@@ -2,4 +2,3 @@ firmware/build/
 __pycache__/
 site/
 *.pyc
-hw/fab/
