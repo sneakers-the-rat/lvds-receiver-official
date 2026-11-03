@@ -285,6 +285,64 @@ attempts included, unpolished.
   fresh full checkout (history/ is tracked) and runs build_site.py
   there; the tolerant artifact downloads do not touch history/.
 
+## CI speed pass (2026-11-03, branch ci-speed)
+
+Problem, observed from the Actions API ~23:07Z: two concurrent runs
+(main 5a70774, routing-history 333cef6) both sat in kicad-validate's
+"Install KiCad 8" step for 7+ minutes with no visible progress,
+while both runs' sim-and-firmware jobs (plain Ubuntu-archive
+installs, no PPA) finished in ~1 minute. Historical KiCad installs
+in this workflow took 2–4 min; the sim toolchain install takes
+~45 s. In-progress job logs are not retrievable via the API, so a
+slow install is indistinguishable from a stall until it finishes.
+
+Root cause priced from the PPA package index (kicad 8.0.9,
+2026-11-03): the old step `apt-get install -y kicad xvfb` followed
+apt's default Recommends chain — kicad recommends kicad-libraries,
+kicad-doc-en and kicad-demos; kicad-libraries in turn recommends
+kicad-symbols (2.6 MB), kicad-templates (2.8 MB), kicad-footprints
+(22.1 MB) and kicad-packages3d, a 378 MB .deb (4.8 GB installed) of
+3D models. Roughly 440 MB came down the Launchpad mirror's variable
+throughput on every single run, for packages no step can use: the
+only kicad-cli subcommands this pipeline invokes are `sch erc`,
+`pcb drc`, `sch export netlist` (scripts/ci.sh step 10) and
+`pcb export gerbers|drill|pos|svg|pdf` (scripts/make_fab.sh), and
+all of them read the schematic's embedded symbols and the board's
+embedded footprints.
+
+Fixes (all in .github/workflows/ci.yml; ci.sh / make_fab.sh /
+build_site.py untouched):
+- Install is now `apt-get install -y --no-install-recommends kicad
+  xvfb` — the 35.7 MB kicad package plus hard Depends (shared
+  libraries). xvfb kept deliberately: small, from the fast Ubuntu
+  archive, and kicad-cli's wx initialisation has historically
+  wanted a display for some export paths.
+- actions/cache on /var/cache/apt/archives (restore before install,
+  save after on success), keyed on the workflow file's hash — the
+  package list lives in that file — with a restore-keys prefix for
+  best-effort reuse. /etc/apt/apt.conf.d/docker-clean is removed in
+  the install step so downloaded .debs survive to be cached; apt
+  reuses version-exact cached .debs without re-downloading. A cache
+  miss behaves exactly like the pre-cache workflow.
+- update+install in both install steps (KiCad and sim toolchain)
+  is wrapped in a 2-attempt retry loop, so a transiently sick
+  mirror gets one in-step second chance.
+- kicad-validate gains timeout-minutes: 25 (healthy total ~5 min):
+  a truly stuck job now fails fast instead of crawling silently.
+- Workflow-level concurrency, group <workflow>-<ref> with
+  cancel-in-progress: rapid successive pushes to one ref cancel the
+  stale run instead of queueing duplicate installs.
+
+NOT claimed: any new install time. The next real runs are the
+measurement; before/after will be read from the Actions API.
+Watch item for the first slim-install run: hw/sym-lib-table points
+its 'power' entry at ${KICAD8_SYMBOL_DIR}/power.kicad_sym from the
+kicad-symbols package, which is no longer installed. ERC resolves
+this design's symbols from the schematic's embedded definitions
+(that is the mechanism CI fix rounds 3–4 proved), so the entry
+should be inert — but if the first slim run shows NEW lib-related
+ERC diagnostics versus the 0 errors / 8 warnings baseline, that is
+the first place to look.
 ## Routing history gallery, round 2 (2026-11-03, branch routing-history)
 
 The combined top/bottom renders stack all four copper layers in one
