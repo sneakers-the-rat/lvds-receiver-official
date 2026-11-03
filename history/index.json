@@ -26,6 +26,13 @@
       "top": "board-top.svg",
       "bottom": "board-bottom.svg"
     },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
     "stats": {
       "nets_routed": 0,
       "nets_total": 112,
@@ -63,6 +70,13 @@
       "top": "board-top.svg",
       "bottom": "board-bottom.svg"
     },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
     "stats": {
       "nets_routed": 57,
       "nets_total": 112,
@@ -83,6 +97,13 @@
       "top": "board-top.svg",
       "bottom": "board-bottom.svg"
     },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
     "stats": {
       "nets_routed": 67,
       "nets_total": 112,
@@ -103,13 +124,20 @@
       "top": "board-top.svg",
       "bottom": "board-bottom.svg"
     },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
     "stats": {
-      "unconnected_nets": 98,
-      "clearance_violations": 341,
-      "audit_verdict": "FAIL",
       "nets_routed": 58,
       "nets_total": 112,
-      "pins_failed": 74
+      "pins_failed": 74,
+      "clearance_violations": 341,
+      "unconnected_nets": 98,
+      "audit_verdict": "FAIL"
     },
     "note": "Stricter clearance model (vias never exempt, segment-midpoint tests, layer-aware HV) traded connections for correctness vs v4 (commit fb2acf7 message). Clearance/unconnected/verdict parsed from the audit file committed with this attempt."
   }

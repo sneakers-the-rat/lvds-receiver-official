@@ -14,8 +14,53 @@ is the story.
 - `<UTC-timestamp>_<short-hash>/` — one snapshot per attempt:
   - `board-top.svg`, `board-bottom.svg` — kicad-cli renders
     (copper + silk layers), when a board exists for the attempt;
+  - `layer-FCu.svg`, `layer-In1Cu.svg`, `layer-In2Cu.svg`,
+    `layer-BCu.svg` — single-layer exports, one per copper layer,
+    each recoloured to the fixed palette below. All four share the
+    board's viewBox, so they register pixel-perfectly when stacked;
   - `stats.txt` — the same numbers as the index entry, human-readable.
     Anything never measured is written as `not recorded`.
+
+## Route-only renders (no zone fills)
+
+All renders — per-layer, composite, and the top/bottom references —
+show **routes only**: tracks, vias and pads. The opaque zone fills
+(the GND pours) are removed, because a filled front pour hides every
+layer beneath it. The snapshot script does this without touching
+the committed board: it loads the board with `pcbnew` into a temp
+copy, **deletes every zone in the temp copy**, saves that, and runs
+all `kicad-cli` exports against the temp copy. The method is
+recorded in each snapshot's `stats.txt` and in the index entry's
+`render_method`.
+
+Why deletion rather than `ZONE.SetIsFilled(False)`: that flag was
+tried first and does not work — it persists in the saved board, but
+KiCad 7's plotter draws the zones' stored filled polygons anyway
+(F.Cu export byte size unchanged, 830,046 → 830,055). Deleting the
+zones works, verified numerically: the largest filled F.Cu shape
+drops from 7,821 mm² (the pour, 87% of the board) to 10 mm² (a
+pad), with tracks and footprints intact. Silkscreen is excluded
+from the per-layer and composite views; it appears only in the
+top/bottom reference renders.
+
+## Layer colours (fixed palette)
+
+| Layer  | Colour    | Meaning        |
+|--------|-----------|----------------|
+| F.Cu   | `#FF3B30` | front copper   |
+| In1.Cu | `#FF9500` | inner 1 (GND)  |
+| In2.Cu | `#34C759` | inner 2        |
+| B.Cu   | `#0A84FF` | back copper    |
+
+The snapshot script rewrites the layer geometry colour in each
+single-layer SVG to the palette colour (the white/grey hole rendering
+KiCad draws on every layer is kept). The site gallery shows, per
+attempt: a **composite** — the four layer SVGs stacked with
+`mix-blend-mode: screen` at 0.55 opacity on a near-black background,
+so all four layers are visible at once in their colours — a colour
+legend, the four individual layer panels, and the top/bottom
+reference renders. `index.json` entries carry a `layers` map
+(layer name → file) alongside `renders`.
 
 ## Making a snapshot (the per-attempt convention)
 
