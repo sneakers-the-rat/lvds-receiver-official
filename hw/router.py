@@ -312,6 +312,11 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=(),
             via_hw = 0.4 if eff_hw(wx_, wy_) >= 0.2 else 0.3
             if blocked(items, lj, wx_, wy_, netname, via_hw, clr):
                 continue
+            # The via barrel also occupies the SOURCE layer at via
+            # radius — v5 tested only the target layer, and the
+            # audit's via violations (199 pairs) are the result.
+            if blocked(items, li, wx_, wy_, netname, via_hw, clr):
+                continue
             gscore[nb] = gscore[node] + via_cost; came[nb] = node
             heapq.heappush(openh, (gscore[nb] + h(nb), nb))
     return None
