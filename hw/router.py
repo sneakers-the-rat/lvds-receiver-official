@@ -29,6 +29,17 @@ def netclass(name):
     if name in LVDS_NETS: return (0.30, 0.20)
     return (0.25, 0.20)
 
+# Neck-down: a 0.6 mm power track physically cannot escape a
+# 0.5 mm-pitch QFP/QFN pad row — the lateral distance from a pad axis
+# to the neighbouring pad edge is 0.35 mm, but the track demands
+# width/2 + clearance = 0.30 + 0.25 = 0.55 mm. Human designers neck
+# the trace down at the pad; the router does the same: within
+# NECK_R mm of one of the net's own pad centres, the search and the
+# emitted copper use NECK_W (0.35 - 0.10 = 0.25 mm edge gap, which
+# still satisfies the 0.25 mm power clearance at the neck).
+NECK_W = 0.20
+NECK_R = 1.6
+
 def cell_of(x_mm, y_mm):
     return (min(W - 1, max(0, int(x_mm / CELL))), min(H - 1, max(0, int(y_mm / CELL))))
 
@@ -131,8 +142,10 @@ def route(board, net_objs, fps):
             tree.add((li, cx, cy))
         trees[netname] = tree
         ok = True
+        neck_pts = [p[2] for p in pins]
         for pin_id, cells, _ in pins[1:]:
-            path = astar(items, cells, tree, netname, hw_, clr)
+            path = astar(items, cells, tree, netname, hw_, clr,
+                         neck_pts=neck_pts)
             if path is None:
                 ok = False
                 failed.append((netname, pin_id, cells))
@@ -152,7 +165,8 @@ def route(board, net_objs, fps):
         for netname, pin_id, cells in failed:
             width, clr = netclass(netname)
             path = astar(items, cells, trees[netname], netname,
-                         width / 2, clr, cap=2500000)
+                         width / 2, clr, cap=2500000,
+                         neck_pts=[p[2] for p in pad_cells[netname]])
             if path is None:
                 still.append((netname, pin_id, cells))
                 continue
@@ -199,7 +213,15 @@ def route(board, net_objs, fps):
         print("  FAILED:", f)
     return stats
 
-def astar(items, starts, goals, netname, hw_, clr, cap=900000):
+def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=()):
+    def eff_hw(x, y):
+        # half-width the search must respect at this cell: necked
+        # down near the net's own pads (see NECK_W note above)
+        for (px, py) in neck_pts:
+            if abs(x - px) <= NECK_R and abs(y - py) <= NECK_R and \
+               (x - px) ** 2 + (y - py) ** 2 <= NECK_R * NECK_R:
+                return NECK_W / 2
+        return hw_
     goalset = set(goals)
     openh = []
     gscore = {}
@@ -235,7 +257,7 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000):
             if nb in gscore and gscore[nb] <= gscore[node] + 1:
                 continue
             wx_, wy_ = (nx + 0.5) * CELL, (ny + 0.5) * CELL
-            if blocked(items, li, wx_, wy_, netname, hw_, clr):
+            if blocked(items, li, wx_, wy_, netname, eff_hw(wx_, wy_), clr):
                 continue
             gscore[nb] = gscore[node] + 1; came[nb] = node
             heapq.heappush(openh, (gscore[nb] + h(nb), nb))
@@ -245,7 +267,7 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000):
             if nb in gscore and gscore[nb] <= gscore[node] + 6:
                 continue
             wx_, wy_ = (cx + 0.5) * CELL, (cy + 0.5) * CELL
-            if blocked(items, lj, wx_, wy_, netname, hw_, clr):
+            if blocked(items, lj, wx_, wy_, netname, eff_hw(wx_, wy_), clr):
                 continue
             gscore[nb] = gscore[node] + 6; came[nb] = node
             heapq.heappush(openh, (gscore[nb] + h(nb), nb))
@@ -269,22 +291,37 @@ def emit(board, netobj, path, width, items, netname, clr, stats):
             if (p0[1] == p1[1] == node[1]) or (p0[2] == p1[2] == node[2]):
                 pts[-1] = node; continue
         pts.append(node)
+    def draw_seg(layer_i, x1, y1, x2, y2, w):
+        tr = pcbnew.PCB_TRACK(board)
+        tr.SetStart(pcbnew.VECTOR2I(MM(x1), MM(y1)))
+        tr.SetEnd(pcbnew.VECTOR2I(MM(x2), MM(y2)))
+        tr.SetWidth(MM(w)); tr.SetLayer(LAYERS[layer_i]); tr.SetNet(netobj)
+        board.Add(tr)
+        items[layer_i].add(layer_i, ('seg', netname, (x1, y1, x2, y2, w / 2), clr),
+                           (min(x1, x2) - 2, min(y1, y2) - 2,
+                            max(x1, x2) + 2, max(y1, y2) + 2))
+    cumdist = 0.0  # distance along the path from the pin (path start)
     for a, b in zip(pts, pts[1:]):
+        # neck-down near the pin end, matching the search allowance
+        seg_w = NECK_W if (width > NECK_W and cumdist < NECK_R) else width
         if a[0] == b[0]:
             x1, y1 = (a[1] + 0.5) * CELL, (a[2] + 0.5) * CELL
             x2, y2 = (b[1] + 0.5) * CELL, (b[2] + 0.5) * CELL
-            tr = pcbnew.PCB_TRACK(board)
-            tr.SetStart(pcbnew.VECTOR2I(MM(x1), MM(y1)))
-            tr.SetEnd(pcbnew.VECTOR2I(MM(x2), MM(y2)))
-            tr.SetWidth(MM(width)); tr.SetLayer(LAYERS[a[0]]); tr.SetNet(netobj)
-            board.Add(tr)
-            items[a[0]].add(a[0], ('seg', netname, (x1, y1, x2, y2, width / 2), clr),
-                            (min(x1, x2) - 2, min(y1, y2) - 2, max(x1, x2) + 2, max(y1, y2) + 2))
+            seglen = math.hypot(x2 - x1, y2 - y1)
+            budget = NECK_R - cumdist
+            if seg_w == NECK_W and 0 < budget < seglen:
+                frac = budget / seglen
+                xm, ym = x1 + (x2 - x1) * frac, y1 + (y2 - y1) * frac
+                draw_seg(a[0], x1, y1, xm, ym, NECK_W)
+                draw_seg(a[0], xm, ym, x2, y2, width)
+            else:
+                draw_seg(a[0], x1, y1, x2, y2, seg_w)
+            cumdist += seglen
         else:
             x, y = (a[1] + 0.5) * CELL, (a[2] + 0.5) * CELL
             via = pcbnew.PCB_VIA(board)
             via.SetPosition(pcbnew.VECTOR2I(MM(x), MM(y)))
-            vd, dr = (0.8, 0.4) if width >= 0.4 else (0.6, 0.3)
+            vd, dr = (0.8, 0.4) if seg_w >= 0.4 else (0.6, 0.3)
             via.SetWidth(MM(vd)); via.SetDrill(MM(dr))
             via.SetNet(netobj); via.SetLayerPair(pcbnew.F_Cu, pcbnew.B_Cu)
             board.Add(via)
