@@ -35,11 +35,10 @@ step "6/10 impedance calculation"
 python3 sim/impedance.py > /tmp/z_ci.txt 2>&1; tail -3 /tmp/z_ci.txt
 
 step "7/10 firmware host unit tests"
-( cd firmware && gcc -std=c99 -Wall -Wextra -Werror -I codec -I drivers \
-    codec/codec.c tests/test_codec.c -o /tmp/fwtest && /tmp/fwtest ) || fail "firmware host tests"
+( cd firmware && make host-test 2>&1 | tail -3 ) || fail "firmware host tests"
 
 step "8/10 firmware ARM cross-compile"
-( cd firmware && make clean >/dev/null 2>&1; make 2>&1 | tail -3 ) || fail "arm build"
+( cd firmware && make clean >/dev/null 2>&1; make arm 2>&1 | tail -3 ) || fail "arm build"
 
 step "9/10 host tool simulation smoke test"
 python3 host/rxhost.py --simulate selftest && \

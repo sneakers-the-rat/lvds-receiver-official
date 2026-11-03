@@ -3,6 +3,11 @@ on:
   push:
   pull_request:
 
+# Least privilege by default; only the deploy-pages job below holds
+# the Pages permissions, scoped to that job alone.
+permissions:
+  contents: read
+
 jobs:
   validate-and-build-site:
     runs-on: ubuntu-22.04
