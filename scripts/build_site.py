@@ -12,7 +12,7 @@ Content is assembled from the repo's own verified artefacts:
 Anything missing is shown as "not generated" rather than faked.
 Run scripts/ci.sh and scripts/make_fab.sh first for a complete site.
 """
-import csv, html, os, re, shutil, subprocess, sys
+import csv, html, json, os, re, shutil, subprocess, sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SITE = os.path.join(ROOT, "site")
@@ -125,6 +125,112 @@ def key_lines(path, keys):
               if any(k in ln for k in keys)]
     return picked
 
+# ------------------------------------------------------- build status
+def job_status():
+    """Status JSONs recorded by the CI validation jobs and downloaded
+    by the build-site job into .site-status/<job>/. Absent on a local
+    build (nothing downloaded) — the panel then says so."""
+    out = []
+    for sub, fn in [("kicad", "kicad-validate.json"),
+                    ("sim", "sim-and-firmware.json")]:
+        p = os.path.join(ROOT, ".site-status", sub, fn)
+        if os.path.exists(p):
+            try:
+                with open(p) as f:
+                    out.append(json.load(f))
+            except Exception as e:
+                print(f"warning: unreadable status file {p} ({e})")
+    return out
+
+def check_status():
+    """(name, status, detail) per verification, from results/ files.
+    status is PASS, FAIL or 'not run' (file absent). A present file
+    with no PASS verdict counts as FAIL — that is what the file's own
+    verdict line is for."""
+    def verdict(path, pass_markers, fail_markers=()):
+        txt = read(path)
+        if txt is None:
+            return ("not run", "no result file")
+        if any(m in txt for m in fail_markers):
+            return ("FAIL", "")
+        if any(m in txt for m in pass_markers):
+            return ("PASS", "")
+        return ("FAIL", "no PASS verdict in file")
+    rows = [
+        ("Link budget (R2 sensitivity)",) + verdict(
+            "results/link_budget.txt",
+            ["R2 VERDICT: PASS"], ["R2 VERDICT: FAIL"]),
+        ("TIA ngspice simulation",) + verdict(
+            "results/tia_sim.txt",
+            ["VERDICT: PASS"], ["VERDICT: FAIL"]),
+        ("HV flyback simulation",) + verdict(
+            "results/hv_sim.txt", ["PASS"], ["FAIL"]),
+        ("Digital simulation (codec / PRBS-15)",) + verdict(
+            "results/digital_sim.txt",
+            ["PASS: digital_sim -- all checks passed"], ["FAIL"]),
+        ("Impedance calculation",) + verdict(
+            "results/impedance.txt", ["VERDICT: PASS"], ["VERDICT: FAIL"]),
+        ("Schematic netlist check",) + verdict(
+            "results/netlist-check.txt",
+            ["PASS: netlist matches"], ["FAIL"]),
+    ]
+    erc = read("results/erc-report.txt")
+    if erc is None:
+        rows.append(("KiCad ERC (native)", "not run",
+                     "no ERC report (needs a KiCad 8 CI run)"))
+    else:
+        ne, nw = erc.count("; error"), erc.count("; warning")
+        rows.append(("KiCad ERC (native)",
+                     "PASS" if ne == 0 else "FAIL",
+                     f"{ne} errors, {nw} warnings"))
+    drc = read("results/drc-report.txt")
+    if drc is None:
+        rows.append(("KiCad DRC (native)", "not run",
+                     "no DRC report (needs a KiCad 8 CI run)"))
+    else:
+        mv = re.search(r"Found (\d+) DRC violations", drc)
+        mu = re.search(r"Found (\d+) unconnected items", drc)
+        nv = int(mv.group(1)) if mv else -1
+        nu = int(mu.group(1)) if mu else -1
+        rows.append(("KiCad DRC (native)",
+                     "PASS" if nv == 0 and nu == 0 else "FAIL",
+                     f"{nv} violations, {nu} unconnected items"))
+    return rows
+
+def status_panel():
+    jobs = job_status()
+    if jobs:
+        jrows = "".join(
+            "<tr><td>{}</td><td>{}</td><td>{}</td></tr>".format(
+                html.escape(str(j.get("job", "?"))),
+                html.escape(str(j.get("ci_outcome", "?"))),
+                html.escape(str(j.get("sha", ""))[:10] +
+                            (f" · run {j['run_id']}"
+                             if j.get("run_id") else "")))
+            for j in jobs)
+        job_html = (f"<table><thead><tr><th>CI job</th><th>check step "
+                    f"outcome</th><th>commit</th></tr></thead><tbody>"
+                    f"{jrows}</tbody></table>")
+    else:
+        job_html = ("<p><em>No CI job status reported for this build "
+                    "(local build, or the status artefacts were not "
+                    "available).</em></p>")
+    def badge(st):
+        cls = {"PASS": "pass", "FAIL": "fail"}.get(st, "notrun")
+        return f'<span class="badge {cls}">{html.escape(st)}</span>'
+    crows = "".join(
+        "<tr><td>{}</td><td>{}</td><td>{}</td></tr>".format(
+            html.escape(name), badge(st), html.escape(detail))
+        for name, st, detail in check_status())
+    return (f"<h3>Build status</h3>{job_html}"
+            f"<table><thead><tr><th>Check</th><th>Status</th>"
+            f"<th>Detail</th></tr></thead><tbody>{crows}</tbody>"
+            f"</table>"
+            f"<p>Status is read from the result files available to "
+            f"this build (the validation jobs' fresh uploads when the "
+            f"site is built by CI); anything missing is shown as "
+            f"<em>not run</em>, never as passed.</p>")
+
 def tia_plot():
     """Render the ngspice TIA AC response to PNG from its CSV, if the
     CSV exists (matplotlib is a declared project dependency)."""
@@ -210,9 +316,11 @@ def main():
     # BOM table from the fab BOM CSV
     bom_html = "<p><em>BOM not generated — run scripts/make_fab.sh.</em></p>"
     bom_path = os.path.join(ROOT, "hw", "fab", "bom.csv")
+    rows = []
     if os.path.exists(bom_path):
         with open(bom_path) as f:
             rows = list(csv.reader(f))
+    if rows:
         n_parts = sum(int(r[1]) for r in rows[1:] if r and r[1].isdigit())
         t = ["<table><thead><tr>" + "".join(f"<th>{html.escape(c)}</th>"
              for c in rows[0]) + "</tr></thead><tbody>"]
@@ -244,6 +352,8 @@ def main():
         block("Schematic netlist verification", "results/netlist-check.txt",
               ["PASS", "FAIL", "nets", "pins"]),
     ])
+
+    panel_html = status_panel()
 
     req_html = md_to_html(read("docs/01-requirements.md")
                           or "_requirements doc missing_")
@@ -289,6 +399,10 @@ pre {{ background: #f4f4f4; padding: .7rem; overflow-x: auto; }}
 code {{ background: #f0f0f0; padding: 0 .25rem; }}
 blockquote {{ border-left: 3px solid #99b; margin-left: 0;
   padding-left: 1rem; color: #444; }}
+.badge {{ font-weight: 600; padding: .05rem .45rem; border-radius: .5rem; }}
+.badge.pass {{ background: #d9ead3; color: #274e13; }}
+.badge.fail {{ background: #f4cccc; color: #7a1f1f; }}
+.badge.notrun {{ background: #e0e0e0; color: #555; }}
 </style></head><body>
 <header><h1>PDLVDS-RX — photodiode LVDS receiver</h1>
 <p>Clean-room receiver for the Miniscope Zero optical uplink:
@@ -310,6 +424,7 @@ laptop over USB, no FPGA attached.</p></header>
 <code>docs/04-risks.md</code>. Everything on this page is generated
 from the repository's own verified artefacts by
 <code>scripts/build_site.py</code>.</p>
+{panel_html}
 {req_html}
 {arch_html}
 </section>

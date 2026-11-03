@@ -4,7 +4,7 @@ Vcc vcc 0 5.0
 Vbias vbias 0 1.0
 * APD: current source, Cd=1pF to AC ground (cathode HV is AC-grounded
 * through its filter cap), dark resistance 100 Meg
-Iph 0 inn ac 1
+Iph 0 inn dc 0 ac 1
 Cd  inn 0 1.0p
 Rd  inn 0 100Meg
 * TIA: OPA657, IN+ at 1.0 V bias, Rf=3.3k, Cf=0.45p total

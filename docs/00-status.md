@@ -96,3 +96,45 @@ side only).
 ## Next
 Finish stage 2 (MANIFEST), integrate stage 3/4c/5 deliverables, then
 4a/4b/4d, host CLI, KiCad.
+
+## CI fix pass (2026-11-03, branch ci-fix)
+
+User-ordered: fix the CI tests and the website deploy so CI gives
+useful information. Three root causes, all fixed at the source:
+
+1. TIA sim failed ONLY in CI. Local ngspice is v42, CI (ubuntu-22.04)
+   is ngspice 36; the generated AC deck's photocurrent source was
+   `Iph 0 inn ac 1` — no DC value. ngspice-36 rejects that ("iph: has
+   no value, DC 0 assumed", no analysis runs, exit 1); v42 accepts it.
+   sim/run_tia.py now emits `dc 0 ac 1` at both AC-deck sites (the
+   noise deck already did). Local rerun: TIA PASS, f-3dB 153.6 MHz,
+   peaking 0.00 dB, settle 3.3 ns, noise 0.567 mV rms — unchanged.
+   Full local steps 1-9: ALL PASS.
+2. KiCad 8 ERC reported 875 violations. Census: 683 endpoint_off_grid,
+   88 no_connect_dangling, 88 no_connect_connected, 8
+   power_pin_not_driven, 8 pin_to_pin. The schematic generator now
+   snaps every placement/pin/wire/label/no-connect coordinate to
+   KiCad's 1.27 mm connection grid (verified: 3756 coordinates, 0
+   off-grid) with collision-avoiding placement (snapping alone merged
+   7 pin pairs across stacked parts; the netlist check caught it and
+   passes again: 630 pins / 213 nets, identical connectivity).
+   PWR_FLAGs added for PHY_1V8/PHY_1V8A (USB3300 internal rails).
+   pin_to_pin was exactly the paralleled same-device pins: TPS62130
+   SW x3 (U11/U12) and LT3042 OUTS sense pins (U13/U14) retyped
+   "passive" per KiCad convention, one driver pin kept per net.
+   Schematic paper A1 -> A0 (the generated layout is ~740 mm tall and
+   always overflowed A1). No ERC category silenced, no severity
+   changed. Residual ERC census is for the branch CI run (no native
+   ERC exists locally — KiCad 7).
+   ci.sh step 10 now also prints ERC errors/warnings as separate
+   counts; pass/fail semantics unchanged.
+3. The site had NEVER built: build-site needed both validation jobs
+   green. ci.yml restructured: build-site runs with !cancelled() and
+   tolerant artefact downloads; validation jobs upload a status JSON
+   (ci step outcome) that the site merges into a new build-status
+   panel (per-check PASS/FAIL/not-run from results/ verdicts + ERC/
+   DRC counts); deploy-pages publishes whenever build-site succeeded
+   and ENABLE_PAGES_DEPLOY is set — regardless of validation outcome.
+   Validation jobs still fail honestly (no continue-on-error on any
+   check). Fab export and sim-results upload now also run on failure
+   so a red run's site shows the current board and partial results.

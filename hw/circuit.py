@@ -248,9 +248,13 @@ PARTS += [
  P("TP1","HV test point", ("TestPoint","TestPoint_Pad_D1.5mm"), "box",
    {"1":("TP","passive","TP_HV")}, "hv"),
  P("C35","10uF", C0805, "C", {"1":("","passive","+5V"), "2":("","passive","GND")}, "hv"),
+ # Pin-type convention (KiCad ERC pin_to_pin): paralleled pins of ONE
+ # device share a single driver-typed pin; the rest are "passive"
+ # (TPS62130 SW x3 below). A sense pin tied to its own rail is likewise
+ # "passive", not a second driver (LT3042 OUTS, further down).
  # ---------------- power: +3V3D buck ----------------
  P("U11","TPS62130RGT", ("Package_DFN_QFN","QFN-16-1EP_3x3mm_P0.5mm_EP1.45x1.45mm"), "box",
-   {"1":("SW","out","SW1"), "2":("SW","out","SW1"), "3":("SW","out","SW1"),
+   {"1":("SW","out","SW1"), "2":("SW","passive","SW1"), "3":("SW","passive","SW1"),
     "4":("PG","oc","PG_3V3"), "5":("FB","in","FB_3V3"),
     "6":("AGND","pwr_in","GND"), "7":("FSW","in","GND"),
     "8":("DEF","in","GND"), "9":("SS/TR","passive","SS_3V3"),
@@ -268,7 +272,7 @@ PARTS += [
  P("R37","10k", R0603, "R", {"1":("","passive","PG_3V3"), "2":("","passive","+3V3D")}, "pwr"),
  # ---------------- power: -5.5V raw inverting buck-boost ----------------
  P("U12","TPS62130RGT (inv)", ("Package_DFN_QFN","QFN-16-1EP_3x3mm_P0.5mm_EP1.45x1.45mm"), "box",
-   {"1":("SW","out","SW2"), "2":("SW","out","SW2"), "3":("SW","out","SW2"),
+   {"1":("SW","out","SW2"), "2":("SW","passive","SW2"), "3":("SW","passive","SW2"),
     "4":("PG","oc",None), "5":("FB","in","FB_NEG"),
     "6":("AGND","pwr_in","NEG_RAW"), "7":("FSW","in","NEG_RAW"),
     "8":("DEF","in","NEG_RAW"), "9":("SS/TR","passive","SS_NEG"),
@@ -290,7 +294,7 @@ PARTS += [
     "3":("EN/UV","in","+5V"), "4":("PG","oc",None),
     "5":("ILIM","passive","ILIM_P"), "6":("PGFB","passive","+5V"),
     "7":("SET","passive","SET_P"), "8":("GND","pwr_in","GND"),
-    "9":("OUTS","pwr_out","+VA"), "10":("OUT","pwr_out","+VA"),
+    "9":("OUTS","passive","+VA"), "10":("OUT","pwr_out","+VA"),
     "11":("EP","pwr_in","GND")}, "pwr"),
  P("R40","46k RSET=+4.6V", R0603, "R", {"1":("","passive","SET_P"), "2":("","passive","GND")}, "pwr"),
  P("C42","4.7uF", C0603, "C", {"1":("","passive","SET_P"), "2":("","passive","GND")}, "pwr"),
@@ -302,7 +306,7 @@ PARTS += [
     "3":("EN/UV","in","+5V"), "4":("PG","oc",None),
     "5":("ILIM","passive","ILIM_A"), "6":("PGFB","passive","+5V"),
     "7":("SET","passive","SET_A"), "8":("GND","pwr_in","GND"),
-    "9":("OUTS","pwr_out","+3V3A"), "10":("OUT","pwr_out","+3V3A"),
+    "9":("OUTS","passive","+3V3A"), "10":("OUT","pwr_out","+3V3A"),
     "11":("EP","pwr_in","GND")}, "pwr"),
  P("R42","33.2k RSET=+3.32V", R0603, "R", {"1":("","passive","SET_A"), "2":("","passive","GND")}, "pwr"),
  P("C45","4.7uF", C0603, "C", {"1":("","passive","SET_A"), "2":("","passive","GND")}, "pwr"),
