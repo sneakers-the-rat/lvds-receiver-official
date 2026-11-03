@@ -3,8 +3,23 @@
 
 Creates history/<UTC-timestamp>_<short-hash>/ containing:
   - board-top.svg / board-bottom.svg  (kicad-cli pcb export svg renders)
+  - layer-FCu.svg / layer-In1Cu.svg / layer-In2Cu.svg / layer-BCu.svg
+    (single-layer exports, recoloured to the fixed palette below so
+    the site can stack all four copper layers in distinct colours)
   - stats.txt                         (label, timestamps, hashes, stats)
-and adds/updates the attempt's entry in history/index.json.
+and adds/updates the attempt's entry in history/index.json (including
+a "layers" map of layer name -> layer render file).
+
+All renders are ROUTE-ONLY: before exporting, the board is loaded
+with pcbnew into a temp copy whose zones are deleted, so the SVGs
+show tracks, vias and pads with no opaque zone fills (GND pours).
+(SetIsFilled(False) alone does not work — KiCad 7's plotter draws
+the zones' stored filled polygons regardless of that flag; deleting
+the zones from the temp copy is what removes the pours. Verified:
+largest filled F.Cu shape drops from 7,821 mm^2 — the pour — to
+10 mm^2, a pad.) The committed board file is never modified.
+Silkscreen appears only in the top/bottom reference renders, never
+in the per-layer or composite views.
 
 Stats are taken, in priority order, from explicit --flags, then parsed
 from the audit file (results/pcb-audit.txt) and build log
@@ -24,12 +39,25 @@ Usage:
       --hash dc6a010... --pins-failed 125 \\
       --note "no board was committed for this attempt"
 """
-import argparse, json, os, re, shutil, subprocess, sys
+import argparse, json, os, re, shutil, subprocess, sys, tempfile
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOP_LAYERS = "F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS"
 BOTTOM_LAYERS = "B.Cu,In2.Cu,In1.Cu,F.Cu,B.SilkS"
+
+# Copper layers in stack order, the file each one's render gets, and
+# the fixed palette colour it is recoloured to (site composite +
+# legend use the same palette — keep scripts/build_site.py in sync).
+COPPER_LAYERS = ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"]
+LAYER_FILES = {"F.Cu": "layer-FCu.svg", "In1.Cu": "layer-In1Cu.svg",
+               "In2.Cu": "layer-In2Cu.svg", "B.Cu": "layer-BCu.svg"}
+LAYER_PALETTE = {"F.Cu": "#FF3B30", "In1.Cu": "#FF9500",
+                 "In2.Cu": "#34C759", "B.Cu": "#0A84FF"}
+# Colours in a single-layer export that are NOT layer geometry: the
+# near-white page/hole rendering KiCad draws on every layer, and the
+# black wrapper groups. Everything else is the layer's theme colour.
+KEEP_COLOURS = {"#FFFFFF", "#ECECEC", "#000000"}
 
 
 def git(*args, cwd=ROOT):
@@ -85,6 +113,57 @@ def export_svg(board, out_path, layers, mirror):
         if r.returncode == 0 and os.path.exists(out_path):
             return spec or "kicad-cli defaults"
     return None
+
+
+def make_route_board(board):
+    """Write a temp copy of `board` with every zone deleted, for
+    route-only renders. Returns (temp_path, method) — or
+    (None, reason) if pcbnew is unavailable, in which case the
+    caller falls back to the original board and the snapshot
+    records that its renders include the pours."""
+    try:
+        import pcbnew
+    except Exception as e:
+        return None, f"pcbnew unavailable ({e}); renders include pours"
+    tmpdir = tempfile.mkdtemp(prefix="snapshot-route-")
+    out = os.path.join(tmpdir, "route.kicad_pcb")
+    b = pcbnew.LoadBoard(board)
+    zones = list(b.Zones())
+    for z in zones:
+        b.Remove(z)
+    pcbnew.SaveBoard(out, b)
+    return out, (f"zones deleted from temp pcbnew copy "
+                 f"({len(zones)} zones removed; source board "
+                 f"unmodified)")
+
+
+def export_layer(board, out_path, layer):
+    """Export exactly one copper layer and recolour its geometry to
+    the palette colour. No fallback to a multi-layer export — a
+    missing layer must stay missing, never silently become the whole
+    board in one colour. Returns the number of colour tokens replaced
+    (0 is legitimate for a layer with no geometry), or None on
+    export/recolour failure. All four layer exports of one board
+    share the same viewBox, so they register pixel-perfectly when
+    stacked."""
+    cmd = ["kicad-cli", "pcb", "export", "svg", "-o", out_path,
+           "--page-size-mode", "2", "--exclude-drawing-sheet",
+           "--layers", layer, board]
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode != 0 or not os.path.exists(out_path):
+        return None
+    txt = open(out_path).read()
+
+    def sub(m):
+        return (m.group(0) if m.group(0).upper() in KEEP_COLOURS
+                else LAYER_PALETTE[layer])
+
+    new, n = re.subn(r"#[0-9A-Fa-f]{6}\b", sub, txt)
+    if n == 0:
+        return None
+    with open(out_path, "w") as f:
+        f.write(new)
+    return n
 
 
 def main():
@@ -173,14 +252,21 @@ def main():
 
     renders = None
     layers_used = None
+    layer_renders = None
+    render_method = None
     if not a.no_board:
         if not os.path.exists(a.board):
             print(f"error: board file not found: {a.board}",
                   file=sys.stderr)
             return 1
-        top = export_svg(a.board, os.path.join(sdir, "board-top.svg"),
+        route_board, render_method = make_route_board(a.board)
+        if route_board is None:
+            print(f"warning: {render_method}", file=sys.stderr)
+            route_board = a.board
+        top = export_svg(route_board,
+                         os.path.join(sdir, "board-top.svg"),
                          TOP_LAYERS, mirror=False)
-        bottom = export_svg(a.board,
+        bottom = export_svg(route_board,
                             os.path.join(sdir, "board-bottom.svg"),
                             BOTTOM_LAYERS, mirror=True)
         if top and bottom:
@@ -190,6 +276,21 @@ def main():
         else:
             print("warning: kicad-cli SVG export failed; entry will "
                   "carry no renders", file=sys.stderr)
+        got = {}
+        for layer in COPPER_LAYERS:
+            n = export_layer(route_board,
+                             os.path.join(sdir, LAYER_FILES[layer]),
+                             layer)
+            if n is None:
+                print(f"warning: layer export failed for {layer}",
+                      file=sys.stderr)
+            else:
+                got[layer] = LAYER_FILES[layer]
+        if got:
+            layer_renders = got
+        if route_board != a.board:
+            shutil.rmtree(os.path.dirname(route_board),
+                          ignore_errors=True)
 
     def fmt(v):
         return "not recorded" if v is None else str(v)
@@ -202,6 +303,11 @@ def main():
         f"board file: {'none (no board committed)' if a.no_board else a.board}",
         f"renders: {'none' if not renders else 'board-top.svg, board-bottom.svg'}",
         f"render layers: {layers_used or 'not recorded'}",
+        "layer renders: " + (", ".join(
+            f"{layer}={layer_renders[layer]} ({LAYER_PALETTE[layer]})"
+            for layer in COPPER_LAYERS if layer_renders
+            and layer in layer_renders) or "none"),
+        f"route-only renders: {render_method or 'not recorded'}",
         f"nets fully routed: {fmt(stats['nets_routed'])}"
         + (f" of {stats['nets_total']}" if stats['nets_total'] else ""),
         f"pins failed: {fmt(stats['pins_failed'])}",
@@ -216,6 +322,8 @@ def main():
     entry = {"timestamp": ts_iso, "hash": full_hash,
              "short_hash": short_hash, "label": a.label,
              "dir": dirname, "renders": renders,
+             "layers": layer_renders,
+             "render_method": render_method,
              "stats": stats, "note": a.note or ""}
     entries.append(entry)
     entries.sort(key=lambda e: (e["timestamp"], e["hash"]))
@@ -224,7 +332,9 @@ def main():
         f.write("\n")
     print(f"snapshot: history/{dirname} "
           f"({a.label}, {short_hash}, renders="
-          f"{'yes' if renders else 'no'})")
+          f"{'yes' if renders else 'no'}, layers="
+          f"{len(layer_renders) if layer_renders else 0}/"
+          f"{len(COPPER_LAYERS)})")
     return 0
 
 
