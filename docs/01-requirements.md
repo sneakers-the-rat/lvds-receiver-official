@@ -36,6 +36,29 @@ and "Data stream packet structure" sections.
 - Environment: strong 6.63 MHz magnetic field (QSCR power), behavioural
   illumination as optical interference, free-space path over a 50x50 cm arena,
   receiver above/around the arena.
+- PER evaluation method in the paper (detail added 2026-11-03): one trial =
+  2^15-1 = 32,767 transmitted buffers (one full PRBS-15 phase cycle);
+  5 trials averaged. Packet = 40,256 payload bits; any bit error fails the
+  packet. Our BER/PER test modes (firmware + host) replicate this counting so
+  results are directly comparable.
+- Paper's empirical coverage benchmark: at PER threshold 1e-3 (which implies
+  expected frame loss 1-(1-1e-3)^8 = 0.80% for 8-packet frames), a single
+  receiver provided a lateral coverage diameter of ~30 cm, i.e. ~700 cm^2
+  area. sim/link_budget.py uses this as the sanity benchmark for our
+  design's coverage estimate (geometric model + stated caveats).
+- Multi-receiver operation in the paper: two receivers' streams are combined
+  post hoc using packet metadata (frame/global packet indices); a frame is
+  lost only when neither receiver received all 8 of its packets. Our packet
+  header compatibility (R6 verification path) preserves the metadata needed
+  for the same post-hoc combining with two of our modules.
+- Diffuse reception: the maze recordings show the data LED signal is received
+  diffusely through translucent walls — the original link works partly on
+  scattered light. Consequence: a wide-FOV bare-detector mode (no lens) must
+  be retained even though the lens mode wins on axis; do not optimise the
+  design for collimated light only.
+- Headstage (transmitter-side) MCU in the paper is an ATSAMD51J20 —
+  transmitter side only, not needed for this receiver; recorded for
+  completeness of the system description.
 
 ## Customer target for this replacement (supersedes the paper's rates)
 - Line rate 50 Mbps, 8b/10b, payload 40 Mbps, UI = 20 ns.
