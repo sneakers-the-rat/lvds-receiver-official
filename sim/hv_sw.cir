@@ -24,5 +24,6 @@ Iload apd 0 200u
 .control
 tran 8n 12m 0 25n uic
 wrdata results/hv_sw.csv v(rect) v(apd)
+quit
 .endc
 .end
