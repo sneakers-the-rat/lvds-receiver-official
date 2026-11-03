@@ -6,6 +6,7 @@ board file: /tmp/regen-41d7196.kicad_pcb
 renders: board-top.svg, board-bottom.svg
 render layers: top: F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS; bottom: B.Cu,In2.Cu,In1.Cu,F.Cu,B.SilkS
 layer renders: F.Cu=layer-FCu.svg (#FF3B30), In1.Cu=layer-In1Cu.svg (#FF9500), In2.Cu=layer-In2Cu.svg (#34C759), B.Cu=layer-BCu.svg (#0A84FF)
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
 nets fully routed: 67 of 112
 pins failed: 59
 clearance violations: 454

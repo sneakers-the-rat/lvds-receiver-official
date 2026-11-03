@@ -32,6 +32,7 @@
       "In2.Cu": "layer-In2Cu.svg",
       "B.Cu": "layer-BCu.svg"
     },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
     "stats": {
       "nets_routed": 0,
       "nets_total": 112,
@@ -75,6 +76,7 @@
       "In2.Cu": "layer-In2Cu.svg",
       "B.Cu": "layer-BCu.svg"
     },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
     "stats": {
       "nets_routed": 57,
       "nets_total": 112,
@@ -101,6 +103,7 @@
       "In2.Cu": "layer-In2Cu.svg",
       "B.Cu": "layer-BCu.svg"
     },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
     "stats": {
       "nets_routed": 67,
       "nets_total": 112,
@@ -127,6 +130,7 @@
       "In2.Cu": "layer-In2Cu.svg",
       "B.Cu": "layer-BCu.svg"
     },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
     "stats": {
       "nets_routed": 58,
       "nets_total": 112,
