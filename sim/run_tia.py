@@ -61,6 +61,16 @@ def ngb(path, fatal=True):
         print(r.stdout[-4000:], file=sys.stderr)
         print("--- ngspice stderr (tail) ---", file=sys.stderr)
         print(r.stderr[-4000:], file=sys.stderr)
+        # Dump the exact deck that failed: CI (ngspice 36) and local
+        # (ngspice 42) parse differently, and the failure in GH run
+        # 41719705390 ('iph: has no value') is a property of the
+        # generated file, so the file itself is the evidence.
+        try:
+            with open(path) as f:
+                print(f"--- full deck {path} ---", file=sys.stderr)
+                print(f.read(), file=sys.stderr)
+        except Exception as e:
+            print(f"(could not read back {path}: {e})", file=sys.stderr)
         if fatal:
             raise SystemExit(f"ngspice failed on {path} "
                              f"(exit {r.returncode}) — output above")
