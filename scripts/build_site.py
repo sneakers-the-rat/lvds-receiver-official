@@ -269,7 +269,11 @@ def routing_history():
     out = ["<p>Every routing attempt, in order — including the ones "
            "that failed. Snapshots live in <code>history/</code> in the "
            "repository, one directory per attempt, made by "
-           "<code>scripts/snapshot_route.py</code>.</p>"]
+           "<code>scripts/snapshot_route.py</code>. The renders are "
+           "route-only: tracks, vias and pads, with zone fills (the "
+           "opaque GND pours) removed — each snapshot is exported "
+           "from a temp copy of the board with its zones deleted, so "
+           "every layer's routes stay visible.</p>"]
     for e in entries:
         st = e.get("stats") or {}
         nets = nr(st.get("nets_routed"))
@@ -320,10 +324,10 @@ def routing_history():
                     f"{LAYER_PALETTE[layer]}</figcaption></figure>"
                     for layer in LAYER_ORDER if layer in copied)
                 layer_html = (
-                    "<h4>All copper layers, stacked</h4>"
+                    "<h4>Routes — all copper layers, stacked</h4>"
                     f'<div class="composite">{stack}</div>'
                     f'<p class="legend">{legend}</p>'
-                    "<h4>Each copper layer</h4>"
+                    "<h4>Routes — each copper layer</h4>"
                     f'<div class="layergrid">{panels}</div>')
             imgs = ""
             for side in ("top", "bottom"):
