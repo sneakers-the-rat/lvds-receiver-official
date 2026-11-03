@@ -51,11 +51,71 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # .deb cache for the install step below. Keyed on this file's
+      # hash because the install package list lives in this file —
+      # change the list and the key changes; the restore-keys prefix
+      # still gives best-effort reuse across unrelated workflow edits.
+      # apt reuses a version-exact .deb already sitting in
+      # /var/cache/apt/archives instead of re-downloading it, so on a
+      # cache hit the slow PPA mirror is barely touched. A cache miss
+      # behaves exactly like the pre-cache workflow.
+      - name: Restore cached .deb packages
+        id: apt-cache
+        uses: actions/cache@v4
+        with:
+          path: /var/cache/apt/archives
+          key: apt-kicad8-${{ runner.os }}-${{ hashFiles('.github/workflows/ci.yml') }}
+          restore-keys: |
+            apt-kicad8-${{ runner.os }}-
+
+      # Slim install — the evidence (PPA package index, 2026-11-03):
+      # the only kicad-cli subcommands this pipeline ever invokes are
+      # `sch erc`, `pcb drc`, `sch export netlist` (scripts/ci.sh step
+      # 10) and `pcb export gerbers|drill|pos|svg|pdf`
+      # (scripts/make_fab.sh). Every one of them reads the schematic's
+      # EMBEDDED symbols and the board's EMBEDDED footprints, so the
+      # stock symbol/footprint libraries are never opened. But apt's
+      # default Recommends chain pulls them anyway — and worse:
+      # `kicad` recommends kicad-libraries + kicad-doc-en +
+      # kicad-demos, and kicad-libraries in turn recommends
+      # kicad-packages3d, a 378 MB .deb (4.8 GB installed) of 3D
+      # models that no invoked command can use, plus kicad-footprints
+      # (22 MB) and kicad-symbols (2.6 MB). Installing `kicad` alone
+      # with --no-install-recommends cuts the PPA download from
+      # ~440 MB to the 35.7 MB kicad package plus its hard Depends
+      # (shared libraries only). xvfb stays: it is small, comes from
+      # the fast Ubuntu archive, and kicad-cli's wx initialisation
+      # has historically wanted a display for some export paths —
+      # removing it risks a new failure class for no real gain.
+      # The update+install is retried once: when the Launchpad mirror
+      # crawls, a second attempt inside the same step is cheaper than
+      # a red job and a manual re-run.
       - name: Install KiCad 8 (native ERC/DRC) — no standalone ngspice
         run: |
+          # GitHub's ubuntu images ship a docker-clean apt config
+          # that deletes downloaded .debs after every transaction;
+          # remove it so the cache save below has something to save
+          # (and so the retry reuses what attempt 1 downloaded).
+          sudo rm -f /etc/apt/apt.conf.d/docker-clean
           sudo add-apt-repository -y ppa:kicad/kicad-8.0-releases
-          sudo apt-get update
-          sudo apt-get install -y kicad xvfb
+          for attempt in 1 2; do
+            if sudo apt-get update && sudo apt-get install -y --no-install-recommends kicad xvfb; then
+              break
+            fi
+            if [ "$attempt" = 2 ]; then
+              echo "apt failed on both attempts" >&2
+              exit 1
+            fi
+            echo "apt attempt $attempt failed — retrying in 20 s" >&2
+            sleep 20
+          done
+
+      - name: Save .deb packages to cache
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: /var/cache/apt/archives
+          key: ${{ steps.apt-cache.outputs.cache-primary-key }}
 
       - name: KiCad ERC + DRC (scripts/ci.sh step 10)
         id: ci
@@ -108,9 +168,24 @@ jobs:
 
       - name: Install simulation toolchain — ngspice, no KiCad
         run: |
-          sudo apt-get update
-          sudo apt-get install -y ngspice gcc-arm-none-eabi \
-            python3-numpy python3-scipy python3-matplotlib
+          # Same one-retry guard as the KiCad job: this install is
+          # small and normally takes ~45 s from the Ubuntu archive,
+          # but a transient mirror hiccup should retry inside the
+          # step instead of reddening the whole job. (No .deb cache
+          # here — the archive is fast and the packages are modest;
+          # caching machinery would cost more than it saves.)
+          for attempt in 1 2; do
+            if sudo apt-get update && sudo apt-get install -y ngspice gcc-arm-none-eabi \
+              python3-numpy python3-scipy python3-matplotlib; then
+              break
+            fi
+            if [ "$attempt" = 2 ]; then
+              echo "apt failed on both attempts" >&2
+              exit 1
+            fi
+            echo "apt attempt $attempt failed — retrying in 20 s" >&2
+            sleep 20
+          done
 
       - name: Simulations, codec, firmware, host tool (ci.sh steps 1-9)
         id: ci
