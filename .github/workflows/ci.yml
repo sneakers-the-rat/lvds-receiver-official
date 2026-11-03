@@ -8,6 +8,17 @@ on:
 permissions:
   contents: read
 
+# One run per ref at a time. Rapid successive pushes used to queue
+# duplicate runs behind each other, each paying the full multi-minute
+# KiCad install; now a new push cancels the stale run on the same ref.
+# (On 2026-11-03 the main and routing-history runs also installed
+# KiCad CONCURRENTLY from the same Launchpad mirror and both crawled
+# for 7+ minutes — per-ref groups don't prevent that cross-branch
+# case, but they stop the self-inflicted same-ref pile-ups.)
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 # Site/deploy decoupling (why the run can be red AND the site live):
 # the two validation jobs are the honest signal — they fail whenever
 # their checks fail, no continue-on-error anywhere near a check.
@@ -31,6 +42,12 @@ jobs:
   # steps via CI_STEPS; a local run without CI_STEPS does everything.
   kicad-validate:
     runs-on: ubuntu-22.04
+    # Healthy total runtime for this job is ~5 minutes, almost all of
+    # it the KiCad install below. A sick Launchpad mirror turned that
+    # install into a 7+ minute silent crawl on 2026-11-03 (twice,
+    # concurrently); 25 minutes is generous headroom that still fails
+    # a truly stuck job fast instead of eating a runner for an hour.
+    timeout-minutes: 25
     steps:
       - uses: actions/checkout@v4
 
