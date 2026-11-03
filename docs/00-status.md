@@ -343,3 +343,69 @@ this design's symbols from the schematic's embedded definitions
 should be inert — but if the first slim run shows NEW lib-related
 ERC diagnostics versus the 0 errors / 8 warnings baseline, that is
 the first place to look.
+## Routing history gallery, round 2 (2026-11-03, branch routing-history)
+
+The combined top/bottom renders stack all four copper layers in one
+export, but opaque F.Cu copper and pours hide the inner layers — the
+gallery read as top-layer-only. Now every board-bearing snapshot
+also carries one recoloured render per copper layer, and the
+gallery leads with a composite that stacks all four:
+
+- `scripts/snapshot_route.py` additionally exports each copper
+  layer singly (`kicad-cli pcb export svg --layers <one>`) and
+  rewrites the layer geometry colour to the fixed palette
+  (F.Cu #FF3B30, In1.Cu #FF9500, In2.Cu #34C759, B.Cu #0A84FF);
+  the white/grey hole rendering and black wrapper groups are kept.
+  Verified on the v4 board: recoloured counts equal the raw census
+  (2194/58/250/162 geometry tokens) and all four exports share the
+  combined view's viewBox (105.6894 x 85.0138), so stacked layers
+  register pixel-perfectly. `index.json` entries gained a `layers`
+  map; `stats.txt` lists the layer renders.
+- `scripts/build_site.py` gallery: per board-bearing entry, a
+  composite (four layer SVGs stacked, `mix-blend-mode: screen`,
+  opacity 0.55, background #111), a palette legend, the four
+  individual layer panels, then the existing top/bottom reference
+  renders. Board-less entries unchanged (explicit no-render note);
+  zero-history builds still show the placeholder.
+- The four board-bearing backfills (d0c0bca placed, 3ac1a43 v3,
+  41d7196 v4, fb2acf7 v5) were regenerated in place — same dirs,
+  timestamps, hashes, labels, notes and stats (cross-checked
+  field-by-field against the previous index.json); boards were
+  re-extracted read-only via `git show` at the original commits
+  and stats pinned with explicit flags. Verified in a full local
+  site build: 16 layer SVGs copied to `site/assets/history/`,
+  4 composites / 12 stacked images in the HTML, each layer file
+  referenced exactly twice per entry (composite + panel).
+  `history/README.md` documents the palette, file layout and
+  composite convention.
+
+## Routing history gallery, round 2 addendum — route-only renders (2026-11-03)
+
+Spec change from the user (14:51 PST): the opaque layers block the
+actual routes — renders must show routes only. All gallery renders
+(per-layer, composite, and the top/bottom references) are now made
+from a temp pcbnew copy of the board with its zones deleted, so
+they show tracks, vias and pads with no GND pours.
+
+- Method, with the failed first attempt on record:
+  `ZONE.SetIsFilled(False)` persists in the saved board but KiCad
+  7's plotter draws the zones' stored filled polygons regardless
+  (F.Cu export 830,046 → 830,055 bytes, identical path count).
+  Deleting the zones from the temp copy works — largest filled
+  F.Cu shape 7,821 mm² (pour) → 10 mm² (pad); 1,123 tracks and
+  144 footprints intact on the v5 board. The source board is never
+  modified (sha256 identical across a snapshot run); the method
+  is recorded per snapshot in `stats.txt` / index `render_method`.
+- Silkscreen is excluded from the per-layer and composite views
+  (single-layer exports never contained it); it remains only in
+  the top/bottom reference renders, which are now also exported
+  from the zone-deleted copy.
+- The four board-bearing backfills were regenerated a second time
+  under this method — same dirs/timestamps/hashes/labels/notes/
+  stats (cross-checked field-by-field again), plus a new
+  objective check: no layer render of any entry contains a filled
+  shape larger than 10 mm². Site rebuilt and re-verified
+  (4 composites, 12 stacked images, 16 layer assets, route-only
+  wording in the gallery intro and headings; built site shrank
+  24.9 MB → 19.8 MB with the pours gone). `history/README.md`
+  documents the method, including why SetIsFilled was rejected.
