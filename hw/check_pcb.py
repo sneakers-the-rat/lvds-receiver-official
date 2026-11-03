@@ -87,6 +87,11 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
             unconnected.append((net, [sorted(g)[:4] for g in groups.values()]))
     # ---------- clearance ----------
     violations = []
+    intrinsic = []  # pad pairs of the SAME footprint: their spacing is
+    # fixed by the manufacturer's footprint geometry (e.g. 0.5 mm-pitch
+    # QFN pads are 0.2 mm apart by design) — no routing or placement
+    # decision can change it, so it is reported separately, not counted
+    # as a routing violation. Still printed, never silent.
     n = len(items)
     for i in range(n):
         a = items[i]
@@ -95,7 +100,6 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
             if a[1] == b[1]: continue
             if not (a[2] & b[2]): continue
             need = max(clearance_for(a[1]), clearance_for(b[1]))
-            bb = a[4]; bb.Merge(b[4])  # cheap reject below uses grown box
             if not a[4].Intersects(b[4]):
                 # grow test: skip if bboxes are farther than need apart
                 ax0, ay0 = pcbnew.ToMM(a[4].GetLeft()), pcbnew.ToMM(a[4].GetTop())
@@ -110,6 +114,10 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
                 hit = False
             if hit:
                 if any({a[1], b[1]} == {w[0], w[1]} for w in WAIVERS): continue
+                if a[0] == "pad" and b[0] == "pad" and \
+                   a[5].rsplit(".", 1)[0] == b[5].rsplit(".", 1)[0]:
+                    intrinsic.append((a[1], a[5], b[1], b[5], need))
+                    continue
                 violations.append((a[1], a[5], b[1], b[5], need))
     print(f"unconnected nets: {len(unconnected)}")
     for net, gs in unconnected:
@@ -117,6 +125,10 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
     print(f"clearance violations: {len(violations)}")
     for v in violations[:60]:
         print(f"  CLEARANCE {v[0]} ({v[1]}) vs {v[2]} ({v[3]}): need {v[4]} mm")
+    print(f"intrinsic same-footprint pad pairs below class clearance "
+          f"(datasheet geometry, not routable): {len(intrinsic)}")
+    for v in intrinsic[:20]:
+        print(f"  INTRINSIC {v[0]} ({v[1]}) vs {v[2]} ({v[3]}): need {v[4]} mm")
     ok = not unconnected and not violations
     print("PCB CHECK:", "PASS" if ok else "FAIL")
     return 0 if ok else 1

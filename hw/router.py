@@ -143,9 +143,10 @@ def route(board, net_objs, fps):
         trees[netname] = tree
         ok = True
         neck_pts = [p[2] for p in pins]
+        own_cells = frozenset(c for _, cs, _ in pins for c in cs)
         for pin_id, cells, _ in pins[1:]:
             path = astar(items, cells, tree, netname, hw_, clr,
-                         neck_pts=neck_pts)
+                         neck_pts=neck_pts, own_cells=own_cells)
             if path is None:
                 ok = False
                 failed.append((netname, pin_id, cells))
@@ -166,7 +167,10 @@ def route(board, net_objs, fps):
             width, clr = netclass(netname)
             path = astar(items, cells, trees[netname], netname,
                          width / 2, clr, cap=2500000,
-                         neck_pts=[p[2] for p in pad_cells[netname]])
+                         neck_pts=[p[2] for p in pad_cells[netname]],
+                         own_cells=frozenset(
+                             c for _, cs, _ in pad_cells[netname]
+                             for c in cs))
             if path is None:
                 still.append((netname, pin_id, cells))
                 continue
@@ -213,7 +217,8 @@ def route(board, net_objs, fps):
         print("  FAILED:", f)
     return stats
 
-def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=()):
+def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=(),
+          own_cells=frozenset()):
     def eff_hw(x, y):
         # half-width the search must respect at this cell: necked
         # down near the net's own pads (see NECK_W note above)
@@ -257,7 +262,15 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=()):
             if nb in gscore and gscore[nb] <= gscore[node] + 1:
                 continue
             wx_, wy_ = (nx + 0.5) * CELL, (ny + 0.5) * CELL
-            if blocked(items, li, wx_, wy_, netname, eff_hw(wx_, wy_), clr):
+            # Goal cells and this net's own pad cells are exempt from
+            # the blocked test: they ARE this net's copper. Without
+            # this, grid quantisation (cell centre up to 0.18 mm from
+            # the true pad centre) plus 0.5 mm-pitch pad geometry made
+            # goal cells unenterable whenever a neighbouring foreign
+            # pad edge sat closer than hw+clr — whole nets (every QFN
+            # power net) failed instantly in v3 despite open board.
+            if nb not in goalset and nb not in own_cells and \
+               blocked(items, li, wx_, wy_, netname, eff_hw(wx_, wy_), clr):
                 continue
             gscore[nb] = gscore[node] + 1; came[nb] = node
             heapq.heappush(openh, (gscore[nb] + h(nb), nb))
@@ -267,7 +280,13 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=()):
             if nb in gscore and gscore[nb] <= gscore[node] + 6:
                 continue
             wx_, wy_ = (cx + 0.5) * CELL, (cy + 0.5) * CELL
-            if blocked(items, lj, wx_, wy_, netname, eff_hw(wx_, wy_), clr):
+            # Via landings must respect the VIA radius, not the track
+            # half-width (v3 under-modelled this: a 0.8 mm via was
+            # tested as a 0.4 mm-wide track, producing real clearance
+            # violations at via sites). Goal/own cells stay exempt.
+            via_hw = 0.4 if eff_hw(wx_, wy_) >= 0.2 else 0.3
+            if nb not in goalset and nb not in own_cells and \
+               blocked(items, lj, wx_, wy_, netname, via_hw, clr):
                 continue
             gscore[nb] = gscore[node] + 6; came[nb] = node
             heapq.heappush(openh, (gscore[nb] + h(nb), nb))

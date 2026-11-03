@@ -140,6 +140,12 @@ def build(route=True):
                 raise RuntimeError(f"net {name} missing after reload")
             nets2[name] = ni
         router.route(board, nets2, fps2)
+    # Checkpoint: save the routed board BEFORE the zone fill, so a
+    # timeout during the (slow) fill can never discard a completed
+    # route — a follow-up fill+save is a 1-minute job, a re-route is
+    # not. (v3 lost its safety margin exactly here.)
+    board.Save(outpath)
+    print("checkpoint save (routed, unfilled)", flush=True)
     filler = pcbnew.ZONE_FILLER(board)
     filler.Fill(board.Zones())
     board.Save(outpath)
