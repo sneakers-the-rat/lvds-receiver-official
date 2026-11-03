@@ -1,0 +1,57 @@
+name: ci
+on:
+  push:
+  pull_request:
+
+jobs:
+  validate-and-build-site:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install toolchain (KiCad 8 for native ERC/DRC, ngspice, ARM gcc)
+        run: |
+          sudo add-apt-repository -y ppa:kicad/kicad-8.0-releases
+          sudo apt-get update
+          sudo apt-get install -y kicad ngspice gcc-arm-none-eabi \
+            python3-numpy python3-scipy python3-matplotlib xvfb
+
+      - name: Run the full validation pipeline (scripts/ci.sh)
+        run: bash scripts/ci.sh
+
+      - name: Fabricate outputs (Gerbers, drill, BOM, CPL, renders)
+        run: bash scripts/make_fab.sh
+
+      - name: Build the static project site
+        run: python3 scripts/build_site.py
+
+      - name: Upload site as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-site
+          path: site/
+
+      # Pages deployment is a separate job so that a repo without
+      # Pages enabled does not hard-fail the validation pipeline.
+      # Enable it by turning on GitHub Pages (source: GitHub Actions)
+      # in the repository settings.
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+  deploy-pages:
+    needs: validate-and-build-site
+    # Guarded: only runs when the repository owner enables it by
+    # setting the repository variable ENABLE_PAGES_DEPLOY=true, so a
+    # missing Pages setup never fails CI.
+    if: vars.ENABLE_PAGES_DEPLOY == 'true'
+    runs-on: ubuntu-22.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+    steps:
+      - name: Deploy to GitHub Pages
+        uses: actions/deploy-pages@v4
