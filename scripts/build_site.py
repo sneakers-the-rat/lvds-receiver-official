@@ -273,7 +273,11 @@ def routing_history():
            "route-only: tracks, vias and pads, with zone fills (the "
            "opaque GND pours) removed — each snapshot is exported "
            "from a temp copy of the board with its zones deleted, so "
-           "every layer's routes stay visible.</p>"]
+           "every layer's routes stay visible. All renders are "
+           "presented light-on-dark — bright layer colours on dark "
+           "panels, the presentation the project owner asked for; "
+           "drill holes are drawn in the panel tone so they read "
+           "as holes in the pads around them.</p>"]
     for e in entries:
         st = e.get("stats") or {}
         nets = nr(st.get("nets_routed"))
@@ -337,7 +341,8 @@ def routing_history():
                 if src and os.path.exists(src):
                     shutil.copy2(src, os.path.join(dst_dir, fn))
                     imgs += (f"<h4>{side.capitalize()}</h4>"
-                             f'<img src="assets/history/{e["dir"]}/{fn}" '
+                             f'<img class="refview" '
+                             f'src="assets/history/{e["dir"]}/{fn}" '
                              f'alt="{html.escape(e.get("label", ""))} '
                              f'— {side}">')
                 else:
@@ -543,6 +548,8 @@ blockquote {{ border-left: 3px solid #99b; margin-left: 0;
 .layergrid figure {{ flex: 1 1 9rem; margin: 0; }}
 .layergrid img {{ background: #111; border: none; width: 100%;
   display: block; }}
+.refview {{ background: #111; border: 1px solid #444; display: block;
+  width: 100%; box-sizing: border-box; }}
 .layergrid figcaption {{ font-size: .85rem; padding-top: .25rem; }}
 </style></head><body>
 <header><h1>PDLVDS-RX — photodiode LVDS receiver</h1>

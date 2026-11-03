@@ -409,3 +409,52 @@ they show tracks, vias and pads with no GND pours.
   wording in the gallery intro and headings; built site shrank
   24.9 MB → 19.8 MB with the pours gone). `history/README.md`
   documents the method, including why SetIsFilled was rejected.
+
+## Routing history gallery, round 3 — light-on-dark presentation (2026-11-03, branch routing-history)
+
+Direction history, for the record: the round-3 brief first asked
+for white-background-safe (darkened) colours, because several
+elements of the round-2 renders are pale. Before any of that was
+implemented — investigation only, no commits — the user corrected
+the call (15:19 PST): they prefer light-on-dark ("i'd rather you
+have it be light-on-dark than dark-on-light, if there's a choice
+between them"). Round 3 implements light-on-dark throughout.
+
+- Every gallery render now sits on a dark panel in the site: the
+  composite (unchanged round-2 treatment: screen blend on #111),
+  the per-layer panels (already #111), and the top/bottom
+  reference renders, which previously sat directly on the white
+  page — they now carry a `refview` style (#111 background, subtle
+  #444 border) so the panel reads as intentional.
+- The bright round-2 palette is kept verbatim (F.Cu #FF3B30,
+  In1.Cu #FF9500, In2.Cu #34C759, B.Cu #0A84FF) — it was chosen
+  for dark. The top/bottom references, previously not recoloured
+  at all, now map KiCad's muted theme colours onto that palette.
+- Polarity flip handled in the snapshot script's recolouring:
+  the invisible-on-dark class is near-black, and the glowing
+  class is drill-hole white. Drill holes (#FFFFFF) are rendered
+  in the panel tone #111111 so a hole reads as a hole against its
+  pad; #000000 → #9E9E9E (verified beforehand: black occurs only
+  in inert wrapper group styles — zero circles/paths in black
+  groups in every export, layer and reference alike); pads
+  (#ECECEC) and silkscreen (#F2EDA1) are kept verbatim, both
+  clearly visible on dark.
+- The four board-bearing backfills were regenerated under this
+  mapping — dirs, timestamps, hashes, labels, notes and stats
+  unchanged (index entries and every stats.txt verified
+  byte-identical against pre-regen copies; exactly the 24 SVGs
+  changed). Objective scan of all 24 produced SVGs: zero
+  fill/stroke colours with relative luminance < 0.08 other than
+  the designated #111111 panel tone; #000000 and #FFFFFF token
+  counts are 0 everywhere; hole-token counts match the pre-regen
+  #FFFFFF counts exactly (e.g. v4 top reference 5,880 → 5,880).
+  Pale classes survived where the source exports contain them:
+  #ECECEC > 0 in every routed snapshot, #F2EDA1 > 0 in all four
+  top references; both are absent from the bottom references and
+  the unrouted placed board because the raw exports contain none
+  there (pre-regen census) — a property of the source, not a loss.
+- Site rebuilt locally and verified: 4 composites + 12 stacked
+  images, 8 refview reference images on dark panels, 16 layer +
+  8 reference SVGs copied into site assets (spot-checked asset
+  carries the new mapping), legend shows the bright palette, and
+  the gallery intro states the light-on-dark presentation.

@@ -52,15 +52,38 @@ top/bottom reference renders.
 | In2.Cu | `#34C759` | inner 2        |
 | B.Cu   | `#0A84FF` | back copper    |
 
-The snapshot script rewrites the layer geometry colour in each
-single-layer SVG to the palette colour (the white/grey hole rendering
-KiCad draws on every layer is kept). The site gallery shows, per
-attempt: a **composite** — the four layer SVGs stacked with
-`mix-blend-mode: screen` at 0.55 opacity on a near-black background,
-so all four layers are visible at once in their colours — a colour
-legend, the four individual layer panels, and the top/bottom
-reference renders. `index.json` entries carry a `layers` map
-(layer name → file) alongside `renders`.
+Presentation is **light-on-dark** — the project owner's stated
+preference (2026-11-03). Every render in the site gallery sits on
+a `#111` panel: the composite stacks the four layer SVGs with
+`mix-blend-mode: screen` at 0.55 opacity on that panel, and the
+individual layer panels and the top/bottom reference renders sit
+on the same dark panels with a subtle border.
+
+To keep everything visible on dark, the snapshot script recolours
+each export after rendering:
+
+- layer geometry → the palette colour above (in the single-layer
+  exports, and in the top/bottom references, where KiCad's muted
+  per-layer theme colours `#C83434`/`#CE7D2C`/`#7FC87F`/`#4D7FC4`
+  are mapped onto the same palette);
+- drill holes, which KiCad draws `#FFFFFF`, → `#111111`, the
+  panel tone, so a hole reads as a hole against the coloured pad
+  around it instead of glowing;
+- pure black `#000000` → `#9E9E9E` (verified to occur only in
+  inert wrapper group styles — zero circles/paths in black groups
+  across all exports — so nothing geometric changes);
+- pads (`#ECECEC`) and silkscreen (`#F2EDA1`) are kept verbatim:
+  both are clearly visible on dark.
+
+The mapping is verified objectively after each regeneration: a
+scan of every produced SVG finds zero fill/stroke colours with
+relative luminance < 0.08 other than the designated panel tone
+`#111111`. (Silkscreen and `#ECECEC` pads are absent from the
+bottom references and from the unrouted placed board because the
+raw KiCad exports themselves contain none there.)
+
+`index.json` entries carry a `layers` map (layer name → file)
+alongside `renders`.
 
 ## Making a snapshot (the per-attempt convention)
 

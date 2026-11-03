@@ -21,6 +21,19 @@ largest filled F.Cu shape drops from 7,821 mm^2 — the pour — to
 Silkscreen appears only in the top/bottom reference renders, never
 in the per-layer or composite views.
 
+Presentation is LIGHT-ON-DARK (the site shows every render on a
+#111 panel — the project owner's stated preference), so after
+export, colours that would be invisible or wrong on dark are
+remapped: drill holes, which KiCad draws #FFFFFF, are rendered in
+the panel tone #111111 so a hole reads as a hole against the
+coloured pad around it; #000000 — verified to occur only in inert
+wrapper group styles, carrying zero geometry — becomes #9E9E9E so
+no near-black token survives; pads (#ECECEC) and silkscreen
+(#F2EDA1) are kept verbatim, both clearly visible on dark. The
+top/bottom references additionally map KiCad's muted per-layer
+theme colours onto the same bright palette as the per-layer
+renders, so every view agrees.
+
 Stats are taken, in priority order, from explicit --flags, then parsed
 from the audit file (results/pcb-audit.txt) and build log
 (results/pcb_build.log). Anything not found is recorded as
@@ -54,10 +67,22 @@ LAYER_FILES = {"F.Cu": "layer-FCu.svg", "In1.Cu": "layer-In1Cu.svg",
                "In2.Cu": "layer-In2Cu.svg", "B.Cu": "layer-BCu.svg"}
 LAYER_PALETTE = {"F.Cu": "#FF3B30", "In1.Cu": "#FF9500",
                  "In2.Cu": "#34C759", "B.Cu": "#0A84FF"}
-# Colours in a single-layer export that are NOT layer geometry: the
-# near-white page/hole rendering KiCad draws on every layer, and the
-# black wrapper groups. Everything else is the layer's theme colour.
-KEEP_COLOURS = {"#FFFFFF", "#ECECEC", "#000000"}
+# Light-on-dark remapping (see module docstring): drill holes are
+# drawn in the site panel tone so they read as holes on dark; pure
+# black (inert wrapper styles only) becomes a visible neutral;
+# pads (#ECECEC light grey) are kept verbatim. Everything else in
+# a single-layer export is the layer's theme colour and becomes
+# the palette colour.
+HOLE_COLOUR = "#111111"
+BLACK_AS = "#9E9E9E"
+KEEP_COLOURS = {"#ECECEC"}
+# The top/bottom reference exports carry each copper layer in
+# KiCad's muted theme colours; map them onto the same palette.
+THEME_TO_PALETTE = {"#C83434": "#FF3B30", "#CE7D2C": "#FF9500",
+                    "#7FC87F": "#34C759", "#4D7FC4": "#0A84FF"}
+# Reference colours kept verbatim: pads and silkscreen, both
+# clearly visible on the dark panels.
+REF_KEEP_COLOURS = {"#ECECEC", "#F2EDA1"}
 
 
 def git(*args, cwd=ROOT):
@@ -111,8 +136,36 @@ def export_svg(board, out_path, layers, mirror):
         cmd = base + (["--layers", spec] if spec else []) + [board]
         r = subprocess.run(cmd, capture_output=True, text=True)
         if r.returncode == 0 and os.path.exists(out_path):
+            recolour_ref(out_path)
             return spec or "kicad-cli defaults"
     return None
+
+
+def recolour_ref(path):
+    """Recolour a top/bottom reference export for the dark panels:
+    per-layer theme colours -> the bright palette, drill-hole white
+    -> panel tone, pure black -> visible neutral; pads and
+    silkscreen kept verbatim. Any other colour passes through
+    unchanged (the colour census of these exports is closed — see
+    history/README.md — and the near-black scan after regeneration
+    is the guard)."""
+    txt = open(path).read()
+
+    def sub(m):
+        tok = m.group(0).upper()
+        if tok in THEME_TO_PALETTE:
+            return THEME_TO_PALETTE[tok]
+        if tok == "#FFFFFF":
+            return HOLE_COLOUR
+        if tok == "#000000":
+            return BLACK_AS
+        return tok if tok in REF_KEEP_COLOURS else m.group(0)
+
+    new, n = re.subn(r"#[0-9A-Fa-f]{6}\b", sub, txt)
+    if n:
+        with open(path, "w") as f:
+            f.write(new)
+    return n
 
 
 def make_route_board(board):
@@ -155,8 +208,12 @@ def export_layer(board, out_path, layer):
     txt = open(out_path).read()
 
     def sub(m):
-        return (m.group(0) if m.group(0).upper() in KEEP_COLOURS
-                else LAYER_PALETTE[layer])
+        tok = m.group(0).upper()
+        if tok == "#FFFFFF":
+            return HOLE_COLOUR
+        if tok == "#000000":
+            return BLACK_AS
+        return tok if tok in KEEP_COLOURS else LAYER_PALETTE[layer]
 
     new, n = re.subn(r"#[0-9A-Fa-f]{6}\b", sub, txt)
     if n == 0:
