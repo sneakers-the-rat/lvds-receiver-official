@@ -9,23 +9,80 @@ permissions:
   contents: read
 
 jobs:
-  validate-and-build-site:
+  # Why two validation jobs instead of one: the KiCad 8 PPA ships
+  # libngspice-kicad, whose codemodel files collide with Ubuntu's
+  # standalone `ngspice` package (both provide
+  # /usr/lib/x86_64-linux-gnu/ngspice/*.cm, with no Conflicts/Replaces
+  # declared). Installing both in one apt transaction fails in dpkg —
+  # that is exactly what killed run 41710107325 at the install step.
+  # So: the KiCad job never installs the standalone ngspice package,
+  # and the simulation job never installs KiCad. scripts/ci.sh selects
+  # steps via CI_STEPS; a local run without CI_STEPS does everything.
+  kicad-validate:
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install toolchain (KiCad 8 for native ERC/DRC, ngspice, ARM gcc)
+      - name: Install KiCad 8 (native ERC/DRC) — no standalone ngspice
         run: |
           sudo add-apt-repository -y ppa:kicad/kicad-8.0-releases
           sudo apt-get update
-          sudo apt-get install -y kicad ngspice gcc-arm-none-eabi \
-            python3-numpy python3-scipy python3-matplotlib xvfb
+          sudo apt-get install -y kicad xvfb
 
-      - name: Run the full validation pipeline (scripts/ci.sh)
-        run: bash scripts/ci.sh
+      - name: KiCad ERC + DRC (scripts/ci.sh step 10)
+        run: CI_STEPS=10 bash scripts/ci.sh
 
       - name: Fabricate outputs (Gerbers, drill, BOM, CPL, renders)
         run: bash scripts/make_fab.sh
+
+      - name: Upload fabrication outputs for the site job
+        uses: actions/upload-artifact@v4
+        with:
+          name: fab-outputs
+          path: hw/fab/
+
+  sim-and-firmware:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install simulation toolchain — ngspice, no KiCad
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ngspice gcc-arm-none-eabi \
+            python3-numpy python3-scipy python3-matplotlib
+
+      - name: Simulations, codec, firmware, host tool (ci.sh steps 1-9)
+        run: CI_STEPS=1,2,3,4,5,6,7,8,9 bash scripts/ci.sh
+
+      - name: Upload simulation results for the site job
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-results
+          path: results/
+
+  build-site:
+    needs: [kicad-validate, sim-and-firmware]
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch fabrication outputs
+        uses: actions/download-artifact@v4
+        with:
+          name: fab-outputs
+          path: hw/fab
+
+      - name: Fetch simulation results
+        uses: actions/download-artifact@v4
+        with:
+          name: sim-results
+          path: results
+
+      - name: Install site build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-numpy python3-matplotlib
 
       - name: Build the static project site
         run: python3 scripts/build_site.py
@@ -36,20 +93,18 @@ jobs:
           name: project-site
           path: site/
 
-      # Pages deployment is a separate job so that a repo without
-      # Pages enabled does not hard-fail the validation pipeline.
-      # Enable it by turning on GitHub Pages (source: GitHub Actions)
-      # in the repository settings.
       - name: Upload Pages artifact
         uses: actions/upload-pages-artifact@v3
         with:
           path: site/
 
   deploy-pages:
-    needs: validate-and-build-site
+    needs: build-site
     # Guarded: only runs when the repository owner enables it by
     # setting the repository variable ENABLE_PAGES_DEPLOY=true, so a
-    # missing Pages setup never fails CI.
+    # missing Pages setup never fails CI. (Pages itself is enabled on
+    # this repo with build_type=workflow; this job deploys the site/
+    # built by the build-site job.)
     if: vars.ENABLE_PAGES_DEPLOY == 'true'
     runs-on: ubuntu-22.04
     permissions:
@@ -57,6 +112,8 @@ jobs:
       id-token: write
     environment:
       name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Deploy to GitHub Pages
+        id: deployment
         uses: actions/deploy-pages@v4

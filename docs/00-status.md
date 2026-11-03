@@ -1,5 +1,42 @@
 # 00 — Status board (updated by the build coordinator after every stage)
 
+## LATEST — 2026-11-03 12:36 PST — CI fix for GH Actions run 41710107325
+
+**Failure (diagnosed from the real Actions log, head f531258):** the
+single-job workflow died at "Install toolchain" (exit 100, dpkg):
+Ubuntu jammy's `ngspice` package and the KiCad 8 PPA's
+`libngspice-kicad` both ship `/usr/lib/x86_64-linux-gnu/ngspice/*.cm`
+with no Conflicts/Replaces declared, so installing both in one apt
+transaction fails. The deploy-pages job was skipped only because its
+upstream job failed; Pages itself is enabled (build_type=workflow,
+custom domain jon-e.net) and ENABLE_PAGES_DEPLOY is set.
+
+**Fix (chosen: the preferred job split, not --force-overwrite):**
+- `.github/workflows/ci.yml` is now four jobs: `kicad-validate`
+  (KiCad 8 PPA, **no standalone ngspice**; runs ci.sh step 10 +
+  make_fab; uploads `fab-outputs`), `sim-and-firmware` (ngspice +
+  ARM gcc + python, **no KiCad**; runs ci.sh steps 1–9; uploads
+  `sim-results`), `build-site` (needs both; downloads the two
+  artifacts, builds the site, uploads `project-site` + the Pages
+  artifact), and `deploy-pages` (unchanged guard:
+  `vars.ENABLE_PAGES_DEPLOY == 'true'`).
+- `scripts/ci.sh` gained step selection: steps are functions, run per
+  the `CI_STEPS` env var (comma list). No CI_STEPS = all 10 steps in
+  order, so the local one-command pipeline is unchanged. The ngspice
+  TIA step (step 3) is kept and runs in the sim job.
+- Validated locally before commit: `bash -n` clean, workflow YAML
+  parses (4 jobs), `CI_STEPS=1,9` PASS, `CI_STEPS=3` (TIA/ngspice)
+  PASS standalone, unknown step correctly fails the run.
+
+**Local build state at this checkpoint:** the 19:34 VM replacement
+wiped the apt toolchain mid-routing; KiCad 7.0.11 / ngspice / ARM gcc
+were reinstalled (apt exit 0) and routing resumed with router v3
+(neck-down at fine-pitch pads — see git log). PCB audit, fab outputs,
+the full local `scripts/ci.sh` run (`results/ci-local-run.txt`) and
+the full rewrite of this status board follow when routing lands.
+
+---
+
 Last update: 2026-11-03 (Stage 1/2 in progress)
 
 ## Stages
