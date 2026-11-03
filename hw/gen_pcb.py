@@ -118,6 +118,26 @@ def build(route=True):
             chain.Append(pcbnew.VECTOR2I(MM(x), MM(y)))
         chain.SetClosed(True)
         out.AddOutline(chain)
+        if layer in (pcbnew.F_Cu, pcbnew.B_Cu):
+            # Surface pours must keep the 1.0 mm HV creepage rule, so
+            # the fill is voided over the HV island, the APD site and
+            # the APD jumper cluster. (Buried In1.Cu is NOT voided:
+            # internal clearance to HV is dielectric-limited, see
+            # check_pcb.py's layer-aware rule, and the island's GND
+            # pads reach the plane through it.)
+            for (hx0, hx1, hy0, hy1) in [(2, 50, 2, 27), (5, 16, 36, 46),
+                                         (11, 16, 53, 58)]:
+                hole = pcbnew.SHAPE_LINE_CHAIN()
+                for (x, y) in [(hx0, hy0), (hx1, hy0), (hx1, hy1), (hx0, hy1)]:
+                    hole.Append(pcbnew.VECTOR2I(MM(x), MM(y)))
+                hole.SetClosed(True)
+                try:
+                    out.AddHole(hole, 0)
+                except Exception:
+                    try:
+                        out.AddHole(hole)
+                    except Exception as e:
+                        print(f"WARNING: zone hole failed on L{layer}: {e}")
         if hasattr(z, "SetPriority"):
             z.SetPriority(prio)
         board.Add(z)

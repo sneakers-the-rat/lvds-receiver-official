@@ -18,6 +18,17 @@ LAYERS = [pcbnew.F_Cu, pcbnew.In2_Cu, pcbnew.B_Cu]
 MM = pcbnew.FromMM
 
 HV_NETS = {"APD_K", "HV_RAW", "HV_SEC"}
+# Nets that failed pins in the v4 run (59 pins over 41 nets), promoted
+# ahead of LVDS/default so they route while the board is still open;
+# the easy nets route around them afterwards. Data from
+# results/pcb_build.log of the v4 run (commit 41d7196).
+PROMOTE = {"SW2", "I2C_SDA", "I2C_SCL", "CDR_DATN", "CDR_CLKN", "CDR_CLKP",
+           "CDR_VREF", "CDR_SQUELCH", "CDR_PIN", "XI", "XO", "DP_CON",
+           "APD_A", "ULPI_STP", "ULPI_NXT", "ULPI_D6", "ULPI_D4", "ULPI_D3",
+           "ULPI_D1", "ULPI_CK", "VCAP1", "USB_RST", "TMP_ALERT", "SS_NEG",
+           "SS_3V3", "SPI_MOSI", "SLICEP", "SET_A", "REFCLKN", "RBIAS",
+           "HV_RT", "HV_INTVCC", "HV_FBX", "DP_PHY", "DBG_RX", "DAC_VREF",
+           "DAC_SYNC", "CF2", "CC1", "CC2", "CAP_CLK", "BIST_DRV"}
 POWER_NETS = {"+5V", "+3V3D", "+3V3D_CDR", "+3V3A", "+VA", "-VA",
               "NEG_RAW", "VBUS_RAW", "PHY_1V8", "PHY_1V8A"}
 LVDS_NETS = {"CDR_DATP", "CDR_DATN", "CDR_CLKP", "CDR_CLKN",
@@ -122,8 +133,9 @@ def route(board, net_objs, fps):
     def order_class(n):
         if n in HV_NETS: return 0
         if n in POWER_NETS: return 1
-        if n in LVDS_NETS: return 2
-        return 3
+        if n in PROMOTE: return 2
+        if n in LVDS_NETS: return 3
+        return 4
     order = sorted((n for n in pad_cells if n != "GND"),
                    key=lambda n: (order_class(n), spread(n)))
     import time
@@ -170,7 +182,8 @@ def route(board, net_objs, fps):
                          neck_pts=[p[2] for p in pad_cells[netname]],
                          own_cells=frozenset(
                              c for _, cs, _ in pad_cells[netname]
-                             for c in cs))
+                             for c in cs),
+                         via_cost=6 if attempt == 0 else 3)
             if path is None:
                 still.append((netname, pin_id, cells))
                 continue
@@ -218,7 +231,7 @@ def route(board, net_objs, fps):
     return stats
 
 def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=(),
-          own_cells=frozenset()):
+          own_cells=frozenset(), via_cost=6):
     def eff_hw(x, y):
         # half-width the search must respect at this cell: necked
         # down near the net's own pads (see NECK_W note above)
@@ -272,6 +285,13 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=(),
             if nb not in goalset and nb not in own_cells and \
                blocked(items, li, wx_, wy_, netname, eff_hw(wx_, wy_), clr):
                 continue
+            # Segment-midpoint test: testing only cell centres on a
+            # 0.25 mm grid under-protects the swept segment between
+            # them (midpoints and corners) by up to ~half a cell; the
+            # v4 board showed 200+ sub-clearance pairs from this.
+            mx, my = ((cx + nx) / 2 + 0.5) * CELL, ((cy + ny) / 2 + 0.5) * CELL
+            if blocked(items, li, mx, my, netname, eff_hw(mx, my), clr):
+                continue
             gscore[nb] = gscore[node] + 1; came[nb] = node
             heapq.heappush(openh, (gscore[nb] + h(nb), nb))
         for lj in range(3):
@@ -283,20 +303,31 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=(),
             # Via landings must respect the VIA radius, not the track
             # half-width (v3 under-modelled this: a 0.8 mm via was
             # tested as a 0.4 mm-wide track, producing real clearance
-            # violations at via sites). Goal/own cells stay exempt.
+            # violations at via sites). Vias are NEVER exempt, not
+            # even on goal/own cells: a via is a circle that overhangs
+            # its cell in every direction — v4 exempted it and landed
+            # vias directly on neighbouring QFN pads (gap 0.0, i.e.
+            # shorts). A goal is reached by walking in on its own
+            # layer from an adjacent, properly tested via.
             via_hw = 0.4 if eff_hw(wx_, wy_) >= 0.2 else 0.3
-            if nb not in goalset and nb not in own_cells and \
-               blocked(items, lj, wx_, wy_, netname, via_hw, clr):
+            if blocked(items, lj, wx_, wy_, netname, via_hw, clr):
                 continue
-            gscore[nb] = gscore[node] + 6; came[nb] = node
+            gscore[nb] = gscore[node] + via_cost; came[nb] = node
             heapq.heappush(openh, (gscore[nb] + h(nb), nb))
     return None
 
 def blocked(items, li, x, y, netname, hw_, clr):
+    # Layer-aware HV clearance: the 1.0 mm HV rule is a SURFACE
+    # creepage rule (F.Cu/B.Cu). On the buried In2.Cu layer the
+    # insulation is solid FR4 prepreg (dielectric strength an order
+    # of magnitude above 420 V at 0.3 mm), so HV pairs there use
+    # 0.3 mm. The audit (hw/check_pcb.py) applies the same rule.
+    my_clr = 0.3 if (netname in HV_NETS and li == 1) else clr
     for it in items[li].near(li, x, y):
         if it[1] == netname:
             continue
-        need = hw_ + max(clr, it[3])
+        it_clr = 0.3 if (it[1] in HV_NETS and li == 1) else it[3]
+        need = hw_ + max(my_clr, it_clr)
         if dist_to_item(it, x, y) < need:
             return True
     return False

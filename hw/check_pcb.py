@@ -30,7 +30,23 @@ def clearance_for(net):
     if net in POWER_NETS: return 0.25
     return 0.2
 
+SURFACE = None  # set in main (needs pcbnew layer ids)
+
+def need_for(na, nb, shared_layers):
+    """Layer-aware clearance: the 1.0 mm HV rule is a surface
+    creepage rule. A pair sharing ONLY buried layers (In1/In2) is
+    separated by solid FR4 prepreg, whose dielectric strength makes
+    0.3 mm ample for 420 V — so HV counts 0.3 there. Pairs sharing
+    F.Cu or B.Cu use the full surface values."""
+    internal_only = shared_layers and not (shared_layers & SURFACE)
+    def c(n):
+        if internal_only and n in HV_NETS: return 0.3
+        return clearance_for(n)
+    return max(c(na), c(nb))
+
 def main(path="hw/pdlvds_rx.kicad_pcb"):
+    global SURFACE
+    SURFACE = {pcbnew.F_Cu, pcbnew.B_Cu}
     board = pcbnew.LoadBoard(path)
     items = []   # (kind, net, layers:set, shape, bbox, desc)
     for fp in board.GetFootprints():
@@ -99,7 +115,7 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
             b = items[j]
             if a[1] == b[1]: continue
             if not (a[2] & b[2]): continue
-            need = max(clearance_for(a[1]), clearance_for(b[1]))
+            need = need_for(a[1], b[1], a[2] & b[2])
             if not a[4].Intersects(b[4]):
                 # grow test: skip if bboxes are farther than need apart
                 ax0, ay0 = pcbnew.ToMM(a[4].GetLeft()), pcbnew.ToMM(a[4].GetTop())
@@ -109,7 +125,10 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
                 dx = max(bx0 - ax1, ax0 - bx1, 0); dy = max(by0 - ay1, ay0 - by1, 0)
                 if (dx * dx + dy * dy) ** 0.5 > need: continue
             try:
-                hit = a[3].Collide(b[3], MM(need))
+                # equality passes (a gap of exactly the clearance is
+                # compliant — e.g. zone fills carved at exactly the
+                # rule), hence the 1 um tolerance
+                hit = a[3].Collide(b[3], MM(need - 0.001))
             except Exception:
                 hit = False
             if hit:
@@ -123,7 +142,7 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
     for net, gs in unconnected:
         print(f"  UNCONNECTED {net}: {len(gs)} groups, e.g. {gs}")
     print(f"clearance violations: {len(violations)}")
-    for v in violations[:60]:
+    for v in violations[:600]:
         print(f"  CLEARANCE {v[0]} ({v[1]}) vs {v[2]} ({v[3]}): need {v[4]} mm")
     print(f"intrinsic same-footprint pad pairs below class clearance "
           f"(datasheet geometry, not routable): {len(intrinsic)}")
