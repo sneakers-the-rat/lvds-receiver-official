@@ -225,7 +225,20 @@ def main():
             pname, ptype, net = pins[n]
             px, py = snap(cx + lx), snap(cy - ly)   # KiCad symbol y is up, sheet y is down
             if net is None:
-                ncs.append(f'(no_connect (at {px} {py}) (uuid {q(U())}))')
+                # An explicit no-connect marker is the declaration that
+                # an ordinary pin is intentionally unconnected. A pin
+                # whose symbol type is ALREADY no_connect (OPA657 NC
+                # pins, T1 NC pins, unused STM32 pins) carries that
+                # declaration in its type; adding a marker on top is a
+                # double declaration KiCad 8 flags both ways —
+                # [no_connect_dangling] for the marker and
+                # [no_connect_connected] for the pin, 88 of each in CI
+                # run 41728446884, exactly the 88 net-None pins whose
+                # type is no_connect (U1 x3, U6 x83, T1 x2). Markers
+                # stay for the other 12 net-None pins (output /
+                # passive / open_collector), which genuinely need them.
+                if ptype != "no_connect":
+                    ncs.append(f'(no_connect (at {px} {py}) (uuid {q(U())}))')
             else:
                 # stub extends further outward from pin end
                 dx = 5.08 * side
