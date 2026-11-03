@@ -1,0 +1,246 @@
+========================================================================
+APD + TIA LINK BUDGET -- photodiode/LVDS receiver (sim/link_budget.py)
+========================================================================
+
+ASSUMPTIONS AND LOCKED PARAMETERS
+------------------------------------------------------------------------
+Detector : Excelitas C30737LH-500-90 Si APD, active dia 0.5 mm (area 0.196 mm^2), Ct = 1.0 pF, cutoff 380 MHz
+           (>> TIA bandwidth, so APD transit/cutoff not modelled).
+Responsivity at M=1 (datasheet spectral curve): 0.55 A/W @900 nm,
+           ~0.50 A/W @740 nm, ~0.37 A/W @630 nm.
+Dark current: 0.1 nA typ AT OPERATING GAIN (multiplied/output);
+           primary dark current used in shot noise = 0.1 nA / M.
+Excess noise: McIntyre F = k*M + (2-1/M)*(1-k), k = 0.02 (Si).
+           (Simple F = M^x, x = 0.3 would give F(100) = 4.0 vs
+           3.95 here -- immaterial.)  Check: dark shot-noise
+           density at M=100 from this model = 0.113 pA/rtHz vs datasheet 0.1 pA/rtHz at M~100 -- agreement OK.
+TIA      : TI OPA657, en = 4.8 nV/rtHz, in = 1.3 fA/rtHz,
+           GBP = 1.6 GHz, single-pole model with A0 = 70 dB
+           (assumed), f_dom = GBP/A0.  Numeric integration
+           0..3 GHz (numpy trapz, 30001 points).
+Cin total: 2.3 pF  (APD Ct 1.0 pF, OPA657 input 0.8 pF, stray/layout 0.5 pF).  Cf is separate.
+Baseline : Rf = 3300 ohm, Cf_total = 0.45 pF incl. parasitics (doc 02 locked).
+Post amp : THS4304 x5, jumper selectable -- modelled at x1 AND x5.
+Link     : OOK/NRZ at 50 Mbps (UI = 20 ns), extinction ratio
+           10 dB ASSUMED; P1 = 2*Pavg*er/(er+1), P0 = P1/er;
+           Q = (I1-I0)/(sigma1+sigma0); BER = 0.5*erfc(Q/sqrt(2)).
+           Q targets: BER 1e-6 -> Q = 4.753; BER 1e-9 -> Q = 5.998.
+Noise    : (a) en x noise-gain transfer |H_en(f)| integrated;
+           (b) Rf Johnson sqrt(4kT/Rf) through |Zt(f)| integrated;
+           (c) APD shot per level, 2q(Iph,pri+Id,pri)M^2 F * Beff,
+               Beff from the integrated |Zt(f)| shape;
+           (d) comparator noise: 0.1 mV rms ALLOWANCE at the
+               comparator plane (not a datasheet number) --
+               negligible vs the TIA noise below; post-amp noise
+               is lumped into this allowance (model limitation).
+           T = 290 K.
+
+1) TIA MODEL -- BASELINE (locked) DESIGN
+------------------------------------------------------------------------
+|Zt(0)|            = 3299 ohm (Rf = 3300)
+f-3dB              = 138.2 MHz   (R1 needs >= 50 MHz: PASS)
+rise time (0.35/f) = 2.53 ns = 0.127 UI
+Beff (shot)        = 157.5 MHz
+noise-gain peak    = 5.75 (~1 + Cin/Cf = 6.11)
+Integrated TIA output noise (no signal):
+  en through noise gain : 0.561 mV rms
+  Rf Johnson via |Zt|   : 0.091 mV rms
+  op-amp in via |Zt|     : 0.05 uV rms (negligible, as expected for 1.3 fA/rtHz)
+  TOTAL TIA              : 0.569 mV rms
+Cross-check vs doc 02: signal (I1-I0) at -34 dBm, 740 nm, M=50
+  from this model = 53.7 mV (doc 02 hand calc says 54 mV) -- agreement OK.
+
+2) GAIN (M) SWEEP AT THE R2 POINT: -34 dBm avg, 740 nm, baseline Rf/Cf
+------------------------------------------------------------------------
+    M   F(M)        Q  log10(BER)  sens@1e-6 (dBm)
+   10   2.06     9.01       -19.0           -36.84
+   20   2.31    16.38       -59.9           -39.76
+   30   2.53    21.47      -101.8           -41.42
+   40   2.74    24.62      -133.5           -42.55
+   50   2.94    26.44      -153.6           -43.39
+   60   3.14    27.38      -164.6           -44.05
+   70   3.35    27.78      -169.4           -44.57
+   80   3.55    27.84      -170.2           -44.99
+   90   3.75    27.69      -168.4           -45.33
+  100   3.95    27.42      -165.1           -45.62
+  110   4.15    27.07      -160.9           -45.85
+  120   4.35    26.68      -156.4           -46.04
+  130   4.55    26.26      -151.6           -46.19
+  140   4.75    25.84      -146.9           -46.32
+  150   4.95    25.43      -142.2           -46.41
+  160   5.15    25.01      -137.6           -46.49
+  170   5.35    24.61      -133.3           -46.54
+  180   5.55    24.21      -129.1           -46.57
+  190   5.75    23.83      -125.1           -46.59
+  200   5.96    23.47      -121.4           -46.60
+Best sensitivity in sweep: -46.60 dBm at M = 200 (sweep edge region; sensitivity is very
+flat at high M -- see the design-M rule below).
+DESIGN OPERATING M = 100: smallest swept M within 1.0 dB of the
+  best sensitivity (-45.62 dBm vs best -46.60 dBm).  Higher M buys <1 dB while moving
+  the bias closer to Vbr and increasing ripple/tempco gain
+  modulation and clipping (sections 5 and 7).  M = 100 is also
+  the gain at which the APD datasheet noise/dark figures are
+  specified.
+
+3) SENSITIVITY AT THE DESIGN POINT
+------------------------------------------------------------------------
+Chosen design: Rf = 3300 ohm, Cf = 0.45 pF, M = 100, f-3dB = 138.2 MHz
+  (locked doc-02 design RETAINED: it passes R2 at its optimal M, so the fallback search was not used to change the design)
+ lambda  R0 (A/W)   sens@BER1e-6   sens@BER1e-9
+  740nm      0.50       -45.62 dBm       -44.31 dBm
+  630nm      0.37       -44.31 dBm       -43.00 dBm
+At the R2 point (-34 dBm, 740 nm, M = 100): signal (I1-I0) = 107.5 mV at TIA output,
+  sigma1 = 2.86 mV, sigma0 = 1.06 mV, Q = 27.42, BER = 10^-165.1.
+  Margin vs R2: 11.6 dB (sensitivity is that far below the -34 dBm requirement).
+
+Post-stage cases (THS4304), at design M, 740 nm, BER 1e-6:
+  post gain x1: sensitivity = -45.62 dBm (delta vs x1 = +0.000 dB)
+  post gain x5: sensitivity = -45.66 dBm (delta vs x1 = -0.046 dB)
+  Why so small: post gain multiplies signal and TIA/shot noise
+  together; only the comparator-plane allowance (0.1 mV) is
+  divided by the gain when input-referred.  The real value of
+  the x5 stage is comparator overdrive: at sensitivity the
+  half-swing at the comparator is 3.7 mV direct,
+  18.5 mV with x5 -- relevant to the <20 mV-overdrive dispersion risk
+  noted in doc 02.  At -34 dBm the direct half-swing is
+  54 mV, comfortably above that risk zone.
+
+4) Rf DESIGN SEARCH (fallback; Cf re-optimised to Q = 0.707 each)
+------------------------------------------------------------------------
+     Rf  Cf(pF)  f-3dB(MHz)  Mopt  sens@1e-6(dBm)  Q@-34dBm  verdict
+   2200   0.456       203.9   200          -44.98     19.47  passes R2
+   3300   0.372       169.2   190          -46.01     21.83  passes R2
+   4700   0.312       143.5   180          -46.91     24.19  passes R2
+   6800   0.259       120.5   170          -47.85     26.94  passes R2
+  10000   0.214       100.3   160          -48.83     30.16  passes R2
+Locked baseline (3.3k, Cf = 0.45 pF as built -- the table row
+above uses the Q=0.707 Cf = 0.372 pF variant) ALSO passes, at
+the design M = 100 (Q = 27.4 at -34 dBm) and across the M sweep.  Per the
+tasking, the search is only invoked to CHANGE the design if
+the locked values fail; they do not, so Rf/Cf stay locked.
+Note the table also shows larger Rf is more sensitive on
+paper; it was NOT adopted: it clips at proportionally lower
+power (section 5) and departs from the locked doc-02 design
+for margin this application does not need (11+ dB already).
+
+5) SWING, CLIPPING AND OVERLOAD (+0 dBm, R3)
+------------------------------------------------------------------------
+TIA output bias 1.0 V, usable swing 3.5 Vpp (+/-1.75 V) on a 5 V rail.
+    M  Pavg at clip (dBm)   level-1 demand at +0 dBm
+   20               -15.3                     60 V (rails at 1.75 V)
+   50               -19.3                    150 V (rails at 1.75 V)
+  100               -22.3                    300 V (rails at 1.75 V)
+  150               -24.1                    450 V (rails at 1.75 V)
+  200               -25.3                    600 V (rails at 1.75 V)
+At the design M = 100: linear operation ends at -22.3 dBm average;
++0 dBm is ~19 dB above that.  CONCLUSION, stated plainly: at
++0 dBm the TIA output WILL rail at any usable M -- clipping is
+certain, not marginal.  That is normal for a receiver with
+~12 dB of sensitivity margin below -34 dBm and a 3.3k TIA on
+5 V; R3 does not require linear operation at +0 dBm, it
+requires NO DAMAGE and recovery within 10 UI (200 ns).
+Damage: no mechanism is identified in this budget -- the APD
+current is bounded by the HV supply's hardware current limit
+(doc 02: <200 uA class; bias collapses and gain falls under
+strong light, which is self-limiting), and the TIA input node
+is a virtual earth with the feedback network as the only path.
+Recovery <= 10 UI is NOT PROVEN by this link budget: it is set
+by the OPA657's overload recovery, the AC-coupling/baseline-
+restore time constants and HV-rail recovery, none of which a
+noise/link budget can establish.  It must be measured on the
+bench (or in an overload transient simulation) before R3 is
+claimed.  Treat R3 recovery as OPEN, not passed.
+
+6) JITTER BUDGET AT THE DESIGN POINT (R4: < 0.1 UI = 2 ns pk-pk)
+------------------------------------------------------------------------
+Signal at design point: swing (I1-I0) = 107.5 mV, slew at threshold ~ 33.9 mV/ns
+  (0.8*swing / tr, tr = 2.53 ns), sigma_v at mid-level = 2.16 mV rms.
+source                                          ns pk-pk      UI  in LVDS-data total?
+TIA rise time (context; enters via slew/ISI)        2.53   0.127  no -- not jitter itself
+  residual ISI after 1 UI (est., tau~1/2pi f3)      0.00   0.000  negligible (e^-17 class)
+comparator overdrive dispersion (0.6 ns class)      0.60   0.030  yes
+noise-induced (sigma_v/slew, x2Q at BER 1e-6)       0.60   0.030  yes
+CDR jitter generation (ASSUMED 0.05 UI)             1.00   0.050  no -- tap path only
+LVDS DATA total (deterministic + 2Q*random, linear): 1.20 ns = 0.060 UI -> PASS vs 0.1 UI
+The CDR is a verification-path TAP (doc 02): it does not sit in
+the LVDS data path, so its jitter generation is not added to
+the data pair.  For completeness, the recovered-CLOCK pair in
+CDR mode would total 2.20 ns = 0.110 UI on the same conservative linear
+accounting IF the assumed 0.05 UI CDR generation is really
+pk-pk -- marginally over 2 ns.  That number rests entirely on
+the stated 0.05 UI assumption, not on an ADN2813 datasheet
+jitter specification; resolve it from the datasheet before
+claiming the CDR-mode clock against the same 0.1 UI budget.
+R4 JITTER (LVDS data pair): PASS
+
+7) HV RIPPLE -> GAIN MODULATION (R9: ripple <= 20 mVpp)
+------------------------------------------------------------------------
+Gain law M = 1/(1-(V/Vbr)^n), n = 3, Vbr = 220 V.  d(lnM)/dV = n*u/(V*(1-u)), u = (V/Vbr)^n = 1 - 1/M.
+  M =  50: V_op = 218.5 V (Vbr - V = 1.5 V), d(lnM)/dV = 0.673 /V, 20 mVpp ripple -> dM/M = 1.35 % pk-pk (+/-0.67 %)
+  M = 100: V_op = 219.3 V (Vbr - V = 0.7 V), d(lnM)/dV = 1.355 /V, 20 mVpp ripple -> dM/M = 2.71 % pk-pk (+/-1.35 %)
+At design M = 100: peak AM depth 1.35 % of the signal, i.e. a
+  worst-case sensitivity loss of 0.118 dB, vs a 1-sigma noise fraction
+  of 3.6 % at the R2 point and an R2 margin of 11.6 dB.  Ripple-induced AM is well below
+  the noise: PASS.  (Criterion: peak AM << 1/Q fraction and << 5%.)
+  Same sensitivity coefficient, for temperature: at fixed bias
+  d(lnM) = 1.35 * 1.3 V/degC = 1.76 per degC -- i.e. fixed-bias
+  gain is unusable across temperature at this M; the R9
+  temperature compensation (bias tracking Vbr) is mandatory,
+  as doc 02 already provides for.  This is also why the design
+  M is the knee (~100), not the sweep edge (~200, where the
+  ripple AM would be ~5.4 % pk-pk).
+HV RIPPLE VERDICT: PASS (at design M, with temp compensation fitted)
+
+8) COVERAGE SANITY CHECK vs THE ORIGINAL PAPER SYSTEM  [INFO]
+------------------------------------------------------------------------
+Paper benchmark: PER test, packet = 40,256 bits, packet fails if
+any bit differs; PER = 1e-3, frame = 8 packets -> frame loss
+  1-(1-1e-3)^8 = 0.797 %.  One SiPM receiver
+covered ~700 cm^2 of lateral area (equivalent diameter
+  2*sqrt(700/pi) = 29.9 cm).  Note that packet PER 1e-3
+  corresponds to BER ~ 2.5e-08 (any-bit-fails over 40,256 bits),
+  which is STRICTER than our R2 BER 1e-6 operating point.
+Our estimate (free space, on axis, simple model):
+  Emitter: NIR LED radiant intensity 1.7 mW/sr typ @ 20 mA
+           (datasheet, paper); pulsed by the GaN driver --
+           ASSUMED 5 mW/sr pulsed.  E = I/d^2;  P_rx = E * A_eff.
+  Sensitivity used: -45.62 dBm = 27.4 nW (740 nm, BER 1e-6, design M).
+  BARE: A_eff = 0.196 mm^2 -> on-axis range to sensitivity = 19 cm.
+        At a 0.5 m mounting height the on-axis received power is -54.1 dBm,
+        i.e. 8.4 dB BELOW sensitivity: bare mode does not cover a
+        0.5 m geometry at all.  Bare mode is a bench / short-
+        range mode (~20 cm class), as its -34 dBm R2 point implies.
+  LENS: 25 mm lens, geometric 491 mm^2 x 0.9 transmission x 0.1
+        coupling/defocus efficiency (ASSUMED) = 44.2 mm^2 effective -> on-axis
+        range to sensitivity = 2.84 m.
+  At receiver height 0.5 m with an assumed +/-15 deg useful cone: radius 13.4 cm,
+  area = pi r^2 = 564 cm^2.  Range is NOT the limit inside the cone:
+  at the cone edge (slant 0.52 m) P_rx = -30.8 dBm, still 14.8 dB above
+  sensitivity (1/d^2 only; emitter off-axis falloff not modelled).
+  Even at the stricter paper-equivalent BER (~2.5e-8, between
+  our 1e-6 and 1e-9 sensitivities), the lens range stays >2 m, so
+  the cone area at 0.5 m height is unchanged.
+COMPARISON [INFO, not a gate]: lens-mode cone area 564 cm^2 vs the paper's
+  ~700 cm^2 per SiPM receiver -- same class, 0.81x the area, under much cruder optics (one 25 mm
+  lens vs a large-area SiPM).  CAVEAT, honestly: this is a pure
+  geometric line-of-sight estimate.  The paper's system also
+  collects diffuse/scattered light in an enclosed maze, and
+  animal head orientation / emitter pattern dominate in
+  practice; the geometric comparison understates BOTH systems'
+  real coverage and must not be read as a measured coverage.
+
+9) SUMMARY
+------------------------------------------------------------------------
+Chosen design: Rf = 3300 ohm, Cf = 0.45 pF (total, incl. parasitics), M = 100, f-3dB = 138.2 MHz
+Sensitivity @740 nm: -45.62 dBm (BER 1e-6), -44.31 dBm (BER 1e-9)
+Sensitivity @630 nm: -44.31 dBm (BER 1e-6), -43.00 dBm (BER 1e-9)
+R1 bandwidth: f-3dB 138.2 MHz >= 50 MHz -- PASS
+R3 overload: +0 dBm clips the TIA at any usable M (linear to
+  -22.3 dBm at design M); no damage mechanism identified,
+  but <=10 UI recovery is UNPROVEN by this budget -- OPEN.
+R4 jitter (LVDS data): 1.20 ns pk-pk (PASS); CDR-mode clock see section 6 caveat.
+R9 ripple at design M: PASS (section 7).
+Coverage [INFO]: bare ~19 cm on-axis range; lens mode 2.8 m range, ~564 cm^2 cone area at 0.5 m
+  height vs paper's ~700 cm^2 (geometric estimate only).
+
+R2 VERDICT: PASS (locked Rf = 3.3 kohm design passes as originally specified)

@@ -1,0 +1,402 @@
+                                                                                      Si APD
+
+                                                                                     S8664 series
+
+
+
+                                                 Short wavelength type APD
+
+
+
+   Features                                                                   Applications
+
+   High sensitivity at visible range                                          Low-light-level measurement
+   Low noise                                                                  Analytical instrument
+   High gain
+   Low capacitance
+
+
+
+
+   Structure / Absolute maximum ratings
+                                                                                              Absolute maximum ratings
+                 Dimensional                        Effective     Effective       Operating      Storage     Forward                  Reverse
+                   outline                       photosensitive photosensitive temperature*3
+   Type no.                        Package                                                   temperature*3   current                  current
+                  /Window                          area size* 2     area
+                                                                                    Topr           Tstg       IF max                  IR max
+                  material*1
+                                                     (mm)          (mm2)            (°C)           (°C)        (mA)                    (µA)
+S8664-02K                                             ϕ0.2          0.03
+S8664-05K                                             ϕ0.5          0.19
+                     /K             TO-5
+S8664-10K                                             ϕ1.0          0.78
+                                                                                              -55 to +100
+S8664-20K                                             ϕ2.0          3.14
+                                                                                 -20 to +60                     10                      200
+S8664-30K                                             ϕ3.0           7.0
+                     /K             TO-8
+S8664-50K                                             ϕ5.0          19.6
+S8664-55             /E                             5×5             25
+                                   Ceramic                                                     -20 to +80
+S8664-1010           /E                            10 × 10          100
+*1: K: Borosilicate glass E: Epoxy resin
+*2: Area in which a typical gain can be obtained
+*3: No dew condensation. When there is a temperature difference between a product and the surrounding area in high humidity
+     environments, dew condensation may occur on the product surface. Dew condensation on the product may cause deterioration in
+     characteristics and reliability.
+Note: Exceeding the absolute maximum ratings even momentarily may cause a drop in product quality. Always be sure to use the
+       product within the absolute maximum ratings.
+
+
+
+   Electrical and optical characteristics (Typ. Ta=25 °C, unless otherwise noted)
+                                         Photo Quantum Breakdown                             Dark
+                 Spectral  Peak
+                                       sensitivity efficiency   voltage   Temperature                   Cutoff      Terminal     Excess
+                response sensitivity                                                       current*4                                        Gain
+                                           S          QE          VBR     coefficient of             frequency* 4 capacitance*4   Noise
+   Type no.       range wavelength*  4                                                        ID                                             M
+                                         M=1         M=1      ID=100 µA       VBR                         fc           Ct        index* 4
+                    λ       λp                                                                                                            λ=420 nm
+                                       λ=420 nm λ=420 nm Typ. Max.                       Typ. Max.                              λ=420  nm
+                  (nm)    (nm) (A/W)                 (%)      (V)     (V)   (V/°C) (nA) (nA)           (MHz)         (pF)
+S8664-02K                                                                                0.1      1      700          0.8
+S8664-05K                                                                                0.2     1.5     680          1.6
+S8664-10K                                                                                0.3      3      530           4
+S8664-20K        320 to                                                                  0.6      6      280          11
+                           600           0.24          70     400     500    0.78                                                  0.2       50
+S8664-30K         1000                                                                    1       15     140          22
+S8664-50K                                                                                 3       35      60           55
+S8664-55                                                                                   5      50      40           80
+S8664-1010                                                                                10     100      11          270
+*4: Values measured at a gain listed in the characteristics table
+
+
+                                                    www.hamamatsu.com                                                                           1
+                                       Si APD                            S8664 series
+
+
+                         Spectral response                                                                                 Quantum efficiency vs. wavelength
+                                                                 (Typ. M=50 at 600 nm)                                                                                     (Typ. Ta=25 °C)
+                            25                                                                                               100
+                                                                                                                                     S8664-55/-1010
+
+                                                                   S8664-55/-1010
+                            20                                                                                                80
+
+
+
+
+                                                                                                  Quantum efficiency (%)
+Photosensitivity (A/W)
+
+
+
+
+                            15                                                                                                60
+
+
+                                                                                                                                                            S8664-02K/-05K/-10K/
+                                           S8664-02K/-05K/-10K/                                                                                             -20K/-30K/-50K
+                            10                                                                                                40
+                                           -20K/-30K/-50K
+   re                                                                                                vo
+
+                              5                                                                                               20
+
+
+
+                              0                                                                                                0
+                              300    400      500    600         700   800    900    1000                                      300      400     500        600     700     800     900    1000
+
+
+                                                  Wavelength (nm)                                                                                    Wavelength (nm)
+                                                                                    KAPDB0073ED                                                                                          KAPDB0074ED
+
+
+
+
+                         Dark current vs. reverse voltage                                                                  Gain vs. reverse voltage
+                                                                       (Typ. Ta=25 °C)                                                                                     (Typ. λ=420 nm)
+                           1 µA                                                                                             1000
+
+
+                         100 nA                            S8664-55
+                                                    S8664-50K                                                                                  -20 °C
+
+                          10 nA     S8664-1010                                                                               100
+                                                                                                                                              0 °C
+Dark current
+
+
+
+
+                                  S8664-30K
+                                                                                                                                                                           20 °C
+                                                                                                  Gain
+
+
+
+
+                           1 nA
+
+
+                                                                                                                                                                   40 °C
+                         100 pA                                                                                               10
+
+
+                                                                        S8664-10K
+                          10 pA                                                                                                                            60 °C
+                                                       S8664-02K
+
+                           1 pA                                                                                                1
+                              100          200             300          400           500                                      200                   300                 400               500
+
+
+                                                 Reverse voltage (V)                                                                             Reverse voltage (V)
+                                                                                    KAPDB0075EC                                                                                          KAPDB0076EC
+
+
+
+
+                                                                                                                                                                                                  2
+                                      Si APD                        S8664 series
+
+
+                       Terminal capacitance vs. reverse voltage
+                                                      (Typ. Ta=25 °C, f=10 kHz)
+                        10 nF
+
+                                     S8664-55                     S8664-1010
+                                                S8664-30K
+                         1 nF                                       S8664-50K
+Terminal capacitance
+
+
+
+
+                       100 pF
+
+
+
+                        10 pF
+
+
+
+                         1 pF
+
+                                    S8664-10K          S8664-02K
+
+                       100 fF
+                                0     100       200         300      400         500
+
+
+                                            Reverse voltage (V)
+                                                                               KAPDB0077EC
+
+
+
+
+                                                                                             3
+                       Si APD                                      S8664 series
+
+
+   Dimensional outlines (unit: mm)
+
+                       S8664-02K/-05K/-10K/-20K                                                                        S8664-30K/-50K
+                       9.1 ± 0.2                                                                                    13.9 ± 0.2
+                        8.1 ± 0.1                                                                                  12.35 ± 0.1
+                        5.9 ± 0.1                                                                                   10.5 ± 0.2
+                           Y
+
+
+
+                                    X
+
+
+
+
+Photosensitive area
+        A                                                                                  Photosensitive area
+                                                                                                   A
+  Photosensitive
+                                    2.6 ± 0.2
+                                                4.2 ± 0.2
+
+
+
+
+                                                                                                                                   2.9 ± 0.2
+                                                                                                                                               4.9 ± 0.2
+  surface                                                                                  Photosensitive surface
+                                    0.4 max.
+                                                (20)
+
+
+
+
+                                                                                                                                   0.5 max.
+                                                                                                                                               (15)
+            0.45                                                                                     0.45
+          Lead                                                                                     Lead
+
+
+                       5.08 ± 0.2                                                                                   7.5 ± 0.2
+                                                     The glass window may extend                                                 Index mark
+                                                     a maximum of 0.2 mm beyond                                                    1.4
+                                                     the upper surface of the cap.
+
+
+                                                            Type no.   A
+         1.5 max.                                       S8664-02K      0.2
+                                                        S8664-05K      0.5
+                                                                                                 1.0 max.                              The glass window may extend
+          Case                                          S8664-10K      1.0                                                             a maximum of 0.2 mm beyond
+                                                        S8664-20K      2.0                                                             the upper surface of the cap.
+
+
+                                                                                                            Case                               Type no.    A
+                                                                             KAPDA0026EC                                                  S8664-30K        3.0
+                                                                                                                                          S8664-50K        5.0
+                                                                                                                                                                 KAPDA0027EC
+
+
+
+
+                                                                                                                                                                      4
+                             Si APD                                       S8664 series
+
+
+
+                                              S8664-55                                                                          S8664-1010
+                                               10.6 ± 0.2          Photosensitive area             (4 ×) C0.5              13.7 ± 0.2               Photosensitive area
+                                                                   5×5                                                                              10 × 10
+                          9.0 ± 0.2
+
+
+
+
+                                                                                                      14.5 ± 0.2
+                                                                                                                   0.4 *
+                                                           Photosensitive
+                                                           surface
+             1.65 ± 0.2
+
+
+
+
+                                                               Epoxy resin
+                                                                                                                                         Photosensitive
+                                                                                                                                         surface
+
+
+
+
+                                                                                                      1.78 ± 0.2
+                                                                                                                                             Epoxy resin
+
+
+
+
+                                                                                                                   (0.2)
+                          0.3 max.
+
+
+
+
+                                                                    1.2
+
+
+
+
+                                                            0.80
+             5.0
+
+
+
+
+                                                                                                                                                 1.18
+                                                            0.45                                                                          0.70
+
+
+                                                                                                      5
+                                      1.5     5.08 ± 0.2
+
+                                                                                                                                          0.46
+
+                                                                                                                            5.08 ± 0.2
+                          2.0
+
+
+
+
+                                                                                                                                                 0.5
+                                                                                                                   6.0
+
+
+
+
+                                            (3.0)      (5.5)       Index mark
+                                                                                                                                                           * From center of
+                                                                                                                                                             active area to
+                                                                                     KAPDA0022EB                                                             center of package
+
+
+
+                                                                                                                                           0.5
+                                                                                                                                          (2 ×) 2
+
+
+
+                                                                                                                                                                          KAPDA0036EB
+
+
+
+
+   Recommended soldering conditions
+                                                                      S8664-02K/-05K/-10K/-20K/-30K/-50K
+Solder temperature: 260 °C (10 s or less, once)
+Solder the leads at a point at least 1 mm away from the package body.
+
+
+
+                                                                                    S8664-55/-1010
+Solder temperature: 260 °C (5 s or less, once)
+Solder the leads at a point at least 1.5 mm away from the package body.
+
+Note: When you set soldering conditions, check that problems do not occur in the product by testing out the conditions in advance.
+
+
+
+
+                                                                                                                                                                               5
+                     Si APD                            S8664 series
+
+
+    Related information
+www.hamamatsu.com/sp/ssd/doc_en.html
+
+  Precautions
+∙ Disclaimer
+∙ Precautions / Metal, ceramic, plastic package products
+
+  Catalogs
+∙ Technical note / Si APD
+
+
+
+
+Information described in this material is current as of February 2026.
+Product specifications are subject to change without prior notice due to improvements or other reasons. This document has been carefully prepared and the
+information contained is believed to be accurate. In rare cases, however, there may be inaccuracies such as text errors. Before using these products, always
+contact us for the delivery specification sheet to check the latest specifications.
+The product warranty is valid for one year after delivery and is limited to product repair or replacement for defects discovered and reported to us within that
+one year period. However, even if within the warranty period we accept absolutely no liability for any loss caused by natural disasters or improper product use.
+Copying or reprinting the contents described in this material in whole or in part is prohibited without our prior permission.
+
+
+                                                                                                                                            Cat. No. KAPD1012E08
+                                                                     Visit our website for product and contact information.                 Feb. 2026 DN
+                                                                     www.hamamatsu.com                                                      Created in Japan
+

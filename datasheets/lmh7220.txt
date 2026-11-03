@@ -1,0 +1,2072 @@
+                                                                                                                                        LMH7220
+www.ti.com                                                                                        SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+
+                                    LMH7220 High Speed Comparator with LVDS Output
+                                                                   Check for Samples: LMH7220
+
+1FEATURES                                                                         DESCRIPTION
+2•      (VS = 5V TA = 25°C, Typical Values unless                                 The LMH7220 is a high speed, low power comparator
+        Otherwise Specified)                                                      with an operating supply voltage range of 2.7V to
+                                                                                  12V. The LMH7220 has a differential, LVDS output,
+•       Propagation Delay @ 100 mV Overdrive 2.9 ns                               driving 325 mV into a 100Ω symmetrical transmission
+•       Rise and Fall Times 0.6 ns                                                line. The LMH7220 has a 2.9 ns propagation delay
+•       Supply Voltage 2.7V to 12V                                                and 0.6 ns rise and fall times while the supply current
+                                                                                  is only 6.8 mA at 5V (load current excluded).
+•       Supply Current 6.8 mA
+•       Temperature Range −40°C to 125°C                                          The LMH7220 inputs have a voltage range that
+                                                                                  extends 200 mV below ground, allowing ground
+•       LVDS Output                                                               sensing applications. The LMH7220 is available in the
+                                                                                  6-Pin SOT package. This package is ideal where
+APPLICATIONS                                                                      space is a critical item.
+•       Acquisition Trigger
+•       Fast Differential Line Receiver
+•       Pulse Height Analyzer
+•       Peak Detector
+•       Pulse Width Modulator
+•       Remote Threshold Detection
+•       Oscilloscope Triggering
+
+
+
+                                                                                                            LVDS input port
+              Sensor                                                                                          on receiver
+                                       LMH7220
+
+                                   +                                       100:                                      100:
+                                   -
+                                                                  Transmission Line
+
+                  Ref
+
+
+
+                                                                 Figure 1. Typical Schematic
+
+
+
+
+1
+
+
+
+
+             Please be aware that an important notice concerning availability, standard warranty, and use in critical applications of
+             Texas Instruments semiconductor products and disclaimers thereto appears at the end of this data sheet.
+2   All trademarks are the property of their respective owners.
+PRODUCTION DATA information is current as of publication date.                                   Copyright © 2006–2013, Texas Instruments Incorporated
+Products conform to specifications per the terms of the Texas
+Instruments standard warranty. Production processing does not
+necessarily include testing of all parameters.
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                          www.ti.com
+
+
+          These devices have limited built-in ESD protection. The leads should be shorted together or the device placed in conductive foam
+          during storage or handling to prevent electrostatic damage to the MOS gates.
+
+
+ABSOLUTE MAXIMUM RATINGS (1) (2)
+ESD Tolerance (3)                                         Human Body Model                                                                 2.5 kV
+                                                          Machine Model                                                                     250V
+Supply Voltage (VCC - GND)                                                                                                                 13.5V
+Differential Input Voltage                                                                                                                  ±13V
+Output Shorted to GND (4)                                                                                                             Continuous
+Output Shorted Together (4)                                                                                                           Continuous
+Storage Temperature Range                                                                                                      −65°C to +150°C
+Voltage on any I/O Pin                                                                                                  GND−0.2V to VCC+0.2V
+Junction Temperature (5)                                                                                                              150°C max
+
+(1)   Absolute Maximum Ratings indicate limits beyond which damage to the device may occur. Operating Conditions indicate specifications
+      for which the device is intended to be functional, but specific performance is not ensured. For specifications and the test conditions, see
+      the Electrical Characteristics.
+(2)   If Military/Aerospace specified devices are required, please contact the Texas Instruments Sales Office/ Distributors for availability and
+      specifications.
+(3)   Human Body Model, applicable std. MIL-STD-883, Method 3015.7. Machine Model, applicable std. JESD22-A115-A (ESD MM std. of
+      JEDEC). Field-Induced Charge-Device Model, applicable std. JESD22-C101-C (ESD FICDM std. of JEDEC)
+(4)   Applies to both single-supply and split-supply operation. Continuous short circuit operation at elevated ambient temperature can result in
+      exceeding the maximum allowed junction temperature of 150°C.
+(5)   The maximum power dissipation is a function of TJ(MAX), θJA. The maximum allowable power dissipation at any ambient temperature is
+      PD = (TJ(MAX) – TA)/ θJA. All numbers apply for packages soldered directly onto a PC Board.
+
+OPERATING RATINGS (1)
+Temperature Range (2)                                                                                                          −40°C to +125°C
+Supply Voltage                                                                                                                       2.7V to 13V
+Package Thermal Resistance (θJA )                           6-Pin SOT                                                                   189°C/W
+
+(1)   Absolute Maximum Ratings indicate limits beyond which damage to the device may occur. Operating Conditions indicate specifications
+      for which the device is intended to be functional, but specific performance is not ensured. For specifications and the test conditions, see
+      the Electrical Characteristics.
+(2)   The maximum power dissipation is a function of TJ(MAX), θJA. The maximum allowable power dissipation at any ambient temperature is
+      PD = (TJ(MAX) – TA)/ θJA. All numbers apply for packages soldered directly onto a PC Board.
+
+
+
+
+2        Submit Documentation Feedback                                                        Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                         Product Folder Links: LMH7220
+                                                                                                                                     LMH7220
+www.ti.com                                                                                     SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
++12V DC ELECTRICAL CHARACTERISTICS
+Unless otherwise specified, all limits are specified for TJ = 25°C, VCM = 300 mV, −50 mV < VID < +50 mV and RL = 100Ω.
+Boldface limits apply at the temperature extremes. (1) (2)
+  Symbol                    Parameter                                Conditions                  Min (1)       Typ (3)     Max (1)       Units
+IB            Input Bias Current                        VIN Differential = 0                       −5           −2.1        −0.5
+                                                                                                                                          µA
+                                                                                                   −7
+IOS           Input Offset Current                      VIN Differential = 0                      −500                      +500          nA
+TC IOS        Input Offset Current TC                   VIN Differential = 0                                     ±2                     nA/°C
+VOS           Input Offset Voltage                                                                −9.5                      +9.5          mV
+TC VOS        Input Offset Voltage TC                                                                           ± 50                    μV/°C
+VRI           Input Voltage Range                       CMRR > 50 dB                              −0.2                     VCC−2           V
+CMRR          Common-Mode Rejection Ratio               VCM = 0 to VCC−2.2V                        60            70                       dB
+PSRR          Power Supply Rejection Ratio                                                         63            74                       dB
+AV            Open Loop Gain                                                                                     59                       dB
+VO            Output Offset Voltage                     VIN Differential = 50 mV                  1125         1225         1325          mV
+ΔVO           VO Change Between ‘0’ and ‘1’             VIN Differential = ±50 mV                  −25                      +25           mV
+VOH           Output Voltage High                       VIN Differential = 50 mV                               1390         1475          mV
+VOL           Output Voltage Low                        VIN Differential = 50 mV                   925         1060                       mV
+VOD           Output Voltage Differential               VIN Differential = 50 mV                   250          330          400          mV
+ΔVOD          VOD Change between ‘0’ to ‘1’             VIN Differential = ±50 mV                  −25                      +25           mV
+ISC           Short Circuit Current Output to GND       OUT Q to GND Pin                                                      5
+              Pin (4)                                   VIN Differential = 50 mV
+                                                        OUT Q to GND Pin                                                      5
+                                                                                                                                          mA
+                                                        VIN Differential = 50 mV
+                                         (4)
+              Output Shorted Together                   OUT Q to OUT Q                                                        5
+                                                        VIN Differential = 50 mV
+IS            Supply Current                            Load Current Excluded                                   7.5         10.0
+                                                                                                                                          mA
+                                                        VIN Differential = 50 mV                                            14.0
+
+(1)   All limits are specified by testing or statistical analysis.
+(2)   Electrical Table values apply only for factory testing conditions at the temperature indicated. Factory testing conditions result in very
+      limited self-heating of the device such that TJ = TA. No specification of parametric performance is indicated in the electrical tables under
+      conditions of internal self heating where TJ > TA. See APPLICATION INFORMATION for information on temperature de-rating of this
+      device.
+(3)   Typical values represent the most likely parametric norm as determined at the time of characterization. Actual typical values may vary
+      over time and will also depend on the application and configuration. The typical values are not tested and are not ensured on shipped
+      production material.
+(4)   Applies to both single-supply and split-supply operation. Continuous short circuit operation at elevated ambient temperature can result in
+      exceeding the maximum allowed junction temperature of 150°C.
+
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                                    Submit Documentation Feedback           3
+                                                          Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                            www.ti.com
+
++12V AC ELECTRICAL CHARACTERISTICS
+Unless otherwise specified, all limits specified for TJ = 25°C, VCM = 300 mV, −50 mV < VID < +50 mV and RL = 100Ω.
+Boldface limits apply at the temperature extremes. (1) (2)
+     Symbol                  Parameter                               Conditions                    Min (1)      Typ (3)      Max (1)       Units
+TR             Toggle Rate                              Overdrive = ±50 mV; CL = 2 pF @             860          1080                      Mb/s
+                                                        50% Output Swing
+tjitter_RMS    RMS-Random Jitter                        Overdrive = 100 mV; CL = 2 pF                            4.29                        ps
+                                                        Center Frequency = 70 MHz
+                                                        Bandwidth = 10 Hz – 20 MHz
+tPDLH          Propagation Delay                        Overdrive 20 mV                                          3.56
+               tPDLH = (tPDH + tPDL ) / 2
+                                                        Overdrive 50 mV                                          2.98
+               (see Figure 21 application
+                                                        Overdrive 100 mV                                         2.7            7            ns
+               information)
+               Input SR = Constant                      Overdrive 1V                                             2.24
+               VID start value = −100 mV
+tOD-disp       Input Overdrive Dispersion               @Overdrive 20 - 100 mV                                   0.86
+                                                                                                                                             ns
+                                                        @Overdrive 100 mV - 1V                                   0.46
+tSR-disp       Input Slew Rate Dispersion               0.05 V/ns to 1 V/ns                                      0.24                        ns
+                                                        Overdrive 100 mV
+tCM-disp       Input Common Mode dispersion             SR = 4 V/ns; Overdrive 100 mV                            0.55                        ns
+                                                        VCM = 0 to 10V
+ΔtPDLH         Q to Q Time Skew                         Overdrive = 100 mV; CL = 2 pF                             0                          ns
+               | tPDH - tPDL | (4)
+ΔtPDHL         Q to Q Time Skew                         Overdrive = 100 mV; CL = 2 pF                            0.06                        ns
+               | tPDL - tPDH | (4)
+tr             Output Rise Time (20% - 80%) (5)         Overdrive = 100 mV; CL = 2 pF                            0.56                        ns
+tf             Output Fall Time (20% - 80%) (5)         Overdrive = 100 mV; CL = 2 pF                            0.49                        ns
+
+(1)    All limits are specified by testing or statistical analysis.
+(2)    Electrical Table values apply only for factory testing conditions at the temperature indicated. Factory testing conditions result in very
+       limited self-heating of the device such that TJ = TA. No specification of parametric performance is indicated in the electrical tables under
+       conditions of internal self heating where TJ > TA. See APPLICATION INFORMATION for information on temperature de-rating of this
+       device.
+(3)    Typical values represent the most likely parametric norm as determined at the time of characterization. Actual typical values may vary
+       over time and will also depend on the application and configuration. The typical values are not tested and are not ensured on shipped
+       production material.
+(4)    Propagation Delay Skew, ΔtPD, is defined as the average of ΔtPDLH and ΔtPDHL.
+(5)    The rise or fall time is the average of the Q and Q rise or fall time.
+
+
+
+
+4         Submit Documentation Feedback                                                         Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                          Product Folder Links: LMH7220
+                                                                                                                                     LMH7220
+www.ti.com                                                                                     SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
++5V DC ELECTRICAL CHARACTERISTICS
+Unless otherwise specified, all limits specified for TJ = 25°C, VCM = 300 mV, −50 mV < VID < +50 mV and RL = 100Ω.
+Boldface limits apply at the temperature extremes. (1) (2)
+  Symbol                    Parameter                                Conditions                  Min (1)       Typ (3)     Max (1)       Units
+IB            Input Bias Current                        VIN Differential = 0                       −5           −1.5        −0.5
+                                                                                                                                          µA
+                                                                                                   −7
+IOS           Input Offset Current                      VIN Differential = 0                      −500                      +500          nA
+TC IOS        Input Offset Current TC                   VIN Differential = 0                                    ±2                      nA/°C
+VOS           Input Offset Voltage                                                                −9.5                      +9.5          mV
+TC VOS        Input Offset Voltage TC                                                                           ± 50                    μV/°C
+VRI           Input Voltage Range                       CMRR > 50 dB                              −0.2                     VCC−2           V
+CMRR          Common-Mode Rejection Ratio               VCM = 0 to VCC−2.2V                        60            70                       dB
+PSRR          Power Supply Rejection Ratio                                                         63            74                       dB
+AV            Open Loop Gain                                                                                     59                       dB
+VO            Output Offset Voltage                     VIN Differential = 50 mV                  1125         1217         1325          mV
+ΔVO           VO Change Between ‘0’ and ‘1’             VIN Differential = ±50 mV                  −25                      +25           mV
+VOH           Output Voltage High                       VIN Differential = 50 mV                               1380         1475          mV
+VOL           Output Voltage Low                        VIN Differential = 50 mV                   925         1060                       mV
+VOD           Output Voltage Differential               VIN Differential = 50 mV                   250          320          400          mV
+ΔVOD          VOD Change between ‘0’ to ‘1’             VIN Differential = ±50 mV                  −25                      +25           mV
+ISC           Short Circuit Current Output to GND       OUT Q to GND Pin                                                      5
+              Pin (4)                                   VIN Differential = 50 mV
+                                                        OUT Q to GND Pin                                                      5
+                                                                                                                                          mA
+                                                        VIN Differential = 50 mV
+                                         (4)
+              Output Shorted Together                   OUT Q to OUT Q                                                        5
+                                                        VIN Differential = 50 mV
+IS            Supply Current                            Load Current Excluded                                   6.8          9
+                                                                                                                                          mA
+                                                        VIN Differential = 50 mV                                            12.6
+
+(1)   All limits are specified by testing or statistical analysis.
+(2)   Electrical Table values apply only for factory testing conditions at the temperature indicated. Factory testing conditions result in very
+      limited self-heating of the device such that TJ = TA. No specification of parametric performance is indicated in the electrical tables under
+      conditions of internal self heating where TJ > TA. See APPLICATION INFORMATION for information on temperature de-rating of this
+      device.
+(3)   Typical values represent the most likely parametric norm as determined at the time of characterization. Actual typical values may vary
+      over time and will also depend on the application and configuration. The typical values are not tested and are not ensured on shipped
+      production material.
+(4)   Applies to both single-supply and split-supply operation. Continuous short circuit operation at elevated ambient temperature can result in
+      exceeding the maximum allowed junction temperature of 150°C.
+
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                                    Submit Documentation Feedback           5
+                                                          Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                            www.ti.com
+
++5V AC ELECTRICAL CHARACTERISTICS
+Unless otherwise specified, all limits specified for TJ = 25°C, VCM = 300 mV, −50 mV < VID < +50 mV and RL = 100Ω.
+Boldface limits apply at the temperature extremes. (1) (2)
+     Symbol                  Parameter                               Conditions                    Min (1)      Typ (3)      Max (1)       Units
+TR             Toggle Rate                              Overdrive = ±50 mV; CL = 2 pF @             750          940                       Mb/s
+                                                        50% Output Swing
+tjitter_RMS    RMS-Random Jitter                        Overdrive = 100 mV; CL = 2 pF                            4.44                        ps
+                                                        Center Frequency = 70 MHz
+                                                        Bandwidth = 10 Hz – 20 MHz
+tPDLH          Propagation Delay                        Overdrive 20 mV                                          3.63
+               tPDLH = (tPDH + tPDL ) / 2
+                                                        Overdrive 50 mV                                          3.09
+               (see Figure 21 application
+                                                        Overdrive 100 mV                                         2.9            7            ns
+               information)
+               Input SR = Constant                      Overdrive 1V                                             2.41
+               VID start value = -100mV
+tOD-disp       Input Overdrive Dispersion               @Overdrive 20 - 100 mV                                   0.79
+                                                                                                                                             ns
+                                                        @Overdrive 100 mV - 1V                                   0.43
+tSR-disp       Input Slew Rate Dispersion               0.05 V/ns to 1 V/ns                                      0.20                        ns
+                                                        Overdrive 100 mV
+tCM-disp       Input Common Mode Dispersion             SR = 4 V/ns; Overdrive 100 mV                            0.21                        ns
+                                                        VCM = 0 to 3V
+ΔtPDLH         Q to Q Time Skew                         Overdrive = 100 mV; CL = 2 pF                            0.09                        ns
+               | tPDH - tPDL | (4)
+ΔtPDHL         Q to Q Time Skew                         Overdrive = 100 mV; CL = 2 pF                            0.07                        ns
+               | tPDL - tPDH | (4)
+tr             Output Rise Time (20% - 80%) (5)         Overdrive = 100 mV; CL = 2 pF                            0.59                        ns
+tf             Output Fall Time (20% - 80%) (5)         Overdrive = 100 mV; CL = 2 pF                            0.55                        ns
+
+(1)    All limits are specified by testing or statistical analysis.
+(2)    Electrical Table values apply only for factory testing conditions at the temperature indicated. Factory testing conditions result in very
+       limited self-heating of the device such that TJ = TA. No specification of parametric performance is indicated in the electrical tables under
+       conditions of internal self heating where TJ > TA. See APPLICATION INFORMATION for information on temperature de-rating of this
+       device.
+(3)    Typical values represent the most likely parametric norm as determined at the time of characterization. Actual typical values may vary
+       over time and will also depend on the application and configuration. The typical values are not tested and are not ensured on shipped
+       production material.
+(4)    Propagation Delay Skew, ΔtPD, is defined as the average of ΔtPDLH and ΔtPDHL.
+(5)    The rise or fall time is the average of the Q and Q rise or fall time.
+
+
+
+
+6         Submit Documentation Feedback                                                         Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                          Product Folder Links: LMH7220
+                                                                                                                                   LMH7220
+www.ti.com                                                                                    SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
++2.7V DC ELECTRICAL CHARACTERISTICS
+Unless otherwise specified, all limits specified for TJ = 25°C, VCM = 300 mV, −50 mV < VID < +50 mV and RL = 100Ω.
+Boldface limits apply at the temperature extremes. (1)
+  Symbol                    Parameter                                Conditions                 Min (1)       Typ (2)    Max (1)       Units
+IB            Input Bias Current                        VIN Differential = 0                      −5           −1.3       −0.5
+                                                                                                                                        µA
+                                                                                                  −7
+IOS           Input Offset Current                      VIN Differential = 0                     −500                     +500          nA
+TC IOS        Input Offset Current TC                   VIN Differential = 0                                    ±2                     nA/°C
+VOS           Input Offset Voltage                                                               −9.5                     +9.5          mV
+TC VOS        Input Offset Voltage TC                                                                          ± 50                   μV/°C
+VRI           Input Voltage Range                       CMRR > 50 dB                             −0.2                    VCC−2           V
+CMRR          Common-Mode Rejection Ratio               VCM = 0 to VCC−2.2V                       56            70                      dB
+PSRR          Power Supply Rejection Ratio                                                        63            74                      dB
+AV            Open Loop Gain                                                                                    59                      dB
+VO            Output Offset Voltage                     VIN Differential = 50 mV                 1125         1213        1325          mV
+ΔVO           VO Change Between ‘0’ and ‘1’             VIN Differential = ± 50 mV               −25                       +25          mV
+VOH           Output Voltage High                       VIN Differential = 50 mV                              1370        1475          mV
+              Average of ‘0’ to ‘1’
+VOL           Output Voltage Low                        VIN Differential = 50 mV                 925          1060                      mV
+              Average of ‘0’ to ‘1’
+VOD           Output Voltage Differential               VIN Differential = 50 mV                 250           315         400          mV
+ΔVOD          VOD Change between ‘0’ to ‘1’             VIN Differential = ±50 mV                −25                       +25          mV
+ISC           Short Circuit Current Output to GND       OUT Q to GND Pin                                                    5
+              Pin (3)                                   VIN Differential = 50 mV
+                                                        OUT Q to GND Pin                                                    5
+                                                                                                                                        mA
+                                                        VIN Differential = 50 mV
+              Output Shorted Together (3)               OUT Q to OUT Q                                                      5
+                                                        VIN Differential = 50 mV
+IS            Supply Current                            Load Current Excluded                                  6.6          9
+                                                                                                                                        mA
+                                                        VIN Differential = 50 mV                                           12.6
+
+(1)   All limits are specified by testing or statistical analysis.
+(2)   Typical values represent the most likely parametric norm as determined at the time of characterization. Actual typical values may vary
+      over time and will also depend on the application and configuration. The typical values are not tested and are not ensured on shipped
+      production material.
+(3)   Applies to both single-supply and split-supply operation. Continuous short circuit operation at elevated ambient temperature can result in
+      exceeding the maximum allowed junction temperature of 150°C.
+
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                                   Submit Documentation Feedback          7
+                                                          Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                            www.ti.com
+
++2.7V AC ELECTRICAL CHARACTERISTICS
+Unless otherwise specified, all limits specified for TJ = 25°C, VCM = 300 mV, −50 mV < VID < +50 mV and RL = 100Ω.
+Boldface limits apply at the temperature extremes. (1) (2)
+     Symbol                  Parameter                               Conditions                    Min (1)      Typ (3)      Max (1)       Units
+TR             Toggle Rate                              Overdrive = ±50 mV; CL = 2 pF @             700          880                       Mb/s
+                                                        50% Output Swing
+tjitter_RMS    RMS-Random Jitter                        Overdrive = 100 mV; CL = 2 pF                            4.82                        ps
+                                                        Center Frequency = 70 MHz
+                                                        Bandwidth = 10 Hz – 20 MHz
+tPDLH          Propagation Delay                        Overdrive 20 mV                                          3.80
+               tPDLH = (tPDH + tPDL ) / 2
+                                                        Overdrive 50 mV                                          3.29
+               (see Figure 21 application
+                                                        Overdrive 100 mV                                         3.0            7            ns
+               information)
+               Input SR = Constant                      Overdrive 1V                                             2.60
+               VID start value = -100mV
+tOD-disp       Input Overdrive Dispersion               @Overdrive 20 - 100 mV                                   0.83
+                                                                                                                                             ns
+                                                        @Overdrive 100 mV - 1V                                   0.37
+tSR-disp       Input Slew Rate Dispersion               0.05 V/ns to 1 V/ns                                      0.23                        ns
+                                                        Overdrive 100 mV
+tCM-disp       Input Common Mode dispersion             SR = 4 V/ns; Overdrive 100 mV                            0.16                        ns
+                                                        VCM = 0 to 1.5V
+ΔtPDLH         Q to Q Time Skew                         Overdrive = 100 mV; CL = 2 pF                            0.09                        ns
+               | tPDH - tPDL | (4)
+ΔtPDHL         Q to Q Time Skew                         Overdrive = 100 mV; CL = 2 pF                            0.09                        ns
+               | tPDL - tPDH | (4)
+tr             Output Rise Time (20% - 80%) (5)         Overdrive = 100 mV; CL = 2 pF                            0.64                        ns
+tf             Output Fall Time (20% - 80%) (5)         Overdrive = 100 mV; CL = 2 pF                            0.59                        ns
+
+(1)    All limits are specified by testing or statistical analysis.
+(2)    Electrical Table values apply only for factory testing conditions at the temperature indicated. Factory testing conditions result in very
+       limited self-heating of the device such that TJ = TA. No specification of parametric performance is indicated in the electrical tables under
+       conditions of internal self heating where TJ > TA. See APPLICATION INFORMATION for information on temperature de-rating of this
+       device.
+(3)    Typical values represent the most likely parametric norm as determined at the time of characterization. Actual typical values may vary
+       over time and will also depend on the application and configuration. The typical values are not tested and are not ensured on shipped
+       production material.
+(4)    Propagation Delay Skew, ΔtPD, is defined as the average of ΔtPDLH and ΔtPDHL.
+(5)    The rise or fall time is the average of the Q and Q rise or fall time.
+
+
+
+                                                                        VCC
+
+
+
+
+                                                         IN+
+                                                                    +      OUT Q
+
+                                                                    -      OUT Q
+                                                         IN-
+
+
+
+
+                                                                        GND
+
+                                                      Figure 2. Schematic Diagram
+
+
+
+
+8         Submit Documentation Feedback                                                         Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                          Product Folder Links: LMH7220
+                                                                                                                          LMH7220
+www.ti.com                                                                                SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+Connection Diagram
+
+                                                            6          5           4
+
+                                                           IN+        VCC        OUT Q
+
+
+
+
+                                                           IN-        GND        OUT Q
+
+                                                            1          2           3
+
+
+                                                        Figure 3. 6-Pin SOT Top View
+
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                           Submit Documentation Feedback       9
+                                                          Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                                                                                                                                    www.ti.com
+
+                                                                                TYPICAL PERFORMANCE CHARACTERISTICS
+                                                         At TJ = 25°C; unless otherwise specified: VCM = 0.3V, VOVERDRIVE = 100 mV, RL = 100Ω.
+                                                                   Input Current                                                                                                                        Bias Current
+                                                                         vs.                                                                                                                                 vs.
+                                                             Differential Input Voltage                                                                                                                Supply Voltage
+                                              10                                                                                                                                   0.0
+                                                                                                                                                                                          VCM = 300V
+                                                                                                                                                                                          VIN_DIFF = 0
+                                                                                                                                                                                  -0.5
+                                               5                                                                                                                                          IBIAS = (IIN+ + IIN-)/2
+                                                                                        IIN+
+                        INPUT CURRENT (PA)
+
+
+
+
+                                                                                                                                                         BIAS CURRENT (PA)
+                                                                    IIN-
+                                                                                                                                                                                  -1.0
+                                               0
+                                                                                                                                                                                  -1.5
+
+                                              -5
+                                                                 VCM = 2.5V                                                                                                       -2.0
+                                                                 VS = 5V
+                                             -10
+                                                                 VIN+ SWEEP = 1.6 to 3.4V                                                                                         -2.5
+                                                                 VIN- SWEEP = 3.4V to 1.6V
+                                             -15                                                                                                                                  -3.0
+                                                    -2    -1.5     -1    -0.5     0   0.5      1   1.5     2                                                                          2     3    4    5 6 7 8 9 10 11 12 13
+                                                          DIFFERENTIAL INPUT VOLTAGE (V)                                                                                                             SUPPLY VOLTAGE (V)
+
+                                                                           Figure 4.                                                                                                                        Figure 5.
+
+                                                                        Bias Current                                                                                                             Output Offset Voltage
+                                                                             vs.                                                                                                                         vs.
+                                                                        Temperature                                                                                                                 Supply Voltage
+                                             0.0                                                                                                                                   1.3
+                                                                                                                                                                                          VCM = 300 mV
+                                             -1.0                                                                                                    OUTPUT OFFSET VOLTAGE (V)            VIN_DIFF = 50 mV
+                                                                                               VS = 2.7V
+                                                                                                                                                                                 1.28
+                                             -2.0
+           BIAS CURRENT (PA)
+
+
+
+
+                                             -3.0
+                                                                        VS = 5V                                                                                                  1.26
+                                             -4.0                                                                                                                                                                       125°C
+                                                                           VS = 12V
+                                             -5.0                                                                                                                                1.24                85°C
+
+                                             -6.0        VCM = 300 mV
+                                                                                                                                                                                 1.22
+                                             -7.0        VIN_DIFF = 0
+                                                                                                                                                                                                                           25°C
+                                                         IBIAS = (IIN+ + IIN-)/2
+                                                                                                                                                                                                       -40°C
+                                             -8.0                                                                                                                                  1.2
+                                                -40 -25 -10 5 20 35 50 65 80 95 110 125                                                                                               2.5        4.5           6.5   8.5          10.5   12.5
+                                                                    TEMPERATURE (°C)                                                                                                                 SUPPLY VOLTAGE (V)
+
+                                                                           Figure 6.                                                                                                                        Figure 7.
+
+                                                                 Output Offset Voltage                                                                                                       Differential Output Voltage
+                                                                         vs.                                                                                                                              vs.
+                                                                     Temperature                                                                                                                   Supply Voltage
+                                              1.3                                                                                                                                 0.35
+                                                                                                                                    DIFFERENTIAL OUTPUT VOLTAGE (V)
+
+
+
+
+                                                         VCM = 300 mV                                                                                                                     VCM = 300 mV
+           OUTPUT OFFSET VOLTAGE (V)
+
+
+
+
+                                                         VIN_DIFF = 50 mV
+                                                                                                                                                                                 0.345 VIN_DIFF = 50 mV
+                                             1.28
+
+                                                                                                                                                                                  0.34
+                                             1.26
+                                                                                                                                                                                                                                    125°C
+                                                                                            VS = 12V                                                                             0.335
+                                                                                                                                                                                                                           -40°C
+                                             1.24                                                                                                                                         25°C
+                                                                         VS = 5V                                                                                                  0.33
+
+                                             1.22                                                                                                                                                      85°C
+                                                                                                                                                                                 0.325
+
+                                                                           VS = 2.7V                                                                                                        125°C
+                                              1.2                                                                                                                                 0.32
+                                                 -40 -25 -10 -5 20 35 50 65 80 95 110 125                                                                                             2.5        4.5           6.5   8.5          10.5      12.5
+                                                                    TEMPERATURE (°C)                                                                                                                   SUPPLY VOLTAGE (V)
+                                                                           Figure 8.                                                                                                                        Figure 9.
+
+
+
+
+10     Submit Documentation Feedback                                                                                                                                                     Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                                                                           Product Folder Links: LMH7220
+                                                                                                                                                                                                              LMH7220
+www.ti.com                                                                                                                                                    SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+                                                              TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+At TJ = 25°C; unless otherwise specified: VCM = 0.3V, VOVERDRIVE = 100 mV, RL = 100Ω.
+                                                          Differential Output Voltage                                                                                    Supply Current
+                                                                       vs.                                                                                                    vs.
+                                                                 Temperature                                                                                             Supply Voltage
+                                                 0.38                                                                                               14
+                                                        VCM = 300 mV
+               DIFFERENTIAL OUTPUT VOLTAGE (V)
+
+
+
+
+                                                        VIN_DIFF = 50 mV                                                                            12
+                                                 0.36                                                                                                         125°C               85°C
+
+
+
+
+                                                                                                                         SUPPLY CURRENT (mA)
+                                                                       VS = 12V                                                                     10
+
+                                                 0.34                                                                                                8
+
+                                                                                                                                                     6
+                                                 0.32
+                                                            VS = 5V                                                                                                         25°C
+                                                                                   VS = 2.7V                                                                                                   -40°C
+                                                                                                                                                     4
+                                                                                                                                                          LOAD CURRENT EXCLUDED
+                                                 0.30
+                                                                                                                                                     2 VCM = 300 mV
+                                                                                                                                                        VIN_DIFF = 50 mV
+                                                 0.28                                                                                                0
+                                                    -40 -25 -10 -5 20 35 50 65 80 95 110 125                                                          2.5    4.5      6.5            8.5      10.5     12.5
+                                                                   TEMPERATURE (°)                                                                                    SUPPLY VOLTAGE (V)
+
+                                                                      Figure 10.                                                                                           Figure 11.
+
+                                                                   Supply Current                                                                                        Rise & Fall Time
+                                                                        vs.                                                                                                    vs.
+                                                                    Temperature                                                                                            Temperature
+                                                 13                                                                                                 1.0
+                                                    LOAD CURRENT EXCLUDED                                                                                     VS = 12V
+                                                 12 V
+                                                      CM = 300 mV                                                                                             RL = 100:
+                                                                                                                                                    0.9
+                                                 11 VIN_DIFF = 50 mV                                                                                          VIN+ = 0.2V to 0.4V PULSE
+             SUPPLY CURRENT (mA)
+
+
+
+
+                                                 10                                                                                                           VIN- = 300 mV
+                                                                       VS = 12V                                                                     0.8
+                                                                                                                                                              INPUT SLEW RATE: 1 V/ns
+                                                  9
+                                                                                                                               TIME (ns)
+
+
+
+
+                                                  8       VS = 5V                                                                                   0.7
+                                                                                                                                                                         FALL TIME
+                                                  7
+                                                                                                                                                    0.6
+                                                  6                    VS = 2.7V
+                                                  5
+                                                                                                                                                    0.5
+                                                  4                                                                                                                       RISE TIME
+
+                                                  3                                                                                                 0.4
+                                                  -40 -25 -10 5 20 35 50 65 80 95 110 125                                                             -40 -25 -10 5 20 35 50 65 80 95 110 125
+                                                                TEMPERATURE (°C)                                                                                        TEMPERATURE (°C)
+
+                                                                      Figure 12.                                                                                           Figure 13.
+
+                                                               Propagation Delay                                                                                      Propagation Delay
+                                                                     vs.                                                                                                     vs.
+                                                                  Temperature                                                                                         Overdrive Voltage
+                                                 4.0                                                                                                5.0
+                                                        VS = 12V                                                                                        VCM = 0.3V
+                                                 3.8
+                                                        RL = 100:                                                                                   4.5 VIN- = VCM
+                PROPAGATION DELAY (ns)
+
+
+
+
+                                                                                                                           PROPAGATION DELAY (ns)
+
+
+
+
+                                                 3.6    VIN+ = 0.2V to 0.4V PULSE                                                                             VIN+ = VCM - 100 mV to VCM + VOD
+                                                                                                                                                    4.0
+                                                 3.4    VIN- = 300 mV
+                                                        INPUT SLEW RATE: 1 V/ns                                                                     3.5
+                                                 3.2
+                                                                                                                                                                                  VS = 2.7V
+                                                 3.0                                                                                                3.0
+                                                 2.8
+                                                                                                                                                    2.5
+                                                 2.6
+                                                                              VS = 2.7V                                                             2.0
+                                                 2.4                                                                                                                   VS = 12V             VS = 5V
+                                                        VS = 12V    VS = 5V
+                                                 2.2                                                                                                1.5
+
+                                                 2.0                                                                                                1.0
+                                                   -40 -25 -10 5 20 35 50 65 80 95 110 125                                                                0       200       400       600      800     1000
+                                                                TEMPERATURE (°C)                                                                                  OVERDRIVE VOLTAGE (mV)
+
+                                                                      Figure 14.                                                                                           Figure 15.
+
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                                                                                                  Submit Documentation Feedback               11
+                                                                                               Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                                                                                                           www.ti.com
+
+                                                 TYPICAL PERFORMANCE CHARACTERISTICS (continued)
+At TJ = 25°C; unless otherwise specified: VCM = 0.3V, VOVERDRIVE = 100 mV, RL = 100Ω.
+                                                 Propagation Delay                                                                                                              Propagation Delay
+                                                       vs.                                                                                                                             vs.
+                                               Common Mode Voltage                                                                                                                  Slew Rate
+                                     5.0                                                                                                                      6.0
+                                           VIN- = VCM                                                                                                             VCM = 0.3V
+                                     4.5   VIN+ = VCM - 50 mV to VCM + 50 mV                                                                                  5.5 VIN- = VCM
+            PROPAGATION DELAY (ns)
+
+
+
+
+                                                                                                                                     PROPAGATION DELAY (ns)
+                                                                                                                                                                  VIN+ = VCM - 100 mV to VCM + 100 mV
+                                     4.0                                                                                                                      5.0
+
+                                     3.5     VS = 2.7V                                                                                                        4.5
+                                                         VS = 5V
+                                     3.0                                                                                                                      4.0
+                                                                   VS = 12V                                                                                                 VS = 2.7V
+                                     2.5                                                                                                                      3.5                          VS = 5V
+
+                                     2.0                                                                                                                      3.0
+
+                                     1.5                                                                                                                      2.5
+                                                                                                                                                                                                     VS = 12V
+                                     1.0                                                                                                                      2.0
+                                        -1 0 1 2 3 4 5 6 7            8 9 10 11 12                                                                                  0        200     400      600        800    1000
+                                              COMMON MODE VOLTAGE (V)                                                                                                              SLEW RATE (V/Ps)
+
+                                                         Figure 16.                                                                                                                  Figure 17.
+
+                                                                                            Pulse Response Over Temperature
+                                                                                         1500
+                                                                                                         25°C
+                                                                                         1400
+                                                                                                                             125°C
+                                                                                         1300                   -40°C
+                                                                         Q-OUTPUT (mV)
+
+
+
+
+                                                                                                                              85°C
+                                                                                         1200
+
+                                                                                         1100
+
+
+                                                                                         1000       VS = 5V
+                                                                                                    VCM = 300 mV
+                                                                                          900       VIN- = VCM
+                                                                                                    VIN+ = VCM - 100 mV to VCM + 100 mV
+                                                                                          800
+                                                                                                0    2     4    6     8   10 12 14 16 18 20
+                                                                                                                      TIME (ns)
+
+                                                                                                                    Figure 18.
+
+
+
+
+12     Submit Documentation Feedback                                                                                                                                    Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                                                           Product Folder Links: LMH7220
+                                                                                                                                    LMH7220
+www.ti.com                                                                                         SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+                                                    APPLICATION INFORMATION
+
+INTRODUCTION
+The LMH7220 is a high speed comparator with LVDS outputs. The LVDS (Low Voltage Differential Signaling)
+standard uses differential outputs with a voltage swing of approximately 325 mV on each output. The most widely
+used setup for LVDS outputs consists of a switched current source of 3.25 mA. The output pins need to be
+differentially terminated with an external 100Ω resistor, producing the standardized output voltage swing of 325
+mV. The common mode level of both outputs is about 1.2V, and is independent of the power supply voltage. The
+use of complementary outputs gives a high level of suppression for common mode noise. The very fast rise and
+fall times of the LMH7220 enable data transmission rates up to several hundreds of Megabits per second (Mbps).
+Due to the current-nature of the outputs the power consumption remains at a very low level even if the data
+transmission rate is rising. Power delivered to a load resistance of 100Ω is only 1.2 mW.
+The LMH7220 inputs have a common mode voltage range that extends 200 mV below the negative supply
+voltage thus allowing ground sensing in case of single supply. The rise and fall times of the LMH7220 are about
+0.6 ns, while the propagation delay time is about 2.7 ns. The LMH7220 can operate over the full supply voltage
+range of 2.7V to 12V, while using single or dual supply voltages. The LVDS outputs refer to the negative supply
+rail. The supply current is 6.8 mA at 5V (load current excluded). The LMH7220 is available in the 6-Pin SOT
+package.
+In the next sections the following issues are discussed:
+• In- and output topology
+• Definition of terms of used specifications
+• Propagation delay and dispersion
+• Hysteresis and oscillations
+• The output
+• Applying transmission lines
+• PCB layout
+
+INPUT & OUTPUT TOPOLOGY
+All input and output pins are protected against excessive voltages by ESD diodes. These diodes are connected
+from the negative supply to the positive supply. As can be seen in Figure 19, both inputs are connected to these
+diodes. Protection against excessive supply voltages is provided by a power clamp between VCC and GND. Both
+inputs are also connected to the bases of the input transistors of the differential pair via 1.5 kΩ resistors. The
+input transistors cannot withstand high reverse voltages between bases and emitter, due to their high frequency
+properties. To protect the input stage against damage, both bases are connected together by a string of anti-
+parallel diodes. Be aware of situations in which differential input voltage level is such that these diodes are
+conducting. In this case the input current is raised far above the normal value stated in the datasheet tables.
+
+                                                                      VCC
+
+
+                                              VCC                                            VCC             VCC
+
+                                                    1.5 k:                       1.5 k:
+                                     IN+                                                             IN-
+
+
+
+
+                                                                                                           Power
+                                                                                                           Clamp
+
+
+
+
+                                                        Equivalent Input Circuitry
+
+                                                 Figure 19. Equivalent Input Circuitry
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                                      Submit Documentation Feedback    13
+                                                             Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                         www.ti.com
+
+The output can be seen as a bridge configuration in which switches are crosswise closed, producing the
+differential LVDS logic high and low levels (see Figure 20). The output switches are fed at top and bottom by two
+current sources. The top one is fixed and determines the differential voltage across the external load resistor.
+The other one is regulated and determines the common-mode voltage on the outputs. It is essential to keep the
+output common-mode voltage at the defined standardized LVDS level under all circumstances. To realize this,
+both outputs are internally connected together via two equal resistors. At the midpoint this produces the common
+mode output voltage, which is made equal to VREF (1.2V) by means of the CM feedback loop.
+
+                                                           VCC
+
+                                            Current 3.25 mA
+
+
+                                                                                    Output Q
+
+
+
+
+                                                                                    Output Q
+
+
+
+
+                                            Current 3.25 mA
+                                                                             +
+                                                                             -
+                                                                                            VREF
+                                                                                        +
+                                                                         CM loop        -
+
+
+
+
+                                                          Equivalent Output Circuitry
+
+                                              Figure 20. Equivalent Output Circuitry
+
+
+DEFINITIONS
+For a good understanding of many parameters of the LMH7220 it is necessary to perform a lot of measurements.
+All of those parameters are listed in the data tables in the first part of the datasheet. There are different tables for
+several supply voltages containing a separate set of data per supply voltage. In the table below is a list of
+abbreviations of the measured parameters and a short description of the conditions which are applied for
+measuring them . Following this table several parameters are highlighted to explain more clearly what it means
+exactly and what effects such a phenomena can have for any applied electronic circuit.
+
+      Symbol                              Text                                                     Description
+IB                   Input Bias Current                          Current flowing in or out the input pins, when both biased at 0.3 Volt above
+                                                                 GND
+IOS                  Input Offset Current                        Difference between the positive- and the negative input currents needed to
+                                                                 make the outputs change state, averaged for H to L and L to H transitions
+TC IOS               Average Input Offset Current Drift          Temperature Coefficient of IOS
+VOS                  Input Offset Voltage                        Voltage difference needed between IN+ and IN− to make the outputs
+                                                                 change state, averaged for H to L and L to H transitions
+TC VOS               Average Input Offset Voltage Drift          Temperature Coefficient of VOS
+CMRR                 Common Mode Rejection Ratio                 Ratio of input offset voltage change and input common mode voltage
+                                                                 change
+VRI                  Input Voltage Range                         Upper and lower limits of the input voltage are defined as where CMRR
+                                                                 drops below 50 dB.
+PSRR                 Power Supply Rejection Ratio                Ratio of input offset voltage change and supply voltage change from VS-MIN
+                                                                 to VS-MAX
+VO                   Output Offset Voltage                       Output Common Mode Voltage averaged for logic ‘0’ and logic ‘1’ levels
+                                                                 (See Figure 30)
+
+14       Submit Documentation Feedback                                                       Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                        Product Folder Links: LMH7220
+                                                                                                                                     LMH7220
+www.ti.com                                                                                     SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+           Symbol                          Text                                                    Description
+ΔVO                    Change in Output Offset Voltage            Difference in Output Common Mode Voltage between logic ‘0’ and logic ‘1’
+                                                                  levels (See Figure 31)
+VOH                    Output Voltage High                        High state single ended output voltage (Q or Q) (See Figure 30)
+VOL                    Output Voltage Low                         Low state single ended output voltage (Q or Q) (See Figure 30)
+VODH                   Output Differential Voltage logic ‘1’      VOH(Q) – VOL(Q) (logic level ‘1’) (See Figure 31)
+VODL                   Output Differential Voltage logic ‘0’      VOH(Q) – VOL(Q) (logic level ‘0’) (See Figure 31)
+VOD                    Average of VODH and VODL                   (VODH + VODL) / 2
+ΔVOD                   Change in VOD between ‘0’ and ‘1’          |VODH – VODL| (See Figure 31)
+Hyst                   Hysteresis                                 Difference in input switching levels for L to H and H to L transitions. (See
+                                                                  Figure 29)
+ISQG, ISQG             Short Circuit Current one output to GND    Current that flows from one output to GND if shorted single ended
+ISQQ                   Short Circuit Current outputs together     Current flowing between output Q and output Q if shorted differentially
+TR                     Maximum Toggle Rate                        Maximum frequency at which the outputs can toggle before VOD drops
+                                                                  under 50% of the nominal value.
+PW                     Pulse Width                                Time from 50% of the rising edge of a signal to 50% of the falling edge
+tPDH resp tPDL         Propagation Delay                          Delay time between the moment the input signal crosses the switching
+                                                                  level L to H and the moment the output signal crosses 50% of the rising
+                                                                  edge of Q output (tPDH), or delay time between the moment the input signal
+                                                                  crosses the switching level H to L and the moment the output signal
+                                                                  crosses 50% of the falling edge of Q output (tPDL)
+tPDLresp tPDH                                                     Delay time between the moment the input signal crosses the switching
+                                                                  level L to H and the moment the output signal crosses 50% of the falling
+                                                                  edge of Q output (tPDL), or delay time between the moment the input signal
+                                                                  crosses the switching level H to L and the moment the output signal
+                                                                  crosses 50% of the rising edge of Q output (tPDH)
+tPDLH                                                             Average of tPDH and tPDL
+tPDHL                                                             Average of tPDL and tPDH
+tPD                                                               Average of tPDLH and tPDHL
+tPDHd resp tPDLd                                                  Delay time between the moment the input signal crosses the switching
+                                                                  level L to H and the zero crossing of the rising edge of the differential
+                                                                  output signal (tPDHd), or delay time between the moment the input signal
+                                                                  crosses the switching level H to L and the zero crossing of the falling edge
+                                                                  of the differential output signal (tPDLd)
+ΔtPDLH resp ΔtPDHL     Q to Q time skew                           Time skew between 50% levels of rising edge of Q output and falling edge
+                                                                  of Q output (ΔtPDLH ), or time skew between 50% levels of falling edge of Q
+                                                                  output and rising edge of Q output (ΔtPDHL)
+ΔtPD                   Average Q to Q time skew                   Average of tPDLH and tPDHL for L to H and H to L transients
+ΔtPDd                  Average diff. time skew                    Average of tPDHd and tPDLd for L to H and H to L transients
+tOD-disp               Input overdrive dispersion                 Change in tPD for different overdrive voltages at the input pins
+tSR-disp               Input slew rate dispersion                 Change in tPD for different slew rates at the input pins
+tCM-disp               Input Common Mode dispersion               Change in tPD for different common mode voltages at the input pins
+tr / trd               Output rise time (20% - 80%)               Time needed for the (single ended or differential) output voltage to change
+                                                                  from 20% of its nominal value to 80%
+tf / tfd               Output fall time (20% - 80%)               Time needed for the (single ended or differential) output voltage to change
+                                                                  from 80% of its nominal value to 20%
+
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                                 Submit Documentation Feedback              15
+                                                         Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                        www.ti.com
+
+
+
+                                     PW
+
+                                                        Voverdrive
+          Differential                                                                                  tPDLH = (tPDH + tPDL)/ 2
+         Input Signal                                                                            0
+
+                                'tPDLH                                                                  tPDHL = (tPDL + tPDH)/ 2
+                                                 'tPDHL
+                                                                                    tf
+                                                                            tr                          tPD = (tPDLH + tPDHL)/ 2
+                             tPDH
+                                                          80% or 90%                                    'tPDLH = | tPDH - tPDL |
+            Output Q                           tPDL                                              VO
+                                                          10% or 20%
+                                                                                                        'tPDHL = | tPDL - tPDH |
+                                               tPDH
+                                                                                                 VO     'tPD = 'tPDLH + 'tPDHL)/ 2
+            Output Q
+                              tPDL
+                                                                                                        'tPDQ = | tPDH - tPDL |
+                                                                             trd
+                                                                                                        'tPDQ = | tPDL - tPDH |
+                             tPDHd
+          Differential                                   80% or 90%
+        Output Signal                                                                            0      tPDd = (tPDHd + tPDLd)/ 2
+                                               tPDLd     10% or 20%
+                                                                                                        'tPDd = | tPDHd - tPDLd |
+                                                                                   tfd
+
+
+                                          Figure 21. Propagation Delay Definition
+
+
+DELAY AND DISPERSION
+Comparators are widely used to connect the analog world to the digital one. The accuracy of a comparator is
+dictated by its DC properties such as offset voltage and hysteresis and by its timing aspects such as rise and fall
+times and delay. For low frequency applications most comparators are much faster than the analog input signals
+they handle. The timing aspects are less important here than the accuracy of the input switching levels. The
+higher the frequency, the more important the timing properties of the comparator become, because the response
+of the comparator can give e.g. a noticeable change in time frame or duty cycle. A designer has to know these
+effects in order to deal with them. In order to predict what the output signal will do compared to the input signal,
+several parameters are defined which describe the behavior of the comparator. For a good understanding of the
+timing parameters discussed in the following section, a brief explanation is given and several timing diagrams are
+shown for clarification.
+
+PROPAGATION DELAY
+The propagation delay parameter is defined as the time it takes for the comparator to change the output level
+halfway in its transition from L to H or H to L, in reaction to the moment the input signal crosses the switching
+level. Due to this definition there are two parameters, tPDH and tPDL (Figure 22). Both parameters don’t
+necessarily have the same value. It is possible that differences will occur due to a different response of the
+internal circuitry. As a result of this effect another parameter is defined: ΔtPD. This parameter is defined as the
+absolute value of the difference between tPDH and tPDL.
+
+
+
+
+16     Submit Documentation Feedback                                                     Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                      Product Folder Links: LMH7220
+                                                                                                                                                      LMH7220
+www.ti.com                                                                                                           SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+
+
+                                                                                    PW
+
+                                                              80%                                        80%
+                                                       VIN   50%                                          50%
+                                                             20%                                              20%
+                                                                          tPDH                                tPDL
+
+
+                                                                           80%                                        80%
+                                           Output Q                       50%                                          50%
+                                                                      20%                                               20%
+
+                                                                     tr                                  tf
+
+
+                                                               Figure 22. Pulse Parameter
+
+If ΔtPD isn’t zero, duty cycle distortion will occur. For example when applying a symmetrical waveform (e.g. a
+sinewave) at the input, it is expected that the comparator produces a symmetrical square wave at the output with
+a duty cycle of 50%. In case of different tPDH and tPDL the duty cycle of the output signal will not remain at 50%,
+but will be lower or higher. In addition to the propagation delay parameters for single ended outputs discussed
+before, there are other parameters in case of complementary outputs. These parameters describe the delay from
+input to each of the outputs and the difference between both delay times (see Figure 23). When the differential
+input signal crosses the reference level from L to H, both outputs will switch to their new state with some delay.
+This is defined as tPDH for the Q output and tPDL for the Q output, while the difference between both signals is
+defined as ΔtPDLH. similar definitions for the falling slope of the input signal can be seen in Figure 21.
+                                             Input Signal
+
+
+
+
+                                                                                                                      VREF
+                                                                                                  time
+
+
+                                                                            tPDH
+                                             Output Q
+
+
+
+
+                                                                                                                      VO
+                                                                                                  time
+
+
+                                                                                         'tPDLH
+                                              Output Q
+
+
+
+
+                                                                                                                      VO
+                                                                                                  time
+
+                                                                             tPDL
+
+
+                                                                            Propagation Delay
+
+                                                              Figure 23. Propagation Delay
+
+Both output circuits should be symmetrical. At the moment one output is switching ‘on’ the other is switching ‘off’
+with ideally no skew between them. The design of the LMH7220 is optimized to minimize this timing difference.
+Propagation delay tPD is defined as the average delay of both outputs at both slopes: (tPDLH + tPDHL) / 2.
+
+DISPERSION
+There are several circumstances that will produce a variation of the propagation delay time. This effect is called
+dispersion.
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                                                        Submit Documentation Feedback    17
+                                                                   Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                                              www.ti.com
+
+Amplitude Overdrive Dispersion
+One of the parameters that causes dispersion is the amplitude variation of the input signal. Figure 24 shows the
+dispersion due to a variation of the input overdrive voltage. The overdrive is defined as the ‘goto’ differential
+voltage applied to the inputs. Figure 24 shows the impact it has on the propagation delay time if overdrive is
+varied from 10 millivolts to 100 millivolts. This parameter is measured with a constant slew rate of the input
+signal.
+
+                                                                                           Overdrive 100 mV
+
+                                                                   +
+
+                                   Input Differential Signal
+                                                                                           Overdrive 10 mV
+                                                                   0
+                                                                                                                time
+                                                                                 -100 mV
+
+
+                                                                   -
+                                                                              Overdrive Dispersion
+                                   Output Differential Signal
+
+
+
+
+                                                                   +
+
+
+                                                                                                   Dispersion
+                                                                   0
+                                                                                                                time
+
+
+
+                                                                   -
+
+
+                                                                       Figure 24. Overdrive Dispersion
+
+The overdrive dispersion is caused by the fact that switching currents in the input stage depend on the level of
+the differential input signal.
+
+Slew Rate Dispersion
+The slew rate is another parameter that affects propagation delay. The higher the input slew rate, the faster the
+input stage switches (Figure 25).
+
+
+                                                                   +
+                                   Input Differential Signal
+
+
+
+
+                                                                   0
+                                                                                                       time
+
+
+
+                                                                   -         Slew Rate Dispersion
+                                                                   +
+                                      Output Differential Signal
+
+
+
+
+                                                                                               Dispersion
+                                                                   0
+                                                                                                       time
+
+
+
+                                                                   -
+
+
+                                                                       Figure 25. Slew Rate Dispersion
+
+
+18     Submit Documentation Feedback                                                                              Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                                           Product Folder Links: LMH7220
+                                                                                                                                                             LMH7220
+www.ti.com                                                                                                                   SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+A combination of overdrive- and slew rate dispersion occurs when applying signals with different amplitude at
+constant frequency. A small amplitude will produce a small voltage change per time unit (dV/dt) but also a small
+maximum switching current (overdrive) in the input transistors. High amplitudes produce a high dV/dt and a
+bigger overdrive.
+
+Common Mode Dispersion
+Dispersion will also occur when changing the common mode level of the input signal (Figure 26). When VREF is
+swept through the CMVR (Common Mode Voltage Range), this results in a variation of the propagation delay
+time. This variation is called Common Mode Dispersion.
+
+                                                                             Vin cm
+                                                                        +
+                                            Input Differential Signal
+
+
+
+
+                                                                             Vin cm
+                                                                        0
+                                                                                                                          time
+
+
+
+                                                                        -
+                                                                                       Common Mode Dispersion
+
+                                                                        +
+                                           Output Differential Signal
+
+
+
+
+                                                                                                             Dispersion
+                                                                        0
+                                                                                                                          time
+
+
+
+                                                                        -
+
+
+                                                                            Figure 26. Common Mode Dispersion
+
+All of the dispersion effects discussed before influence the propagation delay. In practice the dispersion is often
+caused by a combination of more than one varied parameter. It is good to realize this if there is the need to
+predict how much dispersion a circuit will show.
+
+HYSTERESIS & OSCILLATIONS
+In contrast to an op amp, the output of a comparator has only two defined states ‘0’ or ‘1’. Due to finite
+comparator gain however, there will be a small band of input differential voltage where the output is in an
+undefined state. An input signal with fast slopes will pass this band very quickly without problems. During slow
+slopes however, passing the band of uncertainty can be relatively long. This enables the comparator outputs to
+switch back and forth several times between ‘0’ and ‘1’ on a single slope. The comparator will switch on its input
+noise, ground bounce (possible oscillations), ringing etc. Noise in the input signal will also contribute to these
+undesired switching effects.
+In the next sections an explanation follows about these phenomena in situations where no hysteresis is applied,
+and the possible improvement hysteresis can give.
+
+Using No Hysteresis
+In Figure 27 can be seen what happens when the input signal rises from just under the threshold VREF to a level
+just above it. From the moment the input reaches the lowest dotted line around VREF at t=0, the output toggles on
+noise etc. Toggling ends when the input signal leaves the undefined area at t=1. In this example the output was
+fast enough to toggle three times. Due to this behavior digital circuitry connected to the output will count a wrong
+number of pulses. One way to prevent this is to choose a very slow comparator with an output that is not able to
+switch more than once between ‘0’ and ‘1’ during the time the input state is undefined.
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                                                              Submit Documentation Feedback      19
+                                                                                      Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                                   www.ti.com
+
+
+
+                                                       mV
+
+
+
+
+                                        Input Signal
+                                                       Vref
+                                                                                                time
+
+
+
+
+                                         fast output
+                                                         1
+                                                                                                time
+                                                         0
+
+                                         slow output
+                                                         1
+
+                                                                                                time
+                                                         0
+                                                                              t=0        t=1
+
+                                                                         Oscillations & Noise
+
+                                                        Figure 27. Oscillations & Noise
+
+In most circumstances this is not an option because the slew rate of the input signal will vary.
+
+Using Hysteresis
+A good way to avoid oscillations and noise during slow slopes is the use of hysteresis. For this purpose a
+threshold is introduced that pushes the input switching level back at the moment the output switches (See
+Figure 28). In this simple setup, a comparator with a single output and a resistive divider to the positive input is
+drawn.
+
+
+
+
+                                                                                    CC
+
+
+
+
+                                                              CP
+                                                                                    Rf
+
+
+                                                                               +
+                                                              Rp                    CP
+                                                                               -
+                                                   VREF
+                                                                   VIN
+
+
+                                                                   Simplified Schematic
+
+
+
+
+                                                        Figure 28. Simplified Schematic
+
+
+
+
+20     Submit Documentation Feedback                                                                   Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                               Product Folder Links: LMH7220
+                                                                                                                                  LMH7220
+www.ti.com                                                                                        SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+The divider RF-RP feeds back a portion of the output voltage to the positive input. Only a small part of the output
+voltage is needed, just enough to avoid the area at which the input is in an undefined state. Assuming this is only
+a few millivolts, it is sufficient to add (plus or minus) 10 mV to the positive input to prevent the circuit from
+oscillations. If the output switches between 0V and 5V and the choice for one of the resistors is done the other
+can be calculated. Assume RP is 50Ω then RF is 25 kΩ for 10 mV threshold on the positive input. The situation of
+Figure 29 is now created.
+
+
+
+                                                           mV
+
+
+                                            Input Signal                       A
+                                                           Vref
+                                                                                     B
+
+
+
+
+                                                             1
+                                             Output
+
+
+
+
+                                                             0
+
+                                                                             t=0         t=1
+
+                                                                                Hysteresis
+
+
+
+                                                                   Figure 29. Hysteresis
+
+In this picture there are two dotted lines, A and B, both indicating the resulting level at the positive input. When
+the signal at the negative input is low, the state of the input stage is well defined with the negative input much
+lower than the positive input. As a result the output will be in the high state. The positive input is at level A. With
+the input signal sloping up, this situation remains until VIN crosses level A at t=1. Now the output toggles, and the
+voltage at the positive input is lowered to level B. So before the output has the possibility to toggle again, the
+difference between both inputs is made sufficient to have a stable situation again. When the input signal comes
+down from high to low, the situation is stable until level B is reached at t=0. At this moment the output will toggle
+back, and the circuit is back in the start situation with the negative input at a much lower level than the positive
+one. In the situation without hysteresis, the output would toggle exactly at VREF. With hysteresis this happens at
+the introduced levels A and B, as can be seen in Figure 29. Varying the levels A and B will also vary the timing of
+t=0 and t=1. When designing a circuit be aware of this effect. Introducing hysteresis will cause some time shifts
+between output and input (e.g. duty cycle variations), but eliminates undesired switching of the output.
+
+Parasitic Capacitors
+In the simple schematic of Figure 28 some capacitors are drawn. The capacitors CP. represent the parasitic
+(board) capacitance at the input of the part. This capacity will slow down the change of the level of the positive
+input in reaction to the changing output voltage. As a result of this, the output may have the time to switch over
+more than once. Actually the parasitic capacity represented by CP makes the attenuation circuit of RF and RP
+frequency dependent. The only action to take is to create a frequency independent circuit. This is simply done by
+placing the compensation capacitor CC in parallel with RF. The capacitor CC can be calculated with the formula
+RF *CC = RP *CP; this means that both of the time constants must be the same to create a frequency
+independent network. A simple example gives the following assuming that CP is in total 2.5 pF and as already
+calculated RF = 25 kΩ in combination with RP = 50Ω. These input data gives:
+       CC = RP * CP/RF                                                                                                                     (1)
+       CC = 50*2.5e-12/25e3                                                                                                                (2)
+       CC = 5e-15 = 0.005 pF                                                                                                               (3)
+This is not a practical value and different conclusions are possible:
+• No capacitor CC needed
+Copyright © 2006–2013, Texas Instruments Incorporated                                                   Submit Documentation Feedback      21
+                                                                  Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                    www.ti.com
+
+•    Place a capacitor CC of 1 pF and accept a big overshoot at the positive input being sure that the input stage
+     is in a secure new position
+•    Place an extra CP of such a value that CC has a realistic value of say 1 pF (extra CP = ±500 pF).
+
+Position of Feedback Resistors
+Another important issue while using positive feedback is the placement of the resistors RP and RF. These
+resistors must be placed as near as possible to the positive input, because this input is most sensitive for picking
+up spurious signals, noise etc. This connection must be very clean for the best performance of the overall circuit.
+With raising speeds the total PCB design becomes more and more critical, the LMH7220 comparator doesn’t
+have built in hysteresis, so the input signal must meet minimum requirements to make the output switch over
+properly. In the following sections some aspects concerning the load connected to the outputs and transmission
+lines will be discussed.
+
+THE OUTPUT SWING PROPERTIES
+LVDS has differential outputs which means that both outputs have the same swing but in opposite direction
+(Figure 30). Both outputs swing around a voltage called the common mode output voltage (VO). This voltage can
+be measured at the midpoint of two equal resistors connected to both outputs as discussed in INPUT & OUTPUT
+TOPOLOGY. The absolute value of the difference between both voltages is called VOD. LVDS outputs cannot be
+held at the VO level because of their digital nature. They only cross this level during a transition. Due to the
+symmetrical structure of the circuit, both output voltages cross at VO regardless if the output changes from ‘0’ to
+‘1’ or vise versa.
+
+                                        Output Q                                            VOH
+
+
+
+
+                                                                 VOD                        VO
+
+
+
+
+                                        Output Q                                            VOL
+
+
+                                               Figure 30. LVDS Output Signals
+
+In case the outputs aren’t symmetrical or are a-symmetrically loaded, the output voltages differ from the situation
+of Figure 30. For this non-ideal situation there are two additional parameters defined, ΔVO and ΔVOD, as can be
+seen in Figure 31.
+
+                                         Output Q
+
+
+
+                                            'VO                          VODH       VODL
+
+
+
+                                         Output Q
+                                                                         'VOD = | VODH - VODL |
+                                                                         VOD = (VODH + VODL) / 2
+
+
+                                                    '0'            '1'                '0'
+                            Figure 31. LVDS Output Signals with Different Amplitude
+
+ΔVO is the difference in VO between the ‘1’ state and the ‘0’ state. This variation is acceptable if it is below 50 mV
+following the ANSI/TIA/EIA-644 LVDS standard. It is also possible that VOD in the ‘1’ state isn’t the same as in
+the ‘0’ state. This parameter is specified as ΔVOD, and is calculated as the absolute value of the difference of
+VODH and VODL.
+
+
+
+22      Submit Documentation Feedback                                                   Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                    Product Folder Links: LMH7220
+                                                                                                                         LMH7220
+www.ti.com                                                                               SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+LOADING THE OUTPUT
+The output structure creates a current (ILOOP see Figure 32) through an external differential load resistor of 100Ω
+nominal. This results in a differential output voltage of 325 mV. The outputs of the comparator are connected to
+tracks on a PCB. These tracks can be seen as a differential transmission line. The differential load resistor acts
+as a high frequency termination at the end of the transmission line. This means that for a proper signal behavior
+the PCB tracks have to be dimensioned for a characteristic impedance of 100Ω as well. Changing the load
+resistor also implies a change of the transmission line impedance. More about transmission lines and termination
+can be found in the next section. The signal across the 100Ω termination resistor is fed into the inputs of
+subsequent circuitry that processes the data. Any connection to input circuitry of course draws current from the
+comparator’s outputs. In the case of a balanced input connected to the load resistance, current IP is drawn from
+both output connection points to ground. Keep in mind that the LMH7220’s ability to source currents is much
+higher than to sink them. The connected input circuitry also forms a differential load to the outputs of the
+comparator (see Figure 32). This will cause the voltage across the termination resistor to differ from its nominal
+value.
+                                                                                   IP
+
+                                                                              CP
+
+                                                          VCC                 RP
+                                                                      ILOOP
+
+                                                  IN+
+                                                        + OUT Q
+                                                                          RLOAD         CLOAD
+                                                        - OUT Q
+                                                  IN-
+
+
+                                                          GND
+                                                                              RP
+
+                                                                              CP
+
+                                                                                   IP
+                                                                LOAD
+
+                                                            Figure 32. Load
+
+In general one single connection only draws a few µA’s, and doesn’t have much effect on the LVDS output
+voltage. For multiple inputs on one output pair, load currents must not exceed the specified limits, as described in
+the ANSI or IEEE LVDS standards. Below a specified value of VOD, the functioning of subsequent circuitry
+becomes uncertain. However under normal conditions there is no need to worry. Another point of practice is load
+capacitances. Capacitances are applied differentially (CLOAD) and also to ground (CP). All of these capacitors will
+disturb the pulse shape. The edges of the output pulse become slower, and in reaction the detection of the
+transition comes at a later moment. Be aware of this effect when measuring with probes. Both single ended and
+differential probes have these capacitances. A standard probe commonly has a load capacity of about 8 to 10
+pF. This will cause some degradation of the pulse shape and will add some time delay.
+
+TRANSMISSION LINES & TERMINATION TECHNOLOGIES
+The LMH7220 uses LVDS technology. LVDS is a way to communicate data using low voltage swing and low
+power consumption. Nowadays data rates are growing, requiring increasing speed. Data isn’t only connected to
+other IC’s on a single PCB board but in many cases there are interconnections from board to board or from
+equipment to equipment. Distances can be short or long but it is always necessary to have a reliable connection,
+consume low power and to be able to handle high data rates. LVDS is a differential signal protocol. The
+advantage over single ended signal transmission is its higher immunity to common mode noise. Common mode
+signals are signals that are equally apparent on both lines and because the receiver only looks at the difference
+between both lines, this noise is canceled.
+
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                           Submit Documentation Feedback     23
+                                                        Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                                          www.ti.com
+
+Maximum Bitrates
+A very important specification in high speed circuits are the rise and fall times. In fact these determine the
+maximum toggle rate (TR) of the part. The LVDS standard specifies them at 0.26 ns to 1.5 ns. Rise and fall times
+are normally specified at 20% and 80% of the signal amplitude (60% difference). TR is defined as the bitrate at
+which the differential output voltage drops to 50% of its nominal value.
+                                                          period   period
+                                                            1        2
+
+                                                    80%
+                                       VOUT
+                                                                                     Decision Level
+                                                  20%
+
+
+
+
+                                             1
+                                       bit                                          Ideal Pulse Out
+                                                     0    1    0   1   0    1   0
+                                             0
+
+
+
+                                                          Figure 33. Bitrate
+
+Need for Terminated Transmission Lines
+During the ‘80’s and ‘90’s TI fabricated the 100k ECL logic family. The rise and fall time specification was 0.75 ns
+which was very fast and will easily introduce errors in digital circuits if insufficient care has been taken to the
+transmission lines and terminations used for these signals. To be helpful to designers that use ECL with “old”
+PCB-techniques, the 10k ECL family was introduced with a rise and fall time specification of 2 ns. This was much
+slower and more easy to use. LVDS signals have transition times that exceed the fastest ECL family. A careful
+PCB design is needed using RF techniques for transmission and termination. Transmission lines can be formed
+in several ways. The most commonly used types are the coaxial cable and the twisted pair telephony cable
+(Figure 34).
+
+                                                     D                                   2h
+
+                                                                                          d
+                                                                   d
+
+
+                                                                                    Parallel Wire
+                                                  Coax Cable
+
+                                                 Figure 34. Cable Configuration
+
+These cables have a characteristic impedance determined by their geometric parameters. Widely used
+impedances for the coaxial cable are 50Ω and 75Ω. Twisted pair cables have impedances of about 120Ω to
+150Ω.
+Other types of transmission lines are the strip line and the micro strip. These last types are used on PCB boards.
+They have the characteristic impedance dictated by the physical dimensions of a track placed over a metal
+ground plane (See Figure 35).
+
+
+
+
+24     Submit Documentation Feedback                                                          Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                                     Product Folder Links: LMH7220
+                                                                                                                                         LMH7220
+
+
+
+
+                                                    xxxx
+                                                     xx
+www.ti.com                                                                                               SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+
+
+
+                                                    xxxx
+                                                                                            top copper
+
+                                                         signal line                  PCB          FR4
+
+
+
+
+                                                     xx
+                                                                                        bottom copper
+
+                                                                        stripline
+
+
+
+
+                                                    xxxx
+                                                                   signal line
+                                                                                            Top Copper
+
+
+                                                                                  PCB        FR4
+
+                                                                                        bottom copper
+                                                                  Microstrip
+
+
+
+
+                                                    xx                 signal lines
+
+
+
+
+                                                    xxxx
+                                                                                            Top Copper
+
+
+                                                                              x
+                                                                                  PCB        FR4
+
+                                                                                        bottom copper
+
+                                                            differential microstrip
+
+                                                 Figure 35. PCB Transmission Lines
+
+Differential Microstrip Line
+The transmission line which is ideally suited for LVDS signals is the differential micro strip line. This is a double
+micro strip line with a narrow space in between. This means both lines have a strong coupling and this
+determines mainly the characteristic impedance. The fact that they are routed above a copper plane doesn't
+affect differential impedance, only CM-capacitance is added. Each of the structures above has its own geometric
+parameters so for each structure there is another formula to calculate the right impedance. For calculations of
+these transmission lines visit the Texas Instruments website or feel free to order the RAPIDESIGNER. For some
+formula’s given in the ‘LVDS owners manual’ see chapter 3 (see INTRODUCTION for the URL). At the end of the
+transmission line there must be a termination having the same impedance as of the transmission line itself. It
+doesn’t matter what impedance the line has, if the load has the same value no reflections will occur. When
+designing a PCB board with transmission lines on it, space becomes an important item especially on high density
+boards. With a single micro strip line, line width is fixed for given impedance and a board material. Other line
+widths will result in different impedances.
+
+Advantage of Differential Microstrip
+Impedances of transmission lines are always dictated by their geometric parameters. This is also true for
+differential micro strip lines. Using this type of transmission lines, track distance determines mainly the resulting
+impedance. So, if the PCB manufacturer can produce reliable boards with narrow track spacing the track width
+for a given impedance is also small. The wider the spacing, the wider tracks are needed for a certain impedance.
+For example two tracks of 0.2 mm width and 0.1 mm spacing have the same impedance as two tracks of 0.8 mm
+width and 0.4 mm spacing. With high-end PCB processes, it is possible to design very narrow differential
+microstrip transmission lines. It is desirable to use these phenomena to create optimal connections to the
+receiving part or the terminating resistor, in accordance with their physical dimensions. Seen from the
+comparator, the termination resistor must be connected at the far end of the line. Open connections after the
+termination resistor (e.g. to an input of a receiver) must be as short as possible. The allowed length of such
+connections varies with the received transients. The faster the transients the shorter open lines must be to
+prevent signal degradation.
+
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                                          Submit Documentation Feedback      25
+                                                        Product Folder Links: LMH7220
+LMH7220
+SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013                                                                           www.ti.com
+
+PCB LAYOUT CONSIDERATIONS AND COMPONENT VALUES SELECTION
+High frequency designs require that both active- and passive components are selected that are specially
+designed for this purpose. For reliable high speed design it is highly recommended also to use small surface
+mount passive components because these packages have low parasitic capacitance and low inductance simply
+because they have no leads to connect them to the PCB. It is possible to amplify signals at frequencies of
+several hundreds of MHz using standard through- hole resistors. Surface mount devices however are better
+suited for this purpose. Another important issue is the PCB itself, which is no longer a simple carrier for all the
+parts and a medium to interconnect them. The PCB becomes a real component itself and consequently
+contributes its own high frequency properties to the overall performance of the circuit. Practice dictates that a
+high frequency design at least has one ground plane, providing a low impedance path for all decoupling
+capacitors and other ground connections. Care should be taken especially that on-board transmission lines have
+the same impedance as the cables to which they are connected. Most single ended applications have 50Ω
+impedance (75Ω for video and cable TV applications). On PCBs, such low impedance single ended microstrip
+transmission lines usually require much wider traces (2 to 3 mm) on a standard double sided PCB board than
+needed for a ‘normal’ trace. Another important issue is that inputs and outputs shouldn’t ‘see’ each other. This
+occurs if input- and output tracks are routed in parallel over the PCB with only a small amount of physical
+separation, and particularly when the difference in signal level is high. Furthermore components should be
+placed as flat and low as possible on the surface of the PCB. For higher frequencies a long lead can act as a
+coil, a capacitor or an antenna. A pair of leads can even form a transformer. Careful design of the PCB
+minimizes oscillations, ringing and other unwanted behavior. For ultra high frequency designs only surface mount
+components will give acceptable results. (for more information see OA-15 [SNOA367]).
+TI suggests the following evaluation boards as a guide for high frequency layout and as an aid in device testing
+and characterization.
+LMH730220 / 551012993-002 Rev A
+
+
+
+
+26     Submit Documentation Feedback                                           Copyright © 2006–2013, Texas Instruments Incorporated
+
+                                               Product Folder Links: LMH7220
+                                                                                                                                                     LMH7220
+www.ti.com                                                                                                SNOSAL3E – SEPTEMBER 2006 – REVISED MAY 2013
+
+
+                                                                REVISION HISTORY
+
+Changes from Revision D (April 2013) to Revision E                                                                                                           Page
+
+•   Changed layout of National Data Sheet to TI format .......................................................................................................... 26
+
+
+
+
+Copyright © 2006–2013, Texas Instruments Incorporated                                                              Submit Documentation Feedback                 27
+                                                               Product Folder Links: LMH7220
+                                                                                                                                                                      PACKAGE OPTION ADDENDUM
+
+       www.ti.com                                                                                                                                                                                                   11-Nov-2025
+
+
+
+
+PACKAGING INFORMATION
+
+       Orderable part number          Status     Material type      Package | Pins      Package qty | Carrier        RoHS             Lead finish/              MSL rating/               Op temp (°C)          Part marking
+                                        (1)            (2)                                                             (3)            Ball material             Peak reflow                                           (6)
+                                                                                                                                            (4)                      (5)
+
+         LMH7220MK/NOPB               Active      Production          SOT-23-            1000 | LARGE T&R             Yes                  SN              Level-1-260C-UNLIM              -40 to 125               C29A
+                                                                    THIN (DDC) | 6
+        LMH7220MK/NOPB.A              Active      Production          SOT-23-            1000 | LARGE T&R             Yes                  SN              Level-1-260C-UNLIM              -40 to 125               C29A
+                                                                    THIN (DDC) | 6
+
+(1)
+      Status: For more details on status, see our product life cycle.
+
+(2)
+   Material type: When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+
+(3)
+      RoHS values: Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+
+(4)
+   Lead finish/Ball material: Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+
+(5)
+  MSL rating/Peak reflow: The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+
+(6)
+      Part marking: There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+
+
+
+
+                                                                                                          Addendum-Page 1
+                                                                                PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                                                          5-Sep-2025
+
+
+
+TAPE AND REEL INFORMATION
+
+       REEL DIMENSIONS                                                                       TAPE DIMENSIONS
+                                                                                        K0         P1
+
+
+
+                                                                                                                         B0 W
+                                          Reel
+                                        Diameter
+                                                                                     Cavity             A0
+                                                                 A0   Dimension designed to accommodate the component width
+                                                                 B0   Dimension designed to accommodate the component length
+                                                                 K0   Dimension designed to accommodate the component thickness
+                                                                 W    Overall width of the carrier tape
+                                                                 P1   Pitch between successive cavity centers
+
+
+                                         Reel Width (W1)
+                               QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+
+                                                                                                        Sprocket Holes
+
+
+                                                   Q1       Q2          Q1    Q2
+
+                                                   Q3       Q4          Q3    Q4                    User Direction of Feed
+
+
+
+                                                             Pocket Quadrants
+
+
+*All dimensions are nominal
+             Device           Package Package Pins               SPQ       Reel   Reel   A0                    B0         K0     P1     W     Pin1
+                               Type Drawing                              Diameter Width (mm)                  (mm)       (mm)   (mm)   (mm) Quadrant
+                                                                           (mm) W1 (mm)
+   LMH7220MK/NOPB             SOT-23-     DDC           6        1000        178.0           8.4        3.2    3.2       1.4    4.0    8.0     Q3
+                               THIN
+
+
+
+
+                                                                       Pack Materials-Page 1
+                                                                PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                              5-Sep-2025
+
+
+
+ TAPE AND REEL BOX DIMENSIONS
+
+
+
+
+                                                               Width (mm)
+                                                                              H
+                      W
+
+
+
+
+                                                          L
+
+
+
+
+*All dimensions are nominal
+             Device           Package Type   Package Drawing   Pins         SPQ    Length (mm)   Width (mm)   Height (mm)
+    LMH7220MK/NOPB            SOT-23-THIN         DDC           6           1000      208.0        191.0         35.0
+
+
+
+
+                                                        Pack Materials-Page 2
+                                                                                                             PACKAGE OUTLINE
+ DDC0006A                                                           SCALE 4.000
+                                                                                                             SOT-23 - 1.1 max height
+                                                                                                                 SMALL OUTLINE TRANSISTOR
+
+
+
+
+                                              3.05                                                                  1.1
+                                              2.55                                                                  0.7
+                                              1.75                                                                                0.1 C
+                                                                B                        A
+                                              1.45
+                 PIN 1
+           INDEX AREA
+
+                             1
+                                                                                   6
+
+
+                   4X 0.95
+
+                                                                                        3.05
+             1.9
+                                                                                        2.75
+
+
+
+
+                                                                                   4
+                             3                                                                    4X 0 -15
+
+
+                                                                                           0.5                               0.1
+                                                                                        6X                                       TYP
+                                                                                           0.3                               0.0
+                                                                                          0.2    C A B
+
+
+
+
+                                                                          4X 4 -15
+
+
+
+
+                                                                                             C
+      0 -8 TYP
+
+
+
+                                                 SEATING PLANE                          0.25
+           0.20
+                TYP                                                                     GAGE PLANE
+           0.12
+                                       0.6
+                                           TYP
+                                       0.3
+
+
+
+
+                                                                                                                          4214841/E 08/2024
+
+NOTES:
+
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+   per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Reference JEDEC MO-193.
+
+
+
+
+                                                                                  www.ti.com
+                                                                               EXAMPLE BOARD LAYOUT
+ DDC0006A                                                                                     SOT-23 - 1.1 max height
+                                                                                                     SMALL OUTLINE TRANSISTOR
+
+
+
+
+                                                                SYMM
+                                                  6X (1.1)
+                                             1
+
+                                  6X (0.6)                                                6
+
+
+
+                                                                                              SYMM
+
+
+                              4X (0.95)
+
+                                                                                          4
+                                             3
+
+                            (R0.05) TYP
+                                                                 (2.7)
+
+
+                                                     LAND PATTERN EXAMPLE
+                                                         EXPLOSED METAL SHOWN
+                                                               SCALE:15X
+
+
+
+
+                                                                         METAL UNDER                     SOLDER MASK
+              SOLDER MASK                        METAL                   SOLDER MASK                     OPENING
+              OPENING
+
+                                                                 EXPOSED METAL
+
+
+                                                      EXPOSED METAL
+
+                                    0.07 MAX                                                  0.07 MIN
+                                    ARROUND                                                   ARROUND
+
+                             NON SOLDER MASK                                             SOLDER MASK
+                                 DEFINED                                                   DEFINED
+
+
+                                                    SOLDERMASK DETAILS
+
+
+
+
+                                                                                                              4214841/E 08/2024
+
+NOTES: (continued)
+
+4. Publication IPC-7351 may have alternate designs.
+5. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+
+
+
+
+                                                                 www.ti.com
+                                                                               EXAMPLE STENCIL DESIGN
+ DDC0006A                                                                                       SOT-23 - 1.1 max height
+                                                                                                      SMALL OUTLINE TRANSISTOR
+
+
+
+
+                                                                SYMM
+                                                6X (1.1)
+                                            1
+
+                                 6X (0.6)                                                6
+
+
+
+                                                                                             SYMM
+
+
+                             4X(0.95)
+
+                                                                                         4
+                                            3
+
+                           (R0.05) TYP
+                                                                 (2.7)
+
+
+                                                   SOLDER PASTE EXAMPLE
+                                                   BASED ON 0.125 THICK STENCIL
+                                                           SCALE:15X
+
+
+
+
+                                                                                                                   4214841/E 08/2024
+
+NOTES: (continued)
+
+6. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.
+7. Board assembly site may have different recommendations for stencil design.
+
+
+
+
+                                                                  www.ti.com
+                                         IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS”
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+
+                                                Copyright © 2025, Texas Instruments Incorporated
+                                                                Last updated 10/2025
+

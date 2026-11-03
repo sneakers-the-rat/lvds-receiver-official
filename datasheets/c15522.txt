@@ -1,0 +1,365 @@
+                                                                               MPPC® modules
+
+                                                                                               C15522 series
+
+
+                                                 Optical measurement modules for low-level
+                                                 light detection, analog output
+
+  The C15522 series are optical measurement modules capable of detecting low level light using its built-in MPPC that features
+  wide dynamic range. These modules consist of an MPPC, a signal amplifier circuit, a high-voltage power supply circuit, and a
+  temperature compensation circuit. The photosensitive area is available in two sizes of 1.3 × 1.3 mm and 3 × 3 mm, and the
+  signal output is analog. Modules operate just by connecting them to an external power supply (±5 V).
+
+
+   Features                                                                            Applications
+
+  Built-in wide dynamic range type MPPC                                                Flow cytometry
+  High sensitivity in the short wavelength range                                       Low-level-light measurement
+  Low noise equivalent power                                                           Fluorescence measurement
+  Built-in temperature compensation circuit                                            Analytical instrument
+  Compact and lightweight
+  Analog output
+
+
+
+   Structure
+         Parameter              Symbol     C15522-1310SA      C15522-1315SA                            C15522-3010SA                    C15522-3015SA                     Unit
+Effective photosensitive area     -                    1.3 × 1.3                                                                3×3                                       mm
+Pixel pitch                       -             10                 15                                           10                                15                      µm
+Number of pixels                  -            16663              7284                                         89984                             39984                     -
+
+
+
+   Absolute maximum ratings
+       Parameter                Symbol          Condition                                                         Value                                                   Unit
+Supply voltage                    Vs                                                                               ±6                                                       V
+Operating temperature            Topr    No dew condensation*1                                                 -10 to +60                                                  °C
+Storage temperature              Tstg    No dew condensation*1                                                 -20 to +80                                                  °C
+*1: W
+     hen there is a temperature difference between a product and the surrounding area in high humidity environment, dew condensation
+    may occur on the product surface. Dew condensation on the product may cause deterioration in characteristics and reliability.
+Note: Exceeding the absolute maximum ratings even momentarily may cause a drop in product quality. Always be sure to use the
+       product within the absolute maximum ratings.
+
+
+
+   Electrical and optical characteristics (Typ. Ta=25 °C, λ=λp, Vs=±5 V, unless otherwise noted)
+                                                         C15522-1310SA C15522-1315SA C15522-3010SA C15522-3015SA
+        Parameter               Symbol     Condition                                                                                                                      Unit
+                                                         Min. Typ. Max. Min. Typ. Max. Min. Typ. Max. Min. Typ. Max.
+Spectral response range            λ                        290 to 900     290 to 900     290 to 900     290 to 900                                                        nm
+Peak sensitivity wavelength       λp                      -    500     - -    500     - -    500     - -    500     -                                                      nm
+Temperature stability of
+                                  -      Ta=25 ± 10 °C      -        -      ±5         -        -       ±5        -        -       ±5        -        -       ±5           %
+output voltage
+Photoelectric sensitivity         -      λ=λp            0.3 × 108 0.4 × 108 0.5 × 108 0.7 × 108 1.0 × 108 1.3 × 108 0.3 × 108 0.4 × 108 0.5 × 108 0.7 × 108 1.0 × 108 1.3 × 108 V/W
+Cutoff       High band                   -3 dB,             10        15         -         7        10         -        10        15         -         7        10         -     MHz
+                                  fc
+frequency Low band                       sine wave                   DC                            DC                            DC                            DC                 -
+Noise equivalent power           NEP     Dark state          -       1.2 2.4               -       0.8 1.6               -       2.7 5.4               -       1.8 3.6 fW/Hz1/2
+Minimum detection limit           -                          -       5.4 10.8 -                    2.5 5.0               -        10        20         -       5.7 11.4 pW rms
+Maximum output voltage            -                          -       4.7         -         -       4.7         -         -       4.7         -         -       4.7         -      V
+
+
+
+                                                      www.hamamatsu.com                                                                                                          1
+     Block diagram
+                            MPPC modules                            C15522 series
+
+
+           Electrical characteristics
+                Parameter          Symbol              Condition                Min.                       Typ.                   Max.             Unit
+                                    +Vs                                        +4.75                        +5                    +5.25
+        Supply voltage*2                                                                                                                            V
+                                     -Vs                                       -4.75                        -5                    -5.25
+                                              +Vs                                -                         +50                    +250
+        Current consumption             Ic                                                                                                         mA
+                                              -Vs                                -                         -20                     -40
+        *2: A power supply with 300 mA or higher output must be used.
+
+
+
+           Block diagram
+
+
+                                                Amplifier          Analog output
+
+
+
+
+                     MPPC
+                                              Power supply
+                                                for MPPC
+              Temperature sensor
+                                               C11204-01
+                                                                   ±5 V
+
+
+                                                                               KACCC0675EA
+
+Connection example
+
+
+           Connection example
+        Using the supplied power cable, connect the MPPC module to a power supply. You can monitor the output waveform by connecting the
+        MPPC module to an osilloscope.
+
+
+                                                                                    Power supply (±5 V)
+
+
+
+
+           Light source
+
+
+                                             Photons                                  Power cable
+                                                                                      (accessory)
+                                                                                    KACCC0675EA
+
+                                                                                                                   Oscilloscope
+
+
+
+                                                             MPPC module
+
+                              Subject
+
+                                                                                             Analog signal cable
+                                                                                                                                     KACCC1002EA
+
+
+
+
+                                                                                                                                  KACCC1002EA
+
+
+
+
+                                                                                                                                                          2
+                                           MPPC modules                                  C15522 series
+e
+
+
+
+
+                              Measurement example                                                                                    Photoelectric conversion sensitivity vs. wavelength
+                                                  Analog output                                                                                                                          (Typ. Ta=25 °C)
+                                                                                                                      1.2 × 108
+                                                        (Incident light level=2 nW, λ=λp)                                                                                 C15522-1315SA/-3015SA
+
+                                                                                                                                     1 × 108
+
+
+
+
+                                                                                                   Photoelectric sensitivity (V/W)
+                                                                                                                                     8 × 107
+
+
+                                                                                                                                     6 × 107
+
+
+                          GND                                                                                                        4 × 107
+          100 mV
+
+
+
+
+                                                                                                      2 × 107
+requency response                                                                  Linearity pulse light
+                                                                                                                                                      C15522-1310SA/-3010SA
+                                                                                                                                          0
+                                                                                                                                          300        400      500        600      700        800       900
+                                  1 µs
+                                                                                                                                                              Wavelength (nm)
+                                                                                                                                                                                                    KACCB0580EA
+
+
+
+
+                              Frequency response (typical example)                                                                   Linearity
+                                                                            (Ta=25 °C)                                                                                          (Typ. Ta=25 °C, λ=λp)
+                                   5                                                                                                     10
+                                                                                                                                                Pulse conditions
+                                                                                                                                                Repetition rate: 5 kHz
+                                                                                                                                                Pulse width: 2 µs
+                                   0                                                                                                      1     Duty ratio: 1%
+           Relative output (dB)
+
+
+
+
+                                                                                                   Output voltage (V)
+
+
+
+
+                                   -5                                                                                                    0.1
+                                                                                                                                                                                                                  KACCB0580E
+
+
+                                  -10                                                                                                  0.01
+
+
+
+                                  -15                                                                                                 0.001
+                                                                                                                                                                                    Ideal value
+                                                                                                                                                                                    C15522-1315SA
+                                                                                                                                                                                    C15522-3015SA
+                                  -20                                                                                                0.0001
+                                    0.01    0.1           1            10            100                                                  10-12     10-11    10-10       10-9     10-8       10-7      10-6
+
+
+                                                   Frequency (MHz)                                                                                          Incident light level (W)
+                                                                                  KACCB0652EA                                                                                                       KACCB0581EA
+
+
+
+
+                                                                                                KACCB0652EA                                                                                                       KACCB0581E
+
+
+
+                                                                                                                                                                                                              3
+                   MPPC modules                                  C15522 series
+Dimensional outline (unit: mm)
+
+
+   Dimensional outlines (unit: mm)
+                                                           C15522-1310SA/-1315SA
+
+                          22                                        (0.85)
+                                                                                    Photosensitive                              Photosensitive
+       C1.5               16             (4 ×) ɸ2.2                 (0.55)          surface                       (11)          area
+
+
+
+
+                                                                                                      (3.2)
+  36
+       30
+
+
+
+
+                                               16.3
+                                          15
+
+
+
+
+Power connector
+                    2.2                                           9.3 ± 1     1.6
+53047-0310                             Analog output connector                                                Tolerance unless otherwise noted: ±0.3
+(Molex)                        3.2     (MMCX connector)                                                       Weight: 8 g
+Dimensional outline (unit: mm)
+                                                                                                                                            KACCA0442EA
+
+
+
+
+                                                           C15522-3010SA/-3015SA
+
+                          22                                           1.5                                                        KACCA0442EA
+                                                                                     Photosensitive                             Photosensitive
+       C1.5               16             (4 ×) ɸ2.2                   (1.2)          surface                      (11)          area
+                                                                                                      (4)
+  36
+       30
+
+
+
+
+                                               16.3
+                                          15
+
+
+
+
+Power connector
+                    2.2                                           9.3 ± 1     1.6
+53047-0310                             Analog output connector                                                Tolerance unless otherwise noted: ±0.3
+(Molex)                          3.2   (MMCX connector)                                                       Weight: 8 g
+                                                                                                                                            KACCA0443EA
+
+
+
+
+   Accessories
+∙ Power cable
+                                                                                                                                   KACCA0443EA
+∙ Instruction manual
+
+
+
+
+                                                                                                                                                 4
+                            MPPC modules                                                           C15522 series
+
+
+   Options (sold separately)
+                                                                                         MMCX-BNC cable A12763
+  Dimensional outline (unit: mm)
+                                                          +50
+                                                  1500      0
+
+
+
+
+                                                  1.5C-QEW             MMCX-P-178B/U (40)
+                   BNC-J-178/U
+                                                                                                         KACCA0358EA
+
+
+
+
+    Related products
+                                                                                   MPPC modules C15524 series
+The C15524 series are optical measurement modules with a wide dynamic range type
+MPPC that can detect low-level light. These modules consist of an MPPC, an amplifier, a
+high-voltage power supply circuit, and a temperature compensation circuit. The signal
+output is analog. The MPPC of the C15524 series has a flexible cable, but that of the
+C15522 series is mounted on the circuit board.
+
+
+
+
+                                                                                                  KACCA0358EA
+
+    Related information
+www.hamamatsu.com/sp/ssd/doc_en.html
+
+
+  Precautions
+∙ Disclaimer
+
+
+
+
+MPPC is a registered trademark of Hamamatsu Photonics K.K.
+Information described in this material is current as of May 2022.
+Product specifications are subject to change without prior notice due to improvements or other reasons. This document has been carefully prepared and the
+information contained is believed to be accurate. In rare cases, however, there may be inaccuracies such as text errors. Before using these products, always
+contact us for the delivery specification sheet to check the latest specifications.
+The product warranty is valid for one year after delivery and is limited to product repair or replacement for defects discovered and reported to us within that
+one year period. However, even if within the warranty period we accept absolutely no liability for any loss caused by natural disasters or improper product use.
+Copying or reprinting the contents described in this material in whole or in part is prohibited without our prior permission.
+
+
+
+                                                                                                                                                                               www.hamamatsu.com
+     HAMAMATSU PHOTONICS K.K., Solid State Division
+     1126-1 Ichino-cho, Higashi-ku, Hamamatsu City, 435-8558 Japan, Telephone: (81)53-434-3311, Fax: (81)53-434-5184
+     U.S.A.: HAMAMATSU CORPORATION: 360 Foothill Road, Bridgewater, NJ 08807, U.S.A., Telephone: (1)908-231-0960, Fax: (1)908-231-1218 E-mail: usa@hamamatsu.com
+     Germany: HAMAMATSU PHOTONICS DEUTSCHLAND GMBH.: Arzbergerstr. 10, 82211 Herrsching am Ammersee, Germany, Telephone: (49)8152-375-0, Fax: (49)8152-265-8 E-mail: info@hamamatsu.de
+     France: HAMAMATSU PHOTONICS FRANCE S.A.R.L.: 19, Rue du Saule Trapu, Parc du Moulin de Massy, 91882 Massy Cedex, France, Telephone: (33)1 69 53 71 00, Fax: (33)1 69 53 71 10 E-mail: infos@hamamatsu.fr
+     United Kingdom: HAMAMATSU PHOTONICS UK LIMITED: 2 Howard Court,10 Tewin Road, Welwyn Garden City, Hertfordshire AL7 1BW, UK, Telephone: (44)1707-294888, Fax: (44)1707-325777 E-mail: info@hamamatsu.co.uk
+     North Europe: HAMAMATSU PHOTONICS NORDEN AB: Torshamnsgatan 35 16440 Kista, Sweden, Telephone: (46)8-509 031 00, Fax: (46)8-509 031 01 E-mail: info@hamamatsu.se
+     Italy: HAMAMATSU PHOTONICS ITALIA S.R.L.: Strada della Moia, 1 int. 6, 20044 Arese (Milano), Italy, Telephone: (39)02-93 58 17 33, Fax: (39)02-93 58 17 41 E-mail: info@hamamatsu.it
+     China: HAMAMATSU PHOTONICS (CHINA) CO., LTD.: 1201 Tower B, Jiaming Center, 27 Dongsanhuan Beilu, Chaoyang District, 100020 Beijing, P.R. China, Telephone: (86)10-6586-6006, Fax: (86)10-6586-2866 E-mail: hpc@hamamatsu.com.cn
+     Taiwan: HAMAMATSU PHOTONICS TAIWAN CO., LTD.: 8F-3, No.158, Section 2, Gongdao 5th Road, East District, Hsinchu, 300, Taiwan R.O.C. Telephone: (886)3-659-0080, Fax: (886)3-659-0081 E-mail: info@hamamatsu.com.tw
+                                                                                                                                                                                                                                        5
+                                                                                                                                                                        Cat. No. KACC1288E02 May 2022 DN
+

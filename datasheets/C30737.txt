@@ -1,0 +1,572 @@
+                                                                                            DATASHEET
+                                                                                            Photon Detection
+
+
+C30737PH, CH, LH, MH and EH Series
+Silicon Avalanche Photodiodes (APDs) for LIDAR, range finding
+and laser meters – plastic, leadless ceramic and FR4 packages
+                                                                                            Key Features
+
+                                                                                               High gain at low bias voltage
+                                                                                               Low breakdown voltage
+                                                                                               Fast response, tr ~ 200 ps for
+                                                                                                high-speed applications
+                                                                                               Low noise ~ 0.1pA/√ Hz
+                                                                                               Optimized versions for high
+                                                                                                responsivity and high bandwidth
+                                                                                               Two standard diameters: 230µm
+                                                                                                and 500µm
+                                                                                               Built-in band-pass filter windows
+                                                                                               NEW ultra-compact and low-
+                                                                                                cost “MH” SMT package
+                                                                                               “Tape-and-Reel” packaging
+                                                                                                format for automated SMD
+                                                                                                pick-and-place
+
+ Excelitas’ C30737 Series APDs are ideally suited to automotive LIDAR, laser meter, laser   Applications
+ range finding and area scanning applications, providing high responsivity in the 500 –
+                                                                                               Automotive LIDAR
+ 1000 nm range.
+                                                                                               905nm range-finding devices
+                                                                                               635nm and 650nm laser meters
+ The Excelitas C30737 series silicon avalanche photodiodes (APDs) provide
+                                                                                               Speed measurement
+ high responsivity between 500nm and 1000nm, as well as extremely fast
+                                                                                               Area scanners for safety,
+ rise times at all wavelengths with a cut-off frequency >1 GHz for some                         surveillance, automatic door
+ versions.                                                                                      opening
+                                                                                               Optical communication
+ Standard versions of these APDs are available in two active area sizes:
+                                                                                               3D laser scanning
+ 230µm and 500µm diameter. They are offered in a metal TO-18 and
+                                                                                               Gesture recognition
+ plastic T1-¾ through-hole packages (C30737EH and PH), in leadless
+ ceramic-carrier (LCC) surface-mount “side-looking” and “top-looking”
+ packages (C30737CH and LH), and in a surface-mount “top-looking”
+ leadless FR4 package (C30737MH). The EH and LH packages comes with
+ clear glass or built-in 635nm, 650nm, or 905nm filter window versions.
+ The MH package is only 1.75 x 2.0mm. These package varieties are ideally
+ suited for high volume, cost-effective applications where a high gain APD is
+ required.
+ The leadless, ceramic-carrier (LCC) SMD package parts (C30737CH, LH and
+ MH series) are available in tape-and-reel pack for SMT-compatible, RoHS-
+ compliant reflow soldering.
+ Customizations of these APDs are offered to meet your design challenges.
+ Options for these APDs include breakdown voltage selection (binning).
+www.excelitas.com                                                       Page 1 of 14              C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+Table 1. Electrical Characteristics at TA = 22 °C; at operating voltage-Vop – unfiltered devices
+                                             C30737PH-230-80               C30737PH-500-80
+                                             C30737CH-230-80               C30737CH-500-80
+                 Parameter                   C30737LH-230-80                C30737LH-500-80
+                                            C30737MH-230-80                C30737MH-500-80
+                                             C30737EH-230-80               C30737EH-500-80
+                                         Min     Typical     Max          Min   Typical Max          Unit
+  Active Area Diameter                            230                            500                 μm
+  Peak Sensitivity Wavelength                     800                            800                 nm
+  Breakdown Voltage, VBR                 120                       210    120             210         V
+  Temperature Coefficient
+                                          -        0.5              -      -     0.5        -        V/°C
+  of VR, for Constant M
+  Gain (M) @ 800nm                        -       100               -      -     100       -
+  Responsivity @ 800 nm                   -        50               -      -      50       -        A/W
+  Total Dark Current, Id                  -       0.05             0.5     -     0.1       1         nA
+  Noise Current, In, f=10kHz, Δf=1.0Hz    -       0.1               -      -     0.1       -       pA/√Hz
+  Capacitance, Cd                         -         1               -      -       2       -         pF
+  Rise + Fall Time,
+                                          -        0.2              -      -     0.3        -         ns
+  RL=50 Ω, 10%-90%-10% points
+  Cut-off frequency (-3 dB)               -        1.5               -     -     1.3       -         GHz
+  Storage Temperature                    -50                       +100   -50            +100         °C
+  Operating Temperature                  -40                        +85   -40             +85         °C
+
+                                             C30737PH-230-90               C30737PH-500-90
+                                             C30737CH-230-90               C30737CH-500-90
+                 Parameter                   C30737LH-230-90                C30737LH-500-90
+                                            C30737MH-230-90                C30737MH-500-90
+                                             C30737EH-230-90               C30737EH-500-90
+                                         Min     Typical     Max          Min   Typical Max          Unit
+  Active Area Diameter                            230                            500                 μm
+  Peak Sensitivity Wavelength                     900                            900                 nm
+  Breakdown Voltage, VBR                 180                       260    180             260         V
+  Temperature Coefficient
+                                                   1.3                           1.3                 V/°C
+  of VR, for Constant M
+  Gain (M) @ 900 nm                       -       100               -            100
+  Responsivity @ 900 nm                  55        60               -     55      60                A/W
+  Total Dark Current, Id                  -       0.05             0.5           0.1       1         nA
+  Noise Current, in, f=10kHz, Δf=1.0Hz    -       0.1               -      -     0.1       -       pA/√Hz
+  Capacitance, Cd                         -       0.6               -      -       1       -         pF
+  Rise & Fall Time,
+                                          -        0.9              -            0.9        -         ns
+  RL=50 Ω, 10%-90%-10% points
+  Cut-off frequency (-3 dB)               -       380                -     -     380       -         MHz
+  Storage Temperature                    -50                       +100   -50            +100         °C
+  Operating Temperature                  -40                        +85   -40             +85         °C
+
+
+www.excelitas.com                                   Page 2 of 14                       C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+Table 2. Electrical Characteristics at TA = 22 °C; at operating voltage-Vop – devices with optical bandpass
+filters
+
+
+                 Parameter                     C30737LH-230-81                    C30737LH-500-81
+                                               (635nm filter #1)                  (635nm filter #1)
+                                         Min        Typical           Max    Min       Typical     Max         Unit
+  Active Area Diameter                               230                                500                    μm
+  Peak Sensitivity Wavelength                        635                                635                    nm
+  Breakdown Voltage, VBR                 120                          210    120                    210         V
+  Temperature Coefficient
+                                          -           0.5              -      -          0.5          -        V/°C
+  of VR, for Constant M
+  Gain (M) @ 635 nm                       -          100               -      -         100          -
+  Responsivity @ 635 nm                   -           35               -      -          35          -        A/W
+  Total Dark Current, Id                  -          0.05             0.5     -         0.1          1         nA
+  Noise Current, in, f=10kHz, Δf=1.0Hz    -          0.1               -      -         0.1          -       pA/√Hz
+  Capacitance, Cd                         -            1               -      -           2          -         pF
+  Rise & Fall Time,
+                                          -           0.2              -      -          0.3          -         ns
+  RL=50 Ω, 10%-90%-10% points
+  Cut-off frequency (-3 dB)               -           1.5               -     -          1.3         -         GHz
+  Storage Temperature                    -50                          +100   -50                   +100         °C
+  Operating Temperature                  -40                           +85   -40                    +85         °C
+
+                                             C30737LH-230-92                   C30737LH-500-92
+                 Parameter                   C30737EH-230-92                  C30737EH-500-92
+                                             (905nm filter #2)                 (905nm filter #2)
+                                         Min     Typical       Max           Min   Typical Max                 Unit
+  Active Area Diameter                               230                                500                    μm
+  Peak Sensitivity Wavelength                        905                                905                    nm
+  Breakdown Voltage, VBR                 180                          260    180                    260         V
+  Temperature Coefficient
+                                                      1.3                                1.3                   V/°C
+  of VR, for Constant M
+  Gain (M) @ 900nm                        -          100               -                100
+  Responsivity @ 900 nm                  55           60               -     55          60                   A/W
+  Total Dark Current, Id                  -          0.05             0.5               0.1          1         nA
+  Noise Current, in, f=10kHz, Δf=1.0Hz    -          0.1               -      -         0.1          -       pA/√Hz
+  Capacitance, Cd                         -          0.6               -      -           1          -         pF
+  Rise & Fall Time,
+                                          -           0.9              -      -          0.9          -         ns
+  RL=50 Ω, 10%-90%-10% points
+  Cut-off frequency (-3 dB)               -          380                -     -         380          -         MHz
+  Storage Temperature                    -50                          +100   -50                   +100         °C
+  Operating Temperature                  -40                           +85   -40                    +85         °C
+
+
+
+
+www.excelitas.com                                      Page 3 of 14                              C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+
+                    Parameter                                             C30737LH-230-83                               C30737LH-500-83
+                                                                          (650nm filter #3)                             (650nm filter #3)
+
+                                                              Min               Typical           Max             Min         Typical      Max         Unit
+  Active Area Diameter                                                           230                                              500                  μm
+  Peak Sensitivity Wavelength                                                    650                                              650                  nm
+  Breakdown Voltage, VBR                                       120                                210             120                       210         V
+  Temperature Coefficient
+                                                                   -              0.5                  -            -             0.5         -        V/°C
+  of VR, for Constant M
+  Gain (M) @ 650 nm                                                -             100                -               -             100        -
+  Responsivity @ 650 nm                                            -              35                -               -              35        -        A/W
+  Total Dark Current, Id                                           -             0.05              0.5              -             0.1        1         nA
+  Noise Current, in, f=10kHz, Δf=1.0Hz                             -             0.1                -               -             0.1        -       pA/√Hz
+  Capacitance, Cd                                                  -               1                -               -               2        -         pF
+  Rise & Fall Time,
+                                                                   -              0.2                  -            -             0.3         -         ns
+  RL=50 Ω, 10%-90%-10% points
+  Cut-off frequency (-3 dB)                                     -                 1.5               -               -             1.3        -         GHz
+  Storage Temperature                                          -50                                +100             -50                     +100         °C
+  Operating Temperature                                        -40                                 +85             -40                      +85         °C
+
+
+ Table 3. Filter Transmission Characteristics
+
+                    Filter #                                   1                          2                          3
+                                                                       note 1                 note 2                     note 3
+  Nominal center wavelength                            635nm                       905nm                      650nm                  Transmission ≥ 85%
+
+  Transmission window                                  623…652nm                                             638…669nm               Transmission ≥ 85%
+
+  50% cut-on wavelength                                606…617nm                  870…890nm                  622…634nm
+
+  50% cut-off wavelength                               657…669nm                  929…949nm                  673...685nm
+
+  Average transmission from                                <1% @                      <1% @                      <1% @
+  300 nm to bandpass region                               <593nm                     <850nm                     <608nm
+
+  Average transmission from                                <1% @                      <1% @                      <1% @
+  bandpass region to 1100 nm                              >682nm                     >979nm                     >699nm
+
+  Wavelength drift                                     <+0.5nm/°C                  <+0.5nm/°C                <+0.5nm/°C                 for range -10°C…+50°C
+
+  Typical filter thickness                                 0.3mm                        0.3mm                    0.3mm               Material: Borosilicate glass
+
+ Notes:
+   1.     The 635nm filter is designed to work optimally with the 635nm red laser commonly used in laser meters or laser pointers.
+   2.     The 905nm filter is designed to work optimally with the Excelitas 905nm Pulse Laser Diodes PGEW and PGA series.
+   3.     The 650nm filter is designed to work optimally with the 650nm red laser commonly used in laser meters or laser pointers.
+
+
+
+
+www.excelitas.com                                                                  Page 4 of 14                                          C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+                                           Typical Responsivity vs. wavelength.
+800nm PSW = APD with 800nm peak sensitivity wavelength; 900nm PSW = APD with 900nm peak sensitivity
+wavelength
+                                                                         Spectral Response
+                                           70
+                                                        800nm PSW          900nm PSW
+                                           60
+                      Responsivity (A/W)
+
+
+
+
+                                           50
+
+                                           40
+
+                                           30
+
+                                           20
+
+                                           10
+
+                                               0
+
+
+
+                                                                           Wavelength (nm)
+
+
+Figure 2 Typical capacitance vs. bias voltage
+                                                                    Capacitance vs. Bias Voltage
+                          100
+                                                                                                           230um Active, 800nm PSW
+
+                                                                                                           500um Active, 800nm PSW
+
+                                                                                                           230um Active, 900nm PSW
+                                  10
+                                                                                                           500um Active, 900nm PSW
+   Capacitance (pF)
+
+
+
+
+                                           1
+
+
+
+
+                              0.1
+                                               0        20          40            60                  80    100           120           140
+
+                                                                               Bias voltage (V)
+
+
+
+www.excelitas.com                                                                      Page 5 of 14                        C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+Figure 3 Typical response vs. wavelength for a 635nm filtered APD
+
+                                     Spectral Response for 635nm Filtered Devices
+                          40
+
+                          35
+
+                          30
+   Responsivity (A/W)
+
+
+
+
+                          25
+
+                          20
+
+                          15
+
+                          10
+
+                           5
+
+                           0
+                               400    500        600       700        800          900    1000    1100        1200
+
+                                                           Wavelength (nm)
+
+
+
+Figure 4 - Typical response vs. wavelength for a 905nm filtered APD
+
+                                     Spectral Response for 905nm Filtered Devices
+                          70
+
+                          60
+     Responsivity (A/W)
+
+
+
+
+                          50
+
+                          40
+
+                          30
+
+                          20
+
+                          10
+
+                           0
+                               400    500       600       700        800          900    1000    1100       1200
+
+                                                           Wavelength (nm)
+
+
+
+
+www.excelitas.com                                                  Page 6 of 14                    C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+Figure 5 – Typical gain vs. bias voltage for 800nm peak sensitivity wavelength types
+                                           Gain Curve
+          1000
+
+
+
+
+                                                                 800nm PSW
+           100
+  Gain
+
+
+
+
+            10
+
+
+
+
+             1
+                 50         70              90                    110              130                 150
+
+                                            Bias voltage (V)
+
+
+
+Figure 6 Typical gain vs. bias voltage for 900nm peak sensitivity wavelength types
+
+                                            Gain curve
+          1000
+
+
+
+
+                                                 900nm PSW
+           100
+   Gain
+
+
+
+
+            10
+
+
+
+
+             1
+                 60              120                180                      240                      300
+
+                                        Bias voltage (V)
+
+
+
+
+www.excelitas.com                                 Page 7 of 14                           C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+Figure 7 Plastic T 1 ¾ through-hole PH package. Dimensions in mm [inches].
+
+
+
+
+Figure 8 Leadless ceramic carrier (LCC) side-looking CH package. Dimensions in mm [inches]
+
+
+
+
+www.excelitas.com                              Page 8 of 14                    C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+Figure 9 – Flat window hermetic TO-18 package dimension in mm (inches)
+
+
+
+
+Figure 10 Leadless ceramic carrier (LCC) top-looking LH package. Dimensions in mm [inches]
+
+
+
+
+www.excelitas.com                              Page 9 of 14                   C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+Figure 11   Leadless FR4 top-looking MH package. Dimensions in mm
+
+
+
+
+www.excelitas.com                             Page 10 of 14         C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+Table 4 Ordering Guide
+                                                                                                                  (1)     (2)(3)
+                                                                       C30737      AA -       BBB -       C      D       E
+  Epitaxial structure Si APD                                           C30737
+  Plastic TO-18 can (P-package)                                                    PH -
+  Flat window hermetic TO-18 package                                                EH
+  Leadless ceramic carrier side-looking package                                    CH -
+                                     2
+  Leadless ceramic carrier (3 x 3 mm LCC) top-looking package                      LH -
+  Ultra-compact (1.75 x 2 mm) FR4 top-looking package                              MH-
+  Active area diameter = 230 μm                                                               230 -
+  Active area diameter = 500 μm                                                               500 -
+  Optimum chip response λ @ 800 nm                                                                        8
+  Optimum chip response λ @ 900 nm                                                                        9
+  No filter                                                                                                       0
+  With 635 nm filter                                                                                              1
+  With 905 nm filter                                                                                              2
+  With 650 nm filter                                                                                              3
+  Vbd = 120 - 160 V                                                                                                          A
+  Vbd = 160 - 200 V                                                                                                          B
+  Vbd = 180 - 220 V                                                                                                          C
+  Vbd = 220 - 260 V                                                                                                          D
+  Vbd = whole Vbd range (no Vbd binning)                                                                                     N
+     (1) Filter option is only available for the LCC (LH) package option.
+     (2) Vbd binning /screening is available in these options:
+          A and B are available for APD with optimum response λ @ 800nm
+          C and D are available for APD with optimum response λ @ 900nm
+          N is available for all types
+     (3) Bandwidth tends to be lower for lower voltage bins. Contact factory for further information.
+     (4) For binning please allow 2 V overlap between bins for the 800nm versions and 5 V for the 900nm versions.
+Example: C30737LH-230-92C: A C30737 in the 3 x 3mm ceramic carrier package, with optimum 900nm response wavelength, with 905nm filter
+and selected for Vbd of 180V - 220V.
+
+
+
+
+www.excelitas.com                                            Page 11 of 14                            C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+Tape-and-Reel Shipping Pack Option
+
+
+All the C30737LH (leadless ceramic carrier SMD package) series are offered in the tape-and-reel shipping pack option
+for quantities of 3000 units per reel; as shown in Figure 11 and 12. This packing option should be indicated at the
+time of order placement.
+
+
+Figure 12 Tape-and-reel packing specification
+
+
+
+
+www.excelitas.com                                    Page 12 of 14                       C30737PH-CH-LH-MH-EH-Rev.2017-10
+ C30737PH, CH, LH, MH and EH Series
+ Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+ packages
+
+Figure 13 Tape-and-reel device carrier specification
+
+
+
+
+Figure 14 – Solder Reflow Diagram
+
+
+
+
+www.excelitas.com                               Page 13 of 14   C30737PH-CH-LH-MH-EH-Rev.2017-10
+  C30737PH, CH, LH, MH and EH Series
+  Epitaxial Silicon Avalanche Photodiodes – Through-hole and Leadless SMT
+  packages
+
+
+RoHS Compliance
+
+This series of APDs is designed and built to be fully compliant with the European Union Directive 2011/65/EU – Restriction of the
+use of certain Hazardous Substances (RoHS) in Electrical and Electronic equipment.
+
+
+
+
+Warranty
+
+A standard 12-month warranty following shipment applies.
+
+
+About Excelitas Technologies
+Excelitas Technologies is a global technology leader focused on delivering innovative, customized solutions to meet the lighting,
+detection and other high-performance technology needs of OEM customers.
+Excelitas has a long and rich history of serving our OEM customer base with optoelectronic sensors and modules for more than 45
+years beginning with PerkinElmer, EG&G, and RCA. The constant throughout has been our innovation and commitment to
+delivering the highest quality solutions to our customers worldwide.
+From aerospace and defense to analytical instrumentation, clinical diagnostics, medical, industrial, and safety and security
+applications, Excelitas Technologies is committed to enabling our customers' success in their specialty end-markets. Excelitas
+Technologies has approximately 3,000 employees in North America, Europe and Asia, serving customers across the world.
+
+
+
+
+  Excelitas Technologies                       Excelitas Technologies                          Excelitas Technologies Singapore, Pte. Ltd.
+  22001 Dumberry Road                          GmbH & Co. KG                                   8 Tractor Road
+  Vaudreuil-Dorion, Quebec                     Wenzel-Jaksch-Str. 31                           Singapore 627969
+  Canada J7V 8P7                               D-65199 Wiesbaden                               Telephone: (+65) 6775 2022 (Main number)
+  Telephone: (+1) 450.424.3300                 Germany                                         Telephone: (+65) 6770 4366 (Customer Service)
+  Toll-free: (+1) 800.775.6786                 Telephone: (+49) 611 492 430                    Fax: (+65) 6778-1752
+  Fax: (+1) 450.424.3345                       Fax: (+49) 611 492 165                          detection.asia@excelitas.com
+  detection@excelitas.com                      detection.europe@excelitas.com
+
+For a complete listing of our global offices, visit www.excelitas.com/ContactUs
+© 2014 Excelitas Technologies Corp. All rights reserved. The Excelitas logo and design are registered trademarks of Excelitas Technologies Corp. All other trademarks not owned by Excelitas Technologies or its subsidiaries that are
+depicted herein are the property of their respective owners. Excelitas reserves the right to change this document at any time without notice and disclaims liability for editorial, pictorial or typographical errors.
+
+
+
+
+www.excelitas.com                                                                                             Page 14 of 14                                                            C30737PH-CH-LH-MH-EH-Rev.2017-10
+
