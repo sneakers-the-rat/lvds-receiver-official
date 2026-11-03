@@ -231,6 +231,13 @@ def status_panel():
             f"site is built by CI); anything missing is shown as "
             f"<em>not run</em>, never as passed.</p>")
 
+# Copper-layer palette for the routing-history composite + legend;
+# must match LAYER_PALETTE in scripts/snapshot_route.py.
+LAYER_ORDER = ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"]
+LAYER_PALETTE = {"F.Cu": "#FF3B30", "In1.Cu": "#FF9500",
+                 "In2.Cu": "#34C759", "B.Cu": "#0A84FF"}
+
+
 def routing_history():
     """Render the routing-evolution gallery from history/index.json.
 
@@ -262,7 +269,11 @@ def routing_history():
     out = ["<p>Every routing attempt, in order — including the ones "
            "that failed. Snapshots live in <code>history/</code> in the "
            "repository, one directory per attempt, made by "
-           "<code>scripts/snapshot_route.py</code>.</p>"]
+           "<code>scripts/snapshot_route.py</code>. The renders are "
+           "route-only: tracks, vias and pads, with zone fills (the "
+           "opaque GND pours) removed — each snapshot is exported "
+           "from a temp copy of the board with its zones deleted, so "
+           "every layer's routes stay visible.</p>"]
     for e in entries:
         st = e.get("stats") or {}
         nets = nr(st.get("nets_routed"))
@@ -280,9 +291,44 @@ def routing_history():
             f"<td>{nr(st.get('audit_verdict'))}</td></tr>",
         ])
         renders = e.get("renders")
+        layer_html = ""
         if renders and e.get("dir"):
             dst_dir = os.path.join(hist_assets, e["dir"])
             os.makedirs(dst_dir, exist_ok=True)
+            # per-layer renders: composite stack + individual panels
+            layers = e.get("layers") or {}
+            copied = {}
+            for layer in LAYER_ORDER:
+                fn = layers.get(layer)
+                src = os.path.join(ROOT, "history", e["dir"], fn) \
+                    if fn else None
+                if src and os.path.exists(src):
+                    shutil.copy2(src, os.path.join(dst_dir, fn))
+                    copied[layer] = fn
+            if copied:
+                stack = ""
+                for i, layer in enumerate(
+                        [l for l in LAYER_ORDER if l in copied]):
+                    cls = "" if i == 0 else ' class="stack"'
+                    stack += (f'<img{cls} src="assets/history/'
+                              f'{e["dir"]}/{copied[layer]}" '
+                              f'alt="{layer} layer">')
+                legend = " ".join(
+                    f'<span class="sw" style="background:'
+                    f'{LAYER_PALETTE[layer]}"></span> {layer}'
+                    for layer in LAYER_ORDER if layer in copied)
+                panels = "".join(
+                    f'<figure><img src="assets/history/{e["dir"]}/'
+                    f'{copied[layer]}" alt="{layer} layer">'
+                    f"<figcaption>{layer} — "
+                    f"{LAYER_PALETTE[layer]}</figcaption></figure>"
+                    for layer in LAYER_ORDER if layer in copied)
+                layer_html = (
+                    "<h4>Routes — all copper layers, stacked</h4>"
+                    f'<div class="composite">{stack}</div>'
+                    f'<p class="legend">{legend}</p>'
+                    "<h4>Routes — each copper layer</h4>"
+                    f'<div class="layergrid">{panels}</div>')
             imgs = ""
             for side in ("top", "bottom"):
                 fn = renders.get(side)
@@ -307,7 +353,8 @@ def routing_history():
             f"</h3><p>{html.escape(e.get('timestamp', ''))} UTC · "
             f"commit <code>{html.escape(e.get('short_hash', ''))}"
             f"</code> (<code>{html.escape(e.get('hash', ''))}</code>)"
-            f"</p><table><tbody>{rows}</tbody></table>{imgs}{note}"
+            f"</p><table><tbody>{rows}</tbody></table>"
+            f"{layer_html}{imgs}{note}"
             "</div>")
     return "\n".join(out)
 
@@ -485,6 +532,18 @@ blockquote {{ border-left: 3px solid #99b; margin-left: 0;
 .badge.pass {{ background: #d9ead3; color: #274e13; }}
 .badge.fail {{ background: #f4cccc; color: #7a1f1f; }}
 .badge.notrun {{ background: #e0e0e0; color: #555; }}
+.composite {{ position: relative; background: #111; line-height: 0; }}
+.composite img {{ display: block; width: 100%; border: none; }}
+.composite img.stack {{ position: absolute; inset: 0; height: 100%;
+  mix-blend-mode: screen; opacity: .55; }}
+.legend .sw {{ display: inline-block; width: .8em; height: .8em;
+  margin-left: .8em; }}
+.legend .sw:first-child {{ margin-left: 0; }}
+.layergrid {{ display: flex; flex-wrap: wrap; gap: .6rem; }}
+.layergrid figure {{ flex: 1 1 9rem; margin: 0; }}
+.layergrid img {{ background: #111; border: none; width: 100%;
+  display: block; }}
+.layergrid figcaption {{ font-size: .85rem; padding-top: .25rem; }}
 </style></head><body>
 <header><h1>PDLVDS-RX — photodiode LVDS receiver</h1>
 <p>Clean-room receiver for the Miniscope Zero optical uplink:
