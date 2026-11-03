@@ -1,0 +1,31 @@
+* OPA657 macromodel — BUILT FROM DATASHEET NUMBERS (no vendor SPICE model
+* is published by TI in a form usable by ngspice; TI's own model is an
+* encrypted/full transistor-behavioural TINA model). This is a documented
+* single-pole macromodel, sufficient for TIA bandwidth/stability/noise
+* verification at the accuracy this stage claims (+-3 dB class):
+*   GBP = 1.6 GHz, A0 = 70 dB (3162) assumed -> dominant pole
+*   fp = GBP/A0 = 506 kHz. Second pole placed at 800 MHz to emulate the
+*   datasheet's phase behaviour in a TIA (decompensated part, min stable
+*   noise gain ~ 7 at high frequency per datasheet — our TIA noise gain
+*   peaks at ~6; the model is used with that caveat stated).
+*   en = 4.8 nV/rtHz modelled as Ren = en^2/(4kT) = 1.39 kohm in series
+*   with the IN+ lead (IN+ is a stiff DC bias in the TIA, so this injects
+*   the correct input-referred voltage noise through the noise gain in
+*   .noise analysis and does not touch the signal path).
+*   in = 1.3 fA/rtHz: negligible (checked in link budget), not modelled.
+*   Input capacitance 0.8 pF diff+common lumped at IN- (datasheet-class
+*   value, also carried in the link-budget Cin accounting).
+*   Output resistance 25 ohm. Slew rate 700 V/us not modelled (signals
+*   here are <= 0.1 V; pole-limited, not slew-limited — stated limit).
+.subckt OPA657 INP INN VCC VEE OUT
+Ren  INP INP_I 1390
+Cin  INN 0 0.8p
+Rin  INP_I INN 1e12
+E1   n1 0 INP_I INN 3162
+R1   n1 n2 1000
+C1   n2 0 314p
+R2   n2 n3 100
+C2   n3 0 1.99p
+E2   n4 0 n3 0 1.0
+Rout n4 OUT 25
+.ends OPA657

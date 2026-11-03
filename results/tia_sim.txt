@@ -1,0 +1,9 @@
+f-3dB = 153.6 MHz
+peaking = 0.00 dB
+step swing = -118.8 mV, settle(5%) = 3.3 ns
+integrated output noise = 0.567 mV rms (link budget 0.569)
+PASS  f-3dB >= 50 MHz (R1)
+PASS  peaking < 3 dB
+PASS  step settles to 5% within 1 UI (20 ns)
+PASS  noise within 3 dB of link budget 0.569 mV
+VERDICT: PASS

@@ -49,8 +49,9 @@ Checks printed (and written to results/digital_sim.txt):
       (|sim - analytic| <= 4 * binomial sigma of the packet count);
   (d) at the SNR where A/sigma_v = 6 (SNR = 20*log10(6) = 15.56 dB,
       centre-of-eye BER = Q(6) ~= 1e-9), the measured BER over a
-      1,000,000-bit run is < 1e-6 (with BER ~= 1e-9 the expected number
-      of errors in 1e6 bits is ~0.001, so observing 0 is consistent).
+      1,000,000-bit run is < 1e-6 (with the jitter-reduced eye the
+      model-mean BER there is ~2.5e-8, an expected ~0.025 errors in
+      1e6 bits, so observing 0 is consistent).
 
 Run:  python3 sim/digital_sim.py     (stdlib + numpy; matplotlib for the
 optional plot, skipped with a note if unavailable)
@@ -132,9 +133,26 @@ def run_8b10b_once(data, snr_db, rng, sigma_j_s=SIGMA_J_S,
     flips = uniforms < p_err
     rx = tx ^ flips.astype(np.int8)
     res = c.decode_bitstream([int(v) for v in rx])
-    if res.aligned:
-        byte_errors = sum(1 for a, b in zip(res.data, data) if a != b) \
-            + abs(len(data) - len(res.data))
+    if res.aligned and res.offset % 10 == 0:
+        # Byte errors are counted per symbol slot, NOT by comparing
+        # res.data (which drops code-errored symbols and would shift
+        # every following byte out of place, inflating the count to
+        # ~100% after the first dropped symbol).  The transmitted stream
+        # starts on a symbol boundary, so a true comma lock lands at a
+        # multiple of 10; that tells us exactly how many of the 4
+        # leading comma slots precede the data (a comma corrupted into
+        # a data-looking symbol still occupies its slot).  A lock at a
+        # non-multiple of 10 can only be a false comma inside corrupted
+        # data: positional correspondence is lost, every byte counts as
+        # an error, and that is reported as-is rather than hidden.
+        k = 4 - res.offset // 10
+        slots = res.symbols[k:] if 0 <= k <= len(res.symbols) else []
+        if len(slots) == len(data):
+            byte_errors = sum(
+                1 for (byte, is_ctrl, ce, _de), orig in zip(slots, data)
+                if ce or is_ctrl or byte != orig)
+        else:
+            byte_errors = len(data)
     else:
         byte_errors = len(data)
     return {
@@ -143,7 +161,7 @@ def run_8b10b_once(data, snr_db, rng, sigma_j_s=SIGMA_J_S,
         "byte_errors": int(byte_errors),
         "byte_error_rate": byte_errors / len(data) if data else 0.0,
         "code_errors": res.code_errors, "disp_errors": res.disparity_errors,
-        "aligned": bool(res.aligned),
+        "aligned": bool(res.aligned), "offset": res.offset,
     }
 
 
@@ -282,6 +300,13 @@ def main():
     ok_b = all(b2 <= b1 for b1, b2 in zip(bers, bers[1:]))
     checks.append(("(b) BER monotonic non-increasing with SNR", ok_b))
     log(f"  measured BER sequence monotonic non-increasing: {ok_b}")
+    for snr, r in sweep:
+        if r["aligned"] and r["offset"] % 10 != 0:
+            log(f"  note: at SNR {snr:.0f} dB all four leading commas were "
+                f"corrupted and the comma hunt locked onto a false K28.5 "
+                f"at bit offset {r['offset']} (not a multiple of 10), so "
+                f"the byte error rate for that point is 1.0 by loss of "
+                f"alignment, not by per-symbol errors.")
 
     # (c) PER vs analytic ---------------------------------------------------
     per_lines = []
@@ -302,9 +327,12 @@ def main():
     log(f"(d) Q=6 point: SNR = {snr_q6:.2f} dB (A/sigma_v = 6, centre-eye "
         f"BER = Q(6) = 9.9e-10); run = {r_d['bits']} bits, "
         f"bit errors = {r_d['bit_errors']}, measured BER = {r_d['ber']:.3e}, "
-        f"model-mean BER = {r_d['analytic_ber']:.3e}. At BER ~1e-9 the "
-        f"expected error count in 1e6 bits is ~0.001, so a 0-error run is "
-        f"consistent, and the < 1e-6 criterion allows at most 1 error.")
+        f"model-mean BER = {r_d['analytic_ber']:.3e} (expected error count "
+        f"in this run ~= {r_d['analytic_ber'] * r_d['bits']:.3f}, counting "
+        f"the jitter-reduced eye; at the un-jittered centre-eye BER Q(6) "
+        f"~= 1e-9 it would be ~0.001).  Observing 0 errors is consistent "
+        f"with both, and the < 1e-6 criterion allows at most 1 error in "
+        f"a run of this length.")
 
     # Manchester legacy path -------------------------------------------------
     mc_snr = 6.0
