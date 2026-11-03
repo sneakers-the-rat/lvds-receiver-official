@@ -8,9 +8,20 @@ pin NAME->NUMBER map is parsed from the installed KiCad symbol library
 (ST's own symbol data).  Correctness is proven downstream by diffing the
 kicad-cli netlist export against circuit.py (hw/check_netlist.py).
 """
-import sys, uuid, re
+import sys, uuid, re, math
 sys.path.insert(0, 'hw')
 import circuit
+
+# KiCad's schematic connection grid is 1.27 mm (50 mil). Every symbol
+# placement, pin offset, wire endpoint, label anchor and no-connect
+# marker MUST land exactly on it: KiCad 8 ERC flags off-grid endpoints
+# ([endpoint_off_grid], 683 hits on the un-snapped layout) and off-grid
+# no-connect markers stop coinciding exactly with their pins
+# ([no_connect_dangling] / [no_connect_connected], 88 each). All layout
+# arithmetic below is therefore quantised with snap().
+GRID = 1.27
+def snap(v):
+    return round(round(v / GRID) * GRID, 2)
 
 TYPEMAP = {"in":"input","out":"output","bidir":"bidirectional",
            "passive":"passive","pwr_in":"power_in","pwr_out":"power_out",
@@ -106,7 +117,10 @@ def layout(part):
     rows = max(len(left), len(right), 1)
     h = max(7.62, (rows - 1) * 2.54 + 5.08)
     label = part["value"].split(" ")[0]
-    w = max(15.24, min(40.0, 2 * (len(label) * 1.1 + 6)))
+    # width quantised UP to a multiple of 2.54 (= 2 grid units) so that
+    # w/2 is a whole number of 1.27 mm grid steps (40.64 = 16 * 2.54 cap)
+    w = max(15.24, min(40.64, math.ceil((2 * (len(label) * 1.1 + 6)) / 2.54) * 2.54))
+    w, h = round(w, 2), round(h, 2)
     if part["sym"] in ("R","C","L","D","LED"):
         w, h = 10.16, 5.08
         lay = {}
@@ -116,9 +130,9 @@ def layout(part):
         return lay, w, h, pins
     lay = {}
     for i, n in enumerate(left):
-        lay[n] = (-w/2 - 2.54, -h/2 + 2.54 + i * 2.54 + 1.27, -1)
+        lay[n] = (snap(-w/2 - 2.54), snap(-h/2 + 2.54 + i * 2.54 + 1.27), -1)
     for i, n in enumerate(right):
-        lay[n] = ( w/2 + 2.54, -h/2 + 2.54 + i * 2.54 + 1.27, 1)
+        lay[n] = (snap( w/2 + 2.54), snap(-h/2 + 2.54 + i * 2.54 + 1.27), 1)
     return lay, w, h, pins
 
 def symdef(part, lay, w, h, pins):
@@ -148,10 +162,37 @@ GROUP_X = {"afe": 40, "hv": 150, "pwr": 260, "cdr": 40, "cap": 150,
 GROUP_Y = {"afe": 30, "cdr": 200, "cap": 200, "hv": 30, "pwr": 30,
            "mcu": 150, "usb": 30, "dac": 190, "misc": 300, "mech": 350}
 
+def part_points(lay, pins, cx, cy):
+    """All grid points this part's connectivity occupies at (cx, cy):
+    every pin endpoint plus every grid point along each stub wire
+    (a stub crossing another part's pin endpoint would short to it)."""
+    pts = set()
+    for n, (lx, ly, side) in lay.items():
+        px, py = snap(cx + lx), snap(cy - ly)
+        pts.add((px, py))
+        if pins[n][2] is not None:
+            for j in range(1, 5):
+                pts.add((snap(px + GRID * j * side), py))
+    return pts
+
 def main():
     defs, instances, wires, labels, ncs = [], [], [], [], []
     cursors = {}
     placed = {}
+    # Grid snapping makes exact pin coincidences between stacked parts
+    # possible (the un-snapped layout's irrational offsets avoided them
+    # by luck). Placement therefore collision-avoids: a part is shifted
+    # down in whole grid steps until none of its connectivity points
+    # coincide with points already occupied. The PWR_FLAG row at the
+    # bottom is seeded as occupied from the start.
+    FLAG_NETS = list(circuit.POWER_NETS) + ["PHY_1V8", "PHY_1V8A"]
+    occupied = set()
+    fx = 30.48
+    for _ in FLAG_NETS:
+        fy = snap(560.0)
+        for j in range(5):
+            occupied.add((fx, snap(fy - GRID * j)))
+        fx = snap(fx + 25.4)
     for part in circuit.PARTS:
         lay, w, h, pins = layout(part)
         name, sd = symdef(part, lay, w, h, pins)
@@ -159,9 +200,17 @@ def main():
         sd = sd.replace('(symbol "' + name + '"', '(symbol "pdlvds:' + name + '"', 1)
         defs.append(sd)
         g = part["group"]
-        x0 = GROUP_X[g]; y = cursors.get(g, GROUP_Y[g])
-        cx, cy = x0 + w/2 + 10, y + h/2
-        cursors[g] = y + h + 12
+        x0 = GROUP_X[g]; y = snap(cursors.get(g, GROUP_Y[g]))
+        cx = snap(x0 + w/2 + 10.16)
+        cy = snap(y + h/2)
+        shifts = 0
+        while part_points(lay, pins, cx, cy) & occupied:
+            cy = snap(cy + GRID)
+            shifts += 1
+            if shifts > 400:
+                raise RuntimeError(f"no collision-free placement for {part['ref']}")
+        occupied |= part_points(lay, pins, cx, cy)
+        cursors[g] = snap(cy + h/2 + 12.7)
         placed[part["ref"]] = (cx, cy)
         fplib, fpname = part["fp"]
         inst = [f'(symbol (lib_id {q("pdlvds:"+name)}) (at {cx} {cy} 0) (unit 1) (in_bom yes) (on_board yes) (dnp no) (uuid {q(U())})']
@@ -174,24 +223,30 @@ def main():
         instances.append("\n".join(inst))
         for n, (lx, ly, side) in lay.items():
             pname, ptype, net = pins[n]
-            px, py = cx + lx, cy - ly   # KiCad symbol y is up, sheet y is down
+            px, py = snap(cx + lx), snap(cy - ly)   # KiCad symbol y is up, sheet y is down
             if net is None:
                 ncs.append(f'(no_connect (at {px} {py}) (uuid {q(U())}))')
             else:
                 # stub extends further outward from pin end
                 dx = 5.08 * side
-                ex = px + dx
+                ex = snap(px + dx)
                 wires.append(f'(wire (pts (xy {px} {py}) (xy {ex} {py})) (stroke (width 0) (type default)) (uuid {q(U())}))')
                 lrot = 0 if side > 0 else 180
                 labels.append(f'(global_label {q(net)} (shape input) (at {ex} {py} {lrot}) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify {"left" if lrot==0 else "right"})) (uuid {q(U())}) (property "Intersheetrefs" "${{INTERSHEET_REFS}}" (at {ex} {py} {lrot}) (effects (font (size 1.27 1.27)) hide)))')
-    # PWR_FLAGs: one per power net, parked at bottom, stub+label like others
-    fx = 30.0
-    for net in circuit.POWER_NETS:
-        fy = 560.0
-        wires.append(f'(wire (pts (xy {fx} {fy}) (xy {fx} {fy-5.08})) (stroke (width 0) (type default)) (uuid {q(U())}))')
-        labels.append(f'(global_label {q(net)} (shape input) (at {fx} {fy-5.08} 270) (fields_autoplaced) (effects (font (size 1.27 1.27))) (uuid {q(U())}) (property "Intersheetrefs" "${{INTERSHEET_REFS}}" (at {fx} {fy-5.08} 270) (effects (font (size 1.27 1.27)) hide)))')
+    # PWR_FLAGs: one per power net, parked at bottom, stub+label like others.
+    # PHY_1V8 / PHY_1V8A are the USB3300's internal-regulator rails: real
+    # driven rails whose only pins are power_in loads on U7 itself, so
+    # they need flags just like the externally-sourced rails (KiCad 8 ERC
+    # reported their pins as power_pin_not_driven).
+    FLAG_NETS = list(circuit.POWER_NETS) + ["PHY_1V8", "PHY_1V8A"]
+    fx = 30.48
+    for net in FLAG_NETS:
+        fy = snap(560.0)
+        sy = snap(fy - 5.08)
+        wires.append(f'(wire (pts (xy {fx} {fy}) (xy {fx} {sy})) (stroke (width 0) (type default)) (uuid {q(U())}))')
+        labels.append(f'(global_label {q(net)} (shape input) (at {fx} {sy} 270) (fields_autoplaced) (effects (font (size 1.27 1.27))) (uuid {q(U())}) (property "Intersheetrefs" "${{INTERSHEET_REFS}}" (at {fx} {sy} 270) (effects (font (size 1.27 1.27)) hide)))')
         instances.append(f'(symbol (lib_id "power:PWR_FLAG") (at {fx} {fy} 0) (unit 1) (in_bom no) (on_board no) (dnp no) (uuid {q(U())}) (property "Reference" {q("#FLG"+str(int(fx)))} (at {fx} {fy+2.54} 0) (effects (font (size 1.27 1.27)) hide)) (property "Value" "PWR_FLAG" (at {fx} {fy-2.54} 0) (effects (font (size 1.27 1.27)) hide)) (property "Footprint" "" (at {fx} {fy} 0) (effects (font (size 1.27 1.27)) hide)) (property "Datasheet" "" (at {fx} {fy} 0) (effects (font (size 1.27 1.27)) hide)) (instances (project "pdlvds_rx" (path "/{SHEET_UUID}" (reference {q("#FLG"+str(int(fx)))}) (unit 1)))))')
-        fx += 25.0
+        fx = snap(fx + 25.4)
     out = ['(kicad_sch (version 20230121) (generator "pdlvds-gen")', f'(uuid {SHEET_UUID})',
            '(paper "A1")', '(title_block (title "PDLVDS-RX rev A — photodiode LVDS receiver") (rev "A"))',
            '(lib_symbols']
