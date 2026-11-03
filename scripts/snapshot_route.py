@@ -3,8 +3,12 @@
 
 Creates history/<UTC-timestamp>_<short-hash>/ containing:
   - board-top.svg / board-bottom.svg  (kicad-cli pcb export svg renders)
+  - layer-FCu.svg / layer-In1Cu.svg / layer-In2Cu.svg / layer-BCu.svg
+    (single-layer exports, recoloured to the fixed palette below so
+    the site can stack all four copper layers in distinct colours)
   - stats.txt                         (label, timestamps, hashes, stats)
-and adds/updates the attempt's entry in history/index.json.
+and adds/updates the attempt's entry in history/index.json (including
+a "layers" map of layer name -> layer render file).
 
 Stats are taken, in priority order, from explicit --flags, then parsed
 from the audit file (results/pcb-audit.txt) and build log
@@ -30,6 +34,19 @@ from datetime import datetime, timezone
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOP_LAYERS = "F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS"
 BOTTOM_LAYERS = "B.Cu,In2.Cu,In1.Cu,F.Cu,B.SilkS"
+
+# Copper layers in stack order, the file each one's render gets, and
+# the fixed palette colour it is recoloured to (site composite +
+# legend use the same palette — keep scripts/build_site.py in sync).
+COPPER_LAYERS = ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"]
+LAYER_FILES = {"F.Cu": "layer-FCu.svg", "In1.Cu": "layer-In1Cu.svg",
+               "In2.Cu": "layer-In2Cu.svg", "B.Cu": "layer-BCu.svg"}
+LAYER_PALETTE = {"F.Cu": "#FF3B30", "In1.Cu": "#FF9500",
+                 "In2.Cu": "#34C759", "B.Cu": "#0A84FF"}
+# Colours in a single-layer export that are NOT layer geometry: the
+# near-white page/hole rendering KiCad draws on every layer, and the
+# black wrapper groups. Everything else is the layer's theme colour.
+KEEP_COLOURS = {"#FFFFFF", "#ECECEC", "#000000"}
 
 
 def git(*args, cwd=ROOT):
@@ -85,6 +102,35 @@ def export_svg(board, out_path, layers, mirror):
         if r.returncode == 0 and os.path.exists(out_path):
             return spec or "kicad-cli defaults"
     return None
+
+
+def export_layer(board, out_path, layer):
+    """Export exactly one copper layer and recolour its geometry to
+    the palette colour. No fallback to a multi-layer export — a
+    missing layer must stay missing, never silently become the whole
+    board in one colour. Returns the number of colour tokens replaced
+    (0 is legitimate for a layer with no geometry), or None on
+    export/recolour failure. All four layer exports of one board
+    share the same viewBox, so they register pixel-perfectly when
+    stacked."""
+    cmd = ["kicad-cli", "pcb", "export", "svg", "-o", out_path,
+           "--page-size-mode", "2", "--exclude-drawing-sheet",
+           "--layers", layer, board]
+    r = subprocess.run(cmd, capture_output=True, text=True)
+    if r.returncode != 0 or not os.path.exists(out_path):
+        return None
+    txt = open(out_path).read()
+
+    def sub(m):
+        return (m.group(0) if m.group(0).upper() in KEEP_COLOURS
+                else LAYER_PALETTE[layer])
+
+    new, n = re.subn(r"#[0-9A-Fa-f]{6}\b", sub, txt)
+    if n == 0:
+        return None
+    with open(out_path, "w") as f:
+        f.write(new)
+    return n
 
 
 def main():
@@ -173,6 +219,7 @@ def main():
 
     renders = None
     layers_used = None
+    layer_renders = None
     if not a.no_board:
         if not os.path.exists(a.board):
             print(f"error: board file not found: {a.board}",
@@ -190,6 +237,18 @@ def main():
         else:
             print("warning: kicad-cli SVG export failed; entry will "
                   "carry no renders", file=sys.stderr)
+        got = {}
+        for layer in COPPER_LAYERS:
+            n = export_layer(a.board,
+                             os.path.join(sdir, LAYER_FILES[layer]),
+                             layer)
+            if n is None:
+                print(f"warning: layer export failed for {layer}",
+                      file=sys.stderr)
+            else:
+                got[layer] = LAYER_FILES[layer]
+        if got:
+            layer_renders = got
 
     def fmt(v):
         return "not recorded" if v is None else str(v)
@@ -202,6 +261,10 @@ def main():
         f"board file: {'none (no board committed)' if a.no_board else a.board}",
         f"renders: {'none' if not renders else 'board-top.svg, board-bottom.svg'}",
         f"render layers: {layers_used or 'not recorded'}",
+        "layer renders: " + (", ".join(
+            f"{layer}={layer_renders[layer]} ({LAYER_PALETTE[layer]})"
+            for layer in COPPER_LAYERS if layer_renders
+            and layer in layer_renders) or "none"),
         f"nets fully routed: {fmt(stats['nets_routed'])}"
         + (f" of {stats['nets_total']}" if stats['nets_total'] else ""),
         f"pins failed: {fmt(stats['pins_failed'])}",
@@ -216,6 +279,7 @@ def main():
     entry = {"timestamp": ts_iso, "hash": full_hash,
              "short_hash": short_hash, "label": a.label,
              "dir": dirname, "renders": renders,
+             "layers": layer_renders,
              "stats": stats, "note": a.note or ""}
     entries.append(entry)
     entries.sort(key=lambda e: (e["timestamp"], e["hash"]))
@@ -224,7 +288,9 @@ def main():
         f.write("\n")
     print(f"snapshot: history/{dirname} "
           f"({a.label}, {short_hash}, renders="
-          f"{'yes' if renders else 'no'})")
+          f"{'yes' if renders else 'no'}, layers="
+          f"{len(layer_renders) if layer_renders else 0}/"
+          f"{len(COPPER_LAYERS)})")
     return 0
 
 
