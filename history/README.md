@@ -21,6 +21,28 @@ is the story.
   - `stats.txt` — the same numbers as the index entry, human-readable.
     Anything never measured is written as `not recorded`.
 
+## Route-only renders (no zone fills)
+
+All renders — per-layer, composite, and the top/bottom references —
+show **routes only**: tracks, vias and pads. The opaque zone fills
+(the GND pours) are removed, because a filled front pour hides every
+layer beneath it. The snapshot script does this without touching
+the committed board: it loads the board with `pcbnew` into a temp
+copy, **deletes every zone in the temp copy**, saves that, and runs
+all `kicad-cli` exports against the temp copy. The method is
+recorded in each snapshot's `stats.txt` and in the index entry's
+`render_method`.
+
+Why deletion rather than `ZONE.SetIsFilled(False)`: that flag was
+tried first and does not work — it persists in the saved board, but
+KiCad 7's plotter draws the zones' stored filled polygons anyway
+(F.Cu export byte size unchanged, 830,046 → 830,055). Deleting the
+zones works, verified numerically: the largest filled F.Cu shape
+drops from 7,821 mm² (the pour, 87% of the board) to 10 mm² (a
+pad), with tracks and footprints intact. Silkscreen is excluded
+from the per-layer and composite views; it appears only in the
+top/bottom reference renders.
+
 ## Layer colours (fixed palette)
 
 | Layer  | Colour    | Meaning        |

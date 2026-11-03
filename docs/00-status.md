@@ -257,3 +257,34 @@ gallery leads with a composite that stacks all four:
   referenced exactly twice per entry (composite + panel).
   `history/README.md` documents the palette, file layout and
   composite convention.
+
+## Routing history gallery, round 2 addendum — route-only renders (2026-11-03)
+
+Spec change from the user (14:51 PST): the opaque layers block the
+actual routes — renders must show routes only. All gallery renders
+(per-layer, composite, and the top/bottom references) are now made
+from a temp pcbnew copy of the board with its zones deleted, so
+they show tracks, vias and pads with no GND pours.
+
+- Method, with the failed first attempt on record:
+  `ZONE.SetIsFilled(False)` persists in the saved board but KiCad
+  7's plotter draws the zones' stored filled polygons regardless
+  (F.Cu export 830,046 → 830,055 bytes, identical path count).
+  Deleting the zones from the temp copy works — largest filled
+  F.Cu shape 7,821 mm² (pour) → 10 mm² (pad); 1,123 tracks and
+  144 footprints intact on the v5 board. The source board is never
+  modified (sha256 identical across a snapshot run); the method
+  is recorded per snapshot in `stats.txt` / index `render_method`.
+- Silkscreen is excluded from the per-layer and composite views
+  (single-layer exports never contained it); it remains only in
+  the top/bottom reference renders, which are now also exported
+  from the zone-deleted copy.
+- The four board-bearing backfills were regenerated a second time
+  under this method — same dirs/timestamps/hashes/labels/notes/
+  stats (cross-checked field-by-field again), plus a new
+  objective check: no layer render of any entry contains a filled
+  shape larger than 10 mm². Site rebuilt and re-verified
+  (4 composites, 12 stacked images, 16 layer assets, route-only
+  wording in the gallery intro and headings; built site shrank
+  24.9 MB → 19.8 MB with the pours gone). `history/README.md`
+  documents the method, including why SetIsFilled was rejected.
