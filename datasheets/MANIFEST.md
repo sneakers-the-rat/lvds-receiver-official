@@ -145,3 +145,47 @@ LQFP-100 pin map: hw/h723vgt_pins.json (100 pins; pin 99 = VSS).
 Pins used by function are listed in hw/CONNECTIONS.md; alternate-function
 numbers for ULPI/timers are firmware-side VERIFY items (RM0468), the
 schematic only commits pin number + GPIO name + net.
+
+## Addendum (Stage 7, 2026-11-03) — parts added during schematic capture
+- SN65LVDS32 (U5): TI SLLS262R pinout via search snippet of the TI
+  datasheet: SOIC-16: 1=1B, 2=1A, 3=1Y, 4=G, 5=2Y, 6=2A, 7=2B, 8=GND,
+  9=3B, 10=3A, 11=3Y, 12=G̅, 13=4Y, 14=4A, 15=4B, 16=VCC.
+- TPS62130 (U11/U12): TI SLVSAG7F Table 6-1 read in full via DigiKey's
+  datasheet rendering: SW 1-3, PG 4, FB 5, AGND 6, FSW 7, DEF 8, SS/TR 9,
+  AVIN 10, PVIN 11-12, EN 13, VOS 14, PGND 15-16, EP=GND. VFB = 0.8 V.
+  Inverting topology per datasheet §10.3.3 (Figure 42).
+- LT3042 (U13/U14): pin configuration read from the full datasheet text
+  (ADI Rev. C): 1 IN, 2 IN, 3 EN/UV, 4 PG, 5 ILIM, 6 PGFB, 7 SET, 8 GND,
+  9 OUTS, 10 OUT, 11 EP=GND. ISET = 100 µA; ILIM scale 125 mA·kΩ.
+- LT3094 was evaluated for the −5 V rail and REJECTED: its pin table
+  could not be extracted reliably from the sources reachable here.
+  The −VA rail uses the TPS62130 inverting topology instead.
+- STM32H723ZGT6: pin name->number map parsed programmatically from the
+  installed KiCad symbol (ST data). ULPI mapping D0 PA3, D1 PB0, D2 PB1,
+  D3 PB10, D4 PB11, D5 PB12, D6 PB13, D7 PB5, CK PA5, STP PC0, DIR PC2_C,
+  NXT PC3_C — cross-checked against ST community + mbed pin tables.
+  NOTE the variant change: LQFP-100 (VG) does NOT bond PC2/PC3 digitally;
+  the design uses LQFP-144 (ZG). PC2_C/PC3_C are analog-switch pads:
+  SYSCFG PMCR switches must be closed for ULPI (bring-up item).
+- CORRECTION to the Stage-2 record, resolved in Stage 7b: the
+  s8664.pdf on disk was found to be an HTML error page, not a PDF
+  (verified with `file`) — a later failed re-download had overwritten
+  the valid copy obtained earlier the same day. The file was restored
+  2026-11-03 from the Hamamatsu official URL (s8664_series_kapd1012e.pdf,
+  654,300 bytes, PDF 1.7) and re-verified with `file`/`pdfinfo`.
+  S8664-20K lead identity is now VERIFIED from the datasheet p.4
+  dimensional outline (drawing 1, KAPDA0026EC), read from a rendered
+  image of the page: **pin 1 = ANODE, pin 2 = CATHODE, pin 3 = CASE**
+  (equivalent-circuit inset on the drawing). Pins sit on a
+  φ5.08 ± 0.2 mm circle — pin 1 east, pin 3 north, pin 2 west in the
+  datasheet BOTTOM view; leads φ0.45; flange φ9.1 ± 0.2, cap
+  φ8.1 ± 0.1; tab between pins 1 and 3 (SE in top view).
+  circuit.py's D2 pin semantics (1→anode net, 2→cathode net, 3→GND)
+  were already correct and are unchanged. The S8664_TO5 footprint,
+  however, had been drawn with a 120° equilateral pad pattern, which
+  contradicts the drawing; it was corrected to the datasheet pattern
+  (top view: pin 1 at (+2.54, 0), pin 2 at (−2.54, 0), pin 3 at
+  (0, +2.54), tab tick at SE) in Stage 7b.
+- THS4304 supply (from ths4304.pdf in this repo): dual ±1.35–±2.5 V or
+  single 2.7–5 V; input common-mode VS− −0.2 V to VS+ +0.2 V. The design
+  runs it single-supply on +VA with AC coupling and VMID bias.
