@@ -18,5 +18,6 @@ Iload rect 0 200u
 .control
 tran 100u 220m 0 200u uic
 wrdata results/hv_avg.csv v(rect) v(duty)
+quit
 .endc
 .end

@@ -15,5 +15,6 @@ Cf  out inn 0.45p
 .control
 tran 0.05n 400n
 wrdata results/tia_pulse.csv v(out)
+quit
 .endc
 .end
