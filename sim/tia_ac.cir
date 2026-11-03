@@ -15,5 +15,6 @@ Cf  out inn 0.45p
 .control
 ac dec 200 1e5 3e9
 wrdata results/tia_ac.csv db(v(out))
+quit
 .endc
 .end

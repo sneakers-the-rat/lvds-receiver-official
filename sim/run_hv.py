@@ -52,6 +52,7 @@ Iload apd 0 200u
 .control
 tran 8n 12m 0 25n uic
 wrdata results/hv_sw.csv v(rect) v(apd)
+quit
 .endc
 .end
 """
@@ -76,6 +77,7 @@ Iload rect 0 200u
 .control
 tran 100u 220m 0 200u uic
 wrdata results/hv_avg.csv v(rect) v(duty)
+quit
 .endc
 .end
 """

@@ -16,5 +16,6 @@ Cf  out inn 0.45p
 noise v(out) Iph dec 100 1e4 3e9
 setplot noise1
 wrdata results/tia_noise.csv onoise_spectrum
+quit
 .endc
 .end
