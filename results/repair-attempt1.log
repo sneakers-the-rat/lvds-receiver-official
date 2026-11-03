@@ -1,0 +1,479 @@
+sweep 1: 97 nets with >1 group
+  +3V3D: connected group of 13 items
+  +3V3D: connected group of 7 items
+  +3V3D: connected group of 6 items
+  +3V3D: connected group of 5 items
+  +3V3D: connected group of 5 items
+  +3V3D: connected group of 2 items
+  +3V3D: group (2 items, ['U5.16', 'via@(67.375, 47.625)']) STILL isolated
+  +3V3D: group (2 items, ['U11.14', 'via@(14.375, 62.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.6', 'via@(65.375, 26.875)']) STILL isolated
+  +3V3D: group (2 items, ['U6.17', 'via@(65.375, 32.375)']) STILL isolated
+  +3V3D: group (2 items, ['U6.30', 'via@(65.375, 38.875)']) STILL isolated
+  +3V3D: group (2 items, ['U6.39', 'via@(68.375, 43.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.52', 'via@(74.875, 43.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.62', 'via@(79.875, 43.625)']) STILL isolated
+  +3V3D: connected group of 2 items
+  +3V3D: group (2 items, ['U6.84', 'via@(86.625, 36.375)']) STILL isolated
+  +3V3D: group (2 items, ['U6.121', 'via@(78.875, 22.375)']) STILL isolated
+  +3V3D: group (2 items, ['U6.131', 'via@(73.875, 22.375)']) STILL isolated
+  +3V3D: group (2 items, ['U8.9', 'via@(50.125, 27.625)']) STILL isolated
+  +5V: connected group of 36 items
+  +5V: connected group of 20 items
+  +5V: connected group of 20 items
+  +5V: connected group of 9 items
+  +5V: connected group of 3 items
+  +5V: connected group of 3 items
+  +5V: group (1 items, ['U12.10']) STILL isolated
+  +5V: group (1 items, ['U12.13']) STILL isolated
+  +5V: connected group of 1 items
+  +3V3A: group (35 items, ['U7.6', 'U7.30', 'U7.31']) STILL isolated
+  +3V3A: connected group of 2 items
+  +3V3A: group (2 items, ['U9.5', 'via@(8.625, 48.125)']) STILL isolated
+  +3V3A: group (1 items, ['U7.25']) STILL isolated
+  APD_A: connected group of 5 items
+  APD_A: connected group of 4 items
+  APD_A: connected group of 3 items
+  APD_A: group (2 items, ['D1.4', 'via@(8.875, 41.125)']) STILL isolated
+  APD_K: connected group of 8 items
+  APD_K: connected group of 4 items
+  APD_K: connected group of 4 items
+  APD_K: group (2 items, ['D1.5', 'via@(8.875, 40.125)']) STILL isolated
+  VMID: connected group of 3 items
+  VMID: connected group of 3 items
+  VMID: connected group of 2 items
+  VMID: connected group of 1 items
+  VBUS_RAW: group (1 items, ['J1.A9']) STILL isolated
+  VBUS_RAW: group (1 items, ['J1.B4']) STILL isolated
+  VBUS_RAW: group (1 items, ['J1.B9']) STILL isolated
+  VBUS_RAW: group (1 items, ['F1.1']) STILL isolated
+  +3V3D_CDR: group (3 items, ['U4.12', 'via@(51.875, 54.375)', 'track@(51.875, 53.375)']) STILL isolated
+  +3V3D_CDR: group (2 items, ['U4.18', 'via@(54.375, 53.375)']) STILL isolated
+  +3V3D_CDR: group (2 items, ['U4.24', 'via@(54.375, 50.375)']) STILL isolated
+  I2C_SCL: group (1 items, ['U6.136']) STILL isolated
+  I2C_SCL: group (1 items, ['U4.20']) STILL isolated
+  I2C_SCL: group (1 items, ['R20.1']) STILL isolated
+  I2C_SDA: group (1 items, ['R21.1']) STILL isolated
+  I2C_SDA: group (1 items, ['U6.137']) STILL isolated
+  I2C_SDA: group (1 items, ['U4.21']) STILL isolated
+  CDR_CLKP: group (1 items, ['J2.5']) STILL isolated
+  CDR_CLKP: group (1 items, ['U4.26']) STILL isolated
+  CDR_CLKP: group (1 items, ['R14.1']) STILL isolated
+  SW2: group (1 items, ['U12.2']) STILL isolated
+  SW2: group (1 items, ['U12.3']) STILL isolated
+  SW2: group (1 items, ['L2.1']) STILL isolated
+  POST_OUT: connected group of 3 items
+  POST_OUT: connected group of 3 items
+  TIA_OUT: connected group of 7 items
+  TIA_OUT: connected group of 3 items
+  PHY_1V8: group (1 items, ['U7.26']) STILL isolated
+  PHY_1V8: group (1 items, ['C22.1']) STILL isolated
+  XO: group (1 items, ['X1.3']) STILL isolated
+  XO: group (1 items, ['C21.1']) STILL isolated
+  XI: group (1 items, ['X1.1']) STILL isolated
+  XI: group (1 items, ['C20.1']) STILL isolated
+  +VA: group (7 items, ['U13.9', 'U13.10', 'track@(49.625, 61.625)']) STILL isolated
+  +VA: connected group of 4 items
+  NRST: connected group of 7 items
+  NRST: group (2 items, ['U6.25', 'via@(65.375, 36.375)']) STILL isolated
+  TMP_ALERT: group (1 items, ['R22.1']) STILL isolated
+  TMP_ALERT: group (1 items, ['U6.139']) STILL isolated
+  DP_CON: group (2 items, ['J1.A6', 'via@(29.875, 71.375)']) STILL isolated
+  DP_CON: group (1 items, ['J1.B6']) STILL isolated
+  DM_CON: group (2 items, ['J1.B7', 'via@(29.625, 73.125)']) STILL isolated
+  DM_CON: group (1 items, ['J1.A7']) STILL isolated
+  NEG_RAW: group (6 items, ['U12.6', 'U12.7', 'U12.8']) STILL isolated
+  NEG_RAW: group (6 items, ['U12.14', 'U12.15', 'U12.16']) STILL isolated
+  FB_NEG: group (1 items, ['U12.5']) STILL isolated
+  FB_NEG: group (1 items, ['R39.1']) STILL isolated
+  FB_3V3: connected group of 3 items
+  FB_3V3: connected group of 3 items
+  SET_A: group (1 items, ['C45.1']) STILL isolated
+  SET_A: group (1 items, ['R42.1']) STILL isolated
+  HV_SHDN: group (1 items, ['U6.97']) STILL isolated
+  HV_SHDN: group (1 items, ['U10.9']) STILL isolated
+  SET_P: group (1 items, ['C42.1']) STILL isolated
+  SET_P: group (1 items, ['R40.1']) STILL isolated
+  THR_DAC: connected group of 10 items
+  THR_DAC: connected group of 10 items
+  CMP_QN: connected group of 3 items
+  CDR_NIN: group (1 items, ['U4.4']) STILL isolated
+  PG_3V3: group (2 items, ['U6.140', 'via@(69.375, 22.375)']) STILL isolated
+  BIST_A: connected group of 5 items
+  CMP_QP: connected group of 3 items
+  HV_DAC: group (2 items, ['U8.2', 'via@(45.875, 27.625)']) STILL isolated
+  HV_FBX: group (2 items, ['U10.2', 'via@(13.875, 9.625)']) STILL isolated
+  DP_PHY: group (1 items, ['D3.6']) STILL isolated
+  USB_RST: group (1 items, ['U6.40']) STILL isolated
+  ULPI_NXT: group (1 items, ['U6.29']) STILL isolated
+  ULPI_DIR: group (1 items, ['U6.28']) STILL isolated
+  ULPI_STP: group (1 items, ['U6.26']) STILL isolated
+  ULPI_CK: group (1 items, ['U6.41']) STILL isolated
+  ULPI_D7: group (2 items, ['U6.135', 'via@(71.875, 22.375)']) STILL isolated
+  ULPI_D6: group (1 items, ['U6.74']) STILL isolated
+  ULPI_D5: group (1 items, ['U6.73']) STILL isolated
+  ULPI_D4: group (1 items, ['U6.70']) STILL isolated
+  ULPI_D3: group (1 items, ['U6.69']) STILL isolated
+  ULPI_D2: group (1 items, ['U6.47']) STILL isolated
+  ULPI_D1: group (1 items, ['U6.46']) STILL isolated
+  ULPI_D0: connected group of 10 items
+  PHY_1V8A: group (1 items, ['C23.1']) STILL isolated
+  RBIAS: group (1 items, ['R17.1']) STILL isolated
+  HV_SS: group (1 items, ['U10.3']) STILL isolated
+  BIST_DRV: group (2 items, ['U6.98', 'via@(86.625, 29.375)']) STILL isolated
+  HV_GATE: group (1 items, ['U10.7']) STILL isolated
+  SS_3V3: group (2 items, ['U11.9', 'via@(15.375, 64.875)']) STILL isolated
+  DAC_VREF: group (1 items, ['U8.10']) STILL isolated
+  SWDIO: group (1 items, ['U6.105']) STILL isolated
+  SWCLK: connected group of 3 items
+  SLICEP: group (2 items, ['U4.6', 'via@(49.625, 52.875)']) STILL isolated
+  SLICEN: group (1 items, ['U4.7']) STILL isolated
+  CDR_DATN: group (2 items, ['U4.28', 'via@(52.375, 49.625)']) STILL isolated
+  CDR_DATP: group (1 items, ['U4.29']) STILL isolated
+  CAP_DATA: group (1 items, ['U6.35']) STILL isolated
+  CAP_CLK: group (2 items, ['U6.34', 'via@(65.375, 40.875)']) STILL isolated
+  CDR_CLKN: group (1 items, ['J2.6']) STILL isolated
+  SS_NEG: group (1 items, ['U12.9']) STILL isolated
+  CC2: group (2 items, ['J1.B5', 'via@(30.625, 73.125)']) STILL isolated
+  SW1: connected group of 4 items
+  VCAP1: group (2 items, ['U6.106', 'via@(86.625, 25.375)']) STILL isolated
+  POST_INP: connected group of 3 items
+  CDR_VREF: group (2 items, ['U4.3', 'via@(49.625, 51.375)']) STILL isolated
+  LED_STAT: group (1 items, ['U6.99']) STILL isolated
+  LED_STAT_A: connected group of 2 items
+  ILIM_A: connected group of 3 items
+  CC1: group (1 items, ['R18.1']) STILL isolated
+  HV_INTVCC: group (2 items, ['U10.8', 'via@(18.125, 10.125)']) STILL isolated
+  THR_FILT: connected group of 2 items
+  CF1: group (1 items, ['U4.15']) STILL isolated
+  CF2: group (2 items, ['U4.14', 'via@(52.875, 54.375)']) STILL isolated
+  ILIM_P: connected group of 2 items
+  BOOT0: group (2 items, ['U6.138', 'via@(70.375, 22.375)']) STILL isolated
+  HV_RT: group (2 items, ['U10.4', 'via@(13.875, 10.625)']) STILL isolated
+  APD_A_ALT: connected group of 3 items
+  DBG_TX: group (2 items, ['U6.101', 'via@(86.625, 27.875)']) STILL isolated
+  VCAP2: group (1 items, ['U6.71']) STILL isolated
+  CDR_LOL: connected group of 8 items
+  CDR_LOS: group (1 items, ['U4.22']) STILL isolated
+  CDR_SQUELCH: group (1 items, ['U4.27']) STILL isolated
+  DBG_RX: group (1 items, ['TP3.1']) STILL isolated
+  DAC_SYNC: group (1 items, ['U8.6']) STILL isolated
+  SPI_SCK: group (1 items, ['U8.7']) STILL isolated
+  SPI_MOSI: group (1 items, ['U8.8']) STILL isolated
+  CDR_PIN: group (1 items, ['C8.2']) STILL isolated
+  THRADJ: group (2 items, ['R12.1', 'via@(48.125, 60.625)']) STILL isolated
+  REFCLK: group (1 items, ['X2.3']) STILL isolated
+  REFCLKN: group (1 items, ['C14.1']) STILL isolated
+sweep 2: 95 nets with >1 group
+  +3V3D: connected group of 55 items
+  +3V3D: connected group of 15 items
+  +3V3D: connected group of 8 items
+  +3V3D: connected group of 6 items
+  +3V3D: group (2 items, ['U11.14', 'via@(14.375, 62.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.6', 'via@(65.375, 26.875)']) STILL isolated
+  +3V3D: group (2 items, ['U6.17', 'via@(65.375, 32.375)']) STILL isolated
+  +3V3D: group (2 items, ['U6.30', 'via@(65.375, 38.875)']) STILL isolated
+  +3V3D: group (2 items, ['U6.39', 'via@(68.375, 43.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.52', 'via@(74.875, 43.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.62', 'via@(79.875, 43.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.84', 'via@(86.625, 36.375)']) STILL isolated
+  +3V3D: group (2 items, ['U6.121', 'via@(78.875, 22.375)']) STILL isolated
+  +3V3D: group (2 items, ['U6.131', 'via@(73.875, 22.375)']) STILL isolated
+  +3V3D: group (2 items, ['U8.9', 'via@(50.125, 27.625)']) STILL isolated
+  +5V: connected group of 57 items
+  +5V: connected group of 56 items
+  +5V: connected group of 31 items
+  +5V: connected group of 7 items
+  +5V: group (1 items, ['U12.10']) STILL isolated
+  +5V: group (1 items, ['U12.13']) STILL isolated
+  +3V3A: group (35 items, ['U7.6', 'U7.30', 'U7.31']) STILL isolated
+  +3V3A: connected group of 3 items
+  +3V3A: group (2 items, ['U9.5', 'via@(8.625, 48.125)']) STILL isolated
+  +3V3A: group (1 items, ['U7.25']) STILL isolated
+  APD_A: connected group of 11 items
+  APD_A: connected group of 10 items
+  APD_A: connected group of 8 items
+  APD_A: group (2 items, ['D1.4', 'via@(8.875, 41.125)']) STILL isolated
+  VBUS_RAW: group (1 items, ['J1.A9']) STILL isolated
+  VBUS_RAW: group (1 items, ['J1.B4']) STILL isolated
+  VBUS_RAW: group (1 items, ['J1.B9']) STILL isolated
+  VBUS_RAW: group (1 items, ['F1.1']) STILL isolated
+  +3V3D_CDR: group (3 items, ['U4.12', 'via@(51.875, 54.375)', 'track@(51.875, 53.375)']) STILL isolated
+  +3V3D_CDR: group (2 items, ['U4.18', 'via@(54.375, 53.375)']) STILL isolated
+  +3V3D_CDR: group (2 items, ['U4.24', 'via@(54.375, 50.375)']) STILL isolated
+  APD_K: connected group of 10 items
+  APD_K: connected group of 8 items
+  APD_K: group (2 items, ['D1.5', 'via@(8.875, 40.125)']) STILL isolated
+  I2C_SCL: group (1 items, ['U6.136']) STILL isolated
+  I2C_SCL: group (1 items, ['U4.20']) STILL isolated
+  I2C_SCL: group (1 items, ['R20.1']) STILL isolated
+  I2C_SDA: group (1 items, ['R21.1']) STILL isolated
+  I2C_SDA: group (1 items, ['U6.137']) STILL isolated
+  I2C_SDA: group (1 items, ['U4.21']) STILL isolated
+  CDR_CLKP: group (1 items, ['J2.5']) STILL isolated
+  CDR_CLKP: group (1 items, ['U4.26']) STILL isolated
+  CDR_CLKP: group (1 items, ['R14.1']) STILL isolated
+  SW2: group (1 items, ['U12.2']) STILL isolated
+  SW2: group (1 items, ['U12.3']) STILL isolated
+  SW2: group (1 items, ['L2.1']) STILL isolated
+  TIA_OUT: connected group of 9 items
+  TIA_OUT: connected group of 5 items
+  PHY_1V8: group (1 items, ['U7.26']) STILL isolated
+  PHY_1V8: group (1 items, ['C22.1']) STILL isolated
+  XO: group (1 items, ['X1.3']) STILL isolated
+  XO: group (1 items, ['C21.1']) STILL isolated
+  XI: group (1 items, ['X1.1']) STILL isolated
+  XI: group (1 items, ['C20.1']) STILL isolated
+  VMID: connected group of 8 items
+  VMID: connected group of 6 items
+  +VA: connected group of 8 items
+  +VA: group (7 items, ['U13.9', 'U13.10', 'track@(49.625, 61.625)']) STILL isolated
+  TMP_ALERT: group (1 items, ['R22.1']) STILL isolated
+  TMP_ALERT: group (1 items, ['U6.139']) STILL isolated
+  DP_CON: group (2 items, ['J1.A6', 'via@(29.875, 71.375)']) STILL isolated
+  DP_CON: group (1 items, ['J1.B6']) STILL isolated
+  DM_CON: group (2 items, ['J1.B7', 'via@(29.625, 73.125)']) STILL isolated
+  DM_CON: group (1 items, ['J1.A7']) STILL isolated
+  NEG_RAW: group (6 items, ['U12.6', 'U12.7', 'U12.8']) STILL isolated
+  NEG_RAW: group (6 items, ['U12.14', 'U12.15', 'U12.16']) STILL isolated
+  FB_NEG: group (1 items, ['U12.5']) STILL isolated
+  FB_NEG: group (1 items, ['R39.1']) STILL isolated
+  FB_3V3: connected group of 5 items
+  FB_3V3: connected group of 5 items
+  SET_A: group (1 items, ['C45.1']) STILL isolated
+  SET_A: group (1 items, ['R42.1']) STILL isolated
+  HV_SHDN: group (1 items, ['U6.97']) STILL isolated
+  HV_SHDN: group (1 items, ['U10.9']) STILL isolated
+  SET_P: group (1 items, ['C42.1']) STILL isolated
+  SET_P: group (1 items, ['R40.1']) STILL isolated
+  POST_OUT: connected group of 5 items
+  CDR_NIN: group (1 items, ['U4.4']) STILL isolated
+  PG_3V3: group (2 items, ['U6.140', 'via@(69.375, 22.375)']) STILL isolated
+  BIST_A: connected group of 8 items
+  CMP_QP: connected group of 5 items
+  HV_DAC: group (2 items, ['U8.2', 'via@(45.875, 27.625)']) STILL isolated
+  HV_FBX: group (2 items, ['U10.2', 'via@(13.875, 9.625)']) STILL isolated
+  DP_PHY: group (1 items, ['D3.6']) STILL isolated
+  USB_RST: group (1 items, ['U6.40']) STILL isolated
+  ULPI_NXT: group (1 items, ['U6.29']) STILL isolated
+  ULPI_DIR: group (1 items, ['U6.28']) STILL isolated
+  ULPI_STP: group (1 items, ['U6.26']) STILL isolated
+  ULPI_CK: group (1 items, ['U6.41']) STILL isolated
+  ULPI_D7: group (2 items, ['U6.135', 'via@(71.875, 22.375)']) STILL isolated
+  ULPI_D6: group (1 items, ['U6.74']) STILL isolated
+  ULPI_D5: group (1 items, ['U6.73']) STILL isolated
+  ULPI_D4: group (1 items, ['U6.70']) STILL isolated
+  ULPI_D3: group (1 items, ['U6.69']) STILL isolated
+  ULPI_D2: group (1 items, ['U6.47']) STILL isolated
+  ULPI_D1: group (1 items, ['U6.46']) STILL isolated
+  ULPI_D0: connected group of 14 items
+  PHY_1V8A: group (1 items, ['C23.1']) STILL isolated
+  RBIAS: group (1 items, ['R17.1']) STILL isolated
+  HV_SS: group (1 items, ['U10.3']) STILL isolated
+  BIST_DRV: group (2 items, ['U6.98', 'via@(86.625, 29.375)']) STILL isolated
+  HV_GATE: group (1 items, ['U10.7']) STILL isolated
+  NRST: group (2 items, ['U6.25', 'via@(65.375, 36.375)']) STILL isolated
+  SS_3V3: group (2 items, ['U11.9', 'via@(15.375, 64.875)']) STILL isolated
+  DAC_VREF: group (1 items, ['U8.10']) STILL isolated
+  SWDIO: group (1 items, ['U6.105']) STILL isolated
+  SWCLK: connected group of 6 items
+  SLICEP: group (2 items, ['U4.6', 'via@(49.625, 52.875)']) STILL isolated
+  SLICEN: group (1 items, ['U4.7']) STILL isolated
+  CDR_DATN: group (2 items, ['U4.28', 'via@(52.375, 49.625)']) STILL isolated
+  CDR_DATP: group (1 items, ['U4.29']) STILL isolated
+  CAP_DATA: group (1 items, ['U6.35']) STILL isolated
+  CAP_CLK: group (2 items, ['U6.34', 'via@(65.375, 40.875)']) STILL isolated
+  CDR_CLKN: group (1 items, ['J2.6']) STILL isolated
+  SS_NEG: group (1 items, ['U12.9']) STILL isolated
+  CC2: group (2 items, ['J1.B5', 'via@(30.625, 73.125)']) STILL isolated
+  SW1: connected group of 7 items
+  VCAP1: group (2 items, ['U6.106', 'via@(86.625, 25.375)']) STILL isolated
+  POST_INP: connected group of 5 items
+  CDR_VREF: group (2 items, ['U4.3', 'via@(49.625, 51.375)']) STILL isolated
+  LED_STAT: group (1 items, ['U6.99']) STILL isolated
+  LED_STAT_A: connected group of 3 items
+  ILIM_A: connected group of 5 items
+  CC1: group (1 items, ['R18.1']) STILL isolated
+  HV_INTVCC: group (2 items, ['U10.8', 'via@(18.125, 10.125)']) STILL isolated
+  THR_FILT: connected group of 8 items
+  CF1: group (1 items, ['U4.15']) STILL isolated
+  CF2: group (2 items, ['U4.14', 'via@(52.875, 54.375)']) STILL isolated
+  ILIM_P: connected group of 4 items
+  BOOT0: group (2 items, ['U6.138', 'via@(70.375, 22.375)']) STILL isolated
+  HV_RT: group (2 items, ['U10.4', 'via@(13.875, 10.625)']) STILL isolated
+  APD_A_ALT: connected group of 14 items
+  DBG_TX: group (2 items, ['U6.101', 'via@(86.625, 27.875)']) STILL isolated
+  VCAP2: group (1 items, ['U6.71']) STILL isolated
+  CDR_LOL: connected group of 11 items
+  CDR_LOS: group (1 items, ['U4.22']) STILL isolated
+  CDR_SQUELCH: group (1 items, ['U4.27']) STILL isolated
+  DBG_RX: group (1 items, ['TP3.1']) STILL isolated
+  DAC_SYNC: group (1 items, ['U8.6']) STILL isolated
+  SPI_SCK: group (1 items, ['U8.7']) STILL isolated
+  SPI_MOSI: group (1 items, ['U8.8']) STILL isolated
+  CDR_PIN: group (1 items, ['C8.2']) STILL isolated
+  THRADJ: group (2 items, ['R12.1', 'via@(48.125, 60.625)']) STILL isolated
+  REFCLK: group (1 items, ['X2.3']) STILL isolated
+  REFCLKN: group (1 items, ['C14.1']) STILL isolated
+sweep 3: 94 nets with >1 group
+  +3V3D: connected group of 77 items
+  +3V3D: connected group of 23 items
+  +3V3D: connected group of 10 items
+  +3V3D: connected group of 9 items
+  +3V3D: group (2 items, ['U11.14', 'via@(14.375, 62.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.6', 'via@(65.375, 26.875)']) STILL isolated
+  +3V3D: group (2 items, ['U6.17', 'via@(65.375, 32.375)']) STILL isolated
+  +3V3D: group (2 items, ['U6.30', 'via@(65.375, 38.875)']) STILL isolated
+  +3V3D: group (2 items, ['U6.39', 'via@(68.375, 43.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.52', 'via@(74.875, 43.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.62', 'via@(79.875, 43.625)']) STILL isolated
+  +3V3D: group (2 items, ['U6.84', 'via@(86.625, 36.375)']) STILL isolated
+  +3V3D: group (2 items, ['U6.121', 'via@(78.875, 22.375)']) STILL isolated
+  +3V3D: group (2 items, ['U6.131', 'via@(73.875, 22.375)']) STILL isolated
+  +3V3D: group (2 items, ['U8.9', 'via@(50.125, 27.625)']) STILL isolated
+  +5V: connected group of 59 items
+  +5V: connected group of 42 items
+  +5V: connected group of 10 items
+  +5V: group (1 items, ['U12.10']) STILL isolated
+  +5V: group (1 items, ['U12.13']) STILL isolated
+  +3V3A: group (35 items, ['U7.6', 'U7.30', 'U7.31']) STILL isolated
+  +3V3A: connected group of 4 items
+  +3V3A: group (2 items, ['U9.5', 'via@(8.625, 48.125)']) STILL isolated
+  +3V3A: group (1 items, ['U7.25']) STILL isolated
+  APD_A: connected group of 19 items
+  APD_A: connected group of 17 items
+  APD_A: connected group of 11 items
+  APD_A: group (2 items, ['D1.4', 'via@(8.875, 41.125)']) STILL isolated
+  VBUS_RAW: group (1 items, ['J1.A9']) STILL isolated
+  VBUS_RAW: group (1 items, ['J1.B4']) STILL isolated
+  VBUS_RAW: group (1 items, ['J1.B9']) STILL isolated
+  VBUS_RAW: group (1 items, ['F1.1']) STILL isolated
+  +3V3D_CDR: group (3 items, ['U4.12', 'via@(51.875, 54.375)', 'track@(51.875, 53.375)']) STILL isolated
+  +3V3D_CDR: group (2 items, ['U4.18', 'via@(54.375, 53.375)']) STILL isolated
+  +3V3D_CDR: group (2 items, ['U4.24', 'via@(54.375, 50.375)']) STILL isolated
+  APD_K: connected group of 12 items
+  APD_K: connected group of 12 items
+  APD_K: group (2 items, ['D1.5', 'via@(8.875, 40.125)']) STILL isolated
+  I2C_SCL: group (1 items, ['U6.136']) STILL isolated
+  I2C_SCL: group (1 items, ['U4.20']) STILL isolated
+  I2C_SCL: group (1 items, ['R20.1']) STILL isolated
+  I2C_SDA: group (1 items, ['R21.1']) STILL isolated
+  I2C_SDA: group (1 items, ['U6.137']) STILL isolated
+  I2C_SDA: group (1 items, ['U4.21']) STILL isolated
+  CDR_CLKP: group (1 items, ['J2.5']) STILL isolated
+  CDR_CLKP: group (1 items, ['U4.26']) STILL isolated
+  CDR_CLKP: group (1 items, ['R14.1']) STILL isolated
+  SW2: group (1 items, ['U12.2']) STILL isolated
+  SW2: group (1 items, ['U12.3']) STILL isolated
+  SW2: group (1 items, ['L2.1']) STILL isolated
+  TIA_OUT: connected group of 11 items
+  TIA_OUT: connected group of 7 items
+  PHY_1V8: group (1 items, ['U7.26']) STILL isolated
+  PHY_1V8: group (1 items, ['C22.1']) STILL isolated
+  ULPI_D0: connected group of 17 items
+  ULPI_D0: connected group of 4 items
+  XO: group (1 items, ['X1.3']) STILL isolated
+  XO: group (1 items, ['C21.1']) STILL isolated
+  XI: group (1 items, ['X1.1']) STILL isolated
+  XI: group (1 items, ['C20.1']) STILL isolated
+  VMID: connected group of 13 items
+  VMID: connected group of 10 items
+  +VA: connected group of 12 items
+  +VA: group (7 items, ['U13.9', 'U13.10', 'track@(49.625, 61.625)']) STILL isolated
+  TMP_ALERT: group (1 items, ['R22.1']) STILL isolated
+  TMP_ALERT: group (1 items, ['U6.139']) STILL isolated
+  DP_CON: group (2 items, ['J1.A6', 'via@(29.875, 71.375)']) STILL isolated
+  DP_CON: group (1 items, ['J1.B6']) STILL isolated
+  DM_CON: group (2 items, ['J1.B7', 'via@(29.625, 73.125)']) STILL isolated
+  DM_CON: group (1 items, ['J1.A7']) STILL isolated
+  NEG_RAW: group (6 items, ['U12.6', 'U12.7', 'U12.8']) STILL isolated
+  NEG_RAW: group (6 items, ['U12.14', 'U12.15', 'U12.16']) STILL isolated
+  FB_NEG: group (1 items, ['U12.5']) STILL isolated
+  FB_NEG: group (1 items, ['R39.1']) STILL isolated
+  FB_3V3: connected group of 7 items
+  FB_3V3: connected group of 7 items
+  SET_A: group (1 items, ['C45.1']) STILL isolated
+  SET_A: group (1 items, ['R42.1']) STILL isolated
+  HV_SHDN: group (1 items, ['U6.97']) STILL isolated
+  HV_SHDN: group (1 items, ['U10.9']) STILL isolated
+  SET_P: group (1 items, ['C42.1']) STILL isolated
+  SET_P: group (1 items, ['R40.1']) STILL isolated
+  POST_OUT: connected group of 7 items
+  CDR_NIN: group (1 items, ['U4.4']) STILL isolated
+  PG_3V3: group (2 items, ['U6.140', 'via@(69.375, 22.375)']) STILL isolated
+  BIST_A: connected group of 11 items
+  CMP_QP: connected group of 7 items
+  HV_DAC: group (2 items, ['U8.2', 'via@(45.875, 27.625)']) STILL isolated
+  HV_FBX: group (2 items, ['U10.2', 'via@(13.875, 9.625)']) STILL isolated
+  DP_PHY: group (1 items, ['D3.6']) STILL isolated
+  USB_RST: group (1 items, ['U6.40']) STILL isolated
+  ULPI_NXT: group (1 items, ['U6.29']) STILL isolated
+  ULPI_DIR: group (1 items, ['U6.28']) STILL isolated
+  ULPI_STP: group (1 items, ['U6.26']) STILL isolated
+  ULPI_CK: group (1 items, ['U6.41']) STILL isolated
+  ULPI_D7: group (2 items, ['U6.135', 'via@(71.875, 22.375)']) STILL isolated
+  ULPI_D6: group (1 items, ['U6.74']) STILL isolated
+  ULPI_D5: group (1 items, ['U6.73']) STILL isolated
+  ULPI_D4: group (1 items, ['U6.70']) STILL isolated
+  ULPI_D3: group (1 items, ['U6.69']) STILL isolated
+  ULPI_D2: group (1 items, ['U6.47']) STILL isolated
+  ULPI_D1: group (1 items, ['U6.46']) STILL isolated
+  PHY_1V8A: group (1 items, ['C23.1']) STILL isolated
+  RBIAS: group (1 items, ['R17.1']) STILL isolated
+  HV_SS: group (1 items, ['U10.3']) STILL isolated
+  BIST_DRV: group (2 items, ['U6.98', 'via@(86.625, 29.375)']) STILL isolated
+  HV_GATE: group (1 items, ['U10.7']) STILL isolated
+  NRST: group (2 items, ['U6.25', 'via@(65.375, 36.375)']) STILL isolated
+  SS_3V3: group (2 items, ['U11.9', 'via@(15.375, 64.875)']) STILL isolated
+  DAC_VREF: group (1 items, ['U8.10']) STILL isolated
+  SWDIO: group (1 items, ['U6.105']) STILL isolated
+  SWCLK: connected group of 9 items
+  SLICEP: group (2 items, ['U4.6', 'via@(49.625, 52.875)']) STILL isolated
+  SLICEN: group (1 items, ['U4.7']) STILL isolated
+  CDR_DATN: group (2 items, ['U4.28', 'via@(52.375, 49.625)']) STILL isolated
+  CDR_DATP: group (1 items, ['U4.29']) STILL isolated
+  CAP_DATA: group (1 items, ['U6.35']) STILL isolated
+  CAP_CLK: group (2 items, ['U6.34', 'via@(65.375, 40.875)']) STILL isolated
+  CDR_CLKN: group (1 items, ['J2.6']) STILL isolated
+  SS_NEG: group (1 items, ['U12.9']) STILL isolated
+  CC2: group (2 items, ['J1.B5', 'via@(30.625, 73.125)']) STILL isolated
+  SW1: connected group of 10 items
+  VCAP1: group (2 items, ['U6.106', 'via@(86.625, 25.375)']) STILL isolated
+  POST_INP: connected group of 7 items
+  CDR_VREF: group (2 items, ['U4.3', 'via@(49.625, 51.375)']) STILL isolated
+  LED_STAT: group (1 items, ['U6.99']) STILL isolated
+  LED_STAT_A: connected group of 4 items
+  ILIM_A: connected group of 7 items
+  CC1: group (1 items, ['R18.1']) STILL isolated
+  HV_INTVCC: group (2 items, ['U10.8', 'via@(18.125, 10.125)']) STILL isolated
+  THR_FILT: connected group of 9 items
+  CF1: group (1 items, ['U4.15']) STILL isolated
+  CF2: group (2 items, ['U4.14', 'via@(52.875, 54.375)']) STILL isolated
+  BOOT0: group (2 items, ['U6.138', 'via@(70.375, 22.375)']) STILL isolated
+  HV_RT: group (2 items, ['U10.4', 'via@(13.875, 10.625)']) STILL isolated
+  APD_A_ALT: connected group of 15 items
+  DBG_TX: group (2 items, ['U6.101', 'via@(86.625, 27.875)']) STILL isolated
+  VCAP2: group (1 items, ['U6.71']) STILL isolated
+  CDR_LOL: connected group of 14 items
+  CDR_LOS: group (1 items, ['U4.22']) STILL isolated
+  CDR_SQUELCH: group (1 items, ['U4.27']) STILL isolated
+  DBG_RX: group (1 items, ['TP3.1']) STILL isolated
+  DAC_SYNC: group (1 items, ['U8.6']) STILL isolated
+  SPI_SCK: group (1 items, ['U8.7']) STILL isolated
+  SPI_MOSI: group (1 items, ['U8.8']) STILL isolated
+  CDR_PIN: group (1 items, ['C8.2']) STILL isolated
+  THRADJ: group (2 items, ['R12.1', 'via@(48.125, 60.625)']) STILL isolated
+  REFCLK: group (1 items, ['X2.3']) STILL isolated
+  REFCLKN: group (1 items, ['C14.1']) STILL isolated
+saved (pre-fill checkpoint)
+Traceback (most recent call last):
+  File "/home/hatch/workspace/photodiode-lvds-rx/hw/repair.py", line 230, in <module>
+    main(sys.argv[1] if len(sys.argv) > 1 else "hw/pdlvds_rx.kicad_pcb")
+  File "/home/hatch/workspace/photodiode-lvds-rx/hw/repair.py", line 222, in main
+    board = pcbnew.LoadBoard(path)
+            ^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pcbnew.py", line 9052, in LoadBoard
+    return _pcbnew.LoadBoard(*args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: Unknown file type
+exit=1

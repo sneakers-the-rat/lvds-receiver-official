@@ -1,177 +1,192 @@
 [1/112] HV_SEC (2 pins) t=0s
 [2/112] HV_RAW (3 pins) t=0s
 [3/112] APD_K (8 pins) t=0s
-[4/112] PHY_1V8 (3 pins) t=0s
-[5/112] PHY_1V8A (2 pins) t=0s
-[6/112] VBUS_RAW (5 pins) t=1s
-[7/112] NEG_RAW (12 pins) t=1s
-[8/112] +3V3D_CDR (10 pins) t=1s
-[9/112] -VA (4 pins) t=1s
-[10/112] +VA (10 pins) t=1s
-[11/112] +3V3A (13 pins) t=2s
-[12/112] +5V (27 pins) t=6s
-[13/112] +3V3D (40 pins) t=8s
-[14/112] CMP_QN (2 pins) t=12s
-[15/112] CMP_QP (3 pins) t=12s
-[16/112] CDR_DATP (4 pins) t=12s
-[17/112] CDR_DATN (4 pins) t=13s
-[18/112] CDR_CLKP (4 pins) t=42s
-[19/112] CDR_CLKN (4 pins) t=42s
-[20/112] FLY_PRI (2 pins) t=66s
-[21/112] MOS_G (2 pins) t=66s
-[22/112] HV_GATE (2 pins) t=66s
-[23/112] VCAP2 (2 pins) t=66s
-[24/112] TP_HV (2 pins) t=66s
-[25/112] TEST_IN (2 pins) t=66s
-[26/112] LED_STAT_A (2 pins) t=66s
-[27/112] LED_PWR_K (2 pins) t=66s
-[28/112] SS_3V3 (2 pins) t=66s
-[29/112] HV_VC2 (2 pins) t=90s
-[30/112] DM_CON (3 pins) t=90s
-[31/112] CC2 (2 pins) t=90s
-[32/112] SS_NEG (2 pins) t=90s
-[33/112] SLICEN (2 pins) t=113s
-[34/112] POST_INP (3 pins) t=113s
-[35/112] APD_K_ALT (2 pins) t=113s
-[36/112] DP_CON (3 pins) t=113s
-[37/112] SW2 (4 pins) t=113s
-[38/112] SW1 (4 pins) t=170s
-[39/112] BIST_A (2 pins) t=170s
-[40/112] HV_SENSE (3 pins) t=170s
-[41/112] CDR_VREF (2 pins) t=170s
-[42/112] SLICEP (2 pins) t=183s
-[43/112] THRADJ (2 pins) t=196s
-[44/112] HV_VC (2 pins) t=196s
-[45/112] HV_INTVCC (2 pins) t=196s
-[46/112] CC1 (2 pins) t=196s
-[47/112] THR_FILT (3 pins) t=196s
-[48/112] DP_PHY (2 pins) t=196s
-[49/112] HV_SS (2 pins) t=196s
-[50/112] RBIAS (2 pins) t=196s
-[51/112] POST_INN (3 pins) t=196s
-[52/112] ILIM_A (2 pins) t=196s
-[53/112] ILIM_P (2 pins) t=196s
-[54/112] FB_NEG (3 pins) t=196s
-[55/112] REFCLKN (2 pins) t=197s
-[56/112] XO (3 pins) t=206s
-[57/112] DM_PHY (2 pins) t=206s
-[58/112] HV_RT (2 pins) t=206s
-[59/112] DAC_VREF (2 pins) t=206s
-[60/112] CF1 (2 pins) t=216s
-[61/112] REFCLK (2 pins) t=216s
-[62/112] CAP_DATA (2 pins) t=216s
-[63/112] DBG_TX (2 pins) t=216s
-[64/112] POST_OUT (3 pins) t=216s
-[65/112] CF2 (2 pins) t=216s
-[66/112] FB_3V3 (3 pins) t=216s
-[67/112] APD_A_ALT (2 pins) t=217s
-[68/112] SET_P (3 pins) t=217s
-[69/112] VMID (5 pins) t=217s
-[70/112] CAP_CLK (2 pins) t=217s
-[71/112] DBG_RX (2 pins) t=217s
-[72/112] XI (3 pins) t=217s
-[73/112] CDR_NIN (2 pins) t=227s
-[74/112] SET_A (3 pins) t=227s
-[75/112] TIA_OUT (5 pins) t=227s
-[76/112] LED_STAT (2 pins) t=228s
-[77/112] CMP_IN (5 pins) t=228s
-[78/112] CDR_PIN (2 pins) t=228s
-[79/112] CDR_LOL (2 pins) t=238s
-[80/112] HV_DAC (2 pins) t=239s
-[81/112] APD_A (9 pins) t=239s
-[82/112] THR_DAC (2 pins) t=239s
-[83/112] HV_FBX (5 pins) t=240s
-[84/112] SPI_MOSI (2 pins) t=240s
-[85/112] SWDIO (2 pins) t=251s
-[86/112] BOOT0 (2 pins) t=251s
-[87/112] SPI_SCK (2 pins) t=251s
-[88/112] DAC_SYNC (2 pins) t=252s
-[89/112] VCAP1 (2 pins) t=252s
-[90/112] CDR_LOS (2 pins) t=252s
-[91/112] CDR_SQUELCH (2 pins) t=253s
-[92/112] SWCLK (2 pins) t=253s
-[93/112] ULPI_D0 (2 pins) t=253s
-[94/112] NRST (4 pins) t=255s
-[95/112] ULPI_D1 (2 pins) t=256s
-[96/112] ULPI_D2 (2 pins) t=267s
-[97/112] ULPI_CK (2 pins) t=268s
-[98/112] USB_RST (2 pins) t=280s
-[99/112] ULPI_NXT (2 pins) t=280s
-[100/112] ULPI_DIR (2 pins) t=280s
-[101/112] ULPI_STP (2 pins) t=282s
-[102/112] ULPI_D3 (2 pins) t=282s
-[103/112] ULPI_D4 (2 pins) t=294s
-[104/112] ULPI_D5 (2 pins) t=294s
-[105/112] ULPI_D6 (2 pins) t=296s
-[106/112] ULPI_D7 (2 pins) t=296s
-[107/112] TMP_ALERT (3 pins) t=301s
-[108/112] BIST_DRV (2 pins) t=301s
-[109/112] I2C_SDA (4 pins) t=301s
-[110/112] I2C_SCL (4 pins) t=313s
-[111/112] HV_SHDN (4 pins) t=336s
-[112/112] PG_3V3 (3 pins) t=338s
-retry pass 1: 59 failed pins, t=341s
-retry pass 2: 59 failed pins, t=611s
-router: 67 nets routed, 59 pin connections failed, 192 signal vias, 69 gnd vias
+[4/112] PHY_1V8 (3 pins) t=1s
+[5/112] PHY_1V8A (2 pins) t=18s
+[6/112] VBUS_RAW (5 pins) t=28s
+[7/112] NEG_RAW (12 pins) t=61s
+[8/112] +3V3D_CDR (10 pins) t=61s
+[9/112] -VA (4 pins) t=61s
+[10/112] +VA (10 pins) t=62s
+[11/112] +3V3A (13 pins) t=63s
+[12/112] +5V (27 pins) t=68s
+[13/112] +3V3D (40 pins) t=71s
+[14/112] SS_3V3 (2 pins) t=82s
+[15/112] CC2 (2 pins) t=82s
+[16/112] SS_NEG (2 pins) t=82s
+[17/112] DP_CON (3 pins) t=82s
+[18/112] SW2 (4 pins) t=82s
+[19/112] SLICEP (2 pins) t=114s
+[20/112] CDR_VREF (2 pins) t=114s
+[21/112] HV_INTVCC (2 pins) t=114s
+[22/112] XO (3 pins) t=114s
+[23/112] CC1 (2 pins) t=127s
+[24/112] DP_PHY (2 pins) t=157s
+[25/112] RBIAS (2 pins) t=182s
+[26/112] REFCLKN (2 pins) t=205s
+[27/112] HV_RT (2 pins) t=228s
+[28/112] DAC_VREF (2 pins) t=229s
+[29/112] CF2 (2 pins) t=229s
+[30/112] CAP_CLK (2 pins) t=229s
+[31/112] XI (3 pins) t=229s
+[32/112] DBG_RX (2 pins) t=260s
+[33/112] SET_A (3 pins) t=272s
+[34/112] CDR_PIN (2 pins) t=296s
+[35/112] APD_A (9 pins) t=310s
+[36/112] HV_FBX (5 pins) t=310s
+[37/112] SPI_MOSI (2 pins) t=310s
+[38/112] DAC_SYNC (2 pins) t=310s
+[39/112] VCAP1 (2 pins) t=323s
+[40/112] CDR_SQUELCH (2 pins) t=324s
+[41/112] CDR_DATN (4 pins) t=337s
+[42/112] ULPI_D1 (2 pins) t=337s
+[43/112] ULPI_CK (2 pins) t=351s
+[44/112] CDR_CLKP (4 pins) t=364s
+[45/112] USB_RST (2 pins) t=390s
+[46/112] CDR_CLKN (4 pins) t=390s
+[47/112] ULPI_NXT (2 pins) t=390s
+[48/112] ULPI_STP (2 pins) t=390s
+[49/112] ULPI_D3 (2 pins) t=404s
+[50/112] ULPI_D4 (2 pins) t=418s
+[51/112] ULPI_D6 (2 pins) t=433s
+[52/112] TMP_ALERT (3 pins) t=449s
+[53/112] BIST_DRV (2 pins) t=484s
+[54/112] I2C_SDA (4 pins) t=486s
+[55/112] I2C_SCL (4 pins) t=529s
+[56/112] CMP_QN (2 pins) t=572s
+[57/112] CMP_QP (3 pins) t=572s
+[58/112] CDR_DATP (4 pins) t=572s
+[59/112] FLY_PRI (2 pins) t=573s
+[60/112] MOS_G (2 pins) t=573s
+[61/112] HV_GATE (2 pins) t=573s
+[62/112] VCAP2 (2 pins) t=573s
+[63/112] TP_HV (2 pins) t=573s
+[64/112] TEST_IN (2 pins) t=573s
+[65/112] LED_STAT_A (2 pins) t=573s
+[66/112] LED_PWR_K (2 pins) t=573s
+[67/112] HV_VC2 (2 pins) t=573s
+[68/112] DM_CON (3 pins) t=573s
+[69/112] SLICEN (2 pins) t=573s
+[70/112] POST_INP (3 pins) t=573s
+[71/112] APD_K_ALT (2 pins) t=573s
+[72/112] SW1 (4 pins) t=573s
+[73/112] BIST_A (2 pins) t=573s
+[74/112] HV_SENSE (3 pins) t=573s
+[75/112] THRADJ (2 pins) t=573s
+[76/112] HV_VC (2 pins) t=573s
+[77/112] THR_FILT (3 pins) t=573s
+[78/112] HV_SS (2 pins) t=573s
+[79/112] POST_INN (3 pins) t=573s
+[80/112] ILIM_A (2 pins) t=573s
+[81/112] ILIM_P (2 pins) t=574s
+[82/112] FB_NEG (3 pins) t=574s
+[83/112] DM_PHY (2 pins) t=588s
+[84/112] REFCLK (2 pins) t=588s
+[85/112] CAP_DATA (2 pins) t=601s
+[86/112] DBG_TX (2 pins) t=601s
+[87/112] POST_OUT (3 pins) t=602s
+[88/112] CF1 (2 pins) t=602s
+[89/112] FB_3V3 (3 pins) t=602s
+[90/112] APD_A_ALT (2 pins) t=602s
+[91/112] SET_P (3 pins) t=602s
+[92/112] VMID (5 pins) t=630s
+[93/112] CDR_NIN (2 pins) t=631s
+[94/112] TIA_OUT (5 pins) t=631s
+[95/112] LED_STAT (2 pins) t=631s
+[96/112] CMP_IN (5 pins) t=631s
+[97/112] CDR_LOL (2 pins) t=631s
+[98/112] HV_DAC (2 pins) t=632s
+[99/112] THR_DAC (2 pins) t=632s
+[100/112] SWDIO (2 pins) t=633s
+[101/112] BOOT0 (2 pins) t=633s
+[102/112] SPI_SCK (2 pins) t=634s
+[103/112] CDR_LOS (2 pins) t=650s
+[104/112] SWCLK (2 pins) t=666s
+[105/112] ULPI_D0 (2 pins) t=666s
+[106/112] NRST (4 pins) t=669s
+[107/112] ULPI_D2 (2 pins) t=670s
+[108/112] ULPI_DIR (2 pins) t=686s
+[109/112] ULPI_D5 (2 pins) t=703s
+[110/112] ULPI_D7 (2 pins) t=722s
+[111/112] HV_SHDN (4 pins) t=730s
+[112/112] PG_3V3 (3 pins) t=730s
+retry pass 1: 74 failed pins, t=769s
+retry pass 2: 74 failed pins, t=1940s
+router: 58 nets routed, 74 pin connections failed, 175 signal vias, 72 gnd vias
+  FAILED: ('PHY_1V8', 'U7.26')
+  FAILED: ('PHY_1V8', 'C22.1')
+  FAILED: ('PHY_1V8A', 'C23.1')
+  FAILED: ('VBUS_RAW', 'J1.A9')
+  FAILED: ('VBUS_RAW', 'J1.B4')
+  FAILED: ('VBUS_RAW', 'J1.B9')
+  FAILED: ('VBUS_RAW', 'F1.1')
   FAILED: ('+3V3A', 'U7.25')
-  FAILED: ('+3V3A', 'U7.30')
   FAILED: ('+5V', 'U12.10')
-  FAILED: ('+3V3D', 'U11.14')
-  FAILED: ('CDR_DATN', 'R13.2')
-  FAILED: ('CDR_DATN', 'U5.1')
-  FAILED: ('CDR_DATN', 'J2.2')
-  FAILED: ('CDR_CLKP', 'J2.5')
-  FAILED: ('CDR_CLKN', 'R14.2')
-  FAILED: ('CDR_CLKN', 'U5.7')
-  FAILED: ('CDR_CLKN', 'J2.6')
-  FAILED: ('SS_3V3', 'C36.1')
-  FAILED: ('CC2', 'J1.B5')
-  FAILED: ('SS_NEG', 'C39.1')
-  FAILED: ('DP_CON', 'J1.A6')
+  FAILED: ('+5V', 'U12.13')
+  FAILED: ('SS_NEG', 'U12.9')
   FAILED: ('DP_CON', 'J1.B6')
-  FAILED: ('SW2', 'U12.1')
   FAILED: ('SW2', 'U12.2')
   FAILED: ('SW2', 'U12.3')
-  FAILED: ('CDR_VREF', 'C12.1')
-  FAILED: ('SLICEP', 'C13.1')
-  FAILED: ('HV_INTVCC', 'U10.8')
-  FAILED: ('CC1', 'J1.A5')
-  FAILED: ('DP_PHY', 'U7.7')
-  FAILED: ('RBIAS', 'U7.32')
+  FAILED: ('SW2', 'L2.1')
+  FAILED: ('XO', 'X1.3')
+  FAILED: ('XO', 'C21.1')
+  FAILED: ('CC1', 'R18.1')
+  FAILED: ('DP_PHY', 'D3.6')
+  FAILED: ('RBIAS', 'R17.1')
   FAILED: ('REFCLKN', 'C14.1')
-  FAILED: ('XO', 'U7.27')
-  FAILED: ('HV_RT', 'U10.4')
-  FAILED: ('DAC_VREF', 'C26.1')
-  FAILED: ('CF2', 'U4.14')
-  FAILED: ('CAP_CLK', 'U6.34')
-  FAILED: ('DBG_RX', 'U6.102')
+  FAILED: ('DAC_VREF', 'U8.10')
+  FAILED: ('XI', 'X1.1')
   FAILED: ('XI', 'C20.1')
-  FAILED: ('XI', 'U7.28')
-  FAILED: ('SET_A', 'U14.7')
+  FAILED: ('DBG_RX', 'TP3.1')
+  FAILED: ('SET_A', 'C45.1')
+  FAILED: ('SET_A', 'R42.1')
   FAILED: ('CDR_PIN', 'C8.2')
-  FAILED: ('APD_A', 'D1.4')
-  FAILED: ('APD_A', 'D1.6')
-  FAILED: ('HV_FBX', 'U10.2')
-  FAILED: ('SPI_MOSI', 'U6.113')
-  FAILED: ('DAC_SYNC', 'U6.110')
-  FAILED: ('VCAP1', 'U6.106')
-  FAILED: ('CDR_SQUELCH', 'U6.76')
+  FAILED: ('SPI_MOSI', 'U8.8')
+  FAILED: ('DAC_SYNC', 'U8.6')
+  FAILED: ('CDR_SQUELCH', 'U4.27')
   FAILED: ('ULPI_D1', 'U6.46')
   FAILED: ('ULPI_CK', 'U6.41')
+  FAILED: ('CDR_CLKP', 'J2.5')
+  FAILED: ('CDR_CLKP', 'U4.26')
+  FAILED: ('CDR_CLKP', 'R14.1')
   FAILED: ('USB_RST', 'U6.40')
+  FAILED: ('CDR_CLKN', 'J2.6')
   FAILED: ('ULPI_NXT', 'U6.29')
   FAILED: ('ULPI_STP', 'U6.26')
   FAILED: ('ULPI_D3', 'U6.69')
   FAILED: ('ULPI_D4', 'U6.70')
   FAILED: ('ULPI_D6', 'U6.74')
+  FAILED: ('TMP_ALERT', 'R22.1')
   FAILED: ('TMP_ALERT', 'U6.139')
-  FAILED: ('BIST_DRV', 'U6.98')
   FAILED: ('I2C_SDA', 'R21.1')
   FAILED: ('I2C_SDA', 'U6.137')
-  FAILED: ('I2C_SDA', 'U9.6')
-  FAILED: ('I2C_SCL', 'R20.1')
+  FAILED: ('I2C_SDA', 'U4.21')
   FAILED: ('I2C_SCL', 'U6.136')
-  FAILED: ('I2C_SCL', 'U9.1')
+  FAILED: ('I2C_SCL', 'U4.20')
+  FAILED: ('I2C_SCL', 'R20.1')
+  FAILED: ('CDR_DATP', 'U4.29')
+  FAILED: ('HV_GATE', 'U10.7')
+  FAILED: ('VCAP2', 'U6.71')
+  FAILED: ('DM_CON', 'J1.A7')
+  FAILED: ('SLICEN', 'U4.7')
+  FAILED: ('HV_SS', 'U10.3')
+  FAILED: ('FB_NEG', 'U12.5')
+  FAILED: ('FB_NEG', 'R39.1')
+  FAILED: ('REFCLK', 'X2.3')
+  FAILED: ('CAP_DATA', 'U6.35')
+  FAILED: ('CF1', 'U4.15')
+  FAILED: ('SET_P', 'C42.1')
+  FAILED: ('SET_P', 'R40.1')
+  FAILED: ('CDR_NIN', 'U4.4')
+  FAILED: ('LED_STAT', 'U6.99')
+  FAILED: ('SWDIO', 'U6.105')
+  FAILED: ('SPI_SCK', 'U8.7')
+  FAILED: ('CDR_LOS', 'U4.22')
+  FAILED: ('ULPI_D2', 'U6.47')
+  FAILED: ('ULPI_DIR', 'U6.28')
+  FAILED: ('ULPI_D5', 'U6.73')
+  FAILED: ('HV_SHDN', 'U6.97')
+  FAILED: ('HV_SHDN', 'U10.9')
 checkpoint save (routed, unfilled)
 saved /home/hatch/workspace/photodiode-lvds-rx/hw/pdlvds_rx.kicad_pcb
 EXIT=0
