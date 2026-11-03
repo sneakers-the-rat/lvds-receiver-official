@@ -161,10 +161,11 @@ def compute_groups(board):
 
 
 def main(path="hw/pdlvds_rx.kicad_pcb"):
-    # Lockfile: the first repair attempt's output was lost when two
-    # processes ran on the same board file concurrently (saves
-    # clobbered / reload hit a half-written file — 'Unknown file
-    # type'); refuse to run if another repair holds the lock.
+    # Lockfile (cheap insurance): attempts 1-2 both lost their boards
+    # at the save step — attempt 2's post-mortem found the true cause
+    # (the A* result variable `path` shadowed the board-path argument,
+    # so the save used a route/None; see _main_locked). Concurrency
+    # was suspected for attempt 1 but the shadowing explains both.
     import os
     lock = path + ".repair.lock"
     if os.path.exists(lock):
@@ -179,8 +180,9 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
         os.unlink(lock)
 
 
-def _main_locked(path):
-    board = pcbnew.LoadBoard(path)
+def _main_locked(board_path):
+    board = pcbnew.LoadBoard(board_path)
+    out = board_path.replace(".kicad_pcb", ".repaired.kicad_pcb")
     items, pad_cells = build_items(board)
     net_objs = {}
 
@@ -216,27 +218,32 @@ def _main_locked(path):
                 if not starts:
                     for it in g:
                         starts += list(it.cells)[:2]
-                path = astar(items, starts, main_cells, net, width / 2,
-                             clr, cap=1500000, neck_pts=neck_pts,
-                             own_cells=own_cells)
-                if path is None:
+                rpath = astar(items, starts, main_cells, net, width / 2,
+                              clr, cap=1500000, neck_pts=neck_pts,
+                              own_cells=own_cells)
+                if rpath is None:
                     print(f"  {net}: group ({len(g)} items, "
                           f"{[it.desc for it in g[:3]]}) STILL isolated",
                           flush=True)
                     continue
                 stats = {"vias": 0}
-                emit(board, net_obj(net), path, width, items, net, clr,
+                emit(board, net_obj(net), rpath, width, items, net, clr,
                      stats)
-                for node in path:
+                for node in rpath:
                     main_cells.add(node)
                 total += 1
                 progressed = True
                 print(f"  {net}: connected group of {len(g)} items",
                       flush=True)
+        # Checkpoint after every sweep: a late crash must not be able
+        # to take earlier sweeps' connections with it (attempts 1-2
+        # each lost a full run at the final save).
+        board.Save(out)
+        print(f"checkpoint saved after sweep {sweep + 1}: {out}",
+              flush=True)
         if not progressed:
             print("no progress this sweep — stopping")
             break
-    out = path.replace(".kicad_pcb", ".repaired.kicad_pcb")
     n_tracks_before = len(list(board.GetTracks()))
     board.Save(out)
     # Verify the save actually landed before trusting it (attempt 1
