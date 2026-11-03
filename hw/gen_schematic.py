@@ -253,10 +253,24 @@ def main():
            '(paper "A0")', '(title_block (title "PDLVDS-RX rev A — photodiode LVDS receiver") (rev "A"))',
            '(lib_symbols']
     out += defs
-    # embed PWR_FLAG definition copied from KiCad power library
+    # Embed the PWR_FLAG definition copied from the KiCad power library.
+    # In lib_symbols, a definition's name carries its library nickname
+    # prefix ("power:PWR_FLAG") — the same rename applied to the custom
+    # "pdlvds:" defs above — because instances reference it by lib_id
+    # "power:PWR_FLAG". Copying the block verbatim keeps the bare name
+    # "PWR_FLAG", the instances then resolve to NOTHING, and every flag
+    # is electrically inert: no pin, no power_out on its net. (Proven
+    # with a minimal two-file probe against kicad-cli's netlist: with
+    # the bare name a pin placed exactly on the flag stayed
+    # "unconnected-(...)"; with the prefixed name it joined a real net.
+    # This is why KiCad 8 ERC reported power_pin_not_driven on all 8
+    # flag-dependent nets in run 41728446884 despite 11 flags existing,
+    # and why the round-1 PHY flags changed nothing.)
     ptxt = open('/usr/share/kicad/symbols/power.kicad_sym').read()
     i = ptxt.index('(symbol "PWR_FLAG"')
-    out.append(balanced(ptxt, i))
+    flagdef = balanced(ptxt, i).replace('(symbol "PWR_FLAG"',
+                                        '(symbol "power:PWR_FLAG"', 1)
+    out.append(flagdef)
     out.append(')')
     out += instances + wires + labels + ncs
     out.append('(sheet_instances (path "/" (page "1")))')
