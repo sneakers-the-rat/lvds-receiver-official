@@ -248,7 +248,9 @@ def main():
         instances.append(f'(symbol (lib_id "power:PWR_FLAG") (at {fx} {fy} 0) (unit 1) (in_bom no) (on_board no) (dnp no) (uuid {q(U())}) (property "Reference" {q("#FLG"+str(int(fx)))} (at {fx} {fy+2.54} 0) (effects (font (size 1.27 1.27)) hide)) (property "Value" "PWR_FLAG" (at {fx} {fy-2.54} 0) (effects (font (size 1.27 1.27)) hide)) (property "Footprint" "" (at {fx} {fy} 0) (effects (font (size 1.27 1.27)) hide)) (property "Datasheet" "" (at {fx} {fy} 0) (effects (font (size 1.27 1.27)) hide)) (instances (project "pdlvds_rx" (path "/{SHEET_UUID}" (reference {q("#FLG"+str(int(fx)))}) (unit 1)))))')
         fx = snap(fx + 25.4)
     out = ['(kicad_sch (version 20230121) (generator "pdlvds-gen")', f'(uuid {SHEET_UUID})',
-           '(paper "A1")', '(title_block (title "PDLVDS-RX rev A — photodiode LVDS receiver") (rev "A"))',
+           # A0: the generated single-sheet layout is ~740 mm tall; it
+           # overflowed A1 (594 mm) from the first generation onward.
+           '(paper "A0")', '(title_block (title "PDLVDS-RX rev A — photodiode LVDS receiver") (rev "A"))',
            '(lib_symbols']
     out += defs
     # embed PWR_FLAG definition copied from KiCad power library
