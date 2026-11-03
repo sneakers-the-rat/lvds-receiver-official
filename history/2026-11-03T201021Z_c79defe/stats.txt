@@ -1,0 +1,13 @@
+label: router v2 — wide nets first
+timestamp (UTC): 2026-11-03T20:10:21Z
+commit: c79defe9ecb1ad3dc6286e18894aba50cdc4e07f
+commit (short): c79defe
+board file: none (no board committed)
+renders: none
+render layers: not recorded
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: not recorded
+unconnected nets: not recorded
+audit verdict: not recorded
+note: No board was committed for this attempt, and no result tally was recorded. v2 routed wide nets first (HV > power > LVDS > signals) with retry passes; the next commit (d9d257a) diagnosed the shared v1/v2 root cause: wide tracks could never escape 0.5mm-pitch pads without neck-down.

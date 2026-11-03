@@ -190,3 +190,34 @@ no severity touched. NOT claimed here: a KiCad 8 ERC number (none
 exists locally); the expectation that errors reach 0 and both NC
 warning classes collapse by 88 rests on the mechanism evidence
 above and is for the next CI run's report to confirm.
+
+## Routing history gallery (2026-11-03, branch routing-history)
+
+Per the user's direction, every routing attempt is now committed and
+snapshotted as it happens, and the site shows the evolution — failed
+attempts included, unpolished.
+
+- `scripts/snapshot_route.py` snapshots one attempt into
+  `history/<UTC-timestamp>_<short-hash>/` (kicad-cli top/bottom SVG
+  renders, stats.txt) and maintains `history/index.json`. Stats are
+  parsed from the audit/build log or given explicitly; anything not
+  measured is recorded as "not recorded". Idempotent per commit hash.
+  Convention for future attempts: commit the attempt, run the script,
+  commit the history/ update. See `history/README.md`.
+- Backfilled six entries from git history (boards extracted read-only
+  from the main repo at their real hashes/timestamps): router v1
+  (dc6a010, 125 pins failed, no board committed), placed-unrouted
+  waypoint (d0c0bca, renders), router v2 (c79defe, no board committed),
+  router v3 (3ac1a43, 57/112 nets, 90 failed, renders), router v4
+  (41d7196, 67/112, 59 failed, 454 violating pairs per f8b9d1c,
+  renders), router v5 (fb2acf7, 58/112, 74 failed, 341 clearance /
+  98 unconnected / audit FAIL from its committed audit, renders).
+- `scripts/build_site.py` gained a "Routing history" section (nav
+  linked): chronological gallery with timestamp, commit hash, the
+  real stats and renders per attempt; board-less attempts show an
+  explicit no-render note; the section builds with zero entries too.
+  Verified in a full local build (all 6 entries present) and a
+  zero-history build (placeholder line).
+- CI: no workflow change needed — build-site already builds from a
+  fresh full checkout (history/ is tracked) and runs build_site.py
+  there; the tolerant artifact downloads do not touch history/.

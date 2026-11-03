@@ -1,0 +1,116 @@
+[
+  {
+    "timestamp": "2026-11-03T19:39:29Z",
+    "hash": "dc6a010850077f47eaaf227b1751e7d5000965f0",
+    "short_hash": "dc6a010",
+    "label": "router v1 \u2014 first routed attempt",
+    "dir": "2026-11-03T193929Z_dc6a010",
+    "renders": null,
+    "stats": {
+      "pins_failed": 125,
+      "nets_routed": null,
+      "nets_total": null,
+      "clearance_violations": null,
+      "unconnected_nets": null,
+      "audit_verdict": null
+    },
+    "note": "No board was committed for this attempt. Pins-failed figure (125) is from the later commit messages that chart the progression (3ac1a43: 'v1: 125'; 41d7196: 'v1 125 -> v3 90 -> v4 59'). v1 sorted nets by spread only, leaving the 0.6mm +3V3D net (40 pins) last."
+  },
+  {
+    "timestamp": "2026-11-03T19:43:45Z",
+    "hash": "d0c0bca09143177ae7a3f59f2cc6b8dc8500739a",
+    "short_hash": "d0c0bca",
+    "label": "placed board \u2014 UNROUTED waypoint",
+    "dir": "2026-11-03T194345Z_d0c0bca",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "stats": {
+      "nets_routed": 0,
+      "nets_total": 112,
+      "pins_failed": null,
+      "clearance_violations": null,
+      "unconnected_nets": null,
+      "audit_verdict": null
+    },
+    "note": "144 footprints placed, GND zones, HV isolation slot; saved unrouted after a VM replacement wiped the toolchain mid-routing (commit d0c0bca message)."
+  },
+  {
+    "timestamp": "2026-11-03T20:10:21Z",
+    "hash": "c79defe9ecb1ad3dc6286e18894aba50cdc4e07f",
+    "short_hash": "c79defe",
+    "label": "router v2 \u2014 wide nets first",
+    "dir": "2026-11-03T201021Z_c79defe",
+    "renders": null,
+    "stats": {
+      "nets_routed": null,
+      "nets_total": null,
+      "pins_failed": null,
+      "clearance_violations": null,
+      "unconnected_nets": null,
+      "audit_verdict": null
+    },
+    "note": "No board was committed for this attempt, and no result tally was recorded. v2 routed wide nets first (HV > power > LVDS > signals) with retry passes; the next commit (d9d257a) diagnosed the shared v1/v2 root cause: wide tracks could never escape 0.5mm-pitch pads without neck-down."
+  },
+  {
+    "timestamp": "2026-11-03T20:52:25Z",
+    "hash": "3ac1a430b6b34aad838f234624f8244d95d50e0e",
+    "short_hash": "3ac1a43",
+    "label": "router v3 \u2014 neck-down at fine-pitch pads",
+    "dir": "2026-11-03T205225Z_3ac1a43",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "stats": {
+      "nets_routed": 57,
+      "nets_total": 112,
+      "pins_failed": 90,
+      "clearance_violations": null,
+      "unconnected_nets": null,
+      "audit_verdict": null
+    },
+    "note": "First committed routed board. 151 signal vias + 74 GND vias (commit 3ac1a43 message). No audit file was committed at this attempt, so clearance/unconnected/verdict are not recorded."
+  },
+  {
+    "timestamp": "2026-11-03T21:25:40Z",
+    "hash": "41d7196ba016876cd4c570858b575174c105ceee",
+    "short_hash": "41d7196",
+    "label": "router v4 \u2014 goal-cell exemption fix",
+    "dir": "2026-11-03T212540Z_41d7196",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "stats": {
+      "nets_routed": 67,
+      "nets_total": 112,
+      "pins_failed": 59,
+      "clearance_violations": 454,
+      "audit_verdict": "FAIL",
+      "unconnected_nets": null
+    },
+    "note": "Clearance figure is the v4 audit's violating-pair count (454, of which 126 at gap 0.0 = literal shorts) as recorded in commit f8b9d1c; no audit file was committed at 41d7196 itself. Unconnected-net count for v4 not recorded."
+  },
+  {
+    "timestamp": "2026-11-03T22:29:05Z",
+    "hash": "fb2acf7b80f74860a8301a3cce6eaf4df1abbb6f",
+    "short_hash": "fb2acf7",
+    "label": "router v5 \u2014 stricter clearance model",
+    "dir": "2026-11-03T222905Z_fb2acf7",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "stats": {
+      "unconnected_nets": 98,
+      "clearance_violations": 341,
+      "audit_verdict": "FAIL",
+      "nets_routed": 58,
+      "nets_total": 112,
+      "pins_failed": 74
+    },
+    "note": "Stricter clearance model (vias never exempt, segment-midpoint tests, layer-aware HV) traded connections for correctness vs v4 (commit fb2acf7 message). Clearance/unconnected/verdict parsed from the audit file committed with this attempt."
+  }
+]

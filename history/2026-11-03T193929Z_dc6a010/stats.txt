@@ -1,0 +1,13 @@
+label: router v1 — first routed attempt
+timestamp (UTC): 2026-11-03T19:39:29Z
+commit: dc6a010850077f47eaaf227b1751e7d5000965f0
+commit (short): dc6a010
+board file: none (no board committed)
+renders: none
+render layers: not recorded
+nets fully routed: not recorded
+pins failed: 125
+clearance violations: not recorded
+unconnected nets: not recorded
+audit verdict: not recorded
+note: No board was committed for this attempt. Pins-failed figure (125) is from the later commit messages that chart the progression (3ac1a43: 'v1: 125'; 41d7196: 'v1 125 -> v3 90 -> v4 59'). v1 sorted nets by spread only, leaving the 0.6mm +3V3D net (40 pins) last.
