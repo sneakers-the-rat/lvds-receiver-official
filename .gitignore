@@ -3,3 +3,4 @@ __pycache__/
 site/
 *.pyc
 .site-status/
+*.repair.lock
