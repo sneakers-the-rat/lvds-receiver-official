@@ -82,8 +82,13 @@ def read_wrdata(path):
 
 results = {}
 
+# NOTE: every AC stimulus below is "dc 0 ac 1", never bare "ac 1".
+# ngspice-36 (Ubuntu 22.04, what CI runs) rejects an AC-only independent
+# source ("iph: has no value, DC 0 assumed", no analysis runs, exit 1);
+# ngspice-42 accepts it. The explicit DC value is valid in both.
+
 # ---------- AC ----------
-deck = CIR_HEAD.format(stim="ac 1") + """
+deck = CIR_HEAD.format(stim="dc 0 ac 1") + """
 .control
 ac dec 200 1e5 3e9
 wrdata results/tia_ac.csv db(v(out)) ph(v(out))
@@ -92,7 +97,7 @@ wrdata results/tia_ac.csv db(v(out)) ph(v(out))
 # wrdata with db() writes a single real column pair; handle generically:
 run_ngspice(deck.replace(".end\n", ""), "tia_ac") if False else None
 with open("sim/tia_ac.cir", "w") as f:
-    f.write(CIR_HEAD.format(stim="ac 1").replace(".end\n", "") + """
+    f.write(CIR_HEAD.format(stim="dc 0 ac 1").replace(".end\n", "") + """
 .control
 ac dec 200 1e5 3e9
 wrdata results/tia_ac.csv db(v(out))
