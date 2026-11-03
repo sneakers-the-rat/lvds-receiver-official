@@ -191,6 +191,69 @@ exists locally); the expectation that errors reach 0 and both NC
 warning classes collapse by 88 rests on the mechanism evidence
 above and is for the next CI run's report to confirm.
 
+## CI fix pass, round 4 (2026-11-03, branch ci-fix)
+
+The main-branch CI run on 264d58b (the round-3 merge) confirmed the
+round-3 expectation and priced the flags' new electrical life: ERC
+184 -> 13 total = 2 errors + 11 warnings. Both remaining classes
+trace to the PWR_FLAGs, and both are addressed here.
+
+1. 2 errors, both [pin_to_pin] "Power output and Power output
+   connected": a flag on +VA facing U13 pin 10 [OUT, Power output],
+   and a flag on +3V3A facing U14 pin 10 [OUT]. Round 1 flagged
+   every rail indiscriminately; while the flags were dead (the
+   round-3 lib_id bug) that was invisible. +VA/+3V3A are driven by
+   LT3042 OUT pins — genuine power outputs — and were never among
+   the 8 power_pin_not_driven nets. Fix: flag placement in
+   gen_schematic.py is now data-driven. flag_nets() computes the
+   flag set from circuit.py pin data (via part_pins()): a net is
+   flagged iff it contains at least one power_in pin and no
+   power_out pin — a PWR_FLAG is itself a power_out to ERC, so it
+   belongs exactly on nets that have loads to drive and no driver.
+   Measured census behind the change: +VA 3 power_in / 1 power_out,
+   +3V3A 7 / 1, APD_K 0 power_in (8 passive pins) — precisely the
+   three flags the rule removes. APD_K's flag goes too: correct,
+   there is nothing on that net for a flag to drive. The PHY rails
+   (PHY_1V8, PHY_1V8A) are no longer appended by hand; they fall
+   out of the rule (power_in loads on U7, no power_out). Result:
+   11 flags -> 8 (GND, +5V, +3V3D, -VA, NEG_RAW, +3V3D_CDR,
+   PHY_1V8, PHY_1V8A). Verified locally (KiCad 7.0.11): schematic
+   regenerated; the 8 remaining flag instances sit on exactly
+   those nets (paired with their stub labels); label count
+   541 -> 538 (the three removed flag labels); the kicadxml
+   pin->net map is identical to the pre-fix baseline export;
+   check_netlist PASS — 630 connected pins, 213 nets, including
+   the round-3 lib_id-resolution check.
+
+2. 11 warnings, all [lib_symbol_issues] "The current configuration
+   does not include the library 'power'", one per flag instance.
+   Action taken: hw/sym-lib-table now also declares the 'power'
+   library, at ${KICAD8_SYMBOL_DIR}/power.kicad_sym (CI runs
+   KiCad 8.0.9 and installs kicad-symbols, so the file exists
+   there). The project table previously declared only 'pdlvds',
+   and the headless CI environment has no configured global table
+   to fall back on. The embedded flag definitions are kept, so
+   the schematic remains self-contained and local KiCad 7 still
+   resolves it. Local gate (KiCad 7.0.11): netlist export exits 0
+   with no diagnostics, check_netlist PASS at baseline, pin->net
+   map identical. Whether the declaration clears the warning
+   under KiCad 8 is NOT claimed here — it is for the next CI run's
+   report to show. If it persists (e.g. the complaint mutates
+   because the stock v8 PWR_FLAG differs from the embedded
+   v7-derived copy), the standing justification is: the symbols
+   resolve from the embedded definitions; the warning is a
+   library-table configuration note in the headless CI
+   environment; electrical ERC is unaffected — the proof is item
+   1 itself, since ERC could only report power outputs colliding
+   on +VA/+3V3A because the flags are electrically live on those
+   nets. Note the count coupling: if the warning does recur it
+   will number 8, not 11 — one per remaining flag.
+
+Expectation (not a claim): ERC errors 2 -> 0; warnings 11 -> 0 if
+the table declaration satisfies KiCad 8's library check, else 8
+justified-standing [lib_symbol_issues]. The parent verifies from
+the next main CI run's ERC report. No ERC category silenced, no
+severity touched, in this round either.
 ## Routing history gallery (2026-11-03, branch routing-history)
 
 Per the user's direction, every routing attempt is now committed and
