@@ -8,6 +8,17 @@ on:
 permissions:
   contents: read
 
+# Site/deploy decoupling (why the run can be red AND the site live):
+# the two validation jobs are the honest signal — they fail whenever
+# their checks fail, no continue-on-error anywhere near a check.
+# But the project site must exist to make those failures legible, so
+# build-site runs whenever the run was not cancelled, downloads every
+# artefact tolerantly (a missing artefact means "that section shows
+# as not available yet", never a failed site build), and deploy-pages
+# publishes whenever build-site succeeded and the owner enabled it.
+# Each validation job also records a small status JSON (its ci step
+# outcome) that build-site merges into the site's build-status panel.
+
 jobs:
   # Why two validation jobs instead of one: the KiCad 8 PPA ships
   # libngspice-kicad, whose codemodel files collide with Ubuntu's
@@ -30,16 +41,38 @@ jobs:
           sudo apt-get install -y kicad xvfb
 
       - name: KiCad ERC + DRC (scripts/ci.sh step 10)
+        id: ci
         run: CI_STEPS=10 bash scripts/ci.sh
 
+      # Fab export runs even when ERC/DRC failed: the site should show
+      # the board as it currently is, not hide it behind a red check.
       - name: Fabricate outputs (Gerbers, drill, BOM, CPL, renders)
+        id: fab
+        if: ${{ !cancelled() }}
         run: bash scripts/make_fab.sh
 
       - name: Upload fabrication outputs for the site job
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
           name: fab-outputs
           path: hw/fab/
+
+      - name: Record job status for the site build-status panel
+        if: always()
+        run: |
+          mkdir -p status
+          printf '{"job": "kicad-validate", "ci_outcome": "%s", "fab_outcome": "%s", "sha": "%s", "run_id": "%s"}\n' \
+            '${{ steps.ci.outcome }}' '${{ steps.fab.outcome }}' \
+            '${{ github.sha }}' '${{ github.run_id }}' > status/kicad-validate.json
+          cat status/kicad-validate.json
+
+      - name: Upload job status
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: status-kicad
+          path: status/
 
       # Evidence on failure: ERC/DRC reports must survive a red run,
       # otherwise the next failure is as invisible as run 41714928437's
@@ -63,13 +96,33 @@ jobs:
             python3-numpy python3-scipy python3-matplotlib
 
       - name: Simulations, codec, firmware, host tool (ci.sh steps 1-9)
+        id: ci
         run: CI_STEPS=1,2,3,4,5,6,7,8,9 bash scripts/ci.sh
 
+      # Uploaded even on failure so the site can show the partial
+      # results of a red run instead of nothing at all.
       - name: Upload simulation results for the site job
+        if: ${{ !cancelled() }}
         uses: actions/upload-artifact@v4
         with:
           name: sim-results
           path: results/
+
+      - name: Record job status for the site build-status panel
+        if: always()
+        run: |
+          mkdir -p status
+          printf '{"job": "sim-and-firmware", "ci_outcome": "%s", "sha": "%s", "run_id": "%s"}\n' \
+            '${{ steps.ci.outcome }}' '${{ github.sha }}' \
+            '${{ github.run_id }}' > status/sim-and-firmware.json
+          cat status/sim-and-firmware.json
+
+      - name: Upload job status
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: status-sim
+          path: status/
 
       - name: Upload reports as evidence (always)
         if: always()
@@ -80,21 +133,43 @@ jobs:
 
   build-site:
     needs: [kicad-validate, sim-and-firmware]
+    # Runs whenever the run was not cancelled — in particular it runs
+    # when a validation job FAILED. scripts/build_site.py tolerates
+    # every missing input (the tolerant downloads below plus its own
+    # "not available yet" placeholders), so a red validation run still
+    # produces a complete, honest site.
+    if: ${{ !cancelled() }}
     runs-on: ubuntu-22.04
     steps:
       - uses: actions/checkout@v4
 
-      - name: Fetch fabrication outputs
+      - name: Fetch fabrication outputs (tolerant)
+        continue-on-error: true
         uses: actions/download-artifact@v4
         with:
           name: fab-outputs
           path: hw/fab
 
-      - name: Fetch simulation results
+      - name: Fetch simulation results (tolerant)
+        continue-on-error: true
         uses: actions/download-artifact@v4
         with:
           name: sim-results
           path: results
+
+      - name: Fetch KiCad job status (tolerant)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: status-kicad
+          path: .site-status/kicad
+
+      - name: Fetch simulation job status (tolerant)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: status-sim
+          path: .site-status/sim
 
       - name: Install site build dependencies
         run: |
@@ -121,8 +196,11 @@ jobs:
     # setting the repository variable ENABLE_PAGES_DEPLOY=true, so a
     # missing Pages setup never fails CI. (Pages itself is enabled on
     # this repo with build_type=workflow; this job deploys the site/
-    # built by the build-site job.)
-    if: vars.ENABLE_PAGES_DEPLOY == 'true'
+    # built by the build-site job.) It deliberately does NOT require
+    # the validation jobs to have passed: the site carries the
+    # build-status panel that says what failed, which is the point of
+    # publishing it.
+    if: ${{ !cancelled() && vars.ENABLE_PAGES_DEPLOY == 'true' }}
     runs-on: ubuntu-22.04
     permissions:
       pages: write

@@ -90,6 +90,13 @@ step10() {
           echo "--- ERC report (results/erc-report.txt, FULL; also in the evidence artifact) ---"
           cat results/erc-report.txt 2>/dev/null || echo "(no ERC report file produced)"
         }
+    # Report errors and warnings as separate counts (reporting only —
+    # pass/fail still follows the kicad-cli exit code above).
+    if [ -f results/erc-report.txt ]; then
+      erc_errors=$(grep -c '; error' results/erc-report.txt || true)
+      erc_warnings=$(grep -c '; warning' results/erc-report.txt || true)
+      echo "ERC summary: $erc_errors errors, $erc_warnings warnings (report: results/erc-report.txt)"
+    fi
     kicad-cli pcb drc --severity-all --exit-code-violations \
         -o results/drc-report.txt hw/pdlvds_rx.kicad_pcb || {
           fail "native DRC"
