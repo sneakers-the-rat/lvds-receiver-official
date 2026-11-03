@@ -10,6 +10,17 @@ Creates history/<UTC-timestamp>_<short-hash>/ containing:
 and adds/updates the attempt's entry in history/index.json (including
 a "layers" map of layer name -> layer render file).
 
+All renders are ROUTE-ONLY: before exporting, the board is loaded
+with pcbnew into a temp copy whose zones are deleted, so the SVGs
+show tracks, vias and pads with no opaque zone fills (GND pours).
+(SetIsFilled(False) alone does not work — KiCad 7's plotter draws
+the zones' stored filled polygons regardless of that flag; deleting
+the zones from the temp copy is what removes the pours. Verified:
+largest filled F.Cu shape drops from 7,821 mm^2 — the pour — to
+10 mm^2, a pad.) The committed board file is never modified.
+Silkscreen appears only in the top/bottom reference renders, never
+in the per-layer or composite views.
+
 Stats are taken, in priority order, from explicit --flags, then parsed
 from the audit file (results/pcb-audit.txt) and build log
 (results/pcb_build.log). Anything not found is recorded as
@@ -28,7 +39,7 @@ Usage:
       --hash dc6a010... --pins-failed 125 \\
       --note "no board was committed for this attempt"
 """
-import argparse, json, os, re, shutil, subprocess, sys
+import argparse, json, os, re, shutil, subprocess, sys, tempfile
 from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -102,6 +113,28 @@ def export_svg(board, out_path, layers, mirror):
         if r.returncode == 0 and os.path.exists(out_path):
             return spec or "kicad-cli defaults"
     return None
+
+
+def make_route_board(board):
+    """Write a temp copy of `board` with every zone deleted, for
+    route-only renders. Returns (temp_path, method) — or
+    (None, reason) if pcbnew is unavailable, in which case the
+    caller falls back to the original board and the snapshot
+    records that its renders include the pours."""
+    try:
+        import pcbnew
+    except Exception as e:
+        return None, f"pcbnew unavailable ({e}); renders include pours"
+    tmpdir = tempfile.mkdtemp(prefix="snapshot-route-")
+    out = os.path.join(tmpdir, "route.kicad_pcb")
+    b = pcbnew.LoadBoard(board)
+    zones = list(b.Zones())
+    for z in zones:
+        b.Remove(z)
+    pcbnew.SaveBoard(out, b)
+    return out, (f"zones deleted from temp pcbnew copy "
+                 f"({len(zones)} zones removed; source board "
+                 f"unmodified)")
 
 
 def export_layer(board, out_path, layer):
@@ -220,14 +253,20 @@ def main():
     renders = None
     layers_used = None
     layer_renders = None
+    render_method = None
     if not a.no_board:
         if not os.path.exists(a.board):
             print(f"error: board file not found: {a.board}",
                   file=sys.stderr)
             return 1
-        top = export_svg(a.board, os.path.join(sdir, "board-top.svg"),
+        route_board, render_method = make_route_board(a.board)
+        if route_board is None:
+            print(f"warning: {render_method}", file=sys.stderr)
+            route_board = a.board
+        top = export_svg(route_board,
+                         os.path.join(sdir, "board-top.svg"),
                          TOP_LAYERS, mirror=False)
-        bottom = export_svg(a.board,
+        bottom = export_svg(route_board,
                             os.path.join(sdir, "board-bottom.svg"),
                             BOTTOM_LAYERS, mirror=True)
         if top and bottom:
@@ -239,7 +278,7 @@ def main():
                   "carry no renders", file=sys.stderr)
         got = {}
         for layer in COPPER_LAYERS:
-            n = export_layer(a.board,
+            n = export_layer(route_board,
                              os.path.join(sdir, LAYER_FILES[layer]),
                              layer)
             if n is None:
@@ -249,6 +288,9 @@ def main():
                 got[layer] = LAYER_FILES[layer]
         if got:
             layer_renders = got
+        if route_board != a.board:
+            shutil.rmtree(os.path.dirname(route_board),
+                          ignore_errors=True)
 
     def fmt(v):
         return "not recorded" if v is None else str(v)
@@ -265,6 +307,7 @@ def main():
             f"{layer}={layer_renders[layer]} ({LAYER_PALETTE[layer]})"
             for layer in COPPER_LAYERS if layer_renders
             and layer in layer_renders) or "none"),
+        f"route-only renders: {render_method or 'not recorded'}",
         f"nets fully routed: {fmt(stats['nets_routed'])}"
         + (f" of {stats['nets_total']}" if stats['nets_total'] else ""),
         f"pins failed: {fmt(stats['pins_failed'])}",
@@ -280,6 +323,7 @@ def main():
              "short_hash": short_hash, "label": a.label,
              "dir": dirname, "renders": renders,
              "layers": layer_renders,
+             "render_method": render_method,
              "stats": stats, "note": a.note or ""}
     entries.append(entry)
     entries.sort(key=lambda e: (e["timestamp"], e["hash"]))
