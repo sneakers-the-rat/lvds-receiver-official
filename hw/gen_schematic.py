@@ -102,6 +102,37 @@ def part_pins(part):
                 in stm32_all_pins(part).items()}
     return {n: (nm, TYPEMAP[t], net) for n, (nm, t, net) in part["pins"].items()}
 
+def flag_nets():
+    """Nets that get a PWR_FLAG, computed from circuit.py pin data:
+    a net is flagged iff it contains at least one power_in pin and
+    NO power_out pin. A PWR_FLAG presents a power_out to ERC — that
+    is its whole job — so flagging a net that already has a genuine
+    power_out puts two power outputs on one net: [pin_to_pin]
+    "Power output and Power output connected", the 2 ERC errors on
+    +VA (U13 OUT) and +3V3A (U14 OUT) in the main CI run on 264d58b,
+    once round 3 made the flags electrically live. Conversely a net
+    with no power_in pins (APD_K: only passive pins) has nothing for
+    a flag to drive. The old hardcoded list (every POWER_NETS entry
+    plus the two PHY rails appended by hand) violated both halves.
+    The PHY rails now fall out of the rule on their own: they are
+    the USB3300's internal-regulator outputs whose only pins are
+    power_in loads on U7 itself. Order is deterministic: POWER_NETS
+    order first, then first-appearance order in the pin census."""
+    census, order = {}, []
+    for part in circuit.PARTS:
+        for _num, (_name, ktype, net) in part_pins(part).items():
+            if net is None:
+                continue
+            if net not in census:
+                census[net] = set()
+                order.append(net)
+            census[net].add(ktype)
+    want = {n for n, ts in census.items()
+            if "power_in" in ts and "power_out" not in ts}
+    return ([n for n in circuit.POWER_NETS if n in want]
+            + [n for n in order
+               if n in want and n not in circuit.POWER_NETS])
+
 # ---------- symbol layout ----------
 def layout(part):
     """Assign each pin a side and local (x,y). Returns (pins_layout, w, h).
@@ -185,7 +216,7 @@ def main():
     # down in whole grid steps until none of its connectivity points
     # coincide with points already occupied. The PWR_FLAG row at the
     # bottom is seeded as occupied from the start.
-    FLAG_NETS = list(circuit.POWER_NETS) + ["PHY_1V8", "PHY_1V8A"]
+    FLAG_NETS = flag_nets()
     occupied = set()
     fx = 30.48
     for _ in FLAG_NETS:
@@ -246,12 +277,9 @@ def main():
                 wires.append(f'(wire (pts (xy {px} {py}) (xy {ex} {py})) (stroke (width 0) (type default)) (uuid {q(U())}))')
                 lrot = 0 if side > 0 else 180
                 labels.append(f'(global_label {q(net)} (shape input) (at {ex} {py} {lrot}) (fields_autoplaced) (effects (font (size 1.27 1.27)) (justify {"left" if lrot==0 else "right"})) (uuid {q(U())}) (property "Intersheetrefs" "${{INTERSHEET_REFS}}" (at {ex} {py} {lrot}) (effects (font (size 1.27 1.27)) hide)))')
-    # PWR_FLAGs: one per power net, parked at bottom, stub+label like others.
-    # PHY_1V8 / PHY_1V8A are the USB3300's internal-regulator rails: real
-    # driven rails whose only pins are power_in loads on U7 itself, so
-    # they need flags just like the externally-sourced rails (KiCad 8 ERC
-    # reported their pins as power_pin_not_driven).
-    FLAG_NETS = list(circuit.POWER_NETS) + ["PHY_1V8", "PHY_1V8A"]
+    # PWR_FLAGs: one per flag_nets() entry (computed once at the top
+    # of main from the pin census — see flag_nets() for the rule),
+    # parked at bottom, stub+label like the part pins.
     fx = 30.48
     for net in FLAG_NETS:
         fy = snap(560.0)

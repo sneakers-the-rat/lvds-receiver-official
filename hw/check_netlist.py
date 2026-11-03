@@ -77,7 +77,9 @@ def main(path="/tmp/netlist.xml"):
             errors.append(f"net {net}: only {len(pins)} pin(s) {pins}")
         ts = [types.get(p, "passive") for p in pins]
         # power nets are ERC-driven via the PWR_FLAG symbols placed by
-        # gen_schematic for every net in circuit.POWER_NETS (by construction).
+        # gen_schematic's flag_nets() rule (nets with a power_in pin and
+        # no power_out pin); that those instances actually resolve is
+        # verified by libid_resolution_errors below, not assumed.
         n_out = sum(1 for t in ts if t == "output")
         if n_out > 1 and net not in ("CDR_DATP","CDR_DATN","CDR_CLKP","CDR_CLKN","SW1","SW2"):
             errors.append(f"net {net}: {n_out} outputs shorted")
