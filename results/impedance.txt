@@ -1,0 +1,18 @@
+=== Impedance geometry — JLC04161H-7628 4L stackup ===
+L1-L2 dielectric h = 0.2104 mm, Er = 4.4, copper t = 35 um
+50 ohm SE:  W = 0.405 mm  (check Z0 = 50.0 ohm)
+   sensitivity Er=4.2: same W gives Z0 = 51.1 ohm; W for 50 ohm = 0.420 mm
+   sensitivity Er=4.6: same W gives Z0 = 49.0 ohm; W for 50 ohm = 0.392 mm
+100 ohm diff: W = 0.25 mm, gap S = 0.188 mm (pitch 0.438 mm, check Zdiff = 100.0 ohm)
+100 ohm diff: W = 0.30 mm, gap S = 0.349 mm (pitch 0.649 mm, check Zdiff = 100.0 ohm)
+100 ohm diff: W = 0.35 mm, gap S = 0.643 mm (pitch 0.993 mm, check Zdiff = 100.0 ohm)
+
+Propagation: eps_eff = 3.25, vp = 166 mm/ns, delay = 6.02 ps/mm
+Intra-pair skew budget: 1 mm length mismatch = 6.0 ps = 0.030% of the 20 ns UI — length matching to +/-0.5 mm is ample; rule adopted: match within 0.5 mm.
+UI = 20 ns -> one UI of trace = 3.3 m: board-scale traces are electrically short; termination and geometry discipline matter, serpentine tuning does not.
+
+--- PCB geometry to use (hw generator constants) ---
+SE50_W_MM   = 0.405
+DIFF_W_MM   = 0.300
+DIFF_GAP_MM = 0.349
+VERDICT: PASS — closed-form solution converges to 50.0 / 100.0 ohm within 1 ohm; fab coupon verification is in the test plan (docs/05).

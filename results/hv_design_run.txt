@@ -1,0 +1,22 @@
+=== APD bias flyback — analytical design (LT3757, DCM) ===
+Load: APD 200 uA + bleeder 89 uA = 289 uA  -> P_out = 122 mW, P_in(eta=0.7) = 174 mW
+Turns ratio 1:20, Lp = 47 uH, f_sw = 250 kHz
+Primary peak current Ipk = 0.17 A, t_on = 1.70 us, t_off = 0.38 us, period = 4.00 us (DCM: t_on+t_off = 2.09 us < period: OK)
+Reflected voltage Vor = 21.0 V, worst-case duty = 0.816
+MOSFET: Vds = 26.2 V, with spike allowance 43.1 V vs 100 V rating -> 43% ; Irms = 0.09 A vs 2 A
+Secondary diode: Vrev = 525 V vs 1000 V -> 52% ; Ipk_sec = 9 mA
+Output caps see 420 V vs 630 V class -> 67%
+Ripple at converter output ~ 24.6 mVpp; RC post-filter (10 kohm x 100 nF, attenuation 6.37e-04) -> 15.7 uVpp at APD; filter drop 2.9 V (absorbed by DAC setpoint range)
+Bleeder: tau = 0.69 s, 420 V -> 60 V in 1.34 s
+
+--- checks ---
+PASS  MOSFET V stress (incl. spike) < 80% of 100 V
+PASS  MOSFET I_rms < 80% of 2 A
+PASS  Diode V stress < 80% of 1000 V
+PASS  Output cap V stress < 80% of 630 V
+PASS  Duty cycle < 0.85 worst case
+PASS  DCM maintained (t_on+t_off < period)
+PASS  Ripple at APD < 20 mVpp (R9)
+PASS  Bleeder 420->60 V in < 10 s (R9)
+
+HV DESIGN VERDICT: PASS
