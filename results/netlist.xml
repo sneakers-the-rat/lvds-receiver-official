@@ -2,7 +2,7 @@
 <export version="E">
   <design>
     <source>/home/hatch/workspace/photodiode-lvds-rx/hw/pdlvds_rx.kicad_sch</source>
-    <date>Tue Nov  3 19:26:05 2026</date>
+    <date>Tue Nov  3 19:31:02 2026</date>
     <tool>Eeschema 7.0.11+dfsg-1build4</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
