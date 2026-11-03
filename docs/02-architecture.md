@@ -121,3 +121,32 @@ measurement. BIST LED (630 nm, same part as the paper's emitter) facing the APD
 position via a light-pipe hole for optical self-test. SMA test input for
 electrical injection in parallel with the APD (AC-coupled, for bench verify
 without light).
+
+## Deviations and corrections recorded during the build (2026-11-03)
+1. ADN2813 outputs are LVDS, not CML (datasheet Rev. C, Table 3 and pin
+   table: CLKOUTP/N and DATAOUTP/N are LVDS, VOD 250–400 mV, VOS ~1.2 V).
+   Its inputs (PIN/NIN) are the CML-style internally-biased inputs.
+   Consequence: the CDR->MCU capture path inserts a quad LVDS receiver
+   (TI SN65LVDS32, SOIC-16; datasheet SLLS262R pinout in MANIFEST
+   addendum) between the ADN2813 LVDS outputs and the STM32 CMOS capture
+   inputs. The comparator->CDR input path is unaffected (LMH7220 LVDS
+   out AC-coupled into PIN/NIN, whose common-mode is set internally).
+2. MCU variant: STM32H723VG (LQFP-100) instead of the contradictory
+   "ZG / 100-pin" wording above. ZG is LQFP-144; the 100-pin VG carries
+   the same 1 MB flash / USB-HS OTG core and keeps the board smaller.
+   Pinout source: KiCad 7 symbol library (ST datasheet PDF download was
+   blocked; see MANIFEST).
+3. LMH7220 hysteresis: the TSOT-6 variant has no hysteresis-adjust pin
+   (that is the WSON variant); rev A sets ~8 mV hysteresis with external
+   positive feedback around the TSOT-6, as noted in MANIFEST.
+4. Link-budget outcome (sim/link_budget.py): the locked Rf = 3.3 kohm /
+   Cf = 0.45 pF design PASSES R2 as specified — no iteration of Rf/M was
+   needed. Design operating point chosen there: M = 100 (knee rule:
+   smallest M within 1 dB of best sensitivity; sensitivity −45.6 dBm at
+   740 nm, BER 1e-6). Comparator overdrive at the R2 point is therefore
+   ~14x the noise, and the THS4304 x5 post stage remains a bench option
+   for below-design-point work, exactly as originally framed.
+5. HV feedforward/feedback: LT3757 FBX positive-mode reference voltage
+   1.6 V is used for the divider/DAC-injection design and is flagged
+   VERIFY in the schematic notes — the extracted datasheet text
+   confirmed the servo behaviour but truncated the number.
