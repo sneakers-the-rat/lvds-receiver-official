@@ -97,15 +97,28 @@ def route(board, net_objs, fps):
                                                       [(li, cx, cy) for li in layers],
                                                       (pos[0], pos[1])))
     stats = {"routed": [], "failed": [], "vias": 0, "gnd_vias": 0}
-    # order: HV first, then by ascending pad spread
+    # Order matters more than anything else in a greedy sequential
+    # router: WIDE nets must go while the board is still empty. The
+    # first full run sorted purely by pad spread, which put the 0.6 mm
+    # +3V3D net (40 pins) dead last; 39 of its 40 pins then failed
+    # because a 0.6 mm track + 0.25 mm clearance cannot thread a
+    # finished board. Order now: HV, then POWER (wide), then LVDS,
+    # then signals — by ascending pad spread within each class.
     def spread(net):
         pts = [p[2] for p in pad_cells[net]]
         xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
         return (max(xs) - min(xs)) + (max(ys) - min(ys))
+    def order_class(n):
+        if n in HV_NETS: return 0
+        if n in POWER_NETS: return 1
+        if n in LVDS_NETS: return 2
+        return 3
     order = sorted((n for n in pad_cells if n != "GND"),
-                   key=lambda n: (0 if n in HV_NETS else 1, spread(n)))
+                   key=lambda n: (order_class(n), spread(n)))
     import time
     t_start = time.time()
+    trees = {}   # netname -> set of routed (li, cx, cy) cells
+    failed = []  # (netname, pin_id, cells)
     for idx, netname in enumerate(order):
         width, clr = netclass(netname)
         hw_ = width / 2
@@ -116,17 +129,39 @@ def route(board, net_objs, fps):
         tree = set()
         for li, cx, cy in pins[0][1]:
             tree.add((li, cx, cy))
+        trees[netname] = tree
         ok = True
         for pin_id, cells, _ in pins[1:]:
             path = astar(items, cells, tree, netname, hw_, clr)
             if path is None:
                 ok = False
-                stats["failed"].append((netname, pin_id))
+                failed.append((netname, pin_id, cells))
                 continue
             emit(board, net_objs[netname], path, width, items, netname, clr, stats)
             for node in path:
                 tree.add(node)
         if ok: stats["routed"].append(netname)
+    # Retry passes: failed pins get a much larger expansion budget
+    # against the (now larger) trees of their nets.
+    for attempt in range(2):
+        if not failed:
+            break
+        print(f"retry pass {attempt + 1}: {len(failed)} failed pins, "
+              f"t={time.time() - t_start:.0f}s", flush=True)
+        still = []
+        for netname, pin_id, cells in failed:
+            width, clr = netclass(netname)
+            path = astar(items, cells, trees[netname], netname,
+                         width / 2, clr, cap=2500000)
+            if path is None:
+                still.append((netname, pin_id, cells))
+                continue
+            emit(board, net_objs[netname], path, width, items, netname,
+                 clr, stats)
+            for node in path:
+                trees[netname].add(node)
+        failed = still
+    stats["failed"] = [(n, p) for (n, p, _) in failed]
     # GND vias for SMD GND pads (reach the In1 plane)
     for ref, fp in fps.items():
         for pad in fp.Pads():
@@ -164,7 +199,7 @@ def route(board, net_objs, fps):
         print("  FAILED:", f)
     return stats
 
-def astar(items, starts, goals, netname, hw_, clr):
+def astar(items, starts, goals, netname, hw_, clr, cap=900000):
     goalset = set(goals)
     openh = []
     gscore = {}
@@ -172,9 +207,14 @@ def astar(items, starts, goals, netname, hw_, clr):
     for (li, cx, cy) in starts:
         gscore[(li, cx, cy)] = 0
         heapq.heappush(openh, (0, (li, cx, cy)))
+    # Heuristic evaluated against a subsample of the goal cells: with
+    # a large routed tree the full min() per push dominates the whole
+    # search. A subsampled distance overestimates slightly (greedier
+    # search, still complete up to the expansion cap).
+    hgoals = sorted(goalset)[::max(1, len(goalset) // 300)] or list(goalset)
     def h(node):
         li, cx, cy = node
-        return min(abs(cx - gx) + abs(cy - gy) for (_, gx, gy) in goalset)
+        return min(abs(cx - gx) + abs(cy - gy) for (_, gx, gy) in hgoals)
     visited = 0
     while openh:
         _, node = heapq.heappop(openh)
@@ -184,7 +224,7 @@ def astar(items, starts, goals, netname, hw_, clr):
                 node = came[node]; path.append(node)
             return list(reversed(path))
         visited += 1
-        if visited > 260000:
+        if visited > cap:
             return None
         li, cx, cy = node
         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):

@@ -46,7 +46,7 @@ python3 host/rxhost.py --simulate ber-test --buffers 20 --ber 1e-5 > /dev/null &
 echo "rxhost simulate PASS" || fail "rxhost"
 
 step "10/10 KiCad ERC + netlist/DRC checks"
-if kicad-cli sch erc --help > /dev/null 2>&1; then
+if kicad-cli sch --help 2>&1 | grep -qw erc && kicad-cli pcb --help 2>&1 | grep -qw drc; then
   echo "kicad-cli with native ERC/DRC found — running native checks"
   kicad-cli sch erc --severity-all --exit-code-violations \
       -o results/erc-report.txt hw/pdlvds_rx.kicad_sch || fail "native ERC"
