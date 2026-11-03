@@ -45,6 +45,27 @@ def run_ngspice(deck, name):
         raise SystemExit(f"ngspice failed on {name}")
     return r.stdout
 
+def ngb(path, fatal=True):
+    """Run an ngspice deck file LOUDLY. The inline subprocess calls
+    this replaces used check=True + capture_output=True, which raised
+    CalledProcessError with the captured output never printed — in CI
+    that swallowed the actual ngspice error entirely (GH Actions run
+    41714928437: tia_ac.cir exited 1 under Ubuntu ngspice 36 with no
+    diagnosable message in the log). On failure this prints the full
+    captured stdout+stderr tails to stderr before raising."""
+    r = subprocess.run(["ngspice", "-b", path], capture_output=True, text=True)
+    if r.returncode != 0:
+        print(f"--- ngspice FAILED on {path} (exit {r.returncode}) ---",
+              file=sys.stderr)
+        print("--- ngspice stdout (tail) ---", file=sys.stderr)
+        print(r.stdout[-4000:], file=sys.stderr)
+        print("--- ngspice stderr (tail) ---", file=sys.stderr)
+        print(r.stderr[-4000:], file=sys.stderr)
+        if fatal:
+            raise SystemExit(f"ngspice failed on {path} "
+                             f"(exit {r.returncode}) — output above")
+    return r
+
 def read_wrdata(path):
     d = np.loadtxt(path)
     return d[:, 0], d[:, 1::2] + 1j * d[:, 2::2] if d.shape[1] > 2 else (d[:, 0], d[:, 1])
@@ -68,8 +89,7 @@ wrdata results/tia_ac.csv db(v(out))
 .endc
 .end
 """)
-subprocess.run(["ngspice", "-b", "sim/tia_ac.cir"], check=True,
-               capture_output=True, text=True)
+ngb("sim/tia_ac.cir")
 d = np.loadtxt("results/tia_ac.csv")
 freq, gdb = d[:, 0], d[:, 1]
 g0 = gdb[0]
@@ -91,8 +111,7 @@ wrdata results/tia_step.csv v(out)
 .endc
 .end
 """)
-subprocess.run(["ngspice", "-b", "sim/tia_tran.cir"], check=True,
-               capture_output=True, text=True)
+ngb("sim/tia_tran.cir")
 d = np.loadtxt("results/tia_step.csv")
 t, v = d[:, 0], d[:, 1]
 vfinal = v[(t > 40e-9) & (t < 65e-9)].mean()  # plateau of the 60 ns pulse
@@ -120,8 +139,7 @@ wrdata results/tia_pulse.csv v(out)
 .endc
 .end
 """)
-subprocess.run(["ngspice", "-b", "sim/tia_pulse.cir"], check=True,
-               capture_output=True, text=True)
+ngb("sim/tia_pulse.cir")
 d = np.loadtxt("results/tia_pulse.csv")
 t, v = d[:, 0], d[:, 1]
 # eye opening at the centre of each UI in the last 10 periods
@@ -148,8 +166,7 @@ wrdata results/tia_noise.csv onoise_spectrum
 .endc
 .end
 """)
-r = subprocess.run(["ngspice", "-b", "sim/tia_noise.cir"],
-                   capture_output=True, text=True)
+r = ngb("sim/tia_noise.cir", fatal=False)
 try:
     d = np.loadtxt("results/tia_noise.csv")
     fn, dens = d[:, 0], np.abs(d[:, 1])

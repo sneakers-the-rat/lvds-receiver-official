@@ -41,6 +41,16 @@ jobs:
           name: fab-outputs
           path: hw/fab/
 
+      # Evidence on failure: ERC/DRC reports must survive a red run,
+      # otherwise the next failure is as invisible as run 41714928437's
+      # TIA failure was.
+      - name: Upload reports as evidence (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-kicad
+          path: results/
+
   sim-and-firmware:
     runs-on: ubuntu-22.04
     steps:
@@ -59,6 +69,13 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: sim-results
+          path: results/
+
+      - name: Upload reports as evidence (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-sim
           path: results/
 
   build-site:

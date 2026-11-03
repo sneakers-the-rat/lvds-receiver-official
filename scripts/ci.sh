@@ -85,9 +85,17 @@ step10() {
   if kicad-cli sch --help 2>&1 | grep -qw erc && kicad-cli pcb --help 2>&1 | grep -qw drc; then
     echo "kicad-cli with native ERC/DRC found — running native checks"
     kicad-cli sch erc --severity-all --exit-code-violations \
-        -o results/erc-report.txt hw/pdlvds_rx.kicad_sch || fail "native ERC"
+        -o results/erc-report.txt hw/pdlvds_rx.kicad_sch || {
+          fail "native ERC"
+          echo "--- ERC report (results/erc-report.txt, first 120 lines; full file in the evidence artifact) ---"
+          head -120 results/erc-report.txt 2>/dev/null || echo "(no ERC report file produced)"
+        }
     kicad-cli pcb drc --severity-all --exit-code-violations \
-        -o results/drc-report.txt hw/pdlvds_rx.kicad_pcb || fail "native DRC"
+        -o results/drc-report.txt hw/pdlvds_rx.kicad_pcb || {
+          fail "native DRC"
+          echo "--- DRC report (results/drc-report.txt, first 120 lines; full file in the evidence artifact) ---"
+          head -120 results/drc-report.txt 2>/dev/null || echo "(no DRC report file produced)"
+        }
   else
     echo "NOTE: this kicad-cli has no erc/drc subcommands (KiCad 7.x)."
     echo "Running scripted equivalents: netlist diff + PCB audit."
