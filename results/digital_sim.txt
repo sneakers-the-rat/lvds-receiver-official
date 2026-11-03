@@ -9,13 +9,14 @@ Manchester path: 8 Mbps data / 16 Mbaud chips, chip = 62.5 ns, same jitter sigma
 
 BER vs SNR sweep, 8b/10b at 50 Mbps (200040 bits/point, common random numbers across points)
    SNR_dB  sigma_v    BER_meas  BER_analytic  bit_err  byte_err_rate  code_err  aligned
-      0.0   1.0000   1.646e-01     1.647e-01    32929      9.977e-01      8228     True
-      3.0   0.7079   8.444e-02     8.426e-02    16891      9.966e-01      4496     True
-      6.0   0.5012   2.693e-02     2.603e-02     5388      9.957e-01      1636     True
-      9.0   0.3548   3.254e-03     3.112e-03      651      9.963e-01       203     True
-     12.0   0.2512   5.999e-05     6.397e-05       12      8.895e-02         0     True
+      0.0   1.0000   1.646e-01     1.647e-01    32929      1.000e+00      8228     True
+      3.0   0.7079   8.444e-02     8.426e-02    16891      5.821e-01      4496     True
+      6.0   0.5012   2.693e-02     2.603e-02     5388      2.395e-01      1636     True
+      9.0   0.3548   3.254e-03     3.112e-03      651      3.245e-02       203     True
+     12.0   0.2512   5.999e-05     6.397e-05       12      6.000e-04         0     True
      15.0   0.1778   0.000e+00     1.023e-07        0      0.000e+00         0     True
   measured BER sequence monotonic non-increasing: True
+  note: at SNR 0 dB all four leading commas were corrupted and the comma hunt locked onto a false K28.5 at bit offset 2892 (not a multiple of 10), so the byte error rate for that point is 1.0 by loss of alignment, not by per-symbol errors.
 
 PRBS-15 PER test (paper method: 5032-byte payload, 40256 bits, packet fails if any payload bit differs)
      BER_in  PER_analytic   PER_sim  packets  4sigma_tol  verdict
@@ -24,11 +25,11 @@ PRBS-15 PER test (paper method: 5032-byte payload, 40256 bits, packet fails if a
     5.0e-05      0.866393  0.845000      600    0.055559  within bound
   (PRBS15Checker cross-check on 12 physically built packets: bit-error counts exact, fail verdicts agree)
 
-(d) Q=6 point: SNR = 15.56 dB (A/sigma_v = 6, centre-eye BER = Q(6) = 9.9e-10); run = 1000040 bits, bit errors = 0, measured BER = 0.000e+00, model-mean BER = 2.509e-08. At BER ~1e-9 the expected error count in 1e6 bits is ~0.001, so a 0-error run is consistent, and the < 1e-6 criterion allows at most 1 error.
+(d) Q=6 point: SNR = 15.56 dB (A/sigma_v = 6, centre-eye BER = Q(6) = 9.9e-10); run = 1000040 bits, bit errors = 0, measured BER = 0.000e+00, model-mean BER = 2.509e-08 (expected error count in this run ~= 0.025, counting the jitter-reduced eye; at the un-jittered centre-eye BER Q(6) ~= 1e-9 it would be ~0.001).  Observing 0 errors is consistent with both, and the < 1e-6 criterion allows at most 1 error in a run of this length.
 
 Manchester legacy path at SNR = 6 dB, same 2 ns jitter sigma and same sigma_v:
   chip rate 16 Mbaud, chip BER measured 2.336e-02 (model mean 2.329e-02), invalid chip pairs 4546, decoded bit BER 2.365e-02 (2365 bit errors / 100000 bits)
-  comparison, 50 Mbps 8b/10b path at the same SNR: channel BER 2.693e-02, byte error rate 9.957e-01
+  comparison, 50 Mbps 8b/10b path at the same SNR: channel BER 2.693e-02, byte error rate 2.395e-01
   the Manchester path's advantage here is time margin only: its 62.5 ns chip is 3.125x the 20 ns UI, so the same absolute jitter is a 3.125x smaller fraction of the interval it must decide in.
 
 PASS: (a) zero-noise codec, 1e6 bits
