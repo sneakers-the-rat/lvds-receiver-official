@@ -225,7 +225,20 @@ def main():
             pname, ptype, net = pins[n]
             px, py = snap(cx + lx), snap(cy - ly)   # KiCad symbol y is up, sheet y is down
             if net is None:
-                ncs.append(f'(no_connect (at {px} {py}) (uuid {q(U())}))')
+                # An explicit no-connect marker is the declaration that
+                # an ordinary pin is intentionally unconnected. A pin
+                # whose symbol type is ALREADY no_connect (OPA657 NC
+                # pins, T1 NC pins, unused STM32 pins) carries that
+                # declaration in its type; adding a marker on top is a
+                # double declaration KiCad 8 flags both ways —
+                # [no_connect_dangling] for the marker and
+                # [no_connect_connected] for the pin, 88 of each in CI
+                # run 41728446884, exactly the 88 net-None pins whose
+                # type is no_connect (U1 x3, U6 x83, T1 x2). Markers
+                # stay for the other 12 net-None pins (output /
+                # passive / open_collector), which genuinely need them.
+                if ptype != "no_connect":
+                    ncs.append(f'(no_connect (at {px} {py}) (uuid {q(U())}))')
             else:
                 # stub extends further outward from pin end
                 dx = 5.08 * side
@@ -253,10 +266,24 @@ def main():
            '(paper "A0")', '(title_block (title "PDLVDS-RX rev A — photodiode LVDS receiver") (rev "A"))',
            '(lib_symbols']
     out += defs
-    # embed PWR_FLAG definition copied from KiCad power library
+    # Embed the PWR_FLAG definition copied from the KiCad power library.
+    # In lib_symbols, a definition's name carries its library nickname
+    # prefix ("power:PWR_FLAG") — the same rename applied to the custom
+    # "pdlvds:" defs above — because instances reference it by lib_id
+    # "power:PWR_FLAG". Copying the block verbatim keeps the bare name
+    # "PWR_FLAG", the instances then resolve to NOTHING, and every flag
+    # is electrically inert: no pin, no power_out on its net. (Proven
+    # with a minimal two-file probe against kicad-cli's netlist: with
+    # the bare name a pin placed exactly on the flag stayed
+    # "unconnected-(...)"; with the prefixed name it joined a real net.
+    # This is why KiCad 8 ERC reported power_pin_not_driven on all 8
+    # flag-dependent nets in run 41728446884 despite 11 flags existing,
+    # and why the round-1 PHY flags changed nothing.)
     ptxt = open('/usr/share/kicad/symbols/power.kicad_sym').read()
     i = ptxt.index('(symbol "PWR_FLAG"')
-    out.append(balanced(ptxt, i))
+    flagdef = balanced(ptxt, i).replace('(symbol "PWR_FLAG"',
+                                        '(symbol "power:PWR_FLAG"', 1)
+    out.append(flagdef)
     out.append(')')
     out += instances + wires + labels + ncs
     out.append('(sheet_instances (path "/" (page "1")))')
