@@ -235,6 +235,13 @@ def _main_locked(board_path):
                 progressed = True
                 print(f"  {net}: connected group of {len(g)} items",
                       flush=True)
+                if total % 10 == 0:
+                    # Fine checkpoint: VM replacements kill long runs
+                    # without warning (four on 2026-11-03); losing at
+                    # most 10 connections beats losing a whole sweep.
+                    board.Save(out)
+                    print(f"  checkpoint: {total} groups, saved",
+                          flush=True)
         # Checkpoint after every sweep: a late crash must not be able
         # to take earlier sweeps' connections with it (attempts 1-2
         # each lost a full run at the final save).
