@@ -131,11 +131,19 @@ without light).
    addendum) between the ADN2813 LVDS outputs and the STM32 CMOS capture
    inputs. The comparator->CDR input path is unaffected (LMH7220 LVDS
    out AC-coupled into PIN/NIN, whose common-mode is set internally).
-2. MCU variant: STM32H723VG (LQFP-100) instead of the contradictory
-   "ZG / 100-pin" wording above. ZG is LQFP-144; the 100-pin VG carries
-   the same 1 MB flash / USB-HS OTG core and keeps the board smaller.
-   Pinout source: KiCad 7 symbol library (ST datasheet PDF download was
-   blocked; see MANIFEST).
+2. MCU variant — CORRECTED in Stage 7 (this supersedes an earlier
+   Stage 5/6 note that chose the VG): the design uses the
+   **STM32H723ZG (LQFP-144)**, as originally specified above. The
+   LQFP-100 VG was tried first and rejected on evidence: in the VG
+   bond-out, ULPI_DIR and ULPI_NXT exist only as the PC2_C / PC3_C
+   analog-switch pads with no digital ULPI alternate function, so the
+   USB3300 ULPI link cannot be wired on the 100-pin part. The ZG bonds
+   the full ULPI set out (mapping in MANIFEST addendum). Note the ZG's
+   DIR/NXT are also the PC2_C/PC3_C analog-switch pads: firmware must
+   close the SYSCFG PMCR analog switches before ULPI works (bring-up
+   item #1, docs/04). Pinout source: KiCad 7 symbol library,
+   parsed programmatically (ST datasheet PDF download was blocked;
+   see MANIFEST).
 3. LMH7220 hysteresis: the TSOT-6 variant has no hysteresis-adjust pin
    (that is the WSON variant); rev A sets ~8 mV hysteresis with external
    positive feedback around the TSOT-6, as noted in MANIFEST.
