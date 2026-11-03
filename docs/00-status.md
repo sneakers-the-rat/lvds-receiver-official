@@ -138,3 +138,55 @@ useful information. Three root causes, all fixed at the source:
    Validation jobs still fail honestly (no continue-on-error on any
    check). Fab export and sim-results upload now also run on failure
    so a red run's site shows the current board and partial results.
+
+## CI fix pass, round 3 (2026-11-03, branch ci-fix)
+
+Branch CI run 41728446884 gave the first full native KiCad 8 ERC
+census after the round-1 grid snap: ERC 875 -> 184 = 8 errors + 176
+warnings. endpoint_off_grid and pin_to_pin: ELIMINATED. The two
+remaining classes, both fixed at the generator:
+
+1. 8 errors, all [power_pin_not_driven] — root cause was NOT missing
+   flags. All 11 PWR_FLAGs existed (one per POWER_NETS net + the two
+   PHY rails) with correct stub wires and labels, but the embedded
+   lib_symbols definition kept the bare library name "PWR_FLAG"
+   while instances reference lib_id "power:PWR_FLAG"; KiCad resolves
+   embedded definitions by the nickname-prefixed name (the generator
+   already renames its custom defs to "pdlvds:..."), so every flag
+   instance was unresolved and electrically inert — no pin, no
+   power_out on its net. That is why the round-1 PHY flags changed
+   nothing. Proof (minimal probe, kicad-cli netlist, KiCad's own
+   verbatim PWR_FLAG block): a pin placed exactly on the flag pin
+   stayed "unconnected-(R1-Pad1)" with the bare name and joined a
+   real net ("Net-(R1-Pad1)") with the prefixed name. The 8 reported
+   nets are exactly the flag-dependent nets containing power_in pins
+   but no real power_out pin (GND, +5V, -VA, NEG_RAW, +3V3D,
+   +3V3D_CDR, PHY_1V8, PHY_1V8A); each confirmed in hw/circuit.py as
+   a genuinely driven rail (connector/regulator pins typed passive)
+   — declaration gaps, not undriven nets. +VA/+3V3A have real
+   power_out pins (LT3042 OUT); APD_K has no power_in pins. Fix in
+   gen_schematic.py: embed the definition as "power:PWR_FLAG".
+   The bug survived two rounds because kicadxml netlists never list
+   power-symbol nodes (verified for power:GND too), so the netlist
+   diff could not see it; check_netlist.py now also verifies that
+   every instance lib_id resolves to an embedded definition of the
+   same name (tested both ways: PASS now, and it flags the pre-fix
+   schematic with exactly the power:PWR_FLAG error).
+2. 176 warnings = 88 [no_connect_dangling] + 88
+   [no_connect_connected], paired at identical coordinates. The
+   generator put explicit NC markers on pins whose symbol pin type
+   is already no_connect — a double declaration KiCad flags from
+   both sides. Census via the generator's own part_pins(): exactly
+   88 net-None pins are typed no_connect (U1 x3, U6/STM32 x83,
+   T1 x2), matching 88+88 one-for-one. Fix: markers are now emitted
+   only for net-None pins of other types (12 remain: output /
+   passive / open_collector pins intentionally unconnected).
+
+Verification (local): schematic regenerated after each fix;
+instances/labels/wires coordinate sets unchanged (155/541/541);
+markers 100 -> 12; netlist check PASS — 630 connected pins, 213
+nets, identical to the pre-fix baseline. No ERC category silenced,
+no severity touched. NOT claimed here: a KiCad 8 ERC number (none
+exists locally); the expectation that errors reach 0 and both NC
+warning classes collapse by 88 rests on the mechanism evidence
+above and is for the next CI run's report to confirm.
