@@ -1,0 +1,13 @@
+label: router v4 — goal-cell exemption fix
+timestamp (UTC): 2026-11-03T21:25:40Z
+commit: 41d7196ba016876cd4c570858b575174c105ceee
+commit (short): 41d7196
+board file: /tmp/backfill/41d7196.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+render layers: top: F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS; bottom: B.Cu,In2.Cu,In1.Cu,F.Cu,B.SilkS
+nets fully routed: 67 of 112
+pins failed: 59
+clearance violations: 454
+unconnected nets: not recorded
+audit verdict: FAIL
+note: Clearance figure is the v4 audit's violating-pair count (454, of which 126 at gap 0.0 = literal shorts) as recorded in commit f8b9d1c; no audit file was committed at 41d7196 itself. Unconnected-net count for v4 not recorded.

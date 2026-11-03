@@ -231,6 +231,87 @@ def status_panel():
             f"site is built by CI); anything missing is shown as "
             f"<em>not run</em>, never as passed.</p>")
 
+def routing_history():
+    """Render the routing-evolution gallery from history/index.json.
+
+    Snapshot assets (history/<ts>_<hash>/*.svg) are copied into
+    assets/history/<dir>/ so the built site is self-contained. Entries
+    without renders (attempts whose board was never committed) show an
+    explicit note instead of an image. Stats that were never recorded
+    show as "not recorded" — never interpolated. With no history at
+    all, the section still builds with a placeholder line."""
+    idx_path = os.path.join(ROOT, "history", "index.json")
+    if not os.path.exists(idx_path):
+        return ("<p><em>No routing snapshots recorded yet — run "
+                "<code>scripts/snapshot_route.py</code> after a routing "
+                "attempt.</em></p>")
+    try:
+        entries = json.load(open(idx_path))
+    except Exception as e:
+        return f"<p><em>history/index.json unreadable ({e}).</em></p>"
+    if not entries:
+        return ("<p><em>No routing snapshots recorded yet — run "
+                "<code>scripts/snapshot_route.py</code> after a routing "
+                "attempt.</em></p>")
+    hist_assets = os.path.join(ASSETS, "history")
+    os.makedirs(hist_assets, exist_ok=True)
+
+    def nr(v):
+        return "not recorded" if v is None else str(v)
+
+    out = ["<p>Every routing attempt, in order — including the ones "
+           "that failed. Snapshots live in <code>history/</code> in the "
+           "repository, one directory per attempt, made by "
+           "<code>scripts/snapshot_route.py</code>.</p>"]
+    for e in entries:
+        st = e.get("stats") or {}
+        nets = nr(st.get("nets_routed"))
+        if st.get("nets_routed") is not None and st.get("nets_total"):
+            nets = f"{st['nets_routed']} of {st['nets_total']}"
+        rows = "".join([
+            f"<tr><td>Nets fully routed</td><td>{nets}</td></tr>",
+            f"<tr><td>Pins failed</td><td>{nr(st.get('pins_failed'))}"
+            "</td></tr>",
+            "<tr><td>Clearance violations</td><td>"
+            f"{nr(st.get('clearance_violations'))}</td></tr>",
+            f"<tr><td>Unconnected nets</td>"
+            f"<td>{nr(st.get('unconnected_nets'))}</td></tr>",
+            f"<tr><td>Audit verdict</td>"
+            f"<td>{nr(st.get('audit_verdict'))}</td></tr>",
+        ])
+        renders = e.get("renders")
+        if renders and e.get("dir"):
+            dst_dir = os.path.join(hist_assets, e["dir"])
+            os.makedirs(dst_dir, exist_ok=True)
+            imgs = ""
+            for side in ("top", "bottom"):
+                fn = renders.get(side)
+                src = os.path.join(ROOT, "history", e["dir"], fn) \
+                    if fn else None
+                if src and os.path.exists(src):
+                    shutil.copy2(src, os.path.join(dst_dir, fn))
+                    imgs += (f"<h4>{side.capitalize()}</h4>"
+                             f'<img src="assets/history/{e["dir"]}/{fn}" '
+                             f'alt="{html.escape(e.get("label", ""))} '
+                             f'— {side}">')
+                else:
+                    imgs += (f"<p><em>{side} render missing from the "
+                             "snapshot.</em></p>")
+        else:
+            imgs = ("<p><em>No board render — no board was committed "
+                    "for this attempt (see note).</em></p>")
+        note = (f"<p>{html.escape(e['note'])}</p>"
+                if e.get("note") else "")
+        out.append(
+            f'<div class="attempt"><h3>{html.escape(e.get("label", ""))}'
+            f"</h3><p>{html.escape(e.get('timestamp', ''))} UTC · "
+            f"commit <code>{html.escape(e.get('short_hash', ''))}"
+            f"</code> (<code>{html.escape(e.get('hash', ''))}</code>)"
+            f"</p><table><tbody>{rows}</tbody></table>{imgs}{note}"
+            "</div>")
+    return "\n".join(out)
+
+
 def tia_plot():
     """Render the ngspice TIA AC response to PNG from its CSV, if the
     CSV exists (matplotlib is a declared project dependency)."""
@@ -354,6 +435,7 @@ def main():
     ])
 
     panel_html = status_panel()
+    history_html = routing_history()
 
     req_html = md_to_html(read("docs/01-requirements.md")
                           or "_requirements doc missing_")
@@ -413,6 +495,7 @@ mode. LT3757 flyback APD bias 150–420 V. USB-C powered; verify on any
 laptop over USB, no FPGA attached.</p></header>
 <nav>
 <a href="#summary">Summary</a><a href="#board">Board</a>
+<a href="#routing-history">Routing history</a>
 <a href="#schematic">Schematic</a><a href="#stackup">Stackup</a>
 <a href="#bom">BOM</a><a href="#sims">Simulations</a>
 <a href="#testplan">Bench test plan</a><a href="#downloads">Downloads</a>
@@ -432,6 +515,9 @@ from the repository's own verified artefacts by
 <h3>Top</h3>{img_tag("board-top.svg", "PCB top")}
 <h3>Bottom</h3>{img_tag("board-bottom.svg", "PCB bottom")}
 <p>Per-layer SVG: {layer_links}</p>
+</section>
+<section id="routing-history"><h2>Routing history</h2>
+{history_html}
 </section>
 <section id="schematic"><h2>Schematic</h2>
 {sch_link}{sch_inline}
