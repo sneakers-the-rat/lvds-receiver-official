@@ -221,3 +221,39 @@ attempts included, unpolished.
 - CI: no workflow change needed — build-site already builds from a
   fresh full checkout (history/ is tracked) and runs build_site.py
   there; the tolerant artifact downloads do not touch history/.
+
+## Routing history gallery, round 2 (2026-11-03, branch routing-history)
+
+The combined top/bottom renders stack all four copper layers in one
+export, but opaque F.Cu copper and pours hide the inner layers — the
+gallery read as top-layer-only. Now every board-bearing snapshot
+also carries one recoloured render per copper layer, and the
+gallery leads with a composite that stacks all four:
+
+- `scripts/snapshot_route.py` additionally exports each copper
+  layer singly (`kicad-cli pcb export svg --layers <one>`) and
+  rewrites the layer geometry colour to the fixed palette
+  (F.Cu #FF3B30, In1.Cu #FF9500, In2.Cu #34C759, B.Cu #0A84FF);
+  the white/grey hole rendering and black wrapper groups are kept.
+  Verified on the v4 board: recoloured counts equal the raw census
+  (2194/58/250/162 geometry tokens) and all four exports share the
+  combined view's viewBox (105.6894 x 85.0138), so stacked layers
+  register pixel-perfectly. `index.json` entries gained a `layers`
+  map; `stats.txt` lists the layer renders.
+- `scripts/build_site.py` gallery: per board-bearing entry, a
+  composite (four layer SVGs stacked, `mix-blend-mode: screen`,
+  opacity 0.55, background #111), a palette legend, the four
+  individual layer panels, then the existing top/bottom reference
+  renders. Board-less entries unchanged (explicit no-render note);
+  zero-history builds still show the placeholder.
+- The four board-bearing backfills (d0c0bca placed, 3ac1a43 v3,
+  41d7196 v4, fb2acf7 v5) were regenerated in place — same dirs,
+  timestamps, hashes, labels, notes and stats (cross-checked
+  field-by-field against the previous index.json); boards were
+  re-extracted read-only via `git show` at the original commits
+  and stats pinned with explicit flags. Verified in a full local
+  site build: 16 layer SVGs copied to `site/assets/history/`,
+  4 composites / 12 stacked images in the HTML, each layer file
+  referenced exactly twice per entry (composite + panel).
+  `history/README.md` documents the palette, file layout and
+  composite convention.

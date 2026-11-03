@@ -14,8 +14,31 @@ is the story.
 - `<UTC-timestamp>_<short-hash>/` — one snapshot per attempt:
   - `board-top.svg`, `board-bottom.svg` — kicad-cli renders
     (copper + silk layers), when a board exists for the attempt;
+  - `layer-FCu.svg`, `layer-In1Cu.svg`, `layer-In2Cu.svg`,
+    `layer-BCu.svg` — single-layer exports, one per copper layer,
+    each recoloured to the fixed palette below. All four share the
+    board's viewBox, so they register pixel-perfectly when stacked;
   - `stats.txt` — the same numbers as the index entry, human-readable.
     Anything never measured is written as `not recorded`.
+
+## Layer colours (fixed palette)
+
+| Layer  | Colour    | Meaning        |
+|--------|-----------|----------------|
+| F.Cu   | `#FF3B30` | front copper   |
+| In1.Cu | `#FF9500` | inner 1 (GND)  |
+| In2.Cu | `#34C759` | inner 2        |
+| B.Cu   | `#0A84FF` | back copper    |
+
+The snapshot script rewrites the layer geometry colour in each
+single-layer SVG to the palette colour (the white/grey hole rendering
+KiCad draws on every layer is kept). The site gallery shows, per
+attempt: a **composite** — the four layer SVGs stacked with
+`mix-blend-mode: screen` at 0.55 opacity on a near-black background,
+so all four layers are visible at once in their colours — a colour
+legend, the four individual layer panels, and the top/bottom
+reference renders. `index.json` entries carry a `layers` map
+(layer name → file) alongside `renders`.
 
 ## Making a snapshot (the per-attempt convention)
 
