@@ -1,0 +1,8 @@
+switching: Vout=408 V open-loop, APD ripple=2.89 mVpp
+averaged loop: pre=150 V, post=419.5 V, overshoot=-0.1%
+PASS  switching Vout in 300..600 V band at design Ipk (open-loop power delivery class)
+PASS  APD-node ripple < 20 mVpp (R9)
+PASS  averaged loop: 150 V pre-step within 5%
+PASS  averaged loop: settles within 2% of 420 V
+PASS  averaged loop: overshoot < 5%
+VERDICT: PASS
