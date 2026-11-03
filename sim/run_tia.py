@@ -87,11 +87,21 @@ results = {}
 # source ("iph: has no value, DC 0 assumed", no analysis runs, exit 1);
 # ngspice-42 accepts it. The explicit DC value is valid in both.
 
+# NOTE 2 (ngspice-36 exit code): every .control block below ends with
+# "quit" before .endc. Without it, ngspice-36 batch mode runs the
+# analyses and writes the CSVs correctly but still exits 1, printing
+# 'No ".plot"/".print"/".fourier" lines; no simulations run' — it only
+# counts top-level analysis cards toward its exit status, and these
+# decks keep theirs inside .control. ngspice-42 exits 0 either way.
+# The explicit quit makes both versions exit 0 on success (verified:
+# v36 and v42, identical CSV output).
+
 # ---------- AC ----------
 deck = CIR_HEAD.format(stim="dc 0 ac 1") + """
 .control
 ac dec 200 1e5 3e9
 wrdata results/tia_ac.csv db(v(out)) ph(v(out))
+quit
 .endc
 """
 # wrdata with db() writes a single real column pair; handle generically:
@@ -101,6 +111,7 @@ with open("sim/tia_ac.cir", "w") as f:
 .control
 ac dec 200 1e5 3e9
 wrdata results/tia_ac.csv db(v(out))
+quit
 .endc
 .end
 """)
@@ -123,6 +134,7 @@ with open("sim/tia_tran.cir", "w") as f:
 .control
 tran 0.05n 160n
 wrdata results/tia_step.csv v(out)
+quit
 .endc
 .end
 """)
@@ -151,6 +163,7 @@ with open("sim/tia_pulse.cir", "w") as f:
 .control
 tran 0.05n 400n
 wrdata results/tia_pulse.csv v(out)
+quit
 .endc
 .end
 """)
@@ -178,6 +191,7 @@ with open("sim/tia_noise.cir", "w") as f:
 noise v(out) Iph dec 100 1e4 3e9
 setplot noise1
 wrdata results/tia_noise.csv onoise_spectrum
+quit
 .endc
 .end
 """)
