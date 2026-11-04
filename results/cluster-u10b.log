@@ -1,0 +1,15 @@
+=== cluster u10b start 17:43:11 ===
+17:43:13 clear_disc: removed 25, remaining in disc: 44
+17:43:14 clear_disc: removed 25, remaining in disc: 19
+17:43:15 clear_disc: removed 19, remaining in disc: 0
+17:43:16 clear_disc: removed 0, remaining in disc: 0
+17:43:17 clear_disc: removed 0, remaining in disc: 0
+17:43:18 clear_disc: removed 0, remaining in disc: 0
+17:43:23 cleared 0 foreign items in disc (0.0,0.0) r=0.0: {}
+17:43:23   HV_INTVCC U10.8: still isolated (0s)
+17:43:23   HV_SS U10.3: CONNECTED (0s)
+17:43:23 cluster done: 1/2 targets connected; isolated groups remaining: 90
+copper items: 5106
+unconnected nets: 44
+  UNCONNECTED +3V3A: 5 groups, e.g. [['U9.5', 'track@(8.87, 48.0)', 'track@(9.274999, 48.0)', 'via@(9.274999, 48.0)'], ['C24.1', 'C46.1', 'C49.1', 'U14.10'], ['U7.6'], ['U7.30'], ['U7.31']]
+=== cluster u10b exit 17:44:05 ===

@@ -1013,6 +1013,34 @@
       },
       "description": "APD_K pour clearance resolved geometrically (hw/notch.py): rule-area copper-pour keepouts expanded >1.0 mm around the APD_K copper (northern cluster incl. R30's large pad, D1.5's escape, RJ2.2) on F/B, plus the In1 plane clearance raised 0.25 -> 0.35 so its antipads meet the 0.3 buried-HV rule. Audit: clearance 20 -> 3, the remainder exactly the justified D1 package-geometry grazes; GND connectivity unchanged",
       "note": ""
+    },
+    {
+      "pass": 38,
+      "timestamp": "2026-11-04T19:53:30Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr22.kicad_pcb",
+      "dir": "pass-0038",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 36,
+        "audit_verdict": "FAIL"
+      },
+      "description": "stub campaign 1 (hw/hand_stub.py): 13 of 31 singleton pads given audit-exact edge-anchored escape stubs, incl. D1.6 west, RJ2.2, CDR_DATP U4.29, CDR_NIN U4.4, CF1/CF2, GND R28.2, PHY_1V8A C23.1",
+      "note": ""
     }
   ],
   "gaps": [

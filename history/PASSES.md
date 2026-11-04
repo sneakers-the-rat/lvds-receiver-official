@@ -328,6 +328,14 @@ APD_K pour clearance resolved geometrically (hw/notch.py): rule-area copper-pour
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 36 · Audit verdict: FAIL
 
+### Pass 38 — 2026-11-04T19:53:30Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr22.kicad_pcb` · Commit: `pending`
+
+stub campaign 1 (hw/hand_stub.py): 13 of 31 singleton pads given audit-exact edge-anchored escape stubs, incl. D1.6 west, RJ2.2, CDR_DATP U4.29, CDR_NIN U4.4, CF1/CF2, GND R28.2, PHY_1V8A C23.1
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 36 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

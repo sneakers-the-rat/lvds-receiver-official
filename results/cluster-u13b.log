@@ -1,0 +1,14 @@
+=== cluster u13b start 17:44:56 ===
+17:44:57 clear_disc: removed 25, remaining in disc: 104
+17:44:58 clear_disc: removed 25, remaining in disc: 79
+17:44:59 clear_disc: removed 25, remaining in disc: 54
+17:45:00 clear_disc: removed 25, remaining in disc: 29
+17:45:00 clear_disc: removed 25, remaining in disc: 4
+17:45:01 clear_disc: removed 4, remaining in disc: 0
+17:45:06 cleared 0 foreign items in disc (0.0,0.0) r=0.0: {}
+17:45:06   ILIM_P U13.5: CONNECTED (1s)
+17:45:06 cluster done: 1/1 targets connected; isolated groups remaining: 119
+copper items: 4908
+unconnected nets: 50
+  UNCONNECTED +3V3A: 7 groups, e.g. [['U9.5', 'track@(8.87, 48.0)', 'track@(9.274999, 48.0)', 'via@(9.274999, 48.0)'], ['C46.1', 'U14.10', 'U14.9', 'U6.32'], ['C49.1', 'track@(80.375, 38.125)', 'track@(80.375, 39.375)', 'track@(80.625, 37.875)'], ['C24.1', 'U7.16', 'U7.25', 'track@(31.75, 58.5625)'], ['U7.6'], ['U7.30'], ['U7.31']]
+=== cluster u13b exit 17:45:46 ===
