@@ -312,6 +312,14 @@ GND-inclusive healing (hw/repairg.py = repair6 without the GND exclusion): 65 gr
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 20 · Unconnected nets: 40 · Audit verdict: FAIL
 
+### Pass 36 — 2026-11-04T17:10:26Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr20.kicad_pcb` · Commit: `pending`
+
+repairg round 2: 10 more groups in sweep 1 (APD_A corner re-bridged 7 -> 2 groups; HV_GATE, MOS_G, NEG_RAW, ULPI_D4 closed), sweep 2 connected 0 and the run stopped by its own rule; 36 unconnected nets remain, mostly lone-pad vs stub long hauls
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 20 · Unconnected nets: 36 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
