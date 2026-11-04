@@ -552,6 +552,16 @@ EXPANSION: outline 100x80 -> 100x110 mm (+30 mm north — the only side moving n
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 69 · Audit verdict: FAIL
 
+### Pass 66 — 2026-11-04T22:56:57Z · commit `pending`
+
+Board: `hw/pdlvds_rx.expanded.kicad_pcb` · Commit: `pending`
+
+expansion routing 1: GND pours extended into the strip (zone outlines y 0.3 -> -29.7 on F/In1/B, hw/refill_strip.py) + HV keepout notches carved from the moved U10 cluster's HV copper extents (hw/notch_strip.py, rule areas as in notch.py). GND 51 -> 9 groups; clearance 2 (justified D1 pair) after an intermediate refill-only state read 10 (8 HV-vs-pour in the strip, results/audit-refill-candidate.txt) — the notch removed all 8. Rails untouched yet: +3V3D 40, +5V 27, +3V3A 13, +3V3D_CDR 10 groups.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 69 · Audit verdict: FAIL
+
+Intermediate audits: results/audit-refill-candidate.txt (pour extension only: GND 51->7, violations 2->10) and results/audit-notch-candidate.txt (after notch: violations back to 2, GND 7->9 — two GND pads inside the notch rects lost pour contact, left for stitch/repair).
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
