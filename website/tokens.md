@@ -26,10 +26,26 @@ Records are the runtime's per-message token-usage rows: each row aggregates ever
 
 ## Cost summary
 
-Breakdown of API costs at list-price equivalents, computed from the same per-message token records (method and price basis: [metrics/README.md]({{ '/downloads/token-metrics-README.md' | relative_url }})).
+What this workload would cost at each provider's published API list prices, computed from the same per-message token records (method and price basis: [metrics/README.md]({{ '/downloads/token-metrics-README.md' | relative_url }})).
 
-| {% for h in site.data.costs.header %}{{ h }} | {% endfor %}
-|{% for h in site.data.costs.header %}---|{% endfor %}
-{% for row in site.data.costs.rows %}| {% for cell in row %}{{ cell }} | {% endfor %}
+The rates are constants — US dollars per million tokens, standard pay-as-you-go list prices:
+
+| Provider | Model | Input | Cached input | Output |
+|---|---|---:|---:|---:|
+{% for r in site.data.costs.rates %}| {{ r.provider }} | {{ r.model }} | {{ r.input }} | {{ r.cached }} | {{ r.output }} |
+{% endfor %}
+
+**Cost at list prices — each model's share priced at its own tier** (the main chat and the checkpoint cron ran on the flagship-tier model, the subagents on the step-down-tier model):
+
+| Scope | {% for c in site.data.costs.columns %}{{ c }} | {% endfor %}
+|---|---:|---:|---:|
+{% for r in site.data.costs.costs %}| {% if r.total %}**{{ r.label }}**{% else %}{{ r.label }}{% endif %} | {% for cell in r.cells %}{% if r.total %}**{{ cell }}**{% else %}{{ cell }}{% endif %} | {% endfor %}
+{% endfor %}
+
+Two whole-volume variants. *Upper bound (all flagship)*: every token priced at the flagship tier, ignoring the tier split. *Cache-adjusted (measured share)*: repeated input billed at the cached-input rate, using the measured repeated share of input instead of the standard rate.
+
+| | {% for c in site.data.costs.columns %}{{ c }} | {% endfor %}
+|---|---:|---:|---:|
+{% for r in site.data.costs.extras %}| {{ r.label }} | {% for cell in r.cells %}{{ cell }} | {% endfor %}
 {% endfor %}
 {% endif %}
