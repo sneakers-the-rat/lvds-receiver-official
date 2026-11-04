@@ -997,3 +997,107 @@ worker on the `pass-structure` branch:
   committed" note. `history/index.json` and the two-step
   snapshot_route flow are retired (frozen legacy); commit_pass.py
   reuses snapshot_route's render machinery.
+
+## CI apt-cache round 2 (2026-11-04) — the slow installs were the sim job, not KiCad
+
+Owner complaint: "you never actually cached your apt installs and
+they keep taking like 5-10m". Diagnosis from per-step timings pulled
+from the GitHub API (public repo; step logs themselves need auth and
+were not available — every claim below rests on timings + workflow
+semantics, and the two places where that leaves a gap are labelled
+hypotheses).
+
+### Measured install-step durations, 2026-11-04 runs
+
+| run (UTC) | sim install | KiCad install | run outcome |
+| --- | --- | --- | --- |
+| 41752803331 (01:15) | **429 s** | 38 s | success |
+| 41752825210 (01:15) | 57 s | 98 s | success |
+| 41787138138 (06:40) | **371 s** | 33 s | success |
+| 41787142236 (06:40) | **479 s** | 33 s | success (run total 10m23s) |
+| 41797445451 (08:10) | 53 s | 61 s | success |
+| 41801117836 (08:38) | 72 s | 64 s | success |
+| 41801682836 (08:43) | 73 s | 75 s | success |
+| 41813013226 (10:15) | 64 s | 66 s | success |
+| 41813639156 (10:21) | 47 s | 37 s | success |
+| 41814248099 (10:26) | **456 s, cancelled in-step** | 59 s | run cancelled |
+| 41815056150 (10:34) | **309 s, cancelled in-step** | 65 s | run cancelled |
+
+### Root causes, ranked
+
+1. **The sim job's install was never cached, and it is bimodal**
+   (real, measured). Its set (gcc-arm-none-eabi + newlib + scipy,
+   several hundred MB from the Ubuntu archive) installs in 47–73 s
+   on a healthy mirror, but in 5 of 11 measured runs it crawled at
+   ~1.5 MB/s for 309–479 s. The retry loop cannot help: attempt 1
+   eventually *succeeds*, just slowly; a retry only fires on
+   failure. The two slowest pairs started the same second in two
+   different runs (06:41, and the 10:26/10:34 pair overlapped a
+   third run), so concurrent runs pulling the same set from the
+   same mirror plausibly amplify the crawl (hypothesis — timings
+   show simultaneity, not the mirror's internals).
+2. **Workflow-level `cancel-in-progress: true` killed main runs
+   mid-install** (real, measured). Both cancelled runs above died
+   inside the sim install step when the next main push landed; in
+   the Actions UI a cancelled run is indistinguishable from a
+   5–10 minute install, and the partial work is discarded either
+   way. Per-ref groups never protected the default branch from
+   itself.
+3. **The KiCad .deb cache worked but was structurally frozen**
+   (real, from cache semantics). Restore/save steps take 0–1 s and
+   the install never crawled (33–98 s) — consistent with a small
+   set served from cache (exact set size is a hypothesis: step logs
+   with the cache action's size lines need auth we don't have).
+   But cache entries are immutable, and the key was the hash of
+   ci.yml: the first save under a key won forever, so a PPA point
+   release would leave every later run restoring stale .debs,
+   re-downloading the changed ones, and never saving the fresh
+   set. Two extra defects rode along: the combined actions/cache
+   auto-saved in its post step, duplicating the explicit save step
+   (the stray "Post Restore cached .deb packages" step in logs),
+   and any unrelated ci.yml edit busted the key.
+4. **The KiCad job's commented "healthy ~5 minutes" was stale** —
+   measured job totals are 51–120 s. (Comment corrected.)
+
+Out of scope, flagged: build-site's own apt step (python3-numpy,
+python3-matplotlib) is likewise uncached — 32–79 s measured. That
+job is being restructured by the Jekyll migration; its owner can
+apply the same rolling-cache pattern.
+
+### Fixes (this commit)
+
+- sim-and-firmware gains the .deb cache (restore/save pair on
+  /var/cache/apt/archives, own `apt-sim-` namespace), the
+  docker-clean removal its save silently depends on (without it
+  the image's post-transaction hook empties the archives before
+  the save step runs and the cache would save nothing, forever),
+  and `timeout-minutes: 25`.
+- Both jobs use **rolling cache keys**: primary key carries the
+  run id so the save always lands; restore-keys fetch the newest
+  entry under the prefix. PPA bumps and package-list edits
+  self-heal on the next run. Combined actions/cache replaced by
+  the restore/save pair — one save mechanism, no post-step
+  duplicate. Each job also echoes the restore's matched key, so a
+  hit is visible on the job page (previously invisible).
+- Concurrency: `cancel-in-progress` is now
+  `${{ github.ref != 'refs/heads/main' }}` — the default branch
+  (verified: `main`) is never cancelled mid-flight; a new push
+  queues as the group's single pending run. Feature branches and
+  PRs keep cancelling stale runs.
+- No gate touched: ERC hard gate and DRC ratchet unchanged.
+
+### What to watch in the next runs
+
+- First run after this lands: sim restore matches nothing (cold),
+  save takes real seconds (hundreds of MB) — that run's sim
+  install may still crawl if the mirror does.
+- Every run after: the sim "Report .deb cache restore" step shows
+  a matched key naming the previous run; restore takes ~2–6 s;
+  **predicted sim install ≈ 35–55 s and the 300 s+ mode gone**,
+  because on a hit apt downloads ~nothing and dpkg unpack is the
+  only real work. KiCad install should stay ~30–45 s with its save
+  now guaranteed fresh each run.
+- If the sim install still crawls with a matched key shown, the
+  remaining suspects are `apt-get update` index trickle and the
+  unpack itself — read the matched-key line and step split before
+  concluding the cache failed.
