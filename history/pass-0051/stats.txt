@@ -1,0 +1,13 @@
+pass: 51
+description: surgery2 (hw/surgery2.py — probe 16 directions, rip the cheapest rippable blockers, place a 0.2 mm neck): +3V3A U7.6 stubbed (1 DP_PHY via ripped), USB_RST U6.40, HV_INTVCC U10.8, HV_SS U10.3 stubbed (their necks were clean all along; the stub search's endpoint-openness test had been the blocker)
+timestamp (UTC): 2026-11-04T20:06:04Z
+commit: pending
+board file: hw/pdlvds_rx.fr37.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 3
+unconnected nets: 54
+audit verdict: fail
+note: 
