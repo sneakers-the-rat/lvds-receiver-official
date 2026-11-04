@@ -1860,6 +1860,35 @@
       },
       "description": "expansion routing 1: GND pours extended into the strip (zone outlines y 0.3 -> -29.7 on F/In1/B, hw/refill_strip.py) + HV keepout notches carved from the moved U10 cluster's HV copper extents (hw/notch_strip.py, rule areas as in notch.py). GND 51 -> 9 groups; clearance 2 (justified D1 pair) after an intermediate refill-only state read 10 (8 HV-vs-pour in the strip, results/audit-refill-candidate.txt) \u2014 the notch removed all 8. Rails untouched yet: +3V3D 40, +5V 27, +3V3A 13, +3V3D_CDR 10 groups.",
       "note": "Intermediate audits: results/audit-refill-candidate.txt (pour extension only: GND 51->7, violations 2->10) and results/audit-notch-candidate.txt (after notch: violations back to 2, GND 7->9 \u2014 two GND pads inside the notch rects lost pour contact, left for stitch/repair)."
+    },
+    {
+      "pass": 67,
+      "timestamp": "2026-11-04T23:56:47Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp2.kicad_pcb",
+      "dir": "pass-0067",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 2,
+        "unconnected_nets": 65,
+        "audit_verdict": "FAIL"
+      },
+      "description": "expansion routing 2: bridge campaign (4 rounds, hw/bridge.py batched) on the repairg exp1 checkpoint board. Total groups 253 -> 226, unconnected nets 69 -> 65, violations 2 (justified D1 pair). Round yields -16/-6/-3/-2: nearest-pair bridges consumed; rails merged one pair per round (+3V3D/+5V/+3V3A/+3V3D_CDR all connected once per round), HV cluster nets bridged in the strip (HV_FBX, HV_SHDN, HV_RAW, HV_SENSE, FLY_PRI, HV_SEC, HV_VC2), +/-VA joined. ULPI bus (U7<->U6) untouched: nearest fragments >3 mm apart (bridge gap sentinel 9.9) \u2014 A* territory. Decay curve says change shape: next = rails bridge-chain, thread.py on geometry-stuck pairs, repairg2 sweep for long hauls.",
+      "note": "bridge rounds in results/bridge-r1..r4.log; audits in results/audit-bridge-r1..r4.txt"
     }
   ],
   "gaps": [
