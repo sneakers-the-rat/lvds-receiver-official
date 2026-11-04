@@ -1,0 +1,13 @@
+pass: 64
+description: repairg healing on the NXT-escape board: 1 group connected — the heal curve is exhausted on this residue (68, 40, 17, 12, 1 across the last five heals); the remaining bridges are astar-proof in the current field and need forced geometry (ripup/hand bridges). A clean re-run (fr51) reproduced this state exactly: 35 unconnected nets
+timestamp (UTC): 2026-11-04T21:24:00Z
+commit: pending
+board file: hw/pdlvds_rx.fr50.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 4
+unconnected nets: 35
+audit verdict: fail
+note: 
