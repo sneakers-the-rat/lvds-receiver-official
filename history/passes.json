@@ -929,6 +929,34 @@
       },
       "description": "D1 escapes placed (hw/d1_escape.py): APD_K D1.5 neck SE to via@(10.8,36.6) + In2 tail \u2014 its neck passes D1.4/D1.6 at 0.70 mm (justified: the APD's own terminals are 0.5 mm apart; the 1.0 mm board rule cannot be met inside the footprint); APD_A D1.4 neck NE to via@(9.9,41.9) + In2 tail, true gap to D1.5 0.975 mm (0.025 graze, same justification class). Both APD pads now have copper; healing bridges them",
       "note": ""
+    },
+    {
+      "pass": 35,
+      "timestamp": "2026-11-04T16:46:56Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr19.kicad_pcb",
+      "dir": "pass-0035",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 20,
+        "unconnected_nets": 40,
+        "audit_verdict": "FAIL"
+      },
+      "description": "GND-inclusive healing (hw/repairg.py = repair6 without the GND exclusion): 65 groups connected before a VM replacement killed the run mid sweep-2; state recovered from the watcher checkpoint. GND 12 groups -> 2; clearance 36 -> 20 (C40/R27 families gone; rest = 16 APD_K-vs-pour + 3 D1 justified grazes + via antipad); APD_A fragmented to 7 groups in the detector corner by the D1.6-chain rip",
+      "note": ""
     }
   ],
   "gaps": [
