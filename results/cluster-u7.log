@@ -1,0 +1,39 @@
+=== cluster U7 start 14:20:43 ===
+14:20:46 cleared 66 foreign items in disc (30.3,57.6) r=3.4: {'+3V3D_CDR': 6, '+VA': 21, '-VA': 1, 'GND': 9, 'RBIAS': 10, 'ULPI_D0': 2, 'ULPI_D1': 1, 'XI': 6, 'XO': 10}
+14:20:46 Traceback (most recent call last):
+14:20:46   File "/home/hatch/workspace/photodiode-lvds-rx/hw/cluster.py", line 86, in <module>
+14:20:46     main()
+14:20:46   File "/home/hatch/workspace/photodiode-lvds-rx/hw/cluster.py", line 52, in main
+14:20:46     items, pad_cells = repair.build_items(board)
+14:20:46                        ^^^^^^^^^^^^^^^^^^^^^^^^^
+14:20:46   File "/home/hatch/workspace/photodiode-lvds-rx/hw/repair.py", line 32, in build_items
+14:20:46     fps = {fp.GetReference(): fp for fp in board.GetFootprints()}
+14:20:46                                            ^^^^^^^^^^^^^^^^^^^^^
+14:20:46   File "/usr/lib/python3/dist-packages/pcbnew.py", line 17604, in GetFootprints
+14:20:46     def GetFootprints(self):          return list(self.Footprints())
+14:20:46                                              ^^^^^^^^^^^^^^^^^^^^^^^
+14:20:46 TypeError: 'SwigPyObject' object is not iterable
+=== cluster U7 exit 14:20:46 ===
+=== cluster U7 v2 start 14:31:22 ===
+python3: can't open file '/tmp/tswrap.py': [Errno 2] No such file or directory
+python3: can't open file '/tmp/tswrap.py': [Errno 2] No such file or directory
+python3: can't open file '/tmp/tswrap.py': [Errno 2] No such file or directory
+python3: can't open file '/tmp/tswrap.py': [Errno 2] No such file or directory
+python3: can't open file '/tmp/tswrap.py': [Errno 2] No such file or directory
+=== cluster U7 v2 exit 14:31:22 ===
+=== cluster U7 v3 start 14:33:32 ===
+14:33:33 clear_disc: removed 25, remaining in disc: 41
+14:33:34 clear_disc: removed 25, remaining in disc: 16
+14:33:34 clear_disc: removed 16, remaining in disc: 0
+14:33:35 clear_disc: removed 0, remaining in disc: 0
+14:33:47 cleared 0 foreign items in disc (0.0,0.0) r=0.0: {}
+14:33:47   +3V3A U7.25: CONNECTED (3s)
+14:33:47   +3V3A U7.30: CONNECTED (2s)
+14:33:47   +3V3A U7.31: CONNECTED (3s)
+14:33:47   PHY_1V8 U7.26: still isolated (0s)
+14:33:47   PHY_1V8A U7.29: still isolated (0s)
+14:33:47 cluster done: 3/5 targets connected; isolated groups remaining: 98
+copper items: 3210
+unconnected nets: 38
+  UNCONNECTED +3V3A: 2 groups, e.g. [['U9.5'], ['C24.1', 'C46.1', 'C49.1', 'U14.10']]
+=== cluster U7 v3 exit 14:34:11 ===
