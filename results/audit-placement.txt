@@ -1,0 +1,188 @@
+copper items: 528
+unconnected nets: 113
+  UNCONNECTED +3V3A: 13 groups, e.g. [['U9.5'], ['U6.32'], ['U6.33'], ['C49.1'], ['C24.1'], ['C46.1'], ['U7.6'], ['U7.16'], ['U7.25'], ['U7.30'], ['U7.31'], ['U14.9'], ['U14.10']]
+  UNCONNECTED +3V3D: 40 groups, e.g. [['U8.5'], ['U8.9'], ['U6.6'], ['U6.17'], ['U6.30'], ['U6.39'], ['U6.52'], ['U6.62'], ['U6.72'], ['U6.84'], ['U6.108'], ['U6.121'], ['U6.131'], ['U6.143'], ['U6.144'], ['U5.4'], ['U5.10'], ['U5.14'], ['U5.16'], ['X2.1'], ['X2.4'], ['R15.2'], ['R46.1'], ['R45.1'], ['C27.1'], ['C28.1'], ['C16.1'], ['D6.2'], ['R21.2'], ['C48.1'], ['R35.1'], ['R20.2'], ['L1.2'], ['U11.14'], ['C47.1'], ['C38.1'], ['R22.2'], ['FB1.1'], ['R37.2'], ['J4.1']]
+  UNCONNECTED +3V3D_CDR: 10 groups, e.g. [['C51.1'], ['U4.1'], ['U4.2'], ['U4.12'], ['U4.18'], ['U4.24'], ['U4.31'], ['U4.32'], ['C50.1'], ['FB1.2']]
+  UNCONNECTED +5V: 27 groups, e.g. [['C25.1'], ['F1.2'], ['R25.1'], ['C37.1'], ['U12.10'], ['U12.11'], ['U12.12'], ['U12.13'], ['U7.4'], ['D3.5'], ['C35.1'], ['U11.10'], ['U11.11'], ['U11.12'], ['U11.13'], ['U14.1'], ['U14.2'], ['U14.3'], ['U14.6'], ['U13.1'], ['U13.2'], ['U13.3'], ['U13.6'], ['C43.1'], ['U10.10'], ['T1.1'], ['D4.1']]
+  UNCONNECTED +VA: 10 groups, e.g. [['U3.5'], ['C7.1'], ['C2.1'], ['U1.7'], ['C10.1'], ['U13.9'], ['U13.10'], ['U2.5'], ['C44.1'], ['R5.1']]
+  UNCONNECTED -VA: 4 groups, e.g. [['C41.1'], ['C3.1'], ['U1.4'], ['FB2.2']]
+  UNCONNECTED APD_A: 9 groups, e.g. [['C1.2'], ['RJ1.2'], ['U1.2'], ['D1.1'], ['D1.2'], ['D1.3'], ['D1.4'], ['D1.6'], ['R1.2']]
+  UNCONNECTED APD_A_ALT: 2 groups, e.g. [['RJ1.1'], ['D2.1']]
+  UNCONNECTED APD_K: 8 groups, e.g. [['R30.1'], ['R31.1'], ['R34.1'], ['R29.2'], ['D1.5'], ['C4.1'], ['RJ2.2'], ['C33.1']]
+  UNCONNECTED APD_K_ALT: 2 groups, e.g. [['D2.2'], ['RJ2.1']]
+  UNCONNECTED BIST_A: 2 groups, e.g. [['R46.2'], ['D8.2']]
+  UNCONNECTED BIST_DRV: 2 groups, e.g. [['U6.98'], ['D8.1']]
+  UNCONNECTED BOOT0: 2 groups, e.g. [['U6.138'], ['R16.1']]
+  UNCONNECTED CAP_CLK: 2 groups, e.g. [['U6.34'], ['U5.5']]
+  UNCONNECTED CAP_DATA: 2 groups, e.g. [['U6.35'], ['U5.3']]
+  UNCONNECTED CC1: 2 groups, e.g. [['J1.A5'], ['R18.1']]
+  UNCONNECTED CC2: 2 groups, e.g. [['R19.1'], ['J1.B5']]
+  UNCONNECTED CDR_CLKN: 4 groups, e.g. [['U5.7'], ['J2.6'], ['U4.25'], ['R14.2']]
+  UNCONNECTED CDR_CLKP: 4 groups, e.g. [['U5.6'], ['J2.5'], ['U4.26'], ['R14.1']]
+  UNCONNECTED CDR_DATN: 4 groups, e.g. [['U5.1'], ['J2.2'], ['U4.28'], ['R13.2']]
+  UNCONNECTED CDR_DATP: 4 groups, e.g. [['U5.2'], ['J2.1'], ['U4.29'], ['R13.1']]
+  UNCONNECTED CDR_LOL: 2 groups, e.g. [['U6.36'], ['U4.16']]
+  UNCONNECTED CDR_LOS: 2 groups, e.g. [['U6.75'], ['U4.22']]
+  UNCONNECTED CDR_NIN: 2 groups, e.g. [['C9.2'], ['U4.4']]
+  UNCONNECTED CDR_PIN: 2 groups, e.g. [['C8.2'], ['U4.5']]
+  UNCONNECTED CDR_SQUELCH: 2 groups, e.g. [['U6.76'], ['U4.27']]
+  UNCONNECTED CDR_VREF: 2 groups, e.g. [['U4.3'], ['C12.1']]
+  UNCONNECTED CF1: 2 groups, e.g. [['U4.15'], ['C15.1']]
+  UNCONNECTED CF2: 2 groups, e.g. [['U4.14'], ['C15.2']]
+  UNCONNECTED CMP_IN: 5 groups, e.g. [['R8.2'], ['U3.6'], ['R11.2'], ['R9.2'], ['R7.2']]
+  UNCONNECTED CMP_QN: 2 groups, e.g. [['U3.3'], ['C9.1']]
+  UNCONNECTED CMP_QP: 3 groups, e.g. [['U3.4'], ['C8.1'], ['R9.1']]
+  UNCONNECTED DAC_SYNC: 2 groups, e.g. [['U8.6'], ['U6.110']]
+  UNCONNECTED DAC_VREF: 2 groups, e.g. [['U8.10'], ['C26.1']]
+  UNCONNECTED DBG_RX: 2 groups, e.g. [['U6.102'], ['TP3.1']]
+  UNCONNECTED DBG_TX: 2 groups, e.g. [['U6.101'], ['TP2.1']]
+  UNCONNECTED DM_CON: 3 groups, e.g. [['J1.A7'], ['J1.B7'], ['D3.3']]
+  UNCONNECTED DM_PHY: 2 groups, e.g. [['U7.8'], ['D3.4']]
+  UNCONNECTED DP_CON: 3 groups, e.g. [['J1.A6'], ['J1.B6'], ['D3.1']]
+  UNCONNECTED DP_PHY: 2 groups, e.g. [['U7.7'], ['D3.6']]
+  UNCONNECTED FB_3V3: 3 groups, e.g. [['R36.1'], ['R35.2'], ['U11.5']]
+  UNCONNECTED FB_NEG: 3 groups, e.g. [['R39.1'], ['U12.5'], ['R38.2']]
+  UNCONNECTED FLY_PRI: 2 groups, e.g. [['Q1.3'], ['T1.2']]
+  UNCONNECTED GND: 21 groups, e.g. [['C10.2', 'C11.2', 'C12.2', 'C14.2'], ['C26.2'], ['R32.2'], ['C28.2'], ['C32.2'], ['C34.2'], ['U1.3'], ['C31.2'], ['X1.2'], ['C21.2', 'X1.4'], ['R24.2'], ['U7.1'], ['U7.2'], ['C29.2'], ['R26.2'], ['C35.2'], ['C30.2'], ['U10.5'], ['U10.11'], ['T1.4'], ['R28.2']]
+  UNCONNECTED HV_DAC: 2 groups, e.g. [['U8.2'], ['R33.1']]
+  UNCONNECTED HV_FBX: 5 groups, e.g. [['R32.1'], ['R33.2'], ['C34.1'], ['R31.2'], ['U10.2']]
+  UNCONNECTED HV_GATE: 2 groups, e.g. [['R27.1'], ['U10.7']]
+  UNCONNECTED HV_INTVCC: 2 groups, e.g. [['C31.1'], ['U10.8']]
+  UNCONNECTED HV_RAW: 3 groups, e.g. [['C32.1'], ['R29.1'], ['D5.1']]
+  UNCONNECTED HV_RT: 2 groups, e.g. [['R24.1'], ['U10.4']]
+  UNCONNECTED HV_SEC: 2 groups, e.g. [['T1.5'], ['D5.2']]
+  UNCONNECTED HV_SENSE: 3 groups, e.g. [['Q1.2'], ['U10.6'], ['R28.1']]
+  UNCONNECTED HV_SHDN: 4 groups, e.g. [['U6.97'], ['R25.2'], ['R26.1'], ['U10.9']]
+  UNCONNECTED HV_SS: 2 groups, e.g. [['C30.1'], ['U10.3']]
+  UNCONNECTED HV_VC: 2 groups, e.g. [['R23.1'], ['U10.1']]
+  UNCONNECTED HV_VC2: 2 groups, e.g. [['R23.2'], ['C29.1']]
+  UNCONNECTED I2C_SCL: 4 groups, e.g. [['U9.1'], ['U6.136'], ['U4.20'], ['R20.1']]
+  UNCONNECTED I2C_SDA: 4 groups, e.g. [['U9.6'], ['U6.137'], ['U4.21'], ['R21.1']]
+  UNCONNECTED ILIM_A: 2 groups, e.g. [['U14.5'], ['R43.1']]
+  UNCONNECTED ILIM_P: 2 groups, e.g. [['R41.1'], ['U13.5']]
+  UNCONNECTED LED_PWR_K: 2 groups, e.g. [['D6.1'], ['R44.1']]
+  UNCONNECTED LED_STAT: 2 groups, e.g. [['U6.99'], ['D7.1']]
+  UNCONNECTED LED_STAT_A: 2 groups, e.g. [['R45.2'], ['D7.2']]
+  UNCONNECTED MOS_G: 2 groups, e.g. [['R27.2'], ['Q1.1']]
+  UNCONNECTED NEG_RAW: 12 groups, e.g. [['C39.2'], ['R39.2'], ['C40.2'], ['U12.6'], ['U12.7'], ['U12.8'], ['U12.14'], ['U12.15'], ['U12.16'], ['U12.17'], ['FB2.1'], ['L2.2']]
+  UNCONNECTED NRST: 4 groups, e.g. [['U6.25'], ['R15.1'], ['C19.1'], ['J4.10']]
+  UNCONNECTED PG_3V3: 3 groups, e.g. [['U6.140'], ['U11.4'], ['R37.1']]
+  UNCONNECTED PHY_1V8: 3 groups, e.g. [['C22.1'], ['U7.15'], ['U7.26']]
+  UNCONNECTED PHY_1V8A: 2 groups, e.g. [['U7.29'], ['C23.1']]
+  UNCONNECTED POST_INN: 3 groups, e.g. [['R3.2'], ['R4.1'], ['U2.4']]
+  UNCONNECTED POST_INP: 3 groups, e.g. [['R2.1'], ['C5.2'], ['U2.3']]
+  UNCONNECTED POST_OUT: 3 groups, e.g. [['R8.1'], ['R3.1'], ['U2.1']]
+  UNCONNECTED RBIAS: 2 groups, e.g. [['R17.1'], ['U7.32']]
+  UNCONNECTED REFCLK: 2 groups, e.g. [['X2.3'], ['U4.10']]
+  UNCONNECTED REFCLKN: 2 groups, e.g. [['U4.11'], ['C14.1']]
+  UNCONNECTED SET_A: 3 groups, e.g. [['C45.1'], ['R42.1'], ['U14.7']]
+  UNCONNECTED SET_P: 3 groups, e.g. [['R40.1'], ['U13.7'], ['C42.1']]
+  UNCONNECTED SLICEN: 2 groups, e.g. [['U4.7'], ['C13.2']]
+  UNCONNECTED SLICEP: 2 groups, e.g. [['U4.6'], ['C13.1']]
+  UNCONNECTED SPI_MOSI: 2 groups, e.g. [['U8.8'], ['U6.113']]
+  UNCONNECTED SPI_SCK: 2 groups, e.g. [['U8.7'], ['U6.111']]
+  UNCONNECTED SS_3V3: 2 groups, e.g. [['C36.1'], ['U11.9']]
+  UNCONNECTED SS_NEG: 2 groups, e.g. [['C39.1'], ['U12.9']]
+  UNCONNECTED SW1: 4 groups, e.g. [['L1.1'], ['U11.1'], ['U11.2'], ['U11.3']]
+  UNCONNECTED SW2: 4 groups, e.g. [['U12.1'], ['U12.2'], ['U12.3'], ['L2.1']]
+  UNCONNECTED SWCLK: 2 groups, e.g. [['U6.109'], ['J4.4']]
+  UNCONNECTED SWDIO: 2 groups, e.g. [['U6.105'], ['J4.2']]
+  UNCONNECTED TEST_IN: 2 groups, e.g. [['R11.1'], ['J3.1']]
+  UNCONNECTED THRADJ: 2 groups, e.g. [['R12.1'], ['U4.9']]
+  UNCONNECTED THR_DAC: 2 groups, e.g. [['U8.1'], ['R10.1']]
+  UNCONNECTED THR_FILT: 3 groups, e.g. [['U3.1'], ['R10.2'], ['C11.1']]
+  UNCONNECTED TIA_OUT: 5 groups, e.g. [['C1.1'], ['U1.6'], ['R7.1'], ['C5.1'], ['R1.1']]
+  UNCONNECTED TMP_ALERT: 3 groups, e.g. [['U9.3'], ['U6.139'], ['R22.1']]
+  UNCONNECTED TP_HV: 2 groups, e.g. [['TP1.1'], ['R34.2']]
+  UNCONNECTED ULPI_CK: 2 groups, e.g. [['U6.41'], ['U7.14']]
+  UNCONNECTED ULPI_D0: 2 groups, e.g. [['U6.37'], ['U7.24']]
+  UNCONNECTED ULPI_D1: 2 groups, e.g. [['U6.46'], ['U7.23']]
+  UNCONNECTED ULPI_D2: 2 groups, e.g. [['U6.47'], ['U7.22']]
+  UNCONNECTED ULPI_D3: 2 groups, e.g. [['U6.69'], ['U7.21']]
+  UNCONNECTED ULPI_D4: 2 groups, e.g. [['U6.70'], ['U7.20']]
+  UNCONNECTED ULPI_D5: 2 groups, e.g. [['U6.73'], ['U7.19']]
+  UNCONNECTED ULPI_D6: 2 groups, e.g. [['U6.74'], ['U7.18']]
+  UNCONNECTED ULPI_D7: 2 groups, e.g. [['U6.135'], ['U7.17']]
+  UNCONNECTED ULPI_DIR: 2 groups, e.g. [['U6.28'], ['U7.12']]
+  UNCONNECTED ULPI_NXT: 2 groups, e.g. [['U6.29'], ['U7.11']]
+  UNCONNECTED ULPI_STP: 2 groups, e.g. [['U6.26'], ['U7.13']]
+  UNCONNECTED USB_RST: 2 groups, e.g. [['U6.40'], ['U7.9']]
+  UNCONNECTED VBUS_RAW: 5 groups, e.g. [['F1.1'], ['J1.A4'], ['J1.A9'], ['J1.B4'], ['J1.B9']]
+  UNCONNECTED VCAP1: 2 groups, e.g. [['U6.106'], ['C17.1']]
+  UNCONNECTED VCAP2: 2 groups, e.g. [['U6.71'], ['C18.1']]
+  UNCONNECTED VMID: 5 groups, e.g. [['R2.2'], ['R6.1'], ['R4.2'], ['C6.1'], ['R5.2']]
+  UNCONNECTED XI: 3 groups, e.g. [['X1.1'], ['U7.28'], ['C20.1']]
+  UNCONNECTED XO: 3 groups, e.g. [['X1.3'], ['C21.1'], ['U7.27']]
+clearance violations: 50
+  CLEARANCE GND (C41.2) vs SET_P (R40.1): need 0.2 mm
+  CLEARANCE GND (C41.2) vs +3V3D_CDR (C51.1): need 0.25 mm
+  CLEARANCE CDR_CLKP (U5.6) vs +3V3D (C28.1): need 0.25 mm
+  CLEARANCE CDR_CLKP (U5.6) vs GND (C28.2): need 0.2 mm
+  CLEARANCE +3V3D (U5.16) vs VCAP1 (C17.1): need 0.25 mm
+  CLEARANCE +3V3D (U5.16) vs GND (C17.2): need 0.25 mm
+  CLEARANCE VBUS_RAW (F1.1) vs GND (D4.2): need 0.25 mm
+  CLEARANCE +5V (F1.2) vs GND (C38.2): need 0.25 mm
+  CLEARANCE APD_A (C1.2) vs TIA_OUT (C5.1): need 0.2 mm
+  CLEARANCE RBIAS (R17.1) vs NEG_RAW (FB2.1): need 0.25 mm
+  CLEARANCE GND (R17.2) vs -VA (FB2.2): need 0.25 mm
+  CLEARANCE SS_NEG (C39.1) vs GND (zone L0): need 0.2 mm
+  CLEARANCE +3V3D (C16.1) vs GND (C17.2): need 0.25 mm
+  CLEARANCE THRADJ (R12.1) vs GND (U13.11): need 0.2 mm
+  CLEARANCE GND (R12.2) vs +VA (U13.10): need 0.25 mm
+  CLEARANCE GND (R41.2) vs SET_A (R42.1): need 0.2 mm
+  CLEARANCE NEG_RAW (R39.2) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (C40.2) vs PHY_1V8 (C22.1): need 0.25 mm
+  CLEARANCE APD_K_ALT (D2.2) vs +3V3D (R35.1): need 0.25 mm
+  CLEARANCE GND (D2.3) vs SW1 (L1.1): need 0.2 mm
+  CLEARANCE XO (C21.1) vs GND (zone L0): need 0.2 mm
+  CLEARANCE APD_K (R30.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE SW2 (U12.2) vs GND (zone L0): need 0.2 mm
+  CLEARANCE SW2 (U12.3) vs GND (zone L0): need 0.2 mm
+  CLEARANCE FB_NEG (U12.5) vs GND (zone L0): need 0.2 mm
+  CLEARANCE NEG_RAW (U12.6) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.7) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.8) vs GND (zone L0): need 0.25 mm
+  CLEARANCE SS_NEG (U12.9) vs GND (zone L0): need 0.2 mm
+  CLEARANCE +5V (U12.10) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (U12.11) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (U12.13) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.14) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.15) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.16) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.17) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (R35.1) vs APD_K (RJ2.2): need 1.0 mm
+  CLEARANCE CDR_CLKP (R14.1) vs GND (zone L0): need 0.2 mm
+  CLEARANCE CDR_CLKN (R14.2) vs GND (zone L0): need 0.2 mm
+  CLEARANCE GND (R24.2) vs HV_SENSE (R28.1): need 0.2 mm
+  CLEARANCE FB_NEG (R38.2) vs GND (zone L0): need 0.2 mm
+  CLEARANCE APD_K (C4.1) vs GND (C33.2): need 1.0 mm
+  CLEARANCE APD_K (C4.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE +5V (U14.1) vs GND (C14.2): need 0.25 mm
+  CLEARANCE APD_K (RJ2.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE SW2 (L2.1) vs GND (zone L0): need 0.2 mm
+  CLEARANCE NEG_RAW (L2.2) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (R5.1) vs GND (zone L0): need 0.25 mm
+  CLEARANCE VMID (R5.2) vs GND (zone L0): need 0.2 mm
+  CLEARANCE APD_K (C33.1) vs GND (zone L0): need 1.0 mm
+intrinsic same-footprint pad pairs below class clearance (datasheet geometry, not routable): 42
+  INTRINSIC I2C_SCL (U9.1) vs GND (U9.7): need 0.2 mm
+  INTRINSIC TMP_ALERT (U9.3) vs GND (U9.7): need 0.2 mm
+  INTRINSIC GND (U9.4) vs +3V3A (U9.5): need 0.25 mm
+  INTRINSIC +3V3A (U9.5) vs I2C_SDA (U9.6): need 0.25 mm
+  INTRINSIC +3V3A (U9.5) vs GND (U9.7): need 0.25 mm
+  INTRINSIC I2C_SDA (U9.6) vs GND (U9.7): need 0.2 mm
+  INTRINSIC GND (U8.4) vs +3V3D (U8.5): need 0.25 mm
+  INTRINSIC SPI_MOSI (U8.8) vs +3V3D (U8.9): need 0.25 mm
+  INTRINSIC +3V3D (U8.9) vs DAC_VREF (U8.10): need 0.25 mm
+  INTRINSIC GND (U6.16) vs +3V3D (U6.17): need 0.25 mm
+  INTRINSIC ULPI_NXT (U6.29) vs +3V3D (U6.30): need 0.25 mm
+  INTRINSIC +3V3D (U6.30) vs GND (U6.31): need 0.25 mm
+  INTRINSIC GND (U6.31) vs +3V3A (U6.32): need 0.25 mm
+  INTRINSIC +3V3A (U6.33) vs CAP_CLK (U6.34): need 0.25 mm
+  INTRINSIC GND (U6.38) vs +3V3D (U6.39): need 0.25 mm
+  INTRINSIC +3V3D (U6.39) vs USB_RST (U6.40): need 0.25 mm
+  INTRINSIC GND (U6.51) vs +3V3D (U6.52): need 0.25 mm
+  INTRINSIC GND (U6.61) vs +3V3D (U6.62): need 0.25 mm
+  INTRINSIC VCAP2 (U6.71) vs +3V3D (U6.72): need 0.25 mm
+  INTRINSIC GND (U6.83) vs +3V3D (U6.84): need 0.25 mm
+PCB CHECK: FAIL

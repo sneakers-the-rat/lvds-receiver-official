@@ -291,6 +291,34 @@
       "board_file": "hw/pdlvds_rx.movedr.ckpt1.kicad_pcb",
       "description": "Repair resumed over the placement-revised board (pass 9) and \u2014 the first pass committed under the sharpened rule \u2014 committed at checkpoint 1 of the run instead of at run end: 111 groups connected, unconnected nets 69 \u2192 49. The audit committed with the checkpoint reads 1,435 clearance violations on 3,424 copper items; checkpoint saves did not refill zones at the time (fixed in cabbebc), and the figure is recorded exactly as the committed audit states it \u2014 a mid-run checkpoint state, not a finished-board audit. The run was still in progress when this was committed.",
       "note": "Audit: results/audit-repair6-attempt3-ckpt1.txt, committed with the pass. Pins-failed not recorded (the old gallery index's 74 came from the same stale build-log parse as pass 7's). The 1,435 clearance violations in this pass's audit are a stale-zone-fill artifact of mid-run checkpoint saves (zones refilled only at run end, so the input board's stored pours were counted against new copper); fixed structurally in cabbebc \u2014 zones now refill at every checkpoint save. The comparable post-refill violation count for this board state is 64. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
+    },
+    {
+      "pass": 11,
+      "timestamp": "2026-11-04T12:30:46Z",
+      "hash": "2d2114ea0d33c014b9531aee7766f1e9e97afa0a",
+      "short_hash": "2d2114e",
+      "board_file": "hw/pdlvds_rx.relief.kicad_pcb",
+      "dir": "pass-0011",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 56,
+        "unconnected_nets": 113,
+        "audit_verdict": "FAIL"
+      },
+      "description": "placement relief: J2 shifted -4 mm in x (pads 5/6 were 2.08 mm outside the outline); 40 audit-driven nudges (hw/relief_nudge.py) clear all 22 inter-part pad clearance violations, several at gap 0.000 (touching); only small passives moved, no ICs, APD/TIA cluster untouched; remaining audit items = 20 INTRINSIC same-footprint pairs + 56 stale zone-fill pairs (refilled at route import); unrouted, Freerouting next",
+      "note": ""
     }
   ],
   "gaps": [

@@ -1,0 +1,13 @@
+pass: 11
+description: placement relief: J2 shifted -4 mm in x (pads 5/6 were 2.08 mm outside the outline); 40 audit-driven nudges (hw/relief_nudge.py) clear all 22 inter-part pad clearance violations, several at gap 0.000 (touching); only small passives moved, no ICs, APD/TIA cluster untouched; remaining audit items = 20 INTRINSIC same-footprint pairs + 56 stale zone-fill pairs (refilled at route import); unrouted, Freerouting next
+timestamp (UTC): 2026-11-04T12:30:46Z
+commit: pending
+board file: hw/pdlvds_rx.relief.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 56
+unconnected nets: 113
+audit verdict: fail
+note: 
