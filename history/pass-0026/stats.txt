@@ -1,0 +1,13 @@
+pass: 26
+description: U10 cluster clearing (disc 16,10 r3.6): HV_FBX U10.2 connected; HV_GATE U10.7 and HV_SHDN U10.9 fanout-empty (sibling-pad seal)
+timestamp (UTC): 2026-11-04T15:06:18Z
+commit: pending
+board file: hw/pdlvds_rx.fr9.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 13
+unconnected nets: 50
+audit verdict: fail
+note: 
