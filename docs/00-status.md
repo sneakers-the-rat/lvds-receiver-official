@@ -920,3 +920,22 @@ revision; `metrics/progress_vs_tokens.svg` plots board state against tokens
   so the snapshot understates the running total. Final re-export
   remains a project-end step, now including
   `python3 metrics/make_token_chart.py .`.
+
+## Pass numbering (adopted 2026-11-04, user directive)
+
+All layout work is numbered with ONE monotonic counter — pass 1,
+2, 3, … — in commit subjects as `pass NNNN: <what changed>`.
+Named families ("repair6 attempt N", "v6 + diagonals") are
+retired as organizing labels; strategy changes are changelog
+lines, not names. The structure worker's history/PASSES.md
+backfill is authoritative for the early count; if its numbering
+differs from the count below by an offset, the log wins and
+later entries reconcile.
+
+Counting basis used here (committed layout states in commit
+order): passes 1-5 = v1..v5 routes; 6-9 = repair attempts 1-4;
+10 = v6 full-board route 1 (b805fc3); 11 = repair6 attempt 1
+(67722e0); 12 = diagonals run (f2b2fbe); 13 = placement revision
+(e8a0954); **14 = repair6-on-placement-revised-board checkpoint
+1 (d489c78)**. Pass 15 will be that run's next checkpoint/sweep
+state, and so on.

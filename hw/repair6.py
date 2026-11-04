@@ -52,6 +52,21 @@ def main(board_path="hw/pdlvds_rx.kicad_pcb", out=None):
         os.unlink(lock)
 
 
+def save_checkpoint(board, out):
+    """Save with zones refilled, so every checkpoint state audits
+    comparably (user pass discipline, 2026-11-04: each checkpoint
+    is committed with a fresh audit; without a refill the audit
+    counts the input board's stale pours against new copper —
+    pass 14 read 1,435 violations where the refilled number is
+    ~64). The refill runs on a reloaded copy via the save/reload
+    cycle; the in-memory working board is untouched (routing
+    ignores zones). Costs ~30 s per checkpoint on this board."""
+    board.Save(out)
+    chk = pcbnew.LoadBoard(out)
+    filler = pcbnew.ZONE_FILLER(chk)
+    filler.Fill(chk.Zones())
+    chk.Save(out)
+
 def _run(board_path, out):
     board = pcbnew.LoadBoard(board_path)
     items, pad_cells = repair.build_items(board)
@@ -109,10 +124,10 @@ def _run(board_path, out):
                       f"({time.time() - t0:.0f}s, {st['vias']} vias)",
                       flush=True)
                 if total % 10 == 0:
-                    board.Save(out)
+                    save_checkpoint(board, out)
                     print(f"  checkpoint: {total} groups, saved",
                           flush=True)
-        board.Save(out)
+        save_checkpoint(board, out)
         print(f"checkpoint saved after sweep {sweep + 1}: {out}",
               flush=True)
         if not progressed:
