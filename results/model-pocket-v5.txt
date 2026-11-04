@@ -1,0 +1,33 @@
+Pocket analysis of the isolated +3V3A groups on the ripped v5 board
+(hw/debug_pocket.py, 2026-11-03): BFS of the cells reachable under
+the v6 exact model from each single-pad group, ignoring goals.
+
++3V3A: 13 groups after rip, ALL single pads.
+Free pads (pocket = 304,970 cells = the whole reachable board):
+  C24.1, C46.1, U14.10 (first-step margins +0.03..+0.75)
+  U7.16 (two directions at +0.025, two negative; via -0.150)
+Boxed pads (pocket = 1 cell; every first step and the via illegal
+even at neck width 0.20 mm, need = 0.10 + 0.25 power clearance):
+  U7.6   steps -0.100/-0.100/-0.350/-0.100, via -0.150
+  U7.25  steps -0.350/-0.100/-0.350/-0.350, via -0.150
+         (also a placement pad-pad pair: U7.25 vs L2.1 SW2)
+  U7.30  steps -0.350/-0.100/-0.100/-0.100, via -0.400
+  U7.31  steps -0.309/-0.100/-0.350/-0.287, via -0.150
+         (placement pad-pad pairs vs U12.9 SS_NEG, U12.10 +5V)
+  U9.5   steps -0.114/-0.115/-0.350/-0.115, via -0.415
+  U14.9  steps -0.125/-0.125/-0.350/+0.000, via -0.425
+
+Reading: on the dirty v5 board the boxed pads' escape corridors are
+occupied by copper placed under v5's looser effective rules — the
+repair-on-v5 trial therefore underestimates v6, and the decisive
+test is the clean full-board route (power nets route early, while
+their corridors are still empty).
+
+Second finding (drove the SAFE fix in router6): the perpendicular
+escape of a 0.5 mm-pitch power pin is EXACTLY clearance-wide —
+pad-axis to neighbour pad edge = 0.35 mm = 0.10 neck half-width +
+0.25 power clearance, a legal gap-equal-to-clearance route. U14.9's
++0.000 direction is that case. Any positive safety margin in the
+router makes such pins unroutable by construction; router6's
+acceptance threshold is now zero (1 um float-dust slack, the same
+tolerance the audit itself applies).
