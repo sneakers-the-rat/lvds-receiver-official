@@ -25,6 +25,14 @@
    "tokens_after": 15354
   },
   {
+   "agent": "4925d244",
+   "chars_before": 587294,
+   "tokens_before": 252658,
+   "chars_per_token_before": 2.3244623166493836,
+   "chars_after": 72261,
+   "tokens_after": 21359
+  },
+  {
    "agent": "211e6068",
    "chars_before": 680779,
    "tokens_before": 272304,
@@ -659,7 +667,7 @@
    "median_abs_err_pct": 2.636764823739374
   },
   "zero_k_rows": 0,
-  "unassigned": 76
+  "unassigned": 126
  },
  "without_thinking": {
   "b_train": {
@@ -998,7 +1006,7 @@
    "median_abs_err_pct": 4.468266660495596
   },
   "zero_k_rows": 0,
-  "unassigned": 76
+  "unassigned": 126
  },
  "not_estimable_agents": {
   "24e0eb6c": "delivery-agent (a priori)",
