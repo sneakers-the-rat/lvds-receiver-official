@@ -240,9 +240,9 @@ U10 cluster clearing (disc 16,10 r3.6): HV_FBX U10.2 connected; HV_GATE U10.7 an
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 50 · Audit verdict: FAIL
 
-### Pass 27 — 2026-11-04T15:06:52Z · commit `pending`
+### Pass 27 — 2026-11-04T15:06:52Z · commit `8b6204d`
 
-Board: `hw/pdlvds_rx.fr10.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr10.kicad_pcb` · Commit: `8b6204dfcbe60967165e9a2e6a93e0287ae7a9d1`
 
 U9 cluster clearing (disc 8,48 r3.4): 0/4 — full clearing changed nothing; U9's pins are sealed by their own exposed pad (0.075 mm) inside the router's centre-anchored fanout model; hand-placed stubs are the route (the audit judges exact shapes, the model anchors at pad centres)
 
