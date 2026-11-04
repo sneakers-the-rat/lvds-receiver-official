@@ -677,6 +677,34 @@
       },
       "description": "U7 full-chip cluster clearing (disc 30,61 r4.5, 101 items): 9/16 connected incl. PHY_1V8A U7.29, ULPI_D0/D2/DIR, XI, +3V3A U7.30/31; ULPI_D3/D4/D6 fanout-empty; USB_RST and RBIAS search-failed; clearing also cut U7.6/16/25's +3V3A stubs (healing owes them back)",
       "note": ""
+    },
+    {
+      "pass": 26,
+      "timestamp": "2026-11-04T15:06:18Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr9.kicad_pcb",
+      "dir": "pass-0026",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 13,
+        "unconnected_nets": 50,
+        "audit_verdict": "FAIL"
+      },
+      "description": "U10 cluster clearing (disc 16,10 r3.6): HV_FBX U10.2 connected; HV_GATE U10.7 and HV_SHDN U10.9 fanout-empty (sibling-pad seal)",
+      "note": ""
     }
   ],
   "gaps": [
