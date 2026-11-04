@@ -51,6 +51,18 @@ blockquote { border-left: 3px solid #99b; margin-left: 0;
   display: block; }
 .refview { background: #111; border: 1px solid #444; display: block;
   width: 100%; box-sizing: border-box; }
+.routes-viewer { margin: 0 0 .6rem; }
+.routes-viewer img { background: #111; border: 1px solid #444;
+  display: block; width: 100%; box-sizing: border-box; }
+.routes-viewer figcaption { font-size: .85rem; padding-top: .25rem; }
+.routes-thumbs { display: flex; flex-wrap: wrap; gap: .6rem;
+  margin-bottom: 1rem; }
+.routes-thumb { flex: 1 1 9rem; text-decoration: none; color: inherit; }
+.routes-thumb img { background: #111; border: 2px solid #ccc;
+  display: block; width: 100%; box-sizing: border-box; }
+.routes-thumb.active img { border-color: #34c759; }
+.routes-thumb span { font-size: .85rem; display: block;
+  padding-top: .25rem; }
 .tokenpanel { background: #fff; border: 1px solid #bbb;
   padding: .6rem; }
 .tokenpanel img { border: none; display: block; width: 100%; }
