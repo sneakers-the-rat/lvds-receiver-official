@@ -360,9 +360,9 @@ cluster clearing U10 disc (16,10) r3.6: 1/2 HV targets connected
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 44 · Audit verdict: FAIL
 
-### Pass 42 — 2026-11-04T19:57:05Z · commit `pending`
+### Pass 42 — 2026-11-04T19:57:05Z · commit `d247c5c`
 
-Board: `hw/pdlvds_rx.fr27.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr27.kicad_pcb` · Commit: `d247c5c9e3ed4b0c305fdae9788a7a96988387ad`
 
 cluster clearing U6 west disc (83,44) r3.5: USB_RST U6.40 not connected by astar even in the cleared field (fanout-model seal)
 
