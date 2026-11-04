@@ -504,9 +504,9 @@ D1.6 link segment from the pad's NW corner to its fanout chain: APD_A fully conn
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 36 · Audit verdict: FAIL
 
-### Pass 60 — 2026-11-04T20:52:01Z · commit `pending`
+### Pass 60 — 2026-11-04T20:52:01Z · commit `6fb8574`
 
-Board: `hw/pdlvds_rx.fr46.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr46.kicad_pcb` · Commit: `6fb85749164a6f34f186626686a84028d959c777`
 
 ripup 'all' batch 3: 1 group connected (victims GND, I2C_SDA)
 
