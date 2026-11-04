@@ -20,7 +20,8 @@ for retiring them in order. Nothing in the firmware's docs claims
 otherwise; if you find a claim that does, it is a bug in the docs.
 
 ## First-power-on sequence (USB part; do the README's power/clock
-## steps first, HV last and only with the interlock in place)
+## steps first; for HV see the interlock decision below - this
+## firmware can never enable it, verify instead that it stays off)
 
 1. **PHY clock before stack.** With the board powered and the
    firmware running, probe ULPI_CK (PA5): the USB3300 must be
@@ -85,6 +86,38 @@ otherwise; if you find a claim that does, it is a bug in the docs.
   PA15 and PA4 is never touched. What remains unverified is the
   usual register-level kind: SPI3 base/AF number/RCC bit are
   marked VERIFY against RM0468 and the datasheet AF table.
+- **HV pins were invented; interlock does not exist — pins
+  RESOLVED, enable REFUSED by design (2026-11-04, `fw-hv-pins`).**
+  `board.h` claimed PB0 = HV enable, PB1 = interlock sense,
+  PB2 = ADN2813 LOS, with comments describing an AND gate and a
+  series interlock jumper. The drawn design (inventory:
+  `docs/06-hv-cdr-pin-inventory.md`) has none of it: PB0/PB1 are
+  ULPI data lines D1/D2, PB2 is unassigned. As drawn, the real
+  converter could never have been driven by that firmware at all.
+  Now: HV control is **PC7 (HV_SHDN)**, the LT3757's SHDN/UVLO
+  node; the R25/R26 divider holds the node at 1.241 V, above the
+  1.22 V threshold, so firmware drives PC7 low at init and holds
+  the converter in shutdown — the only positively-off state, and
+  the board's required power-up default. ADN2813 **LOS is PB14,
+  LOL is PA2**, both LVTTL active-high, read as GPIOs (they were
+  previously an unconnected pin and an unverified I2C register bit
+  respectively). SQUELCH (PB15), drawn but previously undriven, is
+  now driven low (outputs enabled) at init instead of floating.
+  **The interlock:** the requirement text (docs/01 R9, docs/02)
+  assumes an enclosure interlock, but rev A fits no jumper, switch
+  or sense input — the inventory searched all 213 nets, every part
+  and the full MCU pin list. OWNER DESIGN DECISION: firmware must
+  not invent one, so `hv_ctrl_enable()` refuses every enable and
+  SET_BIAS returns the protocol's INTERLOCK status on every rev A
+  unit. HV is therefore **not testable as a feature** until the
+  owner either fits an interlock in a schematic revision or
+  records a decision to enable without one. The bench check that
+  remains: PC7 low from the first init step, HV_SHDN node at ~0 V,
+  APD rail at 0 V, SET_BIAS answered with INTERLOCK. Also corrected
+  while here: `hv_ctrl.h` credited the board with an independent
+  OVP zener clamp from docs/02; no such part is drawn — the drawn
+  protections are the LT3757 current limit, the R30 bleeder and
+  the feedback-divider ceiling.
 - **VID/PID are unregistered development ids** (0x1209 /
   0xD723, the former being pid.codes' open-source VID). Register
   a PID at pid.codes or obtain a VID before any distribution;
