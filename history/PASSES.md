@@ -136,6 +136,14 @@ repair6 checkpoint 1 on the Freerouting board (pass 12): 10 groups connected in 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 44 · Audit verdict: FAIL
 
+### Pass 14 — 2026-11-04T13:39:12Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr1r.ckpt2.kicad_pcb` · Commit: `pending`
+
+repair6 checkpoint 2 on the Freerouting board: 20 groups connected, sweep 1 continuing
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 44 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
