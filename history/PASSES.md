@@ -504,6 +504,38 @@ D1.6 link segment from the pad's NW corner to its fanout chain: APD_A fully conn
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 36 · Audit verdict: FAIL
 
+### Pass 60 — 2026-11-04T20:52:01Z · commit `6fb8574`
+
+Board: `hw/pdlvds_rx.fr46.kicad_pcb` · Commit: `6fb85749164a6f34f186626686a84028d959c777`
+
+ripup 'all' batch 3: 1 group connected (victims GND, I2C_SDA)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 35 · Audit verdict: FAIL
+
+### Pass 61 — 2026-11-04T20:53:35Z · commit `49900f6`
+
+Board: `hw/pdlvds_rx.fr47.kicad_pcb` · Commit: `49900f6fc319ab7889a644b521397f7d5c3957fb`
+
+ripup 'all' batch 4: 2 groups connected (victims in the CDR differential family)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 38 · Audit verdict: FAIL
+
+### Pass 62 — 2026-11-04T20:55:09Z · commit `a1e4d9d`
+
+Board: `hw/pdlvds_rx.fr48.kicad_pcb` · Commit: `a1e4d9d5d99a188c5853896a8c9524d7185ecfae`
+
+repairg healing: 12 groups connected, victims repaid; 34 unconnected nets, 74 groups, clearance 4 (all D1 family)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 34 · Audit verdict: FAIL
+
+### Pass 63 — 2026-11-04T20:57:44Z · commit `d8ff341`
+
+Board: `hw/pdlvds_rx.fr49.kicad_pcb` · Commit: `d8ff3415f801efd2c03d952a3fc2ee14908f7a1b`
+
+ULPI_NXT escape hand-placed: from U7.11's surgery stub, SW 2.2 mm to open field at (27.69,65.85), 4 ULPI_STP/DIR fence items ripped (heal owes them back); the router's grid could not start from the lone stub cell at any expansion cap
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 35 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

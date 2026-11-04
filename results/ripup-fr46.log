@@ -1,0 +1,136 @@
+ripup: 41 isolated groups, batch of 10
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.56
+    rip I2C_SDA F.Cu d=0.67
+    rip GND F.Cu d=0.69
+    rip GND F.Cu d=1.03
+    rip GND F.Cu d=1.25
+    rip TMP_ALERT F.Cu d=1.54
+    rip I2C_SCL F.Cu d=1.54
+    rip GND F.Cu d=1.54
+    rip GND F.Cu d=1.78
+  +3V3A ['U9.5']: still isolated after 11 rips; copper restored
+    rip DP_PHY F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip DP_PHY F.Cu d=0.56
+    rip DP_PHY In2.Cu d=0.76
+    rip DP_PHY In2.Cu d=0.76
+    rip GND F.Cu d=0.82
+    rip GND F.Cu d=0.82
+    rip DP_PHY In2.Cu d=0.89
+    rip ULPI_D2 In2.Cu d=0.93
+    rip ULPI_D2 In2.Cu d=0.93
+  +3V3A ['U7.6']: still isolated after 12 rips; copper restored
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.56
+    rip GND F.Cu d=0.71
+    rip GND F.Cu d=0.75
+    rip GND F.Cu d=0.86
+    rip GND F.Cu d=0.88
+    rip REFCLK B.Cu d=0.93
+    rip GND F.Cu d=0.95
+    rip I2C_SCL F.Cu d=1.00
+    rip GND via d=1.01
+  +3V3D_CDR ['U4.18']: still isolated after 12 rips; copper restored
+    rip +3V3A B.Cu d=0.50
+    rip +3V3A B.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip ILIM_P In2.Cu d=0.62
+    rip +3V3A B.Cu d=0.63
+    rip ILIM_P In2.Cu d=0.65
+    rip GND F.Cu d=0.71
+    rip GND F.Cu d=0.77
+    rip ILIM_P F.Cu d=0.83
+    rip +3V3A B.Cu d=0.89
+    rip ILIM_P F.Cu d=0.91
+    rip GND F.Cu d=0.92
+  +VA ['U13.9']: still isolated after 12 rips; copper restored
+    rip +3V3A B.Cu d=0.14
+    rip +3V3A B.Cu d=0.15
+    rip +3V3A B.Cu d=0.35
+    rip +3V3A B.Cu d=0.41
+    rip GND In2.Cu d=0.70
+    rip GND In2.Cu d=0.70
+    rip +3V3A B.Cu d=0.76
+    rip ILIM_P F.Cu d=0.83
+    rip ILIM_P F.Cu d=0.83
+    rip GND In2.Cu d=0.88
+    rip GND F.Cu d=0.90
+    rip GND F.Cu d=0.90
+  +VA ['U13.10']: still isolated after 12 rips; copper restored
+    rip VBUS_RAW B.Cu d=0.19
+    rip VBUS_RAW B.Cu d=0.23
+    rip DP_CON F.Cu d=0.50
+    rip VBUS_RAW F.Cu d=0.50
+    rip VBUS_RAW B.Cu d=0.58
+    rip VBUS_RAW F.Cu d=0.71
+    rip DP_CON In2.Cu d=0.73
+    rip VBUS_RAW F.Cu d=0.74
+    rip DP_CON In2.Cu d=0.83
+    rip DP_CON F.Cu d=0.84
+    rip DM_CON F.Cu d=0.90
+    rip DM_CON F.Cu d=0.90
+  CC2 ['J1.B5']: still isolated after 12 rips; copper restored
+    rip CDR_CLKN F.Cu d=0.50
+    rip CDR_SQUELCH F.Cu d=0.50
+    rip CDR_CLKN F.Cu d=0.56
+    rip CDR_SQUELCH F.Cu d=0.56
+    rip +3V3D_CDR In2.Cu d=0.56
+    rip CDR_CLKN via d=0.65
+    rip CDR_CLKN In2.Cu d=0.65
+    rip +3V3D_CDR In2.Cu d=0.68
+    rip CDR_SQUELCH F.Cu d=0.78
+    rip CDR_SQUELCH F.Cu d=0.94
+    rip CDR_SQUELCH via d=0.95
+    rip CDR_SQUELCH In2.Cu d=0.95
+  CDR_CLKP ['U4.26']: still isolated after 12 rips; copper restored
+    rip CDR_SQUELCH F.Cu d=0.50
+    rip CDR_DATP F.Cu d=0.50
+    rip CDR_SQUELCH F.Cu d=0.56
+    rip CDR_DATP F.Cu d=0.56
+    rip +3V3D_CDR In2.Cu d=0.56
+    rip +3V3D_CDR In2.Cu d=0.58
+    rip ULPI_D0 B.Cu d=0.75
+    rip ULPI_D0 B.Cu d=0.76
+    rip CDR_DATP F.Cu d=0.78
+    rip ULPI_D0 B.Cu d=0.78
+    rip +3V3D_CDR In2.Cu d=0.84
+    rip ULPI_D0 B.Cu d=0.89
+  CDR_DATN ['U4.28']: still isolated after 12 rips; copper restored
+    rip GND F.Cu d=0.62
+    rip GND F.Cu d=0.70
+    rip GND F.Cu d=0.75
+    rip GND F.Cu d=0.78
+    rip GND F.Cu d=0.81
+    rip GND F.Cu d=0.95
+    rip GND F.Cu d=0.97
+    rip GND F.Cu d=1.16
+    rip GND F.Cu d=1.19
+    rip I2C_SDA F.Cu d=1.46
+    rip I2C_SDA F.Cu d=1.46
+    rip I2C_SDA F.Cu d=1.48
+  CDR_LOL ['U4.16']: CONNECTED after ripping 12 (1s); victims: ['GND', 'GND', 'GND', 'GND', 'GND', 'GND', 'GND', 'GND', 'GND', 'I2C_SDA', 'I2C_SDA', 'I2C_SDA']
+    rip ULPI_D0 B.Cu d=0.40
+    rip ULPI_D0 B.Cu d=0.42
+    rip ULPI_D0 B.Cu d=0.46
+    rip CDR_PIN F.Cu d=0.50
+    rip CDR_PIN F.Cu d=0.56
+    rip ULPI_D0 B.Cu d=0.63
+    rip ULPI_D0 B.Cu d=0.70
+    rip ULPI_D0 B.Cu d=0.93
+    rip +3V3D_CDR F.Cu d=1.00
+    rip SLICEP F.Cu d=1.00
+    rip CDR_PIN F.Cu d=1.01
+    rip ULPI_D0 B.Cu d=1.01
+  CDR_NIN ['U4.4']: still isolated after 12 rips; copper restored
+ripup done: 1 groups connected, victims ['GND', 'I2C_SDA'], isolated groups remaining: 50
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'BOX2< VECTOR2< int > > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.

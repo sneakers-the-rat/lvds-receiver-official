@@ -1,0 +1,13 @@
+pass: 60
+description: ripup 'all' batch 3: 1 group connected (victims GND, I2C_SDA)
+timestamp (UTC): 2026-11-04T20:52:01Z
+commit: pending
+board file: hw/pdlvds_rx.fr46.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 4
+unconnected nets: 35
+audit verdict: fail
+note: 
