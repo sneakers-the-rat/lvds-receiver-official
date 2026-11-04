@@ -1237,6 +1237,34 @@
       },
       "description": "stub campaign 2 on the healed field: +3V3A U7.30/U7.31 stubbed; CF1/CF2 re-stubbed (their campaign-1 stubs were ripped as cluster victims)",
       "note": ""
+    },
+    {
+      "pass": 46,
+      "timestamp": "2026-11-04T20:00:27Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr31.kicad_pcb",
+      "dir": "pass-0046",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 42,
+        "audit_verdict": "FAIL"
+      },
+      "description": "small-disc clear (31.5,63.4) r2.4 with immediate audit-exact stubs: ULPI_STP, ULPI_DIR, ULPI_CK stubbed; ULPI_NXT U7.11 still sealed",
+      "note": ""
     }
   ],
   "gaps": [
