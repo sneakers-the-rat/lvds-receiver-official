@@ -272,9 +272,9 @@ fence surgery + hand stubs: ripped CDR_NIN x9 / CDR_CLKP x2 / GND x6 / HV_INTVCC
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 53 · Audit verdict: FAIL
 
-### Pass 31 — 2026-11-04T15:33:01Z · commit `pending`
+### Pass 31 — 2026-11-04T15:33:01Z · commit `f68880e`
 
-Board: `hw/pdlvds_rx.fr14.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr14.kicad_pcb` · Commit: `f68880ec7c66799746562d1bb815c1d3a28598fd`
 
 placement micro-ops: C40 flipped to the bottom side (frees U7's east-row exits; first bottom-side part on the board) and R27 moved north to (20.5,6.0) (frees U10.9's east exit); stubs placed: ULPI_D4 U7.20, ULPI_D6 U7.18, HV_SHDN U10.9
 
