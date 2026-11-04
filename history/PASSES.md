@@ -512,6 +512,14 @@ ripup 'all' batch 3: 1 group connected (victims GND, I2C_SDA)
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 35 · Audit verdict: FAIL
 
+### Pass 61 — 2026-11-04T20:53:35Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr47.kicad_pcb` · Commit: `pending`
+
+ripup 'all' batch 4: 2 groups connected (victims in the CDR differential family)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 38 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
