@@ -1,0 +1,17 @@
+SET_P: 3 groups, sizes [1, 1, 1]
+  U13.7 (net SET_P):
+    step ->(0, 199, 250): -0.125 vs pad[+5V]
+    step ->(0, 197, 250): -0.125 vs pad[+5V]
+    step ->(0, 198, 251): -0.350 vs pad[+5V]
+    step ->(0, 198, 249): -0.075 vs pad[GND]
+    via L0: -0.325 vs pad[+5V]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  C42.1 (net SET_P):
+    step ->(0, 171, 262): +0.650 vs pad[GND]
+    step ->(0, 169, 262): +0.800 vs pad[GND]
+    step ->(0, 170, 263): +0.800 vs pad[GND]
+    step ->(0, 170, 261): +0.800 vs pad[GND]
+    via L0: +0.700 vs pad[GND]
+    via L1: +inf vs -
+    via L2: +inf vs -

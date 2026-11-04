@@ -1,0 +1,9 @@
+THRADJ: 2 groups, sizes [1, 1]
+  U4.9 (net THRADJ):
+    step ->(0, 202, 217): -0.300 vs pad[REFCLK]
+    step ->(0, 200, 217): +0.075 vs pad[REFCLK]
+    step ->(0, 201, 218): -0.050 vs pad[REFCLK]
+    step ->(0, 201, 216): -0.050 vs pad[REFCLK]
+    via L0: -0.250 vs pad[REFCLK]
+    via L1: +inf vs -
+    via L2: +inf vs -

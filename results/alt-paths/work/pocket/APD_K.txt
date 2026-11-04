@@ -1,0 +1,57 @@
+APD_K: 8 groups, sizes [1, 1, 1, 1, 1, 1, 1, 1]
+  R31.1 (net APD_K):
+    step ->(0, 131, 78): +0.925 vs pad[HV_FBX]
+    step ->(0, 129, 78): +1.262 vs pad[HV_FBX]
+    step ->(0, 130, 79): +1.055 vs pad[HV_FBX]
+    step ->(0, 130, 77): +1.175 vs pad[HV_FBX]
+    via L0: +0.875 vs pad[HV_FBX]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  R34.1 (net APD_K):
+    step ->(0, 155, 80): +0.925 vs pad[TP_HV]
+    step ->(0, 153, 80): +1.250 vs pad[HV_FBX]
+    step ->(0, 154, 81): +1.175 vs pad[TP_HV]
+    step ->(0, 154, 79): +1.175 vs pad[TP_HV]
+    via L0: +0.875 vs pad[TP_HV]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  R29.2 (net APD_K):
+    step ->(0, 176, 60): +1.262 vs pad[HV_RAW]
+    step ->(0, 174, 60): +0.925 vs pad[HV_RAW]
+    step ->(0, 175, 61): +1.175 vs pad[HV_RAW]
+    step ->(0, 175, 59): +1.175 vs pad[HV_RAW]
+    via L0: +0.875 vs pad[HV_RAW]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  D1.5 (net APD_K):
+    step ->(0, 36, 160): -0.425 vs pad[APD_A]
+    step ->(0, 34, 160): -0.425 vs pad[APD_A]
+    step ->(0, 35, 161): -0.675 vs pad[APD_A]
+    step ->(0, 35, 159): -0.425 vs pad[APD_A]
+    via L0: -0.725 vs pad[APD_A]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  C4.1 (net APD_K):
+    step ->(0, 43, 112): -0.150 vs pad[GND]
+    step ->(0, 41, 112): +0.000 vs pad[GND]
+    step ->(0, 42, 113): +0.000 vs pad[GND]
+    step ->(0, 42, 111): +0.000 vs pad[GND]
+    via L0: -0.200 vs pad[GND]
+    via L1: +1.103 vs pad[]
+    via L2: +0.403 vs pad[]
+  RJ2.2 (net APD_K):
+    step ->(0, 56, 228): +0.010 vs pad[+3V3D]
+    step ->(0, 54, 228): -0.050 vs pad[APD_K_ALT]
+    step ->(0, 55, 229): +0.010 vs pad[+3V3D]
+    step ->(0, 55, 227): +0.150 vs pad[APD_K_ALT]
+    via L0: -0.127 vs pad[+3V3D]
+    via L1: +1.519 vs pad[APD_K_ALT]
+    via L2: +0.819 vs pad[APD_K_ALT]
+  C33.1 (net APD_K):
+    step ->(0, 39, 112): +0.063 vs pad[]
+    step ->(0, 37, 112): +0.063 vs pad[]
+    step ->(0, 38, 113): +0.063 vs pad[]
+    step ->(0, 38, 111): -0.039 vs pad[]
+    via L0: -0.096 vs pad[]
+    via L1: +0.604 vs pad[]
+    via L2: -0.096 vs pad[]

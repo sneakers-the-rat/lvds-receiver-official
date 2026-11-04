@@ -1,0 +1,25 @@
+I2C_SCL: 4 groups, sizes [1, 1, 1, 1]
+  U6.136 (net I2C_SCL):
+    step ->(0, 286, 89): -0.300 vs pad[ULPI_D7]
+    step ->(0, 284, 89): -0.075 vs pad[I2C_SDA]
+    step ->(0, 285, 90): -0.075 vs pad[ULPI_D7]
+    step ->(0, 285, 88): -0.075 vs pad[ULPI_D7]
+    via L0: -0.275 vs pad[ULPI_D7]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  U4.20 (net I2C_SCL):
+    step ->(0, 218, 209): -0.050 vs pad[GND]
+    step ->(0, 216, 209): -0.050 vs pad[GND]
+    step ->(0, 217, 210): -0.300 vs pad[GND]
+    step ->(0, 217, 208): -0.050 vs pad[I2C_SDA]
+    via L0: -0.250 vs pad[GND]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  R20.1 (net I2C_SCL):
+    step ->(0, 217, 116): +0.700 vs pad[+3V3D]
+    step ->(0, 215, 116): +0.900 vs pad[+3V3D]
+    step ->(0, 216, 117): +0.900 vs pad[+3V3D]
+    step ->(0, 216, 115): +0.900 vs pad[+3V3D]
+    via L0: +0.750 vs pad[+3V3D]
+    via L1: +inf vs -
+    via L2: +inf vs -

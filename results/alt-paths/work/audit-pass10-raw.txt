@@ -1,0 +1,674 @@
+copper items: 3424
+unconnected nets: 49
+  UNCONNECTED +3V3A: 13 groups, e.g. [['U9.5'], ['U6.32'], ['U6.33'], ['C49.1'], ['C24.1'], ['C46.1'], ['U7.6'], ['U7.16'], ['U7.25'], ['U7.30'], ['U7.31'], ['U14.9'], ['U14.10']]
+  UNCONNECTED +3V3D: 3 groups, e.g. [['C16.1', 'C27.1', 'C38.1', 'C47.1'], ['U5.16'], ['C28.1']]
+  UNCONNECTED +3V3D_CDR: 2 groups, e.g. [['C50.1', 'C51.1', 'FB1.2', 'U4.1'], ['U4.18']]
+  UNCONNECTED +5V: 2 groups, e.g. [['C25.1', 'C35.1', 'C37.1', 'C43.1'], ['U14.1']]
+  UNCONNECTED +VA: 2 groups, e.g. [['C10.1', 'C2.1', 'C44.1', 'C7.1'], ['U13.10']]
+  UNCONNECTED APD_A: 9 groups, e.g. [['C1.2'], ['RJ1.2'], ['U1.2'], ['D1.1'], ['D1.2'], ['D1.3'], ['D1.4'], ['D1.6'], ['R1.2']]
+  UNCONNECTED APD_K: 2 groups, e.g. [['C33.1', 'C4.1', 'R29.2', 'R30.1'], ['D1.5']]
+  UNCONNECTED BIST_DRV: 2 groups, e.g. [['U6.98'], ['D8.1']]
+  UNCONNECTED CC1: 2 groups, e.g. [['J1.A5'], ['R18.1']]
+  UNCONNECTED CC2: 2 groups, e.g. [['R19.1'], ['J1.B5']]
+  UNCONNECTED CDR_CLKN: 3 groups, e.g. [['R14.2', 'U5.7', 'track@(57.0, 53.175)', 'track@(57.25, 53.175)'], ['J2.6'], ['U4.25']]
+  UNCONNECTED CDR_CLKP: 4 groups, e.g. [['U5.6'], ['J2.5'], ['U4.26'], ['R14.1']]
+  UNCONNECTED CDR_DATN: 2 groups, e.g. [['J2.2', 'R13.2', 'U5.1', 'track@(58.0, 47.675)'], ['U4.28']]
+  UNCONNECTED CDR_DATP: 2 groups, e.g. [['J2.1', 'R13.1', 'U5.2', 'track@(58.0, 49.325)'], ['U4.29']]
+  UNCONNECTED CDR_LOS: 2 groups, e.g. [['U6.75'], ['U4.22']]
+  UNCONNECTED CDR_SQUELCH: 2 groups, e.g. [['U6.76'], ['U4.27']]
+  UNCONNECTED CDR_VREF: 2 groups, e.g. [['U4.3'], ['C12.1']]
+  UNCONNECTED CF1: 2 groups, e.g. [['U4.15'], ['C15.1']]
+  UNCONNECTED DBG_TX: 2 groups, e.g. [['U6.101'], ['TP2.1']]
+  UNCONNECTED DM_CON: 3 groups, e.g. [['J1.A7'], ['J1.B7'], ['D3.3']]
+  UNCONNECTED GND: 21 groups, e.g. [['C10.2', 'C11.2', 'C12.2', 'C14.2'], ['C26.2'], ['R32.2'], ['C28.2'], ['C32.2'], ['C34.2'], ['U1.3'], ['C31.2'], ['X1.2'], ['C21.2', 'X1.4'], ['R24.2'], ['U7.1'], ['U7.2'], ['C29.2'], ['R26.2'], ['C35.2'], ['C30.2'], ['U10.5'], ['T1.4'], ['via@(32.552817, 23.777817)'], ['via@(45.375, 24.0)']]
+  UNCONNECTED HV_DAC: 2 groups, e.g. [['U8.2'], ['R33.1']]
+  UNCONNECTED HV_GATE: 2 groups, e.g. [['R27.1'], ['U10.7']]
+  UNCONNECTED HV_INTVCC: 2 groups, e.g. [['C31.1'], ['U10.8']]
+  UNCONNECTED HV_RT: 2 groups, e.g. [['R24.1'], ['U10.4']]
+  UNCONNECTED HV_SHDN: 2 groups, e.g. [['R25.2', 'R26.1', 'U6.97', 'track@(10.825, 6.5)'], ['U10.9']]
+  UNCONNECTED HV_SS: 2 groups, e.g. [['C30.1'], ['U10.3']]
+  UNCONNECTED I2C_SCL: 4 groups, e.g. [['U9.1'], ['U6.136'], ['U4.20'], ['R20.1']]
+  UNCONNECTED I2C_SDA: 4 groups, e.g. [['U9.6'], ['U6.137'], ['U4.21'], ['R21.1']]
+  UNCONNECTED ILIM_A: 2 groups, e.g. [['U14.5'], ['R43.1']]
+  UNCONNECTED ILIM_P: 2 groups, e.g. [['R41.1'], ['U13.5']]
+  UNCONNECTED PHY_1V8: 2 groups, e.g. [['C22.1', 'U7.15', 'track@(31.25, 63.4375)', 'track@(31.25, 64.1875)'], ['U7.26']]
+  UNCONNECTED REFCLK: 2 groups, e.g. [['X2.3'], ['U4.10']]
+  UNCONNECTED REFCLKN: 2 groups, e.g. [['U4.11'], ['C14.1']]
+  UNCONNECTED SET_P: 3 groups, e.g. [['R40.1'], ['U13.7'], ['C42.1']]
+  UNCONNECTED SLICEN: 2 groups, e.g. [['U4.7'], ['C13.2']]
+  UNCONNECTED SPI_MOSI: 2 groups, e.g. [['U8.8'], ['U6.113']]
+  UNCONNECTED SPI_SCK: 2 groups, e.g. [['U8.7'], ['U6.111']]
+  UNCONNECTED SS_NEG: 2 groups, e.g. [['C39.1'], ['U12.9']]
+  UNCONNECTED SWDIO: 2 groups, e.g. [['U6.105'], ['J4.2']]
+  UNCONNECTED THRADJ: 2 groups, e.g. [['R12.1'], ['U4.9']]
+  UNCONNECTED TMP_ALERT: 3 groups, e.g. [['U9.3'], ['U6.139'], ['R22.1']]
+  UNCONNECTED ULPI_CK: 2 groups, e.g. [['U6.41'], ['U7.14']]
+  UNCONNECTED ULPI_D3: 2 groups, e.g. [['U6.69'], ['U7.21']]
+  UNCONNECTED ULPI_D4: 2 groups, e.g. [['U6.70'], ['U7.20']]
+  UNCONNECTED ULPI_D5: 2 groups, e.g. [['U6.73'], ['U7.19']]
+  UNCONNECTED ULPI_D6: 2 groups, e.g. [['U6.74'], ['U7.18']]
+  UNCONNECTED ULPI_NXT: 2 groups, e.g. [['U6.29'], ['U7.11']]
+  UNCONNECTED VCAP1: 2 groups, e.g. [['U6.106'], ['C17.1']]
+clearance violations: 1435
+  CLEARANCE GND (C41.2) vs SET_P (R40.1): need 0.2 mm
+  CLEARANCE GND (C41.2) vs +3V3D_CDR (C51.1): need 0.25 mm
+  CLEARANCE CDR_CLKP (U5.6) vs +3V3D (C28.1): need 0.25 mm
+  CLEARANCE CDR_CLKP (U5.6) vs GND (C28.2): need 0.2 mm
+  CLEARANCE +3V3D (U5.16) vs VCAP1 (C17.1): need 0.25 mm
+  CLEARANCE +3V3D (U5.16) vs GND (C17.2): need 0.25 mm
+  CLEARANCE VBUS_RAW (F1.1) vs GND (D4.2): need 0.25 mm
+  CLEARANCE +5V (F1.2) vs GND (C38.2): need 0.25 mm
+  CLEARANCE APD_A (C1.2) vs TIA_OUT (C5.1): need 0.2 mm
+  CLEARANCE RBIAS (R17.1) vs NEG_RAW (FB2.1): need 0.25 mm
+  CLEARANCE GND (R17.2) vs -VA (FB2.2): need 0.25 mm
+  CLEARANCE SS_NEG (C39.1) vs GND (zone L0): need 0.2 mm
+  CLEARANCE +3V3D (C16.1) vs GND (C17.2): need 0.25 mm
+  CLEARANCE THRADJ (R12.1) vs GND (U13.11): need 0.2 mm
+  CLEARANCE GND (R12.2) vs +VA (U13.10): need 0.25 mm
+  CLEARANCE GND (R41.2) vs SET_A (R42.1): need 0.2 mm
+  CLEARANCE NEG_RAW (R39.2) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (C40.2) vs PHY_1V8 (C22.1): need 0.25 mm
+  CLEARANCE APD_K_ALT (D2.2) vs +3V3D (R35.1): need 0.25 mm
+  CLEARANCE GND (D2.3) vs SW1 (L1.1): need 0.2 mm
+  CLEARANCE XO (C21.1) vs GND (zone L0): need 0.2 mm
+  CLEARANCE APD_K (R30.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE SW2 (U12.2) vs GND (zone L0): need 0.2 mm
+  CLEARANCE SW2 (U12.3) vs GND (zone L0): need 0.2 mm
+  CLEARANCE FB_NEG (U12.5) vs GND (zone L0): need 0.2 mm
+  CLEARANCE NEG_RAW (U12.6) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.7) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.8) vs GND (zone L0): need 0.25 mm
+  CLEARANCE SS_NEG (U12.9) vs GND (zone L0): need 0.2 mm
+  CLEARANCE +5V (U12.10) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (U12.11) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (U12.13) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.14) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.15) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.16) vs GND (zone L0): need 0.25 mm
+  CLEARANCE NEG_RAW (U12.17) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (R35.1) vs APD_K (RJ2.2): need 1.0 mm
+  CLEARANCE CDR_CLKP (R14.1) vs GND (zone L0): need 0.2 mm
+  CLEARANCE CDR_CLKN (R14.2) vs GND (zone L0): need 0.2 mm
+  CLEARANCE GND (R24.2) vs HV_SENSE (R28.1): need 0.2 mm
+  CLEARANCE FB_NEG (R38.2) vs GND (zone L0): need 0.2 mm
+  CLEARANCE APD_K (C4.1) vs GND (C33.2): need 1.0 mm
+  CLEARANCE APD_K (C4.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE +5V (U14.1) vs GND (C14.2): need 0.25 mm
+  CLEARANCE APD_K (RJ2.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE SW2 (L2.1) vs GND (zone L0): need 0.2 mm
+  CLEARANCE NEG_RAW (L2.2) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (R5.1) vs GND (zone L0): need 0.25 mm
+  CLEARANCE VMID (R5.2) vs GND (zone L0): need 0.2 mm
+  CLEARANCE APD_K (C33.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE +3V3D (track@(87.125, 45.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(84.625, 24.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(90.625, 7.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(80.875, 18.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(66.875, 54.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.375, 35.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(47.05, 29.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.125, 51.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(92.125, 59.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(78.875, 20.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(44.625, 30.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(61.125, 51.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(82.625, 16.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(51.875, 26.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.875, 10.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(14.625, 51.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(18.375, 67.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(44.1875, 52.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(79.375, 19.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(15.125, 51.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(55.875, 29.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.375, 36.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.125, 52.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(90.375, 48.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(83.875, 13.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.375, 52.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(55.825, 32.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(88.625, 8.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(79.875, 19.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(83.125, 16.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(48.375, 26.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(86.875, 9.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(84.125, 13.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.375, 46.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(79.125, 20.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(48.125, 26.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(59.125, 54.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(81.625, 17.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(45.8, 29.75)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(87.125, 9.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(91.875, 58.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(87.625, 9.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(78.75, 21.0875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.125, 46.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(63.125, 26.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(64.875, 51.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(81.375, 17.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(44.325, 31.25)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(58.625, 55.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(63.8375, 26.75)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(46.875, 28.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(19.375, 66.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(15.375, 62.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(59.875, 54.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(86.625, 10.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(86.625, 44.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(90.375, 7.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(18.625, 67.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(87.875, 46.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.375, 35.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(19.125, 66.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(84.625, 38.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(89.375, 47.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.375, 37.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(90.875, 57.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(89.125, 47.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(15.625, 62.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(90.125, 48.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(86.125, 44.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(60.125, 53.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(81.125, 18.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(60.875, 53.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(90.875, 49.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(20.05, 66.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(14.625, 61.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(66.625, 31.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.375, 11.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(15.925, 47.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(47.375, 27.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.625, 51.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.5, 43.6625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(82.875, 18.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(74.375, 23.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(80.375, 18.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.375, 24.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(82.625, 18.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(66.125, 54.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(15.625, 52.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(79.625, 19.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(60.875, 52.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(73.75, 23.3375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(81.875, 17.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(45.125, 29.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(44.875, 30.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(56.125, 55.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(47.875, 27.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.125, 46.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(20.3125, 64.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(14.375, 61.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(79.625, 23.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(67.25, 20.8375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(78.75, 23.3375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(92.125, 59.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.625, 10.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(67.625, 44.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.875, 52.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(78.125, 23.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(89.875, 48.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(83.875, 15.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(87.625, 45.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(66.375, 50.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(64.125, 47.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(84.125, 23.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(84.375, 23.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.375, 25.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(87.875, 8.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(82.125, 17.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.6625, 36.25)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(19.875, 65.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.125, 41.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(15.125, 61.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(90.625, 48.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(87.375, 9.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(83.375, 15.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(55.875, 55.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(87.375, 45.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(91.625, 58.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.6625, 24.25)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(60.375, 53.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(64.375, 47.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(86.875, 45.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.625, 52.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(59.625, 54.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(91.625, 57.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.875, 44.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(55.825, 30.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(80.125, 19.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(77.875, 23.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(57.45, 56.175)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(64.875, 47.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(19.875, 65.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(88.875, 47.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(80.625, 18.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(60.875, 52.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(14.875, 51.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(88.125, 46.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(91.875, 58.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(18.125, 67.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(20.5625, 65.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(47.625, 27.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(14.625, 48.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(82.375, 16.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(92.375, 59.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(59.375, 54.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(92.75, 60.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(64.625, 47.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(84.875, 41.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(88.375, 8.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(14.25, 62.0625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(86.375, 44.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.875, 54.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(58.125, 55.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(66.125, 50.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(56.375, 55.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(61.525, 51.365)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(64.625, 51.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(86.375, 10.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(82.125, 17.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(14.875, 61.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(18.875, 66.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(91.125, 57.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(66.3375, 32.25)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(66.625, 54.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(84.675, 11.25)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(79.75, 42.6625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(67.125, 20.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(15.375, 51.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(11.375, 67.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(55.875, 27.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(58.375, 55.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(79.375, 23.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(48.125, 26.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(56.625, 55.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(84.375, 13.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(45.125, 30.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.875, 50.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(56.875, 55.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(66.625, 50.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(86.125, 10.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(82.875, 16.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(83.625, 15.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(60.625, 53.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(57.875, 56.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(9.325, 68.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.1625, 24.25)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(10.825, 68.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(82.375, 17.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.3375, 26.75)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(88.125, 8.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(84.625, 12.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(86.6625, 24.25)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(44.325, 32.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(74.625, 23.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(88.375, 46.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(88.625, 46.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(51.7, 27.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(85.125, 37.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(14.375, 61.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(91.375, 57.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(58.875, 55.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(83.225, 18.75)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(45.8, 30.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(89.625, 47.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(66.625, 31.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (track@(65.375, 51.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (via@(16.125, 47.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (via@(16.125, 47.375)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +3V3D (via@(16.125, 47.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (via@(55.875, 55.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (via@(55.875, 55.375)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +3V3D (via@(55.875, 55.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (via@(19.625, 64.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (via@(19.625, 64.125)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +3V3D (via@(19.625, 64.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (via@(15.625, 62.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (via@(15.625, 62.375)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +3V3D (via@(15.625, 62.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (via@(45.125, 29.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (via@(45.125, 29.875)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +3V3D (via@(45.125, 29.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (via@(44.625, 52.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +3V3D (via@(44.625, 52.125)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +3V3D (via@(44.625, 52.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(46.875, 52.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(17.625, 46.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(35.625, 33.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(32.625, 36.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(21.875, 42.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(24.625, 41.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(36.125, 32.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(35.875, 32.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(32.875, 35.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(20.875, 43.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(35.375, 33.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(34.375, 34.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(36.875, 31.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(24.125, 41.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(33.125, 35.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(44.625, 29.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(25.125, 40.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(34.625, 34.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(21.375, 42.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(31.875, 36.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(37.875, 30.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(33.875, 34.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(53.125, 54.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(37.375, 31.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(19.125, 45.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(20.125, 44.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(25.375, 40.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(24.375, 41.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(25.875, 40.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(18.375, 45.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(51.375, 53.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(29.375, 39.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(26.875, 39.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(34.125, 34.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(29.875, 38.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(20.625, 43.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(53.375, 55.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(30.125, 38.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(35.125, 33.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(17.875, 46.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(52.625, 54.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(26.625, 39.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(17.125, 47.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(51.875, 53.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(33.625, 35.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(50.625, 52.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(32.375, 36.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(19.875, 44.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(38.125, 30.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(38.625, 30.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(21.125, 43.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(31.625, 37.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(29.125, 39.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(52.375, 54.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(37.125, 31.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(19.625, 44.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(18.875, 45.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(46.625, 52.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(36.625, 32.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(18.125, 46.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(24.875, 41.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(51.625, 53.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(51.125, 52.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(25.625, 40.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(52.125, 53.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(50.875, 52.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(32.125, 36.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(29.625, 39.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(16.125, 47.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(30.625, 38.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(18.625, 45.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(52.875, 54.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(23.625, 42.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(30.875, 37.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(23.875, 42.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(45.375, 52.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(33.375, 35.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(30.375, 38.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(38.375, 30.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(20.375, 43.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(26.125, 39.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(17.375, 46.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(31.125, 37.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(44.625, 52.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(19.375, 44.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(36.375, 32.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(38.875, 29.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(34.875, 33.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(21.625, 42.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(16.875, 47.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(31.375, 37.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +3V3D (track@(37.625, 31.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +5V (track@(41.125, 66.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(49.375, 63.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(14.625, 69.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(21.125, 51.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(16.375, 28.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(14.875, 27.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(17.125, 66.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(40.125, 67.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(14.375, 69.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(16.375, 65.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(34.875, 70.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(16.625, 65.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(39.625, 67.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(51.375, 64.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(39.125, 68.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(50.875, 62.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(16.875, 29.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(16.125, 28.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(20.625, 36.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(38.125, 69.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(24.375, 70.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(21.4375, 51.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(41.375, 65.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(60.55, 63.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(55.875, 61.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(7.8, 60.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(55.625, 61.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(17.875, 30.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(56.2, 62.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(15.375, 27.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(15.375, 68.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(17.375, 29.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(15.125, 27.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(49.625, 63.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(17.875, 30.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(13.375, 70.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(18.125, 30.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(27.0625, 60.75)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(20.875, 37.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(19.125, 32.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(17.625, 30.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(38.625, 68.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(15.125, 69.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(43.875, 63.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(18.875, 31.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(37.875, 69.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(20.75, 50.3125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(53.625, 62.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(38.875, 68.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(35.55, 70.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(15.875, 28.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(40.625, 66.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(41.625, 65.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(27.625, 70.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(21.4375, 51.75)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(20.875, 50.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(55.875, 62.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(21.1875, 51.75)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(13.875, 26.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(16.625, 29.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(37.875, 69.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(26.125, 60.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(53.375, 62.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(51.725, 65.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(21.4375, 52.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(43.375, 64.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(40.875, 66.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(43.625, 64.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(27.5625, 60.75)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(18.625, 31.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(14.875, 69.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(14.125, 26.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(42.125, 64.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(50.625, 62.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(50.625, 63.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(20.375, 33.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(20.625, 33.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(16.875, 65.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(27.875, 70.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(19.875, 32.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(60.55, 63.25)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(14.625, 27.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(39.375, 67.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(18.375, 31.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(13.875, 70.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(23.6375, 70.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(16.375, 64.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(39.875, 67.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(41.875, 64.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(51.725, 65.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(51.125, 64.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(56.375, 63.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(37.55, 70.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(26.375, 60.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(17.125, 29.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(48.375, 63.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(22.1375, 70.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(13.625, 70.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(56.125, 62.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(12.875, 71.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(50.875, 63.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(55.375, 62.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(60.375, 63.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(18.125, 31.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(14.375, 26.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(15.625, 28.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(13.125, 71.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(21.4375, 52.25)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(19.625, 32.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(20.75, 50.5625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(14.125, 70.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(38.375, 68.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(40.375, 66.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(19.375, 32.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(21.1875, 51.75)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (track@(20.125, 33.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (via@(22.125, 69.375)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +5V (via@(22.125, 69.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +5V (via@(18.125, 66.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (via@(18.125, 66.125)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +5V (via@(18.125, 66.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +5V (via@(8.125, 59.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (via@(8.125, 59.875)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +5V (via@(8.125, 59.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +5V (via@(15.625, 68.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (via@(15.625, 68.625)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +5V (via@(15.625, 68.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +5V (via@(20.875, 41.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (via@(20.875, 41.875)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +5V (via@(20.875, 41.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +5V (via@(21.375, 51.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (via@(21.375, 51.875)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +5V (via@(21.375, 51.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +5V (via@(22.125, 60.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +5V (via@(22.125, 60.375)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +5V (via@(22.125, 60.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(15.875, 49.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(49.875, 58.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(14.125, 36.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(28.225, 45.75)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(32.625, 43.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(17.625, 45.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(28.625, 45.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(13.125, 35.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(14.375, 36.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(32.875, 43.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(13.375, 35.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(26.125, 45.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(43.475, 69.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(32.875, 42.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(12.375, 34.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(15.675, 50.25)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(28.875, 45.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(32.375, 43.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(13.625, 35.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(31.625, 44.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(50.375, 59.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(38.625, 35.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(38.625, 36.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(33.125, 42.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(50.875, 61.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(48.875, 57.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(12.875, 34.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(49.375, 58.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(31.375, 44.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(15.625, 37.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(16.125, 49.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(26.875, 39.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(33.375, 42.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(26.725, 46.0)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(16.375, 49.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(16.625, 48.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(49.125, 58.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(18.375, 44.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(48.625, 57.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(17.875, 44.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(38.625, 37.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(49.625, 58.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(50.625, 59.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(15.675, 50.5)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(29.375, 44.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(13.875, 35.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(50.125, 59.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(12.625, 34.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(26.375, 45.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(26.625, 39.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(15.375, 37.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (track@(18.125, 44.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (via@(16.625, 48.625)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (via@(16.625, 48.625)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +VA (via@(16.625, 48.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (via@(17.625, 45.125)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (via@(17.625, 45.125)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +VA (via@(17.625, 45.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (via@(50.875, 61.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (via@(50.875, 61.375)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +VA (via@(50.875, 61.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (via@(38.125, 41.875)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (via@(38.125, 41.875)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +VA (via@(38.125, 41.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (via@(48.375, 57.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (via@(48.375, 57.375)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +VA (via@(48.375, 57.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (via@(43.625, 69.375)) vs GND (zone L0): need 0.25 mm
+  CLEARANCE +VA (via@(43.625, 69.375)) vs GND (zone L1): need 0.25 mm
+  CLEARANCE +VA (via@(43.625, 69.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(41.375, 45.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(43.125, 46.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(38.625, 42.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(43.625, 52.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(38.875, 42.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(43.625, 47.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(42.625, 46.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(44.875, 53.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(48.125, 57.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(40.125, 43.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(45.125, 54.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(44.375, 53.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(39.375, 43.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(44.625, 53.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(39.625, 43.375)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(40.875, 44.625)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(43.875, 52.875)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(44.125, 53.125)) vs GND (zone L31): need 0.25 mm
+  CLEARANCE +VA (track@(47.375, 56.375)) vs GND (zone L31): need 0.25 mm
+intrinsic same-footprint pad pairs below class clearance (datasheet geometry, not routable): 42
+  INTRINSIC I2C_SCL (U9.1) vs GND (U9.7): need 0.2 mm
+  INTRINSIC TMP_ALERT (U9.3) vs GND (U9.7): need 0.2 mm
+  INTRINSIC GND (U9.4) vs +3V3A (U9.5): need 0.25 mm
+  INTRINSIC +3V3A (U9.5) vs I2C_SDA (U9.6): need 0.25 mm
+  INTRINSIC +3V3A (U9.5) vs GND (U9.7): need 0.25 mm
+  INTRINSIC I2C_SDA (U9.6) vs GND (U9.7): need 0.2 mm
+  INTRINSIC GND (U8.4) vs +3V3D (U8.5): need 0.25 mm
+  INTRINSIC SPI_MOSI (U8.8) vs +3V3D (U8.9): need 0.25 mm
+  INTRINSIC +3V3D (U8.9) vs DAC_VREF (U8.10): need 0.25 mm
+  INTRINSIC GND (U6.16) vs +3V3D (U6.17): need 0.25 mm
+  INTRINSIC ULPI_NXT (U6.29) vs +3V3D (U6.30): need 0.25 mm
+  INTRINSIC +3V3D (U6.30) vs GND (U6.31): need 0.25 mm
+  INTRINSIC GND (U6.31) vs +3V3A (U6.32): need 0.25 mm
+  INTRINSIC +3V3A (U6.33) vs CAP_CLK (U6.34): need 0.25 mm
+  INTRINSIC GND (U6.38) vs +3V3D (U6.39): need 0.25 mm
+  INTRINSIC +3V3D (U6.39) vs USB_RST (U6.40): need 0.25 mm
+  INTRINSIC GND (U6.51) vs +3V3D (U6.52): need 0.25 mm
+  INTRINSIC GND (U6.61) vs +3V3D (U6.62): need 0.25 mm
+  INTRINSIC VCAP2 (U6.71) vs +3V3D (U6.72): need 0.25 mm
+  INTRINSIC GND (U6.83) vs +3V3D (U6.84): need 0.25 mm
+PCB CHECK: FAIL
