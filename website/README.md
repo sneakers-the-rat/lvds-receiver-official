@@ -54,9 +54,11 @@ before `jekyll build` and writes the generated, gitignored files:
   the gates' numbers; the gates themselves are
   `scripts/drc_gate.py` / `scripts/erc_gate.py`, unchanged.
 - `_data/tokens.json` — token totals computed from the committed
-  `metrics/*.csv` export; `_data/costs.json` — `metrics/
-  cost_summary.csv` staged verbatim when that file exists (the
-  token page's Cost section renders only then).
+  `metrics/*.csv` export; `_data/costs.json` — the cost tables
+  (rates from `metrics/api_rates.json`; tier-matched, upper-bound
+  and cache-adjusted costs from `metrics/cost_summary.csv`),
+  staged when those files exist (the token page's Cost section
+  renders only then).
 - `_data/bom.json`, `_data/sims.json`, `_data/board.json`,
   `_data/downloads.json` — BOM table, simulation blocks, asset
   presence, download list.
