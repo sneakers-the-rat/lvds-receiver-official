@@ -288,9 +288,9 @@ via-first hand stubs (hw/hand_via.py; via disc tested as a zero-length segment a
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 36 · Unconnected nets: 55 · Audit verdict: FAIL
 
-### Pass 33 — 2026-11-04T16:00:43Z · commit `pending`
+### Pass 33 — 2026-11-04T16:00:43Z · commit `128862d`
 
-Board: `hw/pdlvds_rx.fr17.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr17.kicad_pcb` · Commit: `128862d766c8434e7b1abff75698481437a9e54b`
 
 placement fixes found by exhaustive audit-exact search (hw/place_search.py): C40 to a clean home at (41.5,62) still flipped on the bottom side (its (35,62) B pads grazed PHY_1V8/ULPI_D2 B-tracks — 21 items), R27 west to (18.1,6.0) (its pad 2 grazed +5V tracks — 2 items); APD_A's D1.6 escape chain ripped (10 items) to open D1.5's exit
 
