@@ -544,6 +544,14 @@ repairg healing on the NXT-escape board: 1 group connected — the heal curve is
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 35 · Audit verdict: FAIL
 
+### Pass 65 — 2026-11-04T22:10:13Z · commit `pending`
+
+Board: `hw/pdlvds_rx.expanded.kicad_pcb` · Commit: `pending`
+
+EXPANSION: outline 100x80 -> 100x110 mm (+30 mm north — the only side moving neither connector edge (J1 south, J2 east) nor the APD/TIA cluster (D1/U1/R1 west)). 44 footprints moved as 4 rigid groups into the new strip (hw/expand_board.py; membership from signal-net BFS + decoupling radius, hw/groups_expand.py): U7 USB cluster 8 parts, U4 CDR cluster 14 (incl. U5 capture chain), U9 alone, U10 HV cluster 21 (incl. hand-verified secondary chain D5/C32/R29/R34). Copper of the 63 nets touching moved pads ripped (3215 tracks, 195 vias, 181 GND stubs at moved pads); every other net's copper verified untouched (6110 -> 2519 items, exact difference). Courtyard overlap pairs 34 -> 18, pairs involving a moved part 16 -> 0 (6 intra-group grazes cleared by measured nudges); the 18 remaining pairs are all between unmoved parts (2 inside the frozen analog cluster, U6 field, MH5, J3) and cannot be zeroed without breaking the freeze. Cluster moats (min pad-centre distance to nearest foreign part): U7 1.54 -> 4.46 mm, U4 1.13 -> 3.99, U9 3.46 -> 5.09, U10 3.54 -> 3.99. U9's four sealed pins: escape fans 12-13/16 -> 16/16. Unrouted placement state by design — the strip gets routed next.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 69 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

@@ -1,0 +1,5 @@
+board: hw/pdlvds_rx.expanded.kicad_pcb
+group U7   ( 8 parts): moat 4.46 mm  (C20 pad -> U5)
+group U4   (14 parts): moat 3.99 mm  (C51 pad -> C32)
+group U9   ( 1 parts): moat 5.09 mm  (U9 pad -> R12)
+group U10  (21 parts): moat 3.99 mm  (C32 pad -> C51)
