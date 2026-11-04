@@ -140,5 +140,32 @@
       "audit_verdict": "FAIL"
     },
     "note": "Stricter clearance model (vias never exempt, segment-midpoint tests, layer-aware HV) traded connections for correctness vs v4 (commit fb2acf7 message). Clearance/unconnected/verdict parsed from the audit file committed with this attempt."
+  },
+  {
+    "timestamp": "2026-11-04T03:50:41Z",
+    "hash": "b805fc37860f13a3d83fb11efe47e1b1ce8da968",
+    "short_hash": "b805fc3",
+    "label": "v6 full-board route 1 (home-grown exact model)",
+    "dir": "2026-11-04T035041Z_b805fc3",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
+    "stats": {
+      "pins_failed": 144,
+      "unconnected_nets": 83,
+      "clearance_violations": 64,
+      "audit_verdict": "FAIL",
+      "nets_routed": 30,
+      "nets_total": 112
+    },
+    "note": "Exact-clearance model: zero router-output violations (64 = 46 placement pad-pad + 18 zone). Connectivity behind: 144 pins failed, retries made zero progress."
   }
 ]
