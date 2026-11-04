@@ -1,0 +1,18 @@
+=== cluster u13 start 14:51:39 ===
+14:51:41 clear_disc: removed 25, remaining in disc: 37
+14:51:43 clear_disc: removed 25, remaining in disc: 12
+14:51:45 clear_disc: removed 12, remaining in disc: 0
+14:51:47 clear_disc: removed 0, remaining in disc: 0
+14:51:48 clear_disc: removed 0, remaining in disc: 0
+14:51:49 clear_disc: removed 0, remaining in disc: 0
+14:52:15 cleared 0 foreign items in disc (0.0,0.0) r=0.0: {}
+14:52:15   +5V U13.1: CONNECTED (7s)
+14:52:15   +5V U13.3: CONNECTED (6s)
+14:52:15   +VA U13.9: CONNECTED (4s)
+14:52:15   +VA U13.10: net already single-group
+14:52:15   SET_P U13.7: CONNECTED (3s)
+14:52:15 cluster done: 5/5 targets connected; isolated groups remaining: 119
+copper items: 3380
+unconnected nets: 46
+  UNCONNECTED +3V3A: 3 groups, e.g. [['U9.5'], ['C46.1', 'C49.1', 'U14.10', 'U14.9'], ['C24.1', 'U7.16', 'U7.25', 'U7.30']]
+=== cluster u13 exit 14:53:07 ===

@@ -1,0 +1,21 @@
+=== cluster u4 start 14:50:45 ===
+14:50:46 clear_disc: removed 25, remaining in disc: 92
+14:50:47 clear_disc: removed 25, remaining in disc: 67
+14:50:48 clear_disc: removed 25, remaining in disc: 42
+14:50:49 clear_disc: removed 25, remaining in disc: 17
+14:50:49 clear_disc: removed 17, remaining in disc: 0
+14:50:50 clear_disc: removed 0, remaining in disc: 0
+14:51:02 cleared 0 foreign items in disc (0.0,0.0) r=0.0: {}
+14:51:02   +3V3D_CDR U4.12: CONNECTED (1s)
+14:51:02   +3V3D_CDR U4.18: CONNECTED (2s)
+14:51:02   CDR_CLKP U4.26: CONNECTED (1s)
+14:51:02   CDR_DATN U4.28: CONNECTED (1s)
+14:51:02   CDR_LOS U4.22: still isolated (0s)
+14:51:02   CDR_NIN U4.4: CONNECTED (1s)
+14:51:02   CDR_VREF U4.3: still isolated (0s)
+14:51:02   REFCLK U4.10: CONNECTED (1s)
+14:51:02 cluster done: 6/8 targets connected; isolated groups remaining: 114
+copper items: 3390
+unconnected nets: 45
+  UNCONNECTED +3V3A: 2 groups, e.g. [['U9.5'], ['C24.1', 'C46.1', 'C49.1', 'U14.10']]
+=== cluster u4 exit 14:51:39 ===

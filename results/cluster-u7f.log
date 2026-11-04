@@ -1,0 +1,29 @@
+=== cluster u7f start 14:53:07 ===
+14:53:10 clear_disc: removed 25, remaining in disc: 101
+14:53:12 clear_disc: removed 25, remaining in disc: 76
+14:53:15 clear_disc: removed 25, remaining in disc: 51
+14:53:17 clear_disc: removed 25, remaining in disc: 26
+14:53:18 clear_disc: removed 25, remaining in disc: 1
+14:53:19 clear_disc: removed 1, remaining in disc: 0
+14:57:35 cleared 0 foreign items in disc (0.0,0.0) r=0.0: {}
+14:57:35   PHY_1V8 U7.26: CONNECTED (2s)
+14:57:35   PHY_1V8 U7.15: CONNECTED (1s)
+14:57:35   PHY_1V8A U7.29: CONNECTED (0s)
+14:57:35   ULPI_D0 U7.24: CONNECTED (2s)
+14:57:35   ULPI_D2 U7.22: CONNECTED (9s)
+14:57:35   ULPI_D3 U7.21: still isolated (0s)
+14:57:35   ULPI_D4 U7.20: still isolated (0s)
+14:57:35   ULPI_D6 U7.18: still isolated (0s)
+14:57:35   ULPI_DIR U7.12: CONNECTED (9s)
+14:57:35   USB_RST U7.9: still isolated (101s)
+14:57:35   XI U7.28: CONNECTED (1s)
+14:57:35   XO U7.27: still isolated (1s)
+14:57:35   RBIAS U7.32: still isolated (110s)
+14:57:35   +3V3A U7.25: still isolated (2s)
+14:57:35   +3V3A U7.30: CONNECTED (7s)
+14:57:35   +3V3A U7.31: CONNECTED (3s)
+14:57:35 cluster done: 9/16 targets connected; isolated groups remaining: 126
+copper items: 3611
+unconnected nets: 46
+  UNCONNECTED +3V3A: 5 groups, e.g. [['U9.5'], ['C24.1', 'C46.1', 'C49.1', 'U14.10'], ['U7.6'], ['U7.16'], ['U7.25']]
+=== cluster u7f exit 14:58:07 ===

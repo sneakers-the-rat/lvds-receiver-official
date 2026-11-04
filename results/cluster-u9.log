@@ -1,0 +1,17 @@
+=== cluster u9 start 14:58:50 ===
+14:58:51 clear_disc: removed 8, remaining in disc: 0
+14:58:51 clear_disc: removed 0, remaining in disc: 0
+14:58:52 clear_disc: removed 0, remaining in disc: 0
+14:58:53 clear_disc: removed 0, remaining in disc: 0
+14:58:54 clear_disc: removed 0, remaining in disc: 0
+14:58:55 clear_disc: removed 0, remaining in disc: 0
+14:59:02 cleared 0 foreign items in disc (0.0,0.0) r=0.0: {}
+14:59:02   +3V3A U9.5: still isolated (2s)
+14:59:02   I2C_SCL U9.1: still isolated (0s)
+14:59:02   I2C_SDA U9.6: still isolated (0s)
+14:59:02   TMP_ALERT U9.3: still isolated (0s)
+14:59:02 cluster done: 0/4 targets connected; isolated groups remaining: 138
+copper items: 3614
+unconnected nets: 50
+  UNCONNECTED +3V3A: 5 groups, e.g. [['U9.5'], ['C24.1', 'C46.1', 'C49.1', 'U14.10'], ['U7.6'], ['U7.16'], ['U7.25']]
+=== cluster u9 exit 14:59:31 ===
