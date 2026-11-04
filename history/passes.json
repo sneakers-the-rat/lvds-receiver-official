@@ -905,8 +905,8 @@
     {
       "pass": 34,
       "timestamp": "2026-11-04T16:01:28Z",
-      "hash": null,
-      "short_hash": null,
+      "hash": "2a678510f3eb31cef82fac90596097f22f044c40",
+      "short_hash": "2a67851",
       "board_file": "hw/pdlvds_rx.fr18.kicad_pcb",
       "dir": "pass-0034",
       "renders": {
