@@ -315,6 +315,78 @@ def status_panel():
             f"site is built by CI); anything missing is shown as "
             f"<em>not run</em>, never as passed.</p>")
 
+def token_usage():
+    """Token-usage section from the committed metrics/ export
+    (metrics/README.md is the methodology). Every number is computed
+    from the export files themselves, so the panel always matches
+    the committed snapshot; a missing export yields a placeholder,
+    never a fabricated total."""
+    series = os.path.join(ROOT, "metrics", "token_series.csv")
+    agents_p = os.path.join(ROOT, "metrics", "agents.csv")
+    if not (os.path.exists(series) and os.path.exists(agents_p)):
+        return ("<p><em>Token export not present in this checkout "
+                "&mdash; see metrics/README.md for the export "
+                "procedure.</em></p>")
+    with open(series) as f:
+        rows = list(csv.DictReader(f))
+    if not rows:
+        return "<p><em>Token export is empty.</em></p>"
+    last = rows[-1]
+    tin = sum(int(r["input_tokens"]) for r in rows)
+    tout = sum(int(r["output_tokens"]) for r in rows)
+    with open(agents_p) as f:
+        ag = list(csv.DictReader(f))
+    n_with = sum(1 for a in ag if int(a["usage_rows"]) > 0)
+    by_scope = {}
+    for a in ag:
+        s = by_scope.setdefault(a["scope"], [0, 0])
+        s[0] += int(a["input_tokens"])
+        s[1] += int(a["output_tokens"])
+    scope_names = {"chat-tree": "design chat tree (main chat + its subagents)",
+                   "checkpoint-cron": "checkpoint cron (pdlvds-progress)"}
+    scope_rows = "".join(
+        "<tr><td>{}</td><td>{:,}</td><td>{:,}</td><td>{:,}</td></tr>".format(
+            html.escape(scope_names.get(k, k)), v[0], v[1], v[0] + v[1])
+        for k, v in sorted(by_scope.items()))
+    chart = ('<div class="tokenpanel">'
+             '<img src="assets/token_per_message.svg" alt="token use '
+             'per message over time, annotated with project epochs">'
+             '</div>'
+             if os.path.exists(os.path.join(
+                 ROOT, "metrics", "token_per_message.svg")) else
+             "<p><em>per-message chart not generated &mdash; run "
+             "metrics/make_token_chart.py.</em></p>")
+    prog = ('<p>Board progress against cumulative tokens: '
+            '<a href="assets/progress_vs_tokens.svg">'
+            'progress_vs_tokens.svg</a> (unconnected nets and clearance '
+            'violations from the audit file as committed at each '
+            'revision).</p>'
+            if os.path.exists(os.path.join(
+                ROOT, "metrics", "progress_vs_tokens.svg")) else "")
+    readme = ('<a href="downloads/token-metrics-README.md">'
+              'metrics/README.md</a>')
+    return (f"<p><strong>{tin + tout:,} gross tokens</strong> "
+            f"({tin:,} input + {tout:,} output) across {len(rows)} "
+            f"recorded messages from {n_with} agents ({len(ag)} in "
+            f"project scope), snapshot {html.escape(last['ts_utc'])} "
+            f"(UTC).</p>"
+            f"{chart}"
+            f"<table><thead><tr><th>Scope</th><th>Input</th>"
+            f"<th>Output</th><th>Gross</th></tr></thead><tbody>"
+            f"{scope_rows}</tbody></table>"
+            f"<p>Records are the runtime's per-message token-usage "
+            f"rows: each row aggregates every model request made while "
+            f"producing one message &mdash; the full context is "
+            f"re-sent on every request, so input dominates and the "
+            f"totals are a work meter, not a content size. Main-chat "
+            f"rows are true per-message values; a subagent appears as "
+            f"a single whole-run record timestamped at its completion. "
+            f"Agents still running have no rows yet, so the snapshot "
+            f"understates the final total. Full method, the exact SQL "
+            f"and all caveats: {readme}.</p>"
+            f"{prog}")
+
+
 # Copper-layer palette for the routing-history composite + legend;
 # must match LAYER_PALETTE in scripts/snapshot_route.py.
 LAYER_ORDER = ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"]
@@ -481,11 +553,18 @@ def tia_plot():
 def schematic_svg():
     dst = os.path.join(ASSETS, "schematic.svg")
     try:
+        before = set(os.listdir(ASSETS))
         subprocess.run(["kicad-cli", "sch", "export", "svg", "-o", ASSETS,
                         os.path.join(ROOT, "hw", "pdlvds_rx.kicad_sch")],
                        check=True, capture_output=True, timeout=180)
+        # Collapse ONLY the files this export just produced onto
+        # schematic.svg. (The rename previously matched every .svg in
+        # ASSETS, silently eating assets copied earlier in the build —
+        # found when the token-usage chart SVG vanished from the built
+        # site while its copy reported success.)
         for f in os.listdir(ASSETS):
-            if f.endswith(".svg") and "schematic" not in f:
+            if (f not in before and f.endswith(".svg")
+                    and "schematic" not in f):
                 os.rename(os.path.join(ASSETS, f), dst)
         return "schematic.svg" if os.path.exists(dst) else None
     except Exception as e:
@@ -503,7 +582,8 @@ def main():
                       ("hw/fab/bom.csv", "bom.csv"),
                       ("hw/fab/cpl.csv", "cpl.csv"),
                       ("hw/fab/board-layers.pdf", "board-layers.pdf"),
-                      ("results/schematic.pdf", "schematic.pdf")]:
+                      ("results/schematic.pdf", "schematic.pdf"),
+                      ("metrics/README.md", "token-metrics-README.md")]:
         got = copy_into(src, DOWNLOADS, name)
         if got:
             dl[name] = got
@@ -512,7 +592,11 @@ def main():
     for src, name in [("hw/fab/board-top.svg", "board-top.svg"),
                       ("hw/fab/board-bottom.svg", "board-bottom.svg"),
                       ("results/link_budget.png", "link_budget.png"),
-                      ("results/digital_sim.png", "digital_sim.png")]:
+                      ("results/digital_sim.png", "digital_sim.png"),
+                      ("metrics/token_per_message.svg",
+                       "token_per_message.svg"),
+                      ("metrics/progress_vs_tokens.svg",
+                       "progress_vs_tokens.svg")]:
         got = copy_into(src, ASSETS, name)
         if got:
             img[name] = got
@@ -572,6 +656,7 @@ def main():
 
     panel_html = status_panel()
     history_html = routing_history()
+    tokens_html = token_usage()
 
     req_html = md_to_html(read("docs/01-requirements.md")
                           or "_requirements doc missing_")
@@ -634,6 +719,9 @@ blockquote {{ border-left: 3px solid #99b; margin-left: 0;
   display: block; }}
 .refview {{ background: #111; border: 1px solid #444; display: block;
   width: 100%; box-sizing: border-box; }}
+.tokenpanel {{ background: #fff; border: 1px solid #bbb;
+  padding: .6rem; }}
+.tokenpanel img {{ border: none; display: block; width: 100%; }}
 .layergrid figcaption {{ font-size: .85rem; padding-top: .25rem; }}
 </style></head><body>
 <header><h1>PDLVDS-RX — photodiode LVDS receiver</h1>
@@ -645,6 +733,7 @@ mode. LT3757 flyback APD bias 150–420 V. USB-C powered; verify on any
 laptop over USB, no FPGA attached.</p></header>
 <nav>
 <a href="#summary">Summary</a><a href="#board">Board</a>
+<a href="#token-usage">Token usage</a>
 <a href="#routing-history">Routing history</a>
 <a href="#schematic">Schematic</a><a href="#stackup">Stackup</a>
 <a href="#bom">BOM</a><a href="#sims">Simulations</a>
@@ -665,6 +754,9 @@ from the repository's own verified artefacts by
 <h3>Top</h3>{img_tag("board-top.svg", "PCB top")}
 <h3>Bottom</h3>{img_tag("board-bottom.svg", "PCB bottom")}
 <p>Per-layer SVG: {layer_links}</p>
+</section>
+<section id="token-usage"><h2>Token usage</h2>
+{tokens_html}
 </section>
 <section id="routing-history"><h2>Routing history</h2>
 {history_html}

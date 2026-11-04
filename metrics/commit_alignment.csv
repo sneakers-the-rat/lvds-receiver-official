@@ -105,3 +105,7 @@ eea18f6378bc,2026-11-04T03:50:53Z,gallery: snapshot v6 full-board route 1 (b805f
 aa04b66f6d83,2026-11-04T04:33:23Z,stage7c: fanout macro (escape routing) — the U6/U7 pins were grid-boundary prisoners,113977788,579775,114557563,83,64,not recorded
 67722e038347,2026-11-04T06:10:45Z,"routing attempt (engine: home-grown v6 + repair6): 45 groups connected, 83 -> 62 unconnected nets, violations UNCHANGED at 64",116945515,594296,117539811,62,64,not recorded
 37b0640897b4,2026-11-04T06:10:59Z,gallery: snapshot repair6 attempt 1 (67722e0),116945515,594296,117539811,83,64,not recorded
+7a555432d308,2026-11-04T08:08:27Z,"metrics: token usage export — series + per-agent census (143 message rows, 47 agents with records, 124.73M gross tokens at snapshot 2026-11-04T08:04Z)",124105756,624462,124730218,83,64,not recorded
+946e13492fb6,2026-11-04T08:09:05Z,"metrics: methodology README (source, semantics, scope, caveats, verbatim SQL) + status doc section — headline 124,730,218 gross tokens at 2026-11-04T08:04Z snapshot",124105756,624462,124730218,83,64,not recorded
+f2b2fbebc169,2026-11-04T08:21:31Z,routing attempt (engine: home-grown v6 + repair6 + diagonals): 0 groups connected — NOT ADOPTED; full diagnosis of the residue committed,131776017,663793,132439810,83,64,not recorded
+63992b481441,2026-11-04T08:29:16Z,"Merge origin/main (f2b2fbe, repair6+diagonals attempt) into token-graph base",133003884,666550,133670434,83,64,not recorded
