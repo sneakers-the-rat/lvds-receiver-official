@@ -99,9 +99,19 @@ typedef struct {
 /* is authoritative once it exists. VERIFY against the schematic at    */
 /* bring-up.                                                           */
 /* ------------------------------------------------------------------ */
-/* Status LED: PA5 (active high) */
-#define BOARD_LED_PORT GPIOA
-#define BOARD_LED_PIN  5u
+/* Status LED: PC9 (LED_STAT on the schematic, hw/CONNECTIONS.md,
+ * via R45). This define previously said PA5 - the schematic assigns
+ * PA5 to ULPI_CK, so PA5 cannot be the LED on the real board; the
+ * schematic is authoritative (see the header of this file). */
+#define BOARD_LED_PORT GPIOC
+#define BOARD_LED_PIN  9u
+/* USB: ULPI bus + USB3300 reset (PA4), per hw/CONNECTIONS.md. The
+ * full ULPI pin table lives in usb_device_tinyusb.c; the DAC CS
+ * define below also names PA4 - that is the pre-schematic intent
+ * and CONFLICTS with the schematic's USB_RST assignment. The
+ * schematic wins for USB; reconciling the DAC path (SPI3 + PA15
+ * SYNC on the schematic) is bring-up work, flagged in
+ * firmware/BRINGUP.md. */
 /* HV enable: PB0 (active high, drives the flyback enable + interlock
  * AND gate; hardware interlock jumper is in series - firmware can
  * never force HV on by itself) */

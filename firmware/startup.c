@@ -14,6 +14,10 @@ extern uint32_t _sidata, _sdata, _edata, _sbss, _ebss;
 /* From clocks.c */
 extern void board_systick_irq(void);
 
+/* From usb_device_tinyusb.c (OTG HS global interrupt, IRQ 77 -
+ * VERIFY against RM0468's NVIC map at bring-up) */
+extern void OTG_HS_IRQHandler(void);
+
 void Reset_Handler(void);
 void Default_Handler(void);
 static void SysTick_Handler(void);
@@ -38,11 +42,35 @@ static const handler_t g_vectors[] = {
     0,                        /* 13: reserved */
     Default_Handler,          /* 14: PendSV */
     SysTick_Handler,          /* 15: SysTick */
-    /* Peripheral IRQs (16+) intentionally omitted in rev A: the table
-     * only needs to cover vectors the firmware can actually take, and
-     * no peripheral interrupt is enabled yet. EXTEND at bring-up
-     * before enabling any peripheral IRQ - an interrupt landing past
-     * the end of a short table reads garbage as its handler. */
+    /* Peripheral IRQs 0..76 (table slots 16..92): parked in
+     * Default_Handler. No driver in rev A enables any of these; the
+     * slots exist so the table reaches the one peripheral vector
+     * that IS live, below - an interrupt landing past the end of a
+     * short table reads garbage as its handler. If another IRQ is
+     * ever enabled, give its slot a real handler in the same edit. */
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler, Default_Handler, Default_Handler, Default_Handler,
+    Default_Handler,
+    /* IRQ 77 (slot 93): USB OTG HS global interrupt - the only
+     * peripheral interrupt the firmware enables (via TinyUSB). */
+    OTG_HS_IRQHandler,
 };
 
 static void SysTick_Handler(void)
