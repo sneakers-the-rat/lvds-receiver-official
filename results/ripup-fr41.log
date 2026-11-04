@@ -1,0 +1,120 @@
+ripup: 52 isolated groups, batch of 10
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.56
+    rip I2C_SDA F.Cu d=0.67
+    rip GND F.Cu d=0.69
+    rip GND F.Cu d=1.03
+    rip GND F.Cu d=1.25
+    rip TMP_ALERT F.Cu d=1.54
+    rip I2C_SCL F.Cu d=1.54
+    rip GND F.Cu d=1.54
+    rip GND F.Cu d=1.78
+  +3V3A ['U9.5']: still isolated after 11 rips; copper restored
+    rip DP_PHY F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip DP_PHY F.Cu d=0.56
+    rip GND F.Cu d=0.71
+    rip DP_PHY In2.Cu d=0.76
+    rip DP_PHY In2.Cu d=0.76
+    rip GND F.Cu d=0.82
+    rip GND F.Cu d=0.82
+    rip DP_PHY In2.Cu d=0.89
+    rip ULPI_D2 In2.Cu d=0.93
+  +3V3A ['U7.6']: still isolated after 12 rips; copper restored
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.71
+    rip GND F.Cu d=0.75
+    rip GND F.Cu d=0.86
+    rip GND F.Cu d=0.88
+    rip REFCLK B.Cu d=0.93
+    rip GND F.Cu d=0.95
+    rip I2C_SCL F.Cu d=1.00
+    rip GND via d=1.01
+    rip I2C_SCL F.Cu d=1.03
+    rip REFCLK B.Cu d=1.28
+  +3V3D_CDR ['U4.18']: still isolated after 12 rips; copper restored
+    rip ULPI_D2 In2.Cu d=0.23
+    rip ULPI_D2 In2.Cu d=0.46
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.71
+    rip ULPI_D4 In2.Cu d=0.75
+    rip ULPI_D4 In2.Cu d=0.76
+    rip ULPI_D2 In2.Cu d=0.78
+    rip ULPI_D4 In2.Cu d=0.78
+    rip GND F.Cu d=0.82
+    rip GND F.Cu d=0.82
+  +5V ['U7.4']: still isolated after 12 rips; copper restored
+    rip +3V3A B.Cu d=0.50
+    rip +3V3A B.Cu d=0.50
+    rip +3V3A B.Cu d=0.63
+    rip +3V3A B.Cu d=0.89
+    rip ILIM_P F.Cu d=0.91
+    rip GND F.Cu d=0.92
+    rip GND via d=1.00
+    rip GND In2.Cu d=1.00
+    rip GND In2.Cu d=1.17
+    rip GND In2.Cu d=1.17
+    rip +3V3A B.Cu d=1.20
+    rip GND F.Cu d=1.23
+  +VA ['U13.9']: still isolated after 12 rips; copper restored
+    rip +3V3A B.Cu d=0.14
+    rip +3V3A B.Cu d=0.15
+    rip +3V3A B.Cu d=0.35
+    rip +3V3A B.Cu d=0.41
+    rip GND In2.Cu d=0.70
+    rip GND In2.Cu d=0.70
+    rip +3V3A B.Cu d=0.76
+    rip ILIM_P F.Cu d=0.83
+    rip GND In2.Cu d=0.88
+    rip GND F.Cu d=0.90
+    rip GND F.Cu d=0.90
+    rip GND In2.Cu d=0.92
+  +VA ['U13.10']: still isolated after 12 rips; copper restored
+    rip APD_K F.Cu d=1.01
+  APD_A ['D1.6']: still isolated after 1 rips; copper restored
+    rip APD_A F.Cu d=1.43
+    rip APD_A F.Cu d=1.62
+    rip APD_A F.Cu d=1.63
+    rip APD_A F.Cu d=1.72
+    rip APD_A F.Cu d=1.72
+    rip APD_A F.Cu d=1.78
+    rip APD_A F.Cu d=1.81
+    rip APD_A F.Cu d=1.81
+    rip APD_A F.Cu d=1.82
+    rip APD_A F.Cu d=1.82
+    rip APD_A F.Cu d=1.87
+    rip APD_A F.Cu d=1.90
+  APD_K ['D1.5']: still isolated after 12 rips; copper restored
+    rip APD_K_ALT In2.Cu d=0.21
+    rip FB_3V3 In2.Cu d=0.30
+    rip APD_K_ALT In2.Cu d=0.38
+    rip +3V3D B.Cu d=0.56
+    rip APD_K_ALT F.Cu d=1.65
+    rip GND B.Cu d=1.70
+    rip GND B.Cu d=1.70
+    rip APD_K_ALT F.Cu d=1.73
+    rip +3V3D F.Cu d=1.85
+    rip +3V3D F.Cu d=1.85
+    rip +3V3D F.Cu d=1.90
+    rip GND F.Cu d=1.95
+  APD_K ['RJ2.2']: CONNECTED after ripping 12 (4s); victims: ['APD_K_ALT', 'FB_3V3', 'APD_K_ALT', '+3V3D', 'APD_K_ALT', 'GND', 'GND', 'APD_K_ALT', '+3V3D', '+3V3D', '+3V3D', 'GND']
+    rip CDR_CLKN F.Cu d=0.50
+    rip CDR_SQUELCH F.Cu d=0.50
+    rip CDR_CLKN F.Cu d=0.56
+    rip CDR_SQUELCH F.Cu d=0.56
+    rip +3V3D_CDR In2.Cu d=0.56
+    rip CDR_CLKN via d=0.65
+    rip CDR_CLKN In2.Cu d=0.65
+    rip +3V3D_CDR In2.Cu d=0.68
+    rip CDR_SQUELCH F.Cu d=0.78
+    rip CDR_SQUELCH F.Cu d=0.94
+    rip CDR_SQUELCH via d=0.95
+    rip CDR_SQUELCH In2.Cu d=0.95
+  CDR_CLKP ['U4.26']: still isolated after 12 rips; copper restored
+ripup done: 1 groups connected, victims ['+3V3D', 'APD_K_ALT', 'FB_3V3', 'GND'], isolated groups remaining: 64

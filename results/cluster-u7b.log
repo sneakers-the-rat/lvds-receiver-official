@@ -1,0 +1,20 @@
+=== cluster u7b start 17:41:31 ===
+17:41:32 clear_disc: removed 25, remaining in disc: 181
+17:41:34 clear_disc: removed 25, remaining in disc: 156
+17:41:36 clear_disc: removed 25, remaining in disc: 131
+17:41:37 clear_disc: removed 25, remaining in disc: 106
+17:41:39 clear_disc: removed 25, remaining in disc: 81
+17:41:41 clear_disc: removed 25, remaining in disc: 56
+17:42:06 cleared 0 foreign items in disc (0.0,0.0) r=0.0: {}
+17:42:06   +3V3A U7.16: CONNECTED (3s)
+17:42:06   +3V3A U7.25: CONNECTED (5s)
+17:42:06   DP_PHY U7.7: CONNECTED (2s)
+17:42:06   ULPI_D5 U7.19: CONNECTED (1s)
+17:42:06   ULPI_NXT U7.11: still isolated (0s)
+17:42:06   ULPI_STP U7.13: still isolated (0s)
+17:42:06   XI U7.28: CONNECTED (2s)
+17:42:06 cluster done: 5/7 targets connected; isolated groups remaining: 81
+copper items: 5156
+unconnected nets: 39
+  UNCONNECTED +3V3A: 5 groups, e.g. [['U9.5', 'track@(8.87, 48.0)', 'track@(9.274999, 48.0)', 'via@(9.274999, 48.0)'], ['C24.1', 'C46.1', 'C49.1', 'U14.10'], ['U7.6'], ['U7.30'], ['U7.31']]
+=== cluster u7b exit 17:43:11 ===

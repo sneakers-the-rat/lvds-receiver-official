@@ -1,0 +1,13 @@
+pass: 38
+description: stub campaign 1 (hw/hand_stub.py): 13 of 31 singleton pads given audit-exact edge-anchored escape stubs, incl. D1.6 west, RJ2.2, CDR_DATP U4.29, CDR_NIN U4.4, CF1/CF2, GND R28.2, PHY_1V8A C23.1
+timestamp (UTC): 2026-11-04T19:53:30Z
+commit: pending
+board file: hw/pdlvds_rx.fr22.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 3
+unconnected nets: 36
+audit verdict: fail
+note: 

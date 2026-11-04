@@ -1,0 +1,13 @@
+pass: 45
+description: stub campaign 2 on the healed field: +3V3A U7.30/U7.31 stubbed; CF1/CF2 re-stubbed (their campaign-1 stubs were ripped as cluster victims)
+timestamp (UTC): 2026-11-04T19:59:31Z
+commit: pending
+board file: hw/pdlvds_rx.fr30.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 3
+unconnected nets: 37
+audit verdict: fail
+note: 

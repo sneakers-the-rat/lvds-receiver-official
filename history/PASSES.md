@@ -328,6 +328,182 @@ APD_K pour clearance resolved geometrically (hw/notch.py): rule-area copper-pour
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 36 · Audit verdict: FAIL
 
+### Pass 38 — 2026-11-04T19:53:30Z · commit `cadd345`
+
+Board: `hw/pdlvds_rx.fr22.kicad_pcb` · Commit: `cadd345d5cb1f37e4b2cb3d0579ea08c10f2058e`
+
+stub campaign 1 (hw/hand_stub.py): 13 of 31 singleton pads given audit-exact edge-anchored escape stubs, incl. D1.6 west, RJ2.2, CDR_DATP U4.29, CDR_NIN U4.4, CF1/CF2, GND R28.2, PHY_1V8A C23.1
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 36 · Audit verdict: FAIL
+
+### Pass 39 — 2026-11-04T19:54:32Z · commit `23547a3`
+
+Board: `hw/pdlvds_rx.fr24.kicad_pcb` · Commit: `23547a35b594c2be591ea5f5950ab99bca586472`
+
+cluster clearing U4 disc (52,52) r4.2 on the stubbed board: 7/9 targets connected through the cleared field (CDR ring pads, +3V3D_CDR U4.24 among them)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 35 · Audit verdict: FAIL
+
+### Pass 40 — 2026-11-04T19:55:21Z · commit `3b07804`
+
+Board: `hw/pdlvds_rx.fr25.kicad_pcb` · Commit: `3b078040b0d3843f83165e865a336e261ce9f171`
+
+cluster clearing U7 disc (30,61) r4.5: 5/7 targets connected incl. +3V3A U7.16/U7.25; ULPI_NXT U7.11 and ULPI_STP U7.13 remain sealed by their own row geometry
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 39 · Audit verdict: FAIL
+
+### Pass 41 — 2026-11-04T19:56:08Z · commit `b8feded`
+
+Board: `hw/pdlvds_rx.fr26.kicad_pcb` · Commit: `b8feded3391365c287c593c33d3281a6a429e622`
+
+cluster clearing U10 disc (16,10) r3.6: 1/2 HV targets connected
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 44 · Audit verdict: FAIL
+
+### Pass 42 — 2026-11-04T19:57:05Z · commit `d247c5c`
+
+Board: `hw/pdlvds_rx.fr27.kicad_pcb` · Commit: `d247c5c9e3ed4b0c305fdae9788a7a96988387ad`
+
+cluster clearing U6 west disc (83,44) r3.5: USB_RST U6.40 not connected by astar even in the cleared field (fanout-model seal)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 49 · Audit verdict: FAIL
+
+### Pass 43 — 2026-11-04T19:57:49Z · commit `043b44e`
+
+Board: `hw/pdlvds_rx.fr28.kicad_pcb` · Commit: `043b44e7ce6564089c7c0fb0d3a7396060a27e64`
+
+cluster clearing U13 disc (48,62) r3.6: ILIM_P U13.5 connected
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 50 · Audit verdict: FAIL
+
+### Pass 44 — 2026-11-04T19:58:31Z · commit `2b9154b`
+
+Board: `hw/pdlvds_rx.fr29.kicad_pcb` · Commit: `2b9154b2c6237443ec035b56dc71ff3192ee4461`
+
+repairg healing after cluster chain 2: 68 groups connected (victims repaid in the cleared fields), sweep 2 connected 0; 37 unconnected nets, 85 groups, clearance 3
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 37 · Audit verdict: FAIL
+
+### Pass 45 — 2026-11-04T19:59:31Z · commit `769f95e`
+
+Board: `hw/pdlvds_rx.fr30.kicad_pcb` · Commit: `769f95e946b0175012572087c588e2cce2cad7bf`
+
+stub campaign 2 on the healed field: +3V3A U7.30/U7.31 stubbed; CF1/CF2 re-stubbed (their campaign-1 stubs were ripped as cluster victims)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 37 · Audit verdict: FAIL
+
+### Pass 46 — 2026-11-04T20:00:27Z · commit `a71a04e`
+
+Board: `hw/pdlvds_rx.fr31.kicad_pcb` · Commit: `a71a04e62d3713b2d10007b737ea3c2d3eb81fbd`
+
+small-disc clear (31.5,63.4) r2.4 with immediate audit-exact stubs: ULPI_STP, ULPI_DIR, ULPI_CK stubbed; ULPI_NXT U7.11 still sealed
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 42 · Audit verdict: FAIL
+
+### Pass 47 — 2026-11-04T20:01:49Z · commit `cffc8be`
+
+Board: `hw/pdlvds_rx.fr32.kicad_pcb` · Commit: `cffc8beca43c63fc97fff95a76a3d87ee96a0169`
+
+small-disc clear (30,58.5) r2.6 with immediate stubs: PHY_1V8A U7.29 stubbed; +3V3A U7.6 still sealed
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 44 · Audit verdict: FAIL
+
+### Pass 48 — 2026-11-04T20:03:22Z · commit `69c7cca`
+
+Board: `hw/pdlvds_rx.fr33.kicad_pcb` · Commit: `69c7cca6cef35050814e4518b80d0b5760ffb59a`
+
+small-disc clear (84.5,43.5) r2.5 with immediate stubs: ULPI_D6 U6.74 stubbed; USB_RST U6.40 still sealed
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 49 · Audit verdict: FAIL
+
+### Pass 49 — 2026-11-04T20:04:18Z · commit `32030c5`
+
+Board: `hw/pdlvds_rx.fr34.kicad_pcb` · Commit: `32030c524ea1de6609ad615cc56d04a69530fff1`
+
+small-disc clear (16,10) r3.0: HV_INTVCC U10.8 / HV_SS U10.3 stubs still refused by the stub search's openness test
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 53 · Audit verdict: FAIL
+
+### Pass 50 — 2026-11-04T20:05:10Z · commit `6a5a9b9`
+
+Board: `hw/pdlvds_rx.fr35.kicad_pcb` · Commit: `6a5a9b9335eff9a1b22634f82fb12439571ebfbd`
+
+small-disc clear (52.5,54) r2.6 with immediate stub: REFCLKN U4.11 stubbed; THRADJ U4.9 still sealed
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 54 · Audit verdict: FAIL
+
+### Pass 51 — 2026-11-04T20:06:04Z · commit `dab3529`
+
+Board: `hw/pdlvds_rx.fr37.kicad_pcb` · Commit: `dab352998dba6271cce5cdc932dde399481b061f`
+
+surgery2 (hw/surgery2.py — probe 16 directions, rip the cheapest rippable blockers, place a 0.2 mm neck): +3V3A U7.6 stubbed (1 DP_PHY via ripped), USB_RST U6.40, HV_INTVCC U10.8, HV_SS U10.3 stubbed (their necks were clean all along; the stub search's endpoint-openness test had been the blocker)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 54 · Audit verdict: FAIL
+
+### Pass 52 — 2026-11-04T20:07:19Z · commit `6bd1ae4`
+
+Board: `hw/pdlvds_rx.fr38.kicad_pcb` · Commit: `6bd1ae40bb898fb8feefd20c5cfd4b013bfc4079`
+
+surgery2 with pad-aware blocker pricing (pads cost 10, tracks/vias 1): ULPI_NXT U7.11 stubbed south (3 ULPI_STP items ripped), THRADJ U4.9 stubbed (2 GND tracks ripped) — every formerly singleton pad on the board now has copper
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 54 · Audit verdict: FAIL
+
+### Pass 53 — 2026-11-04T20:08:16Z · commit `6755cd8`
+
+Board: `hw/pdlvds_rx.fr39.kicad_pcb` · Commit: `6755cd89d0eeb28d390b90530444e603c602b2ab`
+
+repairg healing on the surgery board: 40 groups connected, sweep 2 connected 0; 39 unconnected nets, 87 groups, clearance 3
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 39 · Audit verdict: FAIL
+
+### Pass 54 — 2026-11-04T20:09:18Z · commit `a36d5f2`
+
+Board: `hw/pdlvds_rx.fr40.kicad_pcb` · Commit: `a36d5f28a59059bd69a58e4cf2dbd32fa88b5991`
+
+ripup 'all' batch 1 on the healed board: 3 groups connected through ripped fences (victims queued for the next heal)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 47 · Audit verdict: FAIL
+
+### Pass 55 — 2026-11-04T20:10:22Z · commit `a153b60`
+
+Board: `hw/pdlvds_rx.fr41.kicad_pcb` · Commit: `a153b60cd4537d26a354aac30e9609d7dbc6ce97`
+
+ripup 'all' batch 2: 1 group connected
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 49 · Audit verdict: FAIL
+
+### Pass 56 — 2026-11-04T20:12:12Z · commit `a7dc784`
+
+Board: `hw/pdlvds_rx.fr42.kicad_pcb` · Commit: `a7dc78456f13552b7c67fa2347c7a81033b7354d`
+
+repairg healing: 17 groups connected (ripup victims repaid; APD_K's three groups merged); 39 unconnected nets, 83 groups, clearance 3
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 39 · Audit verdict: FAIL
+
+### Pass 57 — 2026-11-04T20:14:26Z · commit `9f1ce83`
+
+Board: `hw/pdlvds_rx.fr43.kicad_pcb` · Commit: `9f1ce83f645b53e190761b2166aeecbd036c0de1`
+
+hand bridges (hw/bridge.py): VBUS_RAW, ULPI_D0 and +5V group pairs bridged across 1.0-1.45 mm gaps, one fence item ripped each
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 37 · Audit verdict: FAIL
+
+### Pass 58 — 2026-11-04T20:15:33Z · commit `577a6b0`
+
+Board: `hw/pdlvds_rx.fr44.kicad_pcb` · Commit: `577a6b066fa0a8730c71f46a66443d8f517eda4f`
+
+hand segment joins the floating fanout chain west of D1 to APD_A's main group (the chain proved to be main-group copper; D1.6's pad itself still lone)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 37 · Audit verdict: FAIL
+
+### Pass 59 — 2026-11-04T20:16:51Z · commit `7ea91c7`
+
+Board: `hw/pdlvds_rx.fr45.kicad_pcb` · Commit: `7ea91c721a3bdc0afca185513cd7c7b167e6ae3c`
+
+D1.6 link segment from the pad's NW corner to its fanout chain: APD_A fully connected (36 unconnected nets). The segment passes D1.5 at ~0.96 mm — the 4th item of the justified D1 package-geometry graze family (the APD's own terminals are 0.5 mm apart; the 1.0 mm board rule cannot be met inside the footprint)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 36 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

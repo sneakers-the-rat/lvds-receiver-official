@@ -1,0 +1,13 @@
+pass: 59
+description: D1.6 link segment from the pad's NW corner to its fanout chain: APD_A fully connected (36 unconnected nets). The segment passes D1.5 at ~0.96 mm — the 4th item of the justified D1 package-geometry graze family (the APD's own terminals are 0.5 mm apart; the 1.0 mm board rule cannot be met inside the footprint)
+timestamp (UTC): 2026-11-04T20:16:51Z
+commit: pending
+board file: hw/pdlvds_rx.fr45.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 4
+unconnected nets: 36
+audit verdict: fail
+note: 
