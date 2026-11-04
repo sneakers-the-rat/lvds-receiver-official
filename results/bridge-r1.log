@@ -1,0 +1,69 @@
++3V3D: bridged gap 0.20 on layer 0 via 1 seg(s), ripped 0
++5V: bridged gap 0.20 on layer 0 via 1 seg(s), ripped 0
++3V3A: bridged gap 0.20 on layer 0 via 1 seg(s), ripped 0
++3V3D_CDR: bridged gap 0.23 on layer 0 via 1 seg(s), ripped 0
+APD_K: no bridge placed (gap 2.29)
+HV_FBX: bridged gap 1.34 on layer 0 via 1 seg(s), ripped 0
+CDR_CLKN: nearest gap 9.9 — too far
+CDR_CLKP: nearest gap 9.9 — too far
+CDR_DATN: nearest gap 9.9 — too far
+CDR_DATP: nearest gap 9.9 — too far
+HV_SHDN: bridged gap 1.65 on layer 0 via 1 seg(s), ripped 0
+I2C_SCL: nearest gap 9.9 — too far
+I2C_SDA: nearest gap 9.9 — too far
++VA: bridged gap 0.20 on layer 0 via 1 seg(s), ripped 0
+-VA: bridged gap 0.46 on layer 2 via 1 seg(s), ripped 0
+HV_RAW: bridged gap 2.10 on layer 0 via 1 seg(s), ripped 0
+HV_SENSE: bridged gap 1.17 on layer 0 via 1 seg(s), ripped 0
+PHY_1V8: nearest gap 9.9 — too far
+TMP_ALERT: nearest gap 9.9 — too far
+XI: no bridge placed (gap 1.77)
+XO: nearest gap 9.9 — too far
+CAP_CLK: nearest gap 9.9 — too far
+CAP_DATA: nearest gap 9.9 — too far
+CC2: no bridge placed (gap 2.07)
+CDR_LOL: nearest gap 9.9 — too far
+CDR_LOS: nearest gap 9.9 — too far
+CDR_NIN: nearest gap 9.9 — too far
+CDR_PIN: nearest gap 9.9 — too far
+CDR_SQUELCH: nearest gap 9.9 — too far
+CDR_VREF: nearest gap 9.9 — too far
+CF1: nearest gap 9.9 — too far
+CF2: nearest gap 9.9 — too far
+CMP_QN: nearest gap 9.9 — too far
+DM_PHY: nearest gap 9.9 — too far
+DP_PHY: nearest gap 9.9 — too far
+FLY_PRI: bridged gap 0.83 on layer 0 via 1 seg(s), ripped 0
+HV_DAC: nearest gap 9.9 — too far
+HV_GATE: nearest gap 9.9 — too far
+HV_INTVCC: nearest gap 9.9 — too far
+HV_RT: nearest gap 9.9 — too far
+HV_SEC: bridged gap 1.10 on layer 0 via 1 seg(s), ripped 0
+HV_SS: nearest gap 9.9 — too far
+HV_VC: nearest gap 9.9 — too far
+HV_VC2: bridged gap 2.77 on layer 0 via 1 seg(s), ripped 0
+ILIM_A: no bridge placed (gap 2.71)
+MOS_G: nearest gap 9.9 — too far
+PHY_1V8A: nearest gap 9.9 — too far
+RBIAS: nearest gap 9.9 — too far
+REFCLK: nearest gap 9.9 — too far
+REFCLKN: nearest gap 9.9 — too far
+SET_P: nearest gap 9.9 — too far
+SLICEN: nearest gap 9.9 — too far
+SLICEP: nearest gap 9.9 — too far
+THRADJ: nearest gap 9.9 — too far
+TP_HV: nearest gap 9.9 — too far
+ULPI_CK: nearest gap 9.9 — too far
+ULPI_D0: nearest gap 9.9 — too far
+ULPI_D1: nearest gap 9.9 — too far
+ULPI_D2: nearest gap 9.9 — too far
+ULPI_D3: nearest gap 9.9 — too far
+ULPI_D4: nearest gap 9.9 — too far
+ULPI_D5: nearest gap 9.9 — too far
+ULPI_D6: nearest gap 9.9 — too far
+ULPI_D7: nearest gap 9.9 — too far
+ULPI_DIR: nearest gap 9.9 — too far
+ULPI_NXT: nearest gap 9.9 — too far
+ULPI_STP: nearest gap 9.9 — too far
+USB_RST: nearest gap 9.9 — too far
+saved hw/pdlvds_rx.exp2.kicad_pcb.tmp.kicad_pcb

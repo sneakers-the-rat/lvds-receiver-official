@@ -1,0 +1,9 @@
+=== bridge round 1: 68 nets ===
+round 1: unconnected nets=66 total groups=237 violations=2
+=== bridge round 2: 65 nets ===
+round 2: unconnected nets=65 total groups=231 violations=2
+=== bridge round 3: 64 nets ===
+round 3: unconnected nets=65 total groups=228 violations=2
+=== bridge round 4: 64 nets ===
+round 4: unconnected nets=65 total groups=226 violations=2
+campaign done

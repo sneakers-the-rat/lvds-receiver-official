@@ -1,0 +1,50 @@
+CI steps selected: 1,2,4,5,6,7,9
+
+=== 1/11 python codec unit tests ===
+/usr/bin/python3: No module named pytest
+PASS test_all_k_codes_both_rd
+PASS test_code_and_disparity_errors
+PASS test_comma_alignment_bit_shifted
+PASS test_disparity_invariant_long_stream
+PASS test_exhaustive_round_trip_both_rd
+PASS test_known_data_vectors
+PASS test_manchester_invalid_pairs
+PASS test_manchester_round_trip_random
+PASS test_packet_build_and_parse
+PASS test_prbs_checker_counts_injected_errors
+PASS test_prbs_determinism_and_seed_rule
+PASS: all 11 codec tests passed
+
+=== 2/11 link budget check (R2 must PASS) ===
+link budget PASS
+
+=== 4/11 digital simulation (8b/10b / Manchester / PRBS-15) ===
+PASS: digital_sim -- all checks passed
+plot: results/digital_sim.png
+wrote /home/hatch/workspace/pdlvds-route/results/digital_sim.txt
+
+=== 5/11 HV analytical design check ===
+PASS  Bleeder 420->60 V in < 10 s (R9)
+
+HV DESIGN VERDICT: PASS
+
+=== 6/11 impedance calculation ===
+DIFF_W_MM   = 0.300
+DIFF_GAP_MM = 0.349
+VERDICT: PASS — closed-form solution converges to 50.0 / 100.0 ohm within 1 ohm; fab coupon verification is in the test plan (docs/05).
+
+=== 7/11 firmware host unit tests ===
+PASS init emits the 5 expected frames, each SYNC-pulsed on PA15
+PASS init never touches PA4 (USB_RST)
+test_dac8562: all checks passed
+
+=== 9/11 host tool simulation smoke test ===
+selftest: BIST LED -> APD -> TIA -> comparator -> CDR -> MCU (simulated with the real codec)
+  packet loopback (8b10b): PASS
+  PRBS-15 checker on clean channel: PASS
+  control plane (bias/threshold/status): PASS
+selftest: PASS
+rxhost simulate PASS
+
+CI: ALL STEPS PASS
+CI_PRE rc=0

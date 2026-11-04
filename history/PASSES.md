@@ -562,6 +562,16 @@ Nets fully routed: not recorded · Pins failed: not recorded · Clearance violat
 
 Intermediate audits: results/audit-refill-candidate.txt (pour extension only: GND 51->7, violations 2->10) and results/audit-notch-candidate.txt (after notch: violations back to 2, GND 7->9 — two GND pads inside the notch rects lost pour contact, left for stitch/repair).
 
+### Pass 67 — 2026-11-04T23:56:47Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp2.kicad_pcb` · Commit: `pending`
+
+expansion routing 2: bridge campaign (4 rounds, hw/bridge.py batched) on the repairg exp1 checkpoint board. Total groups 253 -> 226, unconnected nets 69 -> 65, violations 2 (justified D1 pair). Round yields -16/-6/-3/-2: nearest-pair bridges consumed; rails merged one pair per round (+3V3D/+5V/+3V3A/+3V3D_CDR all connected once per round), HV cluster nets bridged in the strip (HV_FBX, HV_SHDN, HV_RAW, HV_SENSE, FLY_PRI, HV_SEC, HV_VC2), +/-VA joined. ULPI bus (U7<->U6) untouched: nearest fragments >3 mm apart (bridge gap sentinel 9.9) — A* territory. Decay curve says change shape: next = rails bridge-chain, thread.py on geometry-stuck pairs, repairg2 sweep for long hauls.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 65 · Audit verdict: FAIL
+
+bridge rounds in results/bridge-r1..r4.log; audits in results/audit-bridge-r1..r4.txt
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
