@@ -940,6 +940,28 @@ order): passes 1-5 = v1..v5 routes; 6-9 = repair attempts 1-4;
 1 (d489c78)**. Pass 15 will be that run's next checkpoint/sweep
 state, and so on.
 
+## Token chart v2 (2026-11-04) — Pacific axis, stacked cumulative
+
+User directives 2026-11-04 02:16–02:17 PST, same data snapshot
+(133,920,588 gross tokens @ 2026-11-04T08:29:34Z), new rendering only:
+
+- `metrics/token_per_message.svg` now plots all timestamps in Pacific
+  time (America/Los_Angeles) — axis ticks, epoch labels, span/snapshot
+  caption; the x-axis is labelled as Pacific time. CSVs unchanged
+  (epoch seconds); this is display-only.
+- The single cumulative line is replaced by a six-layer stacked
+  cumulative plot: one hue per scope (main chat / subagents /
+  checkpoint cron, matching the top panel), darker shade = input,
+  lighter shade = output, a scope's layers adjacent so each scope's
+  cumulative subtotal is readable, and the top edge of the stack is
+  the grand cumulative total. Layer finals: main chat 51,605,352 in +
+  141,610 out; subagents 65,734,580 in + 408,578 out; checkpoint cron
+  15,914,052 in + 116,416 out; stack top 133,920,588 == the CSV's
+  final cum_total_tokens (asserted inside make_token_chart.py and
+  re-verified with an independent summation of the CSVs). Output is
+  0.5% of gross, so the light layers are thin — the caption says so.
+- The site's Token usage section now shows the snapshot time in
+  Pacific time (UTC in parentheses). No other section touched.
 ## Pass system — structure (2026-11-04, branch pass-structure)
 
 The pass counter now has its machinery, built by the structure
@@ -990,3 +1012,32 @@ worker on the `pass-structure` branch:
   committed" note. `history/index.json` and the two-step
   snapshot_route flow are retired (frozen legacy); commit_pass.py
   reuses snapshot_route's render machinery.
+## Cost summary — list-price equivalents (2026-11-04)
+
+- **What landed**: `metrics/cost_summary.csv` + `metrics/api_rates.json`
+  + `metrics/make_cost_summary.py` (generator, cross-checks totals
+  against `token_series.csv`), and a "Cost summary (list-price
+  equivalents)" section in `metrics/README.md`, beneath the token
+  summaries. Same snapshot as the token export
+  (2026-11-04T08:29:34Z): 133,253,984 input + 666,604 output tokens.
+- **Framing**: subscriptions differ across all three providers and are
+  unquantifiable; the project ran on a Muse subscription (flat cost).
+  These are rough estimates of what the same volume would cost at
+  published pay-as-you-go API list prices — for scaling decisions, not
+  a bill and not the project's cost.
+- **Totals**: Muse `muse-wonder-1.0` (Meta Model API Standard,
+  $4.00 in / $0.20 cached / $20.00 out) **$546**; Claude Opus 5.5
+  ($4 / $0.20 cache read / $20) **$546** — identical because the rate
+  cards are identical; OpenAI GPT-6 Astra ($10 / $1.00 / $50)
+  **$1,366**. Per-scope rows (main chat / subagents / checkpoint cron)
+  are in the CSV and README table. Cache sensitivity at an assumed
+  95% cache-read share: totals fall to ≈$65 (Muse, Claude) and
+  ≈$227 (OpenAI); the measured input-split estimate supersedes the
+  assumed share when it lands.
+- **Model census**: `agent.agents.model` is populated for all 66
+  project agents, but only with internal codenames — 49 roots
+  `ipnext/watermelon-v0`, 17 subagents `ipnext/avocado-5.17-v1`. No
+  Anthropic/OpenAI model name appears in any project record;
+  transcripts carry no model field and `runtime.requests` has no
+  model column. No evidence any project agent was served by a
+  non-Muse model; the Claude/OpenAI figures are equivalents only.
