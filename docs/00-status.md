@@ -939,3 +939,26 @@ order): passes 1-5 = v1..v5 routes; 6-9 = repair attempts 1-4;
 (e8a0954); **14 = repair6-on-placement-revised-board checkpoint
 1 (d489c78)**. Pass 15 will be that run's next checkpoint/sweep
 state, and so on.
+
+## Token chart v2 (2026-11-04) — Pacific axis, stacked cumulative
+
+User directives 2026-11-04 02:16–02:17 PST, same data snapshot
+(133,920,588 gross tokens @ 2026-11-04T08:29:34Z), new rendering only:
+
+- `metrics/token_per_message.svg` now plots all timestamps in Pacific
+  time (America/Los_Angeles) — axis ticks, epoch labels, span/snapshot
+  caption; the x-axis is labelled as Pacific time. CSVs unchanged
+  (epoch seconds); this is display-only.
+- The single cumulative line is replaced by a six-layer stacked
+  cumulative plot: one hue per scope (main chat / subagents /
+  checkpoint cron, matching the top panel), darker shade = input,
+  lighter shade = output, a scope's layers adjacent so each scope's
+  cumulative subtotal is readable, and the top edge of the stack is
+  the grand cumulative total. Layer finals: main chat 51,605,352 in +
+  141,610 out; subagents 65,734,580 in + 408,578 out; checkpoint cron
+  15,914,052 in + 116,416 out; stack top 133,920,588 == the CSV's
+  final cum_total_tokens (asserted inside make_token_chart.py and
+  re-verified with an independent summation of the CSVs). Output is
+  0.5% of gross, so the light layers are thin — the caption says so.
+- The site's Token usage section now shows the snapshot time in
+  Pacific time (UTC in parentheses). No other section touched.
