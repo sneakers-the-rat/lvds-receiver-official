@@ -1,0 +1,13 @@
+pass: 36
+description: repairg round 2: 10 more groups in sweep 1 (APD_A corner re-bridged 7 -> 2 groups; HV_GATE, MOS_G, NEG_RAW, ULPI_D4 closed), sweep 2 connected 0 and the run stopped by its own rule; 36 unconnected nets remain, mostly lone-pad vs stub long hauls
+timestamp (UTC): 2026-11-04T17:10:26Z
+commit: pending
+board file: hw/pdlvds_rx.fr20.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 20
+unconnected nets: 36
+audit verdict: fail
+note: 
