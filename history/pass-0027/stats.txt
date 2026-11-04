@@ -1,0 +1,13 @@
+pass: 27
+description: U9 cluster clearing (disc 8,48 r3.4): 0/4 — full clearing changed nothing; U9's pins are sealed by their own exposed pad (0.075 mm) inside the router's centre-anchored fanout model; hand-placed stubs are the route (the audit judges exact shapes, the model anchors at pad centres)
+timestamp (UTC): 2026-11-04T15:06:52Z
+commit: pending
+board file: hw/pdlvds_rx.fr10.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 13
+unconnected nets: 50
+audit verdict: fail
+note: 
