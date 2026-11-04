@@ -1,0 +1,45 @@
+// pdlvds_h723.repl — STM32H723 platform for the LVDS receiver, Renode format.
+// UNTESTED: authored from the design sources, never executed (REFUSAL-RECORD.md).
+//
+// HOW TO USE: start from Renode's bundled STM32H7 platform file
+//   (find renode -iname '*stm32h7*' -name '*.repl')
+// and reconcile it against this file: the memory map below is authoritative
+// for THIS design (from firmware/linker.ld); the peripheral list is the set
+// the firmware actually touches (firmware/src/board.h, hw/CONNECTIONS.md).
+// Addresses follow the repo's own convention: VERIFY against RM0468.
+//
+// Memory map (firmware/linker.ld):
+//   FLASH    0x08000000  1024K
+//   DTCM     0x20000000   128K   (stack lives here: _estack = top of DTCM)
+//   AXI SRAM 0x24000000   512K
+//
+// cpu: STM32H723 is a Cortex-M7 (use Renode's bundled H7 CPU/peripheral
+// models where they exist; the H723 and H743 peripheral sets are near
+// identical for the blocks below).
+//
+// Peripherals the firmware drives (board.h bases, all VERIFY vs RM0468):
+//   RCC        0x58024400   clocks.c — must at least accept the PLL config
+//   PWR        0x58024800   USB33DEN bit is written by the USB glue
+//   SYSCFG     0x58000400   PMCR analog switches (ULPI PC2_C/PC3_C)
+//   GPIOA..H   0x58020000+  ULPI on AF10, USB3300 reset on PA4 (active high)
+//   OTG_HS     USB device controller, ULPI external PHY (USB3300);
+//              firmware runs the DWC2 in slave (non-DMA) mode
+//   SPI3                  DAC8562, SYNC = PA15 (per schematic; see
+//                         hw/CONNECTIONS.md) — threshold path
+//   I2C1/I2C2  0x40005400 / 0x40005800   TMP117 + config devices
+//   ADN2813 CDR           modelled boundary: recovered clock/data enter
+//                         the capture path; CDR lock behaviour is a
+//                         stimulus parameter, not an emulated chip
+//   Capture input         comparator's digitized chip stream arrives via
+//                         the timer/SPI-slave capture the firmware arms
+//                         in capture.c — inject the codec chain's chip
+//                         stream here (Manchester 16 Mbaud, PRBS-15)
+
+flash: Memory.MappedMemory @ sysbus 0x08000000
+    size: 0x100000
+
+dtcm: Memory.MappedMemory @ sysbus 0x20000000
+    size: 0x20000
+
+axi_sram: Memory.MappedMemory @ sysbus 0x24000000
+    size: 0x80000

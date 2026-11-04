@@ -1,0 +1,25 @@
+// run-device.resc — boot the receiver firmware on the emulated STM32H723.
+// UNTESTED (REFUSAL-RECORD.md). Run from this folder:
+//   ./renode/renode --console run-device.resc   (renode/ installed by step 2)
+// Stage A: boot the unmodified ELF to its main loop. Score per README.
+// Stage B: USB bridge — uncomment only after Stage A scores. Renode's USB
+// device support for the DWC2/OTG block is the fidelity question this
+// package exists to answer; if the platform cannot present the CDC
+// endpoint to the host, bridge at the firmware's byte-pipe boundary and
+// record that as the Stage B result (see README scoring).
+
+mach create "pdlvds_rx"
+// Reconcile pdlvds_h723.repl with Renode's bundled STM32H7 platform first
+// (README step 3); the line below assumes the reconciled file keeps
+// this name.
+machine LoadPlatformDescription @pdlvds_h723.repl
+sysbus LoadELF @../../firmware/build/rxfw.elf
+
+// Stage A
+start
+
+// Stage B (after Stage A scores): expose the device endpoint.
+// The reconciled platform notes (pdlvds_h723.repl header) record which
+// mechanism the bundled H7 platform offers for the OTG block; create the
+// host-visible serial endpoint there and note its path for
+// 03-host-tool-test.md / drive_protocol.py.
