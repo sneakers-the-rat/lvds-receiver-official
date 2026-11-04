@@ -33,7 +33,12 @@ void hv_ctrl_init(hv_ctrl_t *hv)
     hv->enabled = 0;
     hv->interlock_ok = 0;
     hv->fault = 0;
-    gpio_write(BOARD_HV_EN_PORT, BOARD_HV_EN_PIN, 0);
+    /* Hold the converter in shutdown: PC7 low pulls the LT3757
+     * SHDN node to ~0 V (board.h). gpio_init_board_pins() has
+     * already configured the pin as an output driving low; this
+     * write keeps hv_ctrl_init() self-sufficient about the state
+     * it owns. */
+    gpio_write(BOARD_HV_SHDN_PORT, BOARD_HV_SHDN_PIN, 0);
     /* DAC bias channel to 0 - the caller (main) runs dac8562_init
      * before hv_ctrl_init, so the channel exists. */
     (void)dac8562_set_bias_setpoint(0u);
@@ -54,23 +59,28 @@ float hv_ctrl_target_for_temp(const hv_ctrl_t *hv, float temp_c)
 int hv_ctrl_enable(hv_ctrl_t *hv, int on)
 {
     if (on) {
-        hv->interlock_ok = gpio_read(BOARD_INTERLOCK_PORT,
-                                     BOARD_INTERLOCK_PIN);
+        /* The gate is NOT sampled from a pin: rev A has no interlock
+         * input (docs/06-hv-cdr-pin-inventory.md), so interlock_ok
+         * is never set and this refusal always fires. That is the
+         * recorded owner design decision - see hv_ctrl.h. */
         if (!hv->interlock_ok) {
             hv->fault = 1;
-            return -1; /* refused: interlock open */
+            return -1; /* refused: interlock gate unsatisfied */
         }
         hv->fault = 0;
         hv->enabled = 1;
-        gpio_write(BOARD_HV_EN_PORT, BOARD_HV_EN_PIN, 1);
+        /* Release the shutdown clamp: PC7 high lets the SHDN node
+         * rise to the divider's 1.24 V, above the LT3757 threshold. */
+        gpio_write(BOARD_HV_SHDN_PORT, BOARD_HV_SHDN_PIN, 1);
         return 0;
     }
     hv->enabled = 0;
-    gpio_write(BOARD_HV_EN_PORT, BOARD_HV_EN_PIN, 0);
-    /* Note: with HV_EN low the flyback stops; the hardware bleeder
-     * (docs/02) discharges the rail below 60 V within 10 s. The DAC
-     * setpoint is also driven to 0 in hv_ctrl_update's disabled path
-     * so a later enable starts from 0 and slews up, never jumps. */
+    gpio_write(BOARD_HV_SHDN_PORT, BOARD_HV_SHDN_PIN, 0);
+    /* Note: with HV_SHDN clamped low the flyback stops; the
+     * hardware bleeder (R30, docs/03) discharges the rail below
+     * 60 V within ~1 s. The DAC setpoint is also driven to 0 in
+     * hv_ctrl_update's disabled path so a later enable starts
+     * from 0 and slews up, never jumps. */
     return 0;
 }
 
@@ -81,10 +91,11 @@ int hv_ctrl_update(hv_ctrl_t *hv, float temp_c, int temp_valid)
     uint16_t counts;
     int r;
 
-    hv->interlock_ok = gpio_read(BOARD_INTERLOCK_PORT,
-                                 BOARD_INTERLOCK_PIN);
+    /* Safety invariant, kept even though rev A can never be in the
+     * enabled state: if the gate is (or becomes) unsatisfied while
+     * HV is enabled, drop HV immediately. Nothing samples a pin
+     * here - there is no interlock input to sample (hv_ctrl.h). */
     if (hv->enabled && !hv->interlock_ok) {
-        /* Interlock opened under power: drop HV immediately. */
         (void)hv_ctrl_enable(hv, 0);
         hv->fault = 1;
     }

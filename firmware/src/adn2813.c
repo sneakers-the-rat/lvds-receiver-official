@@ -1,19 +1,24 @@
 /*
  * adn2813.c - skeleton-plus: the I2C transaction logic is complete
  * (via i2c.c); the ADN2813 register numbers and the rate scaling are
- * NOT verified - there is no ADN2813 datasheet in datasheets/ yet.
- * Every constant below carries its VERIFY marker; fill them in from
- * the datasheet as bring-up item (see README) before trusting any
- * value this driver returns.
+ * NOT verified - the register map is not among the datasheet
+ * material extracted into datasheets/MANIFEST.md. Every register
+ * constant below carries its VERIFY marker; fill them in from the
+ * datasheet as bring-up item (see README) before trusting any value
+ * the I2C paths return. The status pins (LOS/LOL) need no register
+ * map: they are read as GPIOs, with pin numbers and polarity from
+ * the manifest's pin-function extraction.
  */
 #include "adn2813.h"
 #include "board.h"
 #include "gpio.h"
 #include "i2c.h"
 
-/* VERIFY vs ADN2813 datasheet - placeholder register assignments: */
-#define ADN2813_REG_STATUS    0x00u /* VERIFY: status/LOL register */
-#define ADN2813_STATUS_LOL    0x01u /* VERIFY: LOL bit mask */
+/* VERIFY vs ADN2813 datasheet - placeholder register assignments.
+ * REG_STATUS is used only as an init presence probe (any readable
+ * register proves the part ACKs); LOL no longer comes from a
+ * register - it is a hardware pin, read in adn2813_lol_asserted(). */
+#define ADN2813_REG_STATUS    0x00u /* VERIFY: status register */
 #define ADN2813_REG_RATE_MSB  0x02u /* VERIFY: rate readback MSB */
 #define ADN2813_REG_RATE_LSB  0x03u /* VERIFY: rate readback LSB */
 /* VERIFY: rate readback unit. Placeholder assumption: the 16-bit
@@ -44,18 +49,18 @@ int adn2813_read_rate_kbps(uint32_t *kbps_out)
 
 int adn2813_lol_asserted(void)
 {
-    uint8_t status = 0;
-    int r = i2c_read_regs(ADN2813_ADDR7, ADN2813_REG_STATUS, &status, 1u);
-    if (r != 0) {
-        return r;
-    }
-    return (status & ADN2813_STATUS_LOL) != 0u;
+    /* LOL is a hardware pin on the ADN2813 (pin 16) routed to PA2;
+     * LVTTL active high (datasheets/MANIFEST.md), so the pin value
+     * is the assertion state. Reading the pin replaces an earlier
+     * read of an unverified I2C status-register bit. */
+    return gpio_read(BOARD_CDR_LOL_PORT, BOARD_CDR_LOL_PIN);
 }
 
 int adn2813_los_asserted(void)
 {
-    /* LOS is a hardware pin on the ADN2813 routed to BOARD_LOS_PIN;
-     * reading the pin is the primary path (it works even if I2C is
-     * down). Polarity: VERIFY vs datasheet at bring-up. */
-    return gpio_read(BOARD_LOS_PORT, BOARD_LOS_PIN);
+    /* LOS is a hardware pin on the ADN2813 (pin 22) routed to PB14;
+     * LVTTL active high (datasheets/MANIFEST.md), so the pin value
+     * is the assertion state. Reading the pin is the primary path
+     * (it works even if I2C is down). */
+    return gpio_read(BOARD_CDR_LOS_PORT, BOARD_CDR_LOS_PIN);
 }

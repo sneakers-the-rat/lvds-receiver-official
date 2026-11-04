@@ -3,13 +3,25 @@
  * The setpoint lives in the DAC8562 bias channel; this module adds:
  *   - temperature compensation at the C30737 breakdown tempco,
  *   - slew-rate limiting on every change,
- *   - an interlock gate (HV can only be enabled with the interlock
- *     input closed, and drops immediately if it opens),
+ *   - an interlock gate (HV can only be enabled while the gate is
+ *     satisfied, and drops immediately if it ceases to be),
  *   - safe defaults: off at power-up, output driven to 0 on disable.
- * The hardware side (docs/02) additionally has an independent OVP
- * zener clamp at 440 V, a primary current limit, and a bleeder that
- * discharges the rail below 60 V within 10 s of disable - firmware is
- * never the only protection. */
+ *
+ * The gate has NO input on rev A: the drawn design fits no interlock
+ * jumper, switch or sense pin (inventory: docs/06-hv-cdr-pin-
+ * inventory.md), so nothing ever satisfies it and hv_ctrl_enable()
+ * refuses every enable. That is deliberate - an owner design
+ * decision recorded in docs/00-status.md and firmware/BRINGUP.md,
+ * not a stub: firmware must not invent a safety input the board
+ * does not have. The converter is held off positively via PC7
+ * (HV_SHDN, board.h) regardless.
+ *
+ * Drawn hardware protections (hw/circuit.py - the earlier claim of
+ * an independent OVP zener clamp came from docs/02 and is NOT in
+ * the drawn design; do not rely on it): the LT3757's cycle-by-cycle
+ * primary current limit via the R28 sense resistor, the R30 4.7 MOhm
+ * bleeder discharging the rail below 60 V within ~1 s of disable
+ * (docs/03), and the feedback divider ceiling (~420 V at V_DAC = 0). */
 #ifndef HV_CTRL_H
 #define HV_CTRL_H
 
@@ -25,7 +37,9 @@
 #define HV_FULL_SCALE_V       420.0f
 /* Slew limit applied to the commanded bias: volts per second. */
 #define HV_SLEW_V_PER_S       5.0f
-/* Hard firmware clamp, below the 440 V hardware OVP clamp. */
+/* Hard firmware clamp on the requested setpoint. There is no
+ * separate hardware OVP clamp in rev A (see header); the drawn
+ * loop's own ceiling is the feedback divider's, ~420 V. */
 #define HV_MAX_V              430.0f
 
 typedef struct {
@@ -33,15 +47,20 @@ typedef struct {
     float    commanded_v;       /* slew-limited voltage actually applied */
     uint16_t dac_counts;        /* counts last written to the DAC */
     int      enabled;           /* HV output stage enabled */
-    int      interlock_ok;      /* last interlock sample */
+    int      interlock_ok;      /* enable-gate state. On rev A no
+                                   interlock input exists, so nothing
+                                   ever sets this and it stays 0 -
+                                   see the header of this file. It is
+                                   published in GET_STATUS as-is. */
     int      fault;             /* latched fault: interlock/temp/DAC error */
 } hv_ctrl_t;
 
 void hv_ctrl_init(hv_ctrl_t *hv);
 /* Request a setpoint (volts at 25 C). Does not by itself enable HV. */
 void hv_ctrl_set_setpoint(hv_ctrl_t *hv, float volts_at_25c);
-/* Enable/disable the HV output (GPIO HV_EN + DAC). Enabling is
- * refused (returns -1) while the interlock is open. */
+/* Enable/disable the HV output (HV_SHDN clamp + DAC). Enabling is
+ * refused (returns -1) while the interlock gate is unsatisfied -
+ * which on rev A is always (see header). Disabling always works. */
 int  hv_ctrl_enable(hv_ctrl_t *hv, int on);
 /* Temperature-compensated target for a given temperature:
  *   Vset(T) = Vset25 + 1.3 V/C * (T - 25 C)     (pure function) */
