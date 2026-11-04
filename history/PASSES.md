@@ -448,6 +448,14 @@ surgery2 with pad-aware blocker pricing (pads cost 10, tracks/vias 1): ULPI_NXT 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 54 · Audit verdict: FAIL
 
+### Pass 53 — 2026-11-04T20:08:16Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr39.kicad_pcb` · Commit: `pending`
+
+repairg healing on the surgery board: 40 groups connected, sweep 2 connected 0; 39 unconnected nets, 87 groups, clearance 3
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 39 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
