@@ -456,9 +456,9 @@ repairg healing on the surgery board: 40 groups connected, sweep 2 connected 0; 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 39 · Audit verdict: FAIL
 
-### Pass 54 — 2026-11-04T20:09:18Z · commit `pending`
+### Pass 54 — 2026-11-04T20:09:18Z · commit `a36d5f2`
 
-Board: `hw/pdlvds_rx.fr40.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr40.kicad_pcb` · Commit: `a36d5f28a59059bd69a58e4cf2dbd32fa88b5991`
 
 ripup 'all' batch 1 on the healed board: 3 groups connected through ripped fences (victims queued for the next heal)
 
