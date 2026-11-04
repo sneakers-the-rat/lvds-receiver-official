@@ -1,0 +1,141 @@
+# Pass log — the layout history
+
+One monotonic counter for all layout work: **pass 1, pass 2,
+pass 3, …** A pass is a commit that produced a new board state
+(a routing or placement change to a `hw/*.kicad_pcb` file),
+numbered in commit order; pass 1 is the first committed board
+state. Strategy changes are described in each pass's changelog
+line below — never encoded in names. Named families from before
+the counter ("router v3", "repair6 attempt 1", "v6 + diagonals")
+survive only inside the descriptions, as history.
+
+Machine-readable twin: `history/passes.json` (the site reads it).
+New passes are added by `scripts/commit_pass.py` — one command
+that audits, renders, logs and commits. Numbers are never
+reused or reordered; a number, once committed, is permanent.
+Anything never measured is written as "not recorded" — numbers
+are never invented.
+
+## The passes
+
+### Pass 1 — 2026-11-03T19:43:45Z · commit `d0c0bca`
+
+Board: `hw/pdlvds_rx.kicad_pcb` · Commit: `d0c0bca09143177ae7a3f59f2cc6b8dc8500739a`
+
+Placement only: 144 footprints placed, GND zones and the HV isolation slot drawn, saved unrouted — the routing run was interrupted by a VM replacement. First committed board state; 0 of 112 nets routed.
+
+Nets fully routed: 0 of 112 · Pins failed: not recorded · Clearance violations: not recorded · Unconnected nets: not recorded · Audit verdict: not recorded
+
+Snapshot renders were made later from the board as committed at d0c0bca.
+
+### Pass 2 — 2026-11-03T20:52:25Z · commit `3ac1a43`
+
+Board: `hw/pdlvds_rx.kicad_pcb` · Commit: `3ac1a430b6b34aad838f234624f8244d95d50e0e`
+
+First committed routed board. Router gains neck-down where wide tracks meet fine-pitch pads and power-first net ordering (HV > power > LVDS > signals) — the fixes for the uncommitted v1/v2 failures (see gaps). 57 of 112 nets fully routed, 90 pins failed; no audit file was committed with this pass, so clearance violations and unconnected nets are not recorded.
+
+Nets fully routed: 57 of 112 · Pins failed: 90 · Clearance violations: not recorded · Unconnected nets: not recorded · Audit verdict: not recorded
+
+### Pass 3 — 2026-11-03T21:25:40Z · commit `41d7196`
+
+Board: `hw/pdlvds_rx.kicad_pcb` · Commit: `41d7196ba016876cd4c570858b575174c105ceee`
+
+Goal-cell exemption fix: a net's own target cells no longer count as blocked for it. 67 of 112 nets fully routed, 59 pins failed. The clearance figure (454) is the audit's violating-pair count as recorded in commit f8b9d1c — no audit file was committed with the pass itself — and the unconnected-net count was not recorded.
+
+Nets fully routed: 67 of 112 · Pins failed: 59 · Clearance violations: 454 · Unconnected nets: not recorded · Audit verdict: FAIL
+
+### Pass 4 — 2026-11-03T22:29:05Z · commit `fb2acf7`
+
+Board: `hw/pdlvds_rx.kicad_pcb` · Commit: `fb2acf7b80f74860a8301a3cce6eaf4df1abbb6f`
+
+Stricter clearance model in the router: vias never exempt, segment-midpoint tests, layer-aware HV clearance. Traded connections for correctness — 58 of 112 nets fully routed, 74 pins failed. First pass with a full audit committed: 98 unconnected nets, 341 clearance violations.
+
+Nets fully routed: 58 of 112 · Pins failed: 74 · Clearance violations: 341 · Unconnected nets: 98 · Audit verdict: FAIL
+
+### Pass 5 — 2026-11-04T00:18:21Z · commit `162cc87`
+
+Board: `hw/pdlvds_rx.repaired.kicad_pcb` · Commit: `162cc8762f15b8b432861d5dcaf89ba4ce13a7c0`
+
+Repair pass over the pass-4 board — the first repair run to survive to a commit (attempts 1–3 were lost; see gaps). 82 isolated groups connected across 2 sweeps, but clearance violations rose 341 → 445, so it was NOT adopted as the main board; the board is kept as the attempt artifact. Its verdict drove the next rewrite: the router's clearance model (grid-node + segment-midpoint tests) systematically under-protects against the audit's exact shape geometry.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 445 · Unconnected nets: 95 · Audit verdict: FAIL
+
+Audit: results/audit-repair-attempt4.txt, committed with the pass (copper items 2,208). No renders were committed for this pass.
+
+### Pass 6 — 2026-11-04T03:50:41Z · commit `b805fc3`
+
+Board: `hw/pdlvds_rx.kicad_pcb` · Commit: `b805fc37860f13a3d83fb11efe47e1b1ce8da968`
+
+Router rewritten with an exact clearance model — per-segment shape-distance tests in blocked(), zero slack, parity with the audit — and run full-board from the placed board: 30 of 112 nets fully routed, 144 pins failed, 83 unconnected nets, 64 clearance violations, none of them involving router-emitted geometry (46 known placement pad pairs + 18 zone-involved). Model proven; connectivity is what remains. Adopted as the main board.
+
+Nets fully routed: 30 of 112 · Pins failed: 144 · Clearance violations: 64 · Unconnected nets: 83 · Audit verdict: FAIL
+
+Audit: results/audit-v6-attempt1.txt (copper items 1,588).
+
+### Pass 7 — 2026-11-04T06:10:45Z · commit `67722e0`
+
+Board: `hw/pdlvds_rx.repaired6.kicad_pcb` · Commit: `67722e038347f08fb7ee20062df80662bb41896a`
+
+Repair over the pass-6 board, with two-segment fanout escapes for pads sitting on grid boundaries: 45 groups connected, unconnected nets 83 → 62, clearance violations unchanged at 64. Board kept as hw/pdlvds_rx.repaired6.kicad_pcb.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 64 · Unconnected nets: 62 · Audit verdict: FAIL
+
+Audit: results/audit-repair6-attempt1.txt, committed with the pass (copper items 2,115). Pins-failed is recorded as not recorded: no figure exists in this pass's own records (the old gallery index carried 74, parsed from a stale build log, not from this pass).
+
+### Pass 8 — 2026-11-04T08:21:31Z · commit `f2b2fbe`
+
+Board: `hw/pdlvds_rx.repaired6b.kicad_pcb` · Commit: `f2b2fbebc1693e7055479a407f3cbc098f60b14d`
+
+Bundled change — two strategy changes in a single commit, the practice this counter replaces: diagonal moves added to the repair router AND the repair re-run over the pass-7 board. Result: 0 groups connected, no progress, not adopted. The commit's real payload is the per-pin diagnosis of the residue (results/diagnose-repaired6b.txt): of 99 isolated groups, 50 NO_EXIT, 16 POCKET, 20 WIDE_NO_GOAL, 13 REACHES — pads boxed in by placement, which is what pass 9 changes.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: not recorded · Unconnected nets: not recorded · Audit verdict: not recorded
+
+Board saved as hw/pdlvds_rx.repaired6b.kicad_pcb (1,587 tracks per results/repair6-attempt2.log). No audit was committed for this pass, so unconnected nets and clearance violations are not recorded. No renders were committed.
+
+### Pass 9 — 2026-11-04T08:30:34Z · commit `e8a0954`
+
+Board: `hw/pdlvds_rx.moved.kicad_pcb` · Commit: `e8a09549b812b52075500880970cce009af8e59f`
+
+Placement change, answering pass 8's diagnosis: the U7/U12/L2/X1 cluster is moved on the pass-7 board to unbox pads that had no exit — 24 pad pairs removed, 0 added. Board saved as hw/pdlvds_rx.moved.kicad_pcb.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 64 · Unconnected nets: 69 · Audit verdict: FAIL
+
+Audit: results/audit-moved.txt, committed with the pass (copper items 1,392). No renders were committed for this pass.
+
+### Pass 10 — 2026-11-04T10:08:43Z · commit `d489c78`
+
+Board: `hw/pdlvds_rx.movedr.ckpt1.kicad_pcb` · Commit: `d489c787af9551c350cec5a0459c838ec1d9f41f`
+
+Repair resumed over the placement-revised board (pass 9) and — the first pass committed under the sharpened rule — committed at checkpoint 1 of the run instead of at run end: 111 groups connected, unconnected nets 69 → 49. The audit committed with the checkpoint reads 1,435 clearance violations on 3,424 copper items; checkpoint saves did not refill zones at the time (fixed in cabbebc), and the figure is recorded exactly as the committed audit states it — a mid-run checkpoint state, not a finished-board audit. The run was still in progress when this was committed.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 1435 · Unconnected nets: 49 · Audit verdict: FAIL
+
+Audit: results/audit-repair6-attempt3-ckpt1.txt, committed with the pass. Pins-failed not recorded (the old gallery index's 74 came from the same stale build-log parse as pass 7's).
+
+<!-- next-pass -->
+
+## Gaps — runs that were never committed, and so have no number
+
+The counter only counts committed board states. These runs
+happened — the record of them is in the commits and files named
+— but their boards were never committed, so they hold no pass
+number. Listing them is the honest accounting of what the
+sequence misses:
+
+- **router v1 run (commit dc6a010, 2026-11-03T19:39:29Z)** — Board routed in memory only; the commit carries router code, no board. Its 125 failed pins are known only from later commit messages (passes 2–3). Not numbered.
+- **router v2 run (commit c79defe, 2026-11-03T20:10:21Z)** — Wide-nets-first ordering; board never committed and no result tally recorded. Not numbered.
+- **repair attempts 1–3 over the pass-4 board (commits 2add453, 0c20958, 04c90b4)** — Attempt 1's board was lost at save; attempt 2 connected 82 groups in memory, then crashed at the same save (variable `path` shadowing the board path — root cause proven in 0c20958, which also retro-explains attempt 1); attempt 3 was killed by a VM replacement mid-sweep (04c90b4). The commits carry code and logs but no board. Pass 5 is repair attempt 4, the first to be committed. Not numbered.
+- **in-flight run state lost to a VM replacement (commit 8d39045)** — Both /tmp scratch trees (v6 routing and the Freerouting line), with their logs and checkpoints, were lost; any board states in them were never committed. Scratch state moved into the workspace afterwards. Not numbered.
+- **Freerouting baseline line** — No board produced by Freerouting has ever been committed (the native CLI build is dead — 8d39045; the JVM/AppImage line produced no committed board either), so it holds no pass numbers. If it ever produces a committed board state, it takes the next number like everything else.
+
+## Reconciliation with the provisional count in docs/00-status.md
+
+Commit `81b2942` ("Pass numbering" section of docs/00-status.md)
+recorded d489c78 provisionally as "pass 14", counting the five
+uncommitted runs in the gaps above (router v1, router v2, repair
+attempts 1–3) as passes and not counting the placed board.
+That section states this log is authoritative and later entries
+reconcile. Under the rule above, d489c78 is **pass 10** (an
+offset of −4), and the next pass is **pass 11**. Any "pass 15"
+subject written against the provisional count refers to what
+is pass 11 here.
