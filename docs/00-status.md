@@ -820,3 +820,32 @@ the edge; to be accounted in the final write-up).
 Recovery change: all scratch state now lives under ~/workspace
 (pdlvds-v6run/, pdlvds-fr/) — /tmp does not survive this VM's
 replacements, the workspace does.
+
+### Stage 7c — v6 full-board attempt 1 (2026-11-03 eve)
+
+Clean full-board route with router6 (exact model), from the
+placed board: main pass 112 nets in 2,276 s, two retry passes
+(2.5M cap) in 2,372 s more, then zone fill + save. The run that
+produced it survived one VM replacement only because the scratch
+tree had been moved into the workspace (pdlvds-v6run/).
+
+Result (results/pcb_build_v6.log, results/audit-v6-attempt1.txt):
+- router6: 30/112 nets fully routed, 144 pin connections failed,
+  67 signal vias + 87 GND vias. Retry passes made ZERO progress
+  (144 -> 144) — the failures are structural, not budget.
+- Audit vs v5 board: copper items 1,588 (v5 1,651); unconnected
+  nets 83 (v5 98); clearance violations 64 (v5 341); intrinsic 42.
+- THE MODEL VERDICT: of the 64 violations, 46 are the known
+  cross-footprint pad-pad placement pairs (identical to v5) and 18
+  are zone-involved (10 via-zone, 4 pad-zone, 4 track-zone — the
+  HV/buried-clearance residue). ZERO pairs involve router-emitted
+  track/via geometry against other copper. The exact-clearance
+  invariant held on every emitted item — the v6 model rewrite is
+  proven; what remains is connectivity.
+- Failed pins concentrate in power nets (+3V3D 13, +3V3A 12,
+  APD_A 8, NEG_RAW 7, VBUS_RAW 4, +5V 3) and fine-pitch parts
+  (U7 24, U6 17, U4 14, U12 11, J1 7).
+
+Adopted as the main board (strictly better than v5 on both audit
+axes; v5 remains in history at fb2acf7). Next: pocket diagnosis on
+THIS board for the structural blocker, then repair6 passes.
