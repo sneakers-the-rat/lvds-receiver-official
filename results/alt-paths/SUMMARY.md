@@ -106,10 +106,37 @@ U9×4 to open; J2×2 will not.
 
 ## 2) Path B — Freerouting v2.5.0 baseline
 
-**Status: RUNNING** (jar under OpenJDK 25, relaunched after the
-environment lost the first attempt — see below). This section will be
-updated with the verdict and audited numbers when the run lands;
-watch `work/freerouting-jar2.log` and `work/fr-heartbeat.log`.
+**Status: RUNNING, verifiably.** Current run, as of 2026-11-04
+12:45 UTC:
+
+- Process: **PID 19062** —
+  `/usr/lib/jvm/java-25-openjdk-amd64/bin/java -jar
+  ~/workspace/tools/freerouting/freerouting-2.5.0.jar
+  -de pass10.dsn -do pass10.ses -mp 20`
+  (launched detached via `work/run_freerouting2.sh`, setsid; this is
+  distinct from the coordinator's own Freerouting process PID 14778,
+  which is routing a different DSN in the main clone).
+- Log: `work/freerouting-jar2.log` (growing; 43 lines at 12:45 UTC),
+  heartbeat `work/fr2-heartbeat.log` (one timestamped line/minute
+  with the live jar-log line count), final status will land in
+  `work/freerouting-run2.status`.
+- Progress in the log: fanout stage completed 12:44:05 UTC —
+  342/503 SMD pins escaped (68.0%); **auto-routing stage started
+  12:44:10 UTC with 135 unrouted items**, baseline score 551.57.
+  SES is written only at the end; none exists yet.
+
+**Correction to this file's earlier state (the 04:39 watchdog flag
+was right):** the first relaunch attempt (12:37 UTC) died within
+seconds — a shell operator-precedence bug in the launch command ran
+java in the wrong working directory and it aborted with "Couldn't
+read the input file 'pass10.dsn'" — while its detached heartbeat
+loop kept writing "alive" lines until 12:39 UTC with no process
+behind them. That shell and heartbeat were killed, the failure is
+preserved in `work/freerouting-jar2.log` (12:37 entries), and the
+current run is the wrapper-script relaunch described above. The
+pre-compaction first attempt (Java 25, reached fanout pass #2) was
+killed by an environment reset that also removed the KiCad/Java
+installs; log at `work/freerouting-jar.log`.
 
 Established so far, with evidence in `work/`:
 
@@ -119,12 +146,10 @@ Established so far, with evidence in `work/`:
   then dies with a GraalVM `UnsupportedFeatureError:
   SerializationConstructorAccessor class not found for ...
   ComponentOutline`. Log: `work/freerouting-smoke.log`.
-- The official jar (same release) under OpenJDK 25.0.4.1 starts,
-  loads the DSN (`work/pass10.dsn`, produced by `hw/make_dsn.py`:
-  113 nets; F.Cu/B.Cu GND planes removed, In1.Cu kept as the solid
-  GND layer), and routes. First attempt reached fanout pass #2
-  (191 of 401 SMD pins fanouted) before the environment was reset and
-  killed it — no SES was produced. Log: `work/freerouting-jar.log`.
+- The official jar (same release) under OpenJDK 25.0.4.1 loads the
+  DSN (`work/pass10.dsn`, produced by `hw/make_dsn.py`: 113 nets;
+  F.Cu/B.Cu GND planes removed, In1.Cu kept as the solid GND layer)
+  and routes — see the live run above.
   Jar sha256 `f6f51bb02245e8e717f9359bd260cc9c5c0b1bc0acc8b7cb2cd5b8ffeb5de3c7`
   — note the release checksums file covers only the CLI archives, so
   the jar itself has no upstream checksum to verify against; its
