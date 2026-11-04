@@ -216,9 +216,9 @@ U4 cluster clearing (disc 52,52 r4.2): +3V3D_CDR U4.12/18, CDR_CLKP U4.26, CDR_D
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 45 · Audit verdict: FAIL
 
-### Pass 24 — 2026-11-04T15:05:16Z · commit `pending`
+### Pass 24 — 2026-11-04T15:05:16Z · commit `7f565dc`
 
-Board: `hw/pdlvds_rx.fr7.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr7.kicad_pcb` · Commit: `7f565dc84c90dbc717c7da1f55ea57bddab3ffbc`
 
 U13 cluster clearing (disc 48,62 r3.6): all five targets connected — +5V U13.1/3, +VA U13.9/10, SET_P U13.7
 
