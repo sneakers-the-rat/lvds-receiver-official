@@ -15,7 +15,10 @@ placement tweak — this command, run from the repo root:
      temp copy; light-on-dark palette), plus a stats.txt;
   3. appends the entry — next pass number, timestamp, audit stats,
      the description given on the command line — to
-     history/passes.json and history/PASSES.md;
+     history/passes.json and history/PASSES.md, and writes the
+     pass's Jekyll page website/_passes/pass-NNNN.md from the same
+     entry (gen_pass_pages.pass_markdown), so a relayout literally
+     creates one new markdown file for the site's passes collection;
   4. stages exactly the pass's files (the board, router code and
      result/log changes under hw/ and results/, the pass directory,
      the two log files) and commits: "pass NNNN: <description>";
@@ -41,6 +44,7 @@ from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import snapshot_route as sr
+import gen_pass_pages as gpp
 
 ROOT = sr.ROOT
 HIST = os.path.join(ROOT, "history")
@@ -125,10 +129,20 @@ def render_pass(board, sdir):
     return renders, (layers or None), method
 
 
-def stage_pass_files(board_rel, sdir_rel):
+def write_pass_page(entry):
+    """Write the pass's Jekyll page (website/_passes/pass-NNNN.md)
+    from its passes.json entry; return its repo-relative path."""
+    name, text = gpp.pass_markdown(entry)
+    os.makedirs(gpp.PASSES_DIR, exist_ok=True)
+    with open(os.path.join(gpp.PASSES_DIR, name), "w") as f:
+        f.write(text)
+    return f"website/_passes/{name}"
+
+
+def stage_pass_files(board_rel, sdir_rel, page_rel):
     """Stage exactly the pass's files; return (staged, left) lists."""
     paths = [sdir_rel, "history/passes.json", "history/PASSES.md",
-             board_rel]
+             page_rel, board_rel]
     left = []
     status = git("status", "--porcelain", "--", "hw", "results")
     for line in status.splitlines():
@@ -220,7 +234,10 @@ def main():
     with open(PASSES_MD, "w") as f:
         f.write(md)
 
-    staged, left = stage_pass_files(board_rel, f"history/{tag}")
+    page_rel = write_pass_page(entry)
+
+    staged, left = stage_pass_files(board_rel, f"history/{tag}",
+                                    page_rel)
     if left:
         print("not staged (not pass files): " + ", ".join(left))
     git("commit", "-q", "-m", f"pass {n:04d}: {a.description}")
@@ -234,6 +251,7 @@ def main():
     for p in doc["passes"]:
         if p["pass"] == n:
             p["hash"], p["short_hash"] = full, short
+            write_pass_page(p)
     with open(PASSES_JSON, "w") as f:
         json.dump(doc, f, indent=2)
         f.write("\n")
@@ -244,7 +262,8 @@ def main():
     tail = tail.replace("Commit: `pending`", f"Commit: `{full}`", 1)
     with open(PASSES_MD, "w") as f:
         f.write(head + sep + tail)
-    git("add", "--", "history/passes.json", "history/PASSES.md")
+    git("add", "--", "history/passes.json", "history/PASSES.md",
+        page_rel)
     git("commit", "-q", "-m", f"pass {n:04d}: record commit hash")
     print(f"pass {n} recorded as commit {full}")
     print("only step remaining: git push")

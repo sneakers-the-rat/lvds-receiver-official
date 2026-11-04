@@ -61,7 +61,7 @@ BOTTOM_LAYERS = "B.Cu,In2.Cu,In1.Cu,F.Cu,B.SilkS"
 
 # Copper layers in stack order, the file each one's render gets, and
 # the fixed palette colour it is recoloured to (site composite +
-# legend use the same palette — keep scripts/build_site.py in sync).
+# legend use the same palette — keep website/_data/layers.yml in sync).
 COPPER_LAYERS = ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu"]
 LAYER_FILES = {"F.Cu": "layer-FCu.svg", "In1.Cu": "layer-In1Cu.svg",
                "In2.Cu": "layer-In2Cu.svg", "B.Cu": "layer-BCu.svg"}
