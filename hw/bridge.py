@@ -90,16 +90,18 @@ def main():
             print(f'{net}: already single-group', flush=True)
             continue
         gs.sort(key=len, reverse=True)
-        # nearest cross-group pair
+        # nearest cross-group pair among ALL group pairs (the
+        # closest pair is often small-group to small-group)
         best = (9.9, None, None)
-        for gi in gs[1:]:
-            for a in gs[0]:
-                for b in gi:
-                    v = gapf(a[3], a[2], b[3], b[2])
-                    if v is not None and v < best[0]:
-                        best = (v, a, b)
+        for i1 in range(len(gs)):
+            for i2 in range(i1 + 1, len(gs)):
+                for a in gs[i1]:
+                    for b in gs[i2]:
+                        v = gapf(a[3], a[2], b[3], b[2])
+                        if v is not None and v < best[0]:
+                            best = (v, a, b)
         gap, a, b = best
-        if a is None or gap > 2.0:
+        if a is None or gap > 3.0:
             print(f'{net}: nearest gap {gap} — too far', flush=True)
             continue
         # anchor points: bbox centres of the two shapes, clipped
