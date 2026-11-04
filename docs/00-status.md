@@ -510,3 +510,88 @@ is 0.3 mm, zone local clearance carves 0.25 mm).
   ~/workspace/tools/freerouting/ with a PROVENANCE.md; binary is not
   committed. Role: baseline/fallback only — the home-grown v6 line
   continues to its own completion regardless (user, 16:22 PST).
+
+## CI signal fix — DRC ratchet instead of a permanent red (2026-11-03, branch ci-signal)
+
+The user's reasoning, in one line (2026-11-03 16:24 PST): an
+always-failing CI is worse than none, because a genuinely broken
+pipeline step can hide inside the permanent red and send the work
+down dead ends.
+
+The problem: the kicad-validate job hard-failed on the raw DRC
+count of a board that is known to be mid-routing, so the job was
+red on every run regardless of whether anything else broke.
+
+Design (implemented in this branch; board state is reported, never
+hidden):
+
+- ERC and DRC are now separate CI steps (scripts/ci.sh steps 10
+  and 11). ERC stays a HARD GATE: `kicad-cli sch erc
+  --exit-code-violations`, 0 errors required, exactly as before —
+  it currently passes and keeps biting.
+- DRC (step 11) runs `kicad-cli pcb drc --severity-all` WITHOUT
+  --exit-code-violations and hands the report to
+  scripts/drc_gate.py, which applies three duties:
+  - TOOL HEALTH (hard fail): kicad-cli must run, the board file
+    must exist, and the report must be produced, parse (both
+    "Found N DRC violations" and "Found N unconnected items"
+    summary lines), and carry a plausible census (total items
+    > 0 while the baseline says the board is unfinished). Exit 2.
+    A crash/empty/unparseable report fails the job — a silently
+    broken DRC is precisely the failure mode being fixed.
+  - RATCHET (hard fail on regression): counts above
+    ci/drc-baseline.json fail the step (exit 1) — routing
+    regressed, or the checker changed behaviour; either must be
+    seen. Counts at/below baseline pass, printing both numbers.
+  - VISIBILITY: the counts are printed prominently in the job
+    log, appended to $GITHUB_STEP_SUMMARY, written to
+    results/drc-status.json, merged into the site's kicad status
+    JSON by the workflow, and shown in the build-status panel
+    worded as board state — "DRC (board in progress): 807
+    violations, 175 unconnected — baseline 807/175, no
+    regression" — never as "DRC passed". The DRC report itself
+    still uploads as evidence on every run, pass or fail.
+- Baseline seed: 807 violations, 175 unconnected, from the last
+  measured KiCad 8 DRC of the current v5 board (main run on
+  b5c2b57; the board on main is unchanged since). Provenance is
+  recorded inside ci/drc-baseline.json; no run id was available
+  in the tasking, so none is claimed. If the first CI run with
+  this gate measures the unchanged board differently (report
+  format counting differences), that is a calibration event to
+  document here, not a silent baseline edit.
+- What still HARD-FAILS, unchanged: any ERC error; DRC tool
+  health; DRC regression above baseline; and every sim/firmware
+  check (codec, link budget, TIA, digital, HV, impedance,
+  firmware host tests, ARM build, host tool) in the other job.
+- What no longer fails: in-progress DRC counts at or below the
+  baseline. The job can now be green while the board is honestly
+  unfinished — and red only when something actually broke or
+  got worse.
+- End state: when routing completes (0 violations, 0
+  unconnected), set ci/drc-baseline.json to 0/0. The same gate
+  is then a hard zero-tolerance DRC gate by construction (the
+  census check applies only while the baseline is > 0, so a
+  clean report passes) — no code change beyond the baseline
+  file. The workflow comments record this flip next to the job.
+- KiCad 7 fallback (local runs) keeps the scripted equivalents:
+  netlist check in step 10, the hw/check_pcb.py audit as a hard
+  gate in step 11, both loudly labelled as fallbacks. The
+  ratchet applies to the native KiCad 8 path used by CI.
+- Local verification performed: scripts/drc_gate.py run against
+  fixture reports in the summary-line format the repo already
+  parses (scripts/build_site.py) — no real DRC report file
+  exists under results/ in the repo, so no KiCad 8 report was
+  available locally and none is claimed. Results: at-baseline
+  (807/175) exit 0; below baseline (700/100) exit 0; doctored
+  over-baseline copies (808/175 and 807/176) exit 1; corrupt
+  and empty reports exit 2; a 0/0 report against the seeded
+  baseline exits 2 (implausible census); a 0/0 report against
+  a 0/0 baseline exits 0; missing report exit 2. The workflow
+  status-merge snippet was executed standalone and produced
+  the expected drc_* fields; the site's drc_row() was executed
+  against status-JSON and local-report fixtures for the
+  at-baseline, regression, tool-failure, not-run and finished
+  0/0 cases with the exact wordings above. ci.yml parses as
+  YAML; ci.sh passes bash -n. Local KiCad is v7, so no KiCad 8
+  DRC behaviour is claimed from local runs — the first CI run
+  on this branch is the calibration check for the counts.
