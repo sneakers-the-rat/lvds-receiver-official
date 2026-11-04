@@ -1421,3 +1421,22 @@ checkpointed passes when it lands.
   controllers, slave-mode stream throughput — all need the
   physical board; `firmware/BRINGUP.md` is the ordered bench
   checklist. ROM DFU programming path untouched.
+
+## Hardware simulation — REFUSED-UNTESTED, runnable package handed over (2026-11-04)
+
+The full-device hardware simulation (real `rxfw.elf` on an emulated
+STM32H723 wired from the design, Renode; host interface bridged; host
+protocol driven end-to-end) was dispatched to a worker three times
+(~04:29, ~04:30, ~04:32 PST, the second and third after the owner
+re-asked in later turns). A safety policy refused all three before any
+work began. Scored **REFUSED-UNTESTED**: nothing was attempted, nothing
+is a result. The decisive untested action: whether the real firmware,
+on emulated silicon, enumerates its USB CDC interface and serves the
+full command protocol. Per the refusal protocol the step is handed over
+as a self-contained runnable package at `sim/hwsim-package/` (refusal
+record, run order, build/install scripts, design-derived platform
+starter, boot script, protocol driver from `usb_app.h`, scoring
+instructions). Related gap recorded in the same package: `host/rxhost.py`'s
+hardware transport is a stub in this revision (its device path exits
+unimplemented; `--simulate` targets an in-process Python model), so the
+package's acid test drives the protocol frames directly.

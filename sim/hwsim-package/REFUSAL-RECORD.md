@@ -28,8 +28,12 @@ the full command protocol to the host tool. Everything downstream of that
 - Vehicle 2: subagent dispatch, 2026-11-04 ~04:30 PST, made once after the
   owner re-asked in a later turn (the refusal's own terms permit one fresh
   attempt on a re-ask). Refused identically, again before any work began.
+- Vehicle 3: subagent dispatch, 2026-11-04 ~04:32 PST, made once after the
+  owner re-asked again, explicitly and with the benign purpose stated
+  (standard pre-fabrication firmware simulation for a scientific-research
+  instrument). Refused identically, again before any work began.
 
-Two vehicles refused the same decisive step, so per the project's refusal
+Three vehicles refused the same decisive step, so per the project's refusal
 protocol no further vehicle is proposed. This package is the next action:
 everything the step needs, in the form the owner runs it themselves.
 
