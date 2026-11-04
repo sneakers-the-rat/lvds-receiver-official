@@ -60,7 +60,7 @@ Repair pass over the pass-4 board — the first repair run to survive to a commi
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 445 · Unconnected nets: 95 · Audit verdict: FAIL
 
-Audit: results/audit-repair-attempt4.txt, committed with the pass (copper items 2,208). No renders were committed for this pass.
+Audit: results/audit-repair-attempt4.txt, committed with the pass (copper items 2,208). No renders were committed for this pass. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 6 — 2026-11-04T03:50:41Z · commit `b805fc3`
 
@@ -90,7 +90,7 @@ Bundled change — two strategy changes in a single commit, the practice this co
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: not recorded · Unconnected nets: not recorded · Audit verdict: not recorded
 
-Board saved as hw/pdlvds_rx.repaired6b.kicad_pcb (1,587 tracks per results/repair6-attempt2.log). No audit was committed for this pass, so unconnected nets and clearance violations are not recorded. No renders were committed.
+Board saved as hw/pdlvds_rx.repaired6b.kicad_pcb (1,587 tracks per results/repair6-attempt2.log). No audit was committed for this pass, so unconnected nets and clearance violations are not recorded. No renders were committed. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 9 — 2026-11-04T08:30:34Z · commit `e8a0954`
 
@@ -100,7 +100,7 @@ Placement change, answering pass 8's diagnosis: the U7/U12/L2/X1 cluster is move
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 64 · Unconnected nets: 69 · Audit verdict: FAIL
 
-Audit: results/audit-moved.txt, committed with the pass (copper items 1,392). No renders were committed for this pass.
+Audit: results/audit-moved.txt, committed with the pass (copper items 1,392). No renders were committed for this pass. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 10 — 2026-11-04T10:08:43Z · commit `d489c78`
 
