@@ -41,7 +41,12 @@ jobs:
   # and the simulation job never installs KiCad. scripts/ci.sh selects
   # steps via CI_STEPS; a local run without CI_STEPS does everything.
   # DRC signal design (2026-11-03 — see docs/00-status.md, "CI
-  # signal fix"): ERC below is a HARD GATE and always has been. DRC
+  # signal fix"): ERC below is a HARD GATE and always has been —
+  # but since round 2 its verdict is parsed from the ERC report by
+  # scripts/erc_gate.py (FAIL iff Errors > 0; missing/unparseable
+  # report is a tool-health failure), NOT taken from kicad-cli's
+  # exit code: --exit-code-violations fires on warnings too and
+  # failed run 41750532660's ERC step over a 0-error report. DRC
   # is split into its own step because the board is mid-routing: its
   # raw counts are board state, not pass/fail. That step hard-fails
   # only when (a) the DRC tool or its report is broken (kicad-cli
@@ -129,7 +134,7 @@ jobs:
           path: /var/cache/apt/archives
           key: ${{ steps.apt-cache.outputs.cache-primary-key }}
 
-      - name: KiCad ERC — hard gate (scripts/ci.sh step 10)
+      - name: KiCad ERC — hard gate on the parsed report (scripts/ci.sh step 10)
         id: erc
         run: CI_STEPS=10 bash scripts/ci.sh
 
