@@ -1041,6 +1041,34 @@
       },
       "description": "stub campaign 1 (hw/hand_stub.py): 13 of 31 singleton pads given audit-exact edge-anchored escape stubs, incl. D1.6 west, RJ2.2, CDR_DATP U4.29, CDR_NIN U4.4, CF1/CF2, GND R28.2, PHY_1V8A C23.1",
       "note": ""
+    },
+    {
+      "pass": 39,
+      "timestamp": "2026-11-04T19:54:32Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr24.kicad_pcb",
+      "dir": "pass-0039",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL"
+      },
+      "description": "cluster clearing U4 disc (52,52) r4.2 on the stubbed board: 7/9 targets connected through the cleared field (CDR ring pads, +3V3D_CDR U4.24 among them)",
+      "note": ""
     }
   ],
   "gaps": [

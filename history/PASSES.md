@@ -336,6 +336,14 @@ stub campaign 1 (hw/hand_stub.py): 13 of 31 singleton pads given audit-exact edg
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 36 · Audit verdict: FAIL
 
+### Pass 39 — 2026-11-04T19:54:32Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr24.kicad_pcb` · Commit: `pending`
+
+cluster clearing U4 disc (52,52) r4.2 on the stubbed board: 7/9 targets connected through the cleared field (CDR ring pads, +3V3D_CDR U4.24 among them)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 35 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
