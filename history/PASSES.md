@@ -488,9 +488,9 @@ hand bridges (hw/bridge.py): VBUS_RAW, ULPI_D0 and +5V group pairs bridged acros
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 37 · Audit verdict: FAIL
 
-### Pass 58 — 2026-11-04T20:15:33Z · commit `pending`
+### Pass 58 — 2026-11-04T20:15:33Z · commit `577a6b0`
 
-Board: `hw/pdlvds_rx.fr44.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr44.kicad_pcb` · Commit: `577a6b066fa0a8730c71f46a66443d8f517eda4f`
 
 hand segment joins the floating fanout chain west of D1 to APD_A's main group (the chain proved to be main-group copper; D1.6's pad itself still lone)
 
