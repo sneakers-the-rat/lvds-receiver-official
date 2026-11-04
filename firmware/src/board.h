@@ -54,6 +54,7 @@
 /* SPI - VERIFY against RM0468 at bring-up (H7 SPI register block) */
 #define SPI1_BASE  0x40013000u /* VERIFY against RM0468 */
 #define SPI2_BASE  0x40003800u /* VERIFY against RM0468 */
+#define SPI3_BASE  0x40003C00u /* VERIFY against RM0468 */
 
 /* Timers / DMA / ADC (used by the capture sketch) -
  * VERIFY against RM0468 at bring-up */
@@ -105,13 +106,12 @@ typedef struct {
  * schematic is authoritative (see the header of this file). */
 #define BOARD_LED_PORT GPIOC
 #define BOARD_LED_PIN  9u
-/* USB: ULPI bus + USB3300 reset (PA4), per hw/CONNECTIONS.md. The
- * full ULPI pin table lives in usb_device_tinyusb.c; the DAC CS
- * define below also names PA4 - that is the pre-schematic intent
- * and CONFLICTS with the schematic's USB_RST assignment. The
- * schematic wins for USB; reconciling the DAC path (SPI3 + PA15
- * SYNC on the schematic) is bring-up work, flagged in
- * firmware/BRINGUP.md. */
+/* USB: ULPI bus + USB3300 reset. PA4 is USB_RST and nothing else:
+ * hw/CONNECTIONS.md assigns it to the USB3300 RESET input and the
+ * USB code (usb_device_tinyusb.c) is its only user. The DAC that
+ * once claimed PA4 as its chip select hangs on SPI3 with PA15 as
+ * SYNC - see the DAC defines below. The full ULPI pin table lives
+ * in usb_device_tinyusb.c. */
 /* HV enable: PB0 (active high, drives the flyback enable + interlock
  * AND gate; hardware interlock jumper is in series - firmware can
  * never force HV on by itself) */
@@ -124,15 +124,23 @@ typedef struct {
  * VERIFY vs ADN2813 datasheet at bring-up) */
 #define BOARD_LOS_PORT GPIOB
 #define BOARD_LOS_PIN  2u
-/* DAC8562 chip select: PA4 (active low, manual GPIO CS around SPI1) */
-#define BOARD_DAC_CS_PORT GPIOA
-#define BOARD_DAC_CS_PIN  4u
+/* DAC8562 (U8) serial interface, per the schematic
+ * (hw/CONNECTIONS.md: "SPI3: PC10 SCK, PC12 MOSI -> DAC8562;
+ * PA15 = DAC_SYNC"; hw/circuit.py U6/U8 net assignments agree):
+ * SPI3 with SCK on PC10 and MOSI on PC12 (write-only - the DAC has
+ * no data output, so no MISO is routed), SYNC on PA15 (active low,
+ * manual GPIO around the SPI transfer; LDAC is tied to GND on the
+ * board, so the outputs update on the SYNC rising edge). */
+#define BOARD_DAC_SPI_BASE  SPI3_BASE
+#define BOARD_DAC_SCK_PORT  GPIOC
+#define BOARD_DAC_SCK_PIN   10u
+#define BOARD_DAC_MOSI_PORT GPIOC
+#define BOARD_DAC_MOSI_PIN  12u
+#define BOARD_DAC_SPI_AF    6u /* SPI3 on PC10/PC12 - VERIFY against the STM32H723 datasheet AF table at bring-up */
+#define BOARD_DAC_SYNC_PORT GPIOA
+#define BOARD_DAC_SYNC_PIN  15u
 /* I2C bus shared by ADN2813 and TMP117: I2C1, PB6=SCL PB7=SDA (AF4) */
 #define BOARD_I2C_INSTANCE 1u
-/* SPI for DAC8562: SPI1, PA5=SCK is the LED here - CONFLICT NOTE:
- * rev A must resolve LED vs SCK before layout; the driver only uses
- * the bus/CS abstractions in spi.h, so moving pins changes board.h
- * and gpio.c only. VERIFY against the schematic at bring-up. */
 
 /* Clock intent (see clocks.c for the full arithmetic) */
 #define BOARD_HSE_HZ        25000000u

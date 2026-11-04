@@ -4,12 +4,13 @@
  * differs substantially from the F-series SPI this code is NOT based on.
  *
  * Configuration intent: master, software slave management with a GPIO
- * chip select (the DAC driver owns CS), 8-bit data size, SPI mode 1
+ * slave select (the DAC driver owns SYNC), 8-bit data size, SPI mode 1
  * (CPOL 0, CPHA 1 - VERIFY what the DAC8562 wants vs its datasheet at
  * bring-up), baud prescaler targeting a few MHz from the kernel clock.
  */
 #include "spi.h"
 #include "board.h"
+#include "gpio.h"
 
 /* VERIFY against RM0468 at bring-up */
 typedef struct {
@@ -24,7 +25,7 @@ typedef struct {
     volatile uint32_t RXDR; /* 0x30 (byte access used) - VERIFY gap */
 } spi_regs_t;
 
-#define BOARD_SPI ((spi_regs_t *)(uintptr_t)SPI1_BASE)
+#define BOARD_SPI ((spi_regs_t *)(uintptr_t)BOARD_DAC_SPI_BASE)
 
 #define SPI_CR1_SPE   (1u << 0)
 #define SPI_CR1_CSTART (1u << 9)
@@ -38,9 +39,20 @@ typedef struct {
 void spi_init(void)
 {
     uint32_t v;
-    /* SCK/MISO/MOSI alternate-function hookup for SPI1 is left to
-     * bring-up because of the PA5 LED/SCK pin conflict noted in
-     * board.h - spi_init deliberately does not touch GPIO. */
+    /* Pin hookup, per the schematic (hw/CONNECTIONS.md): SPI3 SCK on
+     * PC10, MOSI on PC12, alternate function per board.h. The DAC is
+     * write-only, so no MISO pin is configured. This lives here (not
+     * in gpio_init_board_pins) so the DAC's pins are configured in
+     * exactly one place; SYNC (PA15) is a plain GPIO, set up by
+     * gpio_init_board_pins and driven by the DAC driver. */
+    gpio_set_mode(BOARD_DAC_SCK_PORT, BOARD_DAC_SCK_PIN,
+                  GPIO_MODE_ALTERNATE);
+    gpio_set_alt_func(BOARD_DAC_SCK_PORT, BOARD_DAC_SCK_PIN,
+                      BOARD_DAC_SPI_AF);
+    gpio_set_mode(BOARD_DAC_MOSI_PORT, BOARD_DAC_MOSI_PIN,
+                  GPIO_MODE_ALTERNATE);
+    gpio_set_alt_func(BOARD_DAC_MOSI_PORT, BOARD_DAC_MOSI_PIN,
+                      BOARD_DAC_SPI_AF);
     BOARD_SPI->CR1 &= ~SPI_CR1_SPE;
     v = BOARD_SPI->CFG1;
     v &= ~SPI_CFG1_DSIZE;
