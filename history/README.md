@@ -1,9 +1,9 @@
 # Routing history snapshots
 
 This directory is the project's routing memory, kept in the repo
-forever, rendered by `scripts/build_site.py` as the site's "Routing
-history" gallery. Intermediate and failed attempts are kept on
-purpose — the evolution is the story.
+forever, rendered by the Jekyll site (website/, collection
+`_passes/`) as the Routing history pages. Intermediate and failed
+attempts are kept on purpose — the evolution is the story.
 
 Since 2026-11-04 the organising record is the **pass log**: one
 monotonic counter (pass 1, 2, 3, …) over committed board states.

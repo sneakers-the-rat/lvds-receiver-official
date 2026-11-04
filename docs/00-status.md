@@ -1178,3 +1178,74 @@ apply the same rolling-cache pattern.
   remaining suspects are `apt-get update` index trickle and the
   unpack itself — read the matched-key line and step split before
   concluding the cache failed.
+
+## Site migration to Jekyll (2026-11-04, user directive)
+
+- **Why**: the user directed a real static-site tool over the
+  hand-rolled Python skeleton: a left-bar table of contents, and
+  content as files so iteration (each relayout = one new markdown
+  file, included programmatically) is the native flow. Jekyll was
+  blessed by name earlier the same day.
+- **What**: the site source is now `website/` (Jekyll 4). Layout
+  `_layouts/default.html` carries a persistent **left sidebar TOC**
+  (all sections + every pass page, the pass list a Liquid loop over
+  the collection). Each old single-page section is a page:
+  Summary (build-status panel + docs/01 + docs/02), Board, Token
+  usage, Routing history, Schematic, Stackup, BOM, Simulations,
+  Bench test plan (docs/05), Downloads. Passes are a Jekyll
+  collection: `website/_passes/pass-NNNN.md`, one file per pass,
+  front matter = pass number, commit hash, UTC timestamp,
+  unconnected nets, clearance violations (+ pins/nets/verdict),
+  adopted flag (false only where the pass record says NOT adopted:
+  passes 5 and 8), render map; body = the changelog description.
+  Generated for passes 1–10 from `history/passes.json` by
+  `scripts/gen_pass_pages.py`.
+- **Data step**: `scripts/site_data.py` is the only Python left in
+  the site path — a pre-build step (CI + local) that ports
+  build_site.py's data logic verbatim into `website/_data/*.json`
+  (status panel incl. the DRC board-state wording and jitter
+  tolerance, token totals computed from the committed metrics
+  CSVs, BOM, sim blocks) and stages `assets/gen/` + `downloads/`
+  (fab renders, results plots, metrics charts, per-pass history
+  renders, docs includes). The gates themselves
+  (drc_gate/erc_gate, ci baseline) are untouched; the step only
+  displays their numbers. Token page: timestamps render in
+  Pacific time (`pacific` filter in `website/_plugins/filters.rb`;
+  data stays UTC), as do pass pages. A **Cost section** sits
+  beneath the token summaries, wired to `metrics/cost_summary.csv`
+  via `_data/costs.json`: it renders only when that file exists in
+  the tree (absent at this migration — wired but unpopulated,
+  pending the cost worker's export; no figures are hand-written).
+- **commit_pass.py**: now also writes the pass's
+  `website/_passes/pass-NNNN.md` from the same entry (and re-writes
+  it in the bookkeeping commit with the real hash). Dummy-tested
+  end-to-end in this branch: pass 0011 committed audit (83
+  unconnected / 64 violations, the standing board state) + 6
+  renders + the .md with its hash recorded; the site built with 11
+  passes; the dummy was then reset away — the delivered log holds
+  only the 10 real passes.
+- **CI**: only the build-site job changed (deploy-pages and both
+  validation jobs untouched): tolerant artefact downloads as
+  before, then ruby/setup-ruby 3.2 + bundler-cache,
+  `python3 scripts/site_data.py`, `bundle exec jekyll build`
+  (destination `../site`, the same artifact path Pages deploys).
+- **Retired**: `scripts/build_site.py` deleted (git history keeps
+  it). No dual generators.
+- **Verified locally** (ruby 3.2.3, jekyll 4.4.1): build clean, no
+  Liquid warnings; 25-point parity check against the old site's
+  content — sidebar TOC on every page with all 10 passes, status
+  panel with the same verdicts, token totals 133,920,588 gross
+  with both scope rows, routing index with 10 pass cards, pass
+  pages with stats/renders/prev-next (pass 5: NOT ADOPTED, no
+  renders — as recorded), schematic PDF link, sim blocks,
+  downloads; every asset reference in the built HTML resolves to a
+  file. Local-only gaps identical to the old generator's in this
+  clone: hw/fab renders/BOM arrive via CI artefacts; the TIA PNG
+  plot's CSV parse quirk is pre-existing in the ported code.
+- **Coordination note**: this work was done in a git worktree
+  (`pdlvds-jekyllwt`) because the shared `pdlvds-cifix` checkout
+  was flipped to the `ci-apt-cache` branch by the parallel CI
+  worker mid-task; an uncommitted build-site ci.yml edit from this
+  lane may be sitting in that checkout's working tree — the same
+  edit is committed here on `site-jekyll`, so it can be discarded
+  there.
