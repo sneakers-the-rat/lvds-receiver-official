@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Via-first escape stubs for pads sealed on F.Cu.
 
-For pads whose F.Cu field is hemmed within a few tenths of a
-millimetre in every direction (0.5 mm-pitch rows), the working shape
-is: a short neck from the pad edge to a via, then a tail segment on
-In2.Cu (where sibling pads do not exist and the field is emptier).
+Shape: a short neck from the pad edge to a via, then (when one
+clears) a tail segment on In2.Cu. A via alone is already a valid
+result — the router starts from the via's buried-layer cells.
 All tests are the audit's own (KiCad SHAPE.Collide at the class
-clearance, check_pcb.need_for), zone fills excluded (the pour
+clearance via check_pcb.need_for); zone fills excluded (the pour
 re-carves at refill; the post-pass audit verifies).
 
 Run: xvfb-run -a python3 hw/hand_via.py IN OUT NET:PAD [NET:PAD...]
@@ -41,46 +40,47 @@ def ok(items, net, shape, layers, safety):
 def find(items, net, pos, half, width):
     px, py = pos
     hx, hy = half
-    w = min(width, 0.25)
+    fallback = None
     for safety in (0.02, 0.005, 0.0):
-        for dv in (0.55, 0.7, 0.85, 1.0):
-            for k in range(16):
-                a = k * math.pi / 8
-                ca, sa = math.cos(a), math.sin(a)
-                ext = hx * abs(ca) + hy * abs(sa)
-                sx, sy = px + (ext - 0.02) * ca, py + (ext - 0.02) * sa
-                vx, vy = px + dv * ca, py + dv * sa
-                neck = pcbnew.SHAPE_SEGMENT(
-                    pcbnew.VECTOR2I(MM(sx), MM(sy)),
-                    pcbnew.VECTOR2I(MM(vx), MM(vy)), MM(w))
-                if not ok(items, net, neck, {pcbnew.F_Cu}, safety):
-                    continue
-                via = pcbnew.SHAPE_CIRCLE(
-                    pcbnew.VECTOR2I(MM(vx), MM(vy)), MM(0.3))
-                # circle Collide dispatches per shape type; use a
-                # segment cross as the via's test shape instead
-                via_h = pcbnew.SHAPE_SEGMENT(
-                    pcbnew.VECTOR2I(MM(vx - 0.3), MM(vy)),
-                    pcbnew.VECTOR2I(MM(vx + 0.3), MM(vy)), MM(0.6))
-                via_v = pcbnew.SHAPE_SEGMENT(
-                    pcbnew.VECTOR2I(MM(vx), MM(vy - 0.3)),
-                    pcbnew.VECTOR2I(MM(vx), MM(vy + 0.3)), MM(0.6))
-                if not (ok(items, net, via_h, ALL_LAYERS, safety) and
-                        ok(items, net, via_v, ALL_LAYERS, safety)):
-                    continue
-                # In2 tail: same direction or +-45 degrees
-                for da in (0.0, math.pi / 4, -math.pi / 4,
-                           math.pi / 2, -math.pi / 2):
-                    aa = a + da
-                    ca2, sa2 = math.cos(aa), math.sin(aa)
-                    for tl in (1.0, 1.5, 2.0):
-                        ex, ey = vx + tl * ca2, vy + tl * sa2
-                        tail = pcbnew.SHAPE_SEGMENT(
+        for w in (min(width, 0.25), 0.2):
+            for soff in (-0.02, 0.02):
+                for dv in (0.55, 0.7, 0.85, 1.0, 1.15):
+                    for k in range(16):
+                        a = k * math.pi / 8
+                        ca, sa = math.cos(a), math.sin(a)
+                        ext = hx * abs(ca) + hy * abs(sa)
+                        sx = px + (ext + soff) * ca
+                        sy = py + (ext + soff) * sa
+                        vx, vy = px + dv * ca, py + dv * sa
+                        neck = pcbnew.SHAPE_SEGMENT(
+                            pcbnew.VECTOR2I(MM(sx), MM(sy)),
+                            pcbnew.VECTOR2I(MM(vx), MM(vy)), MM(w))
+                        if not ok(items, net, neck, {pcbnew.F_Cu}, safety):
+                            continue
+                        # via disc as a zero-length segment (a plus
+                        # of two segments would poke 0.3 mm past the
+                        # disc on the axes — that bug sealed U9.5)
+                        via_disc = pcbnew.SHAPE_SEGMENT(
                             pcbnew.VECTOR2I(MM(vx), MM(vy)),
-                            pcbnew.VECTOR2I(MM(ex), MM(ey)), MM(w))
-                        if ok(items, net, tail, {pcbnew.In2_Cu}, safety):
-                            return (sx, sy, vx, vy, ex, ey, w)
-    return None
+                            pcbnew.VECTOR2I(MM(vx), MM(vy)), MM(0.6))
+                        if not ok(items, net, via_disc, ALL_LAYERS,
+                                  safety):
+                            continue
+                        if fallback is None:
+                            fallback = (sx, sy, vx, vy, vx, vy, w)
+                        for da in (0.0, math.pi / 4, -math.pi / 4,
+                                   math.pi / 2, -math.pi / 2):
+                            aa = a + da
+                            ca2, sa2 = math.cos(aa), math.sin(aa)
+                            for tl in (1.0, 1.5, 2.0):
+                                ex, ey = vx + tl * ca2, vy + tl * sa2
+                                tail = pcbnew.SHAPE_SEGMENT(
+                                    pcbnew.VECTOR2I(MM(vx), MM(vy)),
+                                    pcbnew.VECTOR2I(MM(ex), MM(ey)), MM(w))
+                                if ok(items, net, tail,
+                                      {pcbnew.In2_Cu}, safety):
+                                    return (sx, sy, vx, vy, ex, ey, w)
+    return fallback
 
 def main():
     src, out = sys.argv[1], sys.argv[2]
@@ -118,13 +118,14 @@ def main():
         v.SetDrill(MM(0.3))
         v.SetNet(board.FindNet(net))
         board.Add(v)
-        t2 = pcbnew.PCB_TRACK(board)
-        t2.SetStart(pcbnew.VECTOR2I(MM(vx), MM(vy)))
-        t2.SetEnd(pcbnew.VECTOR2I(MM(ex), MM(ey)))
-        t2.SetWidth(MM(w))
-        t2.SetLayer(pcbnew.In2_Cu)
-        t2.SetNet(board.FindNet(net))
-        board.Add(t2)
+        if (ex, ey) != (vx, vy):
+            t2 = pcbnew.PCB_TRACK(board)
+            t2.SetStart(pcbnew.VECTOR2I(MM(vx), MM(vy)))
+            t2.SetEnd(pcbnew.VECTOR2I(MM(ex), MM(ey)))
+            t2.SetWidth(MM(w))
+            t2.SetLayer(pcbnew.In2_Cu)
+            t2.SetNet(board.FindNet(net))
+            board.Add(t2)
         items = build_items(board)
         placed += 1
         print(f"  {net} {desc}: via stub via@({vx:.2f},{vy:.2f}) "
