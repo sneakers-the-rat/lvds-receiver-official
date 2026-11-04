@@ -40,8 +40,16 @@ import os
 import re
 import sys
 
-RE_VIOLATIONS = re.compile(r"Found (\d+) DRC violations")
-RE_UNCONNECTED = re.compile(r"Found (\d+) unconnected items")
+# Summary-line formats. The REPORT FILE written by KiCad 8 frames
+# the lines in '**' and counts unconnected PADS ('** Found 190
+# unconnected pads **'); the round-1 gate expected the bare console
+# wording with 'items' and failed tool-health on the first real
+# report (run 41750532660) — loudly, as designed, but wrong. Accept
+# both framings and both nouns; the real captured report is a test
+# fixture (ci/fixtures/drc-report-run41750532660.txt).
+RE_VIOLATIONS = re.compile(r"(?:\*\*\s*)?Found (\d+) DRC violations(?:\s*\*\*)?")
+RE_UNCONNECTED = re.compile(
+    r"(?:\*\*\s*)?Found (\d+) unconnected (?:pads|items)(?:\s*\*\*)?")
 
 
 def load_baseline(path):
@@ -76,7 +84,7 @@ def parse_report(path):
         if mv is None:
             missing.append("'Found N DRC violations'")
         if mu is None:
-            missing.append("'Found N unconnected items'")
+            missing.append("'Found N unconnected pads/items'")
         raise ValueError(
             "DRC report unparseable: missing summary line(s) "
             + ", ".join(missing) + f" in {path}")

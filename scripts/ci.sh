@@ -22,6 +22,10 @@
 #
 # ERC and DRC are separate steps (10 and 11) because they are
 # different signals: ERC is a HARD GATE (any error fails, always).
+# Since round 2 the ERC verdict is parsed from the report by
+# scripts/erc_gate.py, NOT taken from kicad-cli's exit code:
+# KiCad 8's --exit-code-violations exits non-zero on warnings too
+# (run 41750532660 failed its ERC step with a 0-error report).
 # DRC of the still-unfinished board cannot be a hard gate on the raw
 # count — that made CI permanently red and hid real breakage — so
 # step 11 runs DRC for its report and then applies the tool-health +
@@ -93,22 +97,30 @@ native_kicad() {
 }
 
 step10() {
-  step "10/11 KiCad ERC (HARD GATE: 0 errors required)"
+  step "10/11 KiCad ERC (HARD GATE: 0 errors, gated on the parsed report)"
   if native_kicad; then
     echo "kicad-cli with native ERC/DRC found — running native ERC"
-    kicad-cli sch erc --severity-all --exit-code-violations \
-        -o results/erc-report.txt hw/pdlvds_rx.kicad_sch || {
-          fail "native ERC"
+    # The verdict comes from the parsed report (scripts/erc_gate.py),
+    # never from the kicad-cli exit code: KiCad 8's
+    # --exit-code-violations exits non-zero on WARNINGS too, which
+    # failed run 41750532660's ERC step over a 0-error / 8-warning
+    # report. So ERC is invoked WITHOUT that flag, its exit code is
+    # logged for information only, and the gate decides: FAIL iff
+    # the report's Errors count is > 0; a missing, empty,
+    # unparseable or internally inconsistent report is a tool-health
+    # failure. The stale report is removed first so the gate can
+    # never pass on a previous run's file.
+    rm -f results/erc-report.txt
+    kicad-cli sch erc --severity-all \
+        -o results/erc-report.txt hw/pdlvds_rx.kicad_sch
+    echo "kicad-cli sch erc exit code: $? (informational only — the gate below decides)"
+    python3 scripts/erc_gate.py \
+        --report results/erc-report.txt \
+        --out results/erc-status.json || {
+          fail "ERC gate (errors present, or report missing/unparseable)"
           echo "--- ERC report (results/erc-report.txt, FULL; also in the evidence artifact) ---"
           cat results/erc-report.txt 2>/dev/null || echo "(no ERC report file produced)"
         }
-    # Report errors and warnings as separate counts (reporting only —
-    # pass/fail still follows the kicad-cli exit code above).
-    if [ -f results/erc-report.txt ]; then
-      erc_errors=$(grep -c '; error' results/erc-report.txt || true)
-      erc_warnings=$(grep -c '; warning' results/erc-report.txt || true)
-      echo "ERC summary: $erc_errors errors, $erc_warnings warnings (report: results/erc-report.txt)"
-    fi
   else
     echo "NOTE: this kicad-cli has no erc/drc subcommands (KiCad 7.x)."
     echo "Running scripted ERC equivalent: netlist diff."
