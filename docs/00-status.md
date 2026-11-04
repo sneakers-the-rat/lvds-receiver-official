@@ -1462,3 +1462,45 @@ there, NOT fixed (separate jobs): `board.h`'s HV_EN/INTERLOCK/LOS
 defines (PB0/PB1/PB2) have no schematic counterpart — the
 schematic's HV control is PC7 HV_SHDN and LOS is PB14 CDR_LOS —
 and `main.c` still carries a stale "usb stub" comment.
+
+## Firmware reconciliation #2 — HV control + CDR status pins (2026-11-04)
+
+`board.h`'s PB0/PB1/PB2 claims (HV_EN, INTERLOCK, LOS) were invented,
+exactly as the DAC job found for PA4: circuit.py assigns none of them
+(PB0 = ULPI_D1, PB1 = ULPI_D2, PB2 unassigned). Reconciled on branch
+`fw-hv-pins` against the primary-source inventory in
+`docs/06-hv-cdr-pin-inventory.md` (circuit.py, generated netlist with
+pin numbers cross-checked against the schematic's embedded
+STM32H723ZGT6 symbol, CONNECTIONS.md, datasheets/MANIFEST.md):
+
+- **HV control is PC7 (HV_SHDN)** — the only MCU connection to the
+  LT3757. The R25/R26 divider holds the SHDN node at 1.241 V, above
+  the 1.22 V threshold, so PC7 driven low is the only positively-off
+  state: gpio init preloads low before enabling the output, and
+  hv_ctrl drives the clamp from PC7. Power-up default OFF preserved
+  by init order (GPIO before buses/devices), as docs/03 intends.
+- **CDR status: LOS = PB14, LOL = PA2**, both LVTTL active-high per
+  the ADN2813 datasheet extraction; both now read as GPIOs (LOL was
+  an unverified I2C register bit). SQUELCH (PB15), drawn but
+  previously undriven with no pull on the net, is driven low
+  (outputs enabled) at init.
+- **Interlock: none exists.** Inventory searched all 213 nets,
+  circuit.py, the schematic and CONNECTIONS.md — the interlock in
+  docs/01 R9 / docs/02 was never drawn. OWNER DESIGN DECISION:
+  firmware does not invent one; `hv_ctrl_enable()` therefore refuses
+  every enable and SET_BIAS returns the protocol's INTERLOCK status
+  on every rev A unit, with PC7 holding the converter in shutdown.
+  HV stays untestable-as-a-feature until the owner fits an
+  interlock in a schematic revision or records a contrary decision.
+  Also corrected: hv_ctrl.h's "independent OVP zener clamp" (a
+  docs/02 claim) is not drawn; drawn protections are the LT3757
+  current limit, the R30 bleeder and the divider ceiling.
+- Stale "USB stub" comments in main.c (and one in usb_device_if.h)
+  fixed; the transport is the merged TinyUSB implementation.
+- Gates: `make host-test` 72/72 PASS (count unchanged from the
+  pre-change baseline; no assertion changed — the framing mock's
+  contract is unchanged, its comment now states the rev A truth).
+  `make arm` clean at 17,796/36/19,840 — **Δ 0/0/0** vs the DAC-fix
+  base (pin-constant swaps; object-level checks confirm the kept
+  code: hv_ctrl_enable contains no gpio_read, adn2813_los_asserted
+  reads GPIOB, gpio_init_board_pins touches GPIOA/B/C as drawn).

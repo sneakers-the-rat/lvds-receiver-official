@@ -44,12 +44,25 @@ void gpio_init_board_pins(void)
     /* Status LED out, start off. */
     gpio_set_mode(BOARD_LED_PORT, BOARD_LED_PIN, GPIO_MODE_OUTPUT);
     gpio_write(BOARD_LED_PORT, BOARD_LED_PIN, 0);
-    /* HV enable out, start OFF (power-up default state, per docs/02). */
-    gpio_set_mode(BOARD_HV_EN_PORT, BOARD_HV_EN_PIN, GPIO_MODE_OUTPUT);
-    gpio_write(BOARD_HV_EN_PORT, BOARD_HV_EN_PIN, 0);
-    /* Interlock + LOS inputs. */
-    gpio_set_mode(BOARD_INTERLOCK_PORT, BOARD_INTERLOCK_PIN, GPIO_MODE_INPUT);
-    gpio_set_mode(BOARD_LOS_PORT, BOARD_LOS_PIN, GPIO_MODE_INPUT);
+    /* HV shutdown clamp, start OFF: PC7 low pulls the LT3757 SHDN
+     * node to ~0 V, the only positively-off state (the R25/R26
+     * divider alone holds the node above the 1.22 V threshold - see
+     * board.h). Load the low level BEFORE switching the pin to
+     * output so it never presents a released (enabled) level, and
+     * leave the pin an output for the life of the firmware. This is
+     * the power-up default the design requires (docs/03). */
+    gpio_write(BOARD_HV_SHDN_PORT, BOARD_HV_SHDN_PIN, 0);
+    gpio_set_mode(BOARD_HV_SHDN_PORT, BOARD_HV_SHDN_PIN, GPIO_MODE_OUTPUT);
+    /* CDR status inputs: LOS (PB14) and LOL (PA2), both active high.
+     * There is no interlock input to configure - none is drawn
+     * (docs/06-hv-cdr-pin-inventory.md). */
+    gpio_set_mode(BOARD_CDR_LOS_PORT, BOARD_CDR_LOS_PIN, GPIO_MODE_INPUT);
+    gpio_set_mode(BOARD_CDR_LOL_PORT, BOARD_CDR_LOL_PIN, GPIO_MODE_INPUT);
+    /* CDR SQUELCH out, deasserted (low = outputs enabled); the net
+     * has no other driver, so it must not float. */
+    gpio_write(BOARD_CDR_SQUELCH_PORT, BOARD_CDR_SQUELCH_PIN, 0);
+    gpio_set_mode(BOARD_CDR_SQUELCH_PORT, BOARD_CDR_SQUELCH_PIN,
+                  GPIO_MODE_OUTPUT);
     /* DAC SYNC out, start deasserted (high). */
     gpio_set_mode(BOARD_DAC_SYNC_PORT, BOARD_DAC_SYNC_PIN, GPIO_MODE_OUTPUT);
     gpio_write(BOARD_DAC_SYNC_PORT, BOARD_DAC_SYNC_PIN, 1);
