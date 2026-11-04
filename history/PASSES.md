@@ -128,6 +128,14 @@ Freerouting v2.5.0 routes the pass-11 relief placement (6 passes, score plateau 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 44 · Audit verdict: FAIL
 
+### Pass 13 — 2026-11-04T13:37:41Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr1r.ckpt1.kicad_pcb` · Commit: `pending`
+
+repair6 checkpoint 1 on the Freerouting board (pass 12): 10 groups connected in the first ~90 s of sweep 1 (contrast: 0 in 90 min on the pre-relief placement); run continues checkpointing on hw/pdlvds_rx.fr1r.kicad_pcb
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 44 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
