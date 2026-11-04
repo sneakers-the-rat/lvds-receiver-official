@@ -248,6 +248,14 @@ U9 cluster clearing (disc 8,48 r3.4): 0/4 — full clearing changed nothing; U9'
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 50 · Audit verdict: FAIL
 
+### Pass 28 — 2026-11-04T15:18:50Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr11.kicad_pcb` · Commit: `pending`
+
+hand-placed escape stubs (new tool hw/hand_stub.py — audit-exact SHAPE.Collide search, edge-anchored, the fix for the router's centre-anchored fanout seal): I2C_SCL U9.1, I2C_SDA U9.6, TMP_ALERT U9.3, USB_RST U7.9, RBIAS U7.32 stubbed into open field; the router takes over from the stub ends
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 50 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
