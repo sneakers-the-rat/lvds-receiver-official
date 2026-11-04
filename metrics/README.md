@@ -140,6 +140,19 @@ estimates for if one would want to scale up**: the recorded token
 volume priced at each provider's published pay-as-you-go API list
 rates. They are not a bill, and not what this project cost.
 
+Why API prices are the comparison currency (project owner's framing,
+2026-11-04): Anthropic's and OpenAI's subscription tiers carry no
+token count at all — Anthropic's are flat multipliers (5×, 20×) of an
+undefined base amount, and OpenAI's are similar, except that hitting
+the limit degrades your thinking level first. Only Muse's
+subscription tiers correspond to an actual token count. A
+subscription therefore cannot answer "what would this workload cost
+to run as a business"; the pay-as-you-go API rates can, which is why
+this table uses them. The cached-vs-uncached input split is what
+makes the estimate realistic rather than an upper bound — see the
+input-split estimate (`input_split.csv`), which replaces the assumed
+cache share used in the sensitivity line below.
+
 Rates used (USD per 1M tokens, standard rates, fetched 2026-11-04;
 also in `api_rates.json`):
 
