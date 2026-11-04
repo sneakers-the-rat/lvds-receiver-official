@@ -962,6 +962,12 @@ User directives 2026-11-04 02:16–02:17 PST, same data snapshot
   0.5% of gross, so the light layers are thin — the caption says so.
 - The site's Token usage section now shows the snapshot time in
   Pacific time (UTC in parentheses). No other section touched.
+RECONCILED (2026-11-04): the provisional count above is
+superseded by history/PASSES.md, which counts only commits
+that produced a board state (uncommitted runs are gaps, and
+the placed board counts). Under the authoritative log,
+d489c78 is **pass 10** and the next pass is **pass 11**.
+Passes are committed with scripts/commit_pass.py.
 ## Pass system — structure (2026-11-04, branch pass-structure)
 
 The pass counter now has its machinery, built by the structure
