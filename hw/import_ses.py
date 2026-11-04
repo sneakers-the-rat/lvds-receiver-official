@@ -8,9 +8,11 @@ and an auditable record of what was created).
 SES facts relied on (Specctra session format, as written by
 Freerouting 2.5.0 for a KiCad-exported DSN):
   * (network_out (net NAME (wire (path LAYER WIDTH x y x y ...))
-    (via PADSTACK x y) ...)) — coordinates in the DSN resolution
-    (um), Y axis pointing UP (KiCad's DSN export negates Y), so
-    importing negates Y back and scales um -> mm.
+    (via PADSTACK x y) ...)) — coordinates in the SES file's own
+    resolution units ((resolution um N) = N units per um; Freerouting
+    writes um 10, i.e. 0.1 um units — NOT um), Y axis pointing UP
+    (KiCad's DSN export negates Y), so importing negates Y back and
+    scales units -> mm via the parsed resolution.
   * Via padstack names look like "Via[0-3]_600:300_um" (dia:drill
     in um).
   * Wires may also appear under (bundle ...) groupings in some
@@ -56,7 +58,17 @@ def walk(node):
 
 def main():
     base_path, ses_path, out_path = sys.argv[1], sys.argv[2], sys.argv[3]
-    tree = parse_sexp(open(ses_path).read())
+    ses_text = open(ses_path).read()
+    # SES coordinates are in the file's resolution units:
+    # (resolution um N) means N units per um (Freerouting writes
+    # um 10 -> 1 unit = 0.1 um). mm = raw / N / 1000. Assuming um
+    # (N=1) mis-scales every coordinate by exactly N (found 2026-11-04:
+    # a full import landed at 10x, tracks 10x away from their pads).
+    rm = re.search(r'\(resolution\s+um\s+([\d.]+)\)', ses_text)
+    units_per_um = float(rm.group(1)) if rm else 1.0
+    TO_MM = 1.0 / (units_per_um * 1000.0)
+    print(f"SES resolution: {units_per_um} units/um (1 unit = {TO_MM} mm)")
+    tree = parse_sexp(ses_text)
     board = pcbnew.LoadBoard(base_path)
     n_tracks = n_vias = 0
     skipped_layers = set()
@@ -78,8 +90,8 @@ def main():
             if not isinstance(sub, list) or not sub:
                 continue
             if sub[0] == 'path' and len(sub) >= 4:
-                layer, width_um = sub[1], float(sub[2])
-                coords = [float(v) / 1000.0 for v in sub[3:]]
+                layer, width_um = sub[1], float(sub[2]) * TO_MM * 1000.0
+                coords = [float(v) * TO_MM for v in sub[3:]]
                 pts = [(coords[i], -coords[i + 1])
                        for i in range(0, len(coords) - 1, 2)]
                 if layer not in LAYER_IDS:
@@ -100,7 +112,7 @@ def main():
                 m = re.search(r'_(\d+):(\d+)_um', str(sub[1]))
                 dia, drill = (0.6, 0.3) if not m else \
                     (int(m.group(1)) / 1000.0, int(m.group(2)) / 1000.0)
-                x, y = float(sub[2]) / 1000.0, -float(sub[3]) / 1000.0
+                x, y = float(sub[2]) * TO_MM, -float(sub[3]) * TO_MM
                 via = pcbnew.PCB_VIA(board)
                 via.SetPosition(pcbnew.VECTOR2I(MM(x), MM(y)))
                 via.SetWidth(MM(dia)); via.SetDrill(MM(drill))

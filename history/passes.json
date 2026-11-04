@@ -767,6 +767,146 @@
       },
       "description": "U9 cluster clearing (disc 8,48 r3.4): 0/4 \u2014 full clearing changed nothing; U9's pins are sealed by their own exposed pad (0.075 mm) inside the router's centre-anchored fanout model; hand-placed stubs are the route (the audit judges exact shapes, the model anchors at pad centres)",
       "note": ""
+    },
+    {
+      "pass": 28,
+      "timestamp": "2026-11-04T15:18:50Z",
+      "hash": "d57c57ae6ba190935b34e49d76ab12c5968eaeb0",
+      "short_hash": "d57c57a",
+      "board_file": "hw/pdlvds_rx.fr11.kicad_pcb",
+      "dir": "pass-0028",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 13,
+        "unconnected_nets": 50,
+        "audit_verdict": "FAIL"
+      },
+      "description": "hand-placed escape stubs (new tool hw/hand_stub.py \u2014 audit-exact SHAPE.Collide search, edge-anchored, the fix for the router's centre-anchored fanout seal): I2C_SCL U9.1, I2C_SDA U9.6, TMP_ALERT U9.3, USB_RST U7.9, RBIAS U7.32 stubbed into open field; the router takes over from the stub ends",
+      "note": ""
+    },
+    {
+      "pass": 29,
+      "timestamp": "2026-11-04T15:19:22Z",
+      "hash": "30aa43d08fc16b172bc46439287e0cbe24c3f174",
+      "short_hash": "30aa43d",
+      "board_file": "hw/pdlvds_rx.fr12.kicad_pcb",
+      "dir": "pass-0029",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 13,
+        "unconnected_nets": 50,
+        "audit_verdict": "FAIL"
+      },
+      "description": "hand stub: ULPI_D3 U7.21 east along the row (openness test fixed \u2014 neck-width step instead of a fat cross; shorter 0.5 mm stubs admitted). Remaining sealed pads classified by blocker: fence tracks (rip+stub), C40's pad (micro-move), D1 pair (custom via escapes)",
+      "note": ""
+    },
+    {
+      "pass": 30,
+      "timestamp": "2026-11-04T15:32:13Z",
+      "hash": "ac9435d211807d5fa71e7f945fc377e01d41425f",
+      "short_hash": "ac9435d",
+      "board_file": "hw/pdlvds_rx.fr13.kicad_pcb",
+      "dir": "pass-0030",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 13,
+        "unconnected_nets": 53,
+        "audit_verdict": "FAIL"
+      },
+      "description": "fence surgery + hand stubs: ripped CDR_NIN x9 / CDR_CLKP x2 / GND x6 / HV_INTVCC via / XI x5 (victims heal next round), then stubbed CDR_VREF U4.3 (W), CDR_LOS U4.22 (E), +3V3D U11.14 (N), HV_GATE U10.7 (E), VBUS_RAW J1.A9 (NE, full 0.6 width), XO U7.27 (N)",
+      "note": ""
+    },
+    {
+      "pass": 31,
+      "timestamp": "2026-11-04T15:33:01Z",
+      "hash": "f68880ec7c66799746562d1bb815c1d3a28598fd",
+      "short_hash": "f68880e",
+      "board_file": "hw/pdlvds_rx.fr14.kicad_pcb",
+      "dir": "pass-0031",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 36,
+        "unconnected_nets": 55,
+        "audit_verdict": "FAIL"
+      },
+      "description": "placement micro-ops: C40 flipped to the bottom side (frees U7's east-row exits; first bottom-side part on the board) and R27 moved north to (20.5,6.0) (frees U10.9's east exit); stubs placed: ULPI_D4 U7.20, ULPI_D6 U7.18, HV_SHDN U10.9",
+      "note": ""
+    },
+    {
+      "pass": 32,
+      "timestamp": "2026-11-04T15:33:34Z",
+      "hash": "d3c2952a8374d83f88feaebb256879385555402c",
+      "short_hash": "d3c2952",
+      "board_file": "hw/pdlvds_rx.fr15.kicad_pcb",
+      "dir": "pass-0032",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 36,
+        "unconnected_nets": 55,
+        "audit_verdict": "FAIL"
+      },
+      "description": "via-first hand stubs (hw/hand_via.py; via disc tested as a zero-length segment after the plus-shape bug was found): +3V3A U9.5 via@(9.27,48) with In2 tail \u2014 the last U9 pin; CDR_LOS U4.22 second escape via@(55.29,51.25)",
+      "note": ""
     }
   ],
   "gaps": [
