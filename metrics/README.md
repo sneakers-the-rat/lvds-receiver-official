@@ -1,0 +1,166 @@
+# Token metrics — how much agent work this PCB took, as recorded
+
+Snapshot generated **2026-11-04T08:04:23Z** (the last usage row included).
+Headline, for the project scope defined below:
+
+| scope | agents | usage rows | input tokens | output tokens |
+|---|---|---|---|---|
+| chat tree (main chat + its subagents) | 17 | 111 | 108,914,972 | 514,796 |
+| checkpoint cron (`pdlvds-progress`) | 46 | 32 | 15,190,784 | 109,666 |
+| **project total** | **63** | **143** | **124,105,756** | **624,462** |
+
+**Gross total: 124,730,218 tokens processed.** Read the semantics section
+before quoting that number anywhere: it is *gross tokens processed* — the
+full context is re-sent on every model request, so the sum counts the same
+content many times. It is a work meter, not a content size and not a bill.
+
+## Files
+
+- `token_series.csv` — one row per usage record (timestamp, agent, input,
+  output, running cumulative totals), sorted by time.
+- `agents.csv` — every agent in scope, its role, and its totals.
+- `commit_alignment.csv` — every commit in this repo's HEAD history with
+  cumulative project tokens at the commit's time and the board state from
+  the audit file committed at that revision (`not recorded` where the
+  record doesn't say — never back-filled).
+- `progress_vs_tokens.svg` — cumulative tokens vs unconnected nets and
+  clearance violations at the board-bearing attempt commits.
+- `align_commits.py` — regenerates `commit_alignment.csv` from
+  `token_series.csv` + git history (runs anywhere the repo is cloned).
+
+## Source
+
+The Muse runtime database (`muse.db`, read via the read-only SQL tool).
+Two candidate tables exist:
+
+- `agent.token_usage` (per-request) — **completely empty (0 rows). Do not use.**
+- `agent.agent_message_token_usage` — populated; the only source used here.
+  Columns: `agent_id`, `message_id`, `input_tokens`, `output_tokens`,
+  `created_at` (seconds epoch, UTC).
+
+## Semantics — what a row is
+
+Evidence gathered while building this export:
+
+- A row aggregates **all model requests made while producing one message**
+  in that agent. The main agent has 97 rows in this snapshot, one per
+  delivered message/turn, with per-row input from ~0.09M to ~3.7M tokens
+  (a turn with many tool calls makes many requests, each re-sending the
+  context — hence rows larger than the 350k context window).
+- Every **completed subagent has exactly one row**, timestamped at its
+  completion, totalling its whole run (e.g. the CI-fix rounds 1–2 worker:
+  9,121,511 input / 45,386 output in a single row).
+- **Running agents have no rows.** At snapshot time the second build
+  coordinator (~5.5 h of v6/Freerouting work) and this metrics worker had
+  none — their usage lands only when they complete. All totals here
+  therefore *undercount* in-flight work.
+- Sanity anchor: one live request of the root agent on 2026-11-04T07:58Z
+  was estimated at 219,814 input tokens (session status) — a single
+  request, vs 49,411,439 cumulative input over its 97 message rows.
+
+## Scope — who counts
+
+(a) **Chat tree.** `agent.agent_ancestors` for root agent
+`4925d244-018c-4b4f-9fad-7b3ad78af7c1` (this chat): 17 agents — root, 13
+direct children (2 build coordinators, CI-fix ×3, gallery ×3, CI speed,
+CI-signal ×3, this worker), 3 grandchildren (coordinator #1's workers).
+Cross-check: `agent.subagent_spawns` lists exactly the same 13 direct
+children of the root and the same 3 children of coordinator #1 — the two
+records reconcile completely, no gap.
+
+(b) **Checkpoint cron.** The `pdlvds-progress` job (every 30 min) runs
+under the goal scheduler, a different tree. Found via
+`scheduler.jobs`/`scheduler.job_runs`: 23 runs, each with a worker agent
+and a history agent (46 ids). Usage rows exist for all 23 history agents
+(the checkpoint authors, 0.39M–1.17M input each) and for 9 of the 23 run
+agents (small rows, ~0.05M–0.07M); the other 14 have no rows.
+
+(c) **Nothing else.** A prompt-text census (`subagent_spawns` prompts
+mentioning the project) found no project agents outside (a)+(b).
+
+The two scopes are disjoint agent-id sets (verified), so the total does
+not double-count. Two honest overlaps of *effort*, not of records: the
+root agent's rows include the turns that delivered checkpoint handoffs in
+this chat (orchestration cost), and they include turns spent reading
+subagent reports.
+
+## Caveats
+
+- The table is **live**: the root agent keeps accruing rows. This snapshot
+  ends at the 2026-11-04T08:04:23Z row; later exports will be larger.
+- Coverage starts at the first row, **2026-11-03T18:34:31Z**, ~6 minutes
+  after the project's first user message (18:28Z) — that first row
+  aggregates the opening work burst (2,945,917 input), so coverage is
+  effectively from the start.
+- Because subagent rows land at completion, token growth appears in lumps
+  at delivery times. `commit_alignment.csv` assigns a commit the
+  cumulative total of rows timestamped ≤ the commit time: work that was
+  in flight at commit time is missing from that row and appears later.
+- GitHub's server-side merge commits are not in this clone's HEAD lineage
+  and carry no content changes; the alignment covers the 106 content
+  commits of the lineage.
+- Board state is parsed from the audit file **as committed at each
+  revision** (an attempt-specific `results/audit-*.txt` when the commit
+  touched one, else `results/pcb-audit.txt`). No ERC report is committed
+  anywhere in the history (ERC reports live in CI artifacts), so
+  `erc_errors` is `not recorded` throughout — the ERC story (875 → 0) is
+  in `docs/00-status.md`, not in git.
+
+## Regenerating at project end
+
+CI cannot reach this database. An agent with `muse.db` access re-runs the
+SQL below, rewrites `token_series.csv`/`agents.csv`, then runs
+`python3 metrics/align_commits.py .` and re-renders the chart from
+`commit_alignment.csv` (attempt commits only). Update the snapshot date
+and totals in this file and in `docs/00-status.md`.
+
+### SQL used for this snapshot (verbatim)
+
+Token-table check:
+
+```sql
+SELECT (SELECT count(*) FROM agent.token_usage) AS token_usage_rows,
+       (SELECT count(*) FROM agent.agent_message_token_usage) AS msg_rows
+```
+
+Tree census:
+
+```sql
+SELECT descendant_id, distance FROM agent.agent_ancestors
+WHERE ancestor_id='4925d244-018c-4b4f-9fad-7b3ad78af7c1'
+ORDER BY distance, descendant_id
+```
+
+Spawn cross-check:
+
+```sql
+SELECT child_agent_id, child_depth, status, created_at
+FROM agent.subagent_spawns
+WHERE parent_agent_id='4925d244-018c-4b4f-9fad-7b3ad78af7c1' ORDER BY created_at
+```
+
+Per-agent totals with verification bound (the bound is this snapshot's
+last row; the exported CSV was verified to reproduce these sums exactly,
+per agent, all 47 agents with rows):
+
+```sql
+SELECT substr(agent_id,1,8) AS agent8, count(*) AS rows_n,
+       sum(input_tokens) AS input_sum, sum(output_tokens) AS output_sum
+FROM agent.agent_message_token_usage
+WHERE created_at <= 1793779463 AND agent_id IN (/* the 63 scope ids in agents.csv */)
+GROUP BY substr(agent_id,1,8) ORDER BY agent8
+```
+
+Checkpoint discovery:
+
+```sql
+SELECT job_id, source_path FROM scheduler.jobs WHERE source_path LIKE '%pdlvds%';
+SELECT worker_agent_id, worker_history_agent_id, count(*) AS runs_n,
+       min(started_at_utc) AS first_ts, max(started_at_utc) AS last_ts
+FROM scheduler.job_runs WHERE job_id='pdlvds-progress'
+GROUP BY worker_agent_id, worker_history_agent_id ORDER BY runs_n DESC
+```
+
+The series export is the same `agent_id IN (...)` list with
+`SELECT created_at, agent_id, input_tokens, output_tokens
+... ORDER BY created_at, agent_id`.
