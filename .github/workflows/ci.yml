@@ -40,6 +40,18 @@ jobs:
   # So: the KiCad job never installs the standalone ngspice package,
   # and the simulation job never installs KiCad. scripts/ci.sh selects
   # steps via CI_STEPS; a local run without CI_STEPS does everything.
+  # DRC signal design (2026-11-03 — see docs/00-status.md, "CI
+  # signal fix"): ERC below is a HARD GATE and always has been. DRC
+  # is split into its own step because the board is mid-routing: its
+  # raw counts are board state, not pass/fail. That step hard-fails
+  # only when (a) the DRC tool or its report is broken (kicad-cli
+  # won't run, board missing, report missing/empty/unparseable,
+  # implausible zero census while unfinished), or (b) the counts
+  # REGRESS above ci/drc-baseline.json. At/below baseline it passes
+  # and reports the counts as board state — never as "DRC passed".
+  # End state: when routing completes, set the baseline to 0/0 and
+  # this same step is a hard zero-tolerance DRC gate again — the
+  # baseline file is the only change needed.
   kicad-validate:
     runs-on: ubuntu-22.04
     # Healthy total runtime for this job is ~5 minutes, almost all of
@@ -117,9 +129,18 @@ jobs:
           path: /var/cache/apt/archives
           key: ${{ steps.apt-cache.outputs.cache-primary-key }}
 
-      - name: KiCad ERC + DRC (scripts/ci.sh step 10)
-        id: ci
+      - name: KiCad ERC — hard gate (scripts/ci.sh step 10)
+        id: erc
         run: CI_STEPS=10 bash scripts/ci.sh
+
+      # Runs even when ERC failed: the DRC counts are evidence the
+      # site and the next diagnosis need, whatever ERC said. The
+      # step itself still fails on DRC tool-health breakage or a
+      # regression above ci/drc-baseline.json (see job comment).
+      - name: KiCad DRC — tool health + baseline ratchet (scripts/ci.sh step 11)
+        id: drc
+        if: ${{ !cancelled() }}
+        run: CI_STEPS=11 bash scripts/ci.sh
 
       # Fab export runs even when ERC/DRC failed: the site should show
       # the board as it currently is, not hide it behind a red check.
@@ -135,14 +156,50 @@ jobs:
           name: fab-outputs
           path: hw/fab/
 
+      # ci_outcome is the combined validation outcome (failure if
+      # either the ERC or the DRC step failed); the DRC board-state
+      # fields are merged in from results/drc-status.json, written
+      # by scripts/drc_gate.py in step 11, so the site panel can
+      # show the counts as board state next to the baseline.
       - name: Record job status for the site build-status panel
         if: always()
+        env:
+          ERC_OUTCOME: ${{ steps.erc.outcome }}
+          DRC_OUTCOME: ${{ steps.drc.outcome }}
+          FAB_OUTCOME: ${{ steps.fab.outcome }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ID: ${{ github.run_id }}
         run: |
           mkdir -p status
-          printf '{"job": "kicad-validate", "ci_outcome": "%s", "fab_outcome": "%s", "sha": "%s", "run_id": "%s"}\n' \
-            '${{ steps.ci.outcome }}' '${{ steps.fab.outcome }}' \
-            '${{ github.sha }}' '${{ github.run_id }}' > status/kicad-validate.json
-          cat status/kicad-validate.json
+          python3 - <<'PYEOF'
+          import json, os
+          erc = os.environ.get("ERC_OUTCOME", "")
+          drc = os.environ.get("DRC_OUTCOME", "")
+          status = {
+              "job": "kicad-validate",
+              "ci_outcome": "failure" if "failure" in (erc, drc) else erc,
+              "erc_outcome": erc,
+              "drc_outcome": drc,
+              "fab_outcome": os.environ.get("FAB_OUTCOME", ""),
+              "sha": os.environ.get("RUN_SHA", ""),
+              "run_id": os.environ.get("RUN_ID", ""),
+          }
+          try:
+              with open("results/drc-status.json") as f:
+                  gate = json.load(f)
+              for key in ("violations", "unconnected",
+                          "baseline_violations", "baseline_unconnected",
+                          "tool_health", "regression", "verdict",
+                          "board_state"):
+                  if key in gate:
+                      status["drc_" + key] = gate[key]
+          except FileNotFoundError:
+              pass
+          with open("status/kicad-validate.json", "w") as f:
+              json.dump(status, f)
+              f.write("\n")
+          print(json.dumps(status, indent=2))
+          PYEOF
 
       - name: Upload job status
         if: always()
