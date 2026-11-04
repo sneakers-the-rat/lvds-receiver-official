@@ -1,0 +1,13 @@
+pass: 13
+description: repair6 checkpoint 1 on the Freerouting board (pass 12): 10 groups connected in the first ~90 s of sweep 1 (contrast: 0 in 90 min on the pre-relief placement); run continues checkpointing on hw/pdlvds_rx.fr1r.kicad_pcb
+timestamp (UTC): 2026-11-04T13:37:41Z
+commit: pending
+board file: hw/pdlvds_rx.fr1r.ckpt1.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 13
+unconnected nets: 44
+audit verdict: fail
+note: 
