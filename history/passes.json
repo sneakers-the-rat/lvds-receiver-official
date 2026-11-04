@@ -261,8 +261,8 @@
     {
       "pass": 11,
       "timestamp": "2026-11-04T12:30:46Z",
-      "hash": null,
-      "short_hash": null,
+      "hash": "2d2114ea0d33c014b9531aee7766f1e9e97afa0a",
+      "short_hash": "2d2114e",
       "board_file": "hw/pdlvds_rx.relief.kicad_pcb",
       "dir": "pass-0011",
       "renders": {
