@@ -408,6 +408,14 @@ small-disc clear (30,58.5) r2.6 with immediate stubs: PHY_1V8A U7.29 stubbed; +3
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 44 · Audit verdict: FAIL
 
+### Pass 48 — 2026-11-04T20:03:22Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr33.kicad_pcb` · Commit: `pending`
+
+small-disc clear (84.5,43.5) r2.5 with immediate stubs: ULPI_D6 U6.74 stubbed; USB_RST U6.40 still sealed
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 49 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
