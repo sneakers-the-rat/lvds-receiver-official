@@ -62,14 +62,15 @@ def route(in_path, out_path, nets):
                 for it in g:
                     starts += list(it.cells)[:2]
             t0 = time.time()
-            path = router6.astar6(items, starts, main_cells, net,
-                                  width, clr, cap=1500000,
-                                  neck_pts=neck_pts, anchors=anchors)
+            path, fb, lb = router6.astar6(
+                items, starts, main_cells, net, width, clr,
+                cap=1500000, neck_pts=neck_pts, anchors=anchors)
             if path is None:
                 print(f"  {net}: group of {len(g)} items STILL "
                       f"isolated ({time.time() - t0:.0f}s)", flush=True)
                 continue
-            st = {"vias": 0, "neck_pts": neck_pts, "anchors": anchors}
+            st = {"vias": 0, "neck_pts": neck_pts, "anchors": anchors,
+                  "first_bend": fb, "last_bend": lb}
             router6.emit6(board, board.FindNet(net), path, width,
                           items, net, clr, st)
             for node in path:

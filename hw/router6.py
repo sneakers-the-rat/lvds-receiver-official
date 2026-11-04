@@ -62,6 +62,10 @@ MM = pcbnew.FromMM
 # KiCad's integer-nm grid, and the pad model is the bounding rect,
 # which errs conservative against KiCad's real pad shapes).
 SAFE = -0.001
+# Fanout macro geometry (astar6): bend distances along the pad's
+# axis lines and the reach from a bend to candidate cell centres.
+BEND_DS = (0.25, 0.5, 0.75, 1.0, 1.25, 1.5)
+BEND_REACH = 0.75
 
 # ---------------- exact geometry ----------------
 
@@ -207,7 +211,12 @@ def astar6(items, starts, goals, netname, width, clr, cap=900000,
     grid quantisation puts cell centres up to 0.18 mm from the pad
     centre, which under exact testing boxes in fine-pitch pads that
     a real router escapes trivially from the true centre. The tested
-    segment is still exactly the emitted segment."""
+    segment is still exactly the emitted segment.
+
+    Returns (path, first_bend, last_bend): path is the node list or
+    None; the bends are the fanout macro's intermediate points for
+    the first/last step (or None), to be handed to emit6 via stats
+    so emission draws the tested polylines."""
     anchors = anchors or {}
     starts_set = set(starts)
     vr = via_size(width)[0] / 2
@@ -224,6 +233,67 @@ def astar6(items, starts, goals, netname, width, clr, cap=900000,
         return min(abs(cx - gx) + abs(cy - gy) for (_, gx, gy) in hgoals)
     def centre(node):
         return ((node[1] + 0.5) * CELL, (node[2] + 0.5) * CELL)
+    # ---- fanout macros (escape routing) ----
+    # A pad centre can sit exactly on a cell boundary (0.5 mm pitch
+    # on a 0.25 mm grid): every cell centre is then >= 0.125 mm off
+    # the pad axis, and where the escape corridor is exactly
+    # clearance-wide, ANY single straight segment from the pad
+    # centre to a cell centre spends the whole corridor and fails
+    # (measured: U6.6, all 31 single-segment candidates illegal,
+    # while the on-axis segment is exactly legal). The escape must
+    # run on-axis past the neighbour pads' span, THEN turn. Macro:
+    # anchor -> bend (on an axis line through the anchor, distance
+    # d) -> cell centre within BEND_REACH of the bend; both segments
+    # exact-tested with their own neck widths. fanout_out maps a
+    # start node to {cell: (bend, cost)}; goal_finish maps a cell
+    # to (goal node, bend, cost) for the symmetric approach into an
+    # anchored goal pad. Bends are returned with the path so emit
+    # draws exactly what was tested.
+    bends = {}
+    def fanout(anchor_pt, li):
+        out = {}
+        for ux, uy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            for d in BEND_DS:
+                bend = (anchor_pt[0] + ux * d, anchor_pt[1] + uy * d)
+                hw1 = _neck_hw(width, anchor_pt[0], anchor_pt[1],
+                               bend[0], bend[1], neck_pts)
+                if seg_margin(items, li, netname, clr,
+                              anchor_pt[0], anchor_pt[1],
+                              bend[0], bend[1], hw1) < SAFE:
+                    continue
+                ccx, ccy = cell_of(bend[0], bend[1])
+                for ddx in range(-3, 4):
+                    for ddy in range(-3, 4):
+                        cell = (li, ccx + ddx, ccy + ddy)
+                        if not (0 <= cell[1] < W and 0 <= cell[2] < H):
+                            continue
+                        cp = centre(cell)
+                        if (cp[0] - bend[0]) ** 2 + \
+                           (cp[1] - bend[1]) ** 2 > BEND_REACH ** 2:
+                            continue
+                        hw2 = _neck_hw(width, bend[0], bend[1],
+                                       cp[0], cp[1], neck_pts)
+                        if seg_margin(items, li, netname, clr,
+                                      bend[0], bend[1],
+                                      cp[0], cp[1], hw2) < SAFE:
+                            continue
+                        cost = (d + math.hypot(cp[0] - bend[0],
+                                               cp[1] - bend[1])) / CELL
+                        if cell not in out or cost < out[cell][1]:
+                            out[cell] = (bend, cost)
+        return out
+    fanout_out = {}
+    for s in starts_set:
+        if s in anchors:
+            fanout_out[s] = fanout(anchors[s], s[0])
+    goal_finish = {}
+    for gnode in goalset:
+        if gnode in anchors:
+            for cell, (bend, cost) in fanout(anchors[gnode],
+                                             gnode[0]).items():
+                if cell not in goal_finish or \
+                   cost < goal_finish[cell][2]:
+                    goal_finish[cell] = (gnode, bend, cost)
     visited = 0
     while openh:
         _, node = heapq.heappop(openh)
@@ -232,13 +302,37 @@ def astar6(items, starts, goals, netname, width, clr, cap=900000,
             path = [node]
             while node in came:
                 node = came[node]; path.append(node)
-            return list(reversed(path))
+            path = list(reversed(path))
+            fb = bends.get((path[0], path[1])) if len(path) > 1 \
+                else None
+            return path, fb, None
+        if node in goal_finish and node not in starts_set:
+            gnode, bend, _ = goal_finish[node]
+            path = [node]
+            while node in came:
+                node = came[node]; path.append(node)
+            path = list(reversed(path)) + [gnode]
+            fb = bends.get((path[0], path[1])) if len(path) > 1 \
+                else None
+            return path, fb, bend
         visited += 1
         if visited > cap:
             return None
         li, cx, cy = node
         ax, ay = anchors.get(node, centre(node)) \
             if node in starts_set else centre(node)
+        if node in starts_set and node in anchors:
+            # Fanout macro (see module docstring): two-segment
+            # escapes anchor -> bend -> cell, bends on the pad's
+            # axis lines. Precomputed in fanout_out above; here we
+            # just relax the recorded edges.
+            for nb, (bend, cost) in fanout_out.get(node, {}).items():
+                ng = gscore[node] + cost
+                if nb in gscore and gscore[nb] <= ng:
+                    continue
+                gscore[nb] = ng; came[nb] = node
+                bends[(node, nb)] = bend
+                heapq.heappush(openh, (ng + h(nb), nb))
         for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
             nx, ny = cx + dx, cy + dy
             if not (0 <= nx < W and 0 <= ny < H):
@@ -270,7 +364,7 @@ def astar6(items, starts, goals, netname, width, clr, cap=900000,
                     continue
                 gscore[nb] = ng; came[nb] = node
                 heapq.heappush(openh, (ng + h(nb), nb))
-    return None
+    return None, None, None
 
 # ---------------- emission ----------------
 
@@ -309,7 +403,29 @@ def emit6(board, netobj, path, width, items, netname, clr, stats):
             if a != b:
                 draw_seg(li, a, b, w)
             run = None
+    first_bend = stats.get("first_bend")
+    last_bend = stats.get("last_bend")
+    def draw_piece(li, a, b):
+        # one fanout piece, at its own neck-rule width — the same
+        # width astar6 tested for this exact segment
+        w = _neck_hw(width, a[0], a[1], b[0], b[1], neck_pts) * 2
+        if a != b:
+            draw_seg(li, a, b, w)
     for i, (a_node, b_node) in enumerate(zip(path, path[1:])):
+        if i == 0 and first_bend and a_node[0] == b_node[0]:
+            li = a_node[0]
+            a = point_of(a_node, True)
+            draw_piece(li, a, first_bend)
+            draw_piece(li, first_bend, centre(b_node))
+            continue
+        if i == len(path) - 2 and last_bend and \
+           a_node[0] == b_node[0]:
+            flush()
+            li = a_node[0]
+            b = point_of(b_node, True)
+            draw_piece(li, centre(a_node), last_bend)
+            draw_piece(li, last_bend, b)
+            continue
         if a_node[0] == b_node[0]:
             li = a_node[0]
             a = point_of(a_node, i == 0)
@@ -398,13 +514,15 @@ def route6(board, net_objs, fps, checkpoint=None):
             for c in cs:
                 anchors[c] = pos
         for pin_id, cells, _ in pins[1:]:
-            path = astar6(items, cells, tree, netname, width, clr,
-                          neck_pts=neck_pts, anchors=anchors)
+            path, fb, lb = astar6(items, cells, tree, netname, width,
+                                  clr, neck_pts=neck_pts,
+                                  anchors=anchors)
             if path is None:
                 ok = False
                 failed.append((netname, pin_id, cells))
                 continue
-            st = {"vias": 0, "neck_pts": neck_pts, "anchors": anchors}
+            st = {"vias": 0, "neck_pts": neck_pts, "anchors": anchors,
+                  "first_bend": fb, "last_bend": lb}
             emit6(board, net_objs[netname], path, width, items,
                   netname, clr, st)
             stats["vias"] += st["vias"]
@@ -427,14 +545,16 @@ def route6(board, net_objs, fps, checkpoint=None):
             for _, cs, pos in pad_cells[netname]:
                 for c in cs:
                     anchors[c] = pos
-            path = astar6(items, cells, trees[netname], netname,
-                          width, clr, cap=2500000, neck_pts=neck_pts,
-                          via_cost=6 if attempt == 0 else 3,
-                          anchors=anchors)
+            path, fb, lb = astar6(items, cells, trees[netname],
+                                  netname, width, clr, cap=2500000,
+                                  neck_pts=neck_pts,
+                                  via_cost=6 if attempt == 0 else 3,
+                                  anchors=anchors)
             if path is None:
                 still.append((netname, pin_id, cells))
                 continue
-            st = {"vias": 0, "neck_pts": neck_pts, "anchors": anchors}
+            st = {"vias": 0, "neck_pts": neck_pts, "anchors": anchors,
+                  "first_bend": fb, "last_bend": lb}
             emit6(board, net_objs[netname], path, width, items,
                   netname, clr, st)
             stats["vias"] += st["vias"]

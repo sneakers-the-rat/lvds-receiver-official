@@ -79,10 +79,9 @@ def _run(board_path, out):
                     for it in g:
                         starts += list(it.cells)[:2]
                 t0 = time.time()
-                rpath = router6.astar6(items, starts, main_cells, net,
-                                       width, clr, cap=1500000,
-                                       neck_pts=neck_pts,
-                                       anchors=anchors)
+                rpath, fb, lb = router6.astar6(
+                    items, starts, main_cells, net, width, clr,
+                    cap=1500000, neck_pts=neck_pts, anchors=anchors)
                 if rpath is None:
                     print(f"  {net}: group ({len(g)} items, "
                           f"{[it.desc for it in g[:3]]}) STILL "
@@ -90,7 +89,8 @@ def _run(board_path, out):
                           flush=True)
                     continue
                 st = {"vias": 0, "neck_pts": neck_pts,
-                      "anchors": anchors}
+                      "anchors": anchors, "first_bend": fb,
+                      "last_bend": lb}
                 router6.emit6(board, board.FindNet(net), rpath, width,
                               items, net, clr, st)
                 for node in rpath:
