@@ -424,9 +424,9 @@ small-disc clear (16,10) r3.0: HV_INTVCC U10.8 / HV_SS U10.3 stubs still refused
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 53 · Audit verdict: FAIL
 
-### Pass 50 — 2026-11-04T20:05:10Z · commit `pending`
+### Pass 50 — 2026-11-04T20:05:10Z · commit `6a5a9b9`
 
-Board: `hw/pdlvds_rx.fr35.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr35.kicad_pcb` · Commit: `6a5a9b9335eff9a1b22634f82fb12439571ebfbd`
 
 small-disc clear (52.5,54) r2.6 with immediate stub: REFCLKN U4.11 stubbed; THRADJ U4.9 still sealed
 
