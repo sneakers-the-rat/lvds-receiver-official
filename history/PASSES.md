@@ -120,9 +120,9 @@ placement relief: J2 shifted -4 mm in x (pads 5/6 were 2.08 mm outside the outli
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 56 · Unconnected nets: 113 · Audit verdict: FAIL
 
-### Pass 12 — 2026-11-04T13:34:01Z · commit `pending`
+### Pass 12 — 2026-11-04T13:34:01Z · commit `2120e09`
 
-Board: `hw/pdlvds_rx.fr1.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr1.kicad_pcb` · Commit: `2120e096b8b049c09fed553c4c691a2fbd6f996b`
 
 Freerouting v2.5.0 routes the pass-11 relief placement (6 passes, score plateau ~221, best state kept: 148/402 connections unrouted by FR); SES imported via hw/import_ses.py after fixing its unit scaling (SES is in 0.1 um resolution units, importer assumed um and landed at 10x; fix parses (resolution um N)); importer also refills zones. Audit: 44 unconnected nets (power nets dominate: +3V3D 20 groups, +5V 15, +3V3A 13, GND 10), 13 clearance items all one family (APD_K pads/tracks vs F.Cu GND pour, 1.0 mm HV rule), 20 intrinsic; repair6 in checkpointed runs next
 
