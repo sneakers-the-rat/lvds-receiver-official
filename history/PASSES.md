@@ -384,6 +384,14 @@ repairg healing after cluster chain 2: 68 groups connected (victims repaid in th
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 37 · Audit verdict: FAIL
 
+### Pass 45 — 2026-11-04T19:59:31Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr30.kicad_pcb` · Commit: `pending`
+
+stub campaign 2 on the healed field: +3V3A U7.30/U7.31 stubbed; CF1/CF2 re-stubbed (their campaign-1 stubs were ripped as cluster victims)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 37 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
