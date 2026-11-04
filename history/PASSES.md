@@ -144,6 +144,46 @@ repair6 checkpoint 2 on the Freerouting board: 20 groups connected, sweep 1 cont
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 44 · Audit verdict: FAIL
 
+### Pass 15 — 2026-11-04T13:43:07Z · commit `17d9b29`
+
+Board: `hw/pdlvds_rx.fr1r.ckpt3.kicad_pcb` · Commit: `17d9b29beb16275d0103d5195da306f668e0b167`
+
+repair6 checkpoint 3 on the Freerouting board: 30 groups connected, sweep 1 continuing
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 44 · Audit verdict: FAIL
+
+### Pass 16 — 2026-11-04T13:44:21Z · commit `060416b`
+
+Board: `hw/pdlvds_rx.fr1r.ckpt4.kicad_pcb` · Commit: `060416bc280766a98ea6518b3f67351ab07d1931`
+
+repair6 checkpoint 4 on the Freerouting board: 40 groups connected; first still-isolated groups appear (U4.12/U4.18 +3V3D_CDR, J1.A4 VBUS_RAW) - later sweeps retry them
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 44 · Audit verdict: FAIL
+
+### Pass 17 — 2026-11-04T13:45:26Z · commit `32fa1a8`
+
+Board: `hw/pdlvds_rx.fr1r.ckpt5.kicad_pcb` · Commit: `32fa1a8c5c766c0a97e50b7976218902be22d237`
+
+repair6 checkpoint 5 on the Freerouting board: 50 groups connected, sweep 1 continuing (53 connected vs 25 still-isolated attempts so far)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 43 · Audit verdict: FAIL
+
+### Pass 18 — 2026-11-04T13:50:48Z · commit `bb962a3`
+
+Board: `hw/pdlvds_rx.fr1r.ckpt6.kicad_pcb` · Commit: `bb962a37b36993b5bcd4563c4170016d4d5ea1ff`
+
+repair6 checkpoint 6 on the Freerouting board: 60 groups connected, sweep 1 continuing
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 33 · Audit verdict: FAIL
+
+### Pass 19 — 2026-11-04T14:06:35Z · commit `da3cc77`
+
+Board: `hw/pdlvds_rx.fr1r.s2.kicad_pcb` · Commit: `da3cc774f61afa610f6e69f671032489068509bb`
+
+repair6 final state on the Freerouting board: sweep 1 connected 64 groups, sweep 2 connected 0 (residue is copper-walled, per results/diagnose-fr1r.log census: NO_EXIT 23, POCKET 14, WIDE_NO_GOAL 2 of 39 classified); run stopped during the provably futile identical sweep 3; board state is the sweep-2-end save
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 30 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
