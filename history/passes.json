@@ -285,6 +285,34 @@
       },
       "description": "placement relief: J2 shifted -4 mm in x (pads 5/6 were 2.08 mm outside the outline); 40 audit-driven nudges (hw/relief_nudge.py) clear all 22 inter-part pad clearance violations, several at gap 0.000 (touching); only small passives moved, no ICs, APD/TIA cluster untouched; remaining audit items = 20 INTRINSIC same-footprint pairs + 56 stale zone-fill pairs (refilled at route import); unrouted, Freerouting next",
       "note": ""
+    },
+    {
+      "pass": 12,
+      "timestamp": "2026-11-04T13:34:01Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr1.kicad_pcb",
+      "dir": "pass-0012",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 13,
+        "unconnected_nets": 44,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Freerouting v2.5.0 routes the pass-11 relief placement (6 passes, score plateau ~221, best state kept: 148/402 connections unrouted by FR); SES imported via hw/import_ses.py after fixing its unit scaling (SES is in 0.1 um resolution units, importer assumed um and landed at 10x; fix parses (resolution um N)); importer also refills zones. Audit: 44 unconnected nets (power nets dominate: +3V3D 20 groups, +5V 15, +3V3A 13, GND 10), 13 clearance items all one family (APD_K pads/tracks vs F.Cu GND pour, 1.0 mm HV rule), 20 intrinsic; repair6 in checkpointed runs next",
+      "note": ""
     }
   ],
   "gaps": [
