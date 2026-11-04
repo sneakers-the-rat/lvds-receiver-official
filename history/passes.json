@@ -761,6 +761,34 @@
       },
       "description": "hand-placed escape stubs (new tool hw/hand_stub.py \u2014 audit-exact SHAPE.Collide search, edge-anchored, the fix for the router's centre-anchored fanout seal): I2C_SCL U9.1, I2C_SDA U9.6, TMP_ALERT U9.3, USB_RST U7.9, RBIAS U7.32 stubbed into open field; the router takes over from the stub ends",
       "note": ""
+    },
+    {
+      "pass": 29,
+      "timestamp": "2026-11-04T15:19:22Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr12.kicad_pcb",
+      "dir": "pass-0029",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 13,
+        "unconnected_nets": 50,
+        "audit_verdict": "FAIL"
+      },
+      "description": "hand stub: ULPI_D3 U7.21 east along the row (openness test fixed \u2014 neck-width step instead of a fat cross; shorter 0.5 mm stubs admitted). Remaining sealed pads classified by blocker: fence tracks (rip+stub), C40's pad (micro-move), D1 pair (custom via escapes)",
+      "note": ""
     }
   ],
   "gaps": [
