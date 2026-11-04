@@ -232,9 +232,9 @@ U7 full-chip cluster clearing (disc 30,61 r4.5, 101 items): 9/16 connected incl.
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 46 · Audit verdict: FAIL
 
-### Pass 26 — 2026-11-04T15:06:18Z · commit `pending`
+### Pass 26 — 2026-11-04T15:06:18Z · commit `8b9cb9d`
 
-Board: `hw/pdlvds_rx.fr9.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr9.kicad_pcb` · Commit: `8b9cb9d84ecd18163dc5f8d70eadc4cf7c995e4d`
 
 U10 cluster clearing (disc 16,10 r3.6): HV_FBX U10.2 connected; HV_GATE U10.7 and HV_SHDN U10.9 fanout-empty (sibling-pad seal)
 
