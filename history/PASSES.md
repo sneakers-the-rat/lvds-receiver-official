@@ -400,9 +400,9 @@ small-disc clear (31.5,63.4) r2.4 with immediate audit-exact stubs: ULPI_STP, UL
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 42 · Audit verdict: FAIL
 
-### Pass 47 — 2026-11-04T20:01:49Z · commit `pending`
+### Pass 47 — 2026-11-04T20:01:49Z · commit `cffc8be`
 
-Board: `hw/pdlvds_rx.fr32.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr32.kicad_pcb` · Commit: `cffc8beca43c63fc97fff95a76a3d87ee96a0169`
 
 small-disc clear (30,58.5) r2.6 with immediate stubs: PHY_1V8A U7.29 stubbed; +3V3A U7.6 still sealed
 
