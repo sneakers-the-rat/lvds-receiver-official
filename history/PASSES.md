@@ -368,9 +368,9 @@ cluster clearing U6 west disc (83,44) r3.5: USB_RST U6.40 not connected by astar
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 49 · Audit verdict: FAIL
 
-### Pass 43 — 2026-11-04T19:57:49Z · commit `pending`
+### Pass 43 — 2026-11-04T19:57:49Z · commit `043b44e`
 
-Board: `hw/pdlvds_rx.fr28.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr28.kicad_pcb` · Commit: `043b44e7ce6564089c7c0fb0d3a7396060a27e64`
 
 cluster clearing U13 disc (48,62) r3.6: ILIM_P U13.5 connected
 
