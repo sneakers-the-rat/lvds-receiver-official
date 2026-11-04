@@ -184,6 +184,14 @@ repair6 final state on the Freerouting board: sweep 1 connected 64 groups, sweep
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 30 · Audit verdict: FAIL
 
+### Pass 20 — 2026-11-04T14:35:37Z · commit `c7ed6a2`
+
+Board: `hw/pdlvds_rx.fr4.kicad_pcb` · Commit: `c7ed6a223224796ac7df97e12f157bdc9b700b89`
+
+cluster clearing at the U7 south row: 66 foreign items (the XI/XO/RBIAS/+VA fanout thicket) ripped in three process batches of <=25 removes (KiCad 7 SWIG corrupts beyond a few dozen removes per process); +3V3A U7.25/30/31 then connected in seconds each through the cleared field — +3V3A is down to its main group plus U9.5. Victim nets fragmented by the clearing (unconnected-net count rises to 38; +VA/XI/XO/RBIAS/ULPI stubs to be healed by repair in the cleared field). PHY_1V8 U7.26 and PHY_1V8A U7.29 still sealed with empty fanout even in the cleared field — a pad-geometry seal, not copper. APD_A is down to D1.4 alone; clearance unchanged at the 13 APD_K-vs-pour items
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 38 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

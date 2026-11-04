@@ -1,0 +1,16 @@
+=== ripup batch start 14:07:43 ===
+14:07:46 ripup: 38 isolated groups, batch of 12
+14:08:00   +3V3A ['U9.5']: still isolated after 3 rips; copper restored
+14:08:17   +3V3A ['U7.25']: still isolated after 3 rips; copper restored
+14:08:32   +3V3A ['U7.30']: still isolated after 3 rips; copper restored
+14:08:48   +3V3A ['U7.31']: still isolated after 3 rips; copper restored
+14:09:41   +3V3D ['U11.14']: still isolated after 3 rips; copper restored
+14:10:00   +3V3D_CDR ['U4.12']: still isolated after 3 rips; copper restored
+14:10:14   +3V3D_CDR ['U4.18']: still isolated after 3 rips; copper restored
+14:10:45   +5V ['U14.6']: CONNECTED after ripping 3 (10s); victims: ['SET_A', 'SET_A', 'ILIM_A']
+14:11:18   +5V ['U13.3']: still isolated after 3 rips; copper restored
+14:11:36   +VA ['U13.9']: still isolated after 3 rips; copper restored
+14:11:54   +VA ['U13.10']: still isolated after 3 rips; copper restored
+14:11:54   APD_A ['D1.4']: no wall candidates within 1.6 mm
+14:12:01 ripup done: 1 groups connected, victims ['ILIM_A', 'SET_A'], isolated groups remaining: 88
+=== ripup batch exit 14:12:04 ===

@@ -116,6 +116,9 @@ def attempt(board, items, pad_cells, groups_by_net, net, g):
 def main():
     src, out = sys.argv[1], sys.argv[2]
     maxg = int(sys.argv[3]) if len(sys.argv) > 3 else 12
+    mode = sys.argv[4] if len(sys.argv) > 4 else "inc"
+    wall_r = 2.0 if mode == "all" else WALL_R
+    max_rip = 12 if mode == "all" else MAX_RIP
     board = pcbnew.LoadBoard(src)
     items, pad_cells = repair.build_items(board)
     groups_by_net = repair.compute_groups(board)
@@ -153,20 +156,28 @@ def main():
             if t.GetNetname() == net:
                 continue
             d = min(seg_dist(px, py, t) for px, py in pos)
-            if d < WALL_R:
+            if d < wall_r:
                 cands.append((d, t))
         cands.sort(key=lambda x: x[0])
         if not cands:
-            print(f"  {label}: no wall candidates within {WALL_R} mm",
+            print(f"  {label}: no wall candidates within {wall_r} mm",
                   flush=True)
             continue
         removed = []
         ok = False
-        for k in range(min(MAX_RIP, len(cands))):
-            _d, t = cands[k]
-            removed.append(snapshot(t))
-            victims.add(t.GetNetname())
-            board.Remove(t)
+        # 'inc': add one candidate per trial, attempt after each.
+        # 'all': remove the whole fence (up to max_rip) in one trial.
+        steps = ([min(max_rip, len(cands))] if mode == "all"
+                 else list(range(1, min(max_rip, len(cands)) + 1)))
+        for upto in steps:
+            while len(removed) < upto:
+                _d, t = cands[len(removed)]
+                removed.append(snapshot(t))
+                victims.add(t.GetNetname())
+                board.Remove(t)
+                print(f"    rip {t.GetNetname()} "
+                      f"{'via' if isinstance(t, pcbnew.PCB_VIA) else t.GetLayerName()} "
+                      f"d={_d:.2f}", flush=True)
             items, _pc = repair.build_items(board)
             groups_by_net = repair.compute_groups(board)
             # the group object is stale after recompute; re-find it
