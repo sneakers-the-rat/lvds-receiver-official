@@ -341,6 +341,34 @@
       },
       "description": "repair6 checkpoint 1 on the Freerouting board (pass 12): 10 groups connected in the first ~90 s of sweep 1 (contrast: 0 in 90 min on the pre-relief placement); run continues checkpointing on hw/pdlvds_rx.fr1r.kicad_pcb",
       "note": ""
+    },
+    {
+      "pass": 14,
+      "timestamp": "2026-11-04T13:39:12Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr1r.ckpt2.kicad_pcb",
+      "dir": "pass-0014",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 13,
+        "unconnected_nets": 44,
+        "audit_verdict": "FAIL"
+      },
+      "description": "repair6 checkpoint 2 on the Freerouting board: 20 groups connected, sweep 1 continuing",
+      "note": ""
     }
   ],
   "gaps": [

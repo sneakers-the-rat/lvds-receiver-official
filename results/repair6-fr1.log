@@ -23,3 +23,11 @@
 13:38:14   +5V: connected group of 12 items (23s, 2 vias)
 13:38:32   +5V: connected group of 3 items (18s, 2 vias)
 13:38:37   checkpoint: 20 groups, saved
+13:39:09   +5V: connected group of 3 items (32s, 2 vias)
+13:39:15   +5V: group (3 items, ['U13.1', 'U13.2', 'track@(46.45, 61.5)']) STILL isolated (6s)
+13:39:23   +5V: connected group of 1 items (8s, 0 vias)
+13:39:32   +5V: connected group of 1 items (9s, 0 vias)
+13:39:43   +5V: connected group of 1 items (11s, 1 vias)
+13:39:51   +5V: connected group of 1 items (8s, 0 vias)
+13:39:58   +5V: connected group of 1 items (7s, 0 vias)
+13:40:05   +5V: group (1 items, ['U14.6']) STILL isolated (7s)
