@@ -115,11 +115,11 @@ Evidence gathered while building this export:
 
 **Headline, with its error attached:** of the 133,253,984 recorded
 input tokens, 132,657,139 (99.6%) were estimable, and of those an
-estimated **3.6% (4,780,664) were NEW** — content sent for the first
-time — and **96.4% (127,876,475) were REPEATED** — context re-sent
-from earlier requests. Per scope: chat tree **2.5% new / 97.5%
-repeated**; checkpoint cron **12.2% new / 87.8% repeated** (of its
-estimable 15,317,207). The remaining 596,845 tokens (0.4%) belong to
+estimated **3.63% (4,816,164) were NEW** — content sent for the first
+time in its context window — and **96.37% (127,840,975) were
+REPEATED** — context re-sent within the same window. Per scope:
+chat tree **2.51% new / 97.49% repeated**; checkpoint cron
+**12.2% new / 87.8% repeated** (of its estimable 15,317,207). The remaining 596,845 tokens (0.4%) belong to
 the 10 cron run/delivery agents and are NOT estimable (below); they
 are carried as repeated in the CSV, flagged per row. Validation:
 against held-out agents the estimator's reconstructed totals land at
@@ -130,6 +130,55 @@ uncertainty, not as exact. This split is the closest available proxy
 for cached-vs-uncached input: repeated content is what a prompt
 cache serves, but a repeat is not necessarily a cache *hit* (caches
 expire), and no billing conclusion follows from tokens alone.
+
+### Correction (2026-11-04): the compaction rule
+
+The first published version of this estimate handled compactions
+under an incorrect rule. It kept a kept item's identity alive across
+a compaction: only the summary counted as new at the first request
+after the boundary, and kept items went on accruing REPEATED from
+that first send. That is not how a prefix cache works. A prompt
+cache is keyed on the exact token prefix of a single context window;
+a compaction starts a new window whose text — the summary plus the
+kept items, the kept items now standing at new positions behind
+different preceding text — matches nothing already cached. On the
+first request after a compaction, everything in the surviving
+context is therefore uncached (NEW); repeats accrue only from the
+second request in the new window onward. No evidence shows any
+provider preserving cache across a compaction, and systems that
+expose the mechanism (Claude Code after a recompaction, for one)
+treat the new window as new. The old rule measured *content
+repetition* — whether the same text had ever been sent before —
+which is an upper bound on the cache-served share, not the share
+itself.
+
+Effect on the numbers: NEW rises by 35,500 tokens overall
+(4,780,664 → 4,816,164; REPEATED 127,876,475 → 127,840,975), so the
+repeated share moves 96.40% → 96.37% of estimable input and the
+chat-tree share 97.52% → 97.49%; the cron scope contains no
+compactions and is unchanged. Per agent: the root agent's NEW rises
+28,213 → 79,055 (three compactions in its transcripts at
+publication); build coordinator #1's NEW *falls* 58,608 → 43,266,
+because the old pipeline additionally carried a manual add-on that
+counted its final segment's starting context on top of the summary
+— a double count the corrected rule makes unnecessary, since the
+segment's first request now counts the whole window exactly once,
+by the rule itself. The cost summary's measured-share sensitivity
+moves with the corrected shares (Muse $44.31 → $44.39, Claude
+$44.67 → $44.77, OpenAI $123.20 → $123.37; its headlines do not
+depend on the split and are unchanged). Validation of the totals
+model never depended on the split rule, and re-running it
+reproduces every published fit statistic exactly (held-out median
+ratio 1.03; median absolute error 3.5% raw, 3.2% after correction);
+every published record still satisfies new + repeated = recorded
+exactly, and the recorded total is unchanged at 133,253,984.
+
+One artefact of re-running on a live machine: the regenerated
+validation file lists an eighth compaction anchor — the root agent
+compacted again at 2026-11-04T10:47:56Z, after the frozen export.
+Its segment contains no frozen usage rows, so it changes no
+published figure; the seven anchors of the original publication are
+unchanged.
 
 ### Why this is an estimate
 
@@ -159,16 +208,25 @@ with usage rows), so the split is reconstructed from text sizes.
   chars). The slice is the agent's starting context (new at its
   first own request); the parent's requests inside it are not
   counted as the child's.
-- **Compactions** (`compaction_checkpoint` records, 7 in scope): the
-  summary replaces all items before `first_kept_seq`; the summary is
-  new at its first send, dropped items stop accruing repeats.
+- **Compactions** (`compaction_checkpoint` records, 7 at
+  publication): a compaction starts a NEW context window. The
+  summary replaces all items before `first_kept_seq` and dropped
+  items are gone; at the first request of the new window the ENTIRE
+  surviving context — summary and kept items alike — counts as NEW
+  (uncached), because a prefix cache is keyed on the exact prefix of
+  one window and the new window's prefix matches nothing cached.
+  From the window's second request on, its content accrues REPEATED
+  normally. (The first published version of this bullet described a
+  different rule; see the correction note above for why it was
+  wrong.)
 - **Single-row agents with compactions** are modelled on their
   post-last-compaction segment only: build coordinator #1's row
   reconciles with its final segment (estimated 2,276,625 vs recorded
   2,224,018, ratio 0.98) but not with its whole stream (~55M
   predicted, 25× the record) — its usage evidently accumulated over
   the final segment only. The segment's starting context counts as
-  new at its first request.
+  new at its first request — by the compaction rule itself (the
+  segment opens a new window), not by any add-on.
 - Responses are assigned to usage records by timestamp (a response
   belongs to the first record completing after it). 74 inferred
   responses fall after their agent's last snapshot record (the root
