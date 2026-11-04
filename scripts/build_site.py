@@ -553,11 +553,18 @@ def tia_plot():
 def schematic_svg():
     dst = os.path.join(ASSETS, "schematic.svg")
     try:
+        before = set(os.listdir(ASSETS))
         subprocess.run(["kicad-cli", "sch", "export", "svg", "-o", ASSETS,
                         os.path.join(ROOT, "hw", "pdlvds_rx.kicad_sch")],
                        check=True, capture_output=True, timeout=180)
+        # Collapse ONLY the files this export just produced onto
+        # schematic.svg. (The rename previously matched every .svg in
+        # ASSETS, silently eating assets copied earlier in the build —
+        # found when the token-usage chart SVG vanished from the built
+        # site while its copy reported success.)
         for f in os.listdir(ASSETS):
-            if f.endswith(".svg") and "schematic" not in f:
+            if (f not in before and f.endswith(".svg")
+                    and "schematic" not in f):
                 os.rename(os.path.join(ASSETS, f), dst)
         return "schematic.svg" if os.path.exists(dst) else None
     except Exception as e:
