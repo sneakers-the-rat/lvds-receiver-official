@@ -112,6 +112,14 @@ Nets fully routed: not recorded · Pins failed: not recorded · Clearance violat
 
 Audit: results/audit-repair6-attempt3-ckpt1.txt, committed with the pass. Pins-failed not recorded (the old gallery index's 74 came from the same stale build-log parse as pass 7's).
 
+### Pass 11 — 2026-11-04T12:30:46Z · commit `pending`
+
+Board: `hw/pdlvds_rx.relief.kicad_pcb` · Commit: `pending`
+
+placement relief: J2 shifted -4 mm in x (pads 5/6 were 2.08 mm outside the outline); 40 audit-driven nudges (hw/relief_nudge.py) clear all 22 inter-part pad clearance violations, several at gap 0.000 (touching); only small passives moved, no ICs, APD/TIA cluster untouched; remaining audit items = 20 INTRINSIC same-footprint pairs + 56 stale zone-fill pairs (refilled at route import); unrouted, Freerouting next
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 56 · Unconnected nets: 113 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
