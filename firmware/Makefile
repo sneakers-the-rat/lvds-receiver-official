@@ -1,7 +1,9 @@
 # Firmware Makefile - photodiode LVDS receiver (STM32H723)
 #
-#   make host-test   build the codec library + host tests with the
-#                    host gcc and run them (works today)
+#   make host-test   build + run the host-side tests: the codec suite
+#                    (codec/test_codec.c), the USB descriptor audit
+#                    and the USB framing round-trip (tests/). Works
+#                    with the host gcc alone.
 #   make arm         cross-compile firmware for the target; needs
 #                    arm-none-eabi-gcc - if it is not installed this
 #                    target says so and fails, it does not fake a build
@@ -10,6 +12,9 @@
 BUILD      := build
 CODEC_DIR  := codec
 SRC_DIR    := src
+TESTS_DIR  := tests
+TUSB_DIR   := third_party/tinyusb/src
+TUSB_PORT  := $(SRC_DIR)/tinyusb_port
 
 HOST_CC    := gcc
 HOST_FLAGS := -std=c99 -Wall -Wextra -Werror -O2
@@ -17,8 +22,21 @@ HOST_FLAGS := -std=c99 -Wall -Wextra -Werror -O2
 ARM_CC     := arm-none-eabi-gcc
 ARM_CPU    := -mcpu=cortex-m7 -mthumb -mfpu=fpv5-d16 -mfloat-abi=hard
 ARM_FLAGS  := -std=c99 -Wall -Wextra -O2 -ffunction-sections -fdata-sections \
-              -fno-common -I$(CODEC_DIR) -I$(SRC_DIR)
+              -fno-common -I$(CODEC_DIR) -I$(SRC_DIR) -I$(TUSB_DIR) -I$(TUSB_PORT)
 ARM_LD     := -T linker.ld -Wl,--gc-sections -nostartfiles -Wl,-Map=$(BUILD)/rxfw.map
+
+# TinyUSB (third_party/PROVENANCE.md) is compiled as C11 with its own
+# warning set kept visible but non-fatal; it is upstream code, not
+# held to this repo's -Werror bar (the host build) nor edited to
+# satisfy ours.
+TUSB_FLAGS := -std=gnu11 -Wall -O2 -ffunction-sections -fdata-sections \
+              -fno-common -I$(TUSB_DIR) -I$(TUSB_PORT) -I$(SRC_DIR)
+TUSB_SRCS  := $(TUSB_DIR)/tusb.c \
+              $(TUSB_DIR)/device/usbd.c \
+              $(TUSB_DIR)/common/tusb_fifo.c \
+              $(TUSB_DIR)/class/cdc/cdc_device.c \
+              $(TUSB_DIR)/portable/synopsys/dwc2/dcd_dwc2.c \
+              $(TUSB_DIR)/portable/synopsys/dwc2/dwc2_common.c
 
 CODEC_SRCS := $(CODEC_DIR)/codec.c
 TEST_SRCS  := $(CODEC_DIR)/test_codec.c
@@ -35,17 +53,39 @@ ARM_SRCS   := startup.c \
               $(SRC_DIR)/hv_ctrl.c \
               $(SRC_DIR)/capture.c \
               $(SRC_DIR)/usb_app.c \
-              $(SRC_DIR)/usb_device_stub.c
-ARM_OBJS   := $(patsubst %.c,$(BUILD)/%.o,$(ARM_SRCS))
+              $(SRC_DIR)/usb_descriptors.c \
+              $(SRC_DIR)/usb_device_tinyusb.c
+ARM_OBJS   := $(patsubst %.c,$(BUILD)/%.o,$(ARM_SRCS)) \
+              $(patsubst %.c,$(BUILD)/tusb/%.o,$(notdir $(TUSB_SRCS)))
 
 .PHONY: host-test arm clean
 
-host-test: $(BUILD)/test_codec
+host-test: $(BUILD)/test_codec $(BUILD)/test_usb_descriptors \
+           $(BUILD)/test_usb_framing
 	./$(BUILD)/test_codec
+	./$(BUILD)/test_usb_descriptors
+	./$(BUILD)/test_usb_framing
 
 $(BUILD)/test_codec: $(CODEC_SRCS) $(TEST_SRCS) $(CODEC_DIR)/codec.h
 	@mkdir -p $(BUILD)
 	$(HOST_CC) $(HOST_FLAGS) -I$(CODEC_DIR) $(CODEC_SRCS) $(TEST_SRCS) -o $@
+
+$(BUILD)/test_usb_descriptors: $(TESTS_DIR)/test_usb_descriptors.c \
+                               $(SRC_DIR)/usb_descriptors_data.h
+	@mkdir -p $(BUILD)
+	$(HOST_CC) $(HOST_FLAGS) -I$(SRC_DIR) \
+	    $(TESTS_DIR)/test_usb_descriptors.c -o $@
+
+# The framing round-trip runs the real usb_app.c protocol handler
+# through the real usb_device_if.h byte pipe, with mock control
+# backends and an in-memory loopback standing where the TinyUSB
+# transport sits on target (see the test's header comment).
+$(BUILD)/test_usb_framing: $(TESTS_DIR)/test_usb_framing.c \
+                           $(SRC_DIR)/usb_app.c $(CODEC_SRCS)
+	@mkdir -p $(BUILD)
+	$(HOST_CC) $(HOST_FLAGS) -I$(CODEC_DIR) -I$(SRC_DIR) \
+	    $(TESTS_DIR)/test_usb_framing.c $(SRC_DIR)/usb_app.c \
+	    $(CODEC_SRCS) -o $@
 
 arm:
 	@command -v $(ARM_CC) >/dev/null 2>&1 || { \
@@ -64,6 +104,26 @@ $(BUILD)/rxfw.elf: $(ARM_OBJS) linker.ld
 $(BUILD)/%.o: %.c
 	@mkdir -p $(dir $@)
 	$(ARM_CC) $(ARM_CPU) $(ARM_FLAGS) -c $< -o $@
+
+$(BUILD)/tusb/%.o: $(TUSB_DIR)/%.c
+	@mkdir -p $(dir $@)
+	$(ARM_CC) $(ARM_CPU) $(TUSB_FLAGS) -c $< -o $@
+
+$(BUILD)/tusb/%.o: $(TUSB_DIR)/device/%.c
+	@mkdir -p $(dir $@)
+	$(ARM_CC) $(ARM_CPU) $(TUSB_FLAGS) -c $< -o $@
+
+$(BUILD)/tusb/%.o: $(TUSB_DIR)/common/%.c
+	@mkdir -p $(dir $@)
+	$(ARM_CC) $(ARM_CPU) $(TUSB_FLAGS) -c $< -o $@
+
+$(BUILD)/tusb/%.o: $(TUSB_DIR)/class/cdc/%.c
+	@mkdir -p $(dir $@)
+	$(ARM_CC) $(ARM_CPU) $(TUSB_FLAGS) -c $< -o $@
+
+$(BUILD)/tusb/%.o: $(TUSB_DIR)/portable/synopsys/dwc2/%.c
+	@mkdir -p $(dir $@)
+	$(ARM_CC) $(ARM_CPU) $(TUSB_FLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(BUILD)
