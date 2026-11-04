@@ -172,8 +172,12 @@ def drc_row():
         if drc is None:
             return ("KiCad DRC (native)", "not run",
                     "no DRC report or status (needs a KiCad 8 CI run)")
-        mv = re.search(r"Found (\d+) DRC violations", drc)
-        mu = re.search(r"Found (\d+) unconnected items", drc)
+        # Same real-format fix as scripts/drc_gate.py (round 2):
+        # KiCad 8's report file frames the lines in '**' and counts
+        # unconnected PADS, not items.
+        mv = re.search(r"(?:\*\*\s*)?Found (\d+) DRC violations(?:\s*\*\*)?", drc)
+        mu = re.search(
+            r"(?:\*\*\s*)?Found (\d+) unconnected (?:pads|items)(?:\s*\*\*)?", drc)
         if mv is None or mu is None:
             return ("KiCad DRC (native)", "FAIL",
                     "DRC report present but unparseable (tool health)")
