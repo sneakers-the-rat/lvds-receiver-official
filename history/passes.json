@@ -817,6 +817,34 @@
       },
       "description": "fence surgery + hand stubs: ripped CDR_NIN x9 / CDR_CLKP x2 / GND x6 / HV_INTVCC via / XI x5 (victims heal next round), then stubbed CDR_VREF U4.3 (W), CDR_LOS U4.22 (E), +3V3D U11.14 (N), HV_GATE U10.7 (E), VBUS_RAW J1.A9 (NE, full 0.6 width), XO U7.27 (N)",
       "note": ""
+    },
+    {
+      "pass": 31,
+      "timestamp": "2026-11-04T15:33:01Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr14.kicad_pcb",
+      "dir": "pass-0031",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 36,
+        "unconnected_nets": 55,
+        "audit_verdict": "FAIL"
+      },
+      "description": "placement micro-ops: C40 flipped to the bottom side (frees U7's east-row exits; first bottom-side part on the board) and R27 moved north to (20.5,6.0) (frees U10.9's east exit); stubs placed: ULPI_D4 U7.20, ULPI_D6 U7.18, HV_SHDN U10.9",
+      "note": ""
     }
   ],
   "gaps": [
