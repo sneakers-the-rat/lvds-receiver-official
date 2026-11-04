@@ -1,0 +1,10 @@
+board: placement-candidate.kicad_pcb
+footprints total: 144
+footprints with courtyard polygon: 139
+footprints without courtyard: [('U9', 'empty'), ('SH1', 'empty'), ('D2', 'empty'), ('D1', 'empty'), ('T1', 'empty')]
+same-side courtyard BBOX overlap pairs: 2
+  BBOX D8 x U1 (top)
+  BBOX U1 x R1 (top)
+same-side courtyard POLYGON overlap pairs (area > 0.001 mm^2): 2
+  POLY D8 x U1 (top) area=0.7936 mm^2
+  POLY U1 x R1 (top) area=0.1674 mm^2

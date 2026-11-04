@@ -1,0 +1,43 @@
+2026-11-04T12:37:08+00:00 freerouting jar run2 start (java25, -mp 20)
+2026-11-04T12:40:55+00:00 run2 wrapper start pid=19058
+2026-11-04 12:41:00.044 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-11-04 12:41:01.181 INFO   Hardware: 4 CPU cores, 40 CPU score, 1984 MB RAM
+2026-11-04 12:41:01.183 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-11-04 12:41:01.197 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-11-04 12:41:01.250 INFO   Configured network proxy: hatch-egress-proxy:3128
+2026-11-04 12:41:03.429 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-11-04 12:41:04.624 INFO   [243FD8\E42024] Loading board file 'pass10.dsn'...
+2026-11-04 12:41:07.306 WARN   Design Error: Component 'J2' pin '6' (ID 1526) is outside board outline at (1020800,-424600).
+2026-11-04 12:41:07.312 WARN   Design Error: Component 'J2' pin '5' (ID 1525) is outside board outline at (1020800,-450000).
+2026-11-04 12:41:07.616 INFO   [243FD8\E42024] Job '243FD8\E42024' started at 2026-11-04T12:41:07.615734100Z.
+2026-11-04 12:41:12.538 WARN   Design Warning: Board has 439 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 439 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 106 pin-to-pin clearance violations (first 5 shown):
+          - D4.2 [net GND] <-> F1.1 [net VBUS_RAW]
+          - T1.3 <-> R28.2 [net GND]
+          - U10.10 [net +5V] <-> U10.9 [net HV_SHDN]
+          - U13.11 [net GND] <-> R12.1 [net THRADJ]
+          - U13.10 [net +VA] <-> R12.2 [net GND]
+          ... and 101 more
+      * 333 fixed trace/via clearance violations (first 5 shown):
+          - FixedVia#4940 [net USB_RST] <-> FixedVia#4856 [net GND]
+          - FixedVia#4940 [net USB_RST] <-> FixedVia#4856 [net GND]
+          - FixedVia#4940 [net USB_RST] <-> FixedVia#4856 [net GND]
+          - FixedVia#4940 [net USB_RST] <-> FixedVia#4856 [net GND]
+          - FixedVia#4938 [net ULPI_STP] <-> FixedTrace#3786 [net PHY_1V8]
+          ... and 328 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 439 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-11-04 12:41:13.254 INFO   [243FD8\E42024] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=3.
+2026-11-04 12:41:13.326 WARN   Analytics tracking: first delivery failure in this window - /v1/analytics/track - SocketTimeoutException: Read timed out. Further failures will be aggregated and reported every 60 minutes.
+2026-11-04 12:41:15.450 INFO   [243FD8\E42024] Fanout stage started on board 'f0acfc0f03aa93f52f64b3d32edfbd98' with 401 of 607 SMD pins needing fanout (102 already connected, 104 netless).
+2026-11-04 12:42:56.846 INFO   [243FD8\E42024] Fanout pass #1 on board 'a05dfa5495b64061b335acf1bfc6975c' completed in 100.24 seconds with 148 SMD pins fanouted, 147 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-11-04 12:43:13.439 INFO   [243FD8\E42024] Fanout pass #2 on board '096d99b0b0041c56525b69c5cc55b844' completed in 16.37 seconds with 43 SMD pins fanouted, 86 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=200).
+2026-11-04 12:43:27.932 INFO   [243FD8\E42024] Fanout pass #3 on board '15f288b95015a26dbf4860005c7f8b99' completed in 13.85 seconds with 42 SMD pins fanouted, 35 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-11-04 12:43:40.150 INFO   [243FD8\E42024] Fanout pass #4 on board 'feba29a1f815efaa1b00920042f555d7' completed in 11.90 seconds with 42 SMD pins fanouted, 35 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+2026-11-04 12:43:52.245 INFO   [243FD8\E42024] Fanout pass #5 on board '17a98ebc811188316a95d83f5c313128' completed in 11.78 seconds with 42 SMD pins fanouted, 35 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=500).
+2026-11-04 12:44:03.306 INFO   [243FD8\E42024] Fanout pass #6 on board 'c7b93a1a3dc69212c3358eb05632730d' completed in 10.75 seconds with 42 SMD pins fanouted, 35 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=600).
+2026-11-04 12:44:03.328 INFO   Fanout stopped after 6 passes: no progress for 3 consecutive passes.
+2026-11-04 12:44:05.022 INFO   [243FD8\E42024] Fanout stage completed: started with 503 total SMD pins, completed in 168.66 seconds, escaped pins: 342/503 (68.0%), using 67.52 total CPU seconds, 20.00 GB total allocated, and 304.8 MB peak heap usage.
+2026-11-04 12:44:10.532 INFO   [243FD8\E42024] Auto-routing stage started on board 'c7b93a1a3dc69212c3358eb05632730d' with baseline score 551.57 for 135 unrouted items.

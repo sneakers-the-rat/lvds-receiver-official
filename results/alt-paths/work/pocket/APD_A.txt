@@ -1,0 +1,65 @@
+APD_A: 9 groups, sizes [1, 1, 1, 1, 1, 1, 1, 1, 1]
+  RJ1.2 (net APD_A):
+    step ->(0, 56, 216): +0.950 vs pad[APD_A_ALT]
+    step ->(0, 54, 216): +0.750 vs pad[APD_A_ALT]
+    step ->(0, 55, 217): +0.950 vs pad[APD_A_ALT]
+    step ->(0, 55, 215): +0.950 vs pad[APD_A_ALT]
+    via L0: +0.800 vs pad[APD_A_ALT]
+    via L1: +4.025 vs pad[]
+    via L2: +4.025 vs pad[]
+  U1.2 (net APD_A):
+    step ->(0, 55, 157): +0.660 vs pad[GND]
+    step ->(0, 53, 157): +0.660 vs pad[GND]
+    step ->(0, 54, 158): +0.410 vs pad[GND]
+    step ->(0, 54, 156): +0.430 vs pad[]
+    via L0: +0.460 vs pad[GND]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  D1.1 (net APD_A):
+    step ->(0, 29, 155): +0.067 vs pad[APD_K]
+    step ->(0, 27, 155): +0.220 vs pad[APD_K]
+    step ->(0, 28, 156): +0.119 vs pad[APD_K]
+    step ->(0, 28, 154): +0.220 vs pad[APD_K]
+    via L0: +0.055 vs pad[APD_K]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  D1.2 (net APD_A):
+    step ->(0, 29, 160): -0.275 vs pad[APD_K]
+    step ->(0, 27, 160): -0.050 vs pad[APD_K]
+    step ->(0, 28, 161): -0.050 vs pad[APD_K]
+    step ->(0, 28, 159): -0.050 vs pad[APD_K]
+    via L0: -0.225 vs pad[APD_K]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  D1.3 (net APD_A):
+    step ->(0, 29, 164): +0.067 vs pad[APD_K]
+    step ->(0, 27, 164): +0.220 vs pad[APD_K]
+    step ->(0, 28, 165): +0.220 vs pad[APD_K]
+    step ->(0, 28, 163): +0.119 vs pad[APD_K]
+    via L0: +0.055 vs pad[APD_K]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  D1.4 (net APD_A):
+    step ->(0, 36, 164): -0.300 vs pad[APD_K]
+    step ->(0, 34, 164): -0.300 vs pad[APD_K]
+    step ->(0, 35, 165): -0.300 vs pad[APD_K]
+    step ->(0, 35, 163): -0.525 vs pad[APD_K]
+    via L0: -0.475 vs pad[APD_K]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  D1.6 (net APD_A):
+    step ->(0, 36, 155): -0.300 vs pad[APD_K]
+    step ->(0, 34, 155): -0.300 vs pad[APD_K]
+    step ->(0, 35, 156): -0.525 vs pad[APD_K]
+    step ->(0, 35, 154): -0.300 vs pad[APD_K]
+    via L0: -0.475 vs pad[APD_K]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  R1.2 (net APD_A):
+    step ->(0, 79, 140): +0.875 vs pad[TIA_OUT]
+    step ->(0, 77, 140): +0.875 vs pad[TIA_OUT]
+    step ->(0, 78, 141): +0.675 vs pad[TIA_OUT]
+    step ->(0, 78, 139): +0.875 vs pad[TIA_OUT]
+    via L0: +0.725 vs pad[TIA_OUT]
+    via L1: +inf vs -
+    via L2: +inf vs -
