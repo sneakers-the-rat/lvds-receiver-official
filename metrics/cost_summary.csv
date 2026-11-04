@@ -1,13 +1,22 @@
 provider,model,scope,input_tokens,output_tokens,input_rate_usd_per_mtok,output_rate_usd_per_mtok,cache_read_rate_usd_per_mtok,input_cost_usd,output_cost_usd,total_cost_usd,source_url
 Meta - Muse (Meta Model API),muse-wonder-1.0,main_chat,51605352,141610,4.00,20.00,0.20,206.42,2.83,209.25,https://dev.meta.ai/docs/pricing-rate-limits
-Meta - Muse (Meta Model API),muse-wonder-1.0,subagents,65734580,408578,4.00,20.00,0.20,262.94,8.17,271.11,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),muse-spark-1.3,subagents,65734580,408578,1.25,4.25,0.15,82.17,1.74,83.90,https://dev.meta.ai/docs/pricing-rate-limits
 Meta - Muse (Meta Model API),muse-wonder-1.0,checkpoint_cron,15914052,116416,4.00,20.00,0.20,63.66,2.33,65.98,https://dev.meta.ai/docs/pricing-rate-limits
-Meta - Muse (Meta Model API),muse-wonder-1.0,all,133253984,666604,4.00,20.00,0.20,533.02,13.33,546.35,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),muse-wonder-1.0,all,67519404,258026,4.00,20.00,0.20,270.08,5.16,275.24,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),muse-spark-1.3,all,65734580,408578,1.25,4.25,0.15,82.17,1.74,83.91,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),codename-mix,all,133253984,666604,mixed,mixed,mixed,,,359.15,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),muse-wonder-1.0 (upper bound),all,133253984,666604,4.00,20.00,0.20,533.02,13.33,546.35,https://dev.meta.ai/docs/pricing-rate-limits
 Anthropic - Claude API,claude-opus-5-5,main_chat,51605352,141610,4.00,20.00,0.20,206.42,2.83,209.25,https://platform.claude.com/docs/en/about-claude/pricing
-Anthropic - Claude API,claude-opus-5-5,subagents,65734580,408578,4.00,20.00,0.20,262.94,8.17,271.11,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,claude-sonnet-5-5,subagents,65734580,408578,2.00,10.00,0.10,131.47,4.09,135.55,https://platform.claude.com/docs/en/about-claude/pricing
 Anthropic - Claude API,claude-opus-5-5,checkpoint_cron,15914052,116416,4.00,20.00,0.20,63.66,2.33,65.98,https://platform.claude.com/docs/en/about-claude/pricing
-Anthropic - Claude API,claude-opus-5-5,all,133253984,666604,4.00,20.00,0.20,533.02,13.33,546.35,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,claude-opus-5-5,all,67519404,258026,4.00,20.00,0.20,270.08,5.16,275.24,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,claude-sonnet-5-5,all,65734580,408578,2.00,10.00,0.10,131.47,4.09,135.56,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,codename-mix,all,133253984,666604,mixed,mixed,mixed,,,410.80,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,claude-opus-5-5 (upper bound),all,133253984,666604,4.00,20.00,0.20,533.02,13.33,546.35,https://platform.claude.com/docs/en/about-claude/pricing
 OpenAI API,gpt-6-astra,main_chat,51605352,141610,10.00,50.00,1.00,516.05,7.08,523.13,https://developers.openai.com/api/docs/pricing
-OpenAI API,gpt-6-astra,subagents,65734580,408578,10.00,50.00,1.00,657.35,20.43,677.77,https://developers.openai.com/api/docs/pricing
+OpenAI API,gpt-6.1-sol,subagents,65734580,408578,2.00,10.00,0.10,131.47,4.09,135.55,https://developers.openai.com/api/docs/pricing
 OpenAI API,gpt-6-astra,checkpoint_cron,15914052,116416,10.00,50.00,1.00,159.14,5.82,164.96,https://developers.openai.com/api/docs/pricing
-OpenAI API,gpt-6-astra,all,133253984,666604,10.00,50.00,1.00,1332.54,33.33,1365.87,https://developers.openai.com/api/docs/pricing
+OpenAI API,gpt-6-astra,all,67519404,258026,10.00,50.00,1.00,675.19,12.90,688.09,https://developers.openai.com/api/docs/pricing
+OpenAI API,gpt-6.1-sol,all,65734580,408578,2.00,10.00,0.10,131.47,4.09,135.56,https://developers.openai.com/api/docs/pricing
+OpenAI API,codename-mix,all,133253984,666604,mixed,mixed,mixed,,,823.65,https://developers.openai.com/api/docs/pricing
+OpenAI API,gpt-6-astra (upper bound),all,133253984,666604,10.00,50.00,1.00,1332.54,33.33,1365.87,https://developers.openai.com/api/docs/pricing

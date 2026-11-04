@@ -1047,3 +1047,30 @@ worker on the `pass-structure` branch:
   transcripts carry no model field and `runtime.requests` has no
   model column. No evidence any project agent was served by a
   non-Muse model; the Claude/OpenAI figures are equivalents only.
+
+## Cost summary — codename-priced refinement (2026-11-04)
+
+- **Codename pricing (owner directive + amendments, 2026-11-04).**
+  The cost summary now prices the recorded volume per model codename
+  (`agents.csv` gained a `model` column from `agent.agents.model`).
+  Model codenames (confirmed by the project owner, 2026-11-04):
+  `ipnext/watermelon-v0` = Muse Wonder (49 root agents; 67,519,404
+  in / 258,026 out over 35 agents with rows);
+  `ipnext/avocado-5.17-v1` = Muse Spark (17 subagents; 65,734,580
+  in / 408,578 out over 15). Split re-derived from the DB and
+  reconciles exactly to the snapshot totals (133,253,984 / 666,604).
+- **Like-for-like tier pairs for all three providers**: the Wonder
+  share at each flagship (Muse Wonder 1.0; Claude Opus 5.5; GPT-6
+  Astra) and the Spark share at each step-down (`muse-spark-1.3`
+  $1.25/$0.15/$4.25; Claude Sonnet 5.5 $2/$0.10/$10; GPT-6.1 Sol
+  $2/$0.10/$10 — step-down rates fetched 2026-11-04 from the same
+  official pricing pages). **Headlines: Muse $359, Claude $411,
+  OpenAI $824. Upper bounds (all volume at flagship): $546 / $546 /
+  $1,366.**
+- **Cache sensitivity now uses the measured input split** (96.4% of
+  estimable input repeated; chat tree 97.5%, cron 87.8% — validated
+  estimate, held-out median error 3.5%): headlines fall to ≈$44
+  (Muse), ≈$45 (Claude), ≈$123 (OpenAI). The assumed-95% line is
+  superseded. README also records the compaction caveat: for
+  compacted subagents the recorded usage row covers only the
+  post-compaction segment, so recorded totals are a floor.
