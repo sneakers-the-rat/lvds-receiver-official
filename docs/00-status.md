@@ -458,3 +458,55 @@ between them"). Round 3 implements light-on-dark throughout.
   8 reference SVGs copied into site assets (spot-checked asset
   carries the new mapping), legend shows the bright palette, and
   the gallery intro states the light-on-dark presentation.
+
+## Stage 7c — v6 model rewrite + Freerouting baseline (2026-11-03)
+
+Successor coordinator took over the routing lane at 3211eac.
+
+### Model-gap analysis of the v5 board (hw/analyze_model_gap.py,
+results/model-gap-v5.txt)
+
+Every audit-flagged via/track on the v5 board was re-tested against
+the v5 router's own clearance model (point-sampled dist_to_item) and
+against an exact segment-capsule distance test, using a registry
+rebuilt from the final board:
+
+- Vias: 108 flagged positions; the router's own model REJECTS 107 of
+  them on the final geometry (worst margin -0.55 mm); 2 accepted are
+  APD_K vias whose audit pairs are against zone fills (the registry
+  contains no zones).
+- Tracks: 131 flagged start points; 110 rejected by BOTH the point
+  model and the exact test; only 18 are pure point-sampling gaps
+  (point model accepts, exact rejects); 4 accepted by both (3 APD_K +
+  1 +3V3D, zone-pair suspects).
+
+Conclusion, superseding the simpler "sampling" story: point sampling
+is a real but minority defect (18 tracks). The dominant defect is
+that emitted copper pervasively fails the router's own model on the
+final board — i.e. emission paths whose tests do not cover the final
+geometry: via tests cover only the source+target layers (a via
+barrel also occupies the third routing layer), the neck-down width
+is chosen by the search from distance-to-any-own-pad but by emit
+from distance-along-path (goal-end approaches are drawn wider than
+they were tested), goal/own-cell entry steps are exempt from the
+track test, and GND stitch vias use an ad-hoc test. The v6 rewrite
+therefore makes the invariant structural: every emitted segment and
+via is exact-tested, on every layer it occupies, with the same width
+the search tested, and no entry exemptions.
+
+Known non-router audit residue on v5 (for the final accounting):
+46 cross-footprint pad-pad pairs (placement geometry, e.g. U7 pins
+vs U12/L2 pads at the 0.25 mm power clearance) and 18 zone-involved
+pairs (mostly HV vias vs the In1 GND plane: audit's buried-HV rule
+is 0.3 mm, zone local clearance carves 0.25 mm).
+
+### Freerouting baseline (permitted by the user 2026-11-03 16:21 PST)
+
+- freerouting/freerouting v2.5.0, official GitHub release asset
+  freerouting-cli-2.5.0-linux-x64.tar.gz.
+- sha256 64a957a9ef2a2fbde6ab2001bb32800f5ba34f9fd15575e363512934b870d63a
+  — matches the release's own checksums file exactly.
+- Self-contained native CLI (no JRE needed); kept OUTSIDE the repo at
+  ~/workspace/tools/freerouting/ with a PROVENANCE.md; binary is not
+  committed. Role: baseline/fallback only — the home-grown v6 line
+  continues to its own completion regardless (user, 16:22 PST).
