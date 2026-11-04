@@ -1,67 +1,67 @@
-agent_id,scope,role,usage_rows,input_tokens,output_tokens,first_row_utc,last_row_utc,notes
-4925d244-018c-4b4f-9fad-7b3ad78af7c1,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",102,51605352,141610,2026-11-03T18:34:31Z,2026-11-04T08:29:34Z,
-211e6068-5645-443d-821c-d965a1288a6c,chat-tree,"build coordinator #1 (router v1-v5, repair passes 1-4, stage 7b/7c start)",1,2224018,8136,2026-11-04T00:18:30Z,2026-11-04T00:18:30Z,
-04d878b8-e46d-47c3-a3e8-19842ed9ea6c,chat-tree,coordinator #1 child worker,1,3089221,53683,2026-11-03T18:42:31Z,2026-11-03T18:42:31Z,spawn prompt in agent.subagent_spawns
-6b643e67-3b72-4a34-a4e4-cb88906fc170,chat-tree,coordinator #1 child worker,1,788734,34177,2026-11-03T18:40:38Z,2026-11-03T18:40:38Z,spawn prompt in agent.subagent_spawns
-6ff926cd-6c17-4a41-8909-98b586b5f440,chat-tree,coordinator #1 child worker,1,2116475,39013,2026-11-03T18:42:50Z,2026-11-03T18:42:50Z,spawn prompt in agent.subagent_spawns
-3c689d8e-9bcc-47b0-a096-4767120a160c,chat-tree,"CI-fix worker, rounds 1-2",1,9121511,45386,2026-11-03T22:09:48Z,2026-11-03T22:09:48Z,
-263d02bd-2694-4be4-a34b-d020557c1979,chat-tree,"CI-fix worker, round 3",1,6039766,36647,2026-11-03T22:34:05Z,2026-11-03T22:34:05Z,
-fbee6d75-6e0b-4c8a-a720-6ef52d21c0d2,chat-tree,"CI-fix worker, round 4 (ERC)",1,4949062,19301,2026-11-03T22:44:33Z,2026-11-03T22:44:33Z,
-00079813-c48a-433e-bd73-476dd6ede479,chat-tree,"routing-history gallery worker, round 1",1,3740528,16143,2026-11-03T22:42:38Z,2026-11-03T22:42:38Z,
-ff0c75ad-4e6c-4321-bfa3-a2ca61b971bc,chat-tree,"routing-history gallery worker, round 2 (route-only renders)",1,8545955,29044,2026-11-03T22:59:46Z,2026-11-03T22:59:46Z,
-e3e498fa-2d0f-4ea0-896f-06f51051aa22,chat-tree,"routing-history gallery worker, round 3 (light-on-dark)",1,5960096,18709,2026-11-03T23:23:50Z,2026-11-03T23:23:50Z,
-7f6dd3c0-90bf-4b74-9767-641daf60ab88,chat-tree,CI speed worker,1,3755916,11915,2026-11-03T23:10:48Z,2026-11-03T23:10:48Z,
-b3484ddd-409f-4eb0-bc21-c912679c6b5d,chat-tree,"CI-signal worker, round 1",1,3087268,23626,2026-11-04T00:55:59Z,2026-11-04T00:55:59Z,
-13c2bc99-3cf3-4499-a01f-dda273939356,chat-tree,"CI-signal worker, round 2",1,3641257,23380,2026-11-04T01:06:54Z,2026-11-04T01:06:54Z,
-b785e77a-5ae4-47b7-a4a9-61508885fa25,chat-tree,"CI-signal worker, round 3",1,2443726,17957,2026-11-04T01:15:03Z,2026-11-04T01:15:03Z,
-110e2372-a411-4917-9496-e2188176d9f6,chat-tree,build coordinator #2 (router v6 + Freerouting lines),0,0,0,,,RUNNING at snapshot: no usage row yet (rows land at completion) - excluded from totals
-60e10a13-9832-4f5a-b861-c8112a74866b,chat-tree,"token-metrics worker (first export: series, census, alignment, methodology)",1,6231047,31461,2026-11-04T08:09:18Z,2026-11-04T08:09:18Z,completed after the 2026-11-04T08:04Z snapshot; its usage row landed 2026-11-04T08:09:38Z and is included here
-a3e40860-2586-4cf9-82a8-2a75ddc66333,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,505296,4190,2026-11-03T21:41:18Z,2026-11-03T21:41:18Z,run scheduled 2026-11-03T21:39:16Z
-24e0eb6c-44aa-4edb-b20b-5aa162bbbee9,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,53120,411,2026-11-03T21:41:34Z,2026-11-03T21:41:34Z,run scheduled 2026-11-03T21:39:16Z
-8cd3872d-6d1a-4019-a2ec-2fc4eaf8ba32,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,595395,5733,2026-11-03T21:12:05Z,2026-11-03T21:12:05Z,run scheduled 2026-11-03T21:09:16Z
-20029001-796e-47cd-954c-3275a5ba1f49,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-03T21:09:16Z; no usage row recorded
-666e7905-566f-4542-b7c8-e3a635056245,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,601811,6128,2026-11-03T22:12:50Z,2026-11-03T22:12:50Z,run scheduled 2026-11-03T22:09:16Z
-5c02f48f-e810-477e-a1a5-b0e051554599,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,59495,904,2026-11-03T22:13:10Z,2026-11-03T22:13:10Z,run scheduled 2026-11-03T22:09:16Z
-ef183183-61a9-4861-924b-f734c2af0d40,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,538374,4207,2026-11-03T22:40:52Z,2026-11-03T22:40:52Z,run scheduled 2026-11-03T22:39:16Z
-e6df4119-7d10-4878-bda3-f7028100059a,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,65065,720,2026-11-03T22:41:01Z,2026-11-03T22:41:01Z,run scheduled 2026-11-03T22:39:16Z
-d5e5d654-fe3e-40d4-95d4-8b6dc95f990a,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,733431,5133,2026-11-03T23:12:16Z,2026-11-03T23:12:16Z,run scheduled 2026-11-03T23:09:16Z
-17cf59bf-8385-4af3-b3d2-68307731e9ae,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,68917,662,2026-11-03T23:12:30Z,2026-11-03T23:12:30Z,run scheduled 2026-11-03T23:09:16Z
-6a97695b-6751-4abd-9929-f5f37e468e68,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,733884,4162,2026-11-03T23:41:24Z,2026-11-03T23:41:24Z,run scheduled 2026-11-03T23:39:16Z
-702cfae9-6d8c-406b-82a2-813949aadb2b,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,58878,800,2026-11-03T23:41:35Z,2026-11-03T23:41:35Z,run scheduled 2026-11-03T23:39:16Z
-85d4defd-603f-4301-993d-8d2d3551c8ea,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,545512,2883,2026-11-04T00:10:52Z,2026-11-04T00:10:52Z,run scheduled 2026-11-04T00:09:16Z
-0425f4c8-b441-42cd-b0c1-45614475590c,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,47268,533,2026-11-04T00:11:02Z,2026-11-04T00:11:02Z,run scheduled 2026-11-04T00:09:16Z
-e7c8284e-984b-4ac2-a44b-93088cb7c38e,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,677487,5299,2026-11-04T00:41:12Z,2026-11-04T00:41:12Z,run scheduled 2026-11-04T00:39:16Z
-1960d6c4-e52f-4f1b-8a20-979b5eca273b,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T00:39:16Z; no usage row recorded
-f619171e-4521-4863-b1d1-15245f6f2fa3,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,477726,4236,2026-11-04T01:11:40Z,2026-11-04T01:11:40Z,run scheduled 2026-11-04T01:09:16Z
-f733d408-fc0f-4f72-bad0-e8122c5005dc,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,59212,435,2026-11-04T01:11:47Z,2026-11-04T01:11:47Z,run scheduled 2026-11-04T01:09:16Z
-f495395a-2b18-40e9-9b68-0ec796786ae1,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,520135,3269,2026-11-04T01:41:45Z,2026-11-04T01:41:45Z,run scheduled 2026-11-04T01:39:16Z
-8bca1620-a5e4-45bc-9317-c968fdc57d13,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T01:39:16Z; no usage row recorded
-01f324ab-0034-4376-92f0-6d70e32d9a32,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,914622,5423,2026-11-04T02:12:21Z,2026-11-04T02:12:21Z,run scheduled 2026-11-04T02:09:16Z
-c7a4e87c-3725-4588-8cf9-d8eb9365731c,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T02:09:16Z; no usage row recorded
-56fcfcc3-9f6e-4c4a-920b-ff977d6e1bc4,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,528135,3285,2026-11-04T02:40:53Z,2026-11-04T02:40:53Z,run scheduled 2026-11-04T02:39:16Z
-954f2fb0-37ef-45d3-8bb6-17a11f93d581,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T02:39:16Z; no usage row recorded
-c85c9228-2542-4b64-a2a4-57fa956a0576,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,860684,4746,2026-11-04T03:11:51Z,2026-11-04T03:11:51Z,run scheduled 2026-11-04T03:09:16Z
-fc82ce37-fd26-4628-bd0b-ee8562c23198,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T03:09:16Z; no usage row recorded
-d4391ab4-4e7c-4d77-9067-46dde4939300,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,488528,4784,2026-11-04T03:40:51Z,2026-11-04T03:40:51Z,run scheduled 2026-11-04T03:39:16Z
-18e4ad88-a14e-4dcc-949a-9be952075632,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T03:39:16Z; no usage row recorded
-2e0c24c3-50b8-43e3-b1b4-29100617c5f2,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,836329,4456,2026-11-04T04:12:19Z,2026-11-04T04:12:19Z,run scheduled 2026-11-04T04:09:16Z
-7fa5c66c-a4a7-4422-a8bd-18e29bf7beee,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T04:09:16Z; no usage row recorded
-a8dba706-0be9-4395-80a9-73b16c43d91e,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,763530,5384,2026-11-04T04:41:32Z,2026-11-04T04:41:32Z,run scheduled 2026-11-04T04:39:16Z
-b506df93-d341-44f6-abc2-a6ea85961130,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T04:39:16Z; no usage row recorded
-b763af74-d05d-4a08-adb7-d169eca32540,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,680079,4136,2026-11-04T05:11:50Z,2026-11-04T05:11:50Z,run scheduled 2026-11-04T05:09:16Z
-704a193a-d248-432c-b2a3-d40995da7da1,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T05:09:16Z; no usage row recorded
-b86bfcad-e748-48fb-888c-37c6c390ac86,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,582384,3732,2026-11-04T05:41:22Z,2026-11-04T05:41:22Z,run scheduled 2026-11-04T05:39:16Z
-a5c042f2-7da4-4c40-9402-d2ffbb94730e,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T05:39:16Z; no usage row recorded
-47385b29-ea4b-4e6a-8b39-0be1ff54def1,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,1171590,7943,2026-11-04T06:12:24Z,2026-11-04T06:12:24Z,run scheduled 2026-11-04T06:09:16Z
-ae32c733-a578-486c-b7a8-3806eda1dc93,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T06:09:16Z; no usage row recorded
-114e9629-7982-4555-bf09-37914c8a9ee3,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,536647,4242,2026-11-04T07:10:47Z,2026-11-04T07:10:47Z,run scheduled 2026-11-04T07:09:16Z
-270d1279-1c15-4987-8933-fd315926044c,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,55992,710,2026-11-04T07:10:56Z,2026-11-04T07:10:56Z,run scheduled 2026-11-04T07:09:16Z
-6608b8a8-96c5-4a91-9bb7-9c620fc1e56b,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,538689,3629,2026-11-04T07:41:34Z,2026-11-04T07:41:34Z,run scheduled 2026-11-04T07:39:16Z
-91a6bfe2-2e01-45f6-81f6-9f41461c757d,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,66851,588,2026-11-04T07:42:06Z,2026-11-04T07:42:06Z,run scheduled 2026-11-04T07:39:16Z
-dee33dc9-3fdc-4561-bef6-9869699d6401,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,440334,3392,2026-11-04T06:40:27Z,2026-11-04T06:40:27Z,run scheduled 2026-11-04T06:39:16Z
-dc0bfe1a-e481-4e4a-9fe4-7fc9ba02a4c9,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T06:39:16Z; no usage row recorded
-6f4d20c5-47b4-4bf6-8065-beccf060eb00,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,385384,3511,2026-11-03T20:40:47Z,2026-11-03T20:40:47Z,run scheduled 2026-11-03T20:39:16Z
-e1d5b58c-f788-4aa1-9682-171cbfbbe165,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-03T20:39:16Z; no usage row recorded
-0088c73b-1d16-42f6-9f1a-5ba99e7c4865,chat-tree,token-graph worker (per-message chart + site section),0,0,0,,,RUNNING at snapshot: no usage row yet (rows land at completion) - excluded from totals
-68408d59-f6ed-4708-90a9-be0e83fac647,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,661221,6180,2026-11-04T08:12:55Z,2026-11-04T08:12:55Z,run scheduled 2026-11-04T08:09:16Z
-e0d7ee14-2a58-4ea5-b726-45c333173e8b,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,62047,570,2026-11-04T08:13:20Z,2026-11-04T08:13:20Z,run scheduled 2026-11-04T08:09:16Z
+agent_id,model,scope,role,usage_rows,input_tokens,output_tokens,first_row_utc,last_row_utc,notes
+4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",102,51605352,141610,2026-11-03T18:34:31Z,2026-11-04T08:29:34Z,
+211e6068-5645-443d-821c-d965a1288a6c,ipnext/avocado-5.17-v1,chat-tree,"build coordinator #1 (router v1-v5, repair passes 1-4, stage 7b/7c start)",1,2224018,8136,2026-11-04T00:18:30Z,2026-11-04T00:18:30Z,
+04d878b8-e46d-47c3-a3e8-19842ed9ea6c,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,3089221,53683,2026-11-03T18:42:31Z,2026-11-03T18:42:31Z,spawn prompt in agent.subagent_spawns
+6b643e67-3b72-4a34-a4e4-cb88906fc170,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,788734,34177,2026-11-03T18:40:38Z,2026-11-03T18:40:38Z,spawn prompt in agent.subagent_spawns
+6ff926cd-6c17-4a41-8909-98b586b5f440,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,2116475,39013,2026-11-03T18:42:50Z,2026-11-03T18:42:50Z,spawn prompt in agent.subagent_spawns
+3c689d8e-9bcc-47b0-a096-4767120a160c,ipnext/avocado-5.17-v1,chat-tree,"CI-fix worker, rounds 1-2",1,9121511,45386,2026-11-03T22:09:48Z,2026-11-03T22:09:48Z,
+263d02bd-2694-4be4-a34b-d020557c1979,ipnext/avocado-5.17-v1,chat-tree,"CI-fix worker, round 3",1,6039766,36647,2026-11-03T22:34:05Z,2026-11-03T22:34:05Z,
+fbee6d75-6e0b-4c8a-a720-6ef52d21c0d2,ipnext/avocado-5.17-v1,chat-tree,"CI-fix worker, round 4 (ERC)",1,4949062,19301,2026-11-03T22:44:33Z,2026-11-03T22:44:33Z,
+00079813-c48a-433e-bd73-476dd6ede479,ipnext/avocado-5.17-v1,chat-tree,"routing-history gallery worker, round 1",1,3740528,16143,2026-11-03T22:42:38Z,2026-11-03T22:42:38Z,
+ff0c75ad-4e6c-4321-bfa3-a2ca61b971bc,ipnext/avocado-5.17-v1,chat-tree,"routing-history gallery worker, round 2 (route-only renders)",1,8545955,29044,2026-11-03T22:59:46Z,2026-11-03T22:59:46Z,
+e3e498fa-2d0f-4ea0-896f-06f51051aa22,ipnext/avocado-5.17-v1,chat-tree,"routing-history gallery worker, round 3 (light-on-dark)",1,5960096,18709,2026-11-03T23:23:50Z,2026-11-03T23:23:50Z,
+7f6dd3c0-90bf-4b74-9767-641daf60ab88,ipnext/avocado-5.17-v1,chat-tree,CI speed worker,1,3755916,11915,2026-11-03T23:10:48Z,2026-11-03T23:10:48Z,
+b3484ddd-409f-4eb0-bc21-c912679c6b5d,ipnext/avocado-5.17-v1,chat-tree,"CI-signal worker, round 1",1,3087268,23626,2026-11-04T00:55:59Z,2026-11-04T00:55:59Z,
+13c2bc99-3cf3-4499-a01f-dda273939356,ipnext/avocado-5.17-v1,chat-tree,"CI-signal worker, round 2",1,3641257,23380,2026-11-04T01:06:54Z,2026-11-04T01:06:54Z,
+b785e77a-5ae4-47b7-a4a9-61508885fa25,ipnext/avocado-5.17-v1,chat-tree,"CI-signal worker, round 3",1,2443726,17957,2026-11-04T01:15:03Z,2026-11-04T01:15:03Z,
+110e2372-a411-4917-9496-e2188176d9f6,ipnext/avocado-5.17-v1,chat-tree,build coordinator #2 (router v6 + Freerouting lines),0,0,0,,,RUNNING at snapshot: no usage row yet (rows land at completion) - excluded from totals
+60e10a13-9832-4f5a-b861-c8112a74866b,ipnext/avocado-5.17-v1,chat-tree,"token-metrics worker (first export: series, census, alignment, methodology)",1,6231047,31461,2026-11-04T08:09:18Z,2026-11-04T08:09:18Z,completed after the 2026-11-04T08:04Z snapshot; its usage row landed 2026-11-04T08:09:38Z and is included here
+a3e40860-2586-4cf9-82a8-2a75ddc66333,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,505296,4190,2026-11-03T21:41:18Z,2026-11-03T21:41:18Z,run scheduled 2026-11-03T21:39:16Z
+24e0eb6c-44aa-4edb-b20b-5aa162bbbee9,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,53120,411,2026-11-03T21:41:34Z,2026-11-03T21:41:34Z,run scheduled 2026-11-03T21:39:16Z
+8cd3872d-6d1a-4019-a2ec-2fc4eaf8ba32,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,595395,5733,2026-11-03T21:12:05Z,2026-11-03T21:12:05Z,run scheduled 2026-11-03T21:09:16Z
+20029001-796e-47cd-954c-3275a5ba1f49,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-03T21:09:16Z; no usage row recorded
+666e7905-566f-4542-b7c8-e3a635056245,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,601811,6128,2026-11-03T22:12:50Z,2026-11-03T22:12:50Z,run scheduled 2026-11-03T22:09:16Z
+5c02f48f-e810-477e-a1a5-b0e051554599,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,59495,904,2026-11-03T22:13:10Z,2026-11-03T22:13:10Z,run scheduled 2026-11-03T22:09:16Z
+ef183183-61a9-4861-924b-f734c2af0d40,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,538374,4207,2026-11-03T22:40:52Z,2026-11-03T22:40:52Z,run scheduled 2026-11-03T22:39:16Z
+e6df4119-7d10-4878-bda3-f7028100059a,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,65065,720,2026-11-03T22:41:01Z,2026-11-03T22:41:01Z,run scheduled 2026-11-03T22:39:16Z
+d5e5d654-fe3e-40d4-95d4-8b6dc95f990a,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,733431,5133,2026-11-03T23:12:16Z,2026-11-03T23:12:16Z,run scheduled 2026-11-03T23:09:16Z
+17cf59bf-8385-4af3-b3d2-68307731e9ae,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,68917,662,2026-11-03T23:12:30Z,2026-11-03T23:12:30Z,run scheduled 2026-11-03T23:09:16Z
+6a97695b-6751-4abd-9929-f5f37e468e68,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,733884,4162,2026-11-03T23:41:24Z,2026-11-03T23:41:24Z,run scheduled 2026-11-03T23:39:16Z
+702cfae9-6d8c-406b-82a2-813949aadb2b,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,58878,800,2026-11-03T23:41:35Z,2026-11-03T23:41:35Z,run scheduled 2026-11-03T23:39:16Z
+85d4defd-603f-4301-993d-8d2d3551c8ea,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,545512,2883,2026-11-04T00:10:52Z,2026-11-04T00:10:52Z,run scheduled 2026-11-04T00:09:16Z
+0425f4c8-b441-42cd-b0c1-45614475590c,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,47268,533,2026-11-04T00:11:02Z,2026-11-04T00:11:02Z,run scheduled 2026-11-04T00:09:16Z
+e7c8284e-984b-4ac2-a44b-93088cb7c38e,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,677487,5299,2026-11-04T00:41:12Z,2026-11-04T00:41:12Z,run scheduled 2026-11-04T00:39:16Z
+1960d6c4-e52f-4f1b-8a20-979b5eca273b,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T00:39:16Z; no usage row recorded
+f619171e-4521-4863-b1d1-15245f6f2fa3,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,477726,4236,2026-11-04T01:11:40Z,2026-11-04T01:11:40Z,run scheduled 2026-11-04T01:09:16Z
+f733d408-fc0f-4f72-bad0-e8122c5005dc,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,59212,435,2026-11-04T01:11:47Z,2026-11-04T01:11:47Z,run scheduled 2026-11-04T01:09:16Z
+f495395a-2b18-40e9-9b68-0ec796786ae1,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,520135,3269,2026-11-04T01:41:45Z,2026-11-04T01:41:45Z,run scheduled 2026-11-04T01:39:16Z
+8bca1620-a5e4-45bc-9317-c968fdc57d13,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T01:39:16Z; no usage row recorded
+01f324ab-0034-4376-92f0-6d70e32d9a32,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,914622,5423,2026-11-04T02:12:21Z,2026-11-04T02:12:21Z,run scheduled 2026-11-04T02:09:16Z
+c7a4e87c-3725-4588-8cf9-d8eb9365731c,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T02:09:16Z; no usage row recorded
+56fcfcc3-9f6e-4c4a-920b-ff977d6e1bc4,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,528135,3285,2026-11-04T02:40:53Z,2026-11-04T02:40:53Z,run scheduled 2026-11-04T02:39:16Z
+954f2fb0-37ef-45d3-8bb6-17a11f93d581,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T02:39:16Z; no usage row recorded
+c85c9228-2542-4b64-a2a4-57fa956a0576,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,860684,4746,2026-11-04T03:11:51Z,2026-11-04T03:11:51Z,run scheduled 2026-11-04T03:09:16Z
+fc82ce37-fd26-4628-bd0b-ee8562c23198,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T03:09:16Z; no usage row recorded
+d4391ab4-4e7c-4d77-9067-46dde4939300,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,488528,4784,2026-11-04T03:40:51Z,2026-11-04T03:40:51Z,run scheduled 2026-11-04T03:39:16Z
+18e4ad88-a14e-4dcc-949a-9be952075632,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T03:39:16Z; no usage row recorded
+2e0c24c3-50b8-43e3-b1b4-29100617c5f2,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,836329,4456,2026-11-04T04:12:19Z,2026-11-04T04:12:19Z,run scheduled 2026-11-04T04:09:16Z
+7fa5c66c-a4a7-4422-a8bd-18e29bf7beee,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T04:09:16Z; no usage row recorded
+a8dba706-0be9-4395-80a9-73b16c43d91e,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,763530,5384,2026-11-04T04:41:32Z,2026-11-04T04:41:32Z,run scheduled 2026-11-04T04:39:16Z
+b506df93-d341-44f6-abc2-a6ea85961130,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T04:39:16Z; no usage row recorded
+b763af74-d05d-4a08-adb7-d169eca32540,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,680079,4136,2026-11-04T05:11:50Z,2026-11-04T05:11:50Z,run scheduled 2026-11-04T05:09:16Z
+704a193a-d248-432c-b2a3-d40995da7da1,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T05:09:16Z; no usage row recorded
+b86bfcad-e748-48fb-888c-37c6c390ac86,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,582384,3732,2026-11-04T05:41:22Z,2026-11-04T05:41:22Z,run scheduled 2026-11-04T05:39:16Z
+a5c042f2-7da4-4c40-9402-d2ffbb94730e,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T05:39:16Z; no usage row recorded
+47385b29-ea4b-4e6a-8b39-0be1ff54def1,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,1171590,7943,2026-11-04T06:12:24Z,2026-11-04T06:12:24Z,run scheduled 2026-11-04T06:09:16Z
+ae32c733-a578-486c-b7a8-3806eda1dc93,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T06:09:16Z; no usage row recorded
+114e9629-7982-4555-bf09-37914c8a9ee3,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,536647,4242,2026-11-04T07:10:47Z,2026-11-04T07:10:47Z,run scheduled 2026-11-04T07:09:16Z
+270d1279-1c15-4987-8933-fd315926044c,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,55992,710,2026-11-04T07:10:56Z,2026-11-04T07:10:56Z,run scheduled 2026-11-04T07:09:16Z
+6608b8a8-96c5-4a91-9bb7-9c620fc1e56b,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,538689,3629,2026-11-04T07:41:34Z,2026-11-04T07:41:34Z,run scheduled 2026-11-04T07:39:16Z
+91a6bfe2-2e01-45f6-81f6-9f41461c757d,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,66851,588,2026-11-04T07:42:06Z,2026-11-04T07:42:06Z,run scheduled 2026-11-04T07:39:16Z
+dee33dc9-3fdc-4561-bef6-9869699d6401,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,440334,3392,2026-11-04T06:40:27Z,2026-11-04T06:40:27Z,run scheduled 2026-11-04T06:39:16Z
+dc0bfe1a-e481-4e4a-9fe4-7fc9ba02a4c9,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T06:39:16Z; no usage row recorded
+6f4d20c5-47b4-4bf6-8065-beccf060eb00,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,385384,3511,2026-11-03T20:40:47Z,2026-11-03T20:40:47Z,run scheduled 2026-11-03T20:39:16Z
+e1d5b58c-f788-4aa1-9682-171cbfbbe165,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-03T20:39:16Z; no usage row recorded
+0088c73b-1d16-42f6-9f1a-5ba99e7c4865,ipnext/avocado-5.17-v1,chat-tree,token-graph worker (per-message chart + site section),0,0,0,,,RUNNING at snapshot: no usage row yet (rows land at completion) - excluded from totals
+68408d59-f6ed-4708-90a9-be0e83fac647,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,661221,6180,2026-11-04T08:12:55Z,2026-11-04T08:12:55Z,run scheduled 2026-11-04T08:09:16Z
+e0d7ee14-2a58-4ea5-b726-45c333173e8b,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,62047,570,2026-11-04T08:13:20Z,2026-11-04T08:13:20Z,run scheduled 2026-11-04T08:09:16Z
