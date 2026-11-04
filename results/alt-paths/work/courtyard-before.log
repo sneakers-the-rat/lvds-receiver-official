@@ -1,0 +1,11 @@
+2026-11-04T12:27:34 courtyard_audit start board=pass10-placement.kicad_pcb
+2026-11-04T12:27:34 loaded 144 footprints
+2026-11-04T12:27:34 courtyards: 139 with polygon, 5 without
+2026-11-04T12:27:34 progress 0/139 footprints, bbox_pairs=0 poly_pairs=0
+2026-11-04T12:27:34 progress 20/139 footprints, bbox_pairs=13 poly_pairs=12
+2026-11-04T12:27:34 progress 40/139 footprints, bbox_pairs=18 poly_pairs=17
+2026-11-04T12:27:34 progress 60/139 footprints, bbox_pairs=24 poly_pairs=23
+2026-11-04T12:27:34 progress 80/139 footprints, bbox_pairs=27 poly_pairs=26
+2026-11-04T12:27:34 progress 100/139 footprints, bbox_pairs=31 poly_pairs=30
+2026-11-04T12:27:34 progress 120/139 footprints, bbox_pairs=33 poly_pairs=32
+2026-11-04T12:27:34 done bbox=33 poly=32 -> courtyard-before.txt
