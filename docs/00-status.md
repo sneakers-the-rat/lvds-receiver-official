@@ -694,3 +694,93 @@ with the panel showing those counts as board state. If that
 run measures different DRC counts for the unchanged board,
 that is a new calibration event to document here, not a
 silent baseline edit.
+
+## CI signal fix, round 3 — checker jitter is not a regression (2026-11-03, branch ci-signal)
+
+Round 2's closing paragraph said: if a later run measures
+different DRC counts for the unchanged board, that is a new
+calibration event to document here, not a silent baseline edit.
+That event happened on the very next run. GitHub Actions run
+41751841325 measured **727 violations / 190 unconnected** where
+run 41750532660 had measured **726 / 190** — on the IDENTICAL
+board: both runs carry board blob
+`6a377ebcdb64282f3e0857f522c2f4b960e9fe93`, and the ci-signal
+rounds touched no board files, so nothing about the board
+changed between the two measurements. The round-2 ratchet did
+exactly what it was built to do — it fired REGRESSION on the
+rise — but the rise is the checker, not the routing: KiCad 8's
+DRC has ±1 run-to-run jitter on violations for this board
+(unconnected was stable at 190 in both runs). A gate that cries
+regression on jitter trains everyone to ignore it, which is
+the permanently-red disease in a subtler form.
+
+The fix is a tolerance, not a re-baseline:
+
+- **ci/drc-baseline.json** gains `tolerance_violations: 5` and
+  `tolerance_unconnected: 2`. The baseline itself STAYS
+  726/190 — the reference measurement from run 41750532660.
+  The baseline is deliberately NOT raised to 727: the tolerance
+  is the jitter mechanism, the baseline stays the reference, so
+  drift remains visible against a fixed point instead of being
+  absorbed into a moving one.
+- **Sizing rationale.** The single observed jitter sample is
+  ±1 on violations, 0 on unconnected. The tolerances (5 / 2)
+  give that sample headroom while remaining far below any real
+  routing regression: the v3→v4→v5 re-routes moved the
+  violation count by 100+, and even one net's worth of new
+  copper moves counts by more than the jitter band. A genuine
+  regression cannot hide inside +5/+2; jitter cannot escape
+  it either, on the evidence of the two runs.
+- **scripts/drc_gate.py**: regression iff violations >
+  baseline + tolerance_violations OR unconnected > baseline +
+  tolerance_unconnected. Three healthy/unhealthy outcomes now
+  have three distinct wordings everywhere the verdict appears
+  (job-log banner, results/drc-status.json, $GITHUB_STEP_SUMMARY,
+  site panel): at/below baseline → "no regression"; above
+  baseline but within tolerance → verdict `WITHIN JITTER
+  TOLERANCE`, board state "… — within checker jitter tolerance
+  (+N over baseline, tolerance +T)", exit 0; above tolerance →
+  REGRESSION, exit 1. The status JSON gains
+  `tolerance_violations`, `tolerance_unconnected`,
+  `over_violations`, `over_unconnected` and a `case` field
+  (`no_regression` / `within_jitter_tolerance` / `regression` /
+  `tool_failure`); `regression` keeps its CI meaning (the hard
+  failure) and is true only in the regression case. Baseline
+  files without tolerance keys default to 0 — pre-round-3
+  strict semantics. The finished-board end state is guarded:
+  when the baseline is 0/0 the gate forces both tolerances to
+  0, so the hard zero-tolerance gate cannot be softened by
+  tolerance keys left in the file (verified: 0/0 baseline with
+  tolerances recorded, 3/0 report → REGRESSION, exit 1).
+- **scripts/build_site.py** `drc_row()`: the CI-status path
+  keys on the gate's verdict — `WITHIN JITTER TOLERANCE`
+  renders BOARD STATE carrying the gate's jitter wording, and
+  REGRESSION stays red with the tolerance in its line; the
+  local fallback applies the same baseline + tolerance
+  arithmetic. Verified for 726/190 (no regression), 727/190
+  (jitter, both paths), 732/190 (REGRESSION) and the
+  TOOL FAILURE row (unchanged).
+- **ci/test_gates.py**: 21 → 27 checks, all passing. New
+  round-3 cases run the REAL fixture doctored against the
+  SHIPPED baseline: 727/190 → exit 0 with the jitter banner
+  wording and the status-JSON case/tolerance fields asserted;
+  731/192 (exactly at the tolerance edge on both counts) →
+  exit 0; 732/190 → exit 1; 726/193 → exit 1. The round-2
+  doctored-727 case is kept against a tolerance-less temporary
+  baseline (exit 1), pinning the strict default. The ERC gate
+  is untouched this round — its parsed verdict already passed
+  on run 41751841325 — and all its cases stay green.
+
+**Standing rule from this round:** the baseline is a fixed
+reference point and the tolerance is the only jitter absorber.
+Further upward drift beyond the tolerance is real signal —
+investigate it and document it here; never silently re-baseline
+to absorb it, and never widen the tolerance to fit a drift
+without the same two-run, identical-blob evidence that
+justified this one.
+
+Remaining verification: the next CI run on main with round 3
+merged should show the DRC step passing as board state — at
+726/190 as "no regression", or at 727/190 (if the jitter lands
+that way again) as "within checker jitter tolerance", with the
+site panel showing the matching wording.
