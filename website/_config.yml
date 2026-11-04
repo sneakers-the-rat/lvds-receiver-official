@@ -1,0 +1,37 @@
+# PDLVDS-RX project site — Jekyll.
+#
+# Build (from the repo root):
+#   python3 scripts/site_data.py        # data + asset staging step
+#   cd website && bundle exec jekyll build
+# Output goes to ../site (the path CI uploads as the Pages artifact).
+# CI's build-site job runs exactly these two steps; see
+# .github/workflows/ci.yml.
+#
+# Adding a layout pass = adding one website/_passes/pass-NNNN.md
+# file (scripts/commit_pass.py writes it automatically); the
+# routing index and the sidebar TOC pick it up via Liquid loops.
+
+title: "PDLVDS-RX — photodiode LVDS receiver"
+description: >-
+  Clean-room photodiode LVDS receiver for the Miniscope Zero optical
+  uplink: design status, board, simulations, routing history.
+baseurl: "/lvds-receiver-official"
+url: "http://jon-e.net"
+destination: ../site
+markdown: kramdown
+
+collections:
+  passes:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "passes"
+    values:
+      layout: "pass"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md

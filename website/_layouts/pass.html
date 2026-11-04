@@ -1,0 +1,34 @@
+---
+layout: default
+---
+<h2>Pass {{ page.pass }}</h2>
+<p>{{ page.timestamp | pacific: "%Y-%m-%d %H:%M %Z" }} ({{ page.timestamp }} UTC) · commit <code>{{ page.short_hash }}</code> (<code>{{ page.hash }}</code>)</p>
+<p>{% if page.adopted %}<span class="badge pass">ADOPTED</span>{% else %}<span class="badge fail">NOT ADOPTED</span>{% endif %}</p>
+{{ content }}
+<table><tbody>
+<tr><td>Nets fully routed</td><td>{% if page.nets_routed %}{{ page.nets_routed }}{% if page.nets_total %} of {{ page.nets_total }}{% endif %}{% else %}not recorded{% endif %}</td></tr>
+<tr><td>Pins failed</td><td>{{ page.pins_failed | default: "not recorded" }}</td></tr>
+<tr><td>Clearance violations</td><td>{{ page.clearance_violations | default: "not recorded" }}</td></tr>
+<tr><td>Unconnected nets</td><td>{{ page.unconnected_nets | default: "not recorded" }}</td></tr>
+<tr><td>Audit verdict</td><td>{{ page.audit_verdict | default: "not recorded" }}</td></tr>
+</tbody></table>
+{% if page.renders and page.dir %}
+{% assign base = "/assets/gen/history/" | append: page.dir | append: "/" %}
+{% if page.layers %}
+<h4>Routes — all copper layers, stacked</h4>
+<div class="composite">{% assign first = true %}{% for l in site.data.layers %}{% assign fn = page.layers[l.name] %}{% if fn %}<img{% unless first %} class="stack"{% endunless %} src="{{ base | append: fn | relative_url }}" alt="{{ l.name }} layer">{% assign first = false %}{% endif %}{% endfor %}</div>
+<p class="legend">{% for l in site.data.layers %}{% if page.layers[l.name] %}<span class="sw" style="background:{{ l.color }}"></span> {{ l.name }} {% endif %}{% endfor %}</p>
+<h4>Routes — each copper layer</h4>
+<div class="layergrid">{% for l in site.data.layers %}{% assign fn = page.layers[l.name] %}{% if fn %}<figure><img src="{{ base | append: fn | relative_url }}" alt="{{ l.name }} layer"><figcaption>{{ l.name }} — {{ l.color }}</figcaption></figure>{% endif %}{% endfor %}</div>
+{% endif %}
+{% for side in "top,bottom" | split: "," %}
+{% assign fn = page.renders[side] %}
+<h4>{{ side | capitalize }}</h4>
+{% if fn %}<img class="refview" src="{{ base | append: fn | relative_url }}" alt="Pass {{ page.pass }} — {{ side }}">{% else %}<p><em>{{ side }} render missing from the snapshot.</em></p>{% endif %}
+{% endfor %}
+{% else %}
+<p><em>No renders were committed for this pass.</em></p>
+{% endif %}
+{% if page.note and page.note != "" %}<p>{{ page.note }}</p>{% endif %}
+{% assign sorted_passes = site.passes | sort: "pass" %}
+<p class="passnav">{% for p in sorted_passes %}{% if p.pass == page.pass %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}{% assign prev = sorted_passes[idx | minus: 1] %}{% assign nxt = sorted_passes[idx | plus: 1] %}{% if idx > 0 %}← <a href="{{ prev.url | relative_url }}">Pass {{ prev.pass }}</a> · {% endif %}<a href="{{ '/routing/' | relative_url }}">all passes</a>{% if nxt %} · <a href="{{ nxt.url | relative_url }}">Pass {{ nxt.pass }}</a> →{% endif %}</p>
