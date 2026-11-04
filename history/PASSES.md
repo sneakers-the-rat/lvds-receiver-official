@@ -304,6 +304,22 @@ D1 escapes placed (hw/d1_escape.py): APD_K D1.5 neck SE to via@(10.8,36.6) + In2
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 20 · Unconnected nets: 40 · Audit verdict: FAIL
 
+### Pass 35 — 2026-11-04T16:46:56Z · commit `1bf1b3e`
+
+Board: `hw/pdlvds_rx.fr19.kicad_pcb` · Commit: `1bf1b3ea602fed81b45ac122db85ae213a0f348a`
+
+GND-inclusive healing (hw/repairg.py = repair6 without the GND exclusion): 65 groups connected before a VM replacement killed the run mid sweep-2; state recovered from the watcher checkpoint. GND 12 groups -> 2; clearance 36 -> 20 (C40/R27 families gone; rest = 16 APD_K-vs-pour + 3 D1 justified grazes + via antipad); APD_A fragmented to 7 groups in the detector corner by the D1.6-chain rip
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 20 · Unconnected nets: 40 · Audit verdict: FAIL
+
+### Pass 36 — 2026-11-04T17:10:26Z · commit `6a3a728`
+
+Board: `hw/pdlvds_rx.fr20.kicad_pcb` · Commit: `6a3a728d86c9c2372f6815518942f03e7c518ccb`
+
+repairg round 2: 10 more groups in sweep 1 (APD_A corner re-bridged 7 -> 2 groups; HV_GATE, MOS_G, NEG_RAW, ULPI_D4 closed), sweep 2 connected 0 and the run stopped by its own rule; 36 unconnected nets remain, mostly lone-pad vs stub long hauls
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 20 · Unconnected nets: 36 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
