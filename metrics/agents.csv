@@ -1,5 +1,5 @@
 agent_id,scope,role,usage_rows,input_tokens,output_tokens,first_row_utc,last_row_utc,notes
-4925d244-018c-4b4f-9fad-7b3ad78af7c1,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",97,49411439,137679,2026-11-03T18:34:31Z,2026-11-04T08:04:23Z,
+4925d244-018c-4b4f-9fad-7b3ad78af7c1,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",102,51605352,141610,2026-11-03T18:34:31Z,2026-11-04T08:29:34Z,
 211e6068-5645-443d-821c-d965a1288a6c,chat-tree,"build coordinator #1 (router v1-v5, repair passes 1-4, stage 7b/7c start)",1,2224018,8136,2026-11-04T00:18:30Z,2026-11-04T00:18:30Z,
 04d878b8-e46d-47c3-a3e8-19842ed9ea6c,chat-tree,coordinator #1 child worker,1,3089221,53683,2026-11-03T18:42:31Z,2026-11-03T18:42:31Z,spawn prompt in agent.subagent_spawns
 6b643e67-3b72-4a34-a4e4-cb88906fc170,chat-tree,coordinator #1 child worker,1,788734,34177,2026-11-03T18:40:38Z,2026-11-03T18:40:38Z,spawn prompt in agent.subagent_spawns
@@ -15,7 +15,7 @@ b3484ddd-409f-4eb0-bc21-c912679c6b5d,chat-tree,"CI-signal worker, round 1",1,308
 13c2bc99-3cf3-4499-a01f-dda273939356,chat-tree,"CI-signal worker, round 2",1,3641257,23380,2026-11-04T01:06:54Z,2026-11-04T01:06:54Z,
 b785e77a-5ae4-47b7-a4a9-61508885fa25,chat-tree,"CI-signal worker, round 3",1,2443726,17957,2026-11-04T01:15:03Z,2026-11-04T01:15:03Z,
 110e2372-a411-4917-9496-e2188176d9f6,chat-tree,build coordinator #2 (router v6 + Freerouting lines),0,0,0,,,RUNNING at snapshot: no usage row yet (rows land at completion) - excluded from totals
-60e10a13-9832-4f5a-b861-c8112a74866b,chat-tree,token-metrics worker (this export),0,0,0,,,RUNNING at snapshot: no usage row yet - excluded from totals
+60e10a13-9832-4f5a-b861-c8112a74866b,chat-tree,"token-metrics worker (first export: series, census, alignment, methodology)",1,6231047,31461,2026-11-04T08:09:18Z,2026-11-04T08:09:18Z,completed after the 2026-11-04T08:04Z snapshot; its usage row landed 2026-11-04T08:09:38Z and is included here
 a3e40860-2586-4cf9-82a8-2a75ddc66333,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,505296,4190,2026-11-03T21:41:18Z,2026-11-03T21:41:18Z,run scheduled 2026-11-03T21:39:16Z
 24e0eb6c-44aa-4edb-b20b-5aa162bbbee9,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,53120,411,2026-11-03T21:41:34Z,2026-11-03T21:41:34Z,run scheduled 2026-11-03T21:39:16Z
 8cd3872d-6d1a-4019-a2ec-2fc4eaf8ba32,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,595395,5733,2026-11-03T21:12:05Z,2026-11-03T21:12:05Z,run scheduled 2026-11-03T21:09:16Z
@@ -62,3 +62,6 @@ dee33dc9-3fdc-4561-bef6-9869699d6401,checkpoint-cron,pdlvds-progress checkpoint 
 dc0bfe1a-e481-4e4a-9fe4-7fc9ba02a4c9,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-04T06:39:16Z; no usage row recorded
 6f4d20c5-47b4-4bf6-8065-beccf060eb00,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,385384,3511,2026-11-03T20:40:47Z,2026-11-03T20:40:47Z,run scheduled 2026-11-03T20:39:16Z
 e1d5b58c-f788-4aa1-9682-171cbfbbe165,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-03T20:39:16Z; no usage row recorded
+0088c73b-1d16-42f6-9f1a-5ba99e7c4865,chat-tree,token-graph worker (per-message chart + site section),0,0,0,,,RUNNING at snapshot: no usage row yet (rows land at completion) - excluded from totals
+68408d59-f6ed-4708-90a9-be0e83fac647,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,661221,6180,2026-11-04T08:12:55Z,2026-11-04T08:12:55Z,run scheduled 2026-11-04T08:09:16Z
+e0d7ee14-2a58-4ea5-b726-45c333173e8b,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,62047,570,2026-11-04T08:13:20Z,2026-11-04T08:13:20Z,run scheduled 2026-11-04T08:09:16Z
