@@ -35,6 +35,17 @@ content many times. It is a work meter, not a content size and not a bill.
   comes from.
 - `align_commits.py` — regenerates `commit_alignment.csv` from
   `token_series.csv` + git history (runs anywhere the repo is cloned).
+- `input_split.csv` — per usage record: recorded input split into
+  estimated NEW vs REPEATED (see the input-split section; an
+  **estimate**, not a record).
+- `input_split_summary.csv` — the same split aggregated per scope.
+- `input_split.svg` — cumulative stacked area of estimated new vs
+  repeated input over time (Pacific-time axis), labelled as estimate.
+- `estimate_input_split.py` — regenerates the three files above from
+  `token_series.csv` + the agent transcripts under `~/agents`
+  (this machine only).
+- `input_split_validation.json` — every fit/validation number quoted
+  in the input-split section below.
 
 ## Source
 
@@ -65,6 +76,157 @@ Evidence gathered while building this export:
 - Sanity anchor: one live request of the root agent on 2026-11-04T07:58Z
   was estimated at 219,814 input tokens (session status) — a single
   request, vs 49,411,439 cumulative input over its 97 message rows.
+
+## Input split — NEW vs REPEATED (ESTIMATE, not a record)
+
+**Headline, with its error attached:** of the 133,253,984 recorded
+input tokens, 132,657,139 (99.6%) were estimable, and of those an
+estimated **3.6% (4,780,664) were NEW** — content sent for the first
+time — and **96.4% (127,876,475) were REPEATED** — context re-sent
+from earlier requests. Per scope: chat tree **2.5% new / 97.5%
+repeated**; checkpoint cron **12.2% new / 87.8% repeated** (of its
+estimable 15,317,207). The remaining 596,845 tokens (0.4%) belong to
+the 10 cron run/delivery agents and are NOT estimable (below); they
+are carried as repeated in the CSV, flagged per row. Validation:
+against held-out agents the estimator's reconstructed totals land at
+median recorded/estimated ratio **1.03** (p10 0.81, p90 1.09; median
+absolute error **3.5%** raw, **3.2%** after a train-derived
+correction) — so read the percentages as carrying a few-points
+uncertainty, not as exact. This split is the closest available proxy
+for cached-vs-uncached input: repeated content is what a prompt
+cache serves, but a repeat is not necessarily a cache *hit* (caches
+expire), and no billing conclusion follows from tokens alone.
+
+### Why this is an estimate
+
+The per-request table `agent.token_usage` has exactly the right
+column (`cached_input_tokens`) but contains **zero rows** in this
+deployment (re-verified 2026-11-04), and the per-message table has
+no cache split. `agent.context_items` / `agent.context_text_segments`
+have no token-count fields either (checked against the schema docs).
+What does exist per item is the transcript text
+(`~/agents/agent-<id>/sessions/*.jsonl`, present for all 50 agents
+with usage rows), so the split is reconstructed from text sizes.
+
+### Method (estimate_input_split.py)
+
+- A transcript is an ordered item stream. A model *request* is
+  inferred as one maximal run of consecutive assistant-produced items
+  (thinking / commentary / tool calls / assistant messages); its
+  input is a fixed preamble (system prompt + tool schemas, absent
+  from transcripts) plus all context items present before the run.
+- An item is NEW at the first request that sends it, REPEATED at
+  every later send; the preamble is new once per session. Item size
+  = text character count.
+- **Fork slices:** spawned chat agents' transcripts open with a
+  byte-identical copy of a slice of the parent's stream (detected:
+  a ≥20-item prefix also present in an earlier-born chat-tree
+  transcript; found in 12 sessions, 43–361 items, 69,735–472,983
+  chars). The slice is the agent's starting context (new at its
+  first own request); the parent's requests inside it are not
+  counted as the child's.
+- **Compactions** (`compaction_checkpoint` records, 7 in scope): the
+  summary replaces all items before `first_kept_seq`; the summary is
+  new at its first send, dropped items stop accruing repeats.
+- **Single-row agents with compactions** are modelled on their
+  post-last-compaction segment only: build coordinator #1's row
+  reconciles with its final segment (estimated 2,276,625 vs recorded
+  2,224,018, ratio 0.98) but not with its whole stream (~55M
+  predicted, 25× the record) — its usage evidently accumulated over
+  the final segment only. The segment's starting context counts as
+  new at its first request.
+- Responses are assigned to usage records by timestamp (a response
+  belongs to the first record completing after it). 74 inferred
+  responses fall after their agent's last snapshot record (the root
+  agent kept working past the snapshot bound) and are excluded.
+- Fit, per class (root / chat-tree subagent / cron worker):
+  `recorded ≈ S/cpt(class) + preamble(class)·K`, K = inferred
+  requests in the record, S = summed context chars before each
+  request, fitted by non-negative least squares. Thinking items are
+  counted as re-sent context (the with-thinking variant beat the
+  without-thinking variant on held-out data, 3.2% vs 3.8% median
+  absolute error — a narrow margin; both fits are in the validation
+  file).
+
+Fitted parameters (full-data fit; train-half fit in parentheses):
+chars/token 3.39 (3.39) root, 3.42 (3.61) chat-sub, 3.62 (3.63)
+cron; preamble 74,392 (74,392) root, 58,711 (61,326) chat-sub,
+46,036 (45,754) tokens cron. These preambles are *effective* values:
+they absorb per-request wrapper overhead as well as the true
+system prompt and tool schemas, so do not quote them as prompt sizes.
+
+### Validation
+
+Split-half by agent (stratified by scope; root always in train —
+it holds 102 of the 151 records; the published fit uses all agents):
+
+- Train (124 records): median ratio 0.985, p10 0.950, p90 1.029,
+  median absolute error 2.6%.
+- Held-out test (17 records): median 1.028, p10 0.806, p90 1.090,
+  median absolute error 3.5%; after per-class corrections derived
+  on train only (0.984 root / 0.966 chat-sub / 1.003 cron): median
+  1.025, median absolute error 3.2%. (Corrections cancel in the
+  published proportions; they validate the totals model only.)
+- The root agent's 102 records under the full fit: median 0.984,
+  p10 0.952, p90 1.028, median absolute error 2.6%.
+- Per-agent median ratios across the 40 estimable agents span
+  0.77–1.10. Worst: build coordinator #1 (0.77) and one of its
+  workers (0.79) — see the anchor cross-check for why.
+- **Compaction anchors (independent cross-check):** the runtime's
+  own `tokens_before` at each compaction vs the model's estimate of
+  the same context: root 0.99 / 1.04 / 0.99 (within ±4%), coordinator
+  #1 1.06, then 1.38 / 1.40 / 1.28 — its later, code- and
+  JSON-dense segments carry more tokens per character than the
+  class factor assumes. (`tokens_after` measures the compacted
+  content alone and does not reconcile with the request model; it
+  is not used.)
+- **Not estimable:** the 10 cron run/delivery agents (596,845
+  recorded input). Their session files hold the paired worker's
+  stream, not their own requests: reconstructing those files
+  over-predicts their ~50–70k records by ~8× (ratio ≈ 0.12). They
+  are excluded from fitting and from the split percentages, and
+  flagged in `input_split.csv`.
+
+### Worked example (hand-traceable)
+
+Cron checkpoint worker `6f4d20c5` (first checkpoint run; one usage
+record: 385,384 input). Its transcript has 25 items and 7 inferred
+requests. With the cron parameters (3.62 chars/token, preamble
+46,036):
+
+| request | context before (chars) | context tokens | + preamble | request total | new chars first sent |
+|---|---|---|---|---|---|
+| 1 | 8,602 | 2,377 | 46,036 | 48,413 | 8,602 |
+| 2 | 24,157 | 6,675 | 46,036 | 52,711 | 15,555 |
+| 3 | 31,740 | 8,770 | 46,036 | 54,806 | 7,583 |
+| 4 | 44,456 | 12,283 | 46,036 | 58,319 | 12,716 |
+| 5 | 53,978 | 14,914 | 46,036 | 60,950 | 9,522 |
+| 6 | 56,892 | 15,719 | 46,036 | 61,755 | 2,914 |
+| 7 | 59,993 | 16,576 | 46,036 | 62,612 | 3,101 |
+
+Estimated total 399,566 vs recorded 385,384 (ratio 0.96). New =
+all 59,993 item chars sent once (16,576 tokens) + the preamble's
+first send (46,036) = 62,612, i.e. 15.7% of the estimate; the
+published row scales that proportion to the recorded total:
+est_new 60,390, est_repeated 324,994. Every number here can be
+re-derived from the 25 items (the task prompt is 8,602 chars; the
+first tool output, 13,761 chars, is first sent at request 2 —
+counted in its new_chars 15,555 alongside request 1's own thinking,
+commentary and tool call).
+
+### Limitations
+
+- Chars-per-token varies with content (prose vs code vs JSON); the
+  per-class factor is an average, and dense segments (coordinator
+  #1's later work) are under-estimated by up to ~40% at the segment
+  level. Agent-level medians stay within 0.77–1.10, but treat any
+  single record's split as ±10–20%, and small records as noisier.
+- Mid-session context expiry/summarisation of old tool outputs, if
+  the runtime does any outside compaction records, is invisible in
+  transcripts and would inflate the repeated estimate.
+- Published per-record new+repeated equals the recorded input
+  exactly by construction (proportions applied to records); the
+  estimation error lives entirely in the proportion.
 
 ## Scope — who counts
 
@@ -122,6 +284,11 @@ SQL below, rewrites `token_series.csv`/`agents.csv`, then runs
 `commit_alignment.csv` (attempt commits only), and re-renders the
 per-message chart with `python3 metrics/make_token_chart.py .`. Update
 the snapshot date and totals in this file and in `docs/00-status.md`.
+The input split additionally needs the agent transcripts, so it can
+only be regenerated on this machine: after the re-export, run
+`python3 metrics/estimate_input_split.py .` and transcribe the new
+validation numbers from its output / `input_split_validation.json`
+into the input-split section above.
 
 ### SQL used for this snapshot (verbatim)
 
