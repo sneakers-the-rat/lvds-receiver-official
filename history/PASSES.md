@@ -416,6 +416,14 @@ small-disc clear (84.5,43.5) r2.5 with immediate stubs: ULPI_D6 U6.74 stubbed; U
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 49 · Audit verdict: FAIL
 
+### Pass 49 — 2026-11-04T20:04:18Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr34.kicad_pcb` · Commit: `pending`
+
+small-disc clear (16,10) r3.0: HV_INTVCC U10.8 / HV_SS U10.3 stubs still refused by the stub search's openness test
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 53 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
