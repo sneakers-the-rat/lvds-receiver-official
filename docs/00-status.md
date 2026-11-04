@@ -1012,3 +1012,32 @@ worker on the `pass-structure` branch:
   committed" note. `history/index.json` and the two-step
   snapshot_route flow are retired (frozen legacy); commit_pass.py
   reuses snapshot_route's render machinery.
+## Cost summary — list-price equivalents (2026-11-04)
+
+- **What landed**: `metrics/cost_summary.csv` + `metrics/api_rates.json`
+  + `metrics/make_cost_summary.py` (generator, cross-checks totals
+  against `token_series.csv`), and a "Cost summary (list-price
+  equivalents)" section in `metrics/README.md`, beneath the token
+  summaries. Same snapshot as the token export
+  (2026-11-04T08:29:34Z): 133,253,984 input + 666,604 output tokens.
+- **Framing**: subscriptions differ across all three providers and are
+  unquantifiable; the project ran on a Muse subscription (flat cost).
+  These are rough estimates of what the same volume would cost at
+  published pay-as-you-go API list prices — for scaling decisions, not
+  a bill and not the project's cost.
+- **Totals**: Muse `muse-wonder-1.0` (Meta Model API Standard,
+  $4.00 in / $0.20 cached / $20.00 out) **$546**; Claude Opus 5.5
+  ($4 / $0.20 cache read / $20) **$546** — identical because the rate
+  cards are identical; OpenAI GPT-6 Astra ($10 / $1.00 / $50)
+  **$1,366**. Per-scope rows (main chat / subagents / checkpoint cron)
+  are in the CSV and README table. Cache sensitivity at an assumed
+  95% cache-read share: totals fall to ≈$65 (Muse, Claude) and
+  ≈$227 (OpenAI); the measured input-split estimate supersedes the
+  assumed share when it lands.
+- **Model census**: `agent.agents.model` is populated for all 66
+  project agents, but only with internal codenames — 49 roots
+  `ipnext/watermelon-v0`, 17 subagents `ipnext/avocado-5.17-v1`. No
+  Anthropic/OpenAI model name appears in any project record;
+  transcripts carry no model field and `runtime.requests` has no
+  model column. No evidence any project agent was served by a
+  non-Muse model; the Claude/OpenAI figures are equivalents only.
