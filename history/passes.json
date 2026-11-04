@@ -481,6 +481,34 @@
       },
       "description": "repair6 checkpoint 6 on the Freerouting board: 60 groups connected, sweep 1 continuing",
       "note": ""
+    },
+    {
+      "pass": 19,
+      "timestamp": "2026-11-04T14:06:35Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr1r.s2.kicad_pcb",
+      "dir": "pass-0019",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 13,
+        "unconnected_nets": 30,
+        "audit_verdict": "FAIL"
+      },
+      "description": "repair6 final state on the Freerouting board: sweep 1 connected 64 groups, sweep 2 connected 0 (residue is copper-walled, per results/diagnose-fr1r.log census: NO_EXIT 23, POCKET 14, WIDE_NO_GOAL 2 of 39 classified); run stopped during the provably futile identical sweep 3; board state is the sweep-2-end save",
+      "note": ""
     }
   ],
   "gaps": [
