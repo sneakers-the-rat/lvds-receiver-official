@@ -50,9 +50,9 @@ void gpio_init_board_pins(void)
     /* Interlock + LOS inputs. */
     gpio_set_mode(BOARD_INTERLOCK_PORT, BOARD_INTERLOCK_PIN, GPIO_MODE_INPUT);
     gpio_set_mode(BOARD_LOS_PORT, BOARD_LOS_PIN, GPIO_MODE_INPUT);
-    /* DAC CS out, start deasserted (high). */
-    gpio_set_mode(BOARD_DAC_CS_PORT, BOARD_DAC_CS_PIN, GPIO_MODE_OUTPUT);
-    gpio_write(BOARD_DAC_CS_PORT, BOARD_DAC_CS_PIN, 1);
+    /* DAC SYNC out, start deasserted (high). */
+    gpio_set_mode(BOARD_DAC_SYNC_PORT, BOARD_DAC_SYNC_PIN, GPIO_MODE_OUTPUT);
+    gpio_write(BOARD_DAC_SYNC_PORT, BOARD_DAC_SYNC_PIN, 1);
     /* I2C1 pins PB6/PB7 alternate function 4, open-drain.
      * AF number: VERIFY against the datasheet AF table at bring-up. */
     gpio_set_mode(GPIOB, 6u, GPIO_MODE_ALTERNATE);
@@ -60,9 +60,8 @@ void gpio_init_board_pins(void)
     gpio_set_alt_func(GPIOB, 6u, 4u);
     gpio_set_alt_func(GPIOB, 7u, 4u);
     GPIOB->OTYPER |= (1u << 6) | (1u << 7);
-    /* SPI1 pins PA5/PA6/PA7 alternate function 5 - but PA5 is also the
-     * LED on this board plan; see the CONFLICT NOTE in board.h. The AF
-     * setup is deliberately NOT done here: gpio_init for the SPI pins
-     * happens in spi_init() so the conflict is resolved in one place
-     * at bring-up, not silently here. */
+    /* SPI3 pins (PC10 SCK / PC12 MOSI, per the schematic) are NOT set
+     * up here: their alternate-function setup happens in spi_init()
+     * so the DAC's pin configuration lives in one place with its
+     * driver. SYNC (PA15) is the plain GPIO set up above. */
 }
