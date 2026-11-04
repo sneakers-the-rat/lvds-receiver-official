@@ -248,6 +248,46 @@ U9 cluster clearing (disc 8,48 r3.4): 0/4 — full clearing changed nothing; U9'
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 50 · Audit verdict: FAIL
 
+### Pass 28 — 2026-11-04T15:18:50Z · commit `d57c57a`
+
+Board: `hw/pdlvds_rx.fr11.kicad_pcb` · Commit: `d57c57ae6ba190935b34e49d76ab12c5968eaeb0`
+
+hand-placed escape stubs (new tool hw/hand_stub.py — audit-exact SHAPE.Collide search, edge-anchored, the fix for the router's centre-anchored fanout seal): I2C_SCL U9.1, I2C_SDA U9.6, TMP_ALERT U9.3, USB_RST U7.9, RBIAS U7.32 stubbed into open field; the router takes over from the stub ends
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 50 · Audit verdict: FAIL
+
+### Pass 29 — 2026-11-04T15:19:22Z · commit `30aa43d`
+
+Board: `hw/pdlvds_rx.fr12.kicad_pcb` · Commit: `30aa43d08fc16b172bc46439287e0cbe24c3f174`
+
+hand stub: ULPI_D3 U7.21 east along the row (openness test fixed — neck-width step instead of a fat cross; shorter 0.5 mm stubs admitted). Remaining sealed pads classified by blocker: fence tracks (rip+stub), C40's pad (micro-move), D1 pair (custom via escapes)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 50 · Audit verdict: FAIL
+
+### Pass 30 — 2026-11-04T15:32:13Z · commit `ac9435d`
+
+Board: `hw/pdlvds_rx.fr13.kicad_pcb` · Commit: `ac9435d211807d5fa71e7f945fc377e01d41425f`
+
+fence surgery + hand stubs: ripped CDR_NIN x9 / CDR_CLKP x2 / GND x6 / HV_INTVCC via / XI x5 (victims heal next round), then stubbed CDR_VREF U4.3 (W), CDR_LOS U4.22 (E), +3V3D U11.14 (N), HV_GATE U10.7 (E), VBUS_RAW J1.A9 (NE, full 0.6 width), XO U7.27 (N)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 53 · Audit verdict: FAIL
+
+### Pass 31 — 2026-11-04T15:33:01Z · commit `f68880e`
+
+Board: `hw/pdlvds_rx.fr14.kicad_pcb` · Commit: `f68880ec7c66799746562d1bb815c1d3a28598fd`
+
+placement micro-ops: C40 flipped to the bottom side (frees U7's east-row exits; first bottom-side part on the board) and R27 moved north to (20.5,6.0) (frees U10.9's east exit); stubs placed: ULPI_D4 U7.20, ULPI_D6 U7.18, HV_SHDN U10.9
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 36 · Unconnected nets: 55 · Audit verdict: FAIL
+
+### Pass 32 — 2026-11-04T15:33:34Z · commit `d3c2952`
+
+Board: `hw/pdlvds_rx.fr15.kicad_pcb` · Commit: `d3c2952a8374d83f88feaebb256879385555402c`
+
+via-first hand stubs (hw/hand_via.py; via disc tested as a zero-length segment after the plus-shape bug was found): +3V3A U9.5 via@(9.27,48) with In2 tail — the last U9 pin; CDR_LOS U4.22 second escape via@(55.29,51.25)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 36 · Unconnected nets: 55 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

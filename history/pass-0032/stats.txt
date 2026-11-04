@@ -1,0 +1,13 @@
+pass: 32
+description: via-first hand stubs (hw/hand_via.py; via disc tested as a zero-length segment after the plus-shape bug was found): +3V3A U9.5 via@(9.27,48) with In2 tail — the last U9 pin; CDR_LOS U4.22 second escape via@(55.29,51.25)
+timestamp (UTC): 2026-11-04T15:33:34Z
+commit: pending
+board file: hw/pdlvds_rx.fr15.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 36
+unconnected nets: 55
+audit verdict: fail
+note: 

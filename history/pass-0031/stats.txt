@@ -1,0 +1,13 @@
+pass: 31
+description: placement micro-ops: C40 flipped to the bottom side (frees U7's east-row exits; first bottom-side part on the board) and R27 moved north to (20.5,6.0) (frees U10.9's east exit); stubs placed: ULPI_D4 U7.20, ULPI_D6 U7.18, HV_SHDN U10.9
+timestamp (UTC): 2026-11-04T15:33:01Z
+commit: pending
+board file: hw/pdlvds_rx.fr14.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 36
+unconnected nets: 55
+audit verdict: fail
+note: 

@@ -1,0 +1,13 @@
+pass: 28
+description: hand-placed escape stubs (new tool hw/hand_stub.py — audit-exact SHAPE.Collide search, edge-anchored, the fix for the router's centre-anchored fanout seal): I2C_SCL U9.1, I2C_SDA U9.6, TMP_ALERT U9.3, USB_RST U7.9, RBIAS U7.32 stubbed into open field; the router takes over from the stub ends
+timestamp (UTC): 2026-11-04T15:18:50Z
+commit: pending
+board file: hw/pdlvds_rx.fr11.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 13
+unconnected nets: 50
+audit verdict: fail
+note: 
