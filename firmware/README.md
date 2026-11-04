@@ -106,23 +106,31 @@ Known soft spots, called out where they live:
   standard frame format; marked VERIFY against `datasheets/dac8562.pdf`.
 - `tmp117.c`: standard TMP117 register map (0x00 temp, 0x0F ID =
   0x0117), 0.0078125 C/LSB; marked VERIFY against the datasheet.
-- `adn2813.c`: transaction logic complete, but the ADN2813 is **not**
-  in `datasheets/` - its register numbers, rate-readback scaling and
-  the I2C address are placeholders, all marked VERIFY. Do not trust
-  any value from this driver until they are filled in.
+- `adn2813.c`: transaction logic complete. The I2C register numbers
+  and rate-readback scaling are placeholders, marked VERIFY (the
+  register map is not in `datasheets/`); do not trust values from
+  those paths yet. The pin-level facts are settled: I2C address
+  0x40 (SADDR5 grounded), LOS (PB14) and LOL (PA2) read as GPIOs,
+  both active high per `datasheets/MANIFEST.md`.
 - `hv_ctrl.c`: logic complete (temperature compensation
   Vset(T) = Vset25 + 1.3 V/C x (T - 25) for the C30737, 5 V/s slew
-  limit, interlock drop-out, fail-safe on invalid temperature); the
-  DAC-counts-to-volts scale assumes a 0-420 V feedback divider -
-  VERIFY against the HV design.
+  limit, interlock gate with drop-out, fail-safe on invalid
+  temperature); the DAC-counts-to-volts scale assumes a 0-420 V
+  feedback divider - VERIFY against the HV design. Note the gate
+  can never be satisfied on rev A (no interlock input is drawn),
+  so as shipped the converter is held off - see BRINGUP.md.
 - `capture.c`: state machine + AXI SRAM double buffer complete; the
   DMA/timer feed is a commented sketch (`capture_board_dma_init_sketch`,
   deliberately writes no registers).
 - Pin assignments in `board.h` are design intent. The schematic
-  (`hw/CONNECTIONS.md`) has since settled two conflicts against
+  (`hw/CONNECTIONS.md`) has since settled three conflicts against
   board.h's initial guesses, and board.h now follows it: the
   status LED is PC9, not PA5 (PA5 is ULPI_CK), and PA4 is the
-  USB3300 reset, not the DAC chip select. The DAC path has since
+  USB3300 reset, not the DAC chip select. A third pass found the
+  HV/interlock/LOS pins (PB0/PB1/PB2) were invented outright -
+  PB0/PB1 are ULPI data lines; the drawn pins are PC7 (HV_SHDN),
+  PB14 (CDR LOS) and PA2 (CDR LOL), and no interlock input exists
+  (`docs/06-hv-cdr-pin-inventory.md`). The DAC path has since
   been reconciled to the schematic (SPI3 + PA15 SYNC), so
   `dac8562_set_threshold()` no longer touches the PHY reset
   line; a host test locks the pin map. See `BRINGUP.md`.
@@ -161,11 +169,16 @@ Known soft spots, called out where they live:
    reconciliation: confirm the AF numbers and RCC bits marked
    VERIFY in `board.h` against RM0468 and the datasheet AF table.
 5. Verify the HV feedback divider ratio; fix `HV_FULL_SCALE_V` in
-   `hv_ctrl.h`; confirm the interlock and LOS polarities.
+   `hv_ctrl.h`. (LOS/LOL polarities are settled - active high, see
+   `adn2813.h`. There is no interlock polarity to confirm: no
+   interlock input is drawn on rev A.)
 6. First power-up on a current-limited supply: confirm 550 MHz
    SYSCLK (e.g. MCO or a SysTick-timed LED), then I2C presence of
    TMP117 (ID register) and ADN2813, then DAC output voltages on a
-   meter, HV **last** and only with the interlock in place.
+   meter. HV **last**, and know that this firmware as shipped can
+   never enable it (no interlock input - owner design decision,
+   BRINGUP.md); the bench check for HV is that PC7 holds HV_SHDN
+   low and the rail stays at 0 V.
 7. Decide the CDR-to-MCU capture peripheral (SPI slave vs timer
    path) at schematic time; implement the DMA programming sketched
    in `capture.c`; verify DMA can reach the AXI SRAM buffers.

@@ -10,10 +10,13 @@
  *     and answer it through usb_app; forward any ready capture buffer
  *     to the host, and through the BER checker while a test runs.
  *
- * The USB device layer is the stub (usb_device_stub.c), so the poll
- * below currently receives USB_DEV_NOT_IMPLEMENTED every time and the
- * loop simply carries on - that is deliberate: the control/safety
- * duties above must not depend on USB working.
+ * The USB device layer is the TinyUSB transport
+ * (usb_device_tinyusb.c, CDC ACM via the board's USB3300 ULPI PHY);
+ * the poll below receives USB_DEV_NO_DATA whenever the host is
+ * silent and the loop simply carries on - that is deliberate: the
+ * control/safety duties above must not depend on USB working.
+ * (Enumeration on real hardware is unproven until bring-up -
+ * firmware/BRINGUP.md.)
  */
 #include "adn2813.h"
 #include "board.h"
@@ -55,7 +58,9 @@ int main(void)
     hv_ctrl_init(&g_hv);
     capture_init(&g_cap);
     usb_app_init(&g_app, &g_hv, &g_cap);
-    (void)usb_dev_init(); /* stub: returns USB_DEV_NOT_IMPLEMENTED */
+    (void)usb_dev_init(); /* TinyUSB transport; a USB_DEV_IO_ERROR
+                             here leaves the control loop running -
+                             USB is not a safety dependency */
 
     for (;;) {
         uint32_t now = board_millis();
@@ -99,7 +104,7 @@ int main(void)
                 if (g_app.ber_running) {
                     usb_app_ber_feed(&g_app, buf, len);
                 }
-                (void)usb_dev_send(buf, len); /* stub: not implemented */
+                (void)usb_dev_send(buf, len);
                 capture_release(&g_cap);
             }
         }

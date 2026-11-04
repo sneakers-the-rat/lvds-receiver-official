@@ -41,6 +41,13 @@ void hv_ctrl_set_setpoint(hv_ctrl_t *hv, float volts_at_25c)
     hv->setpoint_v_at_25c = volts_at_25c;
 }
 
+/* Mock of hv_ctrl_enable's contract: enable is refused (-1) while
+ * the interlock gate is unsatisfied. This exercises usb_app's
+ * two-way mapping (refusal -> USB_STATUS_INTERLOCK, success -> OK).
+ * It is NOT a model of rev A hardware: the drawn board has no
+ * interlock input, so the real hv_ctrl's gate is never satisfied
+ * and the real SET_BIAS always takes the refusal path tested first
+ * below (docs/06-hv-cdr-pin-inventory.md). */
 int hv_ctrl_enable(hv_ctrl_t *hv, int on)
 {
     if (on && !hv->interlock_ok) {

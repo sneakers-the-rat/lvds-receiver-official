@@ -112,18 +112,45 @@ typedef struct {
  * once claimed PA4 as its chip select hangs on SPI3 with PA15 as
  * SYNC - see the DAC defines below. The full ULPI pin table lives
  * in usb_device_tinyusb.c. */
-/* HV enable: PB0 (active high, drives the flyback enable + interlock
- * AND gate; hardware interlock jumper is in series - firmware can
- * never force HV on by itself) */
-#define BOARD_HV_EN_PORT GPIOB
-#define BOARD_HV_EN_PIN  0u
-/* Enclosure interlock sense: PB1 (1 = interlock fitted/closed) */
-#define BOARD_INTERLOCK_PORT GPIOB
-#define BOARD_INTERLOCK_PIN  1u
-/* ADN2813 LOS output into PB2 (1 = loss of signal asserted; polarity
- * VERIFY vs ADN2813 datasheet at bring-up) */
-#define BOARD_LOS_PORT GPIOB
-#define BOARD_LOS_PIN  2u
+/* HV converter control: PC7 = HV_SHDN, the LT3757's SHDN/UVLO pin
+ * node (hw/circuit.py U6/U10; hw/CONNECTIONS.md "HV bias"). This is
+ * the ONLY MCU connection to the converter. R25 100 kOhm / R26 33 kOhm
+ * divide +5 V onto the node: 1.241 V, just above the SHDN threshold
+ * of 1.22 V (falling; datasheets/MANIFEST.md, LT3757 section). So
+ * the pin's logic is a shutdown clamp, not an enable:
+ *   PC7 driven LOW  -> node ~0 V -> converter shut down (HV OFF)
+ *   PC7 high/floating -> divider wins -> converter enabled
+ * Firmware must therefore configure PC7 as a push-pull output and
+ * drive it low at init, and never float it (docs/03-power.md states
+ * the same semantics). Full derivation: docs/06-hv-cdr-pin-inventory.md.
+ * (This define previously claimed PB0 as an "HV enable" with an AND
+ * gate and an interlock jumper in series. None of that exists in the
+ * drawn design - PB0 is ULPI_D1.) */
+#define BOARD_HV_SHDN_PORT GPIOC
+#define BOARD_HV_SHDN_PIN  7u
+/* There is NO interlock input on rev A. The requirement text
+ * (docs/01 R9, docs/02) assumes an enclosure interlock jumper, but
+ * the drawn design fits neither a jumper nor a sense input: the
+ * inventory in docs/06-hv-cdr-pin-inventory.md searched every net,
+ * part and MCU pin and found none. Firmware must not invent one;
+ * hv_ctrl therefore never satisfies its enable gate on this board
+ * (owner design decision, recorded in docs/00-status.md and
+ * firmware/BRINGUP.md). No BOARD_INTERLOCK define exists, on
+ * purpose. (It previously claimed PB1 - that pin is ULPI_D2.) */
+/* ADN2813 status outputs (hw/circuit.py U4/U6; datasheets/MANIFEST.md
+ * ADN2813 section, official Rev. C text): LOS pin 22 -> PB14,
+ * LOL pin 16 -> PA2. Both are LVTTL, ACTIVE HIGH (1 = asserted). */
+#define BOARD_CDR_LOS_PORT GPIOB
+#define BOARD_CDR_LOS_PIN  14u
+#define BOARD_CDR_LOL_PORT GPIOA
+#define BOARD_CDR_LOL_PIN  2u
+/* ADN2813 SQUELCH input: pin 27 <- PB15. LVTTL, active high disables
+ * the CDR outputs. The net has no pull resistor and no other driver,
+ * so firmware drives it low (outputs enabled) at init - leaving it
+ * floating, as earlier firmware did, leaves the CDR outputs gated
+ * by a floating CMOS input on the real board. */
+#define BOARD_CDR_SQUELCH_PORT GPIOB
+#define BOARD_CDR_SQUELCH_PIN  15u
 /* DAC8562 (U8) serial interface, per the schematic
  * (hw/CONNECTIONS.md: "SPI3: PC10 SCK, PC12 MOSI -> DAC8562;
  * PA15 = DAC_SYNC"; hw/circuit.py U6/U8 net assignments agree):

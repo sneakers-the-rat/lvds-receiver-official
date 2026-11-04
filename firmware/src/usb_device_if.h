@@ -37,6 +37,6 @@ int usb_dev_init(void);
 int usb_dev_send(const uint8_t *data, size_t len);
 /* Copy out received host bytes; returns byte count or an error code. */
 int usb_dev_recv(uint8_t *buf, size_t cap);
-int usb_dev_connected(void); /* 1 once enumerated (never, in the stub) */
+int usb_dev_connected(void); /* 1 once enumerated by a host */
 
 #endif /* USB_DEVICE_IF_H */
