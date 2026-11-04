@@ -13,17 +13,39 @@ the board state. It fails the step (exit != 0) when:
     census. A silently broken DRC is exactly the failure mode this
     gate exists to catch; it is never waved through.
   * The counts REGRESS — violations or unconnected items rise above
-    ci/drc-baseline.json (routing got worse, or the checker changed
+    ci/drc-baseline.json BY MORE THAN the checker's own run-to-run
+    jitter tolerance (routing got worse, or the checker changed
     behaviour; either must be seen).
 
-It exits 0 when the tool is healthy and counts are at or below the
-baseline. That outcome is reported as BOARD STATE ("DRC (board in
-progress): ... — no regression"), never as "DRC passed".
+Checker jitter (round 3, 2026-11-03): KiCad 8's DRC is not
+perfectly deterministic — run 41751841325 measured 727/190 on the
+IDENTICAL board blob (6a377ebc) that run 41750532660 had measured
+at 726/190, and the round-2 ratchet fired REGRESSION on jitter
+alone. The baseline therefore carries tolerance_violations /
+tolerance_unconnected (5 / 2: sized from the observed ±1 with
+headroom, far below any real routing regression, which moves
+counts by tens). Three healthy outcomes, three wordings:
+
+  * counts at or below baseline — "no regression";
+  * above baseline but within tolerance — verdict PASS, reported
+    as "within checker jitter tolerance (+N over baseline,
+    tolerance +T)" so the drift stays visible in the log, the
+    status JSON and the site panel;
+  * above baseline + tolerance — REGRESSION, exit 1.
+
+The baseline itself stays the reference measurement (726/190);
+the tolerance is the jitter mechanism, never a quiet baseline
+raise. Further drift beyond tolerance is real signal.
+
+It exits 0 when the tool is healthy and counts are within
+baseline + tolerance. That outcome is reported as BOARD STATE
+("DRC (board in progress): ..."), never as "DRC passed".
 
 End state: when routing completes, the baseline is set to 0/0 and the
 same ratchet is a hard zero-tolerance gate by construction — the
-census check is skipped when the baseline total is 0, so a genuinely
-clean report passes.
+census check is skipped when the baseline total is 0, and the
+tolerances are forced to 0 when the baseline is 0/0, so a genuinely
+clean report is the only pass.
 
 Every run writes a JSON status file (default
 results/drc-status.json) for the workflow's site status JSON, prints
@@ -53,14 +75,22 @@ RE_UNCONNECTED = re.compile(
 
 
 def load_baseline(path):
-    """Return (violations, unconnected) or raise ValueError."""
+    """Return (violations, unconnected, tol_violations,
+    tol_unconnected) or raise ValueError. Tolerances default to 0
+    when absent (pre-round-3 baseline files keep the strict
+    any-rise-is-a-regression semantics)."""
     with open(path) as f:
         data = json.load(f)
     v = data["violations"]
     u = data["unconnected"]
     if not isinstance(v, int) or not isinstance(u, int) or v < 0 or u < 0:
         raise ValueError(f"baseline counts must be non-negative ints, got {v!r}/{u!r}")
-    return v, u
+    tv = data.get("tolerance_violations", 0)
+    tu = data.get("tolerance_unconnected", 0)
+    if not isinstance(tv, int) or not isinstance(tu, int) or tv < 0 or tu < 0:
+        raise ValueError(
+            f"baseline tolerances must be non-negative ints, got {tv!r}/{tu!r}")
+    return v, u, tv, tu
 
 
 def parse_report(path):
@@ -104,6 +134,7 @@ def main(argv=None):
         "baseline_file": args.baseline,
         "tool_health": "unknown",
         "regression": None,
+        "case": "unknown",
         "verdict": "unknown",
         "board_state": "",
     }
@@ -134,19 +165,27 @@ def main(argv=None):
         return code
 
     try:
-        bv, bu = load_baseline(args.baseline)
+        bv, bu, tv, tu = load_baseline(args.baseline)
     except Exception as e:
         status["tool_health"] = "FAIL"
+        status["case"] = "tool_failure"
         status["verdict"] = "TOOL FAILURE"
         status["board_state"] = f"DRC TOOL FAILURE: baseline unreadable ({e})"
         return finish(2)
+    # End state guard: a 0/0 baseline is the finished-board hard
+    # gate — tolerances recorded in the file must not soften it.
+    if bv == 0 and bu == 0:
+        tv = tu = 0
     status["baseline_violations"] = bv
     status["baseline_unconnected"] = bu
+    status["tolerance_violations"] = tv
+    status["tolerance_unconnected"] = tu
 
     try:
         v, u, census = parse_report(args.report)
     except Exception as e:
         status["tool_health"] = "FAIL"
+        status["case"] = "tool_failure"
         status["verdict"] = "TOOL FAILURE"
         status["board_state"] = f"DRC TOOL FAILURE: {e}"
         return finish(2)
@@ -161,6 +200,7 @@ def main(argv=None):
     # report is exactly what health looks like there.
     if bv + bu > 0 and census <= 0:
         status["tool_health"] = "FAIL"
+        status["case"] = "tool_failure"
         status["verdict"] = "TOOL FAILURE"
         status["board_state"] = (
             f"DRC TOOL FAILURE: report census is {census} items while the "
@@ -169,15 +209,38 @@ def main(argv=None):
         return finish(2)
     status["tool_health"] = "ok"
 
-    status["regression"] = v > bv or u > bu
+    # Three cases (round 3): at/below baseline; above baseline but
+    # within the checker-jitter tolerance; above baseline +
+    # tolerance. `regression` keeps its CI meaning — the hard
+    # failure — and is true only in the third case.
+    status["over_violations"] = v - bv
+    status["over_unconnected"] = u - bu
+    status["regression"] = v > bv + tv or u > bu + tu
     if status["regression"]:
+        status["case"] = "regression"
         status["verdict"] = "REGRESSION"
         status["board_state"] = (
             f"DRC REGRESSION: {v} violations, {u} unconnected — "
-            f"ABOVE baseline {bv}/{bu} (routing regressed, or the "
-            "checker changed behaviour)")
+            f"ABOVE baseline {bv}/{bu} + jitter tolerance +{tv}/+{tu} "
+            "(routing regressed, or the checker changed behaviour)")
         return finish(1)
 
+    if v > bv or u > bu:
+        status["case"] = "within_jitter_tolerance"
+        status["verdict"] = "WITHIN JITTER TOLERANCE"
+        over = []
+        if v > bv:
+            over.append(f"+{v - bv} violations")
+        if u > bu:
+            over.append(f"+{u - bu} unconnected")
+        status["board_state"] = (
+            f"DRC (board in progress): {v} violations, {u} unconnected "
+            f"— within checker jitter tolerance "
+            f"({', '.join(over)} over baseline {bv}/{bu}, "
+            f"tolerance +{tv}/+{tu})")
+        return finish(0)
+
+    status["case"] = "no_regression"
     status["verdict"] = "NO REGRESSION"
     if bv == 0 and bu == 0:
         status["board_state"] = (

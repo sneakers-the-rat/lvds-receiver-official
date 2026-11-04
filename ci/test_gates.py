@@ -15,6 +15,16 @@ Two generations of cases:
     both round-1 implementations on live CI — the DRC parser on
     the '**'-framed 'unconnected pads' wording, and the ERC
     step on --exit-code-violations firing on warnings.
+  * ROUND 3 (jitter): run 41751841325 measured 727/190 on the
+    IDENTICAL board blob run 41750532660 measured at 726/190 —
+    ±1 checker jitter, which the round-2 ratchet flagged as a
+    regression. The shipped baseline now carries tolerances
+    (5 violations / 2 unconnected): the real fixture doctored
+    to 727/190 must pass WITH the jitter wording, 731/192 (the
+    tolerance edge) must pass, and 732/190 / 726/193 (beyond
+    tolerance) must still fail. The round-2 doctored-727 case
+    against a tolerance-less baseline stays: default tolerance
+    is 0, so strict semantics are pinned too.
 
 Exit 0 iff every case matches its expected exit code.
 """
@@ -39,6 +49,12 @@ failures = []
 def check(name, got, want):
     ok = got == want
     print(f"{'PASS' if ok else 'FAIL'}  {name}: exit {got} (want {want})")
+    if not ok:
+        failures.append(name)
+
+
+def check_bool(name, ok):
+    print(f"{'PASS' if ok else 'FAIL'}  {name}")
     if not ok:
         failures.append(name)
 
@@ -96,8 +112,45 @@ def main():
         doc = write(os.path.join(tmp, "drc-727.txt"),
                     real_drc.replace("** Found 726 DRC violations **",
                                      "** Found 727 DRC violations **"))
-        check("drc real fixture doctored 727/190",
+        check("drc real fixture doctored 727/190 @ tolerance-less "
+              "baseline (strict)",
               drc(tmp, doc, base726).returncode, 1)
+
+        # ---- DRC, round 3: jitter tolerance (shipped baseline
+        # 726/190 + tolerance 5/2) ----
+        r = drc(tmp, doc, SHIPPED_BASELINE)
+        check("drc round3 doctored 727/190 @ shipped baseline "
+              "(jitter)", r.returncode, 0)
+        check_bool("drc round3 jitter banner wording",
+                   "within checker jitter tolerance" in r.stdout
+                   and "+1 violations over baseline" in r.stdout
+                   and "tolerance +5/+2" in r.stdout)
+        with open(os.path.join(tmp, "drc-status.json")) as f:
+            st = json.load(f)
+        check_bool("drc round3 status json case + tolerances",
+                   st.get("case") == "within_jitter_tolerance"
+                   and st.get("verdict") == "WITHIN JITTER TOLERANCE"
+                   and st.get("regression") is False
+                   and st.get("tolerance_violations") == 5
+                   and st.get("tolerance_unconnected") == 2)
+        doc = write(os.path.join(tmp, "drc-731-192.txt"),
+                    real_drc.replace(
+                        "** Found 726 DRC violations **",
+                        "** Found 731 DRC violations **").replace(
+                        "** Found 190 unconnected pads **",
+                        "** Found 192 unconnected pads **"))
+        check("drc round3 doctored 731/192 @ shipped (tolerance "
+              "edge)", drc(tmp, doc, SHIPPED_BASELINE).returncode, 0)
+        doc = write(os.path.join(tmp, "drc-732.txt"),
+                    real_drc.replace("** Found 726 DRC violations **",
+                                     "** Found 732 DRC violations **"))
+        check("drc round3 doctored 732/190 @ shipped (beyond "
+              "tolerance)", drc(tmp, doc, SHIPPED_BASELINE).returncode, 1)
+        doc = write(os.path.join(tmp, "drc-193.txt"),
+                    real_drc.replace("** Found 190 unconnected pads **",
+                                     "** Found 193 unconnected pads **"))
+        check("drc round3 doctored 726/193 @ shipped (beyond "
+              "tolerance)", drc(tmp, doc, SHIPPED_BASELINE).returncode, 1)
         doc = write(os.path.join(tmp, "drc-191.txt"),
                     real_drc.replace("** Found 190 unconnected pads **",
                                      "** Found 191 unconnected pads **"))
