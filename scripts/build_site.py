@@ -142,6 +142,67 @@ def job_status():
                 print(f"warning: unreadable status file {p} ({e})")
     return out
 
+def drc_row():
+    """The DRC row of the status panel, worded as BOARD STATE
+    (CI signal fix, 2026-11-03): while routing is unfinished the
+    counts are reported against ci/drc-baseline.json — never as
+    "DRC passed" and no longer as a bare FAIL either. The row is
+    FAIL only for a tool-health breakage, REGRESSION when a count
+    rises above baseline, and PASS only once the board is finished
+    and the baseline is 0/0 (the hard-gate end state).
+
+    Counts come from the kicad-validate job's status JSON when the
+    site is built by CI (scripts/drc_gate.py's numbers, merged in
+    by the workflow), else from a local results/drc-report.txt; the
+    baseline falls back to ci/drc-baseline.json in the checkout."""
+    kj = next((j for j in job_status()
+               if j.get("job") == "kicad-validate"), None)
+    if kj is not None and kj.get("drc_verdict") == "TOOL FAILURE":
+        return ("KiCad DRC (native)", "FAIL",
+                kj.get("drc_board_state") or "DRC tool failure (see CI log)")
+    v = u = bv = bu = None
+    regression = None
+    if kj is not None and "drc_violations" in kj:
+        v, u = kj["drc_violations"], kj["drc_unconnected"]
+        bv = kj.get("drc_baseline_violations")
+        bu = kj.get("drc_baseline_unconnected")
+        regression = kj.get("drc_regression")
+    if v is None:
+        drc = read("results/drc-report.txt")
+        if drc is None:
+            return ("KiCad DRC (native)", "not run",
+                    "no DRC report or status (needs a KiCad 8 CI run)")
+        mv = re.search(r"Found (\d+) DRC violations", drc)
+        mu = re.search(r"Found (\d+) unconnected items", drc)
+        if mv is None or mu is None:
+            return ("KiCad DRC (native)", "FAIL",
+                    "DRC report present but unparseable (tool health)")
+        v, u = int(mv.group(1)), int(mu.group(1))
+    if bv is None:
+        base = read("ci/drc-baseline.json")
+        if base is not None:
+            try:
+                bj = json.loads(base)
+                bv, bu = bj["violations"], bj["unconnected"]
+            except Exception:
+                bv = bu = None
+    if bv is None:
+        return ("KiCad DRC (native)", "BOARD STATE",
+                f"{v} violations, {u} unconnected items "
+                "(no baseline recorded)")
+    if regression is None:
+        regression = v > bv or u > bu
+    if v == 0 and u == 0 and bv == 0 and bu == 0:
+        return ("KiCad DRC (native)", "PASS",
+                "0 violations, 0 unconnected — baseline 0/0 (hard gate)")
+    if regression:
+        return ("KiCad DRC (native)", "REGRESSION",
+                f"DRC REGRESSION: {v} violations, {u} unconnected "
+                f"— above baseline {bv}/{bu}")
+    return ("KiCad DRC (native)", "BOARD STATE",
+            f"DRC (board in progress): {v} violations, {u} unconnected "
+            f"— baseline {bv}/{bu}, no regression")
+
 def check_status():
     """(name, status, detail) per verification, from results/ files.
     status is PASS, FAIL or 'not run' (file absent). A present file
@@ -183,18 +244,7 @@ def check_status():
         rows.append(("KiCad ERC (native)",
                      "PASS" if ne == 0 else "FAIL",
                      f"{ne} errors, {nw} warnings"))
-    drc = read("results/drc-report.txt")
-    if drc is None:
-        rows.append(("KiCad DRC (native)", "not run",
-                     "no DRC report (needs a KiCad 8 CI run)"))
-    else:
-        mv = re.search(r"Found (\d+) DRC violations", drc)
-        mu = re.search(r"Found (\d+) unconnected items", drc)
-        nv = int(mv.group(1)) if mv else -1
-        nu = int(mu.group(1)) if mu else -1
-        rows.append(("KiCad DRC (native)",
-                     "PASS" if nv == 0 and nu == 0 else "FAIL",
-                     f"{nv} violations, {nu} unconnected items"))
+    rows.append(drc_row())
     return rows
 
 def status_panel():
@@ -216,7 +266,8 @@ def status_panel():
                     "(local build, or the status artefacts were not "
                     "available).</em></p>")
     def badge(st):
-        cls = {"PASS": "pass", "FAIL": "fail"}.get(st, "notrun")
+        cls = {"PASS": "pass", "FAIL": "fail",
+               "REGRESSION": "fail"}.get(st, "notrun")
         return f'<span class="badge {cls}">{html.escape(st)}</span>'
     crows = "".join(
         "<tr><td>{}</td><td>{}</td><td>{}</td></tr>".format(
