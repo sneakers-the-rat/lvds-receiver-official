@@ -1,0 +1,9 @@
+2026-11-04T12:24:19+00:00 apt-get update start
+SUDO=sudo
+2026-11-04T12:24:30+00:00 update done, installing kicad
+E: Could not get lock /var/lib/dpkg/lock-frontend. It is held by process 6779 (apt-get)
+E: Unable to acquire the dpkg frontend lock (/var/lib/dpkg/lock-frontend), is another process using it?
+2026-11-04T12:24:30+00:00 install exit=0
+Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+ModuleNotFoundError: No module named 'pcbnew'
