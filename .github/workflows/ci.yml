@@ -288,10 +288,11 @@ jobs:
   build-site:
     needs: [kicad-validate, sim-and-firmware]
     # Runs whenever the run was not cancelled — in particular it runs
-    # when a validation job FAILED. scripts/build_site.py tolerates
-    # every missing input (the tolerant downloads below plus its own
-    # "not available yet" placeholders), so a red validation run still
-    # produces a complete, honest site.
+    # when a validation job FAILED. The site is Jekyll (website/);
+    # its data step, scripts/site_data.py, tolerates every missing
+    # input (the tolerant downloads below plus its own
+    # "not available yet" placeholders), so a red validation run
+    # still produces a complete, honest site.
     if: ${{ !cancelled() }}
     runs-on: ubuntu-22.04
     steps:
@@ -330,8 +331,24 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y python3-numpy python3-matplotlib
 
-      - name: Build the static project site
-        run: python3 scripts/build_site.py
+      # Jekyll builds the site skeleton (layouts, the sidebar TOC,
+      # the passes collection); scripts/site_data.py runs first and
+      # stages _data/*.json + assets from the artefacts above. Ruby
+      # version matches the local development setup; bundler-cache
+      # installs website/Gemfile.lock's gems.
+      - name: Set up Ruby for Jekyll
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+          working-directory: website
+
+      - name: Stage site data (scripts/site_data.py)
+        run: python3 scripts/site_data.py
+
+      - name: Build the static project site (Jekyll)
+        working-directory: website
+        run: bundle exec jekyll build
 
       - name: Upload site as workflow artifact
         uses: actions/upload-artifact@v4
