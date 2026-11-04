@@ -208,9 +208,9 @@ repair6 healing run on the cluster-cleared board, final state: unconnected nets 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 35 · Audit verdict: FAIL
 
-### Pass 23 — 2026-11-04T15:04:44Z · commit `pending`
+### Pass 23 — 2026-11-04T15:04:44Z · commit `9fef1ac`
 
-Board: `hw/pdlvds_rx.fr6.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr6.kicad_pcb` · Commit: `9fef1ac758984156b2113e7c8715c5163f79c92e`
 
 U4 cluster clearing (disc 52,52 r4.2): +3V3D_CDR U4.12/18, CDR_CLKP U4.26, CDR_DATN U4.28, CDR_NIN U4.4, REFCLK U4.10 connected; CDR_LOS U4.22 and CDR_VREF U4.3 fanout-empty (sibling-pad seal, hand-stub next); victims fragmented, nets 35 -> 45 by count pending healing
 
