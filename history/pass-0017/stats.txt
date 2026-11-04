@@ -1,0 +1,13 @@
+pass: 17
+description: repair6 checkpoint 5 on the Freerouting board: 50 groups connected, sweep 1 continuing (53 connected vs 25 still-isolated attempts so far)
+timestamp (UTC): 2026-11-04T13:45:26Z
+commit: pending
+board file: hw/pdlvds_rx.fr1r.ckpt5.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 13
+unconnected nets: 43
+audit verdict: fail
+note: 
