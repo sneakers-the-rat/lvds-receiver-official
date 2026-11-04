@@ -1,7 +1,14 @@
 name: ci
+# Main only (2026-11-04, owner directive): this project does not use
+# pull requests — work lands by direct merge to main. The old
+# push(any branch) + pull_request triggers ran the whole suite on
+# every worker-branch push and then again on the merge: every job
+# twice, pointlessly. Branch pushes now run nothing; manual runs
+# remain available via workflow_dispatch.
 on:
   push:
-  pull_request:
+    branches: [main]
+  workflow_dispatch:
 
 # Least privilege by default; only the deploy-pages job below holds
 # the Pages permissions, scoped to that job alone.
