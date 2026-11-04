@@ -480,9 +480,9 @@ repairg healing: 17 groups connected (ripup victims repaid; APD_K's three groups
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 39 · Audit verdict: FAIL
 
-### Pass 57 — 2026-11-04T20:14:26Z · commit `pending`
+### Pass 57 — 2026-11-04T20:14:26Z · commit `9f1ce83`
 
-Board: `hw/pdlvds_rx.fr43.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr43.kicad_pcb` · Commit: `9f1ce83f645b53e190761b2166aeecbd036c0de1`
 
 hand bridges (hw/bridge.py): VBUS_RAW, ULPI_D0 and +5V group pairs bridged across 1.0-1.45 mm gaps, one fence item ripped each
 
