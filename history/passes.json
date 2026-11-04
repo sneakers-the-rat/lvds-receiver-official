@@ -1775,6 +1775,34 @@
       },
       "description": "ULPI_NXT escape hand-placed: from U7.11's surgery stub, SW 2.2 mm to open field at (27.69,65.85), 4 ULPI_STP/DIR fence items ripped (heal owes them back); the router's grid could not start from the lone stub cell at any expansion cap",
       "note": ""
+    },
+    {
+      "pass": 64,
+      "timestamp": "2026-11-04T21:24:00Z",
+      "hash": "28f0b1f67920694147922fec8b7e514a7a908bd6",
+      "short_hash": "28f0b1f",
+      "board_file": "hw/pdlvds_rx.fr50.kicad_pcb",
+      "dir": "pass-0064",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 4,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL"
+      },
+      "description": "repairg healing on the NXT-escape board: 1 group connected \u2014 the heal curve is exhausted on this residue (68, 40, 17, 12, 1 across the last five heals); the remaining bridges are astar-proof in the current field and need forced geometry (ripup/hand bridges). A clean re-run (fr51) reproduced this state exactly: 35 unconnected nets",
+      "note": ""
     }
   ],
   "gaps": [
