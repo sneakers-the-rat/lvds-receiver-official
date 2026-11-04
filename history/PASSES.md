@@ -352,6 +352,14 @@ cluster clearing U7 disc (30,61) r4.5: 5/7 targets connected incl. +3V3A U7.16/U
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 39 · Audit verdict: FAIL
 
+### Pass 41 — 2026-11-04T19:56:08Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr26.kicad_pcb` · Commit: `pending`
+
+cluster clearing U10 disc (16,10) r3.6: 1/2 HV targets connected
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 44 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

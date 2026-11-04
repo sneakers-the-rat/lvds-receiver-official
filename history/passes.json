@@ -1097,6 +1097,34 @@
       },
       "description": "cluster clearing U7 disc (30,61) r4.5: 5/7 targets connected incl. +3V3A U7.16/U7.25; ULPI_NXT U7.11 and ULPI_STP U7.13 remain sealed by their own row geometry",
       "note": ""
+    },
+    {
+      "pass": 41,
+      "timestamp": "2026-11-04T19:56:08Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr26.kicad_pcb",
+      "dir": "pass-0041",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 44,
+        "audit_verdict": "FAIL"
+      },
+      "description": "cluster clearing U10 disc (16,10) r3.6: 1/2 HV targets connected",
+      "note": ""
     }
   ],
   "gaps": [
