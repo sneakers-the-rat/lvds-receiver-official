@@ -528,6 +528,14 @@ repairg healing: 12 groups connected, victims repaid; 34 unconnected nets, 74 gr
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 34 · Audit verdict: FAIL
 
+### Pass 63 — 2026-11-04T20:57:44Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr49.kicad_pcb` · Commit: `pending`
+
+ULPI_NXT escape hand-placed: from U7.11's surgery stub, SW 2.2 mm to open field at (27.69,65.85), 4 ULPI_STP/DIR fence items ripped (heal owes them back); the router's grid could not start from the lone stub cell at any expansion cap
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 35 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

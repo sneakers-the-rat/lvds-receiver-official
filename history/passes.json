@@ -1713,6 +1713,34 @@
       },
       "description": "repairg healing: 12 groups connected, victims repaid; 34 unconnected nets, 74 groups, clearance 4 (all D1 family)",
       "note": ""
+    },
+    {
+      "pass": 63,
+      "timestamp": "2026-11-04T20:57:44Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr49.kicad_pcb",
+      "dir": "pass-0063",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 4,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL"
+      },
+      "description": "ULPI_NXT escape hand-placed: from U7.11's surgery stub, SW 2.2 mm to open field at (27.69,65.85), 4 ULPI_STP/DIR fence items ripped (heal owes them back); the router's grid could not start from the lone stub cell at any expansion cap",
+      "note": ""
     }
   ],
   "gaps": [
