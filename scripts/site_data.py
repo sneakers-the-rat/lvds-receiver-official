@@ -336,24 +336,119 @@ def token_data():
 
 
 # ------------------------------------------------------- cost summary
+# Presentation names for the cost tables: the data files carry the
+# providers' full API names and the models' catalogue ids; the tables
+# use the plain names below. Anything unmapped falls back to the
+# string in the data file.
+COST_PROVIDER_DISPLAY = {
+    "Meta - Muse (Meta Model API)": "Meta",
+    "Anthropic - Claude API": "Anthropic",
+    "OpenAI API": "OpenAI",
+}
+COST_MODEL_DISPLAY = {
+    "muse-wonder-1.0": "Muse Wonder 1.0",
+    "muse-spark-1.3": "Muse Spark 1.3",
+    "claude-opus-5-5": "Opus 5.5",
+    "claude-sonnet-5-5": "Sonnet 5.5",
+    "gpt-6-astra": "GPT-6 Astra",
+    "gpt-6.1-sol": "GPT-6.1 Sol",
+}
+COST_SCOPE_DISPLAY = {
+    "main_chat": "Main chat",
+    "subagents": "Subagents",
+    "checkpoint_cron": "Checkpoint cron",
+}
+COST_SCOPES = ("main_chat", "subagents", "checkpoint_cron")
+
+
+def _usd(value):
+    return f"${float(value):,.2f}"
+
+
+def _usd_rate(value):
+    return f"${float(value):.2f}"
+
+
 def cost_data():
-    """Cost summary from metrics/cost_summary.csv (list-price
-    equivalents per API, per scope — produced by a separate metrics
-    step; see metrics/README.md). The file is OPTIONAL: when it is
-    absent from the tree the token page simply has no cost section.
-    The CSV is staged verbatim (header + rows, as strings); no cost
-    figure is computed or invented here."""
-    p = os.path.join(ROOT, "metrics", "cost_summary.csv")
-    if not os.path.exists(p):
+    """Cost tables for the token page, generated from the metrics
+    data files: the rates table from metrics/api_rates.json and the
+    cost tables from metrics/cost_summary.csv (both produced by the
+    metrics step; see metrics/README.md). The files are OPTIONAL:
+    when either is absent from the tree the token page simply has no
+    cost section. No cost figure is computed or invented here — the
+    staging only selects, orders and formats the generator's rows."""
+    csv_path = os.path.join(ROOT, "metrics", "cost_summary.csv")
+    rates_path = os.path.join(ROOT, "metrics", "api_rates.json")
+    if not (os.path.exists(csv_path) and os.path.exists(rates_path)):
         write_json("costs.json", {"available": False})
         return
-    with open(p, newline="") as f:
-        rows = list(csv.reader(f))
-    if len(rows) < 2:
+    with open(rates_path) as f:
+        rates_doc = json.load(f)
+    with open(csv_path, newline="") as f:
+        rows = list(csv.DictReader(f))
+    if not rows or "providers" not in rates_doc:
         write_json("costs.json", {"available": False})
         return
-    write_json("costs.json", {"available": True, "header": rows[0],
-                              "rows": rows[1:]})
+
+    providers = [p["provider"] for p in rates_doc["providers"]]
+    columns = [COST_PROVIDER_DISPLAY.get(p, p) for p in providers]
+
+    # Rates table: each provider's flagship tier, then its step-down.
+    rates = []
+    for p in rates_doc["providers"]:
+        prov = COST_PROVIDER_DISPLAY.get(p["provider"], p["provider"])
+        rates.append({
+            "provider": prov,
+            "model": COST_MODEL_DISPLAY.get(p["model"], p["model"]),
+            "input": _usd_rate(p["input_usd_per_mtok"]),
+            "cached": _usd_rate(p["cached_input_usd_per_mtok"]),
+            "output": _usd_rate(p["output_usd_per_mtok"]),
+        })
+        rates.append({
+            "provider": prov,
+            "model": COST_MODEL_DISPLAY.get(
+                p["stepdown_model"], p["stepdown_model"]),
+            "input": _usd_rate(p["stepdown_input_usd_per_mtok"]),
+            "cached": _usd_rate(p["stepdown_cached_input_usd_per_mtok"]),
+            "output": _usd_rate(p["stepdown_output_usd_per_mtok"]),
+        })
+
+    def cells_for(model_label, scope):
+        """One formatted cell per provider, in api_rates.json order,
+        from the cost_summary.csv row with this model label + scope;
+        empty string where a provider has no such row."""
+        cells = []
+        for prov in providers:
+            match = [r for r in rows if r["provider"] == prov
+                     and r["model"] == model_label
+                     and r["scope"] == scope]
+            cells.append(_usd(match[0]["total_cost_usd"]) if match else "")
+        return cells
+
+    # Main cost table: the tier-matched rows, scopes then Total.
+    costs = []
+    for scope in COST_SCOPES:
+        costs.append({"label": COST_SCOPE_DISPLAY[scope], "total": False,
+                      "cells": cells_for("tier-matched", scope)})
+    costs.append({"label": "Total", "total": True,
+                  "cells": cells_for("tier-matched", "all")})
+
+    # Second table: the two whole-volume scenarios.
+    extras = []
+    for label in ("upper bound (all flagship)",
+                  "cache-adjusted (measured share)",
+                  "cache-adjusted (assumed 95% share)"):
+        cells = cells_for(label, "all")
+        if any(cells):
+            extras.append({"label": label[0].upper() + label[1:],
+                           "cells": cells})
+
+    if not all(costs[-1]["cells"]) or not rates:
+        write_json("costs.json", {"available": False})
+        return
+    write_json("costs.json", {"available": True, "columns": columns,
+                              "rates": rates, "costs": costs,
+                              "extras": extras})
 
 
 # ------------------------------------------------------- bom + sims
