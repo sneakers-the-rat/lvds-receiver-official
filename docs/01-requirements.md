@@ -74,7 +74,7 @@ and "Data stream packet structure" sections.
 R1  Analog front end -3 dB bandwidth >= 50 MHz (0.7/UI rule gives 35 MHz for
     NRZ; 50 MHz target keeps rise time <= 7 ns = 0.35 UI), low-frequency cutoff
     <= 500 kHz (8b/10b max run length 5 UI -> lowest fundamental 5 MHz for a
-    repeating pattern, Manchester legacy is DC-balanced by construction;
+    repeating pattern; Manchester is DC-balanced by construction;
     AC-coupling / baseline restoration must not droop over 5 UI).
 R2  Sensitivity design point: BER <= 1e-6 at -34 dBm average incident power at
     740 nm on the bare APD (no lens), improving to <= -44 dBm effective with the

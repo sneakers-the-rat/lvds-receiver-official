@@ -27,7 +27,7 @@ PRBS-15 PER test (paper method: 5032-byte payload, 40256 bits, packet fails if a
 
 (d) Q=6 point: SNR = 15.56 dB (A/sigma_v = 6, centre-eye BER = Q(6) = 9.9e-10); run = 1000040 bits, bit errors = 0, measured BER = 0.000e+00, model-mean BER = 2.509e-08 (expected error count in this run ~= 0.025, counting the jitter-reduced eye; at the un-jittered centre-eye BER Q(6) ~= 1e-9 it would be ~0.001).  Observing 0 errors is consistent with both, and the < 1e-6 criterion allows at most 1 error in a run of this length.
 
-Manchester legacy path at SNR = 6 dB, same 2 ns jitter sigma and same sigma_v:
+Manchester path (paper's mode) at SNR = 6 dB, same 2 ns jitter sigma and same sigma_v:
   chip rate 16 Mbaud, chip BER measured 2.336e-02 (model mean 2.329e-02), invalid chip pairs 4546, decoded bit BER 2.365e-02 (2365 bit errors / 100000 bits)
   comparison, 50 Mbps 8b/10b path at the same SNR: channel BER 2.693e-02, byte error rate 2.395e-01
   the Manchester path's advantage here is time margin only: its 62.5 ns chip is 3.125x the 20 ns UI, so the same absolute jitter is a 3.125x smaller fraction of the interval it must decide in.

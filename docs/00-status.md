@@ -1340,3 +1340,22 @@ apply the same rolling-cache pattern.
   0 missing. Stub-DOM test against the built pass-10 markup:
   thumbnail click swaps viewer src, open-link href, caption and
   active highlight.
+
+## Mode naming corrected (2026-11-04) — Manchester is not "legacy"
+
+The word "legacy" had been attached to the Manchester mode in the
+earliest design docs and propagated into the requirements, the test
+plan, the site header, the README, the digital sim and the host tool.
+It was the wrong label, and it is now removed everywhere it named a
+mode. The facts it obscured: the Miniscope Zero transmitter sends
+8 Mbps Manchester (16 Mbaud) — that is the actual, present signal
+this receiver exists to receive. The 50 Mbps 8b/10b rate is a design
+target set in the project brief (headroom for the replacement
+design); no transmitter sends it yet. The two modes are now named
+plainly throughout: "the paper's mode — 8 Mbps Manchester, as
+transmitted" and "the design target — 50 Mbps, 8b/10b". Both modes
+remain implemented and simulated as first-class paths; no number,
+result or behaviour changed. One wording fix rode along: the bench
+plan's BER section no longer describes the Manchester spot-check as
+running "at reduced rate" — it runs at Manchester's full rate
+(8 Mbps, 16 Mbaud), as the mode's own test section already specified.
