@@ -163,7 +163,8 @@ waterfall shows a cliff instead of a slope, raising THRADJ (up to
    function generator (no light yet).
 8. **CDR lock.** Inject a 50 Mbps 8b/10b pattern at the SMA; confirm
    ADN2813 LOL deasserts, recovered clock present, capture state
-   machine frames packets; repeat at 16 Mbaud Manchester (legacy).
+   machine frames packets; repeat at 16 Mbaud Manchester (the paper's
+   mode, as transmitted).
 9. **HV first power (R-3, R-8).** Current-limited, HV probe on the
    divider tap. Firmware sequence: DAC to 150 V code first, then
    assert SHDN. Ramp 150 → 420 V in 25 V steps, logging demanded vs

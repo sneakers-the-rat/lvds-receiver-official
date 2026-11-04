@@ -11,8 +11,8 @@
 <p>Clean-room receiver for the Miniscope Zero optical uplink:
 Excelitas C30737LH Si APD → OPA657 TIA → LMH7220 comparator (LVDS out,
 DAC-set threshold) → ADN2813 CDR → STM32H723 + USB3300 USB-HS.
-50 Mbps line rate, 8b/10b (40 Mbps payload); legacy 8 Mbps Manchester
-mode. LT3757 flyback APD bias 150–420 V. USB-C powered; verify on any
+Design target: 50 Mbps line rate, 8b/10b (40 Mbps payload); the paper's
+mode: 8 Mbps Manchester (16 Mbaud), as transmitted. LT3757 flyback APD bias 150–420 V. USB-C powered; verify on any
 laptop over USB, no FPGA attached.</p></header>
 <main>
 {{ content }}
