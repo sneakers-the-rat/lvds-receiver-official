@@ -1,0 +1,13 @@
+pass: 24
+description: U13 cluster clearing (disc 48,62 r3.6): all five targets connected — +5V U13.1/3, +VA U13.9/10, SET_P U13.7
+timestamp (UTC): 2026-11-04T15:05:16Z
+commit: pending
+board file: hw/pdlvds_rx.fr7.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 13
+unconnected nets: 46
+audit verdict: fail
+note: 
