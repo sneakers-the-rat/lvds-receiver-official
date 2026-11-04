@@ -13,3 +13,4 @@ clearance violations: not recorded
 unconnected nets: not recorded
 audit verdict: not recorded
 note: Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
+note: Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.

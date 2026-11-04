@@ -13,3 +13,4 @@ clearance violations: 341
 unconnected nets: 98
 audit verdict: FAIL
 note: Stricter clearance model (vias never exempt, segment-midpoint tests, layer-aware HV) traded connections for correctness vs v4 (commit fb2acf7 message). Clearance/unconnected/verdict parsed from the audit file committed with this attempt.
+note: Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.

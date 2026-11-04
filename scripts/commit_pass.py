@@ -98,7 +98,10 @@ def run_audit(board, out_path):
 
 def render_pass(board, sdir):
     """Render the pass's image set into sdir via snapshot_route's
-    machinery. Returns (renders, layers, render_method)."""
+    machinery: top/bottom references, one SVG per copper layer, and
+    the composite — all four copper layers exported into ONE file
+    (board-all-layers.svg, a real single-file SVG, not a stack of
+    images). Returns (renders, layers, render_method)."""
     route_board, method = sr.make_route_board(board)
     if route_board is None:
         print(f"warning: {method}", file=sys.stderr)
@@ -111,6 +114,14 @@ def render_pass(board, sdir):
                            sr.BOTTOM_LAYERS, mirror=True)
     if top and bottom:
         renders = {"top": "board-top.svg", "bottom": "board-bottom.svg"}
+        comp = sr.export_svg(route_board,
+                             os.path.join(sdir, sr.COMPOSITE_FILE),
+                             sr.ALL_LAYERS, mirror=False)
+        if comp:
+            renders["all_layers"] = sr.COMPOSITE_FILE
+        else:
+            print("warning: composite SVG export failed; pass will "
+                  "carry no all-layers render", file=sys.stderr)
     else:
         print("warning: kicad-cli SVG export failed; pass will carry "
               "no top/bottom renders", file=sys.stderr)
@@ -203,7 +214,10 @@ def main():
     lines = [f"pass: {n}", f"description: {a.description}",
              f"timestamp (UTC): {ts}", "commit: pending",
              f"board file: {board_rel}",
-             "renders: " + ("board-top.svg, board-bottom.svg"
+             "renders: " + (", ".join(
+                 fn for fn in ("board-top.svg", "board-bottom.svg",
+                               "board-all-layers.svg")
+                 if renders and fn in renders.values())
                             if renders else "none"),
              f"route-only renders: {method or 'not recorded'}",
              stats_line(stats).replace(" · ", "\n").lower(),

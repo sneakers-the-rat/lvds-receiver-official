@@ -1,282 +1,318 @@
-[
-  {
-    "pass": 1,
-    "timestamp": "2026-11-03T19:43:45Z",
-    "hash": "d0c0bca09143177ae7a3f59f2cc6b8dc8500739a",
-    "short_hash": "d0c0bca",
-    "dir": "2026-11-03T194345Z_d0c0bca",
-    "renders": {
-      "top": "board-top.svg",
-      "bottom": "board-bottom.svg"
+{
+  "version": 1,
+  "rule": "A pass is a commit that produced a new board state (a routing or placement change to a hw/*.kicad_pcb file). Passes are numbered sequentially in commit order; pass 1 is the first committed board state. Runs whose boards were never committed are not numbered \u2014 they are listed under gaps. Strategy changes live in each entry's description (the changelog), never in the numbering.",
+  "passes": [
+    {
+      "pass": 1,
+      "timestamp": "2026-11-03T19:43:45Z",
+      "hash": "d0c0bca09143177ae7a3f59f2cc6b8dc8500739a",
+      "short_hash": "d0c0bca",
+      "dir": "2026-11-03T194345Z_d0c0bca",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": 0,
+        "nets_total": 112,
+        "pins_failed": null,
+        "clearance_violations": null,
+        "unconnected_nets": null,
+        "audit_verdict": null
+      },
+      "board_file": "hw/pdlvds_rx.kicad_pcb",
+      "description": "Placement only: 144 footprints placed, GND zones and the HV isolation slot drawn, saved unrouted \u2014 the routing run was interrupted by a VM replacement. First committed board state; 0 of 112 nets routed.",
+      "note": "Snapshot renders were made later from the board as committed at d0c0bca. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
     },
-    "layers": {
-      "F.Cu": "layer-FCu.svg",
-      "In1.Cu": "layer-In1Cu.svg",
-      "In2.Cu": "layer-In2Cu.svg",
-      "B.Cu": "layer-BCu.svg"
+    {
+      "pass": 2,
+      "timestamp": "2026-11-03T20:52:25Z",
+      "hash": "3ac1a430b6b34aad838f234624f8244d95d50e0e",
+      "short_hash": "3ac1a43",
+      "dir": "2026-11-03T205225Z_3ac1a43",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": 57,
+        "nets_total": 112,
+        "pins_failed": 90,
+        "clearance_violations": null,
+        "unconnected_nets": null,
+        "audit_verdict": null
+      },
+      "board_file": "hw/pdlvds_rx.kicad_pcb",
+      "description": "First committed routed board. Router gains neck-down where wide tracks meet fine-pitch pads and power-first net ordering (HV > power > LVDS > signals) \u2014 the fixes for the uncommitted v1/v2 failures (see gaps). 57 of 112 nets fully routed, 90 pins failed; no audit file was committed with this pass, so clearance violations and unconnected nets are not recorded.",
+      "note": "Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
     },
-    "stats": {
-      "nets_routed": 0,
-      "nets_total": 112,
-      "pins_failed": null,
-      "clearance_violations": null,
-      "unconnected_nets": null,
-      "audit_verdict": null
+    {
+      "pass": 3,
+      "timestamp": "2026-11-03T21:25:40Z",
+      "hash": "41d7196ba016876cd4c570858b575174c105ceee",
+      "short_hash": "41d7196",
+      "dir": "2026-11-03T212540Z_41d7196",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": 67,
+        "nets_total": 112,
+        "pins_failed": 59,
+        "clearance_violations": 454,
+        "audit_verdict": "FAIL",
+        "unconnected_nets": null
+      },
+      "board_file": "hw/pdlvds_rx.kicad_pcb",
+      "description": "Goal-cell exemption fix: a net's own target cells no longer count as blocked for it. 67 of 112 nets fully routed, 59 pins failed. The clearance figure (454) is the audit's violating-pair count as recorded in commit f8b9d1c \u2014 no audit file was committed with the pass itself \u2014 and the unconnected-net count was not recorded.",
+      "note": "Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
     },
-    "board_file": "hw/pdlvds_rx.kicad_pcb",
-    "description": "Placement only: 144 footprints placed, GND zones and the HV isolation slot drawn, saved unrouted \u2014 the routing run was interrupted by a VM replacement. First committed board state; 0 of 112 nets routed.",
-    "note": "Snapshot renders were made later from the board as committed at d0c0bca."
-  },
-  {
-    "pass": 2,
-    "timestamp": "2026-11-03T20:52:25Z",
-    "hash": "3ac1a430b6b34aad838f234624f8244d95d50e0e",
-    "short_hash": "3ac1a43",
-    "dir": "2026-11-03T205225Z_3ac1a43",
-    "renders": {
-      "top": "board-top.svg",
-      "bottom": "board-bottom.svg"
+    {
+      "pass": 4,
+      "timestamp": "2026-11-03T22:29:05Z",
+      "hash": "fb2acf7b80f74860a8301a3cce6eaf4df1abbb6f",
+      "short_hash": "fb2acf7",
+      "dir": "2026-11-03T222905Z_fb2acf7",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": 58,
+        "nets_total": 112,
+        "pins_failed": 74,
+        "clearance_violations": 341,
+        "unconnected_nets": 98,
+        "audit_verdict": "FAIL"
+      },
+      "board_file": "hw/pdlvds_rx.kicad_pcb",
+      "description": "Stricter clearance model in the router: vias never exempt, segment-midpoint tests, layer-aware HV clearance. Traded connections for correctness \u2014 58 of 112 nets fully routed, 74 pins failed. First pass with a full audit committed: 98 unconnected nets, 341 clearance violations.",
+      "note": "Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
     },
-    "layers": {
-      "F.Cu": "layer-FCu.svg",
-      "In1.Cu": "layer-In1Cu.svg",
-      "In2.Cu": "layer-In2Cu.svg",
-      "B.Cu": "layer-BCu.svg"
+    {
+      "pass": 5,
+      "timestamp": "2026-11-04T00:18:21Z",
+      "hash": "162cc8762f15b8b432861d5dcaf89ba4ce13a7c0",
+      "short_hash": "162cc87",
+      "board_file": "hw/pdlvds_rx.repaired.kicad_pcb",
+      "dir": "pass-0005",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 445,
+        "unconnected_nets": 95,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Repair pass over the pass-4 board \u2014 the first repair run to survive to a commit (attempts 1\u20133 were lost; see gaps). 82 isolated groups connected across 2 sweeps, but clearance violations rose 341 \u2192 445, so it was NOT adopted as the main board; the board is kept as the attempt artifact. Its verdict drove the next rewrite: the router's clearance model (grid-node + segment-midpoint tests) systematically under-protects against the audit's exact shape geometry.",
+      "note": "Audit: results/audit-repair-attempt4.txt, committed with the pass (copper items 2,208). No renders were committed for this pass. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
     },
-    "stats": {
-      "nets_routed": 57,
-      "nets_total": 112,
-      "pins_failed": 90,
-      "clearance_violations": null,
-      "unconnected_nets": null,
-      "audit_verdict": null
+    {
+      "pass": 6,
+      "timestamp": "2026-11-04T03:50:41Z",
+      "hash": "b805fc37860f13a3d83fb11efe47e1b1ce8da968",
+      "short_hash": "b805fc3",
+      "dir": "2026-11-04T035041Z_b805fc3",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "pins_failed": 144,
+        "unconnected_nets": 83,
+        "clearance_violations": 64,
+        "audit_verdict": "FAIL",
+        "nets_routed": 30,
+        "nets_total": 112
+      },
+      "board_file": "hw/pdlvds_rx.kicad_pcb",
+      "description": "Router rewritten with an exact clearance model \u2014 per-segment shape-distance tests in blocked(), zero slack, parity with the audit \u2014 and run full-board from the placed board: 30 of 112 nets fully routed, 144 pins failed, 83 unconnected nets, 64 clearance violations, none of them involving router-emitted geometry (46 known placement pad pairs + 18 zone-involved). Model proven; connectivity is what remains. Adopted as the main board.",
+      "note": "Audit: results/audit-v6-attempt1.txt (copper items 1,588). Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
     },
-    "board_file": "hw/pdlvds_rx.kicad_pcb",
-    "description": "First committed routed board. Router gains neck-down where wide tracks meet fine-pitch pads and power-first net ordering (HV > power > LVDS > signals) \u2014 the fixes for the uncommitted v1/v2 failures (see gaps). 57 of 112 nets fully routed, 90 pins failed; no audit file was committed with this pass, so clearance violations and unconnected nets are not recorded.",
-    "note": ""
-  },
-  {
-    "pass": 3,
-    "timestamp": "2026-11-03T21:25:40Z",
-    "hash": "41d7196ba016876cd4c570858b575174c105ceee",
-    "short_hash": "41d7196",
-    "dir": "2026-11-03T212540Z_41d7196",
-    "renders": {
-      "top": "board-top.svg",
-      "bottom": "board-bottom.svg"
+    {
+      "pass": 7,
+      "timestamp": "2026-11-04T06:10:45Z",
+      "hash": "67722e038347f08fb7ee20062df80662bb41896a",
+      "short_hash": "67722e0",
+      "dir": "2026-11-04T061045Z_67722e0",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "pins_failed": null,
+        "unconnected_nets": 62,
+        "clearance_violations": 64,
+        "audit_verdict": "FAIL",
+        "nets_routed": null,
+        "nets_total": null
+      },
+      "board_file": "hw/pdlvds_rx.repaired6.kicad_pcb",
+      "description": "Repair over the pass-6 board, with two-segment fanout escapes for pads sitting on grid boundaries: 45 groups connected, unconnected nets 83 \u2192 62, clearance violations unchanged at 64. Board kept as hw/pdlvds_rx.repaired6.kicad_pcb.",
+      "note": "Audit: results/audit-repair6-attempt1.txt, committed with the pass (copper items 2,115). Pins-failed is recorded as not recorded: no figure exists in this pass's own records (the old gallery index carried 74, parsed from a stale build log, not from this pass). Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
     },
-    "layers": {
-      "F.Cu": "layer-FCu.svg",
-      "In1.Cu": "layer-In1Cu.svg",
-      "In2.Cu": "layer-In2Cu.svg",
-      "B.Cu": "layer-BCu.svg"
+    {
+      "pass": 8,
+      "timestamp": "2026-11-04T08:21:31Z",
+      "hash": "f2b2fbebc1693e7055479a407f3cbc098f60b14d",
+      "short_hash": "f2b2fbe",
+      "board_file": "hw/pdlvds_rx.repaired6b.kicad_pcb",
+      "dir": "pass-0008",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": null,
+        "unconnected_nets": null,
+        "audit_verdict": null
+      },
+      "description": "Bundled change \u2014 two strategy changes in a single commit, the practice this counter replaces: diagonal moves added to the repair router AND the repair re-run over the pass-7 board. Result: 0 groups connected, no progress, not adopted. The commit's real payload is the per-pin diagnosis of the residue (results/diagnose-repaired6b.txt): of 99 isolated groups, 50 NO_EXIT, 16 POCKET, 20 WIDE_NO_GOAL, 13 REACHES \u2014 pads boxed in by placement, which is what pass 9 changes.",
+      "note": "Board saved as hw/pdlvds_rx.repaired6b.kicad_pcb (1,587 tracks per results/repair6-attempt2.log). No audit was committed for this pass, so unconnected nets and clearance violations are not recorded. No renders were committed. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
     },
-    "stats": {
-      "nets_routed": 67,
-      "nets_total": 112,
-      "pins_failed": 59,
-      "clearance_violations": 454,
-      "audit_verdict": "FAIL",
-      "unconnected_nets": null
+    {
+      "pass": 9,
+      "timestamp": "2026-11-04T08:30:34Z",
+      "hash": "e8a09549b812b52075500880970cce009af8e59f",
+      "short_hash": "e8a0954",
+      "board_file": "hw/pdlvds_rx.moved.kicad_pcb",
+      "dir": "pass-0009",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 64,
+        "unconnected_nets": 69,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Placement change, answering pass 8's diagnosis: the U7/U12/L2/X1 cluster is moved on the pass-7 board to unbox pads that had no exit \u2014 24 pad pairs removed, 0 added. Board saved as hw/pdlvds_rx.moved.kicad_pcb.",
+      "note": "Audit: results/audit-moved.txt, committed with the pass (copper items 1,392). No renders were committed for this pass. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
     },
-    "board_file": "hw/pdlvds_rx.kicad_pcb",
-    "description": "Goal-cell exemption fix: a net's own target cells no longer count as blocked for it. 67 of 112 nets fully routed, 59 pins failed. The clearance figure (454) is the audit's violating-pair count as recorded in commit f8b9d1c \u2014 no audit file was committed with the pass itself \u2014 and the unconnected-net count was not recorded.",
-    "note": ""
-  },
-  {
-    "pass": 4,
-    "timestamp": "2026-11-03T22:29:05Z",
-    "hash": "fb2acf7b80f74860a8301a3cce6eaf4df1abbb6f",
-    "short_hash": "fb2acf7",
-    "dir": "2026-11-03T222905Z_fb2acf7",
-    "renders": {
-      "top": "board-top.svg",
-      "bottom": "board-bottom.svg"
+    {
+      "pass": 10,
+      "timestamp": "2026-11-04T10:08:43Z",
+      "hash": "d489c787af9551c350cec5a0459c838ec1d9f41f",
+      "short_hash": "d489c78",
+      "dir": "2026-11-04T100843Z_d489c78",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "pins_failed": null,
+        "unconnected_nets": 49,
+        "clearance_violations": 1435,
+        "audit_verdict": "FAIL",
+        "nets_routed": null,
+        "nets_total": null
+      },
+      "board_file": "hw/pdlvds_rx.movedr.ckpt1.kicad_pcb",
+      "description": "Repair resumed over the placement-revised board (pass 9) and \u2014 the first pass committed under the sharpened rule \u2014 committed at checkpoint 1 of the run instead of at run end: 111 groups connected, unconnected nets 69 \u2192 49. The audit committed with the checkpoint reads 1,435 clearance violations on 3,424 copper items; checkpoint saves did not refill zones at the time (fixed in cabbebc), and the figure is recorded exactly as the committed audit states it \u2014 a mid-run checkpoint state, not a finished-board audit. The run was still in progress when this was committed.",
+      "note": "Audit: results/audit-repair6-attempt3-ckpt1.txt, committed with the pass. Pins-failed not recorded (the old gallery index's 74 came from the same stale build-log parse as pass 7's). The 1,435 clearance violations in this pass's audit are a stale-zone-fill artifact of mid-run checkpoint saves (zones refilled only at run end, so the input board's stored pours were counted against new copper); fixed structurally in cabbebc \u2014 zones now refill at every checkpoint save. The comparable post-refill violation count for this board state is 64. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
+    }
+  ],
+  "gaps": [
+    {
+      "label": "router v1 run (commit dc6a010, 2026-11-03T19:39:29Z)",
+      "note": "Board routed in memory only; the commit carries router code, no board. Its 125 failed pins are known only from later commit messages (passes 2\u20133). Not numbered."
     },
-    "layers": {
-      "F.Cu": "layer-FCu.svg",
-      "In1.Cu": "layer-In1Cu.svg",
-      "In2.Cu": "layer-In2Cu.svg",
-      "B.Cu": "layer-BCu.svg"
+    {
+      "label": "router v2 run (commit c79defe, 2026-11-03T20:10:21Z)",
+      "note": "Wide-nets-first ordering; board never committed and no result tally recorded. Not numbered."
     },
-    "stats": {
-      "nets_routed": 58,
-      "nets_total": 112,
-      "pins_failed": 74,
-      "clearance_violations": 341,
-      "unconnected_nets": 98,
-      "audit_verdict": "FAIL"
+    {
+      "label": "repair attempts 1\u20133 over the pass-4 board (commits 2add453, 0c20958, 04c90b4)",
+      "note": "Attempt 1's board was lost at save; attempt 2 connected 82 groups in memory, then crashed at the same save (variable `path` shadowing the board path \u2014 root cause proven in 0c20958, which also retro-explains attempt 1); attempt 3 was killed by a VM replacement mid-sweep (04c90b4). The commits carry code and logs but no board. Pass 5 is repair attempt 4, the first to be committed. Not numbered."
     },
-    "board_file": "hw/pdlvds_rx.kicad_pcb",
-    "description": "Stricter clearance model in the router: vias never exempt, segment-midpoint tests, layer-aware HV clearance. Traded connections for correctness \u2014 58 of 112 nets fully routed, 74 pins failed. First pass with a full audit committed: 98 unconnected nets, 341 clearance violations.",
-    "note": ""
-  },
-  {
-    "pass": 5,
-    "timestamp": "2026-11-04T00:18:21Z",
-    "hash": "162cc8762f15b8b432861d5dcaf89ba4ce13a7c0",
-    "short_hash": "162cc87",
-    "board_file": "hw/pdlvds_rx.repaired.kicad_pcb",
-    "dir": "pass-0005",
-    "renders": {
-      "top": "board-top.svg",
-      "bottom": "board-bottom.svg"
+    {
+      "label": "in-flight run state lost to a VM replacement (commit 8d39045)",
+      "note": "Both /tmp scratch trees (v6 routing and the Freerouting line), with their logs and checkpoints, were lost; any board states in them were never committed. Scratch state moved into the workspace afterwards. Not numbered."
     },
-    "layers": {
-      "F.Cu": "layer-FCu.svg",
-      "In1.Cu": "layer-In1Cu.svg",
-      "In2.Cu": "layer-In2Cu.svg",
-      "B.Cu": "layer-BCu.svg"
-    },
-    "stats": {
-      "nets_routed": null,
-      "nets_total": null,
-      "pins_failed": null,
-      "clearance_violations": 445,
-      "unconnected_nets": 95,
-      "audit_verdict": "FAIL"
-    },
-    "description": "Repair pass over the pass-4 board \u2014 the first repair run to survive to a commit (attempts 1\u20133 were lost; see gaps). 82 isolated groups connected across 2 sweeps, but clearance violations rose 341 \u2192 445, so it was NOT adopted as the main board; the board is kept as the attempt artifact. Its verdict drove the next rewrite: the router's clearance model (grid-node + segment-midpoint tests) systematically under-protects against the audit's exact shape geometry.",
-    "note": "Audit: results/audit-repair-attempt4.txt, committed with the pass (copper items 2,208). No renders were committed for this pass. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
-  },
-  {
-    "pass": 6,
-    "timestamp": "2026-11-04T03:50:41Z",
-    "hash": "b805fc37860f13a3d83fb11efe47e1b1ce8da968",
-    "short_hash": "b805fc3",
-    "dir": "2026-11-04T035041Z_b805fc3",
-    "renders": {
-      "top": "board-top.svg",
-      "bottom": "board-bottom.svg"
-    },
-    "layers": {
-      "F.Cu": "layer-FCu.svg",
-      "In1.Cu": "layer-In1Cu.svg",
-      "In2.Cu": "layer-In2Cu.svg",
-      "B.Cu": "layer-BCu.svg"
-    },
-    "stats": {
-      "pins_failed": 144,
-      "unconnected_nets": 83,
-      "clearance_violations": 64,
-      "audit_verdict": "FAIL",
-      "nets_routed": 30,
-      "nets_total": 112
-    },
-    "board_file": "hw/pdlvds_rx.kicad_pcb",
-    "description": "Router rewritten with an exact clearance model \u2014 per-segment shape-distance tests in blocked(), zero slack, parity with the audit \u2014 and run full-board from the placed board: 30 of 112 nets fully routed, 144 pins failed, 83 unconnected nets, 64 clearance violations, none of them involving router-emitted geometry (46 known placement pad pairs + 18 zone-involved). Model proven; connectivity is what remains. Adopted as the main board.",
-    "note": "Audit: results/audit-v6-attempt1.txt (copper items 1,588)."
-  },
-  {
-    "pass": 7,
-    "timestamp": "2026-11-04T06:10:45Z",
-    "hash": "67722e038347f08fb7ee20062df80662bb41896a",
-    "short_hash": "67722e0",
-    "dir": "2026-11-04T061045Z_67722e0",
-    "renders": {
-      "top": "board-top.svg",
-      "bottom": "board-bottom.svg"
-    },
-    "layers": {
-      "F.Cu": "layer-FCu.svg",
-      "In1.Cu": "layer-In1Cu.svg",
-      "In2.Cu": "layer-In2Cu.svg",
-      "B.Cu": "layer-BCu.svg"
-    },
-    "stats": {
-      "pins_failed": null,
-      "unconnected_nets": 62,
-      "clearance_violations": 64,
-      "audit_verdict": "FAIL",
-      "nets_routed": null,
-      "nets_total": null
-    },
-    "board_file": "hw/pdlvds_rx.repaired6.kicad_pcb",
-    "description": "Repair over the pass-6 board, with two-segment fanout escapes for pads sitting on grid boundaries: 45 groups connected, unconnected nets 83 \u2192 62, clearance violations unchanged at 64. Board kept as hw/pdlvds_rx.repaired6.kicad_pcb.",
-    "note": "Audit: results/audit-repair6-attempt1.txt, committed with the pass (copper items 2,115). Pins-failed is recorded as not recorded: no figure exists in this pass's own records (the old gallery index carried 74, parsed from a stale build log, not from this pass)."
-  },
-  {
-    "pass": 8,
-    "timestamp": "2026-11-04T08:21:31Z",
-    "hash": "f2b2fbebc1693e7055479a407f3cbc098f60b14d",
-    "short_hash": "f2b2fbe",
-    "board_file": "hw/pdlvds_rx.repaired6b.kicad_pcb",
-    "dir": "pass-0008",
-    "renders": {
-      "top": "board-top.svg",
-      "bottom": "board-bottom.svg"
-    },
-    "layers": {
-      "F.Cu": "layer-FCu.svg",
-      "In1.Cu": "layer-In1Cu.svg",
-      "In2.Cu": "layer-In2Cu.svg",
-      "B.Cu": "layer-BCu.svg"
-    },
-    "stats": {
-      "nets_routed": null,
-      "nets_total": null,
-      "pins_failed": null,
-      "clearance_violations": null,
-      "unconnected_nets": null,
-      "audit_verdict": null
-    },
-    "description": "Bundled change \u2014 two strategy changes in a single commit, the practice this counter replaces: diagonal moves added to the repair router AND the repair re-run over the pass-7 board. Result: 0 groups connected, no progress, not adopted. The commit's real payload is the per-pin diagnosis of the residue (results/diagnose-repaired6b.txt): of 99 isolated groups, 50 NO_EXIT, 16 POCKET, 20 WIDE_NO_GOAL, 13 REACHES \u2014 pads boxed in by placement, which is what pass 9 changes.",
-    "note": "Board saved as hw/pdlvds_rx.repaired6b.kicad_pcb (1,587 tracks per results/repair6-attempt2.log). No audit was committed for this pass, so unconnected nets and clearance violations are not recorded. No renders were committed. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
-  },
-  {
-    "pass": 9,
-    "timestamp": "2026-11-04T08:30:34Z",
-    "hash": "e8a09549b812b52075500880970cce009af8e59f",
-    "short_hash": "e8a0954",
-    "board_file": "hw/pdlvds_rx.moved.kicad_pcb",
-    "dir": "pass-0009",
-    "renders": {
-      "top": "board-top.svg",
-      "bottom": "board-bottom.svg"
-    },
-    "layers": {
-      "F.Cu": "layer-FCu.svg",
-      "In1.Cu": "layer-In1Cu.svg",
-      "In2.Cu": "layer-In2Cu.svg",
-      "B.Cu": "layer-BCu.svg"
-    },
-    "stats": {
-      "nets_routed": null,
-      "nets_total": null,
-      "pins_failed": null,
-      "clearance_violations": 64,
-      "unconnected_nets": 69,
-      "audit_verdict": "FAIL"
-    },
-    "description": "Placement change, answering pass 8's diagnosis: the U7/U12/L2/X1 cluster is moved on the pass-7 board to unbox pads that had no exit \u2014 24 pad pairs removed, 0 added. Board saved as hw/pdlvds_rx.moved.kicad_pcb.",
-    "note": "Audit: results/audit-moved.txt, committed with the pass (copper items 1,392). No renders were committed for this pass. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass."
-  },
-  {
-    "pass": 10,
-    "timestamp": "2026-11-04T10:08:43Z",
-    "hash": "d489c787af9551c350cec5a0459c838ec1d9f41f",
-    "short_hash": "d489c78",
-    "dir": "2026-11-04T100843Z_d489c78",
-    "renders": {
-      "top": "board-top.svg",
-      "bottom": "board-bottom.svg"
-    },
-    "layers": {
-      "F.Cu": "layer-FCu.svg",
-      "In1.Cu": "layer-In1Cu.svg",
-      "In2.Cu": "layer-In2Cu.svg",
-      "B.Cu": "layer-BCu.svg"
-    },
-    "stats": {
-      "pins_failed": null,
-      "unconnected_nets": 49,
-      "clearance_violations": 1435,
-      "audit_verdict": "FAIL",
-      "nets_routed": null,
-      "nets_total": null
-    },
-    "board_file": "hw/pdlvds_rx.movedr.ckpt1.kicad_pcb",
-    "description": "Repair resumed over the placement-revised board (pass 9) and \u2014 the first pass committed under the sharpened rule \u2014 committed at checkpoint 1 of the run instead of at run end: 111 groups connected, unconnected nets 69 \u2192 49. The audit committed with the checkpoint reads 1,435 clearance violations on 3,424 copper items; checkpoint saves did not refill zones at the time (fixed in cabbebc), and the figure is recorded exactly as the committed audit states it \u2014 a mid-run checkpoint state, not a finished-board audit. The run was still in progress when this was committed.",
-    "note": "Audit: results/audit-repair6-attempt3-ckpt1.txt, committed with the pass. Pins-failed not recorded (the old gallery index's 74 came from the same stale build-log parse as pass 7's). The 1,435 clearance violations in this pass's audit are a stale-zone-fill artifact of mid-run checkpoint saves (zones refilled only at run end, so the input board's stored pours were counted against new copper); fixed structurally in cabbebc \u2014 zones now refill at every checkpoint save. The comparable post-refill violation count for this board state is 64."
-  }
-]
+    {
+      "label": "Freerouting baseline line",
+      "note": "No board produced by Freerouting has ever been committed (the native CLI build is dead \u2014 8d39045; the JVM/AppImage line produced no committed board either), so it holds no pass numbers. If it ever produces a committed board state, it takes the next number like everything else."
+    }
+  ]
+}

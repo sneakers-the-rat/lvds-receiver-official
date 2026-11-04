@@ -58,6 +58,13 @@ from datetime import datetime, timezone
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TOP_LAYERS = "F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS"
 BOTTOM_LAYERS = "B.Cu,In2.Cu,In1.Cu,F.Cu,B.SilkS"
+# The composite view: all four copper layers in ONE export, so the
+# result is a single self-contained SVG file (every layer's geometry
+# inline, recoloured onto the palette by recolour_ref) — never a
+# browser-side stack of separate images. No silkscreen: silkscreen
+# appears only in the top/bottom reference renders.
+ALL_LAYERS = "F.Cu,In1.Cu,In2.Cu,B.Cu"
+COMPOSITE_FILE = "board-all-layers.svg"
 
 # Copper layers in stack order, the file each one's render gets, and
 # the fixed palette colour it is recoloured to (site composite +
