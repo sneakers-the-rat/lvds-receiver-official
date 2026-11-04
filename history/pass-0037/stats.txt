@@ -1,0 +1,13 @@
+pass: 37
+description: APD_K pour clearance resolved geometrically (hw/notch.py): rule-area copper-pour keepouts expanded >1.0 mm around the APD_K copper (northern cluster incl. R30's large pad, D1.5's escape, RJ2.2) on F/B, plus the In1 plane clearance raised 0.25 -> 0.35 so its antipads meet the 0.3 buried-HV rule. Audit: clearance 20 -> 3, the remainder exactly the justified D1 package-geometry grazes; GND connectivity unchanged
+timestamp (UTC): 2026-11-04T17:15:28Z
+commit: pending
+board file: hw/pdlvds_rx.fr21.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 3
+unconnected nets: 36
+audit verdict: fail
+note: 

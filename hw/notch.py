@@ -22,7 +22,10 @@ import pcbnew
 import repair6
 
 RECTS = [
-    (3.5, 22.0, 14.5, 32.5),    # A: northern APD_K cluster
+    (3.5, 22.0, 14.8, 33.0),    # A: northern APD_K cluster (R30.1 is
+                                #    a 1.12x1.75 pad at (13.04,31.0);
+                                #    its 1.0 mm expansion reaches
+                                #    x 14.60, y 32.88)
     (8.4, 35.3, 12.3, 41.2),    # B: D1.5 escape neck + via
     (12.1, 55.3, 15.5, 58.7),   # C: RJ2.2
 ]
@@ -31,6 +34,12 @@ MM = pcbnew.FromMM
 def main():
     src, out = sys.argv[1], sys.argv[2]
     board = pcbnew.LoadBoard(src)
+    # The In1 GND plane's antipads are carved at the zone clearance
+    # (0.25); the buried-layer HV rule needs 0.3 around the APD_K
+    # via. Raise the plane's clearance to 0.35 and refill.
+    for z in board.Zones():
+        if z.GetNetname() == 'GND' and z.GetLayer() == pcbnew.In1_Cu:
+            z.SetLocalClearance(MM(0.35))
     for layer in (pcbnew.F_Cu, pcbnew.B_Cu):
         for (x0, y0, x1, y1) in RECTS:
             z = pcbnew.ZONE(board)

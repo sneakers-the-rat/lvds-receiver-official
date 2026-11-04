@@ -320,6 +320,14 @@ repairg round 2: 10 more groups in sweep 1 (APD_A corner re-bridged 7 -> 2 group
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 20 · Unconnected nets: 36 · Audit verdict: FAIL
 
+### Pass 37 — 2026-11-04T17:15:28Z · commit `38e1fc1`
+
+Board: `hw/pdlvds_rx.fr21.kicad_pcb` · Commit: `38e1fc137559a8a329f9dd99d352e68834cb2624`
+
+APD_K pour clearance resolved geometrically (hw/notch.py): rule-area copper-pour keepouts expanded >1.0 mm around the APD_K copper (northern cluster incl. R30's large pad, D1.5's escape, RJ2.2) on F/B, plus the In1 plane clearance raised 0.25 -> 0.35 so its antipads meet the 0.3 buried-HV rule. Audit: clearance 20 -> 3, the remainder exactly the justified D1 package-geometry grazes; GND connectivity unchanged
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 36 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
