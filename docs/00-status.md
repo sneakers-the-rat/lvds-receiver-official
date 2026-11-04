@@ -940,6 +940,13 @@ order): passes 1-5 = v1..v5 routes; 6-9 = repair attempts 1-4;
 1 (d489c78)**. Pass 15 will be that run's next checkpoint/sweep
 state, and so on.
 
+RECONCILED (2026-11-04): the provisional count above is
+superseded by history/PASSES.md, which counts only commits
+that produced a board state (uncommitted runs are gaps, and
+the placed board counts). Under the authoritative log,
+d489c78 is **pass 10** and the next pass is **pass 11**.
+Passes are committed with scripts/commit_pass.py.
+
 ## Pass system — structure (2026-11-04, branch pass-structure)
 
 The pass counter now has its machinery, built by the structure
