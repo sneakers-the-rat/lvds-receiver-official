@@ -1,17 +1,36 @@
 # Routing history snapshots
 
-This directory is the project's routing memory: one subdirectory per
-routing attempt, kept in the repo forever, rendered by
-`scripts/build_site.py` as the site's "Routing history" gallery.
-Intermediate and failed attempts are kept on purpose — the evolution
-is the story.
+This directory is the project's routing memory, kept in the repo
+forever, rendered by `scripts/build_site.py` as the site's "Routing
+history" gallery. Intermediate and failed attempts are kept on
+purpose — the evolution is the story.
+
+Since 2026-11-04 the organising record is the **pass log**: one
+monotonic counter (pass 1, 2, 3, …) over committed board states.
+See `PASSES.md`. The older per-attempt snapshots below remain as the
+render source for passes 1–10; `index.json` is frozen as the legacy
+record of that era and is no longer updated or read by the site.
 
 ## Layout
 
-- `index.json` — machine-readable list of attempts (timestamp, commit
-  hash, label, stats, note), sorted chronologically. This is what the
-  site reads.
-- `<UTC-timestamp>_<short-hash>/` — one snapshot per attempt:
+- `PASSES.md` — the pass log (human-readable): the numbering rule,
+  one changelog entry per pass, the gaps (runs never committed, so
+  never numbered), and the reconciliation with the provisional
+  count that preceded it.
+- `passes.json` — machine-readable twin of the pass log. This is
+  what the site reads. Each entry: pass number, commit hash, UTC
+  timestamp, board file, snapshot directory (if renders exist),
+  audit stats ("not recorded" where never measured), and the
+  one-line changelog description of what strategy changed.
+- `pass-NNNN/` — one snapshot directory per pass from pass 11 on,
+  created by `scripts/commit_pass.py`: the same file set as the
+  legacy snapshots (renders + `stats.txt`) plus `audit.txt`, the
+  pass's own audit output.
+- `index.json` — LEGACY machine-readable list of pre-pass-system
+  attempts (timestamp, commit hash, label, stats, note), sorted
+  chronologically. Frozen; superseded by `passes.json`.
+- `<UTC-timestamp>_<short-hash>/` — one snapshot per pre-pass-system
+  attempt (these are the render directories passes 1–10 point at):
   - `board-top.svg`, `board-bottom.svg` — kicad-cli renders
     (copper + silk layers), when a board exists for the attempt;
   - `layer-FCu.svg`, `layer-In1Cu.svg`, `layer-In2Cu.svg`,
@@ -85,28 +104,37 @@ raw KiCad exports themselves contain none there.)
 `index.json` entries carry a `layers` map (layer name → file)
 alongside `renders`.
 
-## Making a snapshot (the per-attempt convention)
+## Adding a pass (the convention)
 
-Commit the routing attempt first (board + audit results), then, from
-the repo root:
+One command, from the repo root, the moment a run produces a new
+board state — a finished run, a checkpoint of a long run, a
+placement change:
 
 ```sh
-python3 scripts/snapshot_route.py --label "router v6 — <what changed>"
+python3 scripts/commit_pass.py "what changed in this pass"
 ```
 
-The script takes the commit hash and timestamp from HEAD, renders
-`hw/pdlvds_rx.kicad_pcb`, parses `results/pcb-audit.txt` and
-`results/pcb_build.log` for stats, and updates `index.json`.
-Re-running it for the same commit replaces that commit's entry
-(idempotent). Commit the resulting `history/` changes with the next
-commit.
+It runs the audit (`hw/check_pcb.py`) on the board and saves it as
+`history/pass-NNNN/audit.txt`, renders the pass's image set into
+`history/pass-NNNN/` with the route-only machinery below, appends
+the entry to `PASSES.md` + `passes.json` with the next number,
+stages exactly the pass's files (board, router code and results
+changes under `hw/`/`results/`, the pass directory, the log files)
+and commits with subject `pass NNNN: <description>`. A commit
+cannot contain its own hash, so the command then makes one small
+bookkeeping commit (`pass NNNN: record commit hash`) writing the
+pass commit's hash into the log. After the command, the only
+remaining step is a push.
 
-Useful options:
+Options: `--board <file>` (audit + render a board other than
+`hw/pdlvds_rx.kicad_pcb` — variant boards are passes too),
+`--note "..."` (extra note on the entry), `--no-audit` (skip the
+audit; stats are recorded as not recorded).
 
-- `--nets-routed N --nets-total 112 --pins-failed N` — explicit stats
-  (they win over parsed ones).
-- `--board <file>` — snapshot a board file other than the working one.
-- `--hash <full> --timestamp <ISO>` — backfill an older attempt.
-- `--no-board --note "..."` — record an attempt whose board was never
-  committed (as v1/v2 here): the gallery shows the entry with an
-  explicit no-render note.
+The old flow — `scripts/snapshot_route.py` into `index.json`, with
+the snapshot committed separately after the attempt — is retired:
+it made committing each render a two-step manual process, which is
+how runs went uncommitted. `snapshot_route.py` remains in the tree
+because `commit_pass.py` reuses its render machinery, and
+`index.json` remains as the frozen record passes 1–10 were
+backfilled from.
