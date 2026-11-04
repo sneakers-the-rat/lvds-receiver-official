@@ -1461,6 +1461,34 @@
       },
       "description": "repairg healing on the surgery board: 40 groups connected, sweep 2 connected 0; 39 unconnected nets, 87 groups, clearance 3",
       "note": ""
+    },
+    {
+      "pass": 54,
+      "timestamp": "2026-11-04T20:09:18Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr40.kicad_pcb",
+      "dir": "pass-0054",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 47,
+        "audit_verdict": "FAIL"
+      },
+      "description": "ripup 'all' batch 1 on the healed board: 3 groups connected through ripped fences (victims queued for the next heal)",
+      "note": ""
     }
   ],
   "gaps": [
