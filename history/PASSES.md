@@ -464,9 +464,9 @@ ripup 'all' batch 1 on the healed board: 3 groups connected through ripped fence
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 47 · Audit verdict: FAIL
 
-### Pass 55 — 2026-11-04T20:10:22Z · commit `pending`
+### Pass 55 — 2026-11-04T20:10:22Z · commit `a153b60`
 
-Board: `hw/pdlvds_rx.fr41.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr41.kicad_pcb` · Commit: `a153b60cd4537d26a354aac30e9609d7dbc6ce97`
 
 ripup 'all' batch 2: 1 group connected
 
