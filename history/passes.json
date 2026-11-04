@@ -1153,6 +1153,34 @@
       },
       "description": "cluster clearing U6 west disc (83,44) r3.5: USB_RST U6.40 not connected by astar even in the cleared field (fanout-model seal)",
       "note": ""
+    },
+    {
+      "pass": 43,
+      "timestamp": "2026-11-04T19:57:49Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr28.kicad_pcb",
+      "dir": "pass-0043",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 50,
+        "audit_verdict": "FAIL"
+      },
+      "description": "cluster clearing U13 disc (48,62) r3.6: ILIM_P U13.5 connected",
+      "note": ""
     }
   ],
   "gaps": [
