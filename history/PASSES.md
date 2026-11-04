@@ -472,9 +472,9 @@ ripup 'all' batch 2: 1 group connected
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 49 · Audit verdict: FAIL
 
-### Pass 56 — 2026-11-04T20:12:12Z · commit `pending`
+### Pass 56 — 2026-11-04T20:12:12Z · commit `a7dc784`
 
-Board: `hw/pdlvds_rx.fr42.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr42.kicad_pcb` · Commit: `a7dc78456f13552b7c67fa2347c7a81033b7354d`
 
 repairg healing: 17 groups connected (ripup victims repaid; APD_K's three groups merged); 39 unconnected nets, 83 groups, clearance 3
 
