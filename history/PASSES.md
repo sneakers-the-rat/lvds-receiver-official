@@ -344,9 +344,9 @@ cluster clearing U4 disc (52,52) r4.2 on the stubbed board: 7/9 targets connecte
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 35 · Audit verdict: FAIL
 
-### Pass 40 — 2026-11-04T19:55:21Z · commit `pending`
+### Pass 40 — 2026-11-04T19:55:21Z · commit `3b07804`
 
-Board: `hw/pdlvds_rx.fr25.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr25.kicad_pcb` · Commit: `3b078040b0d3843f83165e865a336e261ce9f171`
 
 cluster clearing U7 disc (30,61) r4.5: 5/7 targets connected incl. +3V3A U7.16/U7.25; ULPI_NXT U7.11 and ULPI_STP U7.13 remain sealed by their own row geometry
 
