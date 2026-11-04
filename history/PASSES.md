@@ -520,9 +520,9 @@ ripup 'all' batch 4: 2 groups connected (victims in the CDR differential family)
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 38 · Audit verdict: FAIL
 
-### Pass 62 — 2026-11-04T20:55:09Z · commit `pending`
+### Pass 62 — 2026-11-04T20:55:09Z · commit `a1e4d9d`
 
-Board: `hw/pdlvds_rx.fr48.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr48.kicad_pcb` · Commit: `a1e4d9d5d99a188c5853896a8c9524d7185ecfae`
 
 repairg healing: 12 groups connected, victims repaid; 34 unconnected nets, 74 groups, clearance 4 (all D1 family)
 
