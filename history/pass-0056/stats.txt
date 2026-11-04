@@ -1,0 +1,13 @@
+pass: 56
+description: repairg healing: 17 groups connected (ripup victims repaid; APD_K's three groups merged); 39 unconnected nets, 83 groups, clearance 3
+timestamp (UTC): 2026-11-04T20:12:12Z
+commit: pending
+board file: hw/pdlvds_rx.fr42.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 3
+unconnected nets: 39
+audit verdict: fail
+note: 
