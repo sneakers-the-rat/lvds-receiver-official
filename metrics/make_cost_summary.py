@@ -28,13 +28,17 @@ headline row for the provider (scope=all, tier_model=codename-mix),
 and one "all" upper-bound row (tier_model=<flagship> (upper bound)).
 Headline costs use standard (uncached) input rates.
 
-The script also prints one sensitivity figure per provider: total cost
-if 95% of input tokens had been billed at cache-read rates instead.
-Per codename share, each share's own tier cache rate is used (for the
-Muse row: Wonder $0.20 / Spark $0.15 per MTok). The 95% share is an
-ASSUMED value for sensitivity only (the measured new-vs-repeated
-split lives in metrics/input_split.csv when present); it is printed,
-never written into cost_summary.csv.
+The script also prints one sensitivity figure per provider, computed
+from the MEASURED new-vs-repeated split in
+metrics/input_split_summary.csv (a validated estimate; per-scope
+repeated share: chat tree 97.5%, checkpoint cron 87.8%, overall
+96.4% of estimable input): each (scope, codename) cell's input is
+billed at that cell's standard rate for the new share and at its own
+tier cache-read rate for the repeated share (for the Muse row:
+Wonder $0.20 / Spark $0.15 per MTok). If the summary file is absent,
+the script falls back to an ASSUMED flat 95% cache share and labels it
+as assumed. Sensitivity figures are printed, never written into
+cost_summary.csv.
 
 Usage: python3 metrics/make_cost_summary.py [repo_root]
 """
@@ -205,30 +209,74 @@ def main():
         w.writerows(rows)
     print(f'wrote {out} (snapshot {snapshot_ts})')
 
-    # sensitivity (printed only): 95% of each codename share's input at
-    # that share's tier cache-read rate
+    # sensitivity (printed only). Headline form: the MEASURED repeated
+    # share per scope from input_split_summary.csv applied to each
+    # (scope, codename) cell at that cell's tier cache-read rate.
+    # Fallback: an ASSUMED flat cache share, labelled as assumed.
+    measured = None
+    try:
+        summ = {r['scope']: r for r in csv.DictReader(
+            open(f'{repo}/metrics/input_split_summary.csv'))}
+        measured = {
+            'main_chat': float(
+                summ['chat-tree']['est_repeated_pct_of_estimable']) / 100,
+            'subagents': float(
+                summ['chat-tree']['est_repeated_pct_of_estimable']) / 100,
+            'checkpoint_cron': float(
+                summ['checkpoint-cron']
+                ['est_repeated_pct_of_estimable']) / 100,
+        }
+    except (OSError, KeyError, ValueError):
+        measured = None
+
     muse_flagship_public = rates_doc['providers'][0]['model']
     for p in rates_doc['providers']:
         flagship, stepdown = p['model'], p['stepdown_model']
-        headline = sens = 0.0
-        for codename, (tin, tout) in codename_totals.items():
-            tier = flagship if codename_map[codename] == \
+
+        def tier_of(codename):
+            return flagship if codename_map[codename] == \
                 muse_flagship_public else stepdown
-            rin, rout, rcache = tier_rates(p, tier)
-            headline += (tin * rin + tout * rout) / 1e6
-            eff = ((1 - ASSUMED_CACHE_SHARE) * rin
-                   + ASSUMED_CACHE_SHARE * rcache)
-            sens += (tin * eff + tout * rout) / 1e6
-        rin, rout, rcache = tier_rates(p, flagship)
-        eff = ((1 - ASSUMED_CACHE_SHARE) * rin
-               + ASSUMED_CACHE_SHARE * rcache)
-        upper_sens = (grand_in * eff + grand_out * rout) / 1e6
-        ub = (grand_in * rin + grand_out * rout) / 1e6
-        print(f"{p['provider']}: headline (codename-priced) "
-              f"${headline:,.2f} | upper bound (all at {flagship}) "
-              f"${ub:,.2f} | if {ASSUMED_CACHE_SHARE:.0%} of input were "
-              f"cache-reads: headline ${sens:,.2f}, upper bound "
-              f"${upper_sens:,.2f} (assumed share)")
+
+        headline = (sum((tin * tier_rates(p, tier_of(c))[0]
+                         + tout * tier_rates(p, tier_of(c))[1]) / 1e6
+                        for c, (tin, tout) in codename_totals.items()))
+        rin_f, rout_f, rcache_f = tier_rates(p, flagship)
+        ub = (grand_in * rin_f + grand_out * rout_f) / 1e6
+        if measured is not None:
+            sens = upper_sens = 0.0
+            for (scope, codename), (tin, tout) in cell.items():
+                rin, rout, rcache = tier_rates(p, tier_of(codename))
+                share = measured[scope]
+                sens += (tin * ((1 - share) * rin + share * rcache)
+                         + tout * rout) / 1e6
+            for scope in SCOPES:
+                tin = scope_totals[scope][0]
+                share = measured[scope]
+                upper_sens += tin * ((1 - share) * rin_f
+                                     + share * rcache_f) / 1e6
+            upper_sens += grand_out * rout_f / 1e6
+            print(f"{p['provider']}: headline (codename-priced) "
+                  f"${headline:,.2f} | upper bound (all at {flagship}) "
+                  f"${ub:,.2f} | at the MEASURED repeated share "
+                  f"(chat tree {measured['main_chat']:.1%}, cron "
+                  f"{measured['checkpoint_cron']:.1%}): headline "
+                  f"${sens:,.2f}, upper bound ${upper_sens:,.2f}")
+        else:
+            sens = sum((tin * ((1 - ASSUMED_CACHE_SHARE)
+                               * tier_rates(p, tier_of(c))[0]
+                              + ASSUMED_CACHE_SHARE
+                              * tier_rates(p, tier_of(c))[2])
+                        + tout * tier_rates(p, tier_of(c))[1]) / 1e6
+                       for c, (tin, tout) in codename_totals.items())
+            eff = ((1 - ASSUMED_CACHE_SHARE) * rin_f
+                   + ASSUMED_CACHE_SHARE * rcache_f)
+            upper_sens = (grand_in * eff + grand_out * rout_f) / 1e6
+            print(f"{p['provider']}: headline (codename-priced) "
+                  f"${headline:,.2f} | upper bound (all at {flagship}) "
+                  f"${ub:,.2f} | if {ASSUMED_CACHE_SHARE:.0%} of input "
+                  f"were cache-reads: headline ${sens:,.2f}, upper "
+                  f"bound ${upper_sens:,.2f} (assumed share; "
+                  f"input_split_summary.csv absent)")
 
 
 if __name__ == '__main__':
