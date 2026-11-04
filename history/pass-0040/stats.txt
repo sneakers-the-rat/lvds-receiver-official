@@ -1,0 +1,13 @@
+pass: 40
+description: cluster clearing U7 disc (30,61) r4.5: 5/7 targets connected incl. +3V3A U7.16/U7.25; ULPI_NXT U7.11 and ULPI_STP U7.13 remain sealed by their own row geometry
+timestamp (UTC): 2026-11-04T19:55:21Z
+commit: pending
+board file: hw/pdlvds_rx.fr25.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 3
+unconnected nets: 39
+audit verdict: fail
+note: 

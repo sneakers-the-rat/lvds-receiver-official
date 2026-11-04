@@ -1,0 +1,13 @@
+pass: 43
+description: cluster clearing U13 disc (48,62) r3.6: ILIM_P U13.5 connected
+timestamp (UTC): 2026-11-04T19:57:49Z
+commit: pending
+board file: hw/pdlvds_rx.fr28.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 3
+unconnected nets: 50
+audit verdict: fail
+note: 

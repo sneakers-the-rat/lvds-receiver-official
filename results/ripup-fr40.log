@@ -1,0 +1,120 @@
+ripup: 47 isolated groups, batch of 10
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.56
+    rip I2C_SDA F.Cu d=0.67
+    rip GND F.Cu d=0.69
+    rip GND F.Cu d=1.03
+    rip GND F.Cu d=1.25
+    rip TMP_ALERT F.Cu d=1.54
+    rip I2C_SCL F.Cu d=1.54
+    rip GND F.Cu d=1.54
+    rip GND F.Cu d=1.78
+  +3V3A ['U9.5']: still isolated after 11 rips; copper restored
+    rip SWDIO In2.Cu d=0.29
+    rip SWCLK In2.Cu d=0.41
+    rip SWCLK In2.Cu d=0.90
+    rip DBG_RX F.Cu d=0.94
+    rip DBG_RX F.Cu d=0.94
+    rip DBG_RX F.Cu d=1.00
+    rip SWDIO In2.Cu d=1.53
+    rip GND F.Cu d=1.55
+    rip DBG_TX F.Cu d=1.58
+    rip DBG_TX F.Cu d=1.60
+    rip VCAP1 B.Cu d=1.62
+    rip VCAP1 B.Cu d=1.63
+  +3V3A ['C49.1']: CONNECTED after ripping 12 (7s); victims: ['SWDIO', 'SWCLK', 'SWCLK', 'DBG_RX', 'DBG_RX', 'DBG_RX', 'SWDIO', 'GND', 'DBG_TX', 'DBG_TX', 'VCAP1', 'VCAP1']
+    rip DP_PHY F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip DP_PHY F.Cu d=0.56
+    rip GND F.Cu d=0.71
+    rip DP_PHY In2.Cu d=0.76
+    rip DP_PHY In2.Cu d=0.76
+    rip GND F.Cu d=0.82
+    rip GND F.Cu d=0.82
+    rip DP_PHY In2.Cu d=0.89
+    rip ULPI_D2 In2.Cu d=0.93
+  +3V3A ['U7.6']: still isolated after 12 rips; copper restored
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip REFCLKN F.Cu d=0.65
+    rip GND F.Cu d=0.90
+    rip GND F.Cu d=1.32
+    rip ULPI_D5 B.Cu d=1.37
+    rip ULPI_D5 B.Cu d=1.38
+    rip ULPI_D5 B.Cu d=1.39
+    rip ULPI_D5 B.Cu d=1.45
+    rip ULPI_D5 B.Cu d=1.49
+    rip THRADJ F.Cu d=1.50
+    rip GND F.Cu d=1.55
+  +3V3D_CDR ['U4.12']: CONNECTED after ripping 12 (4s); victims: ['GND', 'GND', 'REFCLKN', 'GND', 'GND', 'ULPI_D5', 'ULPI_D5', 'ULPI_D5', 'ULPI_D5', 'ULPI_D5', 'THRADJ', 'GND']
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.71
+    rip GND F.Cu d=0.75
+    rip GND F.Cu d=0.86
+    rip GND F.Cu d=0.88
+    rip REFCLK B.Cu d=0.93
+    rip GND F.Cu d=0.95
+    rip I2C_SCL F.Cu d=1.00
+    rip GND via d=1.01
+    rip I2C_SCL F.Cu d=1.03
+    rip REFCLK B.Cu d=1.28
+  +3V3D_CDR ['U4.18']: still isolated after 12 rips; copper restored
+    rip ULPI_D2 In2.Cu d=0.23
+    rip ULPI_D2 In2.Cu d=0.46
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.50
+    rip GND F.Cu d=0.71
+    rip ULPI_D4 In2.Cu d=0.75
+    rip ULPI_D4 In2.Cu d=0.76
+    rip ULPI_D2 In2.Cu d=0.78
+    rip ULPI_D4 In2.Cu d=0.78
+    rip GND F.Cu d=0.82
+    rip GND F.Cu d=0.82
+  +5V ['U7.4']: still isolated after 12 rips; copper restored
+    rip ILIM_P F.Cu d=0.62
+    rip ILIM_P F.Cu d=0.83
+    rip ILIM_P F.Cu d=0.85
+    rip GND F.Cu d=1.00
+    rip GND F.Cu d=1.00
+    rip GND F.Cu d=1.12
+    rip GND F.Cu d=1.12
+    rip NEG_RAW In2.Cu d=1.12
+    rip NEG_RAW In2.Cu d=1.20
+    rip NEG_RAW In2.Cu d=1.20
+    rip NEG_RAW In2.Cu d=1.20
+    rip NEG_RAW In2.Cu d=1.53
+  +5V ['U13.6']: CONNECTED after ripping 12 (7s); victims: ['ILIM_P', 'ILIM_P', 'ILIM_P', 'GND', 'GND', 'GND', 'GND', 'NEG_RAW', 'NEG_RAW', 'NEG_RAW', 'NEG_RAW', 'NEG_RAW']
+    rip +3V3A B.Cu d=0.50
+    rip +3V3A B.Cu d=0.50
+    rip +3V3A B.Cu d=0.63
+    rip +3V3A B.Cu d=0.89
+    rip ILIM_P F.Cu d=0.91
+    rip GND F.Cu d=0.92
+    rip GND via d=1.00
+    rip GND In2.Cu d=1.00
+    rip GND In2.Cu d=1.17
+    rip GND In2.Cu d=1.17
+    rip +3V3A B.Cu d=1.20
+    rip GND F.Cu d=1.23
+  +VA ['U13.9']: still isolated after 12 rips; copper restored
+    rip +3V3A B.Cu d=0.14
+    rip +3V3A B.Cu d=0.15
+    rip +3V3A B.Cu d=0.35
+    rip +3V3A B.Cu d=0.41
+    rip GND In2.Cu d=0.70
+    rip GND In2.Cu d=0.70
+    rip +3V3A B.Cu d=0.76
+    rip ILIM_P F.Cu d=0.83
+    rip GND In2.Cu d=0.88
+    rip GND F.Cu d=0.90
+    rip GND F.Cu d=0.90
+    rip GND In2.Cu d=0.92
+  +VA ['U13.10']: still isolated after 12 rips; copper restored
+    rip APD_K F.Cu d=1.01
+  APD_A ['D1.6']: still isolated after 1 rips; copper restored
+ripup done: 3 groups connected, victims ['DBG_RX', 'DBG_TX', 'NEG_RAW', 'REFCLKN', 'SWCLK', 'SWDIO', 'THRADJ', 'ULPI_D5', 'VCAP1'], isolated groups remaining: 60

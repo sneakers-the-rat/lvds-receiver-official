@@ -1047,6 +1047,622 @@
       },
       "description": "APD_K pour clearance resolved geometrically (hw/notch.py): rule-area copper-pour keepouts expanded >1.0 mm around the APD_K copper (northern cluster incl. R30's large pad, D1.5's escape, RJ2.2) on F/B, plus the In1 plane clearance raised 0.25 -> 0.35 so its antipads meet the 0.3 buried-HV rule. Audit: clearance 20 -> 3, the remainder exactly the justified D1 package-geometry grazes; GND connectivity unchanged",
       "note": ""
+    },
+    {
+      "pass": 38,
+      "timestamp": "2026-11-04T19:53:30Z",
+      "hash": "cadd345d5cb1f37e4b2cb3d0579ea08c10f2058e",
+      "short_hash": "cadd345",
+      "board_file": "hw/pdlvds_rx.fr22.kicad_pcb",
+      "dir": "pass-0038",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 36,
+        "audit_verdict": "FAIL"
+      },
+      "description": "stub campaign 1 (hw/hand_stub.py): 13 of 31 singleton pads given audit-exact edge-anchored escape stubs, incl. D1.6 west, RJ2.2, CDR_DATP U4.29, CDR_NIN U4.4, CF1/CF2, GND R28.2, PHY_1V8A C23.1",
+      "note": ""
+    },
+    {
+      "pass": 39,
+      "timestamp": "2026-11-04T19:54:32Z",
+      "hash": "23547a35b594c2be591ea5f5950ab99bca586472",
+      "short_hash": "23547a3",
+      "board_file": "hw/pdlvds_rx.fr24.kicad_pcb",
+      "dir": "pass-0039",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL"
+      },
+      "description": "cluster clearing U4 disc (52,52) r4.2 on the stubbed board: 7/9 targets connected through the cleared field (CDR ring pads, +3V3D_CDR U4.24 among them)",
+      "note": ""
+    },
+    {
+      "pass": 40,
+      "timestamp": "2026-11-04T19:55:21Z",
+      "hash": "3b078040b0d3843f83165e865a336e261ce9f171",
+      "short_hash": "3b07804",
+      "board_file": "hw/pdlvds_rx.fr25.kicad_pcb",
+      "dir": "pass-0040",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 39,
+        "audit_verdict": "FAIL"
+      },
+      "description": "cluster clearing U7 disc (30,61) r4.5: 5/7 targets connected incl. +3V3A U7.16/U7.25; ULPI_NXT U7.11 and ULPI_STP U7.13 remain sealed by their own row geometry",
+      "note": ""
+    },
+    {
+      "pass": 41,
+      "timestamp": "2026-11-04T19:56:08Z",
+      "hash": "b8feded3391365c287c593c33d3281a6a429e622",
+      "short_hash": "b8feded",
+      "board_file": "hw/pdlvds_rx.fr26.kicad_pcb",
+      "dir": "pass-0041",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 44,
+        "audit_verdict": "FAIL"
+      },
+      "description": "cluster clearing U10 disc (16,10) r3.6: 1/2 HV targets connected",
+      "note": ""
+    },
+    {
+      "pass": 42,
+      "timestamp": "2026-11-04T19:57:05Z",
+      "hash": "d247c5c9e3ed4b0c305fdae9788a7a96988387ad",
+      "short_hash": "d247c5c",
+      "board_file": "hw/pdlvds_rx.fr27.kicad_pcb",
+      "dir": "pass-0042",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 49,
+        "audit_verdict": "FAIL"
+      },
+      "description": "cluster clearing U6 west disc (83,44) r3.5: USB_RST U6.40 not connected by astar even in the cleared field (fanout-model seal)",
+      "note": ""
+    },
+    {
+      "pass": 43,
+      "timestamp": "2026-11-04T19:57:49Z",
+      "hash": "043b44e7ce6564089c7c0fb0d3a7396060a27e64",
+      "short_hash": "043b44e",
+      "board_file": "hw/pdlvds_rx.fr28.kicad_pcb",
+      "dir": "pass-0043",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 50,
+        "audit_verdict": "FAIL"
+      },
+      "description": "cluster clearing U13 disc (48,62) r3.6: ILIM_P U13.5 connected",
+      "note": ""
+    },
+    {
+      "pass": 44,
+      "timestamp": "2026-11-04T19:58:31Z",
+      "hash": "2b9154b2c6237443ec035b56dc71ff3192ee4461",
+      "short_hash": "2b9154b",
+      "board_file": "hw/pdlvds_rx.fr29.kicad_pcb",
+      "dir": "pass-0044",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 37,
+        "audit_verdict": "FAIL"
+      },
+      "description": "repairg healing after cluster chain 2: 68 groups connected (victims repaid in the cleared fields), sweep 2 connected 0; 37 unconnected nets, 85 groups, clearance 3",
+      "note": ""
+    },
+    {
+      "pass": 45,
+      "timestamp": "2026-11-04T19:59:31Z",
+      "hash": "769f95e946b0175012572087c588e2cce2cad7bf",
+      "short_hash": "769f95e",
+      "board_file": "hw/pdlvds_rx.fr30.kicad_pcb",
+      "dir": "pass-0045",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 37,
+        "audit_verdict": "FAIL"
+      },
+      "description": "stub campaign 2 on the healed field: +3V3A U7.30/U7.31 stubbed; CF1/CF2 re-stubbed (their campaign-1 stubs were ripped as cluster victims)",
+      "note": ""
+    },
+    {
+      "pass": 46,
+      "timestamp": "2026-11-04T20:00:27Z",
+      "hash": "a71a04e62d3713b2d10007b737ea3c2d3eb81fbd",
+      "short_hash": "a71a04e",
+      "board_file": "hw/pdlvds_rx.fr31.kicad_pcb",
+      "dir": "pass-0046",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 42,
+        "audit_verdict": "FAIL"
+      },
+      "description": "small-disc clear (31.5,63.4) r2.4 with immediate audit-exact stubs: ULPI_STP, ULPI_DIR, ULPI_CK stubbed; ULPI_NXT U7.11 still sealed",
+      "note": ""
+    },
+    {
+      "pass": 47,
+      "timestamp": "2026-11-04T20:01:49Z",
+      "hash": "cffc8beca43c63fc97fff95a76a3d87ee96a0169",
+      "short_hash": "cffc8be",
+      "board_file": "hw/pdlvds_rx.fr32.kicad_pcb",
+      "dir": "pass-0047",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 44,
+        "audit_verdict": "FAIL"
+      },
+      "description": "small-disc clear (30,58.5) r2.6 with immediate stubs: PHY_1V8A U7.29 stubbed; +3V3A U7.6 still sealed",
+      "note": ""
+    },
+    {
+      "pass": 48,
+      "timestamp": "2026-11-04T20:03:22Z",
+      "hash": "69c7cca6cef35050814e4518b80d0b5760ffb59a",
+      "short_hash": "69c7cca",
+      "board_file": "hw/pdlvds_rx.fr33.kicad_pcb",
+      "dir": "pass-0048",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 49,
+        "audit_verdict": "FAIL"
+      },
+      "description": "small-disc clear (84.5,43.5) r2.5 with immediate stubs: ULPI_D6 U6.74 stubbed; USB_RST U6.40 still sealed",
+      "note": ""
+    },
+    {
+      "pass": 49,
+      "timestamp": "2026-11-04T20:04:18Z",
+      "hash": "32030c524ea1de6609ad615cc56d04a69530fff1",
+      "short_hash": "32030c5",
+      "board_file": "hw/pdlvds_rx.fr34.kicad_pcb",
+      "dir": "pass-0049",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 53,
+        "audit_verdict": "FAIL"
+      },
+      "description": "small-disc clear (16,10) r3.0: HV_INTVCC U10.8 / HV_SS U10.3 stubs still refused by the stub search's openness test",
+      "note": ""
+    },
+    {
+      "pass": 50,
+      "timestamp": "2026-11-04T20:05:10Z",
+      "hash": "6a5a9b9335eff9a1b22634f82fb12439571ebfbd",
+      "short_hash": "6a5a9b9",
+      "board_file": "hw/pdlvds_rx.fr35.kicad_pcb",
+      "dir": "pass-0050",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 54,
+        "audit_verdict": "FAIL"
+      },
+      "description": "small-disc clear (52.5,54) r2.6 with immediate stub: REFCLKN U4.11 stubbed; THRADJ U4.9 still sealed",
+      "note": ""
+    },
+    {
+      "pass": 51,
+      "timestamp": "2026-11-04T20:06:04Z",
+      "hash": "dab352998dba6271cce5cdc932dde399481b061f",
+      "short_hash": "dab3529",
+      "board_file": "hw/pdlvds_rx.fr37.kicad_pcb",
+      "dir": "pass-0051",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 54,
+        "audit_verdict": "FAIL"
+      },
+      "description": "surgery2 (hw/surgery2.py \u2014 probe 16 directions, rip the cheapest rippable blockers, place a 0.2 mm neck): +3V3A U7.6 stubbed (1 DP_PHY via ripped), USB_RST U6.40, HV_INTVCC U10.8, HV_SS U10.3 stubbed (their necks were clean all along; the stub search's endpoint-openness test had been the blocker)",
+      "note": ""
+    },
+    {
+      "pass": 52,
+      "timestamp": "2026-11-04T20:07:19Z",
+      "hash": "6bd1ae40bb898fb8feefd20c5cfd4b013bfc4079",
+      "short_hash": "6bd1ae4",
+      "board_file": "hw/pdlvds_rx.fr38.kicad_pcb",
+      "dir": "pass-0052",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 54,
+        "audit_verdict": "FAIL"
+      },
+      "description": "surgery2 with pad-aware blocker pricing (pads cost 10, tracks/vias 1): ULPI_NXT U7.11 stubbed south (3 ULPI_STP items ripped), THRADJ U4.9 stubbed (2 GND tracks ripped) \u2014 every formerly singleton pad on the board now has copper",
+      "note": ""
+    },
+    {
+      "pass": 53,
+      "timestamp": "2026-11-04T20:08:16Z",
+      "hash": "6755cd89d0eeb28d390b90530444e603c602b2ab",
+      "short_hash": "6755cd8",
+      "board_file": "hw/pdlvds_rx.fr39.kicad_pcb",
+      "dir": "pass-0053",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 39,
+        "audit_verdict": "FAIL"
+      },
+      "description": "repairg healing on the surgery board: 40 groups connected, sweep 2 connected 0; 39 unconnected nets, 87 groups, clearance 3",
+      "note": ""
+    },
+    {
+      "pass": 54,
+      "timestamp": "2026-11-04T20:09:18Z",
+      "hash": "a36d5f28a59059bd69a58e4cf2dbd32fa88b5991",
+      "short_hash": "a36d5f2",
+      "board_file": "hw/pdlvds_rx.fr40.kicad_pcb",
+      "dir": "pass-0054",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 47,
+        "audit_verdict": "FAIL"
+      },
+      "description": "ripup 'all' batch 1 on the healed board: 3 groups connected through ripped fences (victims queued for the next heal)",
+      "note": ""
+    },
+    {
+      "pass": 55,
+      "timestamp": "2026-11-04T20:10:22Z",
+      "hash": "a153b60cd4537d26a354aac30e9609d7dbc6ce97",
+      "short_hash": "a153b60",
+      "board_file": "hw/pdlvds_rx.fr41.kicad_pcb",
+      "dir": "pass-0055",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 49,
+        "audit_verdict": "FAIL"
+      },
+      "description": "ripup 'all' batch 2: 1 group connected",
+      "note": ""
+    },
+    {
+      "pass": 56,
+      "timestamp": "2026-11-04T20:12:12Z",
+      "hash": "a7dc78456f13552b7c67fa2347c7a81033b7354d",
+      "short_hash": "a7dc784",
+      "board_file": "hw/pdlvds_rx.fr42.kicad_pcb",
+      "dir": "pass-0056",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 39,
+        "audit_verdict": "FAIL"
+      },
+      "description": "repairg healing: 17 groups connected (ripup victims repaid; APD_K's three groups merged); 39 unconnected nets, 83 groups, clearance 3",
+      "note": ""
+    },
+    {
+      "pass": 57,
+      "timestamp": "2026-11-04T20:14:26Z",
+      "hash": "9f1ce83f645b53e190761b2166aeecbd036c0de1",
+      "short_hash": "9f1ce83",
+      "board_file": "hw/pdlvds_rx.fr43.kicad_pcb",
+      "dir": "pass-0057",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 37,
+        "audit_verdict": "FAIL"
+      },
+      "description": "hand bridges (hw/bridge.py): VBUS_RAW, ULPI_D0 and +5V group pairs bridged across 1.0-1.45 mm gaps, one fence item ripped each",
+      "note": ""
+    },
+    {
+      "pass": 58,
+      "timestamp": "2026-11-04T20:15:33Z",
+      "hash": "577a6b066fa0a8730c71f46a66443d8f517eda4f",
+      "short_hash": "577a6b0",
+      "board_file": "hw/pdlvds_rx.fr44.kicad_pcb",
+      "dir": "pass-0058",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 37,
+        "audit_verdict": "FAIL"
+      },
+      "description": "hand segment joins the floating fanout chain west of D1 to APD_A's main group (the chain proved to be main-group copper; D1.6's pad itself still lone)",
+      "note": ""
+    },
+    {
+      "pass": 59,
+      "timestamp": "2026-11-04T20:16:51Z",
+      "hash": "7ea91c721a3bdc0afca185513cd7c7b167e6ae3c",
+      "short_hash": "7ea91c7",
+      "board_file": "hw/pdlvds_rx.fr45.kicad_pcb",
+      "dir": "pass-0059",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 4,
+        "unconnected_nets": 36,
+        "audit_verdict": "FAIL"
+      },
+      "description": "D1.6 link segment from the pad's NW corner to its fanout chain: APD_A fully connected (36 unconnected nets). The segment passes D1.5 at ~0.96 mm \u2014 the 4th item of the justified D1 package-geometry graze family (the APD's own terminals are 0.5 mm apart; the 1.0 mm board rule cannot be met inside the footprint)",
+      "note": ""
     }
   ],
   "gaps": [

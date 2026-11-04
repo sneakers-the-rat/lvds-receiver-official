@@ -1,0 +1,13 @@
+pass: 54
+description: ripup 'all' batch 1 on the healed board: 3 groups connected through ripped fences (victims queued for the next heal)
+timestamp (UTC): 2026-11-04T20:09:18Z
+commit: pending
+board file: hw/pdlvds_rx.fr40.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 3
+unconnected nets: 47
+audit verdict: fail
+note: 

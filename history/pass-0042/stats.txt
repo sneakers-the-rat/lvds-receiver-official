@@ -1,0 +1,13 @@
+pass: 42
+description: cluster clearing U6 west disc (83,44) r3.5: USB_RST U6.40 not connected by astar even in the cleared field (fanout-model seal)
+timestamp (UTC): 2026-11-04T19:57:05Z
+commit: pending
+board file: hw/pdlvds_rx.fr27.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 3
+unconnected nets: 49
+audit verdict: fail
+note: 
