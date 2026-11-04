@@ -1,0 +1,38 @@
+board: hw/pdlvds_rx.fr51.kicad_pcb
+U10.4 (HV_RT) at (13.85,10.50): free 15/16 blocked@135
+U10.7 (HV_GATE) at (18.15,10.50): free 13/16 blocked@45,67.5,90
+U10.8 (HV_INTVCC) at (18.15,10.00): free 11/16 blocked@0,45,90,247.5,292.5
+U10.9 (HV_SHDN) at (18.15,9.50): free 13/16 blocked@0,247.5,292.5
+U4.1 (+3V3D_CDR) at (49.56,50.25): free 15/16 blocked@225
+U4.10 (REFCLK) at (50.75,54.44): free 14/16 blocked@67.5,135
+U4.11 (REFCLKN) at (51.25,54.44): free 14/16 blocked@67.5,90
+U4.14 (CF2) at (52.75,54.44): free 11/16 blocked@0,67.5,90,112.5,337.5
+U4.15 (CF1) at (53.25,54.44): free 11/16 blocked@0,67.5,90,112.5,337.5
+U4.18 (+3V3D_CDR) at (54.44,53.25): free 13/16 blocked@0,22.5,45
+U4.20 (I2C_SCL) at (54.44,52.25): free 13/16 blocked@22.5,45,315
+U4.21 (I2C_SDA) at (54.44,51.75): free 13/16 blocked@22.5,45,315
+U4.26 (CDR_CLKP) at (53.25,49.56): free 15/16 blocked@0
+U4.27 (CDR_SQUELCH) at (52.75,49.56): free 16/16
+U4.29 (CDR_DATP) at (51.75,49.56): free 16/16
+U4.3 (CDR_VREF) at (49.56,51.25): free 14/16 blocked@157.5,180
+U4.4 (CDR_NIN) at (49.56,51.75): free 15/16 blocked@180
+U4.9 (THRADJ) at (50.25,54.44): free 14/16 blocked@67.5,135
+U7.11 (ULPI_NXT) at (29.25,63.44): free 14/16 blocked@67.5,90
+U7.12 (ULPI_DIR) at (29.75,63.44): free 12/16 blocked@45,67.5,90,112.5
+U7.13 (ULPI_STP) at (30.25,63.44): free 12/16 blocked@45,67.5,90,112.5
+U7.15 (PHY_1V8) at (31.25,63.44): free 12/16 blocked@45,67.5,90,112.5
+U7.18 (ULPI_D6) at (32.44,62.25): free 15/16 blocked@67.5
+U7.19 (ULPI_D5) at (32.44,61.75): free 16/16
+U7.20 (ULPI_D4) at (32.44,61.25): free 16/16
+U7.21 (ULPI_D3) at (32.44,60.75): free 15/16 blocked@337.5
+U7.26 (PHY_1V8) at (31.25,58.56): free 12/16 blocked@225,247.5,270,292.5
+U7.27 (XO) at (30.75,58.56): free 12/16 blocked@225,247.5,270,292.5
+U7.29 (PHY_1V8A) at (29.75,58.56): free 12/16 blocked@247.5,270,292.5,315
+U7.32 (RBIAS) at (28.25,58.56): free 13/16 blocked@270,292.5,315
+U7.6 (+3V3A) at (27.56,61.75): free 16/16
+U7.7 (DP_PHY) at (27.56,62.25): free 15/16 blocked@135
+U7.9 (USB_RST) at (28.25,63.44): free 14/16 blocked@90,157.5
+U9.1 (I2C_SCL) at (7.42,47.50): free 13/16 blocked@135,157.5,180
+U9.3 (TMP_ALERT) at (7.42,48.50): free 13/16 blocked@157.5,180,202.5
+U9.5 (+3V3A) at (8.57,48.00): free 13/16 blocked@157.5,180,337.5
+U9.6 (I2C_SDA) at (8.57,47.50): free 12/16 blocked@157.5,180,315,337.5

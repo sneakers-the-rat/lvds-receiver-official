@@ -1,0 +1,11 @@
+2026-11-04T22:07:31 courtyard_audit start board=hw/pdlvds_rx.expanded.kicad_pcb
+2026-11-04T22:07:31 loaded 144 footprints
+2026-11-04T22:07:31 courtyards: 139 with polygon, 5 without
+2026-11-04T22:07:31 progress 0/139 footprints, bbox_pairs=0 poly_pairs=0
+2026-11-04T22:07:31 progress 20/139 footprints, bbox_pairs=10 poly_pairs=9
+2026-11-04T22:07:31 progress 40/139 footprints, bbox_pairs=14 poly_pairs=13
+2026-11-04T22:07:31 progress 60/139 footprints, bbox_pairs=17 poly_pairs=16
+2026-11-04T22:07:31 progress 80/139 footprints, bbox_pairs=18 poly_pairs=17
+2026-11-04T22:07:31 progress 100/139 footprints, bbox_pairs=18 poly_pairs=17
+2026-11-04T22:07:31 progress 120/139 footprints, bbox_pairs=19 poly_pairs=18
+2026-11-04T22:07:31 done bbox=19 poly=18 -> results/courtyard-expanded-2.txt
