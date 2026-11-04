@@ -453,6 +453,34 @@
       },
       "description": "repair6 checkpoint 5 on the Freerouting board: 50 groups connected, sweep 1 continuing (53 connected vs 25 still-isolated attempts so far)",
       "note": ""
+    },
+    {
+      "pass": 18,
+      "timestamp": "2026-11-04T13:50:48Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr1r.ckpt6.kicad_pcb",
+      "dir": "pass-0018",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 13,
+        "unconnected_nets": 33,
+        "audit_verdict": "FAIL"
+      },
+      "description": "repair6 checkpoint 6 on the Freerouting board: 60 groups connected, sweep 1 continuing",
+      "note": ""
     }
   ],
   "gaps": [
