@@ -1,0 +1,13 @@
+pass: 25
+description: U7 full-chip cluster clearing (disc 30,61 r4.5, 101 items): 9/16 connected incl. PHY_1V8A U7.29, ULPI_D0/D2/DIR, XI, +3V3A U7.30/31; ULPI_D3/D4/D6 fanout-empty; USB_RST and RBIAS search-failed; clearing also cut U7.6/16/25's +3V3A stubs (healing owes them back)
+timestamp (UTC): 2026-11-04T15:05:45Z
+commit: pending
+board file: hw/pdlvds_rx.fr8.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 13
+unconnected nets: 46
+audit verdict: fail
+note: 
