@@ -1,0 +1,64 @@
+/* PDLVDS-RX site. Dark sidebar + header band, light content,
+   renders presented light-on-dark on #111 panels (the project
+   owner's standing presentation choice). Ported from the retired
+   scripts/build_site.py inline stylesheet, with the sidebar TOC
+   added for the Jekyll layout. */
+body { font-family: system-ui, sans-serif; margin: 0; color: #1a1a1a; }
+.shell { display: flex; align-items: stretch; min-height: 100vh; }
+.sidebar { flex: 0 0 15.5rem; background: #0f2233; color: #d7e5f2;
+  padding: 1.2rem 1rem 2rem; position: sticky; top: 0; height: 100vh;
+  overflow-y: auto; box-sizing: border-box; }
+.side-title { font-size: 1.15rem; font-weight: 700; margin-bottom: 1rem; }
+.side-title a { color: #fff; text-decoration: none; }
+.sidebar nav ul.toc { list-style: none; margin: 0 0 1.2rem; padding: 0; }
+.sidebar nav ul.toc li { margin: .28rem 0; }
+.sidebar a { color: #cfe3f7; text-decoration: none; }
+.sidebar a:hover { text-decoration: underline; }
+.sidebar a.active { color: #fff; font-weight: 700;
+  border-left: 3px solid #34c759; padding-left: .45rem;
+  margin-left: -.75rem; }
+.toc-head { color: #8fb4d9; font-size: .78rem; font-weight: 700;
+  letter-spacing: .08em; text-transform: uppercase; margin: .6rem 0 .3rem; }
+.side-meta { display: block; font-size: .76rem; color: #8fb4d9;
+  margin-left: .2rem; }
+.content-wrap { flex: 1 1 auto; min-width: 0; }
+header { background: #14304d; color: #fff; padding: 1.2rem 2rem; }
+header h1 { margin: 0 0 .4rem; font-size: 1.5rem; }
+header p { margin: 0; }
+main { max-width: 62rem; padding: 1rem 2rem 3rem; }
+img { max-width: 100%; border: 1px solid #ccc; }
+table { border-collapse: collapse; margin: .8rem 0; font-size: .92rem; }
+th, td { border: 1px solid #bbb; padding: .3rem .55rem; text-align: left; }
+th { background: #eef3f8; }
+pre { background: #f4f4f4; padding: .7rem; overflow-x: auto; }
+code { background: #f0f0f0; padding: 0 .25rem; }
+blockquote { border-left: 3px solid #99b; margin-left: 0;
+  padding-left: 1rem; color: #444; }
+.badge { font-weight: 600; padding: .05rem .45rem; border-radius: .5rem; }
+.badge.pass { background: #d9ead3; color: #274e13; }
+.badge.fail { background: #f4cccc; color: #7a1f1f; }
+.badge.notrun { background: #e0e0e0; color: #555; }
+.composite { position: relative; background: #111; line-height: 0; }
+.composite img { display: block; width: 100%; border: none; }
+.composite img.stack { position: absolute; inset: 0; height: 100%;
+  mix-blend-mode: screen; opacity: .55; }
+.legend .sw { display: inline-block; width: .8em; height: .8em;
+  margin-left: .8em; }
+.legend .sw:first-child { margin-left: 0; }
+.layergrid { display: flex; flex-wrap: wrap; gap: .6rem; }
+.layergrid figure { flex: 1 1 9rem; margin: 0; }
+.layergrid img { background: #111; border: none; width: 100%;
+  display: block; }
+.refview { background: #111; border: 1px solid #444; display: block;
+  width: 100%; box-sizing: border-box; }
+.tokenpanel { background: #fff; border: 1px solid #bbb;
+  padding: .6rem; }
+.tokenpanel img { border: none; display: block; width: 100%; }
+.layergrid figcaption { font-size: .85rem; padding-top: .25rem; }
+.attempt { border-top: 2px solid #14304d; margin-top: 1.6rem;
+  padding-top: .4rem; }
+.passnav { margin-top: 1.6rem; }
+@media (max-width: 56rem) {
+  .shell { flex-direction: column; }
+  .sidebar { position: static; height: auto; flex: none; }
+}

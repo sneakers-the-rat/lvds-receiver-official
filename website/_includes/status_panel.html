@@ -1,0 +1,18 @@
+<h3>Build status</h3>
+{% if site.data.status and site.data.status.jobs.size > 0 %}
+<table><thead><tr><th>CI job</th><th>check step outcome</th><th>commit</th></tr></thead><tbody>
+{% for j in site.data.status.jobs %}
+<tr><td>{{ j.job }}</td><td>{{ j.ci_outcome }}</td><td>{{ j.sha | slice: 0, 10 }}{% if j.run_id and j.run_id != "" %} · run {{ j.run_id }}{% endif %}</td></tr>
+{% endfor %}
+</tbody></table>
+{% else %}
+<p><em>No CI job status reported for this build (local build, or the status artefacts were not available).</em></p>
+{% endif %}
+{% if site.data.status %}
+<table><thead><tr><th>Check</th><th>Status</th><th>Detail</th></tr></thead><tbody>
+{% for c in site.data.status.checks %}
+<tr><td>{{ c.name }}</td><td><span class="badge {% if c.status == 'PASS' %}pass{% elsif c.status == 'FAIL' or c.status == 'REGRESSION' %}fail{% else %}notrun{% endif %}">{{ c.status }}</span></td><td>{{ c.detail }}</td></tr>
+{% endfor %}
+</tbody></table>
+<p>Status is read from the result files available to this build (the validation jobs' fresh uploads when the site is built by CI); anything missing is shown as <em>not run</em>, never as passed.</p>
+{% endif %}

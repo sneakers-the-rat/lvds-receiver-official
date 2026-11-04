@@ -1,0 +1,25 @@
+<aside class="sidebar">
+<div class="side-title"><a href="{{ '/' | relative_url }}">PDLVDS-RX</a></div>
+<nav>
+<ul class="toc">
+<li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Summary</a></li>
+<li><a href="{{ '/board/' | relative_url }}"{% if page.url == '/board/' %} class="active"{% endif %}>Board</a></li>
+<li><a href="{{ '/tokens/' | relative_url }}"{% if page.url == '/tokens/' %} class="active"{% endif %}>Token usage</a></li>
+<li><a href="{{ '/routing/' | relative_url }}"{% if page.url == '/routing/' %} class="active"{% endif %}>Routing history</a></li>
+<li><a href="{{ '/schematic/' | relative_url }}"{% if page.url == '/schematic/' %} class="active"{% endif %}>Schematic</a></li>
+<li><a href="{{ '/stackup/' | relative_url }}"{% if page.url == '/stackup/' %} class="active"{% endif %}>Stackup</a></li>
+<li><a href="{{ '/bom/' | relative_url }}"{% if page.url == '/bom/' %} class="active"{% endif %}>BOM</a></li>
+<li><a href="{{ '/sims/' | relative_url }}"{% if page.url == '/sims/' %} class="active"{% endif %}>Simulations</a></li>
+<li><a href="{{ '/testplan/' | relative_url }}"{% if page.url == '/testplan/' %} class="active"{% endif %}>Bench test plan</a></li>
+<li><a href="{{ '/downloads/' | relative_url }}"{% if page.url == '/downloads/' %} class="active"{% endif %}>Downloads</a></li>
+</ul>
+<div class="toc-head">Layout passes</div>
+<ul class="toc passes">
+{% assign sorted_passes = site.passes | sort: "pass" %}
+{% for p in sorted_passes %}
+<li><a href="{{ p.url | relative_url }}"{% if p.url == page.url %} class="active"{% endif %}>Pass {{ p.pass }}</a>
+<span class="side-meta">{{ p.timestamp | pacific: "%b %-d, %H:%M" }} · {{ p.short_hash }}</span></li>
+{% endfor %}
+</ul>
+</nav>
+</aside>

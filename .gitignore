@@ -4,3 +4,16 @@ site/
 *.pyc
 .site-status/
 *.repair.lock
+
+# Jekyll site: generated data/assets (scripts/site_data.py output)
+website/_data/status.json
+website/_data/tokens.json
+website/_data/costs.json
+website/_data/bom.json
+website/_data/sims.json
+website/_data/board.json
+website/_data/downloads.json
+website/assets/gen/
+website/downloads/
+website/.jekyll-cache/
+website/.jekyll-metadata

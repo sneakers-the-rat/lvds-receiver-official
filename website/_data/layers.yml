@@ -1,0 +1,10 @@
+# Copper layers in stack order, with the routing-history palette.
+# Must match LAYER_PALETTE in scripts/snapshot_route.py.
+- name: "F.Cu"
+  color: "#FF3B30"
+- name: "In1.Cu"
+  color: "#FF9500"
+- name: "In2.Cu"
+  color: "#34C759"
+- name: "B.Cu"
+  color: "#0A84FF"
