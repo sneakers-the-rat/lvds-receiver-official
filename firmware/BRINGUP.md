@@ -69,15 +69,22 @@ otherwise; if you find a claim that does, it is a bug in the docs.
 
 ## Decisions and conflicts a human must close
 
-- **PA4 is claimed twice.** The schematic (authoritative,
-  `hw/CONNECTIONS.md`) assigns PA4 to USB3300 RESET; `board.h`'s
-  older intent and `dac8562.c` use PA4 as the DAC chip select.
-  The USB code follows the schematic. Until the DAC path is
-  reconciled (schematic: SPI3 + PA15 SYNC), **every
-  `dac8562_set_threshold()` call pulses the PHY reset line** and
-  will drop USB. This is the single most likely "USB dies when I
-  set the threshold" bug; it is a pin-map conflict, not a stack
-  bug. (README bring-up item 4.)
+- **PA4 double-claim — RESOLVED (2026-11-04, commit on
+  `fw-dac-spi3`).** The schematic (authoritative,
+  `hw/CONNECTIONS.md`; generator `hw/circuit.py` agrees) assigns
+  PA4 to USB3300 RESET, and the DAC8562 to SPI3 (PC10 SCK,
+  PC12 MOSI) with PA15 as SYNC. `board.h` now matches: PA4 is
+  referenced only as USB_RST, the DAC defines name SPI3 + PA15,
+  `spi.c` points at SPI3 and performs the PC10/PC12 AF hookup,
+  and the SPI3 clock gate is enabled in `clocks.c` (the SPI1
+  gate it replaced is gone). Before this fix every
+  `dac8562_set_threshold()` call pulsed the PHY reset line;
+  that failure mode no longer exists in the pin map. A host test
+  (`tests/test_dac8562.c`, in `make host-test`) links the real
+  driver against mock backends and asserts SYNC is framed on
+  PA15 and PA4 is never touched. What remains unverified is the
+  usual register-level kind: SPI3 base/AF number/RCC bit are
+  marked VERIFY against RM0468 and the datasheet AF table.
 - **VID/PID are unregistered development ids** (0x1209 /
   0xD723, the former being pid.codes' open-source VID). Register
   a PID at pid.codes or obtain a VID before any distribution;

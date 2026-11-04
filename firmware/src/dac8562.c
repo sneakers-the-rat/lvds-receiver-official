@@ -47,9 +47,12 @@ static int dac_write(uint8_t cmd, uint8_t addr, uint16_t data)
     tx[0] = (uint8_t)(f >> 16);
     tx[1] = (uint8_t)(f >> 8);
     tx[2] = (uint8_t)(f >> 0);
-    gpio_write(BOARD_DAC_CS_PORT, BOARD_DAC_CS_PIN, 0);
+    /* SYNC (PA15) frames the transfer: low while the 24 bits are
+     * clocked out on SPI3, high to latch (LDAC is tied low on the
+     * board, so the outputs update on this rising edge). */
+    gpio_write(BOARD_DAC_SYNC_PORT, BOARD_DAC_SYNC_PIN, 0);
     r = spi_transfer(tx, NULL, 3u);
-    gpio_write(BOARD_DAC_CS_PORT, BOARD_DAC_CS_PIN, 1);
+    gpio_write(BOARD_DAC_SYNC_PORT, BOARD_DAC_SYNC_PIN, 1);
     return r;
 }
 

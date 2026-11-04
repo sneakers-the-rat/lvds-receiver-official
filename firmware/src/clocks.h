@@ -20,7 +20,7 @@ uint32_t board_millis(void);
 void board_systick_irq(void); /* call from the SysTick vector */
 
 /* Enable the RCC clock gates for the peripherals this firmware uses
- * (GPIO ports, I2C1, SPI1, DMA1). Implemented in clocks.c so all RCC
+ * (GPIO ports, I2C1, SPI3, DMA1). Implemented in clocks.c so all RCC
  * bit-twiddling lives in one file. */
 void board_enable_peripheral_clocks(void);
 

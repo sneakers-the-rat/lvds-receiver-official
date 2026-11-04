@@ -1440,3 +1440,25 @@ instructions). Related gap recorded in the same package: `host/rxhost.py`'s
 hardware transport is a stub in this revision (its device path exits
 unimplemented; `--simulate` targets an in-process Python model), so the
 package's acid test drives the protocol frames directly.
+## DAC8562 pin conflict resolved — SPI3 + PA15 SYNC (2026-11-04)
+
+Branch `fw-dac-spi3` (from 762aff6). The parked PA4 conflict is
+closed: `board.h` had the DAC8562 chip select on PA4 (the USB3300
+reset per the schematic), so every threshold set would have pulsed
+the PHY reset and dropped USB. Verified from the schematic sources
+themselves — `hw/CONNECTIONS.md` ("SPI3: PC10 SCK, PC12 MOSI ->
+DAC8562; PA15 = DAC_SYNC", "PA4 USB_RST") and the generator
+`hw/circuit.py` (U6 map and U8 pins 6/7/8 agree) — and the firmware
+now matches: DAC on SPI3 (PC10/PC12, AF set up in `spi_init`),
+SYNC on PA15, SPI3 clock gate enabled in `clocks.c` in place of
+the SPI1 gate, PA4 referenced only as USB_RST. New host test
+`tests/test_dac8562.c` links the real driver against mock
+gpio/SPI backends, observes SYNC framed on PA15 with PA4 never
+touched, and locks the pin map to the schematic values.
+`make host-test`: 72 PASS / 0 FAIL (57 existing + 15 new).
+`make arm` clean: text 17796 / data 36 / bss 19840 (delta vs
+762aff6: +64 / 0 / 0, the spi_init pin hookup). Noted while in
+there, NOT fixed (separate jobs): `board.h`'s HV_EN/INTERLOCK/LOS
+defines (PB0/PB1/PB2) have no schematic counterpart — the
+schematic's HV control is PC7 HV_SHDN and LOS is PB14 CDR_LOS —
+and `main.c` still carries a stale "usb stub" comment.

@@ -1,9 +1,10 @@
 # Firmware Makefile - photodiode LVDS receiver (STM32H723)
 #
 #   make host-test   build + run the host-side tests: the codec suite
-#                    (codec/test_codec.c), the USB descriptor audit
-#                    and the USB framing round-trip (tests/). Works
-#                    with the host gcc alone.
+#                    (codec/test_codec.c), the USB descriptor audit,
+#                    the USB framing round-trip and the DAC8562
+#                    driver test (tests/). Works with the host gcc
+#                    alone.
 #   make arm         cross-compile firmware for the target; needs
 #                    arm-none-eabi-gcc - if it is not installed this
 #                    target says so and fails, it does not fake a build
@@ -61,10 +62,11 @@ ARM_OBJS   := $(patsubst %.c,$(BUILD)/%.o,$(ARM_SRCS)) \
 .PHONY: host-test arm clean
 
 host-test: $(BUILD)/test_codec $(BUILD)/test_usb_descriptors \
-           $(BUILD)/test_usb_framing
+           $(BUILD)/test_usb_framing $(BUILD)/test_dac8562
 	./$(BUILD)/test_codec
 	./$(BUILD)/test_usb_descriptors
 	./$(BUILD)/test_usb_framing
+	./$(BUILD)/test_dac8562
 
 $(BUILD)/test_codec: $(CODEC_SRCS) $(TEST_SRCS) $(CODEC_DIR)/codec.h
 	@mkdir -p $(BUILD)
@@ -86,6 +88,17 @@ $(BUILD)/test_usb_framing: $(TESTS_DIR)/test_usb_framing.c \
 	$(HOST_CC) $(HOST_FLAGS) -I$(CODEC_DIR) -I$(SRC_DIR) \
 	    $(TESTS_DIR)/test_usb_framing.c $(SRC_DIR)/usb_app.c \
 	    $(CODEC_SRCS) -o $@
+
+# The DAC8562 driver test links the real dac8562.c against mock
+# gpio_write / spi_transfer backends (tests/test_dac8562.c carries
+# its own copies), so it observes which pin the driver frames SYNC
+# on and the exact bytes transferred. spi.c/gpio.c are NOT linked.
+$(BUILD)/test_dac8562: $(TESTS_DIR)/test_dac8562.c \
+                       $(SRC_DIR)/dac8562.c $(SRC_DIR)/dac8562.h \
+                       $(SRC_DIR)/board.h
+	@mkdir -p $(BUILD)
+	$(HOST_CC) $(HOST_FLAGS) -I$(SRC_DIR) \
+	    $(TESTS_DIR)/test_dac8562.c $(SRC_DIR)/dac8562.c -o $@
 
 arm:
 	@command -v $(ARM_CC) >/dev/null 2>&1 || { \

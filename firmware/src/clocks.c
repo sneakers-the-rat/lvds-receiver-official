@@ -209,8 +209,8 @@ void board_enable_peripheral_clocks(void)
     REG32(RCC_AHB4ENR) |= (1u << 0)   /* GPIOA - VERIFY */
                         | (1u << 1)   /* GPIOB - VERIFY */
                         | (1u << 2);  /* GPIOC - VERIFY */
-    REG32(RCC_APB1LENR) |= (1u << 21); /* I2C1 - VERIFY */
-    REG32(RCC_APB2ENR) |= (1u << 12);  /* SPI1 - VERIFY */
+    REG32(RCC_APB1LENR) |= (1u << 21)  /* I2C1 - VERIFY */
+                         | (1u << 15); /* SPI3 (DAC8562) - VERIFY */
     REG32(RCC_AHB1ENR) |= (1u << 0);   /* DMA1 - VERIFY */
     (void)REG32(RCC_AHB4ENR);          /* read-back: enable takes effect */
 }

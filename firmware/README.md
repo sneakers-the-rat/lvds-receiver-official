@@ -122,10 +122,10 @@ Known soft spots, called out where they live:
   (`hw/CONNECTIONS.md`) has since settled two conflicts against
   board.h's initial guesses, and board.h now follows it: the
   status LED is PC9, not PA5 (PA5 is ULPI_CK), and PA4 is the
-  USB3300 reset, not the DAC chip select - the DAC path
-  (schematic: SPI3 + PA15 SYNC) is NOT yet reconciled, so
-  `dac8562_set_threshold()` currently pulses the PHY reset line.
-  See `BRINGUP.md`.
+  USB3300 reset, not the DAC chip select. The DAC path has since
+  been reconciled to the schematic (SPI3 + PA15 SYNC), so
+  `dac8562_set_threshold()` no longer touches the PHY reset
+  line; a host test locks the pin map. See `BRINGUP.md`.
 - The USB glue in `src/usb_device_tinyusb.c` (SYSCFG PMCR,
   RCC/PWR bit positions, ULPI AF numbers) carries the same VERIFY
   status as the rest of `src/`; the TinyUSB stack itself is
@@ -153,12 +153,13 @@ Known soft spots, called out where they live:
    map, I2C address and rate scaling in `adn2813.c`.
 3. Check DAC8562 frame packing against `datasheets/dac8562.pdf`;
    check TMP117 map against `datasheets/tmp117.pdf`.
-4. Pin conflicts: the schematic resolved PA5 (ULPI_CK; LED moved
-   to PC9 in `board.h`) - but PA4 remains double-assigned (USB3300
-   reset per the schematic vs DAC CS in `dac8562.c`), and the DAC
-   path must be moved to the schematic's SPI3 + PA15 SYNC before
-   threshold-setting can coexist with USB. Finalise the remaining
-   pin/AF assignments in `board.h` + `gpio.c` + `spi.c`.
+4. Pin conflicts: RESOLVED. The schematic's PA5 assignment
+   (ULPI_CK; LED on PC9) and PA4 assignment (USB3300 reset) both
+   stand, and the DAC path now follows the schematic too (SPI3,
+   PC10/PC12, PA15 SYNC) in `board.h` + `gpio.c` + `spi.c` +
+   `clocks.c`. Remaining pin work is verification, not
+   reconciliation: confirm the AF numbers and RCC bits marked
+   VERIFY in `board.h` against RM0468 and the datasheet AF table.
 5. Verify the HV feedback divider ratio; fix `HV_FULL_SCALE_V` in
    `hv_ctrl.h`; confirm the interlock and LOS polarities.
 6. First power-up on a current-limited supply: confirm 550 MHz
