@@ -1,0 +1,13 @@
+pass: 63
+description: ULPI_NXT escape hand-placed: from U7.11's surgery stub, SW 2.2 mm to open field at (27.69,65.85), 4 ULPI_STP/DIR fence items ripped (heal owes them back); the router's grid could not start from the lone stub cell at any expansion cap
+timestamp (UTC): 2026-11-04T20:57:44Z
+commit: pending
+board file: hw/pdlvds_rx.fr49.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 4
+unconnected nets: 35
+audit verdict: fail
+note: 
