@@ -1,0 +1,17 @@
+TMP_ALERT: 3 groups, sizes [1, 1, 1]
+  U6.139 (net TMP_ALERT):
+    step ->(0, 280, 89): -0.300 vs pad[BOOT0]
+    step ->(0, 278, 89): -0.075 vs pad[PG_3V3]
+    step ->(0, 279, 90): -0.075 vs pad[BOOT0]
+    step ->(0, 279, 88): -0.075 vs pad[BOOT0]
+    via L0: -0.275 vs pad[BOOT0]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  R22.1 (net TMP_ALERT):
+    step ->(0, 171, 128): +0.700 vs pad[+3V3D]
+    step ->(0, 169, 128): +0.900 vs pad[+3V3D]
+    step ->(0, 170, 129): +0.900 vs pad[+3V3D]
+    step ->(0, 170, 127): +0.900 vs pad[+3V3D]
+    via L0: +0.750 vs pad[+3V3D]
+    via L1: +4.044 vs pad[GND]
+    via L2: +4.044 vs pad[GND]

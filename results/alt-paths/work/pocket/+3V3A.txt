@@ -1,0 +1,97 @@
++3V3A: 13 groups, sizes [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+  U6.32 (net +3V3A):
+    step ->(0, 262, 159): +0.000 vs pad[GND]
+    step ->(0, 260, 159): +0.000 vs pad[GND]
+    step ->(0, 261, 160): +0.000 vs pad[GND]
+    step ->(0, 261, 158): -0.125 vs pad[GND]
+    via L0: -0.175 vs pad[GND]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  U6.33 (net +3V3A):
+    step ->(0, 262, 161): -0.125 vs pad[CAP_CLK]
+    step ->(0, 260, 161): -0.125 vs pad[CAP_CLK]
+    step ->(0, 261, 162): -0.350 vs pad[CAP_CLK]
+    step ->(0, 261, 160): +0.000 vs pad[CAP_CLK]
+    via L0: -0.425 vs pad[CAP_CLK]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  C49.1 (net +3V3A):
+    step ->(0, 353, 112): +0.481 vs pad[]
+    step ->(0, 351, 112): +0.125 vs pad[]
+    step ->(0, 352, 113): +0.375 vs pad[]
+    step ->(0, 352, 111): +0.375 vs pad[DBG_TX]
+    via L0: +0.075 vs pad[]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  C24.1 (net +3V3A):
+    step ->(0, 133, 264): +0.600 vs pad[GND]
+    step ->(0, 131, 264): +0.750 vs pad[GND]
+    step ->(0, 132, 265): +0.750 vs pad[GND]
+    step ->(0, 132, 263): +0.750 vs pad[GND]
+    via L0: +0.550 vs pad[GND]
+    via L1: +5.040 vs pad[]
+    via L2: +5.040 vs pad[]
+  C46.1 (net +3V3A):
+    step ->(0, 251, 264): +0.600 vs pad[GND]
+    step ->(0, 249, 264): +0.750 vs pad[GND]
+    step ->(0, 250, 265): +0.750 vs pad[GND]
+    step ->(0, 250, 263): +0.750 vs pad[GND]
+    via L0: +0.550 vs pad[GND]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  U7.6 (net +3V3A):
+    step ->(0, 111, 247): -0.100 vs pad[DP_PHY]
+    step ->(0, 109, 247): -0.100 vs pad[DP_PHY]
+    step ->(0, 110, 248): -0.350 vs pad[DP_PHY]
+    step ->(0, 110, 246): -0.100 vs pad[GND]
+    via L0: -0.400 vs pad[DP_PHY]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  U7.16 (net +3V3A):
+    step ->(0, 128, 253): +0.025 vs pad[PHY_1V8]
+    step ->(0, 126, 253): -0.100 vs pad[PHY_1V8]
+    step ->(0, 127, 254): +0.025 vs pad[PHY_1V8]
+    step ->(0, 127, 252): -0.070 vs pad[ULPI_D7]
+    via L0: -0.150 vs pad[PHY_1V8]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  U7.25 (net +3V3A):
+    step ->(0, 128, 234): +0.025 vs pad[PHY_1V8]
+    step ->(0, 126, 234): -0.100 vs pad[PHY_1V8]
+    step ->(0, 127, 235): -0.070 vs pad[ULPI_D0]
+    step ->(0, 127, 233): +0.025 vs pad[PHY_1V8]
+    via L0: -0.150 vs pad[PHY_1V8]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  U7.30 (net +3V3A):
+    step ->(0, 118, 234): -0.350 vs pad[PHY_1V8A]
+    step ->(0, 116, 234): +0.025 vs pad[PHY_1V8A]
+    step ->(0, 117, 235): -0.100 vs pad[PHY_1V8A]
+    step ->(0, 117, 233): -0.100 vs pad[PHY_1V8A]
+    via L0: -0.400 vs pad[PHY_1V8A]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  U7.31 (net +3V3A):
+    step ->(0, 116, 234): +0.025 vs pad[RBIAS]
+    step ->(0, 114, 234): -0.100 vs pad[RBIAS]
+    step ->(0, 115, 235): +0.025 vs pad[RBIAS]
+    step ->(0, 115, 233): +0.025 vs pad[RBIAS]
+    via L0: -0.150 vs pad[RBIAS]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  U14.9 (net +3V3A):
+    step ->(0, 243, 246): -0.125 vs pad[GND]
+    step ->(0, 241, 246): -0.125 vs pad[GND]
+    step ->(0, 242, 247): -0.350 vs pad[GND]
+    step ->(0, 242, 245): +0.000 vs pad[GND]
+    via L0: -0.425 vs pad[GND]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  U14.10 (net +3V3A):
+    step ->(0, 243, 244): +0.375 vs pad[GND]
+    step ->(0, 241, 244): +0.250 vs pad[GND]
+    step ->(0, 242, 245): +0.125 vs pad[GND]
+    step ->(0, 242, 243): +0.425 vs pad[GND]
+    via L0: +0.075 vs pad[GND]
+    via L1: +inf vs -
+    via L2: +inf vs -

@@ -1,0 +1,39 @@
+CDR_CLKN: 4 groups, sizes [1, 1, 1, 1]
+  J2.6 (net CDR_CLKN):
+    step ->(0, 400, 169): -0.350 vs pad[GND]
+    step ->(0, 398, 169): -0.350 vs pad[GND]
+    step ->(0, 399, 170): -0.350 vs pad[GND]
+    step ->(0, 399, 168): -0.350 vs pad[GND]
+    via L0: -0.500 vs pad[GND]
+    via L1: -0.500 vs pad[GND]
+    via L2: -0.500 vs pad[GND]
+    step ->(1, 400, 169): -0.350 vs pad[GND]
+    step ->(1, 398, 169): -0.350 vs pad[GND]
+    step ->(1, 399, 170): -0.350 vs pad[GND]
+    step ->(1, 399, 168): -0.350 vs pad[GND]
+    via L0: -0.500 vs pad[GND]
+    via L1: -0.500 vs pad[GND]
+    via L2: -0.500 vs pad[GND]
+    step ->(2, 400, 169): -0.350 vs pad[GND]
+    step ->(2, 398, 169): -0.350 vs pad[GND]
+    step ->(2, 399, 170): -0.350 vs pad[GND]
+    step ->(2, 399, 168): -0.350 vs pad[GND]
+    via L0: -0.500 vs pad[GND]
+    via L1: -0.500 vs pad[GND]
+    via L2: -0.500 vs pad[GND]
+  U4.25 (net CDR_CLKN):
+    step ->(0, 216, 198): +0.075 vs pad[CDR_CLKP]
+    step ->(0, 214, 198): -0.050 vs pad[CDR_CLKP]
+    step ->(0, 215, 199): -0.070 vs pad[+3V3D_CDR]
+    step ->(0, 215, 197): +0.075 vs pad[CDR_CLKP]
+    via L0: -0.035 vs pad[+3V3D_CDR]
+    via L1: +inf vs -
+    via L2: +inf vs -
+  R14.2 (net CDR_CLKN):
+    step ->(0, 229, 212): +0.875 vs pad[CDR_CLKP]
+    step ->(0, 227, 212): +0.875 vs pad[CDR_CLKP]
+    step ->(0, 228, 213): +0.675 vs pad[CDR_CLKP]
+    step ->(0, 228, 211): +0.875 vs pad[CDR_CLKP]
+    via L0: +0.725 vs pad[CDR_CLKP]
+    via L1: +inf vs -
+    via L2: +inf vs -
