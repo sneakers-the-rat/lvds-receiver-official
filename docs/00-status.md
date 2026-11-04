@@ -595,3 +595,102 @@ hidden):
   YAML; ci.sh passes bash -n. Local KiCad is v7, so no KiCad 8
   DRC behaviour is claimed from local runs — the first CI run
   on this branch is the calibration check for the counts.
+
+## CI signal fix, round 2 — the first live run caught three real things (2026-11-03, branch ci-signal)
+
+Round 1's design goal was that a broken pipeline step could no
+longer hide inside a permanently red job. Its first live run —
+GitHub Actions run 41750532660 on main @ ec773ed — proved the
+point by catching three real defects in the signal itself, all
+invisible before the split. The parent extracted the actual ERC
+and DRC reports from that run's evidence artifact; both are now
+committed byte-pristine as test fixtures
+(ci/fixtures/drc-report-run41750532660.txt,
+ci/fixtures/erc-report-run41750532660.txt).
+
+What the run caught:
+
+1. **The ERC step failed over a clean report.**
+   `kicad-cli sch erc --exit-code-violations` exits non-zero on
+   WARNINGS too in KiCad 8. The step went red while its own
+   report said 0 errors / 8 warnings. Round 1 had trusted the
+   exit code — the same disease as the old DRC step, one step
+   over.
+2. **The DRC gate parser failed on the real report format.**
+   The gate expected the bare console wording ("Found N
+   unconnected items"); the report FILE says
+   `** Found 726 DRC violations **` and
+   `** Found 190 unconnected pads **` — `**` framing, and pads,
+   not items. The gate failed tool-health (exit 2): loudly, as
+   designed — the signal caught its own parser.
+3. **The seeded baseline measured a different board.** The run
+   measured 726 violations / 190 unconnected (console output
+   and report file agree) against the seeded 807 / 175.
+
+Fixes (this round):
+
+- **DRC parser** (scripts/drc_gate.py): both summary regexes
+  now accept the `**`-framed file format and the bare console
+  format, and both nouns (`pads|items`). The identical regex
+  pair in scripts/build_site.py's fallback DRC parse got the
+  same fix (verified: drc_row() on the real fixture returns
+  "DRC (board in progress): 726 violations, 190 unconnected —
+  baseline 726/190, no regression").
+- **ERC gate** (new scripts/erc_gate.py; ci.sh step 10): ERC
+  is invoked WITHOUT --exit-code-violations, any stale report
+  is deleted first, the kicad-cli exit code is logged as
+  informational only, and the verdict is parsed from the
+  report's `** ERC messages: N  Errors E  Warnings W` summary:
+  FAIL (exit 1) iff E > 0; missing/empty/unparseable or
+  internally inconsistent (N != E + W) report is a tool-health
+  FAIL (exit 2) — the same philosophy as the DRC gate. Success
+  prints "ERC: 0 errors, 8 warnings (known lib_symbol_issues,
+  justified in docs/00-status.md)". The gate stays a HARD gate:
+  any real ERC error still fails the job, always. Workflow
+  step renamed accordingly; job comments record why.
+- **Baseline calibration** (ci/drc-baseline.json): violations
+  726, unconnected 190. Justification, git-verified: did
+  hw/pdlvds_rx.kicad_pcb change between b5c2b57 (the seed's
+  provenance commit) and ec773ed (the run's commit)? YES —
+  exactly once. The blob at b5c2b57 is ebe97655 (the pre-v5
+  board); commit fb2acf7 (router v5 result) replaced it with
+  blob 6a377ebc, which reached main via the routing-work
+  merges, and both parents of ec773ed carry 6a377ebc. So the
+  seed 807/175 measured the PREVIOUS board and 726/190 is the
+  first true measurement of the current (v5) board. The delta
+  direction matches v5's own documented trade: its stricter
+  clearance model produced fewer violations, and it routed
+  fewer nets (58/112 vs v4's 67/112), leaving more
+  unconnected. This corrects round 1's statement above that
+  the seed came from "the current v5 board" with "the board
+  on main unchanged since b5c2b57" — that was wrong; the v5
+  board landed on the coordinator line and only later merged.
+  The calibration is therefore to a first measurement of a
+  changed board, not ratchet-loosening to fit a regression:
+  no count was raised above a same-board measurement, because
+  none existed. (Violations went DOWN against the seed;
+  unconnected went UP — above the stale seed, which is
+  precisely why the first live run flagged it instead of
+  silently passing.)
+- **Committed tests** (ci/test_gates.py, 21 checks, all
+  passing): round-1 semantics recreated as synthetic
+  console-format cases against a temporary 807/175 baseline;
+  round-2 cases run both gates against the REAL fixtures —
+  DRC exit 0 at 726/190, exit 1 on either doctored count,
+  exit 2 on corrupt/empty/missing; ERC exit 0 with the exact
+  success line, exit 1 on a doctored Errors 1, exit 2 on
+  corrupt/empty/missing/inconsistent. ci.sh passes bash -n;
+  ci.yml parses as YAML. Local KiCad is v7, so no local
+  kicad-cli ERC/DRC behaviour is claimed — the gates were
+  tested against the captured KiCad 8 reports, which are the
+  ground truth for the formats.
+
+Remaining verification: the next CI run on main with this
+round merged should be GREEN — sim-and-firmware unchanged,
+ERC hard-pass on the parsed report (0 errors / 8 warnings),
+DRC step passing as board state at 726 violations / 190
+unconnected against the calibrated baseline, site deploying
+with the panel showing those counts as board state. If that
+run measures different DRC counts for the unchanged board,
+that is a new calibration event to document here, not a
+silent baseline edit.
