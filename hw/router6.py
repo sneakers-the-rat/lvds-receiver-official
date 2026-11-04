@@ -49,10 +49,19 @@ from router import (CELL, W, H, LAYERS, HV_NETS, POWER_NETS, LVDS_NETS,
                     PROMOTE, NECK_W, NECK_R, Items, netclass, cell_of)
 
 MM = pcbnew.FromMM
-SAFE = 0.005   # required margin beyond the class clearance (mm);
-               # the audit flags gaps < need - 0.001, so 5 um of
-               # headroom absorbs float error without costing real
-               # routability.
+# Acceptance threshold for a move's signed margin (surface distance
+# minus required gap). A gap EQUAL to the class clearance is legal —
+# the audit flags only gaps < need - 0.001 — and at 0.5 mm pitch the
+# perpendicular escape corridor for a power pin is exactly
+# clearance-wide (0.35 mm axis-to-neighbour-edge vs 0.10 neck
+# half-width + 0.25 clearance), so any positive safety margin makes
+# those pins unroutable by construction. The first full-board run
+# was stopped at net 3/112 to fix exactly this. Tolerance is
+# therefore zero, with 1 um of float-dust slack (the audit's own
+# tolerance is also 1 um; emitted coordinates round-trip through
+# KiCad's integer-nm grid, and the pad model is the bounding rect,
+# which errs conservative against KiCad's real pad shapes).
+SAFE = -0.001
 
 # ---------------- exact geometry ----------------
 
