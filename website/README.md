@@ -62,6 +62,20 @@ before `jekyll build` and writes the generated, gitignored files:
   presence, download list.
 - `assets/gen/`, `downloads/` — staged copies of fab renders,
   results plots, metrics charts and per-pass history renders.
+  Board render SVGs (fab top/bottom/composite/per-layer and the
+  per-pass history renders) get a full-canvas `#111` background
+  rect baked in at this step (`inject_svg_background()` in
+  `site_data.py`, marker `id="site-bg"`): KiCad's exports carry no
+  background, so a render opened on its own — the board page's
+  gallery opens the big view in a new tab — would otherwise lose
+  the dark panel the CSS paints behind it on the page. Sources in
+  `hw/fab/` and `history/` are never modified.
+- The board page's Routes section is a selectable gallery
+  (`board.md` + `assets/js/routes-gallery.js`): thumbnails for the
+  all-layers composite (`hw/fab/board-layers.svg`, staged like the
+  other fab renders) and each copper layer; clicking one swaps the
+  main viewer, and the viewer image links to the shown SVG in a
+  new tab. Without JavaScript the thumbnails are plain links.
 - `_includes/docs/` — `docs/01`, `docs/02`, `docs/05` copied in
   (heading levels shifted one deeper); committed, and regenerated
   by the step, so a bare `jekyll build` also works.
