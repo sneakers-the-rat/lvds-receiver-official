@@ -337,6 +337,13 @@ def token_usage():
     with open(agents_p) as f:
         ag = list(csv.DictReader(f))
     n_with = sum(1 for a in ag if int(a["usage_rows"]) > 0)
+    from datetime import datetime
+    from zoneinfo import ZoneInfo
+    snap_pt = datetime.fromtimestamp(int(last["ts_epoch"]),
+                                     ZoneInfo("America/Los_Angeles"))
+    snap_txt = (f"{snap_pt.strftime('%Y-%m-%d %H:%M:%S')} Pacific time "
+                f"({snap_pt.strftime('%Z')}; "
+                f"{html.escape(last['ts_utc'])} UTC)")
     by_scope = {}
     for a in ag:
         s = by_scope.setdefault(a["scope"], [0, 0])
@@ -368,8 +375,7 @@ def token_usage():
     return (f"<p><strong>{tin + tout:,} gross tokens</strong> "
             f"({tin:,} input + {tout:,} output) across {len(rows)} "
             f"recorded messages from {n_with} agents ({len(ag)} in "
-            f"project scope), snapshot {html.escape(last['ts_utc'])} "
-            f"(UTC).</p>"
+            f"project scope), snapshot {snap_txt}.</p>"
             f"{chart}"
             f"<table><thead><tr><th>Scope</th><th>Input</th>"
             f"<th>Output</th><th>Gross</th></tr></thead><tbody>"
