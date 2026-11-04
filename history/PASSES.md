@@ -392,9 +392,9 @@ stub campaign 2 on the healed field: +3V3A U7.30/U7.31 stubbed; CF1/CF2 re-stubb
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 37 · Audit verdict: FAIL
 
-### Pass 46 — 2026-11-04T20:00:27Z · commit `pending`
+### Pass 46 — 2026-11-04T20:00:27Z · commit `a71a04e`
 
-Board: `hw/pdlvds_rx.fr31.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr31.kicad_pcb` · Commit: `a71a04e62d3713b2d10007b737ea3c2d3eb81fbd`
 
 small-disc clear (31.5,63.4) r2.4 with immediate audit-exact stubs: ULPI_STP, ULPI_DIR, ULPI_CK stubbed; ULPI_NXT U7.11 still sealed
 
