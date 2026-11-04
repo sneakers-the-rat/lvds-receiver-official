@@ -230,7 +230,9 @@ def astar6(items, starts, goals, netname, width, clr, cap=900000,
     hgoals = sorted(goalset)[::max(1, len(goalset) // 300)] or list(goalset)
     def h(node):
         li, cx, cy = node
-        return min(abs(cx - gx) + abs(cy - gy) for (_, gx, gy) in hgoals)
+        return min(max(abs(cx - gx), abs(cy - gy)) +
+                   0.4142 * min(abs(cx - gx), abs(cy - gy))
+                   for (_, gx, gy) in hgoals)
     def centre(node):
         return ((node[1] + 0.5) * CELL, (node[2] + 0.5) * CELL)
     # ---- fanout macros (escape routing) ----
@@ -333,12 +335,14 @@ def astar6(items, starts, goals, netname, width, clr, cap=900000,
                 gscore[nb] = ng; came[nb] = node
                 bends[(node, nb)] = bend
                 heapq.heappush(openh, (ng + h(nb), nb))
-        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1),
+                       (1, 1), (1, -1), (-1, 1), (-1, -1)):
             nx, ny = cx + dx, cy + dy
             if not (0 <= nx < W and 0 <= ny < H):
                 continue
             nb = (li, nx, ny)
-            ng = gscore[node] + 1
+            ng = gscore[node] + (1 if dx == 0 or dy == 0
+                                 else math.sqrt(2))
             if nb in gscore and gscore[nb] <= ng:
                 continue
             bx, by = anchors.get(nb, centre(nb)) \

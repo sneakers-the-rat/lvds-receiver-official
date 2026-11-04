@@ -27,6 +27,14 @@ import repair
 import router6
 from router import netclass
 
+# NOTE (verified 2026-11-04): repair.build_items / compute_groups
+# key layers by router.LAYERS = [F_Cu, In2_Cu, B_Cu] — the same
+# indices router6 uses (F=0, In2=1, B=2). A duplicate re-keyed
+# builder pair was briefly added here under a misdiagnosis (the
+# audit-repair6-attempt1 spike was stale zone fills on a killed
+# run's checkpoint, not layer keys) and removed; the originals are
+# correct and are what this file uses.
+
 
 def main(board_path="hw/pdlvds_rx.kicad_pcb", out=None):
     if out is None:
