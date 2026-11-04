@@ -1349,6 +1349,34 @@
       },
       "description": "small-disc clear (16,10) r3.0: HV_INTVCC U10.8 / HV_SS U10.3 stubs still refused by the stub search's openness test",
       "note": ""
+    },
+    {
+      "pass": 50,
+      "timestamp": "2026-11-04T20:05:10Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr35.kicad_pcb",
+      "dir": "pass-0050",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 54,
+        "audit_verdict": "FAIL"
+      },
+      "description": "small-disc clear (52.5,54) r2.6 with immediate stub: REFCLKN U4.11 stubbed; THRADJ U4.9 still sealed",
+      "note": ""
     }
   ],
   "gaps": [
