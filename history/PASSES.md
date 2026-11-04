@@ -432,6 +432,14 @@ small-disc clear (52.5,54) r2.6 with immediate stub: REFCLKN U4.11 stubbed; THRA
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 54 · Audit verdict: FAIL
 
+### Pass 51 — 2026-11-04T20:06:04Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr37.kicad_pcb` · Commit: `pending`
+
+surgery2 (hw/surgery2.py — probe 16 directions, rip the cheapest rippable blockers, place a 0.2 mm neck): +3V3A U7.6 stubbed (1 DP_PHY via ripped), USB_RST U6.40, HV_INTVCC U10.8, HV_SS U10.3 stubbed (their necks were clean all along; the stub search's endpoint-openness test had been the blocker)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 54 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
