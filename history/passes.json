@@ -1545,6 +1545,34 @@
       },
       "description": "repairg healing: 17 groups connected (ripup victims repaid; APD_K's three groups merged); 39 unconnected nets, 83 groups, clearance 3",
       "note": ""
+    },
+    {
+      "pass": 57,
+      "timestamp": "2026-11-04T20:14:26Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr43.kicad_pcb",
+      "dir": "pass-0057",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 37,
+        "audit_verdict": "FAIL"
+      },
+      "description": "hand bridges (hw/bridge.py): VBUS_RAW, ULPI_D0 and +5V group pairs bridged across 1.0-1.45 mm gaps, one fence item ripped each",
+      "note": ""
     }
   ],
   "gaps": [
