@@ -784,3 +784,39 @@ merged should show the DRC step passing as board state — at
 726/190 as "no regression", or at 727/190 (if the jitter lands
 that way again) as "within checker jitter tolerance", with the
 site panel showing the matching wording.
+
+### Stage 7c in-flight report (2026-11-03 ~17:20 PST)
+
+Two runs were in flight in /tmp scratch trees when the VM was
+replaced again (~01:43 UTC; uptime 1 min on return, /tmp a fresh
+tmpfs). Both scratch trees, their logs and checkpoints are LOST.
+The repo and ~/workspace/tools survived intact. Numbers below are
+from log tails read at 01:18 UTC, before the loss.
+
+v6 full-board route (gen_pcb --router6, SAFE tolerance fixed):
+main pass COMPLETED — all 112 nets attempted in 1,830 s (~2x the
+v5 router's per-net pace, inside the expected band), checkpoint
+saves verified on disk at net 110; retry pass 1 was running with
+138 failed pins when the VM died. The final board was never saved
+(gen_pcb saves after route + zone fill). RELAUNCHED from a durable
+workspace scratch tree (see below); the 138-failed-pins figure is
+the number the retries + repair6 must beat down.
+
+Freerouting FR-1: DEAD-IN-PLACE, root cause identified before the
+VM loss. The v2.5.0 native CLI's autorouter thread throws
+UnsupportedFeatureError (GraalVM native-image: no serialization
+constructor for board.model.items.ComponentOutline) seconds after
+job start; the process then idles forever (46 min elapsed, 2 s
+CPU). Reproduced identically with -mt 1. The native CLI build is
+therefore unusable for this board. Plan B in progress: the same
+release's AppImage (JVM build — no GraalVM serialization path),
+extracted under ~/workspace/tools/freerouting/; its bundled JRE
+can also run the plain jar. FR-1's own log noted, for the record:
+140 pre-existing pin-to-pin clearance violations by Freerouting's
+reading of the unrouted board, and J2 pins 5/6 lying outside the
+board outline at x = 102.08 mm (a placement fact — J2 overhangs
+the edge; to be accounted in the final write-up).
+
+Recovery change: all scratch state now lives under ~/workspace
+(pdlvds-v6run/, pdlvds-fr/) — /tmp does not survive this VM's
+replacements, the workspace does.
