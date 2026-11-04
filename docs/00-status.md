@@ -1249,3 +1249,46 @@ apply the same rolling-cache pattern.
   lane may be sitting in that checkout's working tree — the same
   edit is committed here on `site-jekyll`, so it can be discarded
   there.
+## Input-split compaction rule corrected (2026-11-04)
+
+- **What was wrong**: the input-split estimator
+  (`metrics/estimate_input_split.py`) kept pre-compaction item
+  identities alive across a compaction — only the summary counted as
+  NEW at the first request of the new segment and kept items accrued
+  REPEATED from that first send. The project owner ruled this rule
+  incorrect, and it is: it measured *content repetition* (had this
+  text ever been sent before), which overstates the cache-served
+  share.
+- **Correct rule** (now implemented): a prefix cache is keyed on the
+  exact token prefix of a single context window; a compaction starts
+  a NEW window that matches nothing cached, so at the first request
+  after a compaction the ENTIRE surviving context — summary and every
+  kept item — is uncached (NEW), and accrues REPEATED only from the
+  window's second request on. The change in `reconstruct()` is one
+  assignment (`pending_new = ctx_chars` at the boundary); the old
+  manual add-on that layered the final segment's starting context on
+  top of the summary for single-row agents (a double count) is
+  removed, as the rule now counts that context exactly once itself.
+- **Corrected figures** (same frozen snapshot, recorded input
+  133,253,984, estimable 132,657,139; every record still satisfies
+  new + repeated = recorded exactly): NEW 4,780,664 → **4,816,164**,
+  REPEATED 127,876,475 → **127,840,975** (repeated share 96.40% →
+  **96.37%** of estimable). Chat tree 2.51% new / 97.49% repeated;
+  checkpoint cron unchanged (no compactions). Per agent: root NEW
+  28,213 → 79,055; build coordinator #1 NEW 58,608 → 43,266 (the
+  removed double count outweighed its kept-context correction).
+- **Validation re-run**: the split-half totals validation and the
+  compaction-anchor cross-check were re-run; every fit statistic is
+  identical to the published values (the fit never depended on the
+  split rule) — held-out median recorded/estimated ratio 1.03,
+  median absolute error 3.5% raw / 3.2% after correction. The
+  regenerated validation file lists one extra anchor (the root
+  agent compacted again at 2026-11-04T10:47:56Z, after the frozen
+  export; its segment has no frozen rows and changes no figure).
+- **Cost summary**: `cost_summary.csv` is byte-identical after
+  regeneration (headlines Muse $359.15 / Claude $410.80 / OpenAI
+  $823.65 do not depend on the split). The printed measured-share
+  sensitivity moves slightly with the corrected shares: Muse
+  $44.31 → $44.39, Claude $44.67 → $44.77, OpenAI $123.20 → $123.37.
+- Method, correction note and updated numbers are documented in
+  `metrics/README.md` (input-split section).

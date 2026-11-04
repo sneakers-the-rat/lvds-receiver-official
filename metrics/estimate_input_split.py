@@ -25,15 +25,27 @@ Model of a transcript:
   all appear in another project transcript. The slice counts as the
   agent's starting context (new at its first own request); requests
   inside the slice were the parent's and are not counted.
-- Compactions (`compaction_checkpoint` records): the summary replaces
-  all items before `first_kept_seq`; kept items continue. The summary
-  is new at its first send; dropped items stop accruing repeats.
+- Compactions (`compaction_checkpoint` records): a compaction starts
+  a NEW context window. The summary replaces all items before
+  `first_kept_seq`; dropped items are gone. A prefix cache is keyed
+  on the exact token prefix of a single window, so the new window's
+  prefix matches nothing cached: at the first request after a
+  compaction the ENTIRE surviving context — the summary AND every
+  kept item — is uncached (NEW); from the second request in the new
+  window on, that context accrues REPEATED normally. Identical
+  content at new positions behind different preceding text is a
+  different prefix and does not hit a prefix cache. (An earlier
+  version of this estimator kept kept items' identities alive across
+  the boundary and counted only the summary as new; that measured
+  content repetition, not cache behaviour, and overstated the
+  repeated share. Corrected 2026-11-04 — see metrics/README.md.)
 - Single-row agents WITH compactions: the build coordinator #1's row
   reconciles only against its post-last-compaction segment (predicted
   ~1.37M + 21 x preamble vs recorded 2,224,018; the whole-run stream
   predicts ~55M, 25x the record). Such rows are therefore modelled on
-  the final segment only, with the segment's starting context counted
-  as new at its first request. Flagged in the validation file.
+  the final segment only; the compaction rule above already counts
+  the segment's starting context as new at its first request, because
+  the segment opens a new window. Flagged in the validation file.
 
 Item sizes are text character counts. A chars-per-token factor and a
 preamble size (tokens) are fitted PER CLASS (root / chat-tree
@@ -188,7 +200,12 @@ def reconstruct(items, compactions, include_thinking=True,
             context = {-1 - seg: ev['summary_chars']}
             context.update(kept)
             ctx_chars = sum(context.values())
-            pending_new += ev['summary_chars']
+            # New context window: the whole surviving context (summary
+            # + kept items) is uncached at the first request after the
+            # compaction, so it all counts as NEW there; anything still
+            # pending from before the boundary is either inside
+            # ctx_chars (kept) or gone (dropped). Assign, don't add.
+            pending_new = ctx_chars
             anchors[-1]['chars_after'] = ctx_chars
             seg += 1
             continue
@@ -316,11 +333,12 @@ def main():
                 if single_row and compactions and rs:
                     max_seg = max(r['seg'] for r in rs)
                     if max_seg > 0:
-                        seg0_ctx = an[max_seg - 1]['chars_after'] if an else 0
+                        # Final segment only. No manual new-count
+                        # adjustment for its starting context:
+                        # reconstruct()'s compaction rule already
+                        # counts the whole surviving context as new at
+                        # the segment's first request (new window).
                         rs = [r for r in rs if r['seg'] == max_seg]
-                        if rs:
-                            rs[0]['new_chars'] += seg0_ctx
-                            rs[0]['segment_start'] = True
                 responses += rs
                 anchors += an
             responses.sort(key=lambda r: r['end_ts'])
