@@ -536,9 +536,9 @@ ULPI_NXT escape hand-placed: from U7.11's surgery stub, SW 2.2 mm to open field 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 4 · Unconnected nets: 35 · Audit verdict: FAIL
 
-### Pass 64 — 2026-11-04T21:24:00Z · commit `pending`
+### Pass 64 — 2026-11-04T21:24:00Z · commit `28f0b1f`
 
-Board: `hw/pdlvds_rx.fr50.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr50.kicad_pcb` · Commit: `28f0b1f67920694147922fec8b7e514a7a908bd6`
 
 repairg healing on the NXT-escape board: 1 group connected — the heal curve is exhausted on this residue (68, 40, 17, 12, 1 across the last five heals); the remaining bridges are astar-proof in the current field and need forced geometry (ripup/hand bridges). A clean re-run (fr51) reproduced this state exactly: 35 unconnected nets
 
