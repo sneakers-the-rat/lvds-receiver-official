@@ -200,9 +200,9 @@ repair6 healing checkpoint 1 on the cluster-cleared board (fr4): victims of the 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 35 · Audit verdict: FAIL
 
-### Pass 22 — 2026-11-04T14:49:45Z · commit `pending`
+### Pass 22 — 2026-11-04T14:49:45Z · commit `910b627`
 
-Board: `hw/pdlvds_rx.fr5.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.fr5.kicad_pcb` · Commit: `910b627e8b2880ce53ad1c11d1dd4c890869d59b`
 
 repair6 healing run on the cluster-cleared board, final state: unconnected nets 38 -> 35; -VA, SET_A and ULPI_D1 healed outright, the U7-clearing victims partially reconnected; a final sweep connected 0 and the run stopped. Residue is now almost entirely pad-ring clusters (U4, U13, U10, U9, U7 rows) plus D1.4/D1.5, J1.A9, U11.14 and GND islands — cluster clearing is the next tool for each
 
