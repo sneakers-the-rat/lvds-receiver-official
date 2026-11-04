@@ -1,0 +1,75 @@
+board: hw/pdlvds_rx.fr51.kicad_pcb
+footprints total: 144
+footprints with courtyard polygon: 139
+footprints without courtyard: [('U9', 'empty'), ('SH1', 'empty'), ('D2', 'empty'), ('D1', 'empty'), ('T1', 'empty')]
+same-side courtyard BBOX overlap pairs: 35
+  BBOX C1 x C5 (top)
+  BBOX C16 x C17 (top)
+  BBOX C20 x L2 (top)
+  BBOX C21 x C6 (top)
+  BBOX C4 x C33 (top)
+  BBOX C41 x C51 (top)
+  BBOX C41 x FB2 (top)
+  BBOX C41 x R40 (top)
+  BBOX C51 x C13 (top)
+  BBOX D8 x U1 (top)
+  BBOX F1 x C38 (top)
+  BBOX F1 x D4 (top)
+  BBOX MH5 x C33 (top)
+  BBOX MH5 x C4 (top)
+  BBOX R11 x J3 (top)
+  BBOX R12 x U13 (top)
+  BBOX R17 x FB2 (top)
+  BBOX R24 x C30 (top)
+  BBOX R24 x R28 (top)
+  BBOX R27 x C35 (top)
+  BBOX R36 x C37 (top)
+  BBOX R40 x C13 (top)
+  BBOX R41 x R42 (top)
+  BBOX U1 x R1 (top)
+  BBOX U12 x R5 (top)
+  BBOX U14 x C14 (top)
+  BBOX U5 x C17 (top)
+  BBOX U5 x C28 (top)
+  BBOX U6 x C19 (top)
+  BBOX U6 x C49 (top)
+  BBOX U6 x R15 (top)
+  BBOX U6 x R16 (top)
+  BBOX X1 x C21 (top)
+  BBOX X2 x C14 (top)
+  BBOX X2 x R42 (top)
+same-side courtyard POLYGON overlap pairs (area > 0.001 mm^2): 34
+  POLY C1 x C5 (top) area=0.1080 mm^2
+  POLY C16 x C17 (top) area=0.1552 mm^2
+  POLY C20 x L2 (top) area=0.1384 mm^2
+  POLY C21 x C6 (top) area=0.1278 mm^2
+  POLY C4 x C33 (top) area=4.3216 mm^2
+  POLY C41 x C51 (top) area=0.1831 mm^2
+  POLY C41 x FB2 (top) area=0.2417 mm^2
+  POLY C41 x R40 (top) area=0.3577 mm^2
+  POLY C51 x C13 (top) area=0.2669 mm^2
+  POLY D8 x U1 (top) area=0.7936 mm^2
+  POLY F1 x C38 (top) area=0.6647 mm^2
+  POLY F1 x D4 (top) area=0.3200 mm^2
+  POLY MH5 x C33 (top) area=1.3963 mm^2
+  POLY MH5 x C4 (top) area=0.0659 mm^2
+  POLY R11 x J3 (top) area=3.1390 mm^2
+  POLY R12 x U13 (top) area=1.3481 mm^2
+  POLY R17 x FB2 (top) area=0.1771 mm^2
+  POLY R24 x C30 (top) area=0.2116 mm^2
+  POLY R24 x R28 (top) area=0.2076 mm^2
+  POLY R27 x C35 (top) area=0.0588 mm^2
+  POLY R36 x C37 (top) area=0.0378 mm^2
+  POLY R40 x C13 (top) area=0.1817 mm^2
+  POLY R41 x R42 (top) area=0.3650 mm^2
+  POLY U1 x R1 (top) area=0.1674 mm^2
+  POLY U12 x R5 (top) area=0.1496 mm^2
+  POLY U14 x C14 (top) area=0.2816 mm^2
+  POLY U5 x C17 (top) area=1.2155 mm^2
+  POLY U5 x C28 (top) area=0.3451 mm^2
+  POLY U6 x C19 (top) area=0.1898 mm^2
+  POLY U6 x C49 (top) area=0.1898 mm^2
+  POLY U6 x R15 (top) area=0.1898 mm^2
+  POLY X1 x C21 (top) area=0.8294 mm^2
+  POLY X2 x C14 (top) area=0.1040 mm^2
+  POLY X2 x R42 (top) area=0.2774 mm^2
