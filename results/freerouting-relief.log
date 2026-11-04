@@ -1,0 +1,38 @@
+=== relief chain start 12:31:22 ===
+jre25 installed on attempt 10 12:35:12
+openjdk version "25.0.4.1" 2026-08-18
+OpenJDK Runtime Environment (build 25.0.4.1+1-1-24.04.4-Ubuntu)
+OpenJDK 64-Bit Server VM (build 25.0.4.1+1-1-24.04.4-Ubuntu, mixed mode, sharing)
+2026-11-04 12:35:16.668 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-11-04 12:35:17.424 INFO   Hardware: 4 CPU cores, 32 CPU score, 1984 MB RAM
+2026-11-04 12:35:17.475 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-11-04 12:35:17.479 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-11-04 12:35:17.555 INFO   Configured network proxy: hatch-egress-proxy:3128
+2026-11-04 12:35:19.026 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-11-04 12:35:19.661 INFO   [306070\1898EC] Loading board file 'relief.dsn'...
+2026-11-04 12:35:20.817 INFO   [306070\1898EC] Job '306070\1898EC' started at 2026-11-04T12:35:20.817478614Z.
+2026-11-04 12:35:21.247 WARN   Design Warning: Board has 84 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 84 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 84 pin-to-pin clearance violations (first 5 shown):
+          - T1.3 <-> R28.2 [net GND]
+          - U10.10 [net +5V] <-> U10.9 [net HV_SHDN]
+          - U13.9 [net +VA] <-> U13.8 [net GND]
+          - U13.7 [net SET_P] <-> U13.6 [net +5V]
+          - U13.4 <-> U13.3 [net +5V]
+          ... and 79 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 84 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-11-04 12:35:21.536 INFO   [306070\1898EC] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=3.
+2026-11-04 12:35:22.080 INFO   [306070\1898EC] Fanout stage started on board 'c75005309775415613953f7998c55a44' with 503 of 607 SMD pins needing fanout (0 already connected, 104 netless).
+2026-11-04 12:35:23.714 WARN   Analytics tracking: first delivery failure in this window - /v1/analytics/track - SocketException: Connection reset. Further failures will be aggregated and reported every 60 minutes. → Action: Server closed the connection unexpectedly. This may indicate server overload, an intermediate proxy resetting idle connections, or a server-side crash.
+2026-11-04 12:35:53.188 INFO   [306070\1898EC] Fanout pass #1 on board '537bb71e8708c13b54142c160a52ede1' completed in 30.30 seconds with 165 SMD pins fanouted, 323 not routed, 0 insert errors, +2 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-11-04 12:36:17.133 INFO   [306070\1898EC] Fanout pass #2 on board '8d5349665fd3260018fb7789d0a3542d' completed in 23.48 seconds with 18 SMD pins fanouted, 296 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=200).
+2026-11-04 12:36:27.748 INFO   [306070\1898EC] Fanout pass #3 on board 'b52d7239249224c6c68470673a13ed4e' completed in 10.41 seconds with 2 SMD pins fanouted, 98 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-11-04 12:36:30.951 INFO   [306070\1898EC] Fanout pass #4 on board 'c3720a4db735067f73484b9b17185b87' completed in 3.11 seconds with 0 SMD pins fanouted, 38 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+2026-11-04 12:36:32.078 INFO   [306070\1898EC] Fanout stage completed: started with 503 total SMD pins, completed in 69.65 seconds, escaped pins: 246/503 (48.9%), using 26.08 total CPU seconds, 7.63 GB total allocated, and 255.0 MB peak heap usage.
+2026-11-04 12:36:34.821 INFO   [306070\1898EC] Auto-routing stage started on board 'c3720a4db735067f73484b9b17185b87' with baseline score 303.10 for 224 unrouted items.
+2026-11-04 12:43:48.647 INFO   [306070\1898EC] Auto-routing pass #1 on board 'c3720a4db735067f73484b9b17185b87' was completed in 431.92 seconds with score 520.21 (148 unrouted and 84 violations), using 240.42 CPU seconds and the job allocated 118.31 GB of memory so far.
+2026-11-04 12:50:50.050 INFO   [306070\1898EC] Auto-routing pass #2 on board '05ebc7b16e9ed5e979c0be8fc68c2598' was completed in 420.73 seconds with score 220.78 (275 unrouted and 84 violations), using 392.68 CPU seconds and the job allocated 195.37 GB of memory so far.
+2026-11-04 12:56:02.947 INFO   [306070\1898EC] Auto-routing pass #3 on board '95523c4f1a400c0b36bbede115016c20' was completed in 312.57 seconds with score 222.39 (274 unrouted and 84 violations), using 539.58 CPU seconds and the job allocated 271.53 GB of memory so far.
+FREEROUTING_EXIT=130 12:56:34

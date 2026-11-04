@@ -1,0 +1,42 @@
+=== relief route run 2 (-mp 6, no timeout) start 12:57:30 ===
+2026-11-04 12:57:34.027 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-11-04 12:57:34.896 INFO   Hardware: 4 CPU cores, 93 CPU score, 1984 MB RAM
+2026-11-04 12:57:34.900 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-11-04 12:57:34.902 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-11-04 12:57:34.909 INFO   Configured network proxy: hatch-egress-proxy:3128
+2026-11-04 12:57:36.370 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-11-04 12:57:37.301 INFO   [717BB2\148B93] Loading board file 'relief.dsn'...
+2026-11-04 12:57:38.218 INFO   [717BB2\148B93] Job '717BB2\148B93' started at 2026-11-04T12:57:38.217794130Z.
+2026-11-04 12:57:39.060 WARN   Design Warning: Board has 84 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 84 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 84 pin-to-pin clearance violations (first 5 shown):
+          - T1.3 <-> R28.2 [net GND]
+          - U10.10 [net +5V] <-> U10.9 [net HV_SHDN]
+          - U13.9 [net +VA] <-> U13.8 [net GND]
+          - U13.7 [net SET_P] <-> U13.6 [net +5V]
+          - U13.4 <-> U13.3 [net +5V]
+          ... and 79 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 84 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-11-04 12:57:39.760 INFO   [717BB2\148B93] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=3.
+2026-11-04 12:57:40.320 INFO   [717BB2\148B93] Fanout stage started on board 'c75005309775415613953f7998c55a44' with 503 of 607 SMD pins needing fanout (0 already connected, 104 netless).
+2026-11-04 12:57:40.552 WARN   Analytics tracking: first delivery failure in this window - /v1/analytics/track - SocketException: Connection reset. Further failures will be aggregated and reported every 60 minutes. → Action: Server closed the connection unexpectedly. This may indicate server overload, an intermediate proxy resetting idle connections, or a server-side crash.
+2026-11-04 12:58:10.438 INFO   [717BB2\148B93] Fanout pass #1 on board '5e04f67c32636f2560cca95cc9e5f086' completed in 29.30 seconds with 165 SMD pins fanouted, 323 not routed, 0 insert errors, +2 extra vias (0 SMD pins still to check in pass, ripup costs=100).
+2026-11-04 12:58:34.721 INFO   [717BB2\148B93] Fanout pass #2 on board '5eb99e533f25ebb73b55c41c682ea686' completed in 24.14 seconds with 18 SMD pins fanouted, 296 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=200).
+2026-11-04 12:58:41.553 INFO   [717BB2\148B93] Fanout pass #3 on board '699ff2bd702ec1067291bd69d3f28e2a' completed in 6.79 seconds with 2 SMD pins fanouted, 98 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-11-04 12:58:44.733 INFO   [717BB2\148B93] Fanout pass #4 on board '59c1d9d867d252b7dbb99f6b8541f6d9' completed in 3.11 seconds with 0 SMD pins fanouted, 38 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+2026-11-04 12:58:45.507 INFO   [717BB2\148B93] Fanout stage completed: started with 503 total SMD pins, completed in 64.47 seconds, escaped pins: 246/503 (48.9%), using 24.57 total CPU seconds, 7.40 GB total allocated, and 211.6 MB peak heap usage.
+2026-11-04 12:58:47.638 INFO   [717BB2\148B93] Auto-routing stage started on board '59c1d9d867d252b7dbb99f6b8541f6d9' with baseline score 303.10 for 224 unrouted items.
+2026-11-04 13:06:47.641 INFO   [717BB2\148B93] Auto-routing pass #1 on board '59c1d9d867d252b7dbb99f6b8541f6d9' was completed in 479.08 seconds with score 520.21 (148 unrouted and 84 violations), using 239.58 CPU seconds and the job allocated 119.13 GB of memory so far.
+2026-11-04 13:10:40.381 INFO   [717BB2\148B93] Auto-routing pass #2 on board '230d0ebf8854d2a15cdfd981666d5667' was completed in 232.17 seconds with score 220.78 (275 unrouted and 84 violations), using 380.03 CPU seconds and the job allocated 196.87 GB of memory so far.
+2026-11-04 13:15:53.866 INFO   [717BB2\148B93] Auto-routing pass #3 on board '0cec5c43acb66c9c035ae6a39697a2f5' was completed in 313.12 seconds with score 222.39 (274 unrouted and 84 violations), using 526.57 CPU seconds and the job allocated 274.01 GB of memory so far.
+2026-11-04 13:19:54.857 INFO   [717BB2\148B93] Auto-routing pass #4 on board '1196852399c550b61f18d711836e06ba' was completed in 240.75 seconds with score 232.08 (268 unrouted and 84 violations), using 671.55 CPU seconds and the job allocated 354.43 GB of memory so far.
+2026-11-04 13:26:06.042 INFO   [717BB2\148B93] Auto-routing pass #5 on board '69dcc8d831b31bbf38a40c6cc0f4b8ba' was completed in 370.98 seconds with score 224.01 (273 unrouted and 84 violations), using 825.95 CPU seconds and the job allocated 435.56 GB of memory so far.
+2026-11-04 13:30:11.771 INFO   [717BB2\148B93] Auto-routing pass #6 on board 'a3d675ee1df3efcfad85a23e56b94d63' was completed in 245.42 seconds with score 227.24 (271 unrouted and 84 violations), using 966.65 CPU seconds and the job allocated 511.54 GB of memory so far.
+2026-11-04 13:30:13.453 INFO   [717BB2\148B93] Auto-routing stage completed: started with 402 unrouted nets, completed in 1953.45 seconds, final score: 520.21 (148 unrouted and 84 violations), using 967.11 total CPU seconds, 511.65 GB total allocated, and 570.1 MB peak heap usage.
+2026-11-04 13:30:14.171 INFO   [717BB2\148B93] Skipping optimization stage: the board has 148 unrouted connection(s) (optimizer only runs on completely routed boards).
+2026-11-04 13:30:14.414 INFO   [717BB2\148B93] Job '717BB2\148B93' finished with state: COMPLETED (elapsed: 32 minutes 36.19 seconds, finished at UTC: 2026-11-04T13:30:14.411775003Z).
+2026-11-04 13:30:14.456 INFO   Saving output file '/home/hatch/workspace/photodiode-lvds-rx/results/relief.ses' (SES)...
+2026-11-04 13:30:14.606 INFO   Successfully saved output file '/home/hatch/workspace/photodiode-lvds-rx/results/relief.ses' (103972 bytes).
+FREEROUTING_EXIT=0 13:30:19
