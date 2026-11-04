@@ -10,7 +10,7 @@ runs against SimBoard, a software model of the board built on the same
 codec as the firmware tests (host/codec.py):
 
   * SimBoard generates paper-format packets (sync + 11-word header +
-    5032-byte payload), encodes them 8b/10b (or Manchester in legacy
+    5032-byte payload), encodes them 8b/10b (or Manchester, the paper's
     mode), passes them through a channel model with a configurable bit
     error probability and jitter-free ideal CDR, and the host side
     decodes and verifies them — the complete verification flow a user
@@ -108,7 +108,7 @@ class SimBoard:
                 bits += codec.code_to_bits(enc.encode_symbol(0xBC, True))
             for byte in raw:
                 bits += codec.code_to_bits(enc.encode_symbol(byte))
-        else:  # manchester legacy: chips at 2x
+        else:  # manchester (paper's mode): chips at 2x
             bits = codec.manchester_encode_bytes(raw)
         bits, flips = self._channel_bits(bits)
         self.buffer_count += 1

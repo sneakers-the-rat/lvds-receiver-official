@@ -35,8 +35,8 @@ APD. Prediction (link budget): −45.6 dBm — expect ~11 dB of margin.**
    that is ~100 expected errors; do not accept a "zero errors in 1e6
    bits" point as a 1e-6 measurement).
 4. Record the power where BER crosses 1e-6. Repeat at 630 nm
-   (prediction −44.3 dBm) and in Manchester legacy mode at reduced
-   rate for a sanity point.
+   (prediction −44.3 dBm) and in Manchester mode — 8 Mbps, 16 Mbaud,
+   the paper's transmitted format at its full rate — for a sanity point.
 
 ### 2. BER waterfall and PER (paper method)
 
@@ -154,7 +154,7 @@ carries the full 40 Mbps payload rate with zero packet loss over
 4. BIST: `selftest` with the on-board LED loopback, no external
    source connected.
 
-### 9. Legacy Manchester mode
+### 9. Manchester mode — the transmitted signal
 
 **Pass: lock and error-free decode of an 8 Mbps Manchester stream
 (16 Mbaud chips), the paper's uplink format.**
