@@ -280,6 +280,14 @@ placement micro-ops: C40 flipped to the bottom side (frees U7's east-row exits; 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 36 · Unconnected nets: 55 · Audit verdict: FAIL
 
+### Pass 32 — 2026-11-04T15:33:34Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr15.kicad_pcb` · Commit: `pending`
+
+via-first hand stubs (hw/hand_via.py; via disc tested as a zero-length segment after the plus-shape bug was found): +3V3A U9.5 via@(9.27,48) with In2 tail — the last U9 pin; CDR_LOS U4.22 second escape via@(55.29,51.25)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 36 · Unconnected nets: 55 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
