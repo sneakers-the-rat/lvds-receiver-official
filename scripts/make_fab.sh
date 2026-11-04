@@ -7,13 +7,21 @@ B=hw/pdlvds_rx.kicad_pcb
 kicad-cli pcb export gerbers -o hw/fab/ "$B"
 kicad-cli pcb export drill --format excellon -o hw/fab/ "$B"
 kicad-cli pcb export pos --format csv --units mm -o hw/fab/cpl.csv "$B"
+# SVG exports are board-cropped (--page-size-mode 2
+# --exclude-drawing-sheet: no A4 drawing sheet / title block, the
+# viewBox is the board's own extent) — the same flags the pass
+# renders use (scripts/snapshot_route.py), so a fab SVG is the
+# board itself and can be sent around as a single file.
 kicad-cli pcb export svg --layers F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS,B.SilkS,Edge.Cuts \
+    --page-size-mode 2 --exclude-drawing-sheet \
     -o hw/fab/board-layers.svg "$B"
 kicad-cli pcb export pdf --layers F.Cu,In1.Cu,In2.Cu,B.Cu \
     -o hw/fab/board-layers.pdf "$B"
 # per-layer SVGs for the site
 for L in F.Cu In1.Cu In2.Cu B.Cu F.SilkS Edge.Cuts; do
-  kicad-cli pcb export svg --layers "$L" -o "hw/fab/layer-$L.svg" "$B"
+  kicad-cli pcb export svg --layers "$L" \
+    --page-size-mode 2 --exclude-drawing-sheet \
+    -o "hw/fab/layer-$L.svg" "$B"
 done
 # BOM from the verified netlist
 python3 - << 'PY'
@@ -32,8 +40,10 @@ with open("hw/fab/bom.csv", "w", newline="") as f:
 print("BOM rows:", len(groups))
 PY
 # top/bottom assembly renders as SVG -> PNG if a converter exists
-kicad-cli pcb export svg --layers F.Cu,F.SilkS,Edge.Cuts -o hw/fab/board-top.svg "$B"
-kicad-cli pcb export svg --layers B.Cu,B.SilkS,Edge.Cuts -o hw/fab/board-bottom.svg "$B"
+kicad-cli pcb export svg --layers F.Cu,F.SilkS,Edge.Cuts \
+    --page-size-mode 2 --exclude-drawing-sheet -o hw/fab/board-top.svg "$B"
+kicad-cli pcb export svg --layers B.Cu,B.SilkS,Edge.Cuts \
+    --page-size-mode 2 --exclude-drawing-sheet -o hw/fab/board-bottom.svg "$B"
 ( cd hw/fab && zip -q -r gerbers.zip . -i "*.gbr" "*.gbrjob" "*.drl" 2>/dev/null || \
   zip -q -r gerbers.zip . -i "*.gtl" "*.gbl" "*.gts" "*.gbs" "*.gto" "*.gbo" "*.drl" ) || true
 ls hw/fab/

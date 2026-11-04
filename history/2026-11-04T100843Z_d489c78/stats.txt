@@ -13,3 +13,4 @@ clearance violations: 1435
 unconnected nets: 49
 audit verdict: FAIL
 note: Mid-run checkpoint committed per user directive (run still in flight, sweep 2). 111 groups connected so far; 1435 violations is the stale-zone mid-run artifact — zones refill at run end; comparable post-refill baseline is 64.
+note: Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.

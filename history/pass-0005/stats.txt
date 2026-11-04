@@ -13,3 +13,4 @@ clearance violations: 445
 unconnected nets: 95
 audit verdict: FAIL
 note: Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
+note: Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.

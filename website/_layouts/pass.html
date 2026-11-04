@@ -14,12 +14,30 @@ layout: default
 </tbody></table>
 {% if page.renders and page.dir %}
 {% assign base = "/assets/gen/history/" | append: page.dir | append: "/" %}
-{% if page.layers %}
-<h4>Routes — all copper layers, stacked</h4>
-<div class="composite">{% assign first = true %}{% for l in site.data.layers %}{% assign fn = page.layers[l.name] %}{% if fn %}<img{% unless first %} class="stack"{% endunless %} src="{{ base | append: fn | relative_url }}" alt="{{ l.name }} layer">{% assign first = false %}{% endif %}{% endfor %}</div>
+{% comment %}Selectable gallery, same as the board page: the
+all-layers composite (ONE self-contained SVG file — every copper
+layer's geometry inline, never a browser-side stack of separate
+images) plus each copper layer on its own. Thumbnails are plain
+links; assets/js/routes-gallery.js swaps the viewer instead of
+navigating, and the viewer image is a target=_blank link to the
+currently shown SVG.{% endcomment %}
+{% assign comp = page.renders.all_layers %}
+{% assign default_file = comp %}{% assign default_label = "All layers" %}
+{% unless default_file %}{% for l in site.data.layers %}{% assign fn0 = page.layers[l.name] %}{% if fn0 %}{% assign default_file = fn0 %}{% assign default_label = l.name %}{% break %}{% endif %}{% endfor %}{% endunless %}
+{% if default_file %}
+<h4>Routes — all copper layers and each layer</h4>
+<div class="routes-gallery">
+<figure class="routes-viewer">
+<a class="routes-open" href="{{ base | append: default_file | relative_url }}" target="_blank" rel="noopener"><img class="routes-main" src="{{ base | append: default_file | relative_url }}" alt="{{ default_label }}"></a>
+<figcaption><span class="routes-caption">{{ default_label }}</span> — click the image to open the full-size SVG in a new tab.</figcaption>
+</figure>
+<div class="routes-thumbs">
+{% if comp %}<a class="routes-thumb{% if default_file == comp %} active{% endif %}" href="{{ base | append: comp | relative_url }}" data-label="All layers"><img src="{{ base | append: comp | relative_url }}" alt="All layers"><span>All layers</span></a>{% endif %}
+{% for l in site.data.layers %}{% assign fn = page.layers[l.name] %}{% if fn %}<a class="routes-thumb{% if default_file == fn %} active{% endif %}" href="{{ base | append: fn | relative_url }}" data-label="{{ l.name }}"><img src="{{ base | append: fn | relative_url }}" alt="{{ l.name }} layer"><span>{{ l.name }}</span></a>{% endif %}{% endfor %}
+</div>
+</div>
+<script src="{{ '/assets/js/routes-gallery.js' | relative_url }}" defer></script>
 <p class="legend">{% for l in site.data.layers %}{% if page.layers[l.name] %}<span class="sw" style="background:{{ l.color }}"></span> {{ l.name }} {% endif %}{% endfor %}</p>
-<h4>Routes — each copper layer</h4>
-<div class="layergrid">{% for l in site.data.layers %}{% assign fn = page.layers[l.name] %}{% if fn %}<figure><img src="{{ base | append: fn | relative_url }}" alt="{{ l.name }} layer"><figcaption>{{ l.name }} — {{ l.color }}</figcaption></figure>{% endif %}{% endfor %}</div>
 {% endif %}
 {% assign sides = "top,bottom" | split: "," %}
 {% for side in sides %}

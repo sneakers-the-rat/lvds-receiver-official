@@ -1292,3 +1292,51 @@ apply the same rolling-cache pattern.
   $44.31 → $44.39, Claude $44.67 → $44.77, OpenAI $123.20 → $123.37.
 - Method, correction note and updated numbers are documented in
   `metrics/README.md` (input-split section).
+
+## Composite fix + pass-image 404 root cause (2026-11-04)
+
+- ROOT CAUSE of every pass-page image 404ing on the live site: the
+  merge resolution that landed the pass-10 labelling fix (162d876)
+  rewrote history/passes.json as a BARE LIST, dropping the canonical
+  {"version", "rule", "passes", "gaps"} wrapper every consumer
+  expects. scripts/site_data.py reads doc["passes"] inside a
+  try/except, so the build-site staging swallowed the TypeError
+  (one warning line) and staged ZERO history renders. The pass
+  pages themselves are committed files generated before the
+  corruption, so they rendered with correct URLs — pointing at
+  files that were never staged, hence universal 404s. The same
+  corruption would also have crashed gen_pass_pages.py and
+  commit_pass.py on their next run. passes.json is restored to
+  the canonical shape;
+  the 10 pass entries are byte-identical to the intended merge
+  content (verified entry-by-entry against both merge parents:
+  5/8/9 from the render-backfill side, 10 from the labelling-fix
+  side), and version/rule/gaps are back.
+- REAL COMPOSITES: the pass page's "all copper layers, stacked"
+  view was four <img> elements CSS-stacked (B.Cu on top) — not an
+  image at all. commit_pass.render_pass() now also exports
+  board-all-layers.svg: all four copper layers in ONE kicad-cli
+  export, recoloured onto the site palette, board-cropped,
+  registered in passes.json renders as "all_layers". Backfilled
+  for passes 1–10 from each pass's board as of its own commit
+  (verified per file: 0 <image> elements, all four palette
+  colours, viewBox identical to the pass's layer renders);
+  provenance sentence appended to each pass's note in passes.json,
+  PASSES.md and stats.txt, mirroring the renders backfill.
+- PASS PAGES: the CSS stack and the per-layer grid are replaced by
+  the same thumbnail switcher as the board page (All layers +
+  F.Cu/In1.Cu/In2.Cu/B.Cu; viewer click opens the current view in
+  a new tab). routes-gallery.js is now class-based and scoped per
+  .routes-gallery container, serving both pages; board.md's viewer
+  elements gained the matching classes. All 10 pass pages
+  regenerated.
+- FAB CROPS: scripts/make_fab.sh's SVG exports (board-layers.svg,
+  layer-*.svg, board-top/bottom.svg) now pass --page-size-mode 2
+  --exclude-drawing-sheet, like the pass renders: viewBox
+  297.0022x210.0072 (A4 sheet with title block) -> 105.6894x85.0138
+  (the board). PDF export unchanged.
+- VERIFICATION (local jekyll build): 101 asset references across
+  the board page and all 10 pass pages checked mechanically —
+  0 missing. Stub-DOM test against the built pass-10 markup:
+  thumbnail click swaps viewer src, open-link href, caption and
+  active highlight.

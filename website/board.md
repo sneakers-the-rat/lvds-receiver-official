@@ -24,8 +24,8 @@ scripts/site_data.py), so the render stands alone in that tab.{% endcomment %}
 {% if default_file %}
 <div class="routes-gallery">
 <figure class="routes-viewer">
-<a id="routes-open" href="{{ '/assets/gen/' | append: default_file | relative_url }}" target="_blank" rel="noopener"><img id="routes-main" src="{{ '/assets/gen/' | append: default_file | relative_url }}" alt="{{ default_label }}"></a>
-<figcaption><span id="routes-caption">{{ default_label }}</span> — click the image to open the full-size SVG in a new tab.</figcaption>
+<a id="routes-open" class="routes-open" href="{{ '/assets/gen/' | append: default_file | relative_url }}" target="_blank" rel="noopener"><img id="routes-main" class="routes-main" src="{{ '/assets/gen/' | append: default_file | relative_url }}" alt="{{ default_label }}"></a>
+<figcaption><span id="routes-caption" class="routes-caption">{{ default_label }}</span> — click the image to open the full-size SVG in a new tab.</figcaption>
 </figure>
 <div class="routes-thumbs">
 {% if site.data.board.composite %}<a class="routes-thumb{% if default_file == 'board-layers.svg' %} active{% endif %}" href="{{ '/assets/gen/board-layers.svg' | relative_url }}" data-label="All layers"><img src="{{ '/assets/gen/board-layers.svg' | relative_url }}" alt="All layers"><span>All layers</span></a>{% endif %}

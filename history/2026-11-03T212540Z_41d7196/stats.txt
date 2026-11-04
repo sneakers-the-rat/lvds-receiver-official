@@ -13,3 +13,4 @@ clearance violations: 454
 unconnected nets: not recorded
 audit verdict: FAIL
 note: Clearance figure is the v4 audit's violating-pair count (454, of which 126 at gap 0.0 = literal shorts) as recorded in commit f8b9d1c; no audit file was committed at 41d7196 itself. Unconnected-net count for v4 not recorded.
+note: Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.

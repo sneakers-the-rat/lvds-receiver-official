@@ -26,7 +26,7 @@ Placement only: 144 footprints placed, GND zones and the HV isolation slot drawn
 
 Nets fully routed: 0 of 112 · Pins failed: not recorded · Clearance violations: not recorded · Unconnected nets: not recorded · Audit verdict: not recorded
 
-Snapshot renders were made later from the board as committed at d0c0bca.
+Snapshot renders were made later from the board as committed at d0c0bca. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 2 — 2026-11-03T20:52:25Z · commit `3ac1a43`
 
@@ -34,7 +34,7 @@ Board: `hw/pdlvds_rx.kicad_pcb` · Commit: `3ac1a430b6b34aad838f234624f8244d95d5
 
 First committed routed board. Router gains neck-down where wide tracks meet fine-pitch pads and power-first net ordering (HV > power > LVDS > signals) — the fixes for the uncommitted v1/v2 failures (see gaps). 57 of 112 nets fully routed, 90 pins failed; no audit file was committed with this pass, so clearance violations and unconnected nets are not recorded.
 
-Nets fully routed: 57 of 112 · Pins failed: 90 · Clearance violations: not recorded · Unconnected nets: not recorded · Audit verdict: not recorded
+Nets fully routed: 57 of 112 · Pins failed: 90 · Clearance violations: not recorded · Unconnected nets: not recorded · Audit verdict: not recorded Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 3 — 2026-11-03T21:25:40Z · commit `41d7196`
 
@@ -42,7 +42,7 @@ Board: `hw/pdlvds_rx.kicad_pcb` · Commit: `41d7196ba016876cd4c570858b575174c105
 
 Goal-cell exemption fix: a net's own target cells no longer count as blocked for it. 67 of 112 nets fully routed, 59 pins failed. The clearance figure (454) is the audit's violating-pair count as recorded in commit f8b9d1c — no audit file was committed with the pass itself — and the unconnected-net count was not recorded.
 
-Nets fully routed: 67 of 112 · Pins failed: 59 · Clearance violations: 454 · Unconnected nets: not recorded · Audit verdict: FAIL
+Nets fully routed: 67 of 112 · Pins failed: 59 · Clearance violations: 454 · Unconnected nets: not recorded · Audit verdict: FAIL Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 4 — 2026-11-03T22:29:05Z · commit `fb2acf7`
 
@@ -50,7 +50,7 @@ Board: `hw/pdlvds_rx.kicad_pcb` · Commit: `fb2acf7b80f74860a8301a3cce6eaf4df1ab
 
 Stricter clearance model in the router: vias never exempt, segment-midpoint tests, layer-aware HV clearance. Traded connections for correctness — 58 of 112 nets fully routed, 74 pins failed. First pass with a full audit committed: 98 unconnected nets, 341 clearance violations.
 
-Nets fully routed: 58 of 112 · Pins failed: 74 · Clearance violations: 341 · Unconnected nets: 98 · Audit verdict: FAIL
+Nets fully routed: 58 of 112 · Pins failed: 74 · Clearance violations: 341 · Unconnected nets: 98 · Audit verdict: FAIL Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 5 — 2026-11-04T00:18:21Z · commit `162cc87`
 
@@ -60,7 +60,7 @@ Repair pass over the pass-4 board — the first repair run to survive to a commi
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 445 · Unconnected nets: 95 · Audit verdict: FAIL
 
-Audit: results/audit-repair-attempt4.txt, committed with the pass (copper items 2,208). No renders were committed for this pass. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
+Audit: results/audit-repair-attempt4.txt, committed with the pass (copper items 2,208). No renders were committed for this pass. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 6 — 2026-11-04T03:50:41Z · commit `b805fc3`
 
@@ -70,7 +70,7 @@ Router rewritten with an exact clearance model — per-segment shape-distance te
 
 Nets fully routed: 30 of 112 · Pins failed: 144 · Clearance violations: 64 · Unconnected nets: 83 · Audit verdict: FAIL
 
-Audit: results/audit-v6-attempt1.txt (copper items 1,588).
+Audit: results/audit-v6-attempt1.txt (copper items 1,588). Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 7 — 2026-11-04T06:10:45Z · commit `67722e0`
 
@@ -80,7 +80,7 @@ Repair over the pass-6 board, with two-segment fanout escapes for pads sitting o
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 64 · Unconnected nets: 62 · Audit verdict: FAIL
 
-Audit: results/audit-repair6-attempt1.txt, committed with the pass (copper items 2,115). Pins-failed is recorded as not recorded: no figure exists in this pass's own records (the old gallery index carried 74, parsed from a stale build log, not from this pass).
+Audit: results/audit-repair6-attempt1.txt, committed with the pass (copper items 2,115). Pins-failed is recorded as not recorded: no figure exists in this pass's own records (the old gallery index carried 74, parsed from a stale build log, not from this pass). Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 8 — 2026-11-04T08:21:31Z · commit `f2b2fbe`
 
@@ -90,7 +90,7 @@ Bundled change — two strategy changes in a single commit, the practice this co
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: not recorded · Unconnected nets: not recorded · Audit verdict: not recorded
 
-Board saved as hw/pdlvds_rx.repaired6b.kicad_pcb (1,587 tracks per results/repair6-attempt2.log). No audit was committed for this pass, so unconnected nets and clearance violations are not recorded. No renders were committed. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
+Board saved as hw/pdlvds_rx.repaired6b.kicad_pcb (1,587 tracks per results/repair6-attempt2.log). No audit was committed for this pass, so unconnected nets and clearance violations are not recorded. No renders were committed. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 9 — 2026-11-04T08:30:34Z · commit `e8a0954`
 
@@ -100,7 +100,7 @@ Placement change, answering pass 8's diagnosis: the U7/U12/L2/X1 cluster is move
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 64 · Unconnected nets: 69 · Audit verdict: FAIL
 
-Audit: results/audit-moved.txt, committed with the pass (copper items 1,392). No renders were committed for this pass. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
+Audit: results/audit-moved.txt, committed with the pass (copper items 1,392). No renders were committed for this pass. Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
 
 ### Pass 10 — 2026-11-04T10:08:43Z · commit `d489c78`
 
@@ -138,4 +138,5 @@ That section states this log is authoritative and later entries
 reconcile. Under the rule above, d489c78 is **pass 10** (an
 offset of −4), and the next pass is **pass 11**. Any "pass 15"
 subject written against the provisional count refers to what
-is pass 11 here.
+is pass 11 here. Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
+
