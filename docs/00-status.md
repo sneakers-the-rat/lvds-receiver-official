@@ -939,3 +939,54 @@ order): passes 1-5 = v1..v5 routes; 6-9 = repair attempts 1-4;
 (e8a0954); **14 = repair6-on-placement-revised-board checkpoint
 1 (d489c78)**. Pass 15 will be that run's next checkpoint/sweep
 state, and so on.
+
+## Pass system — structure (2026-11-04, branch pass-structure)
+
+The pass counter now has its machinery, built by the structure
+worker on the `pass-structure` branch:
+
+- **The log**: `history/PASSES.md` (human) + `history/passes.json`
+  (machine; the site reads it). Numbering rule: a pass is a commit
+  that produced a new board state (a routing or placement change to
+  a `hw/*.kicad_pcb`), numbered in commit order; pass 1 is the first
+  committed board state. Strategy changes are changelog lines, never
+  names.
+- **Backfilled sequence: 10 passes.** 1 = placed board (d0c0bca);
+  2 = first routed board, neck-down + power-first (3ac1a43);
+  3 = goal-cell exemption fix (41d7196); 4 = stricter clearance
+  model, first committed audit (fb2acf7); 5 = repair over pass 4,
+  not adopted, model-gap verdict (162cc87); 6 = exact-model router,
+  full-board route, adopted (b805fc3); 7 = repair + fanout escapes
+  (67722e0); 8 = diagonals + repair re-run bundled, 0 groups
+  (f2b2fbe); 9 = placement revision unboxing U7/U12/L2/X1
+  (e8a0954); **10 = repair on the placement-revised board,
+  checkpoint 1 (d489c78)**. The next pass is 11.
+- **Reconciliation**: the "Pass numbering" section above counted
+  d489c78 provisionally as 14, including five runs whose boards
+  were never committed (router v1/v2, repair attempts 1–3) and not
+  counting the placed board. That section defers to the pass log;
+  under the log's rule the offset is −4, and any future "pass 15"
+  subject written against the provisional count is pass 11 in the
+  log. The uncommitted runs are accounted in PASSES.md's "Gaps"
+  section — not numbered, not silently dropped.
+- **One-command flow**: `python3 scripts/commit_pass.py "what
+  changed"` audits the board (saved as `history/pass-NNNN/
+  audit.txt`), renders the pass's image set into
+  `history/pass-NNNN/`, appends the log entries, stages exactly the
+  pass's files and commits `pass NNNN: <description>`, then a small
+  bookkeeping commit records the pass commit's hash (a commit
+  cannot contain its own hash). Push is the only step left. Tested
+  end-to-end with a dummy pass (audit read the current main board
+  at 83 unconnected / 64 violations; commit carried board + audit +
+  6 renders + log entries; site built with the entry) and the dummy
+  was then removed by resetting the branch — the delivered log
+  contains only real passes.
+- **Site**: the Routing history section reads `passes.json` and
+  copies each pass's committed render files; it never re-renders
+  old boards, so the site builds from any commit's tree alone (the
+  build-matrix property). No CI workflow change was needed.
+  Verified locally: all 10 entries render — 7 with their committed
+  image sets, passes 5/8/9 with an explicit "no renders were
+  committed" note. `history/index.json` and the two-step
+  snapshot_route flow are retired (frozen legacy); commit_pass.py
+  reuses snapshot_route's render machinery.
