@@ -1125,6 +1125,34 @@
       },
       "description": "cluster clearing U10 disc (16,10) r3.6: 1/2 HV targets connected",
       "note": ""
+    },
+    {
+      "pass": 42,
+      "timestamp": "2026-11-04T19:57:05Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.fr27.kicad_pcb",
+      "dir": "pass-0042",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 3,
+        "unconnected_nets": 49,
+        "audit_verdict": "FAIL"
+      },
+      "description": "cluster clearing U6 west disc (83,44) r3.5: USB_RST U6.40 not connected by astar even in the cleared field (fanout-model seal)",
+      "note": ""
     }
   ],
   "gaps": [
