@@ -1,0 +1,11 @@
+2026-11-04T22:01:03 courtyard_audit start board=hw/pdlvds_rx.fr51.kicad_pcb
+2026-11-04T22:01:03 loaded 144 footprints
+2026-11-04T22:01:03 courtyards: 139 with polygon, 5 without
+2026-11-04T22:01:03 progress 0/139 footprints, bbox_pairs=0 poly_pairs=0
+2026-11-04T22:01:03 progress 20/139 footprints, bbox_pairs=16 poly_pairs=15
+2026-11-04T22:01:03 progress 40/139 footprints, bbox_pairs=21 poly_pairs=20
+2026-11-04T22:01:03 progress 60/139 footprints, bbox_pairs=26 poly_pairs=25
+2026-11-04T22:01:03 progress 80/139 footprints, bbox_pairs=29 poly_pairs=28
+2026-11-04T22:01:03 progress 100/139 footprints, bbox_pairs=33 poly_pairs=32
+2026-11-04T22:01:03 progress 120/139 footprints, bbox_pairs=35 poly_pairs=34
+2026-11-04T22:01:03 done bbox=35 poly=34 -> results/courtyard-fr51-before.txt
