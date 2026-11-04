@@ -148,8 +148,12 @@ def drc_row():
     counts are reported against ci/drc-baseline.json — never as
     "DRC passed" and no longer as a bare FAIL either. The row is
     FAIL only for a tool-health breakage, REGRESSION when a count
-    rises above baseline, and PASS only once the board is finished
-    and the baseline is 0/0 (the hard-gate end state).
+    rises above baseline + the checker's jitter tolerance
+    (round 3: KiCad 8 measured 726 then 727 violations on the
+    identical board blob), BOARD STATE with the jitter note when a
+    count is above baseline but within tolerance, BOARD STATE
+    plain when at/below baseline, and PASS only once the board is
+    finished and the baseline is 0/0 (the hard-gate end state).
 
     Counts come from the kicad-validate job's status JSON when the
     site is built by CI (scripts/drc_gate.py's numbers, merged in
@@ -160,7 +164,16 @@ def drc_row():
     if kj is not None and kj.get("drc_verdict") == "TOOL FAILURE":
         return ("KiCad DRC (native)", "FAIL",
                 kj.get("drc_board_state") or "DRC tool failure (see CI log)")
+    if kj is not None and kj.get("drc_verdict") == "WITHIN JITTER TOLERANCE":
+        # Round 3: above baseline but within the checker's jitter
+        # tolerance — BOARD STATE carrying the gate's own jitter
+        # wording, so the drift stays visible on the panel.
+        return ("KiCad DRC (native)", "BOARD STATE",
+                kj.get("drc_board_state")
+                or "DRC counts above baseline, within checker "
+                   "jitter tolerance (see CI log)")
     v = u = bv = bu = None
+    tv = tu = 0
     regression = None
     if kj is not None and "drc_violations" in kj:
         v, u = kj["drc_violations"], kj["drc_unconnected"]
@@ -188,21 +201,37 @@ def drc_row():
             try:
                 bj = json.loads(base)
                 bv, bu = bj["violations"], bj["unconnected"]
+                tv = bj.get("tolerance_violations", 0)
+                tu = bj.get("tolerance_unconnected", 0)
             except Exception:
                 bv = bu = None
     if bv is None:
         return ("KiCad DRC (native)", "BOARD STATE",
                 f"{v} violations, {u} unconnected items "
                 "(no baseline recorded)")
+    if bv == 0 and bu == 0:
+        tv = tu = 0  # finished-board hard gate, as in drc_gate.py
     if regression is None:
-        regression = v > bv or u > bu
+        regression = v > bv + tv or u > bu + tu
     if v == 0 and u == 0 and bv == 0 and bu == 0:
         return ("KiCad DRC (native)", "PASS",
                 "0 violations, 0 unconnected — baseline 0/0 (hard gate)")
     if regression:
         return ("KiCad DRC (native)", "REGRESSION",
                 f"DRC REGRESSION: {v} violations, {u} unconnected "
-                f"— above baseline {bv}/{bu}")
+                f"— above baseline {bv}/{bu} + jitter tolerance "
+                f"+{tv}/+{tu}")
+    if v > bv or u > bu:
+        over = []
+        if v > bv:
+            over.append(f"+{v - bv} violations")
+        if u > bu:
+            over.append(f"+{u - bu} unconnected")
+        return ("KiCad DRC (native)", "BOARD STATE",
+                f"DRC (board in progress): {v} violations, "
+                f"{u} unconnected — within checker jitter tolerance "
+                f"({', '.join(over)} over baseline {bv}/{bu}, "
+                f"tolerance +{tv}/+{tu})")
     return ("KiCad DRC (native)", "BOARD STATE",
             f"DRC (board in progress): {v} violations, {u} unconnected "
             f"— baseline {bv}/{bu}, no regression")
