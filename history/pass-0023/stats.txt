@@ -1,0 +1,13 @@
+pass: 23
+description: U4 cluster clearing (disc 52,52 r4.2): +3V3D_CDR U4.12/18, CDR_CLKP U4.26, CDR_DATN U4.28, CDR_NIN U4.4, REFCLK U4.10 connected; CDR_LOS U4.22 and CDR_VREF U4.3 fanout-empty (sibling-pad seal, hand-stub next); victims fragmented, nets 35 -> 45 by count pending healing
+timestamp (UTC): 2026-11-04T15:04:44Z
+commit: pending
+board file: hw/pdlvds_rx.fr6.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 13
+unconnected nets: 45
+audit verdict: fail
+note: 

@@ -192,6 +192,62 @@ cluster clearing at the U7 south row: 66 foreign items (the XI/XO/RBIAS/+VA fano
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 38 · Audit verdict: FAIL
 
+### Pass 21 — 2026-11-04T14:43:35Z · commit `11126fb`
+
+Board: `hw/pdlvds_rx.fr5.ckpt1.kicad_pcb` · Commit: `11126fbac1f2d8f31bb33a469dacce0f246b4d0f`
+
+repair6 healing checkpoint 1 on the cluster-cleared board (fr4): victims of the U7 clearing reconnecting in the cleared field; unconnected nets 38 -> 35, copper items 3210 -> 3392. Run continues; further checkpoints follow as passes
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 35 · Audit verdict: FAIL
+
+### Pass 22 — 2026-11-04T14:49:45Z · commit `910b627`
+
+Board: `hw/pdlvds_rx.fr5.kicad_pcb` · Commit: `910b627e8b2880ce53ad1c11d1dd4c890869d59b`
+
+repair6 healing run on the cluster-cleared board, final state: unconnected nets 38 -> 35; -VA, SET_A and ULPI_D1 healed outright, the U7-clearing victims partially reconnected; a final sweep connected 0 and the run stopped. Residue is now almost entirely pad-ring clusters (U4, U13, U10, U9, U7 rows) plus D1.4/D1.5, J1.A9, U11.14 and GND islands — cluster clearing is the next tool for each
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 35 · Audit verdict: FAIL
+
+### Pass 23 — 2026-11-04T15:04:44Z · commit `9fef1ac`
+
+Board: `hw/pdlvds_rx.fr6.kicad_pcb` · Commit: `9fef1ac758984156b2113e7c8715c5163f79c92e`
+
+U4 cluster clearing (disc 52,52 r4.2): +3V3D_CDR U4.12/18, CDR_CLKP U4.26, CDR_DATN U4.28, CDR_NIN U4.4, REFCLK U4.10 connected; CDR_LOS U4.22 and CDR_VREF U4.3 fanout-empty (sibling-pad seal, hand-stub next); victims fragmented, nets 35 -> 45 by count pending healing
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 45 · Audit verdict: FAIL
+
+### Pass 24 — 2026-11-04T15:05:16Z · commit `7f565dc`
+
+Board: `hw/pdlvds_rx.fr7.kicad_pcb` · Commit: `7f565dc84c90dbc717c7da1f55ea57bddab3ffbc`
+
+U13 cluster clearing (disc 48,62 r3.6): all five targets connected — +5V U13.1/3, +VA U13.9/10, SET_P U13.7
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 46 · Audit verdict: FAIL
+
+### Pass 25 — 2026-11-04T15:05:45Z · commit `aea23c7`
+
+Board: `hw/pdlvds_rx.fr8.kicad_pcb` · Commit: `aea23c7a810b0961863253c140deada3b3f8e77c`
+
+U7 full-chip cluster clearing (disc 30,61 r4.5, 101 items): 9/16 connected incl. PHY_1V8A U7.29, ULPI_D0/D2/DIR, XI, +3V3A U7.30/31; ULPI_D3/D4/D6 fanout-empty; USB_RST and RBIAS search-failed; clearing also cut U7.6/16/25's +3V3A stubs (healing owes them back)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 46 · Audit verdict: FAIL
+
+### Pass 26 — 2026-11-04T15:06:18Z · commit `8b9cb9d`
+
+Board: `hw/pdlvds_rx.fr9.kicad_pcb` · Commit: `8b9cb9d84ecd18163dc5f8d70eadc4cf7c995e4d`
+
+U10 cluster clearing (disc 16,10 r3.6): HV_FBX U10.2 connected; HV_GATE U10.7 and HV_SHDN U10.9 fanout-empty (sibling-pad seal)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 50 · Audit verdict: FAIL
+
+### Pass 27 — 2026-11-04T15:06:52Z · commit `8b6204d`
+
+Board: `hw/pdlvds_rx.fr10.kicad_pcb` · Commit: `8b6204dfcbe60967165e9a2e6a93e0287ae7a9d1`
+
+U9 cluster clearing (disc 8,48 r3.4): 0/4 — full clearing changed nothing; U9's pins are sealed by their own exposed pad (0.075 mm) inside the router's centre-anchored fanout model; hand-placed stubs are the route (the audit judges exact shapes, the model anchors at pad centres)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 50 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
