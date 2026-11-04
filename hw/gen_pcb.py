@@ -35,7 +35,7 @@ def load_netlist(path):
         nets[net.get("name")] = pins
     return comps, nets
 
-def build(route=True):
+def build(route=True, use_router6=False):
     nl = export_netlist()
     comps, pin_nets = load_netlist(nl)
     board = pcbnew.BOARD()
@@ -147,7 +147,6 @@ def build(route=True):
     # 7.0.11 build; a save/reload cycle makes Fill work (verified).
     board = pcbnew.LoadBoard(outpath)
     if route:
-        import router
         fps2 = {fp.GetReference(): fp for fp in board.GetFootprints()}
         # NETINFO_ITEMs must belong to the RELOADED board: handing the
         # router net objects from the pre-save board makes SetNet attach
@@ -159,7 +158,15 @@ def build(route=True):
             if ni is None:
                 raise RuntimeError(f"net {name} missing after reload")
             nets2[name] = ni
-        router.route(board, nets2, fps2)
+        if use_router6:
+            import router6
+            def ckpt(n):
+                board.Save(outpath + ".ckpt")
+                print(f"checkpoint save (router6, net {n})", flush=True)
+            router6.route6(board, nets2, fps2, checkpoint=ckpt)
+        else:
+            import router
+            router.route(board, nets2, fps2)
     # Checkpoint: save the routed board BEFORE the zone fill, so a
     # timeout during the (slow) fill can never discard a completed
     # route — a follow-up fill+save is a 1-minute job, a re-route is
@@ -173,4 +180,5 @@ def build(route=True):
     return board
 
 if __name__ == "__main__":
-    build(route="--no-route" not in sys.argv)
+    build(route="--no-route" not in sys.argv,
+          use_router6="--router6" in sys.argv)
