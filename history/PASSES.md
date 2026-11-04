@@ -256,6 +256,14 @@ hand-placed escape stubs (new tool hw/hand_stub.py — audit-exact SHAPE.Collide
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 50 · Audit verdict: FAIL
 
+### Pass 29 — 2026-11-04T15:19:22Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr12.kicad_pcb` · Commit: `pending`
+
+hand stub: ULPI_D3 U7.21 east along the row (openness test fixed — neck-width step instead of a fat cross; shorter 0.5 mm stubs admitted). Remaining sealed pads classified by blocker: fence tracks (rip+stub), C40's pad (micro-move), D1 pair (custom via escapes)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 50 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
