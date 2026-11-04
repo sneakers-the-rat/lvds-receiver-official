@@ -25,7 +25,14 @@ half of the retired scripts/build_site.py:
   - website/_data/sims.json    — simulation summary blocks: the key
     lines of each results/*.txt, or the file's absence.
   - website/_data/board.json   — which board assets exist (top /
-    bottom renders, per-layer SVGs, schematic SVG/PDF).
+    bottom renders, the all-layers composite, per-layer SVGs,
+    schematic SVG/PDF).
+  - Board render SVGs staged into website/assets/gen/ (the fab
+    renders and the per-pass history renders) get a dark background
+    rect baked in — see inject_svg_background() — so a render
+    opened on its own (new tab, direct link) stands on the same
+    #111 ground the site's CSS panels paint behind it. The source
+    SVGs (hw/fab/, history/) stay pristine KiCad output.
   - website/_data/downloads.json — the fabrication downloads list.
   - website/assets/, website/downloads/ — staged copies of the fab
     renders, results plots, metrics charts, per-pass history renders
@@ -77,6 +84,57 @@ def copy_into(src, dst_dir, name=None):
     os.makedirs(dst_dir, exist_ok=True)
     shutil.copy2(p, os.path.join(dst_dir, name))
     return name
+
+
+# --------------------------------------------- SVG background bake
+# The dark colour the site paints behind renders (website/assets/
+# css/main.css: .composite, .layergrid img and .refview all use
+# #111). KiCad's SVG exports carry no background of their own, so a
+# staged render opened outside the page (new tab, direct link) lost
+# the panel and showed the artwork on white/transparent. Staging
+# bakes the same colour into the file instead.
+SVG_BG = "#111"
+SVG_BG_ID = "site-bg"
+
+
+def inject_svg_background(path):
+    """Insert a full-canvas background rect into a staged SVG.
+
+    The rect goes immediately after the opening <svg> tag, i.e. it
+    is the first PAINTED element (<title>/<desc> siblings do not
+    paint); its size is the SVG's viewBox, falling back to the
+    width/height attributes. Idempotent: a file already carrying
+    the marker id is left alone. Anything unparseable is left
+    untouched — a render without the baked background still builds,
+    exactly as before this step existed."""
+    try:
+        with open(path, encoding="utf-8") as f:
+            txt = f.read()
+    except OSError:
+        return
+    if f'id="{SVG_BG_ID}"' in txt:
+        return
+    m = re.search(r"<svg\b[^>]*>", txt)
+    if not m:
+        return
+    tag = m.group(0)
+    box = None
+    vb = re.search(r'viewBox\s*=\s*"([^"]+)"', tag)
+    if vb:
+        parts = [p for p in re.split(r"[\s,]+", vb.group(1).strip()) if p]
+        if len(parts) == 4:
+            box = parts
+    if box is None:
+        wm = re.search(r'width\s*=\s*"([0-9]*\.?[0-9]+)', tag)
+        hm = re.search(r'height\s*=\s*"([0-9]*\.?[0-9]+)', tag)
+        if wm and hm:
+            box = ["0", "0", wm.group(1), hm.group(1)]
+    if box is None:
+        return
+    rect = (f'<rect id="{SVG_BG_ID}" x="{box[0]}" y="{box[1]}" '
+            f'width="{box[2]}" height="{box[3]}" fill="{SVG_BG}"/>')
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(txt[:m.end()] + "\n" + rect + txt[m.end():])
 
 
 def key_lines(path, keys):
@@ -401,6 +459,7 @@ def stage_assets():
     img = {}
     for src, name in [("hw/fab/board-top.svg", "board-top.svg"),
                       ("hw/fab/board-bottom.svg", "board-bottom.svg"),
+                      ("hw/fab/board-layers.svg", "board-layers.svg"),
                       ("results/link_budget.png", "link_budget.png"),
                       ("results/digital_sim.png", "digital_sim.png"),
                       ("metrics/token_per_message.svg",
@@ -437,8 +496,20 @@ def stage_assets():
                 if fn:
                     files.add(fn)
             for fn in sorted(files):
-                copy_into(os.path.join("history", d, fn),
-                          os.path.join(ASSETS, "history", d), fn)
+                if copy_into(os.path.join("history", d, fn),
+                             os.path.join(ASSETS, "history", d), fn) \
+                        and fn.endswith(".svg"):
+                    inject_svg_background(
+                        os.path.join(ASSETS, "history", d, fn))
+    # fab board renders (top / bottom / all-layers composite /
+    # per-layer) get the same baked-in background as the history
+    # renders above, so every board render SVG the site serves
+    # stands alone on #111.
+    for name in ("board-top.svg", "board-bottom.svg", "board-layers.svg"):
+        if name in img:
+            inject_svg_background(os.path.join(ASSETS, name))
+    for f in layers.values():
+        inject_svg_background(os.path.join(ASSETS, f))
     tia = tia_plot()
     if tia:
         img[tia] = tia
@@ -448,6 +519,7 @@ def stage_assets():
     write_json("board.json", {
         "top": "board-top.svg" in img,
         "bottom": "board-bottom.svg" in img,
+        "composite": "board-layers.svg" in img,
         "layers": [{"name": k, "file": v}
                    for k, v in sorted(layers.items())],
         "has_link_budget_plot": "link_budget.png" in img,
