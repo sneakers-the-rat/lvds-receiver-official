@@ -1375,3 +1375,49 @@ monolithic sweeps on this placement; any further runs here are
 short and checkpointed at least every ~20 minutes. The main
 line is now the alt-lane placement-relief candidate, routed in
 checkpointed passes when it lands.
+## USB device transport implemented (2026-11-04, branch fw-usb-transport)
+
+- The firmware's last stub is gone: `usb_device_stub.c` deleted,
+  replaced by a real transport on **TinyUSB 0.21.0** (vendored
+  verbatim from github.com/hathach/tinyusb, tag 0.21.0 commit
+  dae3f9a; `firmware/third_party/PROVENANCE.md`). The repo carried
+  no HAL/CMSIS by policy, which is why TinyUSB rather than ST's
+  HAL-bound device library.
+- Contract implemented: **one CDC ACM function** (IAD; comm
+  interface + data interface) carrying command frames, responses
+  and streamed capture data over the single byte pipe `main.c`
+  already used — the only shape consistent with the existing
+  interface, and matching docs/02's "CDC control channel". EP0
+  64 B; notification EP1 IN interrupt 8 B; bulk EP2 OUT/IN 512 B
+  at HS, 64 B at FS (separate configuration + qualifier +
+  other-speed descriptors). **VID 0x1209 / PID 0xD723 are
+  unregistered development ids** (repo defined none); register
+  before distribution; host tool's hardware path still needs
+  writing to match.
+- Board glue (`firmware/src/usb_device_tinyusb.c`): SYSCFG
+  analog switches closed for PC2_C/PC3_C (ULPI DIR/NXT), PWR
+  USB33 regulator enable, ULPI pins AF10 per hw/CONNECTIONS.md,
+  USB3300 reset pulse on PA4, OTG HS + ULPI clocks, DWC2 in
+  **slave mode** (firmware .bss sits in DTCM, which the OTG DMA
+  engine cannot address; also sidesteps M7 cache coherency),
+  core VBUS sensing off (the PHY owns VBUS and reports over
+  ULPI). OTG_HS IRQ via vector slot 93, table ELF-verified.
+- Pin conflicts surfaced, not smoothed: board.h LED moved
+  PA5 -> PC9 per the schematic (PA5 is ULPI_CK); **PA4 remains
+  double-assigned** — schematic USB_RST (followed) vs dac8562.c's
+  DAC chip select — so SET_THRESHOLD currently pulses the PHY
+  reset until the DAC path moves to the schematic's SPI3 + PA15.
+  Flagged in board.h, README, BRINGUP.md.
+- Verification, all run: `make arm` clean, zero warnings
+  (gcc 13.2.1): text 17732 B vs stub build 4472 B (+13260),
+  bss 19840 vs 16488 (+3352). `make host-test`: 57 PASS / 0 FAIL —
+  codec 25 (unchanged), new descriptor audit 19 (walks both
+  configuration byte arrays: length chains, wTotalLength,
+  endpoint legality per speed, HS/FS differ only in MPS bytes),
+  new framing round-trip 13 (real usb_app.c through the real
+  usb_device_if.h pipe, mock control backends).
+- NOT proven, and not claimed anywhere: enumeration on any real
+  host. ULPI timing, chirp, suspend/resume against real host
+  controllers, slave-mode stream throughput — all need the
+  physical board; `firmware/BRINGUP.md` is the ordered bench
+  checklist. ROM DFU programming path untouched.

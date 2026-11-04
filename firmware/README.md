@@ -10,13 +10,19 @@ make arm         # cross-compile to build/rxfw.elf + build/rxfw.bin
 make clean
 ```
 
-Status at the time of writing: `make host-test` passes (25 PASS lines,
-exit 0, zero warnings under `-std=c99 -Wall -Wextra -Werror`), and
-`make arm` builds cleanly with arm-none-eabi-gcc 13.2.1
-(text 4472 B, bss 104 B in DTCM, 16 KB capture buffers in AXI SRAM,
-vector table at 0x08000000). A successful compile is **not** a claim
+Status at the time of writing: `make host-test` passes all three
+suites (57 PASS lines, exit 0, zero warnings under
+`-std=c99 -Wall -Wextra -Werror`): the codec suite (25, unchanged),
+the USB descriptor audit (19) and the USB framing round-trip (13).
+`make arm` builds cleanly with arm-none-eabi-gcc 13.2.1: text
+17732 B, data 36 B, bss 19840 B (16 KB of it the AXI SRAM capture
+buffers), vector table at 0x08000000 with the OTG_HS handler at
+slot 93 (checked against the built ELF). Against the stub build
+(text 4472 B, bss 16488 B) the USB transport costs +13260 B of
+flash and +3352 B of bss. A successful compile is **not** a claim
 that the firmware runs correctly on the board - nothing here has
-touched real hardware yet; see "unverified" below.
+touched real hardware yet; see "unverified" below and
+`BRINGUP.md`.
 
 ## What is complete
 
@@ -54,6 +60,31 @@ GET_STATUS, BER_TEST_START/STOP, STREAM_START/STOP over byte
 buffers, including BER scoring that applies the paper's rule (a
 5032-byte buffer with any error bit is one failed packet).
 
+USB transport - the device layer behind `usb_device_if.h` is now
+implemented (`src/usb_device_tinyusb.c` + `src/usb_descriptors.c`,
+descriptors in `src/usb_descriptors_data.h`) on **TinyUSB 0.21.0**
+(vendored verbatim from github.com/hathach/tinyusb; see
+`third_party/PROVENANCE.md`), configured as a **CDC ACM** device
+on the OTG HS core in ULPI mode behind the board's USB3300:
+SYSCFG analog-switch and power setup, ULPI pin/AF setup, PHY reset
+on PA4, DWC2 in slave mode (this firmware's `.bss` is in DTCM,
+which the OTG DMA engine cannot address), separate HS/FS
+descriptor sets (bulk 512 B / 64 B), the OTG_HS interrupt wired to
+vector slot 93. The usb_app frames, command responses and streamed
+capture data share the one CDC pipe, exactly as `main.c` has
+always driven the interface; the host tool's protocol contract is
+unchanged. Host-side, the descriptor bytes are audited and the
+framing is round-tripped through the real interface
+(`tests/`, run by `make host-test`). **None of this proves
+enumeration** - that needs a physical board; `BRINGUP.md` is the
+bench checklist and lists what remains unprovable without one.
+Interface decision recorded: the repo defined no VID/PID and no
+class anywhere before this work; CDC ACM (over vendor-specific
+bulk) was chosen because it is driver-free on Linux/macOS/Windows
+and matches docs/02's stated "CDC control channel". The VID/PID
+are unregistered development ids (0x1209 / 0xD723) - see
+`BRINGUP.md`.
+
 ## What is register-level but UNVERIFIED
 
 `src/` targets the STM32H723 with hand-written register code - no
@@ -87,18 +118,28 @@ Known soft spots, called out where they live:
 - `capture.c`: state machine + AXI SRAM double buffer complete; the
   DMA/timer feed is a commented sketch (`capture_board_dma_init_sketch`,
   deliberately writes no registers).
-- Pin assignments in `board.h` are design intent, including one
-  known unresolved conflict (PA5 = status LED vs SPI1 SCK) that the
-  schematic must settle.
+- Pin assignments in `board.h` are design intent. The schematic
+  (`hw/CONNECTIONS.md`) has since settled two conflicts against
+  board.h's initial guesses, and board.h now follows it: the
+  status LED is PC9, not PA5 (PA5 is ULPI_CK), and PA4 is the
+  USB3300 reset, not the DAC chip select - the DAC path
+  (schematic: SPI3 + PA15 SYNC) is NOT yet reconciled, so
+  `dac8562_set_threshold()` currently pulses the PHY reset line.
+  See `BRINGUP.md`.
+- The USB glue in `src/usb_device_tinyusb.c` (SYSCFG PMCR,
+  RCC/PWR bit positions, ULPI AF numbers) carries the same VERIFY
+  status as the rest of `src/`; the TinyUSB stack itself is
+  upstream, unmodified.
 
 ## What does NOT work yet (honest list)
 
-- **USB enumeration does not work.** The device layer
-  (`usb_device_if.h` / `usb_device_stub.c`) is a stub returning
-  `USB_DEV_NOT_IMPLEMENTED`. Implementing it needs the ULPI/USB3300
-  bring-up sequence + OTG HS core init + a device protocol engine,
-  listed step by step in `usb_device_if.h`. Board programming does
-  not depend on it (STM32 ROM DFU bootloader, per docs/02).
+- **USB enumeration is unproven on hardware.** The device layer
+  is implemented (TinyUSB, above) and the stub is gone, but no
+  board exists yet: enumeration, the ULPI link, suspend/resume
+  against a real host controller and stream throughput in slave
+  mode are all unverified until first power-on. `BRINGUP.md`
+  lists them as the bench checklist. Board programming does not
+  depend on any of it (STM32 ROM DFU bootloader, per docs/02).
 - Nothing has run on hardware: no clock, bus, DAC, sensor, CDR, HV
   or capture behaviour has been observed on a real board.
 
@@ -112,8 +153,12 @@ Known soft spots, called out where they live:
    map, I2C address and rate scaling in `adn2813.c`.
 3. Check DAC8562 frame packing against `datasheets/dac8562.pdf`;
    check TMP117 map against `datasheets/tmp117.pdf`.
-4. Resolve the PA5 LED-vs-SCK pin conflict with the schematic;
-   finalise all pin/AF assignments in `board.h` + `gpio.c` + `spi.c`.
+4. Pin conflicts: the schematic resolved PA5 (ULPI_CK; LED moved
+   to PC9 in `board.h`) - but PA4 remains double-assigned (USB3300
+   reset per the schematic vs DAC CS in `dac8562.c`), and the DAC
+   path must be moved to the schematic's SPI3 + PA15 SYNC before
+   threshold-setting can coexist with USB. Finalise the remaining
+   pin/AF assignments in `board.h` + `gpio.c` + `spi.c`.
 5. Verify the HV feedback divider ratio; fix `HV_FULL_SCALE_V` in
    `hv_ctrl.h`; confirm the interlock and LOS polarities.
 6. First power-up on a current-limited supply: confirm 550 MHz
@@ -123,10 +168,14 @@ Known soft spots, called out where they live:
 7. Decide the CDR-to-MCU capture peripheral (SPI slave vs timer
    path) at schematic time; implement the DMA programming sketched
    in `capture.c`; verify DMA can reach the AXI SRAM buffers.
-8. Implement the USB device layer per `usb_device_if.h`
-   (ULPI PHY + OTG HS + descriptors + bulk/CDC endpoints); wire
-   `usb_app_process()` frames to it.
+8. USB device layer: implemented in code (TinyUSB CDC ACM over
+   ULPI, above). What remains is hardware verification per
+   `BRINGUP.md`: ULPI clock, enumeration on real hosts,
+   suspend/resume, stream soak, plus implementing the host tool's
+   hardware path (today `host/rxhost.py` speaks to its simulator;
+   point it at the CDC device and match the recorded VID/PID).
 9. Cross-check the firmware PRBS-15 bit convention against the host
    tool's implementation on a loopback before trusting BER numbers.
-10. Extend `startup.c`'s vector table before enabling any peripheral
-    interrupt (it currently covers only the core exceptions).
+10. `startup.c`'s vector table now extends to the OTG_HS slot
+    (93), the only peripheral interrupt enabled; extend it the
+    same way before enabling any other peripheral IRQ.

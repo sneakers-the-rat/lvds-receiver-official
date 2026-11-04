@@ -1,32 +1,23 @@
 /* usb_device_if.h - the boundary between the application protocol
- * (usb_app.c, complete) and the USB device stack (NOT implemented).
+ * (usb_app.c, complete) and the USB device transport.
  *
- * What remains to implement this layer at bring-up, and why it is not
- * faked here:
- *   The board uses the STM32H723's USB OTG HS core with an external
- *   Microchip USB3300 ULPI PHY. A working device stack requires, in
- *   order:
- *     1. GPIO alternate-function setup for the ULPI bus (D0-D7, CLK,
- *        DIR, NXT, STP) and the USB3300 reset/clock bring-up
- *        (24 MHz crystal on the PHY, 60 MHz ULPI clock out).
- *     2. RCC: OTG HS + ULPI clocks, and the H723's power/voltage
- *        detector bits for USB.
- *     3. OTG HS core initialisation: AHB/TRDT configuration, device
- *        mode force, FIFO sizing (RX / TX0..n), endpoint 0 setup.
- *     4. A USB device protocol engine: reset/suspend interrupts,
- *        SETUP packet handling, enumeration descriptors (device,
- *        configuration, string), SET_ADDRESS / SET_CONFIGURATION.
- *     5. Two interfaces on top of that: bulk IN for streaming
- *        (capture data) and a control/CDC-style channel on which the
- *        byte buffers of usb_app_process() are carried.
- *   That is several thousand lines of register-level code that can
- *   only be debugged against a real ULPI link and a USB analyser /
- *   host. Writing an untestable imitation of it here would compile
- *   and lie. So: usb_device_stub.c implements this interface with
- *   explicit USB_DEV_NOT_IMPLEMENTED returns, main.c copes with that,
- *   and enumeration does NOT work until this layer is written at
- *   bring-up. (Programming the board does not depend on it: the
- *   STM32 ROM DFU bootloader is the programming path, docs/02.)
+ * Implemented by usb_device_tinyusb.c on TinyUSB 0.21.0
+ * (third_party/PROVENANCE.md): a CDC ACM device on the STM32H723's
+ * OTG HS core behind the board's USB3300 ULPI PHY. The byte-pipe
+ * semantics below are unchanged from the stub era - command frames,
+ * responses and streamed capture data all share the one pipe, as
+ * main.c has always used it.
+ *
+ * What "implemented" does NOT yet mean: enumeration has never been
+ * observed on hardware. The protocol engine is a proven library,
+ * but the board-level glue (ULPI pin/analog-switch setup, PHY
+ * reset, RCC/PWR constants) carries the house VERIFY-against-
+ * RM0468 status, and nothing about a real ULPI link, a real host's
+ * chirp, or suspend/resume against a real host controller can be
+ * settled without the board. firmware/BRINGUP.md is the checklist
+ * for exactly that residue. (Programming the board never depended
+ * on any of this: the STM32 ROM DFU bootloader is the programming
+ * path, docs/02.)
  */
 #ifndef USB_DEVICE_IF_H
 #define USB_DEVICE_IF_H
@@ -35,8 +26,11 @@
 #include <stddef.h>
 
 #define USB_DEV_OK              0
-#define USB_DEV_NOT_IMPLEMENTED (-100)
+#define USB_DEV_NOT_IMPLEMENTED (-100) /* retained: no longer returned
+                                          by the real implementation */
 #define USB_DEV_NO_DATA         (-101)
+#define USB_DEV_NOT_CONNECTED   (-102) /* not enumerated (yet/any more) */
+#define USB_DEV_IO_ERROR        (-103) /* init failed / host not draining */
 
 int usb_dev_init(void);
 /* Queue bytes on the bulk/control IN path to the host. */
