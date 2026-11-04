@@ -21,7 +21,8 @@ layout: default
 <h4>Routes — each copper layer</h4>
 <div class="layergrid">{% for l in site.data.layers %}{% assign fn = page.layers[l.name] %}{% if fn %}<figure><img src="{{ base | append: fn | relative_url }}" alt="{{ l.name }} layer"><figcaption>{{ l.name }} — {{ l.color }}</figcaption></figure>{% endif %}{% endfor %}</div>
 {% endif %}
-{% for side in "top,bottom" | split: "," %}
+{% assign sides = "top,bottom" | split: "," %}
+{% for side in sides %}
 {% assign fn = page.renders[side] %}
 <h4>{{ side | capitalize }}</h4>
 {% if fn %}<img class="refview" src="{{ base | append: fn | relative_url }}" alt="Pass {{ page.pass }} — {{ side }}">{% else %}<p><em>{{ side }} render missing from the snapshot.</em></p>{% endif %}
@@ -31,4 +32,7 @@ layout: default
 {% endif %}
 {% if page.note and page.note != "" %}<p>{{ page.note }}</p>{% endif %}
 {% assign sorted_passes = site.passes | sort: "pass" %}
-<p class="passnav">{% for p in sorted_passes %}{% if p.pass == page.pass %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}{% assign prev = sorted_passes[idx | minus: 1] %}{% assign nxt = sorted_passes[idx | plus: 1] %}{% if idx > 0 %}← <a href="{{ prev.url | relative_url }}">Pass {{ prev.pass }}</a> · {% endif %}<a href="{{ '/routing/' | relative_url }}">all passes</a>{% if nxt %} · <a href="{{ nxt.url | relative_url }}">Pass {{ nxt.pass }}</a> →{% endif %}</p>
+{% for p in sorted_passes %}{% if p.pass == page.pass %}{% assign idx = forloop.index0 %}{% endif %}{% endfor %}
+{% assign prev_i = idx | minus: 1 %}{% assign next_i = idx | plus: 1 %}
+{% assign prev = sorted_passes[prev_i] %}{% assign nxt = sorted_passes[next_i] %}
+<p class="passnav">{% if idx > 0 %}← <a href="{{ prev.url | relative_url }}">Pass {{ prev.pass }}</a> · {% endif %}<a href="{{ '/routing/' | relative_url }}">all passes</a>{% if nxt %} · <a href="{{ nxt.url | relative_url }}">Pass {{ nxt.pass }}</a> →{% endif %}</p>
