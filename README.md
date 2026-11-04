@@ -5,7 +5,7 @@ optical uplink in Miniscope Zero (Sasatani et al., bioRxiv 2026.09.05.745822).
 
 Design target (set by the customer, not taken from the paper):
 - 50 Mbps line rate, 8b/10b coding, 40 Mbps payload, UI = 20 ns
-- Legacy compatibility mode: Manchester-coded 8 Mbps data (16 Mbaud) as in the paper
+- The paper's mode, as transmitted: Manchester-coded 8 Mbps data (16 Mbaud)
 - Optical in (630 nm red / 740 nm NIR channels of the paper), LVDS out (TIA/EIA-644)
 - USB-programmable and USB-verifiable from any laptop, no FPGA, no programmer dongle
 - Detector: linear-mode Si APD (SiPM rejected: see docs/02-architecture.md)

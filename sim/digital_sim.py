@@ -5,7 +5,7 @@ LVDS receiver.
     random bytes -> 8b/10b encode -> 50 Mbps bit stream -> channel
     -> comma realignment + 8b/10b decode -> error counts
 
-plus the paper's PRBS-15 packet-error-rate (PER) method, and the legacy
+plus the paper's PRBS-15 packet-error-rate (PER) method, and the paper's
 Manchester path (8 Mbps data, 16 Mbaud chips) under the same channel.
 
 CHANNEL MODEL -- what it is, and what it is NOT (read before quoting any
@@ -73,7 +73,7 @@ RESULTS = os.path.join(ROOT, "results")
 
 LINE_RATE = 50e6            # 8b/10b line rate, bit/s
 UI_S = 1.0 / LINE_RATE      # 20 ns
-MC_DATA_RATE = 8e6          # legacy Manchester data rate, bit/s
+MC_DATA_RATE = 8e6          # Manchester data rate (paper's mode), bit/s
 MC_CHIP_UI_S = 1.0 / (2 * MC_DATA_RATE)   # 62.5 ns per chip
 SIGMA_J_S = 2e-9            # Gaussian timing-jitter sigma, seconds
 A = 1.0                     # normalised eye amplitude at the slicer
@@ -214,7 +214,7 @@ def per_test(rng, lines):
 
 
 # --------------------------------------------------------------------------
-# Manchester legacy path
+# Manchester path (the paper's mode)
 # --------------------------------------------------------------------------
 
 def run_manchester(rng, snr_db, n_bits=100_000, sigma_j_s=SIGMA_J_S):
@@ -334,12 +334,12 @@ def main():
         f"with both, and the < 1e-6 criterion allows at most 1 error in "
         f"a run of this length.")
 
-    # Manchester legacy path -------------------------------------------------
+    # Manchester path (the paper's mode) --------------------------------------
     mc_snr = 6.0
     mc = run_manchester(np.random.default_rng(SEED + 7), mc_snr)
     ref = dict(sweep)[mc_snr]
     log("")
-    log(f"Manchester legacy path at SNR = {mc_snr:.0f} dB, same "
+    log(f"Manchester path (paper's mode) at SNR = {mc_snr:.0f} dB, same "
         f"{SIGMA_J_S * 1e9:.0f} ns jitter sigma and same sigma_v:")
     log(f"  chip rate 16 Mbaud, chip BER measured {mc['chip_ber']:.3e} "
         f"(model mean {mc['analytic_chip_ber']:.3e}), invalid chip pairs "
