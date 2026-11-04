@@ -1,0 +1,9 @@
+  F.Cu: point (0.30,0.30) -> y=-29.7
+  F.Cu: point (99.70,0.30) -> y=-29.7
+  In1.Cu: point (0.30,0.30) -> y=-29.7
+  In1.Cu: point (99.70,0.30) -> y=-29.7
+  B.Cu: point (0.30,0.30) -> y=-29.7
+  B.Cu: point (99.70,0.30) -> y=-29.7
+extended 6 outline points across GND zones
+saved hw/pdlvds_rx.expanded.kicad_pcb (zones refilled)
+exit=0
