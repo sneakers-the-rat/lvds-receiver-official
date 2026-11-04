@@ -849,3 +849,23 @@ Result (results/pcb_build_v6.log, results/audit-v6-attempt1.txt):
 Adopted as the main board (strictly better than v5 on both audit
 axes; v5 remains in history at fb2acf7). Next: pocket diagnosis on
 THIS board for the structural blocker, then repair6 passes.
+
+## Token metrics (2026-11-04) — progress vs tokens used
+
+New `metrics/` directory: the project's agent-token usage, exported from the
+runtime's `agent.agent_message_token_usage` records (the per-request table
+`agent.token_usage` is empty — see metrics/README.md for the full methodology,
+scope rules, exact SQL, and caveats).
+
+Headline at the 2026-11-04T08:04:23Z snapshot: **124,730,218 gross tokens
+processed** (124,105,756 input + 624,462 output) across 63 in-scope agents and
+143 usage records — chat tree 108,914,972 input (main agent + subagents),
+checkpoint cron 15,190,784 input. "Gross" = full context re-sent per request,
+summed; in-flight agents (coordinator #2) have no records until they complete,
+so the true figure is higher. `metrics/token_series.csv` is the timestamped
+cumulative series; `metrics/commit_alignment.csv` aligns every commit with
+cumulative tokens and the board state from the audit committed at that
+revision; `metrics/progress_vs_tokens.svg` plots board state against tokens
+(v5 plateau 98 unconnected / 341 violations → repair-4 spike 445 → v6 drop to
+83 / 64 → repair6 62 / 64). To be re-exported at project end for the final
+"designed in X tokens" figure.
