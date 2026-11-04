@@ -1,0 +1,54 @@
+=== freerouting completion start 17:17:17 ===
+2026-11-04 17:17:23.130 INFO   Freerouting v2.5.0 (build-date: 2026-10-05)
+2026-11-04 17:17:24.155 INFO   Hardware: 4 CPU cores, 56 CPU score, 1984 MB RAM
+2026-11-04 17:17:24.163 WARN   Deprecated settings path '-mp / --router.max_passes'; use '--router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-11-04 17:17:24.164 WARN   Couldn't get screen resolution. If you are running in a headless environment, disable the GUI by setting gui.enabled to false.
+2026-11-04 17:17:24.227 INFO   Configured network proxy: hatch-egress-proxy:3128
+2026-11-04 17:17:25.908 WARN   Deprecated settings path 'router.max_passes'; use 'router.autorouter.max_passes' instead. The old path will be removed in a future release.
+2026-11-04 17:17:27.209 INFO   [5E3FBE\8A8868] Loading board file 'fr21-fr.dsn'...
+2026-11-04 17:17:29.169 WARN   Wiring: duplicate via skipped at (851250, -441250)
+2026-11-04 17:17:29.407 WARN   Wiring: duplicate via skipped at (503750, -603750)
+2026-11-04 17:17:29.421 WARN   Wiring: duplicate via skipped at (383750, -681250)
+2026-11-04 17:17:30.255 WARN   DSN file 'fr21-fr.dsn' was loaded with 4 warning(s).
+2026-11-04 17:17:30.539 INFO   [5E3FBE\8A8868] Job '5E3FBE\8A8868' started at 2026-11-04T17:17:30.539446685Z.
+2026-11-04 17:17:32.519 WARN   Analytics tracking: first delivery failure in this window - /v1/analytics/track - SocketException: Connection reset. Further failures will be aggregated and reported every 60 minutes. → Action: Server closed the connection unexpectedly. This may indicate server overload, an intermediate proxy resetting idle connections, or a server-side crash.
+2026-11-04 17:17:38.956 WARN   Design Warning: Board has 448 pre-existing clearance violation(s) in the loaded design (before routing):
+  - 448 unfixable violation(s) (cannot be resolved by Freerouting):
+      * 84 pin-to-pin clearance violations (first 5 shown):
+          - T1.3 <-> R28.2 [net GND]
+          - U10.10 [net +5V] <-> U10.9 [net HV_SHDN]
+          - U13.9 [net +VA] <-> U13.8 [net GND]
+          - U13.7 [net SET_P] <-> U13.6 [net +5V]
+          - U13.4 <-> U13.3 [net +5V]
+          ... and 79 more
+      * 364 fixed trace/via clearance violations (first 5 shown):
+          - FixedVia#6765 [net XO] <-> FixedTrace#2737 [net +3V3D_CDR]
+          - FixedVia#6765 [net XO] <-> FixedTrace#2714 [net +3V3D_CDR]
+          - FixedVia#6756 [net VBUS_RAW] <-> FixedTrace#5952 [net ULPI_D4]
+          - FixedVia#6756 [net VBUS_RAW] <-> FixedTrace#5930 [net ULPI_D4]
+          - FixedVia#6755 [net VBUS_RAW] <-> FixedVia#6580 [net DP_CON]
+          ... and 359 more
+  - 0 potentially fixable violations
+Notice: Freerouting does not modify component placement, board outlines, or fixed items.
+Resolving these 448 unfixable violation(s) is the responsibility of the board author in their EDA tool (e.g. KiCad).
+2026-11-04 17:17:39.533 INFO   [5E3FBE\8A8868] Pipeline thread limits: autorouter pass is single-threaded, optimizer.max_threads=3.
+2026-11-04 17:17:47.743 INFO   [5E3FBE\8A8868] Fanout stage started on board '0bc3767fb4319cd059892b183a9723d6' with 404 of 607 SMD pins needing fanout (99 already connected, 104 netless).
+2026-11-04 17:18:39.431 WARN   BasicBoard.normalizeTraces: reached 2000 iterations for net 'APD_K' — stopping to prevent hang. The board geometry for this net may be oscillating (split/combine cycle); traces are kept as-is and further normalization for this net is suppressed on this board candidate.
+2026-11-04 17:18:41.961 INFO   [5E3FBE\8A8868] Fanout pass #1 on board 'e7735b885036d3cde2cdfe3ca1747576' completed in 49.76 seconds with 64 SMD pins fanouted, 62 not routed, 0 insert errors, +1 extra via (0 SMD pins still to check in pass, ripup costs=100).
+2026-11-04 17:18:53.883 INFO   [5E3FBE\8A8868] Fanout pass #2 on board 'e7989bfa8419a0793c64598d8d0724ff' completed in 11.73 seconds with 46 SMD pins fanouted, 41 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=200).
+2026-11-04 17:19:24.862 WARN   BasicBoard.normalizeTraces: reached 2000 iterations for net 'HV_VC' — stopping to prevent hang. The board geometry for this net may be oscillating (split/combine cycle); traces are kept as-is and further normalization for this net is suppressed on this board candidate.
+2026-11-04 17:19:30.629 INFO   [5E3FBE\8A8868] Fanout pass #3 on board '15f809be1abfcd2a42f262b4cf3b4a97' completed in 36.56 seconds with 44 SMD pins fanouted, 41 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=300).
+2026-11-04 17:19:40.647 INFO   [5E3FBE\8A8868] Fanout pass #4 on board '7c8e10bb6aeddd30a646232188bb7a4a' completed in 9.83 seconds with 44 SMD pins fanouted, 41 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=400).
+2026-11-04 17:19:50.347 INFO   [5E3FBE\8A8868] Fanout pass #5 on board '02d9788e8737b5f104450c29524be66f' completed in 9.52 seconds with 44 SMD pins fanouted, 41 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=500).
+2026-11-04 17:20:00.547 INFO   [5E3FBE\8A8868] Fanout pass #6 on board '641725c4024f667e10b16567af12cab0' completed in 10.01 seconds with 44 SMD pins fanouted, 41 not routed, 0 insert errors, +0 extra vias (0 SMD pins still to check in pass, ripup costs=600).
+2026-11-04 17:20:00.549 INFO   Fanout stopped after 6 passes: no progress for 3 consecutive passes.
+2026-11-04 17:20:02.266 INFO   [5E3FBE\8A8868] Fanout stage completed: started with 503 total SMD pins, completed in 130.32 seconds, escaped pins: 410/503 (81.5%), using 106.72 total CPU seconds, 40.70 GB total allocated, and 326.6 MB peak heap usage.
+2026-11-04 17:20:08.193 INFO   [5E3FBE\8A8868] Auto-routing stage started on board '641725c4024f667e10b16567af12cab0' with baseline score 615.10 for 115 unrouted items.
+2026-11-04 17:21:29.775 WARN   BasicBoard.normalizeTraces: reached 2000 iterations for net 'CDR_LOS' — stopping to prevent hang. The board geometry for this net may be oscillating (split/combine cycle); traces are kept as-is and further normalization for this net is suppressed on this board candidate.
+2026-11-04 17:25:21.330 INFO   [5E3FBE\8A8868] Auto-routing pass #1 on board '641725c4024f667e10b16567af12cab0' was completed in 311.01 seconds with score 644.16 (106 unrouted and 448 violations), using 388.14 CPU seconds and the job allocated 151.74 GB of memory so far.
+2026-11-04 17:30:21.615 WARN   BasicBoard.normalizeTraces: reached 2000 iterations for net 'I2C_SCL' — stopping to prevent hang. The board geometry for this net may be oscillating (split/combine cycle); traces are kept as-is and further normalization for this net is suppressed on this board candidate.
+2026-11-04 17:31:09.033 WARN   BasicBoard.normalizeTraces: reached 2000 iterations for net 'NEG_RAW' — stopping to prevent hang. The board geometry for this net may be oscillating (split/combine cycle); traces are kept as-is and further normalization for this net is suppressed on this board candidate.
+2026-11-04 17:33:03.056 INFO   [5E3FBE\8A8868] Auto-routing pass #2 on board '4ebcf7dc46e7b13c99f0cea079ac5aa2' was completed in 459.55 seconds with score 624.79 (112 unrouted and 448 violations), using 676.53 CPU seconds and the job allocated 272.01 GB of memory so far.
+FREEROUTING_EXIT=143 17:34:35
+ls: cannot access 'results/fr21.ses': No such file or directory
+=== freerouting completion ABORTED by coordinator 17:34:53: passes 1-2 both worse than baseline (644.16 / 624.79 vs 615.10), violations pinned at 448 (its model counts the existing board itself as violating); best state = the input board, no SES harvested, nothing lost

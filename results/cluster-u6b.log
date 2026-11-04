@@ -1,0 +1,14 @@
+=== cluster u6b start 17:44:05 ===
+17:44:06 clear_disc: removed 25, remaining in disc: 57
+17:44:07 clear_disc: removed 25, remaining in disc: 32
+17:44:08 clear_disc: removed 25, remaining in disc: 7
+17:44:09 clear_disc: removed 7, remaining in disc: 0
+17:44:09 clear_disc: removed 0, remaining in disc: 0
+17:44:10 clear_disc: removed 0, remaining in disc: 0
+17:44:15 cleared 0 foreign items in disc (0.0,0.0) r=0.0: {}
+17:44:15   USB_RST U6.40: still isolated (0s)
+17:44:15 cluster done: 0/1 targets connected; isolated groups remaining: 102
+copper items: 5024
+unconnected nets: 49
+  UNCONNECTED +3V3A: 6 groups, e.g. [['U9.5', 'track@(8.87, 48.0)', 'track@(9.274999, 48.0)', 'via@(9.274999, 48.0)'], ['C24.1', 'C46.1', 'U14.10', 'U14.9'], ['C49.1', 'track@(80.375, 38.125)', 'track@(80.375, 39.375)', 'track@(80.625, 37.875)'], ['U7.6'], ['U7.30'], ['U7.31']]
+=== cluster u6b exit 17:44:56 ===
