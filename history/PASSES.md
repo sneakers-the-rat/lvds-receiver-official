@@ -288,6 +288,22 @@ via-first hand stubs (hw/hand_via.py; via disc tested as a zero-length segment a
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 36 · Unconnected nets: 55 · Audit verdict: FAIL
 
+### Pass 33 — 2026-11-04T16:00:43Z · commit `128862d`
+
+Board: `hw/pdlvds_rx.fr17.kicad_pcb` · Commit: `128862d766c8434e7b1abff75698481437a9e54b`
+
+placement fixes found by exhaustive audit-exact search (hw/place_search.py): C40 to a clean home at (41.5,62) still flipped on the bottom side (its (35,62) B pads grazed PHY_1V8/ULPI_D2 B-tracks — 21 items), R27 west to (18.1,6.0) (its pad 2 grazed +5V tracks — 2 items); APD_A's D1.6 escape chain ripped (10 items) to open D1.5's exit
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 13 · Unconnected nets: 40 · Audit verdict: FAIL
+
+### Pass 34 — 2026-11-04T16:01:28Z · commit `2a67851`
+
+Board: `hw/pdlvds_rx.fr18.kicad_pcb` · Commit: `2a678510f3eb31cef82fac90596097f22f044c40`
+
+D1 escapes placed (hw/d1_escape.py): APD_K D1.5 neck SE to via@(10.8,36.6) + In2 tail — its neck passes D1.4/D1.6 at 0.70 mm (justified: the APD's own terminals are 0.5 mm apart; the 1.0 mm board rule cannot be met inside the footprint); APD_A D1.4 neck NE to via@(9.9,41.9) + In2 tail, true gap to D1.5 0.975 mm (0.025 graze, same justification class). Both APD pads now have copper; healing bridges them
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 20 · Unconnected nets: 40 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

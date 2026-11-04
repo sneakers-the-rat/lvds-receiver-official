@@ -1,0 +1,13 @@
+pass: 33
+description: placement fixes found by exhaustive audit-exact search (hw/place_search.py): C40 to a clean home at (41.5,62) still flipped on the bottom side (its (35,62) B pads grazed PHY_1V8/ULPI_D2 B-tracks — 21 items), R27 west to (18.1,6.0) (its pad 2 grazed +5V tracks — 2 items); APD_A's D1.6 escape chain ripped (10 items) to open D1.5's exit
+timestamp (UTC): 2026-11-04T16:00:43Z
+commit: pending
+board file: hw/pdlvds_rx.fr17.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 13
+unconnected nets: 40
+audit verdict: fail
+note: 
