@@ -10,13 +10,19 @@ make arm         # cross-compile to build/rxfw.elf + build/rxfw.bin
 make clean
 ```
 
-Status at the time of writing: `make host-test` passes (25 PASS lines,
-exit 0, zero warnings under `-std=c99 -Wall -Wextra -Werror`), and
-`make arm` builds cleanly with arm-none-eabi-gcc 13.2.1
-(text 4472 B, bss 104 B in DTCM, 16 KB capture buffers in AXI SRAM,
-vector table at 0x08000000). A successful compile is **not** a claim
+Status at the time of writing: `make host-test` passes all three
+suites (57 PASS lines, exit 0, zero warnings under
+`-std=c99 -Wall -Wextra -Werror`): the codec suite (25, unchanged),
+the USB descriptor audit (19) and the USB framing round-trip (13).
+`make arm` builds cleanly with arm-none-eabi-gcc 13.2.1: text
+17732 B, data 36 B, bss 19840 B (16 KB of it the AXI SRAM capture
+buffers), vector table at 0x08000000 with the OTG_HS handler at
+slot 93 (checked against the built ELF). Against the stub build
+(text 4472 B, bss 16488 B) the USB transport costs +13260 B of
+flash and +3352 B of bss. A successful compile is **not** a claim
 that the firmware runs correctly on the board - nothing here has
-touched real hardware yet; see "unverified" below.
+touched real hardware yet; see "unverified" below and
+`BRINGUP.md`.
 
 ## What is complete
 
