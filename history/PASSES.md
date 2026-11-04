@@ -440,6 +440,14 @@ surgery2 (hw/surgery2.py — probe 16 directions, rip the cheapest rippable bloc
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 54 · Audit verdict: FAIL
 
+### Pass 52 — 2026-11-04T20:07:19Z · commit `pending`
+
+Board: `hw/pdlvds_rx.fr38.kicad_pcb` · Commit: `pending`
+
+surgery2 with pad-aware blocker pricing (pads cost 10, tracks/vias 1): ULPI_NXT U7.11 stubbed south (3 ULPI_STP items ripped), THRADJ U4.9 stubbed (2 GND tracks ripped) — every formerly singleton pad on the board now has copper
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 3 · Unconnected nets: 54 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
