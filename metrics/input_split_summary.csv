@@ -1,0 +1,4 @@
+scope,usage_rows,recorded_input,estimable_recorded_input,not_estimable_input,est_new,est_repeated,est_new_pct_of_estimable,est_repeated_pct_of_estimable
+chat-tree,117,117339932,117339932,0,2908702,114431230,2.48,97.52
+checkpoint-cron,34,15914052,15317207,596845,1871962,13445245,12.22,87.78
+ALL,151,133253984,132657139,596845,4780664,127876475,3.6,96.4
