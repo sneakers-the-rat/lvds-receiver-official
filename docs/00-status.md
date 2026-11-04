@@ -1249,3 +1249,19 @@ apply the same rolling-cache pattern.
   lane may be sitting in that checkout's working tree — the same
   edit is committed here on `site-jekyll`, so it can be discarded
   there.
+## Resumed sweep on the pass-9/10 placement — final tally (2026-11-04)
+
+The repair6 run resumed from the pass-10 board (48 nets with >1
+group) was stopped on the owner's run-shape directive after
+~53 CPU-minutes: **0 groups connected, 67 groups STILL isolated**
+(sweep 1 unfinished; log results/repair6-resumed.log). It never
+saved a board — checkpoints trigger at 10 connections and it had
+none — so it takes no pass number; pass 11 remains the next
+board state. Recorded as placement evidence: on this placement
+the exact-model repair connects nothing further; the
+STILL-isolated tally is the placement verdict repeating (see the
+diagnosis census and the 33-pair courtyard census). No further
+monolithic sweeps on this placement; any further runs here are
+short and checkpointed at least every ~20 minutes. The main
+line is now the alt-lane placement-relief candidate, routed in
+checkpointed passes when it lands.
