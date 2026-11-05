@@ -582,9 +582,9 @@ Nets fully routed: not recorded · Pins failed: not recorded · Clearance violat
 
 repairg2 log: results/repairg2-exp3.log; checkpoint audit: results/audit-exp3-ckpt.txt
 
-### Pass 69 — 2026-11-05T00:29:35Z · commit `pending`
+### Pass 69 — 2026-11-05T00:29:35Z · commit `810cb02`
 
-Board: `hw/pdlvds_rx.exp4.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp4.kicad_pcb` · Commit: `810cb02d823fc1c4b4da12994056a97a1967105c`
 
 heal_nets rails phase (hw/heal_nets.py, repairg engine under a named net list): +3V3D/+5V/+3V3A/+3V3D_CDR. 48 groups connected in 536 s, EVERY merge audit-real: total groups 225 -> 177, nets 65, violations 2. +3V3D 38 -> 7, +5V 23 -> 10, +3V3A 9 -> 5, +3V3D_CDR 7 -> 7 (zero merges — U4's rail pins are walled; rip-priced threading next). 25 groups STILL isolated, failing fast (1-12 s): U5 power pins x4, X2.1/X2.4 group, FB1.1, R25.1, U7.4 et al. — named residue for thread.py (rip pricing) after the signal phase.
 
