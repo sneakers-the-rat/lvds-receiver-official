@@ -1,0 +1,2 @@
+netlist check: 632 connected pins, 213 nets, 533 expected connections
+PASS: netlist matches circuit.py exactly; structural checks pass

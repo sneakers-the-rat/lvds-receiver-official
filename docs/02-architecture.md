@@ -99,12 +99,18 @@ Control duties: bias DAC + HV enable, threshold DAC, ADN2813 I2C, temperature
 APD current is < 200 uA worst case; voltage is 116-253 V with the
 C30737 set-point fit (151-420 V with the S8664 variant values).
 A boost from 5 V cannot reach 84:1; a flyback can. Design: LT3757 in flyback
-configuration, Wurth/Coilcraft-class 1:10 flyback transformer, 600 V MOSFET
-and diode, output RC post-filter (ripple target < 20 mVpp at the APD after the
+configuration, custom-wound 1:20 flyback transformer on the Würth EFD20
+standard frame (order code 070-4290; controlled winding specification in
+docs/09 — an earlier draft of this paragraph said "1:10", which was wrong),
+60 V primary MOSFET (off-state stress = 5 V + reflected ≈26.5 V plus the
+leakage spike) and 600 V secondary diode, output RC post-filter (ripple target < 20 mVpp at the APD after the
 filter — APD gain sensitivity to ripple is computed in the link budget),
 DAC-injected feedback for MCU control, a hardware ceiling set by the
-fitted feedback network itself (253 V for the C30737 fit — no separate
-OVP clamp part is drawn), primary current limit, bleeder + HV-present
+fitted feedback network itself (253.2 V nominal / 259.4 V worst-case
+for the C30737 fit; a per-population OVP derivation in docs/09 found
+NO clamp window for this fit — worst-case demand 259.40 V vs the
+260 V rating — so no clamp is fitted for it, while the S8664 fit gets
+a 460 V zener stack, D9–D11, DNP in the standard build), primary current limit, bleeder + HV-present
 LED, creepage slots and >= 3 mm clearance on the HV island,
 conformal-coat note in the fab drawing.
 Safety: HV is generated only when the MCU drives HV_EN (PC7) after a
@@ -127,7 +133,7 @@ used — LVDS pair is routed to a single Samtec/... ) — decision: LVDS on a
 differential footprint? NO — keep it simple and standard: LVDS data pair and
 clock pair on a 2x4 100-mil shrouded header (100 ohm termination at the far
 end is the user's receiver) AND data pair also on a pair of edge SMA for
-measurement. BIST LED (630 nm, same part as the paper's emitter) facing the APD
+measurement. BIST LED (740 nm, Ushio Epitex SMT740) facing the APD
 position via a light-pipe hole for optical self-test. SMA test input for
 electrical injection in parallel with the APD (AC-coupled, for bench verify
 without light).
@@ -168,3 +174,10 @@ without light).
    1.6 V is used for the divider/DAC-injection design and is flagged
    VERIFY in the schematic notes — the extracted datasheet text
    confirmed the servo behaviour but truncated the number.
+   CLOSED (parts-fix, docs/09): the full LT3757 datasheet (Rev. G)
+   was read; its EC table gives FBX regulation 1.569 / 1.600 / 1.631 V
+   and FBX pin current 100 nA max — exactly the values the HV clamp
+   derivation used. The same read closed the RT table (R24 refitted
+   53.6 kΩ for 250 kHz; the old 24.9 kΩ sits at ≈500 kHz in the table)
+   and the SENSE current-limit threshold (100/110/120 mV → 2.4 A peak
+   max across R28), which sets T1's saturation specification.
