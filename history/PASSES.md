@@ -724,6 +724,14 @@ Heal batch A (heal_nets on exp36 -> exp37): I2C_SCL, I2C_SDA, TMP_ALERT connecte
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 67 · Unconnected nets: 35 · Audit verdict: FAIL
 
+### Pass 86 — 2026-11-05T09:20:20Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp38.kicad_pcb` · Commit: `pending`
+
+heal_big (15M cap) on exp37 -> exp38: +3V3D_CDR's U4.1 group merged (42 items, 2 vias); +5V 7 -> 5 groups (T1.1 group and the (26.42,-18.54) island connected). Refused in ~5 s each despite the diagnosis BFS reaching the goal halo (cost-model refusal, the Class B signature): U4.12, U11.10-12 cluster, U11.13, U7.4, U14.6 -- these go to thread/hand work, not a third engine attempt. Audit: nets 35, violations 67 (group counts fell; net count unchanged). NOTE: two VM replacements hit during this stretch (diagnose run SIGTERM'd at 805 s, toolchain restored from cache twice); committed work unaffected.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 67 · Unconnected nets: 35 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

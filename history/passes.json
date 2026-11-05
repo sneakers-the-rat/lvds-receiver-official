@@ -2411,6 +2411,35 @@
       },
       "description": "Heal batch A (heal_nets on exp36 -> exp37): I2C_SCL, I2C_SDA, TMP_ALERT connected (the redrawn U9's pads heal at once -- the footprint fix unblocked its locality). ULPI_D1-D6, ULPI_NXT, ULPI_STP, USB_RST refused by heal's A* at both endpoints (U6 lone pads and U7 stub groups) -- Class A seal at the fine-pitch U6/U7 field; they go to thread/escape tools next, not a second heal attempt. Audit: nets 38 -> 35, violations 67.",
       "note": ""
+    },
+    {
+      "pass": 86,
+      "timestamp": "2026-11-05T09:20:20Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp38.kicad_pcb",
+      "dir": "pass-0086",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 67,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL"
+      },
+      "description": "heal_big (15M cap) on exp37 -> exp38: +3V3D_CDR's U4.1 group merged (42 items, 2 vias); +5V 7 -> 5 groups (T1.1 group and the (26.42,-18.54) island connected). Refused in ~5 s each despite the diagnosis BFS reaching the goal halo (cost-model refusal, the Class B signature): U4.12, U11.10-12 cluster, U11.13, U7.4, U14.6 -- these go to thread/hand work, not a third engine attempt. Audit: nets 35, violations 67 (group counts fell; net count unchanged). NOTE: two VM replacements hit during this stretch (diagnose run SIGTERM'd at 805 s, toolchain restored from cache twice); committed work unaffected.",
+      "note": ""
     }
   ],
   "gaps": [

@@ -1,0 +1,11 @@
++3V3D_CDR: 3 groups, main group 48 items
+  +3V3D_CDR: connected group of 42 items (3s, 2 vias)
+  +3V3D_CDR: group (1 items, ['U4.12']) STILL isolated (1s)
++5V: 7 groups, main group 260 items
+  +5V: group (6 items, ['U11.10', 'U11.11', 'U11.12']) STILL isolated (6s)
+  +5V: group (2 items, ['U11.13', 'track@(14.8125, 62.588388)']) STILL isolated (5s)
+  +5V: group (1 items, ['U7.4']) STILL isolated (5s)
+  +5V: group (1 items, ['U14.6']) STILL isolated (5s)
+  +5V: connected group of 1 items (6s, 2 vias)
+  +5V: connected group of 1 items (5s, 0 vias)
+heal_big done: 3 groups connected in 40s, output hw/pdlvds_rx.exp38.kicad_pcb
