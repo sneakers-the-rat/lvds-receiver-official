@@ -48,9 +48,16 @@ def find(items, net, pos, half, width):
                     for k in range(16):
                         a = k * math.pi / 8
                         ca, sa = math.cos(a), math.sin(a)
-                        ext = hx * abs(ca) + hy * abs(sa)
-                        sx = px + (ext + soff) * ca
-                        sy = py + (ext + soff) * sa
+                        # Ray-exit distance from the pad's bbox.
+                        # The support function hx*|ca|+hy*|sa|
+                        # overshoots on diagonals and (with soff)
+                        # could start the neck floating off the pad;
+                        # the neck must start INSIDE the pad.
+                        ext = min(hx / abs(ca) if ca else 1e9,
+                                  hy / abs(sa) if sa else 1e9)
+                        startd = max(ext - 0.08, 0.25 * ext) + soff
+                        sx = px + startd * ca
+                        sy = py + startd * sa
                         vx, vy = px + dv * ca, py + dv * sa
                         neck = pcbnew.SHAPE_SEGMENT(
                             pcbnew.VECTOR2I(MM(sx), MM(sy)),
