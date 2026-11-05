@@ -9,10 +9,16 @@ while the audit's surface creepage rule (check_pcb.HV_NETS =
 {APD_K, HV_RAW, HV_SEC}) needs 1.0 mm — 8 new violations.
 
 Rects are not hand-drawn here: they are computed from the actual
-extents of every HV-net pad/track/via whose copper reaches the
-strip side (centre y < 5 mm), each expanded by 1.35 mm (so the
-refilled pour keeps >= 1.0 mm from the copper, as in notch.py's
->=1.3 expansion), then merged where they overlap.
+extents of every HV-net pad/track/via, each expanded by 1.35 mm
+(so the refilled pour keeps >= 1.0 mm from the copper, as in
+notch.py's >=1.3 expansion), then merged where they overlap.
+
+History: the collection was originally filtered to the strip
+(centre y < 5 mm). Pass 72's heal-all2 laid new APD_K copper in
+the old field too — a via at (13.625, 30.625) and its track run
+south to y 19.1 — and the pass-72 audit charged 38 APD_K-vs-pour
+violations, 6 of them on that old-field run, outside the filter.
+The filter is gone: HV copper is collected board-wide.
 
 Run: xvfb-run -a python3 hw/notch_strip.py [IN] [OUT]
      (defaults: hw/pdlvds_rx.expanded.kicad_pcb, in place)
@@ -28,7 +34,7 @@ import check_pcb
 MM = pcbnew.FromMM
 TM = pcbnew.ToMM
 EXPAND = 1.35
-STRIP_Y = 5.0   # collect HV copper centred north of this line
+STRIP_Y = None   # was 5.0 (strip only); None = collect board-wide
 
 def merge(rects):
     """Merge overlapping (or touching after expansion) rects."""
@@ -58,7 +64,7 @@ def main():
     def take(bb):
         x0, y0 = TM(bb.GetX()), TM(bb.GetY())
         x1, y1 = TM(bb.GetRight()), TM(bb.GetBottom())
-        if (y0 + y1) / 2 < STRIP_Y:
+        if STRIP_Y is None or (y0 + y1) / 2 < STRIP_Y:
             rects.append((x0 - EXPAND, y0 - EXPAND, x1 + EXPAND, y1 + EXPAND))
     for fp in board.GetFootprints():
         for pad in fp.Pads():
