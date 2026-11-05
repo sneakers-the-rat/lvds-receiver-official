@@ -844,6 +844,14 @@ Zone refill after the respread (exp59 -> exp60): violations 168 -> 71 (below the
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 65 · Audit verdict: FAIL
 
+### Pass 101 — 2026-11-05T13:08:43Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp61.kicad_pcb` · Commit: `pending`
+
+ULPI fanout heal round 1 (exp60 -> exp61): D0, D1, D4, D6, D7, NXT CONNECTED in the new geometry (audit 65 -> 59 nets). Residue: single U7 pads D2/D3/D5/DIR/CK/STP/RST sealed at heal's first move (fanout-order problem) -- round 2 stubs them by hand first, then heals. Violations 71 -> 81 from heal grazes, violation campaign queued.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 81 · Unconnected nets: 59 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
