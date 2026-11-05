@@ -13,7 +13,8 @@ import heapq, math
 import pcbnew
 
 CELL = 0.25
-W, H = 400, 320            # 100 x 80 mm
+W, H = 400, 440            # 100 x 110 mm (pass-65 expansion: +30 mm strip)
+OY = -30.0                 # board y (mm) of grid row 0; strip is y in [-30, 0]
 LAYERS = [pcbnew.F_Cu, pcbnew.In2_Cu, pcbnew.B_Cu]
 MM = pcbnew.FromMM
 
@@ -52,7 +53,7 @@ NECK_W = 0.20
 NECK_R = 1.6
 
 def cell_of(x_mm, y_mm):
-    return (min(W - 1, max(0, int(x_mm / CELL))), min(H - 1, max(0, int(y_mm / CELL))))
+    return (min(W - 1, max(0, int(x_mm / CELL))), min(H - 1, max(0, int((y_mm - OY) / CELL))))
 
 class Items:
     """Copper geometry registry with buckets. Item: (kind, net, data)
@@ -274,7 +275,7 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=(),
             nb = (li, nx, ny)
             if nb in gscore and gscore[nb] <= gscore[node] + 1:
                 continue
-            wx_, wy_ = (nx + 0.5) * CELL, (ny + 0.5) * CELL
+            wx_, wy_ = (nx + 0.5) * CELL, (ny + 0.5) * CELL + OY
             # Goal cells and this net's own pad cells are exempt from
             # the blocked test: they ARE this net's copper. Without
             # this, grid quantisation (cell centre up to 0.18 mm from
@@ -289,7 +290,7 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=(),
             # 0.25 mm grid under-protects the swept segment between
             # them (midpoints and corners) by up to ~half a cell; the
             # v4 board showed 200+ sub-clearance pairs from this.
-            mx, my = ((cx + nx) / 2 + 0.5) * CELL, ((cy + ny) / 2 + 0.5) * CELL
+            mx, my = ((cx + nx) / 2 + 0.5) * CELL, ((cy + ny) / 2 + 0.5) * CELL + OY
             if blocked(items, li, mx, my, netname, eff_hw(mx, my), clr):
                 continue
             gscore[nb] = gscore[node] + 1; came[nb] = node
@@ -299,7 +300,7 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=(),
             nb = (lj, cx, cy)
             if nb in gscore and gscore[nb] <= gscore[node] + 6:
                 continue
-            wx_, wy_ = (cx + 0.5) * CELL, (cy + 0.5) * CELL
+            wx_, wy_ = (cx + 0.5) * CELL, (cy + 0.5) * CELL + OY
             # Via landings must respect the VIA radius, not the track
             # half-width (v3 under-modelled this: a 0.8 mm via was
             # tested as a 0.4 mm-wide track, producing real clearance
@@ -360,8 +361,8 @@ def emit(board, netobj, path, width, items, netname, clr, stats):
         # neck-down near the pin end, matching the search allowance
         seg_w = NECK_W if (width > NECK_W and cumdist < NECK_R) else width
         if a[0] == b[0]:
-            x1, y1 = (a[1] + 0.5) * CELL, (a[2] + 0.5) * CELL
-            x2, y2 = (b[1] + 0.5) * CELL, (b[2] + 0.5) * CELL
+            x1, y1 = (a[1] + 0.5) * CELL, (a[2] + 0.5) * CELL + OY
+            x2, y2 = (b[1] + 0.5) * CELL, (b[2] + 0.5) * CELL + OY
             seglen = math.hypot(x2 - x1, y2 - y1)
             budget = NECK_R - cumdist
             if seg_w == NECK_W and 0 < budget < seglen:
@@ -373,7 +374,7 @@ def emit(board, netobj, path, width, items, netname, clr, stats):
                 draw_seg(a[0], x1, y1, x2, y2, seg_w)
             cumdist += seglen
         else:
-            x, y = (a[1] + 0.5) * CELL, (a[2] + 0.5) * CELL
+            x, y = (a[1] + 0.5) * CELL, (a[2] + 0.5) * CELL + OY
             via = pcbnew.PCB_VIA(board)
             via.SetPosition(pcbnew.VECTOR2I(MM(x), MM(y)))
             vd, dr = (0.8, 0.4) if seg_w >= 0.4 else (0.6, 0.3)
