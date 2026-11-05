@@ -1,0 +1,43 @@
+## test_router_grid.py — current tree (post-d4a9e0d)
+  PASS  grid width covers 100 mm  W=400 CELL=0.25
+  PASS  grid height covers 110 mm  H=440
+  PASS  grid origin OY is -30 (strip)  OY=-30.0
+  PASS  cell_of round-trips (50.0, -15.0)  -> cell (200, 60) -> (50.12, -14.88)
+  PASS  cell_of round-trips (10.0, -29.0)  -> cell (40, 4) -> (10.12, -28.88)
+  PASS  cell_of round-trips (86.66, 41.25)  -> cell (346, 285) -> (86.62, 41.38)
+  PASS  fixture has two STRIPNET groups  got 2
+  PASS  astar6 routes the strip net  
+  PASS  emitted copper lies in the strip (y ~ -20)  track y range -20.00..-19.88
+RESULT: PASS (0 failed)
+exit=0
+
+## test_router_grid.py — pre-fix tree (router.py/router6.py @ d4a9e0d^)
+  PASS  grid width covers 100 mm  W=400 CELL=0.25
+  FAIL  grid height covers 110 mm  H=320
+  FAIL  grid origin OY is -30 (strip)  OY=0.0
+  FAIL  cell_of round-trips (50.0, -15.0)  -> cell (200, 0) -> (50.12, 0.12)
+  FAIL  cell_of round-trips (10.0, -29.0)  -> cell (40, 0) -> (10.12, 0.12)
+  PASS  cell_of round-trips (86.66, 41.25)  -> cell (346, 165) -> (86.62, 41.38)
+  PASS  fixture has two STRIPNET groups  got 2
+  PASS  astar6 routes the strip net  
+  FAIL  emitted copper lies in the strip (y ~ -20)  track y range -20.00..0.12
+RESULT: FAIL (5 failed)
+exit=1
+
+## test_hand_stub.py — current tree (post-feceb01)
+  PASS  find_stub places a stub  
+  PASS  stub start is ON the pad  start (50.288, 50.119) vs pad half (0.7375, 0.15) at (50.0, 50.0)
+  PASS  winning escape is diagonal (bug's case)  dir (0.54, 0.22)
+  PASS  hand_via finds a via escape  
+  PASS  via neck start is ON the pad  start (50.638, 50.000)
+RESULT: PASS (0 failed)
+exit=0
+
+## test_hand_stub.py — pre-fix tree (hand_stub.py/hand_via.py @ feceb01^)
+  PASS  find_stub places a stub  
+  FAIL  stub start is ON the pad  start (50.664, 50.275) vs pad half (0.7375, 0.15) at (50.0, 50.0)
+  PASS  winning escape is diagonal (bug's case)  dir (0.48, 0.20)
+  PASS  hand_via finds a via escape  
+  PASS  via neck start is ON the pad  start (50.638, 50.000)
+RESULT: FAIL (1 failed)
+exit=1
