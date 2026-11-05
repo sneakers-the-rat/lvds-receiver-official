@@ -136,17 +136,47 @@ outputs in results/test-regressions.txt.
 
 Residue basis: pass 76 audit (28 unconnected nets, 17 violations).
 
-### CLASS T — thread via-rip execution gap (tool defect; NEW at pass 76)
+### CLASS T — thread via-rip execution gap (tool defect; NEW at pass 76) — FIXED, board repair pending
 Mechanism: thread.py's rip reconstruction re-tests only same-layer path
 SEGMENTS against live tracks. Blocker tracks that via_blockers() priced
 as ripped during the search are never removed, so thread_far's placed
 vias violate their own priced victims. Evidence: 15 of pass 76's 17
 violations (SLICEP via@(51.5,-17.5) vs SLICEN/CDR_NIN x8, HV cluster
-threads x7). Fix: execute via-disc rips in the reconstruction (remove
-the priced track items), regression test in the same commit (fixture:
-a thread whose via prices a victim track; assert victim removed and
-audit-clean). Until T is fixed, thread/thread_far output is suspect.
-Status: OPEN.
+threads x7). Diagnosis addendum (coordinator #4, exp13-vs-exp12 track
+diff): TWO sub-defects — (T1) priced rips executed by a capped
+count-heuristic over segment collisions only, so via-disc-priced
+victims were never removed and segment victims were removed by
+count, not identity; (T2) the anchor stubs (facing point <-> first/
+last lattice node) were placed with NO blocker test at all — the
+MOS_G-vs-HV_GATE and HV_RT-vs-HV_SS violations are both stub tracks
+(their start points match stub geometry exactly).
+FIX (thread.py + thread_far.py, same commit as the regression
+test): the search prices the anchor stubs like any other segment —
+start = the four lattice corners around the facing point, each
+initialised with its stub's rip set (a walled stub discards that
+corner); a goal node is accepted only if its goal stub is rippable,
+its blockers joining the rip set. The reconstruction executes
+EXACTLY the priced set: rip_targets() resolves each priced item
+index to its live board object via the build_items/GetTracks()
+correspondence, VERIFIED per item (net + shape BBox) — any mismatch
+aborts the thread with nothing placed. Regression:
+hw/tests/test_thread_via_rip.py (a wall pad forces a layer change;
+the victim is a wide In1_Cu bar only a via disc can price). Clean
+evidence in results/test-regressions.txt: fixed tree PASS (both
+tools rip exactly the victim, audit-clean); pre-fix tree FAIL
+(both rip 0, victim survives, placed via violates it).
+TOOLING TRAP found en route: every hw module self-inserts the
+RELATIVE path 'hw' into sys.path at import, so in a multi-tool
+test the second tool imported resolves against the CWD's tree, not
+HW_DIR — a first pre-fix capture silently tested the fixed
+thread_far and was discarded. Tests must load tools by explicit
+path (test_thread_via_rip.py does) or run where 'hw' resolves to
+the intended tree.
+REMAINING: repair pass 76's board — re-run the fixed thread_far on
+the pass-75 board (exp12) with pass 76's net list and commit the
+audited result as the next pass. Until that lands, pass 76's 15
+Class-T violations stand on main.
+Status: MECHANISM CLOSED; board repair is the next pass.
 
 ### CLASS A — NO_EXIT pads (local surgery per pad; blocker named)
 Pads sealed in their first millimetre (diagnose reach=1 on exp12;
@@ -190,6 +220,27 @@ thread/thread_far per pair AFTER Class T is fixed (its via bug is
 exactly what bit the HV cluster), or hand hops where the gap is
 sub-millimetre. Thread-victim splits (HV_RT, U4.12, +5V's growth)
 are repaid inside this class's fixes. Status: OPEN.
+
+### Queued placement pass — HV interlock jumper header (parent update, 2026-11-04 ~21:01 PST)
+The HV fix lane's schematic regeneration introduces exactly ONE
+new footprint: a 2-pin enable jumper header for the HV
+interlock (owner delegated the decision; deliberate-action
+jumper in the SHDN path). When the fix lands on main, place it
+as a small placement pass: board edge near the HV/U10 cluster,
+operator-accessible; route its nets (SHDN-path series + possibly
+one sense net to a spare MCU GPIO — the fix report names the
+designator, footprint, and nets). No other layout impact from
+that lane. Not actionable until the fix lands.
+
+### D1 owner decision (parent update, 2026-11-04 ~20:53 PST)
+Owner directed the D1 fix: a hardware population clamp on the HV
+set-point network (values-only resistor change; no footprint or
+geometry changes — layout untouched by design). A dedicated worker
+implements it in a separate clone (circuit.py + docs/03/02 + firmware
+DAC mapping + HV sim). When it lands, the docs/07 exemption gate is
+re-run against the new bounded maximum. Until then D1's state stays
+recorded exactly as in the standing-lines section below. No action
+for this lane.
 
 ### Standing audit lines (not a class, not work items)
 The 2 APD_K-vs-APD_A clearance lines (D1.5's own terminal pair) stand
