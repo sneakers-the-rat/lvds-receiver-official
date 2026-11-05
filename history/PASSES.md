@@ -868,9 +868,9 @@ Escapes 18 (exp62 -> exp63): surviving D4 staircase segment ripped (tight tolera
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 81 · Unconnected nets: 62 · Audit verdict: FAIL
 
-### Pass 104 — 2026-11-05T13:40:49Z · commit `pending`
+### Pass 104 — 2026-11-05T13:40:49Z · commit `b7db9f1`
 
-Board: `hw/pdlvds_rx.exp64.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp64.kicad_pcb` · Commit: `b7db9f141c32da836e17e14bd3aef564fd99d44f`
 
 ULPI fanout heal round 2 (exp63 -> exp64): D5, DIR, CK CONNECTED; D7 and NXT re-connected after their fence rips. Residue moved to the U6 side (U6.47/U6.69/U6.26 bare pads) + D4 pad re-entry + RST. Post-fanout audit: 54 nets / 82 violations (from 65/71 at adoption).
 
