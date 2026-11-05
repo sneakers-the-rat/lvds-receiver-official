@@ -1,0 +1,33 @@
++3V3D_CDR: no thread (gap 2.25)
+CDR_VREF: threaded gap 3.81: 6 segs, 0 vias, ripped 2
+CF2: no pair within 15 mm
+REFCLKN: threaded gap 6.04: 8 segs, 2 vias, ripped 2
+SLICEP: threaded gap 4.46: 8 segs, 2 vias, ripped 0
+CDR_PIN: no pair within 15 mm
+CAP_DATA: no pair within 15 mm
+CDR_SQUELCH: no pair within 15 mm
+PHY_1V8A: no thread (gap 8.95)
+PHY_1V8: no thread (gap 4.00)
++3V3A: no thread (gap 2.73)
+I2C_SCL: no pair within 15 mm
+I2C_SDA: no pair within 15 mm
+TMP_ALERT: no pair within 15 mm
+SET_P: no thread (gap 5.14)
+CC2: no thread (gap 2.07)
+DP_PHY: no pair within 15 mm
+HV_SS: threaded gap 4.08: 12 segs, 0 vias, ripped 3
+HV_GATE: threaded gap 3.87: 11 segs, 2 vias, ripped 1
+HV_INTVCC: threaded gap 5.27: 13 segs, 0 vias, ripped 3
+HV_SHDN: no thread (gap 6.28)
+ULPI_D1: no pair within 15 mm
+ULPI_D2: no pair within 15 mm
+ULPI_D3: no pair within 15 mm
+ULPI_D5: no pair within 15 mm
+ULPI_D4: no pair within 15 mm
+ULPI_D6: no pair within 15 mm
+ULPI_NXT: no pair within 15 mm
+ULPI_STP: no pair within 15 mm
+USB_RST: no pair within 15 mm
++5V: threaded gap 0.19: 3 segs, 0 vias, ripped 0
+APD_K: no thread (gap 8.45)
+saved hw/pdlvds_rx.exp13.kicad_pcb
