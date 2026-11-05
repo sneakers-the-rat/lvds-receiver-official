@@ -1,0 +1,20 @@
++3V3D_CDR: 2 groups, main group 101 items
+  +3V3D_CDR: group (2 items, ['U4.12', 'track@(54.75, -16.059999)']) STILL isolated (7s)
++5V: 5 groups, main group 272 items
+  +5V: group (7 items, ['U11.10', 'U11.11', 'U11.12']) STILL isolated (14s)
+  +5V: connected group of 6 items (8s, 0 vias)
+  +5V: group (2 items, ['U11.13', 'track@(14.8125, 62.588388)']) STILL isolated (8s)
+  +5V: connected group of 1 items (23s, 1 vias)
+APD_K: 6 groups, main group 148 items
+  APD_K: connected group of 9 items (1s, 0 vias)
+  APD_K: group (2 items, ['RJ2.2', 'track@(14.151089, 56.864929)']) STILL isolated (2s)
+  APD_K: group (2 items, ['R47.2', 'track@(49.325, -1.6)']) STILL isolated (2s)
+  APD_K: group (1 items, ['R31.1']) STILL isolated (1s)
+  APD_K: group (1 items, ['D1.5']) STILL isolated (1s)
+CAP_DATA: 2 groups, main group 2 items
+  CAP_DATA: group (2 items, ['U5.3', 'track@(66.42, -20.405)']) STILL isolated (414s)
+CDR_PIN: 2 groups, main group 2 items
+  CDR_PIN: group (2 items, ['U4.5', 'track@(52.205, -18.25)']) STILL isolated (1s)
+CDR_SQUELCH: 2 groups, main group 2 items
+  CDR_SQUELCH: group (2 items, ['U4.27', 'track@(55.75, -21.295)']) STILL isolated (1s)
+CF2: 2 groups, main group 2 items

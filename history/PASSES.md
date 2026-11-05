@@ -772,6 +772,14 @@ Escapes 3-8 (exp42 -> exp49): +3V3A COMPLETE (U7.6 west exit, In2 hop under the 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 80 · Unconnected nets: 27 · Audit verdict: FAIL
 
+### Pass 92 — 2026-11-05T11:56:56Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp50.kicad_pcb` · Commit: `pending`
+
+Escapes 9 (exp49 -> exp50): R50 moved (-2.0,-0.8) opening the HV_RAW via-gap lane, orphaned FBX/R31B hops ripped for re-route, U14.6 via down to B, VBUS picket ripped for CC2. Audit records the state.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 82 · Unconnected nets: 29 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
