@@ -78,6 +78,38 @@ def via_blockers(items, net, x, y):
 def rippable(items, bl):
     return all(items[i][4].startswith(('track@', 'via@')) for i in bl)
 
+def rip_targets(board, items, rips):
+    """Resolve priced item indices to live board tracks/vias.
+
+    build_items appends track/via items in board.GetTracks()
+    order. That correspondence is VERIFIED per priced item
+    (net + shape BBox), never assumed: any mismatch returns
+    None and the caller aborts the thread rather than ripping
+    the wrong copper. (Class T: the pre-fix reconstruction
+    re-tested only same-layer path segments and capped removals
+    at len(rips), so via-disc-priced victims were never removed
+    and the placed vias violated them — pass 76, 15 lines.)
+    """
+    tracks = list(board.GetTracks())
+    track_items = [i for i, it in enumerate(items)
+                   if it[0] in ('track', 'via')]
+    if len(track_items) != len(tracks):
+        return None
+    pos = {idx: k for k, idx in enumerate(track_items)}
+    out = []
+    for idx in sorted(rips):
+        it = items[idx]
+        t = tracks[pos[idx]]
+        if t.GetNetname() != it[1]:
+            return None
+        bb, tb = it[3].BBox(), t.GetEffectiveShape().BBox()
+        if (bb.GetLeft() != tb.GetLeft() or bb.GetTop() != tb.GetTop()
+                or bb.GetRight() != tb.GetRight()
+                or bb.GetBottom() != tb.GetBottom()):
+            return None
+        out.append(t)
+    return out
+
 def thread_one(board, items, net):
     gs = groups_of(items, net)
     if len(gs) < 2:
@@ -114,13 +146,37 @@ def thread_one(board, items, net):
     x1 = math.ceil((max(p0[0], p1[0]) + 5.0) / STEP) * STEP
     y0 = math.floor((min(p0[1], p1[1]) - 5.0) / STEP) * STEP
     y1 = math.ceil((max(p0[1], p1[1]) + 5.0) / STEP) * STEP
-    starts = [(round(p0[0] / STEP) * STEP, round(p0[1] / STEP) * STEP)]
+    # Start nodes: the four lattice corners around p0. The anchor
+    # stub p0 -> start node is real placed copper, so it is priced
+    # like any other segment (Class T): a candidate whose stub
+    # hits a wall (unrippable blocker) is discarded, and rippable
+    # stub blockers enter the search's rip set at the start node.
+    sx = [math.floor(p0[0] / STEP) * STEP,
+          math.ceil(p0[0] / STEP) * STEP]
+    sy = [math.floor(p0[1] / STEP) * STEP,
+          math.ceil(p0[1] / STEP) * STEP]
+    start_nodes = sorted({(x, y) for x in sx for y in sy})
     goal = (round(p1[0] / STEP) * STEP, round(p1[1] / STEP) * STEP)
     # node: (layer_idx, gx, gy) in STEP units
     def key(l, x, y):
         return (l, int(round(x / STEP)), int(round(y / STEP)))
-    start_keys = [key(li, starts[0][0], starts[0][1])
-                  for li in range(len(LAYERS)) if LAYERS[li] in shared]
+    start_init = {}
+    for (nx, ny) in start_nodes:
+        if nx < x0 or nx > x1 or ny < y0 or ny > y1:
+            continue
+        for li in range(len(LAYERS)):
+            if LAYERS[li] not in shared:
+                continue
+            bl = blockers(items, net, segm(p0[0], p0[1], nx, ny, w),
+                          LAYERS[li])
+            if not rippable(items, bl) or len(bl) > MAX_RIPS:
+                continue
+            k = key(li, nx, ny)
+            c = RIP_COST * len(bl)
+            if k not in start_init or c < start_init[k][0]:
+                start_init[k] = (c, frozenset(bl))
+    if not start_init:
+        return 'anchor stub walled at start'
     goal_keys = {key(li, goal[0], goal[1])
                  for li in range(len(LAYERS)) if LAYERS[li] in shared}
     seg_cache = {}
@@ -158,17 +214,29 @@ def thread_one(board, items, net):
     open_heap = []
     dist = {}
     prev = {}
-    for sk in start_keys:
-        dist[sk] = (0.0, frozenset())
-        heapq.heappush(open_heap, (0.0, sk))
+    for sk, (c0, r0) in start_init.items():
+        dist[sk] = (c0, r0)
+        heapq.heappush(open_heap, (c0, sk))
     found = None
+    goal_rips = frozenset()
     while open_heap:
         d, node = heapq.heappop(open_heap)
         if dist.get(node, (1e18,))[0] < d:
             continue
         if node in goal_keys:
-            found = node
-            break
+            # The goal anchor stub (node -> p1) is placed copper
+            # too: price it before accepting this goal node
+            # (Class T). A walled stub rejects the node; the
+            # search expands through it instead.
+            gl, ggx, ggy = node
+            sbl = blockers(items, net,
+                           segm(ggx * STEP, ggy * STEP,
+                                p1[0], p1[1], w),
+                           LAYERS[gl])
+            if rippable(items, sbl):
+                found = node
+                goal_rips = frozenset(sbl)
+                break
         l, gx, gy = node
         x, y = gx * STEP, gy * STEP
         cur_rips = dist[node][1]
@@ -211,33 +279,20 @@ def thread_one(board, items, net):
     while path[-1] in prev:
         path.append(prev[path[-1]])
     path.reverse()
-    rips = dist[found][1]
-    # rip exactly the priced items: re-test live tracks against
-    # the path; remove only collisions whose (net) matches a priced
-    # item AND stop once the priced count is reached per net is
-    # impossible (descs are not unique) — instead bound the total:
-    # remove collisions in path order until len(rips) reached.
-    ripped = 0
-    if rips:
-        cand = []
-        for t in list(board.GetTracks()):
-            n2 = t.GetNetname()
-            if n2 == net:
-                continue
-            for i in range(len(path) - 1):
-                l1, gx1, gy1 = path[i]
-                l2, gx2, gy2 = path[i + 1]
-                if l1 != l2 or not t.IsOnLayer(LAYERS[l1]):
-                    continue
-                s = segm(gx1 * STEP, gy1 * STEP,
-                         gx2 * STEP, gy2 * STEP, w)
-                need = check_pcb.need_for(net, n2, {LAYERS[l1]})
-                if s.Collide(t.GetEffectiveShape(), MM(need - 0.001)):
-                    cand.append(t)
-                    break
-        for t in cand[:len(rips)]:
-            board.Remove(t)
-            ripped += 1
+    rips = set(dist[found][1]) | set(goal_rips)
+    # Execute exactly the priced rips (Class T fix): segment
+    # blockers, via-disc blockers and anchor-stub blockers alike
+    # are resolved to their live board objects and removed BEFORE
+    # any new copper is placed. Resolution failure aborts the
+    # thread with nothing placed — placing copper whose priced
+    # victims survive is how pass 76 got 15 violations.
+    targets = rip_targets(board, items, rips)
+    if targets is None:
+        return ('rip resolution failed — thread aborted, '
+                'nothing placed')
+    for t in targets:
+        board.Remove(t)
+    ripped = len(targets)
     netobj = board.FindNet(net)
     segs = vias = 0
     # anchor stubs: from the exact facing points to the nearest

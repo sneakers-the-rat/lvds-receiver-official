@@ -41,3 +41,44 @@ exit=0
   PASS  via neck start is ON the pad  start (50.638, 50.000)
 RESULT: FAIL (1 failed)
 exit=1
+
+## test_thread_via_rip.py — current tree (Class T fix)
+  PASS  thread_far: fixture carries the VIC victim  got 1
+    thread_far: threaded gap 2.40: 5 segs, 2 vias, ripped 1
+  PASS  thread_far: thread succeeds  threaded gap 2.40: 5 segs, 2 vias, ripped 1
+  PASS  thread_far: a via was placed  got 2
+  PASS  thread_far: via-priced victim was ripped  VIC tracks left: 0
+  PASS  thread_far: placed copper is audit-clean  
+  PASS  thread: fixture carries the VIC victim  got 1
+    thread: threaded gap 2.40: 5 segs, 2 vias, ripped 1
+  PASS  thread: thread succeeds  threaded gap 2.40: 5 segs, 2 vias, ripped 1
+  PASS  thread: a via was placed  got 2
+  PASS  thread: via-priced victim was ripped  VIC tracks left: 0
+  PASS  thread: placed copper is audit-clean  
+RESULT: PASS (0 failed)
+exit=0
+
+## test_thread_via_rip.py — pre-fix tree (thread.py/thread_far.py @ 55120aa)
+NOTE: a first capture of this pre-fix run was DISCARDED. The hw
+modules self-insert the relative path 'hw' into sys.path at
+import time (e.g. thread.py line 15), so in the test's original
+import order the second tool module resolved against the CWD's
+tree (the fixed files) instead of the pre-fix tree, and
+thread_far falsely showed ripped 1. Proven by module __file__
+inspection. The test now loads both tools by explicit path
+under HW_DIR. Clean rerun (cwd outside the repo, bytecode
+cache removed):
+  PASS  thread_far: fixture carries the VIC victim  got 1
+    thread_far: threaded gap 2.40: 5 segs, 2 vias, ripped 0
+  PASS  thread_far: thread succeeds  threaded gap 2.40: 5 segs, 2 vias, ripped 0
+  PASS  thread_far: a via was placed  got 2
+  FAIL  thread_far: via-priced victim was ripped  VIC tracks left: 1
+  FAIL  thread_far: placed copper is audit-clean  TGT(via@stubcheck) vs VIC(track@stubcheck)
+  PASS  thread: fixture carries the VIC victim  got 1
+    thread: threaded gap 2.40: 5 segs, 2 vias, ripped 0
+  PASS  thread: thread succeeds  threaded gap 2.40: 5 segs, 2 vias, ripped 0
+  PASS  thread: a via was placed  got 2
+  FAIL  thread: via-priced victim was ripped  VIC tracks left: 1
+  FAIL  thread: placed copper is audit-clean  TGT(via@stubcheck) vs VIC(track@stubcheck)
+RESULT: FAIL (4 failed)
+exit=1
