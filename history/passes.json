@@ -3426,6 +3426,35 @@
       },
       "description": "ZOMBIE PRUNE (owner-directed cleanup): new standing tool hw/prune_dead.py leaf-trims dead branches on a geometric copper graph (pads and pour contacts are terminals; through-paths stay) and proves the invariant in-process before saving: the per-net pad-group partition under the audit's own connectivity model (pads+tracks+vias+zone fills, Collide-0) is IDENTICAL before/after -- no net moved, no net reverted. REMOVED: 392 segments (0 vias), 126 overshoot tracks shortened, 385.9 mm of dead copper. Worst offenders: GND -101 segs (75.7 mm), SWDIO -18 segs (60.9 mm -- an entire superseded route), CDR_DATP -46 (24.2 mm), ULPI_D0 -22 (20.2 mm), HV_EN -6 (19.1 mm), TMP_ALERT -14 (18.5 mm), CAP_CLK -25 (10.9 mm), I2C_SDA -27 (10.6 mm); the old U6-site fanout field around (69-78,33-41) accounts for the NRST/CAP_CLK/TMP_ALERT share. DELTAS vs pass 119: nets 28->28 (identical partitions), violations 74->71 -- 3 lines cured, all zombie GND tracks in the HV field (HV_R31A R49.1 vs GND track@(30.375,-12.625); TP_HV track@(44.375,18.125) vs GND tracks x2), zero new lines. Tool stays in hw/: run after any placement move as a matter of course.",
       "note": ""
+    },
+    {
+      "pass": 121,
+      "timestamp": "2026-11-05T23:03:34Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp113.kicad_pcb",
+      "dir": "pass-0121",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 71,
+        "unconnected_nets": 27,
+        "audit_verdict": "FAIL"
+      },
+      "description": "+3V3A U7.25 connected (queue item 4): via d=0.45 at (77.98,11.65) in the north-east corner -- overlaps U7.25's own pad edge, clears U7.24 (ULPI_D0) by 0.25 shape distance, and touches the In2 mesh segment (77.88,11.62)->(77.62,11.88); F stub (77.80,11.75)->(77.98,11.65). Refused on record: via on the pad or onto the mesh NE (QFN pitch + ULPI_CK's F staircase at 0.25 class on every site) and the F west channel run in 4 variants (ULPI_CK wall + CDR_DATP via (76.88,10.62) + XI/PHY_1V8A escape nubs tile the channel). DELTAS vs pass 120: nets 28->27 (+3V3A connected), violations 71->71, census byte-identical. No victims.",
+      "note": ""
     }
   ],
   "gaps": [

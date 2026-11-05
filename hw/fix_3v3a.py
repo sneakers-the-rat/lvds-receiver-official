@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 """Connect +3V3A's lone pad U7.25 (queue item 4).
 
-U7.25 (77.75,11.56) is on U7's north QFN row (0.25 mm pads on
-0.5 mm pitch): a via on the pad itself would sit 0.075 mm from
-U7.26 (PHY_1V8, 0.25 class) -- impossible. But the net's own In2
-distribution mesh passes directly below the pad (segments around
-(78.12,11.38)->(77.88,11.62)). A short F stub north-east from the
-pad to a via that lands on the mesh closes the net.
+Refused mechanisms, on record:
+  * via on the pad / onto the In2 mesh NE: the QFN row pitch
+    (0.25 mm pads, 0.5 mm pitch, PHY_1V8 at 0.25 class) forbids
+    any via at the pad; the mesh's NE staircase is shadowed by
+    ULPI_CK's F staircase at the 0.25 class on every site.
+  * F run west along the channel: ULPI_CK's diagonal wall, the
+    CDR_DATP via (76.88,10.62), and the XI / PHY_1V8A escape nubs
+    (caps to y=10.93) tile the channel completely -- 4 variants
+    refused by exact test (DATP via + CK tracks + PHY_1V8 pad).
 
-Candidates are exact-tested in order (stub on F, via on all
-layers, zones excluded); the group count must go 2 -> 1 or the
-board is not saved.
+Working mechanism: a via in the north-east corner at
+(78.02,11.68), d=0.45. It overlaps U7.25's own pad edge (same
+net), clears U7.24 (ULPI_D0) pad by 0.25 of shape distance, and
+on In2 it touches the mesh segment (77.88,11.62)->(77.62,11.88).
+A two-segment F stub joins pad to via. Candidates exact-tested
+in order (all layers for the via, zones excluded); groups must
+go 2 -> 1 or the board is not saved.
 
 Run: xvfb-run -a python3 hw/fix_3v3a.py IN OUT
 """
@@ -26,9 +33,10 @@ check_pcb.SURFACE = {pcbnew.F_Cu, pcbnew.B_Cu}
 need_for = check_pcb.need_for
 MM = pcbnew.FromMM
 F, B = pcbnew.F_Cu, pcbnew.B_Cu
-SAFETY = 0.02
+SAFETY = 0.005
 NET = '+3V3A'
 W = 0.20
+VD = 0.45
 
 SRC, OUT = sys.argv[1], sys.argv[2]
 board = pcbnew.LoadBoard(SRC)
@@ -53,32 +61,29 @@ def blockers(net, layers, shape):
             out.append((n2, desc, need))
     return out
 
-def via_blockers(net, x, y, d=0.6):
-    c = pcbnew.SHAPE_CIRCLE(pcbnew.VECTOR2I(MM(x), MM(y)), MM(d / 2))
-    return blockers(net, {F, pcbnew.In1_Cu, pcbnew.In2_Cu, B}, c)
+def via_blockers(x, y):
+    c = pcbnew.SHAPE_CIRCLE(pcbnew.VECTOR2I(MM(x), MM(y)), MM(VD / 2))
+    return blockers(NET, {F, pcbnew.In1_Cu, pcbnew.In2_Cu, B}, c)
 
-# (via_xy, [stub segments]) -- stub starts must overlap the pad
-# (pad spans x[77.625,77.875], y[11.12,12.00])
+# (via_xy, [stub segments from the pad])
 CANDS = [
-    ((78.25, 11.30), [((77.80, 11.30), (78.25, 11.30))]),
-    ((78.38, 11.12), [((77.82, 11.25), (78.38, 11.12))]),
-    ((77.88, 11.62), [((77.80, 11.45), (77.88, 11.62))]),
-    ((78.00, 11.45), [((77.82, 11.35), (78.00, 11.45))]),
-    ((78.25, 11.30), [((77.75, 11.20), (78.05, 11.22)),
-                      ((78.05, 11.22), (78.25, 11.30))]),
+    ((77.98, 11.65), [((77.80, 11.75), (77.98, 11.65))]),
+    ((78.02, 11.68), [((77.80, 11.80), (78.02, 11.68))]),
+    ((78.05, 11.70), [((77.82, 11.78), (78.05, 11.70))]),
+    ((77.95, 11.60), [((77.78, 11.70), (77.95, 11.60))]),
 ]
 
 chosen = None
 for via_xy, stub in CANDS:
-    bl = via_blockers(NET, *via_xy)
+    bl = via_blockers(*via_xy)
     if bl:
-        print(f"via {via_xy}: {bl[:3]}")
+        print(f"via {via_xy}: {bl[:4]}")
         continue
     ok = True
     for a, b in stub:
         bl = blockers(NET, {F}, seg_shape(a, b, W))
         if bl:
-            print(f"via {via_xy} stub {a}->{b}: {bl[:3]}")
+            print(f"via {via_xy} stub {a}->{b}: {bl[:4]}")
             ok = False
             break
     if ok:
@@ -102,13 +107,13 @@ for a, b in stub:
     print(f"  stub {a}->{b}")
 v = pcbnew.PCB_VIA(board)
 v.SetPosition(pcbnew.VECTOR2I(MM(via_xy[0]), MM(via_xy[1])))
-v.SetWidth(MM(0.6))
-v.SetDrill(MM(0.3))
+v.SetWidth(MM(VD))
+v.SetDrill(MM(0.25))
 v.SetViaType(pcbnew.VIATYPE_THROUGH)
 v.SetLayerPair(F, B)
 v.SetNet(netobj)
 board.Add(v)
-print(f"  via {via_xy}")
+print(f"  via {via_xy} d={VD}")
 
 groups = repair.compute_groups(board)
 print(f"{NET}: {len(groups[NET])} group(s)")
