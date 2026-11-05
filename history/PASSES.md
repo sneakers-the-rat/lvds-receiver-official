@@ -884,9 +884,9 @@ Escapes 19-20 (exp64 -> exp65): U6-side ULPI stubs placed for D2 (south, shorten
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 81 · Unconnected nets: 58 · Audit verdict: FAIL
 
-### Pass 106 — 2026-11-05T13:59:22Z · commit `pending`
+### Pass 106 — 2026-11-05T13:59:22Z · commit `b87c4ee`
 
-Board: `hw/pdlvds_rx.exp68.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp68.kicad_pcb` · Commit: `b87c4eecd254424a252052898bc8011dba4094e1`
 
 Escapes 21 (exp67 -> exp68): D5 F stubs ripped for the D4/D5 order fix; D4 and D2 hand routes refused on named blockers (CDR_DATP via, U7.23 pad) -- re-aimed in batches 22-24. exp66/exp67 were engine-attempt states with no connectivity change, folded here.
 
