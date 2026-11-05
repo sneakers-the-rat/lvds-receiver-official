@@ -2382,6 +2382,35 @@
       },
       "description": "TP_HV closed: In2 link segment (44.46,-7.6)->(44.9,-7.6) joins the drop to the moved via (hw/fix_tphv_link.py). TP_HV leaves the unconnected list entirely -- the R50.2 block that killed the predecessor's run is broken and the net is routed end to end (F east at y=2.2, In2 drop, via up east of the CMP_QN run, stub into R34.2). Audit: nets 39 -> 38, violations 67 (TP_HV zone grazes remain for the notch campaign). Next: heal batches over the 2-group residue (ULPI x8, USB_RST, I2C, TMP_ALERT first).",
       "note": ""
+    },
+    {
+      "pass": 85,
+      "timestamp": "2026-11-05T08:58:29Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp37.kicad_pcb",
+      "dir": "pass-0085",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 67,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Heal batch A (heal_nets on exp36 -> exp37): I2C_SCL, I2C_SDA, TMP_ALERT connected (the redrawn U9's pads heal at once -- the footprint fix unblocked its locality). ULPI_D1-D6, ULPI_NXT, ULPI_STP, USB_RST refused by heal's A* at both endpoints (U6 lone pads and U7 stub groups) -- Class A seal at the fine-pitch U6/U7 field; they go to thread/escape tools next, not a second heal attempt. Audit: nets 38 -> 35, violations 67.",
+      "note": ""
     }
   ],
   "gaps": [
