@@ -860,9 +860,9 @@ Escapes 17 (exp61 -> exp62): ULPI residue-first stubs -- fence segments of D7/NX
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 81 · Unconnected nets: 62 · Audit verdict: FAIL
 
-### Pass 103 — 2026-11-05T13:29:22Z · commit `pending`
+### Pass 103 — 2026-11-05T13:29:22Z · commit `091b643`
 
-Board: `hw/pdlvds_rx.exp63.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp63.kicad_pcb` · Commit: `091b6432f85da5d318abe174920279d8bf00918a`
 
 Escapes 18 (exp62 -> exp63): surviving D4 staircase segment ripped (tight tolerance), D5 stub placed; RST stub refused again by the NXT diagonal (batch 19 rips it). Heal round 2 runs on this board.
 
