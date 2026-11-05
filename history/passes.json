@@ -2063,6 +2063,35 @@
       },
       "description": "hand_via campaign on the 16 no-stub pads from the pass-70 record (exp8 -> exp9): only 1/16 placed (ULPI_STP U6.26, via@(64.83,36.96) + In2 tail). The other 15 are proven outside hand_via's straight-neck/single-via shape space on exp8 geometry, each by 1-3 blockers (probe: results/probe-via.txt): U9.5 neck blocked solely by GND pad U9.7; U10.7 via disc solely by one +5V track; D1.5 by APD_A pads D1.4/D1.6 at the 1.0 mm HV class (intrinsic package geometry); J1.B5 by VBUS_RAW in the connector field; U6.74 by the NRST track bundle across the pin tips. These pads go to the residue loop's rip-up healing, which can move the blockers.",
       "note": ""
+    },
+    {
+      "pass": 74,
+      "timestamp": "2026-11-05T02:36:09Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp10.kicad_pcb",
+      "dir": "pass-0074",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 2,
+        "unconnected_nets": 33,
+        "audit_verdict": "FAIL"
+      },
+      "description": "re-notch board-wide (exp9 -> exp10): notch_strip's strip filter (centre y < 5) removed \u2014 pass 72's audit charged 6 of its 38 APD_K-vs-pour violations to old-field APD_K copper outside the filter (via (13.625,30.625) and its run south to y 19.1). Rects now computed from ALL HV copper: 3 merged rects (the strip cluster and the west-side APD_K run merge into one (7.93,-19.25)-(44.58,33.23); D1.5 and RJ2.2 separate). Rule areas block pour only; GND fallout is measured by this audit and repaired by the stitch step next.",
+      "note": ""
     }
   ],
   "gaps": [
