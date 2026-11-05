@@ -892,9 +892,9 @@ Escapes 21 (exp67 -> exp68): D5 F stubs ripped for the D4/D5 order fix; D4 and D
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 81 · Unconnected nets: 59 · Audit verdict: FAIL
 
-### Pass 107 — 2026-11-05T15:03:19Z · commit `pending`
+### Pass 107 — 2026-11-05T15:03:19Z · commit `5dcacab`
 
-Board: `hw/pdlvds_rx.exp79.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp79.kicad_pcb` · Commit: `5dcacab9b39eb885ab792c3c206931bf777d2bf8`
 
 Campaign + ULPI knot work (exp68 -> exp79, cumulative): general heal campaign landed 68 groups over the severance debt (post-campaign audit exp73 = 36 nets / 87 violations, down from 65/71 at respread adoption and 59/81 at pass 104); ULPI heal round rejoin (NXT); knot batches 26-30 -- ULPI_D4 COMPLETE (tail into its via after the D5 vertex rip), ULPI_DIR rejoined (F seg + via placed batch 27, B legs into its staircase batch 29), USB_RST stub placed, D5/D6 fanout fences ripped for the order fix, D2 spur + D1 diagonal + CDR_DATP via ripped, D3 F approach seg placed. exp69-exp78 intra-campaign/batch states folded into this pass. ULPI residue (D1 pad group, D2, D3, D5, D6, STP) is a named knot: hand batches 22-30 + thread_far all refused on the U7 row channel shared with campaign-routed CDR_DATP/D1/D0 copper -- carried as named residual, rest of board proceeds.
 
