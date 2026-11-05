@@ -916,6 +916,14 @@ HV_RAW re-approach (hw/fix_hvraw.py): heal's B.Cu surface diagonal ripped (63 it
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 87 · Unconnected nets: 33 · Audit verdict: FAIL
 
+### Pass 110 — 2026-11-05T17:23:51Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp83.kicad_pcb` · Commit: `pending`
+
+SLICEN connected (hw/fix_slicen.py): pure-F northern jog from U4.7 -- hand_stub and hand_via both refused (SLICEP's escape via at (51.5,-17.5) fences the west lane: 0.6 mm exclusion vs 0.25 mm row offset); pair re-lay grid-searched and refused on evidence (+3V3D In2 trunk fences SLICEP's via to its original row, CDR_NIN diagonal fences its neck). Jog: west on-row to (52.08,-17.25), steep rise to (51.72,-16.82), west into the group track end (51.38,-16.88); one GND stitch via relocated (52.125,-16.625)->(52.45,-15.85) out of the rise corridor. DELTAS vs pass 109: nets 33->32 (SLICEN joined), violations 87->87 (census byte-identical, +0 new). GND groups unchanged.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 87 · Unconnected nets: 32 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
