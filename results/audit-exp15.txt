@@ -1,0 +1,58 @@
+copper items: 7570
+unconnected nets: 31
+  UNCONNECTED +3V3A: 3 groups, e.g. [['U9.5'], ['C24.1', 'C46.1', 'C49.1', 'U14.10'], ['U7.6']]
+  UNCONNECTED +3V3D_CDR: 3 groups, e.g. [['C50.1', 'C51.1', 'FB1.2', 'track@(44.843212, -14.233031)'], ['U4.1', 'U4.18', 'U4.2', 'U4.24'], ['U4.12']]
+  UNCONNECTED +5V: 5 groups, e.g. [['C25.1', 'C35.1', 'C37.1', 'C43.1'], ['U7.4'], ['U11.10', 'U11.11', 'U11.12', 'track@(15.411611, 64.1875)'], ['U11.13', 'track@(14.8125, 62.588388)'], ['U14.6']]
+  UNCONNECTED APD_K: 3 groups, e.g. [['C33.1', 'C4.1', 'R29.2', 'R30.1'], ['D1.5'], ['RJ2.2', 'track@(14.151089, 56.864929)']]
+  UNCONNECTED CAP_DATA: 2 groups, e.g. [['U6.35', 'track@(64.68, 41.25)'], ['U5.3', 'track@(66.42, -20.405)']]
+  UNCONNECTED CC2: 2 groups, e.g. [['R19.1', 'track@(32.8112, 72.4243)', 'track@(33.4022, 73.0153)', 'track@(33.4023, 73.0153)'], ['J1.B5', 'track@(30.5, 73.18)']]
+  UNCONNECTED CDR_NIN: 2 groups, e.g. [['C9.2', 'track@(45.144999, -28.0)', 'track@(45.775, -28.0)', 'track@(46.125, -27.375)'], ['U4.4', 'track@(51.125, -18.375)', 'track@(51.375, -18.625)', 'track@(51.8125, -18.75)']]
+  UNCONNECTED CDR_PIN: 2 groups, e.g. [['C8.2', 'track@(42.144999, 37.5)'], ['U4.5', 'track@(52.205, -18.25)']]
+  UNCONNECTED CDR_SQUELCH: 2 groups, e.g. [['U6.76', 'track@(86.005, 40.25)'], ['U4.27', 'track@(55.75, -21.295)']]
+  UNCONNECTED CF2: 2 groups, e.g. [['U4.14', 'track@(55.75, -15.705)'], ['C15.2', 'track@(60.644999, -26.0)']]
+  UNCONNECTED DP_PHY: 2 groups, e.g. [['U7.7'], ['D3.6', 'track@(31.72, 67.55)']]
+  UNCONNECTED HV_GATE: 2 groups, e.g. [['R27.1', 'track@(14.901089, -18.864929)'], ['U10.7', 'track@(16.79, -14.5)', 'track@(17.2, -14.5)', 'via@(17.2, -14.5)']]
+  UNCONNECTED HV_INTVCC: 2 groups, e.g. [['C31.1', 'track@(13.618431, -9.106568)'], ['U10.8']]
+  UNCONNECTED HV_SHDN: 2 groups, e.g. [['R25.2', 'R26.1', 'U6.97', 'track@(10.125, -0.125)'], ['U10.9']]
+  UNCONNECTED HV_SS: 2 groups, e.g. [['C30.1', 'track@(16.018431, -11.006568)'], ['U10.3', 'track@(11.205, -15.0)']]
+  UNCONNECTED I2C_SCL: 2 groups, e.g. [['U9.1'], ['R20.1', 'U4.20', 'U6.136', 'track@(53.855, 29.0)']]
+  UNCONNECTED I2C_SDA: 2 groups, e.g. [['U9.6'], ['R21.1', 'U4.21', 'U6.137', 'track@(53.625, 28.875)']]
+  UNCONNECTED PHY_1V8: 3 groups, e.g. [['C22.1'], ['U7.15', 'track@(87.25, -18.205)'], ['U7.26', 'track@(87.25, -23.795)']]
+  UNCONNECTED PHY_1V8A: 2 groups, e.g. [['U7.29', 'track@(85.75, -23.795)'], ['C23.1', 'track@(78.891136, -16.09891)']]
+  UNCONNECTED SET_P: 2 groups, e.g. [['C42.1', 'R40.1', 'track@(42.558863, 65.09891)', 'track@(42.725, 64.4673)'], ['U13.7']]
+  UNCONNECTED SLICEN: 2 groups, e.g. [['U4.7'], ['C13.2', 'track@(50.275, -13.5)', 'track@(50.275, -14.25)', 'track@(50.625, -14.875)']]
+  UNCONNECTED TMP_ALERT: 2 groups, e.g. [['U9.3'], ['R22.1', 'U6.139', 'track@(42.675, 32.0)', 'track@(42.925, 32.0)']]
+  UNCONNECTED ULPI_D1: 2 groups, e.g. [['U6.46', 'track@(71.75, 44.32)'], ['U7.23', 'track@(88.795, -22.25)']]
+  UNCONNECTED ULPI_D2: 2 groups, e.g. [['U6.47', 'track@(72.325, 43.6625)'], ['U7.22', 'track@(88.795, -21.75)']]
+  UNCONNECTED ULPI_D3: 2 groups, e.g. [['U6.69', 'track@(83.25, 44.32)'], ['U7.21', 'track@(88.795, -21.25)']]
+  UNCONNECTED ULPI_D4: 2 groups, e.g. [['U6.70'], ['U7.20', 'track@(88.795, -20.75)']]
+  UNCONNECTED ULPI_D5: 2 groups, e.g. [['U6.73', 'track@(86.569068, 41.843431)'], ['U7.19', 'track@(88.795, -20.25)']]
+  UNCONNECTED ULPI_D6: 2 groups, e.g. [['U6.74'], ['U7.18', 'track@(88.795, -19.75)']]
+  UNCONNECTED ULPI_NXT: 2 groups, e.g. [['U6.29'], ['U7.11', 'track@(85.25, -18.205)']]
+  UNCONNECTED ULPI_STP: 2 groups, e.g. [['U6.26', 'track@(64.829366, 36.960475)', 'track@(65.067755, 36.861731)', 'track@(65.430931, 36.843431)'], ['U7.13', 'track@(86.25, -18.205)']]
+  UNCONNECTED USB_RST: 2 groups, e.g. [['U6.40'], ['U7.9', 'track@(84.25, -18.205)']]
+clearance violations: 2
+  CLEARANCE APD_K (D1.5) vs APD_A (track@(8.3, 38.62)): need 1.0 mm
+  CLEARANCE APD_K (D1.5) vs APD_A (track@(9.15, 41.4)): need 1.0 mm
+intrinsic same-footprint pad pairs below class clearance (datasheet geometry, not routable): 42
+  INTRINSIC I2C_SCL (U9.1) vs GND (U9.7): need 0.2 mm
+  INTRINSIC TMP_ALERT (U9.3) vs GND (U9.7): need 0.2 mm
+  INTRINSIC GND (U9.4) vs +3V3A (U9.5): need 0.25 mm
+  INTRINSIC +3V3A (U9.5) vs I2C_SDA (U9.6): need 0.25 mm
+  INTRINSIC +3V3A (U9.5) vs GND (U9.7): need 0.25 mm
+  INTRINSIC I2C_SDA (U9.6) vs GND (U9.7): need 0.2 mm
+  INTRINSIC GND (U8.4) vs +3V3D (U8.5): need 0.25 mm
+  INTRINSIC SPI_MOSI (U8.8) vs +3V3D (U8.9): need 0.25 mm
+  INTRINSIC +3V3D (U8.9) vs DAC_VREF (U8.10): need 0.25 mm
+  INTRINSIC GND (U6.16) vs +3V3D (U6.17): need 0.25 mm
+  INTRINSIC ULPI_NXT (U6.29) vs +3V3D (U6.30): need 0.25 mm
+  INTRINSIC +3V3D (U6.30) vs GND (U6.31): need 0.25 mm
+  INTRINSIC GND (U6.31) vs +3V3A (U6.32): need 0.25 mm
+  INTRINSIC +3V3A (U6.33) vs CAP_CLK (U6.34): need 0.25 mm
+  INTRINSIC GND (U6.38) vs +3V3D (U6.39): need 0.25 mm
+  INTRINSIC +3V3D (U6.39) vs USB_RST (U6.40): need 0.25 mm
+  INTRINSIC GND (U6.51) vs +3V3D (U6.52): need 0.25 mm
+  INTRINSIC GND (U6.61) vs +3V3D (U6.62): need 0.25 mm
+  INTRINSIC VCAP2 (U6.71) vs +3V3D (U6.72): need 0.25 mm
+  INTRINSIC GND (U6.83) vs +3V3D (U6.84): need 0.25 mm
+PCB CHECK: FAIL

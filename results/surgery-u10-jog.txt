@@ -1,0 +1,11 @@
+trunk removed
+jog x=19.3: blocked by ('MOS_G', 'track@stubcheck')
+jog x=19.7: blocked by ('MOS_G', 'track@stubcheck')
+jog x=20.1: blocked by ('MOS_G', 'Q1.1')
+jog x=18.95: blocked by ('MOS_G', 'track@stubcheck')
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/hw/surgery_u10_jog.py", line 100, in <module>
+    assert placed, 'no jog depth cleared'
+           ^^^^^^
+AssertionError: no jog depth cleared
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
