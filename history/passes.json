@@ -2150,6 +2150,35 @@
       },
       "description": "thread_far round 1 (exp12 -> exp13): the exact lattice threader with its pair gate raised 3 -> 15 mm (hw/thread_far.py) \u2014 7 pairs threaded: CDR_VREF (gap 3.81, rips 2), REFCLKN (6.04, rips 2), SLICEP (4.46, rips 0), HV_SS (4.08, rips 3), HV_GATE (3.87, rips 1 \u2014 a diagnose-NO_EXIT group), HV_INTVCC (5.27, rips 3), +5V (0.19, rips 0). Proven en route: heal's astar6 fails this residue at cap 1.5M AND at 15M (heal_big probe on CDR_VREF, 162 s, 0 connected) while the diagnostic BFS reaches the goal halo \u2014 the grid A* model, not the geometry, refuses these hops. Failure classes pinned by the parent: CLASS A = NO_EXIT pads (local surgery per pad, blocker named \u2014 queue in WORKING_NOTES), CLASS B = two-island long hauls (ULPI x8, CDR chain, CAP, APD_K \u2014 the parallel Freerouting lane's territory; U6-side respread authorized if FR loses and diagnosis indicts U6 exits). 11 ripped victim items are repaid inside the class fixes, not by undirected heal sweeps. D1 exemption: STOPPED at the evidence gate (docs/07) \u2014 the 2 D1 lines remain violations as written.",
       "note": ""
+    },
+    {
+      "pass": 77,
+      "timestamp": "2026-11-05T05:38:21Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp14.kicad_pcb",
+      "dir": "pass-0077",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 2,
+        "unconnected_nets": 31,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Class T board repair: fixed thread_far redo on exp12 \u2014 CDR_VREF (rips 2), REFCLKN (rips 2), SLICEP (rips 6) threaded with exactly-executed priced rips; violations 17 -> 2 (only the standing D1 APD lines remain; all 15 Class T lines gone). Nets 28 -> 31 honestly: SLICEP's real rips split SLICEN and CDR_NIN (Class B repayment), and the HV threads are absent \u2014 HV_SS no-thread at honest prices, HV_GATE and +5V anchor stubs walled at start (named U10/Class A locality items). HV_INTVCC solo attempt follows.",
+      "note": ""
     }
   ],
   "gaps": [
