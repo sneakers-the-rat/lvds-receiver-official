@@ -980,6 +980,14 @@ APD_K D1.5 leg connected (queue item 1, leg 2 of 3). D1.5 is ringed by its own f
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 74 · Unconnected nets: 30 · Audit verdict: FAIL
 
+### Pass 118 — 2026-11-05T21:55:19Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp110.kicad_pcb` · Commit: `pending`
+
+GND islands closed (queue item 2): all 4 groups merged to 1. Stitch vias to the In1 GND plane (stitch_track.py): cluster track@(83.375,0.125), C34.2 tail track@(29.775,-2.25); hand_via via stub for the lone R32.2 pad (via (30.77,-3.80)). DELTAS vs pass 117: nets 30->29 (GND connected), violations 74->74 -- census byte-identical (the R32.2-vs-R31.1 1.0 mm line is pad-placement geometry, carried to the violation campaign). No victims. Also this session: APD_K RJ2.2 leg (item 1, leg 3) stands as a named residual -- hand_stub/hand_via/heal x2/thread_far gate/exact via-scan all refused and the APD_A_ALT crossing-swap dive site was refused on +3V3D/FB_3V3/GND blockers; untried mechanisms are a full connector-corner re-fanout or an RJ1/RJ2 move. Tooling: heal crash on In1 copper fixed with regression test in commit 8ffdef7.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 74 · Unconnected nets: 29 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
