@@ -98,3 +98,67 @@ or LOS function to any of those pins: PB0 = ULPI_D1 and PB1 = ULPI_D2
 PB2 has no assignment at all. As shipped, `hv_ctrl.c` could never
 have driven the real converter's shutdown pin, and `adn2813.c` read
 a "LOS" pin that is connected to nothing.
+
+## Owner decision and implementation — J5 interlock (2026-11-04)
+
+The decision left open above has been taken. The owner delegated
+it ("do whatever you need to do") on 2026-11-04 and it is
+implemented in the same schematic change as the HV hardware bound
+(docs/03), so the board needs one regeneration, not two.
+
+**Decision: a deliberate-action hardware interlock — a 2-pin
+jumper, J5 — in series in the SHDN enable path.** Rationale:
+rev A is an open bench board with no enclosure, so an enclosure
+switch has nothing to sense; what the design needs is that HV can
+never be live unless a person has deliberately armed it. A
+fitted-or-absent jumper is exactly that act, it is proportionate,
+and it fails safe: every failure direction (jumper absent, jumper
+pulled, firmware crashed, MCU unpowered) leaves the converter off.
+
+**As drawn now (hw/circuit.py):**
+
+- J5 = 2-pin header, footprint
+  `Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical`.
+  Pin 1 = net HV_EN (U6 PC7), pin 2 = net HV_SHDN (the LT3757
+  node: U10.9, R25.2, R26.1 — plus the sense pin below).
+- Jumper ABSENT: PC7 is not connected to the node at all. The
+  node is held by the R25/R26 divider alone, which was re-ratioed
+  in the same change (R25 100 kΩ → 143 kΩ): idle 0.94 V nominal,
+  1.03 V worst-case, below the LT3757 falling threshold across
+  its whole datasheet spread (1.17 V min) — so with the jumper
+  absent the converter cannot start under ANY DAC or firmware
+  state, including a crashed MCU driving PC7 high (the signal
+  goes nowhere) or the reset window (pin floating = divider =
+  off; this also closes the marginal-divider caveat in section
+  (a) above: floating no longer enables).
+- Jumper FITTED: PC7 control works as designed — low clamps the
+  node to ≈0 V (off), high drives ≈3.3 V (enabled).
+
+**Sense input — fitted.** Section (c) searched for an existing
+spare input and found none drawn; the pin inventory of the
+LQFP-144 package itself has ample unassigned pins, and PA6 —
+previously assigned to nothing in circuit.py — is now wired to
+HV_SHDN as an analogue sense input (ADC1; firmware hv_sense.c).
+A digital read cannot separate the fitted-clamped signature
+(≈0 V) from the absent signature (0.94 V, at the VIL band edge),
+hence the ADC. Firmware behaviour with the sense:
+
+- `hv_ctrl_enable()` samples the node: absent (or sense failed)
+  → refused, SET_BIAS returns USB_STATUS_INTERLOCK — the same
+  refusal rev A always gave, now conditional on a real input.
+- Fitted → enable proceeds, subject to the existing gates
+  (temperature-valid, slew limiting, fault handling).
+- `hv_ctrl_update()` re-samples every cycle: pulling J5 mid-run
+  drops HV (the hardware drops the node on its own; firmware
+  follows the fact), and GET_STATUS publishes the sensed state.
+
+The hardware gate is authoritative: the sense can only veto or
+report. A misreading sense (e.g. a wrong ADC channel constant —
+marked VERIFY in board.h) degrades to refusal, never to an
+enable the jumper has not physically granted.
+
+**Layout consequence (for the routing lane):** J5 is the one new
+footprint in this fix. Place it at the board edge near the HV
+cluster, operator-accessible. Nets HV_EN (U6→J5) and HV_SHDN
+(J5→U10, plus the PA6 sense member at U6) route as part of that
+placement pass; nothing else about the layout changes.

@@ -30,7 +30,11 @@ Why this part:
 Alternate footprint (same optical centre, populate one only):
   Hamamatsu S8664-20K TO-5, dia 2.0 mm, Ct 11 pF, fc 280 MHz, Vbr ~400 V —
   for users who need bare-detector field of view over sensitivity/bias ease.
-  Its bias requirement is why the HV supply is designed to 420 V.
+  Its bias requirement is why the HV set-point network has a 420 V
+  stuffing variant (R32 49.9 kΩ / R33 71.5 kΩ, docs/03): the network
+  is fitted per population, and the standard C30737 fit is bounded
+  to ≤260 V in hardware so the rail can never over-voltage the
+  260 V-class detector fitted here.
 Optics:
   * Bare: FOV set by package, like the original bare SiPM modules.
   * Lens mode: board carries an M25x0.5 / 25.4 mm holder footprint and standoff
@@ -92,16 +96,22 @@ Control duties: bias DAC + HV enable, threshold DAC, ADN2813 I2C, temperature
 - Temperature: TI TMP117 (I2C, +/-0.1 C) placed 3 mm from the APD.
 
 ## APD bias supply — flyback, LT3757 controller
-APD current is < 200 uA worst case, but voltage is 150-420 V (APD dependent).
+APD current is < 200 uA worst case; voltage is 116-253 V with the
+C30737 set-point fit (151-420 V with the S8664 variant values).
 A boost from 5 V cannot reach 84:1; a flyback can. Design: LT3757 in flyback
 configuration, Wurth/Coilcraft-class 1:10 flyback transformer, 600 V MOSFET
 and diode, output RC post-filter (ripple target < 20 mVpp at the APD after the
 filter — APD gain sensitivity to ripple is computed in the link budget),
-DAC-injected feedback for MCU control, hardware OVP zener clamp at 440 V,
-primary current limit, bleeder + HV-present LED, creepage slots and >= 3 mm
-clearance on the HV island, conformal-coat note in the fab drawing.
-Safety: HV is generated only when the MCU asserts HV_EN after USB host sets a
-bias AND the enclosure interlock jumper is fitted; default at power-up is OFF.
+DAC-injected feedback for MCU control, a hardware ceiling set by the
+fitted feedback network itself (253 V for the C30737 fit — no separate
+OVP clamp part is drawn), primary current limit, bleeder + HV-present
+LED, creepage slots and >= 3 mm clearance on the HV island,
+conformal-coat note in the fab drawing.
+Safety: HV is generated only when the MCU drives HV_EN (PC7) after a
+USB host sets a bias AND the J5 interlock jumper is fitted — the
+jumper is a series hardware gate in the PC7 path, sensed on PA6
+(docs/06); default at power-up is OFF by hardware (the SHDN divider
+holds its node below the converter's threshold, docs/03).
 
 ## Power tree (USB-C 5 V in, budget < 4.5 W)
 5 V -> 3.3 V buck (TPS62130) for digital/CDR/LVDS; 5 V analog rail via low-noise
