@@ -828,6 +828,14 @@ Thread sweep 3 (exp57 -> exp58): VBUS_RAW threaded closed, APD_K + GND one pair 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 77 · Unconnected nets: 28 · Audit verdict: FAIL
 
+### Pass 99 — 2026-11-05T13:01:06Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp59.kicad_pcb` · Commit: `pending`
+
+RESPREAD ADOPTED (exp58 -> exp59): U6 -> (82,-6), U7 -> (76,14), X1 -> (87,14) rot90 + full ring, applied via respread_u6u7_local.py (local-rip path) to the current board -- no restart from exp41. 932 items ripped (severance debt ~36 nets, itemised in results/respread-local-exp59.txt). Post-placement audit: 65 nets / 168 violations (zones un-refilled; refill next). ULPI hauls drop from ~66mm to 8-19mm in the new geometry.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 168 · Unconnected nets: 65 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
