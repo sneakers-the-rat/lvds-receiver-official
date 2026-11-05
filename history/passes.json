@@ -2527,6 +2527,35 @@
       },
       "description": "heal_big batch 2 (exp40 -> exp41, checkpointed; GND tail stopped by hand after 27 connections when its 1-item subgroups proved to be item-model noise under the zone-defined audit): CMP_QN and FLY_PRI completed, +3V3A 3 -> 2 groups, APD_K 9 -> 5 (RJ2.2 group, R31.1, D1.5, R47.2 remain), GND item-subgroups merged without moving its audit count (zone fills define it). Refused again, all in ~0-7 s (sealed first millimetre): U4.12, U11.10-12, U11.13, U7.4, U14.6, U5.3, J1.B5, U4.5, U4.27, C15.2, U7.7. Audit: nets 31 -> 29, violations 75. Next: escape-fan census over the sealed pads, hand escapes into open field, then heal/thread take the lengthened stubs.",
       "note": ""
+    },
+    {
+      "pass": 90,
+      "timestamp": "2026-11-05T11:11:16Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp42.kicad_pcb",
+      "dir": "pass-0090",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 77,
+        "unconnected_nets": 29,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escape batch 1 (exp41 -> exp42): APD_K island joined to main via R34.1 pad (section I), GND R48.2 stub south (section L). The other 9 sections were refused by named blockers and are reworked in batch 2/3 with measured pad geometry. Audit follows in stats.",
+      "note": ""
     }
   ],
   "gaps": [
