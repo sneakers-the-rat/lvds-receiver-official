@@ -1,0 +1,11 @@
+ULPI_D2: 2 groups, main group 2 items
+  ULPI_D2: group (2 items, ['U7.22', 'track@(78.4375, 13.25)']) STILL isolated (0s)
+ULPI_D3: 2 groups, main group 2 items
+  ULPI_D3: group (2 items, ['U7.21', 'track@(78.4375, 13.75)']) STILL isolated (0s)
+ULPI_STP: 2 groups, main group 2 items
+  ULPI_STP: group (2 items, ['U7.13', 'track@(76.25, 16.4375)']) STILL isolated (0s)
+ULPI_D4: 2 groups, main group 37 items
+  ULPI_D4: group (2 items, ['U7.20', 'track@(78.4375, 14.25)']) STILL isolated (0s)
+USB_RST: 2 groups, main group 1 items
+  USB_RST: group (1 items, ['U7.9']) STILL isolated (0s)
+heal_big done: 0 groups connected in 6s, output hw/pdlvds_rx.exp66.kicad_pcb
