@@ -602,6 +602,16 @@ Nets fully routed: not recorded · Pins failed: not recorded · Clearance violat
 
 stub logs: results/hand-stub-1.log (buggy run, discarded board) + hand-stub-2.log (fixed); notch: results/notch2.log; audit: results/audit-exp6n.txt
 
+### Pass 71 — 2026-11-05T01:35:35Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp7.kicad_pcb` · Commit: `pending`
+
+heal-all on the stubbed board (58 nets): only 8 groups connected in 1101 s (APD_K x3, HV_FBX, I2C_SCL/SDA, HV_SHDN, TMP_ALERT) vs 93 STILL isolated — and violations REGRESSED 2 -> 32 (30x APD_K copper vs GND pour; groups 163 -> 156, nets 59). Root cause found in hw/router.py: the A* grid is still sized for the pre-expansion board (W,H = 400,320 = 100x80 mm, cell_of clamps y to [0,80]) — every strip pad/track (y<0) crushes onto grid row 0, so strip searches tested phantom geometry along the old field's congested north edge and emitted vias at y 0.6-2.1 where no HV keepout exists. The expansion's open space was invisible to the router for passes 65-71. Fix next: grid 400x440 with OY=-30 in router.py/router6.py.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 32 · Unconnected nets: 59 · Audit verdict: FAIL
+
+heal log: results/heal-all.log; audit: results/audit-exp7.txt (violations itemized: 30 APD_K-vs-zone + 2 justified D1)
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

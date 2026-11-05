@@ -1,0 +1,160 @@
++5V: 8 groups, main group 240 items
+  +5V: group (6 items, ['U11.10', 'U11.11', 'U11.12']) STILL isolated (6s)
+  +5V: group (2 items, ['R25.1', 'track@(7.518431, -18.156568)']) STILL isolated (4s)
+  +5V: group (2 items, ['U11.13', 'track@(14.8125, 62.588388)']) STILL isolated (5s)
+  +5V: group (2 items, ['U10.10', 'track@(15.861778, -16.119385)']) STILL isolated (4s)
+  +5V: group (2 items, ['T1.1', 'track@(26.42, -18.54)']) STILL isolated (5s)
+  +5V: group (1 items, ['U7.4']) STILL isolated (5s)
+  +5V: group (1 items, ['U14.6']) STILL isolated (5s)
++3V3D: 7 groups, main group 530 items
+  +3V3D: group (5 items, ['X2.1', 'X2.4', 'track@(60.45, -12.225)']) STILL isolated (8s)
+  +3V3D: group (2 items, ['U5.4', 'track@(66.42, -19.135)']) STILL isolated (8s)
+  +3V3D: group (2 items, ['U5.10', 'track@(71.369999, -15.325)']) STILL isolated (9s)
+  +3V3D: group (2 items, ['U5.14', 'track@(71.369999, -20.405)']) STILL isolated (11s)
+  +3V3D: group (2 items, ['U5.16', 'track@(71.369999, -22.945)']) STILL isolated (7s)
+  +3V3D: group (2 items, ['FB1.1', 'track@(47.295, -18.5)']) STILL isolated (8s)
++3V3D_CDR: 7 groups, main group 7 items
+  +3V3D_CDR: group (2 items, ['C51.1', 'track@(45.286643, -13.789599)']) STILL isolated (93s)
+  +3V3D_CDR: group (2 items, ['U4.12', 'track@(54.75, -15.705)']) STILL isolated (0s)
+  +3V3D_CDR: group (2 items, ['U4.18', 'track@(57.795, -17.25)']) STILL isolated (0s)
+  +3V3D_CDR: group (2 items, ['U4.24', 'track@(57.4375, -20.3125)']) STILL isolated (0s)
+  +3V3D_CDR: group (2 items, ['C50.1', 'track@(45.891136, -22.59891)']) STILL isolated (85s)
+  +3V3D_CDR: group (2 items, ['FB1.2', 'track@(49.42, -18.5)']) STILL isolated (0s)
+APD_K: 7 groups, main group 2 items
+  APD_K: group (2 items, ['R31.1', 'track@(31.026089, -5.297619)']) STILL isolated (0s)
+  APD_K: connected group of 2 items (4s, 2 vias)
+  APD_K: connected group of 2 items (0s, 2 vias)
+  APD_K: connected group of 2 items (0s, 0 vias)
+  APD_K: group (2 items, ['RJ2.2', 'track@(14.151089, 56.864929)']) STILL isolated (0s)
+  APD_K: group (1 items, ['D1.5']) STILL isolated (0s)
++3V3A: 5 groups, main group 164 items
+  +3V3A: group (5 items, ['U7.30', 'U7.31', 'track@(85.181568, -23.505931)']) STILL isolated (1s)
+  +3V3A: group (2 items, ['U7.25', 'track@(87.8125, -23.4375)']) STILL isolated (1s)
+  +3V3A: group (1 items, ['U9.5']) STILL isolated (1s)
+  +3V3A: group (1 items, ['U7.6']) STILL isolated (1s)
+CDR_CLKN: 4 groups, main group 2 items
+  CDR_CLKN: group (2 items, ['U4.25', 'track@(56.75, -21.295)']) STILL isolated (0s)
+  CDR_CLKN: group (2 items, ['R14.2', 'track@(60.395, -17.325)']) STILL isolated (0s)
+  CDR_CLKN: group (1 items, ['U5.7']) STILL isolated (0s)
+CDR_CLKP: 4 groups, main group 2 items
+  CDR_CLKP: group (2 items, ['U4.26', 'track@(56.25, -21.295)']) STILL isolated (0s)
+  CDR_CLKP: group (2 items, ['R14.1', 'track@(60.395, -15.675)']) STILL isolated (0s)
+  CDR_CLKP: group (1 items, ['U5.6']) STILL isolated (0s)
+CDR_DATN: 4 groups, main group 2 items
+  CDR_DATN: group (2 items, ['U4.28', 'track@(55.25, -21.295)']) STILL isolated (1s)
+  CDR_DATN: group (2 items, ['R13.2', 'track@(61.395, -22.825)']) STILL isolated (1s)
+  CDR_DATN: group (1 items, ['U5.1']) STILL isolated (1s)
+CDR_DATP: 4 groups, main group 2 items
+  CDR_DATP: group (2 items, ['U4.29', 'track@(54.75, -21.295)']) STILL isolated (1s)
+  CDR_DATP: group (2 items, ['R13.1', 'track@(61.395, -21.175)']) STILL isolated (1s)
+  CDR_DATP: group (1 items, ['U5.2']) STILL isolated (1s)
+HV_FBX: 4 groups, main group 3 items
+  HV_FBX: connected group of 2 items (0s, 2 vias)
+  HV_FBX: group (2 items, ['R31.2', 'track@(33.951089, -5.297619)']) STILL isolated (0s)
+  HV_FBX: group (2 items, ['U10.2', 'track@(11.205, -15.5)']) STILL isolated (0s)
+I2C_SCL: 4 groups, main group 2 items
+  I2C_SCL: group (2 items, ['U4.20', 'track@(57.795, -18.25)']) STILL isolated (0s)
+  I2C_SCL: connected group of 2 items (3s, 3 vias)
+  I2C_SCL: group (1 items, ['U9.1']) STILL isolated (0s)
+I2C_SDA: 4 groups, main group 2 items
+  I2C_SDA: group (2 items, ['U4.21', 'track@(57.795, -18.75)']) STILL isolated (0s)
+  I2C_SDA: connected group of 2 items (5s, 2 vias)
+  I2C_SDA: group (1 items, ['U9.6']) STILL isolated (0s)
+HV_SHDN: 3 groups, main group 3 items
+  HV_SHDN: connected group of 2 items (27s, 3 vias)
+  HV_SHDN: group (1 items, ['U10.9']) STILL isolated (0s)
+PHY_1V8: 3 groups, main group 2 items
+  PHY_1V8: group (2 items, ['U7.26', 'track@(87.25, -23.795)']) STILL isolated (0s)
+  PHY_1V8: group (1 items, ['C22.1']) STILL isolated (131s)
+TMP_ALERT: 3 groups, main group 2 items
+  TMP_ALERT: connected group of 2 items (9s, 2 vias)
+  TMP_ALERT: group (1 items, ['U9.3']) STILL isolated (0s)
+XI: 3 groups, main group 2 items
+  XI: group (2 items, ['C20.1', 'track@(74.118431, -25.606568)']) STILL isolated (108s)
+  XI: group (1 items, ['X1.1']) STILL isolated (0s)
+XO: 3 groups, main group 2 items
+  XO: group (2 items, ['U7.27', 'track@(86.75, -23.795)']) STILL isolated (0s)
+  XO: group (1 items, ['X1.3']) STILL isolated (0s)
+CAP_CLK: 2 groups, main group 2 items
+  CAP_CLK: group (2 items, ['U5.5', 'track@(66.42, -17.865)']) STILL isolated (0s)
+CAP_DATA: 2 groups, main group 2 items
+  CAP_DATA: group (2 items, ['U5.3', 'track@(66.42, -20.405)']) STILL isolated (0s)
+CC2: 2 groups, main group 8 items
+  CC2: group (2 items, ['J1.B5', 'track@(30.5, 73.18)']) STILL isolated (0s)
+CDR_LOL: 2 groups, main group 2 items
+  CDR_LOL: group (2 items, ['U4.16', 'track@(56.8125, -16.0625)']) STILL isolated (0s)
+CDR_LOS: 2 groups, main group 2 items
+  CDR_LOS: group (2 items, ['U4.22', 'track@(57.795, -19.25)']) STILL isolated (0s)
+CDR_NIN: 2 groups, main group 2 items
+  CDR_NIN: group (2 items, ['U4.4', 'track@(52.205, -18.75)']) STILL isolated (0s)
+CDR_PIN: 2 groups, main group 2 items
+  CDR_PIN: group (2 items, ['U4.5', 'track@(52.205, -18.25)']) STILL isolated (0s)
+CDR_SQUELCH: 2 groups, main group 2 items
+  CDR_SQUELCH: group (2 items, ['U4.27', 'track@(55.75, -21.295)']) STILL isolated (0s)
+CDR_VREF: 2 groups, main group 2 items
+  CDR_VREF: group (2 items, ['C12.1', 'track@(49.118431, -23.106568)']) STILL isolated (0s)
+CF1: 2 groups, main group 2 items
+  CF1: group (2 items, ['C15.1', 'track@(59.118431, -25.606568)']) STILL isolated (0s)
+CF2: 2 groups, main group 2 items
+  CF2: group (2 items, ['C15.2', 'track@(60.644999, -26.0)']) STILL isolated (0s)
+CMP_QN: 2 groups, main group 2 items
+  CMP_QN: group (2 items, ['C9.1', 'track@(43.618431, -27.606568)']) STILL isolated (0s)
+DM_PHY: 2 groups, main group 2 items
+  DM_PHY: group (2 items, ['D3.4', 'track@(31.726089, 69.693801)']) STILL isolated (155s)
+DP_PHY: 2 groups, main group 2 items
+  DP_PHY: group (1 items, ['U7.7']) STILL isolated (0s)
+HV_GATE: 2 groups, main group 2 items
+  HV_GATE: group (1 items, ['U10.7']) STILL isolated (0s)
+HV_INTVCC: 2 groups, main group 2 items
+  HV_INTVCC: group (1 items, ['U10.8']) STILL isolated (0s)
+HV_RAW: 2 groups, main group 5 items
+  HV_RAW: group (2 items, ['C32.1', 'track@(39.526089, -16.792441)']) STILL isolated (0s)
+HV_RT: 2 groups, main group 2 items
+  HV_RT: group (2 items, ['U10.4', 'track@(11.205, -14.5)']) STILL isolated (0s)
+HV_SENSE: 2 groups, main group 5 items
+  HV_SENSE: group (2 items, ['U10.6', 'track@(16.438221, -13.880614)']) STILL isolated (0s)
+HV_SS: 2 groups, main group 2 items
+  HV_SS: group (2 items, ['U10.3', 'track@(11.205, -15.0)']) STILL isolated (0s)
+HV_VC: 2 groups, main group 2 items
+  HV_VC: group (2 items, ['U10.1', 'track@(11.205, -16.0)']) STILL isolated (0s)
+MOS_G: 2 groups, main group 2 items
+  MOS_G: group (2 items, ['Q1.1', 'track@(21.72, -16.95)']) STILL isolated (0s)
+PHY_1V8A: 2 groups, main group 2 items
+  PHY_1V8A: group (2 items, ['C23.1', 'track@(78.891136, -16.09891)']) STILL isolated (85s)
+RBIAS: 2 groups, main group 2 items
+  RBIAS: group (2 items, ['U7.32', 'track@(84.1875, -23.4375)']) STILL isolated (0s)
+REFCLK: 2 groups, main group 2 items
+  REFCLK: group (2 items, ['U4.10', 'track@(53.75, -15.705)']) STILL isolated (0s)
+REFCLKN: 2 groups, main group 2 items
+  REFCLKN: group (2 items, ['C14.1', 'track@(58.317102, -9.129774)']) STILL isolated (0s)
+SET_P: 2 groups, main group 54 items
+  SET_P: group (1 items, ['U13.7']) STILL isolated (1s)
+SLICEN: 2 groups, main group 2 items
+  SLICEN: group (2 items, ['C13.2', 'track@(50.644999, -13.5)']) STILL isolated (0s)
+SLICEP: 2 groups, main group 2 items
+  SLICEP: group (2 items, ['C13.1', 'track@(49.118431, -13.106568)']) STILL isolated (0s)
+THRADJ: 2 groups, main group 2 items
+  THRADJ: group (2 items, ['U4.9', 'track@(53.25, -15.705)']) STILL isolated (0s)
+ULPI_D0: 2 groups, main group 2 items
+  ULPI_D0: group (2 items, ['U7.24', 'track@(88.795, -22.75)']) STILL isolated (0s)
+ULPI_D1: 2 groups, main group 2 items
+  ULPI_D1: group (2 items, ['U7.23', 'track@(88.795, -22.25)']) STILL isolated (0s)
+ULPI_D2: 2 groups, main group 2 items
+  ULPI_D2: group (2 items, ['U7.22', 'track@(88.795, -21.75)']) STILL isolated (0s)
+ULPI_D3: 2 groups, main group 2 items
+  ULPI_D3: group (2 items, ['U7.21', 'track@(88.795, -21.25)']) STILL isolated (0s)
+ULPI_D4: 2 groups, main group 2 items
+  ULPI_D4: group (1 items, ['U6.70']) STILL isolated (118s)
+ULPI_D5: 2 groups, main group 2 items
+  ULPI_D5: group (2 items, ['U7.19', 'track@(88.795, -20.25)']) STILL isolated (0s)
+ULPI_D6: 2 groups, main group 2 items
+  ULPI_D6: group (1 items, ['U6.74']) STILL isolated (171s)
+ULPI_D7: 2 groups, main group 2 items
+  ULPI_D7: group (2 items, ['U7.17', 'track@(88.795, -19.25)']) STILL isolated (0s)
+ULPI_NXT: 2 groups, main group 2 items
+  ULPI_NXT: group (1 items, ['U6.29']) STILL isolated (0s)
+ULPI_STP: 2 groups, main group 2 items
+  ULPI_STP: group (2 items, ['U7.13', 'track@(86.25, -18.205)']) STILL isolated (0s)
+USB_RST: 2 groups, main group 2 items
+  USB_RST: group (1 items, ['U6.40']) STILL isolated (0s)
+heal_nets done: 8 groups connected in 1101s, output hw/pdlvds_rx.exp7.kicad_pcb

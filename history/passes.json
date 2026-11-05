@@ -1976,6 +1976,35 @@
       },
       "description": "fanout campaign + tool fix: hand_stub batch on 165 sealed pads (targets from the audit's non-main groups) placed 150 stubs after fixing a real bug in hw/hand_stub.py/hw/hand_via.py (bbox support function used as pad-edge distance -> diagonal stubs floated off their pads; first run's audit signature: 8 nets +1 group each as lone track groups; fix = ray-exit distance minus inset, tools commit fece b01). Zero floating stubs after the fix (only lone track group is GND's pre-existing one). Groups 171 -> 163, nets 59. HV keepout notches re-cut on current copper (hw/notch_strip.py): the pass-67 bridge APD_K tracks in the strip sat outside the pass-66 rects (violations had risen to 5); re-notch restored violations to 2 (justified D1 pair). 15 pads still have no stub (U9.5, U7.4/6, D1.5, J1.B5, U10.7/8/9, U13.7, U6.26/29/40/70/74, U14.6) \u2014 via-first escapes next.",
       "note": "stub logs: results/hand-stub-1.log (buggy run, discarded board) + hand-stub-2.log (fixed); notch: results/notch2.log; audit: results/audit-exp6n.txt"
+    },
+    {
+      "pass": 71,
+      "timestamp": "2026-11-05T01:35:35Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp7.kicad_pcb",
+      "dir": "pass-0071",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 32,
+        "unconnected_nets": 59,
+        "audit_verdict": "FAIL"
+      },
+      "description": "heal-all on the stubbed board (58 nets): only 8 groups connected in 1101 s (APD_K x3, HV_FBX, I2C_SCL/SDA, HV_SHDN, TMP_ALERT) vs 93 STILL isolated \u2014 and violations REGRESSED 2 -> 32 (30x APD_K copper vs GND pour; groups 163 -> 156, nets 59). Root cause found in hw/router.py: the A* grid is still sized for the pre-expansion board (W,H = 400,320 = 100x80 mm, cell_of clamps y to [0,80]) \u2014 every strip pad/track (y<0) crushes onto grid row 0, so strip searches tested phantom geometry along the old field's congested north edge and emitted vias at y 0.6-2.1 where no HV keepout exists. The expansion's open space was invisible to the router for passes 65-71. Fix next: grid 400x440 with OY=-30 in router.py/router6.py.",
+      "note": "heal log: results/heal-all.log; audit: results/audit-exp7.txt (violations itemized: 30 APD_K-vs-zone + 2 justified D1)"
     }
   ],
   "gaps": [
