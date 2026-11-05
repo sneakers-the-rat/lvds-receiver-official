@@ -812,9 +812,9 @@ Escapes 13 (exp53 -> exp54): APD_K In2 staircase repaired (5 segments re-placed 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 78 · Unconnected nets: 28 · Audit verdict: FAIL
 
-### Pass 97 — 2026-11-05T12:44:41Z · commit `pending`
+### Pass 97 — 2026-11-05T12:44:41Z · commit `b7e658f`
 
-Board: `hw/pdlvds_rx.exp57.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp57.kicad_pcb` · Commit: `b7e658ff65ec416ecb11bf93ada7bfff74d21f50`
 
 Escapes 14-16 (exp54 -> exp57): HV_RAW north route COMPLETE -- F from the R29.1 fan, north around the APD_K via (41.12,-4.38), west at y=-2.7 (dead FBX orphan stub ripped), south at x=39.3 into the island track; HV_RAW down to main + D9.1. Audit: 28 nets / 78 violations; TP_HV and HV_R31B fully connected.
 
