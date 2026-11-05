@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/hw/check_pcb.py", line 18, in <module>
+    import sys, wx
+ModuleNotFoundError: No module named 'wx'

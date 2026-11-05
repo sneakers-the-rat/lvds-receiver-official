@@ -1,0 +1,3 @@
+HV_R31A: 2 groups, main group 1 items
+  HV_R31A: group (1 items, ['R49.1']) STILL isolated (121s)
+heal_nets done: 0 groups connected in 125s, output hw/pdlvds_rx.exp30.kicad_pcb

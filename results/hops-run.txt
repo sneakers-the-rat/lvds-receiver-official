@@ -1,0 +1,56 @@
+ripped 24 APD_K fence/tail segments
+ripped 1 TP_HV south-run segments
+midpoint hops:
+  HV_R31A: (35.16,-1.60)->(35.24,-5.00)
+  HV_R31B: (38.16,-5.00)->(38.24,-1.60)
+GND stitch re-lay (clears the HV_R29M corridor):
+  deleted the F GND stitch segment
+  GND: (46.74,-14.23)->(46.74,-4.40)
+  GND: (46.74,-4.40)->(46.88,0.12)
+midpoint hops (continued):
+  HV_R29M: (45.33,-1.80)->(47.67,-1.60)
+R48 move + HV_R30M In2 underpass:
+  R48 grid-placed @(17.3,27.4) rot=0
+  HV_R30M: (15.90,30.40)->(15.96,31.00)
+  HV_R30M: (15.90,30.40)->(16.04,27.55)
+  HV_R30M: (16.04,27.55)->(15.84,27.40)
+APD_K re-feed to R31.1:
+  ripped 15 GND stitch segments in the R31 box
+  APD_K: (34.62,2.12)->(33.90,0.60)
+  APD_K: (33.90,0.60)->(33.90,-1.90)
+  APD_K: (33.90,-1.90)->(31.50,-1.95)
+  APD_K: (31.50,-1.95)->(30.35,0.35)
+  APD_K B-feed REFUSED in-script: APD_K via (30.35,0.35): ('HV_FBX', 'track@stubcheck') (heal_nets takes APD_K on the saved board)
+TP_HV re-stitch (east of the strings, north of R34):
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/hw/hops.py", line 248, in <module>
+    add_track('TP_HV', 39.375, 2.2, 42.3, -3.3)
+  File "/home/hatch/workspace/pdlvds-route/hw/hops.py", line 100, in add_track
+    assert not bad, f'{net} seg ({x1},{y1})->({x2},{y2}): {bad}'
+           ^^^^^^^
+AssertionError: TP_HV seg (39.375,2.2)->(42.3,-3.3): ('HV_FBX', 'R50.2')
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
