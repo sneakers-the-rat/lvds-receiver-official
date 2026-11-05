@@ -1,0 +1,18 @@
+== U10.7 HV_GATE east escape, fine dv scan (ang 0):
+   dv=1.02 site=(17.17,-14.50) neck=[] disc=[('pad', 'HV_SENSE'), ('pad', 'HV_INTVCC')]
+   dv=1.05 site=(17.20,-14.50) neck=[] disc=[]
+   dv=1.08 site=(17.23,-14.50) neck=[] disc=[]
+   dv=1.10 site=(17.25,-14.50) neck=[] disc=[]
+   dv=1.12 site=(17.27,-14.50) neck=[] disc=[]
+   dv=1.15 site=(17.30,-14.50) neck=[] disc=[('track', '+5V')]
+   dv=1.18 site=(17.33,-14.50) neck=[] disc=[('track', '+5V')]
+   dv=1.22 site=(17.37,-14.50) neck=[] disc=[('track', '+5V')]
+== U10.8 HV_INTVCC east escape, fine dv scan (ang 0):
+   dv=1.02 site=(17.17,-15.00) neck=[] disc=[('pad', 'HV_GATE'), ('pad', 'HV_SHDN')]
+   dv=1.05 site=(17.20,-15.00) neck=[] disc=[]
+   dv=1.08 site=(17.23,-15.00) neck=[] disc=[]
+   dv=1.10 site=(17.25,-15.00) neck=[] disc=[]
+   dv=1.12 site=(17.27,-15.00) neck=[] disc=[]
+   dv=1.15 site=(17.30,-15.00) neck=[] disc=[('track', '+5V')]
+   dv=1.18 site=(17.33,-15.00) neck=[] disc=[('track', '+5V')]
+   dv=1.22 site=(17.37,-15.00) neck=[] disc=[('track', '+5V')]

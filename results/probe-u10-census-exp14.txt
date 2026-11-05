@@ -1,0 +1,28 @@
+== U10.3 HV_SS pos=(11.85,-15.00) half=(0.72,0.15)
+   dv=0.55 ang= 22.5 neck blockers=1 {'HV_RT': ['pad']}
+   dv=0.55 ang=337.5 neck blockers=1 {'HV_FBX': ['pad']}
+   dv=0.7 ang= 22.5 neck blockers=1 {'HV_RT': ['pad']}
+   dv=0.7 ang=337.5 neck blockers=1 {'HV_FBX': ['pad']}
+   dv=0.85 ang= 22.5 neck blockers=1 {'HV_RT': ['pad']}
+   dv=0.85 ang=337.5 neck blockers=1 {'HV_FBX': ['pad']}
+== U10.7 HV_GATE pos=(16.15,-14.50) half=(0.72,0.15)
+   dv=0.55 ang= 22.5 neck blockers=1 {'HV_SENSE': ['pad']}
+   dv=0.55 ang=157.5 neck blockers=1 {'HV_SENSE': ['pad']}
+   dv=0.55 ang=202.5 neck blockers=1 {'HV_INTVCC': ['pad']}
+   dv=0.55 ang=225.0 neck blockers=1 {'HV_INTVCC': ['pad']}
+   dv=0.55 ang=247.5 neck blockers=1 {'HV_INTVCC': ['pad']}
+   dv=0.55 ang=292.5 neck blockers=1 {'HV_INTVCC': ['pad']}
+== U10.8 HV_INTVCC pos=(16.15,-15.00) half=(0.72,0.15)
+   dv=0.55 ang= 22.5 neck blockers=1 {'HV_GATE': ['pad']}
+   dv=0.55 ang= 45.0 neck blockers=1 {'HV_GATE': ['pad']}
+   dv=0.55 ang= 67.5 neck blockers=1 {'HV_GATE': ['pad']}
+   dv=0.55 ang=112.5 neck blockers=1 {'HV_GATE': ['pad']}
+   dv=0.55 ang=135.0 neck blockers=1 {'HV_GATE': ['pad']}
+   dv=0.55 ang=157.5 neck blockers=1 {'HV_GATE': ['pad']}
+== U10.9 HV_SHDN pos=(16.15,-15.50) half=(0.72,0.15)
+   dv=0.55 ang=  0.0 neck blockers=1 {'+5V': ['pad']}
+   dv=0.55 ang= 22.5 neck blockers=1 {'HV_INTVCC': ['pad']}
+   dv=0.55 ang= 45.0 neck blockers=1 {'HV_INTVCC': ['pad']}
+   dv=0.55 ang= 67.5 neck blockers=1 {'HV_INTVCC': ['pad']}
+   dv=0.55 ang=112.5 neck blockers=1 {'HV_INTVCC': ['pad']}
+   dv=0.55 ang=135.0 neck blockers=1 {'HV_INTVCC': ['pad']}
