@@ -264,6 +264,24 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # Firmware-binary cache (2026-11-05): gcc-arm-none-eabi is
+      # ~505 MB installed and its ONLY consumer is step 8's
+      # cross-compile. The built binary is a few tens of KB — cache
+      # IT, keyed on every compile input (Makefile, linker script,
+      # and all compiled sources incl. the vendored TinyUSB tree),
+      # and install the toolchain only on a miss. A hit means these
+      # exact sources already cross-compiled cleanly once; step 8
+      # then verifies the restored binary instead of rebuilding it
+      # (scripts/ci.sh, FW_CACHE_HIT).
+      - name: Cache built firmware binary
+        id: fw-bin
+        uses: actions/cache@v4
+        with:
+          path: |
+            firmware/build/rxfw.elf
+            firmware/build/rxfw.bin
+          key: fw-bin-${{ runner.os }}-${{ hashFiles('firmware/Makefile', 'firmware/linker.ld', 'firmware/startup.c', 'firmware/src/**', 'firmware/codec/**', 'firmware/third_party/**') }}
+
       # .deb cache (2026-11-04, apt-cache round 2). This job's
       # install turned out to be the workflow's real multi-minute
       # step — NOT the KiCad install. Step timings across
@@ -310,8 +328,27 @@ jobs:
           # hiccup should retry inside the step instead of reddening
           # the whole job.
           for attempt in 1 2; do
-            if sudo apt-get update && sudo apt-get install -y ngspice gcc-arm-none-eabi \
+            if sudo apt-get update && sudo apt-get install -y ngspice \
               python3-numpy python3-scipy python3-matplotlib; then
+              break
+            fi
+            if [ "$attempt" = 2 ]; then
+              echo "apt failed on both attempts" >&2
+              exit 1
+            fi
+            echo "apt attempt $attempt failed — retrying in 20 s" >&2
+            sleep 20
+          done
+
+      # The ARM toolchain is installed ONLY when the firmware
+      # binary cache above missed (sources changed): on a hit the
+      # ~505 MB toolchain never touches the runner at all.
+      - name: Install ARM toolchain (firmware-binary cache miss only)
+        if: steps.fw-bin.outputs.cache-hit != 'true'
+        run: |
+          sudo rm -f /etc/apt/apt.conf.d/docker-clean
+          for attempt in 1 2; do
+            if sudo apt-get update && sudo apt-get install -y gcc-arm-none-eabi; then
               break
             fi
             if [ "$attempt" = 2 ]; then
@@ -324,6 +361,8 @@ jobs:
 
       - name: Simulations, codec, firmware, host tool (ci.sh steps 1-9)
         id: ci
+        env:
+          FW_CACHE_HIT: ${{ steps.fw-bin.outputs.cache-hit }}
         run: CI_STEPS=1,2,3,4,5,6,7,8,9 bash scripts/ci.sh
 
       # Uploaded even on failure so the site can show the partial
