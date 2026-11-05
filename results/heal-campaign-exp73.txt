@@ -23,3 +23,20 @@
   +3V3D: connected group of 1 items (7s, 1 vias)
   +3V3D: connected group of 1 items (8s, 0 vias)
   +3V3D: connected group of 1 items (8s, 0 vias)
+  +3V3D: connected group of 1 items (6s, 0 vias)
+  checkpoint: 20 groups, saved
+  +3V3D: connected group of 1 items (8s, 0 vias)
+  +3V3D: connected group of 1 items (11s, 0 vias)
+  +3V3D: connected group of 1 items (13s, 0 vias)
+  +3V3D: connected group of 1 items (10s, 0 vias)
+  +3V3D: connected group of 1 items (11s, 1 vias)
+  +3V3D: connected group of 1 items (15s, 0 vias)
+  +3V3D: connected group of 1 items (12s, 0 vias)
+  +3V3D: connected group of 1 items (11s, 0 vias)
+  +3V3D: connected group of 1 items (13s, 1 vias)
+  +3V3D: connected group of 1 items (14s, 0 vias)
+  checkpoint: 30 groups, saved
+  +3V3D: connected group of 1 items (11s, 0 vias)
++3V3D_CDR: 2 groups, main group 101 items
+  +3V3D_CDR: group (2 items, ['U4.12', 'track@(54.75, -16.059999)']) STILL isolated (5s)
++5V: 5 groups, main group 272 items
