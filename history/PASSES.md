@@ -804,6 +804,14 @@ Escapes 12 (exp52 -> exp53): PLACEMENT BREAK of the pocket seesaw -- R49+R50 mov
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 78 · Unconnected nets: 28 · Audit verdict: FAIL
 
+### Pass 96 — 2026-11-05T12:38:20Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp54.kicad_pcb` · Commit: `pending`
+
+Escapes 13 (exp53 -> exp54): APD_K In2 staircase repaired (5 segments re-placed exactly after batch 12 collateral rip), HV_FBX dive via restored at (10.12,-15.38); HV_RAW F continuation refused by the APD_K via (41.12,-4.38) -- batches 14-16 take the north route instead. (exp55/exp56 were intra-batch waypoints of that route, folded into the next pass.)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 78 · Unconnected nets: 28 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
