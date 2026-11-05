@@ -4,6 +4,7 @@
 <title>{% if page.title %}{{ page.title }} · {% endif %}PDLVDS-RX — photodiode LVDS receiver</title>
 <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
 </head><body>
+<button class="burger" id="navtoggle" type="button" aria-label="Open or close navigation" aria-expanded="false" aria-controls="sidebar">☰</button>
 <div class="shell">
 {% include sidebar.html %}
 <div class="content-wrap">
@@ -19,4 +20,15 @@ laptop over USB, no FPGA attached.</p></header>
 </main>
 </div>
 </div>
+<script>
+(function () {
+  var btn = document.getElementById('navtoggle');
+  var sb = document.getElementById('sidebar');
+  if (!btn || !sb) return;
+  btn.addEventListener('click', function () {
+    var open = sb.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+})();
+</script>
 </body></html>
