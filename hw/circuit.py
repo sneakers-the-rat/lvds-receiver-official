@@ -16,6 +16,10 @@ C0603  = ("Capacitor_SMD", "C_0603_1608Metric")
 C1206  = ("Capacitor_SMD", "C_1206_3216Metric")
 C0805  = ("Capacitor_SMD", "C_0805_2012Metric")
 L0805  = ("Inductor_SMD", "L_0805_2012Metric")
+R1210  = ("Resistor_SMD", "R_1210_3225Metric")
+DSMB   = ("Diode_SMD", "D_SMB")
+DFE2016 = ("Inductor_SMD", "L_Murata_DFE201610P")
+HC49SD = ("Crystal", "Crystal_SMD_HC49-SD")
 
 PARTS = [
  # ---------------- detector / analogue front end ----------------
@@ -37,7 +41,7 @@ PARTS = [
    {"1":("","passive","TIA_OUT"), "2":("","passive","APD_A")}, "afe"),
  P("C2","100nF", C0603, "C", {"1":("","passive","+VA"), "2":("","passive","GND")}, "afe"),
  P("C3","100nF", C0603, "C", {"1":("","passive","-VA"), "2":("","passive","GND")}, "afe"),
- P("C4","1uF", C0603, "C", {"1":("","passive","APD_K"), "2":("","passive","GND")}, "afe"),
+ P("C4","1uF 630V ECWFD2J105JB", ("pdlvds","ECWFD_1uF_630V"), "C", {"1":("","passive","APD_K"), "2":("","passive","GND")}, "afe"),
  # THS4304 post-amp, single-supply +VA, AC-coupled, VMID-biased, gain x5
  P("U2","THS4304DBV", ("Package_TO_SOT_SMD","SOT-23-5"), "box",
    {"1":("VOUT","out","POST_OUT"), "2":("VS-","pwr_in","GND"),
@@ -93,7 +97,7 @@ PARTS = [
  P("R12","10k", R0603, "R", {"1":("","passive","THRADJ"), "2":("","passive","GND")}, "cdr"),
  P("C14","100nF", C0603, "C", {"1":("","passive","REFCLKN"), "2":("","passive","GND")}, "cdr"),
  P("C15","0.47uF", C0603, "C", {"1":("","passive","CF1"), "2":("","passive","CF2")}, "cdr"),
- P("FB1","600R@100MHz", L0805, "L", {"1":("","passive","+3V3D"), "2":("","passive","+3V3D_CDR")}, "cdr"),
+ P("FB1","BLM21PG601SN1D 600R 1.4A", L0805, "L", {"1":("","passive","+3V3D"), "2":("","passive","+3V3D_CDR")}, "cdr"),
 ]
 
 PARTS += [
@@ -155,11 +159,10 @@ PARTS += [
     "29":("VDDA1.8","pwr_in","PHY_1V8A"), "30":("VDD3.3","pwr_in","+3V3A"),
     "31":("REG_EN","in","+3V3A"), "32":("RBIAS","passive","RBIAS"),
     "33":("EP","pwr_in","GND")}, "usb"),
- P("X1","24MHz", ("Crystal","Crystal_SMD_3225-4Pin_3.2x2.5mm"), "box",
-   {"1":("XI","passive","XI"), "2":("GND","passive","GND"),
-    "3":("XO","passive","XO"), "4":("GND","passive","GND")}, "usb"),
- P("C20","18pF", C0603, "C", {"1":("","passive","XI"), "2":("","passive","GND")}, "usb"),
- P("C21","18pF", C0603, "C", {"1":("","passive","XO"), "2":("","passive","GND")}, "usb"),
+ P("X1","24.000MHz ECS-240-20-5PDN-TR CL20", HC49SD, "box",
+   {"1":("XI","passive","XI"), "2":("XO","passive","XO")}, "usb"),
+ P("C20","33pF", C0603, "C", {"1":("","passive","XI"), "2":("","passive","GND")}, "usb"),
+ P("C21","33pF", C0603, "C", {"1":("","passive","XO"), "2":("","passive","GND")}, "usb"),
  P("R17","12k 1%", R0603, "R", {"1":("","passive","RBIAS"), "2":("","passive","GND")}, "usb"),
  P("C22","4.7uF", C0603, "C", {"1":("","passive","PHY_1V8"), "2":("","passive","GND")}, "usb"),
  P("C23","100nF", C0603, "C", {"1":("","passive","PHY_1V8A"), "2":("","passive","GND")}, "usb"),
@@ -182,7 +185,7 @@ PARTS += [
  P("R19","5.1k", R0603, "R", {"1":("","passive","CC2"), "2":("","passive","GND")}, "usb"),
  P("F1","PTC 1.1A", ("Fuse","Fuse_1812_4532Metric"), "R",
    {"1":("","passive","VBUS_RAW"), "2":("","passive","+5V")}, "usb"),
- P("D4","SMBJ5.0A", ("Diode_SMD","D_SMA"), "D",
+ P("D4","SMBJ5.0A", DSMB, "D",
    {"1":("K","passive","+5V"), "2":("A","passive","GND")}, "usb"),
  P("C25","10uF", C0805, "C", {"1":("","passive","+5V"), "2":("","passive","GND")}, "usb"),
  # ---------------- DAC (threshold + HV set) ----------------
@@ -204,7 +207,7 @@ PARTS += [
  P("R21","4.7k", R0603, "R", {"1":("","passive","I2C_SDA"), "2":("","passive","+3V3D")}, "dac"),
  P("R22","10k", R0603, "R", {"1":("","passive","TMP_ALERT"), "2":("","passive","+3V3D")}, "dac"),
  # ---------------- 25 MHz reference oscillator for CDR ----------------
- P("X2","25MHz OSC", ("Oscillator","Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm"), "box",
+ P("X2","ASE-25.000MHZ-L-R-T 3.3V CMOS OSC", ("Oscillator","Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm"), "box",
    {"1":("OE","in","+3V3D"), "2":("GND","pwr_in","GND"),
     "3":("OUT","out","REFCLK"), "4":("VCC","pwr_in","+3V3D")}, "cdr"),
  P("C28","100nF", C0603, "C", {"1":("","passive","+3V3D"), "2":("","passive","GND")}, "cdr"),
@@ -222,31 +225,46 @@ PARTS += [
  P("R23","10k", R0603, "R", {"1":("","passive","HV_VC"), "2":("","passive","HV_VC2")}, "hv"),
  P("C29","10nF", C0603, "C", {"1":("","passive","HV_VC2"), "2":("","passive","GND")}, "hv"),
  P("C30","100nF", C0603, "C", {"1":("","passive","HV_SS"), "2":("","passive","GND")}, "hv"),
- P("R24","24.9k (RT, VERIFY f=250k)", R0603, "R", {"1":("","passive","HV_RT"), "2":("","passive","GND")}, "hv"),
- P("C31","4.7uF", C0603, "C", {"1":("","passive","HV_INTVCC"), "2":("","passive","GND")}, "hv"),
+ P("R24","53.6k (RT, f=250kHz per LT3757 Table 1)", R0603, "R", {"1":("","passive","HV_RT"), "2":("","passive","GND")}, "hv"),
+ P("C31","4.7uF 10V CL10J475KP8N3NC", C0603, "C", {"1":("","passive","HV_INTVCC"), "2":("","passive","GND")}, "hv"),
  P("R25","143k", R0603, "R", {"1":("","passive","+5V"), "2":("","passive","HV_SHDN")}, "hv"),
  P("R26","33k", R0603, "R", {"1":("","passive","HV_SHDN"), "2":("","passive","GND")}, "hv"),
  P("J5","HV enable jumper", ("Connector_PinHeader_2.54mm","PinHeader_1x02_P2.54mm_Vertical"), "box",
    {"1":("EN","passive","HV_EN"), "2":("SHDN","passive","HV_SHDN")}, "hv"),
- P("R27","10k", R0603, "R", {"1":("","passive","HV_GATE"), "2":("","passive","MOS_G")}, "hv"),
- P("Q1","IRLML0030 SOT-23", ("Package_TO_SOT_SMD","SOT-23"), "box",
+ P("R27","10R", R0603, "R", {"1":("","passive","HV_GATE"), "2":("","passive","MOS_G")}, "hv"),
+ P("Q1","IRLML0060TRPBF", ("Package_TO_SOT_SMD","SOT-23"), "box",
    {"1":("G","in","MOS_G"), "2":("S","passive","HV_SENSE"), "3":("D","passive","FLY_PRI")}, "hv"),
  P("R28","0.05R", R1206, "R", {"1":("","passive","HV_SENSE"), "2":("","passive","GND")}, "hv"),
- P("T1","Flyback xfmr 1:20", ("pdlvds","XFMR_FLYBACK_6P"), "box",
+ P("T1","CUSTOM WIND EFD20 1:20 Lp47uH Isat>=2.6A (Wurth 070-4290 frame, docs/09 spec)", ("pdlvds","XFMR_EFD20_SMD10"), "box",
    {"1":("PRI_A","passive","+5V"), "2":("PRI_B","passive","FLY_PRI"),
-    "3":("NC","nc",None), "4":("SEC_B","passive","GND"),
-    "5":("SEC_A","passive","HV_SEC"), "6":("NC","nc",None)}, "hv"),
+    "3":("NC","nc",None), "4":("NC","nc",None), "5":("NC","nc",None),
+    "6":("NC","nc",None), "7":("NC","nc",None), "8":("NC","nc",None),
+    "9":("SEC_B","passive","GND"), "10":("SEC_A","passive","HV_SEC")}, "hv"),
  P("D5","ES1J", ("Diode_SMD","D_SMA"), "D",
    {"1":("K","passive","HV_RAW"), "2":("A","passive","HV_SEC")}, "hv"),
  P("C32","100nF 630V", C1206, "C", {"1":("","passive","HV_RAW"), "2":("","passive","GND")}, "hv"),
- P("R29","10k HV", R1206, "R", {"1":("","passive","HV_RAW"), "2":("","passive","APD_K")}, "hv"),
+ P("R29","5.00k HV73V1J (1 of 2)", R0603, "R", {"1":("","passive","HV_RAW"), "2":("","passive","HV_R29M")}, "hv"),
+ P("R47","5.00k HV73V1J (2 of 2)", R0603, "R", {"1":("","passive","HV_R29M"), "2":("","passive","APD_K")}, "hv"),
  P("C33","100nF 630V", C1206, "C", {"1":("","passive","APD_K"), "2":("","passive","GND")}, "hv"),
- P("R30","4.7M bleeder", R1206, "R", {"1":("","passive","APD_K"), "2":("","passive","GND")}, "hv"),
- P("R31","7.68M 0.1% HV divider top", R1206, "R", {"1":("","passive","APD_K"), "2":("","passive","HV_FBX")}, "hv"),
+ P("R30","2.35M HV73V2B bleeder (1 of 2)", R1206, "R", {"1":("","passive","APD_K"), "2":("","passive","HV_R30M")}, "hv"),
+ P("R48","2.35M HV73V2B bleeder (2 of 2)", R1206, "R", {"1":("","passive","HV_R30M"), "2":("","passive","GND")}, "hv"),
+ P("R31","2.94M 0.1% TNPV1210 divider top (1 of 3)", R1210, "R", {"1":("","passive","APD_K"), "2":("","passive","HV_R31A")}, "hv"),
+ P("R49","2.37M 0.1% TNPV1210 divider top (2 of 3)", R1210, "R", {"1":("","passive","HV_R31A"), "2":("","passive","HV_R31B")}, "hv"),
+ P("R50","2.37M 0.1% TNPV1210 divider top (3 of 3)", R1210, "R", {"1":("","passive","HV_R31B"), "2":("","passive","HV_FBX")}, "hv"),
  P("R32","75.0k 0.1%", R0603, "R", {"1":("","passive","HV_FBX"), "2":("","passive","GND")}, "hv"),
  P("R33","140k 0.1% DAC inject", R0603, "R", {"1":("","passive","HV_DAC"), "2":("","passive","HV_FBX")}, "hv"),
  P("C34","1nF", C0603, "C", {"1":("","passive","HV_FBX"), "2":("","passive","GND")}, "hv"),
- P("R34","10M HV probe", R1206, "R", {"1":("","passive","APD_K"), "2":("","passive","TP_HV")}, "hv"),
+ P("R34","10M HV73V2B", R1206, "R", {"1":("","passive","APD_K"), "2":("","passive","TP_HV")}, "hv"),
+ # OVP clamp stack, DNP — fit ONLY for the S8664 population (docs/09).
+ # 160+150+150 = 460 V nom (+/-5% band 437-483 V): above the S8664 fit's
+ # worst-case demand 429.47 V, below D2's 500 V abs-max VBR. No window
+ # exists for the C30737 population (259.40 V demand vs 260 V rating).
+ P("D9","SMBJ5384B 160V OVP DNP (S8664 fit)", DSMB, "D",
+   {"1":("K","passive","HV_RAW"), "2":("A","passive","HV_OVP1")}, "hv"),
+ P("D10","SMBJ5383B 150V OVP DNP (S8664 fit)", DSMB, "D",
+   {"1":("K","passive","HV_OVP1"), "2":("A","passive","HV_OVP2")}, "hv"),
+ P("D11","SMBJ5383B 150V OVP DNP (S8664 fit)", DSMB, "D",
+   {"1":("K","passive","HV_OVP2"), "2":("A","passive","GND")}, "hv"),
  P("TP1","HV test point", ("TestPoint","TestPoint_Pad_D1.5mm"), "box",
    {"1":("TP","passive","TP_HV")}, "hv"),
  P("C35","10uF", C0805, "C", {"1":("","passive","+5V"), "2":("","passive","GND")}, "hv"),
@@ -264,7 +282,7 @@ PARTS += [
     "12":("PVIN","pwr_in","+5V"), "13":("EN","in","+5V"),
     "14":("VOS","in","+3V3D"), "15":("PGND","pwr_in","GND"),
     "16":("PGND","pwr_in","GND"), "17":("EP","pwr_in","GND")}, "pwr"),
- P("L1","2.2uH", ("Inductor_SMD","L_0805_2012Metric"), "L",
+ P("L1","2.2uH DFE201612E-2R2M=P2 Isat2.4A", DFE2016, "L",
    {"1":("","passive","SW1"), "2":("","passive","+3V3D")}, "pwr"),
  P("R35","312k", R0603, "R", {"1":("","passive","+3V3D"), "2":("","passive","FB_3V3")}, "pwr"),
  P("R36","100k", R0603, "R", {"1":("","passive","FB_3V3"), "2":("","passive","GND")}, "pwr"),
@@ -282,13 +300,13 @@ PARTS += [
     "12":("PVIN","pwr_in","+5V"), "13":("EN","in","+5V"),
     "14":("VOS","in","NEG_RAW"), "15":("PGND","pwr_in","NEG_RAW"),
     "16":("PGND","pwr_in","NEG_RAW"), "17":("EP","pwr_in","NEG_RAW")}, "pwr"),
- P("L2","2.2uH", ("Inductor_SMD","L_0805_2012Metric"), "L",
+ P("L2","2.2uH DFE201612E-2R2M=P2", DFE2016, "L",
    {"1":("","passive","SW2"), "2":("","passive","NEG_RAW")}, "pwr"),
  P("R38","587k", R0603, "R", {"1":("","passive","GND"), "2":("","passive","FB_NEG")}, "pwr"),
  P("R39","100k", R0603, "R", {"1":("","passive","FB_NEG"), "2":("","passive","NEG_RAW")}, "pwr"),
  P("C39","3.3nF", C0603, "C", {"1":("","passive","SS_NEG"), "2":("","passive","NEG_RAW")}, "pwr"),
  P("C40","22uF", C0805, "C", {"1":("","passive","GND"), "2":("","passive","NEG_RAW")}, "pwr"),
- P("FB2","600R@100MHz", L0805, "L", {"1":("","passive","NEG_RAW"), "2":("","passive","-VA")}, "pwr"),
+ P("FB2","BLM21SP601SN1D 600R 2.3A", L0805, "L", {"1":("","passive","NEG_RAW"), "2":("","passive","-VA")}, "pwr"),
  P("C41","22uF", C0805, "C", {"1":("","passive","-VA"), "2":("","passive","GND")}, "pwr"),
  # ---------------- power: LT3042 -> +VA (4.6V) and +3V3A ----------------
  P("U13","LT3042EDD (+VA)", ("Package_DFN_QFN","DFN-10-1EP_3x3mm_P0.5mm_EP1.55x2.48mm"), "box",
@@ -321,7 +339,7 @@ PARTS += [
  P("D7","LED green STAT", ("LED_SMD","LED_0603_1608Metric"), "LED",
    {"1":("K","passive","LED_STAT"), "2":("A","passive","LED_STAT_A")}, "misc"),
  P("R45","1k", R0603, "R", {"1":("","passive","+3V3D"), "2":("","passive","LED_STAT_A")}, "misc"),
- P("D8","LED 740nm BIST source", ("LED_SMD","LED_1206_3216Metric"), "LED",
+ P("D8","SMT740 740nm LED BIST source", ("LED_SMD","LED_1206_3216Metric"), "LED",
    {"1":("K","passive","BIST_DRV"), "2":("A","passive","BIST_A")}, "misc"),
  P("R46","100R", R0603, "R", {"1":("","passive","+3V3D"), "2":("","passive","BIST_A")}, "misc"),
  # decoupling sprinkled for MCU / LVDS32 / DAC already partly present; add bulk
@@ -347,7 +365,7 @@ PARTS += [
    {"1":("","passive",None)}, "mech"),
  P("MH6","M2.5 lens holder", ("MountingHole","MountingHole_2.7mm_M2.5"), "box",
    {"1":("","passive",None)}, "mech"),
- P("SH1","Shield can frontend", ("pdlvds","SHIELD_CAN_26x20"), "box",
+ P("SH1","Harwin S02-25200300 25x20 can (S1001 clips)", ("pdlvds","SHIELD_CAN_26x20"), "box",
    {"1":("","passive","GND"), "2":("","passive","GND"),
     "3":("","passive","GND"), "4":("","passive","GND")}, "mech"),
 ]

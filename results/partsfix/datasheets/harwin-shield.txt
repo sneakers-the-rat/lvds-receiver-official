@@ -1,0 +1,68 @@
+               RFI Shield Cans                                                                                                      PICK & PLACE READY BY DESIGN
+
+
+
+
+                    EMI/RFI Shielding
+                      0.3mm thickness Shield Cans suitable for use with S1711 and
+                      S2711 Shield Clips (see page 178).
+                      0.2mm thickness Shield Cans suitable for use with S0971, S0981,
+                      S0991, S1001 and S1721 Shield Clips (see pages 178, 178a).
+                      Provides excellent RFI and EMI protection to sensitive circuitry
+                      at the PCB level.
+                      Standard can sizes available from stock.
+
+
+
+
+                       Materials                                                            Standard Sizes
+                   Material:                                Nickel Silver
+                                                                                           ORDER CODE         DIM A       DIM B       DIM C       DIM D
+                   Finish:                                  Unplated
+                                                                                           S01-30200500       30mm        20mm        5mm         0.3mm
+
+                                                 B                                         S01-30300500       30mm        30mm        5mm         0.3mm
+                                                                                           S01-50250500       50mm        25mm        5mm         0.3mm
+                                                                    D
+                                                                                           S02-20150300       20mm        15mm        3mm         0.2mm
+
+                                                                                C          S02-25200300       25mm        20mm        3mm         0.2mm
+                                                                                           S02-30200250       30mm        20mm        2.5mm       0.2mm
+
+
+                                                                                            Dimensions A and B are measured from
+                                                                                            the centre of the material thickness.
+                                                                                            Dimension C is measured from the bottom
+                                                                                            edge to the inside of the top face.
+                     (A + D)                                                    A
+
+
+
+
+                                              (B + D)                           (C + D)
+
+
+                                                                               HOW TO ORDER
+EZ–BoardWare
+
+
+
+
+                                                                            S0X XX XX XXX 0
+                        SERIES CODE                                                                                        Finish
+                          S01          Thickness (Dim D) = 0.3mm                                                             0        Unplated
+                          S02          Thickness (Dim D) = 0.2mm
+                                                                                                                           DIMENSION C
+                        DIMENSION A                                                                                        Example: 5mm = 050
+                        Example: 30mm = 30
+                                                                                                                           DIMENSION B
+                                                                                                                           Example: 30mm = 30
+
+
+               All dimensions in mm.
+
+
+
+
+               www.harwin.com                                                       178b
+

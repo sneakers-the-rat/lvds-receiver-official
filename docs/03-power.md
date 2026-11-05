@@ -22,8 +22,18 @@ README. Numbers below are datasheet typicals/maximums as noted.
 ## Why +VA is 4.6 V, not 5.0 V
 The analogue loads want ~5 V, but an LDO fed from USB VBUS cannot make
 5.0 V out of a worst-case 4.75 V input. Rather than add a boost stage,
-+VA is set to 4.6 V (LT3042 dropout at 40 mA is ≈60 mV typical, so
-regulation holds down to VBUS ≈ 4.7 V). Consequences, all checked
++VA is set to 4.6 V (LT3042 dropout at the +VA load of ≈38 mA is
+220 mV typ / 270 mV max per the datasheet EC table, ILOAD 1–50 mA —
+this corrects an earlier ≈60 mV figure in this paragraph, which the
+datasheet does not support; audit finding F-11). Consequence,
+recorded as a settled residual risk (parts-fix, docs/09): regulation
+holds at nominal VBUS 5.0 V (400 mV headroom ≥ 270 mV max dropout)
+but NOT at the VBUS minimum 4.75 V (150 mV headroom < 220 mV typ
+dropout), where +VA sits at ≈4.53 V. That corner stays inside every
+load's operating range — OPA657 total supply ≈9.9 V against its
+10 V nominal class, THS4304 2.7–5 V ✓, LMH7220 2.7–12 V ✓ — so the
+failure mode is a slightly lower analogue rail at the USB voltage
+corner, not a dead rail. Consequences at nominal VBUS, all checked
 against the requirements: OPA657 runs at +4.6/−5.4 V (total 10.0 V,
 inside its ±5 V nominal operating point; gain/noise specs in the link
 budget used the datasheet ±5 V figures — the small asymmetry does not
@@ -41,6 +51,15 @@ Divider R31 7.68 MΩ / R32 75.0 kΩ; DAC injection R33 140 kΩ from
 DAC8562 VOUTB (0–2.5 V, internal-reference gain ×1). R31/R32/R33
 are specified 0.1% (the bound below depends on it; at 1% the
 worst-case ceiling rises to 264 V and the bound no longer holds).
+As fitted (parts-fix, docs/09), R31 is a three-element series string
+(R31 2.94 MΩ + R49/R50 2.37 MΩ, Vishay TNPV1210, 0.1% each) for
+voltage rating: the string's all-corner total band equals the
+single-part ±0.1% band exactly, so every number below is unchanged
+(proof: results/partsfix/r31_string_check.py). No OVP clamp is
+fitted for this population: the clamp window (must not conduct at
+≤259.40 V worst-case demand; must conduct below the 260 V lowest
+rail-fed rating) is 0.6 V wide and no real device fits it — the
+set-point bound above is this population's protection (docs/09).
 V_HV ≈ 165.4 + 54.86 × (1.6 − V_DAC) volts → 0 V DAC = 253.2 V,
 1.25 V ≈ 184.6 V, 2.5 V ≈ 116.1 V. The maximum demand over ALL
 DAC states — including the DAC8562's zero-scale power-up state,
@@ -69,7 +88,12 @@ V_HV ≈ 247.8 + 107.4 × (1.6 − V_DAC) → 151–420 V, the range that
 detector's ≈400 V breakdown requires. Firmware constants for this
 fit are A = 419.7 V, slope 107.4 V/V (hv_ctrl.h). The 420 V
 design-point analysis and sims (sim/hv_design.py, sim/run_hv.py)
-describe this variant.
+describe this variant. This fit DOES get the hardware OVP clamp
+R9/docs/02 promised (parts-fix, docs/09): D9–D11 (SMBJ5384B 160 V +
+2× SMBJ5383B 150 V, DO-214AA) stack across HV_RAW, 460 V nominal,
+±5% band 437–483 V — above this fit's 429.47 V worst-case demand,
+below D2's 500 V breakdown maximum, the lowest rating on the rail.
+The stack is DNP in the standard (C30737) build.
 
 **HV enable — off at power-up by hardware.** SHDN/UVLO divider
 R25 143 kΩ / R26 33 kΩ holds the node at 0.94 V nominal,
@@ -90,7 +114,9 @@ floating), J5-absent blocking under a driven-high PC7, and the
 sense thresholds (docs/05).
 
 ## Sequencing / safety
-- HV bleeder R30 4.7 MΩ across C33 discharges the rail → <60 V in
+- HV bleeder R30 4.7 MΩ (fitted as a 2× 2.35 MΩ KOA HV73V2B series
+  string for voltage rating; total and discharge spec unchanged,
+  parts-fix docs/09) across C33 discharges the rail → <60 V in
   ≈1 s (sim: 1.34 s for the 10 kΩ/100 nF filter chain worst case
   from the S8664 variant's 420 V; the C30737 fit starts from
   ≤253 V and decays faster) — R9 ✓.

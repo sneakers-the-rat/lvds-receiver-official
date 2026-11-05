@@ -52,6 +52,16 @@ be off, and the DAC injection range would shift). Verify against a
 printed datasheet before first HV power-up; the bench HV calibration
 (docs/05 §5) measures the true map in any case.
 
+**Resolution (parts-fix, docs/09).** The full LT3757 datasheet
+(Rev. G) was obtained and read. FBX regulation is 1.569 / 1.600 /
+1.631 V — the taken-as 1.6 V is confirmed, as is the 100 nA max FBX
+pin current the clamp derivation stacked. The RT table was also
+recovered: the fitted 24.9 kΩ corresponds to ≈500 kHz, NOT 250 kHz;
+R24 is refitted 53.6 kΩ (Table 1 interpolation) for the 250 kHz
+design point. The SENSE current-limit threshold is 100/110/120 mV
+(2.0/2.2/2.4 A across R28), which now sets T1's saturation spec.
+R-3 is closed; the bench calibration still measures the true map.
+
 ### R-4. STM32 alternate-function numbers are VERIFY items
 `firmware/board.h` carries register addresses and AF numbers marked
 "VERIFY against RM0468" — the STM32H723 datasheet/reference manual
@@ -187,8 +197,9 @@ waterfall shows a cliff instead of a slope, raising THRADJ (up to
    measured voltage (this calibrates the true FBX map). Remove power;
    time the bleeder decay from the set ceiling → <60 V (must be
    <10 s; sim says ~1 s). (S8664 variant boards: ramp to 420 V.)
-10. **Optical loopback.** BIST LED (PC8) drives the on-board 630 nm
-    emitter; confirm received packets via the light-pipe path. Then an
+10. **Optical loopback.** BIST LED (PC8) drives the on-board 740 nm
+    emitter (Ushio Epitex SMT740 — wavelength corrected from 630 nm,
+    parts-fix docs/09); confirm received packets via the light-pipe path. Then an
     external 740 nm source for the full bench plan (`docs/05`).
 
 Any step that fails gets a dated note appended to this file with the
