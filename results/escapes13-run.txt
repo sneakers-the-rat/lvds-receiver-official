@@ -1,0 +1,13 @@
+--- 1 APD_K staircase repair ---
+  APD_K: (40.88,-3.12)->(40.62,-2.88) L2
+  APD_K: (40.62,-2.88)->(40.38,-2.62) L2
+  APD_K: (40.38,-2.62)->(40.12,-2.38) L2
+  APD_K: (40.12,-2.38)->(39.88,-2.12) L2
+  APD_K: (39.88,-2.12)->(39.62,-1.88) L2
+  [1 APD_K staircase repair OK]
+--- 2 HV_RAW F + In2 ---
+  [2 HV_RAW F + In2 REFUSED: HV_RAW seg (42.9,-4.7)->(41.6,-4.55): APD_K via@stubcheck]
+--- 3 HV_FBX via restore ---
+  HV_FBX: via (10.12,-15.38)
+  [3 HV_FBX via restore OK]
+saved hw/pdlvds_rx.exp54.kicad_pcb

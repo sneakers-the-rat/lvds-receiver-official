@@ -796,6 +796,14 @@ Escapes 11 (exp51 -> exp52): R50 shifted +1.14 east (fixes the batch-9 pad overl
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 81 · Unconnected nets: 27 · Audit verdict: FAIL
 
+### Pass 95 — 2026-11-05T12:32:01Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp53.kicad_pcb` · Commit: `pending`
+
+Escapes 12 (exp52 -> exp53): PLACEMENT BREAK of the pocket seesaw -- R49+R50 moved SW as a unit (-6,-5.5) into the open field south of the FBX web (one GND stitch ripped); HV_R31B re-join and HV_FBX direct hop to the web both landed. HV_RAW via refused on TP_HV stub proximity; FBX dive re-site refused by HV_VC web (restored in batch 13); HV_SS west leg refused on FBX stub -- its U10 seal is geometric, mechanism named in notes.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 78 · Unconnected nets: 28 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

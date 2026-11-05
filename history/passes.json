@@ -2672,6 +2672,35 @@
       },
       "description": "Escapes 11 (exp51 -> exp52): R50 shifted +1.14 east (fixes the batch-9 pad overlap with R31.2), HV_R31B re-join CONNECTED; FBX and HV_RAW vias refused by the CMP_QN B staircase / FBX In2 vertical (named blockers, batch 12 re-plans with a placement move); HV_SS In2 hop refused -- its seal is geometric (one 1.0-class dive channel at U10 for two HV nets).",
       "note": ""
+    },
+    {
+      "pass": 95,
+      "timestamp": "2026-11-05T12:32:01Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp53.kicad_pcb",
+      "dir": "pass-0095",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 78,
+        "unconnected_nets": 28,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 12 (exp52 -> exp53): PLACEMENT BREAK of the pocket seesaw -- R49+R50 moved SW as a unit (-6,-5.5) into the open field south of the FBX web (one GND stitch ripped); HV_R31B re-join and HV_FBX direct hop to the web both landed. HV_RAW via refused on TP_HV stub proximity; FBX dive re-site refused by HV_VC web (restored in batch 13); HV_SS west leg refused on FBX stub -- its U10 seal is geometric, mechanism named in notes.",
+      "note": ""
     }
   ],
   "gaps": [
