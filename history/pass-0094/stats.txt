@@ -1,0 +1,13 @@
+pass: 94
+description: Escapes 11 (exp51 -> exp52): R50 shifted +1.14 east (fixes the batch-9 pad overlap with R31.2), HV_R31B re-join CONNECTED; FBX and HV_RAW vias refused by the CMP_QN B staircase / FBX In2 vertical (named blockers, batch 12 re-plans with a placement move); HV_SS In2 hop refused -- its seal is geometric (one 1.0-class dive channel at U10 for two HV nets).
+timestamp (UTC): 2026-11-05T12:22:58Z
+commit: pending
+board file: hw/pdlvds_rx.exp52.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 81
+unconnected nets: 27
+audit verdict: fail
+note: 
