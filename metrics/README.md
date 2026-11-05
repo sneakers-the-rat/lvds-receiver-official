@@ -520,6 +520,34 @@ Why even these equivalents are rough:
   text than its predecessor; the counts here were metered on Muse,
   so identical text would meter somewhat higher on Claude.
 
+## Staying in sync during the project
+
+The database export (`token_series.csv` / `agents.csv`) can only be
+refreshed by an agent with `muse.db` access — no shell, git hook, or
+CI job can reach the Muse runtime database. Everything downstream of
+the export, however, is plain local computation, and it is wired to
+stay in sync on its own:
+
+- `metrics/sync_metrics.sh` re-runs the local generators
+  (`align_commits.py`, `make_token_chart.py`, `make_cost_summary.py`)
+  and stages the regenerated artifacts. The milestone plot the site
+  shows is rendered at site-build time from `commit_alignment.csv`, so
+  it follows automatically.
+- `.githooks/pre-commit` and `.githooks/post-merge` (enabled per clone
+  with `git config core.hooksPath .githooks`) call it — but a full run
+  costs ~30 s, so the script only does work in clones that opt in with
+  `git config metrics.sync true`. That flag is set in the merge clone
+  (`pdlvds-split`) only; worker clones return instantly and pay
+  nothing.
+- The parent agent refreshes the database export as part of every
+  merge to `main`, then the hook regenerates the rest. Net effect:
+  metrics on `main` are never more than one merge behind the work;
+  between merges the token axis plateaus at the last export, which the
+  plateau in the per-message chart makes visible rather than hiding.
+- The input split (`estimate_input_split.py`) needs the agent
+  transcripts and a manual transcription into this README, so it stays
+  an agent-run milestone step, not part of the hook.
+
 ## Regenerating at project end
 
 CI cannot reach this database. An agent with `muse.db` access re-runs the
