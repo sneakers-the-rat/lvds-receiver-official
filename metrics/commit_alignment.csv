@@ -495,3 +495,4 @@ f04e5ad9f881,2026-11-05T21:34:25Z,"site: hierarchical collapsible sidebar, mobil
 fb5da432e86b,2026-11-05T21:54:15Z,ci: stable .deb cache keys — run-id primary keys made every run upload a fresh full entry and restores matched nothing,633162938,3290028,636452966,83,64,not recorded
 a274bce7473d,2026-11-05T22:07:17Z,"site: fix progress chart plugin class name — Jekyll 4.4 has PageWithoutAFile, not PageWithoutFile (CI build-site log, run 42116968582: NameError at progress_chart.rb:41)",633162938,3290028,636452966,83,64,not recorded
 ec4ddf840b8f,2026-11-05T22:13:42Z,"ci: cache the built firmware binary, not the toolchain — gcc-arm installed only on a firmware-source change",633162938,3290028,636452966,83,64,not recorded
+aaa02c0a45b9,2026-11-05T22:29:47Z,site: floor the sidebar 25-pass block index — divided_by semantics differ across Liquid versions; floor makes the grouping integer under both,633162938,3290028,636452966,83,64,not recorded
