@@ -1,0 +1,36 @@
+--- 1 SET_P x=50.9 ---
+  [1 SET_P x=50.9 REFUSED: SET_P seg (49.55,62.5)->(50.9,62.5): +5V track@stubcheck]
+--- 2 +5V U14.6 south ---
+  rip GND L0 (59.88,63.38)->(60.12,63.62)
+  rip GND L0 (60.12,63.62)->(60.38,63.62)
+  rip GND L0 (60.38,63.62)->(60.62,63.88)
+  rip GND L0 (60.62,63.88)->(60.88,64.12)
+  ripped 4 GND segments
+  [2 +5V U14.6 south REFUSED: +5V seg (60.55,63.15)->(60.55,64.8): GND track@stubcheck]
+--- 3 +3V3A east run ---
+  rip GND L0 (84.75,-18.56)->(84.88,0.38)
+  rip GND L0 (84.75,-18.56)->(84.88,0.38)
+  ripped 2 GND segments
+  [3 +3V3A east run REFUSED: +3V3A seg (82.6,-17.6)->(87.9,-17.6): PHY_1V8 track@stubcheck]
+--- 4 +3V3D_CDR U4.12 diag stub ---
+  [4 +3V3D_CDR U4.12 diag stub REFUSED: +3V3D_CDR seg (54.75,-16.06)->(56.3,-14.2): REFCLKN U4.11]
+--- 5 HV_FBX In2 waypoint ---
+  [5 HV_FBX In2 waypoint REFUSED: HV_FBX seg (42.9,0.1)->(38.0,-2.2): APD_K track@stubcheck]
+--- 6 HV_INTVCC via-in-pad ---
+  HV_INTVCC: (16.15,-15.00)->(15.55,-15.00) L0
+  [6 HV_INTVCC via-in-pad REFUSED: HV_INTVCC via (15.55,-15.0): HV_GATE U10.7]
+--- 7 HV_SS x=10.1 ---
+  [7 HV_SS x=10.1 REFUSED: HV_SS seg (10.7,-15.0)->(10.1,-15.0): HV_FBX track@stubcheck]
+--- 8a R34 move + rejoins ---
+  R34 moved (0,-1.5)
+  APD_K: (41.54,-6.00)->(41.54,-7.50) L0
+  TP_HV: (44.46,-6.00)->(44.46,-7.50) L0
+  [8a R34 move + rejoins REFUSED: APD_K seg (41.5375,-7.5)->(41.5,-0.5): HV_FBX R50.2]
+--- 8b HV_RAW corridor ---
+  HV_RAW: (43.67,-1.80)->(43.30,-3.60) L0
+  [8b HV_RAW corridor REFUSED: HV_RAW seg (43.3,-3.6)->(42.5,-4.5): APD_K track@stubcheck]
+--- 9 CC2 diagonal ---
+  [9 CC2 diagonal REFUSED: CC2 seg (30.5,72.55)->(31.3,72.35): VBUS_RAW J1.B4]
+saved hw/pdlvds_rx.exp45.kicad_pcb
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'ZONE_FILLER *', no destructor found.

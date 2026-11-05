@@ -1,0 +1,13 @@
+pass: 91
+description: Escapes 3-8 (exp42 -> exp49): +3V3A COMPLETE (U7.6 west exit, In2 hop under the ULPI bank), HV_INTVCC COMPLETE (neck-width turn through the EP/GATE window, via-up hunted to (13.4,-10.8)), HV_SS stubbed to In2, HV_FBX stubbed to a via, R34 moved 1.5mm north (placement) with APD_K/TP_HV re-joins placed. Board state per audit.
+timestamp (UTC): 2026-11-05T11:39:02Z
+commit: pending
+board file: hw/pdlvds_rx.exp49.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 80
+unconnected nets: 27
+audit verdict: fail
+note: 

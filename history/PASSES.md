@@ -764,6 +764,14 @@ Escape batch 1 (exp41 -> exp42): APD_K island joined to main via R34.1 pad (sect
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 77 · Unconnected nets: 29 · Audit verdict: FAIL
 
+### Pass 91 — 2026-11-05T11:39:02Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp49.kicad_pcb` · Commit: `pending`
+
+Escapes 3-8 (exp42 -> exp49): +3V3A COMPLETE (U7.6 west exit, In2 hop under the ULPI bank), HV_INTVCC COMPLETE (neck-width turn through the EP/GATE window, via-up hunted to (13.4,-10.8)), HV_SS stubbed to In2, HV_FBX stubbed to a via, R34 moved 1.5mm north (placement) with APD_K/TP_HV re-joins placed. Board state per audit.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 80 · Unconnected nets: 27 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

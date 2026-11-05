@@ -1,0 +1,23 @@
+--- 1 +5V U14.6 x=60.45 ---
+  +5V: (60.50,63.15)->(60.45,64.80) L0
+  +5V: via (60.45,64.80)
+  [1 +5V U14.6 x=60.45 REFUSED: +5V seg (60.45,64.8)->(57.8,61.6): SET_A track@stubcheck]
+--- 2 +3V3A In2 under ULPI bank ---
+  +3V3A: (82.60,-17.10)->(84.00,-17.10) L0
+  [2 +3V3A In2 under ULPI bank REFUSED: +3V3A via (84.0,-17.1): USB_RST track@stubcheck]
+--- 3 HV_FBX In2 v5 ---
+  HV_FBX: (42.90,0.10)->(42.90,-5.60) L2
+  HV_FBX: (42.90,-5.60)->(34.50,-5.60) L2
+  HV_FBX: (34.50,-5.60)->(34.50,-4.60) L2
+  [3 HV_FBX In2 v5 REFUSED: HV_FBX via (34.5,-4.6): HV_R31A R49.1]
+--- 4 HV_INTVCC via-up hunt ---
+  [4 HV_INTVCC via-up hunt REFUSED: no via-up site in the candidate list]
+--- 5 HV_RAW v5 In2 mouth crossing ---
+  HV_RAW: (43.30,-3.60)->(42.90,-4.70) L0
+  [5 HV_RAW v5 In2 mouth crossing REFUSED: HV_RAW via (42.9,-4.7): HV_FBX track@stubcheck]
+--- 6 CC2 v4 south loop ---
+  CC2: (30.50,72.55)->(30.44,73.00) L0
+  [6 CC2 v4 south loop REFUSED: CC2 seg (30.44,73.0)->(30.44,74.3): DP_CON track@stubcheck]
+--- 7 +3V3D_CDR U4.12 diagonal ---
+  [7 +3V3D_CDR U4.12 diagonal REFUSED: +3V3D_CDR seg (54.75,-15.45)->(56.3,-14.6): CDR_LOL track@stubcheck]
+saved hw/pdlvds_rx.exp48.kicad_pcb
