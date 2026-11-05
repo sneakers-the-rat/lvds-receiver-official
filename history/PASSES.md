@@ -628,9 +628,9 @@ hand_via campaign on the 16 no-stub pads from the pass-70 record (exp8 -> exp9):
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 40 · Unconnected nets: 33 · Audit verdict: FAIL
 
-### Pass 74 — 2026-11-05T02:36:09Z · commit `pending`
+### Pass 74 — 2026-11-05T02:36:09Z · commit `ea80d52`
 
-Board: `hw/pdlvds_rx.exp10.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp10.kicad_pcb` · Commit: `ea80d5209f14e852b2787b7d5ccb169ddcd2662e`
 
 re-notch board-wide (exp9 -> exp10): notch_strip's strip filter (centre y < 5) removed — pass 72's audit charged 6 of its 38 APD_K-vs-pour violations to old-field APD_K copper outside the filter (via (13.625,30.625) and its run south to y 19.1). Rects now computed from ALL HV copper: 3 merged rects (the strip cluster and the west-side APD_K run merge into one (7.93,-19.25)-(44.58,33.23); D1.5 and RJ2.2 separate). Rule areas block pour only; GND fallout is measured by this audit and repaired by the stitch step next.
 
