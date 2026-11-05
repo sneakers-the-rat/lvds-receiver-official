@@ -130,6 +130,19 @@ def proj(a, b, p):
     return s, math.hypot(p[0] - qx, p[1] - qy)
 
 
+def seg_point(a, b, p):
+    """(t_clamped, distance) of point p to segment ab: distance is
+    to the SEGMENT (end caps included), not the infinite line."""
+    dx, dy = b[0] - a[0], b[1] - a[1]
+    L2 = dx * dx + dy * dy
+    if L2 == 0:
+        return 0.0, math.hypot(p[0] - a[0], p[1] - a[1])
+    t = ((p[0] - a[0]) * dx + (p[1] - a[1]) * dy) / L2
+    tc = min(max(t, 0.0), 1.0)
+    qx, qy = a[0] + tc * dx, a[1] + tc * dy
+    return tc, math.hypot(p[0] - qx, p[1] - qy)
+
+
 def seg_intersect(a, b, c, d):
     """centreline crossing point of ab and cd, or None."""
     def cr(o, p, q):
@@ -147,15 +160,22 @@ class Seg:
 
     def __init__(self, obj, layer, a, b, w):
         self.obj, self.layer, self.a, self.b, self.w = obj, layer, a, b, w
-        self.splits = {0.0: 'end', 1.0: 'end'}  # param t -> kind
+        # param t -> (kind, ref) where ref is the via/pad centre for
+        # 'via'/'pad' contacts (drives cross-layer vertex identity)
+        self.splits = {0.0: ('end', None), 1.0: ('end', None)}
 
 
 def build_graph(board, net, zone_polys):
-    """Returns (subedges, segmap, viamap).
-    subedges: list of dicts {seg, t0, t1, v0, v1} where v* are
-    vertex keys (layer, x, y) except via/pad vertices which are
-    ('X', kind, x, y) shared across layers.
-    Terminal vertices: pads and pour-contact split points."""
+    """Geometric graph for one net.
+
+    Vertices are union-find classes over split-point instances.
+    Two instances unite when they are the same physical contact:
+    a segment endpoint touching another segment unites with that
+    segment's junction split; via/pad contacts unite with the
+    via/pad's cross-layer 'X' vertex; coincident points unite.
+    Pad contact is judged by SHAPE Collide (the audit's rule), not
+    centre distance -- a track landing on a pad's edge is connected.
+    Returns (subedges, segs, vias, pads, term_roots)."""
     segs, vias, pads = [], [], []
     for t in board.GetTracks():
         if t.GetNetname() != net:
@@ -175,29 +195,90 @@ def build_graph(board, net, zone_polys):
             pads.append((pad, pcbnew.ToMM(pad.GetPosition()),
                          pcbnew.ToMM(pad.GetSize()), layers,
                          f"{fp.GetReference()}.{pad.GetNumber()}"))
-    # split points from vias and pads (contact intervals)
-    for s in segs:
+
+    parent = {}
+
+    def find(x):
+        parent.setdefault(x, x)
+        while parent[x] != x:
+            parent[x] = parent[parent[x]]
+            x = parent[x]
+        return x
+
+    def union(a, b):
+        ra, rb = find(a), find(b)
+        if ra != rb:
+            parent[ra] = rb
+
+    def inst(si, t):
+        return ('I', si, round(t, 6))
+
+    def xv(kind, c):
+        return ('X', kind, round(c[0], 3), round(c[1], 3))
+
+    term_seeds = set()
+    # ---- contact splits -------------------------------------------
+    for si, s in enumerate(segs):
         L = math.hypot(s.b[0] - s.a[0], s.b[1] - s.a[1])
         if L == 0:
             continue
+        sshape = s.obj.GetEffectiveShape()
+        # vias (circles: centre/radius test is exact)
         for _, c, d in vias:
-            dist, perp = proj(s.a, s.b, c)
-            if 0 <= dist <= L and perp <= s.w / 2 + d / 2 + REACH_TOL:
-                t = dist / L
-                for tt in (t - (d / 2) / L, t, t + (d / 2) / L):
+            tc, dseg = seg_point(s.a, s.b, c)
+            if dseg <= s.w / 2 + d / 2 + REACH_TOL:
+                vx = xv('via', c)
+                for tt in (tc - (d / 2) / L, tc, tc + (d / 2) / L):
                     if 0.0 < tt < 1.0:
-                        s.splits[tt] = 'via'
-        for _, c, sz, layers, _desc in pads:
+                        s.splits[tt] = ('via', c)
+                        union(inst(si, tt), vx)
+                for te in (0.0, 1.0):
+                    p = s.a if te == 0.0 else s.b
+                    if math.hypot(p[0] - c[0], p[1] - c[1]) <= \
+                            d / 2 + s.w / 2 + REACH_TOL:
+                        union(inst(si, te), vx)
+        # pads (shape test; interval from bbox corner projections)
+        for pad, c, sz, layers, _desc in pads:
             if s.layer not in layers:
                 continue
-            dist, perp = proj(s.a, s.b, c)
-            r = max(sz) / 2
-            if 0 <= dist <= L and perp <= s.w / 2 + r + REACH_TOL:
-                t = dist / L
-                for tt in (t - r / L, t, t + r / L):
-                    if 0.0 < tt < 1.0:
-                        s.splits[tt] = 'pad'
-    # split points from other segments' endpoints + crossings
+            try:
+                hit = sshape.Collide(pad.GetEffectiveShape(), 0)
+            except Exception:
+                hit = False
+            if not hit:
+                continue
+            bb = pad.GetBoundingBox()
+            corners = [(pcbnew.ToMM(bb.GetLeft()),
+                        pcbnew.ToMM(bb.GetTop())),
+                       (pcbnew.ToMM(bb.GetRight()),
+                        pcbnew.ToMM(bb.GetTop())),
+                       (pcbnew.ToMM(bb.GetLeft()),
+                        pcbnew.ToMM(bb.GetBottom())),
+                       (pcbnew.ToMM(bb.GetRight()),
+                        pcbnew.ToMM(bb.GetBottom()))]
+            ss = [proj(s.a, s.b, q)[0] for q in corners]
+            lo = max(0.0, min(ss) - s.w / 2)
+            hi = min(L, max(ss) + s.w / 2)
+            px = xv('pad', c)
+            term_seeds.add(px)
+            for tt in (lo / L, hi / L):
+                if 0.0 < tt < 1.0:
+                    s.splits[tt] = ('pad', c)
+                    union(inst(si, tt), px)
+            dist, _perp = proj(s.a, s.b, c)
+            if 0.0 < dist / L < 1.0:
+                s.splits[dist / L] = ('pad', c)
+                union(inst(si, dist / L), px)
+            for te in (0.0, 1.0):
+                p = s.a if te == 0.0 else s.b
+                pt = pcbnew.SHAPE_CIRCLE(
+                    pcbnew.VECTOR2I(MM(p[0]), MM(p[1])), MM(s.w / 2))
+                try:
+                    if pad.GetEffectiveShape().Collide(pt, 0):
+                        union(inst(si, te), px)
+                except Exception:
+                    pass
+    # ---- segment/segment junctions --------------------------------
     for i, s in enumerate(segs):
         L = math.hypot(s.b[0] - s.a[0], s.b[1] - s.a[1])
         if L == 0:
@@ -205,18 +286,23 @@ def build_graph(board, net, zone_polys):
         for j, o in enumerate(segs):
             if i == j or o.layer != s.layer:
                 continue
-            for p in (o.a, o.b):
-                dist, perp = proj(s.a, s.b, p)
-                if 0 < dist < L and perp <= s.w / 2 + o.w / 2 + REACH_TOL:
-                    s.splits[dist / L] = 'junction'
+            Lo = math.hypot(o.b[0] - o.a[0], o.b[1] - o.a[1])
+            for te, p in ((0.0, o.a), (1.0, o.b)):
+                tt, dseg = seg_point(s.a, s.b, p)
+                if dseg <= s.w / 2 + o.w / 2 + REACH_TOL:
+                    if 0.0 < tt < 1.0:
+                        s.splits[tt] = ('junction', None)
+                    union(inst(i, tt), inst(j, te))
             x = seg_intersect(s.a, s.b, o.a, o.b)
             if x is not None:
                 dist, _ = proj(s.a, s.b, x)
-                if 0 < dist < L:
-                    s.splits[dist / L] = 'junction'
-    # pour contact: sample segments on zone layers
+                disto, _ = proj(o.a, o.b, x)
+                if 0 < dist < L and 0 < disto < Lo:
+                    s.splits[dist / L] = ('junction', None)
+                    union(inst(i, dist / L), inst(j, disto / Lo))
+    # ---- pour contact (sampled with the track's own footprint) ----
     if net in zone_polys:
-        for s in segs:
+        for si, s in enumerate(segs):
             polys = [p for (lay, p) in zone_polys[net] if lay == s.layer]
             if not polys:
                 continue
@@ -229,56 +315,44 @@ def build_graph(board, net, zone_polys):
                 x = s.a[0] + t * (s.b[0] - s.a[0])
                 y = s.a[1] + t * (s.b[1] - s.a[1])
                 pt = pcbnew.SHAPE_CIRCLE(
-                    pcbnew.VECTOR2I(MM(x), MM(y)), MM(0.005))
+                    pcbnew.VECTOR2I(MM(x), MM(y)), MM(s.w / 2))
                 for p in polys:
                     try:
                         if p.Collide(pt, 0):
-                            s.splits[t] = 'pour'
+                            s.splits[t] = ('pour', None)
                             break
                     except Exception:
                         pass
-    # build subedges with merged vertices
+    # ---- emit subedges ---------------------------------------------
     subedges = []
-
-    def vkey(layer, x, y):
-        return (layer, round(x / MERGE_TOL), round(y / MERGE_TOL))
-
-    for s in segs:
+    for si, s in enumerate(segs):
+        L = math.hypot(s.b[0] - s.a[0], s.b[1] - s.a[1])
+        if L == 0:
+            continue
+        # No split merging: near-coincident contacts stay distinct
+        # vertices joined by a hair subedge -- connectivity flows
+        # through it. (An earlier merge step ate a live subedge on
+        # a float-boundary comparison and disconnected C19.1.)
         ts = sorted(s.splits)
-        merged = []
-        for t in ts:
-            if merged and t - merged[-1][0] < MERGE_TOL / max(
-                    math.hypot(s.b[0] - s.a[0], s.b[1] - s.a[1]), 1e-9):
-                # keep the stronger kind: pad > pour > via > junction
-                order = {'end': 0, 'junction': 1, 'via': 2,
-                         'pour': 3, 'pad': 4}
-                if order[s.splits[t]] > order[merged[-1][1]]:
-                    merged[-1] = (merged[-1][0], s.splits[t])
-                continue
-            merged.append((t, s.splits[t]))
-        for (t0, k0), (t1, k1) in zip(merged, merged[1:]):
-            x0 = s.a[0] + t0 * (s.b[0] - s.a[0])
-            y0 = s.a[1] + t0 * (s.b[1] - s.a[1])
-            x1 = s.a[0] + t1 * (s.b[0] - s.a[0])
-            y1 = s.a[1] + t1 * (s.b[1] - s.a[1])
+        merged = [(t, s.splits[t]) for t in ts]
+        for (t0, (k0, _r0)), (t1, (k1, _r1)) in zip(merged, merged[1:]):
             subedges.append({
                 'seg': s, 't0': t0, 't1': t1,
-                'v0': vkey(s.layer, x0, y0), 'v1': vkey(s.layer, x1, y1),
-                'k0': k0, 'k1': k1, 'len': (t1 - t0) * math.hypot(
-                    s.b[0] - s.a[0], s.b[1] - s.a[1])})
-    return subedges, segs, vias, pads
-
-
-def trim(subedges):
-    """Leaf-trim; returns set of id(subedge) that survive."""
-    adj = {}
+                'v0': find(inst(si, t0)), 'v1': find(inst(si, t1)),
+                'k0': k0, 'k1': k1, 'len': (t1 - t0) * L})
+    term = set()
     for e in subedges:
-        adj.setdefault(e['v0'], []).append(e)
-        adj.setdefault(e['v1'], []).append(e)
+        if e['k0'] in ('pad', 'pour'):
+            term.add(e['v0'])
+        if e['k1'] in ('pad', 'pour'):
+            term.add(e['v1'])
+    for px in term_seeds:
+        term.add(find(px))
+    return subedges, segs, vias, pads, term
 
-    def terminal(v, e_end_kind):
-        return e_end_kind in ('pad', 'pour')
 
+def trim(subedges, term):
+    """Leaf-trim; returns set of id(subedge) that survive."""
     alive = {id(e) for e in subedges}
     deg = {}
     for e in subedges:
@@ -290,14 +364,14 @@ def trim(subedges):
         for e in subedges:
             if id(e) not in alive:
                 continue
-            for v, k in ((e['v0'], e['k0']), (e['v1'], e['k1'])):
-                if deg.get(v, 0) == 1 and not terminal(v, k):
+            for v in (e['v0'], e['v1']):
+                if deg.get(v, 0) == 1 and v not in term:
                     alive.discard(id(e))
                     deg[e['v0']] -= 1
                     deg[e['v1']] -= 1
                     changed = True
                     break
-    # components with no terminal end at all: drop wholesale
+    # components with no terminal vertex at all: drop wholesale
     comp = {}
     for e in subedges:
         if id(e) not in alive:
@@ -313,8 +387,8 @@ def trim(subedges):
         while stack:
             cur = stack.pop()
             group.append(cur)
-            for v, k in ((cur['v0'], cur['k0']), (cur['v1'], cur['k1'])):
-                if terminal(v, k):
+            for v in (cur['v0'], cur['v1']):
+                if v in term:
                     has_term = True
                 for n in comp.get(v, []):
                     if id(n) not in seen:
@@ -350,15 +424,63 @@ def main():
 
     nets = sorted({t.GetNetname() for t in board.GetTracks()
                    if t.GetNetname()})
+    plan, report = build_plan(board, nets, zone_polys, exclude)
+    # apply + prove; on a moved partition, reload and rebuild the
+    # plan without the offending nets (their objects are stale
+    # after a reload, so the plan must be recomputed, not reused)
+    bad = []
+    for _attempt in range(3):
+        for net, (dels, shorts) in plan.items():
+            for o in dels:
+                board.Remove(o)
+            for s, t0, t1 in shorts:
+                a = (s.a[0] + t0 * (s.b[0] - s.a[0]),
+                     s.a[1] + t0 * (s.b[1] - s.a[1]))
+                b = (s.a[0] + t1 * (s.b[0] - s.a[0]),
+                     s.a[1] + t1 * (s.b[1] - s.a[1]))
+                s.obj.SetStart(pcbnew.VECTOR2I(MM(a[0]), MM(a[1])))
+                s.obj.SetEnd(pcbnew.VECTOR2I(MM(b[0]), MM(b[1])))
+        after = partition(board)
+        moved = [n for n in plan if after.get(n) != before.get(n)]
+        if not moved:
+            break
+        bad.extend(moved)
+        print(f"PARTITION MOVED for {moved}: reverting those nets")
+        board = pcbnew.LoadBoard(src)
+        plan, report = build_plan(board, nets, zone_polys,
+                                  exclude | set(bad))
+    else:
+        raise SystemExit("partition proof did not converge")
+    tot_r = sum(v[0] + v[1] for k, v in report.items())
+    tot_s = sum(v[2] for k, v in report.items())
+    tot_l = sum(v[3] for k, v in report.items())
+    print(f"nets pruned: {len(report)}, reverted: {bad}")
+    print(f"segments+vias removed: {tot_r}, tracks shortened: {tot_s}, "
+          f"dead length removed: {tot_l:.1f} mm")
+    for net in sorted(report, key=lambda n: -report[n][3]):
+        d, v, s, L = report[net]
+        print(f"  {net}: removed {d} segs + {v} vias, shortened {s}, "
+              f"dead length {L:.1f} mm")
+    if bad:
+        print(f"  REVERTED (partition moved, trims NOT applied): {bad}")
+    if dry:
+        print("dry run: board NOT saved")
+        return
+    repair6.save_checkpoint(board, out_path)
+    print(f"saved {out_path}")
+
+
+def build_plan(board, nets, zone_polys, exclude):
     plan = {}   # net -> (objs_to_delete, [(seg, t_lo, t_hi)])
     report = {}
     for net in nets:
         if net in exclude:
             continue
-        subedges, segs, vias, pads = build_graph(board, net, zone_polys)
+        subedges, segs, vias, pads, term = build_graph(
+            board, net, zone_polys)
         if not subedges and not vias:
             continue
-        alive = trim(subedges)
+        alive = trim(subedges, term)
         dead_len = sum(e['len'] for e in subedges if id(e) not in alive)
         # map back to segments
         delete, shorten = [], []
@@ -396,66 +518,28 @@ def main():
                 if id(e) not in alive:
                     continue
                 s = e['seg']
-                dist, perp = proj(s.a, s.b, c)
-                L = math.hypot(s.b[0] - s.a[0], s.b[1] - s.a[1])
-                if 0 <= dist <= L and perp <= s.w / 2 + d / 2 + REACH_TOL:
+                _tc, dseg = seg_point(s.a, s.b, c)
+                if dseg <= s.w / 2 + d / 2 + REACH_TOL:
                     touched = True
                     break
             if not touched:
                 # via still valuable if it touches a pad directly
                 pad_hit = False
-                for _p, pc, sz, layers, _d in pads:
-                    if math.hypot(pc[0] - c[0], pc[1] - c[1]) <= \
-                            max(sz) / 2 + d / 2:
-                        pad_hit = True
-                        break
+                vshape = vobj.GetEffectiveShape()
+                for pobj, _pc, _sz, _layers, _d in pads:
+                    try:
+                        if vshape.Collide(pobj.GetEffectiveShape(), 0):
+                            pad_hit = True
+                            break
+                    except Exception:
+                        pass
                 if not pad_hit:
                     dead_vias.append(vobj)
         if delete or shorten or dead_vias:
             plan[net] = (delete + dead_vias, shorten)
             report[net] = (len(delete), len(dead_vias), len(shorten),
                            dead_len)
-    # apply + prove; revert offenders by reload
-    bad = []
-    for attempt in range(2):
-        for net, (dels, shorts) in plan.items():
-            if net in bad:
-                continue
-            for o in dels:
-                board.Remove(o)
-            for s, t0, t1 in shorts:
-                a = (s.a[0] + t0 * (s.b[0] - s.a[0]),
-                     s.a[1] + t0 * (s.b[1] - s.a[1]))
-                b = (s.a[0] + t1 * (s.b[0] - s.a[0]),
-                     s.a[1] + t1 * (s.b[1] - s.a[1]))
-                s.obj.SetStart(pcbnew.VECTOR2I(MM(a[0]), MM(a[1])))
-                s.obj.SetEnd(pcbnew.VECTOR2I(MM(b[0]), MM(b[1])))
-        after = partition(board)
-        bad = [n for n in plan
-               if after.get(n) != before.get(n) and n not in bad]
-        if not bad:
-            break
-        print(f"PARTITION MOVED for {bad}: reverting those nets")
-        board = pcbnew.LoadBoard(src)
-    tot_r = sum(v[0] + v[1] for k, v in report.items() if k not in bad)
-    tot_s = sum(v[2] for k, v in report.items() if k not in bad)
-    tot_l = sum(v[3] for k, v in report.items() if k not in bad)
-    print(f"nets pruned: {len([k for k in report if k not in bad])}, "
-          f"reverted: {bad}")
-    print(f"segments+vias removed: {tot_r}, tracks shortened: {tot_s}, "
-          f"dead length removed: {tot_l:.1f} mm")
-    for net in sorted(report, key=lambda n: -report[n][3]):
-        d, v, s, L = report[net]
-        mark = ' (REVERTED)' if net in bad else ''
-        print(f"  {net}: removed {d} segs + {v} vias, shortened {s}, "
-              f"dead length {L:.1f} mm{mark}")
-    if dry:
-        print("dry run: board NOT saved")
-        return
-    assert all(after.get(n) == before.get(n) for n in plan), \
-        "partition proof failed"
-    repair6.save_checkpoint(board, out_path)
-    print(f"saved {out_path}")
+    return plan, report
 
 
 if __name__ == '__main__':
