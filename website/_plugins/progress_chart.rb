@@ -38,7 +38,7 @@ module PdlvdsProgress
         }
       end.select { |r| r[:pass] }.sort_by { |r| r[:pass] }
 
-      page = Jekyll::PageWithoutFile.new(site, site.source, "assets/gen", "progress.svg")
+      page = Jekyll::PageWithoutAFile.new(site, site.source, "assets/gen", "progress.svg")
       page.content = build_svg(rows)
       page.data["layout"] = nil
       page.data["sitemap"] = false
