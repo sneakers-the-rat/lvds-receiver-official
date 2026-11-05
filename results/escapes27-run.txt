@@ -1,0 +1,20 @@
+--- phase A rips ---
+  ripped ULPI_D1 (78.44,12.75)->(78.94,12.75)
+--- D2 ---
+  ULPI_D2: (79.05,13.25)->(79.30,13.15) REFUSED: ULPI_D1 track@stubcheck
+  [D2 STOPPED]
+--- D3 ---
+  ULPI_D3: (78.90,13.75)->(79.30,13.90) REFUSED: CDR_DATP via@stubcheck
+  [D3 STOPPED]
+--- STP ---
+  ULPI_STP: (76.25,17.15)->(76.10,18.20) REFUSED: ULPI_DIR track@stubcheck
+  [STP STOPPED]
+--- DIR-rejoin ---
+  ULPI_DIR: (75.88,17.62)->(76.50,17.95) L0 OK
+  ULPI_DIR: via (76.50,17.95) OK
+  ULPI_DIR: (76.50,17.95)->(75.45,19.05) REFUSED: +3V3A track@stubcheck
+  [DIR-rejoin STOPPED]
+--- RST-stub ---
+  USB_RST: (74.25,16.44)->(74.25,16.95) REFUSED: ULPI_NXT track@stubcheck
+  [RST-stub STOPPED]
+saved hw/pdlvds_rx.exp76.kicad_pcb

@@ -1,0 +1,37 @@
+--- phase A rips ---
+  ripped ULPI_D1 (79.62,12.88)->(79.88,13.12)
+  ripped ULPI_D1 (79.88,13.12)->(80.12,13.38)
+  ripped ULPI_D1 (80.12,13.38)->(80.38,13.62)
+  ripped ULPI_D5 (79.69,14.75)->(80.38,14.62)
+  ripped ULPI_D6 (78.44,15.25)->(78.69,15.25)
+  ripped ULPI_D6 (78.69,15.25)->(79.12,15.38)
+  ripped ULPI_DIR (75.88,17.62)->(76.12,17.88)
+  ripped ULPI_DIR (76.12,17.88)->(76.38,18.12)
+  ripped via ULPI_DIR (76.38,18.12)
+--- D2 ---
+  ULPI_D2: (79.05,13.25)->(79.55,12.72) REFUSED: ULPI_D0 track@stubcheck
+  [D2 STOPPED]
+--- D3 ---
+  ULPI_D3: (78.90,13.75)->(79.15,14.05) REFUSED: ULPI_D4 U7.20
+  [D3 STOPPED]
+--- D4 ---
+  ULPI_D4: (79.22,14.98)->(79.55,15.05) L0 OK
+  ULPI_D4: (79.55,15.05)->(80.12,15.38) L0 OK
+  [D4 COMPLETE]
+--- STP ---
+  ULPI_STP: (76.25,17.15)->(76.60,17.50) REFUSED: ULPI_CK track@stubcheck
+  [STP STOPPED]
+--- DIR-rejoin ---
+  ULPI_DIR: (75.88,17.62)->(75.20,18.80) REFUSED: ULPI_D7 track@stubcheck
+  [DIR-rejoin STOPPED]
+--- RST-stub ---
+  USB_RST: (74.25,16.44)->(74.25,17.15) REFUSED: ULPI_NXT track@stubcheck
+  [RST-stub STOPPED]
+saved hw/pdlvds_rx.exp75.kicad_pcb
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'ZONE_FILLER *', no destructor found.

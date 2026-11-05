@@ -1,0 +1,3 @@
+ULPI_D1: no thread (gap 1.57)
+ULPI_D2: no thread (gap 7.41)
+ULPI_D3: no pair within 15 mm
