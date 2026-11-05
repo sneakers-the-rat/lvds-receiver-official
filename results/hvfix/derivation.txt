@@ -1,0 +1,37 @@
+=== FB set-point network ===
+OLD (S8664 variant values): R31=7.68M R32=49.9k R33=71.5k
+  nominal:  A=419.71 V (V_DAC=0), mid(1.25)=285.45 V, L(2.5)=151.18 V, slope=107.413 V/V
+  worst-high A [0.1% (as specified)]: 429.47 V   worst-low A: 410.76 V
+  worst-high A [1% (sensitivity)]: 437.23 V   worst-low A: 403.46 V
+
+NEW (C30737 fit): R31=7.68M R32=75.0k R33=140.0k
+  nominal:  A=253.21 V (V_DAC=0), mid(1.25)=184.64 V, L(2.5)=116.07 V, slope=54.857 V/V
+  worst-high A [0.1% (as specified)]: 259.40 V   worst-low A: 247.81 V
+  worst-high A [1% (sensitivity)]: 264.07 V   worst-low A: 243.42 V
+
+Coverage: cold corner (180 V unit at -20 C) needs 125.4 V; new low end 116.07 V -> margin 9.33 V
+  low end, stacked worst-high corner: 123.22 V (need <= 125.4)
+  VBR span 180..260: nominal range 116.1..253.2 V covers all but the top 6.8 V sliver (units with VBR > 253 V at warm temps)
+
+=== SHDN/UVLO divider (PC7 high-Z = idle/absent-jumper state) ===
+  OLD: VBUS=4.75: node=1.179 V | worst-high(+1% tol)=1.196 V, +1uA leak=1.221 V, margin vs 1.17 = -0.051 V
+  OLD: VBUS=5.0: node=1.241 V | worst-high(+1% tol)=1.259 V, +1uA leak=1.284 V, margin vs 1.17 = -0.114 V
+  OLD: VBUS=5.25: node=1.303 V | worst-high(+1% tol)=1.322 V, +1uA leak=1.347 V, margin vs 1.17 = -0.177 V
+  OLD: divider-only VIN falling point (typ 1.22 V ref) = 4.92 V (divider alone enables at normal VBUS)
+
+  NEW: VBUS=4.75: node=0.891 V | worst-high(+1% tol)=0.905 V, +1uA leak=0.932 V, margin vs 1.17 = 0.238 V
+  NEW: VBUS=5.0: node=0.938 V | worst-high(+1% tol)=0.953 V, +1uA leak=0.980 V, margin vs 1.17 = 0.190 V
+  NEW: VBUS=5.25: node=0.984 V | worst-high(+1% tol)=1.000 V, +1uA leak=1.027 V, margin vs 1.17 = 0.143 V
+  NEW: divider-only VIN falling point (typ 1.22 V ref) = 6.51 V (above max VBUS 5.25 -> divider alone can never enable)
+
+PC7 drive states (both designs): LOW -> node ~0 V (<= 0.4 V input-low);
+HIGH -> 3.3 V push-pull, above 1.27 V threshold max; sources ~(3.3/33k - (5-3.3)/143k) = 88 uA into the NEW divider.
+
+=== Firmware DAC mapping spot values (NEW transfer) ===
+  V_req=   0.00 -> V_DAC=2.5000 V -> counts=65535
+  V_req= 116.07 -> V_DAC=2.5000 V -> counts=65534
+  V_req= 150.00 -> V_DAC=1.8815 V -> counts=49321
+  V_req= 184.64 -> V_DAC=1.2500 V -> counts=32768
+  V_req= 200.00 -> V_DAC=0.9700 V -> counts=25428
+  V_req= 250.00 -> V_DAC=0.0585 V -> counts=1535
+  V_req= 253.21 -> V_DAC=0.0000 V -> counts=1
