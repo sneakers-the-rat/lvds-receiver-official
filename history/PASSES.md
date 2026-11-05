@@ -644,14 +644,6 @@ GND stitches (exp10 -> exp12): the 8 non-main audit groups were all single F.Cu 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 32 · Audit verdict: FAIL
 
-### Pass 76 — 2026-11-05T04:40:38Z · commit `fd23943`
-
-Board: `hw/pdlvds_rx.exp13.kicad_pcb` · Commit: `fd23943d1ff5b694b43e3b7519e7d64f8dd4d6cb`
-
-thread_far round 1 (exp12 -> exp13): the exact lattice threader with its pair gate raised 3 -> 15 mm (hw/thread_far.py) — 7 pairs threaded: CDR_VREF (gap 3.81, rips 2), REFCLKN (6.04, rips 2), SLICEP (4.46, rips 0), HV_SS (4.08, rips 3), HV_GATE (3.87, rips 1 — a diagnose-NO_EXIT group), HV_INTVCC (5.27, rips 3), +5V (0.19, rips 0). Proven en route: heal's astar6 fails this residue at cap 1.5M AND at 15M (heal_big probe on CDR_VREF, 162 s, 0 connected) while the diagnostic BFS reaches the goal halo — the grid A* model, not the geometry, refuses these hops. Long-haul pairs (>15 mm: ULPI bus, CDR_PIN, CAP_DATA, CDR_SQUELCH, I2C, TMP_ALERT, DP_PHY) and no-thread pairs (+3V3D_CDR, PHY_1V8/A, +3V3A, SET_P, CC2, CF2, HV_SHDN, APD_K) carry to the failure-class queue. 11 ripped victim items are repaid by the heal step in the queue's first class fix. D1 exemption: STOPPED at the evidence gate (docs/07) — the 2 D1 lines remain violations as written.
-
-Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 17 · Unconnected nets: 28 · Audit verdict: FAIL
-
 ### Pass 76 — 2026-11-05T04:43:58Z · commit `2462a08`
 
 Board: `hw/pdlvds_rx.exp13.kicad_pcb` · Commit: `2462a08a722e35cf02148bf6dc16423677aff155`
