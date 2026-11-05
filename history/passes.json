@@ -1947,6 +1947,35 @@
       },
       "description": "heal_nets rails phase (hw/heal_nets.py, repairg engine under a named net list): +3V3D/+5V/+3V3A/+3V3D_CDR. 48 groups connected in 536 s, EVERY merge audit-real: total groups 225 -> 177, nets 65, violations 2. +3V3D 38 -> 7, +5V 23 -> 10, +3V3A 9 -> 5, +3V3D_CDR 7 -> 7 (zero merges \u2014 U4's rail pins are walled; rip-priced threading next). 25 groups STILL isolated, failing fast (1-12 s): U5 power pins x4, X2.1/X2.4 group, FB1.1, R25.1, U7.4 et al. \u2014 named residue for thread.py (rip pricing) after the signal phase.",
       "note": "heal log: results/heal-rails.log; audit: results/audit-exp4.txt"
+    },
+    {
+      "pass": 70,
+      "timestamp": "2026-11-05T01:09:41Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp6n.kicad_pcb",
+      "dir": "pass-0070",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 2,
+        "unconnected_nets": 59,
+        "audit_verdict": "FAIL"
+      },
+      "description": "fanout campaign + tool fix: hand_stub batch on 165 sealed pads (targets from the audit's non-main groups) placed 150 stubs after fixing a real bug in hw/hand_stub.py/hw/hand_via.py (bbox support function used as pad-edge distance -> diagonal stubs floated off their pads; first run's audit signature: 8 nets +1 group each as lone track groups; fix = ray-exit distance minus inset, tools commit fece b01). Zero floating stubs after the fix (only lone track group is GND's pre-existing one). Groups 171 -> 163, nets 59. HV keepout notches re-cut on current copper (hw/notch_strip.py): the pass-67 bridge APD_K tracks in the strip sat outside the pass-66 rects (violations had risen to 5); re-notch restored violations to 2 (justified D1 pair). 15 pads still have no stub (U9.5, U7.4/6, D1.5, J1.B5, U10.7/8/9, U13.7, U6.26/29/40/70/74, U14.6) \u2014 via-first escapes next.",
+      "note": "stub logs: results/hand-stub-1.log (buggy run, discarded board) + hand-stub-2.log (fixed); notch: results/notch2.log; audit: results/audit-exp6n.txt"
     }
   ],
   "gaps": [

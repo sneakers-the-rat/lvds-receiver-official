@@ -1,0 +1,30 @@
+APD_K: 7 groups, main group 2 items
+  APD_K: connected group of 1 items (0s, 0 vias)
+  APD_K: group (1 items, ['R31.1']) STILL isolated (0s)
+  APD_K: connected group of 1 items (1s, 2 vias)
+  APD_K: connected group of 1 items (0s, 0 vias)
+  APD_K: group (1 items, ['D1.5']) STILL isolated (0s)
+  APD_K: group (1 items, ['RJ2.2']) STILL isolated (1s)
+CDR_CLKN: 4 groups, main group 1 items
+  CDR_CLKN: group (1 items, ['J2.6']) STILL isolated (159s)
+  CDR_CLKN: group (1 items, ['U4.25']) STILL isolated (0s)
+  CDR_CLKN: group (1 items, ['R14.2']) STILL isolated (0s)
+CDR_CLKP: 4 groups, main group 1 items
+  CDR_CLKP: group (1 items, ['J2.5']) STILL isolated (117s)
+  CDR_CLKP: group (1 items, ['U4.26']) STILL isolated (0s)
+  CDR_CLKP: group (1 items, ['R14.1']) STILL isolated (0s)
+CDR_DATN: 4 groups, main group 1 items
+  CDR_DATN: group (1 items, ['J2.2']) STILL isolated (118s)
+  CDR_DATN: group (1 items, ['U4.28']) STILL isolated (0s)
+  CDR_DATN: group (1 items, ['R13.2']) STILL isolated (0s)
+CDR_DATP: 4 groups, main group 1 items
+  CDR_DATP: group (1 items, ['J2.1']) STILL isolated (118s)
+  CDR_DATP: group (1 items, ['U4.29']) STILL isolated (0s)
+  CDR_DATP: group (1 items, ['R13.1']) STILL isolated (0s)
+HV_FBX: 4 groups, main group 3 items
+  HV_FBX: connected group of 1 items (0s, 2 vias)
+  HV_FBX: group (1 items, ['R31.2']) STILL isolated (0s)
+  HV_FBX: group (1 items, ['U10.2']) STILL isolated (0s)
+I2C_SCL: 4 groups, main group 1 items
+  I2C_SCL: group (1 items, ['U6.136']) STILL isolated (95s)
+  I2C_SCL: group (1 items, ['U4.20']) STILL isolated (0s)
