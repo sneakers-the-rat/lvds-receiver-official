@@ -1,0 +1,24 @@
+  nominal:  A=419.71 V (V_DAC=0), mid(1.25)=285.45 V, L(2.5)=151.18 V, slope=107.413 V/V
+  worst-high A [0.1% (as specified)]: 429.47 V   worst-low A: 410.76 V
+  worst-high A [1% (sensitivity)]: 437.23 V   worst-low A: 403.46 V
+
+  nominal:  A=253.21 V (V_DAC=0), mid(1.25)=184.64 V, L(2.5)=116.07 V, slope=54.857 V/V
+  worst-high A [0.1% (as specified)]: 259.40 V   worst-low A: 247.81 V
+  worst-high A [1% (sensitivity)]: 264.07 V   worst-low A: 243.42 V
+
+
+
+
+
+elements: [2.94, 2.37, 2.37] Mohm -> nominal total 7.68000 Mohm
+all-corner total band: 7.67232 .. 7.68768 Mohm (single-part model band: 7.67232 .. 7.68768)
+C30737 fit: worst-high V_HV with string total max = 259.40 V
+S8664 fit: worst-high V_HV with string total max = 429.47 V
+C30737 <=260 V bound HOLDS with the string: 259.40 V <= 260 V
+  C30737 worst-high  259.40 V: R31 sees   99.4 V (limit 1000 V)
+  C30737 worst-high  259.40 V: R49 sees   80.1 V (limit 1000 V)
+  C30737 worst-high  259.40 V: R50 sees   80.1 V (limit 1000 V)
+  S8664 worst-high  429.47 V: R31 sees  164.6 V (limit 1000 V)
+  S8664 worst-high  429.47 V: R49 sees  132.7 V (limit 1000 V)
+  S8664 worst-high  429.47 V: R50 sees  132.7 V (limit 1000 V)
+PASS: R31 string preserves the 7.68 Mohm +/-0.1% model exactly; <=260 V bound holds; every element is voltage-safe in both fits.
