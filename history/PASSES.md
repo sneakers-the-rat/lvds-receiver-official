@@ -1004,9 +1004,9 @@ ZOMBIE PRUNE (owner-directed cleanup): new standing tool hw/prune_dead.py leaf-t
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 28 · Audit verdict: FAIL
 
-### Pass 121 — 2026-11-05T23:03:34Z · commit `pending`
+### Pass 121 — 2026-11-05T23:03:34Z · commit `ed32afa`
 
-Board: `hw/pdlvds_rx.exp113.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp113.kicad_pcb` · Commit: `ed32afaa472c114246b42c4c590841e9aefe96f4`
 
 +3V3A U7.25 connected (queue item 4): via d=0.45 at (77.98,11.65) in the north-east corner -- overlaps U7.25's own pad edge, clears U7.24 (ULPI_D0) by 0.25 shape distance, and touches the In2 mesh segment (77.88,11.62)->(77.62,11.88); F stub (77.80,11.75)->(77.98,11.65). Refused on record: via on the pad or onto the mesh NE (QFN pitch + ULPI_CK's F staircase at 0.25 class on every site) and the F west channel run in 4 variants (ULPI_CK wall + CDR_DATP via (76.88,10.62) + XI/PHY_1V8A escape nubs tile the channel). DELTAS vs pass 120: nets 28->27 (+3V3A connected), violations 71->71, census byte-identical. No victims.
 
