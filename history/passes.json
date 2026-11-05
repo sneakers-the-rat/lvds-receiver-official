@@ -2440,6 +2440,35 @@
       },
       "description": "heal_big (15M cap) on exp37 -> exp38: +3V3D_CDR's U4.1 group merged (42 items, 2 vias); +5V 7 -> 5 groups (T1.1 group and the (26.42,-18.54) island connected). Refused in ~5 s each despite the diagnosis BFS reaching the goal halo (cost-model refusal, the Class B signature): U4.12, U11.10-12 cluster, U11.13, U7.4, U14.6 -- these go to thread/hand work, not a third engine attempt. Audit: nets 35, violations 67 (group counts fell; net count unchanged). NOTE: two VM replacements hit during this stretch (diagnose run SIGTERM'd at 805 s, toolchain restored from cache twice); committed work unaffected.",
       "note": ""
+    },
+    {
+      "pass": 87,
+      "timestamp": "2026-11-05T09:52:16Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp39.kicad_pcb",
+      "dir": "pass-0087",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 75,
+        "unconnected_nets": 32,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Thread sweep 1 (thread_far, all 35 nets, exp38 -> exp39): 9 pair merges -- APD_K (0.09 gap), CDR_NIN (1.46), CMP_QN (0.17), GND (0.25), HV_DAC (0.08, net complete), HV_FBX (0.33), HV_RAW (1.16), HV_SEC (8.46, 12 segs 2 vias, net complete), XI (0.78, net complete). Most 'unconnected' groups were hairline stub gaps the audit grouping cannot join. Cost: HV_SEC's thread ripped 6 foreign items; violations 67 -> 75 and HV_RAW's merge was offset by a rip split (still 4 groups) -- rip victims are repaid by heal/thread rounds next. Refusals recorded: anchor-walled (+3V3A, +3V3D_CDR, +5V, CC2, PHY_1V8/A, SLICEN), lattice no-thread (HV_INTVCC, HV_SS, SET_P), pairs > 15 mm (ULPI x8, USB_RST, CAP_DATA, CDR_PIN, CDR_SQUELCH, CF2, DP_PHY, FLY_PRI, HV_SHDN). Audit: nets 35 -> 32, violations 75.",
+      "note": ""
     }
   ],
   "gaps": [
