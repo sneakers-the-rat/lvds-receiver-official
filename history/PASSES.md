@@ -676,9 +676,9 @@ HV_GATE connected (Class A): targeted heal_nets on exp15 — the group extended 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 30 · Audit verdict: FAIL
 
-### Pass 80 — 2026-11-05T06:46:17Z · commit `pending`
+### Pass 80 — 2026-11-05T06:46:17Z · commit `addb328`
 
-Board: `hw/pdlvds_rx.exp21.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp21.kicad_pcb` · Commit: `addb328862b3e3ab29a944e1d8fe52b3ea4e6161`
 
 U10.9 HV_SHDN connected (Class A): step-1 dense retest at the true 0.20 class found the one clear via site (17.25,-15.45) the radial probes never sampled — escape placed (hw/surgery_u10_9_escape.py: neck w=0.20, via 0.6/0.3, In2 tail east). heal_nets and thread_far both refused the pair (gap 6.28); the tail was hand-extended on In2 around the cluster (segments probe-verified with hw/probe_path.py) via (20.5,-21) west to the divider web, via up at (9.5,-18.9), F neck into the main track (hw/surgery_u10_9_connect.py), then zones refilled (hw/refill.py) so the pour carves the landing via's antipad. Audit (corrected checker, tools commit ed0d9b6): nets 30 -> 29; violations 11 = 2 D1 standing + 9 TP_HV (class opened by the census correction, fix queued in the re-sync). HV_SHDN leaves Class A; U10.8/U10.3 seals survive correct classes and ride the re-sync. (Record note: this pass was first committed against commit_pass.py's default board — the pre-expansion hw/pdlvds_rx.kicad_pcb — and redone in place before any push; always pass --board.)
 
