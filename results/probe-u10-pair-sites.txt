@@ -1,0 +1,6 @@
+== U10.8 given U10.7 via placed: U10.8 HV_INTVCC
+   no clear neck+disc site in scan
+== U10.7 given U10.8 via placed: U10.7 HV_GATE
+   no clear neck+disc site in scan
+== U10.9 given both placed: U10.9 HV_SHDN
+   no clear neck+disc site in scan

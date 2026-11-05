@@ -1,0 +1,3 @@
+HV_GATE: 2 groups, main group 4 items
+  HV_GATE: connected group of 2 items (1s, 1 vias)
+heal_nets done: 1 groups connected in 8s, output hw/pdlvds_rx.exp16.kicad_pcb

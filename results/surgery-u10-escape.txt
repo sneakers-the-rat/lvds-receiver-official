@@ -1,0 +1,2 @@
+U10.7 escape placed: neck (16.79,-14.5)->(17.2,-14.5), via @(17.2,-14.5), In2 tail ->(19.2,-14.5)
+saved hw/pdlvds_rx.exp15.kicad_pcb

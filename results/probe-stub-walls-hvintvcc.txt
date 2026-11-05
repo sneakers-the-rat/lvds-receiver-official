@@ -1,0 +1,12 @@
+== HV_INTVCC: 2 groups
+   nearest pair gap 5.27: C31.1 (HV_INTVCC) <-> U10.8 (HV_INTVCC)
+   start A: anchor C31.1 net HV_INTVCC facing (13.675, -9.975)
+     (13.5,-10.0) F: CLEAR
+     (13.5,-9.5) F: CLEAR
+     (14.0,-10.0) F: CLEAR
+     (14.0,-9.5) F: CLEAR
+   goal  B: anchor U10.8 net HV_INTVCC facing (15.425, -14.850)
+     (15.0,-15.0) F: [('pad', 'HV_GATE', 'WALL'), ('pad', 'GND', 'WALL')]
+     (15.0,-14.5) F: [('pad', 'HV_GATE', 'WALL'), ('pad', 'GND', 'WALL')]
+     (15.5,-15.0) F: [('pad', 'HV_GATE', 'WALL')]
+     (15.5,-14.5) F: [('pad', 'HV_GATE', 'WALL')]

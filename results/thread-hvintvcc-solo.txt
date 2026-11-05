@@ -1,0 +1,2 @@
+HV_INTVCC: no thread (gap 5.27)
+saved hw/pdlvds_rx.exp15.kicad_pcb
