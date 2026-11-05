@@ -1,0 +1,13 @@
+pass: 74
+description: re-notch board-wide (exp9 -> exp10): notch_strip's strip filter (centre y < 5) removed — pass 72's audit charged 6 of its 38 APD_K-vs-pour violations to old-field APD_K copper outside the filter (via (13.625,30.625) and its run south to y 19.1). Rects now computed from ALL HV copper: 3 merged rects (the strip cluster and the west-side APD_K run merge into one (7.93,-19.25)-(44.58,33.23); D1.5 and RJ2.2 separate). Rule areas block pour only; GND fallout is measured by this audit and repaired by the stitch step next.
+timestamp (UTC): 2026-11-05T02:36:09Z
+commit: pending
+board file: hw/pdlvds_rx.exp10.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 2
+unconnected nets: 33
+audit verdict: fail
+note: 
