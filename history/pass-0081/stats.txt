@@ -1,0 +1,13 @@
+pass: 81
+description: RE-SYNC (pass 81): board absorbed the corrected 152-part schematic (hw/resync.py phases A+B, scratch/netlist_map.json). Footprint swaps in place: C4->ECWFD film (placed (18,16)), D4->D_SMB, L1/L2->Murata DFE, X1->HC49-SD, U9->redrawn TMP117_WSON6. HV cluster iterated: R31 string (R31+R49+R50) and R29 string (R29+R47) to the north row (y=-1.8), R34->(43,-6), R48 south of R30; D9-D11 OVP stack placed west strip (HV_RAW/HV_OVP1/HV_OVP2/GND). Board GREW again (user standing order): north edge -30 -> -45 after the grid placer proved the EFD20 T1 (23.11x26.1 body) has no feasible point in the 30 mm strip (flyback cluster fills its window); C9 nudged east, T1 placed (32.9,-31.4) in the new band. J5 interlock fitted at the west edge (3.5,-16.5): HV_SHDN run severed at the In2 segment above the divider via, 168 U6-side items reassigned to HV_EN (U6.97=PC7), J5 bridges HV_EN->HV_SHDN (SHDN side landed on the pass-80 via (9.5,-18.9)); HV_EN fully connected. TP_HV class: TP1 pad CLOSED (moved (45,20)->(39.5,20.5), disc-clear site, stub joined at (43.125,16.875)); the web's NE tail still grazes the GND run (3 lines) — class stays open on the tail only. Audit (corrected checker): nets 29 -> 44, violations 11 -> 69 — the recorded cost of the corrections: string/OVP midpoint hops unrouted, APD_K web in 10 groups, stale tracks to dead pad positions grazing the moved HV pads (drain classes, in order: HV-area campaign, Class A U10.8/U10.3, Class R, Class B).
+timestamp (UTC): 2026-11-05T07:06:04Z
+commit: pending
+board file: hw/pdlvds_rx.exp22.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 69
+unconnected nets: 44
+audit verdict: fail
+note: 
