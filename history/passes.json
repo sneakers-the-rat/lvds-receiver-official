@@ -3107,6 +3107,35 @@
       },
       "description": "HV_RAW re-approach (hw/fix_hvraw.py): heal's B.Cu surface diagonal ripped (63 items) and the D9.1 haul re-bridged on In2 -- F neck to via (5.38,-24.88), In2 southern run y=-24.88 to x=22.2, corridor north at x=22.2, northern approach into via W (34.12,-11.88), F necks into the D5.1 web; D9 pour notch (notch.py species, rule areas 1.25,-27.5..7.03,-22.5 on F+B) added so the pours hold >=1.0 mm from the D9 pocket. Every placed shape was tested against the audit's own item model including zone fills. DELTAS vs pass 108: nets 33->33 (join retained, mechanism changed), violations 120->87 (-33: -32 HV_RAW diagonal-vs-pour lines removed by the rip, -1 pre-existing 'HV_RAW D9.1 vs GND zone' line cured by the notch, +0 new lines from the In2 bridge). Acceptance test PASSED (full audit results/audit-exp82.txt: 33/87; the single exp82-vs-exp79 newcomer, XI vs the CDR_DATP via, belongs to pass 108's CDR_DATP join).",
       "note": ""
+    },
+    {
+      "pass": 110,
+      "timestamp": "2026-11-05T17:23:51Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp83.kicad_pcb",
+      "dir": "pass-0110",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 87,
+        "unconnected_nets": 32,
+        "audit_verdict": "FAIL"
+      },
+      "description": "SLICEN connected (hw/fix_slicen.py): pure-F northern jog from U4.7 -- hand_stub and hand_via both refused (SLICEP's escape via at (51.5,-17.5) fences the west lane: 0.6 mm exclusion vs 0.25 mm row offset); pair re-lay grid-searched and refused on evidence (+3V3D In2 trunk fences SLICEP's via to its original row, CDR_NIN diagonal fences its neck). Jog: west on-row to (52.08,-17.25), steep rise to (51.72,-16.82), west into the group track end (51.38,-16.88); one GND stitch via relocated (52.125,-16.625)->(52.45,-15.85) out of the rise corridor. DELTAS vs pass 109: nets 33->32 (SLICEN joined), violations 87->87 (census byte-identical, +0 new). GND groups unchanged.",
+      "note": ""
     }
   ],
   "gaps": [
