@@ -852,6 +852,14 @@ ULPI fanout heal round 1 (exp60 -> exp61): D0, D1, D4, D6, D7, NXT CONNECTED in 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 81 · Unconnected nets: 59 · Audit verdict: FAIL
 
+### Pass 102 — 2026-11-05T13:14:26Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp62.kicad_pcb` · Commit: `pending`
+
+Escapes 17 (exp61 -> exp62): ULPI residue-first stubs -- fence segments of D7/NXT ripped (they re-heal after the residue), D4 diagonal ripped back to its pad stub; stubs placed for D2, D3, DIR, STP, CK. D5 stub refused (one D4 staircase segment survived a shifted rip match) and RST stub refused by an NXT diagonal -- both fixed in batch 18.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 81 · Unconnected nets: 62 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

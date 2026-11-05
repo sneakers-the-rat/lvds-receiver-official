@@ -1,0 +1,5 @@
+ULPI_D5: 2 groups, main group 2 items
+  ULPI_D5: connected group of 1 items (10s, 2 vias)
+ULPI_D2: 2 groups, main group 2 items
+  ULPI_D2: group (1 items, ['U6.47']) STILL isolated (0s)
+ULPI_D3: 2 groups, main group 2 items
