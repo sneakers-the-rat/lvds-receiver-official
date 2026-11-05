@@ -732,6 +732,14 @@ heal_big (15M cap) on exp37 -> exp38: +3V3D_CDR's U4.1 group merged (42 items, 2
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 67 · Unconnected nets: 35 · Audit verdict: FAIL
 
+### Pass 87 — 2026-11-05T09:52:16Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp39.kicad_pcb` · Commit: `pending`
+
+Thread sweep 1 (thread_far, all 35 nets, exp38 -> exp39): 9 pair merges -- APD_K (0.09 gap), CDR_NIN (1.46), CMP_QN (0.17), GND (0.25), HV_DAC (0.08, net complete), HV_FBX (0.33), HV_RAW (1.16), HV_SEC (8.46, 12 segs 2 vias, net complete), XI (0.78, net complete). Most 'unconnected' groups were hairline stub gaps the audit grouping cannot join. Cost: HV_SEC's thread ripped 6 foreign items; violations 67 -> 75 and HV_RAW's merge was offset by a rip split (still 4 groups) -- rip victims are repaid by heal/thread rounds next. Refusals recorded: anchor-walled (+3V3A, +3V3D_CDR, +5V, CC2, PHY_1V8/A, SLICEN), lattice no-thread (HV_INTVCC, HV_SS, SET_P), pairs > 15 mm (ULPI x8, USB_RST, CAP_DATA, CDR_PIN, CDR_SQUELCH, CF2, DP_PHY, FLY_PRI, HV_SHDN). Audit: nets 35 -> 32, violations 75.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 75 · Unconnected nets: 32 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
