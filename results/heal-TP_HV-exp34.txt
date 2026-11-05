@@ -1,0 +1,4 @@
+TP_HV: 3 groups, main group 25 items
+  TP_HV: connected group of 1 items (2s, 2 vias)
+  TP_HV: group (1 items, ['track@(45.280045, 20.676089)']) STILL isolated (0s)
+heal_nets done: 1 groups connected in 6s, output hw/pdlvds_rx.exp34.kicad_pcb

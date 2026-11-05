@@ -1,0 +1,3 @@
+HV_OVP1: 2 groups, main group 1 items
+  HV_OVP1: connected group of 1 items (0s, 0 vias)
+heal_nets done: 1 groups connected in 4s, output hw/pdlvds_rx.exp23.kicad_pcb
