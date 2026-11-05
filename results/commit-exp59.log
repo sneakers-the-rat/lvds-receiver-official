@@ -1,0 +1,31 @@
+audit: unconnected=65 violations=168 verdict=FAIL
+not staged (not pass files): w/escapes11.py, hw/pdlvds_rx.exp1.kicad_pro, hw/pdlvds_rx.exp10.kicad_prl, hw/pdlvds_rx.exp10.kicad_pro, hw/pdlvds_rx.exp11.kicad_pro, hw/pdlvds_rx.exp12.kicad_prl, hw/pdlvds_rx.exp12.kicad_pro, hw/pdlvds_rx.exp13.kicad_pro, hw/pdlvds_rx.exp14.kicad_pro, hw/pdlvds_rx.exp15.kicad_prl, hw/pdlvds_rx.exp15.kicad_pro, hw/pdlvds_rx.exp16.kicad_prl, hw/pdlvds_rx.exp16.kicad_pro, hw/pdlvds_rx.exp17.kicad_pro, hw/pdlvds_rx.exp18.kicad_prl, hw/pdlvds_rx.exp18.kicad_pro, hw/pdlvds_rx.exp19.kicad_pro, hw/pdlvds_rx.exp2.kicad_pcb.kicad_prl, hw/pdlvds_rx.exp2.kicad_pcb.kicad_pro, hw/pdlvds_rx.exp2.kicad_pcb.repair6.lock, hw/pdlvds_rx.exp2.kicad_pcb.tmp.kicad_prl, hw/pdlvds_rx.exp2.kicad_pcb.tmp.kicad_pro, hw/pdlvds_rx.exp20.kicad_pro, hw/pdlvds_rx.exp21.kicad_prl, hw/pdlvds_rx.exp21.kicad_pro, hw/pdlvds_rx.exp22.kicad_prl, hw/pdlvds_rx.exp22.kicad_pro, hw/pdlvds_rx.exp22a.kicad_pro, hw/pdlvds_rx.exp23.kicad_pro, hw/pdlvds_rx.exp24.kicad_prl, hw/pdlvds_rx.exp24.kicad_pro, hw/pdlvds_rx.exp25.kicad_pro, hw/pdlvds_rx.exp26.kicad_prl, hw/pdlvds_rx.exp26.kicad_pro, hw/pdlvds_rx.exp27.kicad_pro, hw/pdlvds_rx.exp28.kicad_prl, hw/pdlvds_rx.exp28.kicad_pro, hw/pdlvds_rx.exp29.kicad_pro, hw/pdlvds_rx.exp3.kicad_prl, hw/pdlvds_rx.exp3.kicad_pro, hw/pdlvds_rx.exp30.kicad_prl, hw/pdlvds_rx.exp30.kicad_pro, hw/pdlvds_rx.exp31.kicad_pro, hw/pdlvds_rx.exp32.kicad_prl, hw/pdlvds_rx.exp32.kicad_pro, hw/pdlvds_rx.exp33.kicad_pro, hw/pdlvds_rx.exp34.kicad_prl, hw/pdlvds_rx.exp34.kicad_pro, hw/pdlvds_rx.exp35.kicad_prl, hw/pdlvds_rx.exp35.kicad_pro, hw/pdlvds_rx.exp36.kicad_pro, hw/pdlvds_rx.exp37.kicad_prl, hw/pdlvds_rx.exp37.kicad_pro, hw/pdlvds_rx.exp38.kicad_pro, hw/pdlvds_rx.exp39.kicad_prl, hw/pdlvds_rx.exp39.kicad_pro, hw/pdlvds_rx.exp4.kicad_pro, hw/pdlvds_rx.exp40.kicad_pro, hw/pdlvds_rx.exp41.kicad_prl, hw/pdlvds_rx.exp41.kicad_pro, hw/pdlvds_rx.exp42.kicad_pro, hw/pdlvds_rx.exp43.kicad_prl, hw/pdlvds_rx.exp43.kicad_pro, hw/pdlvds_rx.exp44.kicad_pro, hw/pdlvds_rx.exp45.kicad_prl, hw/pdlvds_rx.exp45.kicad_pro, hw/pdlvds_rx.exp46.kicad_pro, hw/pdlvds_rx.exp47.kicad_prl, hw/pdlvds_rx.exp47.kicad_pro, hw/pdlvds_rx.exp48.kicad_pro, hw/pdlvds_rx.exp49.kicad_prl, hw/pdlvds_rx.exp49.kicad_pro, hw/pdlvds_rx.exp5.kicad_prl, hw/pdlvds_rx.exp5.kicad_pro, hw/pdlvds_rx.exp50.kicad_pro, hw/pdlvds_rx.exp51.kicad_prl, hw/pdlvds_rx.exp51.kicad_pro, hw/pdlvds_rx.exp52.kicad_pro, hw/pdlvds_rx.exp53.kicad_prl, hw/pdlvds_rx.exp53.kicad_pro, hw/pdlvds_rx.exp54.kicad_pro, hw/pdlvds_rx.exp55.kicad_prl, hw/pdlvds_rx.exp55.kicad_pro, hw/pdlvds_rx.exp56.kicad_pro, hw/pdlvds_rx.exp57.kicad_prl, hw/pdlvds_rx.exp57.kicad_pro, hw/pdlvds_rx.exp58.kicad_pro, hw/pdlvds_rx.exp59.kicad_prl, hw/pdlvds_rx.exp59.kicad_pro, hw/pdlvds_rx.exp6.kicad_pro, hw/pdlvds_rx.exp60.kicad_pro, hw/pdlvds_rx.exp6n.kicad_prl, hw/pdlvds_rx.exp6n.kicad_pro, hw/pdlvds_rx.exp7.kicad_pro, hw/pdlvds_rx.exp8.kicad_prl, hw/pdlvds_rx.exp8.kicad_pro, hw/pdlvds_rx.exp9.kicad_pro, hw/pdlvds_rx.expanded.kicad_prl, hw/pdlvds_rx.expanded.kicad_pro
+committed 3c2d5d6: pass 0099: RESPREAD ADOPTED (exp58 -> exp59): U6 -> (82,-6), U7 -> (76,14), X1 -> (87,14) rot90 + full ring, applied via respread_u6u7_local.py (local-rip path) to the current board -- no restart from exp41. 932 items ripped (severance debt ~36 nets, itemised in results/respread-local-exp59.txt). Post-placement audit: 65 nets / 168 violations (zones un-refilled; refill next). ULPI hauls drop from ~66mm to 8-19mm in the new geometry. (18 files)
+pass 99 recorded as commit 3c2d5d6c4eb043f6a2d77e4f478d567db64a458f
+only step remaining: git push
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.

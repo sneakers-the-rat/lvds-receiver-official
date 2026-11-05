@@ -836,6 +836,14 @@ RESPREAD ADOPTED (exp58 -> exp59): U6 -> (82,-6), U7 -> (76,14), X1 -> (87,14) r
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 168 · Unconnected nets: 65 · Audit verdict: FAIL
 
+### Pass 100 — 2026-11-05T13:04:01Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp60.kicad_pcb` · Commit: `pending`
+
+Zone refill after the respread (exp59 -> exp60): violations 168 -> 71 (below the pre-respread 77); 65 unconnected nets = 28 pre-existing + ~37 severance debt, the recovery campaign follows. ULPI fanout-first heal rounds next per parent order.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 65 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
