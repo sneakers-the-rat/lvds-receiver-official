@@ -1,0 +1,10 @@
+--- 1 D4 route ---
+  ULPI_D4: (78.69,14.25)->(79.15,14.30) L0
+  [1 D4 route REFUSED: ULPI_D4 seg (79.15,14.3)->(79.3,15.02): ULPI_D6 track@stubcheck]
+--- 2 D2 route ---
+  [2 D2 route REFUSED: ULPI_D2 seg (79.05,13.25)->(79.25,12.9): ULPI_D1 track@stubcheck]
+--- 3 D3 route ---
+  [3 D3 route REFUSED: ULPI_D3 seg (78.9,13.75)->(80.6,12.6): CDR_DATN via@stubcheck]
+--- 4 STP route ---
+  [4 STP route REFUSED: ULPI_STP seg (76.25,17.15)->(72.0,17.6): CAP_CLK track@stubcheck]
+saved hw/pdlvds_rx.exp69.kicad_pcb

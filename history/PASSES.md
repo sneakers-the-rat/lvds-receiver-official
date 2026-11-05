@@ -876,6 +876,14 @@ ULPI fanout heal round 2 (exp63 -> exp64): D5, DIR, CK CONNECTED; D7 and NXT re-
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 81 · Unconnected nets: 57 · Audit verdict: FAIL
 
+### Pass 105 — 2026-11-05T13:57:16Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp65.kicad_pcb` · Commit: `pending`
+
+Escapes 19-20 (exp64 -> exp65): U6-side ULPI stubs placed for D2 (south, shortened clear of D0 track), D3 (west), STP (west); NXT diagonal ripped for RST. Heal round 3 then connected nothing (U7 stub groups walled in heal model) -- hand routes follow.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 81 · Unconnected nets: 58 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

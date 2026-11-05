@@ -1,0 +1,10 @@
+--- D4 ---
+  ULPI_D4: (79.22,14.98)->(79.40,15.07) REFUSED: ULPI_D6 track@stubcheck
+  [D4 STOPPED]
+--- D2 ---
+  ULPI_D2: (79.20,13.45)->(79.42,13.72) REFUSED: CDR_DATP via@stubcheck
+  [D2 STOPPED]
+--- STP ---
+  ULPI_STP: (76.25,17.15)->(77.30,17.60) REFUSED: ULPI_CK track@stubcheck
+  [STP STOPPED]
+saved hw/pdlvds_rx.exp71.kicad_pcb
