@@ -1,0 +1,13 @@
+HV_R31A: no thread (gap 8.08)
+HV_FBX: no pair within 15 mm
+HV_RAW: no pair within 15 mm
+VBUS_RAW: threaded gap 0.85: 3 segs, 0 vias, ripped 2
+SLICEN: anchor stub walled at start
+PHY_1V8: anchor stub walled at start
+PHY_1V8A: anchor stub walled at start
++5V: anchor stub walled at start
+APD_K: threaded gap 1.08: 3 segs, 0 vias, ripped 2
+GND: threaded gap 0.01: 2 segs, 0 vias, ripped 0
++3V3D_CDR: anchor stub walled at start
+CF2: no pair within 15 mm
+saved hw/pdlvds_rx.exp58.kicad_pcb
