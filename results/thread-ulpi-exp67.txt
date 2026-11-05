@@ -1,3 +1,6 @@
 ULPI_D2: no thread (gap 7.61)
 ULPI_D3: no pair within 15 mm
 ULPI_STP: no pair within 15 mm
+ULPI_D4: no thread (gap 1.33)
+USB_RST: no pair within 15 mm
+saved hw/pdlvds_rx.exp67.kicad_pcb
