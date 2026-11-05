@@ -80,8 +80,18 @@ def find_stub(items, net, pad_pos, half, width):
                 for k in range(16):
                     a = k * math.pi / 8
                     ca, sa = math.cos(a), math.sin(a)
-                    ext = hx * abs(ca) + hy * abs(sa)
-                    sx, sy = px + (ext - 0.02) * ca, py + (ext - 0.02) * sa
+                    # Ray-exit distance from the pad's bbox. The old
+                    # code used the support function hx*|ca|+hy*|sa|
+                    # (the farthest corner's projection), which on
+                    # diagonal rays overshoots the pad's edge and
+                    # started the stub floating OFF the pad — stubs
+                    # the audit then saw as lone track groups (found
+                    # on the expanded board, pass 70: U6.36/U6.37/
+                    # U3.3 stubs missed their pads by 0.1-0.3 mm).
+                    ext = min(hx / abs(ca) if ca else 1e9,
+                              hy / abs(sa) if sa else 1e9)
+                    inset = min(0.08, 0.5 * ext)
+                    sx, sy = px + (ext - inset) * ca, py + (ext - inset) * sa
                     ex, ey = px + (ext + ln) * ca, py + (ext + ln) * sa
                     seg = pcbnew.SHAPE_SEGMENT(
                         pcbnew.VECTOR2I(MM(sx), MM(sy)),
