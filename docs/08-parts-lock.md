@@ -435,3 +435,20 @@ the declared standard.
   evidence (ASE/ASEK) establishes that supply voltage is an orderable
   option; the exact 25.000 MHz code string was not pulled.
 
+
+
+## Parts-fix outcome (branch `parts-fix`, record: docs/09-parts-fix.md)
+
+The directed fixes for this audit were executed on branch
+`parts-fix`; the per-finding closure record with evidence is
+**docs/09-parts-fix.md**. Summary: F-02 (clamp half: S8664 stack
+fitted; C30737 no-window finding recorded), F-03, F-04, F-05,
+F-06, F-07 (with R24 refitted — the RT suspicion was correct),
+F-09, F-10, F-11 (closed as a recorded residual risk in docs/03),
+F-12, F-13 are CLOSED. Still open: F-01's land-pattern condition
+(docs/07 (a); its rail-bound half (b) now PASSES — see the docs/07
+amendment) and F-08 (DS13313 still unreachable; U6/C17/C18 stay
+UNVERIFIED). Flagged sub-items: T1 provisional land pattern, SH1
+clip-land conversion, D8 package outline — all listed in docs/09.
+This audit's rows are not re-verdicted here; the re-audit is the
+audit owner's.

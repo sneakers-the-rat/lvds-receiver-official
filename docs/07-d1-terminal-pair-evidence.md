@@ -87,3 +87,47 @@ C30737PH-LH-Rev.2011-09 Table 1 p.2 and Table 4 p.8 (fetched
 2026-11-05, same values); docs/02-architecture.md;
 docs/03-power.md; hw/CONNECTIONS.md;
 hw/pdlvds.pretty/C30737LH_LCC6.kicad_mod.
+
+## Amendment — post-clamp gate state (HV clamp merged; parts-fix)
+
+The design changed after the verdict above: the HV set-point
+network was re-ratioed and merged (R31 7.68 MΩ / R32 75.0 kΩ /
+R33 140 kΩ, all 0.1%; SHDN divider R25 143 kΩ / R26 33 kΩ; J5
+interlock in the PC7 path). The gate's two conditions re-run
+against the merged design:
+
+**(b) Rated voltage vs design maximum bias — NOW PASSES.**
+The fitted C30737 transfer is V_HV = 253.21 − 54.857·V_DAC, so
+the maximum demand over ALL DAC states — including the DAC8562's
+zero-scale power-up state, which is the top of the transfer — is
+253.21 V nominal, and 259.40 V with every tolerance corner
+stacked against the bound (0.1% resistor stack, FBX reference at
+its 1.631 V datasheet max, FBX pin sinking its 100 nA max):
+inside the 260 V VBR maximum. Derivation:
+results/hvfix/derivation.py (re-run on the parts-fix branch,
+output byte-identical to the merged record). ngspice of the
+actual network agrees: 253.17 V nominal zero-scale, 259.36 V at
+the worst corner, verdict PASS (results/hvfix/hv-clamp-sim-run.txt;
+sim/run_hv_clamp.py). D1's terminals stand across essentially the
+full bias (anode ≈ +1.0 V), so the maximum at the terminal pair
+itself is ≈252 V nominal / ≈258 V worst-case (docs/03) against
+the 260 V rating. The 420 V figure that failed this gate no
+longer exists in the C30737 population's hardware: that range
+survives only in the mutually exclusive S8664 stuffing variant,
+whose detector is 500 V-class. The parts-fix R31 series string
+(2.94 MΩ + 2× 2.37 MΩ) was proven to preserve this bound exactly
+(results/partsfix/r31_string_check.py: all-corner total band
+identical to the single-part model; worst-high reproduces
+259.40 V).
+
+**(a) Land pattern — STILL UNVERIFIED.** Nothing in the clamp or
+parts-fix work touched D1's footprint or produced a readable
+copy of the manufacturer's Figure 10 land pattern; the condition
+stands exactly as recorded above.
+
+**Gate state: the exemption still does NOT ship.** Condition (b)
+now passes and condition (a) remains unverified, and the gate
+requires BOTH. The two audit lines for the D1.5/D1.4/D1.6 pair
+remain in force as written; they come off only when (a) closes
+with a pad-for-pad comparison against Excelitas's recommended
+land pattern.

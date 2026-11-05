@@ -1,0 +1,101 @@
+PASS 8b10b exhaustive round trip 256 values x both RDs
+PASS 8b10b chained RD stream round trip (4096 symbols)
+PASS 8b10b invalid code group flagged
+PASS 8b10b disparity error flagged
+PASS K28.5 RD- symbol is 0x0FA and flips RD
+PASS K28.5 RD+ symbol is 0x305 and flips RD
+PASS K28.5 decode round trip both RDs
+PASS K28.5 comma sequence 0011111 present in wire order
+PASS Manchester round trip 256 values (chip stream)
+PASS Manchester known patterns 0x80/0x00/0xFF
+PASS Manchester invalid pair 00 flagged and counted
+PASS Manchester round trip via 2x oversampled input
+PASS PRBS-15 self-check: regenerated buffer matches (buffer 0)
+PASS PRBS-15 wrong buffer_count does not match (reseed matters)
+PASS PRBS-15 seed = (buffer_count & 0x7FFF) | 1
+PASS PRBS-15 injected-error count is exact (5 bits)
+PASS PRBS-15 streaming checker: 5 errors over 40256 bits
+PASS PRBS-15 period is exactly 32767 bits from seed 1
+PASS packet build: wire size 5080 bytes
+PASS packet build: sync 0xC0FFEE11 stored little-endian
+PASS packet build: header word 0 is frame_index, little-endian
+PASS packet build/parse round trip (header + 5032B payload)
+PASS packet parse: bad sync rejected (-2)
+PASS packet parse: short buffer rejected (-1)
+PASS packet build: undersized output rejected (0)
+RESULT: ALL TESTS PASSED
+PASS device descriptor: 18 bytes, type DEVICE
+PASS device descriptor: VID/PID match the recorded development ids
+PASS device descriptor: EP0 max packet 64
+PASS device descriptor: one configuration
+PASS device descriptor: string indices within the string table
+PASS device qualifier: 10 bytes, class triple mirrors device
+PASS config HS: length chain + wTotalLength consistent
+PASS config HS: 2 interfaces under one IAD
+PASS config HS: all four CDC functional descriptors present
+PASS config HS: notif + bulk OUT + bulk IN endpoints
+PASS config HS: bulk max packet size is 512
+PASS config HS: config header sane (bus powered, bMaxPower <= 500 mA)
+PASS config FS: length chain + wTotalLength consistent
+PASS config FS: 2 interfaces under one IAD
+PASS config FS: all four CDC functional descriptors present
+PASS config FS: notif + bulk OUT + bulk IN endpoints
+PASS config FS: bulk max packet size is 64
+PASS config FS: config header sane (bus powered, bMaxPower <= 500 mA)
+PASS config HS vs FS: differ only in bulk MPS bytes
+RESULT: ALL TESTS PASSED
+PASS framing: idle device produces no bytes
+PASS framing: GET_INFO -> PDRX magic, fw 0.1, protocol 1
+PASS framing: SET_THRESHOLD delivered 0x1234 to the DAC backend
+PASS framing: GET_STATUS reports the threshold just set
+PASS framing: SET_BIAS with open interlock -> INTERLOCK, HV off
+PASS framing: SET_BIAS 200 V with interlock -> OK, HV enabled
+PASS framing: BER_TEST_START arms the scorer
+PASS framing: BER_TEST_STOP returns zeroed counters, disarms
+PASS framing: STREAM_START arms capture
+PASS framing: STREAM_START while armed -> BAD_STATE
+PASS framing: STREAM_STOP returns capture to IDLE
+PASS framing: unknown opcode -> BAD_OPCODE
+PASS framing: truncated SET_THRESHOLD -> BAD_FRAME
+RESULT: ALL TESTS PASSED
+PASS dac sync port is GPIOA
+PASS dac sync pin is PA15 (not PA4)
+PASS dac spi base define is SPI3
+PASS SPI3 base matches STM32H723 map
+PASS dac spi SCK is PC10
+PASS dac spi MOSI is PC12
+PASS set_threshold returns ok
+PASS set_threshold pulses PA15 SYNC around the A-channel frame
+PASS set_threshold never touches PA4 (USB_RST)
+PASS set_bias returns ok
+PASS set_bias pulses PA15 SYNC around the B-channel frame
+PASS set_bias never touches PA4 (USB_RST)
+PASS dac8562_init returns ok
+PASS init emits the 5 expected frames, each SYNC-pulsed on PA15
+PASS init never touches PA4 (USB_RST)
+test_dac8562: all checks passed
+PASS hv shdn drive is PC7
+PASS hv sense is PA6
+PASS 0 V request -> DAC full-scale (minimum demand)
+PASS 253.21 V request -> DAC zero-scale (maximum demand)
+PASS 184.64 V -> mid-scale counts 32768
+PASS 150 V -> 49321 counts
+PASS 200 V -> 25428 counts
+PASS 250 V -> 1535 counts
+PASS counts strictly decrease as requested volts rise
+PASS request above the ceiling clamps to the ceiling
+PASS negative request clamps to minimum demand
+PASS temp comp is identity at 25 C
+PASS temp comp adds 1.3 V/C above 25 C
+PASS init publishes J5 absent (940 mV)
+PASS init leaves DAC at minimum demand (full-scale counts)
+PASS init clamps PC7 low
+PASS enable refused with J5 absent
+PASS enable refused when the sense read fails
+PASS PC7 never driven high on refusal
+PASS enable proceeds with J5 fitted, PC7 driven high
+PASS update keeps HV enabled while node reads driven
+PASS update drops HV when J5 is pulled mid-run
+PASS disabled update publishes J5 fitted
+PASS disabled update publishes J5 absent
+test_hv_ctrl: all checks passed
