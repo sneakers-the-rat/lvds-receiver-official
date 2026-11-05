@@ -65,3 +65,31 @@ GND: 41 groups, main group 1412 items
   GND: connected group of 1 items (47s, 0 vias)
   GND: connected group of 1 items (51s, 0 vias)
   GND: connected group of 1 items (65s, 2 vias)
+  GND: connected group of 1 items (61s, 0 vias)
+  GND: connected group of 1 items (72s, 0 vias)
+  GND: connected group of 1 items (70s, 0 vias)
+  GND: connected group of 1 items (70s, 0 vias)
+  GND: connected group of 1 items (58s, 2 vias)
+  GND: connected group of 1 items (42s, 0 vias)
+  GND: connected group of 1 items (53s, 0 vias)
+  checkpoint: 40 groups, saved
+  GND: connected group of 1 items (55s, 0 vias)
+  GND: connected group of 1 items (42s, 0 vias)
+  GND: connected group of 1 items (60s, 0 vias)
+  GND: connected group of 1 items (49s, 0 vias)
+  GND: connected group of 1 items (87s, 0 vias)
+HV_FBX: 2 groups, main group 84 items
+  HV_FBX: connected group of 1 items (4s, 2 vias)
+HV_INTVCC: 2 groups, main group 2 items
+  HV_INTVCC: group (1 items, ['U10.8']) STILL isolated (1s)
+HV_RAW: 3 groups, main group 24 items
+  HV_RAW: connected group of 1 items (8s, 2 vias)
+  HV_RAW: connected group of 1 items (4s, 2 vias)
+HV_SHDN: 2 groups, main group 17 items
+  HV_SHDN: group (1 items, ['U6.42']) STILL isolated (4s)
+HV_SS: 2 groups, main group 2 items
+  HV_SS: group (2 items, ['U10.3', 'track@(11.205, -15.0)']) STILL isolated (2s)
+PHY_1V8: 3 groups, main group 2 items
+  PHY_1V8: group (2 items, ['U7.26', 'track@(87.25, -23.795)']) STILL isolated (1s)
+  PHY_1V8: group (1 items, ['C22.1']) STILL isolated (386s)
+PHY_1V8A: 2 groups, main group 2 items

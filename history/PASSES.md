@@ -756,6 +756,14 @@ heal_big batch 2 (exp40 -> exp41, checkpointed; GND tail stopped by hand after 2
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 75 · Unconnected nets: 29 · Audit verdict: FAIL
 
+### Pass 90 — 2026-11-05T11:11:16Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp42.kicad_pcb` · Commit: `pending`
+
+Escape batch 1 (exp41 -> exp42): APD_K island joined to main via R34.1 pad (section I), GND R48.2 stub south (section L). The other 9 sections were refused by named blockers and are reworked in batch 2/3 with measured pad geometry. Audit follows in stats.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 77 · Unconnected nets: 29 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

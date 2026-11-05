@@ -1,0 +1,40 @@
+--- A2 +5V U11 north run retry ---
+  [A2 +5V U11 north run retry REFUSED: +5V seg (16.9,63.75)->(17.6,63.75): GND D2.3]
+--- B2 +5V U14.6 ---
+  [B2 +5V U14.6 REFUSED: +5V seg (60.55,63.0)->(61.6,63.0): SET_A U14.7]
+--- D2 SET_P U13.7 ---
+  [D2 SET_P U13.7 REFUSED: SET_P seg (49.55,62.5)->(49.55,60.8): +5V U13.6]
+--- F2 +3V3A U7.6 edge exit ---
+  [F2 +3V3A U7.6 edge exit REFUSED: +3V3A seg (83.12,-20.25)->(82.6,-20.25): GND track@stubcheck]
+--- C +5V U7.4 stub ---
+  [C +5V U7.4 stub REFUSED: +5V seg (83.12,-21.25)->(80.6,-21.25): GND U7.5]
+--- U DP_PHY U7.7 stub ---
+  [U DP_PHY U7.7 stub REFUSED: DP_PHY seg (83.12,-19.75)->(81.0,-19.75): GND track@stubcheck]
+--- G2 HV_FBX R50.2 ---
+  [G2 HV_FBX R50.2 REFUSED: HV_FBX seg (41.16,-2.95)->(42.3,-3.3): APD_K via@stubcheck]
+--- H2 HV_RAW R29.1 ---
+  HV_RAW: (43.67,-1.80)->(43.45,-2.00) L0
+  [H2 HV_RAW R29.1 REFUSED: HV_RAW via (43.45,-2.0): CMP_QN track@stubcheck]
+--- J2 APD_K R47.2 via In2 ---
+  [J2 APD_K R47.2 via In2 REFUSED: APD_K seg (49.325,-1.6)->(49.325,-2.9): TMP_ALERT track@stubcheck]
+--- K2 APD_K R31.1 ---
+  ripped 0 GND segments fencing R31.1
+  [K2 APD_K R31.1 REFUSED: APD_K via (33.3,-1.92): HV_FBX track@stubcheck]
+--- N2 PHY_1V8 U7.26<->U7.15 ---
+  [N2 PHY_1V8 U7.26<->U7.15 REFUSED: PHY_1V8 seg (87.25,-24.38)->(87.9,-24.9): XO track@stubcheck]
+--- T2 CC2 J1.B5 ---
+  [T2 CC2 J1.B5 REFUSED: CC2 seg (30.5,73.18)->(30.5,72.42): VBUS_RAW J1.B4]
+--- E +3V3D_CDR U4.12 stub ---
+  [E +3V3D_CDR U4.12 stub REFUSED: +3V3D_CDR seg (54.75,-16.5)->(54.75,-13.2): REFCLKN U4.11]
+--- Q CDR_PIN stub ---
+  [Q CDR_PIN stub REFUSED: CDR_PIN seg (52.205,-18.25)->(50.0,-19.6): CDR_NIN U4.4]
+--- R CDR_SQUELCH stub ---
+  [R CDR_SQUELCH stub REFUSED: CDR_SQUELCH seg (55.75,-21.295)->(55.75,-24.5): CDR_DATN track@stubcheck]
+--- S CAP_DATA stub ---
+  [S CAP_DATA stub REFUSED: CAP_DATA seg (66.42,-20.405)->(66.42,-24.5): CDR_DATN U5.1]
+--- V HV_INTVCC U10.8 ---
+  [V HV_INTVCC U10.8 REFUSED: HV_INTVCC via (17.5,-15.0): +5V track@stubcheck]
+--- W HV_SS U10.3 ---
+  HV_SS: (11.21,-15.00)->(10.70,-15.00) L0
+  [W HV_SS U10.3 REFUSED: HV_SS via (10.7,-15.0): HV_FBX track@stubcheck]
+saved hw/pdlvds_rx.exp43.kicad_pcb
