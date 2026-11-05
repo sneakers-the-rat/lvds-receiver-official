@@ -18,7 +18,11 @@ OY = -30.0                 # board y (mm) of grid row 0; strip is y in [-30, 0]
 LAYERS = [pcbnew.F_Cu, pcbnew.In2_Cu, pcbnew.B_Cu]
 MM = pcbnew.FromMM
 
-HV_NETS = {"APD_K", "HV_RAW", "HV_SEC"}
+# HV class by carried voltage — MUST equal check_pcb.HV_NETS
+# (drift-guarded by hw/tests/test_hv_class.py; evidence and the
+# per-net voltage table: results/class-voltage-census.txt).
+HV_NETS = {"APD_K", "HV_RAW", "HV_SEC", "TP_HV", "HV_R29M",
+           "HV_R30M", "HV_R31A", "HV_R31B", "HV_OVP1", "HV_OVP2"}
 # Nets that failed pins in the v4 run (59 pins over 41 nets), promoted
 # ahead of LVDS/default so they route while the board is still open;
 # the easy nets route around them afterwards. Data from

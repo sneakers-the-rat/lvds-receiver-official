@@ -1,0 +1,14 @@
+== U10.9 net=HV_SHDN pos=(16.15,-15.50) half=(0.72,0.15)
+   CLEAR sites: 1
+     site (17.25, -15.45)
+   1-blocker sites: 50
+     site (17.2, -15.5) neck=[] disc=['+5V:pad:need0.25']
+     site (17.3, -15.5) neck=[] disc=['+5V:track:need0.25']
+     site (19.0, -15.5) neck=['+5V:track:need0.25'] disc=[]
+== U10.3 net=HV_SS pos=(11.85,-15.00) half=(0.72,0.15)
+   CLEAR sites: 0
+   1-blocker sites: 0
+=[]
+== U10.3 net=HV_SS pos=(11.85,-15.00) half=(0.72,0.15)
+   CLEAR sites: 0
+   1-blocker sites: 0
