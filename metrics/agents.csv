@@ -1,5 +1,5 @@
 agent_id,model,scope,role,usage_rows,input_tokens,output_tokens,first_row_utc,last_row_utc,notes
-4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",320,147744170,489672,2026-11-03T18:34:31Z,2026-11-05T05:35:40Z,
+4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",332,154616358,504599,2026-11-03T18:34:31Z,2026-11-05T06:10:38Z,
 211e6068-5645-443d-821c-d965a1288a6c,ipnext/avocado-5.17-v1,chat-tree,"build coordinator #1 (router v1-v5, repair passes 1-4, stage 7b/7c start)",1,2224018,8136,2026-11-04T00:18:30Z,2026-11-04T00:18:30Z,
 04d878b8-e46d-47c3-a3e8-19842ed9ea6c,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,3089221,53683,2026-11-03T18:42:31Z,2026-11-03T18:42:31Z,spawn prompt in agent.subagent_spawns
 6b643e67-3b72-4a34-a4e4-cb88906fc170,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,788734,34177,2026-11-03T18:40:38Z,2026-11-03T18:40:38Z,spawn prompt in agent.subagent_spawns
@@ -93,9 +93,9 @@ b86d6da7-368f-4d4c-bd21-a7b6566ae3ae,ipnext/avocado-5.17-v1,chat-tree,firmware w
 98e426b0-540c-4eca-a7dd-67f646ed9bb7,ipnext/avocado-5.17-v1,chat-tree,routing worker (failure-class queue line),1,9312156,39894,2026-11-05T04:51:34Z,2026-11-05T04:51:34Z,spawn prompt in agent.subagent_spawns
 b559fea1-e235-466a-a53e-69d4317cdde2,ipnext/avocado-5.17-v1,chat-tree,Freerouting completion-attempt worker (fr-attempt lane),1,3344414,8870,2026-11-05T05:34:52Z,2026-11-05T05:34:52Z,spawn prompt in agent.subagent_spawns
 33778cb7-fbcd-4b8b-a090-0b43bb54f8c8,ipnext/avocado-5.17-v1,chat-tree,parts-audit worker (docs/08),1,7555328,95645,2026-11-05T05:10:56Z,2026-11-05T05:10:56Z,spawn prompt in agent.subagent_spawns
-b8f9dc88-c0ab-4ab4-b924-b731a676afee,ipnext/avocado-5.17-v1,chat-tree,routing worker (Class B fallback line),0,0,0,,,RUNNING at snapshot: no usage row yet (rows land at completion) - excluded from totals
+b8f9dc88-c0ab-4ab4-b924-b731a676afee,ipnext/avocado-5.17-v1,chat-tree,routing worker (Class B fallback line),1,26860163,133898,2026-11-05T06:07:04Z,2026-11-05T06:07:04Z,
 d03706d0-0923-437b-b493-bfbe6552b535,ipnext/avocado-5.17-v1,chat-tree,HV interlock worker,1,12390881,104899,2026-11-05T05:12:45Z,2026-11-05T05:12:45Z,spawn prompt in agent.subagent_spawns
-e5ec69fd-70b5-49cf-baf9-a85b819611d0,ipnext/avocado-5.17-v1,chat-tree,parts-fix worker (docs/08 findings),0,0,0,,,RUNNING at snapshot: no usage row yet (rows land at completion) - excluded from totals
+e5ec69fd-70b5-49cf-baf9-a85b819611d0,ipnext/avocado-5.17-v1,chat-tree,parts-fix worker (docs/08 findings),1,10961179,129157,2026-11-05T05:50:36Z,2026-11-05T05:50:36Z,
 b862bdd0-8863-404c-b91a-ed267edaa316,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,784366,5229,2026-11-04T08:41:30Z,2026-11-04T08:41:30Z,run scheduled 2026-11-04T08:39:16Z
 62dc5188-2a11-48dc-8ed8-9655316a6f35,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,55269,759,2026-11-04T08:41:41Z,2026-11-04T08:41:41Z,run scheduled 2026-11-04T08:39:16Z
 6fe06a99-ccea-4a27-a41d-b44df2f854e8,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,682733,5449,2026-11-04T09:11:29Z,2026-11-04T09:11:29Z,run scheduled 2026-11-04T09:09:16Z
@@ -180,4 +180,6 @@ b4be9d08-6741-45dd-b7c3-8923f33ceaa9,ipnext/watermelon-v0,checkpoint-cron,pdlvds
 7006e73d-ae9e-4db8-a1ec-9e56c6648a6b,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-05T04:39:16Z; no usage row recorded
 0c377d14-e20f-47a7-8723-70146f36f7e2,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,1098013,7787,2026-11-05T05:12:34Z,2026-11-05T05:12:34Z,run scheduled 2026-11-05T05:09:16Z
 0fdd5a72-809b-45b2-b20b-a8d83cfb0010,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,80753,834,2026-11-05T05:12:51Z,2026-11-05T05:12:51Z,run scheduled 2026-11-05T05:09:16Z
-ab6b5d92-2212-43f5-96d7-390af8bd1148,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),0,0,0,,,run scheduled 2026-11-05T05:39:16Z; no usage row recorded
+ab6b5d92-2212-43f5-96d7-390af8bd1148,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,5365330,44169,2026-11-05T05:54:10Z,2026-11-05T05:54:10Z,run scheduled 2026-11-05T05:39:16Z
+7428b319-dd20-40d6-9de6-a51c8acdaf73,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,26782,179,2026-11-05T05:55:40Z,2026-11-05T05:55:40Z,run scheduled 2026-11-05T05:39:16Z
+4393dc69-a319-496f-987c-4c2d3f9d4c83,ipnext/avocado-5.17-v1,chat-tree,"build coordinator successor (route lane, /tmp salvage handover)",0,0,0,,,RUNNING at snapshot: no usage row yet (rows land at completion) - excluded from totals
