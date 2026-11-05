@@ -780,6 +780,14 @@ Escapes 9 (exp49 -> exp50): R50 moved (-2.0,-0.8) opening the HV_RAW via-gap lan
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 82 · Unconnected nets: 29 · Audit verdict: FAIL
 
+### Pass 93 — 2026-11-05T12:03:31Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp51.kicad_pcb` · Commit: `pending`
+
+Escapes 10 (exp50 -> exp51): CC2 COMPLETE (east jog at y=72.3 under the A9/B4 pads) + VBUS_RAW re-feed placed; HV pocket sections refused on named blockers (R31.2 shadow, APD_K via, ILIM_A B track) -- batch 11 re-plans them with real pad bboxes. Audit records the state.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 82 · Unconnected nets: 28 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
