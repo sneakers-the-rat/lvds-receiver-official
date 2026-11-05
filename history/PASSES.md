@@ -996,9 +996,9 @@ CC2 rejoined (queue item 3): F hop (30.50,72.55)->(31.30,72.34)->(31.90,72.30) w
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 74 · Unconnected nets: 28 · Audit verdict: FAIL
 
-### Pass 120 — 2026-11-05T22:53:27Z · commit `pending`
+### Pass 120 — 2026-11-05T22:53:27Z · commit `3a26a18`
 
-Board: `hw/pdlvds_rx.exp112.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp112.kicad_pcb` · Commit: `3a26a18d62750578a8534d19a53b70ab9822f1d8`
 
 ZOMBIE PRUNE (owner-directed cleanup): new standing tool hw/prune_dead.py leaf-trims dead branches on a geometric copper graph (pads and pour contacts are terminals; through-paths stay) and proves the invariant in-process before saving: the per-net pad-group partition under the audit's own connectivity model (pads+tracks+vias+zone fills, Collide-0) is IDENTICAL before/after -- no net moved, no net reverted. REMOVED: 392 segments (0 vias), 126 overshoot tracks shortened, 385.9 mm of dead copper. Worst offenders: GND -101 segs (75.7 mm), SWDIO -18 segs (60.9 mm -- an entire superseded route), CDR_DATP -46 (24.2 mm), ULPI_D0 -22 (20.2 mm), HV_EN -6 (19.1 mm), TMP_ALERT -14 (18.5 mm), CAP_CLK -25 (10.9 mm), I2C_SDA -27 (10.6 mm); the old U6-site fanout field around (69-78,33-41) accounts for the NRST/CAP_CLK/TMP_ALERT share. DELTAS vs pass 119: nets 28->28 (identical partitions), violations 74->71 -- 3 lines cured, all zombie GND tracks in the HV field (HV_R31A R49.1 vs GND track@(30.375,-12.625); TP_HV track@(44.375,18.125) vs GND tracks x2), zero new lines. Tool stays in hw/: run after any placement move as a matter of course.
 
