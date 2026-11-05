@@ -1,0 +1,18 @@
+--- 1 HV_R31B re-join ---
+  rip HV_R31B L0 (38.16,-5.00)->(38.24,-1.60)
+  [1 HV_R31B re-join REFUSED: HV_R31B seg (36.2375,-2.4)->(36.9,-4.6): HV_R31A R31.2]
+--- 2 HV_FBX R50.2 escape v2 ---
+  HV_FBX: (39.16,-2.40)->(38.75,-0.90) L0
+  [2 HV_FBX R50.2 escape v2 REFUSED: HV_FBX seg (38.75,-0.9)->(37.9,0.3): APD_K via@stubcheck]
+--- 3 HV_RAW v6 ---
+  [3 HV_RAW v6 REFUSED: HV_RAW seg (43.675,-1.799999)->(40.92,-1.85): HV_FBX R50.2]
+--- 4 +5V U14.6 B waypoint ---
+  [4 +5V U14.6 B waypoint REFUSED: +5V seg (58.8,63.9)->(58.3,62.9): ILIM_A track@stubcheck]
+--- 5 CC2 v2 ---
+  CC2: (30.50,72.55)->(30.75,72.30) L0
+  CC2: (30.75,72.30)->(31.90,72.30) L0
+  CC2: (31.90,72.30)->(32.81,72.30) L0
+  CC2: (32.81,72.30)->(32.81,72.42) L0
+  VBUS_RAW: (31.10,71.83)->(31.35,71.35) L0
+  [5 CC2 v2 OK]
+saved hw/pdlvds_rx.exp51.kicad_pcb

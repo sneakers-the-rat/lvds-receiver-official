@@ -1,0 +1,13 @@
+pass: 92
+description: Escapes 9 (exp49 -> exp50): R50 moved (-2.0,-0.8) opening the HV_RAW via-gap lane, orphaned FBX/R31B hops ripped for re-route, U14.6 via down to B, VBUS picket ripped for CC2. Audit records the state.
+timestamp (UTC): 2026-11-05T11:56:56Z
+commit: pending
+board file: hw/pdlvds_rx.exp50.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 82
+unconnected nets: 29
+audit verdict: fail
+note: 
