@@ -1,0 +1,43 @@
+--- 0 rips ---
+  rip GND (30.38,-4.88)->(30.38,-12.62)
+  rip HV_RAW (43.67,-1.80)->(42.60,-1.30)
+  rip HV_RAW (43.67,-1.80)->(42.90,-2.60)
+  rip HV_FBX (40.30,-2.40)->(41.30,-2.20)
+  rip via HV_FBX @(10.12,-15.38)
+  rip touching HV_R31A (35.16,-1.60)->(35.24,-5.00)
+  rip touching HV_R31B (37.38,-5.00)->(38.16,-5.00)
+  rip touching HV_R31B (37.38,-2.40)->(37.38,-5.00)
+  rip touching APD_K (40.88,-3.12)->(40.62,-2.88)
+  rip touching APD_K (40.62,-2.88)->(40.38,-2.62)
+  rip touching APD_K (40.12,-2.38)->(39.88,-2.12)
+  rip touching APD_K (39.88,-2.12)->(39.62,-1.88)
+  rip touching APD_K (40.38,-2.62)->(40.12,-2.38)
+  [0 rips OK]
+--- 1 R49+R50 move SW ---
+  R49 moved (-6.0,-5.5)
+  R50 moved (-6.0,-5.5)
+  [1 R49+R50 move SW OK]
+--- 2 HV_R31B re-join ---
+  HV_R31B: (31.38,-7.90)->(31.70,-9.20) L0
+  HV_R31B: (31.70,-9.20)->(32.16,-10.50) L0
+  [2 HV_R31B re-join OK]
+--- 3 HV_FBX hop to web ---
+  HV_FBX: (34.30,-7.90)->(33.90,-6.20) L0
+  HV_FBX: (33.90,-6.20)->(33.46,-5.25) L0
+  [3 HV_FBX hop to web OK]
+--- 4 HV_RAW via + In2 ---
+  [4 HV_RAW via + In2 REFUSED: HV_RAW seg (43.45,-3.9)->(44.35,-4.85): TP_HV track@stubcheck]
+--- 5 HV_FBX re-dive ---
+  [5 HV_FBX re-dive REFUSED: HV_FBX seg (10.12,-15.38)->(9.62,-15.75): HV_VC track@stubcheck]
+--- 6 HV_SS north dive ---
+  [6 HV_SS north dive REFUSED: HV_SS seg (10.62,-15.0)->(9.9,-15.0): HV_FBX track@stubcheck]
+saved hw/pdlvds_rx.exp53.kicad_pcb
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'ZONE_FILLER *', no destructor found.

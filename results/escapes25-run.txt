@@ -1,0 +1,4 @@
+--- D4 ---
+  ULPI_D4: (79.22,14.98)->(79.30,15.02) REFUSED: ULPI_D6 track@stubcheck
+  [D4 STOPPED]
+saved hw/pdlvds_rx.exp72.kicad_pcb

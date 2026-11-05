@@ -1,0 +1,25 @@
+ULPI_D1: 2 groups, main group 2 items
+  ULPI_D1: group (2 items, ['U7.23', 'track@(88.795, -22.25)']) STILL isolated (0s)
+ULPI_D2: 2 groups, main group 2 items
+  ULPI_D2: group (2 items, ['U7.22', 'track@(88.795, -21.75)']) STILL isolated (0s)
+ULPI_D3: 2 groups, main group 2 items
+  ULPI_D3: group (2 items, ['U7.21', 'track@(88.795, -21.25)']) STILL isolated (0s)
+ULPI_D4: 2 groups, main group 2 items
+  ULPI_D4: group (1 items, ['U6.70']) STILL isolated (203s)
+ULPI_D5: 2 groups, main group 2 items
+  ULPI_D5: group (2 items, ['U7.19', 'track@(88.795, -20.25)']) STILL isolated (0s)
+ULPI_D6: 2 groups, main group 2 items
+  ULPI_D6: group (1 items, ['U6.74']) STILL isolated (231s)
+ULPI_NXT: 2 groups, main group 2 items
+  ULPI_NXT: group (1 items, ['U6.29']) STILL isolated (1s)
+ULPI_STP: 2 groups, main group 5 items
+  ULPI_STP: group (2 items, ['U7.13', 'track@(86.25, -18.205)']) STILL isolated (0s)
+USB_RST: 2 groups, main group 2 items
+  USB_RST: group (1 items, ['U6.40']) STILL isolated (0s)
+I2C_SCL: 2 groups, main group 95 items
+  I2C_SCL: connected group of 1 items (2s, 1 vias)
+I2C_SDA: 2 groups, main group 99 items
+  I2C_SDA: connected group of 1 items (2s, 1 vias)
+TMP_ALERT: 2 groups, main group 58 items
+  TMP_ALERT: connected group of 1 items (1s, 1 vias)
+heal_nets done: 3 groups connected in 451s, output hw/pdlvds_rx.exp37.kicad_pcb

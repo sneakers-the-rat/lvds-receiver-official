@@ -1,0 +1,131 @@
+copper items: 8179
+unconnected nets: 28
+  UNCONNECTED +3V3D_CDR: 2 groups, e.g. [['C50.1', 'C51.1', 'FB1.2', 'U4.1'], ['U4.12', 'track@(54.75, -16.059999)']]
+  UNCONNECTED +5V: 5 groups, e.g. [['C25.1', 'C35.1', 'C37.1', 'C43.1'], ['U7.4'], ['U11.10', 'U11.11', 'U11.12', 'track@(15.411611, 64.1875)'], ['U11.13', 'track@(14.8125, 62.588388)'], ['U14.6', 'track@(60.45, 64.8)', 'track@(60.45, 64.8)', 'track@(60.5, 63.15)']]
+  UNCONNECTED APD_K: 6 groups, e.g. [['R31.1'], ['R34.1', 'track@(41.538, -6.0)', 'track@(42.0375, -6.0)', 'track@(42.375, -6.625)'], ['C33.1', 'C4.1', 'R30.1', 'track@(10.5, 16.0)'], ['D1.5'], ['RJ2.2', 'track@(14.151089, 56.864929)'], ['R47.2', 'track@(49.325, -1.6)']]
+  UNCONNECTED CAP_DATA: 2 groups, e.g. [['U6.35', 'track@(64.68, 41.25)'], ['U5.3', 'track@(66.42, -20.405)']]
+  UNCONNECTED CDR_PIN: 2 groups, e.g. [['C8.2', 'track@(42.144999, 37.5)'], ['U4.5', 'track@(52.205, -18.25)']]
+  UNCONNECTED CDR_SQUELCH: 2 groups, e.g. [['U6.76', 'track@(86.005, 40.25)'], ['U4.27', 'track@(55.75, -21.295)']]
+  UNCONNECTED CF2: 2 groups, e.g. [['U4.14', 'track@(55.75, -15.705)'], ['C15.2', 'track@(60.644999, -26.0)']]
+  UNCONNECTED DP_PHY: 2 groups, e.g. [['U7.7'], ['D3.6', 'track@(31.72, 67.55)']]
+  UNCONNECTED GND: 3 groups, e.g. [['C10.2', 'C11.2', 'C12.2', 'C14.2'], ['R32.2'], ['C34.2', 'track@(29.775, -2.0)', 'track@(29.775, -2.25)', 'track@(30.125, -2.875)']]
+  UNCONNECTED HV_FBX: 2 groups, e.g. [['C34.1', 'R32.1', 'R33.2', 'R50.2'], ['track@(42.9, 0.1)']]
+  UNCONNECTED HV_R31A: 2 groups, e.g. [['R31.2'], ['R49.1']]
+  UNCONNECTED HV_RAW: 2 groups, e.g. [['C32.1', 'D5.1', 'R29.1', 'track@(36.32, -12.0)'], ['D9.1']]
+  UNCONNECTED HV_SHDN: 2 groups, e.g. [['U6.42'], ['J5.2', 'R25.2', 'R26.1', 'U10.9']]
+  UNCONNECTED HV_SS: 2 groups, e.g. [['C30.1', 'track@(16.018431, -11.006568)'], ['U10.3', 'track@(11.205, -15.0)', 'track@(11.205, -15.0)']]
+  UNCONNECTED PHY_1V8: 3 groups, e.g. [['C22.1'], ['U7.15', 'track@(87.25, -18.205)'], ['U7.26', 'track@(87.25, -23.795)']]
+  UNCONNECTED PHY_1V8A: 2 groups, e.g. [['U7.29', 'track@(85.75, -23.795)'], ['C23.1', 'track@(78.891136, -16.09891)']]
+  UNCONNECTED SET_P: 2 groups, e.g. [['C42.1', 'R40.1', 'track@(42.558863, 65.09891)', 'track@(42.725, 64.4673)'], ['U13.7']]
+  UNCONNECTED SLICEN: 2 groups, e.g. [['U4.7'], ['C13.2', 'track@(50.275, -13.5)', 'track@(50.275, -14.25)', 'track@(50.625, -14.875)']]
+  UNCONNECTED ULPI_D1: 2 groups, e.g. [['U6.46', 'track@(71.75, 44.32)'], ['U7.23', 'track@(88.795, -22.25)']]
+  UNCONNECTED ULPI_D2: 2 groups, e.g. [['U6.47', 'track@(72.325, 43.6625)'], ['U7.22', 'track@(88.795, -21.75)']]
+  UNCONNECTED ULPI_D3: 2 groups, e.g. [['U6.69', 'track@(83.25, 44.32)'], ['U7.21', 'track@(88.795, -21.25)']]
+  UNCONNECTED ULPI_D4: 2 groups, e.g. [['U6.70'], ['U7.20', 'track@(88.795, -20.75)']]
+  UNCONNECTED ULPI_D5: 2 groups, e.g. [['U6.73', 'track@(86.569068, 41.843431)'], ['U7.19', 'track@(88.795, -20.25)']]
+  UNCONNECTED ULPI_D6: 2 groups, e.g. [['U6.74'], ['U7.18', 'track@(88.795, -19.75)']]
+  UNCONNECTED ULPI_NXT: 2 groups, e.g. [['U6.29'], ['U7.11', 'track@(85.25, -18.205)']]
+  UNCONNECTED ULPI_STP: 2 groups, e.g. [['U6.26', 'track@(64.829366, 36.960475)', 'track@(65.067755, 36.861731)', 'track@(65.430931, 36.843431)'], ['U7.13', 'track@(86.25, -18.205)']]
+  UNCONNECTED USB_RST: 2 groups, e.g. [['U6.40'], ['U7.9', 'track@(84.25, -18.205)']]
+  UNCONNECTED VBUS_RAW: 2 groups, e.g. [['F1.1', 'J1.A4', 'J1.B4', 'J1.B9'], ['J1.A9', 'track@(31.1, 71.83)', 'track@(31.485857, 71.244142)']]
+clearance violations: 78
+  CLEARANCE SW2 (L2.1) vs GND (track@(19.7053, 59.074)): need 0.2 mm
+  CLEARANCE HV_SHDN (U6.42) vs ULPI_CK (track@(69.325, 43.6625)): need 0.2 mm
+  CLEARANCE VBUS_RAW (F1.1) vs GND (D4.2): need 0.25 mm
+  CLEARANCE GND (R32.2) vs APD_K (R31.1): need 1.0 mm
+  CLEARANCE HV_OVP1 (D10.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (D10.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE XI (X1.1) vs XO (C21.1): need 0.2 mm
+  CLEARANCE XI (X1.1) vs GND (C21.2): need 0.2 mm
+  CLEARANCE XI (X1.1) vs XO (track@(81.875, -26.875)): need 0.2 mm
+  CLEARANCE XI (X1.1) vs XO (track@(81.418431, -27.606568)): need 0.2 mm
+  CLEARANCE XI (X1.1) vs XO (via@(81.875, -26.875)): need 0.2 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(31.501089, -2.364929)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(31.375, 0.125)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(31.625, 0.125)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(32.125, -3.125)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(31.175, -2.5)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(32.625, -3.875)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(32.375, -3.375)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(31.925, -2.5)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(31.875, 0.375)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(32.875, -4.125)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (track@(32.625, -3.625)): need 1.0 mm
+  CLEARANCE APD_K (R31.1) vs HV_FBX (via@(32.125, 0.625)): need 1.0 mm
+  CLEARANCE SW1 (L1.1) vs GND (D2.3): need 0.2 mm
+  CLEARANCE SW1 (L1.1) vs +3V3D (via@(19.625, 63.125)): need 0.25 mm
+  CLEARANCE HV_RAW (D9.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP1 (D9.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (R34.2) vs APD_K (track@(43.02, -10.0)): need 1.0 mm
+  CLEARANCE TP_HV (R34.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_R31A (R49.1) vs GND (track@(30.375, -12.625)): need 1.0 mm
+  CLEARANCE APD_K (D1.5) vs APD_A (track@(8.3, 38.62)): need 1.0 mm
+  CLEARANCE APD_K (D1.5) vs APD_A (track@(9.15, 41.4)): need 1.0 mm
+  CLEARANCE GND (C4.2) vs HV_EN (track@(25.875, 15.375)): need 0.2 mm
+  CLEARANCE GND (C4.2) vs HV_EN (track@(25.625, 15.125)): need 0.2 mm
+  CLEARANCE GND (C4.2) vs HV_EN (track@(26.875, 16.375)): need 0.2 mm
+  CLEARANCE GND (C4.2) vs HV_EN (track@(26.375, 15.875)): need 0.2 mm
+  CLEARANCE GND (C4.2) vs HV_EN (track@(25.375, 14.875)): need 0.2 mm
+  CLEARANCE GND (C4.2) vs HV_EN (track@(26.125, 15.625)): need 0.2 mm
+  CLEARANCE GND (C4.2) vs HV_EN (track@(26.625, 16.125)): need 0.2 mm
+  CLEARANCE HV_OVP2 (D11.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (R29.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_R29M (R29.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_R29M (R47.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE APD_K (R47.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_R30M (R48.1) vs GND (track@(24.7289, 28.9978)): need 1.0 mm
+  CLEARANCE HV_R30M (R48.1) vs GND (track@(15.9625, 28.9978)): need 1.0 mm
+  CLEARANCE HV_SEC (T1.10) vs +5V (track@(24.0, -18.54)): need 1.0 mm
+  CLEARANCE HV_SEC (T1.10) vs GND (zone L0): need 1.0 mm
+  CLEARANCE APD_K (track@(49.325, -1.6)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE CC2 (track@(30.75, 72.3)) vs VBUS_RAW (track@(31.1, 71.83)): need 0.25 mm
+  CLEARANCE GND (track@(45.875, 14.125)) vs TP_HV (track@(44.375, 18.125)): need 1.0 mm
+  CLEARANCE GND (track@(45.875, 18.875)) vs TP_HV (track@(44.375, 18.125)): need 1.0 mm
+  CLEARANCE HV_RAW (track@(43.675, -1.799999)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(43.675, -1.799999)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(43.675, -1.799999)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(26.0, -20.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(31.0, -18.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(26.5, -20.5)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(25.5, -19.5)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (via@(30.5, -18.5)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (via@(30.5, -18.5)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (via@(26.5, -20.5)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (via@(26.5, -20.5)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE TP_HV (track@(39.38, 2.2)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (track@(44.9, -7.6)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (track@(44.46, 2.2)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (track@(44.462, -6.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (via@(44.46, 2.9)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (via@(44.46, 2.9)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE TP_HV (via@(44.9, -7.6)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (via@(44.9, -7.6)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_R29M (track@(45.325, -1.799999)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP1 (track@(9.125, -24.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP1 (track@(8.4, -25.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP1 (track@(9.85, -25.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(16.625, -24.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(17.35, -25.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(18.85, -25.0)) vs GND (zone L0): need 1.0 mm
+intrinsic same-footprint pad pairs below class clearance (datasheet geometry, not routable): 37
+  INTRINSIC GND (U8.4) vs +3V3D (U8.5): need 0.25 mm
+  INTRINSIC SPI_MOSI (U8.8) vs +3V3D (U8.9): need 0.25 mm
+  INTRINSIC +3V3D (U8.9) vs DAC_VREF (U8.10): need 0.25 mm
+  INTRINSIC GND (U6.16) vs +3V3D (U6.17): need 0.25 mm
+  INTRINSIC ULPI_NXT (U6.29) vs +3V3D (U6.30): need 0.25 mm
+  INTRINSIC +3V3D (U6.30) vs GND (U6.31): need 0.25 mm
+  INTRINSIC GND (U6.31) vs +3V3A (U6.32): need 0.25 mm
+  INTRINSIC +3V3A (U6.33) vs CAP_CLK (U6.34): need 0.25 mm
+  INTRINSIC GND (U6.38) vs +3V3D (U6.39): need 0.25 mm
+  INTRINSIC +3V3D (U6.39) vs USB_RST (U6.40): need 0.25 mm
+  INTRINSIC GND (U6.51) vs +3V3D (U6.52): need 0.25 mm
+  INTRINSIC GND (U6.61) vs +3V3D (U6.62): need 0.25 mm
+  INTRINSIC VCAP2 (U6.71) vs +3V3D (U6.72): need 0.25 mm
+  INTRINSIC GND (U6.83) vs +3V3D (U6.84): need 0.25 mm
+  INTRINSIC GND (U6.107) vs +3V3D (U6.108): need 0.25 mm
+  INTRINSIC GND (U6.120) vs +3V3D (U6.121): need 0.25 mm
+  INTRINSIC GND (U6.130) vs +3V3D (U6.131): need 0.25 mm
+  INTRINSIC +3V3D_CDR (U4.24) vs CDR_CLKN (U4.25): need 0.25 mm
+  INTRINSIC VBUS_RAW (J1.A4) vs CC1 (J1.A5): need 0.25 mm
+  INTRINSIC VBUS_RAW (J1.B4) vs CC2 (J1.B5): need 0.25 mm
+PCB CHECK: FAIL

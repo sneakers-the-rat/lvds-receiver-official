@@ -1,0 +1,19 @@
+  R32 grid-placed @(30.5,-3.8) rot=0
+  R49 grid-placed @(36.7,-5.0) rot=0
+  R31 grid-placed @(33.7,-1.6) rot=0
+  R50 grid-placed @(39.7,-1.6) rot=0
+  R47 grid-placed @(48.5,-1.6) rot=0
+  deleted TP_HV stub island (1 items) at [(39.9, -5.0), (40.5, -5.0)]
+  deleted APD_K stub island (1 items) at [(37.0, -4.8), (37.6, -4.6)]
+  deleted APD_K stub island (1 items) at [(31.0, -5.3), (31.6, -5.1)]
+  deleted HV_FBX stub island (1 items) at [(34.0, -5.3), (34.5, -5.1)]
+stub islands deleted: 4 items
+  deleted GND stub ending on R30.2 (15.9625, 31.0)
+  deleted GND stub ending on R30.2 (15.9625, 31.0)
+saved hw/pdlvds_rx.exp29.kicad_pcb (respread + cleanup, zones refilled)
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE_SEGMENT > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE_SEGMENT > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE_SEGMENT > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE_SEGMENT > *', no destructor found.
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE_SEGMENT > *', no destructor found.
+swig/python detected a memory leak of type 'ZONE_FILLER *', no destructor found.

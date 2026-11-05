@@ -1,0 +1,32 @@
+--- A +5V U11 cluster ---
+  +5V: (16.38,63.75)->(16.90,63.75) L0
+  [A +5V U11 cluster REFUSED: +5V seg (16.9,63.75)->(16.9,67.12): ('+3V3D', 'track@stubcheck')]
+--- B +5V U14.6 ---
+  [B +5V U14.6 REFUSED: +5V seg (60.55,63.0)->(59.2,64.8): ('SET_A', 'U14.7')]
+--- D SET_P U13.7 ---
+  [D SET_P U13.7 REFUSED: SET_P seg (49.55,62.5)->(49.55,64.2): ('+5V', 'U13.6')]
+--- F +3V3A U7.6 ---
+  [F +3V3A U7.6 REFUSED: +3V3A seg (83.5625,-20.25)->(82.6,-20.25): ('GND', 'U7.5')]
+--- G HV_FBX R50.2 ---
+  [G HV_FBX R50.2 REFUSED: HV_FBX seg (41.1625,-2.6)->(41.1625,-3.6): ('APD_K', 'track@stubcheck')]
+--- H HV_RAW R29.1 ---
+  HV_RAW: (43.67,-1.80)->(43.45,-3.90) L0
+  [H HV_RAW R29.1 REFUSED: HV_RAW via (43.45,-3.9): ('CMP_QN', 'track@stubcheck')]
+--- I APD_K island->R34.1 ---
+  APD_K: (43.02,-10.00)->(42.60,-7.20) L0
+  APD_K: (42.60,-7.20)->(41.54,-6.00) L0
+  [I APD_K island->R34.1 OK]
+--- J APD_K R47.2 ---
+  APD_K: (49.33,-1.60)->(49.90,-1.60) L0
+  [J APD_K R47.2 REFUSED: APD_K seg (49.9,-1.6)->(49.9,-7.0): ('I2C_SCL', 'U9.1')]
+--- K APD_K R31.1 ---
+  ripped 0 GND stitch segments in the R31.1 east fence
+  [K APD_K R31.1 REFUSED: APD_K seg (34.62,2.12)->(33.6,0.5): ('HV_FBX', 'via@stubcheck')]
+--- L GND R48.2 stub ---
+  GND: (18.76,27.40)->(18.76,29.60) L0
+  [L GND R48.2 stub OK]
+--- N PHY_1V8 U7.26<->U7.15 ---
+  [N PHY_1V8 U7.26<->U7.15 REFUSED: PHY_1V8 seg (87.25,-24.38)->(89.3,-24.38): ('+3V3A', 'via@stubcheck')]
+--- T CC2 J1.B5 ---
+  [T CC2 J1.B5 REFUSED: CC2 seg (30.5,73.18)->(31.8,72.9): ('VBUS_RAW', 'J1.B4')]
+saved hw/pdlvds_rx.exp42.kicad_pcb

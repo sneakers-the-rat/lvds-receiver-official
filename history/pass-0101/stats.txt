@@ -1,0 +1,13 @@
+pass: 101
+description: ULPI fanout heal round 1 (exp60 -> exp61): D0, D1, D4, D6, D7, NXT CONNECTED in the new geometry (audit 65 -> 59 nets). Residue: single U7 pads D2/D3/D5/DIR/CK/STP/RST sealed at heal's first move (fanout-order problem) -- round 2 stubs them by hand first, then heals. Violations 71 -> 81 from heal grazes, violation campaign queued.
+timestamp (UTC): 2026-11-05T13:08:43Z
+commit: pending
+board file: hw/pdlvds_rx.exp61.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 81
+unconnected nets: 59
+audit verdict: fail
+note: 

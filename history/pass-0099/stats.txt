@@ -1,0 +1,13 @@
+pass: 99
+description: RESPREAD ADOPTED (exp58 -> exp59): U6 -> (82,-6), U7 -> (76,14), X1 -> (87,14) rot90 + full ring, applied via respread_u6u7_local.py (local-rip path) to the current board -- no restart from exp41. 932 items ripped (severance debt ~36 nets, itemised in results/respread-local-exp59.txt). Post-placement audit: 65 nets / 168 violations (zones un-refilled; refill next). ULPI hauls drop from ~66mm to 8-19mm in the new geometry.
+timestamp (UTC): 2026-11-05T13:01:06Z
+commit: pending
+board file: hw/pdlvds_rx.exp59.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 168
+unconnected nets: 65
+audit verdict: fail
+note: 

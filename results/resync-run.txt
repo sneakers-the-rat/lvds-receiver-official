@@ -1,0 +1,32 @@
+SH1 solid box: (2.8, 29.8, 29.2, 50.2)
+swaps:
+  D4 swapped in place -> Diode_SMD:D_SMB
+  L1 swapped in place -> Inductor_SMD:L_Murata_DFE201610P
+  L2 swapped in place -> Inductor_SMD:L_Murata_DFE201610P
+  X1 swapped in place -> Crystal:Crystal_SMD_HC49-SD
+  U9 swapped in place -> pdlvds:TMP117_WSON6
+  R30 swapped in place -> Resistor_SMD:R_1206_3216Metric
+  C4 @(13.5,22,0): body blocked: MH5 pad in body
+  C4 @(16,20,0): body blocked: MH5 pad in body
+  C4 @(13.5,18,0): body blocked: MH5 pad in body
+  C4 @(22,22,0): body blocked: C26 pad in body
+  C4 placed @(18,16) rot=0
+HV cluster placement (grid search):
+  R33 grid-placed @(26.0,-3.1) rot=0
+  R31 swapped in place -> Resistor_SMD:R_1210_3225Metric
+  R31 grid-placed @(35.5,-1.7999999999999998) rot=0
+  R29 swapped in place -> Resistor_SMD:R_0603_1608Metric
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/hw/resync.py", line 186, in <module>
+    gridplace.place(board, r29, (38, -2.8, 54, -1.0), (44.5, -1.8),
+  File "/home/hatch/workspace/pdlvds-route/hw/gridplace.py", line 31, in place
+    others = _others(board, fp.GetReference())
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/pdlvds-route/hw/gridplace.py", line 18, in _others
+    for fp in board.GetFootprints():
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3/dist-packages/pcbnew.py", line 17604, in GetFootprints
+    def GetFootprints(self):          return list(self.Footprints())
+                                             ^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: 'SwigPyObject' object is not iterable
+swig/python detected a memory leak of type 'BOX2< VECTOR2< int > > *', no destructor found.

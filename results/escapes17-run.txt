@@ -1,0 +1,31 @@
+--- 0 fence rips ---
+  rip ULPI_D7 (78.12,17.38)->(76.12,17.38)
+  rip via ULPI_D7 @(76.12,17.38)
+  rip ULPI_D4 (78.69,14.25)->(79.12,14.38)
+  rip ULPI_D4 (79.12,14.38)->(79.38,14.62)
+  rip ULPI_D4 (79.62,14.88)->(79.88,15.12)
+  rip ULPI_D4 (79.88,15.12)->(80.12,15.38)
+  rip ULPI_NXT (74.88,17.38)->(74.12,17.38)
+  [0 fence rips OK]
+--- 1 D2 stub ---
+  ULPI_D2: (78.44,13.25)->(79.05,13.25)
+  [1 D2 stub OK]
+--- 2 D3 stub ---
+  ULPI_D3: (78.44,13.75)->(78.90,13.75)
+  [2 D3 stub OK]
+--- 3 D5 stub ---
+  [3 D5 stub REFUSED: ULPI_D5 seg (78.4375,14.75)->(79.5,14.75): ULPI_D4 track@stubcheck]
+--- 4 DIR stub ---
+  ULPI_DIR: (75.75,16.44)->(75.75,17.15)
+  [4 DIR stub OK]
+--- 5 STP stub ---
+  ULPI_STP: (76.25,16.44)->(76.25,17.15)
+  [5 STP stub OK]
+--- 6 CK stub ---
+  ULPI_CK: (76.75,16.44)->(76.75,17.15)
+  [6 CK stub OK]
+--- 7 RST stub ---
+  [7 RST stub REFUSED: USB_RST seg (74.25,16.4375)->(74.25,17.6): ULPI_NXT track@stubcheck]
+saved hw/pdlvds_rx.exp62.kicad_pcb
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'ZONE_FILLER *', no destructor found.

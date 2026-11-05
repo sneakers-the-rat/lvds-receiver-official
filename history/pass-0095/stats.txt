@@ -1,0 +1,13 @@
+pass: 95
+description: Escapes 12 (exp52 -> exp53): PLACEMENT BREAK of the pocket seesaw -- R49+R50 moved SW as a unit (-6,-5.5) into the open field south of the FBX web (one GND stitch ripped); HV_R31B re-join and HV_FBX direct hop to the web both landed. HV_RAW via refused on TP_HV stub proximity; FBX dive re-site refused by HV_VC web (restored in batch 13); HV_SS west leg refused on FBX stub -- its U10 seal is geometric, mechanism named in notes.
+timestamp (UTC): 2026-11-05T12:32:01Z
+commit: pending
+board file: hw/pdlvds_rx.exp53.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 78
+unconnected nets: 28
+audit verdict: fail
+note: 

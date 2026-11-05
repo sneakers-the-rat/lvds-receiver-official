@@ -1,0 +1,18 @@
+--- 0 NXT diagonal rip ---
+  rip ULPI_NXT (74.12,17.38)->(73.88,17.12)
+  [0 NXT diagonal rip OK]
+--- 1 D2 U6 stub ---
+  [1 D2 U6 stub REFUSED: ULPI_D2 seg (78.25,4.66)->(78.25,5.55): ULPI_D0 track@stubcheck]
+--- 2 D3 U6 stub ---
+  ULPI_D3: (89.25,4.66)->(88.30,4.66)
+  [2 D3 U6 stub OK]
+--- 3 STP U6 stub ---
+  ULPI_STP: (71.34,-2.25)->(69.90,-2.25)
+  [3 STP U6 stub OK]
+--- 4 D4 stub ext ---
+  [4 D4 stub ext REFUSED: ULPI_D4 seg (78.69,14.25)->(79.45,14.3): CDR_DATP via@stubcheck]
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/hw/escapes19.py", line 112, in <module>
+    section('5 RST stub', stub('U7', '9', 'USB_RST', 74.25, 17.30))
+                          ^^^^
+NameError: name 'stub' is not defined

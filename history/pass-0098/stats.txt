@@ -1,0 +1,13 @@
+pass: 98
+description: Thread sweep 3 (exp57 -> exp58): VBUS_RAW threaded closed, APD_K + GND one pair each -- but thread rips re-split CC2 (the seesaw in miniature: 28 nets / 77 violations, composition churned). Per parent directive the U6/U7 respread placement is adopted next; this pass is the last on the old geometry.
+timestamp (UTC): 2026-11-05T12:57:16Z
+commit: pending
+board file: hw/pdlvds_rx.exp58.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 77
+unconnected nets: 28
+audit verdict: fail
+note: 

@@ -1,0 +1,16 @@
+--- 0 R50 shift east ---
+  R50 shifted +1.14 east (net move (-0.86,-0.8))
+  [0 R50 shift east OK]
+--- 1 HV_R31B re-join ---
+  HV_R31B: (37.38,-2.40)->(37.38,-5.00) L0
+  HV_R31B: (37.38,-5.00)->(38.16,-5.00) L0
+  [1 HV_R31B re-join OK]
+--- 2 HV_FBX via route ---
+  HV_FBX: (40.30,-2.40)->(41.30,-2.20) L0
+  [2 HV_FBX via route REFUSED: HV_FBX via (41.3,-2.2): CMP_QN track@stubcheck]
+--- 3 HV_RAW lane + In2 ---
+  HV_RAW: (43.67,-1.80)->(42.60,-1.30) L0
+  [3 HV_RAW lane + In2 REFUSED: HV_RAW via (42.6,-1.3): CMP_QN track@stubcheck]
+--- 4 HV_SS In2 hop ---
+  [4 HV_SS In2 hop REFUSED: HV_SS seg (10.62,-15.0)->(9.9,-15.9): HV_FBX track@stubcheck]
+saved hw/pdlvds_rx.exp52.kicad_pcb

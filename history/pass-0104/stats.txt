@@ -1,0 +1,13 @@
+pass: 104
+description: ULPI fanout heal round 2 (exp63 -> exp64): D5, DIR, CK CONNECTED; D7 and NXT re-connected after their fence rips. Residue moved to the U6 side (U6.47/U6.69/U6.26 bare pads) + D4 pad re-entry + RST. Post-fanout audit: 54 nets / 82 violations (from 65/71 at adoption).
+timestamp (UTC): 2026-11-05T13:40:49Z
+commit: pending
+board file: hw/pdlvds_rx.exp64.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 81
+unconnected nets: 57
+audit verdict: fail
+note: 

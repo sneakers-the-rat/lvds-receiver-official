@@ -1,0 +1,24 @@
++3V3A: anchor stub walled at start
++3V3D_CDR: anchor stub walled at start
++5V: anchor stub walled at start
+APD_K: anchor stub walled at start
+CAP_DATA: no pair within 15 mm
+CC2: anchor stub walled at start
+CDR_NIN: threaded gap 9.80: 13 segs, 2 vias, ripped 2
+CDR_PIN: no pair within 15 mm
+CDR_SQUELCH: no pair within 15 mm
+CF2: no pair within 15 mm
+CMP_QN: threaded gap 2.14: 5 segs, 0 vias, ripped 0
+DP_PHY: no pair within 15 mm
+FLY_PRI: no pair within 15 mm
+GND: threaded gap 0.25: 2 segs, 0 vias, ripped 0
+HV_FBX: threaded gap 1.21: 3 segs, 0 vias, ripped 0
+HV_INTVCC: no thread (gap 5.27)
+HV_RAW: threaded gap 0.01: 2 segs, 0 vias, ripped 0
+HV_SHDN: no pair within 15 mm
+HV_SS: no thread (gap 4.08)
+PHY_1V8: anchor stub walled at start
+PHY_1V8A: anchor stub walled at start
+SET_P: no thread (gap 5.14)
+SLICEN: anchor stub walled at start
+saved hw/pdlvds_rx.exp40.kicad_pcb

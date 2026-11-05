@@ -1,0 +1,13 @@
+pass: 105
+description: Escapes 19-20 (exp64 -> exp65): U6-side ULPI stubs placed for D2 (south, shortened clear of D0 track), D3 (west), STP (west); NXT diagonal ripped for RST. Heal round 3 then connected nothing (U7 stub groups walled in heal model) -- hand routes follow.
+timestamp (UTC): 2026-11-05T13:57:16Z
+commit: pending
+board file: hw/pdlvds_rx.exp65.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 81
+unconnected nets: 58
+audit verdict: fail
+note: 

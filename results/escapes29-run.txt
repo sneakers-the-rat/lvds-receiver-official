@@ -1,0 +1,16 @@
+--- phase A rips ---
+  rip MISS CDR_DATP (78.38,12.62)->(79.62,13.88)
+--- D2 ---
+  ULPI_D2: via (79.38,12.95) REFUSED: CDR_DATP track@stubcheck
+  [D2 STOPPED]
+--- D3 ---
+  ULPI_D3: (78.90,13.75)->(79.95,13.55) REFUSED: ULPI_D2 track@stubcheck
+  [D3 STOPPED]
+--- DIR-B ---
+  ULPI_DIR: (76.50,17.95)->(76.05,18.75) L31 OK
+  ULPI_DIR: (76.05,18.75)->(75.62,18.88) L31 OK
+  [DIR-B COMPLETE]
+--- STP ---
+  ULPI_STP: (76.25,17.15)->(75.60,17.20) REFUSED: ULPI_DIR track@stubcheck
+  [STP STOPPED]
+saved hw/pdlvds_rx.exp78.kicad_pcb
