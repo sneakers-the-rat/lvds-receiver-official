@@ -652,9 +652,9 @@ thread_far round 1 (exp12 -> exp13): the exact lattice threader with its pair ga
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 17 · Unconnected nets: 28 · Audit verdict: FAIL
 
-### Pass 76 — 2026-11-05T04:43:58Z · commit `pending`
+### Pass 76 — 2026-11-05T04:43:58Z · commit `2462a08`
 
-Board: `hw/pdlvds_rx.exp13.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp13.kicad_pcb` · Commit: `2462a08a722e35cf02148bf6dc16423677aff155`
 
 thread_far round 1 (exp12 -> exp13): the exact lattice threader with its pair gate raised 3 -> 15 mm (hw/thread_far.py) — 7 pairs threaded: CDR_VREF (gap 3.81, rips 2), REFCLKN (6.04, rips 2), SLICEP (4.46, rips 0), HV_SS (4.08, rips 3), HV_GATE (3.87, rips 1 — a diagnose-NO_EXIT group), HV_INTVCC (5.27, rips 3), +5V (0.19, rips 0). Proven en route: heal's astar6 fails this residue at cap 1.5M AND at 15M (heal_big probe on CDR_VREF, 162 s, 0 connected) while the diagnostic BFS reaches the goal halo — the grid A* model, not the geometry, refuses these hops. Failure classes pinned by the parent: CLASS A = NO_EXIT pads (local surgery per pad, blocker named — queue in WORKING_NOTES), CLASS B = two-island long hauls (ULPI x8, CDR chain, CAP, APD_K — the parallel Freerouting lane's territory; U6-side respread authorized if FR loses and diagnosis indicts U6 exits). 11 ripped victim items are repaid inside the class fixes, not by undirected heal sweeps. D1 exemption: STOPPED at the evidence gate (docs/07) — the 2 D1 lines remain violations as written.
 
