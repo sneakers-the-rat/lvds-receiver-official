@@ -1,8 +1,8 @@
 # Token metrics — how much agent work this PCB took, as recorded
 
-Snapshot generated **2026-11-05T17:31:37Z** (the last usage row included;
-refreshed from the 2026-11-05T16:45:31Z export, same SQL, bound
-`created_at <= 1793899897`).
+Snapshot generated **2026-11-05T17:58:09Z** (the last usage row included;
+refreshed from the 2026-11-05T17:31:37Z export, same SQL, bound
+`created_at <= 1793901489`).
 Headline, for the project scope defined below:
 
 | scope | agents | usage rows | input tokens | output tokens |

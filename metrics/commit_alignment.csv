@@ -469,3 +469,4 @@ d408fc552430,2026-11-05T17:02:16Z,"pass 0109: HV_RAW re-approach (hw/fix_hvraw.p
 dcffe61d2c32,2026-11-05T17:05:40Z,"merge: route lane passes 80-109 (re-sync, respread adoption, campaign, delta discipline)",588890178,3095354,591985532,83,64,not recorded
 4fd8cfc619b4,2026-11-05T17:16:44Z,metrics: codename map learns ipnext/avocado-5.17-v2 (Muse Spark) — unbreaks cost summary + watchdog refresh,593024166,3110700,596134866,83,64,not recorded
 428f030844fa,2026-11-05T17:17:42Z,metrics: codename map actually learns ipnext/avocado-5.17-v2 -> muse-spark-1.3 (prior commit only regenerated summaries; the map edit had failed on a wrong key path),593024166,3110700,596134866,83,64,not recorded
+0bfe0a24bc70,2026-11-05T17:46:13Z,metrics: watchdog export refresh,594839947,3113981,597953928,83,64,not recorded
