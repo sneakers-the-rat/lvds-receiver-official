@@ -1,0 +1,13 @@
+pass: 100
+description: Zone refill after the respread (exp59 -> exp60): violations 168 -> 71 (below the pre-respread 77); 65 unconnected nets = 28 pre-existing + ~37 severance debt, the recovery campaign follows. ULPI fanout-first heal rounds next per parent order.
+timestamp (UTC): 2026-11-05T13:04:01Z
+commit: pending
+board file: hw/pdlvds_rx.exp60.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 71
+unconnected nets: 65
+audit verdict: fail
+note: 
