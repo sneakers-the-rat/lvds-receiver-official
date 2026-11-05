@@ -820,9 +820,9 @@ Escapes 14-16 (exp54 -> exp57): HV_RAW north route COMPLETE -- F from the R29.1 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 78 · Unconnected nets: 28 · Audit verdict: FAIL
 
-### Pass 98 — 2026-11-05T12:57:16Z · commit `pending`
+### Pass 98 — 2026-11-05T12:57:16Z · commit `90df97a`
 
-Board: `hw/pdlvds_rx.exp58.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp58.kicad_pcb` · Commit: `90df97aad6696782947a3592194f9e2cd8b8dcc9`
 
 Thread sweep 3 (exp57 -> exp58): VBUS_RAW threaded closed, APD_K + GND one pair each -- but thread rips re-split CC2 (the seesaw in miniature: 28 nets / 77 violations, composition churned). Per parent directive the U6/U7 respread placement is adopted next; this pass is the last on the old geometry.
 
