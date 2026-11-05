@@ -748,9 +748,9 @@ Thread sweep 2 (exp39 -> exp40): CDR_NIN completed (9.80 thread, 2 rips), CMP_QN
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 75 · Unconnected nets: 31 · Audit verdict: FAIL
 
-### Pass 89 — 2026-11-05T10:46:11Z · commit `pending`
+### Pass 89 — 2026-11-05T10:46:11Z · commit `74a2044`
 
-Board: `hw/pdlvds_rx.exp41.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp41.kicad_pcb` · Commit: `74a20445741559bb4ddbeee2009f2bcce97e1be7`
 
 heal_big batch 2 (exp40 -> exp41, checkpointed; GND tail stopped by hand after 27 connections when its 1-item subgroups proved to be item-model noise under the zone-defined audit): CMP_QN and FLY_PRI completed, +3V3A 3 -> 2 groups, APD_K 9 -> 5 (RJ2.2 group, R31.1, D1.5, R47.2 remain), GND item-subgroups merged without moving its audit count (zone fills define it). Refused again, all in ~0-7 s (sealed first millimetre): U4.12, U11.10-12, U11.13, U7.4, U14.6, U5.3, J1.B5, U4.5, U4.27, C15.2, U7.7. Audit: nets 31 -> 29, violations 75. Next: escape-fan census over the sealed pads, hand escapes into open field, then heal/thread take the lengthened stubs.
 
