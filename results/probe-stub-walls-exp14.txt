@@ -1,0 +1,36 @@
+== HV_GATE: 2 groups
+   nearest pair gap 3.87: track@stubcheck (HV_GATE) <-> U10.7 (HV_GATE)
+   start A: anchor track@stubcheck net HV_GATE facing (15.562, -18.518)
+     (15.5,-19.0) F: [('pad', 'MOS_G', 'WALL')]
+     (15.5,-18.5) F: [('pad', 'MOS_G', 'WALL')]
+     (16.0,-19.0) F: [('pad', 'MOS_G', 'WALL')]
+     (16.0,-18.5) F: [('pad', 'MOS_G', 'WALL')]
+   goal  B: anchor U10.7 net HV_GATE facing (15.425, -14.650)
+     (15.0,-15.0) F: [('pad', 'HV_INTVCC', 'WALL'), ('pad', 'GND', 'WALL')]
+     (15.0,-14.5) F: [('pad', 'HV_INTVCC', 'WALL'), ('pad', 'GND', 'WALL')]
+     (15.5,-15.0) F: [('pad', 'HV_INTVCC', 'WALL')]
+     (15.5,-14.5) F: [('pad', 'HV_INTVCC', 'WALL')]
+== HV_SS: 2 groups
+   nearest pair gap 4.08: C30.1 (HV_SS) <-> U10.3 (HV_SS)
+   start A: anchor C30.1 net HV_SS facing (15.175, -11.875)
+     (15.0,-12.0) F: CLEAR
+     (15.0,-11.5) F: CLEAR
+     (15.5,-12.0) F: CLEAR
+     (15.5,-11.5) F: CLEAR
+   goal  B: anchor U10.3 net HV_SS facing (12.575, -14.850)
+     (12.5,-15.0) F: [('pad', 'HV_RT', 'WALL')]
+     (12.5,-14.5) F: [('pad', 'HV_RT', 'WALL')]
+     (13.0,-15.0) F: [('pad', 'HV_RT', 'WALL'), ('pad', 'GND', 'WALL')]
+     (13.0,-14.5) F: [('pad', 'HV_RT', 'WALL'), ('pad', 'GND', 'WALL')]
+== +5V: 5 groups
+   nearest pair gap 0.20: U11.12 (+5V) <-> track@stubcheck (+5V)
+   start A: anchor U11.12 net +5V facing (15.075, 63.125)
+     (15.0,63.0) F: [('pad', 'GND', 'WALL')]
+     (15.0,63.5) F: [('pad', 'GND', 'WALL')]
+     (15.5,63.0) F: [('pad', 'GND', 'WALL')]
+     (15.5,63.5) F: [('pad', 'GND', 'WALL')]
+   goal  B: anchor track@stubcheck net +5V facing (15.438, 62.931)
+     (15.0,62.5) F: CLEAR
+     (15.0,63.0) F: [('pad', 'GND', 'WALL')]
+     (15.5,62.5) F: [('track', 'GND', 'RIP')]
+     (15.5,63.0) F: CLEAR

@@ -652,6 +652,30 @@ thread_far round 1 (exp12 -> exp13): the exact lattice threader with its pair ga
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 17 · Unconnected nets: 28 · Audit verdict: FAIL
 
+### Pass 77 — 2026-11-05T05:38:21Z · commit `3f2e2cd`
+
+Board: `hw/pdlvds_rx.exp14.kicad_pcb` · Commit: `3f2e2cd86798f77b0f3c2045cbd0c6d1d3f6428f`
+
+Class T board repair: fixed thread_far redo on exp12 — CDR_VREF (rips 2), REFCLKN (rips 2), SLICEP (rips 6) threaded with exactly-executed priced rips; violations 17 -> 2 (only the standing D1 APD lines remain; all 15 Class T lines gone). Nets 28 -> 31 honestly: SLICEP's real rips split SLICEN and CDR_NIN (Class B repayment), and the HV threads are absent — HV_SS no-thread at honest prices, HV_GATE and +5V anchor stubs walled at start (named U10/Class A locality items). HV_INTVCC solo attempt follows.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 31 · Audit verdict: FAIL
+
+### Pass 78 — 2026-11-05T05:55:12Z · commit `6b8c0bc`
+
+Board: `hw/pdlvds_rx.exp15.kicad_pcb` · Commit: `6b8c0bc27e008c52c006b047df6f885ddb3fcce9`
+
+U10 locality surgery 1 (Class A): U10.7 via escape placed in its proven east window — F neck (16.79,-14.50)->(17.20,-14.50), via 0.6/0.3 @(17.20,-14.50), In2 tail ->(19.20,-14.50), every shape collision-tested pre-placement (results/surgery-u10-escape.txt). Audit: violations still 2 (D1 standing lines only), nets 31 — HV_GATE's U10.7 group now reaches open field on In2. The companion +5V-trunk jog FAILED and is recorded: a MOS_G track fences every jog depth 18.95-20.10 (results/surgery-u10-jog.txt); U10.8/U10.9/U10.3 remain sealed by row arithmetic (0.5 pitch, 0.30 pads, 0.25 HV class: channel 0.70 < 0.75 demanded) plus that palisade.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 31 · Audit verdict: FAIL
+
+### Pass 79 — 2026-11-05T06:00:28Z · commit `df4ef64`
+
+Board: `hw/pdlvds_rx.exp16.kicad_pcb` · Commit: `df4ef64c9307e24675a044a595271584993fc070`
+
+HV_GATE connected (Class A): targeted heal_nets on exp15 — the group extended by pass 78's In2 tail healed to the R27.1 group in 8 s, 1 via (results/heal-hvgate-exp16.txt). Audit: nets 31 -> 30, violations 2 (D1 standing lines only). HV_GATE leaves Classes A/R; U10.8/U10.9/U10.3 remain sealed (pass 78 findings) and ride the re-sync wave next.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 30 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

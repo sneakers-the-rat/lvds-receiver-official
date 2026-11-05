@@ -1,0 +1,14 @@
+--- U10.7 HV_GATE disc site (17.30,-14.50), all layers:
+    ('track', '+5V', 'track@stubcheck')
+--- U10.8 HV_INTVCC disc site (17.30,-15.00), all layers:
+    ('track', '+5V', 'track@stubcheck')
+--- U10.3 HV_SS disc site west (10.55,-15.00), all layers:
+    ('track', 'HV_FBX', 'track@stubcheck')
+    ('track', 'HV_FBX', 'track@stubcheck')
+    ('track', 'HV_FBX', 'track@stubcheck')
+    ('via', 'HV_FBX', 'via@stubcheck')
+    ('track', 'HV_FBX', 'track@stubcheck')
+    ('track', 'HV_FBX', 'track@stubcheck')
+    ('track', 'HV_RT', 'track@stubcheck')
+    ('via', 'HV_RT', 'via@stubcheck')
+--- +5V tracks/vias with bbox within 1.2 mm of (17.3,-14.75):
