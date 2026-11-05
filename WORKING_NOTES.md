@@ -383,3 +383,18 @@ identical results):
   classes. Placement decision in the re-sync stands.
 - U10.3 HV_SS: 0 clear / 0 one-blocker — seal survives; rides the
   re-sync with the HV_FBX/HV_RT web, as already queued.
+
+## CORRECTION (successor, 2026-11-05 ~00:40 PST)
+Pass 82's commit message quotes per-board audits (exp29 44/69, exp30 44/92,
+exp31 43/87, exp32 44/69, exp33 43/69, exp34 43/92) that came from an
+unreliable exec delivery spanning the VM replacement; they are WRONG for
+exp29/30/32/33. Re-derived from primary records after the toolchain
+restore: exp33 = 43 nets / 87 violations (results/audit-exp33-recheck.txt
+and history/pass-0082/audit.txt agree exactly, 87 CLEARANCE lines each);
+exp34 = 43 / 92 (results/audit-exp34.txt, read directly). exp29/30/32
+audit files on disk are wx-missing tracebacks from the pre-restore run
+-- those boards were never validly audited in this session. The pass-82
+decision stands on the corrected numbers (exp33 dominates exp34: same
+43 nets, 5 fewer violations) and exp33 (md5 cb70aa1fb84f3be98f08189c7ad9b593)
+is the secured base. bridge.py clean vs HEAD and hops.py-never-saved
+were verified directly and stand.
