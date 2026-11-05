@@ -19,12 +19,15 @@ y = -1.1 / 0 / +1.1 mm, so the adjacent-pad edge gap is 0.5 mm.
 hw/CONNECTIONS.md line 11: D1 pad 5 (centre row) = cathode ->
 APD_K; pads 4 and 6 flank it on the APD_A side.
 
-The datasheet's LCC package drawing (Figure 8, p.7) carries its
-dimensions graphically; the text layer of the datasheet contains
-no numeric terminal/land-pattern callouts, so a pad-for-pad
+The LH package drawing is Figure 10 of the current datasheet
+(Rev.2017-10, p.9; the project's own copy is
+datasheets/C30737.pdf, provenance per datasheets/MANIFEST.md).
+Its dimensions are raster graphics: the PDF text layer of that
+page contains only the figure caption, in both the
+Rev.2017-10 project copy and the Rev.2011-09 copy. A pad-for-pad
 comparison against the manufacturer's recommended land pattern
-could NOT be completed from the sources reachable in this run.
-Condition (a) is therefore unverified, not established.
+could NOT be completed from text sources. Condition (a) is
+therefore unverified, not established.
 
 ## (b) Rated voltage vs design maximum bias — FAILS THE GATE
 
@@ -32,9 +35,11 @@ Datasheet Table 1 (p.2), column C30737LH-500-90 (unfiltered,
 900 nm peak): "Breakdown Voltage, VBR — Min 180, Max 260 V";
 "Temperature Coefficient of VR, for Constant M — 1.3 V/°C"; all
 characteristics specified "at TA = 22 °C; at operating
-voltage-Vop"; operating temperature -20 to +60 °C. (The 2017-10
-series datasheet's Table 1 gives the same VBR 180-260 V for the
--500-90 devices.) The part is characterised for operation at Vop
+voltage-Vop"; operating temperature -20 to +60 °C. Values are
+identical in the project's own datasheet copy
+(datasheets/C30737.pdf, Rev.2017-10, Table 1: VBR 180-260 V;
+datasheets/MANIFEST.md records "Vbr 180 typ / 260 max V" for
+the C30737LH-500-90) and in Rev.2011-09 Table 1. The part is characterised for operation at Vop
 at/near its breakdown; nothing in the datasheet rates its
 terminals for more than the VBR envelope (max 260 V at 22 °C,
 plus the 1.3 V/°C constant-M drift).
@@ -75,8 +80,10 @@ decisions):
   (including DAC power-on zero-scale), or
 - a detector population whose rating covers the 420 V rail.
 
-Sources: Excelitas datasheet C30737PH-LH-Rev.2011-09 Table 1
-p.2 and Table 4 p.8 (fetched 2026-11-05); Excelitas series
-datasheet Rev.2017-10 Table 1 (search-index text, same values);
-docs/02-architecture.md; docs/03-power.md; hw/CONNECTIONS.md;
+Sources: datasheets/C30737.pdf (Excelitas Rev.2017-10) Table 1
+p.2, Figure 10 p.9, Table 4 p.10, via datasheets/C30737.txt and
+datasheets/MANIFEST.md; Excelitas datasheet
+C30737PH-LH-Rev.2011-09 Table 1 p.2 and Table 4 p.8 (fetched
+2026-11-05, same values); docs/02-architecture.md;
+docs/03-power.md; hw/CONNECTIONS.md;
 hw/pdlvds.pretty/C30737LH_LCC6.kicad_mod.
