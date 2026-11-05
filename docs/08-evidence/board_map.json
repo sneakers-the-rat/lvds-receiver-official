@@ -1,0 +1,578 @@
+{
+ "U9": {
+  "fp": "TMP117_WSON6",
+  "val": "TMP117NAI"
+ },
+ "U8": {
+  "fp": "VSSOP-10_3x3mm_P0.5mm",
+  "val": "DAC8562SDGS"
+ },
+ "C41": {
+  "fp": "C_0805_2012Metric",
+  "val": "22uF"
+ },
+ "U6": {
+  "fp": "LQFP-144_20x20mm_P0.5mm",
+  "val": "STM32H723ZGT6"
+ },
+ "C26": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C25": {
+  "fp": "C_0805_2012Metric",
+  "val": "10uF"
+ },
+ "TP3": {
+  "fp": "TestPoint_Pad_D1.5mm",
+  "val": "DBG RX test point"
+ },
+ "U5": {
+  "fp": "SOIC-16_3.9x9.9mm_P1.27mm",
+  "val": "SN65LVDS32D"
+ },
+ "F1": {
+  "fp": "Fuse_1812_4532Metric",
+  "val": "PTC 1.1A"
+ },
+ "X2": {
+  "fp": "Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm",
+  "val": "25MHz OSC"
+ },
+ "C49": {
+  "fp": "C_0603_1608Metric",
+  "val": "4.7uF"
+ },
+ "R8": {
+  "fp": "R_0603_1608Metric",
+  "val": "0R DNP (fit for post-amp)"
+ },
+ "TP2": {
+  "fp": "TestPoint_Pad_D1.5mm",
+  "val": "DBG TX test point"
+ },
+ "U3": {
+  "fp": "TSOT-23-6",
+  "val": "LMH7220MK"
+ },
+ "MH6": {
+  "fp": "MountingHole_2.7mm_M2.5",
+  "val": "M2.5 lens holder"
+ },
+ "C1": {
+  "fp": "C_0402_1005Metric",
+  "val": "0.4pF NP0"
+ },
+ "R36": {
+  "fp": "R_0603_1608Metric",
+  "val": "100k"
+ },
+ "R15": {
+  "fp": "R_0603_1608Metric",
+  "val": "10k"
+ },
+ "R17": {
+  "fp": "R_0603_1608Metric",
+  "val": "12k 1%"
+ },
+ "C3": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "R19": {
+  "fp": "R_0603_1608Metric",
+  "val": "5.1k"
+ },
+ "R32": {
+  "fp": "R_0603_1608Metric",
+  "val": "49.9k"
+ },
+ "R46": {
+  "fp": "R_0603_1608Metric",
+  "val": "100R"
+ },
+ "C24": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "R23": {
+  "fp": "R_0603_1608Metric",
+  "val": "10k"
+ },
+ "C39": {
+  "fp": "C_0603_1608Metric",
+  "val": "3.3nF"
+ },
+ "MH5": {
+  "fp": "MountingHole_2.7mm_M2.5",
+  "val": "M2.5 lens holder"
+ },
+ "R11": {
+  "fp": "R_0603_1608Metric",
+  "val": "49.9R DNP"
+ },
+ "R45": {
+  "fp": "R_0603_1608Metric",
+  "val": "1k"
+ },
+ "R40": {
+  "fp": "R_0603_1608Metric",
+  "val": "46k RSET=+4.6V"
+ },
+ "R25": {
+  "fp": "R_0603_1608Metric",
+  "val": "100k"
+ },
+ "C7": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C27": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C8": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C28": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C2": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C16": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "MH4": {
+  "fp": "MountingHole_3.2mm_M3",
+  "val": "M3 corner"
+ },
+ "RJ1": {
+  "fp": "R_0603_1608Metric",
+  "val": "0R DNP"
+ },
+ "R33": {
+  "fp": "R_0603_1608Metric",
+  "val": "71.5k DAC inject"
+ },
+ "D6": {
+  "fp": "LED_0603_1608Metric",
+  "val": "LED green PWR"
+ },
+ "C32": {
+  "fp": "C_1206_3216Metric",
+  "val": "100nF 630V"
+ },
+ "C9": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "R12": {
+  "fp": "R_0603_1608Metric",
+  "val": "10k"
+ },
+ "R3": {
+  "fp": "R_0603_1608Metric",
+  "val": "806R"
+ },
+ "J2": {
+  "fp": "PinHeader_2x03_P2.54mm_Vertical",
+  "val": "LVDS out 2x3"
+ },
+ "D8": {
+  "fp": "LED_1206_3216Metric",
+  "val": "LED 740nm BIST source"
+ },
+ "C37": {
+  "fp": "C_0805_2012Metric",
+  "val": "10uF"
+ },
+ "J3": {
+  "fp": "SMA_Amphenol_132134_Vertical",
+  "val": "SMA test in"
+ },
+ "C34": {
+  "fp": "C_0603_1608Metric",
+  "val": "1nF"
+ },
+ "U1": {
+  "fp": "SOIC-8_3.9x4.9mm_P1.27mm",
+  "val": "OPA657N"
+ },
+ "C51": {
+  "fp": "C_0805_2012Metric",
+  "val": "10uF"
+ },
+ "C10": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "R10": {
+  "fp": "R_0603_1608Metric",
+  "val": "1k"
+ },
+ "U4": {
+  "fp": "QFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm",
+  "val": "ADN2813ACPZ"
+ },
+ "R41": {
+  "fp": "R_0603_1608Metric",
+  "val": "1k ILIM=125mA"
+ },
+ "MH1": {
+  "fp": "MountingHole_3.2mm_M3",
+  "val": "M3 corner"
+ },
+ "J1": {
+  "fp": "USB_C_Receptacle_Amphenol_12401610E4-2A",
+  "val": "USB-C receptacle"
+ },
+ "R39": {
+  "fp": "R_0603_1608Metric",
+  "val": "100k"
+ },
+ "C13": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "SH1": {
+  "fp": "SHIELD_CAN_26x20",
+  "val": "Shield can frontend"
+ },
+ "C31": {
+  "fp": "C_0603_1608Metric",
+  "val": "4.7uF"
+ },
+ "TP1": {
+  "fp": "TestPoint_Pad_D1.5mm",
+  "val": "HV test point"
+ },
+ "C22": {
+  "fp": "C_0603_1608Metric",
+  "val": "4.7uF"
+ },
+ "C12": {
+  "fp": "C_0603_1608Metric",
+  "val": "1uF"
+ },
+ "MH3": {
+  "fp": "MountingHole_3.2mm_M3",
+  "val": "M3 corner"
+ },
+ "C50": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C46": {
+  "fp": "C_0603_1608Metric",
+  "val": "4.7uF"
+ },
+ "C45": {
+  "fp": "C_0603_1608Metric",
+  "val": "4.7uF"
+ },
+ "R44": {
+  "fp": "R_0603_1608Metric",
+  "val": "1k"
+ },
+ "X1": {
+  "fp": "Crystal_SMD_3225-4Pin_3.2x2.5mm",
+  "val": "24MHz"
+ },
+ "R9": {
+  "fp": "R_0603_1608Metric",
+  "val": "100k (hysteresis)"
+ },
+ "R2": {
+  "fp": "R_0603_1608Metric",
+  "val": "1k"
+ },
+ "R21": {
+  "fp": "R_0603_1608Metric",
+  "val": "4.7k"
+ },
+ "D2": {
+  "fp": "S8664_TO5",
+  "val": "S8664-20K (DNP alt)"
+ },
+ "C21": {
+  "fp": "C_0603_1608Metric",
+  "val": "18pF"
+ },
+ "R30": {
+  "fp": "R_1206_3216Metric",
+  "val": "4.7M bleeder"
+ },
+ "R6": {
+  "fp": "R_0603_1608Metric",
+  "val": "10k"
+ },
+ "C48": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C36": {
+  "fp": "C_0603_1608Metric",
+  "val": "3.3nF"
+ },
+ "U12": {
+  "fp": "QFN-16-1EP_3x3mm_P0.5mm_EP1.45x1.45mm",
+  "val": "TPS62130RGT (inv)"
+ },
+ "R31": {
+  "fp": "R_1206_3216Metric",
+  "val": "7.68M HV divider top"
+ },
+ "R35": {
+  "fp": "R_0603_1608Metric",
+  "val": "312k"
+ },
+ "R14": {
+  "fp": "R_0603_1608Metric",
+  "val": "100R"
+ },
+ "C18": {
+  "fp": "C_0603_1608Metric",
+  "val": "2.2uF"
+ },
+ "R24": {
+  "fp": "R_0603_1608Metric",
+  "val": "24.9k (RT, VERIFY f=250k)"
+ },
+ "U7": {
+  "fp": "QFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm",
+  "val": "USB3300-EZK"
+ },
+ "R34": {
+  "fp": "R_1206_3216Metric",
+  "val": "10M HV probe"
+ },
+ "FB2": {
+  "fp": "L_0805_2012Metric",
+  "val": "600R@100MHz"
+ },
+ "R4": {
+  "fp": "R_0603_1608Metric",
+  "val": "200R"
+ },
+ "R29": {
+  "fp": "R_1206_3216Metric",
+  "val": "10k HV"
+ },
+ "D3": {
+  "fp": "SOT-23-6",
+  "val": "USBLC6-2SC6"
+ },
+ "C23": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "R16": {
+  "fp": "R_0603_1608Metric",
+  "val": "10k"
+ },
+ "C29": {
+  "fp": "C_0603_1608Metric",
+  "val": "10nF"
+ },
+ "R27": {
+  "fp": "R_0603_1608Metric",
+  "val": "10k"
+ },
+ "C20": {
+  "fp": "C_0603_1608Metric",
+  "val": "18pF"
+ },
+ "D1": {
+  "fp": "C30737LH_LCC6",
+  "val": "C30737LH-500-90"
+ },
+ "R7": {
+  "fp": "R_0603_1608Metric",
+  "val": "0R (fit for TIA direct)"
+ },
+ "R26": {
+  "fp": "R_0603_1608Metric",
+  "val": "33k"
+ },
+ "C5": {
+  "fp": "C_0603_1608Metric",
+  "val": "1nF"
+ },
+ "C35": {
+  "fp": "C_0805_2012Metric",
+  "val": "10uF"
+ },
+ "C11": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "R20": {
+  "fp": "R_0603_1608Metric",
+  "val": "4.7k"
+ },
+ "R38": {
+  "fp": "R_0603_1608Metric",
+  "val": "587k"
+ },
+ "L1": {
+  "fp": "L_0805_2012Metric",
+  "val": "2.2uH"
+ },
+ "U11": {
+  "fp": "QFN-16-1EP_3x3mm_P0.5mm_EP1.45x1.45mm",
+  "val": "TPS62130RGT"
+ },
+ "R18": {
+  "fp": "R_0603_1608Metric",
+  "val": "5.1k"
+ },
+ "MH2": {
+  "fp": "MountingHole_3.2mm_M3",
+  "val": "M3 corner"
+ },
+ "C4": {
+  "fp": "C_0603_1608Metric",
+  "val": "1uF"
+ },
+ "R42": {
+  "fp": "R_0603_1608Metric",
+  "val": "33.2k RSET=+3.32V"
+ },
+ "U14": {
+  "fp": "DFN-10-1EP_3x3mm_P0.5mm_EP1.55x2.48mm",
+  "val": "LT3042EDD (+3V3A)"
+ },
+ "R43": {
+  "fp": "R_0603_1608Metric",
+  "val": "1k ILIM=125mA"
+ },
+ "U13": {
+  "fp": "DFN-10-1EP_3x3mm_P0.5mm_EP1.55x2.48mm",
+  "val": "LT3042EDD (+VA)"
+ },
+ "C47": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C15": {
+  "fp": "C_0603_1608Metric",
+  "val": "0.47uF"
+ },
+ "C43": {
+  "fp": "C_0603_1608Metric",
+  "val": "4.7uF"
+ },
+ "RJ2": {
+  "fp": "R_0603_1608Metric",
+  "val": "0R DNP"
+ },
+ "U2": {
+  "fp": "SOT-23-5",
+  "val": "THS4304DBV"
+ },
+ "Q1": {
+  "fp": "SOT-23",
+  "val": "IRLML0030 SOT-23"
+ },
+ "C14": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C30": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "C6": {
+  "fp": "C_0805_2012Metric",
+  "val": "10uF"
+ },
+ "U10": {
+  "fp": "MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm",
+  "val": "LT3757EMSE"
+ },
+ "L2": {
+  "fp": "L_0805_2012Metric",
+  "val": "2.2uH"
+ },
+ "C44": {
+  "fp": "C_0603_1608Metric",
+  "val": "4.7uF"
+ },
+ "T1": {
+  "fp": "XFMR_FLYBACK_6P",
+  "val": "Flyback xfmr 1:20"
+ },
+ "D7": {
+  "fp": "LED_0603_1608Metric",
+  "val": "LED green STAT"
+ },
+ "R5": {
+  "fp": "R_0603_1608Metric",
+  "val": "10k"
+ },
+ "R28": {
+  "fp": "R_1206_3216Metric",
+  "val": "0.05R"
+ },
+ "C38": {
+  "fp": "C_0805_2012Metric",
+  "val": "22uF"
+ },
+ "R22": {
+  "fp": "R_0603_1608Metric",
+  "val": "10k"
+ },
+ "R1": {
+  "fp": "R_0603_1608Metric",
+  "val": "3.3k"
+ },
+ "R13": {
+  "fp": "R_0603_1608Metric",
+  "val": "100R"
+ },
+ "FB1": {
+  "fp": "L_0805_2012Metric",
+  "val": "600R@100MHz"
+ },
+ "R37": {
+  "fp": "R_0603_1608Metric",
+  "val": "10k"
+ },
+ "C19": {
+  "fp": "C_0603_1608Metric",
+  "val": "100nF"
+ },
+ "D4": {
+  "fp": "D_SMA",
+  "val": "SMBJ5.0A"
+ },
+ "D5": {
+  "fp": "D_SMA",
+  "val": "ES1J"
+ },
+ "C17": {
+  "fp": "C_0603_1608Metric",
+  "val": "2.2uF"
+ },
+ "C33": {
+  "fp": "C_1206_3216Metric",
+  "val": "100nF 630V"
+ },
+ "J4": {
+  "fp": "PinHeader_2x05_P1.27mm_Vertical",
+  "val": "SWD 2x5 1.27"
+ },
+ "C42": {
+  "fp": "C_0603_1608Metric",
+  "val": "4.7uF"
+ },
+ "C40": {
+  "fp": "C_0805_2012Metric",
+  "val": "22uF"
+ }
+}
