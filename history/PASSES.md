@@ -572,9 +572,9 @@ Nets fully routed: not recorded · Pins failed: not recorded · Clearance violat
 
 bridge rounds in results/bridge-r1..r4.log; audits in results/audit-bridge-r1..r4.txt
 
-### Pass 68 — 2026-11-05T00:16:50Z · commit `pending`
+### Pass 68 — 2026-11-05T00:16:50Z · commit `c6f4a3c`
 
-Board: `hw/pdlvds_rx.exp3.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp3.kicad_pcb` · Commit: `c6f4a3c13bb4719a2720751200109a38fe14d766`
 
 repairg2 GND phase STOPPED: 22 merges + 18 failed searches in ~16 min bought 1 audit group (226 -> 225, GND 5 -> 4) — its pour-blind grouping spends the sweep stitching clusters the GND pour already joins. Checkpoint board kept as the working base (copper is real). Main line changes shape per the stall rule: thread.py chains under my net order (rails first, GND excluded — its grouping is pour-blind too), one save+refill per invocation = checkpoint by construction; GND's 4 audit groups get targeted stitches from the audit's own group membership at the end.
 
