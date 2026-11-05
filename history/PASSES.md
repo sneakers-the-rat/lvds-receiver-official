@@ -700,6 +700,14 @@ SECURE (pass 82): commit the best on-disk board after the coordinator succession
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 87 · Unconnected nets: 43 · Audit verdict: FAIL
 
+### Pass 83 — 2026-11-05T08:42:33Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp35.kicad_pcb` · Commit: `pending`
+
+HV hops landed (hw/hops2.py on exp33 -> exp35): the predecessor's crashed surgery, rebased and completed. HV_R31A, HV_R31B, HV_R29M hops placed direct; GND stitch re-laid on In2 to clear the R29M corridor; R48 moved + HV_R30M In2 underpass; APD_K fence ripped (24 segs) and B.Cu re-feed placed (final via refused in-script by HV_FBX -- heal takes APD_K next); TP_HV re-stitch: hops.py's diagonal was geometrically impossible (crosses R50.2's 1.0 mm shadow) and the x=39.38 slot is empty at the 1.0 need -- routed F east at y=2.2, In2 drop at x=44.46 (0.3 internal need), via up at (44.9,-7.6), stub into R34.2; tail island deleted. Audit (corrected checker): nets 43 -> 39, violations 87 -> 67. Known residue in this state: TP_HV still audits 2 groups -- the In2 run ends at (44.46,-7.6), 0.14 mm short of the moved via at (44.9,-7.6); the link segment lands next pass. TP_HV zone grazes (8 lines) queue for the notch campaign.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 67 · Unconnected nets: 39 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
