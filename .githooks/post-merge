@@ -1,0 +1,8 @@
+#!/bin/sh
+# Merge commits do not run pre-commit; regenerate the metrics after a
+# merge in the designated merge clone instead. The regenerated files
+# land in the working tree and ride the next commit (the parent makes a
+# small "metrics: sync" commit before pushing). Gated + non-fatal:
+# see metrics/sync_metrics.sh.
+[ -f metrics/sync_metrics.sh ] && sh metrics/sync_metrics.sh || true
+exit 0
