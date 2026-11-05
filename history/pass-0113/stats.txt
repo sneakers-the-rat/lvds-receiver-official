@@ -1,0 +1,13 @@
+pass: 113
+description: U7 west-column escapes + residue stubs harvested. Ripped the CAP_CLK/ULPI_NXT F palisade (x=71.88/72.62 verticals + 2 NXT diagonal steps -- via-proof pair, 0.74 apart vs 0.625 needed each side; pad row equally sealed at 0.25 gaps) and laid the four row lanes west on F: +3V3A U7.6 CONNECTED via its lane + heal to the (74.12,10.38) staircase; +5V U7.4, DP_PHY U7.7, DM_PHY U7.8 lanes placed as open-field anchors (heals refused the 55-65mm D3 hauls and the +5V main-group haul -- Class B long-haul residue, anchors in place). Palisade repaid: heal rejoined ULPI_NXT (13 items, 0 vias) and CAP_CLK's split (44 items). bridge (exp99, pre-pass) had connected +3V3A U7.16 (gap 1.99) but ripped 2 victims: ULPI_D7 (rejoined by heal) and ULPI_CK's F->In2 junction via at (77.62,17.88) (restored by hw/fix_ckvia.py, site shape-tested clean). Also in the chain: hand_stub escapes on exp95 for HV_EN/HV_SHDN/VCAP2/PHY_1V8A/RBIAS/XI and hand_via vias for CDR_SQUELCH/SWDIO (anchors for the heal campaign); fix_escape placed a +3V3A U7.16 via (redundant with bridge's join). XO U7.27 named sealed: DATP via (76.88,10.62) + XI stub + PHY_1V8 pad fence every exit -- north-row rework residue. heal/heal_big/thread_far went 0-for on the stubbed singles (grid anchor wall + 15mm pair gate) -- the lane/via hand escapes are the working vehicle for this family.
+timestamp (UTC): 2026-11-05T19:51:10Z
+commit: pending
+board file: hw/pdlvds_rx.exp101.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (29 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 87
+unconnected nets: 31
+audit verdict: fail
+note: 
