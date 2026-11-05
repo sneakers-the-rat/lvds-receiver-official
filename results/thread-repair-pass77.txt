@@ -1,0 +1,5 @@
+CDR_VREF: threaded gap 3.81: 6 segs, 0 vias, ripped 2
+REFCLKN: threaded gap 6.04: 8 segs, 2 vias, ripped 2
+SLICEP: threaded gap 4.46: 8 segs, 2 vias, ripped 6
++5V: anchor stub walled at start
+saved hw/pdlvds_rx.exp14.kicad_pcb
