@@ -94,6 +94,19 @@ a ≈420 V demand. HV is held off by SHDN at power-up, and the firmware
 sequence (set DAC to the 150 V code *before* asserting SHDN) is a
 named bring-up test, not an assumption.
 
+**RESOLVED (2026-11-04 HV fix, docs/03/docs/06).** Both halves of
+this risk are closed by design change, not by procedure: the SHDN
+divider is re-ratioed (R25 143 kΩ → idle node 0.94 V nominal,
+1.03 V worst-case, below the 1.17 V minimum falling threshold, so
+the converter is off at power-up by hardware and the divider alone
+can never enable it), PC7 reaches the node only through the fitted
+J5 interlock jumper, and the set-point network is re-valued so the
+DAC's zero-scale state demands at most 253.2 V nominal /
+259.4 V worst-case — inside the fitted C30737's envelope. The
+bring-up sequence below is updated to match; what remains at
+bring-up is verification (idle node voltage, J5 blocking, sense
+thresholds), not margin-hunting.
+
 ### R-9. Asymmetric analogue rails (+VA = 4.6 V, −VA ≈ −5.4 V)
 USB VBUS worst case (4.75 V) cannot feed a 5.0 V LDO, so +VA is 4.6 V
 (LT3042). The OPA657 then runs at +4.6/−5.4 V (10.0 V total), inside
@@ -166,10 +179,14 @@ waterfall shows a cliff instead of a slope, raising THRADJ (up to
    machine frames packets; repeat at 16 Mbaud Manchester (the paper's
    mode, as transmitted).
 9. **HV first power (R-3, R-8).** Current-limited, HV probe on the
-   divider tap. Firmware sequence: DAC to 150 V code first, then
-   assert SHDN. Ramp 150 → 420 V in 25 V steps, logging demanded vs
+   divider tap. First the interlock proof: J5 absent, PC7 driven
+   high by test firmware — the rail must stay at 0 V and the SHDN
+   node at its ≈0.94 V divider level. Fit J5; firmware init has
+   already left the DAC at minimum demand. Assert SHDN (PC7 high).
+   Ramp 116 → 253 V in ~25 V steps, logging demanded vs
    measured voltage (this calibrates the true FBX map). Remove power;
-   time the bleeder decay 420 → <60 V (must be <10 s; sim says ~1 s).
+   time the bleeder decay from the set ceiling → <60 V (must be
+   <10 s; sim says ~1 s). (S8664 variant boards: ramp to 420 V.)
 10. **Optical loopback.** BIST LED (PC8) drives the on-board 630 nm
     emitter; confirm received packets via the light-pipe path. Then an
     external 740 nm source for the full bench plan (`docs/05`).

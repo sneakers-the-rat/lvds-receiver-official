@@ -1,0 +1,17 @@
+SET-POINT (sim): V_DAC=0 -> 253.17 V (eq 253.21), 1.25 -> 184.61 V (eq 184.64), 2.5 -> 116.05 V (eq 116.07)
+SET-POINT WORST CORNER (sim): max demand = 259.36 V (analytic 259.40 V, bound 260 V)
+SHDN (sim): old divider node at VBUS=5.0 = 1.241 V (threshold min 1.17 -> converter enabled at power-up: defect)
+SHDN (sim): new divider node max over VBUS 4.75..5.25 = 0.984 V; with 1 uA leakage = 1.011 V (must be < 1.17)
+
+--- checks ---
+PASS  zero-scale demand within 1 V of the transfer equation
+PASS  mid-scale (V_DAC=1.25) within 1 V of the equation
+PASS  full-scale demand within 1 V of the equation
+PASS  demand falls monotonically across the DAC span
+PASS  worst-corner max demand agrees with analytic 259.40 V (1 V)
+PASS  worst-corner max demand <= 260 V (C30737 VBR max)
+PASS  old SHDN divider enables at VBUS=5.0 (defect reproduced)
+PASS  new SHDN divider node < 1.17 V at every VBUS corner
+PASS  new SHDN node < 1.17 V with 1 uA leakage injected
+
+HV CLAMP NGSPICE VERDICT: PASS

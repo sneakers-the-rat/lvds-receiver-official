@@ -45,17 +45,18 @@ void gpio_init_board_pins(void)
     gpio_set_mode(BOARD_LED_PORT, BOARD_LED_PIN, GPIO_MODE_OUTPUT);
     gpio_write(BOARD_LED_PORT, BOARD_LED_PIN, 0);
     /* HV shutdown clamp, start OFF: PC7 low pulls the LT3757 SHDN
-     * node to ~0 V, the only positively-off state (the R25/R26
-     * divider alone holds the node above the 1.22 V threshold - see
-     * board.h). Load the low level BEFORE switching the pin to
-     * output so it never presents a released (enabled) level, and
-     * leave the pin an output for the life of the firmware. This is
-     * the power-up default the design requires (docs/03). */
+     * node to ~0 V through the fitted J5 interlock jumper. (The
+     * R25/R26 divider alone also holds the node below the SHDN
+     * threshold - 0.94 V vs 1.17 V minimum - so the converter is
+     * off at power-up by hardware even before this runs; see
+     * board.h and docs/03.) Load the low level BEFORE switching
+     * the pin to output so it never presents a driven-high level,
+     * and leave the pin an output for the life of the firmware. */
     gpio_write(BOARD_HV_SHDN_PORT, BOARD_HV_SHDN_PIN, 0);
     gpio_set_mode(BOARD_HV_SHDN_PORT, BOARD_HV_SHDN_PIN, GPIO_MODE_OUTPUT);
-    /* CDR status inputs: LOS (PB14) and LOL (PA2), both active high.
-     * There is no interlock input to configure - none is drawn
-     * (docs/06-hv-cdr-pin-inventory.md). */
+    /* The J5 sense input (PA6, analogue) is configured by
+     * hv_sense.c on first use, with its ADC setup.
+     * CDR status inputs: LOS (PB14) and LOL (PA2), both active high. */
     gpio_set_mode(BOARD_CDR_LOS_PORT, BOARD_CDR_LOS_PIN, GPIO_MODE_INPUT);
     gpio_set_mode(BOARD_CDR_LOL_PORT, BOARD_CDR_LOL_PIN, GPIO_MODE_INPUT);
     /* CDR SQUELCH out, deasserted (low = outputs enabled); the net

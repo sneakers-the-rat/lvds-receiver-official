@@ -1,0 +1,6 @@
+{
+  "board_state": "ERC TOOL FAILURE: ERC report not produced: results/hvfix/erc-report.txt does not exist",
+  "report": "results/hvfix/erc-report.txt",
+  "tool_health": "FAIL",
+  "verdict": "TOOL FAILURE"
+}

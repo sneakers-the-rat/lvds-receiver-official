@@ -55,8 +55,11 @@ class SimBoard:
                 "transport": "SIMULATED (no hardware)"}
 
     def set_bias(self, volts):
-        if not (0.0 <= volts <= 420.0):
-            raise ValueError(f"bias {volts} V outside 0..420 V range")
+        # Range of the fitted C30737 set-point network (docs/03):
+        # the hardware ceiling is 253.21 V; firmware clamps there.
+        # (The S8664 stuffing variant's range is 0..420 V.)
+        if not (0.0 <= volts <= 253.21):
+            raise ValueError(f"bias {volts} V outside 0..253.21 V range")
         self.bias_v = volts
         self.hv_on = volts > 0
         return {"bias_set_v": volts, "hv_on": self.hv_on,

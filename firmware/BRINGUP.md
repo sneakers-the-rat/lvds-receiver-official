@@ -86,38 +86,45 @@ otherwise; if you find a claim that does, it is a bug in the docs.
   PA15 and PA4 is never touched. What remains unverified is the
   usual register-level kind: SPI3 base/AF number/RCC bit are
   marked VERIFY against RM0468 and the datasheet AF table.
-- **HV pins were invented; interlock does not exist — pins
-  RESOLVED, enable REFUSED by design (2026-11-04, `fw-hv-pins`).**
+- **HV pins were invented; interlock did not exist — pins
+  RESOLVED (2026-11-04, `fw-hv-pins`); interlock FITTED as J5 and
+  the HV rail hardware-bounded in the hvfix change (same day).**
   `board.h` claimed PB0 = HV enable, PB1 = interlock sense,
   PB2 = ADN2813 LOS, with comments describing an AND gate and a
   series interlock jumper. The drawn design (inventory:
   `docs/06-hv-cdr-pin-inventory.md`) has none of it: PB0/PB1 are
   ULPI data lines D1/D2, PB2 is unassigned. As drawn, the real
   converter could never have been driven by that firmware at all.
-  Now: HV control is **PC7 (HV_SHDN)**, the LT3757's SHDN/UVLO
-  node; the R25/R26 divider holds the node at 1.241 V, above the
-  1.22 V threshold, so firmware drives PC7 low at init and holds
-  the converter in shutdown — the only positively-off state, and
-  the board's required power-up default. ADN2813 **LOS is PB14,
+  Now: HV control is **PC7 (net HV_EN)**, reaching the LT3757's
+  SHDN/UVLO node (net HV_SHDN) through the J5 interlock jumper;
+  the re-ratioed R25 143 kΩ / R26 33 kΩ divider holds the node at
+  0.94 V, below the 1.17 V minimum threshold, so the converter is
+  off at power-up by hardware and firmware's PC7-low init is the
+  fitted-jumper clamp, not the only thing keeping HV off. The
+  set-point network is likewise re-valued so no DAC state can
+  demand more than 253.2 V (259.4 V worst-case) from the fitted
+  C30737 (docs/03). ADN2813 **LOS is PB14,
   LOL is PA2**, both LVTTL active-high, read as GPIOs (they were
   previously an unconnected pin and an unverified I2C register bit
   respectively). SQUELCH (PB15), drawn but previously undriven, is
   now driven low (outputs enabled) at init instead of floating.
   **The interlock:** the requirement text (docs/01 R9, docs/02)
-  assumes an enclosure interlock, but rev A fits no jumper, switch
-  or sense input — the inventory searched all 213 nets, every part
-  and the full MCU pin list. OWNER DESIGN DECISION: firmware must
-  not invent one, so `hv_ctrl_enable()` refuses every enable and
-  SET_BIAS returns the protocol's INTERLOCK status on every rev A
-  unit. HV is therefore **not testable as a feature** until the
-  owner either fits an interlock in a schematic revision or
-  records a decision to enable without one. The bench check that
-  remains: PC7 low from the first init step, HV_SHDN node at ~0 V,
-  APD rail at 0 V, SET_BIAS answered with INTERLOCK. Also corrected
+  assumed an interlock the original rev A did not fit — the
+  inventory searched all 213 nets, every part and the full MCU
+  pin list. The owner then delegated the decision (2026-11-04)
+  and it is implemented (docs/06): J5, a 2-pin jumper in series
+  in the PC7 path — absent, no firmware state can start the
+  converter; fitted, PC7 control works — plus a PA6/ADC1 sense
+  of the node so `hv_ctrl_enable()` refuses (SET_BIAS →
+  INTERLOCK) exactly while the jumper is sensed absent, and
+  drops HV if it is pulled mid-run. The bench checks: J5 absent —
+  rail 0 V under any command, SET_BIAS answered with INTERLOCK,
+  SHDN node at its ≈0.94 V divider level; J5 fitted — enable,
+  ramp and the docs/05 §5 interlock sequence. Also corrected
   while here: `hv_ctrl.h` credited the board with an independent
   OVP zener clamp from docs/02; no such part is drawn — the drawn
-  protections are the LT3757 current limit, the R30 bleeder and
-  the feedback-divider ceiling.
+  protections are the LT3757 current limit, the R30 bleeder, the
+  fitted network's hardware ceiling and the J5 gate.
 - **VID/PID are unregistered development ids** (0x1209 /
   0xD723, the former being pid.codes' open-source VID). Register
   a PID at pid.codes or obtain a VID before any distribution;

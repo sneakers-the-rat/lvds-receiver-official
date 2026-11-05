@@ -1,0 +1,9 @@
+make build/rxfw.elf
+make[1]: Entering directory '/home/hatch/workspace/pdlvds-hvfix/firmware'
+make[1]: 'build/rxfw.elf' is up to date.
+make[1]: Leaving directory '/home/hatch/workspace/pdlvds-hvfix/firmware'
+arm-none-eabi-objcopy -O binary build/rxfw.elf build/rxfw.bin
+arm-none-eabi-size build/rxfw.elf
+   text	   data	    bss	    dec	    hex	filename
+  18244	     36	  19848	  38128	   94f0	build/rxfw.elf
+Built build/rxfw.elf and build/rxfw.bin

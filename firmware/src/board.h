@@ -112,31 +112,38 @@ typedef struct {
  * once claimed PA4 as its chip select hangs on SPI3 with PA15 as
  * SYNC - see the DAC defines below. The full ULPI pin table lives
  * in usb_device_tinyusb.c. */
-/* HV converter control: PC7 = HV_SHDN, the LT3757's SHDN/UVLO pin
- * node (hw/circuit.py U6/U10; hw/CONNECTIONS.md "HV bias"). This is
- * the ONLY MCU connection to the converter. R25 100 kOhm / R26 33 kOhm
- * divide +5 V onto the node: 1.241 V, just above the SHDN threshold
- * of 1.22 V (falling; datasheets/MANIFEST.md, LT3757 section). So
- * the pin's logic is a shutdown clamp, not an enable:
- *   PC7 driven LOW  -> node ~0 V -> converter shut down (HV OFF)
- *   PC7 high/floating -> divider wins -> converter enabled
- * Firmware must therefore configure PC7 as a push-pull output and
- * drive it low at init, and never float it (docs/03-power.md states
- * the same semantics). Full derivation: docs/06-hv-cdr-pin-inventory.md.
- * (This define previously claimed PB0 as an "HV enable" with an AND
- * gate and an interlock jumper in series. None of that exists in the
- * drawn design - PB0 is ULPI_D1.) */
+/* HV converter control: PC7 (net HV_EN) reaches the LT3757's
+ * SHDN/UVLO node (net HV_SHDN, U10 pin 9) only through the J5
+ * interlock jumper (hw/circuit.py U6/J5/U10; hw/CONNECTIONS.md
+ * "HV bias"; owner decision in docs/06). R25 143 kOhm / R26 33 kOhm
+ * divide +5 V onto the node: 0.94 V nominal, 1.03 V worst-case -
+ * below the SHDN falling threshold across its whole datasheet
+ * spread (1.17 V min; LT3757 datasheet Rev. F). So the divider
+ * alone NEVER enables the converter, at power-up or any other
+ * time; the pin's logic is:
+ *   PC7 driven LOW   -> node ~0 V (J5 fitted) -> HV OFF
+ *   PC7 driven HIGH  -> node ~3.3 V (J5 fitted) -> HV enabled
+ *   PC7 floating     -> divider wins -> 0.94 V -> HV OFF
+ *   J5 ABSENT        -> PC7 not connected to the node at all ->
+ *                       HV OFF under every firmware state
+ * Firmware configures PC7 as a push-pull output and drives it low
+ * at init (docs/03-power.md states the same semantics).
+ * (This block previously described the pre-fix design - R25 100k
+ * holding the node at 1.241 V, floating = enabled - and, before
+ * that, claimed PB0 as an "HV enable" with an AND gate. PB0 is
+ * ULPI_D1; the pre-fix inventory is docs/06.) */
 #define BOARD_HV_SHDN_PORT GPIOC
 #define BOARD_HV_SHDN_PIN  7u
-/* There is NO interlock input on rev A. The requirement text
- * (docs/01 R9, docs/02) assumes an enclosure interlock jumper, but
- * the drawn design fits neither a jumper nor a sense input: the
- * inventory in docs/06-hv-cdr-pin-inventory.md searched every net,
- * part and MCU pin and found none. Firmware must not invent one;
- * hv_ctrl therefore never satisfies its enable gate on this board
- * (owner design decision, recorded in docs/00-status.md and
- * firmware/BRINGUP.md). No BOARD_INTERLOCK define exists, on
- * purpose. (It previously claimed PB1 - that pin is ULPI_D2.) */
+/* HV interlock sense: PA6 reads the HV_SHDN node voltage via ADC1
+ * so firmware can report and gate on the J5 jumper state
+ * (hv_sense.c). PA6 was unassigned in the drawn design before this
+ * input was added (docs/06). The sense is a veto/reporting layer;
+ * the series jumper is the authoritative gate. */
+#define BOARD_HV_SENSE_PORT        GPIOA
+#define BOARD_HV_SENSE_PIN         6u
+/* PA6 = ADC12_INP3 on the STM32H723 - VERIFY against the
+ * datasheet pin-definition table at bring-up. */
+#define BOARD_HV_SENSE_ADC_CHANNEL 3u
 /* ADN2813 status outputs (hw/circuit.py U4/U6; datasheets/MANIFEST.md
  * ADN2813 section, official Rev. C text): LOS pin 22 -> PB14,
  * LOL pin 16 -> PA2. Both are LVTTL, ACTIVE HIGH (1 = asserted). */
