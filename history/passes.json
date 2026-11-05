@@ -2759,6 +2759,35 @@
       },
       "description": "Escapes 14-16 (exp54 -> exp57): HV_RAW north route COMPLETE -- F from the R29.1 fan, north around the APD_K via (41.12,-4.38), west at y=-2.7 (dead FBX orphan stub ripped), south at x=39.3 into the island track; HV_RAW down to main + D9.1. Audit: 28 nets / 78 violations; TP_HV and HV_R31B fully connected.",
       "note": ""
+    },
+    {
+      "pass": 98,
+      "timestamp": "2026-11-05T12:57:16Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp58.kicad_pcb",
+      "dir": "pass-0098",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 77,
+        "unconnected_nets": 28,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Thread sweep 3 (exp57 -> exp58): VBUS_RAW threaded closed, APD_K + GND one pair each -- but thread rips re-split CC2 (the seesaw in miniature: 28 nets / 77 violations, composition churned). Per parent directive the U6/U7 respread placement is adopted next; this pass is the last on the old geometry.",
+      "note": ""
     }
   ],
   "gaps": [
