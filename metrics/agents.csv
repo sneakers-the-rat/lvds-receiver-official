@@ -1,5 +1,5 @@
 agent_id,model,scope,role,usage_rows,input_tokens,output_tokens,first_row_utc,last_row_utc,notes
-4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",374,164299146,531118,2026-11-03T18:34:31Z,2026-11-05T13:52:55Z,
+4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",377,164906442,531797,2026-11-03T18:34:31Z,2026-11-05T14:38:57Z,
 211e6068-5645-443d-821c-d965a1288a6c,ipnext/avocado-5.17-v1,chat-tree,"build coordinator #1 (router v1-v5, repair passes 1-4, stage 7b/7c start)",1,2224018,8136,2026-11-04T00:18:30Z,2026-11-04T00:18:30Z,
 04d878b8-e46d-47c3-a3e8-19842ed9ea6c,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,3089221,53683,2026-11-03T18:42:31Z,2026-11-03T18:42:31Z,spawn prompt in agent.subagent_spawns
 6b643e67-3b72-4a34-a4e4-cb88906fc170,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,788734,34177,2026-11-03T18:40:38Z,2026-11-03T18:40:38Z,spawn prompt in agent.subagent_spawns
@@ -210,3 +210,5 @@ a7ed933a-108d-4f65-b0e0-b1265dd1e013,ipnext/avocado-5.17-v1,chat-tree,chat-tree 
 51bc0f89-bc33-464d-8dba-d0de18d2300d,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,135449,886,2026-11-05T13:23:35Z,2026-11-05T13:23:35Z,run scheduled 2026-11-05T13:22:57Z
 d2af3904-fdf3-46fb-86f6-686d18ba4e7b,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,2096660,10543,2026-11-05T13:46:11Z,2026-11-05T13:46:11Z,run scheduled 2026-11-05T13:39:16Z
 c892c776-7eb6-43de-aec9-625096c9629f,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,94112,391,2026-11-05T13:46:18Z,2026-11-05T13:46:18Z,run scheduled 2026-11-05T13:39:16Z
+c88aa1dc-ef82-407b-b804-129c1841c611,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,2289844,13041,2026-11-05T14:26:51Z,2026-11-05T14:26:51Z,run scheduled 2026-11-05T14:09:16Z
+50f90b5c-b476-4627-91bd-ff8c7294c835,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,104356,442,2026-11-05T14:26:58Z,2026-11-05T14:26:58Z,run scheduled 2026-11-05T14:09:16Z
