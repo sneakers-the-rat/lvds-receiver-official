@@ -22,7 +22,7 @@ Plain <details> elements: no JS needed for the tree itself.{% endcomment %}
 {% assign sorted_passes = site.passes | sort: "pass" %}
 {% assign total_passes = sorted_passes | size %}
 {% assign cur_blk = -1 %}
-{% if page.pass %}{% assign cur_blk = page.pass | minus: 1 | divided_by: 25 %}{% endif %}
+{% if page.pass %}{% assign cur_blk = page.pass | minus: 1 | divided_by: 25 | floor %}{% endif %}
 <details class="toc-branch"{% if page.pass or page.url == '/routing/' or page.url == '/progress/' %} open{% endif %}>
 <summary class="toc-head">Layout passes</summary>
 <ul class="toc branch-links">
@@ -31,7 +31,7 @@ Plain <details> elements: no JS needed for the tree itself.{% endcomment %}
 </ul>
 {% assign prev_blk = -1 %}
 {% for p in sorted_passes %}
-{% assign blk = p.pass | minus: 1 | divided_by: 25 %}
+{% assign blk = p.pass | minus: 1 | divided_by: 25 | floor %}
 {% if blk != prev_blk %}
 {% if prev_blk != -1 %}</ul></details>{% endif %}
 {% assign lo = blk | times: 25 | plus: 1 %}
