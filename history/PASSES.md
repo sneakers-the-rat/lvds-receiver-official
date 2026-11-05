@@ -924,6 +924,14 @@ SLICEN connected (hw/fix_slicen.py): pure-F northern jog from U4.7 -- hand_stub 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 87 · Unconnected nets: 32 · Audit verdict: FAIL
 
+### Pass 111 — 2026-11-05T17:52:47Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp89.kicad_pcb` · Commit: `pending`
+
+SET_P connected: U13 relocated + re-heal of its 6 nets (hw/move_u13.py, heal_nets, hw/fix_u13_6.py). The decided (-4,0) west move is REFUTED on the current field (exact pad check): destination lands in the routed NEG_RAW staircase web (EP vs 18 tracks, ILIM_P/+5V pins vs more, need 0.25). Full-ring placement search (dx -8..+2, dy -7..+7) found one clean cluster SW; executed (-6.75,-7.00) -> U13 at (41.25,55.00), pin 7 0.47 mm from the SET_P web. One SET_P web vertex (via 43.875,61.375 + 2 segments) ripped pre-move; heal re-bridged it. heal joined SET_P/+VA/ILIM_P and +5V pins 1/2/3; U13.6 (+5V) refused twice more (stubbed and unstubbed) and the pure-F west bridge was refused on the GND/DM_PHY/ILIM_P braid -- landed as a one-via B.Cu hop: via (42.68,56.28) overlapping the pad, B run NW into the +5V B staircase at (41.75,53.25). DELTAS vs pass 110: nets 32->31 (SET_P joined, +5V back to its 4 pre-existing groups), violations 87->87 (census byte-identical, +0 new).
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 87 · Unconnected nets: 31 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
