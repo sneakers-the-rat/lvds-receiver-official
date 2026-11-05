@@ -350,3 +350,36 @@ evidence gate: docs/07-d1-terminal-pair-evidence.md (datasheet VBR
 max 260 V < design maximum bias 420 V). They leave only via an owner
 decision (a hardware bound on the D1 rail inside the part's envelope,
 or a detector rated for the design bias). No registry entry exists.
+
+### Step-1 addendum (2026-11-04, successor coordinator): class-vs-voltage census + checker correction + U10 retest
+Full record: results/class-voltage-census.txt. No tool assigns a
+clearance class by name prefix (check_pcb/router/router6/repair6/
+heal_nets use the same explicit sets; hand_stub/hand_via/thread use
+check_pcb.need_for). Two findings, opposite directions:
+(1) The pass-78 "0.25 HV clearance class" for U10's control nets
+    exists in NO tool — HV_GATE/HV_INTVCC/HV_SHDN carry <=7.2 V and
+    are correctly at the 0.20 default everywhere. The seal
+    arithmetic in the consolidated diagnosis is RETRACTED.
+(2) The real classification error: nets carrying 80-259 V sat at
+    the 0.20 default — TP_HV (live on exp16: floats to ~APD_K
+    through R34 10 MOhm) plus the incoming string/OVP midpoints
+    HV_R29M/HV_R30M/HV_R31A/HV_R31B/HV_OVP1/HV_OVP2. CORRECTED:
+    HV_NETS in check_pcb.py + router.py gains all seven, evidence
+    in the code comments; hw/tests/test_hv_class.py pins the table
+    both directions (FAIL on pre-correction tree, PASS now).
+    Corrected audit of exp16 (results/audit-exp16-corrected-
+    checker.txt): violations 2 -> 11 — the 9 new lines are ALL
+    TP_HV vs GND around TP1 (44.4-46.1, 18.1-20.7). NEW CLASS
+    (TP_HV creepage): TP_HV's stub copper does not respect its own
+    voltage; fix = re-path/move TP1 in the re-sync pass (step 2),
+    where its neighbourhood is redrawn anyway.
+RETEST (hw/probe_u10_dense.py, audit need_for, dense 0.05 grid,
+live exp16; results/probe-u10-dense-exp16*.txt, run twice with
+identical results):
+- U10.9 HV_SHDN: 1 CLEAR via site (17.25,-15.45) — seal DISSOLVED
+  (0.05 off-latitude; radial probes never sampled it). Escape +
+  heal = pass 80.
+- U10.8 HV_INTVCC: 0 clear / 0 one-blocker — seal SURVIVES correct
+  classes. Placement decision in the re-sync stands.
+- U10.3 HV_SS: 0 clear / 0 one-blocker — seal survives; rides the
+  re-sync with the HV_FBX/HV_RT web, as already queued.

@@ -1,0 +1,82 @@
+CLASS-VS-VOLTAGE CENSUS — step 1 record (2026-11-04)
+Instruments: hw/check_pcb.py clearance_for() + need_for(); hw/router.py
+netclass(). Both use EXPLICIT net sets — no tool in the tree assigns a
+clearance class by name prefix (verified by reading check_pcb.py,
+router.py, router6.py (imports router's sets), repair6.py and
+heal_nets.py (router.netclass), hand_stub.py / hand_via.py / thread.py
+(check_pcb.need_for)). Voltage evidence: hw/CONNECTIONS.md (HV bias
+section), docs/03-power.md, docs/09-parts-fix.md F-07.
+
+THE THREE CLASSES (surface pairs): HV set -> 1.00 mm; POWER set ->
+0.25 mm; everything else -> 0.20 mm.
+HV_NETS = {APD_K, HV_RAW, HV_SEC} (both files, identical).
+POWER_NETS = {+5V, +3V3D, +3V3D_CDR, +3V3A, +VA, -VA, NEG_RAW,
+VBUS_RAW, PHY_1V8, PHY_1V8A} (check_pcb; router identical).
+
+U10 (LT3757EMSE) — every net, carried voltage vs assigned class:
+ pin net         carried voltage (evidence)              class
+ 1   HV_VC       VC comp node, LV (R23/C29; CONNECTIONS)  0.20
+ 2   HV_FBX      1.6 V (FBX ref 1.569/1.600/1.631 V,     0.20
+                  LT3757 Rev. G EC via CONNECTIONS)
+ 3   HV_SS       soft-start node, LV (C30 100 nF)         0.20
+ 4   HV_RT       timing node, LV (R24 53.6 kOhm)          0.20
+ 5   GND         0 V                                      0.20
+ 6   HV_SENSE    <= 0.12 V (SENSE limit 100/110/120 mV,   0.20
+                  docs/09 F-07)
+ 7   HV_GATE     0 -> 7.2 V gate drive (INTVCC domain)    0.20
+ 8   HV_INTVCC   7.2 V rail (CONNECTIONS: "INTVCC is      0.20
+                  7.2 V"; C31 is a 10 V part for it)
+ 9   HV_SHDN     0.94 V divider; 3.3 V when PC7 drives    0.20
+                  through J5 (CONNECTIONS)
+ 10  +5V         5.0 V rail                               0.25 POWER
+ EP  GND         0 V                                      0.20
+VERDICT (U10): no U10 control net is over-classed. The pass-78
+diagnosis's "0.25 HV clearance class" exists in no tool: the pairs a
+neck meets between U10's own pads are LV-LV at 0.20. The 0.25 pair
+demand is real only against +5V copper (a legitimate POWER-class
+member) — it binds U10.9's due-east sites, per the probes.
+
+BOARD-WIDE HV_-PREFIX CENSUS (nets on exp16 + nets arriving with
+the re-sync, from scratch/netlist_map.json):
+ LV by voltage, correctly default-classed (0.20):
+   HV_VC, HV_VC2 (comp nodes), HV_FBX (1.6 V), HV_SS, HV_RT,
+   HV_SENSE (<=0.12 V), HV_GATE (<=7.2 V), HV_INTVCC (7.2 V),
+   HV_SHDN (<=3.3 V), HV_EN (3.3 V logic, U6.97/J5.1),
+   HV_DAC (0-2.5 V DAC output, U8.2)
+ HV by voltage, correctly in HV_NETS (1.00):
+   APD_K (<=259.4 V worst case, clamped; CONNECTIONS),
+   HV_RAW (post-rectifier HV node, same domain), HV_SEC
+   (flyback secondary, HV domain)
+ HV BY VOLTAGE BUT CLASSED 0.20 — THE REAL CLASSIFICATION ERROR
+ (opposite direction from the suspected one):
+   TP_HV — TP1 test point tied to APD_K through R34 10 MOhm with
+     no other DC path: the pad floats to ~APD_K potential
+     (<=259.4 V). ALREADY ON THE CURRENT BOARD (exp16).
+   HV_R29M — post-filter string midpoint, within volts of the
+     HV_RAW/APD_K node (2x5.00 kOhm string, uA current). ~259 V.
+   HV_R30M — bleeder string midpoint: V_HV x 2.35/(2.35+2.35)
+     = V_HV/2 ~ 130 V.
+   HV_R31A — divider midpoint: V_HV x 4.74/7.68 ~ 160 V.
+   HV_R31B — divider midpoint: V_HV x 2.37/7.68 ~ 80 V.
+   HV_OVP1 — OVP zener-stack midpoint (D9 160 V / D10 150 V):
+     ~150-310 V domain when fitted (S8664 build).
+   HV_OVP2 — OVP stack midpoint (D10/D11): ~150 V domain.
+   (HV_R*/HV_OVP* arrive with the re-sync; TP_HV is live now.)
+CORRECTION (same commit as this record): HV_NETS in
+hw/check_pcb.py and hw/router.py gains {TP_HV, HV_R29M, HV_R30M,
+HV_R31A, HV_R31B, HV_OVP1, HV_OVP2} with the voltage evidence in a
+comment; hw/tests/test_hv_class.py pins the table BOTH directions
+(every HV-domain net at 1.00, every LV HV_-named net at 0.20), so a
+future net cannot silently land in the wrong class either way.
+
+RETEST (hw/probe_u10_dense.py, audit need_for, neck 0.20, disc
+0.6/0.3, 0.05 grid, live exp16 incl. pass 78's placed U10.7 via;
+results/probe-u10-dense-exp16*.txt):
+ U10.8 HV_INTVCC: 0 clear sites, 0 one-blocker sites — seal
+   SURVIVES correct classes. Placement decision stands.
+ U10.9 HV_SHDN: 1 CLEAR site (17.25,-15.45) — seal DISSOLVES.
+   The radial probes never sampled it: it sits 0.05 mm off the
+   pin latitude inside the east window family. Escape placed by
+   hw/surgery_u10_9_escape.py (pass 80), heal follows.
+ U10.3 HV_SS: 0 clear, 0 one-blocker — seal survives; rides the
+   re-sync with the HV_FBX/HV_RT web redraw, as already queued.

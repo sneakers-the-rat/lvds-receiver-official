@@ -20,7 +20,17 @@ _app = wx.App(False)
 import pcbnew
 
 MM = pcbnew.FromMM
-HV_NETS = {"APD_K", "HV_RAW", "HV_SEC"}
+# HV clearance class (1.0 mm surface creepage) — assigned by CARRIED
+# VOLTAGE, never by name (census: results/class-voltage-census.txt).
+# APD_K/HV_RAW/HV_SEC: the <=259.4 V clamped bias domain. TP_HV: the
+# test point floats to ~APD_K potential through R34 10 MOhm.
+# HV_R29M (~259 V), HV_R30M (~130 V), HV_R31A (~160 V), HV_R31B
+# (~80 V): parts-fix string midpoints. HV_OVP1/HV_OVP2: OVP zener
+# stack midpoints. The LT3757 control nets (HV_GATE <=7.2 V,
+# HV_FBX 1.6 V, HV_SENSE <=0.12 V, ...) are LV and stay at the 0.20
+# default — hw/tests/test_hv_class.py pins both directions.
+HV_NETS = {"APD_K", "HV_RAW", "HV_SEC", "TP_HV", "HV_R29M",
+           "HV_R30M", "HV_R31A", "HV_R31B", "HV_OVP1", "HV_OVP2"}
 POWER_NETS = {"+5V", "+3V3D", "+3V3D_CDR", "+3V3A", "+VA", "-VA",
               "NEG_RAW", "VBUS_RAW", "PHY_1V8", "PHY_1V8A"}
 WAIVERS = []   # (net_a, net_b, reason) — filled from docs/04 if needed
