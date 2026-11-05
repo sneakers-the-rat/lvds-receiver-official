@@ -196,6 +196,15 @@ U5.3/CAP_DATA, U4.27/CDR_SQUELCH, J1.B5/CC2 (disc blocked by VBUS_RAW),
 D1.5/APD_K (same-footprint geometry; its connection is owed as routing
 — see the standing D1 audit lines below). Membership is confirmed per
 pad by probe/diagnosis as surgery reaches it. Status: OPEN (0 closed).
+HOLD (parent order, 2026-11-04 ~21:12 PST): all U9 members (U9.5,
+U9.1, U9.6, U9.3) are OUT of this class until the re-sync wave — the
+parts audit (docs/08-parts-lock.md, main d7acb61; 115 LOCKED / 29 NOT
+LOCKED) measured U9's footprint defective by construction: all six
+signal pads overlap the grounded exposed pad by 0.20 mm (pins short
+to GND on copper) and the geometry disagrees with TI's DRV0006B
+callouts. U9.5's reach=1 "seal" was partly the broken footprint, not
+a routing problem. The pad layout WILL be redrawn; no routing effort
+on U9's current pads. U10 locality and Class T proceed as planned.
 
 ### CLASS B — two-island long hauls (negotiated rip-up territory)
 Both endpoints reach open field (diagnose reach 400k+); the floods do
@@ -221,16 +230,22 @@ exactly what bit the HV cluster), or hand hops where the gap is
 sub-millimetre. Thread-victim splits (HV_RT, U4.12, +5V's growth)
 are repaid inside this class's fixes. Status: OPEN.
 
-### Queued placement pass — HV interlock jumper header (parent update, 2026-11-04 ~21:01 PST)
-The HV fix lane's schematic regeneration introduces exactly ONE
-new footprint: a 2-pin enable jumper header for the HV
-interlock (owner delegated the decision; deliberate-action
-jumper in the SHDN path). When the fix lands on main, place it
-as a small placement pass: board edge near the HV/U10 cluster,
-operator-accessible; route its nets (SHDN-path series + possibly
-one sense net to a spare MCU GPIO — the fix report names the
-designator, footprint, and nets). No other layout impact from
-that lane. Not actionable until the fix lands.
+### Queued placement pass — board re-sync wave (parent updates, 2026-11-04 ~21:01 + ~21:12 PST)
+When the HV-fix and parts-fix schematic changes land on main, the
+parent hands this lane the merged tree and it is absorbed as ONE
+placement pass BEFORE the class queue resumes: place/replace in
+the HV and north areas, rip only the copper the footprint changes
+invalidate, re-audit. Known contents of the wave:
+- HV interlock jumper header (NEW 2-pin footprint; deliberate-
+  action jumper in the SHDN path): board edge near the HV/U10
+  cluster, operator-accessible; route its nets (SHDN-path series
+  + possibly one sense net to a spare MCU GPIO — the fix report
+  names the designator, footprint, and nets).
+- U9 footprint REDRAWN (current pads defective — see the Class A
+  hold above); U9 locality work resumes only on the new pads.
+- D4 SMA -> SMB; C4 0603 -> 1206; HV resistor series strings;
+  a specified flyback transformer footprint.
+Not actionable until the merged tree is handed over.
 
 ### D1 owner decision (parent update, 2026-11-04 ~20:53 PST)
 Owner directed the D1 fix: a hardware population clamp on the HV
