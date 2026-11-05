@@ -908,6 +908,14 @@ Heal campaign exp79->exp81 over 30 non-knot nets (heal_nets, results/heal-exp81.
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 120 · Unconnected nets: 33 · Audit verdict: FAIL
 
+### Pass 109 — 2026-11-05T16:59:39Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp82.kicad_pcb` · Commit: `pending`
+
+HV_RAW re-approach (hw/fix_hvraw.py): heal's B.Cu surface diagonal ripped (63 items) and the D9.1 haul re-bridged on In2 -- F neck to via (5.38,-24.88), In2 southern run y=-24.88 to x=22.2, corridor north at x=22.2, northern approach into via W (34.12,-11.88), F necks into the D5.1 web; D9 pour notch (notch.py species, rule areas 1.25,-27.5..7.03,-22.5 on F+B) added so the pours hold >=1.0 mm from the D9 pocket. Every placed shape was tested against the audit's own item model including zone fills. DELTAS vs pass 108: nets 33->33 (join retained, mechanism changed), violations 120->87 (-33: -32 HV_RAW diagonal-vs-pour lines removed by the rip, -1 pre-existing 'HV_RAW D9.1 vs GND zone' line cured by the notch, +0 new lines from the In2 bridge). Acceptance test PASSED (full audit results/audit-exp82.txt: 33/87; the single exp82-vs-exp79 newcomer, XI vs the CDR_DATP via, belongs to pass 108's CDR_DATP join).
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 87 · Unconnected nets: 33 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

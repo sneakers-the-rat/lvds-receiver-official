@@ -3078,6 +3078,35 @@
       },
       "description": "Heal campaign exp79->exp81 over 30 non-knot nets (heal_nets, results/heal-exp81.log). DELTAS: nets 38->33, violations 87->120. Joins: HV_R31A, HV_FBX, CDR_DATP, ULPI_DIR connected outright; APD_K 6->5 groups (C33/C4/R30 cluster merged). Violation delta +33 concentrated in ONE join: 32 lines from heal's HV_RAW B.Cu surface diagonal vs the GND pours at the 1.0 mm HV class, +1 XI vs a new CDR_DATP via at (87.125,16.625). HV_RAW's join exceeds the acceptance bound; it is ripped and re-approached (In2 bridge + D9 pour notch) in the next pass. All other joins landed clean (0 new violations). Still isolated after heal (residue for hand work): SLICEN U4.7, SET_P U13.7, +3V3D_CDR U4.12 group, +5V U11/U7.4 groups, PHY_1V8 U7.15/U7.26, PHY_1V8A C23.1, APD_K R31.1/D1.5/R47.2/RJ2.2, CC2 J1.B5 group, +3V3A U7.6/16/25, U6/U7 single pads (CAP_CLK, CDR_LOL, CDR_SQUELCH, HV_EN, HV_SHDN, SWDIO, USB_RST, VCAP1), CDR_PIN U4.5 group, CF2 C15.2 group, DM_PHY/DP_PHY U7 pads, RBIAS U7.32, XI/XO X1-site groups.",
       "note": ""
+    },
+    {
+      "pass": 109,
+      "timestamp": "2026-11-05T16:59:39Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp82.kicad_pcb",
+      "dir": "pass-0109",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 87,
+        "unconnected_nets": 33,
+        "audit_verdict": "FAIL"
+      },
+      "description": "HV_RAW re-approach (hw/fix_hvraw.py): heal's B.Cu surface diagonal ripped (63 items) and the D9.1 haul re-bridged on In2 -- F neck to via (5.38,-24.88), In2 southern run y=-24.88 to x=22.2, corridor north at x=22.2, northern approach into via W (34.12,-11.88), F necks into the D5.1 web; D9 pour notch (notch.py species, rule areas 1.25,-27.5..7.03,-22.5 on F+B) added so the pours hold >=1.0 mm from the D9 pocket. Every placed shape was tested against the audit's own item model including zone fills. DELTAS vs pass 108: nets 33->33 (join retained, mechanism changed), violations 120->87 (-33: -32 HV_RAW diagonal-vs-pour lines removed by the rip, -1 pre-existing 'HV_RAW D9.1 vs GND zone' line cured by the notch, +0 new lines from the In2 bridge). Acceptance test PASSED (full audit results/audit-exp82.txt: 33/87; the single exp82-vs-exp79 newcomer, XI vs the CDR_DATP via, belongs to pass 108's CDR_DATP join).",
+      "note": ""
     }
   ],
   "gaps": [
