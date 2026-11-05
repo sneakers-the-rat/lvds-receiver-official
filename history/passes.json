@@ -2933,6 +2933,35 @@
       },
       "description": "Escapes 18 (exp62 -> exp63): surviving D4 staircase segment ripped (tight tolerance), D5 stub placed; RST stub refused again by the NXT diagonal (batch 19 rips it). Heal round 2 runs on this board.",
       "note": ""
+    },
+    {
+      "pass": 104,
+      "timestamp": "2026-11-05T13:40:49Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp64.kicad_pcb",
+      "dir": "pass-0104",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 81,
+        "unconnected_nets": 57,
+        "audit_verdict": "FAIL"
+      },
+      "description": "ULPI fanout heal round 2 (exp63 -> exp64): D5, DIR, CK CONNECTED; D7 and NXT re-connected after their fence rips. Residue moved to the U6 side (U6.47/U6.69/U6.26 bare pads) + D4 pad re-entry + RST. Post-fanout audit: 54 nets / 82 violations (from 65/71 at adoption).",
+      "note": ""
     }
   ],
   "gaps": [
