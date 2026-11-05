@@ -1,4 +1,4 @@
-<aside class="sidebar">
+<aside class="sidebar" id="sidebar">
 <div class="side-title"><a href="{{ '/' | relative_url }}">PDLVDS-RX</a></div>
 <nav>
 <ul class="toc">
@@ -6,6 +6,7 @@
 <li><a href="{{ '/board/' | relative_url }}"{% if page.url == '/board/' %} class="active"{% endif %}>Board</a></li>
 <li><a href="{{ '/tokens/' | relative_url }}"{% if page.url == '/tokens/' %} class="active"{% endif %}>Token usage</a></li>
 <li><a href="{{ '/routing/' | relative_url }}"{% if page.url == '/routing/' %} class="active"{% endif %}>Routing history</a></li>
+<li><a href="{{ '/progress/' | relative_url }}"{% if page.url == '/progress/' %} class="active"{% endif %}>Progress overview</a></li>
 <li><a href="{{ '/schematic/' | relative_url }}"{% if page.url == '/schematic/' %} class="active"{% endif %}>Schematic</a></li>
 <li><a href="{{ '/stackup/' | relative_url }}"{% if page.url == '/stackup/' %} class="active"{% endif %}>Stackup</a></li>
 <li><a href="{{ '/bom/' | relative_url }}"{% if page.url == '/bom/' %} class="active"{% endif %}>BOM</a></li>
@@ -13,13 +14,36 @@
 <li><a href="{{ '/testplan/' | relative_url }}"{% if page.url == '/testplan/' %} class="active"{% endif %}>Bench test plan</a></li>
 <li><a href="{{ '/downloads/' | relative_url }}"{% if page.url == '/downloads/' %} class="active"{% endif %}>Downloads</a></li>
 </ul>
-<div class="toc-head">Layout passes</div>
-<ul class="toc passes">
+{% comment %}Layout passes: a collapsible branch. Every level is
+collapsed unless the current page lives inside it — the branch is
+open on pass/routing/progress pages only, and of the 25-pass
+blocks inside it only the block holding the current pass is open.
+Plain <details> elements: no JS needed for the tree itself.{% endcomment %}
 {% assign sorted_passes = site.passes | sort: "pass" %}
+{% assign total_passes = sorted_passes | size %}
+{% assign cur_blk = -1 %}
+{% if page.pass %}{% assign cur_blk = page.pass | minus: 1 | divided_by: 25 %}{% endif %}
+<details class="toc-branch"{% if page.pass or page.url == '/routing/' or page.url == '/progress/' %} open{% endif %}>
+<summary class="toc-head">Layout passes</summary>
+<ul class="toc branch-links">
+<li><a href="{{ '/progress/' | relative_url }}"{% if page.url == '/progress/' %} class="active"{% endif %}>Progress overview (chart)</a></li>
+<li><a href="{{ '/routing/' | relative_url }}"{% if page.url == '/routing/' %} class="active"{% endif %}>Routing history (all passes)</a></li>
+</ul>
+{% assign prev_blk = -1 %}
 {% for p in sorted_passes %}
+{% assign blk = p.pass | minus: 1 | divided_by: 25 %}
+{% if blk != prev_blk %}
+{% if prev_blk != -1 %}</ul></details>{% endif %}
+{% assign lo = blk | times: 25 | plus: 1 %}
+{% assign hi = blk | times: 25 | plus: 25 %}
+{% if hi > total_passes %}{% assign hi = total_passes %}{% endif %}
+<details class="toc-block"{% if blk == cur_blk %} open{% endif %}><summary>Passes {{ lo }}–{{ hi }}</summary><ul class="toc passes">
+{% assign prev_blk = blk %}
+{% endif %}
 <li><a href="{{ p.url | relative_url }}"{% if p.url == page.url %} class="active"{% endif %}>Pass {{ p.pass }}</a>
 <span class="side-meta">{{ p.timestamp | pacific: "%b %-d, %H:%M" }} · {{ p.short_hash }}</span></li>
 {% endfor %}
-</ul>
+{% if prev_blk != -1 %}</ul></details>{% endif %}
+</details>
 </nav>
 </aside>
