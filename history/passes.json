@@ -3049,6 +3049,35 @@
       },
       "description": "Campaign + ULPI knot work (exp68 -> exp79, cumulative): general heal campaign landed 68 groups over the severance debt (post-campaign audit exp73 = 36 nets / 87 violations, down from 65/71 at respread adoption and 59/81 at pass 104); ULPI heal round rejoin (NXT); knot batches 26-30 -- ULPI_D4 COMPLETE (tail into its via after the D5 vertex rip), ULPI_DIR rejoined (F seg + via placed batch 27, B legs into its staircase batch 29), USB_RST stub placed, D5/D6 fanout fences ripped for the order fix, D2 spur + D1 diagonal + CDR_DATP via ripped, D3 F approach seg placed. exp69-exp78 intra-campaign/batch states folded into this pass. ULPI residue (D1 pad group, D2, D3, D5, D6, STP) is a named knot: hand batches 22-30 + thread_far all refused on the U7 row channel shared with campaign-routed CDR_DATP/D1/D0 copper -- carried as named residual, rest of board proceeds.",
       "note": ""
+    },
+    {
+      "pass": 108,
+      "timestamp": "2026-11-05T16:54:46Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp81.kicad_pcb",
+      "dir": "pass-0108",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 120,
+        "unconnected_nets": 33,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Heal campaign exp79->exp81 over 30 non-knot nets (heal_nets, results/heal-exp81.log). DELTAS: nets 38->33, violations 87->120. Joins: HV_R31A, HV_FBX, CDR_DATP, ULPI_DIR connected outright; APD_K 6->5 groups (C33/C4/R30 cluster merged). Violation delta +33 concentrated in ONE join: 32 lines from heal's HV_RAW B.Cu surface diagonal vs the GND pours at the 1.0 mm HV class, +1 XI vs a new CDR_DATP via at (87.125,16.625). HV_RAW's join exceeds the acceptance bound; it is ripped and re-approached (In2 bridge + D9 pour notch) in the next pass. All other joins landed clean (0 new violations). Still isolated after heal (residue for hand work): SLICEN U4.7, SET_P U13.7, +3V3D_CDR U4.12 group, +5V U11/U7.4 groups, PHY_1V8 U7.15/U7.26, PHY_1V8A C23.1, APD_K R31.1/D1.5/R47.2/RJ2.2, CC2 J1.B5 group, +3V3A U7.6/16/25, U6/U7 single pads (CAP_CLK, CDR_LOL, CDR_SQUELCH, HV_EN, HV_SHDN, SWDIO, USB_RST, VCAP1), CDR_PIN U4.5 group, CF2 C15.2 group, DM_PHY/DP_PHY U7 pads, RBIAS U7.32, XI/XO X1-site groups.",
+      "note": ""
     }
   ],
   "gaps": [
