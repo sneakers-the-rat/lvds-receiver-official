@@ -636,6 +636,14 @@ re-notch board-wide (exp9 -> exp10): notch_strip's strip filter (centre y < 5) r
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 33 · Audit verdict: FAIL
 
+### Pass 75 — 2026-11-05T02:40:54Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp12.kicad_pcb` · Commit: `pending`
+
+GND stitches (exp10 -> exp12): the 8 non-main audit groups were all single F.Cu items inside the board-wide notch rect, cut off from the F/B pours — but the notch rule areas carve F/B only, so each was stitched by a via down to the continuous In1 GND plane. 7 pad stitches via hand_via (C32.2, C29.2, C30.2, U10.5, U10.11, T1.4, R28.2 — 7/7 placed) + 1 via on the lone GND track segment at (27.296,12.092) (hw/stitch_track.py, sampled along the segment under hand_via's all-layer disc test). Group membership from hw/dump_groups.py (audit-exact union-find, full lists).
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 32 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
