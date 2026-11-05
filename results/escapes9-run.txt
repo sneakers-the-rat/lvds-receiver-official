@@ -1,0 +1,22 @@
+--- 1 rip FBX orphans ---
+  rip HV_FBX L0 (41.16,-1.60)->(42.90,0.10)
+  rip HV_FBX via @(42.90,0.10)
+  rip HV_FBX L2 (34.50,-5.60)->(34.50,-4.60)
+  [1 rip FBX orphans OK]
+--- 2 R50 move + R31B re-join ---
+  R50 moved (-2.0,-0.8)
+  [2 R50 move + R31B re-join REFUSED: HV_R31B seg (38.237,-1.6)->(37.0,-2.2): HV_FBX R50.2]
+--- 3 HV_FBX R50.2 escape ---
+  [3 HV_FBX R50.2 escape REFUSED: HV_FBX seg (39.1625,-2.4)->(37.8,-3.9): HV_R31B R49.2]
+--- 4 HV_RAW west lane ---
+  [4 HV_RAW west lane REFUSED: HV_RAW seg (43.675,-1.799999)->(40.0,-1.85): HV_FBX R50.2]
+--- 5 +5V U14.6 B crossing ---
+  +5V: (60.45,64.80)->(58.80,63.90) L2
+  +5V: via (58.80,63.90)
+  [5 +5V U14.6 B crossing REFUSED: +5V seg (58.8,63.9)->(57.8,61.6): ILIM_A track@stubcheck]
+--- 6 CC2 north route ---
+  rip VBUS_RAW L0 (31.15,72.83)->(31.10,71.83)
+  [6 CC2 north route REFUSED: CC2 seg (30.5,72.55)->(30.5,71.9): DM_CON J1.A7]
+saved hw/pdlvds_rx.exp50.kicad_pcb
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'ZONE_FILLER *', no destructor found.
