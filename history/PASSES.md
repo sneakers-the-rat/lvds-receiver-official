@@ -668,6 +668,14 @@ U10 locality surgery 1 (Class A): U10.7 via escape placed in its proven east win
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 31 · Audit verdict: FAIL
 
+### Pass 79 — 2026-11-05T06:00:28Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp16.kicad_pcb` · Commit: `pending`
+
+HV_GATE connected (Class A): targeted heal_nets on exp15 — the group extended by pass 78's In2 tail healed to the R27.1 group in 8 s, 1 via (results/heal-hvgate-exp16.txt). Audit: nets 31 -> 30, violations 2 (D1 standing lines only). HV_GATE leaves Classes A/R; U10.8/U10.9/U10.3 remain sealed (pass 78 findings) and ride the re-sync wave next.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 30 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
