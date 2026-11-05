@@ -956,6 +956,14 @@ Drainable queue harvest (parent queue-order directive). LANDED: CAP_CLK fully co
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 83 · Unconnected nets: 31 · Audit verdict: FAIL
 
+### Pass 115 — 2026-11-05T20:44:51Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp107.kicad_pcb` · Commit: `pending`
+
+HV_FBX repaid (owed from pass 114). Ripped group 1's 9-track F.Cu spur west of (33.25,-4.5) -- the dead-end branch whose north end stopped 1.33 mm short of group 0's In2 run with the only via site inside R31.1's APD_K 1.0 mm disc (pass 114's refused repay). Bridge landed on B.Cu via-to-via: (26.125,-4.625) group-0 via -> (30,-5.0) -> (33.875,-5.375) group-1 via, w=0.3. Refused on evidence first: F corridors y=-4.80/-5.05 (GND tail track x=30.38, y -4.975..-3.025), F y=-5.50 (R50.1 HV_R31B 1.0 mm disc), In2 via-to-via (HV_R31A run fills the In2 corridor). DELTAS vs pass 114: nets 31->30 (HV_FBX joined), violations 83->75 (-8: every APD_K-vs-HV_FBX spur line removed; census diff shows 0 new lines). No victims.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 75 · Unconnected nets: 30 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

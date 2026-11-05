@@ -3252,6 +3252,35 @@
       },
       "description": "Drainable queue harvest (parent queue-order directive). LANDED: CAP_CLK fully connected (thread_far from the U6.34 west lane, gap 2.55); CC2 connected (bridge, gap 1.20); APD_K R31.1 joined the main group (bridge gap 2.72 then 0.02 after its first seg landed short); GND stitch clusters merged 5->4 groups (bridge gap 0.25). VICTIMS NAMED AND MOSTLY REPAID: CAP_CLK thread ripped BOOT0 (re-threaded, gap 7.75); CC2 bridge ripped VBUS_RAW (re-bridged, gap 0.85); APD_K bridge ripped HV_FBX x2 in the (31,-2.5) field -- HV_FBX STILL SPLIT (bridge gap 1.33 unplaced; repay is next); BOOT0 thread ripped ULPI_STP's U6.26 neck track (71.34,-2.25) -- STP's U6 group is a bare pad again, repay queued with the knot work (priced mechanisms still parked per directive). thread_far went 0/8 on VCAP2/PHY_1V8A/XI/+3V3A/PHY_1V8/USB_RST/XO/CF2 (anchor wall / pair gate) and heal_big 0/2 on CAP_CLK/CDR_LOL pad groups (fanout model: starts are pad cells only). CDR_LOL lane anchor in place at (69.9,2.75) for the east-column re-lay.",
       "note": ""
+    },
+    {
+      "pass": 115,
+      "timestamp": "2026-11-05T20:44:51Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp107.kicad_pcb",
+      "dir": "pass-0115",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 75,
+        "unconnected_nets": 30,
+        "audit_verdict": "FAIL"
+      },
+      "description": "HV_FBX repaid (owed from pass 114). Ripped group 1's 9-track F.Cu spur west of (33.25,-4.5) -- the dead-end branch whose north end stopped 1.33 mm short of group 0's In2 run with the only via site inside R31.1's APD_K 1.0 mm disc (pass 114's refused repay). Bridge landed on B.Cu via-to-via: (26.125,-4.625) group-0 via -> (30,-5.0) -> (33.875,-5.375) group-1 via, w=0.3. Refused on evidence first: F corridors y=-4.80/-5.05 (GND tail track x=30.38, y -4.975..-3.025), F y=-5.50 (R50.1 HV_R31B 1.0 mm disc), In2 via-to-via (HV_R31A run fills the In2 corridor). DELTAS vs pass 114: nets 31->30 (HV_FBX joined), violations 83->75 (-8: every APD_K-vs-HV_FBX spur line removed; census diff shows 0 new lines). No victims.",
+      "note": ""
     }
   ],
   "gaps": [
