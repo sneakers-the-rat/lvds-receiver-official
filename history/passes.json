@@ -3368,6 +3368,35 @@
       },
       "description": "GND islands closed (queue item 2): all 4 groups merged to 1. Stitch vias to the In1 GND plane (stitch_track.py): cluster track@(83.375,0.125), C34.2 tail track@(29.775,-2.25); hand_via via stub for the lone R32.2 pad (via (30.77,-3.80)). DELTAS vs pass 117: nets 30->29 (GND connected), violations 74->74 -- census byte-identical (the R32.2-vs-R31.1 1.0 mm line is pad-placement geometry, carried to the violation campaign). No victims. Also this session: APD_K RJ2.2 leg (item 1, leg 3) stands as a named residual -- hand_stub/hand_via/heal x2/thread_far gate/exact via-scan all refused and the APD_A_ALT crossing-swap dive site was refused on +3V3D/FB_3V3/GND blockers; untried mechanisms are a full connector-corner re-fanout or an RJ1/RJ2 move. Tooling: heal crash on In1 copper fixed with regression test in commit 8ffdef7.",
       "note": ""
+    },
+    {
+      "pass": 119,
+      "timestamp": "2026-11-05T22:32:25Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp111.kicad_pcb",
+      "dir": "pass-0119",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 74,
+        "unconnected_nets": 28,
+        "audit_verdict": "FAIL"
+      },
+      "description": "CC2 rejoined (queue item 3): F hop (30.50,72.55)->(31.30,72.34)->(31.90,72.30) w=0.20 threaded through the 0.125 mm window at x=31.10 between J1.B4's pad (0.25 class) and J1.A9's escape start. VBUS_RAW's F jumper (31.15,72.83)->(31.00,71.98) -- A9's sole link -- ripped and repaid in the same pass: escape extended (31.85,70.88)->(32.05,70.68), via (32.05,70.68), B run south then diagonal west onto VBUS_RAW's own B diagonal chain at (28.00,72.25); VBUS_RAW still 1 group. First hop cut cost +3 (74->77: B4 pad + A9 escape x2) and was re-approached, not kept. DELTAS vs pass 118: nets 29->28 (CC2 connected), violations 74->74, census byte-identical. No victims (VBUS_RAW repaid in-pass).",
+      "note": ""
     }
   ],
   "gaps": [

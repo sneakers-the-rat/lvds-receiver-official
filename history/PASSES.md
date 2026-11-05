@@ -988,6 +988,14 @@ GND islands closed (queue item 2): all 4 groups merged to 1. Stitch vias to the 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 74 · Unconnected nets: 29 · Audit verdict: FAIL
 
+### Pass 119 — 2026-11-05T22:32:25Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp111.kicad_pcb` · Commit: `pending`
+
+CC2 rejoined (queue item 3): F hop (30.50,72.55)->(31.30,72.34)->(31.90,72.30) w=0.20 threaded through the 0.125 mm window at x=31.10 between J1.B4's pad (0.25 class) and J1.A9's escape start. VBUS_RAW's F jumper (31.15,72.83)->(31.00,71.98) -- A9's sole link -- ripped and repaid in the same pass: escape extended (31.85,70.88)->(32.05,70.68), via (32.05,70.68), B run south then diagonal west onto VBUS_RAW's own B diagonal chain at (28.00,72.25); VBUS_RAW still 1 group. First hop cut cost +3 (74->77: B4 pad + A9 escape x2) and was re-approached, not kept. DELTAS vs pass 118: nets 29->28 (CC2 connected), violations 74->74, census byte-identical. No victims (VBUS_RAW repaid in-pass).
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 74 · Unconnected nets: 28 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
