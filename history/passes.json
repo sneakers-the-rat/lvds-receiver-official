@@ -3339,6 +3339,35 @@
       },
       "description": "APD_K D1.5 leg connected (queue item 1, leg 2 of 3). D1.5 is ringed by its own footprint's APD_A pads at 0.40-0.50 mm gaps, so any surface exit starts inside the 1.0 mm surface class -- the geometry behind the 2 standing APD_K-vs-APD_A lines. Fix (hw/fix_d15.py): ONE diagonal F neck (9.20,40.00)->(11.00,38.50) whose exact-test blockers are D1.4 and D1.6 only (script asserts all blockers are APD_A and aborts otherwise), via at (11.00,38.50) (nearest clear site in a 0.25-grid disc scan), In1 south+east runs onto the main web's via (13.62,30.62). DELTAS vs pass 116: nets 30->30 (APD_K groups 3->2; only the RJ2.2 leg remains), violations 72->74 (+2, exactly the two predicted sibling-pad lines APD_A (D1.4)/(D1.6) vs the neck track -- same standing D1-footprint species as the 2 gated lines, geometrically forced: no via site reachable from D1.5 clears 1.0 mm from both pads). No victims.",
       "note": ""
+    },
+    {
+      "pass": 118,
+      "timestamp": "2026-11-05T21:55:19Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp110.kicad_pcb",
+      "dir": "pass-0118",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 74,
+        "unconnected_nets": 29,
+        "audit_verdict": "FAIL"
+      },
+      "description": "GND islands closed (queue item 2): all 4 groups merged to 1. Stitch vias to the In1 GND plane (stitch_track.py): cluster track@(83.375,0.125), C34.2 tail track@(29.775,-2.25); hand_via via stub for the lone R32.2 pad (via (30.77,-3.80)). DELTAS vs pass 117: nets 30->29 (GND connected), violations 74->74 -- census byte-identical (the R32.2-vs-R31.1 1.0 mm line is pad-placement geometry, carried to the violation campaign). No victims. Also this session: APD_K RJ2.2 leg (item 1, leg 3) stands as a named residual -- hand_stub/hand_via/heal x2/thread_far gate/exact via-scan all refused and the APD_A_ALT crossing-swap dive site was refused on +3V3D/FB_3V3/GND blockers; untried mechanisms are a full connector-corner re-fanout or an RJ1/RJ2 move. Tooling: heal crash on In1 copper fixed with regression test in commit 8ffdef7.",
+      "note": ""
     }
   ],
   "gaps": [
