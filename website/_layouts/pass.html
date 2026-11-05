@@ -11,8 +11,10 @@ so the board renders line up and versions can be compared by
 flipping back and forth.{% endcomment %}
 {% assign fp_sorted = site.passes | sort: "pass" %}
 {% for p in fp_sorted %}{% if p.pass == page.pass %}{% assign fp_idx = forloop.index0 %}{% endif %}{% endfor %}
-{% assign fp_prev = fp_sorted[fp_idx | minus: 1] %}
-{% assign fp_next = fp_sorted[fp_idx | plus: 1] %}
+{% assign fp_prev_i = fp_idx | minus: 1 %}
+{% assign fp_next_i = fp_idx | plus: 1 %}
+{% assign fp_prev = fp_sorted[fp_prev_i] %}
+{% assign fp_next = fp_sorted[fp_next_i] %}
 <nav class="passflip-nav" aria-label="Flip between pass versions">
 {% if fp_idx > 0 %}<a class="passflip prev" href="{{ fp_prev.url | relative_url }}" rel="prev" title="Previous version: pass {{ fp_prev.pass }}">←<span>Pass {{ fp_prev.pass }}</span></a>{% else %}<span class="passflip prev disabled" aria-hidden="true">←</span>{% endif %}
 {% if fp_next %}<a class="passflip next" href="{{ fp_next.url | relative_url }}" rel="next" title="Next version: pass {{ fp_next.pass }}"><span>Pass {{ fp_next.pass }}</span>→</a>{% else %}<span class="passflip next disabled" aria-hidden="true">→</span>{% endif %}
