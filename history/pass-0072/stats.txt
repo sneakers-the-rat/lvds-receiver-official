@@ -1,0 +1,13 @@
+pass: 72
+description: heal-all2 with the FIXED router grid (d4a9e0d) on the pass-71 board (exp7 -> exp8): 56 groups connected in 2383 s — the strip nets that were 0-second phantom failures under the clamped grid now route in real geometry. Pass 71's phantom-geometry damage state superseded.
+timestamp (UTC): 2026-11-05T02:27:07Z
+commit: pending
+board file: hw/pdlvds_rx.exp8.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (21 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 40
+unconnected nets: 33
+audit verdict: fail
+note: 
