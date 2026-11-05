@@ -1889,6 +1889,35 @@
       },
       "description": "expansion routing 2: bridge campaign (4 rounds, hw/bridge.py batched) on the repairg exp1 checkpoint board. Total groups 253 -> 226, unconnected nets 69 -> 65, violations 2 (justified D1 pair). Round yields -16/-6/-3/-2: nearest-pair bridges consumed; rails merged one pair per round (+3V3D/+5V/+3V3A/+3V3D_CDR all connected once per round), HV cluster nets bridged in the strip (HV_FBX, HV_SHDN, HV_RAW, HV_SENSE, FLY_PRI, HV_SEC, HV_VC2), +/-VA joined. ULPI bus (U7<->U6) untouched: nearest fragments >3 mm apart (bridge gap sentinel 9.9) \u2014 A* territory. Decay curve says change shape: next = rails bridge-chain, thread.py on geometry-stuck pairs, repairg2 sweep for long hauls.",
       "note": "bridge rounds in results/bridge-r1..r4.log; audits in results/audit-bridge-r1..r4.txt"
+    },
+    {
+      "pass": 68,
+      "timestamp": "2026-11-05T00:16:50Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp3.kicad_pcb",
+      "dir": "pass-0068",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 2,
+        "unconnected_nets": 65,
+        "audit_verdict": "FAIL"
+      },
+      "description": "repairg2 GND phase STOPPED: 22 merges + 18 failed searches in ~16 min bought 1 audit group (226 -> 225, GND 5 -> 4) \u2014 its pour-blind grouping spends the sweep stitching clusters the GND pour already joins. Checkpoint board kept as the working base (copper is real). Main line changes shape per the stall rule: thread.py chains under my net order (rails first, GND excluded \u2014 its grouping is pour-blind too), one save+refill per invocation = checkpoint by construction; GND's 4 audit groups get targeted stitches from the audit's own group membership at the end.",
+      "note": "repairg2 log: results/repairg2-exp3.log; checkpoint audit: results/audit-exp3-ckpt.txt"
     }
   ],
   "gaps": [

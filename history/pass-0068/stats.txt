@@ -1,0 +1,13 @@
+pass: 68
+description: repairg2 GND phase STOPPED: 22 merges + 18 failed searches in ~16 min bought 1 audit group (226 -> 225, GND 5 -> 4) — its pour-blind grouping spends the sweep stitching clusters the GND pour already joins. Checkpoint board kept as the working base (copper is real). Main line changes shape per the stall rule: thread.py chains under my net order (rails first, GND excluded — its grouping is pour-blind too), one save+refill per invocation = checkpoint by construction; GND's 4 audit groups get targeted stitches from the audit's own group membership at the end.
+timestamp (UTC): 2026-11-05T00:16:50Z
+commit: pending
+board file: hw/pdlvds_rx.exp3.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (15 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 2
+unconnected nets: 65
+audit verdict: fail
+note: repairg2 log: results/repairg2-exp3.log; checkpoint audit: results/audit-exp3-ckpt.txt
