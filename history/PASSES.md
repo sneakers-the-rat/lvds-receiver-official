@@ -1012,9 +1012,9 @@ Board: `hw/pdlvds_rx.exp113.kicad_pcb` · Commit: `ed32afaa472c114246b42c4c59084
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 27 · Audit verdict: FAIL
 
-### Pass 122 — 2026-11-05T23:23:24Z · commit `pending`
+### Pass 122 — 2026-11-05T23:23:24Z · commit `eadd3bc`
 
-Board: `hw/pdlvds_rx.exp114.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp114.kicad_pcb` · Commit: `eadd3bcfdf4c36ea14547ffdc3e5d4e6156d677d`
 
 XI/XO (queue item 5) stand as NAMED RESIDUALS; XI fanout ray placed as the heal-enabler attempt. XO: U7.27 SEALED -- hand_stub refuses all 16 directions; every via site tiled by the CDR_DATP via (76.88,10.62) at 0.03-0.155mm, ULPI_CK's wall and U7.26 PHY_1V8's pad; the only mechanisms are the coordinated CDR-pair relay or a U7 move (both parked with the ULPI knot). XI: heal refused before AND after this ray (pad-cell seal in the grid model), thread_far refused (gap 8.45, no thread); remaining mechanisms are the west-corridor hand-route (crosses +3V3A's 0.60 west trunk + the GND field at y19-22, multi-via marginal windows) or the pair relay. This pass places ONLY the XI ray: nub extended (76.25,11.03)->(76.25,10.55) + west bend ->(75.85,10.55), exact-tested clean; no via fits at the ray (CDR_DATP buried staircases). DELTAS vs pass 121: nets 27->27, violations 71->71 expected (audit verifies), XI groups unchanged 2. No victims. NEXT: queue item 6 (east-column +3V3D_CDR + CDR_LOL), then the residue family.
 
