@@ -964,6 +964,14 @@ HV_FBX repaid (owed from pass 114). Ripped group 1's 9-track F.Cu spur west of (
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 75 · Unconnected nets: 30 · Audit verdict: FAIL
 
+### Pass 116 — 2026-11-05T21:26:20Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp108.kicad_pcb` · Commit: `pending`
+
+APD_K R47.2 group connected (queue item 1, leg 1 of 3). Diagnosis: TMP_ALERT's B.Cu vertical at x=49.12 was the pocket's last wall -- APD_K (HV) needs 1.0 mm from it on every layer a via spans (hand_via 0/3, heal 1 s refusal, thread_far no-thread all on record). Fix (hw/fix_r47.py): TMP_ALERT repaid in-pass (B vertical ripped south of y=1.20, re-laid on In2 from its own via, via back at (49.12,1.20), B north re-placed); pour notch F+B x[46.20,51.45] y[-3.10,-0.10]; APD_K via (50.05,-1.60) + In1 west run onto the main web's via (41.12,0.62). DELTAS vs pass 115: nets 30->30 (APD_K groups 4->3), violations 75->72 (-3 cured: R47.2 pad, old stub track, R47.1 -- all vs GND zone; +0 new. First notch cut with east edge 51.15 left the new via 0.8 mm from the fill and cost +3 zone lines; widened to 51.45, re-audited clean). No victims: TMP_ALERT connected after repay, GND still 4 groups.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 72 · Unconnected nets: 30 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
