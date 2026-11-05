@@ -91,12 +91,14 @@ response; step response settles within 1 UI (20 ns; ngspice says
 
 ## 5. HV bias (R9) — safety procedures mandatory
 
-**Pass: settable 150–420 V; step resolution ≤ 0.5 V (the DAC map gives
-≈0.42 V/code); ripple at the APD ≤ 20 mVpp (post-filter prediction is
+**Pass: settable 116–253 V (C30737 fit; S8664 variant 151–420 V);
+step resolution ≤ 0.5 V (the fitted DAC map gives ≈0.002 V/code);
+ripple at the APD ≤ 20 mVpp (post-filter prediction is
 µV-level analytically, 2.9 mVpp in the switching sim — either way the
 limit has wide margin, so a failure means a real defect); bleeder
-420 → <60 V in <10 s after disable (sim ≈0.9–1.3 s); temperature
-compensation tracks 1.3 V/°C.**
+from the set ceiling → <60 V in <10 s after disable (sim ≈1 s);
+temperature compensation tracks 1.3 V/°C; the J5 interlock gates
+every enable (item 5).**
 
 Safety: HV probe only, one-hand rule, no rework with bias on, confirm
 bleeder decay on the meter before touching the HV island, every time.
@@ -104,11 +106,19 @@ bleeder decay on the meter before touching the HV island, every time.
 1. Calibration run from bring-up step 9 (docs/04): demanded vs
    measured voltage across the range → true DAC map (closes R-3).
 2. Ripple: scope + HV probe at the APD cathode node, AC-coupled,
-   20 MHz bandwidth limit off; record mVpp at 150/285/420 V.
-3. Bleeder: disable at 420 V, time to <60 V. Repeat 3×.
+   20 MHz bandwidth limit off; record mVpp at 130/185/250 V.
+3. Bleeder: disable at the fit ceiling (253 V), time to <60 V.
+   Repeat 3×.
 4. Temp comp: log TMP117 temperature and measured Vbr-tracking —
    chill/heat the APD environment over ~10 °C and confirm the bias
    moves ≈1.3 V/°C in the compensating direction.
+5. Interlock (J5, docs/06): with J5 absent, SET_BIAS must return
+   INTERLOCK and the rail must stay at 0 V even with PC7 driven
+   high (hardware gate, not just firmware). Fit J5: enable works,
+   GET_STATUS reports the jumper present. Pull J5 under bias: the
+   rail falls and the firmware latches a fault. Also confirm the
+   power-up state with the MCU held in reset: SHDN node ≈0.94 V,
+   rail 0 V.
 
 ## 6. LVDS output and jitter (R4)
 

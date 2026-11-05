@@ -2,9 +2,9 @@
 #
 #   make host-test   build + run the host-side tests: the codec suite
 #                    (codec/test_codec.c), the USB descriptor audit,
-#                    the USB framing round-trip and the DAC8562
-#                    driver test (tests/). Works with the host gcc
-#                    alone.
+#                    the USB framing round-trip, the DAC8562 driver
+#                    test and the HV control test (tests/). Works
+#                    with the host gcc alone.
 #   make arm         cross-compile firmware for the target; needs
 #                    arm-none-eabi-gcc - if it is not installed this
 #                    target says so and fails, it does not fake a build
@@ -52,6 +52,7 @@ ARM_SRCS   := startup.c \
               $(SRC_DIR)/tmp117.c \
               $(SRC_DIR)/adn2813.c \
               $(SRC_DIR)/hv_ctrl.c \
+              $(SRC_DIR)/hv_sense.c \
               $(SRC_DIR)/capture.c \
               $(SRC_DIR)/usb_app.c \
               $(SRC_DIR)/usb_descriptors.c \
@@ -62,11 +63,13 @@ ARM_OBJS   := $(patsubst %.c,$(BUILD)/%.o,$(ARM_SRCS)) \
 .PHONY: host-test arm clean
 
 host-test: $(BUILD)/test_codec $(BUILD)/test_usb_descriptors \
-           $(BUILD)/test_usb_framing $(BUILD)/test_dac8562
+           $(BUILD)/test_usb_framing $(BUILD)/test_dac8562 \
+           $(BUILD)/test_hv_ctrl
 	./$(BUILD)/test_codec
 	./$(BUILD)/test_usb_descriptors
 	./$(BUILD)/test_usb_framing
 	./$(BUILD)/test_dac8562
+	./$(BUILD)/test_hv_ctrl
 
 $(BUILD)/test_codec: $(CODEC_SRCS) $(TEST_SRCS) $(CODEC_DIR)/codec.h
 	@mkdir -p $(BUILD)
@@ -99,6 +102,18 @@ $(BUILD)/test_dac8562: $(TESTS_DIR)/test_dac8562.c \
 	@mkdir -p $(BUILD)
 	$(HOST_CC) $(HOST_FLAGS) -I$(SRC_DIR) \
 	    $(TESTS_DIR)/test_dac8562.c $(SRC_DIR)/dac8562.c -o $@
+
+# The HV control test links the real hv_ctrl.c against mock
+# dac8562_set_bias_setpoint / gpio_write / hv_sense_read_mv
+# backends (tests/test_hv_ctrl.c carries them), so it observes the
+# volts->counts transfer and the J5 interlock gate behaviour.
+# dac8562.c/gpio.c/hv_sense.c are NOT linked.
+$(BUILD)/test_hv_ctrl: $(TESTS_DIR)/test_hv_ctrl.c \
+                       $(SRC_DIR)/hv_ctrl.c $(SRC_DIR)/hv_ctrl.h \
+                       $(SRC_DIR)/board.h
+	@mkdir -p $(BUILD)
+	$(HOST_CC) $(HOST_FLAGS) -I$(SRC_DIR) \
+	    $(TESTS_DIR)/test_hv_ctrl.c $(SRC_DIR)/hv_ctrl.c -o $@
 
 arm:
 	@command -v $(ARM_CC) >/dev/null 2>&1 || { \

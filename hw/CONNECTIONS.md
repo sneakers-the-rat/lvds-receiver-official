@@ -57,8 +57,9 @@ before ULPI will work — bring-up item #1 (docs/04). **
 SWD: PA13/PA14 -> J4. I2C1: PB6/PB7 (ADN2813 + TMP117, R20/R21 4.7 kΩ
 pull-ups). SPI3: PC10 SCK, PC12 MOSI -> DAC8562; PA15 = DAC_SYNC.
 GPIO: PA0 CAP_CLK, PA1 CAP_DATA, PA2 CDR_LOL, PB14 CDR_LOS, PB15 SQUELCH,
-PC7 HV_SHDN, PC8 BIST_DRV, PC9 LED_STAT, PB8 TMP_ALERT, PB9 PG_3V3,
-PA4 USB_RST, PA9/PA10 DBG_TX/RX -> TP2/TP3.
+PC7 HV_EN (to the HV_SHDN node via the J5 interlock jumper), PA6 HV_SHDN
+(analogue sense of the SHDN node / J5 state), PC8 BIST_DRV, PC9 LED_STAT,
+PB8 TMP_ALERT, PB9 PG_3V3, PA4 USB_RST, PA9/PA10 DBG_TX/RX -> TP2/TP3.
 Power: all VDD -> +3V3D, VDDA/VREF+ -> +3V3A, VBAT -> +3V3D, PDR_ON ->
 +3V3D, VCAP×2 -> C17/C18 2.2 µF, NRST pull-up R15 + C19, BOOT0 R16 to GND.
 (AF assignments for SPI3/I2C1/timers remain firmware VERIFY items.)
@@ -86,18 +87,28 @@ ADD0 (4) = GND (addr 0x48), ALERT (3) -> MCU PB8 with R22 pull-up,
 V+ (5) = +3V3A, EP = GND.
 
 ## HV bias (U10 LT3757 MSOP-10E; FBX ref 1.6 V — VERIFY, docs/04)
-VIN (10) = +5V. SHDN/UVLO (9) = HV_SHDN: R25 100 kΩ/R26 33 kΩ divider
-from +5V (≈1.24 V, just above the 1.22 V threshold) with MCU PC7 able to
-pull the node down through R26 to disable. GATE (7) -> R27 10 Ω -> Q1
+VIN (10) = +5V. SHDN/UVLO (9) = HV_SHDN: R25 143 kΩ/R26 33 kΩ divider
+from +5V (≈0.94 V, below the 1.17–1.27 V threshold spread, so the
+divider alone never enables the converter); MCU PC7 (net HV_EN)
+reaches the node only through the J5 interlock jumper (J5.1 = HV_EN,
+J5.2 = HV_SHDN) — jumper absent = converter cannot start under any
+firmware state; jumper fitted, PC7 low pulls the node to ≈0 V to
+disable, PC7 high drives ≈3.3 V to enable. PA6 senses the node
+voltage (ADC) for firmware's jumper-state gate. GATE (7) -> R27 10 Ω -> Q1
 IRLML0030 gate; Q1 drain = FLY_PRI, source -> R28 0.05 Ω sense -> GND;
 SENSE (6) at source. T1 flyback 1:20: primary between +5V and FLY_PRI
 (dot at +5V end), secondary dot at GND end, SEC_A -> D5 ES1J anode;
 cathode = HV_RAW. C32 100 nF/630 V reservoir. R29 10 kΩ + C33 form the
 post-filter to APD_K (the APD node). R30 4.7 MΩ bleeder (<10 s to <60 V).
-Divider: R31 7.68 MΩ (APD_K) / R32 49.9 kΩ (GND) -> HV_FBX (node at FBX
-pin 2); R33 71.5 kΩ injects HV_DAC into the node. With V_FBX = 1.6 V:
-V_HV = 1.6·(1+7680/49.9) + (1.6−V_DAC)·(7680/71.5) ≈ 247.8 + 107.4·(1.6−V_DAC)
-→ V_DAC 0 V ≈ 420 V, 1.25 V ≈ 285 V, 2.5 V ≈ 151 V (see docs/03).
+Divider (C30737 fit): R31 7.68 MΩ (APD_K) / R32 75.0 kΩ (GND) ->
+HV_FBX (node at FBX pin 2); R33 140 kΩ injects HV_DAC into the node.
+R31/R32/R33 are 0.1% parts. With V_FBX = 1.6 V:
+V_HV = 1.6·(1+7680/75.0) + (1.6−V_DAC)·(7680/140) ≈ 165.4 + 54.86·(1.6−V_DAC)
+→ V_DAC 0 V ≈ 253 V, 1.25 V ≈ 185 V, 2.5 V ≈ 116 V. The 0 V DAC state
+is the hardware ceiling: 253.2 V nominal, 259.4 V worst-case — inside
+the C30737's 260 V envelope under every DAC state (see docs/03).
+S8664 variant fit: R32 49.9 kΩ / R33 71.5 kΩ → ≈247.8 + 107.4·(1.6−V_DAC),
+151–420 V (mutually exclusive stuffing variant, docs/03).
 VC (1): R23 10 kΩ + C29 10 nF compensation (nominal, tune at bring-up).
 SS (3): C30 100 nF. RT (4): R24 24.9 kΩ (≈250 kHz — VERIFY against the
 datasheet RT table, docs/04). SYNC (5) = GND. INTVCC (8): C31 4.7 µF.

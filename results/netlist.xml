@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <export version="E">
   <design>
-    <source>/home/hatch/workspace/photodiode-lvds-rx/hw/pdlvds_rx.kicad_sch</source>
-    <date>Tue Nov  3 19:31:02 2026</date>
+    <source>/home/hatch/workspace/pdlvds-hvfix/hw/pdlvds_rx.kicad_sch</source>
+    <date>Thu Nov  5 05:03:51 2026</date>
     <tool>Eeschema 7.0.11+dfsg-1build4</tool>
     <sheet number="1" name="/" tstamps="/">
       <title_block>
@@ -31,7 +31,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>175394f9-80b2-49bd-8dc9-d6482a3202d0</tstamps>
+      <tstamps>5fba3feb-6293-44e7-ad95-8ba7428fc90a</tstamps>
     </comp>
     <comp ref="C2">
       <value>100nF</value>
@@ -40,7 +40,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>599f66a0-d289-486e-939d-8b20b71aaa82</tstamps>
+      <tstamps>4a637aa4-af98-45f3-abad-51e84646850d</tstamps>
     </comp>
     <comp ref="C3">
       <value>100nF</value>
@@ -49,7 +49,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>edf52d61-4167-48c0-964d-066d97f0c47b</tstamps>
+      <tstamps>335b1323-e285-44b1-b88d-effd9afa2ed8</tstamps>
     </comp>
     <comp ref="C4">
       <value>1uF</value>
@@ -58,7 +58,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b34cdd2e-0aff-4f9c-879b-56ec95b3274a</tstamps>
+      <tstamps>ad3b76c3-ae13-4c62-815c-154ab72ed9ae</tstamps>
     </comp>
     <comp ref="C5">
       <value>1nF</value>
@@ -67,7 +67,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>58a0910d-2bec-42d7-9560-65030a636738</tstamps>
+      <tstamps>a95a8a2c-a839-4f9d-b044-aaca286f3d1b</tstamps>
     </comp>
     <comp ref="C6">
       <value>10uF</value>
@@ -76,7 +76,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e2cbc83f-27a7-4de3-9656-dee8be0065e8</tstamps>
+      <tstamps>b249c1e2-28c5-453d-bff2-5008dc10bfa5</tstamps>
     </comp>
     <comp ref="C7">
       <value>100nF</value>
@@ -85,7 +85,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>78c2f4cc-9fb4-46f2-8a28-c1a737742c02</tstamps>
+      <tstamps>e263a15c-5ad7-426a-9034-61a64083fdcc</tstamps>
     </comp>
     <comp ref="C8">
       <value>100nF</value>
@@ -94,7 +94,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>81606083-484c-4dda-ba37-d96cd518380c</tstamps>
+      <tstamps>56d3fd4a-a582-4088-a5c1-cb5dca43e67e</tstamps>
     </comp>
     <comp ref="C9">
       <value>100nF</value>
@@ -103,7 +103,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b3053a7c-6ee4-4001-9e30-ab4aedd8e41a</tstamps>
+      <tstamps>02fe6780-954f-45b4-9883-679dcf691c6e</tstamps>
     </comp>
     <comp ref="C10">
       <value>100nF</value>
@@ -112,7 +112,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d0e0841e-0e08-4dd8-b51e-ebde671a35ab</tstamps>
+      <tstamps>2b24cda1-f164-41e7-a0d5-31fa0266007a</tstamps>
     </comp>
     <comp ref="C11">
       <value>100nF</value>
@@ -121,7 +121,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>37b29e89-f2d1-43c5-a814-88799fd63a0d</tstamps>
+      <tstamps>bc3fe76f-113b-4e91-b9ad-9952cd4cbc84</tstamps>
     </comp>
     <comp ref="C12">
       <value>1uF</value>
@@ -130,7 +130,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>de90f577-479a-490c-b92c-0735319f1322</tstamps>
+      <tstamps>f38a7a69-f02b-4953-b728-e08ad9377da1</tstamps>
     </comp>
     <comp ref="C13">
       <value>100nF</value>
@@ -139,7 +139,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b9d1de77-18b8-4b3d-979d-d470dc0b9604</tstamps>
+      <tstamps>46fe8a55-358e-4903-ac49-d0ed860b426c</tstamps>
     </comp>
     <comp ref="C14">
       <value>100nF</value>
@@ -148,7 +148,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3c37692e-7893-4036-913d-6634373fa622</tstamps>
+      <tstamps>b539bc40-4dd3-46a2-ad10-0b6a566bfabf</tstamps>
     </comp>
     <comp ref="C15">
       <value>0.47uF</value>
@@ -157,7 +157,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cd6e7871-14fc-423f-af49-597ae55d5840</tstamps>
+      <tstamps>90419fc2-b7c7-408d-ac7b-e52ae64537f1</tstamps>
     </comp>
     <comp ref="C16">
       <value>100nF</value>
@@ -166,7 +166,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>08bbc03b-a707-46f3-bbe6-6859100a6130</tstamps>
+      <tstamps>a3d91fa7-bcfe-4c69-87a4-54d57337e344</tstamps>
     </comp>
     <comp ref="C17">
       <value>2.2uF</value>
@@ -175,7 +175,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0ce0b4c9-5a7e-4b66-9247-b27c1f4a63d9</tstamps>
+      <tstamps>b923d4a8-e409-4a3b-be5b-a8eaf301c35e</tstamps>
     </comp>
     <comp ref="C18">
       <value>2.2uF</value>
@@ -184,7 +184,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e2d04fab-d4e7-4438-bdc3-a7735a476bcd</tstamps>
+      <tstamps>26927038-7f7b-4cdf-bd32-02a35b7396f9</tstamps>
     </comp>
     <comp ref="C19">
       <value>100nF</value>
@@ -193,7 +193,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>65e66388-e48b-4b44-a827-352b35500b53</tstamps>
+      <tstamps>a0f58034-ddbf-4849-9b82-8397563f3e06</tstamps>
     </comp>
     <comp ref="C20">
       <value>18pF</value>
@@ -202,7 +202,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>15121206-7a55-46fb-ba4a-34d5b9773b9f</tstamps>
+      <tstamps>7265ae4a-dc2b-4390-b29b-2f6f39b16fb7</tstamps>
     </comp>
     <comp ref="C21">
       <value>18pF</value>
@@ -211,7 +211,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>afb5563a-4b1c-4f56-85e6-49a22b5dc8b6</tstamps>
+      <tstamps>b2695daf-b0b3-4cb8-aa61-4bb6663832a1</tstamps>
     </comp>
     <comp ref="C22">
       <value>4.7uF</value>
@@ -220,7 +220,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6649762d-558f-40da-a69e-cbd8fbdec382</tstamps>
+      <tstamps>15c610ec-3b9a-4d32-9fa5-6a32d5b36a0b</tstamps>
     </comp>
     <comp ref="C23">
       <value>100nF</value>
@@ -229,7 +229,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9f8d517a-2c58-4b8a-91ba-f301d052abb2</tstamps>
+      <tstamps>5c5ddd25-e489-494c-953a-b26a1756705c</tstamps>
     </comp>
     <comp ref="C24">
       <value>100nF</value>
@@ -238,7 +238,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>131d6651-48d8-4938-afb8-41f0abeeedb8</tstamps>
+      <tstamps>fd7a3ffc-2ff0-4b21-908e-a59250dd1171</tstamps>
     </comp>
     <comp ref="C25">
       <value>10uF</value>
@@ -247,7 +247,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e7c99058-d210-4f46-bf64-ad85ee397c32</tstamps>
+      <tstamps>98e15f00-605d-490b-84e8-9232101f8b0f</tstamps>
     </comp>
     <comp ref="C26">
       <value>100nF</value>
@@ -256,7 +256,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d1db37f7-4e68-4f1c-99b3-aff3318063a0</tstamps>
+      <tstamps>fcd11a0d-082c-4cc1-8a41-132e277e7f4d</tstamps>
     </comp>
     <comp ref="C27">
       <value>100nF</value>
@@ -265,7 +265,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>062ad285-c8b3-4200-90b1-7a94457f36ec</tstamps>
+      <tstamps>71260643-cdc7-4ab6-b42f-c848f5d9bd0a</tstamps>
     </comp>
     <comp ref="C28">
       <value>100nF</value>
@@ -274,7 +274,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>de844abe-f464-4f51-9b14-476517b138af</tstamps>
+      <tstamps>fc2cc58f-af02-4fa1-ac6f-a9a4056b83c0</tstamps>
     </comp>
     <comp ref="C29">
       <value>10nF</value>
@@ -283,7 +283,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>758383c7-9a40-4086-bfde-1685e4d43d55</tstamps>
+      <tstamps>22e96007-b33d-4f64-a006-6e49b85e6062</tstamps>
     </comp>
     <comp ref="C30">
       <value>100nF</value>
@@ -292,7 +292,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0ca411d7-c5c3-4a72-b621-c7eeb781109e</tstamps>
+      <tstamps>caaf0ce0-3d6d-4029-bc22-32a3575a372e</tstamps>
     </comp>
     <comp ref="C31">
       <value>4.7uF</value>
@@ -301,7 +301,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1fcc9764-db97-4669-9d94-95d77020a3f9</tstamps>
+      <tstamps>870b7749-f68b-4719-b9df-8fec8c32ad2f</tstamps>
     </comp>
     <comp ref="C32">
       <value>100nF 630V</value>
@@ -310,7 +310,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>15ab3df1-1123-41f2-8069-ef4f7d20bed8</tstamps>
+      <tstamps>7714df67-76de-4fa2-bc0e-c54a06cab4a9</tstamps>
     </comp>
     <comp ref="C33">
       <value>100nF 630V</value>
@@ -319,7 +319,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>be3784d7-8916-4d43-b6ce-67f0e85f6949</tstamps>
+      <tstamps>4530ee8e-55a0-49ef-a784-8762e5aa99bb</tstamps>
     </comp>
     <comp ref="C34">
       <value>1nF</value>
@@ -328,7 +328,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>5ebbb6d7-1104-48fb-a62d-4611d4faf460</tstamps>
+      <tstamps>55f771f2-db81-4bc0-bde1-f537703f2414</tstamps>
     </comp>
     <comp ref="C35">
       <value>10uF</value>
@@ -337,7 +337,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>166d2c3a-cc03-4640-a2df-fbca1764b0b0</tstamps>
+      <tstamps>f7433856-a228-4813-bec7-5001461ce135</tstamps>
     </comp>
     <comp ref="C36">
       <value>3.3nF</value>
@@ -346,7 +346,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>bf11fc6e-a88a-4dea-ac19-bef358b0a8c0</tstamps>
+      <tstamps>ddbcd488-915d-4877-a9d9-3ef0a6f8075a</tstamps>
     </comp>
     <comp ref="C37">
       <value>10uF</value>
@@ -355,7 +355,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3f9571d9-a4eb-47ec-a16c-e0364d356574</tstamps>
+      <tstamps>051bb318-2873-439d-809d-fe1659381c87</tstamps>
     </comp>
     <comp ref="C38">
       <value>22uF</value>
@@ -364,7 +364,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a8fdd0ac-a454-4869-976f-5204eaf8616b</tstamps>
+      <tstamps>b34f6677-8c9a-47e7-b08b-1b11e4b1c36c</tstamps>
     </comp>
     <comp ref="C39">
       <value>3.3nF</value>
@@ -373,7 +373,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1caa0988-4a65-4096-9835-909625783875</tstamps>
+      <tstamps>68f8d647-5eb9-4f5a-a4a6-2aa2aa84033c</tstamps>
     </comp>
     <comp ref="C40">
       <value>22uF</value>
@@ -382,7 +382,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>62549947-2aab-4c3a-af3e-3a1598880a47</tstamps>
+      <tstamps>b856a88a-e704-486a-9cb0-ac8a40f57c05</tstamps>
     </comp>
     <comp ref="C41">
       <value>22uF</value>
@@ -391,7 +391,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cdb0673b-6395-4c87-86b2-13210bc78add</tstamps>
+      <tstamps>fc065506-ac09-4a3e-b400-55078fba7649</tstamps>
     </comp>
     <comp ref="C42">
       <value>4.7uF</value>
@@ -400,7 +400,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c581d9aa-8b8b-4230-a41d-eb726aa04fef</tstamps>
+      <tstamps>ced4dd25-0e87-485a-a6b8-b3057d1b9569</tstamps>
     </comp>
     <comp ref="C43">
       <value>4.7uF</value>
@@ -409,7 +409,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>55e7b64d-05e2-4f38-8a2c-03791b599a53</tstamps>
+      <tstamps>0b6f251a-f29a-4d7e-9efb-03f1c3c1730a</tstamps>
     </comp>
     <comp ref="C44">
       <value>4.7uF</value>
@@ -418,7 +418,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>66d1d981-4b63-4e3a-9fa0-9102c912b481</tstamps>
+      <tstamps>9963cec0-f3ad-4cdb-a6b3-98e3ffa8f829</tstamps>
     </comp>
     <comp ref="C45">
       <value>4.7uF</value>
@@ -427,7 +427,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e6df40ee-4745-4c56-b302-920e8c4d9beb</tstamps>
+      <tstamps>5ac730cb-1d84-4e7f-83b6-c67b2331a691</tstamps>
     </comp>
     <comp ref="C46">
       <value>4.7uF</value>
@@ -436,7 +436,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c9be540e-203f-480d-a875-537ecdc494f1</tstamps>
+      <tstamps>bc4707e9-15d5-4269-ae2c-e0f883fc0734</tstamps>
     </comp>
     <comp ref="C47">
       <value>100nF</value>
@@ -445,7 +445,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>5ce89fec-6aa9-4ede-b78c-ab8eae70b3ed</tstamps>
+      <tstamps>31b1a6a9-7a0f-43b6-b2e4-9d7dd86d6d66</tstamps>
     </comp>
     <comp ref="C48">
       <value>100nF</value>
@@ -454,7 +454,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>88c36046-7f9c-4557-b12c-8a0fc8165820</tstamps>
+      <tstamps>efa930b4-157f-47fc-b85b-63cf11a1c7cd</tstamps>
     </comp>
     <comp ref="C49">
       <value>4.7uF</value>
@@ -463,7 +463,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>ccdf42da-9e96-469f-adeb-5f71861f2938</tstamps>
+      <tstamps>9b76f6ae-6d9a-411b-92e6-392224d37113</tstamps>
     </comp>
     <comp ref="C50">
       <value>100nF</value>
@@ -472,7 +472,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cf49e8ff-a4c5-43de-896e-159a8ed29eb4</tstamps>
+      <tstamps>a49ad98b-9175-4c41-9cb8-de245607bbf0</tstamps>
     </comp>
     <comp ref="C51">
       <value>10uF</value>
@@ -481,7 +481,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1d800116-b54b-484b-9ea7-5e9bf861a75b</tstamps>
+      <tstamps>1eb54f9b-ccdf-4d72-b9f1-1cae9a92e5e2</tstamps>
     </comp>
     <comp ref="D1">
       <value>C30737LH-500-90</value>
@@ -490,7 +490,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0f02a7e9-b157-48c4-bcfa-499b78079316</tstamps>
+      <tstamps>209c474e-38da-4ab1-bc62-a356b320fb46</tstamps>
     </comp>
     <comp ref="D2">
       <value>S8664-20K (DNP alt)</value>
@@ -499,7 +499,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>00531d9f-9550-4a96-b862-b42216ba537a</tstamps>
+      <tstamps>1f136eb1-baca-4363-a02d-58ade1d92c0f</tstamps>
     </comp>
     <comp ref="D3">
       <value>USBLC6-2SC6</value>
@@ -508,7 +508,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1a668cc2-4b77-4dc5-9e66-8a0db6f8f57d</tstamps>
+      <tstamps>58a6e2a8-81b4-4560-93b6-c512617a58f8</tstamps>
     </comp>
     <comp ref="D4">
       <value>SMBJ5.0A</value>
@@ -517,7 +517,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b5f83f77-cae6-469e-8484-1204ac690afe</tstamps>
+      <tstamps>f782088b-1c71-4d30-acf5-82b1d2b5a302</tstamps>
     </comp>
     <comp ref="D5">
       <value>ES1J</value>
@@ -526,7 +526,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7d7d9953-d0de-4c38-ae2b-e04cc5e6cd87</tstamps>
+      <tstamps>ac368303-de96-4501-8b4c-39b449f1e74f</tstamps>
     </comp>
     <comp ref="D6">
       <value>LED green PWR</value>
@@ -535,7 +535,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>dfe7e3db-acc0-4f79-999f-7c2c9958964b</tstamps>
+      <tstamps>0ed92c3c-bf73-4b22-87b7-aa83f93e7975</tstamps>
     </comp>
     <comp ref="D7">
       <value>LED green STAT</value>
@@ -544,7 +544,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>fc05a784-a629-4951-8a8e-6c3a7e3983ba</tstamps>
+      <tstamps>fcda7598-4747-41fc-a2ac-31d411478130</tstamps>
     </comp>
     <comp ref="D8">
       <value>LED 740nm BIST source</value>
@@ -553,7 +553,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c828e950-0701-4e86-9ad2-f868f4c02518</tstamps>
+      <tstamps>b6801fdc-5df1-454a-aed8-82eaae3f1dd2</tstamps>
     </comp>
     <comp ref="F1">
       <value>PTC 1.1A</value>
@@ -562,7 +562,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f6c5477d-30e6-4267-96d5-da3755a69be1</tstamps>
+      <tstamps>f5ace83c-4e88-46e1-ac27-d2dd408126d1</tstamps>
     </comp>
     <comp ref="FB1">
       <value>600R@100MHz</value>
@@ -571,7 +571,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3e630e44-6cf6-408f-9890-52ced184bede</tstamps>
+      <tstamps>03568268-eb77-48ec-a801-8a25fe6688a7</tstamps>
     </comp>
     <comp ref="FB2">
       <value>600R@100MHz</value>
@@ -580,7 +580,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0463c4b4-0395-471d-a6d0-fbfc307ddcb5</tstamps>
+      <tstamps>d38a91f7-8247-48f7-a942-bf026d0f1b13</tstamps>
     </comp>
     <comp ref="J1">
       <value>USB-C receptacle</value>
@@ -589,7 +589,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>abb35f21-a029-498f-843d-b4fc37cb5a1d</tstamps>
+      <tstamps>d297b814-93ba-4d21-a6e0-56fd882e6d4f</tstamps>
     </comp>
     <comp ref="J2">
       <value>LVDS out 2x3</value>
@@ -598,7 +598,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f24ce3c0-e8b5-4022-83dd-0686c0e7c0e5</tstamps>
+      <tstamps>803f9c6b-7fcd-4eae-9714-fc4116a12600</tstamps>
     </comp>
     <comp ref="J3">
       <value>SMA test in</value>
@@ -607,7 +607,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d37f38d4-ded0-441c-a456-c182fa3613ce</tstamps>
+      <tstamps>c7e285bf-0eaa-4917-bee5-11f316bcad59</tstamps>
     </comp>
     <comp ref="J4">
       <value>SWD 2x5 1.27</value>
@@ -616,7 +616,16 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>68b60162-e1a0-450d-bb76-d7aa8c715b5d</tstamps>
+      <tstamps>1728828c-4e95-4c92-9767-24770463b3db</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>HV enable jumper</value>
+      <footprint>Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical</footprint>
+      <libsource lib="pdlvds" part="PD_J5_HV" description=""/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3c72f0a8-02ae-4e37-81f9-ff774b658f2e</tstamps>
     </comp>
     <comp ref="L1">
       <value>2.2uH</value>
@@ -625,7 +634,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f176ec80-ba3f-4cc1-b8f9-54f175c71223</tstamps>
+      <tstamps>82d408b5-63e4-40d1-80e4-9f6314447e36</tstamps>
     </comp>
     <comp ref="L2">
       <value>2.2uH</value>
@@ -634,7 +643,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>adf82467-039e-4fe4-a520-b08412905c29</tstamps>
+      <tstamps>667aa54e-da8c-4b0b-8804-3b6e059d5357</tstamps>
     </comp>
     <comp ref="MH1">
       <value>M3 corner</value>
@@ -643,7 +652,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a5a52462-5eed-4ab7-a9df-90d5d0ec40f7</tstamps>
+      <tstamps>d8aa5184-45ec-4888-966f-0b4ee9073eb4</tstamps>
     </comp>
     <comp ref="MH2">
       <value>M3 corner</value>
@@ -652,7 +661,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0ee1becc-3339-47b2-b12e-dfd60ce6da76</tstamps>
+      <tstamps>83add859-e756-4046-b587-05c292550653</tstamps>
     </comp>
     <comp ref="MH3">
       <value>M3 corner</value>
@@ -661,7 +670,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8089816f-ee86-4c32-86a2-d9670baf746d</tstamps>
+      <tstamps>b69697f5-53cb-4f90-a271-00118387366a</tstamps>
     </comp>
     <comp ref="MH4">
       <value>M3 corner</value>
@@ -670,7 +679,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>dfa548ff-7e27-4055-b530-bad5d9033054</tstamps>
+      <tstamps>0f412407-ab19-440d-9cb8-dc40ea2c5aa9</tstamps>
     </comp>
     <comp ref="MH5">
       <value>M2.5 lens holder</value>
@@ -679,7 +688,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>23719afe-5838-4347-b1f1-531a1bf7ddfc</tstamps>
+      <tstamps>9e7fe694-1c71-42c3-b2ce-036f6350fad6</tstamps>
     </comp>
     <comp ref="MH6">
       <value>M2.5 lens holder</value>
@@ -688,7 +697,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6ce03f6e-eaf2-40b0-a431-942d437a6672</tstamps>
+      <tstamps>3dc51b99-8104-4068-a168-3bde293568ab</tstamps>
     </comp>
     <comp ref="Q1">
       <value>IRLML0030 SOT-23</value>
@@ -697,7 +706,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>d206910a-b0ab-48ea-a3bc-8573272fb539</tstamps>
+      <tstamps>64f8bedd-1927-4647-91f7-15136469dd03</tstamps>
     </comp>
     <comp ref="R1">
       <value>3.3k</value>
@@ -706,7 +715,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6beec8a8-b3f3-4f3e-86a8-6ae45da17cf6</tstamps>
+      <tstamps>1c7eed08-22f4-4a3f-9b53-01aad1457ad6</tstamps>
     </comp>
     <comp ref="R2">
       <value>1k</value>
@@ -715,7 +724,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>41f335aa-e370-4b62-9424-38d096304fe8</tstamps>
+      <tstamps>5be3a8b5-da8c-48d0-a74a-01d51a6722e6</tstamps>
     </comp>
     <comp ref="R3">
       <value>806R</value>
@@ -724,7 +733,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>db74f503-41d1-4781-b856-b9f34cb08da0</tstamps>
+      <tstamps>c4e487ad-db6b-4e65-897a-20ea61d398da</tstamps>
     </comp>
     <comp ref="R4">
       <value>200R</value>
@@ -733,7 +742,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>98906cc2-c444-4b39-b614-41a80ed08e7a</tstamps>
+      <tstamps>8090472a-0843-4eb1-87c0-e94013808776</tstamps>
     </comp>
     <comp ref="R5">
       <value>10k</value>
@@ -742,7 +751,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c0500f34-a608-4cbd-8166-2db306105d5e</tstamps>
+      <tstamps>938d6404-2c0b-4165-ab00-13bf7a55d5f3</tstamps>
     </comp>
     <comp ref="R6">
       <value>10k</value>
@@ -751,7 +760,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>386eb1e0-e002-4132-b90d-bcdcb6e358a5</tstamps>
+      <tstamps>53663454-32b2-4725-9279-5d40ae77e8db</tstamps>
     </comp>
     <comp ref="R7">
       <value>0R (fit for TIA direct)</value>
@@ -760,7 +769,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>4971e5bd-caf8-4411-b9cb-ad148ec2c6ae</tstamps>
+      <tstamps>4cb6c40f-97ed-403f-b279-2317535dcb3e</tstamps>
     </comp>
     <comp ref="R8">
       <value>0R DNP (fit for post-amp)</value>
@@ -769,7 +778,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>44104368-18bd-4768-9781-9863f0ed3c87</tstamps>
+      <tstamps>1d0d07c3-afc7-4e86-a4b1-8f35528a36de</tstamps>
     </comp>
     <comp ref="R9">
       <value>100k (hysteresis)</value>
@@ -778,7 +787,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a6d1f144-2350-4c72-a005-0d9f3a59197f</tstamps>
+      <tstamps>c3fc6d70-9469-4501-9f7f-0b7ab0aa7ea4</tstamps>
     </comp>
     <comp ref="R10">
       <value>1k</value>
@@ -787,7 +796,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>4fa425a8-c313-41cc-bd0c-b0a8a7d783e0</tstamps>
+      <tstamps>527120a7-5841-4667-bab1-fcfa16b80710</tstamps>
     </comp>
     <comp ref="R11">
       <value>49.9R DNP</value>
@@ -796,7 +805,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f48746d1-6898-44e5-bb11-9aa3e1abb8dd</tstamps>
+      <tstamps>943bc0a5-ca8e-4eb9-aca3-5ac2f527dba6</tstamps>
     </comp>
     <comp ref="R12">
       <value>10k</value>
@@ -805,7 +814,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>851ce2dd-aeed-417f-8f20-a8452d2d76e3</tstamps>
+      <tstamps>b9da3e13-1c73-4e13-9afe-b71969933dc3</tstamps>
     </comp>
     <comp ref="R13">
       <value>100R</value>
@@ -814,7 +823,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>416a659e-6def-4f38-8b36-3b32b3b28d60</tstamps>
+      <tstamps>6846cb8b-5471-47c5-813d-eaac3b7647c3</tstamps>
     </comp>
     <comp ref="R14">
       <value>100R</value>
@@ -823,7 +832,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>3255fbb7-3d37-45cc-96cf-3be4e78bb6e8</tstamps>
+      <tstamps>7b6d3637-09bc-46ff-82ca-ebb0213f53b7</tstamps>
     </comp>
     <comp ref="R15">
       <value>10k</value>
@@ -832,7 +841,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8e506ce5-6f60-4649-b90b-d131580a1824</tstamps>
+      <tstamps>575776b8-d796-4d59-9437-9ecd3962883d</tstamps>
     </comp>
     <comp ref="R16">
       <value>10k</value>
@@ -841,7 +850,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>40f62ca4-c8fa-41aa-b54a-bb3d4d759f04</tstamps>
+      <tstamps>12fecaa3-ee6b-4296-beb1-fd9cbf71d997</tstamps>
     </comp>
     <comp ref="R17">
       <value>12k 1%</value>
@@ -850,7 +859,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7989477f-5ca9-4868-b51c-00717a112742</tstamps>
+      <tstamps>4210c443-9dfa-461e-81e2-06935f705aec</tstamps>
     </comp>
     <comp ref="R18">
       <value>5.1k</value>
@@ -859,7 +868,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>822470bc-7ec1-4a55-9a22-e1c15b986c8d</tstamps>
+      <tstamps>a95abe24-77d9-40f5-8b4e-df84871f1a3b</tstamps>
     </comp>
     <comp ref="R19">
       <value>5.1k</value>
@@ -868,7 +877,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>28d0cc26-91c4-45c2-a9a8-e171fd6c64fc</tstamps>
+      <tstamps>8fbc74d0-c5a6-4e4c-9e5b-7a4b4ec78840</tstamps>
     </comp>
     <comp ref="R20">
       <value>4.7k</value>
@@ -877,7 +886,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>b04b4732-1468-46cf-9089-db59eeba9d06</tstamps>
+      <tstamps>2b6359ca-2a11-44f1-ae64-de51079e40d9</tstamps>
     </comp>
     <comp ref="R21">
       <value>4.7k</value>
@@ -886,7 +895,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1100107a-4e76-41e2-9b11-2b9afa60c20f</tstamps>
+      <tstamps>a8e5507d-0208-4891-93d3-469eecadbf04</tstamps>
     </comp>
     <comp ref="R22">
       <value>10k</value>
@@ -895,7 +904,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e7939684-f2e1-4667-8075-e4926f142f37</tstamps>
+      <tstamps>27771db1-8751-4628-b456-d11b5901e405</tstamps>
     </comp>
     <comp ref="R23">
       <value>10k</value>
@@ -904,7 +913,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7780e1a9-52a0-4ebf-8980-8c47ba44f67b</tstamps>
+      <tstamps>563ea947-7d2a-4a77-8fd9-2aa070b75934</tstamps>
     </comp>
     <comp ref="R24">
       <value>24.9k (RT, VERIFY f=250k)</value>
@@ -913,16 +922,16 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>02be7638-bae7-4a97-9b7c-9cd3120a1902</tstamps>
+      <tstamps>1e2f639a-417a-4db6-a035-967bb8a3f6fd</tstamps>
     </comp>
     <comp ref="R25">
-      <value>100k</value>
+      <value>143k</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <libsource lib="pdlvds" part="PD_R25_100k" description=""/>
+      <libsource lib="pdlvds" part="PD_R25_143k" description=""/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a248d21c-fec8-44e4-a226-eaa50ae92cc3</tstamps>
+      <tstamps>0e6faa46-b590-4808-8dbc-5f8a32521aa1</tstamps>
     </comp>
     <comp ref="R26">
       <value>33k</value>
@@ -931,7 +940,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>96ed3ca1-3e36-4e19-bed3-e711d78e7e9d</tstamps>
+      <tstamps>878937ea-c2aa-469e-8e06-d047bf48005d</tstamps>
     </comp>
     <comp ref="R27">
       <value>10k</value>
@@ -940,7 +949,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>25af3836-eb8d-49fc-8122-c4ed453b7409</tstamps>
+      <tstamps>e530d846-d345-4dc4-bb8e-1b8caf5f7fa7</tstamps>
     </comp>
     <comp ref="R28">
       <value>0.05R</value>
@@ -949,7 +958,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>268110a2-59f2-46e3-8e3a-5fa6b63fc616</tstamps>
+      <tstamps>3f69c63a-9eae-4717-bd02-c1ce55340f70</tstamps>
     </comp>
     <comp ref="R29">
       <value>10k HV</value>
@@ -958,7 +967,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>07cc2b02-6fc4-4107-9e73-ede958f45ffd</tstamps>
+      <tstamps>4497d65e-17f7-4489-8d2f-6f3433a0c2fa</tstamps>
     </comp>
     <comp ref="R30">
       <value>4.7M bleeder</value>
@@ -967,34 +976,34 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>526893a7-ba75-4eeb-80d8-86ff0277826a</tstamps>
+      <tstamps>4283ffba-11d0-43ba-ab75-ecd1bffaae0a</tstamps>
     </comp>
     <comp ref="R31">
-      <value>7.68M HV divider top</value>
+      <value>7.68M 0.1% HV divider top</value>
       <footprint>Resistor_SMD:R_1206_3216Metric</footprint>
       <libsource lib="pdlvds" part="PD_R31_7_68M" description=""/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>7ce8895d-2569-45f9-827e-d648d1491b8b</tstamps>
+      <tstamps>26ee2d2c-2269-45ab-81c4-840592e5d30c</tstamps>
     </comp>
     <comp ref="R32">
-      <value>49.9k</value>
+      <value>75.0k 0.1%</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <libsource lib="pdlvds" part="PD_R32_49_9k" description=""/>
+      <libsource lib="pdlvds" part="PD_R32_75_0k" description=""/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e20e0d40-f3a5-486b-b1d1-dee2470dd1ad</tstamps>
+      <tstamps>c45259e8-9414-43d4-8e66-2e9d1d239f68</tstamps>
     </comp>
     <comp ref="R33">
-      <value>71.5k DAC inject</value>
+      <value>140k 0.1% DAC inject</value>
       <footprint>Resistor_SMD:R_0603_1608Metric</footprint>
-      <libsource lib="pdlvds" part="PD_R33_71_5k" description=""/>
+      <libsource lib="pdlvds" part="PD_R33_140k" description=""/>
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>2b02efc7-6949-4938-9bbf-540e3db5a9bf</tstamps>
+      <tstamps>88ca21db-4bf5-4eda-8322-932af5f22dd1</tstamps>
     </comp>
     <comp ref="R34">
       <value>10M HV probe</value>
@@ -1003,7 +1012,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>78c7a09a-c879-46fb-9156-9188d4ff4285</tstamps>
+      <tstamps>d118f0f5-e4ba-46cd-abc4-5b9628434bc2</tstamps>
     </comp>
     <comp ref="R35">
       <value>312k</value>
@@ -1012,7 +1021,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0659454e-0dfc-47e8-8500-6e322d54cb74</tstamps>
+      <tstamps>89a0f4f5-cf28-444a-bd99-7329379886cb</tstamps>
     </comp>
     <comp ref="R36">
       <value>100k</value>
@@ -1021,7 +1030,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>eb9101e2-c743-4235-accf-54682c5cb787</tstamps>
+      <tstamps>2b4276e6-6666-4230-899b-255020e0b1f0</tstamps>
     </comp>
     <comp ref="R37">
       <value>10k</value>
@@ -1030,7 +1039,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>10ae17ec-0b96-413e-b503-a231b7e4e359</tstamps>
+      <tstamps>7de198dd-d0f4-4226-a969-cc9491163181</tstamps>
     </comp>
     <comp ref="R38">
       <value>587k</value>
@@ -1039,7 +1048,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>218b4c28-7c46-497a-bdd4-363c79baeaee</tstamps>
+      <tstamps>93fffd91-5130-4f5b-adc9-5d7d3cb89443</tstamps>
     </comp>
     <comp ref="R39">
       <value>100k</value>
@@ -1048,7 +1057,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>cdd159e9-64b8-4249-b510-0ec7ff344b91</tstamps>
+      <tstamps>50e67fa2-81b4-4274-b37a-ce03641d46b9</tstamps>
     </comp>
     <comp ref="R40">
       <value>46k RSET=+4.6V</value>
@@ -1057,7 +1066,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6ad6f4ca-638a-4242-9fc7-888e194f8049</tstamps>
+      <tstamps>16d43dd3-d792-487b-8d02-bb6040770f84</tstamps>
     </comp>
     <comp ref="R41">
       <value>1k ILIM=125mA</value>
@@ -1066,7 +1075,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>45b74fef-480b-44b2-9e86-924bba0d417e</tstamps>
+      <tstamps>04efc2fe-db67-4f38-b3e6-992f883f0d9f</tstamps>
     </comp>
     <comp ref="R42">
       <value>33.2k RSET=+3.32V</value>
@@ -1075,7 +1084,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>50f63207-cbc3-4d68-8e79-7f0f37307f68</tstamps>
+      <tstamps>3d3ff7a3-b999-4bfc-9ab8-359f17de5888</tstamps>
     </comp>
     <comp ref="R43">
       <value>1k ILIM=125mA</value>
@@ -1084,7 +1093,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>8325261c-8b11-4bfb-93fb-dbbb4bb68f60</tstamps>
+      <tstamps>fa388982-8742-4e1a-830b-35620d012567</tstamps>
     </comp>
     <comp ref="R44">
       <value>1k</value>
@@ -1093,7 +1102,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>5a1ae9d5-f692-4e4b-abda-39c6c0362362</tstamps>
+      <tstamps>38e4cc39-fd59-4648-aba4-4a3d7beff414</tstamps>
     </comp>
     <comp ref="R45">
       <value>1k</value>
@@ -1102,7 +1111,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>a40a8c88-76c7-40a7-a87d-eee252bd01ea</tstamps>
+      <tstamps>c24a5d22-63d1-48cd-a1f7-564e108e7944</tstamps>
     </comp>
     <comp ref="R46">
       <value>100R</value>
@@ -1111,7 +1120,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>02a03e01-6560-453c-981e-d7fd98cdc6df</tstamps>
+      <tstamps>64692a70-dfd2-43cc-ba0b-aba2148047a1</tstamps>
     </comp>
     <comp ref="RJ1">
       <value>0R DNP</value>
@@ -1120,7 +1129,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>75545d13-c72a-4949-95fd-0a0fd1d33d28</tstamps>
+      <tstamps>913202a2-721d-4833-b48d-a58c4d9e5c6e</tstamps>
     </comp>
     <comp ref="RJ2">
       <value>0R DNP</value>
@@ -1129,7 +1138,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>87938113-414c-4a91-a88d-4a32c81ffc32</tstamps>
+      <tstamps>13e75101-bb76-43dd-b15c-89d197bbd614</tstamps>
     </comp>
     <comp ref="SH1">
       <value>Shield can frontend</value>
@@ -1138,7 +1147,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>23372154-ee6d-4e93-add0-5a9a44f50a73</tstamps>
+      <tstamps>cf753d34-cf3a-48eb-b51a-3067d98c471c</tstamps>
     </comp>
     <comp ref="T1">
       <value>Flyback xfmr 1:20</value>
@@ -1147,7 +1156,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>da1b9832-c3f4-442b-80a9-3384300dda9a</tstamps>
+      <tstamps>049683d5-80e8-4b96-99ce-88ba503545ea</tstamps>
     </comp>
     <comp ref="TP1">
       <value>HV test point</value>
@@ -1156,7 +1165,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>764b6cba-0ce0-49f7-a94d-d0f3410158c8</tstamps>
+      <tstamps>83d3c90c-be6e-49c1-8377-d7c2e632a70c</tstamps>
     </comp>
     <comp ref="TP2">
       <value>DBG TX test point</value>
@@ -1165,7 +1174,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f47ac8b7-880e-4901-8eb6-434478efdcc1</tstamps>
+      <tstamps>4ed08c68-d6e6-4686-84e7-bb4b015952a9</tstamps>
     </comp>
     <comp ref="TP3">
       <value>DBG RX test point</value>
@@ -1174,7 +1183,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e1779c67-f368-4e2b-a9d4-63ca3b12b77f</tstamps>
+      <tstamps>31d38953-70a8-49d7-a3a7-05ce866a7dc2</tstamps>
     </comp>
     <comp ref="U1">
       <value>OPA657N</value>
@@ -1183,7 +1192,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>9e4a118d-d622-4446-b9cc-7f71e5904cdf</tstamps>
+      <tstamps>a832aedf-7d65-4ab9-91bb-b7d57354e152</tstamps>
     </comp>
     <comp ref="U2">
       <value>THS4304DBV</value>
@@ -1192,7 +1201,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1e88223e-7e24-4658-b31c-e8cf6b00c5b1</tstamps>
+      <tstamps>c72d06ec-98f8-407e-9537-90fcc314e959</tstamps>
     </comp>
     <comp ref="U3">
       <value>LMH7220MK</value>
@@ -1201,7 +1210,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>730847e7-2a4a-4be2-bf4f-843e311f2a5a</tstamps>
+      <tstamps>b07c04e1-aea5-49fc-b640-fd69cce6f74b</tstamps>
     </comp>
     <comp ref="U4">
       <value>ADN2813ACPZ</value>
@@ -1210,7 +1219,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>0134f845-a13a-4439-82ad-a138f129c82a</tstamps>
+      <tstamps>9e86abc2-bafa-40e1-8514-d32ec06b4ec2</tstamps>
     </comp>
     <comp ref="U5">
       <value>SN65LVDS32D</value>
@@ -1219,7 +1228,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f33a7b10-472a-4c67-8692-935ad06486c0</tstamps>
+      <tstamps>4cfb0988-6ffa-45f0-8b53-2fc45e4fe2cb</tstamps>
     </comp>
     <comp ref="U6">
       <value>STM32H723ZGT6</value>
@@ -1228,7 +1237,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>e678f9a4-55e3-49a9-bf44-2b637e0fa727</tstamps>
+      <tstamps>39965ec5-d847-479f-b661-0b765eafbcb4</tstamps>
     </comp>
     <comp ref="U7">
       <value>USB3300-EZK</value>
@@ -1237,7 +1246,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>f9e8c069-5a31-4dee-a3f9-36ce643852a6</tstamps>
+      <tstamps>82528f77-4bbb-40cf-ade9-5c95c39504d8</tstamps>
     </comp>
     <comp ref="U8">
       <value>DAC8562SDGS</value>
@@ -1246,7 +1255,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>742e5142-417b-4395-a84f-a156009789d7</tstamps>
+      <tstamps>c05501df-2a89-4165-a348-a46bb6dfe63d</tstamps>
     </comp>
     <comp ref="U9">
       <value>TMP117NAI</value>
@@ -1255,7 +1264,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>1ca1b3e6-8809-42cb-81e7-cc65d843b2bb</tstamps>
+      <tstamps>67eb3ac0-fdc1-41b6-a549-d6f29382cbd8</tstamps>
     </comp>
     <comp ref="U10">
       <value>LT3757EMSE</value>
@@ -1264,7 +1273,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>2ad43025-1d3d-4096-90e9-5757d95d1614</tstamps>
+      <tstamps>65dcdc5e-f0fa-4a50-ba23-f2d081140f31</tstamps>
     </comp>
     <comp ref="U11">
       <value>TPS62130RGT</value>
@@ -1273,7 +1282,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>c3b1eb2c-7947-4325-8e89-a20dc98bd9b2</tstamps>
+      <tstamps>1f68288b-0d1f-4814-ba78-c1d50b6ba83b</tstamps>
     </comp>
     <comp ref="U12">
       <value>TPS62130RGT (inv)</value>
@@ -1282,7 +1291,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>19552add-b95a-4bb2-bac9-aac754460281</tstamps>
+      <tstamps>956e6763-cc54-4b4d-ac45-338121b20520</tstamps>
     </comp>
     <comp ref="U13">
       <value>LT3042EDD (+VA)</value>
@@ -1291,7 +1300,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>479d3fb6-c97a-4cb1-8464-7a7001cdccdf</tstamps>
+      <tstamps>db7f9823-4edd-48e7-9877-14a10696275a</tstamps>
     </comp>
     <comp ref="U14">
       <value>LT3042EDD (+3V3A)</value>
@@ -1300,7 +1309,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>6ef2ac28-6062-48a0-9d9c-7f6aeebbdd77</tstamps>
+      <tstamps>23601a3a-1cea-4497-a81a-f7eb1c205d2d</tstamps>
     </comp>
     <comp ref="X1">
       <value>24MHz</value>
@@ -1309,7 +1318,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>781df8d4-efb1-443d-ba2f-4a0d63d1ad5e</tstamps>
+      <tstamps>07d1de4e-f769-4c04-9bcc-1cb0a4a97190</tstamps>
     </comp>
     <comp ref="X2">
       <value>25MHz OSC</value>
@@ -1318,7 +1327,7 @@
       <property name="Sheetname" value=""/>
       <property name="Sheetfile" value="pdlvds_rx.kicad_sch"/>
       <sheetpath names="/" tstamps="/"/>
-      <tstamps>eec448a0-2fcb-4fd7-bc94-908e98323533</tstamps>
+      <tstamps>62f5fb02-249a-4b6c-85d9-e98cb2566a03</tstamps>
     </comp>
   </components>
   <libparts>
@@ -2021,6 +2030,16 @@
         <pin num="10" name="NRST" type="passive"/>
       </pins>
     </libpart>
+    <libpart lib="pdlvds" part="PD_J5_HV">
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">HV enable jumper</field>
+      </fields>
+      <pins>
+        <pin num="1" name="EN" type="passive"/>
+        <pin num="2" name="SHDN" type="passive"/>
+      </pins>
+    </libpart>
     <libpart lib="pdlvds" part="PD_L1_2_2uH">
       <fields>
         <field name="Reference">L</field>
@@ -2266,10 +2285,10 @@
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="pdlvds" part="PD_R25_100k">
+    <libpart lib="pdlvds" part="PD_R25_143k">
       <fields>
         <field name="Reference">R</field>
-        <field name="Value">100k</field>
+        <field name="Value">143k</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
@@ -2339,27 +2358,27 @@
     <libpart lib="pdlvds" part="PD_R31_7_68M">
       <fields>
         <field name="Reference">R</field>
-        <field name="Value">7.68M HV divider top</field>
+        <field name="Value">7.68M 0.1% HV divider top</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="pdlvds" part="PD_R32_49_9k">
+    <libpart lib="pdlvds" part="PD_R32_75_0k">
       <fields>
         <field name="Reference">R</field>
-        <field name="Value">49.9k</field>
+        <field name="Value">75.0k 0.1%</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
         <pin num="2" name="" type="passive"/>
       </pins>
     </libpart>
-    <libpart lib="pdlvds" part="PD_R33_71_5k">
+    <libpart lib="pdlvds" part="PD_R33_140k">
       <fields>
         <field name="Reference">R</field>
-        <field name="Value">71.5k DAC inject</field>
+        <field name="Value">140k 0.1% DAC inject</field>
       </fields>
       <pins>
         <pin num="1" name="" type="passive"/>
@@ -2665,8 +2684,8 @@
       </fields>
       <pins>
         <pin num="1" name="SW" type="output"/>
-        <pin num="2" name="SW" type="output"/>
-        <pin num="3" name="SW" type="output"/>
+        <pin num="2" name="SW" type="passive"/>
+        <pin num="3" name="SW" type="passive"/>
         <pin num="4" name="PG" type="open_collector"/>
         <pin num="5" name="FB" type="input"/>
         <pin num="6" name="AGND" type="power_in"/>
@@ -2690,8 +2709,8 @@
       </fields>
       <pins>
         <pin num="1" name="SW" type="output"/>
-        <pin num="2" name="SW" type="output"/>
-        <pin num="3" name="SW" type="output"/>
+        <pin num="2" name="SW" type="passive"/>
+        <pin num="3" name="SW" type="passive"/>
         <pin num="4" name="PG" type="open_collector"/>
         <pin num="5" name="FB" type="input"/>
         <pin num="6" name="AGND" type="power_in"/>
@@ -2722,7 +2741,7 @@
         <pin num="6" name="PGFB" type="passive"/>
         <pin num="7" name="SET" type="passive"/>
         <pin num="8" name="GND" type="power_in"/>
-        <pin num="9" name="OUTS" type="power_out"/>
+        <pin num="9" name="OUTS" type="passive"/>
         <pin num="10" name="OUT" type="power_out"/>
         <pin num="11" name="EP" type="power_in"/>
       </pins>
@@ -2741,7 +2760,7 @@
         <pin num="6" name="PGFB" type="passive"/>
         <pin num="7" name="SET" type="passive"/>
         <pin num="8" name="GND" type="power_in"/>
-        <pin num="9" name="OUTS" type="power_out"/>
+        <pin num="9" name="OUTS" type="passive"/>
         <pin num="10" name="OUT" type="power_out"/>
         <pin num="11" name="EP" type="power_in"/>
       </pins>
@@ -2901,7 +2920,7 @@
         <pin num="39" name="VDD" type="power_in"/>
         <pin num="40" name="PA4" type="bidirectional"/>
         <pin num="41" name="PA5" type="bidirectional"/>
-        <pin num="42" name="PA6" type="no_connect"/>
+        <pin num="42" name="PA6" type="bidirectional"/>
         <pin num="43" name="PA7" type="no_connect"/>
         <pin num="44" name="PC4" type="no_connect"/>
         <pin num="45" name="PC5" type="no_connect"/>
@@ -3107,7 +3126,7 @@
   </libparts>
   <libraries>
     <library logical="pdlvds">
-      <uri>/home/hatch/workspace/photodiode-lvds-rx/hw/pdlvds.kicad_sym</uri>
+      <uri>/home/hatch/workspace/pdlvds-hvfix/hw/pdlvds.kicad_sym</uri>
     </library>
   </libraries>
   <nets>
@@ -3116,7 +3135,7 @@
       <node ref="C46" pin="1" pintype="passive"/>
       <node ref="C49" pin="1" pintype="passive"/>
       <node ref="U14" pin="10" pinfunction="OUT" pintype="power_out"/>
-      <node ref="U14" pin="9" pinfunction="OUTS" pintype="power_out"/>
+      <node ref="U14" pin="9" pinfunction="OUTS" pintype="passive"/>
       <node ref="U6" pin="32" pinfunction="VREF+" pintype="power_in"/>
       <node ref="U6" pin="33" pinfunction="VDDA" pintype="power_in"/>
       <node ref="U7" pin="16" pinfunction="VDD3.3" pintype="power_in"/>
@@ -3217,7 +3236,7 @@
       <node ref="R5" pin="1" pintype="passive"/>
       <node ref="U1" pin="7" pinfunction="V+" pintype="power_in"/>
       <node ref="U13" pin="10" pinfunction="OUT" pintype="power_out"/>
-      <node ref="U13" pin="9" pinfunction="OUTS" pintype="power_out"/>
+      <node ref="U13" pin="9" pinfunction="OUTS" pintype="passive"/>
       <node ref="U2" pin="5" pinfunction="VS+" pintype="power_in"/>
       <node ref="U3" pin="5" pinfunction="VCC" pintype="power_in"/>
     </net>
@@ -3548,94 +3567,99 @@
       <node ref="R33" pin="1" pintype="passive"/>
       <node ref="U8" pin="2" pinfunction="VOUTB" pintype="output"/>
     </net>
-    <net code="46" name="HV_FBX">
+    <net code="46" name="HV_EN">
+      <node ref="J5" pin="1" pinfunction="EN" pintype="passive"/>
+      <node ref="U6" pin="97" pinfunction="PC7" pintype="bidirectional"/>
+    </net>
+    <net code="47" name="HV_FBX">
       <node ref="C34" pin="1" pintype="passive"/>
       <node ref="R31" pin="2" pintype="passive"/>
       <node ref="R32" pin="1" pintype="passive"/>
       <node ref="R33" pin="2" pintype="passive"/>
       <node ref="U10" pin="2" pinfunction="FBX" pintype="input"/>
     </net>
-    <net code="47" name="HV_GATE">
+    <net code="48" name="HV_GATE">
       <node ref="R27" pin="1" pintype="passive"/>
       <node ref="U10" pin="7" pinfunction="GATE" pintype="output"/>
     </net>
-    <net code="48" name="HV_INTVCC">
+    <net code="49" name="HV_INTVCC">
       <node ref="C31" pin="1" pintype="passive"/>
       <node ref="U10" pin="8" pinfunction="INTVCC" pintype="power_out"/>
     </net>
-    <net code="49" name="HV_RAW">
+    <net code="50" name="HV_RAW">
       <node ref="C32" pin="1" pintype="passive"/>
       <node ref="D5" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="R29" pin="1" pintype="passive"/>
     </net>
-    <net code="50" name="HV_RT">
+    <net code="51" name="HV_RT">
       <node ref="R24" pin="1" pintype="passive"/>
       <node ref="U10" pin="4" pinfunction="RT" pintype="passive"/>
     </net>
-    <net code="51" name="HV_SEC">
+    <net code="52" name="HV_SEC">
       <node ref="D5" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="T1" pin="5" pinfunction="SEC_A" pintype="passive"/>
     </net>
-    <net code="52" name="HV_SENSE">
+    <net code="53" name="HV_SENSE">
       <node ref="Q1" pin="2" pinfunction="S" pintype="passive"/>
       <node ref="R28" pin="1" pintype="passive"/>
       <node ref="U10" pin="6" pinfunction="SENSE" pintype="input"/>
     </net>
-    <net code="53" name="HV_SHDN">
+    <net code="54" name="HV_SHDN">
+      <node ref="J5" pin="2" pinfunction="SHDN" pintype="passive"/>
       <node ref="R25" pin="2" pintype="passive"/>
       <node ref="R26" pin="1" pintype="passive"/>
       <node ref="U10" pin="9" pinfunction="SHDN/UVLO" pintype="input"/>
-      <node ref="U6" pin="97" pinfunction="PC7" pintype="bidirectional"/>
+      <node ref="U6" pin="42" pinfunction="PA6" pintype="bidirectional"/>
     </net>
-    <net code="54" name="HV_SS">
+    <net code="55" name="HV_SS">
       <node ref="C30" pin="1" pintype="passive"/>
       <node ref="U10" pin="3" pinfunction="SS" pintype="passive"/>
     </net>
-    <net code="55" name="HV_VC">
+    <net code="56" name="HV_VC">
       <node ref="R23" pin="1" pintype="passive"/>
       <node ref="U10" pin="1" pinfunction="VC" pintype="passive"/>
     </net>
-    <net code="56" name="HV_VC2">
+    <net code="57" name="HV_VC2">
       <node ref="C29" pin="1" pintype="passive"/>
       <node ref="R23" pin="2" pintype="passive"/>
     </net>
-    <net code="57" name="I2C_SCL">
+    <net code="58" name="I2C_SCL">
       <node ref="R20" pin="1" pintype="passive"/>
       <node ref="U4" pin="20" pinfunction="SCK" pintype="input"/>
       <node ref="U6" pin="136" pinfunction="PB6" pintype="bidirectional"/>
       <node ref="U9" pin="1" pinfunction="SCL" pintype="input"/>
     </net>
-    <net code="58" name="I2C_SDA">
+    <net code="59" name="I2C_SDA">
       <node ref="R21" pin="1" pintype="passive"/>
       <node ref="U4" pin="21" pinfunction="SDA" pintype="bidirectional"/>
       <node ref="U6" pin="137" pinfunction="PB7" pintype="bidirectional"/>
       <node ref="U9" pin="6" pinfunction="SDA" pintype="bidirectional"/>
     </net>
-    <net code="59" name="ILIM_A">
+    <net code="60" name="ILIM_A">
       <node ref="R43" pin="1" pintype="passive"/>
       <node ref="U14" pin="5" pinfunction="ILIM" pintype="passive"/>
     </net>
-    <net code="60" name="ILIM_P">
+    <net code="61" name="ILIM_P">
       <node ref="R41" pin="1" pintype="passive"/>
       <node ref="U13" pin="5" pinfunction="ILIM" pintype="passive"/>
     </net>
-    <net code="61" name="LED_PWR_K">
+    <net code="62" name="LED_PWR_K">
       <node ref="D6" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="R44" pin="1" pintype="passive"/>
     </net>
-    <net code="62" name="LED_STAT">
+    <net code="63" name="LED_STAT">
       <node ref="D7" pin="1" pinfunction="K" pintype="passive"/>
       <node ref="U6" pin="99" pinfunction="PC9" pintype="bidirectional"/>
     </net>
-    <net code="63" name="LED_STAT_A">
+    <net code="64" name="LED_STAT_A">
       <node ref="D7" pin="2" pinfunction="A" pintype="passive"/>
       <node ref="R45" pin="2" pintype="passive"/>
     </net>
-    <net code="64" name="MOS_G">
+    <net code="65" name="MOS_G">
       <node ref="Q1" pin="1" pinfunction="G" pintype="input"/>
       <node ref="R27" pin="2" pintype="passive"/>
     </net>
-    <net code="65" name="NEG_RAW">
+    <net code="66" name="NEG_RAW">
       <node ref="C39" pin="2" pintype="passive"/>
       <node ref="C40" pin="2" pintype="passive"/>
       <node ref="FB2" pin="1" pintype="passive"/>
@@ -3649,265 +3673,262 @@
       <node ref="U12" pin="7" pinfunction="FSW" pintype="input"/>
       <node ref="U12" pin="8" pinfunction="DEF" pintype="input"/>
     </net>
-    <net code="66" name="NRST">
+    <net code="67" name="NRST">
       <node ref="C19" pin="1" pintype="passive"/>
       <node ref="J4" pin="10" pinfunction="NRST" pintype="passive"/>
       <node ref="R15" pin="1" pintype="passive"/>
       <node ref="U6" pin="25" pinfunction="NRST" pintype="input"/>
     </net>
-    <net code="67" name="PG_3V3">
+    <net code="68" name="PG_3V3">
       <node ref="R37" pin="1" pintype="passive"/>
       <node ref="U11" pin="4" pinfunction="PG" pintype="open_collector"/>
       <node ref="U6" pin="140" pinfunction="PB9" pintype="bidirectional"/>
     </net>
-    <net code="68" name="PHY_1V8">
+    <net code="69" name="PHY_1V8">
       <node ref="C22" pin="1" pintype="passive"/>
       <node ref="U7" pin="15" pinfunction="VDD1.8" pintype="power_in"/>
       <node ref="U7" pin="26" pinfunction="VDD1.8" pintype="power_in"/>
     </net>
-    <net code="69" name="PHY_1V8A">
+    <net code="70" name="PHY_1V8A">
       <node ref="C23" pin="1" pintype="passive"/>
       <node ref="U7" pin="29" pinfunction="VDDA1.8" pintype="power_in"/>
     </net>
-    <net code="70" name="POST_INN">
+    <net code="71" name="POST_INN">
       <node ref="R3" pin="2" pintype="passive"/>
       <node ref="R4" pin="1" pintype="passive"/>
       <node ref="U2" pin="4" pinfunction="IN-" pintype="input"/>
     </net>
-    <net code="71" name="POST_INP">
+    <net code="72" name="POST_INP">
       <node ref="C5" pin="2" pintype="passive"/>
       <node ref="R2" pin="1" pintype="passive"/>
       <node ref="U2" pin="3" pinfunction="IN+" pintype="input"/>
     </net>
-    <net code="72" name="POST_OUT">
+    <net code="73" name="POST_OUT">
       <node ref="R3" pin="1" pintype="passive"/>
       <node ref="R8" pin="1" pintype="passive"/>
       <node ref="U2" pin="1" pinfunction="VOUT" pintype="output"/>
     </net>
-    <net code="73" name="RBIAS">
+    <net code="74" name="RBIAS">
       <node ref="R17" pin="1" pintype="passive"/>
       <node ref="U7" pin="32" pinfunction="RBIAS" pintype="passive"/>
     </net>
-    <net code="74" name="REFCLK">
+    <net code="75" name="REFCLK">
       <node ref="U4" pin="10" pinfunction="REFCLKP" pintype="input"/>
       <node ref="X2" pin="3" pinfunction="OUT" pintype="output"/>
     </net>
-    <net code="75" name="REFCLKN">
+    <net code="76" name="REFCLKN">
       <node ref="C14" pin="1" pintype="passive"/>
       <node ref="U4" pin="11" pinfunction="REFCLKN" pintype="input"/>
     </net>
-    <net code="76" name="SET_A">
+    <net code="77" name="SET_A">
       <node ref="C45" pin="1" pintype="passive"/>
       <node ref="R42" pin="1" pintype="passive"/>
       <node ref="U14" pin="7" pinfunction="SET" pintype="passive"/>
     </net>
-    <net code="77" name="SET_P">
+    <net code="78" name="SET_P">
       <node ref="C42" pin="1" pintype="passive"/>
       <node ref="R40" pin="1" pintype="passive"/>
       <node ref="U13" pin="7" pinfunction="SET" pintype="passive"/>
     </net>
-    <net code="78" name="SLICEN">
+    <net code="79" name="SLICEN">
       <node ref="C13" pin="2" pintype="passive"/>
       <node ref="U4" pin="7" pinfunction="SLICEN" pintype="passive"/>
     </net>
-    <net code="79" name="SLICEP">
+    <net code="80" name="SLICEP">
       <node ref="C13" pin="1" pintype="passive"/>
       <node ref="U4" pin="6" pinfunction="SLICEP" pintype="passive"/>
     </net>
-    <net code="80" name="SPI_MOSI">
+    <net code="81" name="SPI_MOSI">
       <node ref="U6" pin="113" pinfunction="PC12" pintype="bidirectional"/>
       <node ref="U8" pin="8" pinfunction="DIN" pintype="input"/>
     </net>
-    <net code="81" name="SPI_SCK">
+    <net code="82" name="SPI_SCK">
       <node ref="U6" pin="111" pinfunction="PC10" pintype="bidirectional"/>
       <node ref="U8" pin="7" pinfunction="SCLK" pintype="input"/>
     </net>
-    <net code="82" name="SS_3V3">
+    <net code="83" name="SS_3V3">
       <node ref="C36" pin="1" pintype="passive"/>
       <node ref="U11" pin="9" pinfunction="SS/TR" pintype="passive"/>
     </net>
-    <net code="83" name="SS_NEG">
+    <net code="84" name="SS_NEG">
       <node ref="C39" pin="1" pintype="passive"/>
       <node ref="U12" pin="9" pinfunction="SS/TR" pintype="passive"/>
     </net>
-    <net code="84" name="SW1">
+    <net code="85" name="SW1">
       <node ref="L1" pin="1" pintype="passive"/>
       <node ref="U11" pin="1" pinfunction="SW" pintype="output"/>
-      <node ref="U11" pin="2" pinfunction="SW" pintype="output"/>
-      <node ref="U11" pin="3" pinfunction="SW" pintype="output"/>
+      <node ref="U11" pin="2" pinfunction="SW" pintype="passive"/>
+      <node ref="U11" pin="3" pinfunction="SW" pintype="passive"/>
     </net>
-    <net code="85" name="SW2">
+    <net code="86" name="SW2">
       <node ref="L2" pin="1" pintype="passive"/>
       <node ref="U12" pin="1" pinfunction="SW" pintype="output"/>
-      <node ref="U12" pin="2" pinfunction="SW" pintype="output"/>
-      <node ref="U12" pin="3" pinfunction="SW" pintype="output"/>
+      <node ref="U12" pin="2" pinfunction="SW" pintype="passive"/>
+      <node ref="U12" pin="3" pinfunction="SW" pintype="passive"/>
     </net>
-    <net code="86" name="SWCLK">
+    <net code="87" name="SWCLK">
       <node ref="J4" pin="4" pinfunction="SWCLK" pintype="passive"/>
       <node ref="U6" pin="109" pinfunction="PA14(JTCK" pintype="bidirectional"/>
     </net>
-    <net code="87" name="SWDIO">
+    <net code="88" name="SWDIO">
       <node ref="J4" pin="2" pinfunction="SWDIO" pintype="passive"/>
       <node ref="U6" pin="105" pinfunction="PA13(JTMS" pintype="bidirectional"/>
     </net>
-    <net code="88" name="TEST_IN">
+    <net code="89" name="TEST_IN">
       <node ref="J3" pin="1" pinfunction="SIG" pintype="passive"/>
       <node ref="R11" pin="1" pintype="passive"/>
     </net>
-    <net code="89" name="THRADJ">
+    <net code="90" name="THRADJ">
       <node ref="R12" pin="1" pintype="passive"/>
       <node ref="U4" pin="9" pinfunction="THRADJ" pintype="passive"/>
     </net>
-    <net code="90" name="THR_DAC">
+    <net code="91" name="THR_DAC">
       <node ref="R10" pin="1" pintype="passive"/>
       <node ref="U8" pin="1" pinfunction="VOUTA" pintype="output"/>
     </net>
-    <net code="91" name="THR_FILT">
+    <net code="92" name="THR_FILT">
       <node ref="C11" pin="1" pintype="passive"/>
       <node ref="R10" pin="2" pintype="passive"/>
       <node ref="U3" pin="1" pinfunction="IN-" pintype="input"/>
     </net>
-    <net code="92" name="TIA_OUT">
+    <net code="93" name="TIA_OUT">
       <node ref="C1" pin="1" pintype="passive"/>
       <node ref="C5" pin="1" pintype="passive"/>
       <node ref="R1" pin="1" pintype="passive"/>
       <node ref="R7" pin="1" pintype="passive"/>
       <node ref="U1" pin="6" pinfunction="OUT" pintype="output"/>
     </net>
-    <net code="93" name="TMP_ALERT">
+    <net code="94" name="TMP_ALERT">
       <node ref="R22" pin="1" pintype="passive"/>
       <node ref="U6" pin="139" pinfunction="PB8" pintype="bidirectional"/>
       <node ref="U9" pin="3" pinfunction="ALERT" pintype="open_collector"/>
     </net>
-    <net code="94" name="TP_HV">
+    <net code="95" name="TP_HV">
       <node ref="R34" pin="2" pintype="passive"/>
       <node ref="TP1" pin="1" pinfunction="TP" pintype="passive"/>
     </net>
-    <net code="95" name="ULPI_CK">
+    <net code="96" name="ULPI_CK">
       <node ref="U6" pin="41" pinfunction="PA5" pintype="bidirectional"/>
       <node ref="U7" pin="14" pinfunction="CLKOUT" pintype="output"/>
     </net>
-    <net code="96" name="ULPI_D0">
+    <net code="97" name="ULPI_D0">
       <node ref="U6" pin="37" pinfunction="PA3" pintype="bidirectional"/>
       <node ref="U7" pin="24" pinfunction="DATA0" pintype="bidirectional"/>
     </net>
-    <net code="97" name="ULPI_D1">
+    <net code="98" name="ULPI_D1">
       <node ref="U6" pin="46" pinfunction="PB0" pintype="bidirectional"/>
       <node ref="U7" pin="23" pinfunction="DATA1" pintype="bidirectional"/>
     </net>
-    <net code="98" name="ULPI_D2">
+    <net code="99" name="ULPI_D2">
       <node ref="U6" pin="47" pinfunction="PB1" pintype="bidirectional"/>
       <node ref="U7" pin="22" pinfunction="DATA2" pintype="bidirectional"/>
     </net>
-    <net code="99" name="ULPI_D3">
+    <net code="100" name="ULPI_D3">
       <node ref="U6" pin="69" pinfunction="PB10" pintype="bidirectional"/>
       <node ref="U7" pin="21" pinfunction="DATA3" pintype="bidirectional"/>
     </net>
-    <net code="100" name="ULPI_D4">
+    <net code="101" name="ULPI_D4">
       <node ref="U6" pin="70" pinfunction="PB11" pintype="bidirectional"/>
       <node ref="U7" pin="20" pinfunction="DATA4" pintype="bidirectional"/>
     </net>
-    <net code="101" name="ULPI_D5">
+    <net code="102" name="ULPI_D5">
       <node ref="U6" pin="73" pinfunction="PB12" pintype="bidirectional"/>
       <node ref="U7" pin="19" pinfunction="DATA5" pintype="bidirectional"/>
     </net>
-    <net code="102" name="ULPI_D6">
+    <net code="103" name="ULPI_D6">
       <node ref="U6" pin="74" pinfunction="PB13" pintype="bidirectional"/>
       <node ref="U7" pin="18" pinfunction="DATA6" pintype="bidirectional"/>
     </net>
-    <net code="103" name="ULPI_D7">
+    <net code="104" name="ULPI_D7">
       <node ref="U6" pin="135" pinfunction="PB5" pintype="bidirectional"/>
       <node ref="U7" pin="17" pinfunction="DATA7" pintype="bidirectional"/>
     </net>
-    <net code="104" name="ULPI_DIR">
+    <net code="105" name="ULPI_DIR">
       <node ref="U6" pin="28" pinfunction="PC2_C" pintype="bidirectional"/>
       <node ref="U7" pin="12" pinfunction="DIR" pintype="output"/>
     </net>
-    <net code="105" name="ULPI_NXT">
+    <net code="106" name="ULPI_NXT">
       <node ref="U6" pin="29" pinfunction="PC3_C" pintype="bidirectional"/>
       <node ref="U7" pin="11" pinfunction="NXT" pintype="output"/>
     </net>
-    <net code="106" name="ULPI_STP">
+    <net code="107" name="ULPI_STP">
       <node ref="U6" pin="26" pinfunction="PC0" pintype="bidirectional"/>
       <node ref="U7" pin="13" pinfunction="STP" pintype="input"/>
     </net>
-    <net code="107" name="USB_RST">
+    <net code="108" name="USB_RST">
       <node ref="U6" pin="40" pinfunction="PA4" pintype="bidirectional"/>
       <node ref="U7" pin="9" pinfunction="RESET" pintype="input"/>
     </net>
-    <net code="108" name="VBUS_RAW">
+    <net code="109" name="VBUS_RAW">
       <node ref="F1" pin="1" pintype="passive"/>
       <node ref="J1" pin="A4" pinfunction="VBUS" pintype="passive"/>
       <node ref="J1" pin="A9" pinfunction="VBUS" pintype="passive"/>
       <node ref="J1" pin="B4" pinfunction="VBUS" pintype="passive"/>
       <node ref="J1" pin="B9" pinfunction="VBUS" pintype="passive"/>
     </net>
-    <net code="109" name="VCAP1">
+    <net code="110" name="VCAP1">
       <node ref="C17" pin="1" pintype="passive"/>
       <node ref="U6" pin="106" pinfunction="VCAP" pintype="passive"/>
     </net>
-    <net code="110" name="VCAP2">
+    <net code="111" name="VCAP2">
       <node ref="C18" pin="1" pintype="passive"/>
       <node ref="U6" pin="71" pinfunction="VCAP" pintype="passive"/>
     </net>
-    <net code="111" name="VMID">
+    <net code="112" name="VMID">
       <node ref="C6" pin="1" pintype="passive"/>
       <node ref="R2" pin="2" pintype="passive"/>
       <node ref="R4" pin="2" pintype="passive"/>
       <node ref="R5" pin="2" pintype="passive"/>
       <node ref="R6" pin="1" pintype="passive"/>
     </net>
-    <net code="112" name="XI">
+    <net code="113" name="XI">
       <node ref="C20" pin="1" pintype="passive"/>
       <node ref="U7" pin="28" pinfunction="XI" pintype="input"/>
       <node ref="X1" pin="1" pinfunction="XI" pintype="passive"/>
     </net>
-    <net code="113" name="XO">
+    <net code="114" name="XO">
       <node ref="C21" pin="1" pintype="passive"/>
       <node ref="U7" pin="27" pinfunction="XO" pintype="output"/>
       <node ref="X1" pin="3" pinfunction="XO" pintype="passive"/>
     </net>
-    <net code="114" name="unconnected-(J1-SBU1-PadA8)">
+    <net code="115" name="unconnected-(J1-SBU1-PadA8)">
       <node ref="J1" pin="A8" pinfunction="SBU1" pintype="passive+no_connect"/>
     </net>
-    <net code="115" name="unconnected-(J1-SBU2-PadB8)">
+    <net code="116" name="unconnected-(J1-SBU2-PadB8)">
       <node ref="J1" pin="B8" pinfunction="SBU2" pintype="passive+no_connect"/>
     </net>
-    <net code="116" name="unconnected-(J4-NC-Pad6)">
+    <net code="117" name="unconnected-(J4-NC-Pad6)">
       <node ref="J4" pin="6" pinfunction="NC" pintype="passive+no_connect"/>
     </net>
-    <net code="117" name="unconnected-(J4-NC-Pad8)">
+    <net code="118" name="unconnected-(J4-NC-Pad8)">
       <node ref="J4" pin="8" pinfunction="NC" pintype="passive+no_connect"/>
     </net>
-    <net code="118" name="unconnected-(MH5-Pad1)">
+    <net code="119" name="unconnected-(MH5-Pad1)">
       <node ref="MH5" pin="1" pintype="passive+no_connect"/>
     </net>
-    <net code="119" name="unconnected-(MH6-Pad1)">
+    <net code="120" name="unconnected-(MH6-Pad1)">
       <node ref="MH6" pin="1" pintype="passive+no_connect"/>
     </net>
-    <net code="120" name="unconnected-(T1-NC-Pad3)">
+    <net code="121" name="unconnected-(T1-NC-Pad3)">
       <node ref="T1" pin="3" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="121" name="unconnected-(T1-NC-Pad6)">
+    <net code="122" name="unconnected-(T1-NC-Pad6)">
       <node ref="T1" pin="6" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="122" name="unconnected-(U1-NC-Pad1)">
+    <net code="123" name="unconnected-(U1-NC-Pad1)">
       <node ref="U1" pin="1" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="123" name="unconnected-(U1-NC-Pad5)">
+    <net code="124" name="unconnected-(U1-NC-Pad5)">
       <node ref="U1" pin="5" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="124" name="unconnected-(U1-NC-Pad8)">
+    <net code="125" name="unconnected-(U1-NC-Pad8)">
       <node ref="U1" pin="8" pinfunction="NC" pintype="no_connect"/>
     </net>
-    <net code="125" name="unconnected-(U5-3Y-Pad11)">
+    <net code="126" name="unconnected-(U5-3Y-Pad11)">
       <node ref="U5" pin="11" pinfunction="3Y" pintype="output+no_connect"/>
     </net>
-    <net code="126" name="unconnected-(U5-4Y-Pad13)">
+    <net code="127" name="unconnected-(U5-4Y-Pad13)">
       <node ref="U5" pin="13" pinfunction="4Y" pintype="output+no_connect"/>
-    </net>
-    <net code="127" name="unconnected-(U6-PA6-Pad42)">
-      <node ref="U6" pin="42" pinfunction="PA6" pintype="no_connect"/>
     </net>
     <net code="128" name="unconnected-(U6-PA7-Pad43)">
       <node ref="U6" pin="43" pinfunction="PA7" pintype="no_connect"/>

@@ -3,6 +3,11 @@
 run_hv.py — stage 4b (simulation half): ngspice HV flyback checks.
 The analytical design (stresses, ripple budget, bleeder) is sim/hv_design.py.
 
+POPULATION NOTE (2026-11-04 HV fix, docs/03): these decks target
+the 420 V design point, which is now the S8664 STUFFING VARIANT.
+The standard C30737 fit (116..253 V, hardware-bounded <= 260 V)
+is simulated by sim/run_hv_clamp.py against its own network.
+
 Deck 1 — SWITCHING (open loop, duty from the analytical design):
   5 V -> ideal 1:20 coupled inductor (Lp 47 uH, K=0.999), switch modelled
   as a voltage-controlled switch, 1000 V secondary diode model, Cout 47 nF,

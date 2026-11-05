@@ -3,25 +3,30 @@
  * The setpoint lives in the DAC8562 bias channel; this module adds:
  *   - temperature compensation at the C30737 breakdown tempco,
  *   - slew-rate limiting on every change,
- *   - an interlock gate (HV can only be enabled while the gate is
- *     satisfied, and drops immediately if it ceases to be),
+ *   - an interlock gate (HV can only be enabled while the J5
+ *     interlock jumper is sensed fitted, and drops immediately if
+ *     it ceases to be),
  *   - safe defaults: off at power-up, output driven to 0 on disable.
  *
- * The gate has NO input on rev A: the drawn design fits no interlock
- * jumper, switch or sense pin (inventory: docs/06-hv-cdr-pin-
- * inventory.md), so nothing ever satisfies it and hv_ctrl_enable()
- * refuses every enable. That is deliberate - an owner design
- * decision recorded in docs/00-status.md and firmware/BRINGUP.md,
- * not a stub: firmware must not invent a safety input the board
- * does not have. The converter is held off positively via PC7
- * (HV_SHDN, board.h) regardless.
+ * The interlock is the J5 deliberate-action jumper (owner decision,
+ * docs/06): a 2-pin header in series in the PC7 -> SHDN path. With
+ * J5 absent the MCU pin is not connected to the SHDN node at all
+ * and the R25/R26 divider alone holds the node in shutdown, so no
+ * firmware state can start the converter; the gate in this module
+ * is the sensed/reported layer on top of that hardware fact. The
+ * sense is PA6 reading the node voltage via ADC1 (hv_sense.c);
+ * while it reports the jumper absent (or cannot be read),
+ * hv_ctrl_enable() refuses and SET_BIAS returns INTERLOCK, exactly
+ * as the pre-jumper firmware refused unconditionally.
  *
  * Drawn hardware protections (hw/circuit.py - the earlier claim of
  * an independent OVP zener clamp came from docs/02 and is NOT in
  * the drawn design; do not rely on it): the LT3757's cycle-by-cycle
  * primary current limit via the R28 sense resistor, the R30 4.7 MOhm
  * bleeder discharging the rail below 60 V within ~1 s of disable
- * (docs/03), and the feedback divider ceiling (~420 V at V_DAC = 0). */
+ * (docs/03), the fitted feedback network's ceiling (253.2 V at
+ * V_DAC = 0 for the C30737 population - a hardware bound, not a
+ * firmware one), and the J5 jumper above. */
 #ifndef HV_CTRL_H
 #define HV_CTRL_H
 
@@ -31,27 +36,37 @@
  * (datasheets/C30737.pdf, via docs/02-architecture.md). */
 #define HV_APD_TEMPCO_V_PER_C 1.3f
 #define HV_REF_TEMP_C         25.0f
-/* HV range mapped onto the DAC full scale by the flyback feedback
- * divider: 0 counts = 0 V, 65535 counts = 420 V.
- * VERIFY the divider ratio against the hv/ design at bring-up. */
-#define HV_FULL_SCALE_V       420.0f
+/* Set-point transfer of the fitted feedback network, C30737
+ * population (docs/03 "HV set-point network"): the LT3757 servos
+ * FBX to 1.6 V across R31 7.68 Mohm / R32 75.0 kohm with the DAC
+ * injected via R33 140 kohm, giving
+ *     V_HV = 253.2 - 54.86 * V_DAC,     V_DAC in [0, 2.5] V
+ * DAC zero-scale (the DAC8562 power-up state) is therefore the
+ * maximum demand, 253.2 V - the hardware ceiling, inside the
+ * C30737's 260 V breakdown maximum at every tolerance corner
+ * (worst case 259.4 V; docs/03). DAC full-scale demands 116.1 V.
+ * hv_ctrl_volts_to_counts() inverts this transfer.
+ * The S8664 stuffing variant (docs/03) restores the original
+ * network and its transfer (A = 419.7 V, slope 107.4 V/V); a board
+ * built that way needs those constants here instead. */
+#define HV_XFER_V_AT_DAC_ZERO 253.21f
+#define HV_XFER_SLOPE_V_PER_V 54.857f
+#define HV_DAC_FULL_SCALE_V   2.5f
 /* Slew limit applied to the commanded bias: volts per second. */
 #define HV_SLEW_V_PER_S       5.0f
-/* Hard firmware clamp on the requested setpoint. There is no
- * separate hardware OVP clamp in rev A (see header); the drawn
- * loop's own ceiling is the feedback divider's, ~420 V. */
-#define HV_MAX_V              430.0f
+/* Hard firmware clamp on the requested setpoint: the fitted
+ * network's own ceiling. Requests above it saturate at the DAC. */
+#define HV_MAX_V              253.21f
 
 typedef struct {
     float    setpoint_v_at_25c; /* host-requested bias, referred to 25 C */
     float    commanded_v;       /* slew-limited voltage actually applied */
     uint16_t dac_counts;        /* counts last written to the DAC */
     int      enabled;           /* HV output stage enabled */
-    int      interlock_ok;      /* enable-gate state. On rev A no
-                                   interlock input exists, so nothing
-                                   ever sets this and it stays 0 -
-                                   see the header of this file. It is
-                                   published in GET_STATUS as-is. */
+    int      interlock_ok;      /* enable-gate state: the sensed J5
+                                   jumper state (hv_sense), refreshed
+                                   by hv_ctrl_init/enable/update. It
+                                   is published in GET_STATUS as-is. */
     int      fault;             /* latched fault: interlock/temp/DAC error */
 } hv_ctrl_t;
 
@@ -59,8 +74,8 @@ void hv_ctrl_init(hv_ctrl_t *hv);
 /* Request a setpoint (volts at 25 C). Does not by itself enable HV. */
 void hv_ctrl_set_setpoint(hv_ctrl_t *hv, float volts_at_25c);
 /* Enable/disable the HV output (HV_SHDN clamp + DAC). Enabling is
- * refused (returns -1) while the interlock gate is unsatisfied -
- * which on rev A is always (see header). Disabling always works. */
+ * refused (returns -1) while the J5 interlock jumper is sensed
+ * absent (see header). Disabling always works. */
 int  hv_ctrl_enable(hv_ctrl_t *hv, int on);
 /* Temperature-compensated target for a given temperature:
  *   Vset(T) = Vset25 + 1.3 V/C * (T - 25 C)     (pure function) */

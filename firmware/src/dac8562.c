@@ -79,7 +79,11 @@ int dac8562_init(void)
     }
     /* Safe starting outputs: threshold mid-scale is NOT safe for the
      * comparator in all states, so both channels start at 0 and the
-     * owning modules (main / hv_ctrl) raise them deliberately. */
+     * owning modules (main / hv_ctrl) raise them deliberately.
+     * Note the bias channel's zero-scale is the HV network's
+     * MAXIMUM demand (253.2 V, docs/03) - safe at this point only
+     * because the converter is held in shutdown; hv_ctrl_init()
+     * immediately rewrites it to minimum demand. */
     r = dac8562_set_threshold(0u);
     if (r != 0) {
         return r;

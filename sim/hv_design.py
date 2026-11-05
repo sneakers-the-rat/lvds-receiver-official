@@ -2,6 +2,14 @@
 """
 hv_design.py — analytical design of the APD bias flyback (stage 4b, part 1).
 
+POPULATION NOTE (2026-11-04 HV fix, docs/03): the 150..420 V design
+point in this file is the S8664 STUFFING VARIANT. The standard
+C30737 fit uses the re-valued set-point network (R32 75.0k /
+R33 140k, 116..253 V, hardware-bounded <= 260 V); its checks are
+sim/run_hv_clamp.py. The power-stage design below (stresses, DCM,
+ripple) is unchanged by the set-point values and covers both fits,
+the C30737 fit being strictly gentler on every stress.
+
 Topology: LT3757 current-mode controller, single-switch flyback, DCM,
 5 V in -> 150..420 V out, DAC-injected feedback (see docs/02).
 All numbers are analytical (hand-calc grade, formulas stated inline);
