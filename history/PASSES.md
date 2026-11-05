@@ -708,9 +708,9 @@ HV hops landed (hw/hops2.py on exp33 -> exp35): the predecessor's crashed surger
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 67 · Unconnected nets: 39 · Audit verdict: FAIL
 
-### Pass 84 — 2026-11-05T08:46:56Z · commit `pending`
+### Pass 84 — 2026-11-05T08:46:56Z · commit `fca498a`
 
-Board: `hw/pdlvds_rx.exp36.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp36.kicad_pcb` · Commit: `fca498a30ef937fa7e96fd2c89a1d920bc01bee8`
 
 TP_HV closed: In2 link segment (44.46,-7.6)->(44.9,-7.6) joins the drop to the moved via (hw/fix_tphv_link.py). TP_HV leaves the unconnected list entirely -- the R50.2 block that killed the predecessor's run is broken and the net is routed end to end (F east at y=2.2, In2 drop, via up east of the CMP_QN run, stub into R34.2). Audit: nets 39 -> 38, violations 67 (TP_HV zone grazes remain for the notch campaign). Next: heal batches over the 2-group residue (ULPI x8, USB_RST, I2C, TMP_ALERT first).
 
