@@ -612,6 +612,14 @@ Nets fully routed: not recorded · Pins failed: not recorded · Clearance violat
 
 heal log: results/heal-all.log; audit: results/audit-exp7.txt (violations itemized: 30 APD_K-vs-zone + 2 justified D1)
 
+### Pass 72 — 2026-11-05T02:27:07Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp8.kicad_pcb` · Commit: `pending`
+
+heal-all2 with the FIXED router grid (d4a9e0d) on the pass-71 board (exp7 -> exp8): 56 groups connected in 2383 s — the strip nets that were 0-second phantom failures under the clamped grid now route in real geometry. Pass 71's phantom-geometry damage state superseded.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 40 · Unconnected nets: 33 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
