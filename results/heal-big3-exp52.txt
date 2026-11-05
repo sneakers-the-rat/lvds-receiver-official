@@ -18,3 +18,15 @@ CDR_PIN: 2 groups, main group 2 items
 CDR_SQUELCH: 2 groups, main group 2 items
   CDR_SQUELCH: group (2 items, ['U4.27', 'track@(55.75, -21.295)']) STILL isolated (1s)
 CF2: 2 groups, main group 2 items
+  CF2: group (2 items, ['C15.2', 'track@(60.644999, -26.0)']) STILL isolated (468s)
+DP_PHY: 2 groups, main group 2 items
+  DP_PHY: group (1 items, ['U7.7']) STILL isolated (1s)
+HV_FBX: 3 groups, main group 84 items
+  HV_FBX: connected group of 2 items (4s, 2 vias)
+  HV_FBX: connected group of 1 items (2s, 1 vias)
+HV_RAW: 3 groups, main group 24 items
+  HV_RAW: connected group of 7 items (3s, 2 vias)
+  HV_RAW: connected group of 1 items (8s, 2 vias)
+HV_SHDN: 2 groups, main group 17 items
+  HV_SHDN: group (1 items, ['U6.42']) STILL isolated (3s)
+HV_SS: 2 groups, main group 3 items
