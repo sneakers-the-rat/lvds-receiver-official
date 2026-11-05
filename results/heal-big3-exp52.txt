@@ -30,3 +30,7 @@ HV_RAW: 3 groups, main group 24 items
 HV_SHDN: 2 groups, main group 17 items
   HV_SHDN: group (1 items, ['U6.42']) STILL isolated (3s)
 HV_SS: 2 groups, main group 3 items
+  HV_SS: group (2 items, ['C30.1', 'track@(16.018431, -11.006568)']) STILL isolated (299s)
+PHY_1V8: 3 groups, main group 2 items
+  PHY_1V8: group (2 items, ['U7.26', 'track@(87.25, -23.795)']) STILL isolated (0s)
+Terminated

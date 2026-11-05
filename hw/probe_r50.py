@@ -5,7 +5,7 @@ _app = wx.App(False)
 import pcbnew
 MMt = pcbnew.ToMM
 board = pcbnew.LoadBoard('hw/pdlvds_rx.exp51.kicad_pcb')
-for ref in ('R49', 'R50', 'R31', 'R29'):
+for ref in ('U10', 'C30'):
     fp = board.FindFootprintByReference(ref)
     for p in fp.Pads():
         bb = p.GetBoundingBox()
