@@ -716,9 +716,9 @@ TP_HV closed: In2 link segment (44.46,-7.6)->(44.9,-7.6) joins the drop to the m
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 67 · Unconnected nets: 38 · Audit verdict: FAIL
 
-### Pass 85 — 2026-11-05T08:58:29Z · commit `pending`
+### Pass 85 — 2026-11-05T08:58:29Z · commit `fb95261`
 
-Board: `hw/pdlvds_rx.exp37.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp37.kicad_pcb` · Commit: `fb952610b5e98749521a996c0045fb38dedf3434`
 
 Heal batch A (heal_nets on exp36 -> exp37): I2C_SCL, I2C_SDA, TMP_ALERT connected (the redrawn U9's pads heal at once -- the footprint fix unblocked its locality). ULPI_D1-D6, ULPI_NXT, ULPI_STP, USB_RST refused by heal's A* at both endpoints (U6 lone pads and U7 stub groups) -- Class A seal at the fine-pitch U6/U7 field; they go to thread/escape tools next, not a second heal attempt. Audit: nets 38 -> 35, violations 67.
 
