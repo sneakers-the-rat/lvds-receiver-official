@@ -45,7 +45,7 @@ search strategy, so the two remain comparable.
 import heapq, math, time
 import pcbnew
 
-from router import (CELL, W, H, LAYERS, HV_NETS, POWER_NETS, LVDS_NETS,
+from router import (CELL, W, H, OY, LAYERS, HV_NETS, POWER_NETS, LVDS_NETS,
                     PROMOTE, NECK_W, NECK_R, Items, netclass, cell_of)
 
 MM = pcbnew.FromMM
@@ -234,7 +234,7 @@ def astar6(items, starts, goals, netname, width, clr, cap=900000,
                    0.4142 * min(abs(cx - gx), abs(cy - gy))
                    for (_, gx, gy) in hgoals)
     def centre(node):
-        return ((node[1] + 0.5) * CELL, (node[2] + 0.5) * CELL)
+        return ((node[1] + 0.5) * CELL, (node[2] + 0.5) * CELL + OY)
     # ---- fanout macros (escape routing) ----
     # A pad centre can sit exactly on a cell boundary (0.5 mm pitch
     # on a 0.25 mm grid): every cell centre is then >= 0.125 mm off
@@ -379,7 +379,7 @@ def emit6(board, netobj, path, width, items, netname, clr, stats):
     that width. Vias use via_size(width) — the size the search
     tested."""
     def centre(node):
-        return ((node[1] + 0.5) * CELL, (node[2] + 0.5) * CELL)
+        return ((node[1] + 0.5) * CELL, (node[2] + 0.5) * CELL + OY)
     neck_pts = stats.get("neck_pts", ())
     anchors = stats.get("anchors", {})
     def point_of(node, anchored):
