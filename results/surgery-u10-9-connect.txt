@@ -1,0 +1,2 @@
+HV_SHDN connected: In2 detour [(19.2, -15.45), (20.5, -15.45), (20.5, -21.0), (9.5, -21.0), (9.5, -18.9)], via @(9.5,-18.9), F neck ->(9.225,-18.975)
+saved hw/pdlvds_rx.exp20.kicad_pcb
