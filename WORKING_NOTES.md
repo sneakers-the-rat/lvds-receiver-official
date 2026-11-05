@@ -172,11 +172,26 @@ HW_DIR — a first pre-fix capture silently tested the fixed
 thread_far and was discarded. Tests must load tools by explicit
 path (test_thread_via_rip.py does) or run where 'hw' resolves to
 the intended tree.
-REMAINING: repair pass 76's board — re-run the fixed thread_far on
-the pass-75 board (exp12) with pass 76's net list and commit the
-audited result as the next pass. Until that lands, pass 76's 15
-Class-T violations stand on main.
-Status: MECHANISM CLOSED; board repair is the next pass.
+BOARD REPAIR (in progress): the full 7-net redo on exp12 was run
+TWICE with identical results (process records + on-disk log agree;
+an interim snapshot claiming all 7 threaded + saved was NOT borne
+out by either and is discarded). Honest per-net outcomes with the
+fixed tool: CDR_VREF threaded (rips 2, executed exactly),
+REFCLKN threaded (rips 2), SLICEP threaded (rips 6 — the priced
+CDR_NIN/SLICEN victims pass 76 left standing are really removed;
+their repayment is Class B growth). HV_SS: NO THREAD at honest
+prices (pass 76's "thread" existed only via unexecuted rips).
+HV_GATE: ANCHOR STUB WALLED AT START — all four start corners'
+stubs hit walls (pass 76 placed that stub untested; it grazed
+R27.2). Both failure modes are the U10 locality's business:
+they move to Class A / the U10 placement work, where moving the
+blockers is the lever. HV_INTVCC: search exceeded the 1500 s
+run budget in this field both times (slow, NOT proven
+impossible) — to be attempted solo. The redo was therefore
+split: pass 77 = exp12 + [CDR_VREF, REFCLKN, SLICEP, +5V] with
+the fixed tool; HV_INTVCC solo and the U10 locality follow.
+Status: MECHANISM CLOSED; board repair partial by the tool's own
+honest refusals — the refusals ARE the class evidence.
 
 ### CLASS A — NO_EXIT pads (local surgery per pad; blocker named)
 Pads sealed in their first millimetre (diagnose reach=1 on exp12;
@@ -196,6 +211,9 @@ U5.3/CAP_DATA, U4.27/CDR_SQUELCH, J1.B5/CC2 (disc blocked by VBUS_RAW),
 D1.5/APD_K (same-footprint geometry; its connection is owed as routing
 — see the standing D1 audit lines below). Membership is confirmed per
 pad by probe/diagnosis as surgery reaches it. Status: OPEN (0 closed).
+Corroboration (FR verdict, 2026-11-04 ~21:35 PST): Freerouting's
+fanout failed on the same pin population (355/503 escaped) — the
+seals are geometry, not search effort.
 HOLD (parent order, 2026-11-04 ~21:12 PST): all U9 members (U9.5,
 U9.1, U9.6, U9.3) are OUT of this class until the re-sync wave — the
 parts audit (docs/08-parts-lock.md, main d7acb61; 115 LOCKED / 29 NOT
@@ -215,11 +233,19 @@ diagnostic BFS reaches the goal halo — the grid A* cost model, not
 the geometry. Members: ULPI x8 (D1-D6, NXT, STP) + USB_RST + DP_PHY
 (U7 legs), CDR chain (CDR_PIN, CDR_SQUELCH, CAP_DATA), APD_K chain
 (D1.5 leg, RJ2.2 leg), I2C_SCL/SDA + TMP_ALERT hauls, CC2, CF2,
-HV_SHDN haul, SET_P haul. The parallel Freerouting lane is aimed at
-this class. If FR loses: endpoint geometry — a local respread of U6's
-decoupling/pin-escape web (U6 never moved in the expansion) is
-authorized under the standing enlargement directive if diagnosis
-indicts the U6-side exits. Status: OPEN (FR lane running elsewhere).
+HV_SHDN haul, SET_P haul. FREEROUTING VERDICT (parent, 2026-11-04
+~21:35 PST): LOSES — no board produced. Branch fr-attempt in
+pdlvds-fr2, final commit 67cc2f6 (RUN-NOTES.md + freerouting.log
+are the record). Full 90-min budget after a VM-replacement
+restart: fanout escaped only 355/503 pins; auto-routing unrouted
+went 125 -> 120 -> 147 -> 146 -> 147 (worse after pass 1,
+pinned); no SES written at the timeout. CLASS B IS THIS LANE'S
+NOW: the authorized fallback applies — thread/thread_far per
+pair (Class T fixed), and endpoint geometry where diagnosis
+indicts it: a local respread of U6's decoupling/pin-escape web
+(U6 never moved in the expansion) is authorized under the
+standing enlargement directive if diagnosis indicts the U6-side
+exits. Status: OPEN (this lane; FR lane closed).
 
 ### CLASS R — rail islands (short/medium hops; thread-class vehicle)
 +5V (6 groups), +3V3A (3), +3V3D_CDR (3), PHY_1V8 (3), PHY_1V8A (2),
@@ -236,26 +262,33 @@ parent hands this lane the merged tree and it is absorbed as ONE
 placement pass BEFORE the class queue resumes: place/replace in
 the HV and north areas, rip only the copper the footprint changes
 invalidate, re-audit. Known contents of the wave:
-- HV interlock jumper header (NEW 2-pin footprint; deliberate-
-  action jumper in the SHDN path): board edge near the HV/U10
-  cluster, operator-accessible; route its nets (SHDN-path series
-  + possibly one sense net to a spare MCU GPIO — the fix report
-  names the designator, footprint, and nets).
+- HV interlock jumper header J5 (FINAL data, parent 2026-11-04
+  ~21:14 PST): footprint Connector_PinHeader_2.54mm:
+  PinHeader_1x02_P2.54mm_Vertical; pin 1 = HV_EN (from PC7),
+  pin 2 = HV_SHDN. Place at the board edge near the HV cluster.
+  The sense is PA6 on HV_SHDN, already in the netlist — no
+  separate sense net to route beyond HV_SHDN itself.
 - U9 footprint REDRAWN (current pads defective — see the Class A
   hold above); U9 locality work resumes only on the new pads.
 - D4 SMA -> SMB; C4 0603 -> 1206; HV resistor series strings;
   a specified flyback transformer footprint.
 Not actionable until the merged tree is handed over.
 
-### D1 owner decision (parent update, 2026-11-04 ~20:53 PST)
+### D1 owner decision (parent update, 2026-11-04 ~20:53 PST) — FIX LANDED 57a1150, gate (b) PASS / (a) OPEN
 Owner directed the D1 fix: a hardware population clamp on the HV
-set-point network (values-only resistor change; no footprint or
-geometry changes — layout untouched by design). A dedicated worker
-implements it in a separate clone (circuit.py + docs/03/02 + firmware
-DAC mapping + HV sim). When it lands, the docs/07 exemption gate is
-re-run against the new bounded maximum. Until then D1's state stays
-recorded exactly as in the standing-lines section below. No action
-for this lane.
+set-point network. LANDED on main at 57a1150 (verified in this
+clone by fetch + primary records, 2026-11-04 ~21:14 PST):
+results/hv_clamp_a.csv at that commit shows V_HV = 253.17 V at
+DAC = 0 (the maximum), inside the C30737's 260 V VBR rating —
+docs/07 condition (b) PASSES, the fry path is closed in the
+schematic. Condition (a) land pattern remains UNVERIFIED, so
+the 2 APD audit lines stay as violations exactly as written
+(standing-lines section below) until (a) closes. The same merge
+carries the J5 interlock: CONNECTIONS.md@57a1150 — PC7 = HV_EN
+reaches the SHDN node only through the J5 jumper (J5.1 = HV_EN,
+J5.2 = HV_SHDN); PA6 = HV_SHDN analogue sense; SHDN divider
+R25 143k/R26 33k; jumper absent = the converter cannot start
+under any firmware state.
 
 ### Standing audit lines (not a class, not work items)
 The 2 APD_K-vs-APD_A clearance lines (D1.5's own terminal pair) stand
