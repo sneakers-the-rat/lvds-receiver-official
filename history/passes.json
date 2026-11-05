@@ -1980,8 +1980,8 @@
     {
       "pass": 71,
       "timestamp": "2026-11-05T01:35:35Z",
-      "hash": null,
-      "short_hash": null,
+      "hash": "8d17402bba0d6178daa567436f191a0f6f911b15",
+      "short_hash": "8d17402",
       "board_file": "hw/pdlvds_rx.exp7.kicad_pcb",
       "dir": "pass-0071",
       "renders": {
