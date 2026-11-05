@@ -1,0 +1,9 @@
+--- 0 fence rips ---
+  rip ULPI_D4 (79.38,14.62)->(79.62,14.88)
+  [0 fence rips OK]
+--- 1 D5 stub ---
+  ULPI_D5: (78.44,14.75)->(79.50,14.75)
+  [1 D5 stub OK]
+--- 2 RST stub ---
+  [2 RST stub REFUSED: USB_RST seg (74.25,16.4375)->(74.25,17.05): ULPI_NXT track@stubcheck]
+saved hw/pdlvds_rx.exp63.kicad_pcb
