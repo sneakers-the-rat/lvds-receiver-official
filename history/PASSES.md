@@ -592,9 +592,9 @@ Nets fully routed: not recorded · Pins failed: not recorded · Clearance violat
 
 heal log: results/heal-rails.log; audit: results/audit-exp4.txt
 
-### Pass 70 — 2026-11-05T01:09:41Z · commit `pending`
+### Pass 70 — 2026-11-05T01:09:41Z · commit `5028477`
 
-Board: `hw/pdlvds_rx.exp6n.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp6n.kicad_pcb` · Commit: `502847785a9ca9e1cfe80070c7fb0f534ffccd8a`
 
 fanout campaign + tool fix: hand_stub batch on 165 sealed pads (targets from the audit's non-main groups) placed 150 stubs after fixing a real bug in hw/hand_stub.py/hw/hand_via.py (bbox support function used as pad-edge distance -> diagonal stubs floated off their pads; first run's audit signature: 8 nets +1 group each as lone track groups; fix = ray-exit distance minus inset, tools commit fece b01). Zero floating stubs after the fix (only lone track group is GND's pre-existing one). Groups 171 -> 163, nets 59. HV keepout notches re-cut on current copper (hw/notch_strip.py): the pass-67 bridge APD_K tracks in the strip sat outside the pass-66 rects (violations had risen to 5); re-notch restored violations to 2 (justified D1 pair). 15 pads still have no stub (U9.5, U7.4/6, D1.5, J1.B5, U10.7/8/9, U13.7, U6.26/29/40/70/74, U14.6) — via-first escapes next.
 
