@@ -214,6 +214,24 @@ pad by probe/diagnosis as surgery reaches it. Status: OPEN (0 closed).
 Corroboration (FR verdict, 2026-11-04 ~21:35 PST): Freerouting's
 fanout failed on the same pin population (355/503 escaped) — the
 seals are geometry, not search effort.
+STUB-WALL DIAGNOSIS on exp14 (results/probe-stub-walls-exp14.txt;
+the fixed thread's own blocker math at both anchors of the
+nearest pair): HV_GATE is walled at BOTH ends on F — start (R27.1
+group track, facing (15.562,-18.518)): all 4 corners blocked by
+the MOS_G pad R27.2; goal (U10.7, facing (15.425,-14.650)): all
+4 corners blocked by pads U10.8 (HV_INTVCC) and U10.11 (GND EP).
+HV_SS: start (C30.1) CLEAR at all corners; goal (U10.3, facing
+(12.575,-14.850)) walled at all corners by pads U10.4 (HV_RT)
+and U10.11 (GND EP). +5V's nearest pair (U11.12 <-> its track,
+gap 0.20): start walled by a GND pad at all corners; goal has
+clear corners. Pattern for the whole U10 row: the facing points
+thread chooses face WEST, into the package's own pad fence
+(EP + adjacent pads); the pads' open side is EAST. Surgery
+direction for the U10 locality: hand-placed east-side escape
+stubs on U10.3/U10.7/U10.8/U10.9 (audit-verified per stub) to
+move the thread anchors to the open side, and an escape via/
+extension on the R27.1 group's track west end for HV_GATE's
+start. These are placement/surgery passes, not search retries.
 HOLD (parent order, 2026-11-04 ~21:12 PST): all U9 members (U9.5,
 U9.1, U9.6, U9.3) are OUT of this class until the re-sync wave — the
 parts audit (docs/08-parts-lock.md, main d7acb61; 115 LOCKED / 29 NOT
