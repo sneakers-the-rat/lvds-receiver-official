@@ -972,9 +972,9 @@ APD_K R47.2 group connected (queue item 1, leg 1 of 3). Diagnosis: TMP_ALERT's B
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 72 · Unconnected nets: 30 · Audit verdict: FAIL
 
-### Pass 117 — 2026-11-05T21:35:24Z · commit `pending`
+### Pass 117 — 2026-11-05T21:35:24Z · commit `9a17ea0`
 
-Board: `hw/pdlvds_rx.exp109.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp109.kicad_pcb` · Commit: `9a17ea002447bfff744c41df914933e09b2f317e`
 
 APD_K D1.5 leg connected (queue item 1, leg 2 of 3). D1.5 is ringed by its own footprint's APD_A pads at 0.40-0.50 mm gaps, so any surface exit starts inside the 1.0 mm surface class -- the geometry behind the 2 standing APD_K-vs-APD_A lines. Fix (hw/fix_d15.py): ONE diagonal F neck (9.20,40.00)->(11.00,38.50) whose exact-test blockers are D1.4 and D1.6 only (script asserts all blockers are APD_A and aborts otherwise), via at (11.00,38.50) (nearest clear site in a 0.25-grid disc scan), In1 south+east runs onto the main web's via (13.62,30.62). DELTAS vs pass 116: nets 30->30 (APD_K groups 3->2; only the RJ2.2 leg remains), violations 72->74 (+2, exactly the two predicted sibling-pad lines APD_A (D1.4)/(D1.6) vs the neck track -- same standing D1-footprint species as the 2 gated lines, geometrically forced: no via site reachable from D1.5 clears 1.0 mm from both pads). No victims.
 
