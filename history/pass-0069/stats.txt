@@ -1,0 +1,13 @@
+pass: 69
+description: heal_nets rails phase (hw/heal_nets.py, repairg engine under a named net list): +3V3D/+5V/+3V3A/+3V3D_CDR. 48 groups connected in 536 s, EVERY merge audit-real: total groups 225 -> 177, nets 65, violations 2. +3V3D 38 -> 7, +5V 23 -> 10, +3V3A 9 -> 5, +3V3D_CDR 7 -> 7 (zero merges — U4's rail pins are walled; rip-priced threading next). 25 groups STILL isolated, failing fast (1-12 s): U5 power pins x4, X2.1/X2.4 group, FB1.1, R25.1, U7.4 et al. — named residue for thread.py (rip pricing) after the signal phase.
+timestamp (UTC): 2026-11-05T00:29:35Z
+commit: pending
+board file: hw/pdlvds_rx.exp4.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (15 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 2
+unconnected nets: 65
+audit verdict: fail
+note: heal log: results/heal-rails.log; audit: results/audit-exp4.txt
