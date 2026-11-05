@@ -1,0 +1,67 @@
++3V3A: 3 groups, main group 196 items
+  +3V3A: group (1 items, ['U7.6']) STILL isolated (3s)
+  +3V3A: connected group of 1 items (9s, 2 vias)
++3V3D_CDR: 2 groups, main group 101 items
+  +3V3D_CDR: group (1 items, ['U4.12']) STILL isolated (3s)
++5V: 5 groups, main group 272 items
+  +5V: group (6 items, ['U11.10', 'U11.11', 'U11.12']) STILL isolated (7s)
+  +5V: group (2 items, ['U11.13', 'track@(14.8125, 62.588388)']) STILL isolated (6s)
+  +5V: group (1 items, ['U7.4']) STILL isolated (5s)
+  +5V: group (1 items, ['U14.6']) STILL isolated (5s)
+APD_K: 9 groups, main group 102 items
+  APD_K: connected group of 3 items (1s, 0 vias)
+  APD_K: group (2 items, ['RJ2.2', 'track@(14.151089, 56.864929)']) STILL isolated (1s)
+  APD_K: group (1 items, ['R31.1']) STILL isolated (0s)
+  APD_K: connected group of 1 items (1s, 1 vias)
+  APD_K: group (1 items, ['D1.5']) STILL isolated (1s)
+  APD_K: connected group of 1 items (1s, 0 vias)
+  APD_K: group (1 items, ['R47.2']) STILL isolated (1s)
+  APD_K: connected group of 1 items (1s, 0 vias)
+CAP_DATA: 2 groups, main group 2 items
+  CAP_DATA: group (2 items, ['U5.3', 'track@(66.42, -20.405)']) STILL isolated (183s)
+CC2: 2 groups, main group 8 items
+  CC2: group (2 items, ['J1.B5', 'track@(30.5, 73.18)']) STILL isolated (0s)
+CDR_PIN: 2 groups, main group 2 items
+  CDR_PIN: group (2 items, ['U4.5', 'track@(52.205, -18.25)']) STILL isolated (0s)
+CDR_SQUELCH: 2 groups, main group 2 items
+  CDR_SQUELCH: group (2 items, ['U4.27', 'track@(55.75, -21.295)']) STILL isolated (0s)
+CF2: 2 groups, main group 2 items
+  CF2: group (2 items, ['C15.2', 'track@(60.644999, -26.0)']) STILL isolated (163s)
+CMP_QN: 2 groups, main group 89 items
+  CMP_QN: connected group of 6 items (0s, 0 vias)
+DP_PHY: 2 groups, main group 2 items
+  DP_PHY: group (1 items, ['U7.7']) STILL isolated (0s)
+FLY_PRI: 2 groups, main group 2 items
+  FLY_PRI: connected group of 1 items (1s, 2 vias)
+GND: 41 groups, main group 1412 items
+  GND: connected group of 11 items (60s, 0 vias)
+  GND: connected group of 4 items (79s, 2 vias)
+  GND: connected group of 4 items (39s, 0 vias)
+  checkpoint: 10 groups, saved
+  GND: connected group of 4 items (30s, 0 vias)
+  GND: connected group of 4 items (28s, 0 vias)
+  GND: connected group of 4 items (27s, 0 vias)
+  GND: connected group of 4 items (28s, 0 vias)
+  GND: connected group of 4 items (31s, 0 vias)
+  GND: connected group of 4 items (31s, 0 vias)
+  GND: connected group of 3 items (31s, 0 vias)
+  GND: connected group of 2 items (28s, 0 vias)
+  GND: connected group of 1 items (30s, 2 vias)
+  GND: connected group of 1 items (30s, 2 vias)
+  checkpoint: 20 groups, saved
+  GND: connected group of 1 items (29s, 1 vias)
+  GND: group (1 items, ['R32.2']) STILL isolated (28s)
+  GND: connected group of 1 items (30s, 0 vias)
+  GND: connected group of 1 items (29s, 0 vias)
+  GND: group (1 items, ['U4.17']) STILL isolated (41s)
+  GND: connected group of 1 items (50s, 0 vias)
+  GND: connected group of 1 items (48s, 0 vias)
+  GND: connected group of 1 items (36s, 0 vias)
+  GND: connected group of 1 items (36s, 0 vias)
+  GND: connected group of 1 items (42s, 2 vias)
+  GND: connected group of 1 items (47s, 1 vias)
+  GND: connected group of 1 items (60s, 0 vias)
+  checkpoint: 30 groups, saved
+  GND: connected group of 1 items (47s, 0 vias)
+  GND: connected group of 1 items (51s, 0 vias)
+  GND: connected group of 1 items (65s, 2 vias)
