@@ -660,9 +660,9 @@ Class T board repair: fixed thread_far redo on exp12 — CDR_VREF (rips 2), REFC
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 2 · Unconnected nets: 31 · Audit verdict: FAIL
 
-### Pass 78 — 2026-11-05T05:55:12Z · commit `pending`
+### Pass 78 — 2026-11-05T05:55:12Z · commit `6b8c0bc`
 
-Board: `hw/pdlvds_rx.exp15.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp15.kicad_pcb` · Commit: `6b8c0bc27e008c52c006b047df6f885ddb3fcce9`
 
 U10 locality surgery 1 (Class A): U10.7 via escape placed in its proven east window — F neck (16.79,-14.50)->(17.20,-14.50), via 0.6/0.3 @(17.20,-14.50), In2 tail ->(19.20,-14.50), every shape collision-tested pre-placement (results/surgery-u10-escape.txt). Audit: violations still 2 (D1 standing lines only), nets 31 — HV_GATE's U10.7 group now reaches open field on In2. The companion +5V-trunk jog FAILED and is recorded: a MOS_G track fences every jog depth 18.95-20.10 (results/surgery-u10-jog.txt); U10.8/U10.9/U10.3 remain sealed by row arithmetic (0.5 pitch, 0.30 pads, 0.25 HV class: channel 0.70 < 0.75 demanded) plus that palisade.
 
