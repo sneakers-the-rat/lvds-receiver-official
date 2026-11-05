@@ -652,9 +652,9 @@ thread_far round 1 (exp12 -> exp13): the exact lattice threader with its pair ga
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 17 · Unconnected nets: 28 · Audit verdict: FAIL
 
-### Pass 77 — 2026-11-05T05:38:21Z · commit `pending`
+### Pass 77 — 2026-11-05T05:38:21Z · commit `3f2e2cd`
 
-Board: `hw/pdlvds_rx.exp14.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp14.kicad_pcb` · Commit: `3f2e2cd86798f77b0f3c2045cbd0c6d1d3f6428f`
 
 Class T board repair: fixed thread_far redo on exp12 — CDR_VREF (rips 2), REFCLKN (rips 2), SLICEP (rips 6) threaded with exactly-executed priced rips; violations 17 -> 2 (only the standing D1 APD lines remain; all 15 Class T lines gone). Nets 28 -> 31 honestly: SLICEP's real rips split SLICEN and CDR_NIN (Class B repayment), and the HV threads are absent — HV_SS no-thread at honest prices, HV_GATE and +5V anchor stubs walled at start (named U10/Class A locality items). HV_INTVCC solo attempt follows.
 
