@@ -692,9 +692,9 @@ RE-SYNC (pass 81): board absorbed the corrected 152-part schematic (hw/resync.py
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 69 · Unconnected nets: 44 · Audit verdict: FAIL
 
-### Pass 82 — 2026-11-05T08:27:06Z · commit `pending`
+### Pass 82 — 2026-11-05T08:27:06Z · commit `929ba23`
 
-Board: `hw/pdlvds_rx.exp33.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp33.kicad_pcb` · Commit: `929ba23638bd8ee3ac81615e8b2cf77484dc1a6a`
 
 SECURE (pass 82): commit the best on-disk board after the coordinator succession + VM replacement. Audited every exp board exp29-exp34 with the corrected checker: exp29 44/69, exp30 44/92, exp31 43/87, exp32 44/69, exp33 43/69, exp34 43/92. exp33 dominates: same 43 unconnected as exp34 with 23 fewer violations. Predecessor's hops.py surgery (written against exp34) never saved -- it crashed on the TP_HV re-stitch (blocked by HV_FBX at R50.2) before board.Save, so exp35 does not exist; the surgery script is committed separately and will be re-based onto exp33. bridge.py verified clean vs HEAD (no uncommitted changes). This pass changes no copper: it records exp33 as the secured base for the drain.
 
