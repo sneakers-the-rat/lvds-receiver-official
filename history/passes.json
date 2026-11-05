@@ -3455,6 +3455,35 @@
       },
       "description": "+3V3A U7.25 connected (queue item 4): via d=0.45 at (77.98,11.65) in the north-east corner -- overlaps U7.25's own pad edge, clears U7.24 (ULPI_D0) by 0.25 shape distance, and touches the In2 mesh segment (77.88,11.62)->(77.62,11.88); F stub (77.80,11.75)->(77.98,11.65). Refused on record: via on the pad or onto the mesh NE (QFN pitch + ULPI_CK's F staircase at 0.25 class on every site) and the F west channel run in 4 variants (ULPI_CK wall + CDR_DATP via (76.88,10.62) + XI/PHY_1V8A escape nubs tile the channel). DELTAS vs pass 120: nets 28->27 (+3V3A connected), violations 71->71, census byte-identical. No victims.",
       "note": ""
+    },
+    {
+      "pass": 122,
+      "timestamp": "2026-11-05T23:23:24Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp114.kicad_pcb",
+      "dir": "pass-0122",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 71,
+        "unconnected_nets": 27,
+        "audit_verdict": "FAIL"
+      },
+      "description": "XI/XO (queue item 5) stand as NAMED RESIDUALS; XI fanout ray placed as the heal-enabler attempt. XO: U7.27 SEALED -- hand_stub refuses all 16 directions; every via site tiled by the CDR_DATP via (76.88,10.62) at 0.03-0.155mm, ULPI_CK's wall and U7.26 PHY_1V8's pad; the only mechanisms are the coordinated CDR-pair relay or a U7 move (both parked with the ULPI knot). XI: heal refused before AND after this ray (pad-cell seal in the grid model), thread_far refused (gap 8.45, no thread); remaining mechanisms are the west-corridor hand-route (crosses +3V3A's 0.60 west trunk + the GND field at y19-22, multi-via marginal windows) or the pair relay. This pass places ONLY the XI ray: nub extended (76.25,11.03)->(76.25,10.55) + west bend ->(75.85,10.55), exact-tested clean; no via fits at the ray (CDR_DATP buried staircases). DELTAS vs pass 121: nets 27->27, violations 71->71 expected (audit verifies), XI groups unchanged 2. No victims. NEXT: queue item 6 (east-column +3V3D_CDR + CDR_LOL), then the residue family.",
+      "note": ""
     }
   ],
   "gaps": [
