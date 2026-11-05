@@ -788,9 +788,9 @@ Escapes 10 (exp50 -> exp51): CC2 COMPLETE (east jog at y=72.3 under the A9/B4 pa
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 82 · Unconnected nets: 28 · Audit verdict: FAIL
 
-### Pass 94 — 2026-11-05T12:22:58Z · commit `pending`
+### Pass 94 — 2026-11-05T12:22:58Z · commit `b0429cb`
 
-Board: `hw/pdlvds_rx.exp52.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp52.kicad_pcb` · Commit: `b0429cb4f0bb488fbfa5c17ff111f3f31b446d52`
 
 Escapes 11 (exp51 -> exp52): R50 shifted +1.14 east (fixes the batch-9 pad overlap with R31.2), HV_R31B re-join CONNECTED; FBX and HV_RAW vias refused by the CMP_QN B staircase / FBX In2 vertical (named blockers, batch 12 re-plans with a placement move); HV_SS In2 hop refused -- its seal is geometric (one 1.0-class dive channel at U10 for two HV nets).
 
