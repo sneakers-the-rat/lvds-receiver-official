@@ -147,6 +147,16 @@ def sec_raw():
     add_track('HV_RAW', 39.3, -7.5, 39.53, -9.8, w=0.4)
 section('3 HV_RAW lane + In2', sec_raw)
 
+# 4. HV_SS In2 hop (heal_big failed from both sides: 8s + 299s).
+def sec_ss():
+    add_track('HV_SS', 10.62, -15.0, 9.9, -15.9)
+    add_via('HV_SS', 9.9, -15.9)
+    add_track('HV_SS', 9.9, -15.9, 15.9, -11.6, layer=pcbnew.In2_Cu)
+    refresh()
+    add_via('HV_SS', 15.9, -11.6)
+    add_track('HV_SS', 15.9, -11.6, 16.02, -11.01)
+section('4 HV_SS In2 hop', sec_ss)
+
 board.Save(OUT)
 board = pcbnew.LoadBoard(OUT)
 filler = pcbnew.ZONE_FILLER(board)
