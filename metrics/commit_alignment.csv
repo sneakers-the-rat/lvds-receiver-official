@@ -491,3 +491,4 @@ cac7c75ba618,2026-11-05T20:48:16Z,"pass 0115: HV_FBX repaid (owed from pass 114)
 29cd9d04b565,2026-11-05T20:48:16Z,pass 0115: record commit hash,628623860,3262797,631886657,83,64,not recorded
 edfa2b93a5b7,2026-11-05T21:13:59Z,metrics: watchdog export refresh,633162938,3290028,636452966,83,64,not recorded
 ddb978287819,2026-11-05T21:21:59Z,"merge: route lane passes 110-115 (SLICEN, SET_P relocation, gate re-weave, CAP_CLK/CC2/APD_K drain, HV_FBX repay)",633162938,3290028,636452966,83,64,not recorded
+f04e5ad9f881,2026-11-05T21:34:25Z,"site: hierarchical collapsible sidebar, mobile burger menu, floating pass flip buttons, generated progress chart",633162938,3290028,636452966,83,64,not recorded
