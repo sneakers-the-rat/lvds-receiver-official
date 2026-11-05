@@ -1,0 +1,13 @@
+pass: 103
+description: Escapes 18 (exp62 -> exp63): surviving D4 staircase segment ripped (tight tolerance), D5 stub placed; RST stub refused again by the NXT diagonal (batch 19 rips it). Heal round 2 runs on this board.
+timestamp (UTC): 2026-11-05T13:29:22Z
+commit: pending
+board file: hw/pdlvds_rx.exp63.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 81
+unconnected nets: 62
+audit verdict: fail
+note: 

@@ -3,3 +3,17 @@ ULPI_D5: 2 groups, main group 2 items
 ULPI_D2: 2 groups, main group 2 items
   ULPI_D2: group (1 items, ['U6.47']) STILL isolated (0s)
 ULPI_D3: 2 groups, main group 2 items
+  ULPI_D3: group (1 items, ['U6.69']) STILL isolated (241s)
+ULPI_DIR: 2 groups, main group 101 items
+  ULPI_DIR: connected group of 2 items (0s, 1 vias)
+ULPI_STP: 2 groups, main group 2 items
+  ULPI_STP: group (1 items, ['U6.26']) STILL isolated (216s)
+ULPI_CK: 2 groups, main group 112 items
+  ULPI_CK: connected group of 2 items (1s, 1 vias)
+ULPI_D4: 2 groups, main group 37 items
+  ULPI_D4: group (2 items, ['U7.20', 'track@(78.4375, 14.25)']) STILL isolated (1s)
+ULPI_D7: 2 groups, main group 101 items
+  ULPI_D7: connected group of 5 items (2s, 1 vias)
+ULPI_NXT: 2 groups, main group 20 items
+  ULPI_NXT: connected group of 4 items (0s, 0 vias)
+heal_big done: 5 groups connected in 478s, output hw/pdlvds_rx.exp64.kicad_pcb
