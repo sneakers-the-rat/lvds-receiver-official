@@ -1,0 +1,13 @@
+pass: 106
+description: Escapes 21 (exp67 -> exp68): D5 F stubs ripped for the D4/D5 order fix; D4 and D2 hand routes refused on named blockers (CDR_DATP via, U7.23 pad) -- re-aimed in batches 22-24. exp66/exp67 were engine-attempt states with no connectivity change, folded here.
+timestamp (UTC): 2026-11-05T13:59:22Z
+commit: pending
+board file: hw/pdlvds_rx.exp68.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 81
+unconnected nets: 59
+audit verdict: fail
+note: 

@@ -1,0 +1,7 @@
+ULPI_D5: 2 groups, main group 60 items
+  ULPI_D5: group (1 items, ['U7.19']) STILL isolated (0s)
+ULPI_NXT: 2 groups, main group 19 items
+  ULPI_NXT: connected group of 8 items (0s, 0 vias)
+USB_RST: 2 groups, main group 1 items
+  USB_RST: group (1 items, ['U7.9']) STILL isolated (0s)
+heal_big done: 1 groups connected in 7s, output hw/pdlvds_rx.exp74.kicad_pcb

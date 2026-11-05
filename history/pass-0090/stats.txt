@@ -1,0 +1,13 @@
+pass: 90
+description: Escape batch 1 (exp41 -> exp42): APD_K island joined to main via R34.1 pad (section I), GND R48.2 stub south (section L). The other 9 sections were refused by named blockers and are reworked in batch 2/3 with measured pad geometry. Audit follows in stats.
+timestamp (UTC): 2026-11-05T11:11:16Z
+commit: pending
+board file: hw/pdlvds_rx.exp42.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 77
+unconnected nets: 29
+audit verdict: fail
+note: 

@@ -1,0 +1,36 @@
++3V3A: anchor stub walled at start
++3V3D_CDR: anchor stub walled at start
++5V: anchor stub walled at start
+APD_K: threaded gap 0.09: 3 segs, 0 vias, ripped 0
+CAP_DATA: no pair within 15 mm
+CC2: anchor stub walled at start
+CDR_NIN: threaded gap 1.46: 3 segs, 0 vias, ripped 0
+CDR_PIN: no pair within 15 mm
+CDR_SQUELCH: no pair within 15 mm
+CF2: no pair within 15 mm
+CMP_QN: threaded gap 0.17: 2 segs, 0 vias, ripped 0
+DP_PHY: no pair within 15 mm
+FLY_PRI: no pair within 15 mm
+GND: threaded gap 0.25: 2 segs, 0 vias, ripped 0
+HV_DAC: threaded gap 0.08: 2 segs, 0 vias, ripped 0
+HV_FBX: threaded gap 0.33: 2 segs, 0 vias, ripped 0
+HV_INTVCC: no thread (gap 5.27)
+HV_RAW: threaded gap 1.16: 3 segs, 0 vias, ripped 0
+HV_SEC: threaded gap 8.46: 12 segs, 2 vias, ripped 6
+HV_SHDN: no pair within 15 mm
+HV_SS: no thread (gap 4.08)
+PHY_1V8: anchor stub walled at start
+PHY_1V8A: anchor stub walled at start
+SET_P: no thread (gap 5.14)
+SLICEN: anchor stub walled at start
+ULPI_D1: no pair within 15 mm
+ULPI_D2: no pair within 15 mm
+ULPI_D3: no pair within 15 mm
+ULPI_D4: no pair within 15 mm
+ULPI_D5: no pair within 15 mm
+ULPI_D6: no pair within 15 mm
+ULPI_NXT: no pair within 15 mm
+ULPI_STP: no pair within 15 mm
+USB_RST: no pair within 15 mm
+XI: threaded gap 0.78: 3 segs, 0 vias, ripped 0
+saved hw/pdlvds_rx.exp39.kicad_pcb

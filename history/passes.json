@@ -2237,6 +2237,876 @@
       },
       "description": "HV_GATE connected (Class A): targeted heal_nets on exp15 \u2014 the group extended by pass 78's In2 tail healed to the R27.1 group in 8 s, 1 via (results/heal-hvgate-exp16.txt). Audit: nets 31 -> 30, violations 2 (D1 standing lines only). HV_GATE leaves Classes A/R; U10.8/U10.9/U10.3 remain sealed (pass 78 findings) and ride the re-sync wave next.",
       "note": ""
+    },
+    {
+      "pass": 80,
+      "timestamp": "2026-11-05T06:46:17Z",
+      "hash": "addb328862b3e3ab29a944e1d8fe52b3ea4e6161",
+      "short_hash": "addb328",
+      "board_file": "hw/pdlvds_rx.exp21.kicad_pcb",
+      "dir": "pass-0080",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 11,
+        "unconnected_nets": 29,
+        "audit_verdict": "FAIL"
+      },
+      "description": "U10.9 HV_SHDN connected (Class A): step-1 dense retest at the true 0.20 class found the one clear via site (17.25,-15.45) the radial probes never sampled \u2014 escape placed (hw/surgery_u10_9_escape.py: neck w=0.20, via 0.6/0.3, In2 tail east). heal_nets and thread_far both refused the pair (gap 6.28); the tail was hand-extended on In2 around the cluster (segments probe-verified with hw/probe_path.py) via (20.5,-21) west to the divider web, via up at (9.5,-18.9), F neck into the main track (hw/surgery_u10_9_connect.py), then zones refilled (hw/refill.py) so the pour carves the landing via's antipad. Audit (corrected checker, tools commit ed0d9b6): nets 30 -> 29; violations 11 = 2 D1 standing + 9 TP_HV (class opened by the census correction, fix queued in the re-sync). HV_SHDN leaves Class A; U10.8/U10.3 seals survive correct classes and ride the re-sync. (Record note: this pass was first committed against commit_pass.py's default board \u2014 the pre-expansion hw/pdlvds_rx.kicad_pcb \u2014 and redone in place before any push; always pass --board.)",
+      "note": ""
+    },
+    {
+      "pass": 81,
+      "timestamp": "2026-11-05T07:06:04Z",
+      "hash": "9cd6b93bc039263a12905217dea1962371aeb992",
+      "short_hash": "9cd6b93",
+      "board_file": "hw/pdlvds_rx.exp22.kicad_pcb",
+      "dir": "pass-0081",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 69,
+        "unconnected_nets": 44,
+        "audit_verdict": "FAIL"
+      },
+      "description": "RE-SYNC (pass 81): board absorbed the corrected 152-part schematic (hw/resync.py phases A+B, scratch/netlist_map.json). Footprint swaps in place: C4->ECWFD film (placed (18,16)), D4->D_SMB, L1/L2->Murata DFE, X1->HC49-SD, U9->redrawn TMP117_WSON6. HV cluster iterated: R31 string (R31+R49+R50) and R29 string (R29+R47) to the north row (y=-1.8), R34->(43,-6), R48 south of R30; D9-D11 OVP stack placed west strip (HV_RAW/HV_OVP1/HV_OVP2/GND). Board GREW again (user standing order): north edge -30 -> -45 after the grid placer proved the EFD20 T1 (23.11x26.1 body) has no feasible point in the 30 mm strip (flyback cluster fills its window); C9 nudged east, T1 placed (32.9,-31.4) in the new band. J5 interlock fitted at the west edge (3.5,-16.5): HV_SHDN run severed at the In2 segment above the divider via, 168 U6-side items reassigned to HV_EN (U6.97=PC7), J5 bridges HV_EN->HV_SHDN (SHDN side landed on the pass-80 via (9.5,-18.9)); HV_EN fully connected. TP_HV class: TP1 pad CLOSED (moved (45,20)->(39.5,20.5), disc-clear site, stub joined at (43.125,16.875)); the web's NE tail still grazes the GND run (3 lines) \u2014 class stays open on the tail only. Audit (corrected checker): nets 29 -> 44, violations 11 -> 69 \u2014 the recorded cost of the corrections: string/OVP midpoint hops unrouted, APD_K web in 10 groups, stale tracks to dead pad positions grazing the moved HV pads (drain classes, in order: HV-area campaign, Class A U10.8/U10.3, Class R, Class B).",
+      "note": ""
+    },
+    {
+      "pass": 82,
+      "timestamp": "2026-11-05T08:27:06Z",
+      "hash": "929ba23638bd8ee3ac81615e8b2cf77484dc1a6a",
+      "short_hash": "929ba23",
+      "board_file": "hw/pdlvds_rx.exp33.kicad_pcb",
+      "dir": "pass-0082",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 87,
+        "unconnected_nets": 43,
+        "audit_verdict": "FAIL"
+      },
+      "description": "SECURE (pass 82): commit the best on-disk board after the coordinator succession + VM replacement. Audited every exp board exp29-exp34 with the corrected checker: exp29 44/69, exp30 44/92, exp31 43/87, exp32 44/69, exp33 43/69, exp34 43/92. exp33 dominates: same 43 unconnected as exp34 with 23 fewer violations. Predecessor's hops.py surgery (written against exp34) never saved -- it crashed on the TP_HV re-stitch (blocked by HV_FBX at R50.2) before board.Save, so exp35 does not exist; the surgery script is committed separately and will be re-based onto exp33. bridge.py verified clean vs HEAD (no uncommitted changes). This pass changes no copper: it records exp33 as the secured base for the drain.",
+      "note": ""
+    },
+    {
+      "pass": 83,
+      "timestamp": "2026-11-05T08:42:33Z",
+      "hash": "606fe0ca4da53274880547211bbc552439377fe2",
+      "short_hash": "606fe0c",
+      "board_file": "hw/pdlvds_rx.exp35.kicad_pcb",
+      "dir": "pass-0083",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 67,
+        "unconnected_nets": 39,
+        "audit_verdict": "FAIL"
+      },
+      "description": "HV hops landed (hw/hops2.py on exp33 -> exp35): the predecessor's crashed surgery, rebased and completed. HV_R31A, HV_R31B, HV_R29M hops placed direct; GND stitch re-laid on In2 to clear the R29M corridor; R48 moved + HV_R30M In2 underpass; APD_K fence ripped (24 segs) and B.Cu re-feed placed (final via refused in-script by HV_FBX -- heal takes APD_K next); TP_HV re-stitch: hops.py's diagonal was geometrically impossible (crosses R50.2's 1.0 mm shadow) and the x=39.38 slot is empty at the 1.0 need -- routed F east at y=2.2, In2 drop at x=44.46 (0.3 internal need), via up at (44.9,-7.6), stub into R34.2; tail island deleted. Audit (corrected checker): nets 43 -> 39, violations 87 -> 67. Known residue in this state: TP_HV still audits 2 groups -- the In2 run ends at (44.46,-7.6), 0.14 mm short of the moved via at (44.9,-7.6); the link segment lands next pass. TP_HV zone grazes (8 lines) queue for the notch campaign.",
+      "note": ""
+    },
+    {
+      "pass": 84,
+      "timestamp": "2026-11-05T08:46:56Z",
+      "hash": "fca498a30ef937fa7e96fd2c89a1d920bc01bee8",
+      "short_hash": "fca498a",
+      "board_file": "hw/pdlvds_rx.exp36.kicad_pcb",
+      "dir": "pass-0084",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 67,
+        "unconnected_nets": 38,
+        "audit_verdict": "FAIL"
+      },
+      "description": "TP_HV closed: In2 link segment (44.46,-7.6)->(44.9,-7.6) joins the drop to the moved via (hw/fix_tphv_link.py). TP_HV leaves the unconnected list entirely -- the R50.2 block that killed the predecessor's run is broken and the net is routed end to end (F east at y=2.2, In2 drop, via up east of the CMP_QN run, stub into R34.2). Audit: nets 39 -> 38, violations 67 (TP_HV zone grazes remain for the notch campaign). Next: heal batches over the 2-group residue (ULPI x8, USB_RST, I2C, TMP_ALERT first).",
+      "note": ""
+    },
+    {
+      "pass": 85,
+      "timestamp": "2026-11-05T08:58:29Z",
+      "hash": "fb952610b5e98749521a996c0045fb38dedf3434",
+      "short_hash": "fb95261",
+      "board_file": "hw/pdlvds_rx.exp37.kicad_pcb",
+      "dir": "pass-0085",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 67,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Heal batch A (heal_nets on exp36 -> exp37): I2C_SCL, I2C_SDA, TMP_ALERT connected (the redrawn U9's pads heal at once -- the footprint fix unblocked its locality). ULPI_D1-D6, ULPI_NXT, ULPI_STP, USB_RST refused by heal's A* at both endpoints (U6 lone pads and U7 stub groups) -- Class A seal at the fine-pitch U6/U7 field; they go to thread/escape tools next, not a second heal attempt. Audit: nets 38 -> 35, violations 67.",
+      "note": ""
+    },
+    {
+      "pass": 86,
+      "timestamp": "2026-11-05T09:20:20Z",
+      "hash": "6d73c4c7f0bf913502fbd082de3ac4da2c19c7de",
+      "short_hash": "6d73c4c",
+      "board_file": "hw/pdlvds_rx.exp38.kicad_pcb",
+      "dir": "pass-0086",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 67,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL"
+      },
+      "description": "heal_big (15M cap) on exp37 -> exp38: +3V3D_CDR's U4.1 group merged (42 items, 2 vias); +5V 7 -> 5 groups (T1.1 group and the (26.42,-18.54) island connected). Refused in ~5 s each despite the diagnosis BFS reaching the goal halo (cost-model refusal, the Class B signature): U4.12, U11.10-12 cluster, U11.13, U7.4, U14.6 -- these go to thread/hand work, not a third engine attempt. Audit: nets 35, violations 67 (group counts fell; net count unchanged). NOTE: two VM replacements hit during this stretch (diagnose run SIGTERM'd at 805 s, toolchain restored from cache twice); committed work unaffected.",
+      "note": ""
+    },
+    {
+      "pass": 87,
+      "timestamp": "2026-11-05T09:52:16Z",
+      "hash": "d79fd232350a5bdda5cfea6066460f3cb1b0c9ad",
+      "short_hash": "d79fd23",
+      "board_file": "hw/pdlvds_rx.exp39.kicad_pcb",
+      "dir": "pass-0087",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 75,
+        "unconnected_nets": 32,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Thread sweep 1 (thread_far, all 35 nets, exp38 -> exp39): 9 pair merges -- APD_K (0.09 gap), CDR_NIN (1.46), CMP_QN (0.17), GND (0.25), HV_DAC (0.08, net complete), HV_FBX (0.33), HV_RAW (1.16), HV_SEC (8.46, 12 segs 2 vias, net complete), XI (0.78, net complete). Most 'unconnected' groups were hairline stub gaps the audit grouping cannot join. Cost: HV_SEC's thread ripped 6 foreign items; violations 67 -> 75 and HV_RAW's merge was offset by a rip split (still 4 groups) -- rip victims are repaid by heal/thread rounds next. Refusals recorded: anchor-walled (+3V3A, +3V3D_CDR, +5V, CC2, PHY_1V8/A, SLICEN), lattice no-thread (HV_INTVCC, HV_SS, SET_P), pairs > 15 mm (ULPI x8, USB_RST, CAP_DATA, CDR_PIN, CDR_SQUELCH, CF2, DP_PHY, FLY_PRI, HV_SHDN). Audit: nets 35 -> 32, violations 75.",
+      "note": ""
+    },
+    {
+      "pass": 88,
+      "timestamp": "2026-11-05T10:20:20Z",
+      "hash": "d7173aa4079fb6aefa3a50c0fbe9b3ef65491db9",
+      "short_hash": "d7173aa",
+      "board_file": "hw/pdlvds_rx.exp40.kicad_pcb",
+      "dir": "pass-0088",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 75,
+        "unconnected_nets": 31,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Thread sweep 2 (exp39 -> exp40): CDR_NIN completed (9.80 thread, 2 rips), CMP_QN threaded (2.14), GND and HV_FBX one pair each, HV_RAW hairline (0.01). Audit: nets 32 -> 31, violations 75 (thread rips keep the violation count flat while nets drain; the violation campaign follows the drain). Remaining 31 nets by refusal species: anchor-walled (+3V3A, +3V3D_CDR, +5V, APD_K, CC2, PHY_1V8/A, SLICEN), lattice no-thread (HV_INTVCC, HV_SS, SET_P), pairs beyond the 15 mm gate (ULPI x8, USB_RST, CAP_DATA, CDR_PIN, CDR_SQUELCH, CF2, DP_PHY, FLY_PRI, HV_SHDN). Next: heal_big over the full residue (different start machinery than thread's anchor), then hand escapes for what survives.",
+      "note": ""
+    },
+    {
+      "pass": 89,
+      "timestamp": "2026-11-05T10:46:11Z",
+      "hash": "74a20445741559bb4ddbeee2009f2bcce97e1be7",
+      "short_hash": "74a2044",
+      "board_file": "hw/pdlvds_rx.exp41.kicad_pcb",
+      "dir": "pass-0089",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 75,
+        "unconnected_nets": 29,
+        "audit_verdict": "FAIL"
+      },
+      "description": "heal_big batch 2 (exp40 -> exp41, checkpointed; GND tail stopped by hand after 27 connections when its 1-item subgroups proved to be item-model noise under the zone-defined audit): CMP_QN and FLY_PRI completed, +3V3A 3 -> 2 groups, APD_K 9 -> 5 (RJ2.2 group, R31.1, D1.5, R47.2 remain), GND item-subgroups merged without moving its audit count (zone fills define it). Refused again, all in ~0-7 s (sealed first millimetre): U4.12, U11.10-12, U11.13, U7.4, U14.6, U5.3, J1.B5, U4.5, U4.27, C15.2, U7.7. Audit: nets 31 -> 29, violations 75. Next: escape-fan census over the sealed pads, hand escapes into open field, then heal/thread take the lengthened stubs.",
+      "note": ""
+    },
+    {
+      "pass": 90,
+      "timestamp": "2026-11-05T11:11:16Z",
+      "hash": "62a9130bd0ccd8aa74660c1a8d1cb6778b9625d8",
+      "short_hash": "62a9130",
+      "board_file": "hw/pdlvds_rx.exp42.kicad_pcb",
+      "dir": "pass-0090",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 77,
+        "unconnected_nets": 29,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escape batch 1 (exp41 -> exp42): APD_K island joined to main via R34.1 pad (section I), GND R48.2 stub south (section L). The other 9 sections were refused by named blockers and are reworked in batch 2/3 with measured pad geometry. Audit follows in stats.",
+      "note": ""
+    },
+    {
+      "pass": 91,
+      "timestamp": "2026-11-05T11:39:02Z",
+      "hash": "6d963074a40af544cac00855c919bf1f501d93db",
+      "short_hash": "6d96307",
+      "board_file": "hw/pdlvds_rx.exp49.kicad_pcb",
+      "dir": "pass-0091",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 80,
+        "unconnected_nets": 27,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 3-8 (exp42 -> exp49): +3V3A COMPLETE (U7.6 west exit, In2 hop under the ULPI bank), HV_INTVCC COMPLETE (neck-width turn through the EP/GATE window, via-up hunted to (13.4,-10.8)), HV_SS stubbed to In2, HV_FBX stubbed to a via, R34 moved 1.5mm north (placement) with APD_K/TP_HV re-joins placed. Board state per audit.",
+      "note": ""
+    },
+    {
+      "pass": 92,
+      "timestamp": "2026-11-05T11:56:56Z",
+      "hash": "10642b30079d3153bd3d60af9a80a5d888d14aca",
+      "short_hash": "10642b3",
+      "board_file": "hw/pdlvds_rx.exp50.kicad_pcb",
+      "dir": "pass-0092",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 82,
+        "unconnected_nets": 29,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 9 (exp49 -> exp50): R50 moved (-2.0,-0.8) opening the HV_RAW via-gap lane, orphaned FBX/R31B hops ripped for re-route, U14.6 via down to B, VBUS picket ripped for CC2. Audit records the state.",
+      "note": ""
+    },
+    {
+      "pass": 93,
+      "timestamp": "2026-11-05T12:03:31Z",
+      "hash": "677fc3e65174b22f39ee6f07f6c11246e247f26e",
+      "short_hash": "677fc3e",
+      "board_file": "hw/pdlvds_rx.exp51.kicad_pcb",
+      "dir": "pass-0093",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 82,
+        "unconnected_nets": 28,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 10 (exp50 -> exp51): CC2 COMPLETE (east jog at y=72.3 under the A9/B4 pads) + VBUS_RAW re-feed placed; HV pocket sections refused on named blockers (R31.2 shadow, APD_K via, ILIM_A B track) -- batch 11 re-plans them with real pad bboxes. Audit records the state.",
+      "note": ""
+    },
+    {
+      "pass": 94,
+      "timestamp": "2026-11-05T12:22:58Z",
+      "hash": "b0429cb4f0bb488fbfa5c17ff111f3f31b446d52",
+      "short_hash": "b0429cb",
+      "board_file": "hw/pdlvds_rx.exp52.kicad_pcb",
+      "dir": "pass-0094",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 81,
+        "unconnected_nets": 27,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 11 (exp51 -> exp52): R50 shifted +1.14 east (fixes the batch-9 pad overlap with R31.2), HV_R31B re-join CONNECTED; FBX and HV_RAW vias refused by the CMP_QN B staircase / FBX In2 vertical (named blockers, batch 12 re-plans with a placement move); HV_SS In2 hop refused -- its seal is geometric (one 1.0-class dive channel at U10 for two HV nets).",
+      "note": ""
+    },
+    {
+      "pass": 95,
+      "timestamp": "2026-11-05T12:32:01Z",
+      "hash": "c10f0307e58c6dfd9195d19eb7e52cec03c1794a",
+      "short_hash": "c10f030",
+      "board_file": "hw/pdlvds_rx.exp53.kicad_pcb",
+      "dir": "pass-0095",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 78,
+        "unconnected_nets": 28,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 12 (exp52 -> exp53): PLACEMENT BREAK of the pocket seesaw -- R49+R50 moved SW as a unit (-6,-5.5) into the open field south of the FBX web (one GND stitch ripped); HV_R31B re-join and HV_FBX direct hop to the web both landed. HV_RAW via refused on TP_HV stub proximity; FBX dive re-site refused by HV_VC web (restored in batch 13); HV_SS west leg refused on FBX stub -- its U10 seal is geometric, mechanism named in notes.",
+      "note": ""
+    },
+    {
+      "pass": 96,
+      "timestamp": "2026-11-05T12:38:20Z",
+      "hash": "801534acd82f7f02cf1bc095e6beb777f9f870a9",
+      "short_hash": "801534a",
+      "board_file": "hw/pdlvds_rx.exp54.kicad_pcb",
+      "dir": "pass-0096",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 78,
+        "unconnected_nets": 28,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 13 (exp53 -> exp54): APD_K In2 staircase repaired (5 segments re-placed exactly after batch 12 collateral rip), HV_FBX dive via restored at (10.12,-15.38); HV_RAW F continuation refused by the APD_K via (41.12,-4.38) -- batches 14-16 take the north route instead. (exp55/exp56 were intra-batch waypoints of that route, folded into the next pass.)",
+      "note": ""
+    },
+    {
+      "pass": 97,
+      "timestamp": "2026-11-05T12:44:41Z",
+      "hash": "b7e658ff65ec416ecb11bf93ada7bfff74d21f50",
+      "short_hash": "b7e658f",
+      "board_file": "hw/pdlvds_rx.exp57.kicad_pcb",
+      "dir": "pass-0097",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 78,
+        "unconnected_nets": 28,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 14-16 (exp54 -> exp57): HV_RAW north route COMPLETE -- F from the R29.1 fan, north around the APD_K via (41.12,-4.38), west at y=-2.7 (dead FBX orphan stub ripped), south at x=39.3 into the island track; HV_RAW down to main + D9.1. Audit: 28 nets / 78 violations; TP_HV and HV_R31B fully connected.",
+      "note": ""
+    },
+    {
+      "pass": 98,
+      "timestamp": "2026-11-05T12:57:16Z",
+      "hash": "90df97aad6696782947a3592194f9e2cd8b8dcc9",
+      "short_hash": "90df97a",
+      "board_file": "hw/pdlvds_rx.exp58.kicad_pcb",
+      "dir": "pass-0098",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 77,
+        "unconnected_nets": 28,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Thread sweep 3 (exp57 -> exp58): VBUS_RAW threaded closed, APD_K + GND one pair each -- but thread rips re-split CC2 (the seesaw in miniature: 28 nets / 77 violations, composition churned). Per parent directive the U6/U7 respread placement is adopted next; this pass is the last on the old geometry.",
+      "note": ""
+    },
+    {
+      "pass": 99,
+      "timestamp": "2026-11-05T13:01:06Z",
+      "hash": "3c2d5d6c4eb043f6a2d77e4f478d567db64a458f",
+      "short_hash": "3c2d5d6",
+      "board_file": "hw/pdlvds_rx.exp59.kicad_pcb",
+      "dir": "pass-0099",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 168,
+        "unconnected_nets": 65,
+        "audit_verdict": "FAIL"
+      },
+      "description": "RESPREAD ADOPTED (exp58 -> exp59): U6 -> (82,-6), U7 -> (76,14), X1 -> (87,14) rot90 + full ring, applied via respread_u6u7_local.py (local-rip path) to the current board -- no restart from exp41. 932 items ripped (severance debt ~36 nets, itemised in results/respread-local-exp59.txt). Post-placement audit: 65 nets / 168 violations (zones un-refilled; refill next). ULPI hauls drop from ~66mm to 8-19mm in the new geometry.",
+      "note": ""
+    },
+    {
+      "pass": 100,
+      "timestamp": "2026-11-05T13:04:01Z",
+      "hash": "0eb765f57a8517198ecba95511ba38ff934e08ad",
+      "short_hash": "0eb765f",
+      "board_file": "hw/pdlvds_rx.exp60.kicad_pcb",
+      "dir": "pass-0100",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 71,
+        "unconnected_nets": 65,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Zone refill after the respread (exp59 -> exp60): violations 168 -> 71 (below the pre-respread 77); 65 unconnected nets = 28 pre-existing + ~37 severance debt, the recovery campaign follows. ULPI fanout-first heal rounds next per parent order.",
+      "note": ""
+    },
+    {
+      "pass": 101,
+      "timestamp": "2026-11-05T13:08:43Z",
+      "hash": "268880aa0cb6ce0712174edad98e2e415544cef8",
+      "short_hash": "268880a",
+      "board_file": "hw/pdlvds_rx.exp61.kicad_pcb",
+      "dir": "pass-0101",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 81,
+        "unconnected_nets": 59,
+        "audit_verdict": "FAIL"
+      },
+      "description": "ULPI fanout heal round 1 (exp60 -> exp61): D0, D1, D4, D6, D7, NXT CONNECTED in the new geometry (audit 65 -> 59 nets). Residue: single U7 pads D2/D3/D5/DIR/CK/STP/RST sealed at heal's first move (fanout-order problem) -- round 2 stubs them by hand first, then heals. Violations 71 -> 81 from heal grazes, violation campaign queued.",
+      "note": ""
+    },
+    {
+      "pass": 102,
+      "timestamp": "2026-11-05T13:14:26Z",
+      "hash": "a66d6cdfeb583ddd1bbe5f9803b320b1f0633f1e",
+      "short_hash": "a66d6cd",
+      "board_file": "hw/pdlvds_rx.exp62.kicad_pcb",
+      "dir": "pass-0102",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 81,
+        "unconnected_nets": 62,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 17 (exp61 -> exp62): ULPI residue-first stubs -- fence segments of D7/NXT ripped (they re-heal after the residue), D4 diagonal ripped back to its pad stub; stubs placed for D2, D3, DIR, STP, CK. D5 stub refused (one D4 staircase segment survived a shifted rip match) and RST stub refused by an NXT diagonal -- both fixed in batch 18.",
+      "note": ""
+    },
+    {
+      "pass": 103,
+      "timestamp": "2026-11-05T13:29:22Z",
+      "hash": "091b6432f85da5d318abe174920279d8bf00918a",
+      "short_hash": "091b643",
+      "board_file": "hw/pdlvds_rx.exp63.kicad_pcb",
+      "dir": "pass-0103",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 81,
+        "unconnected_nets": 62,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 18 (exp62 -> exp63): surviving D4 staircase segment ripped (tight tolerance), D5 stub placed; RST stub refused again by the NXT diagonal (batch 19 rips it). Heal round 2 runs on this board.",
+      "note": ""
+    },
+    {
+      "pass": 104,
+      "timestamp": "2026-11-05T13:40:49Z",
+      "hash": "b7db9f141c32da836e17e14bd3aef564fd99d44f",
+      "short_hash": "b7db9f1",
+      "board_file": "hw/pdlvds_rx.exp64.kicad_pcb",
+      "dir": "pass-0104",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 81,
+        "unconnected_nets": 57,
+        "audit_verdict": "FAIL"
+      },
+      "description": "ULPI fanout heal round 2 (exp63 -> exp64): D5, DIR, CK CONNECTED; D7 and NXT re-connected after their fence rips. Residue moved to the U6 side (U6.47/U6.69/U6.26 bare pads) + D4 pad re-entry + RST. Post-fanout audit: 54 nets / 82 violations (from 65/71 at adoption).",
+      "note": ""
+    },
+    {
+      "pass": 105,
+      "timestamp": "2026-11-05T13:57:16Z",
+      "hash": "21f47f49a306431708701ba4698dfad78198b482",
+      "short_hash": "21f47f4",
+      "board_file": "hw/pdlvds_rx.exp65.kicad_pcb",
+      "dir": "pass-0105",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 81,
+        "unconnected_nets": 58,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 19-20 (exp64 -> exp65): U6-side ULPI stubs placed for D2 (south, shortened clear of D0 track), D3 (west), STP (west); NXT diagonal ripped for RST. Heal round 3 then connected nothing (U7 stub groups walled in heal model) -- hand routes follow.",
+      "note": ""
+    },
+    {
+      "pass": 106,
+      "timestamp": "2026-11-05T13:59:22Z",
+      "hash": "b87c4eecd254424a252052898bc8011dba4094e1",
+      "short_hash": "b87c4ee",
+      "board_file": "hw/pdlvds_rx.exp68.kicad_pcb",
+      "dir": "pass-0106",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 81,
+        "unconnected_nets": 59,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Escapes 21 (exp67 -> exp68): D5 F stubs ripped for the D4/D5 order fix; D4 and D2 hand routes refused on named blockers (CDR_DATP via, U7.23 pad) -- re-aimed in batches 22-24. exp66/exp67 were engine-attempt states with no connectivity change, folded here.",
+      "note": ""
+    },
+    {
+      "pass": 107,
+      "timestamp": "2026-11-05T15:03:19Z",
+      "hash": "5dcacab9b39eb885ab792c3c206931bf777d2bf8",
+      "short_hash": "5dcacab",
+      "board_file": "hw/pdlvds_rx.exp79.kicad_pcb",
+      "dir": "pass-0107",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 87,
+        "unconnected_nets": 38,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Campaign + ULPI knot work (exp68 -> exp79, cumulative): general heal campaign landed 68 groups over the severance debt (post-campaign audit exp73 = 36 nets / 87 violations, down from 65/71 at respread adoption and 59/81 at pass 104); ULPI heal round rejoin (NXT); knot batches 26-30 -- ULPI_D4 COMPLETE (tail into its via after the D5 vertex rip), ULPI_DIR rejoined (F seg + via placed batch 27, B legs into its staircase batch 29), USB_RST stub placed, D5/D6 fanout fences ripped for the order fix, D2 spur + D1 diagonal + CDR_DATP via ripped, D3 F approach seg placed. exp69-exp78 intra-campaign/batch states folded into this pass. ULPI residue (D1 pad group, D2, D3, D5, D6, STP) is a named knot: hand batches 22-30 + thread_far all refused on the U7 row channel shared with campaign-routed CDR_DATP/D1/D0 copper -- carried as named residual, rest of board proceeds.",
+      "note": ""
+    },
+    {
+      "pass": 108,
+      "timestamp": "2026-11-05T16:54:46Z",
+      "hash": "036be9c586201a1e4cfab0ab553eee5b776cf093",
+      "short_hash": "036be9c",
+      "board_file": "hw/pdlvds_rx.exp81.kicad_pcb",
+      "dir": "pass-0108",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 120,
+        "unconnected_nets": 33,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Heal campaign exp79->exp81 over 30 non-knot nets (heal_nets, results/heal-exp81.log). DELTAS: nets 38->33, violations 87->120. Joins: HV_R31A, HV_FBX, CDR_DATP, ULPI_DIR connected outright; APD_K 6->5 groups (C33/C4/R30 cluster merged). Violation delta +33 concentrated in ONE join: 32 lines from heal's HV_RAW B.Cu surface diagonal vs the GND pours at the 1.0 mm HV class, +1 XI vs a new CDR_DATP via at (87.125,16.625). HV_RAW's join exceeds the acceptance bound; it is ripped and re-approached (In2 bridge + D9 pour notch) in the next pass. All other joins landed clean (0 new violations). Still isolated after heal (residue for hand work): SLICEN U4.7, SET_P U13.7, +3V3D_CDR U4.12 group, +5V U11/U7.4 groups, PHY_1V8 U7.15/U7.26, PHY_1V8A C23.1, APD_K R31.1/D1.5/R47.2/RJ2.2, CC2 J1.B5 group, +3V3A U7.6/16/25, U6/U7 single pads (CAP_CLK, CDR_LOL, CDR_SQUELCH, HV_EN, HV_SHDN, SWDIO, USB_RST, VCAP1), CDR_PIN U4.5 group, CF2 C15.2 group, DM_PHY/DP_PHY U7 pads, RBIAS U7.32, XI/XO X1-site groups.",
+      "note": ""
+    },
+    {
+      "pass": 109,
+      "timestamp": "2026-11-05T16:59:39Z",
+      "hash": "d408fc552430493917d875229dcb91165091bebd",
+      "short_hash": "d408fc5",
+      "board_file": "hw/pdlvds_rx.exp82.kicad_pcb",
+      "dir": "pass-0109",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 87,
+        "unconnected_nets": 33,
+        "audit_verdict": "FAIL"
+      },
+      "description": "HV_RAW re-approach (hw/fix_hvraw.py): heal's B.Cu surface diagonal ripped (63 items) and the D9.1 haul re-bridged on In2 -- F neck to via (5.38,-24.88), In2 southern run y=-24.88 to x=22.2, corridor north at x=22.2, northern approach into via W (34.12,-11.88), F necks into the D5.1 web; D9 pour notch (notch.py species, rule areas 1.25,-27.5..7.03,-22.5 on F+B) added so the pours hold >=1.0 mm from the D9 pocket. Every placed shape was tested against the audit's own item model including zone fills. DELTAS vs pass 108: nets 33->33 (join retained, mechanism changed), violations 120->87 (-33: -32 HV_RAW diagonal-vs-pour lines removed by the rip, -1 pre-existing 'HV_RAW D9.1 vs GND zone' line cured by the notch, +0 new lines from the In2 bridge). Acceptance test PASSED (full audit results/audit-exp82.txt: 33/87; the single exp82-vs-exp79 newcomer, XI vs the CDR_DATP via, belongs to pass 108's CDR_DATP join).",
+      "note": ""
     }
   ],
   "gaps": [

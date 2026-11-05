@@ -1,0 +1,11 @@
+--- 0 D5 stub rips ---
+  rip ULPI_D5 (78.44,14.75)->(79.50,14.75)
+  rip ULPI_D5 (79.69,14.75)->(78.44,14.75)
+  [0 D5 stub rips OK]
+--- 1 D4 hand route ---
+  [1 D4 hand route REFUSED: ULPI_D4 seg (78.69,14.25)->(79.45,14.32): CDR_DATP via@stubcheck]
+--- 2 D2 hand route ---
+  [2 D2 hand route REFUSED: ULPI_D2 seg (79.05,13.25)->(79.05,6.6): ULPI_D1 U7.23]
+saved hw/pdlvds_rx.exp68.kicad_pcb
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'ZONE_FILLER *', no destructor found.

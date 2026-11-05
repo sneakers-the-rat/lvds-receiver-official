@@ -1,0 +1,17 @@
+--- 0 NXT diagonal rip ---
+  rip ULPI_NXT (74.12,17.38)->(73.88,17.12)
+  [0 NXT diagonal rip OK]
+--- 1 D2 U6 stub ---
+  ULPI_D2: (78.25,4.66)->(78.25,5.42)
+  [1 D2 U6 stub OK]
+--- 2 D3 U6 stub ---
+  ULPI_D3: (89.25,4.66)->(88.30,4.66)
+  [2 D3 U6 stub OK]
+--- 3 STP U6 stub ---
+  ULPI_STP: (71.34,-2.25)->(69.90,-2.25)
+  [3 STP U6 stub OK]
+--- 4 D4 stub ext ---
+  [4 D4 stub ext REFUSED: ULPI_D4 seg (78.69,14.25)->(79.3,14.45): ULPI_D5 track@stubcheck]
+--- 5 RST stub ---
+  [5 RST stub REFUSED: USB_RST seg (74.25,16.44)->(74.25,17.3): ULPI_NXT track@stubcheck]
+saved hw/pdlvds_rx.exp65.kicad_pcb

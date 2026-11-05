@@ -1,0 +1,163 @@
+board fps: 144  map refs: 152
+NEW refs (place): ['D10', 'D11', 'D9', 'J5', 'R47', 'R48', 'R49', 'R50']
+GONE refs (remove): []
+
+FOOTPRINT SWAPS:
+  C4: C_0603_1608Metric -> ECWFD_1uF_630V
+  D4: D_SMA -> D_SMB
+  L1: L_0805_2012Metric -> L_Murata_DFE201610P
+  L2: L_0805_2012Metric -> L_Murata_DFE201610P
+  R29: R_1206_3216Metric -> R_0603_1608Metric
+  R31: R_1206_3216Metric -> R_1210_3225Metric
+  T1: XFMR_FLYBACK_6P -> XFMR_EFD20_SMD10
+  X1: Crystal_SMD_3225-4Pin_3.2x2.5mm -> Crystal_SMD_HC49-SD
+
+PIN-NET CHANGES (same footprint or swap):
+  J1.:  -> None
+  J1.A10:  -> None
+  J1.A11:  -> None
+  J1.A2:  -> None
+  J1.A3:  -> None
+  J1.A8:  -> unconnected-(J1-SBU1-PadA8)
+  J1.B10:  -> None
+  J1.B11:  -> None
+  J1.B2:  -> None
+  J1.B3:  -> None
+  J1.B8:  -> unconnected-(J1-SBU2-PadB8)
+  J1.S1:  -> None
+  J1.SH: None -> GND
+  J3.3: None -> GND
+  J3.4: None -> GND
+  J3.5: None -> GND
+  J4.6:  -> unconnected-(J4-NC-Pad6)
+  J4.8:  -> unconnected-(J4-NC-Pad8)
+  MH1.:  -> None
+  MH1.1: None -> GND
+  MH2.:  -> None
+  MH2.1: None -> GND
+  MH3.:  -> None
+  MH3.1: None -> GND
+  MH4.:  -> None
+  MH4.1: None -> GND
+  MH5.:  -> None
+  MH5.1: None -> unconnected-(MH5-Pad1)
+  MH6.:  -> None
+  MH6.1: None -> unconnected-(MH6-Pad1)
+  R29.2: APD_K -> HV_R29M
+  R30.2: GND -> HV_R30M
+  R31.2: HV_FBX -> HV_R31A
+  T1.10: None -> HV_SEC
+  T1.3:  -> unconnected-(T1-NC-Pad3)
+  T1.4: GND -> unconnected-(T1-NC-Pad4)
+  T1.5: HV_SEC -> unconnected-(T1-NC-Pad5)
+  T1.6:  -> unconnected-(T1-NC-Pad6)
+  T1.7: None -> unconnected-(T1-NC-Pad7)
+  T1.8: None -> unconnected-(T1-NC-Pad8)
+  T1.9: None -> GND
+  U1.1:  -> unconnected-(U1-NC-Pad1)
+  U1.5:  -> unconnected-(U1-NC-Pad5)
+  U1.8:  -> unconnected-(U1-NC-Pad8)
+  U10.:  -> None
+  U11.:  -> None
+  U12.:  -> None
+  U12.4:  -> unconnected-(U12-PG-Pad4)
+  U13.:  -> None
+  U13.4:  -> unconnected-(U13-PG-Pad4)
+  U14.:  -> None
+  U14.4:  -> unconnected-(U14-PG-Pad4)
+  U4.:  -> None
+  U5.11:  -> unconnected-(U5-3Y-Pad11)
+  U5.13:  -> unconnected-(U5-4Y-Pad13)
+  U6.1:  -> unconnected-(U6-PE2-Pad1)
+  U6.10:  -> unconnected-(U6-PF0-Pad10)
+  U6.100:  -> unconnected-(U6-PA8-Pad100)
+  U6.103:  -> unconnected-(U6-PA11-Pad103)
+  U6.104:  -> unconnected-(U6-PA12-Pad104)
+  U6.11:  -> unconnected-(U6-PF1-Pad11)
+  U6.112:  -> unconnected-(U6-PC11-Pad112)
+  U6.114:  -> unconnected-(U6-PD0-Pad114)
+  U6.115:  -> unconnected-(U6-PD1-Pad115)
+  U6.116:  -> unconnected-(U6-PD2-Pad116)
+  U6.117:  -> unconnected-(U6-PD3-Pad117)
+  U6.118:  -> unconnected-(U6-PD4-Pad118)
+  U6.119:  -> unconnected-(U6-PD5-Pad119)
+  U6.12:  -> unconnected-(U6-PF2-Pad12)
+  U6.122:  -> unconnected-(U6-PD6-Pad122)
+  U6.123:  -> unconnected-(U6-PD7-Pad123)
+  U6.124:  -> unconnected-(U6-PG9-Pad124)
+  U6.125:  -> unconnected-(U6-PG10-Pad125)
+  U6.126:  -> unconnected-(U6-PG11-Pad126)
+  U6.127:  -> unconnected-(U6-PG12-Pad127)
+  U6.128:  -> unconnected-(U6-PG13-Pad128)
+  U6.129:  -> unconnected-(U6-PG14-Pad129)
+  U6.13:  -> unconnected-(U6-PF3-Pad13)
+  U6.132:  -> unconnected-(U6-PG15-Pad132)
+  U6.133:  -> unconnected-(U6-PB3(JTDO-Pad133)
+  U6.134:  -> unconnected-(U6-PB4(NJTRST)-Pad134)
+  U6.14:  -> unconnected-(U6-PF4-Pad14)
+  U6.141:  -> unconnected-(U6-PE0-Pad141)
+  U6.142:  -> unconnected-(U6-PE1-Pad142)
+  U6.15:  -> unconnected-(U6-PF5-Pad15)
+  U6.18:  -> unconnected-(U6-PF6-Pad18)
+  U6.19:  -> unconnected-(U6-PF7-Pad19)
+  U6.2:  -> unconnected-(U6-PE3-Pad2)
+  U6.20:  -> unconnected-(U6-PF8-Pad20)
+  U6.21:  -> unconnected-(U6-PF9-Pad21)
+  U6.22:  -> unconnected-(U6-PF10-Pad22)
+  U6.23:  -> unconnected-(U6-PH0-Pad23)
+  U6.24:  -> unconnected-(U6-PH1-Pad24)
+  U6.27:  -> unconnected-(U6-PC1-Pad27)
+  U6.3:  -> unconnected-(U6-PE4-Pad3)
+  U6.4:  -> unconnected-(U6-PE5-Pad4)
+  U6.42:  -> HV_SHDN
+  U6.43:  -> unconnected-(U6-PA7-Pad43)
+  U6.44:  -> unconnected-(U6-PC4-Pad44)
+  U6.45:  -> unconnected-(U6-PC5-Pad45)
+  U6.48:  -> unconnected-(U6-PB2-Pad48)
+  U6.49:  -> unconnected-(U6-PF11-Pad49)
+  U6.5:  -> unconnected-(U6-PE6-Pad5)
+  U6.50:  -> unconnected-(U6-PF12-Pad50)
+  U6.53:  -> unconnected-(U6-PF13-Pad53)
+  U6.54:  -> unconnected-(U6-PF14-Pad54)
+  U6.55:  -> unconnected-(U6-PF15-Pad55)
+  U6.56:  -> unconnected-(U6-PG0-Pad56)
+  U6.57:  -> unconnected-(U6-PG1-Pad57)
+  U6.58:  -> unconnected-(U6-PE7-Pad58)
+  U6.59:  -> unconnected-(U6-PE8-Pad59)
+  U6.60:  -> unconnected-(U6-PE9-Pad60)
+  U6.63:  -> unconnected-(U6-PE10-Pad63)
+  U6.64:  -> unconnected-(U6-PE11-Pad64)
+  U6.65:  -> unconnected-(U6-PE12-Pad65)
+  U6.66:  -> unconnected-(U6-PE13-Pad66)
+  U6.67:  -> unconnected-(U6-PE14-Pad67)
+  U6.68:  -> unconnected-(U6-PE15-Pad68)
+  U6.7:  -> unconnected-(U6-PC13-Pad7)
+  U6.77:  -> unconnected-(U6-PD8-Pad77)
+  U6.78:  -> unconnected-(U6-PD9-Pad78)
+  U6.79:  -> unconnected-(U6-PD10-Pad79)
+  U6.8:  -> unconnected-(U6-PC14-Pad8)
+  U6.80:  -> unconnected-(U6-PD11-Pad80)
+  U6.81:  -> unconnected-(U6-PD12-Pad81)
+  U6.82:  -> unconnected-(U6-PD13-Pad82)
+  U6.85:  -> unconnected-(U6-PD14-Pad85)
+  U6.86:  -> unconnected-(U6-PD15-Pad86)
+  U6.87:  -> unconnected-(U6-PG2-Pad87)
+  U6.88:  -> unconnected-(U6-PG3-Pad88)
+  U6.89:  -> unconnected-(U6-PG4-Pad89)
+  U6.9:  -> unconnected-(U6-PC15-Pad9)
+  U6.90:  -> unconnected-(U6-PG5-Pad90)
+  U6.91:  -> unconnected-(U6-PG6-Pad91)
+  U6.92:  -> unconnected-(U6-PG7-Pad92)
+  U6.93:  -> unconnected-(U6-PG8-Pad93)
+  U6.95:  -> unconnected-(U6-VDD33USB-Pad95)
+  U6.96:  -> unconnected-(U6-PC6-Pad96)
+  U6.97: HV_SHDN -> HV_EN
+  U7.:  -> None
+  U7.3:  -> unconnected-(U7-CPEN-Pad3)
+  X1.2: GND -> XO
+  X1.3: XO -> None
+  X1.4: GND -> None
+total pin-net changes: 144
+
+NETS only in map (create): ['HV_EN', 'HV_OVP1', 'HV_OVP2', 'HV_R29M', 'HV_R30M', 'HV_R31A', 'HV_R31B', 'unconnected-(J1-SBU1-PadA8)', 'unconnected-(J1-SBU2-PadB8)', 'unconnected-(J4-NC-Pad6)', 'unconnected-(J4-NC-Pad8)', 'unconnected-(MH5-Pad1)', 'unconnected-(MH6-Pad1)', 'unconnected-(T1-NC-Pad3)', 'unconnected-(T1-NC-Pad4)', 'unconnected-(T1-NC-Pad5)', 'unconnected-(T1-NC-Pad6)', 'unconnected-(T1-NC-Pad7)', 'unconnected-(T1-NC-Pad8)', 'unconnected-(U1-NC-Pad1)', 'unconnected-(U1-NC-Pad5)', 'unconnected-(U1-NC-Pad8)', 'unconnected-(U12-PG-Pad4)', 'unconnected-(U13-PG-Pad4)', 'unconnected-(U14-PG-Pad4)', 'unconnected-(U5-3Y-Pad11)', 'unconnected-(U5-4Y-Pad13)', 'unconnected-(U6-PA11-Pad103)', 'unconnected-(U6-PA12-Pad104)', 'unconnected-(U6-PA7-Pad43)', 'unconnected-(U6-PA8-Pad100)', 'unconnected-(U6-PB2-Pad48)', 'unconnected-(U6-PB3(JTDO-Pad133)', 'unconnected-(U6-PB4(NJTRST)-Pad134)', 'unconnected-(U6-PC1-Pad27)', 'unconnected-(U6-PC11-Pad112)', 'unconnected-(U6-PC13-Pad7)', 'unconnected-(U6-PC14-Pad8)', 'unconnected-(U6-PC15-Pad9)', 'unconnected-(U6-PC4-Pad44)', 'unconnected-(U6-PC5-Pad45)', 'unconnected-(U6-PC6-Pad96)', 'unconnected-(U6-PD0-Pad114)', 'unconnected-(U6-PD1-Pad115)', 'unconnected-(U6-PD10-Pad79)', 'unconnected-(U6-PD11-Pad80)', 'unconnected-(U6-PD12-Pad81)', 'unconnected-(U6-PD13-Pad82)', 'unconnected-(U6-PD14-Pad85)', 'unconnected-(U6-PD15-Pad86)', 'unconnected-(U6-PD2-Pad116)', 'unconnected-(U6-PD3-Pad117)', 'unconnected-(U6-PD4-Pad118)', 'unconnected-(U6-PD5-Pad119)', 'unconnected-(U6-PD6-Pad122)', 'unconnected-(U6-PD7-Pad123)', 'unconnected-(U6-PD8-Pad77)', 'unconnected-(U6-PD9-Pad78)', 'unconnected-(U6-PE0-Pad141)', 'unconnected-(U6-PE1-Pad142)', 'unconnected-(U6-PE10-Pad63)', 'unconnected-(U6-PE11-Pad64)', 'unconnected-(U6-PE12-Pad65)', 'unconnected-(U6-PE13-Pad66)', 'unconnected-(U6-PE14-Pad67)', 'unconnected-(U6-PE15-Pad68)', 'unconnected-(U6-PE2-Pad1)', 'unconnected-(U6-PE3-Pad2)', 'unconnected-(U6-PE4-Pad3)', 'unconnected-(U6-PE5-Pad4)', 'unconnected-(U6-PE6-Pad5)', 'unconnected-(U6-PE7-Pad58)', 'unconnected-(U6-PE8-Pad59)', 'unconnected-(U6-PE9-Pad60)', 'unconnected-(U6-PF0-Pad10)', 'unconnected-(U6-PF1-Pad11)', 'unconnected-(U6-PF10-Pad22)', 'unconnected-(U6-PF11-Pad49)', 'unconnected-(U6-PF12-Pad50)', 'unconnected-(U6-PF13-Pad53)', 'unconnected-(U6-PF14-Pad54)', 'unconnected-(U6-PF15-Pad55)', 'unconnected-(U6-PF2-Pad12)', 'unconnected-(U6-PF3-Pad13)', 'unconnected-(U6-PF4-Pad14)', 'unconnected-(U6-PF5-Pad15)', 'unconnected-(U6-PF6-Pad18)', 'unconnected-(U6-PF7-Pad19)', 'unconnected-(U6-PF8-Pad20)', 'unconnected-(U6-PF9-Pad21)', 'unconnected-(U6-PG0-Pad56)', 'unconnected-(U6-PG1-Pad57)', 'unconnected-(U6-PG10-Pad125)', 'unconnected-(U6-PG11-Pad126)', 'unconnected-(U6-PG12-Pad127)', 'unconnected-(U6-PG13-Pad128)', 'unconnected-(U6-PG14-Pad129)', 'unconnected-(U6-PG15-Pad132)', 'unconnected-(U6-PG2-Pad87)', 'unconnected-(U6-PG3-Pad88)', 'unconnected-(U6-PG4-Pad89)', 'unconnected-(U6-PG5-Pad90)', 'unconnected-(U6-PG6-Pad91)', 'unconnected-(U6-PG7-Pad92)', 'unconnected-(U6-PG8-Pad93)', 'unconnected-(U6-PG9-Pad124)', 'unconnected-(U6-PH0-Pad23)', 'unconnected-(U6-PH1-Pad24)', 'unconnected-(U6-VDD33USB-Pad95)', 'unconnected-(U7-CPEN-Pad3)']
+NETS only on board (orphan after re-sync): ['']

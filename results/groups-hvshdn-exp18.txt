@@ -1,0 +1,10 @@
+HV_SHDN: 2 groups
+MAIN group: 173 items
+--- group 1: 4 items
+    U10.9 layers=[0] pos=(16.15,-15.50)
+    track@16.795,-15.471 layers=[0] pos=(16.80,-15.47)
+    via@17.250,-15.450 layers=[0, 1, 2, 31] pos=(17.25,-15.45)
+    track@17.250,-15.450 layers=[2] pos=(17.25,-15.45)
+    near: U10.9 -> R26.1 centre-dist 7.41 shared-layers [0]
+    near: U10.9 -> track@8.875,-17.125 centre-dist 7.45 shared-layers []
+    near: U10.9 -> track@9.225,-18.975 centre-dist 7.75 shared-layers [0]

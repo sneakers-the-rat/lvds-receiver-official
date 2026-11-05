@@ -1,0 +1,2 @@
+HV_SHDN: no thread (gap 6.28)
+saved hw/pdlvds_rx.exp19.kicad_pcb

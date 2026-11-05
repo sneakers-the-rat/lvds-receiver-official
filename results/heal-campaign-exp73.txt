@@ -1,0 +1,142 @@
++3V3A: 11 groups, main group 175 items
+  +3V3A: connected group of 23 items (4s, 1 vias)
+  +3V3A: connected group of 1 items (4s, 2 vias)
+  +3V3A: connected group of 1 items (1s, 0 vias)
+  +3V3A: connected group of 1 items (2s, 1 vias)
+  +3V3A: connected group of 1 items (3s, 1 vias)
+  +3V3A: group (1 items, ['U7.6']) STILL isolated (2s)
+  +3V3A: group (1 items, ['U7.16']) STILL isolated (2s)
+  +3V3A: group (1 items, ['U7.25']) STILL isolated (1s)
+  +3V3A: connected group of 1 items (2s, 1 vias)
+  +3V3A: connected group of 1 items (1s, 0 vias)
++3V3D: 25 groups, main group 215 items
+  +3V3D: connected group of 93 items (23s, 4 vias)
+  +3V3D: connected group of 24 items (13s, 1 vias)
+  +3V3D: connected group of 21 items (5s, 0 vias)
+  checkpoint: 10 groups, saved
+  +3V3D: connected group of 15 items (6s, 1 vias)
+  +3V3D: connected group of 12 items (11s, 1 vias)
+  +3V3D: connected group of 3 items (21s, 2 vias)
+  +3V3D: connected group of 1 items (14s, 2 vias)
+  +3V3D: connected group of 1 items (6s, 0 vias)
+  +3V3D: connected group of 1 items (9s, 2 vias)
+  +3V3D: connected group of 1 items (7s, 1 vias)
+  +3V3D: connected group of 1 items (8s, 0 vias)
+  +3V3D: connected group of 1 items (8s, 0 vias)
+  +3V3D: connected group of 1 items (6s, 0 vias)
+  checkpoint: 20 groups, saved
+  +3V3D: connected group of 1 items (8s, 0 vias)
+  +3V3D: connected group of 1 items (11s, 0 vias)
+  +3V3D: connected group of 1 items (13s, 0 vias)
+  +3V3D: connected group of 1 items (10s, 0 vias)
+  +3V3D: connected group of 1 items (11s, 1 vias)
+  +3V3D: connected group of 1 items (15s, 0 vias)
+  +3V3D: connected group of 1 items (12s, 0 vias)
+  +3V3D: connected group of 1 items (11s, 0 vias)
+  +3V3D: connected group of 1 items (13s, 1 vias)
+  +3V3D: connected group of 1 items (14s, 0 vias)
+  checkpoint: 30 groups, saved
+  +3V3D: connected group of 1 items (11s, 0 vias)
++3V3D_CDR: 2 groups, main group 101 items
+  +3V3D_CDR: group (2 items, ['U4.12', 'track@(54.75, -16.059999)']) STILL isolated (5s)
++5V: 5 groups, main group 272 items
+  +5V: group (7 items, ['U11.10', 'U11.11', 'U11.12']) STILL isolated (7s)
+  +5V: connected group of 6 items (5s, 0 vias)
+  +5V: group (2 items, ['U11.13', 'track@(14.8125, 62.588388)']) STILL isolated (6s)
+  +5V: group (1 items, ['U7.4']) STILL isolated (5s)
+BIST_DRV: 2 groups, main group 14 items
+  BIST_DRV: connected group of 1 items (13s, 2 vias)
+BOOT0: 3 groups, main group 53 items
+  BOOT0: connected group of 1 items (13s, 4 vias)
+  BOOT0: connected group of 1 items (7s, 1 vias)
+CAP_CLK: 3 groups, main group 46 items
+  CAP_CLK: connected group of 23 items (2s, 0 vias)
+  CAP_CLK: group (1 items, ['U6.34']) STILL isolated (0s)
+CAP_DATA: 2 groups, main group 2 items
+  CAP_DATA: connected group of 1 items (10s, 4 vias)
+CDR_CLKN: 2 groups, main group 128 items
+  CDR_CLKN: connected group of 62 items (10s, 1 vias)
+CDR_CLKP: 2 groups, main group 135 items
+  CDR_CLKP: connected group of 68 items (12s, 1 vias)
+CDR_DATN: 2 groups, main group 151 items
+  CDR_DATN: connected group of 34 items (8s, 1 vias)
+  checkpoint: 40 groups, saved
+CDR_DATP: 2 groups, main group 162 items
+  CDR_DATP: connected group of 35 items (9s, 1 vias)
+CDR_LOL: 2 groups, main group 63 items
+  CDR_LOL: group (1 items, ['U6.36']) STILL isolated (1s)
+CDR_LOS: 3 groups, main group 70 items
+  CDR_LOS: connected group of 50 items (1s, 1 vias)
+  CDR_LOS: connected group of 1 items (19s, 3 vias)
+CDR_PIN: 2 groups, main group 2 items
+  CDR_PIN: group (2 items, ['U4.5', 'track@(52.205, -18.25)']) STILL isolated (0s)
+CDR_SQUELCH: 2 groups, main group 2 items
+  CDR_SQUELCH: group (1 items, ['U6.76']) STILL isolated (0s)
+CF2: 2 groups, main group 2 items
+  CF2: group (2 items, ['C15.2', 'track@(60.644999, -26.0)']) STILL isolated (236s)
+DAC_SYNC: 2 groups, main group 8 items
+  DAC_SYNC: connected group of 1 items (26s, 4 vias)
+DBG_RX: 3 groups, main group 1 items
+  DBG_RX: connected group of 1 items (0s, 0 vias)
+  DBG_RX: connected group of 1 items (14s, 3 vias)
+DBG_TX: 2 groups, main group 1 items
+  DBG_TX: connected group of 1 items (2s, 0 vias)
+DM_PHY: 3 groups, main group 182 items
+  DM_PHY: connected group of 32 items (4s, 2 vias)
+  DM_PHY: group (1 items, ['U7.8']) STILL isolated (0s)
+DP_PHY: 2 groups, main group 2 items
+  DP_PHY: group (1 items, ['U7.7']) STILL isolated (0s)
+HV_EN: 2 groups, main group 162 items
+  HV_EN: group (1 items, ['U6.97']) STILL isolated (0s)
+I2C_SCL: 3 groups, main group 65 items
+  I2C_SCL: connected group of 22 items (2s, 2 vias)
+  I2C_SCL: connected group of 1 items (11s, 2 vias)
+  checkpoint: 50 groups, saved
+I2C_SDA: 3 groups, main group 54 items
+  I2C_SDA: connected group of 38 items (5s, 2 vias)
+  I2C_SDA: connected group of 1 items (11s, 2 vias)
+LED_PWR_K: 2 groups, main group 1 items
+  LED_PWR_K: connected group of 1 items (1s, 2 vias)
+LED_STAT: 3 groups, main group 3 items
+  LED_STAT: connected group of 1 items (8s, 3 vias)
+  LED_STAT: connected group of 1 items (1s, 0 vias)
+LED_STAT_A: 2 groups, main group 1 items
+  LED_STAT_A: connected group of 1 items (3s, 2 vias)
+NRST: 6 groups, main group 28 items
+  NRST: connected group of 8 items (2s, 0 vias)
+  NRST: connected group of 2 items (1s, 0 vias)
+  NRST: connected group of 1 items (27s, 5 vias)
+  NRST: connected group of 1 items (3s, 1 vias)
+  checkpoint: 60 groups, saved
+  NRST: connected group of 1 items (3s, 2 vias)
+PG_3V3: 2 groups, main group 143 items
+  PG_3V3: connected group of 1 items (26s, 4 vias)
+PHY_1V8: 3 groups, main group 1 items
+  PHY_1V8: group (1 items, ['U7.15']) STILL isolated (0s)
+  PHY_1V8: group (1 items, ['U7.26']) STILL isolated (0s)
+PHY_1V8A: 2 groups, main group 1 items
+  PHY_1V8A: group (1 items, ['C23.1']) STILL isolated (154s)
+RBIAS: 2 groups, main group 12 items
+  RBIAS: group (1 items, ['U7.32']) STILL isolated (0s)
+SPI_MOSI: 2 groups, main group 19 items
+  SPI_MOSI: connected group of 1 items (38s, 4 vias)
+SPI_SCK: 2 groups, main group 7 items
+  SPI_SCK: connected group of 1 items (49s, 7 vias)
+SWCLK: 2 groups, main group 36 items
+  SWCLK: connected group of 1 items (57s, 3 vias)
+SWDIO: 2 groups, main group 23 items
+  SWDIO: group (1 items, ['U6.105']) STILL isolated (1s)
+TMP_ALERT: 2 groups, main group 46 items
+  TMP_ALERT: connected group of 1 items (28s, 4 vias)
+VCAP1: 3 groups, main group 59 items
+  VCAP1: group (1 items, ['U6.106']) STILL isolated (0s)
+  VCAP1: connected group of 1 items (8s, 3 vias)
+VCAP2: 2 groups, main group 1 items
+  VCAP2: group (1 items, ['C18.1']) STILL isolated (0s)
+XI: 3 groups, main group 1 items
+  XI: group (1 items, ['U7.28']) STILL isolated (1s)
+  XI: connected group of 1 items (61s, 8 vias)
+XO: 3 groups, main group 1 items
+  XO: group (1 items, ['C21.1']) STILL isolated (1s)
+  XO: group (1 items, ['U7.27']) STILL isolated (1s)
+heal_big done: 68 groups connected in 1235s, output hw/pdlvds_rx.exp73.kicad_pcb

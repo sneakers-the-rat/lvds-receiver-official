@@ -35,11 +35,18 @@ is the record. Numbers the audit does not produce are recorded as
 "not recorded", never invented.
 
 Options:
-  --board FILE   board to audit/render (default hw/pdlvds_rx.kicad_pcb)
+  --board FILE   board to audit/render. If omitted, the newest
+                 hw/pdlvds_rx.exp<N>.kicad_pcb is used — the board
+                 the latest work produced. There is NO default to
+                 hw/pdlvds_rx.kicad_pcb: that file is the
+                 pre-expansion base board, and silently auditing
+                 it for a pass on the routed line is exactly the
+                 pass-80 record defect. If no exp board exists the
+                 tool refuses rather than fall back.
   --note TEXT    extra note appended to the pass entry
   --no-audit     skip the audit (stats recorded as not recorded)
 """
-import argparse, json, os, shutil, subprocess, sys
+import argparse, json, os, re, shutil, subprocess, sys
 from datetime import datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -172,18 +179,51 @@ def stage_pass_files(board_rel, sdir_rel, page_rel):
     return staged, left
 
 
-def main():
+def parse_args(argv=None):
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("description",
                     help="one-line changelog for this pass: what "
                          "strategy changed vs the previous pass")
-    ap.add_argument("--board", default=os.path.join(ROOT, "hw",
-                                                    "pdlvds_rx.kicad_pcb"))
+    ap.add_argument("--board", default=None,
+                    help="board file to audit/render; if omitted, "
+                         "the newest hw/pdlvds_rx.exp<N>.kicad_pcb "
+                         "is used (never the base board by default)")
     ap.add_argument("--note", default="")
     ap.add_argument("--no-audit", action="store_true")
-    a = ap.parse_args()
+    return ap.parse_args(argv)
 
-    board = os.path.abspath(a.board)
+
+def resolve_board(board_arg, hw_dir):
+    """Return the absolute board path a pass is recorded against.
+
+    An explicit --board is honoured verbatim. With no --board, the
+    board the pass produced is the newest exp board in hw_dir
+    (highest numeric suffix); if there is none, refuse — falling
+    back to hw/pdlvds_rx.kicad_pcb silently recorded a wrong-board
+    audit for pass 80 and must be impossible, not just unlikely.
+    Pinned by hw/tests/test_commit_pass_board.py.
+    """
+    if board_arg:
+        return os.path.abspath(board_arg)
+    best = None
+    for name in os.listdir(hw_dir):
+        m = re.match(r"pdlvds_rx\.exp(\d+)[a-z]?\.kicad_pcb$", name)
+        if m and (best is None or int(m.group(1)) > best[0]):
+            best = (int(m.group(1)), name)
+    if best is None:
+        raise SystemExit(
+            "error: --board omitted and no hw/pdlvds_rx.exp<N>"
+            ".kicad_pcb found; refusing to fall back to "
+            "hw/pdlvds_rx.kicad_pcb (the pre-expansion base board)")
+    print(f"board: auto-selected {best[1]} (newest exp board; "
+          f"--board not given)")
+    return os.path.join(hw_dir, best[1])
+
+
+def main():
+    a = parse_args()
+
+    board = resolve_board(a.board, os.path.join(ROOT, "hw"))
     if not os.path.exists(board):
         print(f"error: board file not found: {board}", file=sys.stderr)
         return 1

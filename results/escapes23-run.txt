@@ -1,0 +1,15 @@
+--- D4 ---
+  ULPI_D4: (79.15,14.30)->(79.22,14.98) L0 OK
+  ULPI_D4: (79.22,14.98)->(79.60,15.18) REFUSED: ULPI_D5 track@stubcheck
+  [D4 STOPPED]
+--- D2 ---
+  ULPI_D2: (79.05,13.25)->(79.20,13.45) L0 OK
+  ULPI_D2: via (79.20,13.45) REFUSED: ULPI_D3 U7.21
+  [D2 STOPPED]
+--- D3 ---
+  ULPI_D3: (78.90,13.75)->(80.20,12.90) REFUSED: ULPI_D2 track@stubcheck
+  [D3 STOPPED]
+--- STP ---
+  ULPI_STP: (76.25,17.15)->(72.60,17.50) REFUSED: ULPI_DIR track@stubcheck
+  [STP STOPPED]
+saved hw/pdlvds_rx.exp70.kicad_pcb

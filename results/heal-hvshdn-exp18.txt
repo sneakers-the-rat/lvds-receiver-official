@@ -1,0 +1,3 @@
+HV_SHDN: 2 groups, main group 173 items
+  HV_SHDN: group (4 items, ['U10.9', 'track@(16.795082, -15.470678)', 'via@(17.25, -15.45)']) STILL isolated (1s)
+heal_nets done: 0 groups connected in 5s, output hw/pdlvds_rx.exp18.kicad_pcb

@@ -1,0 +1,13 @@
+pass: 96
+description: Escapes 13 (exp53 -> exp54): APD_K In2 staircase repaired (5 segments re-placed exactly after batch 12 collateral rip), HV_FBX dive via restored at (10.12,-15.38); HV_RAW F continuation refused by the APD_K via (41.12,-4.38) -- batches 14-16 take the north route instead. (exp55/exp56 were intra-batch waypoints of that route, folded into the next pass.)
+timestamp (UTC): 2026-11-05T12:38:20Z
+commit: pending
+board file: hw/pdlvds_rx.exp54.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (27 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 78
+unconnected nets: 28
+audit verdict: fail
+note: 

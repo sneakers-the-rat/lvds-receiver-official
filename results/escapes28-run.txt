@@ -1,0 +1,24 @@
+--- phase A rips ---
+  ripped ULPI_D1 (78.94,12.75)->(79.62,12.88)
+  ripped via CDR_DATP (79.62,13.88)
+  ripped ULPI_DIR (75.75,16.94)->(75.88,17.62)
+  ripped ULPI_DIR (76.38,18.12)->(76.12,18.38)
+--- D2 ---
+  ULPI_D2: (79.05,13.25)->(79.38,12.95) L0 OK
+  ULPI_D2: via (79.38,12.95) REFUSED: CDR_DATP track@stubcheck
+  [D2 STOPPED]
+--- D3 ---
+  ULPI_D3: (78.90,13.75)->(79.35,13.42) REFUSED: ULPI_D2 track@stubcheck
+  [D3 STOPPED]
+--- STP ---
+  ULPI_STP: (76.25,17.15)->(76.35,17.75) REFUSED: ULPI_DIR track@stubcheck
+  [STP STOPPED]
+--- DIR-rejoin ---
+  ULPI_DIR: (75.75,17.15)->(76.50,17.95) REFUSED: ULPI_STP track@stubcheck
+  [DIR-rejoin STOPPED]
+--- RST-stub ---
+  USB_RST: (74.25,16.44)->(74.25,16.88) L0 OK
+  [RST-stub COMPLETE]
+saved hw/pdlvds_rx.exp77.kicad_pcb
+swig/python detected a memory leak of type 'std::shared_ptr< SHAPE > *', no destructor found.
+swig/python detected a memory leak of type 'ZONE_FILLER *', no destructor found.
