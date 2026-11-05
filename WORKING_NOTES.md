@@ -90,3 +90,111 @@ Clone: ~/workspace/pdlvds-route (from pdlvds-split @ db5c7ae). Parent merges/pus
   file until the GND net loop closes. Watch: if still GND-bound
   at next poll with <15 merges, kill and switch to thread.py
   chains under checkpoint-per-invocation discipline.
+
+## THE GRID FIX (2026-11-05 ~01:5x UTC) — read this first
+- Passes 65-71 routed with a BROKEN search grid: hw/router.py was
+  still sized for the pre-expansion board (W,H = 400,320 =
+  100x80 mm; cell_of clamped y to [0,80]). Every strip item
+  (y<0) crushed onto grid row 0: strip searches tested phantom
+  geometry along the field's north edge, failed at 0 s, or
+  emitted vias at y 0.6-2.1 (30 APD_K-vs-pour violations at
+  pass 71). The audit (check_pcb, exact shapes, no grid) was
+  never wrong — which is why merges that DID land were real.
+- Fix (tools commit d4a9e0d): grid 400x440, OY=-30 in router.py;
+  cell_of + all 8 cell->mm conversions in router.py/router6.py
+  offset by OY; repair.py/diagnose_groups.py inherit via imports.
+- Smoke proof: CDR_LOS/CDR_LOL/CAP_CLK — 0 s failures in every
+  prior run — connected in 16/23/52 s on an exp7 copy, audit
+  59 -> 56 nets, no new violations.
+- Toolchain: VM replaced again ~01:31 UTC; restore.sh recovered
+  EVERYTHING from the workspace apt cache in <55 s (incl. a
+  freerouting jar smoke test pass — Java + jar now work).
+  ngspice is NOT in the restore set (needed only for final CI
+  step 3; fetch or extend the cache before the final pass).
+- heal-all2 (exp7 -> exp8, fixed grid) running from ~01:5x UTC.
+  Remaining knowns after it: 16 no-stub pads for hand_via
+  (U9.5, U7.4/6/7, U14.6, D1.5, J1.B5, U10.7/8/9, U13.7,
+  U6.26/29/40/70/74), re-notch for APD_K-vs-pour (one via at
+  (13.6,30.6) is outside notch_strip's y<5 filter — check its
+  state on the exp8 audit), GND's 4 audit groups (targeted
+  stitches), then the residue loop to 0.
+
+## FAILURE-CLASS QUEUE (2026-11-05, parent method change — replaces count-chasing)
+
+Rules: each class = mechanism statement -> targeted fix (tool or board)
+-> regression test in the SAME commit -> closed with evidence. No
+undirected sweeps: heal/ripup/bridge/thread runs execute only against a
+named class with a stated hypothesis; a run connecting 0 against its
+class closes the hypothesis and the next move is a new diagnosis. The
+word "justified" is retired; audit exceptions exist only as a registry
+inside hw/check_pcb.py with an evidence citation per entry (the
+registry mechanism lands with the first exception that passes an
+evidence gate). Retroactive regression tests LANDED (commit a62a013):
+hw/tests/test_router_grid.py (grid/OY, pre-d4a9e0d FAIL / now PASS),
+hw/tests/test_hand_stub.py (stub-on-pad, pre-feceb01 FAIL / now PASS);
+outputs in results/test-regressions.txt.
+
+Residue basis: pass 76 audit (28 unconnected nets, 17 violations).
+
+### CLASS T — thread via-rip execution gap (tool defect; NEW at pass 76)
+Mechanism: thread.py's rip reconstruction re-tests only same-layer path
+SEGMENTS against live tracks. Blocker tracks that via_blockers() priced
+as ripped during the search are never removed, so thread_far's placed
+vias violate their own priced victims. Evidence: 15 of pass 76's 17
+violations (SLICEP via@(51.5,-17.5) vs SLICEN/CDR_NIN x8, HV cluster
+threads x7). Fix: execute via-disc rips in the reconstruction (remove
+the priced track items), regression test in the same commit (fixture:
+a thread whose via prices a victim track; assert victim removed and
+audit-clean). Until T is fixed, thread/thread_far output is suspect.
+Status: OPEN.
+
+### CLASS A — NO_EXIT pads (local surgery per pad; blocker named)
+Pads sealed in their first millimetre (diagnose reach=1 on exp12;
+lone-pad groups in the pass-76 audit). Routing effort and board area
+are irrelevant to this class. Fix per pad: move/rip the specific
+blocking item named by probe-via, or escape on the one free
+layer/direction; stub/via verified by audit after each. Members
+(blocker where probed): U9.5/+3V3A (neck blocked by GND pad U9.7; via
+disc clears), U7.6/+3V3A, U7.4/+5V, U14.6/+5V, U7.7/DP_PHY,
+U10.7/HV_GATE (via disc blocked by one +5V track — threaded at pass 76
+but its net still has 2 groups), U10.8/HV_INTVCC (threaded at 76),
+U10.9/HV_SHDN, U4.12/+3V3D_CDR (NEW: split off by a thread rip at 76),
+U13.7/SET_P, U6.29/ULPI_NXT, U6.40/USB_RST, U6.70/ULPI_D4,
+U6.74/ULPI_D6 (NRST bundle across its pin tips), U9.1/I2C_SCL,
+U9.6/I2C_SDA, U9.3/TMP_ALERT, C22.1/PHY_1V8, C15.2/CF2,
+U5.3/CAP_DATA, U4.27/CDR_SQUELCH, J1.B5/CC2 (disc blocked by VBUS_RAW),
+D1.5/APD_K (same-footprint geometry; its connection is owed as routing
+— see the standing D1 audit lines below). Membership is confirmed per
+pad by probe/diagnosis as surgery reaches it. Status: OPEN (0 closed).
+
+### CLASS B — two-island long hauls (negotiated rip-up territory)
+Both endpoints reach open field (diagnose reach 400k+); the floods do
+not meet through the occupied middle at acceptable cost. Proven tool
+limit: heal's astar6 refuses this residue at expansion cap 1.5M AND at
+15M (heal_big probe, CDR_VREF, 162 s, 0 connected) while the
+diagnostic BFS reaches the goal halo — the grid A* cost model, not
+the geometry. Members: ULPI x8 (D1-D6, NXT, STP) + USB_RST + DP_PHY
+(U7 legs), CDR chain (CDR_PIN, CDR_SQUELCH, CAP_DATA), APD_K chain
+(D1.5 leg, RJ2.2 leg), I2C_SCL/SDA + TMP_ALERT hauls, CC2, CF2,
+HV_SHDN haul, SET_P haul. The parallel Freerouting lane is aimed at
+this class. If FR loses: endpoint geometry — a local respread of U6's
+decoupling/pin-escape web (U6 never moved in the expansion) is
+authorized under the standing enlargement directive if diagnosis
+indicts the U6-side exits. Status: OPEN (FR lane running elsewhere).
+
+### CLASS R — rail islands (short/medium hops; thread-class vehicle)
++5V (6 groups), +3V3A (3), +3V3D_CDR (3), PHY_1V8 (3), PHY_1V8A (2),
+HV_RT (2 — split by a thread rip at pass 76; the two groups' tracks
+already overlap in x at y~-14.4), HV_GATE remainder (2). Vehicle:
+thread/thread_far per pair AFTER Class T is fixed (its via bug is
+exactly what bit the HV cluster), or hand hops where the gap is
+sub-millimetre. Thread-victim splits (HV_RT, U4.12, +5V's growth)
+are repaid inside this class's fixes. Status: OPEN.
+
+### Standing audit lines (not a class, not work items)
+The 2 APD_K-vs-APD_A clearance lines (D1.5's own terminal pair) stand
+as violations as written. The directed exemption STOPPED at its
+evidence gate: docs/07-d1-terminal-pair-evidence.md (datasheet VBR
+max 260 V < design maximum bias 420 V). They leave only via an owner
+decision (a hardware bound on the D1 rail inside the part's envelope,
+or a detector rated for the design bias). No registry entry exists.
