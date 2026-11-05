@@ -1,0 +1,95 @@
++VA: 2 groups, main group 173 items
+  +VA: connected group of 3 items (5s, 2 vias)
+CAP_CLK: 2 groups, main group 1 items
+  CAP_CLK: group (1 items, ['U5.5']) STILL isolated (0s)
+CAP_DATA: 2 groups, main group 1 items
+  CAP_DATA: group (1 items, ['U5.3']) STILL isolated (0s)
+CC2: 2 groups, main group 7 items
+  CC2: group (2 items, ['J1.B5', 'track@(30.5, 73.18)']) STILL isolated (0s)
+CDR_LOL: 2 groups, main group 1 items
+  CDR_LOL: group (1 items, ['U4.16']) STILL isolated (0s)
+CDR_LOS: 2 groups, main group 1 items
+  CDR_LOS: group (1 items, ['U4.22']) STILL isolated (0s)
+CDR_NIN: 2 groups, main group 1 items
+  CDR_NIN: group (1 items, ['U4.4']) STILL isolated (0s)
+CDR_PIN: 2 groups, main group 1 items
+  CDR_PIN: group (1 items, ['U4.5']) STILL isolated (0s)
+CDR_SQUELCH: 2 groups, main group 1 items
+  CDR_SQUELCH: group (1 items, ['U4.27']) STILL isolated (0s)
+CDR_VREF: 2 groups, main group 1 items
+  CDR_VREF: group (1 items, ['C12.1']) STILL isolated (0s)
+CF1: 2 groups, main group 1 items
+  CF1: group (1 items, ['C15.1']) STILL isolated (0s)
+CF2: 2 groups, main group 1 items
+  CF2: group (1 items, ['C15.2']) STILL isolated (0s)
+CMP_QN: 2 groups, main group 1 items
+  CMP_QN: group (1 items, ['C9.1']) STILL isolated (0s)
+DM_PHY: 2 groups, main group 1 items
+  DM_PHY: group (1 items, ['D3.4']) STILL isolated (127s)
+DP_PHY: 2 groups, main group 1 items
+  DP_PHY: group (1 items, ['D3.6']) STILL isolated (152s)
+HV_DAC: 2 groups, main group 1 items
+  HV_DAC: connected group of 1 items (2s, 2 vias)
+HV_GATE: 2 groups, main group 1 items
+  HV_GATE: group (1 items, ['U10.7']) STILL isolated (0s)
+HV_INTVCC: 2 groups, main group 1 items
+  HV_INTVCC: group (1 items, ['U10.8']) STILL isolated (0s)
+HV_RAW: 2 groups, main group 3 items
+  HV_RAW: group (1 items, ['C32.1']) STILL isolated (0s)
+HV_RT: 2 groups, main group 1 items
+  HV_RT: group (1 items, ['U10.4']) STILL isolated (0s)
+HV_SENSE: 2 groups, main group 3 items
+  HV_SENSE: group (1 items, ['U10.6']) STILL isolated (0s)
+HV_SS: 2 groups, main group 1 items
+  HV_SS: group (1 items, ['U10.3']) STILL isolated (0s)
+HV_VC: 2 groups, main group 1 items
+  HV_VC: group (1 items, ['U10.1']) STILL isolated (0s)
+ILIM_A: 2 groups, main group 4 items
+  ILIM_A: connected group of 2 items (1s, 2 vias)
+MOS_G: 2 groups, main group 1 items
+  MOS_G: group (1 items, ['Q1.1']) STILL isolated (0s)
+PHY_1V8A: 2 groups, main group 1 items
+  PHY_1V8A: group (1 items, ['C23.1']) STILL isolated (82s)
+RBIAS: 2 groups, main group 1 items
+  RBIAS: group (1 items, ['U7.32']) STILL isolated (0s)
+REFCLK: 2 groups, main group 1 items
+  REFCLK: group (1 items, ['U4.10']) STILL isolated (0s)
+REFCLKN: 2 groups, main group 1 items
+  REFCLKN: group (1 items, ['C14.1']) STILL isolated (0s)
+SET_P: 2 groups, main group 52 items
+  SET_P: group (1 items, ['U13.7']) STILL isolated (1s)
+SLICEN: 2 groups, main group 1 items
+  SLICEN: group (1 items, ['C13.2']) STILL isolated (0s)
+SLICEP: 2 groups, main group 1 items
+  SLICEP: group (1 items, ['C13.1']) STILL isolated (0s)
+THRADJ: 2 groups, main group 1 items
+  THRADJ: group (1 items, ['U4.9']) STILL isolated (0s)
+TP_HV: 2 groups, main group 1 items
+  TP_HV: connected group of 1 items (1s, 0 vias)
+ULPI_CK: 2 groups, main group 1 items
+  ULPI_CK: connected group of 1 items (19s, 4 vias)
+ULPI_D0: 2 groups, main group 1 items
+  ULPI_D0: group (1 items, ['U7.24']) STILL isolated (0s)
+ULPI_D1: 2 groups, main group 1 items
+  ULPI_D1: group (1 items, ['U7.23']) STILL isolated (0s)
+ULPI_D2: 2 groups, main group 1 items
+  ULPI_D2: group (1 items, ['U7.22']) STILL isolated (0s)
+ULPI_D3: 2 groups, main group 1 items
+  ULPI_D3: group (1 items, ['U7.21']) STILL isolated (0s)
+ULPI_D4: 2 groups, main group 1 items
+  ULPI_D4: group (1 items, ['U7.20']) STILL isolated (0s)
+ULPI_D5: 2 groups, main group 1 items
+  ULPI_D5: group (1 items, ['U7.19']) STILL isolated (0s)
+ULPI_D6: 2 groups, main group 1 items
+  ULPI_D6: group (1 items, ['U7.18']) STILL isolated (0s)
+ULPI_D7: 2 groups, main group 1 items
+  ULPI_D7: group (1 items, ['U7.17']) STILL isolated (0s)
+ULPI_DIR: 2 groups, main group 1 items
+  ULPI_DIR: connected group of 1 items (16s, 3 vias)
+ULPI_NXT: 2 groups, main group 1 items
+  ULPI_NXT: group (1 items, ['U7.11']) STILL isolated (0s)
+ULPI_STP: 2 groups, main group 1 items
+  ULPI_STP: group (1 items, ['U7.13']) STILL isolated (0s)
+USB_RST: 2 groups, main group 1 items
+  USB_RST: group (1 items, ['U7.9']) STILL isolated (0s)
+heal_nets done: 6 groups connected in 412s, output hw/pdlvds_rx.exp5.kicad_pcb
