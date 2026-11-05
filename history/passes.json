@@ -2788,6 +2788,35 @@
       },
       "description": "Thread sweep 3 (exp57 -> exp58): VBUS_RAW threaded closed, APD_K + GND one pair each -- but thread rips re-split CC2 (the seesaw in miniature: 28 nets / 77 violations, composition churned). Per parent directive the U6/U7 respread placement is adopted next; this pass is the last on the old geometry.",
       "note": ""
+    },
+    {
+      "pass": 99,
+      "timestamp": "2026-11-05T13:01:06Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp59.kicad_pcb",
+      "dir": "pass-0099",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 168,
+        "unconnected_nets": 65,
+        "audit_verdict": "FAIL"
+      },
+      "description": "RESPREAD ADOPTED (exp58 -> exp59): U6 -> (82,-6), U7 -> (76,14), X1 -> (87,14) rot90 + full ring, applied via respread_u6u7_local.py (local-rip path) to the current board -- no restart from exp41. 932 items ripped (severance debt ~36 nets, itemised in results/respread-local-exp59.txt). Post-placement audit: 65 nets / 168 violations (zones un-refilled; refill next). ULPI hauls drop from ~66mm to 8-19mm in the new geometry.",
+      "note": ""
     }
   ],
   "gaps": [
