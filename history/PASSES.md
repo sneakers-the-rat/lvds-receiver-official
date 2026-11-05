@@ -620,9 +620,9 @@ heal-all2 with the FIXED router grid (d4a9e0d) on the pass-71 board (exp7 -> exp
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 40 · Unconnected nets: 33 · Audit verdict: FAIL
 
-### Pass 73 — 2026-11-05T02:32:56Z · commit `pending`
+### Pass 73 — 2026-11-05T02:32:56Z · commit `d8347be`
 
-Board: `hw/pdlvds_rx.exp9.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp9.kicad_pcb` · Commit: `d8347becf263210813b188cbc5920c353301fa50`
 
 hand_via campaign on the 16 no-stub pads from the pass-70 record (exp8 -> exp9): only 1/16 placed (ULPI_STP U6.26, via@(64.83,36.96) + In2 tail). The other 15 are proven outside hand_via's straight-neck/single-via shape space on exp8 geometry, each by 1-3 blockers (probe: results/probe-via.txt): U9.5 neck blocked solely by GND pad U9.7; U10.7 via disc solely by one +5V track; D1.5 by APD_A pads D1.4/D1.6 at the 1.0 mm HV class (intrinsic package geometry); J1.B5 by VBUS_RAW in the connector field; U6.74 by the NRST track bundle across the pin tips. These pads go to the residue loop's rip-up healing, which can move the blockers.
 
