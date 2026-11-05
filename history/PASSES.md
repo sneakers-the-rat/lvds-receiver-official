@@ -740,9 +740,9 @@ Thread sweep 1 (thread_far, all 35 nets, exp38 -> exp39): 9 pair merges -- APD_K
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 75 · Unconnected nets: 32 · Audit verdict: FAIL
 
-### Pass 88 — 2026-11-05T10:20:20Z · commit `pending`
+### Pass 88 — 2026-11-05T10:20:20Z · commit `d7173aa`
 
-Board: `hw/pdlvds_rx.exp40.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp40.kicad_pcb` · Commit: `d7173aa4079fb6aefa3a50c0fbe9b3ef65491db9`
 
 Thread sweep 2 (exp39 -> exp40): CDR_NIN completed (9.80 thread, 2 rips), CMP_QN threaded (2.14), GND and HV_FBX one pair each, HV_RAW hairline (0.01). Audit: nets 32 -> 31, violations 75 (thread rips keep the violation count flat while nets drain; the violation campaign follows the drain). Remaining 31 nets by refusal species: anchor-walled (+3V3A, +3V3D_CDR, +5V, APD_K, CC2, PHY_1V8/A, SLICEN), lattice no-thread (HV_INTVCC, HV_SS, SET_P), pairs beyond the 15 mm gate (ULPI x8, USB_RST, CAP_DATA, CDR_PIN, CDR_SQUELCH, CF2, DP_PHY, FLY_PRI, HV_SHDN). Next: heal_big over the full residue (different start machinery than thread's anchor), then hand escapes for what survives.
 
