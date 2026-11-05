@@ -232,6 +232,41 @@ stubs on U10.3/U10.7/U10.8/U10.9 (audit-verified per stub) to
 move the thread anchors to the open side, and an escape via/
 extension on the R27.1 group's track west end for HV_GATE's
 start. These are placement/surgery passes, not search retries.
+U10 LOCALITY — CONSOLIDATED FINDINGS (passes 77-78 + probes in
+results/probe-u10-*.txt, probe-stub-walls-*.txt):
+(1) ROW ARITHMETIC SEAL: U10's pads are 1.44x0.30 on a 0.5 pitch
+    -> the inter-pad channel is 0.70 mm; a 0.25 neck at the HV
+    clearance class needs 0.25 + 2x0.25 = 0.75 mm. NO lateral
+    neck can ever leave U10.7/U10.8/U10.9 (proven per-pad:
+    hand_stub 0/4, hand_via 0/4 on exp14; every candidate's
+    least blocker is the neighbouring pin's own pad). U10.9's
+    axial necks are blocked by U10.10's pad (its own +5V pin).
+(2) ONE EAST VIA WINDOW exists per latitude band: dv 1.05..1.12
+    east of the east column (between the pads' reach and the
+    +5V trunk) — hand_via's coarse dv grid (1.00/1.15) straddles
+    and misses it. Adjacent pins' discs in that window mutually
+    exclude (0.5 pitch < 0.8 disc spacing) — the window serves
+    ONE pin. U10.7's escape is PLACED there (pass 78: neck +
+    via @(17.20,-14.50) + In2 tail to (19.20,-14.50); audit
+    still 2 violations).
+(3) THE PALISADE: east of the window, a +5V trunk (x~18.1,
+    w 0.60) and behind it a MOS_G track fence every eastward
+    jog (depths 18.95-20.10 all blocked by MOS_G; Q1.1 beyond).
+    Widening the window for a second pin needs the palisade
+    reworked, not one track moved.
+(4) U10.3 (west column): east is the EP; its west disc site is
+    blocked by 8 items of the HV_FBX/HV_RT web — the same web
+    the parts-fix wave redraws as series strings. DEFER U10.3
+    to the re-sync wave.
+IMPLICATION (design-level, for the parent/owner): U10.8 and
+U10.9 cannot be routed on this footprint at this clearance
+class by any vehicle tried (thread, heal-class, hand stub,
+hand via, Freerouting fanout). The exits are a footprint/
+placement decision in the re-sync wave (move/rotate U10,
+redraw its land pattern, or re-class the HV pins' clearance)
+— not more routing effort. U10.7's connection attempt (heal
+from its new In2 tail) is running; its result does not change
+(1)-(4) for the other two pins.
 HOLD (parent order, 2026-11-04 ~21:12 PST): all U9 members (U9.5,
 U9.1, U9.6, U9.3) are OUT of this class until the re-sync wave — the
 parts audit (docs/08-parts-lock.md, main d7acb61; 115 LOCKED / 29 NOT
