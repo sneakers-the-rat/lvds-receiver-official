@@ -726,3 +726,7 @@ d53221c743ca,2026-11-06T15:37:09Z,"pass 0168: pass 168: CF1 connected (violation
 bb218332abe2,2026-11-06T16:11:09Z,"pass 0169: pass 169: SET_P + ILIM_A connected via +5V relays. SET_P: +5V F hook (41.8,51.25)-(42.375,50.125) relayed to In2 (vias 42.15,51.35 / 42.3,49.9), SET_P straight F run U13.7->R40.1 at y50.75. ILIM_A: +5V w0.6 staircase west of U14 relayed 0.35 west, U14.5 via (52.6,48.35) + In2 south run + via-in-pad R43.1 (55.5,50.8). DRC: violations 156 (unchanged classes), unconnected 39 -> 37",863262334,4158900,867421234,83,64,not recorded
 169ebf6e71ed,2026-11-06T16:11:09Z,pass 0169: record commit hash,863262334,4158900,867421234,83,64,not recorded
 a94cf4807f4a,2026-11-06T16:11:21Z,merge: pass 169 from route,863262334,4158900,867421234,83,64,not recorded
+bdccf3fda181,2026-11-06T16:11:52Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
+fcacae4c2b7d,2026-11-06T16:14:50Z,"pass 0170: pass 170: DAC_VREF connected. Grid router proved F/B no-path; In2 segment (70.0,5.375)-(69.51,7.85) from the router, via (70.3,5.0) overlapping U8.10 pad edge joined by In2 stub, via (69.51,7.85) on-segment, F stub into C26.1. DRC: violations 156 (unchanged), unconnected 37 -> 36",863262334,4158900,867421234,83,64,not recorded
+edc029263430,2026-11-06T16:14:50Z,pass 0170: record commit hash,863262334,4158900,867421234,83,64,not recorded
+c5fef8b906a9,2026-11-06T16:14:55Z,merge: pass 170 from route,863262334,4158900,867421234,83,64,not recorded
