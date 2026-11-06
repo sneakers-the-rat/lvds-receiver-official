@@ -1260,6 +1260,14 @@ pass 152: GND campaign on the re-placed board - pour stitching (vias tying 16 st
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 70 · Unconnected nets: 40 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 153 — 2026-11-06T13:30:42Z · commit `b9b75ce`
+
+Board: `hw/pdlvds_rx.exp183.kicad_pcb` · Commit: `b9b75ceec71d2f0f2d3ac69df125306a73643ef8`
+
+pass 153: +VA first links - grid-routed tree C44.1/C2.1/C7.1/U2.5 on F, U13.9-U13.10 same-net pin link (0.6 segment ending at 49.55 for exactly class clearance to U13.8 GND). KiCad DRC vs exp182: violations 156 -> 156, unconnected items 59 -> 55 (+VA items 9 -> 5; remaining +VA groups: U3.5, C10.1, U1.7, R5.1, U13 pair join)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 70 · Unconnected nets: 40 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
