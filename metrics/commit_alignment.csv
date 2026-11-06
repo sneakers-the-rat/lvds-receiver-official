@@ -763,3 +763,6 @@ ecfeedeee9ec,2026-11-06T19:37:23Z,"pass 0176: pass 176: I2C_SDA U9.6 connected: 
 da927f73a37b,2026-11-06T19:37:23Z,pass 0176: record commit hash,912134236,4585959,916720195,83,64,not recorded
 09ccef27c1fb,2026-11-06T19:37:24Z,tools: SDA U9.6 via-in-pad trial t_q1 (= pass 176) + generalized survey helpers sv_net/sv_box + refill helper,912134236,4585959,916720195,83,64,not recorded
 e9a750dd8e42,2026-11-06T19:37:31Z,merge: pass 176 from route,912134236,4585959,916720195,83,64,not recorded
+a370c6abd74e,2026-11-06T19:37:52Z,metrics: post-merge regen,912134236,4585959,916720195,83,64,not recorded
+a18a7ac0f78c,2026-11-06T20:13:37Z,"tools: session trials t_q2 (SLICEP), t_r1-t_r8 (XO/+3V3A U7.25/U7.6), t_s1-t_s3 (SWCLK via windows) — all DRC-refereed, none banked; seals mapped in trial scripts",912134236,4585959,916720195,83,64,not recorded
+b4255294962f,2026-11-06T20:13:40Z,merge: session trials tools commit from route (no pass banked),912134236,4585959,916720195,83,64,not recorded
