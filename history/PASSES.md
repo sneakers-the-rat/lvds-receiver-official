@@ -1124,6 +1124,14 @@ U5 fanout rip-and-relay, first locality proven: CDR_DATP. Ripped the 6 CDR_DATP 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 138 · Unconnected nets: 35 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 136 — 2026-11-06T05:52:35Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp163.kicad_pcb` · Commit: `pending`
+
+U5 rip-and-relay, the big one: +3V3D. Ripped all 72 +3V3D segments intersecting the U5 pad-field box (x 61..71, y -26..-14) -- the heal-era distribution whose stubs lay across U5's GND/CDR_CLKP/CDR_CLKN pads -- and re-laid with heal_nets (scratch/heal8 KiCad 8 copies): 10 groups connected in 121 s. KiCad DRC referee, exp161 -> exp163: violations 411 -> 347, shorting_items 54 -> 34 (every U5 +3V3D short gone; the 6 remaining +3V3D shorts are the separate east-edge LED-column locality at D6/D7/R44), unconnected items 50 -> 48 (the rip forced the rail's genuinely split groups to re-merge), clearance 65 -> 45, solder_mask_bridge 72 -> 38. Cost: track_dangling 17 -> 22 (fresh heal stubs; the DRC/graph prune eats those next). No class but dangling regressed, and total violations fell by 64.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 112 · Unconnected nets: 34 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
