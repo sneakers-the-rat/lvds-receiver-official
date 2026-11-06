@@ -1428,6 +1428,14 @@ pass 173: CDR_DATN connected (DATP via relayed west to (66.22,33.28) d0.5 freein
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 101 · Unconnected nets: 27 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 174 — 2026-11-06T19:13:37Z · commit `fbc3caa`
+
+Board: `hw/pdlvds_rx.exp204.kicad_pcb` · Commit: `fbc3caa1416a7008768462cd01e1c7520b9caa8e`
+
+pass 174: north-row group — C15 nudged +1.05mm N and C14 +1.0mm E (placement iteration); CF1 re-landed via north detour y43.1, CF2 extended into moved pad; REFCLKN connected (F channel y40.44, arc over +3V3D via, gap via (66.5,41.35), B east + dive to C14.1); +3V3D_CDR U4.12 connected (F stub, via (66.2,40.55), In2 drop to own staircase vertex (66.625,38.375)). KiCad DRC: unconnected 31->29, violations 156->155 (clearance 0, shorting 0, dangling 0)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 104 · Unconnected nets: 25 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
