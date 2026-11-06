@@ -1,0 +1,14 @@
+pass: 159
+description: pass 159: +VA hop group joined to the main tree - 0.5/0.3 via in C44.1 pad (30.825,40.05), In1 track west at y=40 from the U3.5 hop via (37.725,39.975), passing 0.425 clear of the CMP_IN and THR_FILT vias. DRC: violations 156 -> 156 (class table unchanged), unconnected 50 -> 49, +VA items 4 -> 3 (U13 pair, U1.7, R5.1 remain)
+timestamp (UTC): 2026-11-06T14:19:35Z
+commit: pending
+board file: hw/pdlvds_rx.exp189.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 71
+unconnected nets: 39
+courtyard collisions: 0
+audit verdict: fail
+note: 

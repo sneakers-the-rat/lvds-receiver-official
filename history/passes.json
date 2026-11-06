@@ -4562,6 +4562,36 @@
       },
       "description": "pass 158: +VA U3.5-C10.1 joined by an In1 hop - 0.5/0.3 vias in the U3.5 pad (37.725,39.975) and C10.1 pad (37.375,35.75), In1 track routed east around the CMP_IN via pair (In2 is blocked by the CMP_IN vertical and the THR_FILT staircase; In1 carries no tracks in this district). DRC: violations 156 -> 156 (class table unchanged), unconnected 51 -> 50, +VA items 5 -> 4",
       "note": ""
+    },
+    {
+      "pass": 159,
+      "timestamp": "2026-11-06T14:19:35Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp189.kicad_pcb",
+      "dir": "pass-0159",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 71,
+        "unconnected_nets": 39,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 159: +VA hop group joined to the main tree - 0.5/0.3 via in C44.1 pad (30.825,40.05), In1 track west at y=40 from the U3.5 hop via (37.725,39.975), passing 0.425 clear of the CMP_IN and THR_FILT vias. DRC: violations 156 -> 156 (class table unchanged), unconnected 50 -> 49, +VA items 4 -> 3 (U13 pair, U1.7, R5.1 remain)",
+      "note": ""
     }
   ],
   "gaps": [
