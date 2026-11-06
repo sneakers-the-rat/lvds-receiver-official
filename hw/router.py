@@ -100,7 +100,9 @@ def route(board, net_objs, fps):
     items = {l: Items() for l in range(3)}
     pad_cells = {}   # netname -> list of (pin_id, [(layer, cx, cy), ...])
     for ref, fp in fps.items():
-        rot = math.radians(fp.GetOrientationDegrees())
+        # Pad OBB angle: pad.GetOrientationDegrees() is already
+        # board-absolute (KiCad 8); adding the footprint rotation
+        # again double-counts it (see hw/repair.py).
         for pad in fp.Pads():
             net = pad.GetNetname()
             pos = pcbnew.ToMM(pad.GetPosition())
@@ -110,13 +112,13 @@ def route(board, net_objs, fps):
                 if pad.IsOnLayer(lname):
                     layers.append(li)
             item = ('pad', net, (pos[0], pos[1], size[0] / 2, size[1] / 2,
-                                 rot + math.radians(pad.GetOrientationDegrees())))
+                                 math.radians(pad.GetOrientationDegrees())))
             clr = netclass(net)[1] if net else 0.2
             item = ('pad', net, item[2], clr)
             pad_hw = max(size) / 2 + 1.8
             for li in layers:
                 items[li].add(li, ('pad', net, (pos[0], pos[1], size[0]/2, size[1]/2,
-                                                rot + math.radians(pad.GetOrientationDegrees())), clr),
+                                                math.radians(pad.GetOrientationDegrees())), clr),
                               (pos[0] - pad_hw, pos[1] - pad_hw, pos[0] + pad_hw, pos[1] + pad_hw))
             if net:
                 cx, cy = cell_of(pos[0], pos[1])

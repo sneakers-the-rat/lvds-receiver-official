@@ -31,7 +31,10 @@ def build_items(board):
     pad_cells = {}
     fps = {fp.GetReference(): fp for fp in board.GetFootprints()}
     for ref, fp in fps.items():
-        rot = math.radians(fp.GetOrientationDegrees())
+        # Pad OBB angle: pad.GetOrientationDegrees() is already the
+        # board-absolute orientation (KiCad 8) -- adding the footprint
+        # rotation again double-counts it and swaps the axes of every
+        # non-square pad on a 90/270-degree footprint.
         for pad in fp.Pads():
             net = pad.GetNetname()
             pos = pcbnew.ToMM(pad.GetPosition())
@@ -43,7 +46,7 @@ def build_items(board):
             for li in layers:
                 items[li].add(li, ('pad', net,
                                    (pos[0], pos[1], size[0] / 2, size[1] / 2,
-                                    rot + math.radians(
+                                    math.radians(
                                         pad.GetOrientationDegrees())), clr),
                               (pos[0] - bhw, pos[1] - bhw,
                                pos[0] + bhw, pos[1] + bhw))
