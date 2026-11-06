@@ -66,6 +66,15 @@ def build_items(board):
                               (p[0] - r - 2, p[1] - r - 2,
                                p[0] + r + 2, p[1] + r + 2))
         else:
+            if t.GetLayer() not in LAYERS:
+                # Copper on a layer the 3-layer routing grid does
+                # not model (In1.Cu -- first used by the hand-placed
+                # hauls of passes 116-117). It is not an obstacle on
+                # any routed layer, so skip it here; compute_groups
+                # still accounts its connectivity (below). Crashing
+                # here (ValueError: 1 is not in list) killed every
+                # heal run on post-116 boards.
+                continue
             li = LAYERS.index(t.GetLayer())
             a = pcbnew.ToMM(t.GetStart()); b = pcbnew.ToMM(t.GetEnd())
             w = pcbnew.ToMM(t.GetWidth())
@@ -122,7 +131,13 @@ def compute_groups(board):
         else:
             layers = {t.GetLayer()}
             a = pcbnew.ToMM(t.GetStart()); b = pcbnew.ToMM(t.GetEnd())
-            cells = seg_cells(a, b, LAYERS.index(t.GetLayer()))
+            # Unmodelled layers (In1.Cu) take virtual layer index 3:
+            # group union is shape-based and unaffected; the cells
+            # are bookkeeping only (heal's goal set always also
+            # holds the group's routed-layer cells via pads/vias).
+            li = LAYERS.index(t.GetLayer()) \
+                if t.GetLayer() in LAYERS else 3
+            cells = seg_cells(a, b, li)
             kind = "track"
         it = AItem(kind, net, layers, t.GetEffectiveShape(),
                    t.GetBoundingBox(),
