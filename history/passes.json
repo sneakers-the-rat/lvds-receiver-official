@@ -3872,6 +3872,36 @@
       },
       "description": "U5 fanout rip-and-relay, first locality proven: CDR_DATP. Ripped the 6 CDR_DATP segments intersecting the U5 west pad-field box (x 61.5..66, y -24.5..-20) -- the escape zigzag that crossed U5.+3V3D pad 4 three times and CAP_DATA -- then re-laid with heal_nets (KiCad 8 compat copies in scratch/heal8/: wx preambles stripped, run under xvfb; hw/ originals untouched). Heal reported 2 groups connected. KiCad DRC referee: violations 416 -> 411, shorting_items 57 -> 54 (zero CDR_DATP shorts remain), clearance 66 -> 65, unconnected items 50 UNCHANGED, no class regressed. The mechanism (rip the net's copper in the pad-field box, heal, DRC-verify) is now proven for the U5 locality; +3V3D's U5 distribution (16 GND-pad shorts + CLKP/CLKN) is the next and largest application.",
       "note": ""
+    },
+    {
+      "pass": 136,
+      "timestamp": "2026-11-06T05:52:35Z",
+      "hash": "4590d4bb3baae2c86c1a822387921ce41f6d940f",
+      "short_hash": "4590d4b",
+      "board_file": "hw/pdlvds_rx.exp163.kicad_pcb",
+      "dir": "pass-0136",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 112,
+        "unconnected_nets": 34,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "U5 rip-and-relay, the big one: +3V3D. Ripped all 72 +3V3D segments intersecting the U5 pad-field box (x 61..71, y -26..-14) -- the heal-era distribution whose stubs lay across U5's GND/CDR_CLKP/CDR_CLKN pads -- and re-laid with heal_nets (scratch/heal8 KiCad 8 copies): 10 groups connected in 121 s. KiCad DRC referee, exp161 -> exp163: violations 411 -> 347, shorting_items 54 -> 34 (every U5 +3V3D short gone; the 6 remaining +3V3D shorts are the separate east-edge LED-column locality at D6/D7/R44), unconnected items 50 -> 48 (the rip forced the rail's genuinely split groups to re-merge), clearance 65 -> 45, solder_mask_bridge 72 -> 38. Cost: track_dangling 17 -> 22 (fresh heal stubs; the DRC/graph prune eats those next). No class but dangling regressed, and total violations fell by 64.",
+      "note": ""
     }
   ],
   "gaps": [
