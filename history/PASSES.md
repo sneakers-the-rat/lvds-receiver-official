@@ -1204,6 +1204,14 @@ Heal-stub prune on exp174 with a bisection-proven exclusion. First prune attempt
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 68 · Unconnected nets: 32 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 146 — 2026-11-06T09:19:00Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp176.kicad_pcb` · Commit: `pending`
+
+Copper-edge campaign, part 2: the creepage slot is now CLEAR of copper, and C26 was living in it. Diagnosis chain: DRC slot items read 'actual 0.0000 mm' -- tracks CROSS the slot (docs/02 HV-island creepage slot, x12..46 / y23.6..25.1), they do not hug it. The heal router ignores Edge.Cuts and re-lays crossings (proven on +5V: delete the 19 mm In2 crossing, heal, crossing census unchanged). New mechanism, proven on a +5V probe first: a sacrificial SLOTFENCE net fenced across the band on all 4 layers (scratch/fence_slot.py) forces heal detours around the slot ends; fence removed before the referee runs. Production: deleted 23 crossing segments (HV_EN 11, DAC_VREF 6, HV_DAC 3, +5V 1, CMP_QN 1, GND 1; scratch/delete_slot_crossings.py), fenced, healed all 5 nets (4 connected immediately; +5V U7.4 and HV_EN U6.97 remain the standing isolated pads). DAC_VREF's residue exposed the real defect: C26 was PLACED INSIDE THE SLOT (centre (43.5,24.0), pads over the cutout) with its fanout via also in the slot (43.125,24.125, deleted). C26 is U8's VREF bypass (DAC_VREF has exactly two pads: U8.10 and C26.1). First move target (46.8,30.8) landed in U8's +3V3D fanout (4 shorts, heal NO_EXIT -- rejected by DRC); second move to (49.5,23.5), east of the slot end and north of U8, courtyard-clean, healed in 1 s. A VM replacement ate the first heal run mid-flight; the stage was rebuilt from exp175 after a census showed the dead run's checkpoint had contaminated the work file. KiCad DRC referee, exp175 -> exp176: violations 249 -> 229, unconnected items 45 -> 44 (DAC_VREF whole again), copper_edge_clearance 68 -> 40 (slot band 35 -> 0 by the crossing census), shorting 0, clearance 34 -> 35 (one new item: CMP_QN detour vs THR_DAC via south of the slot -- named for the clearance campaign), dangling 23 -> 30 (fresh heal stubs, next prune). Edge residue: J1 NPTH field 18 (incl. footprint-intrinsic pad items), east-edge trunks 15.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 68 · Unconnected nets: 31 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
