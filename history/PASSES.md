@@ -1180,9 +1180,9 @@ Shorts singles cleared: shorting_items 6 -> 0 (class closed). Five micro-localit
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 68 · Unconnected nets: 31 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 143 — 2026-11-06T07:15:38Z · commit `pending`
+### Pass 143 — 2026-11-06T07:15:38Z · commit `d28f43d`
 
-Board: `hw/pdlvds_rx.exp173.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp173.kicad_pcb` · Commit: `d28f43d7c9c28c70990cf18ba54bd3f93e999eb8`
 
 Heal-stub prune after the shorts campaign. Ran scratch/drc_graph_prune.py on exp172 (DRC proposes, contact graph vetoes bridges, DRC referees every round, unconnected invariant held at 45 in all 10 rounds run); stopped at the converged plateau (22 flagged residue = vetoed bridges + ambiguous hairline joints, the standing residue) and banked the last refereed state. KiCad DRC, exp172 -> exp173: violations 278 -> 268, track_dangling 27 -> 22, shorting_items 0, clearance 34, solder_mask_bridge 7, copper_edge_clearance 88 -- all unchanged; unconnected items 45 UNCHANGED.
 
