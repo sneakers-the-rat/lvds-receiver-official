@@ -1484,6 +1484,14 @@ pass 180: CDR_NIN connected — C13's move (pass 179) vacated U4.4's row; F stub
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 19 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 181 — 2026-11-06T23:27:14Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp211.kicad_pcb` · Commit: `pending`
+
+pass 181: I2C_SDA connected (U4.21 end) — heal (astar6) threaded the SE staircase bundle in 31s with 5 vias where hand analysis had proven the only F channel sealed (0.575mm between C46.2/X2.1 pads vs 0.6 needed) and costed a 6-via manual weave across REFCLK/DM_PHY/DP_PHY/+5V/BIST_DRV bands; DRC delta zero. Side experiment t_z1 (evidence, not banked): an I2C_SDA track laid on In1 grazing the RBIAS through-via at (69.625,20.625) by 0.025mm came back from save/reload renamed RBIAS — the save-rename mechanism is CONTACT with any foreign copper sharing a layer (track/via/pad/fill), not the fill alone; clearance-legal tracks are safe, and In1 (solid GND plane) is unusable for signals. DRC: unconnected 22->21, violations 154->154 identical class table, clearance/shorting/dangling 0
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 18 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
