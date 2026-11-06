@@ -1476,6 +1476,14 @@ pass 179: SLICEP + SLICEN connected (U4 west braid joint re-fanout) — C51 move
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 20 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 180 — 2026-11-06T23:19:21Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp210.kicad_pcb` · Commit: `pending`
+
+pass 180: CDR_NIN connected — C13's move (pass 179) vacated U4.4's row; F stub west to via (61.75,36.7) (the (62.8,37.05) dive dies on B against CDR_VREF's staircase vertical), In2 north of the DM_PHY northern staircase, around the +3V3D_CDR staircase west end (rounding shifted west in t_y2 to clear the d0.8 staircase via by 0.44), then SW on the open south-west side of DM_PHY's long In2 staircase to via (51.45,45.5) and F tail into C9.2. DRC: unconnected 23->22, violations 154->154 (identical class table), clearance/shorting/dangling 0
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 19 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
