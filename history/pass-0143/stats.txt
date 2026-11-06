@@ -1,0 +1,14 @@
+pass: 143
+description: Heal-stub prune after the shorts campaign. Ran scratch/drc_graph_prune.py on exp172 (DRC proposes, contact graph vetoes bridges, DRC referees every round, unconnected invariant held at 45 in all 10 rounds run); stopped at the converged plateau (22 flagged residue = vetoed bridges + ambiguous hairline joints, the standing residue) and banked the last refereed state. KiCad DRC, exp172 -> exp173: violations 278 -> 268, track_dangling 27 -> 22, shorting_items 0, clearance 34, solder_mask_bridge 7, copper_edge_clearance 88 -- all unchanged; unconnected items 45 UNCHANGED.
+timestamp (UTC): 2026-11-06T07:15:38Z
+commit: pending
+board file: hw/pdlvds_rx.exp173.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 68
+unconnected nets: 31
+courtyard collisions: 0
+audit verdict: fail
+note: 

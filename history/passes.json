@@ -4082,6 +4082,36 @@
       },
       "description": "Shorts singles cleared: shorting_items 6 -> 0 (class closed). Five micro-localities, each rip+heal with DRC checks between: ULPI_NXT x C17.1/VCAP1 (ripped 13 segs in (69.8,4)-(71.8,12.5); heal reconnected 4 groups -- NXT was more fragmented than it looked); CMP_IN x R11.1/TEST_IN (ripped 4 in (36.5,39.5)-(41.5,44.5); reconnected); HV_SHDN x R25.1/+5V (ripped 8 in (3.5,-22.5)-(10,-16.5); 3 groups reconnected; U6.42 group STILL isolated, pre-existing residue); +VA x D2.2/APD_K_ALT (ripped 10 in (22,58.5)-(27,64); reconnected 59+1 items); ILIM_P x C41.2/GND (cleared ILIM_P's 14 items in (41,58)-(44.5,61.5) including the via on C41.2; heal re-laid the 19-item group). KiCad DRC referee, exp171 -> exp172: violations 283 -> 278, shorting_items 6 -> 0, clearance 37 -> 34, solder_mask_bridge 12 -> 7, unconnected items 45 UNCHANGED, copper_edge_clearance 88 unchanged, track_dangling 23 -> 27 (fresh heal stubs, prune next).",
       "note": ""
+    },
+    {
+      "pass": 143,
+      "timestamp": "2026-11-06T07:15:38Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp173.kicad_pcb",
+      "dir": "pass-0143",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 68,
+        "unconnected_nets": 31,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "Heal-stub prune after the shorts campaign. Ran scratch/drc_graph_prune.py on exp172 (DRC proposes, contact graph vetoes bridges, DRC referees every round, unconnected invariant held at 45 in all 10 rounds run); stopped at the converged plateau (22 flagged residue = vetoed bridges + ambiguous hairline joints, the standing residue) and banked the last refereed state. KiCad DRC, exp172 -> exp173: violations 278 -> 268, track_dangling 27 -> 22, shorting_items 0, clearance 34, solder_mask_bridge 7, copper_edge_clearance 88 -- all unchanged; unconnected items 45 UNCHANGED.",
+      "note": ""
     }
   ],
   "gaps": [
