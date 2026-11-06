@@ -1068,9 +1068,9 @@ COURTYARD CAMPAIGN item 3 (U6xMH2, parent ruling: MH2 moves, U6 stays, no courty
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 122 · Unconnected nets: 32 · Courtyard collisions: 18 · Audit verdict: FAIL
 
-### Pass 129 — 2026-11-06T01:27:31Z · commit `pending`
+### Pass 129 — 2026-11-06T01:27:31Z · commit `100debd`
 
-Board: `hw/pdlvds_rx.exp123.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp123.kicad_pcb` · Commit: `100debd4a17f24967c61e7fe49285a5359caa0b3`
 
 COURTYARD CAMPAIGN item 4 (X1 diodes, MH5, J3, F1, J5 clusters): D6 (90,7)->(92.5,6.5) and D7 (90,12)->(91.5,12), tight to X1 and clear of MH2's new circle; C33 (11.33,28)->(9.83,30) west-south out of MH5 (east was blocked); R11 (44.5,40)->(40,40) west out of J3; F1 (20,70)->(20.5,70) after C38's nudge (20.93,67.27)->(20.93,66.77) freed its east exit; R25 (8,-18.5)->(10,-18.5) east out of J5. Pairs closed (7): X1xD6, X1xD7, MH5xC33, R11xJ3, F1xD4, F1xC38, J5xR25. C38 and F1 nets unchanged. VICTIMS NAMED AS OWED: LED_PWR_K D6 leg (2->3 groups; the R44 leg from item 3 still owed), LED_STAT and LED_STAT_A D7 legs (1->2 each), TEST_IN R11 leg (1->2), HV_SHDN and +5V R25 legs (2->3 each; both already residue nets), C33 GND pad (repair model 56->57; audit is pour-inclusive and governs). prune_dead run after the moves. Remaining courtyard pairs: 11.
 
