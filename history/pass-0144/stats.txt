@@ -1,0 +1,14 @@
+pass: 144
+description: Copper-edge campaign, part 1: the creepage slot (x12..46 / y23.6..25.1, docs/02 HV-island creepage feature). Diagnosis: the class was not tracks hugging edges -- several routes CROSS the slot outright (the heal-era router does respect the slot; the crossings were older copper) plus a fanout field inside its east tip. Ripped 5 nets in corridor (10,21)-(48,28) -- HV_EN 29, DAC_VREF 12, +5V 12, HV_DAC 17, APD_K 1 -- deleted 1 GND via inside the slot, healed all 5 (7 groups reconnected; APD_K test case first proved the re-lay keeps 0 segments within 0.5 mm of the slot). GND's 8 segments inside/near the slot deleted surgically (pour carries the net; referee confirms no split). Pre-existing victims untouched by the corridor remain: RJ2.2, U7.4 (+5V leg), U6.97. KiCad DRC referee, exp173 -> exp174: violations 268 -> 253, copper_edge_clearance 88 -> 68, unconnected items 45 UNCHANGED, shorting 0, clearance 34, mask 7 unchanged, track_dangling 22 -> 25 (fresh heal stubs). Edge residue: J1 NPTH field at the south edge (18), slot east-tip fanout (10), east-edge x=100 runs (8+), south GND runs (6).
+timestamp (UTC): 2026-11-06T07:20:58Z
+commit: pending
+board file: hw/pdlvds_rx.exp174.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 68
+unconnected nets: 32
+courtyard collisions: 0
+audit verdict: fail
+note: 
