@@ -1372,9 +1372,9 @@ pass 166: TIA_OUT COMPLETE - R7.1 joined: 0.5/0.3 via in R7.1 pad (28.1,39.25), 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 37 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 167 — 2026-11-06T15:24:58Z · commit `pending`
+### Pass 167 — 2026-11-06T15:24:58Z · commit `49f3cc6`
 
-Board: `hw/pdlvds_rx.exp197.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp197.kicad_pcb` · Commit: `49f3cc6e3299ef142249348cd1f2f4ca9adfb3d5`
 
 pass 167: HV_VC + HV_VC2 connected (violations 156 -> 156, unconnected 42 -> 40). HV_VC: pure-F route R23.1 -> U10.1 threading south of the HV_FBX F chain. HV_VC2: via-in-pad at C29.1 and R23.2 with a B run passing south of the HV_R29M B staircase (the F corridor between C29.2 and R23.1 pads is 0.05 mm too narrow for a track). HV_GATE and HV_INTVCC investigated and parked as sealed: GATE's channel between U10 EP and the east pad row fits one 0.15 track but every approach (NE diag, south run, B under the HV_SENSE staircase, In2) is blocked by named copper; INTVCC is sealed on F (SHDN via + U10.9 corner pinch), In2 (HV_FBX staircase) and B (HV_SENSE weave).
 
