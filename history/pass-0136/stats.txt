@@ -1,0 +1,14 @@
+pass: 136
+description: U5 rip-and-relay, the big one: +3V3D. Ripped all 72 +3V3D segments intersecting the U5 pad-field box (x 61..71, y -26..-14) -- the heal-era distribution whose stubs lay across U5's GND/CDR_CLKP/CDR_CLKN pads -- and re-laid with heal_nets (scratch/heal8 KiCad 8 copies): 10 groups connected in 121 s. KiCad DRC referee, exp161 -> exp163: violations 411 -> 347, shorting_items 54 -> 34 (every U5 +3V3D short gone; the 6 remaining +3V3D shorts are the separate east-edge LED-column locality at D6/D7/R44), unconnected items 50 -> 48 (the rip forced the rail's genuinely split groups to re-merge), clearance 65 -> 45, solder_mask_bridge 72 -> 38. Cost: track_dangling 17 -> 22 (fresh heal stubs; the DRC/graph prune eats those next). No class but dangling regressed, and total violations fell by 64.
+timestamp (UTC): 2026-11-06T05:52:35Z
+commit: pending
+board file: hw/pdlvds_rx.exp163.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 112
+unconnected nets: 34
+courtyard collisions: 0
+audit verdict: fail
+note: 
