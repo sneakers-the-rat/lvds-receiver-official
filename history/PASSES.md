@@ -1276,6 +1276,14 @@ GND C29.2 unsealed: relayed the HV_R29M via 1.5 mm north (22.375,0.375 -> 22.375
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 70 · Unconnected nets: 39 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 155 — 2026-11-06T13:59:22Z · commit `8ea38d7`
+
+Board: `hw/pdlvds_rx.exp185.kicad_pcb` · Commit: `8ea38d785db7ec1828b232bb671dc1794bc065c9`
+
+pass 155: GND island X2.2 tied - 0.5/0.3 via at (72.55,25.6) in the fragment north lobe drops to the In1 GND zone (In2 +3V3D track at y=24.375 blocks the pad row; F exits sealed by the CDR_SQUELCH staircase and the +3V3D via at (74.625,24.375)). DRC: violations 156 -> 156 (class table unchanged), unconnected 54 -> 53, GND items 4 -> 3
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 70 · Unconnected nets: 39 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
