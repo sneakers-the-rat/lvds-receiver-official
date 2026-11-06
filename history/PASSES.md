@@ -1420,9 +1420,9 @@ pass 172: HV_GATE connected (grid B path R27.1 to U10 district, F w0.15 needle t
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 101 · Unconnected nets: 28 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 173 — 2026-11-06T18:57:16Z · commit `pending`
+### Pass 173 — 2026-11-06T18:57:16Z · commit `d8b6d3f`
 
-Board: `hw/pdlvds_rx.exp203.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp203.kicad_pcb` · Commit: `d8b6d3fb24e6c6986138224fdc4c661981b3336a`
 
 pass 173: CDR_DATN connected (DATP via relayed west to (66.22,33.28) d0.5 freeing the F thread; DATN F thread (66.5,34.4)->(66.9,32.4), via d0.5, B stepped dive south of DATP staircase around GND/+3V3D/DATP-bottom vias, joining own B channel at (78.375,22.125)). KiCad DRC: unconnected 32->31, violations 156 unchanged (clearance 0, shorting 0, dangling 0)
 
