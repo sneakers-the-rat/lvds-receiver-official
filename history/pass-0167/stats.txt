@@ -1,0 +1,14 @@
+pass: 167
+description: pass 167: HV_VC + HV_VC2 connected (violations 156 -> 156, unconnected 42 -> 40). HV_VC: pure-F route R23.1 -> U10.1 threading south of the HV_FBX F chain. HV_VC2: via-in-pad at C29.1 and R23.2 with a B run passing south of the HV_R29M B staircase (the F corridor between C29.2 and R23.1 pads is 0.05 mm too narrow for a track). HV_GATE and HV_INTVCC investigated and parked as sealed: GATE's channel between U10 EP and the east pad row fits one 0.15 track but every approach (NE diag, south run, B under the HV_SENSE staircase, In2) is blocked by named copper; INTVCC is sealed on F (SHDN via + U10.9 corner pinch), In2 (HV_FBX staircase) and B (HV_SENSE weave).
+timestamp (UTC): 2026-11-06T15:24:58Z
+commit: pending
+board file: hw/pdlvds_rx.exp197.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 93
+unconnected nets: 35
+courtyard collisions: 0
+audit verdict: fail
+note: 
