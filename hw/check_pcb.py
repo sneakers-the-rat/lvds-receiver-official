@@ -11,8 +11,23 @@ Checks, using KiCad's own effective copper shapes via pcbnew:
      layer, SHAPE.Collide with the netclass clearance; violations are
      printed with locations.
   3. Board-edge clearance 0.3 mm for all copper.
-Exit 0 iff no unlisted violation. Known/accepted items can be waived in
-WAIVERS with a written reason; waivers are printed, never silent.
+  4. Courtyard collisions (HARD GATE, owner ruling 2026-11-05): two
+     footprints on the same board side whose courtyard polygons
+     intersect with area > 0.001 mm^2 FAIL the verdict. A layout
+     with overlapping parts is invalid, full stop — there are no
+     waivers for this class (WAIVERS below applies to clearance
+     pairs only). Footprints with no drawn courtyard (SH1, D2, D1,
+     C4, U9, T1 at gate introduction) are measured with a
+     bbox fallback (pads + Fab outline, +0.25 mm) and reported in
+     their own counted line — the fallback overcounts by
+     construction (SH1 is a shield can: its bbox encloses the
+     frontend it exists to cover), so fallback pairs are printed
+     and counted but gate only once a real courtyard is drawn.
+     The blind list is printed in every audit until it is empty.
+Exit 0 iff no unconnected net, no unlisted violation, and no
+courtyard collision. Known/accepted clearance items can be waived
+in WAIVERS with a written reason; waivers are printed, never
+silent.
 Run under xvfb-run (pcbnew zone data needs the app context).
 """
 import sys, wx
@@ -41,6 +56,66 @@ def clearance_for(net):
     return 0.2
 
 SURFACE = None  # set in main (needs pcbnew layer ids)
+
+def _fallback_courtyard(fp, flipped):
+    """Bbox-fallback courtyard for a footprint with no drawn
+    courtyard polygon: union bbox of its pads and its Fab-layer
+    outline, expanded by the standard 0.25 mm courtyard allowance.
+    Returns a SHAPE_POLY_SET rectangle in board coordinates."""
+    fab = pcbnew.B_Fab if flipped else pcbnew.F_Fab
+    boxes = [d.GetBoundingBox() for d in fp.GraphicalItems()
+             if d.GetLayer() == fab]
+    boxes += [p.GetBoundingBox() for p in fp.Pads()]
+    xs0 = min(b.GetLeft() for b in boxes); xs1 = max(b.GetRight() for b in boxes)
+    ys0 = min(b.GetTop() for b in boxes); ys1 = max(b.GetBottom() for b in boxes)
+    m = MM(0.25)
+    poly = pcbnew.SHAPE_POLY_SET()
+    poly.NewOutline()
+    for x, y in ((xs0 - m, ys0 - m), (xs1 + m, ys0 - m),
+                 (xs1 + m, ys1 + m), (xs0 - m, ys1 + m)):
+        poly.Append(pcbnew.VECTOR2I(x, y))
+    return poly
+
+def courtyard_pairs(board):
+    """Same-side courtyard polygon collisions.
+    Returns (pairs, blind): pairs is a list of
+    (ref_a, ref_b, side, area_mm2, fallback_used); blind is the
+    sorted list of refs measured with the bbox fallback because
+    they have no drawn courtyard polygon."""
+    entries = []  # (ref, side, poly, bbox, fallback?)
+    blind = []
+    for fp in board.GetFootprints():
+        ref = fp.GetReference()
+        flipped = fp.IsFlipped()
+        layer = pcbnew.B_CrtYd if flipped else pcbnew.F_CrtYd
+        side = "bottom" if flipped else "top"
+        poly = None
+        try:
+            poly = fp.GetCourtyard(layer)
+        except Exception:
+            poly = None
+        fb = False
+        if poly is None or poly.OutlineCount() == 0:
+            poly = _fallback_courtyard(fp, flipped)
+            fb = True
+            blind.append(ref)
+        entries.append((ref, side, poly, poly.BBox(), fb))
+    pairs = []
+    for i in range(len(entries)):
+        ri, si, pi, bi, fbi = entries[i]
+        for j in range(i + 1, len(entries)):
+            rj, sj, pj, bj, fbj = entries[j]
+            if si != sj or not bi.Intersects(bj):
+                continue
+            inter = pcbnew.SHAPE_POLY_SET(pi)
+            inter.BooleanIntersection(pj, pcbnew.SHAPE_POLY_SET.PM_FAST)
+            area = 0.0
+            for k in range(inter.OutlineCount()):
+                area += inter.Outline(k).Area()
+            area /= 1e12  # nm^2 -> mm^2
+            if area > 0.001:
+                pairs.append((ri, rj, si, area, fbi or fbj))
+    return pairs, sorted(blind)
 
 def need_for(na, nb, shared_layers):
     """Layer-aware clearance: the 1.0 mm HV rule is a surface
@@ -158,7 +233,22 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
           f"(datasheet geometry, not routable): {len(intrinsic)}")
     for v in intrinsic[:20]:
         print(f"  INTRINSIC {v[0]} ({v[1]}) vs {v[2]} ({v[3]}): need {v[4]} mm")
-    ok = not unconnected and not violations
+    # ---------- courtyard collisions (HARD GATE: no waivers) ----
+    cpairs, cblind = courtyard_pairs(board)
+    gated = [p for p in cpairs if not p[4]]
+    fbpairs = [p for p in cpairs if p[4]]
+    print(f"courtyard collisions: {len(gated)}")
+    for ra, rb, side, area, fb in sorted(gated):
+        print(f"  COURTYARD {ra} x {rb} ({side}) area={area:.4f} mm^2")
+    print(f"courtyard fallback pairs (blind footprints, reported "
+          f"not gated): {len(fbpairs)}")
+    for ra, rb, side, area, fb in sorted(fbpairs):
+        print(f"  COURTYARD-FALLBACK {ra} x {rb} ({side}) "
+              f"area={area:.4f} mm^2")
+    if cblind:
+        print(f"courtyard bbox fallback in use (no drawn courtyard): "
+              f"{cblind}")
+    ok = not unconnected and not violations and not gated
     print("PCB CHECK:", "PASS" if ok else "FAIL")
     return 0 if ok else 1
 

@@ -110,6 +110,9 @@ def parse_audit(path):
     m = re.search(r"clearance violations:\s*(\d+)", txt)
     if m:
         out["clearance_violations"] = int(m.group(1))
+    m = re.search(r"courtyard collisions:\s*(\d+)", txt)
+    if m:
+        out["courtyard_collisions"] = int(m.group(1))
     m = re.search(r"PCB CHECK:\s*(\w+)", txt)
     if m:
         out["audit_verdict"] = m.group(1)
