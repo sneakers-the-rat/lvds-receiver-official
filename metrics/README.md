@@ -7,11 +7,11 @@ Headline, for the project scope defined below:
 
 | scope | agents | usage rows | input tokens | output tokens |
 |---|---|---|---|---|
-| chat tree (main chat + its subagents) | 55 | 468 | 491,141,505 | 2,480,779 |
-| checkpoint cron (`pdlvds-progress`) | 185 | 145 | 142,021,433 | 809,249 |
-| **project total** | **240** | **613** | **633,162,938** | **3,290,028** |
+| chat tree (main chat + its subagents) | 58 | 527 | 556,732,969 | 2,691,188 |
+| checkpoint cron (`pdlvds-progress`) | 209 | 163 | 159,707,396 | 900,988 |
+| **project total** | **267** | **690** | **716,440,365** | **3,592,176** |
 
-**Gross total: 636,452,966 tokens processed.** Read the semantics section
+**Gross total: 720,032,541 tokens processed.** Read the semantics section
 before quoting that number anywhere: it is *gross tokens processed* — the
 full context is re-sent on every model request, so the sum counts the same
 content many times. It is a work meter, not a content size and not a bill.
@@ -22,8 +22,8 @@ content many times. It is a work meter, not a content size and not a bill.
   output, running cumulative totals), sorted by time.
 - `agents.csv` — every agent in scope, its role, its totals, and its
   model codename (column `model`: the value of `agent.agents.model`
-  for the agent — `ipnext/watermelon-v0` for the 186 root-class
-  agents, `ipnext/avocado-5.17-v1`/`-v2` for the 54 subagents; see
+  for the agent — `ipnext/watermelon-v0` for the 210 root-class
+  agents, `ipnext/avocado-5.17-v1`/`-v2` for the 57 subagents; see
   the codename note in the Cost summary section).
 - `commit_alignment.csv` — every commit in this repo's HEAD history with
   cumulative project tokens at the commit's time and the board state from
@@ -100,7 +100,7 @@ Two candidate tables exist:
 Evidence gathered while building this export:
 
 - A row aggregates **all model requests made while producing one message**
-  in that agent. The main agent has 419 rows in this snapshot, one per
+  in that agent. The main agent has 476 rows in this snapshot, one per
   delivered message/turn
   (a turn with many tool calls makes many requests, each re-sending the
   context — hence rows larger than the 350k context window).
@@ -117,22 +117,23 @@ Evidence gathered while building this export:
   therefore *undercount* in-flight work.
 - Sanity anchor: one live request of the root agent on 2026-11-04T07:58Z
   was estimated at 219,814 input tokens (session status) — a single
-  request, vs 176,149,295 cumulative input over its 419 message rows.
+  request, vs 230,890,683 cumulative input over its 476 message rows.
 
 ## Input split — NEW vs REPEATED (ESTIMATE, not a record)
 
-**Headline, with its error attached:** of the 633,162,938 recorded
-input tokens, 529,779,112 (83.7%) were estimable, and of those an
-estimated **3.06% (16,225,722) were NEW** — content sent for the first
-time in its context window — and **96.94% (513,553,390) were
+**Headline, with its error attached:** of the 716,440,365 recorded
+input tokens, 598,714,990 (83.6%) were estimable, and of those an
+estimated **57.27% (342,871,466) were NEW** — content sent for the first
+time in its context window, plus the injected preamble at every
+request (see the simplification note below) — and **42.73% (255,843,524) were
 REPEATED** — context re-sent within the same window. Per scope:
-chat tree **2.10% new / 97.90% repeated** (of its estimable
-415,813,248); checkpoint cron
-**6.56% new / 93.44% repeated** (of its estimable 113,965,864). The remaining 103,383,826 tokens (16.3%) are NOT estimable (below); they
+chat tree **51.24% new / 48.76% repeated** (of its estimable
+484,749,126); checkpoint cron
+**82.93% new / 17.07% repeated** (of its estimable 113,965,864). The remaining 117,725,375 tokens (16.4%) are NOT estimable (below); they
 are carried as repeated in the CSV, flagged per row. Validation:
 against held-out agents the estimator's reconstructed totals land at
-median recorded/estimated ratio **1.01** (p10 0.76, p90 1.45; median
-absolute error **11.3%** after a train-derived correction) — a much
+median recorded/estimated ratio **1.03** (p10 0.25, p90 1.47; median
+absolute error **16.6%** after a train-derived correction) — a much
 wider spread than the fit quality on the earlier, smaller snapshot,
 so read the percentages as carrying a wide uncertainty band, not as
 exact. This split is the closest available proxy
@@ -189,6 +190,29 @@ Its segment contains no frozen usage rows, so it changes no
 published figure; the seven anchors of the original publication are
 unchanged.
 
+### Simplification (2026-11-05): the preamble is never cache-served
+
+Until this change, the estimator counted the fitted preamble — the
+runtime-injected standing context: system prompt, tool schemas, and
+the standing files (AGENTS.md, MEMORY.md, the alignment synthesis,
+indexes), fitted at roughly 68K–85K tokens per request depending on
+agent class, about a fifth of the context window — as NEW once per
+session and REPEATED (cache-served) at every later request. At the
+project owner's direction that assumption is dropped: the preamble
+is now NEW at **every** request. The standing files are re-injected
+per request and are edited mid-run (MEMORY.md changes during
+ordinary work; the alignment file regenerates nightly), and cache
+residency across the long gaps between messages is not assumed
+either — so the estimate no longer credits the injected context to
+any cache.
+
+Effect: because the preamble is re-sent on every one of an agent's
+requests, it dominates the NEW side for long-running agents. The
+overall repeated share falls from 96.9% (previous snapshot,
+2026-11-05T20:49:21Z, old rule) to 42.7% (this snapshot, new rule);
+the main chat's falls from 98.9% to 36.8%. The totals model and its
+validation are untouched — only the split moved.
+
 ### Why this is an estimate
 
 The per-request table `agent.token_usage` has exactly the right
@@ -208,7 +232,9 @@ with usage rows), so the split is reconstructed from text sizes.
   input is a fixed preamble (system prompt + tool schemas, absent
   from transcripts) plus all context items present before the run.
 - An item is NEW at the first request that sends it, REPEATED at
-  every later send; the preamble is new once per session. Item size
+  every later send; the preamble (injected standing context) is NEW
+  at every request — never counted as cache-served (see the
+  simplification note above). Item size
   = text character count.
 - **Fork slices:** spawned chat agents' transcripts open with a
   byte-identical copy of a slice of the parent's stream (detected:
@@ -400,7 +426,7 @@ this table uses them. The report gives three costs per provider:
 credit at all), **all-cached** (every input token at the cache-read
 rate — the unattainable opposite bracket), and a **cache-adjusted
 estimate** between them, which bills input per the estimated
-new-vs-repeated split (input-split section: 96.9% of estimable input
+new-vs-repeated split (input-split section: 42.7% of estimable input
 is repeated at the current snapshot). The split is an estimate
 reconstructed from transcripts, not a measurement — no record of
 actual cache hits exists — and "repeated" is an upper bound on
@@ -426,9 +452,9 @@ tier pair — flagship and step-down:
 Model codenames (confirmed by the project owner, 2026-11-04):
 `ipnext/watermelon-v0` = Muse Wonder; `ipnext/avocado-5.17-v1` and
 `ipnext/avocado-5.17-v2` = Muse Spark. The recorded volume splits
-by codename — watermelon: 318,170,728 input / 1,364,299 output (the
+by codename — watermelon: 390,598,079 input / 1,645,358 output (the
 root agents: main chat + checkpoint cron); avocado (both builds):
-314,992,210 input / 1,925,729 output (all subagents) — and every
+325,842,286 input / 1,946,818 output (all subagents) — and every
 provider's figures below price the watermelon share at its flagship
 tier and the avocado share at its step-down tier, like-for-like. For the Muse row those tiers are the
 public models themselves. (Corroboration, one line: this chat's root
@@ -448,16 +474,16 @@ the same Standard table.
 
 **All-uncached cost at list prices — each model's share priced
 at its own tier** (every input token billed at the standard
-uncached rate; snapshot 2026-11-05T20:49:21Z). Each scope ran on
+uncached rate; snapshot 2026-11-06T02:53:12Z). Each scope ran on
 one tier — the main chat and the checkpoint cron on the flagship
 tier, the subagents on the step-down tier:
 
 | Scope | Meta | Anthropic | OpenAI |
 | --- | ---: | ---: | ---: |
-| Main chat | $715.70 | $715.70 | $1,789.24 |
-| Subagents | $401.92 | $649.24 | $649.24 |
-| Checkpoint cron | $584.27 | $584.27 | $1,460.67 |
-| **Total** | **$1,701.89** | **$1,949.21** | **$3,899.15** |
+| Main chat | $938.45 | $938.45 | $2,346.13 |
+| Subagents | $415.57 | $671.15 | $671.15 |
+| Checkpoint cron | $656.85 | $656.85 | $1,642.12 |
+| **Total** | **$2,010.87** | **$2,266.45** | **$4,659.40** |
 
 Each scope figure is the sum of its rounded input and output
 component costs (the convention `cost_summary.csv` uses for all its
@@ -475,9 +501,9 @@ at standard rates (the cache estimate paragraph below).
 
 | | Meta | Anthropic | OpenAI |
 | --- | ---: | ---: | ---: |
-| All-uncached (tier-matched) | $1,701.89 | $1,949.21 | $3,899.15 |
-| All-cached (tier-matched) | $146.35 | $141.68 | $437.14 |
-| Cache-adjusted (estimated share) | $203.09 | $203.70 | $566.85 |
+| All-uncached (tier-matched) | $2,010.87 | $2,266.45 | $4,659.40 |
+| All-cached (tier-matched) | $168.18 | $163.08 | $524.92 |
+| Cache-adjusted (estimated share) | $1,304.70 | $1,433.17 | $3,098.93 |
 
 (An earlier layout showed an "upper bound (all flagship)" row —
 the whole volume at flagship rates — instead of the all-cached
@@ -492,7 +518,7 @@ subagent share costs less on Meta than its equivalent on Anthropic.
 
 Cache estimate, from the **estimated** new-vs-repeated split
 (input-split section; the split model is validated on totals —
-held-out median ratio 1.01, median absolute error 11.3% at the
+held-out median ratio 1.03, median absolute error 16.6% at the
 current snapshot — but the split itself cannot be
 validated, because no record of real cache hits exists).
 Estimated repeated share of input, by agent type
@@ -500,10 +526,10 @@ Estimated repeated share of input, by agent type
 
 | Agent type | Repeated share of estimable input | Estimable input | Not estimable |
 | --- | ---: | ---: | ---: |
-| Main chat (root agent) | 98.9% | 176,149,295 | 0 |
-| Subagents | 97.2% | 239,663,953 | 75,328,257 |
-| Checkpoint cron | 93.4% | 113,965,864 | 28,055,569 |
-| **Overall** | **96.9%** | **529,779,112** | **103,383,826** |
+| Main chat (root agent) | 36.8% | 230,890,683 | 0 |
+| Subagents | 59.6% | 253,858,443 | 71,983,843 |
+| Checkpoint cron | 17.1% | 113,965,864 | 45,741,532 |
+| **Overall** | **42.7%** | **598,714,990** | **117,725,375** |
 
 Two cautions on these percentages. First, they are shares of the
 *estimable* input only; the not-estimable remainder (records whose
@@ -521,9 +547,9 @@ the tier-matched total and the cache-adjusted figure.
 Why even these equivalents are rough:
 
 - **Model attribution.** `agent.agents.model` is populated for all
-  240 project agents, but only with internal codenames: the 186
+  267 project agents, but only with internal codenames: the 210
   root-class agents (this chat's root plus the checkpoint cron's
-  worker and run agents) record `ipnext/watermelon-v0`, and the 54
+  worker and run agents) record `ipnext/watermelon-v0`, and the 57
   subagents record `ipnext/avocado-5.17-v1` or
   `ipnext/avocado-5.17-v2`. Model codenames (confirmed by the project
   owner, 2026-11-04): `ipnext/watermelon-v0` = Muse Wonder;
