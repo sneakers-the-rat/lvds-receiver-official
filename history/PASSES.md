@@ -1356,6 +1356,14 @@ pass 164: TIA_OUT C1.1 joined - via-in-pad at C1.1 (18.52,43.25) and U1.6 (18.9,
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 38 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 165 — 2026-11-06T14:57:51Z · commit `e384ee6`
+
+Board: `hw/pdlvds_rx.exp195.kicad_pcb` · Commit: `e384ee6506ac27a38d17fd69f60f9f3d505b563c`
+
+pass 165: TIA_OUT C5.1 joined - 0.5/0.3 via at C5.1 pad east edge (20.95,42.5) (pad-centre via shorts APD_K_ALT's B trunk 0.35 away), In1 track south-east around the APD_K_ALT via to the U1.6 via (18.9,40.635). DRC: violations 156 -> 156 (class table unchanged), unconnected 44 -> 43, TIA_OUT items 2 -> 1 (only R7.1 remains)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 38 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
