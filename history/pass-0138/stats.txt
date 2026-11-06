@@ -1,0 +1,14 @@
+pass: 138
+description: Shorts locality C: HV_EN x C4 GND (7 items). Ripped 14 HV_EN segments intersecting the C4 pad box (x 24..27.5, y 13.8..17.5) -- the B.Cu diagonal grazed the C4.2 PTH ring at its corner -- and re-laid with heal_nets (scratch/heal8): main 68-item group reconnected around the pad in 11 s. HV_EN's U6.97 pad group remains STILL isolated (pre-existing, residue-family queue; the rip box is nowhere near U6). KiCad DRC referee, exp164 -> exp165: violations 338 -> 320, shorting_items 34 -> 27 (zero HV_EN shorts remain), solder_mask_bridge 38 -> 31, unconnected items 48 UNCHANGED, clearance 44 unchanged, track_dangling 20 -> 21 (one fresh heal stub, prune food).
+timestamp (UTC): 2026-11-06T06:10:10Z
+commit: pending
+board file: hw/pdlvds_rx.exp165.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 105
+unconnected nets: 34
+courtyard collisions: 0
+audit verdict: fail
+note: 

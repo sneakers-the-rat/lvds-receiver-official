@@ -1140,6 +1140,14 @@ Heal-stub prune after the U5 rip-and-relays. The +3V3D/CDR_DATP re-lays (passes 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 112 · Unconnected nets: 34 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 138 — 2026-11-06T06:10:10Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp165.kicad_pcb` · Commit: `pending`
+
+Shorts locality C: HV_EN x C4 GND (7 items). Ripped 14 HV_EN segments intersecting the C4 pad box (x 24..27.5, y 13.8..17.5) -- the B.Cu diagonal grazed the C4.2 PTH ring at its corner -- and re-laid with heal_nets (scratch/heal8): main 68-item group reconnected around the pad in 11 s. HV_EN's U6.97 pad group remains STILL isolated (pre-existing, residue-family queue; the rip box is nowhere near U6). KiCad DRC referee, exp164 -> exp165: violations 338 -> 320, shorting_items 34 -> 27 (zero HV_EN shorts remain), solder_mask_bridge 38 -> 31, unconnected items 48 UNCHANGED, clearance 44 unchanged, track_dangling 20 -> 21 (one fresh heal stub, prune food).
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 105 · Unconnected nets: 34 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
