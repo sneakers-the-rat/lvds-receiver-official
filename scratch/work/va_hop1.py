@@ -1,0 +1,15 @@
+import pcbnew
+b = pcbnew.LoadBoard('hw/pdlvds_rx.exp187.kicad_pcb')
+def M(v): return pcbnew.FromMM(v)
+net = b.FindNet('+VA')
+for (x, y) in [(37.725,39.975), (37.375,35.75)]:
+    v = pcbnew.PCB_VIA(b)
+    v.SetPosition(pcbnew.VECTOR2I(M(x), M(y)))
+    v.SetDrill(M(0.3)); v.SetWidth(M(0.5))
+    v.SetLayerPair(pcbnew.F_Cu, pcbnew.B_Cu)
+    v.SetNet(net); b.Add(v)
+t = pcbnew.PCB_TRACK(b)
+t.SetStart(pcbnew.VECTOR2I(M(37.725), M(39.975))); t.SetEnd(pcbnew.VECTOR2I(M(37.375), M(35.75)))
+t.SetWidth(M(0.3)); t.SetLayer(pcbnew.In2_Cu); t.SetNet(net); b.Add(t)
+filler = pcbnew.ZONE_FILLER(b); filler.Fill(b.Zones())
+b.Save('scratch/work/s7.kicad_pcb'); print('saved s7')
