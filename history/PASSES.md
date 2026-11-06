@@ -1316,6 +1316,14 @@ pass 159: +VA hop group joined to the main tree - 0.5/0.3 via in C44.1 pad (30.8
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 39 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 160 — 2026-11-06T14:22:59Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp190.kicad_pcb` · Commit: `pending`
+
+pass 160: +VA U1.7 joined to the tree - 0.5/0.3 vias in U1.7 pad (18.5,39.365) and U2.5 pad (25.95,39.05), straight In1 track between (In1/In2 carry no tracks in the front-end district). DRC: violations 156 -> 156 (class table unchanged), unconnected 49 -> 48, +VA items 3 -> 2 (U13 pair and R5.1 remain)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 39 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
