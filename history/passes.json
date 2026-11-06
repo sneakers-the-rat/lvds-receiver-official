@@ -3722,6 +3722,36 @@
       },
       "description": "COURTYARD CAMPAIGN COMPLETE: 0 courtyard collisions. Consolidated placement session (parent, single pair of hands, audit->render->look->move loop) from pass 127's board (exp121, 19 pairs): 20 moves over 19 parts closing every remaining pair -- R11 (44.5,40)->(42.25,40) out of J3; C41 ->(41.25,59.75) closing C41xFB2 + C41xR40; C5 ->(21.95,42.87) closing C1xC5; C17 ->(71.95,9.5) closing C16xC17; D8 ->(12.5,44) closing D8xU1; C38 ->(20.93,67.02) + D4 ->(13.27,72.25) closing F1xC38 + F1xD4; R25 ->(8,-19.25) closing J5xR25; C33 ->(12.58,28.5) closing MH5xC33 (polygon; bbox still touches the round hole courtyard, shapes do not intersect); R32 ->(30.5,-4.05) closing R32xR31; C37 ->(8.25,60) closing R36xC37; R42 ->(55.46,58.5) closing R41xR42; R50 ->(32.84,-7.15) closing R49xR50; R1 ->(19.5,35.75) closing U1xR1 (nudge only, stays tight to the TIA); D6 ->(91.25,8.5), D7 ->(91.25,12), R44 ->(91.25,14.5) as one column east of X1 closing X1xD6 + X1xD7 and clearing MH2's landing zone; R5 ->(16.25,50.5) closing U12xR5; MH2 ->(96.5,10.0) per the parent ruling closing U6xMH2. LINEAGE: this endpoint branches from pass 127 and SUPERSEDES the sibling item-3/4 positions in passes 128/129 for the shared clusters (MH2's endpoint is identical; R44/D6/D7/R11/C33/R25 differ); passes 128/129 remain the record of that line. VICTIMS OWED on this board, repay first in the resumed routing queue: TEST_IN (R11 leg), GND (C41 leg), +5V (R25 leg), LED_PWR_K (D6 leg and R44 leg), LED_STAT + LED_STAT_A (D7 legs). SH1 still has no drawn courtyard -- the one blind footprint, named until closed. Routing resumes from this board.",
       "note": ""
+    },
+    {
+      "pass": 131,
+      "timestamp": "2026-11-06T04:25:59Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp154.kicad_pcb",
+      "dir": "pass-0131",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 144,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "Post-courtyard routing resumes + dead-copper prune. From pass 130's board (exp141): prune pass, heal reconnected TEST_IN and LED_STAT (exp144); two placement attempts on the sealed LED pads (R44/D7 slid south, exp145/146) did NOT open them -- position alone is not the seal; heal still refuses R44.1/D7.1/D7.2. KiCad 8 DRC adopted as the standing checker (exp147 baseline: 706 violations / 50 unconnected items). Dead-copper campaign: the user's screenshots showed barbs that prune_dead's own redrawn-graph model had absorbed (raw census: 363 one-ended + 71 floating segments). Three deleter designs failed verification and were rejected uncommitted (centreline-tolerance model severed live joints, DRC unconnected 50->115; copper-overlap model 50->51; raw DRC-dangling deletion split pad groups 50->52, restored). Shipped instrument scratch/drc_graph_prune.py: KiCad proposes dangling items, a copper-contact graph vetoes segments that bridge two pad groups, KiCad referees after every round with abort-and-restore. Result (exp154): 150 dead segments removed over 31 rounds; track_dangling 84->25, via_dangling 7->0, violations 706->627, unconnected items 50 UNCHANGED throughout. Residue: 25 flagged dangling = 5 graph-vetoed bridges (live overshoot tracks, kept deliberately) + 19 matcher-skipped (matcher fix owed) + ~1. Failed boards exp148/149/151/152 remain in the working tree as evidence, uncommitted. Instruments saved in scratch/: dead_end_census.py, delete_dead.py, drc_prune.py, graph_prune.py, drc_graph_prune.py.",
+      "note": ""
     }
   ],
   "gaps": [
