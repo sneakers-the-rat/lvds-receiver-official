@@ -59,7 +59,7 @@ def pass_markdown(entry):
           f"adopted: {_q(adopted)}"]
     for key in ("nets_routed", "nets_total", "pins_failed",
                 "clearance_violations", "unconnected_nets",
-                "audit_verdict"):
+                "courtyard_collisions", "audit_verdict"):
         fm.append(f"{key}: {_q(st.get(key))}")
     for key in ("renders", "layers"):
         m = entry.get(key)
