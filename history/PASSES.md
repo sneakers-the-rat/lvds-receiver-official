@@ -1468,9 +1468,9 @@ pass 178: ULPI_D3 connected — D4 via moved west on its own In2 diagonal to (87
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 22 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 179 — 2026-11-06T23:15:37Z · commit `pending`
+### Pass 179 — 2026-11-06T23:15:37Z · commit `7872e91`
 
-Board: `hw/pdlvds_rx.exp209.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp209.kicad_pcb` · Commit: `7872e9179812cc7880bcf30d1ca440c0d2bf8721`
 
 pass 179: SLICEP + SLICEN connected (U4 west braid joint re-fanout) — C51 moved west to (58.75,39.25) with its +3V3D_CDR feed re-laid south of the staircase via; C13 moved to (59.0,41.75) (its pads carry only SLICEP/SLICEN); CDR_PIN jog re-laid west (post (62.875,37.875)->(62.55,37.8)) which unseals SLICEP's diagonal (the jog post + U4.8 NW corner + 0.2 clearances provably sealed the wedge); SLICEP F diagonal + via (62.05,39.8) + In2 + tail into C13.1; SLICEN flat y38.575 + vertical dive x63.0 + via (63.0,39.35) + B west + tail into C13.2; GND stitch vias (63.85,39.15) and (59.0,38.9) re-tie the two F fill islands the new tracks severed. DRC: unconnected 25->23, violations 156->154 (silk 146->144), clearance/shorting/dangling 0; check_pcb courtyard 0, fallback 21 (SH1 only)
 
