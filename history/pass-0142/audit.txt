@@ -1,0 +1,163 @@
+07:07:50: Debug: Adding duplicate image handler for 'PNG file'
+07:07:50: Debug: Adding duplicate image handler for 'JPEG file'
+07:07:50: Debug: Adding duplicate image handler for 'TIFF file'
+07:07:50: Debug: Adding duplicate image handler for 'GIF file'
+07:07:50: Debug: Adding duplicate image handler for 'PNM file'
+07:07:50: Debug: Adding duplicate image handler for 'PCX file'
+07:07:50: Debug: Adding duplicate image handler for 'IFF file'
+07:07:50: Debug: Adding duplicate image handler for 'Windows icon file'
+07:07:50: Debug: Adding duplicate image handler for 'Windows cursor file'
+07:07:50: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+07:07:50: Debug: Adding duplicate image handler for 'TGA file'
+07:07:50: Debug: Adding duplicate image handler for 'XPM file'
+copper items: 10105
+unconnected nets: 31
+  UNCONNECTED +3V3A: 2 groups, e.g. [['C24.1', 'C46.1', 'U14.10', 'U14.9'], ['C49.1']]
+  UNCONNECTED +3V3D_CDR: 2 groups, e.g. [['C50.1', 'C51.1', 'FB1.2', 'U4.1'], ['U4.12']]
+  UNCONNECTED +5V: 3 groups, e.g. [['C25.1', 'C35.1', 'C37.1', 'C43.1'], ['R25.1'], ['U7.4']]
+  UNCONNECTED APD_A_ALT: 2 groups, e.g. [['RJ1.1', 'track@(12.175, 54.0)', 'track@(13.2086, 55.0336)', 'track@(15.785732, 55.245732)'], ['D2.1']]
+  UNCONNECTED APD_K: 2 groups, e.g. [['C33.1', 'C4.1', 'D1.5', 'R30.1'], ['RJ2.2']]
+  UNCONNECTED BOOT0: 2 groups, e.g. [['U6.138', 'track@(68.875, -4.875)', 'track@(68.875, -6.125)', 'track@(69.0, 0.5)'], ['R16.1']]
+  UNCONNECTED CAP_CLK: 2 groups, e.g. [['U6.34', 'track@(65.525, -17.865)', 'track@(65.525, -17.865)', 'track@(65.775, -17.865)'], ['U5.5', 'via@(63.625, -19.625)']]
+  UNCONNECTED CAP_DATA: 2 groups, e.g. [['U6.35', 'track@(62.625, -14.875)', 'track@(62.625, -15.625)', 'track@(62.875, -14.375)'], ['U5.3']]
+  UNCONNECTED CDR_LOL: 2 groups, e.g. [['U6.36', 'track@(71.34, 2.75)'], ['U4.16', 'track@(52.625, 12.875)', 'track@(52.625, 29.125)', 'track@(52.875, 12.625)']]
+  UNCONNECTED CDR_PIN: 2 groups, e.g. [['C8.2'], ['U4.5']]
+  UNCONNECTED CDR_SQUELCH: 2 groups, e.g. [['U6.76', 'track@(92.273591, 0.861091)', 'track@(92.58321, 1.17071)', 'via@(92.273591, 0.861091)'], ['U4.27']]
+  UNCONNECTED CF2: 2 groups, e.g. [['U4.14'], ['C15.2']]
+  UNCONNECTED DM_PHY: 2 groups, e.g. [['U7.8'], ['D3.4', 'track@(31.1375, 69.45)', 'track@(31.375, 69.625)', 'track@(31.3875, 69.45)']]
+  UNCONNECTED DP_PHY: 2 groups, e.g. [['U7.7'], ['D3.6']]
+  UNCONNECTED HV_EN: 2 groups, e.g. [['U6.97'], ['J5.1', 'track@(10.125, -0.125)', 'track@(10.125, -9.375)', 'track@(10.375, -9.125)']]
+  UNCONNECTED HV_SHDN: 2 groups, e.g. [['U6.42'], ['J5.2', 'R25.2', 'R26.1', 'U10.9']]
+  UNCONNECTED HV_SS: 2 groups, e.g. [['C30.1'], ['U10.3']]
+  UNCONNECTED LED_STAT: 2 groups, e.g. [['U6.99'], ['D7.1']]
+  UNCONNECTED LED_STAT_A: 2 groups, e.g. [['R45.2', 'track@(86.125, 23.625)', 'track@(86.325, 23.0)', 'track@(86.375, 23.375)'], ['D7.2']]
+  UNCONNECTED PHY_1V8: 3 groups, e.g. [['C22.1'], ['U7.15'], ['U7.26']]
+  UNCONNECTED PHY_1V8A: 2 groups, e.g. [['U7.29'], ['C23.1']]
+  UNCONNECTED RBIAS: 2 groups, e.g. [['R17.1', 'track@(90.875, -24.125)', 'track@(91.125, -24.375)', 'track@(91.425, -25.0)'], ['U7.32']]
+  UNCONNECTED SWDIO: 2 groups, e.g. [['U6.105', 'track@(92.932244, -13.138268)', 'track@(93.170633, -13.039524)', 'via@(93.170633, -13.039524)'], ['J4.2', 'track@(93.0, 58.48)', 'track@(93.0, 58.73)', 'track@(93.0, 58.73)']]
+  UNCONNECTED ULPI_D2: 2 groups, e.g. [['U6.47', 'track@(78.25, 4.66)'], ['U7.22']]
+  UNCONNECTED ULPI_D5: 2 groups, e.g. [['U6.73', 'track@(87.125, 13.625)', 'track@(87.375, 13.375)', 'track@(87.625, 13.125)'], ['U7.19']]
+  UNCONNECTED ULPI_STP: 2 groups, e.g. [['U6.26'], ['U7.13']]
+  UNCONNECTED USB_RST: 2 groups, e.g. [['U6.40'], ['U7.9', 'track@(74.25, 16.44)']]
+  UNCONNECTED VCAP1: 2 groups, e.g. [['U6.106'], ['C17.1', 'track@(70.875, 40.875)', 'track@(71.125, 40.625)', 'track@(71.375, 40.375)']]
+  UNCONNECTED VCAP2: 2 groups, e.g. [['U6.71'], ['C18.1']]
+  UNCONNECTED XI: 2 groups, e.g. [['C20.1', 'X1.1', 'track@(66.375, 31.125)', 'track@(66.625, 30.875)'], ['U7.28', 'track@(76.25, 11.03)', 'track@(76.25, 11.205)']]
+  UNCONNECTED XO: 3 groups, e.g. [['X1.2'], ['C21.1'], ['U7.27']]
+clearance violations: 68
+  CLEARANCE SW2 (L2.1) vs GND (track@(19.7053, 59.074)): need 0.2 mm
+  CLEARANCE GND (R32.2) vs APD_K (R31.1): need 1.0 mm
+  CLEARANCE HV_OVP1 (D10.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (D10.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE XI (X1.1) vs +3V3D (track@(87.375, 20.875)): need 0.25 mm
+  CLEARANCE XI (X1.1) vs +3V3D (track@(85.625, 20.875)): need 0.25 mm
+  CLEARANCE XI (X1.1) vs BIST_DRV (track@(85.875, 15.875)): need 0.2 mm
+  CLEARANCE XI (X1.1) vs BIST_DRV (track@(86.125, 15.625)): need 0.2 mm
+  CLEARANCE XI (X1.1) vs CDR_DATN (via@(87.625, 19.875)): need 0.2 mm
+  CLEARANCE XI (X1.1) vs CDR_DATP (via@(85.625, 19.875)): need 0.2 mm
+  CLEARANCE XI (X1.1) vs CDR_DATP (via@(87.125, 16.625)): need 0.2 mm
+  CLEARANCE SW1 (L1.1) vs +3V3D (via@(19.625, 63.125)): need 0.25 mm
+  CLEARANCE HV_OVP1 (D9.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE GND (R44.2) vs SPI_MOSI (track@(92.625, 12.375)): need 0.2 mm
+  CLEARANCE APD_K_ALT (D2.2) vs GND (track@(26.375, 59.375)): need 0.2 mm
+  CLEARANCE APD_K_ALT (D2.2) vs GND (track@(26.375, 59.625)): need 0.2 mm
+  CLEARANCE TP_HV (R34.2) vs APD_K (track@(43.02, -10.0)): need 1.0 mm
+  CLEARANCE TP_HV (R34.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE APD_K (R30.1) vs GND (C33.2): need 1.0 mm
+  CLEARANCE APD_A (D1.4) vs APD_K (track@(9.2, 40.0)): need 1.0 mm
+  CLEARANCE APD_K (D1.5) vs APD_A (track@(8.3, 38.62)): need 1.0 mm
+  CLEARANCE APD_K (D1.5) vs APD_A (track@(9.15, 41.4)): need 1.0 mm
+  CLEARANCE APD_A (D1.6) vs APD_K (track@(9.2, 40.0)): need 1.0 mm
+  CLEARANCE SET_A (R42.1) vs GND (track@(56.035, 59.2555)): need 0.2 mm
+  CLEARANCE HV_OVP2 (D11.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (R29.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_R29M (R29.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_R30M (R48.1) vs GND (C33.2): need 1.0 mm
+  CLEARANCE HV_R30M (R48.1) vs GND (track@(24.7289, 28.9978)): need 1.0 mm
+  CLEARANCE HV_R30M (R48.1) vs GND (track@(15.9625, 28.9978)): need 1.0 mm
+  CLEARANCE LED_STAT_A (D7.2) vs SPI_MOSI (track@(92.625, 12.375)): need 0.2 mm
+  CLEARANCE +VA (R5.1) vs +3V3D (track@(14.875, 49.125)): need 0.25 mm
+  CLEARANCE +VA (R5.1) vs +3V3D (track@(14.625, 49.875)): need 0.25 mm
+  CLEARANCE +VA (R5.1) vs +3V3D (track@(14.875, 49.625)): need 0.25 mm
+  CLEARANCE +VA (R5.1) vs +3V3D (via@(14.625, 50.875)): need 0.25 mm
+  CLEARANCE VMID (R5.2) vs +VA (track@(15.7025, 50.5)): need 0.25 mm
+  CLEARANCE GND (C17.2) vs VCAP1 (via@(71.875, 9.625)): need 0.2 mm
+  CLEARANCE GND (C33.2) vs APD_K (via@(13.625, 30.625)): need 1.0 mm
+  CLEARANCE HV_SEC (T1.10) vs +5V (track@(24.0, -18.54)): need 1.0 mm
+  CLEARANCE HV_SEC (T1.10) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(43.675, -1.799999)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(43.675, -1.799999)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(43.675, -1.799999)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(26.0, -20.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(31.0, -18.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(26.5, -20.5)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(25.5, -19.5)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (via@(30.5, -18.5)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (via@(30.5, -18.5)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (via@(26.5, -20.5)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (via@(26.5, -20.5)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE TP_HV (track@(39.38, 2.2)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (track@(44.9, -7.6)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (track@(44.46, 2.2)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (track@(44.462, -6.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (via@(44.46, 2.9)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (via@(44.46, 2.9)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE TP_HV (via@(44.9, -7.6)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE TP_HV (via@(44.9, -7.6)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_R29M (track@(45.325, -1.799999)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP1 (track@(9.125, -24.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP1 (track@(8.4, -25.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP1 (track@(9.85, -25.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(16.625, -24.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(17.35, -25.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(17.35, -25.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(18.85, -25.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(18.85, -25.0)) vs GND (zone L0): need 1.0 mm
+intrinsic same-footprint pad pairs below class clearance (datasheet geometry, not routable): 37
+  INTRINSIC GND (U8.4) vs +3V3D (U8.5): need 0.25 mm
+  INTRINSIC SPI_MOSI (U8.8) vs +3V3D (U8.9): need 0.25 mm
+  INTRINSIC +3V3D (U8.9) vs DAC_VREF (U8.10): need 0.25 mm
+  INTRINSIC GND (U6.16) vs +3V3D (U6.17): need 0.25 mm
+  INTRINSIC ULPI_NXT (U6.29) vs +3V3D (U6.30): need 0.25 mm
+  INTRINSIC +3V3D (U6.30) vs GND (U6.31): need 0.25 mm
+  INTRINSIC GND (U6.31) vs +3V3A (U6.32): need 0.25 mm
+  INTRINSIC +3V3A (U6.33) vs CAP_CLK (U6.34): need 0.25 mm
+  INTRINSIC GND (U6.38) vs +3V3D (U6.39): need 0.25 mm
+  INTRINSIC +3V3D (U6.39) vs USB_RST (U6.40): need 0.25 mm
+  INTRINSIC GND (U6.51) vs +3V3D (U6.52): need 0.25 mm
+  INTRINSIC GND (U6.61) vs +3V3D (U6.62): need 0.25 mm
+  INTRINSIC VCAP2 (U6.71) vs +3V3D (U6.72): need 0.25 mm
+  INTRINSIC GND (U6.83) vs +3V3D (U6.84): need 0.25 mm
+  INTRINSIC GND (U6.107) vs +3V3D (U6.108): need 0.25 mm
+  INTRINSIC GND (U6.120) vs +3V3D (U6.121): need 0.25 mm
+  INTRINSIC GND (U6.130) vs +3V3D (U6.131): need 0.25 mm
+  INTRINSIC +3V3D_CDR (U4.24) vs CDR_CLKN (U4.25): need 0.25 mm
+  INTRINSIC VBUS_RAW (J1.A4) vs CC1 (J1.A5): need 0.25 mm
+  INTRINSIC VBUS_RAW (J1.B4) vs CC2 (J1.B5): need 0.25 mm
+courtyard collisions: 0
+courtyard fallback pairs (blind footprints, reported not gated): 24
+  COURTYARD-FALLBACK C1 x SH1 (top) area=1.6471 mm^2
+  COURTYARD-FALLBACK C2 x SH1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK C3 x SH1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK C39 x SH1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK C7 x SH1 (top) area=2.7912 mm^2
+  COURTYARD-FALLBACK D8 x SH1 (top) area=10.1465 mm^2
+  COURTYARD-FALLBACK R3 x SH1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK R39 x SH1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK R46 x SH1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK R8 x SH1 (top) area=0.6162 mm^2
+  COURTYARD-FALLBACK SH1 x C33 (top) area=0.4360 mm^2
+  COURTYARD-FALLBACK SH1 x C5 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x D1 (top) area=11.4821 mm^2
+  COURTYARD-FALLBACK SH1 x R1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x R2 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x R30 (top) area=10.1465 mm^2
+  COURTYARD-FALLBACK SH1 x R38 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x R4 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x R5 (top) area=1.9912 mm^2
+  COURTYARD-FALLBACK SH1 x R6 (top) area=3.4663 mm^2
+  COURTYARD-FALLBACK SH1 x R7 (top) area=0.6162 mm^2
+  COURTYARD-FALLBACK SH1 x U12 (top) area=2.4438 mm^2
+  COURTYARD-FALLBACK SH1 x U2 (top) area=13.8651 mm^2
+  COURTYARD-FALLBACK U1 x SH1 (top) area=39.8321 mm^2
+courtyard bbox fallback in use (no drawn courtyard): ['SH1']
+PCB CHECK: FAIL
