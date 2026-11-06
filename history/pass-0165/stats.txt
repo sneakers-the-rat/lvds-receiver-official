@@ -1,0 +1,14 @@
+pass: 165
+description: pass 165: TIA_OUT C5.1 joined - 0.5/0.3 via at C5.1 pad east edge (20.95,42.5) (pad-centre via shorts APD_K_ALT's B trunk 0.35 away), In1 track south-east around the APD_K_ALT via to the U1.6 via (18.9,40.635). DRC: violations 156 -> 156 (class table unchanged), unconnected 44 -> 43, TIA_OUT items 2 -> 1 (only R7.1 remains)
+timestamp (UTC): 2026-11-06T14:57:51Z
+commit: pending
+board file: hw/pdlvds_rx.exp195.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 71
+unconnected nets: 38
+courtyard collisions: 0
+audit verdict: fail
+note: 
