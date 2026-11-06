@@ -753,3 +753,8 @@ fbc3caa1416a,2026-11-06T19:14:27Z,"pass 0174: pass 174: north-row group — C15 
 02799eda3b48,2026-11-06T19:14:27Z,pass 0174: record commit hash,912134236,4585959,916720195,83,64,not recorded
 c66a90509c65,2026-11-06T19:14:30Z,"tools: SDA trials t_k1/t_k2 (failed: corridor mined), grid_route NO PATH evidence runs, north-group trials t_m1-t_m6 + survey_net/survey_box helpers (pass 174 working scripts)",912134236,4585959,916720195,83,64,not recorded
 0661a63c1ca3,2026-11-06T19:14:32Z,merge: pass 174 + tools from route,912134236,4585959,916720195,83,64,not recorded
+a42acab513b1,2026-11-06T19:14:43Z,metrics: post-merge regen,912134236,4585959,916720195,83,64,not recorded
+2c8a3c94baf4,2026-11-06T19:28:30Z,"pass 0175: pass 175: HV_SS connected (last-but-one HV net): GND U10.5 east fanout seg+via ripped (its north web keeps the pad connected - DRC-verified), HV_SS F w0.15 needle east from U10.3 through the 0.585 mm EP channel at x26.37, north past the ripped fanout, east into C30.1. Unconnected 29 -> 28, violations 155 -> 155, clearance/shorting/dangling 0",912134236,4585959,916720195,83,64,not recorded
+51e7c313cf14,2026-11-06T19:28:30Z,pass 0175: record commit hash,912134236,4585959,916720195,83,64,not recorded
+d561a9edd755,2026-11-06T19:28:41Z,"tools: HV district trials t_p3-t_p7 (t_p7 = pass 175), SDA campaign scripts (grid_route2, flood, t_k3_prep, t_n1, t_n2, t_n2c)",912134236,4585959,916720195,83,64,not recorded
+2f4acd04ae30,2026-11-06T19:28:45Z,merge: pass 175 from route,912134236,4585959,916720195,83,64,not recorded
