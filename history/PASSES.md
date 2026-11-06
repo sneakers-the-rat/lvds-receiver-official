@@ -1396,6 +1396,14 @@ pass 169: SET_P + ILIM_A connected via +5V relays. SET_P: +5V F hook (41.8,51.25
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 95 · Unconnected nets: 32 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 170 — 2026-11-06T16:13:48Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp200.kicad_pcb` · Commit: `pending`
+
+pass 170: DAC_VREF connected. Grid router proved F/B no-path; In2 segment (70.0,5.375)-(69.51,7.85) from the router, via (70.3,5.0) overlapping U8.10 pad edge joined by In2 stub, via (69.51,7.85) on-segment, F stub into C26.1. DRC: violations 156 (unchanged), unconnected 37 -> 36
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 96 · Unconnected nets: 31 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
