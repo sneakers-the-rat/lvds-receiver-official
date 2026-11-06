@@ -5042,6 +5042,36 @@
       },
       "description": "pass 174: north-row group \u2014 C15 nudged +1.05mm N and C14 +1.0mm E (placement iteration); CF1 re-landed via north detour y43.1, CF2 extended into moved pad; REFCLKN connected (F channel y40.44, arc over +3V3D via, gap via (66.5,41.35), B east + dive to C14.1); +3V3D_CDR U4.12 connected (F stub, via (66.2,40.55), In2 drop to own staircase vertex (66.625,38.375)). KiCad DRC: unconnected 31->29, violations 156->155 (clearance 0, shorting 0, dangling 0)",
       "note": ""
+    },
+    {
+      "pass": 175,
+      "timestamp": "2026-11-06T19:27:38Z",
+      "hash": "2c8a3c94baf4e21ade88b878938ddfd9fcef01dd",
+      "short_hash": "2c8a3c9",
+      "board_file": "hw/pdlvds_rx.exp205.kicad_pcb",
+      "dir": "pass-0175",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 104,
+        "unconnected_nets": 24,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 175: HV_SS connected (last-but-one HV net): GND U10.5 east fanout seg+via ripped (its north web keeps the pad connected - DRC-verified), HV_SS F w0.15 needle east from U10.3 through the 0.585 mm EP channel at x26.37, north past the ripped fanout, east into C30.1. Unconnected 29 -> 28, violations 155 -> 155, clearance/shorting/dangling 0",
+      "note": ""
     }
   ],
   "gaps": [
