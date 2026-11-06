@@ -1,0 +1,14 @@
+pass: 169
+description: pass 169: SET_P + ILIM_A connected via +5V relays. SET_P: +5V F hook (41.8,51.25)-(42.375,50.125) relayed to In2 (vias 42.15,51.35 / 42.3,49.9), SET_P straight F run U13.7->R40.1 at y50.75. ILIM_A: +5V w0.6 staircase west of U14 relayed 0.35 west, U14.5 via (52.6,48.35) + In2 south run + via-in-pad R43.1 (55.5,50.8). DRC: violations 156 (unchanged classes), unconnected 39 -> 37
+timestamp (UTC): 2026-11-06T16:10:13Z
+commit: pending
+board file: hw/pdlvds_rx.exp199.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 95
+unconnected nets: 32
+courtyard collisions: 0
+audit verdict: fail
+note: 
