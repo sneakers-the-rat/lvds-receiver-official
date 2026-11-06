@@ -1,0 +1,4 @@
+[
+  {"net": "GND", "x": 44.375, "y": 10.125,
+   "note": "Track [GND] F.Cu 1.75mm: item-bisect proven load-bearing (removal alone splits a group 45->46, scratch/bisect_items.py 2026-11-05). The contact graph cannot see its join (pour-side). Never delete."}
+]
