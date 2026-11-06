@@ -691,3 +691,10 @@ df74ed2485ad,2026-11-06T14:20:54Z,merge: pass 159 from route,863262334,4158900,8
 3dab7852c4e6,2026-11-06T14:24:01Z,"pass 0160: pass 160: +VA U1.7 joined to the tree - 0.5/0.3 vias in U1.7 pad (18.5,39.365) and U2.5 pad (25.95,39.05), straight In1 track between (In1/In2 carry no tracks in the front-end district). DRC: violations 156 -> 156 (class table unchanged), unconnected 49 -> 48, +VA items 3 -> 2 (U13 pair and R5.1 remain)",863262334,4158900,867421234,83,64,not recorded
 1cfd73a84f80,2026-11-06T14:24:01Z,pass 0160: record commit hash,863262334,4158900,867421234,83,64,not recorded
 a6883e3cadfb,2026-11-06T14:24:06Z,merge: pass 160 from route,863262334,4158900,867421234,83,64,not recorded
+bb91b758e3de,2026-11-06T14:24:17Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
+8990c3d439ed,2026-11-06T14:26:48Z,"pass 0161: pass 161: +VA R5.1 joined - 0.5/0.3 via on R5.1 pad west edge (15.025,50.5) (APD_A 1.0 mm class pushes the legal spot to the pad edge), In1 track south to the U1.7 via (18.5,39.365). DRC: violations 156 -> 156 (class table unchanged), unconnected 48 -> 47, +VA items 2 -> 1 (only the U13 output pair remains)",863262334,4158900,867421234,83,64,not recorded
+727b90f9f764,2026-11-06T14:26:48Z,pass 0161: record commit hash,863262334,4158900,867421234,83,64,not recorded
+31af879d510d,2026-11-06T14:26:51Z,merge: pass 161 from route,863262334,4158900,867421234,83,64,not recorded
+6f32002e9e2d,2026-11-06T14:48:52Z,"pass 0162: pass 162: +VA COMPLETE - U13 output pair joined: 0.5/0.3 via at (41.1,49.35) on the U13.10 pad/stub, In1 track south at x=41.1 then west at y=41.6 (clearing the GND/TEST_IN via pair) to the hop via (37.725,39.975). DRC: violations 156 -> 156 (class table unchanged), unconnected 47 -> 46, +VA items 1 -> 0",863262334,4158900,867421234,83,64,not recorded
+1153e2089a2b,2026-11-06T14:48:52Z,pass 0162: record commit hash,863262334,4158900,867421234,83,64,not recorded
+691ddf82c0a8,2026-11-06T14:49:44Z,merge: pass 162 from route,863262334,4158900,867421234,83,64,not recorded
