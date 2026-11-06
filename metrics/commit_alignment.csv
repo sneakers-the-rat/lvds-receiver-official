@@ -743,3 +743,8 @@ c5fef8b906a9,2026-11-06T16:14:55Z,merge: pass 170 from route,909338979,4568538,9
 7cc0bee45350,2026-11-06T16:58:10Z,metrics: post-merge regen,912134236,4585959,916720195,83,64,not recorded
 fc6051752e16,2026-11-06T18:45:24Z,"tools: commit ALL scratch scripts backlog — 326 files (grid_route, heal variants, gnd/island stitch family, c29 probes, va/tia hops, t_* trials, salvage snapshots) — user directive 2026-11-06: every working script goes in the repo",912134236,4585959,916720195,83,64,not recorded
 cabf4c2a3c17,2026-11-06T18:45:25Z,merge: scratch scripts backlog from route,912134236,4585959,916720195,83,64,not recorded
+7849686ce142,2026-11-06T18:45:47Z,metrics: post-merge regen,912134236,4585959,916720195,83,64,not recorded
+d8b6d3fb24e6,2026-11-06T18:58:06Z,"pass 0173: pass 173: CDR_DATN connected (DATP via relayed west to (66.22,33.28) d0.5 freeing the F thread; DATN F thread (66.5,34.4)->(66.9,32.4), via d0.5, B stepped dive south of DATP staircase around GND/+3V3D/DATP-bottom vias, joining own B channel at (78.375,22.125)). KiCad DRC: unconnected 32->31, violations 156 unchanged (clearance 0, shorting 0, dangling 0)",912134236,4585959,916720195,83,64,not recorded
+754bc3cb0566,2026-11-06T18:58:06Z,pass 0173: record commit hash,912134236,4585959,916720195,83,64,not recorded
+79bd17f8e970,2026-11-06T18:58:16Z,tools: DATN pocket trials t_j1-t_j5 + U4 survey script (pass 173 working scripts),912134236,4585959,916720195,83,64,not recorded
+d9f25657e0a1,2026-11-06T18:58:20Z,merge: pass 173 + DATN tools from route,912134236,4585959,916720195,83,64,not recorded
