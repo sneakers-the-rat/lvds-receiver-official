@@ -1,0 +1,14 @@
+pass: 162
+description: pass 162: +VA COMPLETE - U13 output pair joined: 0.5/0.3 via at (41.1,49.35) on the U13.10 pad/stub, In1 track south at x=41.1 then west at y=41.6 (clearing the GND/TEST_IN via pair) to the hop via (37.725,39.975). DRC: violations 156 -> 156 (class table unchanged), unconnected 47 -> 46, +VA items 1 -> 0
+timestamp (UTC): 2026-11-06T14:48:02Z
+commit: pending
+board file: hw/pdlvds_rx.exp192.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 71
+unconnected nets: 38
+courtyard collisions: 0
+audit verdict: fail
+note: 

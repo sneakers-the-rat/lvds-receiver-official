@@ -4652,6 +4652,36 @@
       },
       "description": "pass 161: +VA R5.1 joined - 0.5/0.3 via on R5.1 pad west edge (15.025,50.5) (APD_A 1.0 mm class pushes the legal spot to the pad edge), In1 track south to the U1.7 via (18.5,39.365). DRC: violations 156 -> 156 (class table unchanged), unconnected 48 -> 47, +VA items 2 -> 1 (only the U13 output pair remains)",
       "note": ""
+    },
+    {
+      "pass": 162,
+      "timestamp": "2026-11-06T14:48:02Z",
+      "hash": "6f32002e9e2dd7d4d18337345eee6b3cc85f0e74",
+      "short_hash": "6f32002",
+      "board_file": "hw/pdlvds_rx.exp192.kicad_pcb",
+      "dir": "pass-0162",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 71,
+        "unconnected_nets": 38,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 162: +VA COMPLETE - U13 output pair joined: 0.5/0.3 via at (41.1,49.35) on the U13.10 pad/stub, In1 track south at x=41.1 then west at y=41.6 (clearing the GND/TEST_IN via pair) to the hop via (37.725,39.975). DRC: violations 156 -> 156 (class table unchanged), unconnected 47 -> 46, +VA items 1 -> 0",
+      "note": ""
     }
   ],
   "gaps": [
