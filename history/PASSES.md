@@ -1100,9 +1100,9 @@ Dead-copper residue prune with the matcher fixed. The pass-131 residue (25 DRC-d
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 144 · Unconnected nets: 35 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 133 — 2026-11-06T05:29:17Z · commit `pending`
+### Pass 133 — 2026-11-06T05:29:17Z · commit `a81f8f0`
 
-Board: `hw/pdlvds_rx.exp158.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp158.kicad_pcb` · Commit: `a81f8f0ec4563c9a34351e70baa5946cc45dc52d`
 
 Keepout class closed by mechanism fix: 199 items_not_allowed -> 0. Provenance: all 28 rule areas on the board were created by hw/notch.py, hw/notch_strip.py, hw/fix_hvraw.py and hw/fix_r47.py, each setting only SetIsRuleArea(True) + SetDoNotAllowCopperPour(True) -- documented intent "copper-pour keepout only, tracks/vias/pads unaffected". A fresh ZONE in the KiCad 7-era pcbnew defaulted DoNotAllowTracks/Vias/Pads to True, the tools never cleared them, and the stored board banned tracks in every rule area (162 of the 199 were APD_K/APD_A tracks crossing the big front-end pour notch; the home-grown routers never modelled keepouts, so the copper accumulated silently). Fix (scratch/fix_keepout_flags.py): every rule area now allows tracks/vias/pads and keeps the pour ban -- the pour still stays out of the HV pocket exactly as designed; track-level HV isolation remains governed by clearance/net classes, untouched. KiCad DRC: violations 619 -> 420, items_not_allowed 199 -> 0, unconnected items 50 UNCHANGED, all other classes byte-identical counts. Regression test hw/tests/test_keepout_flags.py added in this pass: FAILS on exp157 (28 of 28 rule areas ban tracks), PASSES on exp158 (28 pour-only keepouts).
 
