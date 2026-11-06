@@ -1,0 +1,14 @@
+pass: 178
+description: pass 178: ULPI_D3 connected — D4 via moved west on its own In2 diagonal to (87.35,7.15) (old via at (88.375,6.125) sealed pad69's fan together with the NC pad row), D4 tail re-laid north (87.35,7.15)->(88.6,6.6)->(89.65,6.45)->(89.78,5.662); D3 In2 rerouted south of D4's diagonal to via (88.15,5.9), F tail (88.5,6.05)->(89.25,6.05)->dive into U6.69; VCAP2 web re-fanned east ((89.225,7.0)->(89.9,6.9)->(90.25,6.162)) to clear the fan; GND stitch via (88.3,8.6) re-ties the C18.2 F-fill island severed by the fan tracks. DRC: unconnected 26->25, violations 156->156 (identical class table); clearance/shorting/dangling 0
+timestamp (UTC): 2026-11-06T21:03:35Z
+commit: pending
+board file: hw/pdlvds_rx.exp208.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 108
+unconnected nets: 22
+courtyard collisions: 0
+audit verdict: fail
+note: 
