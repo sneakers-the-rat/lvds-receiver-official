@@ -1172,6 +1172,14 @@ Shorts locality B: U5 west pad field (5 items). Ripped in box (61.5,-24)-(66,-14
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 77 · Unconnected nets: 31 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 142 — 2026-11-06T07:07:47Z · commit `1dad870`
+
+Board: `hw/pdlvds_rx.exp172.kicad_pcb` · Commit: `1dad870609ad65574b0d373f52fd2519f01508c1`
+
+Shorts singles cleared: shorting_items 6 -> 0 (class closed). Five micro-localities, each rip+heal with DRC checks between: ULPI_NXT x C17.1/VCAP1 (ripped 13 segs in (69.8,4)-(71.8,12.5); heal reconnected 4 groups -- NXT was more fragmented than it looked); CMP_IN x R11.1/TEST_IN (ripped 4 in (36.5,39.5)-(41.5,44.5); reconnected); HV_SHDN x R25.1/+5V (ripped 8 in (3.5,-22.5)-(10,-16.5); 3 groups reconnected; U6.42 group STILL isolated, pre-existing residue); +VA x D2.2/APD_K_ALT (ripped 10 in (22,58.5)-(27,64); reconnected 59+1 items); ILIM_P x C41.2/GND (cleared ILIM_P's 14 items in (41,58)-(44.5,61.5) including the via on C41.2; heal re-laid the 19-item group). KiCad DRC referee, exp171 -> exp172: violations 283 -> 278, shorting_items 6 -> 0, clearance 37 -> 34, solder_mask_bridge 12 -> 7, unconnected items 45 UNCHANGED, copper_edge_clearance 88 unchanged, track_dangling 23 -> 27 (fresh heal stubs, prune next).
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 68 · Unconnected nets: 31 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
