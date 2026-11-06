@@ -542,3 +542,4 @@ c9129b0492d9,2026-11-06T02:47:43Z,metrics: three-cost report (all-uncached / all
 66e995285e7a,2026-11-06T03:17:45Z,metrics: watchdog export refresh,717137189,3598055,720735244,83,64,not recorded
 3abd77e3bc8e,2026-11-06T03:25:57Z,metrics: preamble never cache-served in the split estimate (owner direction),721907020,3633914,725540934,83,64,not recorded
 f39d6841976e,2026-11-06T03:43:15Z,metrics: watchdog export refresh,724505183,3646868,728152051,83,64,not recorded
+7206971485e6,2026-11-06T03:47:00Z,metrics: cache estimate published as two bounds (pessimistic / optimistic),726716825,3658242,730375067,83,64,not recorded
