@@ -1148,9 +1148,9 @@ Shorts locality C: HV_EN x C4 GND (7 items). Ripped 14 HV_EN segments intersecti
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 105 · Unconnected nets: 34 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 139 — 2026-11-06T06:16:28Z · commit `pending`
+### Pass 139 — 2026-11-06T06:16:28Z · commit `1ba94ed`
 
-Board: `hw/pdlvds_rx.exp166.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp166.kicad_pcb` · Commit: `1ba94ed1fcde11e82c2b33389d1eba50c34daed8`
 
 Shorts locality A: east strip (X1/LED column/ULPI fanout), 16 items + LED victim repaid. Ripped in box (84.5,5)-(94.5,19): +3V3D 20 segs, ULPI_D4 17, ULPI_D6 25, LED_STAT 19 (LED_PWR_K/LED_STAT_A had zero segments -- never routed); deleted 2 stray vias in the LED field (LED_PWR_K at (89.875,8.125), LED_STAT at (89.125,13.625)). Heal (116 s): +3V3D reconnected both groups, re-laid on In2.Cu EAST of the D7/R44 column (was: F.Cu trunk through D7.2 and R44.2 pads); ULPI_D4/D6 reconnected around X1.2; LED_PWR_K CONNECTED D6.1->R44.1 down the west side of the column (victim repaid). LED_STAT D7.1 and LED_STAT_A D7.2 STILL isolated -- pads open but the strip is crossed by the CDR_CLKP/CLKN diagonals; next mechanism is a local rip of the pair + heal LEDs first. KiCad DRC referee, exp165 -> exp166: violations 320 -> 297, shorting_items 27 -> 11 (east strip zero), solder_mask_bridge 31 -> 17, clearance 44 -> 42, unconnected items 48 -> 47. Regressions noted: copper_edge_clearance 80 -> 85 (re-laid strip routes run nearer the east edge; that class is next in queue), track_dangling 21 -> 25 (fresh heal stubs).
 
