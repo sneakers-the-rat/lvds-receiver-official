@@ -4952,6 +4952,36 @@
       },
       "description": "pass 171: APD_K + APD_A x2 connected. APD_K: In2 run (grid_route segment) (10.5,29.375)-(9.5,39.75) w0.4, via at C33.1 pad edge, via at D1.5 pad NE corner. APD_A: F jog from y38.375 web into D1.6, F bridge D1.3->D1.4 at y41.1 (both gaps were same-net 0.125/0.4 mm misses under the shield can). DRC: violations 156 (unchanged), unconnected 36 -> 33",
       "note": ""
+    },
+    {
+      "pass": 172,
+      "timestamp": "2026-11-06T16:56:56Z",
+      "hash": "9448211f01c6f570afa9d81c34cf33321fefc0a9",
+      "short_hash": "9448211",
+      "board_file": "hw/pdlvds_rx.exp202.kicad_pcb",
+      "dir": "pass-0172",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 101,
+        "unconnected_nets": 28,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 172: HV_GATE connected (grid B path R27.1 to U10 district, F w0.15 needle thread between U10.6 pad corner and HV_SHDN via to via (31.6,-1.55), B stub to path end). DRC: unconnected 33->32, violations 156 unchanged (clearance 0, shorting 0)",
+      "note": ""
     }
   ],
   "gaps": [
