@@ -1044,6 +1044,14 @@ COURTYARD CAMPAIGN item 0 (audit blindness): courtyards drawn for the five drawa
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 24 · Courtyard collisions: 34 · Audit verdict: FAIL
 
+### Pass 126 — 2026-11-06T01:09:05Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp120.kicad_pcb` · Commit: `pending`
+
+COURTYARD CAMPAIGN item 1 (U6 cluster): C49 (89,-9)->(97.5,-12), R15 (89,1)->(97.5,-15.5), R16 (89.5,-2)->(97.5,-18), C19 (95,1)->(97.5,-9.5), C18 (94,-4)->(95.5,-4), U5 (68,-18.5)->(66,-20.5). Pairs closed (7): U6xC49, U6xR15, U6xR16, U6xC19, MH2xC19, U6xC18, U6xU5. New instrument hw/move_part.py: courtyard-clear offset + straight re-lay on the anchor's own layer + via-relay fallback, group-count guard per pad net. R15 (both pads) and C19 (NRST) reconnected by relay, counts unchanged; prune_dead run after the moves. VICTIMS NAMED AS OWED: +3V3A C49 leg (pad detached, relay refused at both tried sites; net was 1 group, now 2), BOOT0 R16 leg (1->2), and the U5 nudge split +3V3D, CDR_CLKN, CAP_CLK, CAP_DATA (each 1->2 in the repair model; DATP/DATN/CLKP held by relay) -- all repay in the resumed routing queue. VCAP2 unchanged (2 groups before and after; already a residue net). GND repair-model groups 52->56 (audit is zone-inclusive; its count governs). U6xMH2 still open: neither part may move (U6 load-bearing, MH2 a mounting hole) -- escalated to parent with the polygon data.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 112 · Unconnected nets: 30 · Courtyard collisions: 27 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
