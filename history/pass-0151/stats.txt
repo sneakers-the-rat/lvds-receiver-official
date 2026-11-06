@@ -1,0 +1,14 @@
+pass: 151
+description: CDR_SQUELCH/X1.2 shorts closed by an obstacle-model fix. Root cause: the heal/router item model registered every pad with footprint rotation ADDED to the pad orientation, but KiCad 8 pad.GetOrientationDegrees() is already board-absolute -- non-square pads on 90/270-degree footprints were modelled with axes swapped (X1.2 modelled y[8.75,10.75], real y[7.5,12.0]), so heal laid the squelch web through the real pad corner and re-healing reproduced the short exactly. Model fixed in all four registration copies + regression test (tools commit 32c44dc, fail-old/pass-new). Board: ripped the 11 web segments clipping X1.2, re-healed CDR_SQUELCH with the corrected model; it detoured around the pad. KiCad DRC exp180 -> exp181: violations 167 -> 156, shorting_items 6 -> 0, solder_mask_bridge 5 -> 0, unconnected items 82 UNCHANGED, clearance 0, dangling 0. Remaining classes: silk 148, copper_edge 7, holes_co_located 1 (two co-located NEG_RAW vias).
+timestamp (UTC): 2026-11-06T12:08:41Z
+commit: pending
+board file: hw/pdlvds_rx.exp181.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 70
+unconnected nets: 40
+courtyard collisions: 0
+audit verdict: fail
+note: 

@@ -4322,6 +4322,36 @@
       },
       "description": "First re-route of the re-placed board (exp179, pass 149): three heal campaigns over the bare board (residue/stuck set first while the field was empty, then two full sweeps resumed across a VM restart from the 60-group checkpoint). 234 groups connected in total. KiCad DRC referee against the bare exp179 (154 violations / 303 unconnected): violations 167 (silk_overlap/silk_over_copper 148 -- the designator-text class the re-placement created, tail work; copper_edge_clearance 7; shorting_items 6, named below; CLEARANCE 0 and DANGLING 0 -- the heal lays are clean), unconnected 303 -> 82. Residue by net (DRC items): GND 56 (never healed -- the pour alone strands pads/islands; gets its own heal next), +VA 18 (the one total failure: every group exhausted the search cap; two clusters 12 mm apart around U13/front-end, mechanism to be diagnosed with the board rendered), TIA_OUT 8 (front-end enclosure: U1.6 and C5.1 each failed after ~146 s searches), +3V3A 4 (U7.6/U7.25 sealed pads), APD_A 4 (D1.2/4/6 sealed under the shield can), DP_CON 4 (J1.B6), I2C_SDA 4, +3V3D 2 (U11.14), +3V3D_CDR 2 (U4.12), APD_K 2 (D1.5), CAP_CLK 2 + CAP_DATA 2 (U5-U6 corridor), plus the sealed-pad set (U7 ULPI ring, U4.4/22/28, SWCLK, C23.1 PHY_1V8A). Next: hand-stub fanout for the sealed pads (hw/hand_stub.py exists for exactly this), GND heal, shorts prune, then the residue diagnoses. Placement dividend already visible: +5V, the ULPI bus's U6 side, both CDR pairs and the HV chain connected in seconds-to-minutes where the old placement ground for hours.",
       "note": ""
+    },
+    {
+      "pass": 151,
+      "timestamp": "2026-11-06T12:08:41Z",
+      "hash": "30302465aea7f7706223e922ee6139ef4d95fe78",
+      "short_hash": "3030246",
+      "board_file": "hw/pdlvds_rx.exp181.kicad_pcb",
+      "dir": "pass-0151",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 70,
+        "unconnected_nets": 40,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "CDR_SQUELCH/X1.2 shorts closed by an obstacle-model fix. Root cause: the heal/router item model registered every pad with footprint rotation ADDED to the pad orientation, but KiCad 8 pad.GetOrientationDegrees() is already board-absolute -- non-square pads on 90/270-degree footprints were modelled with axes swapped (X1.2 modelled y[8.75,10.75], real y[7.5,12.0]), so heal laid the squelch web through the real pad corner and re-healing reproduced the short exactly. Model fixed in all four registration copies + regression test (tools commit 32c44dc, fail-old/pass-new). Board: ripped the 11 web segments clipping X1.2, re-healed CDR_SQUELCH with the corrected model; it detoured around the pad. KiCad DRC exp180 -> exp181: violations 167 -> 156, shorting_items 6 -> 0, solder_mask_bridge 5 -> 0, unconnected items 82 UNCHANGED, clearance 0, dangling 0. Remaining classes: silk 148, copper_edge 7, holes_co_located 1 (two co-located NEG_RAW vias).",
+      "note": ""
     }
   ],
   "gaps": [
