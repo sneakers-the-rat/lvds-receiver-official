@@ -1,5 +1,5 @@
 agent_id,model,scope,role,usage_rows,input_tokens,output_tokens,first_row_utc,last_row_utc,notes
-4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",537,271620720,918216,2026-11-03T18:34:31Z,2026-11-06T12:32:01Z,
+4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",558,276481976,926670,2026-11-03T18:34:31Z,2026-11-06T16:11:56Z,
 211e6068-5645-443d-821c-d965a1288a6c,ipnext/avocado-5.17-v1,chat-tree,"build coordinator #1 (router v1-v5, repair passes 1-4, stage 7b/7c start)",1,2224018,8136,2026-11-04T00:18:30Z,2026-11-04T00:18:30Z,
 04d878b8-e46d-47c3-a3e8-19842ed9ea6c,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,3089221,53683,2026-11-03T18:42:31Z,2026-11-03T18:42:31Z,spawn prompt in agent.subagent_spawns
 6b643e67-3b72-4a34-a4e4-cb88906fc170,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,788734,34177,2026-11-03T18:40:38Z,2026-11-03T18:40:38Z,spawn prompt in agent.subagent_spawns
@@ -303,3 +303,13 @@ edcb86a5-c992-43eb-bb47-9aeb2cd8d6f5,ipnext/watermelon-v0,checkpoint-cron,pdlvds
 9db06493-3c24-4223-ab6c-23a1699ab062,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,107940,1202,2026-11-06T11:48:32Z,2026-11-06T11:48:32Z,run scheduled 2026-11-06T11:39:16Z
 11a7a32f-8259-47d1-b430-5deb54b7667d,ipnext/avocado-5.17-v2,chat-tree,subagent worker (child of main agent),1,21243714,48911,2026-11-06T12:03:51Z,2026-11-06T12:03:51Z,spawn prompt in agent.subagent_spawns
 7566f496-727a-486f-8ed1-9b7e00767304,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,3086263,14560,2026-11-06T12:16:48Z,2026-11-06T12:16:48Z,run scheduled 2026-11-06T12:09:16Z
+5a0ce166-cdb5-4a98-b98a-b3dc2da46e44,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,2463221,11957,2026-11-06T12:45:10Z,2026-11-06T12:45:10Z,run scheduled 2026-11-06T12:39:16Z
+fa54ec87-b392-432c-868b-72c6790dbf22,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,932897,5875,2026-11-06T13:12:45Z,2026-11-06T13:12:45Z,run scheduled 2026-11-06T13:09:16Z
+35139a94-eb3b-4010-a0c9-ab7d8690297b,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,82923,255,2026-11-06T13:42:12Z,2026-11-06T13:42:12Z,run scheduled 2026-11-06T13:39:16Z
+ff21b857-33b2-47df-bfe0-11e9cd75be4f,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,1423603,6198,2026-11-06T13:42:08Z,2026-11-06T13:42:08Z,run scheduled 2026-11-06T13:39:16Z
+4ec30fad-187e-43c0-8eea-f9a4d7164422,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,1237514,4935,2026-11-06T14:13:31Z,2026-11-06T14:13:31Z,run scheduled 2026-11-06T14:09:16Z
+b2cf4b60-fccc-4439-b39a-a78bbcfefebb,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,1486957,10428,2026-11-06T14:44:37Z,2026-11-06T14:44:37Z,run scheduled 2026-11-06T14:39:16Z
+2e9976d3-baab-4c9e-b340-9adad49d5c66,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,1017596,5706,2026-11-06T15:14:50Z,2026-11-06T15:14:50Z,run scheduled 2026-11-06T15:09:16Z
+b035162d-e76d-4dcb-a3de-2943f7fb7333,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,1475323,7230,2026-11-06T15:45:59Z,2026-11-06T15:45:59Z,run scheduled 2026-11-06T15:39:16Z
+8e23251f-636a-48aa-9ee3-72368d67abe0,ipnext/avocado-5.17-v2,chat-tree,subagent worker (child of main agent),1,12521217,115471,2026-11-06T13:34:57Z,2026-11-06T13:34:57Z,spawn prompt in agent.subagent_spawns
+b5451089-f5e9-4c9c-b889-4fd19d7fb870,ipnext/avocado-5.17-v2,chat-tree,subagent worker (child of main agent),1,18574138,233129,2026-11-06T15:43:25Z,2026-11-06T15:43:25Z,spawn prompt in agent.subagent_spawns

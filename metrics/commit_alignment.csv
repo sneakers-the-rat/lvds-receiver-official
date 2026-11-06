@@ -656,77 +656,78 @@ f74193145a9f,2026-11-06T12:09:48Z,merge: pass 151 from route,858882844,4143572,8
 e8ca898e45a4,2026-11-06T12:10:03Z,metrics: post-merge regen,858882844,4143572,863026416,83,64,not recorded
 2c017c6a10bc,2026-11-06T12:14:29Z,metrics: watchdog export refresh,859307865,4143746,863451611,83,64,not recorded
 a9d88c1660be,2026-11-06T12:43:35Z,metrics: watchdog export refresh,863262334,4158900,867421234,83,64,not recorded
-668c325961dc,2026-11-06T13:08:10Z,"pass 0152: pass 152: GND campaign on the re-placed board - pour stitching (vias tying 16 stranded pads + F islands to the inner GND plane), U10 pocket cluster track-tied south to T1.9, U8 island tied. KiCad DRC vs exp181: violations 156 -> 156, unconnected items 82 -> 59 (GND items 28 -> 5: C29.2 pad and 4 F islands remain)",863262334,4158900,867421234,83,64,not recorded
-420ed4371f35,2026-11-06T13:08:10Z,pass 0152: record commit hash,863262334,4158900,867421234,83,64,not recorded
-e8e863f1f0f7,2026-11-06T13:08:24Z,merge: pass 152 from route,863262334,4158900,867421234,83,64,not recorded
-a9866a114909,2026-11-06T13:08:41Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-b9b75ceec71d,2026-11-06T13:31:43Z,"pass 0153: pass 153: +VA first links - grid-routed tree C44.1/C2.1/C7.1/U2.5 on F, U13.9-U13.10 same-net pin link (0.6 segment ending at 49.55 for exactly class clearance to U13.8 GND). KiCad DRC vs exp182: violations 156 -> 156, unconnected items 59 -> 55 (+VA items 9 -> 5; remaining +VA groups: U3.5, C10.1, U1.7, R5.1, U13 pair join)",863262334,4158900,867421234,83,64,not recorded
-ab79dff2c7d2,2026-11-06T13:31:44Z,pass 0153: record commit hash,863262334,4158900,867421234,83,64,not recorded
-6b6e80b591a9,2026-11-06T13:31:50Z,merge: pass 153 from route,863262334,4158900,867421234,83,64,not recorded
-f93b1b613a49,2026-11-06T13:32:05Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-d0ec1b1139cb,2026-11-06T13:43:37Z,"pass 0154: GND C29.2 unsealed: relayed the HV_R29M via 1.5 mm north (22.375,0.375 -> 22.375,1.875; F and B chain segments re-laid on the same vertical, DRC-neutral) to open the east corridor its 1.0 mm HV clearance shadow had closed by 0.01 mm, then grid-routed GND C29.2 -> R24.2 on F with pad-anchored ends. KiCad DRC vs exp183: violations 156 -> 156, unconnected items 55 -> 54 (GND items 5 -> 4; remaining GND is the four F-zone islands X2.2/C16.2/U6.51/U6.38). No clearance/shorting/dangling items.",863262334,4158900,867421234,83,64,not recorded
-971db02909d2,2026-11-06T13:43:37Z,pass 0154: record commit hash,863262334,4158900,867421234,83,64,not recorded
-80b2d9a9c352,2026-11-06T13:43:53Z,merge: pass 154 from route,863262334,4158900,867421234,83,64,not recorded
-d8432b256585,2026-11-06T13:44:08Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-8ea38d785db7,2026-11-06T14:01:04Z,"pass 0155: pass 155: GND island X2.2 tied - 0.5/0.3 via at (72.55,25.6) in the fragment north lobe drops to the In1 GND zone (In2 +3V3D track at y=24.375 blocks the pad row; F exits sealed by the CDR_SQUELCH staircase and the +3V3D via at (74.625,24.375)). DRC: violations 156 -> 156 (class table unchanged), unconnected 54 -> 53, GND items 4 -> 3",863262334,4158900,867421234,83,64,not recorded
-a04231a0d031,2026-11-06T14:01:05Z,pass 0155: record commit hash,863262334,4158900,867421234,83,64,not recorded
-630a48bd56f8,2026-11-06T14:01:11Z,merge: pass 155 from route,863262334,4158900,867421234,83,64,not recorded
-733fd495aa2b,2026-11-06T14:01:35Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-dddffe482221,2026-11-06T14:04:43Z,"pass 0156: pass 156: GND island C16.2 tied - 0.5/0.3 via at (76.487,9.139) inside the fragment drops to the In1 GND zone (exhaustive 0.125-grid scan at the board-minimum via size found exactly one legal spot in the fragment). DRC: violations 156 -> 156 (class table unchanged), unconnected 53 -> 52, GND items 3 -> 2",863262334,4158900,867421234,83,64,not recorded
-651bc1b8b8a8,2026-11-06T14:04:43Z,pass 0156: record commit hash,863262334,4158900,867421234,83,64,not recorded
-fd2ad2ef2582,2026-11-06T14:04:46Z,merge: pass 156 from route,863262334,4158900,867421234,83,64,not recorded
-bb4750c58546,2026-11-06T14:05:13Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-f8430f856d89,2026-11-06T14:08:42Z,"pass 0157: pass 157: GND island U6.51 tied - 0.5/0.3 via at (79.817,6.078) inside the fragment drops to the In1 GND zone (single legal spot in an exhaustive 0.125-grid scan at board-minimum via size). DRC: violations 156 -> 156 (class table unchanged), unconnected 52 -> 51, GND items 2 -> 1 (only the U6.38 sliver remains)",863262334,4158900,867421234,83,64,not recorded
-a8a531db2723,2026-11-06T14:08:42Z,pass 0157: record commit hash,863262334,4158900,867421234,83,64,not recorded
-99b5893b2e37,2026-11-06T14:08:52Z,merge: pass 157 from route,863262334,4158900,867421234,83,64,not recorded
-76abc87d8b26,2026-11-06T14:09:27Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-d3711ff00208,2026-11-06T14:16:52Z,"pass 0158: pass 158: +VA U3.5-C10.1 joined by an In1 hop - 0.5/0.3 vias in the U3.5 pad (37.725,39.975) and C10.1 pad (37.375,35.75), In1 track routed east around the CMP_IN via pair (In2 is blocked by the CMP_IN vertical and the THR_FILT staircase; In1 carries no tracks in this district). DRC: violations 156 -> 156 (class table unchanged), unconnected 51 -> 50, +VA items 5 -> 4",863262334,4158900,867421234,83,64,not recorded
-c55d21523b64,2026-11-06T14:16:52Z,pass 0158: record commit hash,863262334,4158900,867421234,83,64,not recorded
-e775eb0b3973,2026-11-06T14:16:59Z,merge: pass 158 from route,863262334,4158900,867421234,83,64,not recorded
-0ce794424df3,2026-11-06T14:17:20Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-6f6877cf4bd3,2026-11-06T14:20:42Z,"pass 0159: pass 159: +VA hop group joined to the main tree - 0.5/0.3 via in C44.1 pad (30.825,40.05), In1 track west at y=40 from the U3.5 hop via (37.725,39.975), passing 0.425 clear of the CMP_IN and THR_FILT vias. DRC: violations 156 -> 156 (class table unchanged), unconnected 50 -> 49, +VA items 4 -> 3 (U13 pair, U1.7, R5.1 remain)",863262334,4158900,867421234,83,64,not recorded
-b14070701544,2026-11-06T14:20:42Z,pass 0159: record commit hash,863262334,4158900,867421234,83,64,not recorded
-df74ed2485ad,2026-11-06T14:20:54Z,merge: pass 159 from route,863262334,4158900,867421234,83,64,not recorded
-21ef861a0cf8,2026-11-06T14:21:08Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-3dab7852c4e6,2026-11-06T14:24:01Z,"pass 0160: pass 160: +VA U1.7 joined to the tree - 0.5/0.3 vias in U1.7 pad (18.5,39.365) and U2.5 pad (25.95,39.05), straight In1 track between (In1/In2 carry no tracks in the front-end district). DRC: violations 156 -> 156 (class table unchanged), unconnected 49 -> 48, +VA items 3 -> 2 (U13 pair and R5.1 remain)",863262334,4158900,867421234,83,64,not recorded
-1cfd73a84f80,2026-11-06T14:24:01Z,pass 0160: record commit hash,863262334,4158900,867421234,83,64,not recorded
-a6883e3cadfb,2026-11-06T14:24:06Z,merge: pass 160 from route,863262334,4158900,867421234,83,64,not recorded
-bb91b758e3de,2026-11-06T14:24:17Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-8990c3d439ed,2026-11-06T14:26:48Z,"pass 0161: pass 161: +VA R5.1 joined - 0.5/0.3 via on R5.1 pad west edge (15.025,50.5) (APD_A 1.0 mm class pushes the legal spot to the pad edge), In1 track south to the U1.7 via (18.5,39.365). DRC: violations 156 -> 156 (class table unchanged), unconnected 48 -> 47, +VA items 2 -> 1 (only the U13 output pair remains)",863262334,4158900,867421234,83,64,not recorded
-727b90f9f764,2026-11-06T14:26:48Z,pass 0161: record commit hash,863262334,4158900,867421234,83,64,not recorded
-31af879d510d,2026-11-06T14:26:51Z,merge: pass 161 from route,863262334,4158900,867421234,83,64,not recorded
-6f32002e9e2d,2026-11-06T14:48:52Z,"pass 0162: pass 162: +VA COMPLETE - U13 output pair joined: 0.5/0.3 via at (41.1,49.35) on the U13.10 pad/stub, In1 track south at x=41.1 then west at y=41.6 (clearing the GND/TEST_IN via pair) to the hop via (37.725,39.975). DRC: violations 156 -> 156 (class table unchanged), unconnected 47 -> 46, +VA items 1 -> 0",863262334,4158900,867421234,83,64,not recorded
-1153e2089a2b,2026-11-06T14:48:52Z,pass 0162: record commit hash,863262334,4158900,867421234,83,64,not recorded
-691ddf82c0a8,2026-11-06T14:49:44Z,merge: pass 162 from route,863262334,4158900,867421234,83,64,not recorded
-7a0a52f30bdb,2026-11-06T14:49:56Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-10b615f7ff63,2026-11-06T14:53:13Z,"pass 0163: pass 163: TIA_OUT U1.6-R1.1 routed on F (grid route, DRC-verified). DRC: violations 156 -> 156 (class table unchanged), unconnected 46 -> 45, TIA_OUT items 4 -> 3",863262334,4158900,867421234,83,64,not recorded
-b47ddc48c4a8,2026-11-06T14:53:13Z,pass 0163: record commit hash,863262334,4158900,867421234,83,64,not recorded
-07caa4d60ba5,2026-11-06T14:53:19Z,merge: pass 163 from route,863262334,4158900,867421234,83,64,not recorded
-ba1cb80dfc74,2026-11-06T14:53:29Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-d8d69b87b510,2026-11-06T14:56:03Z,"pass 0164: pass 164: TIA_OUT C1.1 joined - via-in-pad at C1.1 (18.52,43.25) and U1.6 (18.9,40.635), In1 track between; F is sealed by U1.5 pad and the APD_A/-VA weave, and KiCad DRC accepts the via (APD_A is not in the board's 1.0 mm netclass). DRC: violations 156 -> 156 (class table unchanged), unconnected 45 -> 44, TIA_OUT items 3 -> 2",863262334,4158900,867421234,83,64,not recorded
-4648506d06a6,2026-11-06T14:56:03Z,pass 0164: record commit hash,863262334,4158900,867421234,83,64,not recorded
-366503f0d74d,2026-11-06T14:56:10Z,merge: pass 164 from route,863262334,4158900,867421234,83,64,not recorded
-f6373fa7f392,2026-11-06T14:56:28Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-e384ee6506ac,2026-11-06T14:58:40Z,"pass 0165: pass 165: TIA_OUT C5.1 joined - 0.5/0.3 via at C5.1 pad east edge (20.95,42.5) (pad-centre via shorts APD_K_ALT's B trunk 0.35 away), In1 track south-east around the APD_K_ALT via to the U1.6 via (18.9,40.635). DRC: violations 156 -> 156 (class table unchanged), unconnected 44 -> 43, TIA_OUT items 2 -> 1 (only R7.1 remains)",863262334,4158900,867421234,83,64,not recorded
-a22a22ccb839,2026-11-06T14:58:40Z,pass 0165: record commit hash,863262334,4158900,867421234,83,64,not recorded
-3c16baa4f714,2026-11-06T14:58:46Z,merge: pass 165 from route,863262334,4158900,867421234,83,64,not recorded
-90a96e1aea4d,2026-11-06T14:58:55Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-5774effedc2c,2026-11-06T15:00:55Z,"pass 0166: pass 166: TIA_OUT COMPLETE - R7.1 joined: 0.5/0.3 via in R7.1 pad (28.1,39.25), In1 track west at y=39.9 (0.45 clear of the +VA via) to the C5.1 hop track vertex (20.3,39.9). DRC: violations 156 -> 156 (class table unchanged), unconnected 43 -> 42, TIA_OUT items 1 -> 0",863262334,4158900,867421234,83,64,not recorded
-011df3fa79f0,2026-11-06T15:00:55Z,pass 0166: record commit hash,863262334,4158900,867421234,83,64,not recorded
-8b9f3d98c7c0,2026-11-06T15:01:00Z,merge: pass 166 from route,863262334,4158900,867421234,83,64,not recorded
-6ca3cb85fa38,2026-11-06T15:01:14Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-49f3cc6e3299,2026-11-06T15:26:19Z,"pass 0167: pass 167: HV_VC + HV_VC2 connected (violations 156 -> 156, unconnected 42 -> 40). HV_VC: pure-F route R23.1 -> U10.1 threading south of the HV_FBX F chain. HV_VC2: via-in-pad at C29.1 and R23.2 with a B run passing south of the HV_R29M B staircase (the F corridor between C29.2 and R23.1 pads is 0.05 mm too narrow for a track). HV_GATE and HV_INTVCC investigated and parked as sealed: GATE's channel between U10 EP and the east pad row fits one 0.15 track but every approach (NE diag, south run, B under the HV_SENSE staircase, In2) is blocked by named copper; INTVCC is sealed on F (SHDN via + U10.9 corner pinch), In2 (HV_FBX staircase) and B (HV_SENSE weave).",863262334,4158900,867421234,83,64,not recorded
-509618992632,2026-11-06T15:26:20Z,pass 0167: record commit hash,863262334,4158900,867421234,83,64,not recorded
-d75611d775fd,2026-11-06T15:26:30Z,merge: pass 167 from route,863262334,4158900,867421234,83,64,not recorded
-140d35b52bb8,2026-11-06T15:26:50Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-d53221c743ca,2026-11-06T15:37:09Z,"pass 0168: pass 168: CF1 connected (violations 156 -> 156, unconnected 40 -> 39). Pure-F route U4.15 -> C15.1: north leg at x=67.55 (w0.15 past the CF2 jog), bent east run at y=40.52 clearing U4.16's pad top, north at x=68.6, west over the C15 pads at y=42.05, south into C15.1. Also recorded as parked/sealed this session: HV_GATE, HV_INTVCC, USB_RST, XI, XO, PHY_1V8A, CDR_NIN, REFCLKN, +3V3A U7.6 (each with named blockers in the pass-167/168 working notes).",863262334,4158900,867421234,83,64,not recorded
-10300e835823,2026-11-06T15:37:09Z,pass 0168: record commit hash,863262334,4158900,867421234,83,64,not recorded
-473452e2af52,2026-11-06T15:37:17Z,merge: pass 168 from route,863262334,4158900,867421234,83,64,not recorded
-08e00e2bf9bf,2026-11-06T15:37:30Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-bb218332abe2,2026-11-06T16:11:09Z,"pass 0169: pass 169: SET_P + ILIM_A connected via +5V relays. SET_P: +5V F hook (41.8,51.25)-(42.375,50.125) relayed to In2 (vias 42.15,51.35 / 42.3,49.9), SET_P straight F run U13.7->R40.1 at y50.75. ILIM_A: +5V w0.6 staircase west of U14 relayed 0.35 west, U14.5 via (52.6,48.35) + In2 south run + via-in-pad R43.1 (55.5,50.8). DRC: violations 156 (unchanged classes), unconnected 39 -> 37",863262334,4158900,867421234,83,64,not recorded
-169ebf6e71ed,2026-11-06T16:11:09Z,pass 0169: record commit hash,863262334,4158900,867421234,83,64,not recorded
-a94cf4807f4a,2026-11-06T16:11:21Z,merge: pass 169 from route,863262334,4158900,867421234,83,64,not recorded
-bdccf3fda181,2026-11-06T16:11:52Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
-fcacae4c2b7d,2026-11-06T16:14:50Z,"pass 0170: pass 170: DAC_VREF connected. Grid router proved F/B no-path; In2 segment (70.0,5.375)-(69.51,7.85) from the router, via (70.3,5.0) overlapping U8.10 pad edge joined by In2 stub, via (69.51,7.85) on-segment, F stub into C26.1. DRC: violations 156 (unchanged), unconnected 37 -> 36",863262334,4158900,867421234,83,64,not recorded
-edc029263430,2026-11-06T16:14:50Z,pass 0170: record commit hash,863262334,4158900,867421234,83,64,not recorded
-c5fef8b906a9,2026-11-06T16:14:55Z,merge: pass 170 from route,863262334,4158900,867421234,83,64,not recorded
+668c325961dc,2026-11-06T13:08:10Z,"pass 0152: pass 152: GND campaign on the re-placed board - pour stitching (vias tying 16 stranded pads + F islands to the inner GND plane), U10 pocket cluster track-tied south to T1.9, U8 island tied. KiCad DRC vs exp181: violations 156 -> 156, unconnected items 82 -> 59 (GND items 28 -> 5: C29.2 pad and 4 F islands remain)",866171305,4171097,870342402,83,64,not recorded
+420ed4371f35,2026-11-06T13:08:10Z,pass 0152: record commit hash,866171305,4171097,870342402,83,64,not recorded
+e8e863f1f0f7,2026-11-06T13:08:24Z,merge: pass 152 from route,866171305,4171097,870342402,83,64,not recorded
+a9866a114909,2026-11-06T13:08:41Z,metrics: post-merge regen,866171305,4171097,870342402,83,64,not recorded
+b9b75ceec71d,2026-11-06T13:31:43Z,"pass 0153: pass 153: +VA first links - grid-routed tree C44.1/C2.1/C7.1/U2.5 on F, U13.9-U13.10 same-net pin link (0.6 segment ending at 49.55 for exactly class clearance to U13.8 GND). KiCad DRC vs exp182: violations 156 -> 156, unconnected items 59 -> 55 (+VA items 9 -> 5; remaining +VA groups: U3.5, C10.1, U1.7, R5.1, U13 pair join)",867330854,4177246,871508100,83,64,not recorded
+ab79dff2c7d2,2026-11-06T13:31:44Z,pass 0153: record commit hash,867330854,4177246,871508100,83,64,not recorded
+6b6e80b591a9,2026-11-06T13:31:50Z,merge: pass 153 from route,867330854,4177246,871508100,83,64,not recorded
+f93b1b613a49,2026-11-06T13:32:05Z,metrics: post-merge regen,867330854,4177246,871508100,83,64,not recorded
+d0ec1b1139cb,2026-11-06T13:43:37Z,"pass 0154: GND C29.2 unsealed: relayed the HV_R29M via 1.5 mm north (22.375,0.375 -> 22.375,1.875; F and B chain segments re-laid on the same vertical, DRC-neutral) to open the east corridor its 1.0 mm HV clearance shadow had closed by 0.01 mm, then grid-routed GND C29.2 -> R24.2 on F with pad-anchored ends. KiCad DRC vs exp183: violations 156 -> 156, unconnected items 55 -> 54 (GND items 5 -> 4; remaining GND is the four F-zone islands X2.2/C16.2/U6.51/U6.38). No clearance/shorting/dangling items.",882763892,4302619,887066511,83,64,not recorded
+971db02909d2,2026-11-06T13:43:37Z,pass 0154: record commit hash,882763892,4302619,887066511,83,64,not recorded
+80b2d9a9c352,2026-11-06T13:43:53Z,merge: pass 154 from route,882763892,4302619,887066511,83,64,not recorded
+d8432b256585,2026-11-06T13:44:08Z,metrics: post-merge regen,882763892,4302619,887066511,83,64,not recorded
+8ea38d785db7,2026-11-06T14:01:04Z,"pass 0155: pass 155: GND island X2.2 tied - 0.5/0.3 via at (72.55,25.6) in the fragment north lobe drops to the In1 GND zone (In2 +3V3D track at y=24.375 blocks the pad row; F exits sealed by the CDR_SQUELCH staircase and the +3V3D via at (74.625,24.375)). DRC: violations 156 -> 156 (class table unchanged), unconnected 54 -> 53, GND items 4 -> 3",882763892,4302619,887066511,83,64,not recorded
+a04231a0d031,2026-11-06T14:01:05Z,pass 0155: record commit hash,882763892,4302619,887066511,83,64,not recorded
+630a48bd56f8,2026-11-06T14:01:11Z,merge: pass 155 from route,882763892,4302619,887066511,83,64,not recorded
+733fd495aa2b,2026-11-06T14:01:35Z,metrics: post-merge regen,882763892,4302619,887066511,83,64,not recorded
+dddffe482221,2026-11-06T14:04:43Z,"pass 0156: pass 156: GND island C16.2 tied - 0.5/0.3 via at (76.487,9.139) inside the fragment drops to the In1 GND zone (exhaustive 0.125-grid scan at the board-minimum via size found exactly one legal spot in the fragment). DRC: violations 156 -> 156 (class table unchanged), unconnected 53 -> 52, GND items 3 -> 2",882763892,4302619,887066511,83,64,not recorded
+651bc1b8b8a8,2026-11-06T14:04:43Z,pass 0156: record commit hash,882763892,4302619,887066511,83,64,not recorded
+fd2ad2ef2582,2026-11-06T14:04:46Z,merge: pass 156 from route,882763892,4302619,887066511,83,64,not recorded
+bb4750c58546,2026-11-06T14:05:13Z,metrics: post-merge regen,882763892,4302619,887066511,83,64,not recorded
+f8430f856d89,2026-11-06T14:08:42Z,"pass 0157: pass 157: GND island U6.51 tied - 0.5/0.3 via at (79.817,6.078) inside the fragment drops to the In1 GND zone (single legal spot in an exhaustive 0.125-grid scan at board-minimum via size). DRC: violations 156 -> 156 (class table unchanged), unconnected 52 -> 51, GND items 2 -> 1 (only the U6.38 sliver remains)",882763892,4302619,887066511,83,64,not recorded
+a8a531db2723,2026-11-06T14:08:42Z,pass 0157: record commit hash,882763892,4302619,887066511,83,64,not recorded
+99b5893b2e37,2026-11-06T14:08:52Z,merge: pass 157 from route,882763892,4302619,887066511,83,64,not recorded
+76abc87d8b26,2026-11-06T14:09:27Z,metrics: post-merge regen,882763892,4302619,887066511,83,64,not recorded
+d3711ff00208,2026-11-06T14:16:52Z,"pass 0158: pass 158: +VA U3.5-C10.1 joined by an In1 hop - 0.5/0.3 vias in the U3.5 pad (37.725,39.975) and C10.1 pad (37.375,35.75), In1 track routed east around the CMP_IN via pair (In2 is blocked by the CMP_IN vertical and the THR_FILT staircase; In1 carries no tracks in this district). DRC: violations 156 -> 156 (class table unchanged), unconnected 51 -> 50, +VA items 5 -> 4",884724231,4307980,889032211,83,64,not recorded
+c55d21523b64,2026-11-06T14:16:52Z,pass 0158: record commit hash,884724231,4307980,889032211,83,64,not recorded
+e775eb0b3973,2026-11-06T14:16:59Z,merge: pass 158 from route,884724231,4307980,889032211,83,64,not recorded
+0ce794424df3,2026-11-06T14:17:20Z,metrics: post-merge regen,884724231,4307980,889032211,83,64,not recorded
+6f6877cf4bd3,2026-11-06T14:20:42Z,"pass 0159: pass 159: +VA hop group joined to the main tree - 0.5/0.3 via in C44.1 pad (30.825,40.05), In1 track west at y=40 from the U3.5 hop via (37.725,39.975), passing 0.425 clear of the CMP_IN and THR_FILT vias. DRC: violations 156 -> 156 (class table unchanged), unconnected 50 -> 49, +VA items 4 -> 3 (U13 pair, U1.7, R5.1 remain)",884724231,4307980,889032211,83,64,not recorded
+b14070701544,2026-11-06T14:20:42Z,pass 0159: record commit hash,884724231,4307980,889032211,83,64,not recorded
+df74ed2485ad,2026-11-06T14:20:54Z,merge: pass 159 from route,884724231,4307980,889032211,83,64,not recorded
+21ef861a0cf8,2026-11-06T14:21:08Z,metrics: post-merge regen,884724231,4307980,889032211,83,64,not recorded
+3dab7852c4e6,2026-11-06T14:24:01Z,"pass 0160: pass 160: +VA U1.7 joined to the tree - 0.5/0.3 vias in U1.7 pad (18.5,39.365) and U2.5 pad (25.95,39.05), straight In1 track between (In1/In2 carry no tracks in the front-end district). DRC: violations 156 -> 156 (class table unchanged), unconnected 49 -> 48, +VA items 3 -> 2 (U13 pair and R5.1 remain)",884724231,4307980,889032211,83,64,not recorded
+1cfd73a84f80,2026-11-06T14:24:01Z,pass 0160: record commit hash,884724231,4307980,889032211,83,64,not recorded
+a6883e3cadfb,2026-11-06T14:24:06Z,merge: pass 160 from route,884724231,4307980,889032211,83,64,not recorded
+bb91b758e3de,2026-11-06T14:24:17Z,metrics: post-merge regen,884724231,4307980,889032211,83,64,not recorded
+8990c3d439ed,2026-11-06T14:26:48Z,"pass 0161: pass 161: +VA R5.1 joined - 0.5/0.3 via on R5.1 pad west edge (15.025,50.5) (APD_A 1.0 mm class pushes the legal spot to the pad edge), In1 track south to the U1.7 via (18.5,39.365). DRC: violations 156 -> 156 (class table unchanged), unconnected 48 -> 47, +VA items 2 -> 1 (only the U13 output pair remains)",884724231,4307980,889032211,83,64,not recorded
+727b90f9f764,2026-11-06T14:26:48Z,pass 0161: record commit hash,884724231,4307980,889032211,83,64,not recorded
+31af879d510d,2026-11-06T14:26:51Z,merge: pass 161 from route,884724231,4307980,889032211,83,64,not recorded
+6f32002e9e2d,2026-11-06T14:48:52Z,"pass 0162: pass 162: +VA COMPLETE - U13 output pair joined: 0.5/0.3 via at (41.1,49.35) on the U13.10 pad/stub, In1 track south at x=41.1 then west at y=41.6 (clearing the GND/TEST_IN via pair) to the hop via (37.725,39.975). DRC: violations 156 -> 156 (class table unchanged), unconnected 47 -> 46, +VA items 1 -> 0",886706636,4318774,891025410,83,64,not recorded
+1153e2089a2b,2026-11-06T14:48:52Z,pass 0162: record commit hash,886706636,4318774,891025410,83,64,not recorded
+691ddf82c0a8,2026-11-06T14:49:44Z,merge: pass 162 from route,886706636,4318774,891025410,83,64,not recorded
+7a0a52f30bdb,2026-11-06T14:49:56Z,metrics: post-merge regen,886706636,4318774,891025410,83,64,not recorded
+10b615f7ff63,2026-11-06T14:53:13Z,"pass 0163: pass 163: TIA_OUT U1.6-R1.1 routed on F (grid route, DRC-verified). DRC: violations 156 -> 156 (class table unchanged), unconnected 46 -> 45, TIA_OUT items 4 -> 3",886706636,4318774,891025410,83,64,not recorded
+b47ddc48c4a8,2026-11-06T14:53:13Z,pass 0163: record commit hash,886706636,4318774,891025410,83,64,not recorded
+07caa4d60ba5,2026-11-06T14:53:19Z,merge: pass 163 from route,886706636,4318774,891025410,83,64,not recorded
+ba1cb80dfc74,2026-11-06T14:53:29Z,metrics: post-merge regen,886706636,4318774,891025410,83,64,not recorded
+d8d69b87b510,2026-11-06T14:56:03Z,"pass 0164: pass 164: TIA_OUT C1.1 joined - via-in-pad at C1.1 (18.52,43.25) and U1.6 (18.9,40.635), In1 track between; F is sealed by U1.5 pad and the APD_A/-VA weave, and KiCad DRC accepts the via (APD_A is not in the board's 1.0 mm netclass). DRC: violations 156 -> 156 (class table unchanged), unconnected 45 -> 44, TIA_OUT items 3 -> 2",886706636,4318774,891025410,83,64,not recorded
+4648506d06a6,2026-11-06T14:56:03Z,pass 0164: record commit hash,886706636,4318774,891025410,83,64,not recorded
+366503f0d74d,2026-11-06T14:56:10Z,merge: pass 164 from route,886706636,4318774,891025410,83,64,not recorded
+f6373fa7f392,2026-11-06T14:56:28Z,metrics: post-merge regen,886706636,4318774,891025410,83,64,not recorded
+e384ee6506ac,2026-11-06T14:58:40Z,"pass 0165: pass 165: TIA_OUT C5.1 joined - 0.5/0.3 via at C5.1 pad east edge (20.95,42.5) (pad-centre via shorts APD_K_ALT's B trunk 0.35 away), In1 track south-east around the APD_K_ALT via to the U1.6 via (18.9,40.635). DRC: violations 156 -> 156 (class table unchanged), unconnected 44 -> 43, TIA_OUT items 2 -> 1 (only R7.1 remains)",886706636,4318774,891025410,83,64,not recorded
+a22a22ccb839,2026-11-06T14:58:40Z,pass 0165: record commit hash,886706636,4318774,891025410,83,64,not recorded
+3c16baa4f714,2026-11-06T14:58:46Z,merge: pass 165 from route,886706636,4318774,891025410,83,64,not recorded
+90a96e1aea4d,2026-11-06T14:58:55Z,metrics: post-merge regen,886706636,4318774,891025410,83,64,not recorded
+5774effedc2c,2026-11-06T15:00:55Z,"pass 0166: pass 166: TIA_OUT COMPLETE - R7.1 joined: 0.5/0.3 via in R7.1 pad (28.1,39.25), In1 track west at y=39.9 (0.45 clear of the +VA via) to the C5.1 hop track vertex (20.3,39.9). DRC: violations 156 -> 156 (class table unchanged), unconnected 43 -> 42, TIA_OUT items 1 -> 0",886706636,4318774,891025410,83,64,not recorded
+011df3fa79f0,2026-11-06T15:00:55Z,pass 0166: record commit hash,886706636,4318774,891025410,83,64,not recorded
+8b9f3d98c7c0,2026-11-06T15:01:00Z,merge: pass 166 from route,886706636,4318774,891025410,83,64,not recorded
+6ca3cb85fa38,2026-11-06T15:01:14Z,metrics: post-merge regen,886706636,4318774,891025410,83,64,not recorded
+49f3cc6e3299,2026-11-06T15:26:19Z,"pass 0167: pass 167: HV_VC + HV_VC2 connected (violations 156 -> 156, unconnected 42 -> 40). HV_VC: pure-F route R23.1 -> U10.1 threading south of the HV_FBX F chain. HV_VC2: via-in-pad at C29.1 and R23.2 with a B run passing south of the HV_R29M B staircase (the F corridor between C29.2 and R23.1 pads is 0.05 mm too narrow for a track). HV_GATE and HV_INTVCC investigated and parked as sealed: GATE's channel between U10 EP and the east pad row fits one 0.15 track but every approach (NE diag, south run, B under the HV_SENSE staircase, In2) is blocked by named copper; INTVCC is sealed on F (SHDN via + U10.9 corner pinch), In2 (HV_FBX staircase) and B (HV_SENSE weave).",888730547,4324990,893055537,83,64,not recorded
+509618992632,2026-11-06T15:26:20Z,pass 0167: record commit hash,888730547,4324990,893055537,83,64,not recorded
+d75611d775fd,2026-11-06T15:26:30Z,merge: pass 167 from route,888730547,4324990,893055537,83,64,not recorded
+140d35b52bb8,2026-11-06T15:26:50Z,metrics: post-merge regen,888730547,4324990,893055537,83,64,not recorded
+d53221c743ca,2026-11-06T15:37:09Z,"pass 0168: pass 168: CF1 connected (violations 156 -> 156, unconnected 40 -> 39). Pure-F route U4.15 -> C15.1: north leg at x=67.55 (w0.15 past the CF2 jog), bent east run at y=40.52 clearing U4.16's pad top, north at x=68.6, west over the C15 pads at y=42.05, south into C15.1. Also recorded as parked/sealed this session: HV_GATE, HV_INTVCC, USB_RST, XI, XO, PHY_1V8A, CDR_NIN, REFCLKN, +3V3A U7.6 (each with named blockers in the pass-167/168 working notes).",888730547,4324990,893055537,83,64,not recorded
+10300e835823,2026-11-06T15:37:09Z,pass 0168: record commit hash,888730547,4324990,893055537,83,64,not recorded
+473452e2af52,2026-11-06T15:37:17Z,merge: pass 168 from route,888730547,4324990,893055537,83,64,not recorded
+08e00e2bf9bf,2026-11-06T15:37:30Z,metrics: post-merge regen,888730547,4324990,893055537,83,64,not recorded
+bb218332abe2,2026-11-06T16:11:09Z,"pass 0169: pass 169: SET_P + ILIM_A connected via +5V relays. SET_P: +5V F hook (41.8,51.25)-(42.375,50.125) relayed to In2 (vias 42.15,51.35 / 42.3,49.9), SET_P straight F run U13.7->R40.1 at y50.75. ILIM_A: +5V w0.6 staircase west of U14 relayed 0.35 west, U14.5 via (52.6,48.35) + In2 south run + via-in-pad R43.1 (55.5,50.8). DRC: violations 156 (unchanged classes), unconnected 39 -> 37",909222406,4568468,913790874,83,64,not recorded
+169ebf6e71ed,2026-11-06T16:11:09Z,pass 0169: record commit hash,909222406,4568468,913790874,83,64,not recorded
+a94cf4807f4a,2026-11-06T16:11:21Z,merge: pass 169 from route,909222406,4568468,913790874,83,64,not recorded
+bdccf3fda181,2026-11-06T16:11:52Z,metrics: post-merge regen,909222406,4568468,913790874,83,64,not recorded
+fcacae4c2b7d,2026-11-06T16:14:50Z,"pass 0170: pass 170: DAC_VREF connected. Grid router proved F/B no-path; In2 segment (70.0,5.375)-(69.51,7.85) from the router, via (70.3,5.0) overlapping U8.10 pad edge joined by In2 stub, via (69.51,7.85) on-segment, F stub into C26.1. DRC: violations 156 (unchanged), unconnected 37 -> 36",909338979,4568538,913907517,83,64,not recorded
+edc029263430,2026-11-06T16:14:50Z,pass 0170: record commit hash,909338979,4568538,913907517,83,64,not recorded
+c5fef8b906a9,2026-11-06T16:14:55Z,merge: pass 170 from route,909338979,4568538,913907517,83,64,not recorded
+327d969a96cb,2026-11-06T16:15:16Z,metrics: post-merge regen,909338979,4568538,913907517,83,64,not recorded
