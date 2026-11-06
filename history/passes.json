@@ -5132,6 +5132,36 @@
       },
       "description": "pass 177: ULPI district re-fanout \u2014 C48 moved east (+0.85,-0.15) with +3V3D feed re-routed between C19.1/C19.2 to via (81.625,10.9) on the B trunk; ULPI_D1 ripped and re-fanned on F (west channel x79.18/x79.05/x79.35 with jogs around D0's staircase bulge); ULPI_D2 connected U7.22->U6.47 (F mouth, via (79.87,12.97) d0.5, In2 south, via (80.0,8.3), heal F staircase tail). DRC: unconnected 27->26, violations 155->156 (+1 silk_overlap from C48's moved silkscreen, same existing class); clearance/shorting/dangling remain 0",
       "note": ""
+    },
+    {
+      "pass": 178,
+      "timestamp": "2026-11-06T21:03:35Z",
+      "hash": "608a0dce63daa04841d796806b867e7c56e6dc99",
+      "short_hash": "608a0dc",
+      "board_file": "hw/pdlvds_rx.exp208.kicad_pcb",
+      "dir": "pass-0178",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 108,
+        "unconnected_nets": 22,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 178: ULPI_D3 connected \u2014 D4 via moved west on its own In2 diagonal to (87.35,7.15) (old via at (88.375,6.125) sealed pad69's fan together with the NC pad row), D4 tail re-laid north (87.35,7.15)->(88.6,6.6)->(89.65,6.45)->(89.78,5.662); D3 In2 rerouted south of D4's diagonal to via (88.15,5.9), F tail (88.5,6.05)->(89.25,6.05)->dive into U6.69; VCAP2 web re-fanned east ((89.225,7.0)->(89.9,6.9)->(90.25,6.162)) to clear the fan; GND stitch via (88.3,8.6) re-ties the C18.2 F-fill island severed by the fan tracks. DRC: unconnected 26->25, violations 156->156 (identical class table); clearance/shorting/dangling 0",
+      "note": ""
     }
   ],
   "gaps": [
