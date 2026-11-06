@@ -5072,6 +5072,36 @@
       },
       "description": "pass 175: HV_SS connected (last-but-one HV net): GND U10.5 east fanout seg+via ripped (its north web keeps the pad connected - DRC-verified), HV_SS F w0.15 needle east from U10.3 through the 0.585 mm EP channel at x26.37, north past the ripped fanout, east into C30.1. Unconnected 29 -> 28, violations 155 -> 155, clearance/shorting/dangling 0",
       "note": ""
+    },
+    {
+      "pass": 176,
+      "timestamp": "2026-11-06T19:36:34Z",
+      "hash": "ecfeedeee9ecdae7b6f104ede77acea97808cb24",
+      "short_hash": "ecfeede",
+      "board_file": "hw/pdlvds_rx.exp206.kicad_pcb",
+      "dir": "pass-0176",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 105,
+        "unconnected_nets": 24,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 176: I2C_SDA U9.6 connected: via-in-pad d0.5/drill0.3 at (69.32,2.14) (centre shifted NE off pad centre: clears SCL via (69.375,1.375) d0.6 by 0.217 and U9.5 +3V3A pad by 0.21; on-centre placement measured 0.1904 vs SCL via), In2 single segment east (grid_route2) joining the SDA In2 chain at (71.125,1.875). KiCad DRC: unconnected 28 -> 27, violations 155 unchanged (clearance 0, shorting 0, dangling 0)",
+      "note": ""
     }
   ],
   "gaps": [
