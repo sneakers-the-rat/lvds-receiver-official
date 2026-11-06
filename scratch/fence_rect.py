@@ -20,6 +20,7 @@ if mode == 'remove':
     print(f'removed {len(kill)} fence tracks')
 else:
     x0, y0, x1, y1 = (float(v) for v in sys.argv[3:7])
+    step = float(sys.argv[7]) if len(sys.argv) > 7 else 0.55
     net = pcbnew.NETINFO_ITEM(board, 'SLOTFENCE')
     board.Add(net)
     code = net.GetNetCode()
@@ -37,7 +38,7 @@ else:
                 t.SetEnd(pcbnew.VECTOR2I(int(x1 * MM), int(y * MM)))
                 board.Add(t)
                 n += 1
-                y += 0.55
+                y += step
         else:
             x = x0
             while x <= x1 + 1e-9:
@@ -49,7 +50,7 @@ else:
                 t.SetEnd(pcbnew.VECTOR2I(int(x * MM), int(y1 * MM)))
                 board.Add(t)
                 n += 1
-                x += 0.55
+                x += step
     print(f'added {n} fence tracks')
 board.Save(path)
 print(f'saved {path}')
