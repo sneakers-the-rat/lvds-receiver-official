@@ -1116,6 +1116,14 @@ Shorts class attacked; verdict: it is live routes over foreign pads, not debris.
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 142 · Unconnected nets: 35 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 135 — 2026-11-06T05:46:50Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp161.kicad_pcb` · Commit: `pending`
+
+U5 fanout rip-and-relay, first locality proven: CDR_DATP. Ripped the 6 CDR_DATP segments intersecting the U5 west pad-field box (x 61.5..66, y -24.5..-20) -- the escape zigzag that crossed U5.+3V3D pad 4 three times and CAP_DATA -- then re-laid with heal_nets (KiCad 8 compat copies in scratch/heal8/: wx preambles stripped, run under xvfb; hw/ originals untouched). Heal reported 2 groups connected. KiCad DRC referee: violations 416 -> 411, shorting_items 57 -> 54 (zero CDR_DATP shorts remain), clearance 66 -> 65, unconnected items 50 UNCHANGED, no class regressed. The mechanism (rip the net's copper in the pad-field box, heal, DRC-verify) is now proven for the U5 locality; +3V3D's U5 distribution (16 GND-pad shorts + CLKP/CLKN) is the next and largest application.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 138 · Unconnected nets: 35 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
