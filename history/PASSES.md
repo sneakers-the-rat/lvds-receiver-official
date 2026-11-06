@@ -1244,6 +1244,14 @@ First re-route of the re-placed board (exp179, pass 149): three heal campaigns o
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 76 · Unconnected nets: 40 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 151 — 2026-11-06T12:08:41Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp181.kicad_pcb` · Commit: `pending`
+
+CDR_SQUELCH/X1.2 shorts closed by an obstacle-model fix. Root cause: the heal/router item model registered every pad with footprint rotation ADDED to the pad orientation, but KiCad 8 pad.GetOrientationDegrees() is already board-absolute -- non-square pads on 90/270-degree footprints were modelled with axes swapped (X1.2 modelled y[8.75,10.75], real y[7.5,12.0]), so heal laid the squelch web through the real pad corner and re-healing reproduced the short exactly. Model fixed in all four registration copies + regression test (tools commit 32c44dc, fail-old/pass-new). Board: ripped the 11 web segments clipping X1.2, re-healed CDR_SQUELCH with the corrected model; it detoured around the pad. KiCad DRC exp180 -> exp181: violations 167 -> 156, shorting_items 6 -> 0, solder_mask_bridge 5 -> 0, unconnected items 82 UNCHANGED, clearance 0, dangling 0. Remaining classes: silk 148, copper_edge 7, holes_co_located 1 (two co-located NEG_RAW vias).
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 70 · Unconnected nets: 40 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
