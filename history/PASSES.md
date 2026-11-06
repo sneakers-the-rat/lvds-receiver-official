@@ -1388,6 +1388,14 @@ pass 168: CF1 connected (violations 156 -> 156, unconnected 40 -> 39). Pure-F ro
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 93 · Unconnected nets: 34 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 169 — 2026-11-06T16:10:13Z · commit `bb21833`
+
+Board: `hw/pdlvds_rx.exp199.kicad_pcb` · Commit: `bb218332abe2d847b14cd1286ad1d841464c764d`
+
+pass 169: SET_P + ILIM_A connected via +5V relays. SET_P: +5V F hook (41.8,51.25)-(42.375,50.125) relayed to In2 (vias 42.15,51.35 / 42.3,49.9), SET_P straight F run U13.7->R40.1 at y50.75. ILIM_A: +5V w0.6 staircase west of U14 relayed 0.35 west, U14.5 via (52.6,48.35) + In2 south run + via-in-pad R43.1 (55.5,50.8). DRC: violations 156 (unchanged classes), unconnected 39 -> 37
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 95 · Unconnected nets: 32 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
