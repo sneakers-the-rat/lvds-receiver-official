@@ -1028,9 +1028,9 @@ Batch heal over all 24 remaining nets (heal starts from each net's SMALL group; 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 24 · Audit verdict: FAIL
 
-### Pass 124 — 2026-11-06T00:12:25Z · commit `pending`
+### Pass 124 — 2026-11-06T00:12:25Z · commit `146a6ef`
 
-Board: `hw/pdlvds_rx.exp117.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp117.kicad_pcb` · Commit: `146a6ef734b761fdcfb9463198b220a9559cb834`
 
 Standing prune (owner's instruction: after any route change) over pass 123's heal copper: 6 dead 0.2mm segments removed (CAP_DATA, CDR_SQUELCH, I2C_SCL, HV_SHDN, VCAP2, PHY_1V8A), 6 tracks shortened (I2C_SDA, SET_P x2, ULPI_CK, VCAP1, HV_VC); partition proof passed for all nets (none moved, none reverted). DELTAS vs pass 123: nets 24->24, violations 71->71, census byte-identical. No victims.
 
