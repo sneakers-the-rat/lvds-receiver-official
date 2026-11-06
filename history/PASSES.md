@@ -1452,9 +1452,9 @@ pass 176: I2C_SDA U9.6 connected: via-in-pad d0.5/drill0.3 at (69.32,2.14) (cent
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 105 · Unconnected nets: 24 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 177 — 2026-11-06T20:47:49Z · commit `pending`
+### Pass 177 — 2026-11-06T20:47:49Z · commit `200ac19`
 
-Board: `hw/pdlvds_rx.exp207.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp207.kicad_pcb` · Commit: `200ac191c04aa391b51c3e4b6727776de00fd0cb`
 
 pass 177: ULPI district re-fanout — C48 moved east (+0.85,-0.15) with +3V3D feed re-routed between C19.1/C19.2 to via (81.625,10.9) on the B trunk; ULPI_D1 ripped and re-fanned on F (west channel x79.18/x79.05/x79.35 with jogs around D0's staircase bulge); ULPI_D2 connected U7.22->U6.47 (F mouth, via (79.87,12.97) d0.5, In2 south, via (80.0,8.3), heal F staircase tail). DRC: unconnected 27->26, violations 155->156 (+1 silk_overlap from C48's moved silkscreen, same existing class); clearance/shorting/dangling remain 0
 
