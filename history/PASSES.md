@@ -1404,9 +1404,9 @@ pass 170: DAC_VREF connected. Grid router proved F/B no-path; In2 segment (70.0,
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 96 · Unconnected nets: 31 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 171 — 2026-11-06T16:18:31Z · commit `pending`
+### Pass 171 — 2026-11-06T16:18:31Z · commit `9d9ad04`
 
-Board: `hw/pdlvds_rx.exp201.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp201.kicad_pcb` · Commit: `9d9ad04c50ddf304b7ad5296ffabaf45628f2cfd`
 
 pass 171: APD_K + APD_A x2 connected. APD_K: In2 run (grid_route segment) (10.5,29.375)-(9.5,39.75) w0.4, via at C33.1 pad edge, via at D1.5 pad NE corner. APD_A: F jog from y38.375 web into D1.6, F bridge D1.3->D1.4 at y41.1 (both gaps were same-net 0.125/0.4 mm misses under the shield can). DRC: violations 156 (unchanged), unconnected 36 -> 33
 
