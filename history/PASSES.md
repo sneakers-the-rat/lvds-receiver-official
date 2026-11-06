@@ -1060,9 +1060,9 @@ COURTYARD CAMPAIGN item 2 (D2 + T1 clusters): D2 (18,60)->(28,60) closing all si
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 118 · Unconnected nets: 31 · Courtyard collisions: 19 · Audit verdict: FAIL
 
-### Pass 128 — 2026-11-06T01:20:55Z · commit `pending`
+### Pass 128 — 2026-11-06T01:20:55Z · commit `47140f1`
 
-Board: `hw/pdlvds_rx.exp122.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp122.kicad_pcb` · Commit: `47140f12a33e38bae40befca7fcb38045b110a7e`
 
 COURTYARD CAMPAIGN item 3 (U6xMH2, parent ruling: MH2 moves, U6 stays, no courtyard shrunk): landing zone probed first (x93-100, y6-14) -- occupants: R44 (courtyard reaching (94.48,7.73), inside MH2's new keep-out circle), D6/D7 clear (courtyards end x=91.48). R44 moved first, same item: (93,7)->(91.5,9.5), the pocket between D6, D7, X1 and MH2's new circle (its first target (97.5,5) sat inside MH2's CURRENT circle; the pocket was probe-verified clear of both MH2 positions). MH2 then moved north at constant x: (96.5,3.5)->(96.5,10.0) (corner column with MH4 kept); new courtyard (93.04,6.54)-(99.95,13.46), bottom clearing U6's courtyard top (5.65) by 0.89 mm. U6xMH2 CLOSED. Pair census: 19 -> 18. VICTIM NAMED AS OWED: LED_PWR_K R44 leg (1->2 groups) -- the pocket is sealed: straight F segments to all web targets blocked, heal refused (sealed pad), wide-grid via relay found zero legal via sites within 5 mm (hw/fix_r44.py is the refusal record); repays when D6/D7 move in the next item or in the routing queue. MH2 has no pads/nets; nothing else ripped. prune_dead run after the moves.
 
