@@ -675,3 +675,7 @@ a04231a0d031,2026-11-06T14:01:05Z,pass 0155: record commit hash,863262334,415890
 dddffe482221,2026-11-06T14:04:43Z,"pass 0156: pass 156: GND island C16.2 tied - 0.5/0.3 via at (76.487,9.139) inside the fragment drops to the In1 GND zone (exhaustive 0.125-grid scan at the board-minimum via size found exactly one legal spot in the fragment). DRC: violations 156 -> 156 (class table unchanged), unconnected 53 -> 52, GND items 3 -> 2",863262334,4158900,867421234,83,64,not recorded
 651bc1b8b8a8,2026-11-06T14:04:43Z,pass 0156: record commit hash,863262334,4158900,867421234,83,64,not recorded
 fd2ad2ef2582,2026-11-06T14:04:46Z,merge: pass 156 from route,863262334,4158900,867421234,83,64,not recorded
+bb4750c58546,2026-11-06T14:05:13Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
+f8430f856d89,2026-11-06T14:08:42Z,"pass 0157: pass 157: GND island U6.51 tied - 0.5/0.3 via at (79.817,6.078) inside the fragment drops to the In1 GND zone (single legal spot in an exhaustive 0.125-grid scan at board-minimum via size). DRC: violations 156 -> 156 (class table unchanged), unconnected 52 -> 51, GND items 2 -> 1 (only the U6.38 sliver remains)",863262334,4158900,867421234,83,64,not recorded
+a8a531db2723,2026-11-06T14:08:42Z,pass 0157: record commit hash,863262334,4158900,867421234,83,64,not recorded
+99b5893b2e37,2026-11-06T14:08:52Z,merge: pass 157 from route,863262334,4158900,867421234,83,64,not recorded
