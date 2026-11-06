@@ -3602,6 +3602,36 @@
       },
       "description": "COURTYARD CAMPAIGN item 1 (U6 cluster): C49 (89,-9)->(97.5,-12), R15 (89,1)->(97.5,-15.5), R16 (89.5,-2)->(97.5,-18), C19 (95,1)->(97.5,-9.5), C18 (94,-4)->(95.5,-4), U5 (68,-18.5)->(66,-20.5). Pairs closed (7): U6xC49, U6xR15, U6xR16, U6xC19, MH2xC19, U6xC18, U6xU5. New instrument hw/move_part.py: courtyard-clear offset + straight re-lay on the anchor's own layer + via-relay fallback, group-count guard per pad net. R15 (both pads) and C19 (NRST) reconnected by relay, counts unchanged; prune_dead run after the moves. VICTIMS NAMED AS OWED: +3V3A C49 leg (pad detached, relay refused at both tried sites; net was 1 group, now 2), BOOT0 R16 leg (1->2), and the U5 nudge split +3V3D, CDR_CLKN, CAP_CLK, CAP_DATA (each 1->2 in the repair model; DATP/DATN/CLKP held by relay) -- all repay in the resumed routing queue. VCAP2 unchanged (2 groups before and after; already a residue net). GND repair-model groups 52->56 (audit is zone-inclusive; its count governs). U6xMH2 still open: neither part may move (U6 load-bearing, MH2 a mounting hole) -- escalated to parent with the polygon data.",
       "note": ""
+    },
+    {
+      "pass": 127,
+      "timestamp": "2026-11-06T01:14:00Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp121.kicad_pcb",
+      "dir": "pass-0127",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 118,
+        "unconnected_nets": 31,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 19
+      },
+      "description": "COURTYARD CAMPAIGN item 2 (D2 + T1 clusters): D2 (18,60)->(28,60) closing all six pairs its newly drawn courtyard revealed (L1, L2, C36, R35, U11, RJ2); C32 (40.5,-17)->(40.5,-16.4) and D11 (21,-25)->(17,-29.5) closing C32xT1 and D11xT1 (D11 boxed by D9/D10 west, T1 east/south, Q1 north; nearest pocket SW, 10 segments re-laid clean). APD_K_ALT held by relay; C32 and D11 nets unchanged. VICTIM NAMED AS OWED: APD_A_ALT D2 leg (1->2 groups) -- repays in the resumed routing queue. prune_dead run after the moves. Remaining courtyard pairs: 19, of which U6xMH2 is the neither-may-move case escalated to the parent.",
+      "note": ""
     }
   ],
   "gaps": [
