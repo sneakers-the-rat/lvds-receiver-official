@@ -1300,6 +1300,14 @@ pass 157: GND island U6.51 tied - 0.5/0.3 via at (79.817,6.078) inside the fragm
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 70 · Unconnected nets: 39 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 158 — 2026-11-06T14:15:24Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp188.kicad_pcb` · Commit: `pending`
+
+pass 158: +VA U3.5-C10.1 joined by an In1 hop - 0.5/0.3 vias in the U3.5 pad (37.725,39.975) and C10.1 pad (37.375,35.75), In1 track routed east around the CMP_IN via pair (In2 is blocked by the CMP_IN vertical and the THR_FILT staircase; In1 carries no tracks in this district). DRC: violations 156 -> 156 (class table unchanged), unconnected 51 -> 50, +VA items 5 -> 4
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 39 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
