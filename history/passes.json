@@ -3692,6 +3692,36 @@
       },
       "description": "COURTYARD CAMPAIGN item 4 (X1 diodes, MH5, J3, F1, J5 clusters): D6 (90,7)->(92.5,6.5) and D7 (90,12)->(91.5,12), tight to X1 and clear of MH2's new circle; C33 (11.33,28)->(9.83,30) west-south out of MH5 (east was blocked); R11 (44.5,40)->(40,40) west out of J3; F1 (20,70)->(20.5,70) after C38's nudge (20.93,67.27)->(20.93,66.77) freed its east exit; R25 (8,-18.5)->(10,-18.5) east out of J5. Pairs closed (7): X1xD6, X1xD7, MH5xC33, R11xJ3, F1xD4, F1xC38, J5xR25. C38 and F1 nets unchanged. VICTIMS NAMED AS OWED: LED_PWR_K D6 leg (2->3 groups; the R44 leg from item 3 still owed), LED_STAT and LED_STAT_A D7 legs (1->2 each), TEST_IN R11 leg (1->2), HV_SHDN and +5V R25 legs (2->3 each; both already residue nets), C33 GND pad (repair model 56->57; audit is pour-inclusive and governs). prune_dead run after the moves. Remaining courtyard pairs: 11.",
       "note": ""
+    },
+    {
+      "pass": 130,
+      "timestamp": "2026-11-06T01:45:03Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp141.kicad_pcb",
+      "dir": "pass-0130",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 156,
+        "unconnected_nets": 36,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "COURTYARD CAMPAIGN COMPLETE: 0 courtyard collisions. Consolidated placement session (parent, single pair of hands, audit->render->look->move loop) from pass 127's board (exp121, 19 pairs): 20 moves over 19 parts closing every remaining pair -- R11 (44.5,40)->(42.25,40) out of J3; C41 ->(41.25,59.75) closing C41xFB2 + C41xR40; C5 ->(21.95,42.87) closing C1xC5; C17 ->(71.95,9.5) closing C16xC17; D8 ->(12.5,44) closing D8xU1; C38 ->(20.93,67.02) + D4 ->(13.27,72.25) closing F1xC38 + F1xD4; R25 ->(8,-19.25) closing J5xR25; C33 ->(12.58,28.5) closing MH5xC33 (polygon; bbox still touches the round hole courtyard, shapes do not intersect); R32 ->(30.5,-4.05) closing R32xR31; C37 ->(8.25,60) closing R36xC37; R42 ->(55.46,58.5) closing R41xR42; R50 ->(32.84,-7.15) closing R49xR50; R1 ->(19.5,35.75) closing U1xR1 (nudge only, stays tight to the TIA); D6 ->(91.25,8.5), D7 ->(91.25,12), R44 ->(91.25,14.5) as one column east of X1 closing X1xD6 + X1xD7 and clearing MH2's landing zone; R5 ->(16.25,50.5) closing U12xR5; MH2 ->(96.5,10.0) per the parent ruling closing U6xMH2. LINEAGE: this endpoint branches from pass 127 and SUPERSEDES the sibling item-3/4 positions in passes 128/129 for the shared clusters (MH2's endpoint is identical; R44/D6/D7/R11/C33/R25 differ); passes 128/129 remain the record of that line. VICTIMS OWED on this board, repay first in the resumed routing queue: TEST_IN (R11 leg), GND (C41 leg), +5V (R25 leg), LED_PWR_K (D6 leg and R44 leg), LED_STAT + LED_STAT_A (D7 legs). SH1 still has no drawn courtyard -- the one blind footprint, named until closed. Routing resumes from this board.",
+      "note": ""
     }
   ],
   "gaps": [

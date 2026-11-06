@@ -1076,6 +1076,14 @@ COURTYARD CAMPAIGN item 4 (X1 diodes, MH5, J3, F1, J5 clusters): D6 (90,7)->(92.
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 156 · Unconnected nets: 36 · Courtyard collisions: 11 · Audit verdict: FAIL
 
+### Pass 130 — 2026-11-06T01:45:03Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp141.kicad_pcb` · Commit: `pending`
+
+COURTYARD CAMPAIGN COMPLETE: 0 courtyard collisions. Consolidated placement session (parent, single pair of hands, audit->render->look->move loop) from pass 127's board (exp121, 19 pairs): 20 moves over 19 parts closing every remaining pair -- R11 (44.5,40)->(42.25,40) out of J3; C41 ->(41.25,59.75) closing C41xFB2 + C41xR40; C5 ->(21.95,42.87) closing C1xC5; C17 ->(71.95,9.5) closing C16xC17; D8 ->(12.5,44) closing D8xU1; C38 ->(20.93,67.02) + D4 ->(13.27,72.25) closing F1xC38 + F1xD4; R25 ->(8,-19.25) closing J5xR25; C33 ->(12.58,28.5) closing MH5xC33 (polygon; bbox still touches the round hole courtyard, shapes do not intersect); R32 ->(30.5,-4.05) closing R32xR31; C37 ->(8.25,60) closing R36xC37; R42 ->(55.46,58.5) closing R41xR42; R50 ->(32.84,-7.15) closing R49xR50; R1 ->(19.5,35.75) closing U1xR1 (nudge only, stays tight to the TIA); D6 ->(91.25,8.5), D7 ->(91.25,12), R44 ->(91.25,14.5) as one column east of X1 closing X1xD6 + X1xD7 and clearing MH2's landing zone; R5 ->(16.25,50.5) closing U12xR5; MH2 ->(96.5,10.0) per the parent ruling closing U6xMH2. LINEAGE: this endpoint branches from pass 127 and SUPERSEDES the sibling item-3/4 positions in passes 128/129 for the shared clusters (MH2's endpoint is identical; R44/D6/D7/R11/C33/R25 differ); passes 128/129 remain the record of that line. VICTIMS OWED on this board, repay first in the resumed routing queue: TEST_IN (R11 leg), GND (C41 leg), +5V (R25 leg), LED_PWR_K (D6 leg and R44 leg), LED_STAT + LED_STAT_A (D7 legs). SH1 still has no drawn courtyard -- the one blind footprint, named until closed. Routing resumes from this board.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 156 · Unconnected nets: 36 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
