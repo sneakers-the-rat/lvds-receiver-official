@@ -17,8 +17,13 @@ Model of a transcript:
   schemas; not present in transcripts) plus every context item present
   before the run.
 - An item's tokens are NEW at the first request that sends it and
-  REPEATED at every later send. The preamble is new once per agent
-  session and repeated thereafter.
+  REPEATED at every later send. The preamble is NEW at EVERY request:
+  it is the runtime-injected standing context (system prompt, tool
+  schemas, standing files), re-injected per request and edited
+  mid-run as those files change, so it is never assumed to be served
+  from a prefix cache. (An earlier version counted it new once per
+  session and repeated thereafter; simplified 2026-11-05 at the
+  project owner's direction — see metrics/README.md.)
 - Fork slices: a spawned agent's transcript opens with a byte-identical
   copy (same seq, same content) of a slice of its parent's stream —
   the inherited context. Detected as a >=20-item prefix whose items
@@ -548,7 +553,10 @@ def main():
             note = 'no requests reconstructed for this record; carried as repeated'
         else:
             est_total = predict(b, pre, aid, d)
-            new_tokens = b[kls] * d['new_chars'] + pre[kls] * d['n_first']
+            # The preamble (injected standing context) counts as NEW
+            # at every request (d['K'] of them), never as repeated:
+            # it is not assumed to be cache-served.
+            new_tokens = b[kls] * d['new_chars'] + pre[kls] * d['K']
             share = min(max(new_tokens / est_total, 0.0), 1.0) if est_total > 0 else 0.0
             est_new = round(row['input'] * share)
             est_rep = row['input'] - est_new
