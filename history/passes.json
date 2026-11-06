@@ -3484,6 +3484,35 @@
       },
       "description": "XI/XO (queue item 5) stand as NAMED RESIDUALS; XI fanout ray placed as the heal-enabler attempt. XO: U7.27 SEALED -- hand_stub refuses all 16 directions; every via site tiled by the CDR_DATP via (76.88,10.62) at 0.03-0.155mm, ULPI_CK's wall and U7.26 PHY_1V8's pad; the only mechanisms are the coordinated CDR-pair relay or a U7 move (both parked with the ULPI knot). XI: heal refused before AND after this ray (pad-cell seal in the grid model), thread_far refused (gap 8.45, no thread); remaining mechanisms are the west-corridor hand-route (crosses +3V3A's 0.60 west trunk + the GND field at y19-22, multi-via marginal windows) or the pair relay. This pass places ONLY the XI ray: nub extended (76.25,11.03)->(76.25,10.55) + west bend ->(75.85,10.55), exact-tested clean; no via fits at the ray (CDR_DATP buried staircases). DELTAS vs pass 121: nets 27->27, violations 71->71 expected (audit verifies), XI groups unchanged 2. No victims. NEXT: queue item 6 (east-column +3V3D_CDR + CDR_LOL), then the residue family.",
       "note": ""
+    },
+    {
+      "pass": 123,
+      "timestamp": "2026-11-06T00:01:14Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp116.kicad_pcb",
+      "dir": "pass-0123",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 71,
+        "unconnected_nets": 24,
+        "audit_verdict": "FAIL"
+      },
+      "description": "Batch heal over all 24 remaining nets (heal starts from each net's SMALL group; several small groups sit in open grid even when the far end is sealed): ULPI_D1, ULPI_D3 (3 vias, 75s search) and ULPI_D6 CONNECTED -- the ULPI knot loses three members; +5V closed two of its four groups (7-item group via 1 via; 2-item group direct), leaving [U7.4 group] vs main. All other nets refused by heal (pad-cell seals at the QFP/QFN rows; CF2/DP_PHY/HV_SS/PHY_1V8A/ULPI_D2 searches exhausted the 1.5M cap against enclosed target pockets). DELTAS vs pass 122: nets 27->24 (D1, D3, D6), violations 71->71, census byte-identical -- heal's grid routes audited clean. No victims. LEFT: 24 nets; knot remainder D2/D5/STP + USB_RST; named residuals XI, XO, +3V3D_CDR, CDR_LOL unchanged.",
+      "note": ""
     }
   ],
   "gaps": [
