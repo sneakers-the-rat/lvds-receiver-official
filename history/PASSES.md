@@ -1036,9 +1036,9 @@ Standing prune (owner's instruction: after any route change) over pass 123's hea
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 24 · Audit verdict: FAIL
 
-### Pass 125 — 2026-11-06T00:52:47Z · commit `pending`
+### Pass 125 — 2026-11-06T00:52:47Z · commit `3b0f4fd`
 
-Board: `hw/pdlvds_rx.exp118.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp118.kicad_pcb` · Commit: `3b0f4fd52ba21bd2804e7f19e9ce4a93aa138f82`
 
 COURTYARD CAMPAIGN item 0 (audit blindness): courtyards drawn for the five drawable blind footprints D1, D2, C4, U9, T1 — board instances + hw/pdlvds.pretty library (text insertion of fp_line rectangles: KiCad 7.0.11's writer zeroes FP_SHAPE points set through the Python API, verified in-session; hw/draw_courtyards.py is the instrument). Blind list 6 -> 1: SH1 remains (shield can enclosing the frontend it covers by design; closure is the pending clip-pattern conversion, parts audit; the audit's bbox-fallback line reports it every pass). Drawing the courtyards REVEALED 8 new gated pairs, now counted and queued: L1xD2, L2xD2, D2xC36, D2xR35, D2xU11, D2xRJ2, C32xT1, D11xT1. BOARD STATE: courtyard pairs 26 -> 34, nets 24 -> 24, violations 71 -> 71 (courtyard shapes carry no copper; no parts moved, no victims). Next: D2 cluster (move D2, the DNP alternate APD site), T1 pair (move C32, D11), then the original 26.
 
