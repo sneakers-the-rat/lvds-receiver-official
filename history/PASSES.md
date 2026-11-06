@@ -1052,6 +1052,38 @@ COURTYARD CAMPAIGN item 1 (U6 cluster): C49 (89,-9)->(97.5,-12), R15 (89,1)->(97
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 112 · Unconnected nets: 30 · Courtyard collisions: 27 · Audit verdict: FAIL
 
+### Pass 127 — 2026-11-06T01:14:00Z · commit `1a5ecb6`
+
+Board: `hw/pdlvds_rx.exp121.kicad_pcb` · Commit: `1a5ecb63172159b0824785c7cda42821b5b75325`
+
+COURTYARD CAMPAIGN item 2 (D2 + T1 clusters): D2 (18,60)->(28,60) closing all six pairs its newly drawn courtyard revealed (L1, L2, C36, R35, U11, RJ2); C32 (40.5,-17)->(40.5,-16.4) and D11 (21,-25)->(17,-29.5) closing C32xT1 and D11xT1 (D11 boxed by D9/D10 west, T1 east/south, Q1 north; nearest pocket SW, 10 segments re-laid clean). APD_K_ALT held by relay; C32 and D11 nets unchanged. VICTIM NAMED AS OWED: APD_A_ALT D2 leg (1->2 groups) -- repays in the resumed routing queue. prune_dead run after the moves. Remaining courtyard pairs: 19, of which U6xMH2 is the neither-may-move case escalated to the parent.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 118 · Unconnected nets: 31 · Courtyard collisions: 19 · Audit verdict: FAIL
+
+### Pass 128 — 2026-11-06T01:20:55Z · commit `47140f1`
+
+Board: `hw/pdlvds_rx.exp122.kicad_pcb` · Commit: `47140f12a33e38bae40befca7fcb38045b110a7e`
+
+COURTYARD CAMPAIGN item 3 (U6xMH2, parent ruling: MH2 moves, U6 stays, no courtyard shrunk): landing zone probed first (x93-100, y6-14) -- occupants: R44 (courtyard reaching (94.48,7.73), inside MH2's new keep-out circle), D6/D7 clear (courtyards end x=91.48). R44 moved first, same item: (93,7)->(91.5,9.5), the pocket between D6, D7, X1 and MH2's new circle (its first target (97.5,5) sat inside MH2's CURRENT circle; the pocket was probe-verified clear of both MH2 positions). MH2 then moved north at constant x: (96.5,3.5)->(96.5,10.0) (corner column with MH4 kept); new courtyard (93.04,6.54)-(99.95,13.46), bottom clearing U6's courtyard top (5.65) by 0.89 mm. U6xMH2 CLOSED. Pair census: 19 -> 18. VICTIM NAMED AS OWED: LED_PWR_K R44 leg (1->2 groups) -- the pocket is sealed: straight F segments to all web targets blocked, heal refused (sealed pad), wide-grid via relay found zero legal via sites within 5 mm (hw/fix_r44.py is the refusal record); repays when D6/D7 move in the next item or in the routing queue. MH2 has no pads/nets; nothing else ripped. prune_dead run after the moves.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 122 · Unconnected nets: 32 · Courtyard collisions: 18 · Audit verdict: FAIL
+
+### Pass 129 — 2026-11-06T01:27:31Z · commit `100debd`
+
+Board: `hw/pdlvds_rx.exp123.kicad_pcb` · Commit: `100debd4a17f24967c61e7fe49285a5359caa0b3`
+
+COURTYARD CAMPAIGN item 4 (X1 diodes, MH5, J3, F1, J5 clusters): D6 (90,7)->(92.5,6.5) and D7 (90,12)->(91.5,12), tight to X1 and clear of MH2's new circle; C33 (11.33,28)->(9.83,30) west-south out of MH5 (east was blocked); R11 (44.5,40)->(40,40) west out of J3; F1 (20,70)->(20.5,70) after C38's nudge (20.93,67.27)->(20.93,66.77) freed its east exit; R25 (8,-18.5)->(10,-18.5) east out of J5. Pairs closed (7): X1xD6, X1xD7, MH5xC33, R11xJ3, F1xD4, F1xC38, J5xR25. C38 and F1 nets unchanged. VICTIMS NAMED AS OWED: LED_PWR_K D6 leg (2->3 groups; the R44 leg from item 3 still owed), LED_STAT and LED_STAT_A D7 legs (1->2 each), TEST_IN R11 leg (1->2), HV_SHDN and +5V R25 legs (2->3 each; both already residue nets), C33 GND pad (repair model 56->57; audit is pour-inclusive and governs). prune_dead run after the moves. Remaining courtyard pairs: 11.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 156 · Unconnected nets: 36 · Courtyard collisions: 11 · Audit verdict: FAIL
+
+### Pass 130 — 2026-11-06T01:45:03Z · commit `c528060`
+
+Board: `hw/pdlvds_rx.exp141.kicad_pcb` · Commit: `c52806048ec4c98d5352e748c0565f21c2d94dcd`
+
+COURTYARD CAMPAIGN COMPLETE: 0 courtyard collisions. Consolidated placement session (parent, single pair of hands, audit->render->look->move loop) from pass 127's board (exp121, 19 pairs): 20 moves over 19 parts closing every remaining pair -- R11 (44.5,40)->(42.25,40) out of J3; C41 ->(41.25,59.75) closing C41xFB2 + C41xR40; C5 ->(21.95,42.87) closing C1xC5; C17 ->(71.95,9.5) closing C16xC17; D8 ->(12.5,44) closing D8xU1; C38 ->(20.93,67.02) + D4 ->(13.27,72.25) closing F1xC38 + F1xD4; R25 ->(8,-19.25) closing J5xR25; C33 ->(12.58,28.5) closing MH5xC33 (polygon; bbox still touches the round hole courtyard, shapes do not intersect); R32 ->(30.5,-4.05) closing R32xR31; C37 ->(8.25,60) closing R36xC37; R42 ->(55.46,58.5) closing R41xR42; R50 ->(32.84,-7.15) closing R49xR50; R1 ->(19.5,35.75) closing U1xR1 (nudge only, stays tight to the TIA); D6 ->(91.25,8.5), D7 ->(91.25,12), R44 ->(91.25,14.5) as one column east of X1 closing X1xD6 + X1xD7 and clearing MH2's landing zone; R5 ->(16.25,50.5) closing U12xR5; MH2 ->(96.5,10.0) per the parent ruling closing U6xMH2. LINEAGE: this endpoint branches from pass 127 and SUPERSEDES the sibling item-3/4 positions in passes 128/129 for the shared clusters (MH2's endpoint is identical; R44/D6/D7/R11/C33/R25 differ); passes 128/129 remain the record of that line. VICTIMS OWED on this board, repay first in the resumed routing queue: TEST_IN (R11 leg), GND (C41 leg), +5V (R25 leg), LED_PWR_K (D6 leg and R44 leg), LED_STAT + LED_STAT_A (D7 legs). SH1 still has no drawn courtyard -- the one blind footprint, named until closed. Routing resumes from this board.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 156 · Unconnected nets: 36 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
