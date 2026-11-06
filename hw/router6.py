@@ -464,7 +464,9 @@ def route6(board, net_objs, fps, checkpoint=None):
     items = {l: Items() for l in range(3)}
     pad_cells = {}
     for ref, fp in fps.items():
-        rot = math.radians(fp.GetOrientationDegrees())
+        # Pad OBB angle: pad.GetOrientationDegrees() is already
+        # board-absolute (KiCad 8); adding the footprint rotation
+        # again double-counts it (see hw/repair.py).
         for pad in fp.Pads():
             net = pad.GetNetname()
             pos = pcbnew.ToMM(pad.GetPosition())
@@ -476,7 +478,7 @@ def route6(board, net_objs, fps, checkpoint=None):
             for li in layers:
                 items[li].add(li, ('pad', net,
                                    (pos[0], pos[1], size[0] / 2, size[1] / 2,
-                                    rot + math.radians(
+                                    math.radians(
                                         pad.GetOrientationDegrees())), clr),
                               (pos[0] - bhw, pos[1] - bhw,
                                pos[0] + bhw, pos[1] + bhw))
