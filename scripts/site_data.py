@@ -436,10 +436,11 @@ def cost_data():
                   "cells": cells_for("all-uncached (tier-matched)",
                                      "all")})
 
-    # Second table: the other two whole-volume costs.
+    # Second table: the other whole-volume costs.
     extras = []
     for label in ("all-cached (tier-matched)",
-                  "cache-adjusted (estimated share)",
+                  "cache-adjusted (pessimistic estimate)",
+                  "cache-adjusted (optimistic estimate)",
                   "cache-adjusted (assumed 95% share)"):
         cells = cells_for(label, "all")
         if any(cells):
