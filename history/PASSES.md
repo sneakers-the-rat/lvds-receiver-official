@@ -1236,9 +1236,9 @@ WHOLE-BOARD RE-PLACEMENT (user order 2026-11-06: placement itself was the defect
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 15 · Unconnected nets: 120 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 150 — 2026-11-06T11:33:43Z · commit `pending`
+### Pass 150 — 2026-11-06T11:33:43Z · commit `04b5078`
 
-Board: `hw/pdlvds_rx.exp180.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp180.kicad_pcb` · Commit: `04b507822882d7c63c65482672b053b5d1c78e60`
 
 First re-route of the re-placed board (exp179, pass 149): three heal campaigns over the bare board (residue/stuck set first while the field was empty, then two full sweeps resumed across a VM restart from the 60-group checkpoint). 234 groups connected in total. KiCad DRC referee against the bare exp179 (154 violations / 303 unconnected): violations 167 (silk_overlap/silk_over_copper 148 -- the designator-text class the re-placement created, tail work; copper_edge_clearance 7; shorting_items 6, named below; CLEARANCE 0 and DANGLING 0 -- the heal lays are clean), unconnected 303 -> 82. Residue by net (DRC items): GND 56 (never healed -- the pour alone strands pads/islands; gets its own heal next), +VA 18 (the one total failure: every group exhausted the search cap; two clusters 12 mm apart around U13/front-end, mechanism to be diagnosed with the board rendered), TIA_OUT 8 (front-end enclosure: U1.6 and C5.1 each failed after ~146 s searches), +3V3A 4 (U7.6/U7.25 sealed pads), APD_A 4 (D1.2/4/6 sealed under the shield can), DP_CON 4 (J1.B6), I2C_SDA 4, +3V3D 2 (U11.14), +3V3D_CDR 2 (U4.12), APD_K 2 (D1.5), CAP_CLK 2 + CAP_DATA 2 (U5-U6 corridor), plus the sealed-pad set (U7 ULPI ring, U4.4/22/28, SWCLK, C23.1 PHY_1V8A). Next: hand-stub fanout for the sealed pads (hw/hand_stub.py exists for exactly this), GND heal, shorts prune, then the residue diagnoses. Placement dividend already visible: +5V, the ULPI bus's U6 side, both CDR pairs and the HV chain connected in seconds-to-minutes where the old placement ground for hours.
 
