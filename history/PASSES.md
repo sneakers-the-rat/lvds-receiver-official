@@ -1340,6 +1340,14 @@ pass 162: +VA COMPLETE - U13 output pair joined: 0.5/0.3 via at (41.1,49.35) on 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 38 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 163 — 2026-11-06T14:51:15Z · commit `10b615f`
+
+Board: `hw/pdlvds_rx.exp193.kicad_pcb` · Commit: `10b615f7ff63e95a40c47f77ea3ae0c52733f7d0`
+
+pass 163: TIA_OUT U1.6-R1.1 routed on F (grid route, DRC-verified). DRC: violations 156 -> 156 (class table unchanged), unconnected 46 -> 45, TIA_OUT items 4 -> 3
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 38 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

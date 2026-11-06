@@ -4682,6 +4682,36 @@
       },
       "description": "pass 162: +VA COMPLETE - U13 output pair joined: 0.5/0.3 via at (41.1,49.35) on the U13.10 pad/stub, In1 track south at x=41.1 then west at y=41.6 (clearing the GND/TEST_IN via pair) to the hop via (37.725,39.975). DRC: violations 156 -> 156 (class table unchanged), unconnected 47 -> 46, +VA items 1 -> 0",
       "note": ""
+    },
+    {
+      "pass": 163,
+      "timestamp": "2026-11-06T14:51:15Z",
+      "hash": "10b615f7ff63e95a40c47f77ea3ae0c52733f7d0",
+      "short_hash": "10b615f",
+      "board_file": "hw/pdlvds_rx.exp193.kicad_pcb",
+      "dir": "pass-0163",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 71,
+        "unconnected_nets": 38,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 163: TIA_OUT U1.6-R1.1 routed on F (grid route, DRC-verified). DRC: violations 156 -> 156 (class table unchanged), unconnected 46 -> 45, TIA_OUT items 4 -> 3",
+      "note": ""
     }
   ],
   "gaps": [
