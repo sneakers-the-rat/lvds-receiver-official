@@ -4382,6 +4382,36 @@
       },
       "description": "pass 152: GND campaign on the re-placed board - pour stitching (vias tying 16 stranded pads + F islands to the inner GND plane), U10 pocket cluster track-tied south to T1.9, U8 island tied. KiCad DRC vs exp181: violations 156 -> 156, unconnected items 82 -> 59 (GND items 28 -> 5: C29.2 pad and 4 F islands remain)",
       "note": ""
+    },
+    {
+      "pass": 153,
+      "timestamp": "2026-11-06T13:30:42Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp183.kicad_pcb",
+      "dir": "pass-0153",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 70,
+        "unconnected_nets": 40,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 153: +VA first links - grid-routed tree C44.1/C2.1/C7.1/U2.5 on F, U13.9-U13.10 same-net pin link (0.6 segment ending at 49.55 for exactly class clearance to U13.8 GND). KiCad DRC vs exp182: violations 156 -> 156, unconnected items 59 -> 55 (+VA items 9 -> 5; remaining +VA groups: U3.5, C10.1, U1.7, R5.1, U13 pair join)",
+      "note": ""
     }
   ],
   "gaps": [
