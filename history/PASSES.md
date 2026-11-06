@@ -1132,6 +1132,14 @@ U5 rip-and-relay, the big one: +3V3D. Ripped all 72 +3V3D segments intersecting 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 112 · Unconnected nets: 34 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 137 — 2026-11-06T05:58:33Z · commit `25ee047`
+
+Board: `hw/pdlvds_rx.exp164.kicad_pcb` · Commit: `25ee0470a85dcf0a3fd1d2231f40cd23fd1a5860`
+
+Heal-stub prune after the U5 rip-and-relays. The +3V3D/CDR_DATP re-lays (passes 135-136) left fresh dangling stubs (track_dangling had risen 17 -> 22). Ran the DRC/graph prune (scratch/drc_graph_prune.py) on exp163: 23 dead segments removed over 9 rounds, every round refereed. KiCad DRC: violations 347 -> 338, track_dangling 22 -> 20, clearance 45 -> 44, shorting_items 34 UNCHANGED, unconnected items 48 UNCHANGED throughout. The 20 remaining dangling are the standing residue: graph-vetoed bridges (live overshoot tracks) + ambiguous hairline joints the matcher refuses to guess (SWCLK at (94.125,34.375) among them).
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 112 · Unconnected nets: 34 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
