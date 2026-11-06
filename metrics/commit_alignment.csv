@@ -671,3 +671,7 @@ d8432b256585,2026-11-06T13:44:08Z,metrics: post-merge regen,863262334,4158900,86
 8ea38d785db7,2026-11-06T14:01:04Z,"pass 0155: pass 155: GND island X2.2 tied - 0.5/0.3 via at (72.55,25.6) in the fragment north lobe drops to the In1 GND zone (In2 +3V3D track at y=24.375 blocks the pad row; F exits sealed by the CDR_SQUELCH staircase and the +3V3D via at (74.625,24.375)). DRC: violations 156 -> 156 (class table unchanged), unconnected 54 -> 53, GND items 4 -> 3",863262334,4158900,867421234,83,64,not recorded
 a04231a0d031,2026-11-06T14:01:05Z,pass 0155: record commit hash,863262334,4158900,867421234,83,64,not recorded
 630a48bd56f8,2026-11-06T14:01:11Z,merge: pass 155 from route,863262334,4158900,867421234,83,64,not recorded
+733fd495aa2b,2026-11-06T14:01:35Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
+dddffe482221,2026-11-06T14:04:43Z,"pass 0156: pass 156: GND island C16.2 tied - 0.5/0.3 via at (76.487,9.139) inside the fragment drops to the In1 GND zone (exhaustive 0.125-grid scan at the board-minimum via size found exactly one legal spot in the fragment). DRC: violations 156 -> 156 (class table unchanged), unconnected 53 -> 52, GND items 3 -> 2",863262334,4158900,867421234,83,64,not recorded
+651bc1b8b8a8,2026-11-06T14:04:43Z,pass 0156: record commit hash,863262334,4158900,867421234,83,64,not recorded
+fd2ad2ef2582,2026-11-06T14:04:46Z,merge: pass 156 from route,863262334,4158900,867421234,83,64,not recorded
