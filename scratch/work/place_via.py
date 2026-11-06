@@ -1,0 +1,12 @@
+import sys, pcbnew
+src, dst, netname, x, y = sys.argv[1], sys.argv[2], sys.argv[3], float(sys.argv[4]), float(sys.argv[5])
+b = pcbnew.LoadBoard(src)
+def M(v): return pcbnew.FromMM(v)
+v = pcbnew.PCB_VIA(b)
+v.SetPosition(pcbnew.VECTOR2I(M(x), M(y)))
+v.SetDrill(M(0.3)); v.SetWidth(M(0.6))
+v.SetLayerPair(pcbnew.F_Cu, pcbnew.B_Cu)
+v.SetNet(b.FindNet(netname))
+b.Add(v)
+filler = pcbnew.ZONE_FILLER(b); filler.Fill(b.Zones())
+b.Save(dst); print('saved', dst)
