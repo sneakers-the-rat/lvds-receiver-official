@@ -1052,9 +1052,9 @@ COURTYARD CAMPAIGN item 1 (U6 cluster): C49 (89,-9)->(97.5,-12), R15 (89,1)->(97
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 112 · Unconnected nets: 30 · Courtyard collisions: 27 · Audit verdict: FAIL
 
-### Pass 127 — 2026-11-06T01:14:00Z · commit `pending`
+### Pass 127 — 2026-11-06T01:14:00Z · commit `1a5ecb6`
 
-Board: `hw/pdlvds_rx.exp121.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp121.kicad_pcb` · Commit: `1a5ecb63172159b0824785c7cda42821b5b75325`
 
 COURTYARD CAMPAIGN item 2 (D2 + T1 clusters): D2 (18,60)->(28,60) closing all six pairs its newly drawn courtyard revealed (L1, L2, C36, R35, U11, RJ2); C32 (40.5,-17)->(40.5,-16.4) and D11 (21,-25)->(17,-29.5) closing C32xT1 and D11xT1 (D11 boxed by D9/D10 west, T1 east/south, Q1 north; nearest pocket SW, 10 segments re-laid clean). APD_K_ALT held by relay; C32 and D11 nets unchanged. VICTIM NAMED AS OWED: APD_A_ALT D2 leg (1->2 groups) -- repays in the resumed routing queue. prune_dead run after the moves. Remaining courtyard pairs: 19, of which U6xMH2 is the neither-may-move case escalated to the parent.
 
