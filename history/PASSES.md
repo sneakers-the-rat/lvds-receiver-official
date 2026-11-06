@@ -1084,9 +1084,9 @@ COURTYARD CAMPAIGN COMPLETE: 0 courtyard collisions. Consolidated placement sess
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 156 · Unconnected nets: 36 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 131 — 2026-11-06T04:25:59Z · commit `pending`
+### Pass 131 — 2026-11-06T04:25:59Z · commit `8066156`
 
-Board: `hw/pdlvds_rx.exp154.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp154.kicad_pcb` · Commit: `8066156fbf6e994f7ba41723232e9bbccb7c0ae7`
 
 Post-courtyard routing resumes + dead-copper prune. From pass 130's board (exp141): prune pass, heal reconnected TEST_IN and LED_STAT (exp144); two placement attempts on the sealed LED pads (R44/D7 slid south, exp145/146) did NOT open them -- position alone is not the seal; heal still refuses R44.1/D7.1/D7.2. KiCad 8 DRC adopted as the standing checker (exp147 baseline: 706 violations / 50 unconnected items). Dead-copper campaign: the user's screenshots showed barbs that prune_dead's own redrawn-graph model had absorbed (raw census: 363 one-ended + 71 floating segments). Three deleter designs failed verification and were rejected uncommitted (centreline-tolerance model severed live joints, DRC unconnected 50->115; copper-overlap model 50->51; raw DRC-dangling deletion split pad groups 50->52, restored). Shipped instrument scratch/drc_graph_prune.py: KiCad proposes dangling items, a copper-contact graph vetoes segments that bridge two pad groups, KiCad referees after every round with abort-and-restore. Result (exp154): 150 dead segments removed over 31 rounds; track_dangling 84->25, via_dangling 7->0, violations 706->627, unconnected items 50 UNCHANGED throughout. Residue: 25 flagged dangling = 5 graph-vetoed bridges (live overshoot tracks, kept deliberately) + 19 matcher-skipped (matcher fix owed) + ~1. Failed boards exp148/149/151/152 remain in the working tree as evidence, uncommitted. Instruments saved in scratch/: dead_end_census.py, delete_dead.py, drc_prune.py, graph_prune.py, drc_graph_prune.py.
 
