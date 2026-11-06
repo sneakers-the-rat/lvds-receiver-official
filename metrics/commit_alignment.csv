@@ -683,3 +683,7 @@ a8a531db2723,2026-11-06T14:08:42Z,pass 0157: record commit hash,863262334,415890
 d3711ff00208,2026-11-06T14:16:52Z,"pass 0158: pass 158: +VA U3.5-C10.1 joined by an In1 hop - 0.5/0.3 vias in the U3.5 pad (37.725,39.975) and C10.1 pad (37.375,35.75), In1 track routed east around the CMP_IN via pair (In2 is blocked by the CMP_IN vertical and the THR_FILT staircase; In1 carries no tracks in this district). DRC: violations 156 -> 156 (class table unchanged), unconnected 51 -> 50, +VA items 5 -> 4",863262334,4158900,867421234,83,64,not recorded
 c55d21523b64,2026-11-06T14:16:52Z,pass 0158: record commit hash,863262334,4158900,867421234,83,64,not recorded
 e775eb0b3973,2026-11-06T14:16:59Z,merge: pass 158 from route,863262334,4158900,867421234,83,64,not recorded
+0ce794424df3,2026-11-06T14:17:20Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
+6f6877cf4bd3,2026-11-06T14:20:42Z,"pass 0159: pass 159: +VA hop group joined to the main tree - 0.5/0.3 via in C44.1 pad (30.825,40.05), In1 track west at y=40 from the U3.5 hop via (37.725,39.975), passing 0.425 clear of the CMP_IN and THR_FILT vias. DRC: violations 156 -> 156 (class table unchanged), unconnected 50 -> 49, +VA items 4 -> 3 (U13 pair, U1.7, R5.1 remain)",863262334,4158900,867421234,83,64,not recorded
+b14070701544,2026-11-06T14:20:42Z,pass 0159: record commit hash,863262334,4158900,867421234,83,64,not recorded
+df74ed2485ad,2026-11-06T14:20:54Z,merge: pass 159 from route,863262334,4158900,867421234,83,64,not recorded
