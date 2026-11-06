@@ -1380,6 +1380,14 @@ pass 167: HV_VC + HV_VC2 connected (violations 156 -> 156, unconnected 42 -> 40)
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 93 · Unconnected nets: 35 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 168 — 2026-11-06T15:36:13Z · commit `d53221c`
+
+Board: `hw/pdlvds_rx.exp198.kicad_pcb` · Commit: `d53221c743ca76e66b6a8ccd8b05b868c4995d68`
+
+pass 168: CF1 connected (violations 156 -> 156, unconnected 40 -> 39). Pure-F route U4.15 -> C15.1: north leg at x=67.55 (w0.15 past the CF2 jog), bent east run at y=40.52 clearing U4.16's pad top, north at x=68.6, west over the C15 pads at y=42.05, south into C15.1. Also recorded as parked/sealed this session: HV_GATE, HV_INTVCC, USB_RST, XI, XO, PHY_1V8A, CDR_NIN, REFCLKN, +3V3A U7.6 (each with named blockers in the pass-167/168 working notes).
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 93 · Unconnected nets: 34 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
