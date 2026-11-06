@@ -1,0 +1,14 @@
+pass: 170
+description: pass 170: DAC_VREF connected. Grid router proved F/B no-path; In2 segment (70.0,5.375)-(69.51,7.85) from the router, via (70.3,5.0) overlapping U8.10 pad edge joined by In2 stub, via (69.51,7.85) on-segment, F stub into C26.1. DRC: violations 156 (unchanged), unconnected 37 -> 36
+timestamp (UTC): 2026-11-06T16:13:48Z
+commit: pending
+board file: hw/pdlvds_rx.exp200.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 96
+unconnected nets: 31
+courtyard collisions: 0
+audit verdict: fail
+note: 
