@@ -1164,9 +1164,9 @@ CDR pair rip-and-relay through the east strip (sets up the D7 field), then heal-
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 87 · Unconnected nets: 31 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 141 — 2026-11-06T06:33:19Z · commit `pending`
+### Pass 141 — 2026-11-06T06:33:19Z · commit `3808685`
 
-Board: `hw/pdlvds_rx.exp171.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp171.kicad_pcb` · Commit: `3808685177ecb2b992c03e7e2f5e28155a5c3d60`
 
 Shorts locality B: U5 west pad field (5 items). Ripped in box (61.5,-24)-(66,-14.5): I2C_SCL 4 segs, I2C_SDA 13, CDR_CLKP 25, CDR_DATN 6; deleted 4 vias in the field (CDR_CLKP at (63.12,-18.88), (62.62,-18.12), (64.62,-16.12) -- the last was the one on U5.8 GND -- and CDR_DATN at (65.53,-22.95)). Heal (74 s): all four nets fully reconnected, 7 groups. The I2C vias DRC had paired with U5.6/U5.5 were resolved by the re-lay (their positions in the report were the pads'; the re-laid fanout now clears the column). KiCad DRC referee, exp170 -> exp171: violations 294 -> 283, shorting_items 11 -> 6 (U5 zero; remaining are five single localities), unconnected items 46 -> 45, clearance 42 -> 37, solder_mask_bridge 17 -> 12, copper_edge_clearance 88 unchanged, track_dangling 20 -> 23 (fresh heal stubs).
 
