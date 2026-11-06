@@ -14,4 +14,8 @@
   (pad "8" smd rect (at 0 10.16) (size 1.6 3.2) (layers "F.Cu" "F.Paste" "F.Mask"))
   (pad "9" smd rect (at -4 10.16) (size 1.6 3.2) (layers "F.Cu" "F.Paste" "F.Mask"))
   (pad "10" smd rect (at -8 10.16) (size 1.6 3.2) (layers "F.Cu" "F.Paste" "F.Mask"))
+    (fp_line (start -11.855 -13.35) (end 11.855 -13.35) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (tstamp ed524f14-aea0-45b2-b43a-d7a2fd612e59))
+    (fp_line (start 11.855 -13.35) (end 11.855 13.35) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (tstamp 077c8553-25e8-48b5-914f-d1cd2e2025a1))
+    (fp_line (start 11.855 13.35) (end -11.855 13.35) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (tstamp 307d0bc3-2d3f-4dd4-8b97-231688f4f9b3))
+    (fp_line (start -11.855 13.35) (end -11.855 -13.35) (stroke (width 0.05) (type solid)) (layer "F.CrtYd") (tstamp 1c0b900a-9cde-4f77-8603-990c6d26bfc2))
 )
