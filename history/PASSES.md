@@ -1020,6 +1020,14 @@ XI/XO (queue item 5) stand as NAMED RESIDUALS; XI fanout ray placed as the heal-
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 27 · Audit verdict: FAIL
 
+### Pass 123 — 2026-11-06T00:01:14Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp116.kicad_pcb` · Commit: `pending`
+
+Batch heal over all 24 remaining nets (heal starts from each net's SMALL group; several small groups sit in open grid even when the far end is sealed): ULPI_D1, ULPI_D3 (3 vias, 75s search) and ULPI_D6 CONNECTED -- the ULPI knot loses three members; +5V closed two of its four groups (7-item group via 1 via; 2-item group direct), leaving [U7.4 group] vs main. All other nets refused by heal (pad-cell seals at the QFP/QFN rows; CF2/DP_PHY/HV_SS/PHY_1V8A/ULPI_D2 searches exhausted the 1.5M cap against enclosed target pockets). DELTAS vs pass 122: nets 27->24 (D1, D3, D6), violations 71->71, census byte-identical -- heal's grid routes audited clean. No victims. LEFT: 24 nets; knot remainder D2/D5/STP + USB_RST; named residuals XI, XO, +3V3D_CDR, CDR_LOL unchanged.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 24 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
