@@ -1156,6 +1156,14 @@ Shorts locality A: east strip (X1/LED column/ULPI fanout), 16 items + LED victim
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 87 · Unconnected nets: 32 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 140 — 2026-11-06T06:27:46Z · commit `3d45a4e`
+
+Board: `hw/pdlvds_rx.exp170.kicad_pcb` · Commit: `3d45a4e24eada7bf0dc5c2c13199e991a0da8baa`
+
+CDR pair rip-and-relay through the east strip (sets up the D7 field), then heal-stub prune. Ripped CDR_CLKP 52 + CDR_CLKN 34 segments in box (88.5,10)-(94.5,19) from exp166 and re-laid with heal_nets: both nets fully reconnected (52 / 55+1 items), zero new shorts. Prune (scratch/drc_graph_prune.py) then removed 62 dead segments. KiCad DRC referee, exp166 -> exp170: violations 297 -> 294, unconnected items 47 -> 46, track_dangling 25 -> 20, shorting_items 11 unchanged, clearance 42 unchanged, solder_mask_bridge 17 unchanged. Carried regression: copper_edge_clearance 85 -> 88 (the pair's re-lay runs nearer the east edge; that class is next in queue). NOTE on the branch not taken: exp167/exp168 (uncommitted evidence) added LED_STAT's connection via the same field but its escape vias/stubs landed on X1.2 (XO) three times running (+4 shorts) and LED_STAT_A refused heal in 1 s even with a hand-laid fanout ray -- that whole branch cost more than it gained and was re-approached as this pair-only relay. LED_STAT_A's other endpoint is R45.2 at (86.33,22.0), not U6 (diagnosed from its item list); the LED nets go to the routing queue with that fact.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 87 · Unconnected nets: 31 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
