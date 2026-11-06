@@ -1092,6 +1092,14 @@ Post-courtyard routing resumes + dead-copper prune. From pass 130's board (exp14
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 144 · Unconnected nets: 35 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 132 — 2026-11-06T05:23:24Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp157.kicad_pcb` · Commit: `pending`
+
+Dead-copper residue prune with the matcher fixed. The pass-131 residue (25 DRC-dangling) is now attacked with the joint-disambiguation matcher in scratch/drc_graph_prune.py (far-end-free test + stacked-duplicate handling). Its first full batch removed 33 but KiCad unconnected rose 50 -> 51; a per-net bisect (scratch/bisect_prune.py) isolated the load-bearing deletion to ONE net: SWCLK, In2.Cu at (94.12,34.38) -- two different lattice segments share the flagged joint, both far ends anchor in the contact graph (one onto the long northbound SWCLK segment passing 0.11 mm away, one onto the next lattice segment), yet jointly they carry the net. Root cause: the matcher's fall-through treated any unresolved multi-candidate match as stacked duplicates and deleted ALL candidates. Fix: delete-all only for geometrically identical stacked copies; any other ambiguous joint is skipped, never guessed (regression: this run). Also added same-net zone-bbox anchoring to the far-end test. Result (exp157): 120 further dead segments removed over 31 rounds, KiCad DRC violations 627 -> 619, track_dangling 25 -> 17, via_dangling 0, unconnected items 50 UNCHANGED in every round. Residue 17 = graph-vetoed bridges (live overshoot tracks, incl. a 14 mm GND and the 4.375 mm HV_DAC run) + ambiguous hairline joints the matcher now refuses to guess (SWCLK (94.125,34.375) named; heals in the routing phase). Instruments updated: scratch/drc_graph_prune.py, scratch/bisect_prune.py.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 144 · Unconnected nets: 35 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
