@@ -1,4 +1,4 @@
-agent_type,usage_rows,recorded_input,estimable_input,not_estimable_input,est_new,est_repeated,est_repeated_pct_of_estimable
-main chat (root agent),476,230890683,230890683,0,145819620,85071063,36.84
-subagents,51,325842286,253858443,71983843,102543040,151315403,59.61
-checkpoint cron,163,159707396,113965864,45741532,94508806,19457058,17.07
+agent_type,usage_rows,recorded_input,estimable_input,not_estimable_input,est_new,est_repeated,est_repeated_pct_of_estimable,est_repeated_opt,est_repeated_opt_pct_of_estimable
+main chat (root agent),482,235111727,235111727,0,148000445,87111282,37.05,233326849,99.24
+subagents,51,325842286,253858443,71983843,102543040,151315403,59.61,247110826,97.34
+checkpoint cron,165,163551170,113965864,49585306,94470475,19495389,17.11,106530461,93.48
