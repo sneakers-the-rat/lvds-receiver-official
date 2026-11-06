@@ -1324,6 +1324,14 @@ pass 160: +VA U1.7 joined to the tree - 0.5/0.3 vias in U1.7 pad (18.5,39.365) a
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 39 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 161 — 2026-11-06T14:25:47Z · commit `8990c3d`
+
+Board: `hw/pdlvds_rx.exp191.kicad_pcb` · Commit: `8990c3d439ed5e31b6e46034f5f9a34da57ab493`
+
+pass 161: +VA R5.1 joined - 0.5/0.3 via on R5.1 pad west edge (15.025,50.5) (APD_A 1.0 mm class pushes the legal spot to the pad edge), In1 track south to the U1.7 via (18.5,39.365). DRC: violations 156 -> 156 (class table unchanged), unconnected 48 -> 47, +VA items 2 -> 1 (only the U13 output pair remains)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 39 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
