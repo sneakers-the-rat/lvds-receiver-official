@@ -3752,6 +3752,36 @@
       },
       "description": "Post-courtyard routing resumes + dead-copper prune. From pass 130's board (exp141): prune pass, heal reconnected TEST_IN and LED_STAT (exp144); two placement attempts on the sealed LED pads (R44/D7 slid south, exp145/146) did NOT open them -- position alone is not the seal; heal still refuses R44.1/D7.1/D7.2. KiCad 8 DRC adopted as the standing checker (exp147 baseline: 706 violations / 50 unconnected items). Dead-copper campaign: the user's screenshots showed barbs that prune_dead's own redrawn-graph model had absorbed (raw census: 363 one-ended + 71 floating segments). Three deleter designs failed verification and were rejected uncommitted (centreline-tolerance model severed live joints, DRC unconnected 50->115; copper-overlap model 50->51; raw DRC-dangling deletion split pad groups 50->52, restored). Shipped instrument scratch/drc_graph_prune.py: KiCad proposes dangling items, a copper-contact graph vetoes segments that bridge two pad groups, KiCad referees after every round with abort-and-restore. Result (exp154): 150 dead segments removed over 31 rounds; track_dangling 84->25, via_dangling 7->0, violations 706->627, unconnected items 50 UNCHANGED throughout. Residue: 25 flagged dangling = 5 graph-vetoed bridges (live overshoot tracks, kept deliberately) + 19 matcher-skipped (matcher fix owed) + ~1. Failed boards exp148/149/151/152 remain in the working tree as evidence, uncommitted. Instruments saved in scratch/: dead_end_census.py, delete_dead.py, drc_prune.py, graph_prune.py, drc_graph_prune.py.",
       "note": ""
+    },
+    {
+      "pass": 132,
+      "timestamp": "2026-11-06T05:23:24Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp157.kicad_pcb",
+      "dir": "pass-0132",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 144,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "Dead-copper residue prune with the matcher fixed. The pass-131 residue (25 DRC-dangling) is now attacked with the joint-disambiguation matcher in scratch/drc_graph_prune.py (far-end-free test + stacked-duplicate handling). Its first full batch removed 33 but KiCad unconnected rose 50 -> 51; a per-net bisect (scratch/bisect_prune.py) isolated the load-bearing deletion to ONE net: SWCLK, In2.Cu at (94.12,34.38) -- two different lattice segments share the flagged joint, both far ends anchor in the contact graph (one onto the long northbound SWCLK segment passing 0.11 mm away, one onto the next lattice segment), yet jointly they carry the net. Root cause: the matcher's fall-through treated any unresolved multi-candidate match as stacked duplicates and deleted ALL candidates. Fix: delete-all only for geometrically identical stacked copies; any other ambiguous joint is skipped, never guessed (regression: this run). Also added same-net zone-bbox anchoring to the far-end test. Result (exp157): 120 further dead segments removed over 31 rounds, KiCad DRC violations 627 -> 619, track_dangling 25 -> 17, via_dangling 0, unconnected items 50 UNCHANGED in every round. Residue 17 = graph-vetoed bridges (live overshoot tracks, incl. a 14 mm GND and the 4.375 mm HV_DAC run) + ambiguous hairline joints the matcher now refuses to guess (SWCLK (94.125,34.375) named; heals in the routing phase). Instruments updated: scratch/drc_graph_prune.py, scratch/bisect_prune.py.",
+      "note": ""
     }
   ],
   "gaps": [
