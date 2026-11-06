@@ -1364,9 +1364,9 @@ pass 165: TIA_OUT C5.1 joined - 0.5/0.3 via at C5.1 pad east edge (20.95,42.5) (
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 38 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 166 — 2026-11-06T15:00:01Z · commit `pending`
+### Pass 166 — 2026-11-06T15:00:01Z · commit `5774eff`
 
-Board: `hw/pdlvds_rx.exp196.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp196.kicad_pcb` · Commit: `5774effedc2c85475e6cc96dc8f3a66b36e3a6bb`
 
 pass 166: TIA_OUT COMPLETE - R7.1 joined: 0.5/0.3 via in R7.1 pad (28.1,39.25), In1 track west at y=39.9 (0.45 clear of the +VA via) to the C5.1 hop track vertex (20.3,39.9). DRC: violations 156 -> 156 (class table unchanged), unconnected 43 -> 42, TIA_OUT items 1 -> 0
 
