@@ -1,5 +1,5 @@
 agent_id,model,scope,role,usage_rows,input_tokens,output_tokens,first_row_utc,last_row_utc,notes
-4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",502,258481869,873065,2026-11-03T18:34:31Z,2026-11-06T06:45:49Z,
+4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",505,260638499,878009,2026-11-03T18:34:31Z,2026-11-06T07:34:50Z,
 211e6068-5645-443d-821c-d965a1288a6c,ipnext/avocado-5.17-v1,chat-tree,"build coordinator #1 (router v1-v5, repair passes 1-4, stage 7b/7c start)",1,2224018,8136,2026-11-04T00:18:30Z,2026-11-04T00:18:30Z,
 04d878b8-e46d-47c3-a3e8-19842ed9ea6c,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,3089221,53683,2026-11-03T18:42:31Z,2026-11-03T18:42:31Z,spawn prompt in agent.subagent_spawns
 6b643e67-3b72-4a34-a4e4-cb88906fc170,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,788734,34177,2026-11-03T18:40:38Z,2026-11-03T18:40:38Z,spawn prompt in agent.subagent_spawns
@@ -283,3 +283,4 @@ c9fcbcef-fc8e-41d2-a88a-677baa6fef32,ipnext/watermelon-v0,checkpoint-cron,pdlvds
 6eb6304d-5a53-4044-897e-b97873df1c20,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,5087685,17254,2026-11-06T06:18:11Z,2026-11-06T06:18:11Z,run scheduled 2026-11-06T06:09:16Z
 851770de-0f10-4ce4-8b92-2f651e943821,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,83935,564,2026-11-06T06:45:17Z,2026-11-06T06:45:17Z,run scheduled 2026-11-06T06:39:16Z
 b7c338c2-2700-4c65-93f3-175303361542,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,2521636,14168,2026-11-06T06:45:08Z,2026-11-06T06:45:08Z,run scheduled 2026-11-06T06:39:16Z
+99f45717-7b8f-4897-8752-b2d6f9c6285a,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,2772378,10711,2026-11-06T07:14:54Z,2026-11-06T07:14:54Z,run scheduled 2026-11-06T07:09:16Z
