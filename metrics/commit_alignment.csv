@@ -659,3 +659,7 @@ a9d88c1660be,2026-11-06T12:43:35Z,metrics: watchdog export refresh,863262334,415
 668c325961dc,2026-11-06T13:08:10Z,"pass 0152: pass 152: GND campaign on the re-placed board - pour stitching (vias tying 16 stranded pads + F islands to the inner GND plane), U10 pocket cluster track-tied south to T1.9, U8 island tied. KiCad DRC vs exp181: violations 156 -> 156, unconnected items 82 -> 59 (GND items 28 -> 5: C29.2 pad and 4 F islands remain)",863262334,4158900,867421234,83,64,not recorded
 420ed4371f35,2026-11-06T13:08:10Z,pass 0152: record commit hash,863262334,4158900,867421234,83,64,not recorded
 e8e863f1f0f7,2026-11-06T13:08:24Z,merge: pass 152 from route,863262334,4158900,867421234,83,64,not recorded
+a9866a114909,2026-11-06T13:08:41Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
+b9b75ceec71d,2026-11-06T13:31:43Z,"pass 0153: pass 153: +VA first links - grid-routed tree C44.1/C2.1/C7.1/U2.5 on F, U13.9-U13.10 same-net pin link (0.6 segment ending at 49.55 for exactly class clearance to U13.8 GND). KiCad DRC vs exp182: violations 156 -> 156, unconnected items 59 -> 55 (+VA items 9 -> 5; remaining +VA groups: U3.5, C10.1, U1.7, R5.1, U13 pair join)",863262334,4158900,867421234,83,64,not recorded
+ab79dff2c7d2,2026-11-06T13:31:44Z,pass 0153: record commit hash,863262334,4158900,867421234,83,64,not recorded
+6b6e80b591a9,2026-11-06T13:31:50Z,merge: pass 153 from route,863262334,4158900,867421234,83,64,not recorded
