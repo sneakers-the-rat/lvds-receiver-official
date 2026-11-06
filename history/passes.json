@@ -3812,6 +3812,36 @@
       },
       "description": "Keepout class closed by mechanism fix: 199 items_not_allowed -> 0. Provenance: all 28 rule areas on the board were created by hw/notch.py, hw/notch_strip.py, hw/fix_hvraw.py and hw/fix_r47.py, each setting only SetIsRuleArea(True) + SetDoNotAllowCopperPour(True) -- documented intent \"copper-pour keepout only, tracks/vias/pads unaffected\". A fresh ZONE in the KiCad 7-era pcbnew defaulted DoNotAllowTracks/Vias/Pads to True, the tools never cleared them, and the stored board banned tracks in every rule area (162 of the 199 were APD_K/APD_A tracks crossing the big front-end pour notch; the home-grown routers never modelled keepouts, so the copper accumulated silently). Fix (scratch/fix_keepout_flags.py): every rule area now allows tracks/vias/pads and keeps the pour ban -- the pour still stays out of the HV pocket exactly as designed; track-level HV isolation remains governed by clearance/net classes, untouched. KiCad DRC: violations 619 -> 420, items_not_allowed 199 -> 0, unconnected items 50 UNCHANGED, all other classes byte-identical counts. Regression test hw/tests/test_keepout_flags.py added in this pass: FAILS on exp157 (28 of 28 rule areas ban tracks), PASSES on exp158 (28 pour-only keepouts).",
       "note": ""
+    },
+    {
+      "pass": 134,
+      "timestamp": "2026-11-06T05:40:29Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp159.kicad_pcb",
+      "dir": "pass-0134",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 142,
+        "unconnected_nets": 35,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "Shorts class attacked; verdict: it is live routes over foreign pads, not debris. A DRC-refereed deletion pass (scratch/drc_shorts_prune.py: KiCad proposes the track items of shorting_items, the contact graph vetoes own-net bridges, deletions applied per-net with DRC after each net and wholesale restore on any split) removed exactly 2 segments board-wide (CDR_DATP 1 + 1): KiCad DRC violations 420 -> 416, shorting_items 59 -> 57, unconnected 50 UNCHANGED. Everything else was vetoed as an own-net bridge or split on deletion (+3V3D batch splits +2, ULPI_NXT +1 -- both restored and hand-listed): the shorting tracks are overwhelmingly fanout-lattice escapes that cross foreign pads while carrying their own net, concentrated at U5 (29 of 59: +3V3D stubs over U5 GND/CDR_CLKP/CDR_CLKN pads, CDR_DATP over U5.+3V3D pad, I2C tracks/vias over CDR pads) and the ULPI_D4/D6 x XO lattice (9). Deletion is the wrong tool for the rest; the fix is a coordinated rip-and-relay of the U5 fanout field (same locality as the CAP_CLK/CAP_DATA/CDR unconnected groups), then the ULPI/XO lattice. Via shorts (5) were not auto-deleted by design (a via on a foreign pad can be its net's layer bridge) and are on the same hand list.",
+      "note": ""
     }
   ],
   "gaps": [
