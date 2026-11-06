@@ -748,3 +748,8 @@ d8b6d3fb24e6,2026-11-06T18:58:06Z,"pass 0173: pass 173: CDR_DATN connected (DATP
 754bc3cb0566,2026-11-06T18:58:06Z,pass 0173: record commit hash,912134236,4585959,916720195,83,64,not recorded
 79bd17f8e970,2026-11-06T18:58:16Z,tools: DATN pocket trials t_j1-t_j5 + U4 survey script (pass 173 working scripts),912134236,4585959,916720195,83,64,not recorded
 d9f25657e0a1,2026-11-06T18:58:20Z,merge: pass 173 + DATN tools from route,912134236,4585959,916720195,83,64,not recorded
+31e18c50ae5f,2026-11-06T18:58:35Z,metrics: post-merge regen,912134236,4585959,916720195,83,64,not recorded
+fbc3caa1416a,2026-11-06T19:14:27Z,"pass 0174: pass 174: north-row group — C15 nudged +1.05mm N and C14 +1.0mm E (placement iteration); CF1 re-landed via north detour y43.1, CF2 extended into moved pad; REFCLKN connected (F channel y40.44, arc over +3V3D via, gap via (66.5,41.35), B east + dive to C14.1); +3V3D_CDR U4.12 connected (F stub, via (66.2,40.55), In2 drop to own staircase vertex (66.625,38.375)). KiCad DRC: unconnected 31->29, violations 156->155 (clearance 0, shorting 0, dangling 0)",912134236,4585959,916720195,83,64,not recorded
+02799eda3b48,2026-11-06T19:14:27Z,pass 0174: record commit hash,912134236,4585959,916720195,83,64,not recorded
+c66a90509c65,2026-11-06T19:14:30Z,"tools: SDA trials t_k1/t_k2 (failed: corridor mined), grid_route NO PATH evidence runs, north-group trials t_m1-t_m6 + survey_net/survey_box helpers (pass 174 working scripts)",912134236,4585959,916720195,83,64,not recorded
+0661a63c1ca3,2026-11-06T19:14:32Z,merge: pass 174 + tools from route,912134236,4585959,916720195,83,64,not recorded
