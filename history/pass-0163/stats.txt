@@ -1,0 +1,14 @@
+pass: 163
+description: pass 163: TIA_OUT U1.6-R1.1 routed on F (grid route, DRC-verified). DRC: violations 156 -> 156 (class table unchanged), unconnected 46 -> 45, TIA_OUT items 4 -> 3
+timestamp (UTC): 2026-11-06T14:51:15Z
+commit: pending
+board file: hw/pdlvds_rx.exp193.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 71
+unconnected nets: 38
+courtyard collisions: 0
+audit verdict: fail
+note: 
