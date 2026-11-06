@@ -1,0 +1,14 @@
+pass: 137
+description: Heal-stub prune after the U5 rip-and-relays. The +3V3D/CDR_DATP re-lays (passes 135-136) left fresh dangling stubs (track_dangling had risen 17 -> 22). Ran the DRC/graph prune (scratch/drc_graph_prune.py) on exp163: 23 dead segments removed over 9 rounds, every round refereed. KiCad DRC: violations 347 -> 338, track_dangling 22 -> 20, clearance 45 -> 44, shorting_items 34 UNCHANGED, unconnected items 48 UNCHANGED throughout. The 20 remaining dangling are the standing residue: graph-vetoed bridges (live overshoot tracks) + ambiguous hairline joints the matcher refuses to guess (SWCLK at (94.125,34.375) among them).
+timestamp (UTC): 2026-11-06T05:58:33Z
+commit: pending
+board file: hw/pdlvds_rx.exp164.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 112
+unconnected nets: 34
+courtyard collisions: 0
+audit verdict: fail
+note: 
