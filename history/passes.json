@@ -5192,6 +5192,36 @@
       },
       "description": "pass 179: SLICEP + SLICEN connected (U4 west braid joint re-fanout) \u2014 C51 moved west to (58.75,39.25) with its +3V3D_CDR feed re-laid south of the staircase via; C13 moved to (59.0,41.75) (its pads carry only SLICEP/SLICEN); CDR_PIN jog re-laid west (post (62.875,37.875)->(62.55,37.8)) which unseals SLICEP's diagonal (the jog post + U4.8 NW corner + 0.2 clearances provably sealed the wedge); SLICEP F diagonal + via (62.05,39.8) + In2 + tail into C13.1; SLICEN flat y38.575 + vertical dive x63.0 + via (63.0,39.35) + B west + tail into C13.2; GND stitch vias (63.85,39.15) and (59.0,38.9) re-tie the two F fill islands the new tracks severed. DRC: unconnected 25->23, violations 156->154 (silk 146->144), clearance/shorting/dangling 0; check_pcb courtyard 0, fallback 21 (SH1 only)",
       "note": ""
+    },
+    {
+      "pass": 180,
+      "timestamp": "2026-11-06T23:19:21Z",
+      "hash": "f6c425c4abfd99a7e0e61718ab0a29721d3156a3",
+      "short_hash": "f6c425c",
+      "board_file": "hw/pdlvds_rx.exp210.kicad_pcb",
+      "dir": "pass-0180",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 108,
+        "unconnected_nets": 19,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 180: CDR_NIN connected \u2014 C13's move (pass 179) vacated U4.4's row; F stub west to via (61.75,36.7) (the (62.8,37.05) dive dies on B against CDR_VREF's staircase vertical), In2 north of the DM_PHY northern staircase, around the +3V3D_CDR staircase west end (rounding shifted west in t_y2 to clear the d0.8 staircase via by 0.44), then SW on the open south-west side of DM_PHY's long In2 staircase to via (51.45,45.5) and F tail into C9.2. DRC: unconnected 23->22, violations 154->154 (identical class table), clearance/shorting/dangling 0",
+      "note": ""
     }
   ],
   "gaps": [
