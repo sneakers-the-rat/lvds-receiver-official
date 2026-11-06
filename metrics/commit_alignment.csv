@@ -702,3 +702,7 @@ bb91b758e3de,2026-11-06T14:24:17Z,metrics: post-merge regen,863262334,4158900,86
 10b615f7ff63,2026-11-06T14:53:13Z,"pass 0163: pass 163: TIA_OUT U1.6-R1.1 routed on F (grid route, DRC-verified). DRC: violations 156 -> 156 (class table unchanged), unconnected 46 -> 45, TIA_OUT items 4 -> 3",863262334,4158900,867421234,83,64,not recorded
 b47ddc48c4a8,2026-11-06T14:53:13Z,pass 0163: record commit hash,863262334,4158900,867421234,83,64,not recorded
 07caa4d60ba5,2026-11-06T14:53:19Z,merge: pass 163 from route,863262334,4158900,867421234,83,64,not recorded
+ba1cb80dfc74,2026-11-06T14:53:29Z,metrics: post-merge regen,863262334,4158900,867421234,83,64,not recorded
+d8d69b87b510,2026-11-06T14:56:03Z,"pass 0164: pass 164: TIA_OUT C1.1 joined - via-in-pad at C1.1 (18.52,43.25) and U1.6 (18.9,40.635), In1 track between; F is sealed by U1.5 pad and the APD_A/-VA weave, and KiCad DRC accepts the via (APD_A is not in the board's 1.0 mm netclass). DRC: violations 156 -> 156 (class table unchanged), unconnected 45 -> 44, TIA_OUT items 3 -> 2",863262334,4158900,867421234,83,64,not recorded
+4648506d06a6,2026-11-06T14:56:03Z,pass 0164: record commit hash,863262334,4158900,867421234,83,64,not recorded
+366503f0d74d,2026-11-06T14:56:10Z,merge: pass 164 from route,863262334,4158900,867421234,83,64,not recorded
