@@ -3542,6 +3542,36 @@
       },
       "description": "Standing prune (owner's instruction: after any route change) over pass 123's heal copper: 6 dead 0.2mm segments removed (CAP_DATA, CDR_SQUELCH, I2C_SCL, HV_SHDN, VCAP2, PHY_1V8A), 6 tracks shortened (I2C_SDA, SET_P x2, ULPI_CK, VCAP1, HV_VC); partition proof passed for all nets (none moved, none reverted). DELTAS vs pass 123: nets 24->24, violations 71->71, census byte-identical. No victims.",
       "note": ""
+    },
+    {
+      "pass": 125,
+      "timestamp": "2026-11-06T00:52:47Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp118.kicad_pcb",
+      "dir": "pass-0125",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 71,
+        "unconnected_nets": 24,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 34
+      },
+      "description": "COURTYARD CAMPAIGN item 0 (audit blindness): courtyards drawn for the five drawable blind footprints D1, D2, C4, U9, T1 \u2014 board instances + hw/pdlvds.pretty library (text insertion of fp_line rectangles: KiCad 7.0.11's writer zeroes FP_SHAPE points set through the Python API, verified in-session; hw/draw_courtyards.py is the instrument). Blind list 6 -> 1: SH1 remains (shield can enclosing the frontend it covers by design; closure is the pending clip-pattern conversion, parts audit; the audit's bbox-fallback line reports it every pass). Drawing the courtyards REVEALED 8 new gated pairs, now counted and queued: L1xD2, L2xD2, D2xC36, D2xR35, D2xU11, D2xRJ2, C32xT1, D11xT1. BOARD STATE: courtyard pairs 26 -> 34, nets 24 -> 24, violations 71 -> 71 (courtyard shapes carry no copper; no parts moved, no victims). Next: D2 cluster (move D2, the DNP alternate APD site), T1 pair (move C32, D11), then the original 26.",
+      "note": ""
     }
   ],
   "gaps": [
