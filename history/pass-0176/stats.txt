@@ -1,0 +1,14 @@
+pass: 176
+description: pass 176: I2C_SDA U9.6 connected: via-in-pad d0.5/drill0.3 at (69.32,2.14) (centre shifted NE off pad centre: clears SCL via (69.375,1.375) d0.6 by 0.217 and U9.5 +3V3A pad by 0.21; on-centre placement measured 0.1904 vs SCL via), In2 single segment east (grid_route2) joining the SDA In2 chain at (71.125,1.875). KiCad DRC: unconnected 28 -> 27, violations 155 unchanged (clearance 0, shorting 0, dangling 0)
+timestamp (UTC): 2026-11-06T19:36:34Z
+commit: pending
+board file: hw/pdlvds_rx.exp206.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 105
+unconnected nets: 24
+courtyard collisions: 0
+audit verdict: fail
+note: 
