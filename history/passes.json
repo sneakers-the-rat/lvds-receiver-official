@@ -5162,6 +5162,36 @@
       },
       "description": "pass 178: ULPI_D3 connected \u2014 D4 via moved west on its own In2 diagonal to (87.35,7.15) (old via at (88.375,6.125) sealed pad69's fan together with the NC pad row), D4 tail re-laid north (87.35,7.15)->(88.6,6.6)->(89.65,6.45)->(89.78,5.662); D3 In2 rerouted south of D4's diagonal to via (88.15,5.9), F tail (88.5,6.05)->(89.25,6.05)->dive into U6.69; VCAP2 web re-fanned east ((89.225,7.0)->(89.9,6.9)->(90.25,6.162)) to clear the fan; GND stitch via (88.3,8.6) re-ties the C18.2 F-fill island severed by the fan tracks. DRC: unconnected 26->25, violations 156->156 (identical class table); clearance/shorting/dangling 0",
       "note": ""
+    },
+    {
+      "pass": 179,
+      "timestamp": "2026-11-06T23:15:37Z",
+      "hash": "7872e9179812cc7880bcf30d1ca440c0d2bf8721",
+      "short_hash": "7872e91",
+      "board_file": "hw/pdlvds_rx.exp209.kicad_pcb",
+      "dir": "pass-0179",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 108,
+        "unconnected_nets": 20,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 179: SLICEP + SLICEN connected (U4 west braid joint re-fanout) \u2014 C51 moved west to (58.75,39.25) with its +3V3D_CDR feed re-laid south of the staircase via; C13 moved to (59.0,41.75) (its pads carry only SLICEP/SLICEN); CDR_PIN jog re-laid west (post (62.875,37.875)->(62.55,37.8)) which unseals SLICEP's diagonal (the jog post + U4.8 NW corner + 0.2 clearances provably sealed the wedge); SLICEP F diagonal + via (62.05,39.8) + In2 + tail into C13.1; SLICEN flat y38.575 + vertical dive x63.0 + via (63.0,39.35) + B west + tail into C13.2; GND stitch vias (63.85,39.15) and (59.0,38.9) re-tie the two F fill islands the new tracks severed. DRC: unconnected 25->23, violations 156->154 (silk 146->144), clearance/shorting/dangling 0; check_pcb courtyard 0, fallback 21 (SH1 only)",
+      "note": ""
     }
   ],
   "gaps": [
