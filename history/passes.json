@@ -3992,6 +3992,36 @@
       },
       "description": "Shorts locality A: east strip (X1/LED column/ULPI fanout), 16 items + LED victim repaid. Ripped in box (84.5,5)-(94.5,19): +3V3D 20 segs, ULPI_D4 17, ULPI_D6 25, LED_STAT 19 (LED_PWR_K/LED_STAT_A had zero segments -- never routed); deleted 2 stray vias in the LED field (LED_PWR_K at (89.875,8.125), LED_STAT at (89.125,13.625)). Heal (116 s): +3V3D reconnected both groups, re-laid on In2.Cu EAST of the D7/R44 column (was: F.Cu trunk through D7.2 and R44.2 pads); ULPI_D4/D6 reconnected around X1.2; LED_PWR_K CONNECTED D6.1->R44.1 down the west side of the column (victim repaid). LED_STAT D7.1 and LED_STAT_A D7.2 STILL isolated -- pads open but the strip is crossed by the CDR_CLKP/CLKN diagonals; next mechanism is a local rip of the pair + heal LEDs first. KiCad DRC referee, exp165 -> exp166: violations 320 -> 297, shorting_items 27 -> 11 (east strip zero), solder_mask_bridge 31 -> 17, clearance 44 -> 42, unconnected items 48 -> 47. Regressions noted: copper_edge_clearance 80 -> 85 (re-laid strip routes run nearer the east edge; that class is next in queue), track_dangling 21 -> 25 (fresh heal stubs).",
       "note": ""
+    },
+    {
+      "pass": 140,
+      "timestamp": "2026-11-06T06:27:46Z",
+      "hash": "3d45a4e24eada7bf0dc5c2c13199e991a0da8baa",
+      "short_hash": "3d45a4e",
+      "board_file": "hw/pdlvds_rx.exp170.kicad_pcb",
+      "dir": "pass-0140",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 87,
+        "unconnected_nets": 31,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "CDR pair rip-and-relay through the east strip (sets up the D7 field), then heal-stub prune. Ripped CDR_CLKP 52 + CDR_CLKN 34 segments in box (88.5,10)-(94.5,19) from exp166 and re-laid with heal_nets: both nets fully reconnected (52 / 55+1 items), zero new shorts. Prune (scratch/drc_graph_prune.py) then removed 62 dead segments. KiCad DRC referee, exp166 -> exp170: violations 297 -> 294, unconnected items 47 -> 46, track_dangling 25 -> 20, shorting_items 11 unchanged, clearance 42 unchanged, solder_mask_bridge 17 unchanged. Carried regression: copper_edge_clearance 85 -> 88 (the pair's re-lay runs nearer the east edge; that class is next in queue). NOTE on the branch not taken: exp167/exp168 (uncommitted evidence) added LED_STAT's connection via the same field but its escape vias/stubs landed on X1.2 (XO) three times running (+4 shorts) and LED_STAT_A refused heal in 1 s even with a hand-laid fanout ray -- that whole branch cost more than it gained and was re-approached as this pair-only relay. LED_STAT_A's other endpoint is R45.2 at (86.33,22.0), not U6 (diagnosed from its item list); the LED nets go to the routing queue with that fact.",
+      "note": ""
     }
   ],
   "gaps": [
