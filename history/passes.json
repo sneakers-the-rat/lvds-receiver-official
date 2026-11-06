@@ -4772,6 +4772,36 @@
       },
       "description": "pass 165: TIA_OUT C5.1 joined - 0.5/0.3 via at C5.1 pad east edge (20.95,42.5) (pad-centre via shorts APD_K_ALT's B trunk 0.35 away), In1 track south-east around the APD_K_ALT via to the U1.6 via (18.9,40.635). DRC: violations 156 -> 156 (class table unchanged), unconnected 44 -> 43, TIA_OUT items 2 -> 1 (only R7.1 remains)",
       "note": ""
+    },
+    {
+      "pass": 166,
+      "timestamp": "2026-11-06T15:00:01Z",
+      "hash": "5774effedc2c85475e6cc96dc8f3a66b36e3a6bb",
+      "short_hash": "5774eff",
+      "board_file": "hw/pdlvds_rx.exp196.kicad_pcb",
+      "dir": "pass-0166",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 71,
+        "unconnected_nets": 37,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 166: TIA_OUT COMPLETE - R7.1 joined: 0.5/0.3 via in R7.1 pad (28.1,39.25), In1 track west at y=39.9 (0.45 clear of the +VA via) to the C5.1 hop track vertex (20.3,39.9). DRC: violations 156 -> 156 (class table unchanged), unconnected 43 -> 42, TIA_OUT items 1 -> 0",
+      "note": ""
     }
   ],
   "gaps": [
