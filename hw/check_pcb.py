@@ -59,12 +59,19 @@ SURFACE = None  # set in main (needs pcbnew layer ids)
 
 def _fallback_courtyard(fp, flipped):
     """Bbox-fallback courtyard for a footprint with no drawn
-    courtyard polygon: union bbox of its pads and its Fab-layer
-    outline, expanded by the standard 0.25 mm courtyard allowance.
-    Returns a SHAPE_POLY_SET rectangle in board coordinates."""
+    courtyard polygon: union bbox of its pads and its body outline
+    (Fab-layer shapes; Silkscreen shapes when it has no Fab —
+    text items never count), expanded by the standard 0.25 mm
+    courtyard allowance. Returns a SHAPE_POLY_SET rectangle in
+    board coordinates."""
     fab = pcbnew.B_Fab if flipped else pcbnew.F_Fab
-    boxes = [d.GetBoundingBox() for d in fp.GraphicalItems()
-             if d.GetLayer() == fab]
+    silk = pcbnew.B_SilkS if flipped else pcbnew.F_SilkS
+    shapes = [d for d in fp.GraphicalItems()
+              if isinstance(d, pcbnew.PCB_SHAPE)]
+    boxes = [d.GetBoundingBox() for d in shapes if d.GetLayer() == fab]
+    if not boxes:
+        boxes = [d.GetBoundingBox() for d in shapes
+                 if d.GetLayer() == silk]
     boxes += [p.GetBoundingBox() for p in fp.Pads()]
     xs0 = min(b.GetLeft() for b in boxes); xs1 = max(b.GetRight() for b in boxes)
     ys0 = min(b.GetTop() for b in boxes); ys1 = max(b.GetBottom() for b in boxes)
