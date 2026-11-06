@@ -758,3 +758,8 @@ a42acab513b1,2026-11-06T19:14:43Z,metrics: post-merge regen,912134236,4585959,91
 51e7c313cf14,2026-11-06T19:28:30Z,pass 0175: record commit hash,912134236,4585959,916720195,83,64,not recorded
 d561a9edd755,2026-11-06T19:28:41Z,"tools: HV district trials t_p3-t_p7 (t_p7 = pass 175), SDA campaign scripts (grid_route2, flood, t_k3_prep, t_n1, t_n2, t_n2c)",912134236,4585959,916720195,83,64,not recorded
 2f4acd04ae30,2026-11-06T19:28:45Z,merge: pass 175 from route,912134236,4585959,916720195,83,64,not recorded
+621185ef8e7f,2026-11-06T19:29:11Z,metrics: post-merge regen,912134236,4585959,916720195,83,64,not recorded
+ecfeedeee9ec,2026-11-06T19:37:23Z,"pass 0176: pass 176: I2C_SDA U9.6 connected: via-in-pad d0.5/drill0.3 at (69.32,2.14) (centre shifted NE off pad centre: clears SCL via (69.375,1.375) d0.6 by 0.217 and U9.5 +3V3A pad by 0.21; on-centre placement measured 0.1904 vs SCL via), In2 single segment east (grid_route2) joining the SDA In2 chain at (71.125,1.875). KiCad DRC: unconnected 28 -> 27, violations 155 unchanged (clearance 0, shorting 0, dangling 0)",912134236,4585959,916720195,83,64,not recorded
+da927f73a37b,2026-11-06T19:37:23Z,pass 0176: record commit hash,912134236,4585959,916720195,83,64,not recorded
+09ccef27c1fb,2026-11-06T19:37:24Z,tools: SDA U9.6 via-in-pad trial t_q1 (= pass 176) + generalized survey helpers sv_net/sv_box + refill helper,912134236,4585959,916720195,83,64,not recorded
+e9a750dd8e42,2026-11-06T19:37:31Z,merge: pass 176 from route,912134236,4585959,916720195,83,64,not recorded
