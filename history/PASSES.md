@@ -1292,9 +1292,9 @@ pass 156: GND island C16.2 tied - 0.5/0.3 via at (76.487,9.139) inside the fragm
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 70 · Unconnected nets: 39 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 157 — 2026-11-06T14:06:44Z · commit `pending`
+### Pass 157 — 2026-11-06T14:06:44Z · commit `f8430f8`
 
-Board: `hw/pdlvds_rx.exp187.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp187.kicad_pcb` · Commit: `f8430f856d89e113d83aace0c2d48734c71174e6`
 
 pass 157: GND island U6.51 tied - 0.5/0.3 via at (79.817,6.078) inside the fragment drops to the In1 GND zone (single legal spot in an exhaustive 0.125-grid scan at board-minimum via size). DRC: violations 156 -> 156 (class table unchanged), unconnected 52 -> 51, GND items 2 -> 1 (only the U6.38 sliver remains)
 
