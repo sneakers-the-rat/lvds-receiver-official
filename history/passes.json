@@ -4712,6 +4712,36 @@
       },
       "description": "pass 163: TIA_OUT U1.6-R1.1 routed on F (grid route, DRC-verified). DRC: violations 156 -> 156 (class table unchanged), unconnected 46 -> 45, TIA_OUT items 4 -> 3",
       "note": ""
+    },
+    {
+      "pass": 164,
+      "timestamp": "2026-11-06T14:54:45Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp194.kicad_pcb",
+      "dir": "pass-0164",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 71,
+        "unconnected_nets": 38,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 164: TIA_OUT C1.1 joined - via-in-pad at C1.1 (18.52,43.25) and U1.6 (18.9,40.635), In1 track between; F is sealed by U1.5 pad and the APD_A/-VA weave, and KiCad DRC accepts the via (APD_A is not in the board's 1.0 mm netclass). DRC: violations 156 -> 156 (class table unchanged), unconnected 45 -> 44, TIA_OUT items 3 -> 2",
+      "note": ""
     }
   ],
   "gaps": [

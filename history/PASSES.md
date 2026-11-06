@@ -1348,6 +1348,14 @@ pass 163: TIA_OUT U1.6-R1.1 routed on F (grid route, DRC-verified). DRC: violati
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 38 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 164 — 2026-11-06T14:54:45Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp194.kicad_pcb` · Commit: `pending`
+
+pass 164: TIA_OUT C1.1 joined - via-in-pad at C1.1 (18.52,43.25) and U1.6 (18.9,40.635), In1 track between; F is sealed by U1.5 pad and the APD_A/-VA weave, and KiCad DRC accepts the via (APD_A is not in the board's 1.0 mm netclass). DRC: violations 156 -> 156 (class table unchanged), unconnected 45 -> 44, TIA_OUT items 3 -> 2
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 38 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
