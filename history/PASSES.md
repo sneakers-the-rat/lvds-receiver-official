@@ -964,6 +964,78 @@ HV_FBX repaid (owed from pass 114). Ripped group 1's 9-track F.Cu spur west of (
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 75 · Unconnected nets: 30 · Audit verdict: FAIL
 
+### Pass 116 — 2026-11-05T21:26:20Z · commit `bbf0942`
+
+Board: `hw/pdlvds_rx.exp108.kicad_pcb` · Commit: `bbf0942f28383423d8262e4d4fb7f254f7616bc4`
+
+APD_K R47.2 group connected (queue item 1, leg 1 of 3). Diagnosis: TMP_ALERT's B.Cu vertical at x=49.12 was the pocket's last wall -- APD_K (HV) needs 1.0 mm from it on every layer a via spans (hand_via 0/3, heal 1 s refusal, thread_far no-thread all on record). Fix (hw/fix_r47.py): TMP_ALERT repaid in-pass (B vertical ripped south of y=1.20, re-laid on In2 from its own via, via back at (49.12,1.20), B north re-placed); pour notch F+B x[46.20,51.45] y[-3.10,-0.10]; APD_K via (50.05,-1.60) + In1 west run onto the main web's via (41.12,0.62). DELTAS vs pass 115: nets 30->30 (APD_K groups 4->3), violations 75->72 (-3 cured: R47.2 pad, old stub track, R47.1 -- all vs GND zone; +0 new. First notch cut with east edge 51.15 left the new via 0.8 mm from the fill and cost +3 zone lines; widened to 51.45, re-audited clean). No victims: TMP_ALERT connected after repay, GND still 4 groups.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 72 · Unconnected nets: 30 · Audit verdict: FAIL
+
+### Pass 117 — 2026-11-05T21:35:24Z · commit `9a17ea0`
+
+Board: `hw/pdlvds_rx.exp109.kicad_pcb` · Commit: `9a17ea002447bfff744c41df914933e09b2f317e`
+
+APD_K D1.5 leg connected (queue item 1, leg 2 of 3). D1.5 is ringed by its own footprint's APD_A pads at 0.40-0.50 mm gaps, so any surface exit starts inside the 1.0 mm surface class -- the geometry behind the 2 standing APD_K-vs-APD_A lines. Fix (hw/fix_d15.py): ONE diagonal F neck (9.20,40.00)->(11.00,38.50) whose exact-test blockers are D1.4 and D1.6 only (script asserts all blockers are APD_A and aborts otherwise), via at (11.00,38.50) (nearest clear site in a 0.25-grid disc scan), In1 south+east runs onto the main web's via (13.62,30.62). DELTAS vs pass 116: nets 30->30 (APD_K groups 3->2; only the RJ2.2 leg remains), violations 72->74 (+2, exactly the two predicted sibling-pad lines APD_A (D1.4)/(D1.6) vs the neck track -- same standing D1-footprint species as the 2 gated lines, geometrically forced: no via site reachable from D1.5 clears 1.0 mm from both pads). No victims.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 74 · Unconnected nets: 30 · Audit verdict: FAIL
+
+### Pass 118 — 2026-11-05T21:55:19Z · commit `1c4fe11`
+
+Board: `hw/pdlvds_rx.exp110.kicad_pcb` · Commit: `1c4fe11964d26d9a6aa11a52f18d8371670b2edb`
+
+GND islands closed (queue item 2): all 4 groups merged to 1. Stitch vias to the In1 GND plane (stitch_track.py): cluster track@(83.375,0.125), C34.2 tail track@(29.775,-2.25); hand_via via stub for the lone R32.2 pad (via (30.77,-3.80)). DELTAS vs pass 117: nets 30->29 (GND connected), violations 74->74 -- census byte-identical (the R32.2-vs-R31.1 1.0 mm line is pad-placement geometry, carried to the violation campaign). No victims. Also this session: APD_K RJ2.2 leg (item 1, leg 3) stands as a named residual -- hand_stub/hand_via/heal x2/thread_far gate/exact via-scan all refused and the APD_A_ALT crossing-swap dive site was refused on +3V3D/FB_3V3/GND blockers; untried mechanisms are a full connector-corner re-fanout or an RJ1/RJ2 move. Tooling: heal crash on In1 copper fixed with regression test in commit 8ffdef7.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 74 · Unconnected nets: 29 · Audit verdict: FAIL
+
+### Pass 119 — 2026-11-05T22:32:25Z · commit `7ddc20b`
+
+Board: `hw/pdlvds_rx.exp111.kicad_pcb` · Commit: `7ddc20bdc9cde5ecf3a6e41300897ea028327b80`
+
+CC2 rejoined (queue item 3): F hop (30.50,72.55)->(31.30,72.34)->(31.90,72.30) w=0.20 threaded through the 0.125 mm window at x=31.10 between J1.B4's pad (0.25 class) and J1.A9's escape start. VBUS_RAW's F jumper (31.15,72.83)->(31.00,71.98) -- A9's sole link -- ripped and repaid in the same pass: escape extended (31.85,70.88)->(32.05,70.68), via (32.05,70.68), B run south then diagonal west onto VBUS_RAW's own B diagonal chain at (28.00,72.25); VBUS_RAW still 1 group. First hop cut cost +3 (74->77: B4 pad + A9 escape x2) and was re-approached, not kept. DELTAS vs pass 118: nets 29->28 (CC2 connected), violations 74->74, census byte-identical. No victims (VBUS_RAW repaid in-pass).
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 74 · Unconnected nets: 28 · Audit verdict: FAIL
+
+### Pass 120 — 2026-11-05T22:53:27Z · commit `3a26a18`
+
+Board: `hw/pdlvds_rx.exp112.kicad_pcb` · Commit: `3a26a18d62750578a8534d19a53b70ab9822f1d8`
+
+ZOMBIE PRUNE (owner-directed cleanup): new standing tool hw/prune_dead.py leaf-trims dead branches on a geometric copper graph (pads and pour contacts are terminals; through-paths stay) and proves the invariant in-process before saving: the per-net pad-group partition under the audit's own connectivity model (pads+tracks+vias+zone fills, Collide-0) is IDENTICAL before/after -- no net moved, no net reverted. REMOVED: 392 segments (0 vias), 126 overshoot tracks shortened, 385.9 mm of dead copper. Worst offenders: GND -101 segs (75.7 mm), SWDIO -18 segs (60.9 mm -- an entire superseded route), CDR_DATP -46 (24.2 mm), ULPI_D0 -22 (20.2 mm), HV_EN -6 (19.1 mm), TMP_ALERT -14 (18.5 mm), CAP_CLK -25 (10.9 mm), I2C_SDA -27 (10.6 mm); the old U6-site fanout field around (69-78,33-41) accounts for the NRST/CAP_CLK/TMP_ALERT share. DELTAS vs pass 119: nets 28->28 (identical partitions), violations 74->71 -- 3 lines cured, all zombie GND tracks in the HV field (HV_R31A R49.1 vs GND track@(30.375,-12.625); TP_HV track@(44.375,18.125) vs GND tracks x2), zero new lines. Tool stays in hw/: run after any placement move as a matter of course.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 28 · Audit verdict: FAIL
+
+### Pass 121 — 2026-11-05T23:03:34Z · commit `ed32afa`
+
+Board: `hw/pdlvds_rx.exp113.kicad_pcb` · Commit: `ed32afaa472c114246b42c4c590841e9aefe96f4`
+
++3V3A U7.25 connected (queue item 4): via d=0.45 at (77.98,11.65) in the north-east corner -- overlaps U7.25's own pad edge, clears U7.24 (ULPI_D0) by 0.25 shape distance, and touches the In2 mesh segment (77.88,11.62)->(77.62,11.88); F stub (77.80,11.75)->(77.98,11.65). Refused on record: via on the pad or onto the mesh NE (QFN pitch + ULPI_CK's F staircase at 0.25 class on every site) and the F west channel run in 4 variants (ULPI_CK wall + CDR_DATP via (76.88,10.62) + XI/PHY_1V8A escape nubs tile the channel). DELTAS vs pass 120: nets 28->27 (+3V3A connected), violations 71->71, census byte-identical. No victims.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 27 · Audit verdict: FAIL
+
+### Pass 122 — 2026-11-05T23:23:24Z · commit `eadd3bc`
+
+Board: `hw/pdlvds_rx.exp114.kicad_pcb` · Commit: `eadd3bcfdf4c36ea14547ffdc3e5d4e6156d677d`
+
+XI/XO (queue item 5) stand as NAMED RESIDUALS; XI fanout ray placed as the heal-enabler attempt. XO: U7.27 SEALED -- hand_stub refuses all 16 directions; every via site tiled by the CDR_DATP via (76.88,10.62) at 0.03-0.155mm, ULPI_CK's wall and U7.26 PHY_1V8's pad; the only mechanisms are the coordinated CDR-pair relay or a U7 move (both parked with the ULPI knot). XI: heal refused before AND after this ray (pad-cell seal in the grid model), thread_far refused (gap 8.45, no thread); remaining mechanisms are the west-corridor hand-route (crosses +3V3A's 0.60 west trunk + the GND field at y19-22, multi-via marginal windows) or the pair relay. This pass places ONLY the XI ray: nub extended (76.25,11.03)->(76.25,10.55) + west bend ->(75.85,10.55), exact-tested clean; no via fits at the ray (CDR_DATP buried staircases). DELTAS vs pass 121: nets 27->27, violations 71->71 expected (audit verifies), XI groups unchanged 2. No victims. NEXT: queue item 6 (east-column +3V3D_CDR + CDR_LOL), then the residue family.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 27 · Audit verdict: FAIL
+
+### Pass 123 — 2026-11-06T00:01:14Z · commit `29ad408`
+
+Board: `hw/pdlvds_rx.exp116.kicad_pcb` · Commit: `29ad40873e999f6f1cb2a73941a3270ef74ac310`
+
+Batch heal over all 24 remaining nets (heal starts from each net's SMALL group; several small groups sit in open grid even when the far end is sealed): ULPI_D1, ULPI_D3 (3 vias, 75s search) and ULPI_D6 CONNECTED -- the ULPI knot loses three members; +5V closed two of its four groups (7-item group via 1 via; 2-item group direct), leaving [U7.4 group] vs main. All other nets refused by heal (pad-cell seals at the QFP/QFN rows; CF2/DP_PHY/HV_SS/PHY_1V8A/ULPI_D2 searches exhausted the 1.5M cap against enclosed target pockets). DELTAS vs pass 122: nets 27->24 (D1, D3, D6), violations 71->71, census byte-identical -- heal's grid routes audited clean. No victims. LEFT: 24 nets; knot remainder D2/D5/STP + USB_RST; named residuals XI, XO, +3V3D_CDR, CDR_LOL unchanged.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 24 · Audit verdict: FAIL
+
+### Pass 124 — 2026-11-06T00:12:25Z · commit `146a6ef`
+
+Board: `hw/pdlvds_rx.exp117.kicad_pcb` · Commit: `146a6ef734b761fdcfb9463198b220a9559cb834`
+
+Standing prune (owner's instruction: after any route change) over pass 123's heal copper: 6 dead 0.2mm segments removed (CAP_DATA, CDR_SQUELCH, I2C_SCL, HV_SHDN, VCAP2, PHY_1V8A), 6 tracks shortened (I2C_SDA, SET_P x2, ULPI_CK, VCAP1, HV_VC); partition proof passed for all nets (none moved, none reverted). DELTAS vs pass 123: nets 24->24, violations 71->71, census byte-identical. No victims.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 71 · Unconnected nets: 24 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
