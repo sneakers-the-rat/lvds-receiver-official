@@ -1220,9 +1220,9 @@ Heal-stub prune on exp176. 75 stub segments removed over 33 referee-clean rounds
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 68 · Unconnected nets: 31 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 148 — 2026-11-06T09:46:30Z · commit `pending`
+### Pass 148 — 2026-11-06T09:46:30Z · commit `bbb5dd6`
 
-Board: `hw/pdlvds_rx.exp178.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp178.kicad_pcb` · Commit: `bbb5dd6f7feb79646a227933fdb7ac9fb2345904`
 
 East edge cleared: the J2 CDR pair escape reworked. Diagnosis chain: the pair (J2.5/6 pads at x=98.08) escaped east into a shared channel at x=99.375 whose fanout topology forced the heal to re-lay it identically after every rip (three attempts); the sacrificial-fence mechanism proved lossy on this stack -- a no-op heal run drops fence tracks layer-specifically (In2 loses the out-of-outline column at save, F.Cu loses tracks through save_checkpoint) and routed runs rename survivors to GND (three 123 mm GND-named fence columns found by geometry census and deleted by exact geometry; committed exp177 verified phantom-free by the same census). Working recipe: DENSE fence (0.3 mm pitch, 28 tracks, x 98.9..100.7 full height), wide rip of both pair nets east of x=96.5 (46+28 segments), heal (CLKP took a real interior route: 28 s, 3 vias), fence removal by name AND geometry, then a zone refill (the heal checkpoint refills with the fence still on; without a post-removal refill the F.Cu GND pour keeps fence-shaped slots and reads +1 unconnected island). KiCad DRC referee against committed exp177 (217/44): violations 217 -> 209, copper_edge_clearance 33 -> 20 with ZERO items east of x=98 remaining (the +3V3D east trunk and the whole CDR_CLKP/CLKN east run are gone), clearance 35, shorting 0, unconnected 44 UNCHANGED after the refill. Remaining edge items are exactly the J1 south field (20, placement-decision class). New CLKN path passes close to SWCLK on In2 (one clearance item, named for the clearance campaign).
 
