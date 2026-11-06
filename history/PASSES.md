@@ -1444,6 +1444,14 @@ pass 175: HV_SS connected (last-but-one HV net): GND U10.5 east fanout seg+via r
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 104 · Unconnected nets: 24 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 176 — 2026-11-06T19:36:34Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp206.kicad_pcb` · Commit: `pending`
+
+pass 176: I2C_SDA U9.6 connected: via-in-pad d0.5/drill0.3 at (69.32,2.14) (centre shifted NE off pad centre: clears SCL via (69.375,1.375) d0.6 by 0.217 and U9.5 +3V3A pad by 0.21; on-centre placement measured 0.1904 vs SCL via), In2 single segment east (grid_route2) joining the SDA In2 chain at (71.125,1.875). KiCad DRC: unconnected 28 -> 27, violations 155 unchanged (clearance 0, shorting 0, dangling 0)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 105 · Unconnected nets: 24 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
