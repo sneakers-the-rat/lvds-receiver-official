@@ -1268,6 +1268,14 @@ pass 153: +VA first links - grid-routed tree C44.1/C2.1/C7.1/U2.5 on F, U13.9-U1
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 70 · Unconnected nets: 40 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 154 — 2026-11-06T13:42:46Z · commit `d0ec1b1`
+
+Board: `hw/pdlvds_rx.exp184.kicad_pcb` · Commit: `d0ec1b1139cb17656ce46add3a9534842dcf2c40`
+
+GND C29.2 unsealed: relayed the HV_R29M via 1.5 mm north (22.375,0.375 -> 22.375,1.875; F and B chain segments re-laid on the same vertical, DRC-neutral) to open the east corridor its 1.0 mm HV clearance shadow had closed by 0.01 mm, then grid-routed GND C29.2 -> R24.2 on F with pad-anchored ends. KiCad DRC vs exp183: violations 156 -> 156, unconnected items 55 -> 54 (GND items 5 -> 4; remaining GND is the four F-zone islands X2.2/C16.2/U6.51/U6.38). No clearance/shorting/dangling items.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 70 · Unconnected nets: 39 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
