@@ -1,0 +1,14 @@
+pass: 172
+description: pass 172: HV_GATE connected (grid B path R27.1 to U10 district, F w0.15 needle thread between U10.6 pad corner and HV_SHDN via to via (31.6,-1.55), B stub to path end). DRC: unconnected 33->32, violations 156 unchanged (clearance 0, shorting 0)
+timestamp (UTC): 2026-11-06T16:56:56Z
+commit: pending
+board file: hw/pdlvds_rx.exp202.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 101
+unconnected nets: 28
+courtyard collisions: 0
+audit verdict: fail
+note: 
