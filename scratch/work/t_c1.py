@@ -1,0 +1,48 @@
+import pcbnew
+b = pcbnew.LoadBoard('hw/pdlvds_rx.exp198.kicad_pcb')
+def M(v): return pcbnew.FromMM(v)
+def track(netname, layer, w, pts):
+    net = b.FindNet(netname)
+    for a, bb in zip(pts, pts[1:]):
+        t = pcbnew.PCB_TRACK(b)
+        t.SetStart(pcbnew.VECTOR2I(M(a[0]), M(a[1]))); t.SetEnd(pcbnew.VECTOR2I(M(bb[0]), M(bb[1])))
+        t.SetWidth(M(w)); t.SetLayer(layer); t.SetNet(net); b.Add(t)
+def via(netname, x, y, d=0.5, drill=0.3):
+    net = b.FindNet(netname)
+    v = pcbnew.PCB_VIA(b)
+    v.SetPosition(pcbnew.VECTOR2I(M(x), M(y)))
+    v.SetDrill(M(drill)); v.SetWidth(M(d))
+    v.SetLayerPair(pcbnew.F_Cu, pcbnew.B_Cu)
+    v.SetNet(net); b.Add(v)
+def rip(netname, layer, segs):
+    code = b.FindNet(netname).GetNetCode()
+    hit = []
+    for t in list(b.GetTracks()):
+        if t.GetNetCode() == code and t.GetLayer() == layer and t.Type() == pcbnew.PCB_TRACE_T:
+            s, e = t.GetStart(), t.GetEnd()
+            for (x1, y1, x2, y2) in segs:
+                if (abs(s.x/1e6-x1)<0.01 and abs(s.y/1e6-y1)<0.01 and abs(e.x/1e6-x2)<0.01 and abs(e.y/1e6-y2)<0.01) or \
+                   (abs(e.x/1e6-x1)<0.01 and abs(e.y/1e6-y1)<0.01 and abs(s.x/1e6-x2)<0.01 and abs(s.y/1e6-y2)<0.01):
+                    hit.append(t); break
+    for t in hit: b.Remove(t)
+    print('ripped', netname, len(hit), 'of', len(segs))
+
+# ---- SET_P: +5V F hook relayed to In2, SET_P straight east on F ----
+rip('+5V', pcbnew.F_Cu, [(41.8,51.25,42.125,50.875),(42.125,50.875,42.125,50.375),(42.125,50.375,42.375,50.125)])
+track('+5V', pcbnew.F_Cu, 0.2, [(41.8,51.25),(42.15,51.35)])
+via('+5V', 42.15, 51.35)
+track('+5V', pcbnew.In2_Cu, 0.2, [(42.15,51.35),(42.15,50.0),(42.3,49.9)])
+via('+5V', 42.3, 49.9)
+track('+5V', pcbnew.F_Cu, 0.2, [(42.3,49.9),(42.375,50.125)])
+track('SET_P', pcbnew.F_Cu, 0.2, [(41.3,50.75),(43.1,50.75)])
+
+# ---- ILIM_A: +5V staircase relayed west, U14.5 via + In2 south run + via-in-pad R43.1 ----
+rip('+5V', pcbnew.F_Cu, [(52.375,49.125,52.125,48.875),(52.125,48.875,51.875,48.625),(51.875,48.625,51.875,48.375),(51.875,48.375,52.125,48.125),(52.125,48.125,52.125,47.875),(52.125,47.875,52.2,47.25)])
+track('+5V', pcbnew.F_Cu, 0.6, [(52.375,49.125),(51.7,49.125),(51.5,48.6),(51.65,48.0),(52.2,47.25)])
+track('ILIM_A', pcbnew.F_Cu, 0.2, [(52.95,48.25),(52.6,48.35)])
+via('ILIM_A', 52.6, 48.35)
+track('ILIM_A', pcbnew.In2_Cu, 0.2, [(52.6,48.35),(52.2,50.45),(53.9,51.15),(55.5,50.8)])
+via('ILIM_A', 55.5, 50.8)
+
+filler = pcbnew.ZONE_FILLER(b); filler.Fill(b.Zones())
+b.Save('scratch/work/t_c1.kicad_pcb'); print('saved t_c1')

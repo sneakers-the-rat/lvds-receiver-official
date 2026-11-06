@@ -1,0 +1,43 @@
+import sys, time
+sys.path.insert(0, 'hw'); sys.path.insert(0, 'scratch/heal8')
+import pcbnew
+import repair
+import router6
+from router import netclass
+from repairg import save_checkpoint
+
+board_path, out = sys.argv[1], sys.argv[2]
+want = set(sys.argv[3:])
+board = pcbnew.LoadBoard(board_path)
+items, pad_cells = repair.build_items(board)
+groups = repair.compute_groups(board)['GND']
+def descs(g): return {it.desc for it in g if it.kind == 'pad'}
+targets = [g for g in groups if descs(g) & want]
+goal = set()
+for g in groups:
+    if g in targets: continue
+    for it in g: goal |= it.cells
+print('target groups:', [descs(g) for g in targets], 'goal cells:', len(goal))
+width, clr = netclass('GND')
+neck_pts = [p[2] for p in pad_cells.get('GND', [])]
+anchors = {}
+for _, cs, pos in pad_cells.get('GND', []):
+    for c in cs: anchors[c] = pos
+for g in targets:
+    starts = []
+    for it in g: starts += list(it.cells)
+    print('healing', descs(g), 'items', len(g), 'start cells', len(starts), flush=True)
+    t0 = time.time()
+    rpath, fb, lb = router6.astar6(items, starts, goal, 'GND', width,
+                                   clr, cap=1500000, neck_pts=neck_pts,
+                                   anchors=anchors)
+    print(f'  astar: {"path " + str(len(rpath)) if rpath else None} ({time.time()-t0:.0f}s)', flush=True)
+    if rpath:
+        st = {'vias': 0, 'neck_pts': neck_pts, 'anchors': anchors,
+              'first_bend': fb, 'last_bend': lb}
+        router6.emit6(board, board.FindNet('GND'), rpath, width,
+                      items, 'GND', clr, st)
+        for node in rpath: goal.add(node)
+        print('  connected, vias:', st['vias'], flush=True)
+save_checkpoint(board, out)
+print('saved', out)
