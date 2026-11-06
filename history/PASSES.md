@@ -1412,6 +1412,14 @@ pass 171: APD_K + APD_A x2 connected. APD_K: In2 run (grid_route segment) (10.5,
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 101 · Unconnected nets: 29 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 172 — 2026-11-06T16:56:56Z · commit `9448211`
+
+Board: `hw/pdlvds_rx.exp202.kicad_pcb` · Commit: `9448211f01c6f570afa9d81c34cf33321fefc0a9`
+
+pass 172: HV_GATE connected (grid B path R27.1 to U10 district, F w0.15 needle thread between U10.6 pad corner and HV_SHDN via to via (31.6,-1.55), B stub to path end). DRC: unconnected 33->32, violations 156 unchanged (clearance 0, shorting 0)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 101 · Unconnected nets: 28 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
