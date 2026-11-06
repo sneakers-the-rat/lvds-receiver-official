@@ -4982,6 +4982,36 @@
       },
       "description": "pass 172: HV_GATE connected (grid B path R27.1 to U10 district, F w0.15 needle thread between U10.6 pad corner and HV_SHDN via to via (31.6,-1.55), B stub to path end). DRC: unconnected 33->32, violations 156 unchanged (clearance 0, shorting 0)",
       "note": ""
+    },
+    {
+      "pass": 173,
+      "timestamp": "2026-11-06T18:57:16Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp203.kicad_pcb",
+      "dir": "pass-0173",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 101,
+        "unconnected_nets": 27,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 173: CDR_DATN connected (DATP via relayed west to (66.22,33.28) d0.5 freeing the F thread; DATN F thread (66.5,34.4)->(66.9,32.4), via d0.5, B stepped dive south of DATP staircase around GND/+3V3D/DATP-bottom vias, joining own B channel at (78.375,22.125)). KiCad DRC: unconnected 32->31, violations 156 unchanged (clearance 0, shorting 0, dangling 0)",
+      "note": ""
     }
   ],
   "gaps": [
