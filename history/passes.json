@@ -4502,6 +4502,36 @@
       },
       "description": "pass 156: GND island C16.2 tied - 0.5/0.3 via at (76.487,9.139) inside the fragment drops to the In1 GND zone (exhaustive 0.125-grid scan at the board-minimum via size found exactly one legal spot in the fragment). DRC: violations 156 -> 156 (class table unchanged), unconnected 53 -> 52, GND items 3 -> 2",
       "note": ""
+    },
+    {
+      "pass": 157,
+      "timestamp": "2026-11-06T14:06:44Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp187.kicad_pcb",
+      "dir": "pass-0157",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 70,
+        "unconnected_nets": 39,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 157: GND island U6.51 tied - 0.5/0.3 via at (79.817,6.078) inside the fragment drops to the In1 GND zone (single legal spot in an exhaustive 0.125-grid scan at board-minimum via size). DRC: violations 156 -> 156 (class table unchanged), unconnected 52 -> 51, GND items 2 -> 1 (only the U6.38 sliver remains)",
+      "note": ""
     }
   ],
   "gaps": [
