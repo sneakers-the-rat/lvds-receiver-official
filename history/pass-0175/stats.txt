@@ -1,0 +1,14 @@
+pass: 175
+description: pass 175: HV_SS connected (last-but-one HV net): GND U10.5 east fanout seg+via ripped (its north web keeps the pad connected - DRC-verified), HV_SS F w0.15 needle east from U10.3 through the 0.585 mm EP channel at x26.37, north past the ripped fanout, east into C30.1. Unconnected 29 -> 28, violations 155 -> 155, clearance/shorting/dangling 0
+timestamp (UTC): 2026-11-06T19:27:38Z
+commit: pending
+board file: hw/pdlvds_rx.exp205.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 104
+unconnected nets: 24
+courtyard collisions: 0
+audit verdict: fail
+note: 

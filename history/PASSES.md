@@ -1436,6 +1436,14 @@ pass 174: north-row group — C15 nudged +1.05mm N and C14 +1.0mm E (placement i
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 104 · Unconnected nets: 25 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 175 — 2026-11-06T19:27:38Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp205.kicad_pcb` · Commit: `pending`
+
+pass 175: HV_SS connected (last-but-one HV net): GND U10.5 east fanout seg+via ripped (its north web keeps the pad connected - DRC-verified), HV_SS F w0.15 needle east from U10.3 through the 0.585 mm EP channel at x26.37, north past the ripped fanout, east into C30.1. Unconnected 29 -> 28, violations 155 -> 155, clearance/shorting/dangling 0
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 104 · Unconnected nets: 24 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
