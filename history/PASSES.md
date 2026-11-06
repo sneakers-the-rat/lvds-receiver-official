@@ -1196,6 +1196,14 @@ Copper-edge campaign, part 1: the creepage slot (x12..46 / y23.6..25.1, docs/02 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 68 · Unconnected nets: 32 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 145 — 2026-11-06T08:22:38Z · commit `9c622fc`
+
+Board: `hw/pdlvds_rx.exp175.kicad_pcb` · Commit: `9c622fca66b3e9fddbaa78990135f0f29e550274`
+
+Heal-stub prune on exp174 with a bisection-proven exclusion. First prune attempt BROKE the invariant (round 0 removed 8, unconnected 45 -> 46, board restored uncommitted). Per-net bisection (scratch/bisect_prune.py) isolated the split to the GND batch; per-item bisection (scratch/bisect_items.py) proved the single culprit: Track [GND] on F.Cu, 1.75 mm at (44.375, 10.125) -- removing it alone splits a group (the contact graph cannot see its pour-side join). It is now on the tool's exclusion list (scratch/dgp-exclusions.json) and stays. Clean run: 31 stub segments removed over 10 rounds, unconnected items 45 UNCHANGED in every round. KiCad DRC referee, exp174 -> exp175: violations 253 -> 249, track+via dangling items 27 -> 23, copper_edge_clearance 68, clearance 34, shorting 0. Dangling residue: 4 graph-vetoed bridges + 18 matcher-ambiguous joints (skipped, never guessed) + the excluded GND track.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 68 · Unconnected nets: 32 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

@@ -268,6 +268,22 @@ def apply_plan(plan_path, board_path):
                 if s['net'] == net and s['layer'] == lid and
                 (math.hypot(s['x0'] - x, s['y0'] - y) <= 3000 or
                  math.hypot(s['x1'] - x, s['y1'] - y) <= 3000)]
+        if not cand:
+            # Shorting items report the CONTACT point, which can sit
+            # mid-body: fall back to segments whose body passes under
+            # the point (distance <= half width + slack).
+            def body_d(s):
+                dx, dy = s['x1'] - s['x0'], s['y1'] - s['y0']
+                L2 = dx * dx + dy * dy
+                if L2 == 0:
+                    return math.hypot(s['x0'] - x, s['y0'] - y)
+                u = max(0.0, min(1.0, ((x - s['x0']) * dx +
+                                       (y - s['y0']) * dy) / L2))
+                return math.hypot(x - (s['x0'] + u * dx),
+                                  y - (s['y0'] + u * dy))
+            cand = [i for i, s in enumerate(segs)
+                    if s['net'] == net and s['layer'] == lid and
+                    body_d(s) <= s['w'] // 2 + 2000]
         if len(cand) > 1:
             lm = re.search(r'length ([0-9.]+) mm', it['desc'])
             if lm:
@@ -366,6 +382,18 @@ def main():
                                   'desc': item['description'],
                                   'x': item['pos']['x'],
                                   'y': item['pos']['y']})
+        excl_path = 'scratch/dgp-exclusions.json'
+        if os.path.exists(excl_path):
+            with open(excl_path) as f:
+                excl = json.load(f)
+            def excluded(it):
+                for e in excl:
+                    if e['net'] in it['desc'] and \
+                       abs(it['x'] - e['x']) < 0.01 and \
+                       abs(it['y'] - e['y']) < 0.01:
+                        return True
+                return False
+            items = [it for it in items if not excluded(it)]
         print(f'round {rnd}: unconnected {cnt}, dangling flagged '
               f'{len(items)}', flush=True)
         if prev is not None:
