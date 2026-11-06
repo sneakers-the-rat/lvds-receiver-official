@@ -1252,9 +1252,9 @@ CDR_SQUELCH/X1.2 shorts closed by an obstacle-model fix. Root cause: the heal/ro
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 70 · Unconnected nets: 40 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 152 — 2026-11-06T13:06:51Z · commit `pending`
+### Pass 152 — 2026-11-06T13:06:51Z · commit `668c325`
 
-Board: `hw/pdlvds_rx.exp182.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp182.kicad_pcb` · Commit: `668c325961dcface297a30fe90df1b55276112a2`
 
 pass 152: GND campaign on the re-placed board - pour stitching (vias tying 16 stranded pads + F islands to the inner GND plane), U10 pocket cluster track-tied south to T1.9, U8 island tied. KiCad DRC vs exp181: violations 156 -> 156, unconnected items 82 -> 59 (GND items 28 -> 5: C29.2 pad and 4 F islands remain)
 
