@@ -1,0 +1,14 @@
+pass: 155
+description: pass 155: GND island X2.2 tied - 0.5/0.3 via at (72.55,25.6) in the fragment north lobe drops to the In1 GND zone (In2 +3V3D track at y=24.375 blocks the pad row; F exits sealed by the CDR_SQUELCH staircase and the +3V3D via at (74.625,24.375)). DRC: violations 156 -> 156 (class table unchanged), unconnected 54 -> 53, GND items 4 -> 3
+timestamp (UTC): 2026-11-06T13:59:22Z
+commit: pending
+board file: hw/pdlvds_rx.exp185.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 70
+unconnected nets: 39
+courtyard collisions: 0
+audit verdict: fail
+note: 
