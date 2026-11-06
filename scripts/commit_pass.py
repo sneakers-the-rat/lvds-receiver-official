@@ -58,7 +58,8 @@ HIST = os.path.join(ROOT, "history")
 PASSES_JSON = os.path.join(HIST, "passes.json")
 PASSES_MD = os.path.join(HIST, "PASSES.md")
 STAT_KEYS = ("nets_routed", "nets_total", "pins_failed",
-             "clearance_violations", "unconnected_nets", "audit_verdict")
+             "clearance_violations", "unconnected_nets", "audit_verdict",
+             "courtyard_collisions")
 
 
 def git(*args, check=True):
@@ -80,7 +81,8 @@ def stats_line(st):
     return (f"Nets fully routed: {nets} · Pins failed: "
             f"{nr(st.get('pins_failed'))} · Clearance violations: "
             f"{nr(st.get('clearance_violations'))} · Unconnected nets: "
-            f"{nr(st.get('unconnected_nets'))} · Audit verdict: "
+            f"{nr(st.get('unconnected_nets'))} · Courtyard collisions: "
+            f"{nr(st.get('courtyard_collisions'))} · Audit verdict: "
             f"{nr(st.get('audit_verdict'))}")
 
 
@@ -245,6 +247,7 @@ def main():
         stats.update(parsed)
         print(f"audit: unconnected={nr(stats['unconnected_nets'])} "
               f"violations={nr(stats['clearance_violations'])} "
+              f"courtyard={nr(stats['courtyard_collisions'])} "
               f"verdict={nr(stats['audit_verdict'])}")
     else:
         with open(os.path.join(sdir, "audit.txt"), "w") as f:

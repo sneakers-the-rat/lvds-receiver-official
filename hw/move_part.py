@@ -1,0 +1,375 @@
+#!/usr/bin/env python3
+"""Move one footprint to the nearest position (spiral search,
+0.25 mm grid) where its courtyard collides with NOTHING, then
+re-lay the copper its pads were touching: for every same-net
+track/via endpoint that touched an old pad position and does
+not touch the new one, add an exact-tested segment from that
+anchor to the new pad centre (fix_*.py pattern: audit item
+model, zones excluded). Nets whose pad-group count grows are
+reported as OWED (the caller repays or names them in the
+commit). Also asserts the moved part gains no courtyard pair.
+
+Usage: xvfb-run -a python3 hw/move_part.py IN OUT REF \
+           [--dx X] [--dy Y] [--maxr R]
+With --dx/--dy the exact offset is used (still verified);
+without, the spiral search finds the smallest clearing offset.
+"""
+import argparse
+import math
+import sys
+sys.path.insert(0, 'hw')
+import wx
+_app = wx.App(False)
+import pcbnew
+import check_pcb
+import hand_stub
+import hand_via
+import repair
+
+MM = pcbnew.FromMM
+ALL_LAYERS = {pcbnew.F_Cu, pcbnew.In1_Cu, pcbnew.In2_Cu,
+              pcbnew.B_Cu}
+
+
+def via_ok(items, net, pos):
+    disc = pcbnew.SHAPE_SEGMENT(pos, pos, MM(0.6))
+    return hand_via.ok(items, net, disc, ALL_LAYERS, 0.0)
+
+
+def add_track(board, net, a, b, w_iu, layer):
+    t = pcbnew.PCB_TRACK(board)
+    t.SetStart(a)
+    t.SetEnd(b)
+    t.SetWidth(w_iu)
+    t.SetLayer(layer)
+    t.SetNet(board.FindNet(net))
+    board.Add(t)
+    return t
+
+
+def add_via(board, net, pos):
+    v = pcbnew.PCB_VIA(board)
+    v.SetPosition(pos)
+    v.SetWidth(MM(0.6))
+    v.SetDrill(MM(0.3))
+    v.SetNet(board.FindNet(net))
+    board.Add(v)
+    return v
+
+
+def try_relay(board, items, net, centre, anchors, w_iu,
+              tracks_now):
+    """pad centre -> F stub -> via -> buried run -> via -> anchor.
+    anchors: list of (kind, point, w, layer) that touched the pad
+    before the move; tracks_now: live board tracks (web-side via
+    targets are collected from it). Returns True if a full chain
+    exact-tested clean and was placed."""
+    def mm(v):
+        return pcbnew.ToMM(v)
+    # candidate via points on the pad side: 0.25 mm grid scan,
+    # nearest first — direction ray casts miss the pockets
+    # between fanout tracks.
+    grid = []
+    R = 3.5
+    n = int(R / 0.25)
+    for ix in range(-n, n + 1):
+        for iy in range(-n, n + 1):
+            dx, dy = ix * 0.25, iy * 0.25
+            d2 = dx * dx + dy * dy
+            if d2 < 0.64 or d2 > R * R:
+                continue
+            grid.append((d2, centre.x + MM(dx),
+                         centre.y + MM(dy)))
+    grid.sort()
+    v1s = []
+    for _d2, vx, vy in grid:
+        v1 = pcbnew.VECTOR2I(int(vx), int(vy))
+        sh = pcbnew.SHAPE_SEGMENT(centre, v1, w_iu)
+        if not hand_stub.stub_ok(items, net, sh, {pcbnew.F_Cu},
+                                 0.0):
+            continue
+        if not via_ok(items, net, v1):
+            continue
+        v1s.append(v1)
+        if len(v1s) >= 12:
+            break
+    if not v1s:
+        return False
+    # candidate via points on the anchor side
+    v2s = []  # (via point, stub (a,b,layer) or None, is_via)
+    seen_a = set()
+    for kind, apt, _w, lay in anchors:
+        if (apt.x, apt.y) in seen_a:
+            continue
+        seen_a.add((apt.x, apt.y))
+        if kind == 'via':
+            v2s.append((apt, None, True))
+            continue
+        if via_ok(items, net, apt):
+            v2s.append((apt, None, False))
+        for dist in (0.9, 1.4, 2.0):
+            for k in range(16):
+                a = k * math.pi / 8
+                vx = apt.x + MM(dist * math.cos(a))
+                vy = apt.y + MM(dist * math.sin(a))
+                v2 = pcbnew.VECTOR2I(int(vx), int(vy))
+                sh = pcbnew.SHAPE_SEGMENT(apt, v2, w_iu)
+                if not hand_stub.stub_ok(items, net, sh, {lay},
+                                         0.0):
+                    continue
+                if not via_ok(items, net, v2):
+                    continue
+                v2s.append((v2, (apt, v2, lay), False))
+                break
+    # web-side vias of this net within 15 mm: ready-made targets
+    for t in tracks_now:
+        if t.Type() != pcbnew.PCB_VIA_T or t.GetNetname() != net:
+            continue
+        vp = t.GetPosition()
+        if (vp.x - centre.x) ** 2 + (vp.y - centre.y) ** 2 \
+                <= MM(15.0) ** 2:
+            v2s.append((vp, None, True))
+    if not v2s:
+        return False
+    for v1 in v1s:
+        for v2, stub2, is_via in v2s[:14]:
+            for lr in (pcbnew.In2_Cu, pcbnew.In1_Cu, pcbnew.B_Cu):
+                sh = pcbnew.SHAPE_SEGMENT(v1, v2, w_iu)
+                if not hand_stub.stub_ok(items, net, sh, {lr}, 0.0):
+                    continue
+                # full chain clean: place it
+                add_track(board, net, centre, v1, w_iu,
+                          pcbnew.F_Cu)
+                items.append(('track', net, {pcbnew.F_Cu},
+                              pcbnew.SHAPE_SEGMENT(centre, v1, w_iu),
+                              'track@move'))
+                add_via(board, net, v1)
+                items.append(('via', net, ALL_LAYERS,
+                              pcbnew.SHAPE_SEGMENT(v1, v1, MM(0.6)),
+                              'via@move'))
+                add_track(board, net, v1, v2, w_iu, lr)
+                items.append(('track', net, {lr}, sh, 'track@move'))
+                if stub2 is not None:
+                    a2, b2, l2 = stub2
+                    add_via(board, net, v2)
+                    items.append(('via', net, ALL_LAYERS,
+                                  pcbnew.SHAPE_SEGMENT(v2, v2,
+                                                       MM(0.6)),
+                                  'via@move'))
+                    add_track(board, net, a2, b2, w_iu, l2)
+                    items.append(('track', net, {l2},
+                                  pcbnew.SHAPE_SEGMENT(a2, b2, w_iu),
+                                  'track@move'))
+                elif not is_via:
+                    add_via(board, net, v2)
+                    items.append(('via', net, ALL_LAYERS,
+                                  pcbnew.SHAPE_SEGMENT(v2, v2,
+                                                       MM(0.6)),
+                                  'via@move'))
+                return True
+    return False
+
+
+def entry_of(fp):
+    ref = fp.GetReference()
+    flipped = fp.IsFlipped()
+    layer = pcbnew.B_CrtYd if flipped else pcbnew.F_CrtYd
+    side = "bottom" if flipped else "top"
+    try:
+        poly = fp.GetCourtyard(layer)
+    except Exception:
+        poly = None
+    fb = False
+    if poly is None or poly.OutlineCount() == 0:
+        poly = check_pcb._fallback_courtyard(fp, flipped)
+        fb = True
+    return (ref, side, poly, poly.BBox(), fb)
+
+
+def build_entries(board, skip=None):
+    return [entry_of(fp) for fp in board.GetFootprints()
+            if fp.GetReference() != skip]
+
+
+def pairs_for_mine(mine, others):
+    _r, side, poly, bbox, my_fb = mine
+    out = []
+    if my_fb:
+        return out
+    for (r2, s2, p2, b2, fb2) in others:
+        if s2 != side or fb2:
+            continue
+        if not bbox.Intersects(b2):
+            continue
+        inter = pcbnew.SHAPE_POLY_SET(poly)
+        inter.BooleanIntersection(p2, pcbnew.SHAPE_POLY_SET.PM_FAST)
+        area = 0.0
+        for k in range(inter.OutlineCount()):
+            area += inter.Outline(k).Area()
+        if area / 1e12 > 0.001:
+            out.append(r2)
+    return out
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('src')
+    ap.add_argument('out')
+    ap.add_argument('ref')
+    ap.add_argument('--dx', type=float)
+    ap.add_argument('--dy', type=float)
+    ap.add_argument('--maxr', type=float, default=12.0)
+    a = ap.parse_args()
+
+    board = pcbnew.LoadBoard(a.src)
+    fps = {fp.GetReference(): fp for fp in board.GetFootprints()}
+    fp = fps[a.ref]
+    others = build_entries(board, skip=a.ref)
+    before_pairs = pairs_for_mine(entry_of(fp), others)
+    all_groups = repair.compute_groups(board)
+    groups_before = {}
+    for net in {p.GetNetname() for p in fp.Pads() if p.GetNetname()}:
+        groups_before[net] = len(all_groups.get(net, []))
+    print(f"{a.ref}: pairs before: {before_pairs}; "
+          f"pad-net groups before: {groups_before}")
+
+    # snapshot of pad anchors (before the move): same-net track
+    # endpoints / via centres whose copper touches the pad here.
+    pads = []
+    tracks = list(board.GetTracks())
+    for p in fp.Pads():
+        net = p.GetNetname()
+        if not net:
+            continue
+        pshape = p.GetEffectiveShape()
+        anchors = []
+        for t in tracks:
+            if t.GetNetname() != net:
+                continue
+            if not t.GetEffectiveShape().Collide(pshape, 0):
+                continue
+            if t.Type() == pcbnew.PCB_VIA_T:
+                anchors.append(('via', t.GetPosition(), MM(0.25),
+                                None))
+            else:
+                anchors.append(('track', t.GetStart(), t.GetWidth(),
+                                t.GetLayer()))
+                anchors.append(('track', t.GetEnd(), t.GetWidth(),
+                                t.GetLayer()))
+        pads.append((p, net, anchors))
+
+    pos0 = fp.GetPosition()
+    side = 'B' if fp.IsFlipped() else 'F'
+
+    def set_pos(dx, dy):
+        fp.SetPosition(pcbnew.VECTOR2I(pos0.x + MM(dx),
+                                       pos0.y + MM(dy)))
+
+    def clear_at(dx, dy):
+        set_pos(dx, dy)
+        return pairs_for_mine(entry_of(fp), others) == []
+
+    chosen = None
+    if a.dx is not None:
+        if clear_at(a.dx, a.dy):
+            chosen = (a.dx, a.dy)
+        else:
+            print(f"requested offset ({a.dx},{a.dy}) does NOT clear")
+    else:
+        steps = int(a.maxr / 0.25)
+        cands = []
+        for ix in range(-steps, steps + 1):
+            for iy in range(-steps, steps + 1):
+                if ix == 0 and iy == 0:
+                    continue
+                cands.append((abs(ix) + abs(iy), abs(ix * ix + iy * iy),
+                              ix * 0.25, iy * 0.25))
+        cands.sort()
+        for _m, _r, dx, dy in cands:
+            if clear_at(dx, dy):
+                chosen = (dx, dy)
+                break
+    if chosen is None:
+        print("NO CLEARING OFFSET FOUND within radius")
+        sys.exit(2)
+    dx, dy = chosen
+    set_pos(dx, dy)
+    print(f"move: ({pcbnew.ToMM(pos0.x):.2f},{pcbnew.ToMM(pos0.y):.2f})"
+          f" -> +({dx:.2f},{dy:.2f})")
+
+    # re-lay copper
+    items = hand_stub.build_items(board)
+    owed = []
+    laid = 0
+    for p, net, anchors in pads:
+        centre = p.GetPosition()
+        pshape = p.GetEffectiveShape()
+        seen = set()
+        pad_connected = False
+        failed = []
+        for kind, apt, w_iu, orig_lay in anchors:
+            key = (apt.x, apt.y)
+            if key in seen:
+                continue
+            seen.add(key)
+            apt_shape = pcbnew.SHAPE_SEGMENT(apt, apt, MM(0.05))
+            if apt_shape.Collide(pshape, 0):
+                pad_connected = True
+                continue  # anchor still touches the new pad
+            done = False
+            if kind == 'via':
+                layers = [pcbnew.F_Cu, pcbnew.B_Cu, pcbnew.In2_Cu,
+                          pcbnew.In1_Cu]
+            else:
+                # a track anchor's copper lives on its own layer;
+                # a segment elsewhere joins nothing without a via
+                # (that is the relay's job, below).
+                layers = [orig_lay]
+            for use_lay in layers:
+                sh = pcbnew.SHAPE_SEGMENT(apt, centre, w_iu)
+                if not hand_stub.stub_ok(items, net, sh, {use_lay},
+                                         0.0):
+                    continue
+                add_track(board, net, apt, centre, w_iu, use_lay)
+                items.append(('track', net, {use_lay}, sh,
+                              'track@move'))
+                laid += 1
+                done = True
+                pad_connected = True
+                break
+            if not done:
+                failed.append((kind, apt, w_iu, orig_lay))
+        if not pad_connected and failed:
+            w0 = failed[0][2]
+            if try_relay(board, items, net, centre, anchors, w0,
+                         list(board.GetTracks())):
+                laid += 1
+                pad_connected = True
+                print(f"  relay placed for {net} pad")
+        if not pad_connected:
+            if not anchors and any(
+                    z.GetNetname() == net for z in board.Zones()):
+                print(f"  {net} pad: no track anchors — pour-"
+                      f"connected (audit verifies)")
+            elif net not in owed:
+                owed.append(net)
+    print(f"re-laid segments: {laid}; owed nets: {owed}")
+
+    all_groups = repair.compute_groups(board)
+    groups_after = {net: len(all_groups.get(net, []))
+                    for net in groups_before}
+    print(f"pad-net groups after: {groups_after}")
+    grew = [n for n in groups_before
+            if groups_after[n] > groups_before[n]]
+    if grew:
+        print(f"WARNING groups grew (connectivity lost): {grew}")
+    after_pairs = pairs_for_mine(entry_of(fp), others)
+    print(f"{a.ref}: pairs after: {after_pairs}")
+    assert not after_pairs
+    repair6 = __import__('repair6')
+    repair6.save_checkpoint(board, a.out)
+    print('saved', a.out)
+
+
+if __name__ == '__main__':
+    main()
