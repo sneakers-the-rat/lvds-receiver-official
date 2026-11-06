@@ -1,0 +1,14 @@
+pass: 152
+description: pass 152: GND campaign on the re-placed board - pour stitching (vias tying 16 stranded pads + F islands to the inner GND plane), U10 pocket cluster track-tied south to T1.9, U8 island tied. KiCad DRC vs exp181: violations 156 -> 156, unconnected items 82 -> 59 (GND items 28 -> 5: C29.2 pad and 4 F islands remain)
+timestamp (UTC): 2026-11-06T13:06:51Z
+commit: pending
+board file: hw/pdlvds_rx.exp182.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 70
+unconnected nets: 40
+courtyard collisions: 0
+audit verdict: fail
+note: 
