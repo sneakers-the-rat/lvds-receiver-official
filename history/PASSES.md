@@ -1212,9 +1212,9 @@ Copper-edge campaign, part 2: the creepage slot is now CLEAR of copper, and C26 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 68 · Unconnected nets: 31 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 147 — 2026-11-06T09:30:47Z · commit `pending`
+### Pass 147 — 2026-11-06T09:30:47Z · commit `c12c810`
 
-Board: `hw/pdlvds_rx.exp177.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp177.kicad_pcb` · Commit: `c12c810d0598c41c254e8324e14742d76b1d499d`
 
 Heal-stub prune on exp176. 75 stub segments removed over 33 referee-clean rounds (unconnected items 44 in every round); round 33's single removal split a group (44 -> 45 at the next DRC) and the tool restored the last good board itself -- that segment, the last link of a long stub chain, is live copper the contact graph under-models, same family as the excluded GND track; it stays. KiCad DRC referee against the committed exp176 (229/44): violations 229 -> 217, dangling items 30 -> 25, copper_edge_clearance 40 -> 33 (several pruned stubs were also edge violators), clearance 35, shorting 0, unconnected 44 UNCHANGED. Residue unchanged in kind: 4 graph-vetoed bridges + 19 matcher-ambiguous fanout joints (skipped, never guessed) + the excluded GND track + the rolled-back chain link.
 
