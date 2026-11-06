@@ -4232,6 +4232,66 @@
       },
       "description": "Heal-stub prune on exp176. 75 stub segments removed over 33 referee-clean rounds (unconnected items 44 in every round); round 33's single removal split a group (44 -> 45 at the next DRC) and the tool restored the last good board itself -- that segment, the last link of a long stub chain, is live copper the contact graph under-models, same family as the excluded GND track; it stays. KiCad DRC referee against the committed exp176 (229/44): violations 229 -> 217, dangling items 30 -> 25, copper_edge_clearance 40 -> 33 (several pruned stubs were also edge violators), clearance 35, shorting 0, unconnected 44 UNCHANGED. Residue unchanged in kind: 4 graph-vetoed bridges + 19 matcher-ambiguous fanout joints (skipped, never guessed) + the excluded GND track + the rolled-back chain link.",
       "note": ""
+    },
+    {
+      "pass": 148,
+      "timestamp": "2026-11-06T09:46:30Z",
+      "hash": "bbb5dd6f7feb79646a227933fdb7ac9fb2345904",
+      "short_hash": "bbb5dd6",
+      "board_file": "hw/pdlvds_rx.exp178.kicad_pcb",
+      "dir": "pass-0148",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 68,
+        "unconnected_nets": 31,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "East edge cleared: the J2 CDR pair escape reworked. Diagnosis chain: the pair (J2.5/6 pads at x=98.08) escaped east into a shared channel at x=99.375 whose fanout topology forced the heal to re-lay it identically after every rip (three attempts); the sacrificial-fence mechanism proved lossy on this stack -- a no-op heal run drops fence tracks layer-specifically (In2 loses the out-of-outline column at save, F.Cu loses tracks through save_checkpoint) and routed runs rename survivors to GND (three 123 mm GND-named fence columns found by geometry census and deleted by exact geometry; committed exp177 verified phantom-free by the same census). Working recipe: DENSE fence (0.3 mm pitch, 28 tracks, x 98.9..100.7 full height), wide rip of both pair nets east of x=96.5 (46+28 segments), heal (CLKP took a real interior route: 28 s, 3 vias), fence removal by name AND geometry, then a zone refill (the heal checkpoint refills with the fence still on; without a post-removal refill the F.Cu GND pour keeps fence-shaped slots and reads +1 unconnected island). KiCad DRC referee against committed exp177 (217/44): violations 217 -> 209, copper_edge_clearance 33 -> 20 with ZERO items east of x=98 remaining (the +3V3D east trunk and the whole CDR_CLKP/CLKN east run are gone), clearance 35, shorting 0, unconnected 44 UNCHANGED after the refill. Remaining edge items are exactly the J1 south field (20, placement-decision class). New CLKN path passes close to SWCLK on In2 (one clearance item, named for the clearance campaign).",
+      "note": ""
+    },
+    {
+      "pass": 149,
+      "timestamp": "2026-11-06T09:59:03Z",
+      "hash": "fa5c56be261e09d3ecf641b78a1b2379b8a72cd1",
+      "short_hash": "fa5c56b",
+      "board_file": "hw/pdlvds_rx.exp179.kicad_pcb",
+      "dir": "pass-0149",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 15,
+        "unconnected_nets": 120,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "WHOLE-BOARD RE-PLACEMENT (user order 2026-11-06: placement itself was the defect). Force-directed placement over all 139 movable parts: connection springs (per-net pad star) + hard courtyard separation + simulated annealing with same-padcount swaps; anchored: mounting holes, edge connectors J1/J2, shield can SH1 with the APD/TIA under it, alt-APD D2, test header J3; HV creepage slot and board bounds hard constraints throughout. Clusters now sit on their connections: ADN2813 U4 and capture U5 beside J2 on the y=43 latitude; DAC U8 beside the processor; +3V3D regulator U11 moved from the NW corner to its east-side loads; SWD header J4 beside U6 (and U6's east-edge satellite column -- VCAP1/2, LEDs -- placed against its pads at x=95.75); interlock J5 in the processor-to-converter corridor at (48,-20). Locality census (scratch/locality.py, same method both boards), exp177 -> exp179: TOTAL pad star 6142 -> 3680 mm (-40%); +3V3D 1367 -> 615 (span 122.0 -> 58.4), +5V 818 -> 585, +3V3A 291 -> 162, APD_K 195 -> 105, +VA 141 -> 82, PG_3V3 141 -> 57, CDR_CLKP/DATP ~110 -> ~43 each; worst parts by mean partner distance: J2 53.2 -> 19.1, J5 46.7 -> 20.3, C9 41.1 -> 15.3, J4 38.6 -> below 13, U8 26.4 -> 14.9, U6 22.9 -> 13.9. Remaining far parts are geometric floors, named: D3 (USB PHY pair to U7, USB cluster kept), T1 (transformer pad spread), J5 (series midpoint between processor and converter), D8 (emitter at the detector). Courtyard: 0 gated pairs (full check_pcb audit); SH1 fallback pairs 21 (the standing blind spot; SH1 did not move). One FD casualty found by DRC and fixed before commit: C41 had drifted onto SH1's GND pad (SH1 has no drawn courtyard, so the placer could not see it) -- moved clear to (31,50.5). Copper: STRIPPED (0 tracks, 0 vias verified on the saved file) -- the re-placement orphaned effectively all routing; the board is re-routed from here as the main job. KiCad DRC on the bare board: 154 violations, all non-copper except 4 (J1 footprint-intrinsic edge items: NPTH vs own A12 pad, shield pads vs south edge) + 1 solder-mask bridge (C41 -VA pad vs GND pour); silk_overlap/silk_over_copper 148 (designator text collisions from the moves, tail class); shorting 0; unconnected 303 (every net, by construction). The exp177/178 line remains in git history; this board is the board now.",
+      "note": ""
     }
   ],
   "gaps": [
