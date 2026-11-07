@@ -1524,6 +1524,14 @@ ULPI_NXT connected: DM_PHY In2 vertical shifted 0.50 west opening the canyon gat
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 16 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 186 — 2026-11-07T05:03:06Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp216.kicad_pcb` · Commit: `pending`
+
+Quadrant prep (zero audited delta): ULPI trio exits repacked to their designed positions - DIR via slid SW on its own B line to (75.5,17.521), CK via to its southern home (76.625,17.5), NXT F exit re-laid (74.65,17.8). All three nets stay connected; DRC 19 unconnected / 154 violations identical to exp215. STP dive gate now exactly characterised: DIR/CK vias 1.125 apart (track threads at 0.56/0.565, no via fits between - needs 1.4); the southern dive field is fenced by C20's two pads, DM_PHY's F vertical and C22.2 - completion needs the joint DM re-lay + C22/C20 shift packing
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 16 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
