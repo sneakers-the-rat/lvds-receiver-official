@@ -1532,6 +1532,14 @@ Quadrant prep (zero audited delta): ULPI trio exits repacked to their designed p
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 16 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 187 — 2026-11-07T09:17:48Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp217.kicad_pcb` · Commit: `pending`
+
+pass 187: ULPI D4/D6 east-face re-fanout — D5 district prep at zero audited delta. D4 escape re-laid: stub direct diagonal to via (79.96875,14.53125) d0.5 (was d0.6 at (79.625,14.875)), In2 connector straight to kept-chain joint (80.375,14.125). D6 escape re-laid: stub via raised tail row y15.75 east of x80.0 to via (80.75,14.625) d0.6, In2 connector to (81.375,14.125). Frees the (80.1-80.4,15.0-15.25) pocket where D5's dive via verifies (t_af18 gates, all margins >= 0). KiCad DRC 154/19 class-identical to exp216; check_pcb clearance list identical (109), courtyard 0, SH1 fallback only. D5 journey itself NOT laid: its In2 exit is sealed by XO's lane (x+y=96.5 staircase + corner web) — see session evidence t_af20-t_af23.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 16 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
