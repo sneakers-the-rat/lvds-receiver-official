@@ -5252,6 +5252,36 @@
       },
       "description": "pass 181: I2C_SDA connected (U4.21 end) \u2014 heal (astar6) threaded the SE staircase bundle in 31s with 5 vias where hand analysis had proven the only F channel sealed (0.575mm between C46.2/X2.1 pads vs 0.6 needed) and costed a 6-via manual weave across REFCLK/DM_PHY/DP_PHY/+5V/BIST_DRV bands; DRC delta zero. Side experiment t_z1 (evidence, not banked): an I2C_SDA track laid on In1 grazing the RBIAS through-via at (69.625,20.625) by 0.025mm came back from save/reload renamed RBIAS \u2014 the save-rename mechanism is CONTACT with any foreign copper sharing a layer (track/via/pad/fill), not the fill alone; clearance-legal tracks are safe, and In1 (solid GND plane) is unusable for signals. DRC: unconnected 22->21, violations 154->154 identical class table, clearance/shorting/dangling 0",
       "note": ""
+    },
+    {
+      "pass": 182,
+      "timestamp": "2026-11-07T01:10:27Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp212.kicad_pcb",
+      "dir": "pass-0182",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 108,
+        "unconnected_nets": 18,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "district prep: rip + re-lay ULPI_CK web (F escape that sealed the trio pad columns removed; stub to via (76.62,17.30); In2 joins the CK trunk at its north end (76.62,13.50)->(74.625,13.50), vertical trimmed) and PHY_1V8 web (B run moved y17.375 -> y16.20 so it no longer shadows the south-row via slots; F stub to via (78.10,17.50) d0.6; west joiner to C22.1 via (72.125,17.625) kept). Both nets stay connected; KiCad DRC delta ZERO (154 violations / 21 unconnected, class table identical to exp211). Trio/STP/USB_RST terminations deferred with proof (see tools commit): STP has no DRC-legal first dive while CK via + PHY stub stand; USB_RST F corridor closed (exclusions 0.31+0.425 > 0.707 corner spacing); heal/astar6 cannot cross the district ring in its model in either direction (445,790-cell flood, all 18 goal cells unvisited; reversed search exhausts in 3 s)",
+      "note": ""
     }
   ],
   "gaps": [
