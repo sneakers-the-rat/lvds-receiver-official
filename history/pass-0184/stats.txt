@@ -1,0 +1,14 @@
+pass: 184
+description: ULPI_DIR connected: DRC-rule grid router (t_ab2) with NXT's exit column (75.25,16.85-17.55) and mouth corridor (y-0.75, x68.5-70.8) reserved as virtual obstacles - DIR dives in its own column (75.875,17.375), B lobe run, REFCLK window via (67.25,29.625), western B/In2 journey, straight y-1.25 approach into U6.28. Audited delta: unconnected 21->20, violations 154 identical class table (zero new). NXT/STP remain: see tools commit for their named walls.
+timestamp (UTC): 2026-11-07T03:14:55Z
+commit: pending
+board file: hw/pdlvds_rx.exp214.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 108
+unconnected nets: 17
+courtyard collisions: 0
+audit verdict: fail
+note: 
