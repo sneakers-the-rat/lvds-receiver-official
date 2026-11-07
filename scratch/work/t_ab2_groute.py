@@ -54,6 +54,19 @@ X0, X1, Y0, Y1 = map(float, sys.argv[-4:])
 board = pcbnew.LoadBoard(src)
 items, _pc = repair.build_items(board)
 
+# BLOCK_SEGS=x1,y1,x2,y2;... -- virtual foreign F segments, for
+# reserving a sibling net's exit column while one net routes
+# (DIR's greedy exit diagonal crossed NXT's column at y17.31 and
+# sealed NXT at its pad: start flood 25 cells).
+for spec in os.environ.get('BLOCK_SEGS', '').split(';'):
+    if not spec.strip():
+        continue
+    bx1, by1, bx2, by2 = map(float, spec.split(','))
+    items[0].add(0, ('seg', 'BLOCK!', (bx1, by1, bx2, by2, 0.1), 0.2),
+                 (min(bx1, bx2) - 2, min(by1, by2) - 2,
+                  max(bx1, bx2) + 2, max(by1, by2) + 2))
+    print(f'block seg F ({bx1},{by1})->({bx2},{by2})')
+
 pad_item = {}
 for fp in board.GetFootprints():
     ref = fp.GetReference()
