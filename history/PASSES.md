@@ -1516,9 +1516,9 @@ ULPI_DIR connected: DRC-rule grid router (t_ab2) with NXT's exit column (75.25,1
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 17 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 185 — 2026-11-07T04:52:36Z · commit `pending`
+### Pass 185 — 2026-11-07T04:52:36Z · commit `7727f99`
 
-Board: `hw/pdlvds_rx.exp215.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp215.kicad_pcb` · Commit: `7727f991af654003619c05ce5be2447dc4565aa2`
 
 ULPI_NXT connected: DM_PHY In2 vertical shifted 0.50 west opening the canyon gate; NXT re-routed through the gate and DIR's old window via on the DRC-rule grid router, DIR re-planned around it; I2C_SDA mouth via moved and a GND track tie heals the U6.31 fill scrap. DRC unconnected 20->19, violations 154 identical, zero new
 
