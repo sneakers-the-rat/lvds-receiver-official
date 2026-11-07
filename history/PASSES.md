@@ -1508,6 +1508,14 @@ REFCLK In2 window re-lay: staircase (68.875,27.875)-(66.375,31.625) shifted east
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 18 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 184 — 2026-11-07T03:14:55Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp214.kicad_pcb` · Commit: `pending`
+
+ULPI_DIR connected: DRC-rule grid router (t_ab2) with NXT's exit column (75.25,16.85-17.55) and mouth corridor (y-0.75, x68.5-70.8) reserved as virtual obstacles - DIR dives in its own column (75.875,17.375), B lobe run, REFCLK window via (67.25,29.625), western B/In2 journey, straight y-1.25 approach into U6.28. Audited delta: unconnected 21->20, violations 154 identical class table (zero new). NXT/STP remain: see tools commit for their named walls.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 17 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
