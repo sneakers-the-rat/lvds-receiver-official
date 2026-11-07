@@ -1540,6 +1540,14 @@ pass 187: ULPI D4/D6 east-face re-fanout — D5 district prep at zero audited de
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 16 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 188 — 2026-11-07T12:27:12Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp218.kicad_pcb` · Commit: `pending`
+
+ULPI_D5 connected: XO In2 lane re-laid from x+y=96.5 to ~98.28 (new via (87.5,10.75) d0.6 on X1.2's pad, F stub across the pad) freeing the slot between ULPI_D6's lane and XO's lane; D5 escape per t_af18/t_af24 (stub to via (80.25,15.1875) d0.5) plus In2 journey in the widened slot, NE bulge around the GND stitch via (88.3,8.6), arrival via (92.55,3.9) d0.5 + F seg into U6.73. KiCad DRC: unconnected 19->18, violations 154 with identical class table (clearance/shorting/dangling 0); check_pcb clearance census byte-identical (109), courtyard 0, blind list SH1-only. XO stays 2 groups: its U7.27 leg gates negative against ULPI_CK's In2 vertical x74.625, a +3V3A In2 vertical x75.625, and PHY_1V8's F stub at power-class clearance - that leg belongs to the U7 south-west joint re-fanout (queue item 2). Design: scratch/work/t_ag4_build.py (exact item model, all core gates >= +0.003); the optional-leg all-or-nothing rollback in the same script fixes a leak the reload census caught on the first trial.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 15 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
