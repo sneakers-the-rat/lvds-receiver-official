@@ -1492,6 +1492,14 @@ pass 181: I2C_SDA connected (U4.21 end) — heal (astar6) threaded the SE stairc
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 18 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 182 — 2026-11-07T01:10:27Z · commit `b1f0d0e`
+
+Board: `hw/pdlvds_rx.exp212.kicad_pcb` · Commit: `b1f0d0ef6df4c40ccab803eb5488d32eb1578078`
+
+district prep: rip + re-lay ULPI_CK web (F escape that sealed the trio pad columns removed; stub to via (76.62,17.30); In2 joins the CK trunk at its north end (76.62,13.50)->(74.625,13.50), vertical trimmed) and PHY_1V8 web (B run moved y17.375 -> y16.20 so it no longer shadows the south-row via slots; F stub to via (78.10,17.50) d0.6; west joiner to C22.1 via (72.125,17.625) kept). Both nets stay connected; KiCad DRC delta ZERO (154 violations / 21 unconnected, class table identical to exp211). Trio/STP/USB_RST terminations deferred with proof (see tools commit): STP has no DRC-legal first dive while CK via + PHY stub stand; USB_RST F corridor closed (exclusions 0.31+0.425 > 0.707 corner spacing); heal/astar6 cannot cross the district ring in its model in either direction (445,790-cell flood, all 18 goal cells unvisited; reversed search exhausts in 3 s)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 18 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
