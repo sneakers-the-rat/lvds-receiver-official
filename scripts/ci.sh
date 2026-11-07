@@ -79,6 +79,20 @@ step7() {
 
 step8() {
   step "8/11 firmware ARM cross-compile"
+  if [ "${FW_CACHE_HIT:-}" = "true" ]; then
+    # Firmware-binary cache hit (CI workflow): these exact sources
+    # already cross-compiled cleanly once — the cache key covers
+    # every compile input — and the toolchain was deliberately not
+    # installed. Verify the restored artifacts instead of
+    # rebuilding: both present, non-empty, ELF magic intact.
+    if [ -s firmware/build/rxfw.elf ] && [ -s firmware/build/rxfw.bin ] \
+       && head -c 4 firmware/build/rxfw.elf | od -An -tx1 | grep -q '7f 45 4c 46'; then
+      echo "rxfw.elf + rxfw.bin restored from firmware-binary cache (sources unchanged; rebuild skipped)"
+      return 0
+    fi
+    fail "arm build (cache hit claimed but restored binary missing/invalid)"
+    return 0
+  fi
   ( cd firmware && make clean >/dev/null 2>&1; make arm 2>&1 | tail -3 ) || fail "arm build"
 }
 

@@ -425,18 +425,22 @@ def cost_data():
             cells.append(_usd(match[0]["total_cost_usd"]) if match else "")
         return cells
 
-    # Main cost table: the tier-matched rows, scopes then Total.
+    # Main cost table: the all-uncached tier-matched rows, scopes
+    # then Total.
     costs = []
     for scope in COST_SCOPES:
         costs.append({"label": COST_SCOPE_DISPLAY[scope], "total": False,
-                      "cells": cells_for("tier-matched", scope)})
+                      "cells": cells_for("all-uncached (tier-matched)",
+                                         scope)})
     costs.append({"label": "Total", "total": True,
-                  "cells": cells_for("tier-matched", "all")})
+                  "cells": cells_for("all-uncached (tier-matched)",
+                                     "all")})
 
-    # Second table: the two whole-volume scenarios.
+    # Second table: the other whole-volume costs.
     extras = []
-    for label in ("upper bound (all flagship)",
-                  "cache-adjusted (measured share)",
+    for label in ("all-cached (tier-matched)",
+                  "cache-adjusted (pessimistic estimate)",
+                  "cache-adjusted (optimistic estimate)",
                   "cache-adjusted (assumed 95% share)"):
         cells = cells_for(label, "all")
         if any(cells):

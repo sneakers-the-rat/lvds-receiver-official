@@ -17,8 +17,20 @@ Model of a transcript:
   schemas; not present in transcripts) plus every context item present
   before the run.
 - An item's tokens are NEW at the first request that sends it and
-  REPEATED at every later send. The preamble is new once per agent
-  session and repeated thereafter.
+  REPEATED at every later send. The preamble (the runtime-injected
+  standing context: system prompt, tool schemas, standing files) is
+  published under TWO bounds, because its cache behaviour is the
+  estimate's biggest unknown:
+  * pessimistic (the headline split, `est_new` / `est_repeated`):
+    the preamble is NEW at EVERY request — every context starts
+    totally fresh; the injected context is never credited to a
+    cache (it is re-injected per request and the standing files are
+    edited mid-run).
+  * optimistic (`est_new_opt` / `est_repeated_opt`): the preamble
+    is new once per session and cache-served at every later request
+    — as much caching as the model allows.
+  (Simplified to the two bounds 2026-11-05 at the project owner's
+  direction — see metrics/README.md.)
 - Fork slices: a spawned agent's transcript opens with a byte-identical
   copy (same seq, same content) of a slice of its parent's stream —
   the inherited context. Detected as a >=20-item prefix whose items
@@ -540,30 +552,46 @@ def main():
         kls = klass_of(aid, scope)
         if aid in failed_agents:
             est_new, est_rep = 0, row['input']
+            est_new_opt, est_rep_opt = 0, row['input']
             note = ('NOT ESTIMABLE for this agent (transcript/record '
                     f"reconciliation ratio {failed_agents[aid]}); "
                     'recorded input carried as repeated')
         elif d['K'] == 0:
             est_new, est_rep = 0, row['input']
+            est_new_opt, est_rep_opt = 0, row['input']
             note = 'no requests reconstructed for this record; carried as repeated'
         else:
             est_total = predict(b, pre, aid, d)
-            new_tokens = b[kls] * d['new_chars'] + pre[kls] * d['n_first']
+            # Pessimistic bound: the preamble (injected standing
+            # context) counts as NEW at every request (d['K'] of
+            # them), never as repeated — every context starts fresh.
+            new_tokens = b[kls] * d['new_chars'] + pre[kls] * d['K']
             share = min(max(new_tokens / est_total, 0.0), 1.0) if est_total > 0 else 0.0
             est_new = round(row['input'] * share)
             est_rep = row['input'] - est_new
+            # Optimistic bound: the preamble counts as NEW once per
+            # session (d['n_first']) and cache-served thereafter.
+            new_tokens_opt = (b[kls] * d['new_chars']
+                              + pre[kls] * d['n_first'])
+            share_opt = min(max(new_tokens_opt / est_total, 0.0), 1.0) if est_total > 0 else 0.0
+            est_new_opt = round(row['input'] * share_opt)
+            est_rep_opt = row['input'] - est_new_opt
             note = ''
         out_rows.append({'ts_epoch': row['ts'],
                          'ts_utc': datetime.fromtimestamp(row['ts'], timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ'),
                          'agent_id': aid, 'scope': scope,
                          'recorded_input': row['input'],
                          'est_new': est_new, 'est_repeated': est_rep,
+                         'est_new_opt': est_new_opt,
+                         'est_repeated_opt': est_rep_opt,
                          'note': note})
     out_rows.sort(key=lambda r: r['ts_epoch'])
     with open(f'{repo}/metrics/input_split.csv', 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=['ts_epoch', 'ts_utc', 'agent_id',
                                            'scope', 'recorded_input',
-                                           'est_new', 'est_repeated', 'note'])
+                                           'est_new', 'est_repeated',
+                                           'est_new_opt', 'est_repeated_opt',
+                                           'note'])
         w.writeheader()
         w.writerows(out_rows)
 
@@ -575,6 +603,8 @@ def main():
         rec_in = sum(r['recorded_input'] for r in sel)
         en = sum(r['est_new'] for r in est_sel)
         er = sum(r['est_repeated'] for r in est_sel)
+        eno = sum(r['est_new_opt'] for r in est_sel)
+        ero = sum(r['est_repeated_opt'] for r in est_sel)
         est_in = en + er
         summary.append({'scope': scope, 'usage_rows': len(sel),
                         'recorded_input': rec_in,
@@ -582,7 +612,9 @@ def main():
                         'not_estimable_input': rec_in - est_in,
                         'est_new': en, 'est_repeated': er,
                         'est_new_pct_of_estimable': round(100 * en / est_in, 2) if est_in else 0,
-                        'est_repeated_pct_of_estimable': round(100 * er / est_in, 2) if est_in else 0})
+                        'est_repeated_pct_of_estimable': round(100 * er / est_in, 2) if est_in else 0,
+                        'est_new_opt': eno, 'est_repeated_opt': ero,
+                        'est_repeated_opt_pct_of_estimable': round(100 * ero / est_in, 2) if est_in else 0})
     with open(f'{repo}/metrics/input_split_summary.csv', 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=list(summary[0].keys()))
         w.writeheader()
