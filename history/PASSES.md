@@ -1500,6 +1500,14 @@ district prep: rip + re-lay ULPI_CK web (F escape that sealed the trio pad colum
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 18 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 183 — 2026-11-07T02:55:23Z · commit `c36125c`
+
+Board: `hw/pdlvds_rx.exp213.kicad_pcb` · Commit: `c36125c11d0d2540ddbd69a97c513be759af8e52`
+
+REFCLK In2 window re-lay: staircase (68.875,27.875)-(66.375,31.625) shifted east (+0.50 growing to +1.04), widening the DM_PHY/REFCLK channel from ~0.75 to 1.25-1.66 mm so the sealed ULPI trio pocket gains via crossings. REFCLK stays connected; KiCad DRC audited delta zero (154 violations / 21 unconnected, identical class table). District prep for the trio hauls, as pass 182 was for this one.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 18 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

@@ -1,0 +1,14 @@
+pass: 183
+description: REFCLK In2 window re-lay: staircase (68.875,27.875)-(66.375,31.625) shifted east (+0.50 growing to +1.04), widening the DM_PHY/REFCLK channel from ~0.75 to 1.25-1.66 mm so the sealed ULPI trio pocket gains via crossings. REFCLK stays connected; KiCad DRC audited delta zero (154 violations / 21 unconnected, identical class table). District prep for the trio hauls, as pass 182 was for this one.
+timestamp (UTC): 2026-11-07T02:55:23Z
+commit: pending
+board file: hw/pdlvds_rx.exp213.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 108
+unconnected nets: 18
+courtyard collisions: 0
+audit verdict: fail
+note: 
