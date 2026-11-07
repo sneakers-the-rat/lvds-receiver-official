@@ -1,0 +1,80 @@
+08:39:29: Debug: Adding duplicate image handler for 'PNG file'
+08:39:29: Debug: Adding duplicate image handler for 'JPEG file'
+08:39:29: Debug: Adding duplicate image handler for 'TIFF file'
+08:39:29: Debug: Adding duplicate image handler for 'GIF file'
+08:39:29: Debug: Adding duplicate image handler for 'PNM file'
+08:39:29: Debug: Adding duplicate image handler for 'PCX file'
+08:39:29: Debug: Adding duplicate image handler for 'IFF file'
+08:39:29: Debug: Adding duplicate image handler for 'Windows icon file'
+08:39:29: Debug: Adding duplicate image handler for 'Windows cursor file'
+08:39:29: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+08:39:29: Debug: Adding duplicate image handler for 'TGA file'
+08:39:29: Debug: Adding duplicate image handler for 'XPM file'
+static in box: [96, 102, 48]
+ULPI_D4: 28 static-feasible vias
+ULPI_D6: 7 static-feasible vias
+ULPI_D5: 5 static-feasible vias
+ULPI_D4: 56 options pass statics
+ULPI_D6: 14 options pass statics
+ULPI_D5: 11 options pass statics
+8624 combos scored; top 15 near-misses:
+  worst -0.462  bind: L0 seg[ULPI_D6](80.38,15.12)->(80.75,14.75) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(80.0, 14.75) stub4_tail=[(79.375, 14.625), (80.0, 14.75)]
+      V6=(80.75, 14.75) stub6_tail=[(80.375, 15.125), (80.75, 14.75)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](79.88,15.62)->(80.75,14.75) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(80.0, 14.75) stub4_tail=[(79.375, 14.625), (80.0, 14.75)]
+      V6=(80.75, 14.75) stub6_tail=[(79.875, 15.625), (80.75, 14.75)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](80.38,15.12)->(80.88,14.62) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(80.0, 14.75) stub4_tail=[(79.375, 14.625), (80.0, 14.75)]
+      V6=(80.875, 14.625) stub6_tail=[(80.375, 15.125), (80.875, 14.625)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](79.88,15.62)->(80.88,14.62) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(80.0, 14.75) stub4_tail=[(79.375, 14.625), (80.0, 14.75)]
+      V6=(80.875, 14.625) stub6_tail=[(79.875, 15.625), (80.875, 14.625)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](80.38,15.12)->(80.75,14.75) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(80.0, 14.75) stub4_tail=[(79.125, 14.375), (80.0, 14.75)]
+      V6=(80.75, 14.75) stub6_tail=[(80.375, 15.125), (80.75, 14.75)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](79.88,15.62)->(80.75,14.75) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(80.0, 14.75) stub4_tail=[(79.125, 14.375), (80.0, 14.75)]
+      V6=(80.75, 14.75) stub6_tail=[(79.875, 15.625), (80.75, 14.75)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](80.38,15.12)->(80.88,14.62) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(80.0, 14.75) stub4_tail=[(79.125, 14.375), (80.0, 14.75)]
+      V6=(80.875, 14.625) stub6_tail=[(80.375, 15.125), (80.875, 14.625)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](79.88,15.62)->(80.88,14.62) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(80.0, 14.75) stub4_tail=[(79.125, 14.375), (80.0, 14.75)]
+      V6=(80.875, 14.625) stub6_tail=[(79.875, 15.625), (80.875, 14.625)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](80.38,15.12)->(80.75,14.75) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(79.875, 14.75) stub4_tail=[(79.375, 14.625), (79.875, 14.75)]
+      V6=(80.75, 14.75) stub6_tail=[(80.375, 15.125), (80.75, 14.75)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](79.88,15.62)->(80.75,14.75) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(79.875, 14.75) stub4_tail=[(79.375, 14.625), (79.875, 14.75)]
+      V6=(80.75, 14.75) stub6_tail=[(79.875, 15.625), (80.75, 14.75)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](80.38,15.12)->(80.88,14.62) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(79.875, 14.75) stub4_tail=[(79.375, 14.625), (79.875, 14.75)]
+      V6=(80.875, 14.625) stub6_tail=[(80.375, 15.125), (80.875, 14.625)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](79.88,15.62)->(80.88,14.62) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(79.875, 14.75) stub4_tail=[(79.375, 14.625), (79.875, 14.75)]
+      V6=(80.875, 14.625) stub6_tail=[(79.875, 15.625), (80.875, 14.625)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](80.38,15.12)->(80.75,14.75) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(79.875, 14.75) stub4_tail=[(79.125, 14.375), (79.875, 14.75)]
+      V6=(80.75, 14.75) stub6_tail=[(80.375, 15.125), (80.75, 14.75)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](79.88,15.62)->(80.75,14.75) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(79.875, 14.75) stub4_tail=[(79.125, 14.375), (79.875, 14.75)]
+      V6=(80.75, 14.75) stub6_tail=[(79.875, 15.625), (80.75, 14.75)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
+  worst -0.462  bind: L0 seg[ULPI_D6](80.38,15.12)->(80.88,14.62) vs via[ULPI_D5]@(80.375,15.000)r0.25
+      V4=(79.875, 14.75) stub4_tail=[(79.125, 14.375), (79.875, 14.75)]
+      V6=(80.875, 14.625) stub6_tail=[(80.375, 15.125), (80.875, 14.625)]
+      V5=(80.375, 15.0) stub5=[(78.4375, 14.75), (80.375, 15.0)]
