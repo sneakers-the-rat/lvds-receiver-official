@@ -1,0 +1,14 @@
+pass: 186
+description: Quadrant prep (zero audited delta): ULPI trio exits repacked to their designed positions - DIR via slid SW on its own B line to (75.5,17.521), CK via to its southern home (76.625,17.5), NXT F exit re-laid (74.65,17.8). All three nets stay connected; DRC 19 unconnected / 154 violations identical to exp215. STP dive gate now exactly characterised: DIR/CK vias 1.125 apart (track threads at 0.56/0.565, no via fits between - needs 1.4); the southern dive field is fenced by C20's two pads, DM_PHY's F vertical and C22.2 - completion needs the joint DM re-lay + C22/C20 shift packing
+timestamp (UTC): 2026-11-07T05:03:06Z
+commit: pending
+board file: hw/pdlvds_rx.exp216.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 16
+courtyard collisions: 0
+audit verdict: fail
+note: 

@@ -5372,6 +5372,36 @@
       },
       "description": "ULPI_NXT connected: DM_PHY In2 vertical shifted 0.50 west opening the canyon gate; NXT re-routed through the gate and DIR's old window via on the DRC-rule grid router, DIR re-planned around it; I2C_SDA mouth via moved and a GND track tie heals the U6.31 fill scrap. DRC unconnected 20->19, violations 154 identical, zero new",
       "note": ""
+    },
+    {
+      "pass": 186,
+      "timestamp": "2026-11-07T05:03:06Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp216.kicad_pcb",
+      "dir": "pass-0186",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 109,
+        "unconnected_nets": 16,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "Quadrant prep (zero audited delta): ULPI trio exits repacked to their designed positions - DIR via slid SW on its own B line to (75.5,17.521), CK via to its southern home (76.625,17.5), NXT F exit re-laid (74.65,17.8). All three nets stay connected; DRC 19 unconnected / 154 violations identical to exp215. STP dive gate now exactly characterised: DIR/CK vias 1.125 apart (track threads at 0.56/0.565, no via fits between - needs 1.4); the southern dive field is fenced by C20's two pads, DM_PHY's F vertical and C22.2 - completion needs the joint DM re-lay + C22/C20 shift packing",
+      "note": ""
     }
   ],
   "gaps": [
