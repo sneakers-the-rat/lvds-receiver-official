@@ -23,25 +23,36 @@ Scopes match make_token_chart.py: "main chat" is this chat's root agent
 pdlvds-progress scope.
 
 cost_summary.csv rows: per provider, one row per (scope, tier_model)
-priced share, one "all" row per tier actually used, one "tier-matched"
-row per scope plus the provider headline (scope=all,
-tier_model=tier-matched: each scope priced at the tier its own model
-share ran on, totals summing the rounded per-component costs - the
-same convention as the per-tier totals), one "all" upper-bound row
-(tier_model="upper bound (all flagship)"), and one "all"
-cache-adjusted row (tier_model="cache-adjusted (measured share)").
-Headline costs use standard (uncached) input rates.
+priced share, one "all" row per tier actually used, and three
+whole-volume cost rows (scope=all), each tier-matched (every share
+priced at the tier its own model ran on):
 
-The cache-adjusted figure applies the MEASURED new-vs-repeated split
-in metrics/input_split_summary.csv (a validated estimate; per-scope
-repeated share: chat tree 97.5%, checkpoint cron 87.8%, overall
-96.4% of estimable input): each (scope, codename) cell's input is
-billed at that cell's standard rate for the new share and at its own
-tier cache-read rate for the repeated share (for the Muse row:
-Wonder $0.20 / Spark $0.15 per MTok). If the summary file is absent,
-the script falls back to an ASSUMED flat 95% cache share and labels
-the row "cache-adjusted (assumed 95% share)". Cache-adjusted figures
-are written into cost_summary.csv and also printed.
+- "all-uncached (tier-matched)": every input token at the standard
+  uncached rate. Per-scope rows carry this same label, and their
+  "all" row is the headline (totals summing the rounded per-component
+  costs - the same convention as the per-tier totals).
+- "all-cached (tier-matched)": every input token at its tier's
+  cache-read rate - the opposite bracket (no real workload achieves
+  it; a first send is never a cache read).
+- "cache-adjusted (pessimistic estimate)" and "cache-adjusted
+  (optimistic estimate)": input billed per the ESTIMATED
+  new-vs-repeated split in metrics/input_split_summary.csv (an
+  estimate reconstructed from transcripts, not a measurement; the
+  runtime records no cache split), under the split's two bounds for
+  the injected preamble: pessimistic = the preamble is never
+  cache-served (new at every request); optimistic = it is
+  cache-served after its first send per session. Each (scope,
+  codename) cell's input is billed at its standard rate for the
+  estimated new share and at its tier cache-read rate for the
+  estimated repeated share (for the Muse row: Wonder $0.20 /
+  Spark $0.15 per MTok). If the summary file is absent, the script
+  falls back to an ASSUMED flat 95% cache share and labels the row
+  "cache-adjusted (assumed 95% share)".
+
+The script also writes metrics/cache_share_by_agent_type.csv: the
+estimated repeated (cache-served) percentage behind the third cost,
+broken down by agent type (main chat / subagents / checkpoint cron),
+computed from the per-record estimates in metrics/input_split.csv.
 
 Usage: python3 metrics/make_cost_summary.py [repo_root]
 """
@@ -142,9 +153,13 @@ def main():
         'api_rates.json is not the tier-pair (v2) layout'
     codename_map = rates_doc['codename_map']['map']
 
-    # Measured repeated (cache-served) share per scope, from the
-    # input-split estimate; None -> ASSUMED flat-share fallback.
+    # Estimated repeated (cache-served) share per scope, from the
+    # input-split estimate, under its two preamble bounds:
+    # `measured` = pessimistic (preamble never cache-served),
+    # `measured_opt` = optimistic (preamble cache-served after its
+    # first send per session). None -> ASSUMED flat-share fallback.
     measured = None
+    measured_opt = None
     try:
         summ = {r['scope']: r for r in csv.DictReader(
             open(f'{repo}/metrics/input_split_summary.csv'))}
@@ -157,8 +172,76 @@ def main():
                 summ['checkpoint-cron']
                 ['est_repeated_pct_of_estimable']) / 100,
         }
+        try:
+            measured_opt = {
+                'main_chat': float(
+                    summ['chat-tree']
+                    ['est_repeated_opt_pct_of_estimable']) / 100,
+                'subagents': float(
+                    summ['chat-tree']
+                    ['est_repeated_opt_pct_of_estimable']) / 100,
+                'checkpoint_cron': float(
+                    summ['checkpoint-cron']
+                    ['est_repeated_opt_pct_of_estimable']) / 100,
+            }
+        except (KeyError, ValueError):
+            measured_opt = None
     except (OSError, KeyError, ValueError):
         measured = None
+
+    # Estimated cache (repeated-input) share by agent type, from the
+    # per-record estimates in input_split.csv. A record is estimable
+    # iff its estimate row carries no note; non-estimable records are
+    # reported as their own column, never folded into the percentage.
+    share_rows = []
+    try:
+        split_rows = list(csv.DictReader(
+            open(f'{repo}/metrics/input_split.csv')))
+        scope_by_agent = {a['agent_id']: a['scope'] for a in agents}
+        agg = {}
+        for r in split_rows:
+            aid = r['agent_id']
+            if aid == root_id:
+                atype = 'main chat (root agent)'
+            elif scope_by_agent.get(aid) == 'chat-tree':
+                atype = 'subagents'
+            else:
+                atype = 'checkpoint cron'
+            d = agg.setdefault(atype, [0, 0, 0, 0, 0, 0])
+            d[0] += 1
+            d[1] += int(r['recorded_input'])
+            if r['note']:
+                d[4] += int(r['recorded_input'])
+            else:
+                d[2] += int(r['est_new'])
+                d[3] += int(r['est_repeated'])
+                d[5] += int(r.get('est_repeated_opt') or 0)
+        for atype in ('main chat (root agent)', 'subagents',
+                      'checkpoint cron'):
+            if atype not in agg:
+                continue
+            n, rec_in, en, er, ne_in, ero = agg[atype]
+            est_in = en + er
+            share_rows.append({
+                'agent_type': atype, 'usage_rows': n,
+                'recorded_input': rec_in, 'estimable_input': est_in,
+                'not_estimable_input': ne_in, 'est_new': en,
+                'est_repeated': er,
+                'est_repeated_pct_of_estimable':
+                    f'{100 * er / est_in:.2f}' if est_in else '',
+                'est_repeated_opt': ero,
+                'est_repeated_opt_pct_of_estimable':
+                    f'{100 * ero / est_in:.2f}' if est_in else '',
+            })
+        if share_rows:
+            with open(f'{repo}/metrics/cache_share_by_agent_type.csv',
+                      'w', newline='') as f:
+                w = csv.DictWriter(
+                    f, fieldnames=list(share_rows[0].keys()))
+                w.writeheader()
+                w.writerows(share_rows)
+    except OSError:
+        share_rows = []
 
     rows = []
     report_lines = []
@@ -170,18 +253,37 @@ def main():
         # step-down tier (like-for-like across providers).
         muse_flagship_public = rates_doc['providers'][0]['model']
         tier_for = {}
-        codename_for_tier = {}
+        codenames_of_tier = {flagship: [], stepdown: []}
         for codename, public in codename_map.items():
             tier = flagship if public == muse_flagship_public else stepdown
             tier_for[codename] = tier
-            codename_for_tier[tier] = codename
+            codenames_of_tier[tier].append(codename)
+
+        def cell_tier(scope, tier):
+            """(input, output) summed over EVERY codename mapped to
+            this tier - several codename builds can share one tier
+            (e.g. avocado-5.17-v1 and -v2 both price as Spark), and
+            pricing only one of them silently drops the rest."""
+            return (sum(cell.get((scope, c), [0, 0])[0]
+                        for c in codenames_of_tier[tier]),
+                    sum(cell.get((scope, c), [0, 0])[1]
+                        for c in codenames_of_tier[tier]))
+
+        def total_tier(tier):
+            return (sum(codename_totals[c][0]
+                        for c in codenames_of_tier[tier]),
+                    sum(codename_totals[c][1]
+                        for c in codenames_of_tier[tier]))
+
+        assert sum(total_tier(t)[0]
+                   for t in (flagship, stepdown)) == grand_in, \
+            'tier aggregation does not cover the grand input total'
         tier_totals = {flagship: [0.0, 0.0], stepdown: [0.0, 0.0]}
         scope_costs = {s: [0.0, 0.0] for s in SCOPES}
 
         for scope in SCOPES:
             for tier in (flagship, stepdown):
-                tin, tout = cell.get(
-                    (scope, codename_for_tier[tier]), [0, 0])
+                tin, tout = cell_tier(scope, tier)
                 if tin == 0 and tout == 0:
                     continue
                 r = cost_row(p['provider'], tier, scope, tin, tout,
@@ -196,7 +298,7 @@ def main():
             cin, cout = tier_totals[tier]
             if cin == 0 and cout == 0:
                 continue
-            tin, tout = codename_totals[codename_for_tier[tier]]
+            tin, tout = total_tier(tier)
             rin, rout, rcache = tier_rates(p, tier)
             rows.append({
                 'provider': p['provider'], 'model': tier,
@@ -217,7 +319,8 @@ def main():
                 continue
             tin, tout = scope_totals[scope]
             rows.append({
-                'provider': p['provider'], 'model': 'tier-matched',
+                'provider': p['provider'],
+                'model': 'all-uncached (tier-matched)',
                 'scope': scope, 'input_tokens': tin,
                 'output_tokens': tout,
                 'input_rate_usd_per_mtok': 'mixed',
@@ -229,7 +332,8 @@ def main():
                 'source_url': p['source_url'],
             })
         rows.append({
-            'provider': p['provider'], 'model': 'tier-matched',
+            'provider': p['provider'],
+            'model': 'all-uncached (tier-matched)',
             'scope': 'all',
             'input_tokens': grand_in, 'output_tokens': grand_out,
             'input_rate_usd_per_mtok': 'mixed',
@@ -239,38 +343,51 @@ def main():
             'total_cost_usd': f'{headline:.2f}',
             'source_url': p['source_url'],
         })
-        rin, rout, rcache_f = tier_rates(p, flagship)
-        rows.append(cost_row(p['provider'], 'upper bound (all flagship)',
-                             'all', grand_in, grand_out,
-                             tier_rates(p, flagship), p['source_url']))
 
-        # Cache-adjusted sensitivity for this provider (also printed
-        # in the report lines below).
-        headline_raw = (sum((tin * tier_rates(p, tier_for[c])[0]
-                             + tout * tier_rates(p, tier_for[c])[1]) / 1e6
-                            for c, (tin, tout) in codename_totals.items()))
-        ub = (grand_in * rin + grand_out * rout) / 1e6
-        if measured is not None:
-            sens = upper_sens = 0.0
+        # All-cached bracket: every input token at its tier's
+        # cache-read rate, output at standard rates.
+        all_cached = sum(
+            (tin * tier_rates(p, tier_for[c])[2]
+             + tout * tier_rates(p, tier_for[c])[1]) / 1e6
+            for c, (tin, tout) in codename_totals.items())
+        rows.append({
+            'provider': p['provider'],
+            'model': 'all-cached (tier-matched)',
+            'scope': 'all',
+            'input_tokens': grand_in, 'output_tokens': grand_out,
+            'input_rate_usd_per_mtok': 'mixed',
+            'output_rate_usd_per_mtok': 'mixed',
+            'cache_read_rate_usd_per_mtok': 'mixed',
+            'input_cost_usd': '', 'output_cost_usd': '',
+            'total_cost_usd': f'{all_cached:.2f}',
+            'source_url': p['source_url'],
+        })
+
+        # Cache-adjusted estimates for this provider, under the
+        # split's two preamble bounds.
+        def sens_for(shares):
+            s = 0.0
             for (scope, codename), (tin, tout) in cell.items():
                 rin_c, rout_c, rcache_c = tier_rates(p, tier_for[codename])
-                share = measured[scope]
-                sens += (tin * ((1 - share) * rin_c + share * rcache_c)
-                         + tout * rout_c) / 1e6
-            for scope in SCOPES:
-                tin = scope_totals[scope][0]
-                share = measured[scope]
-                upper_sens += tin * ((1 - share) * rin
-                                     + share * rcache_f) / 1e6
-            upper_sens += grand_out * rout / 1e6
-            cache_label = 'cache-adjusted (measured share)'
-            report_lines.append(
-                f"{p['provider']}: headline (tier-matched) "
-                f"${headline_raw:,.2f} | upper bound (all at {flagship}) "
-                f"${ub:,.2f} | at the MEASURED repeated share "
-                f"(chat tree {measured['main_chat']:.1%}, cron "
-                f"{measured['checkpoint_cron']:.1%}): headline "
-                f"${sens:,.2f}, upper bound ${upper_sens:,.2f}")
+                share = shares[scope]
+                s += (tin * ((1 - share) * rin_c + share * rcache_c)
+                      + tout * rout_c) / 1e6
+            return s
+
+        if measured is not None:
+            variants = [
+                ('cache-adjusted (pessimistic estimate)',
+                 sens_for(measured),
+                 f"pessimistic (chat tree "
+                 f"{measured['main_chat']:.1%}, cron "
+                 f"{measured['checkpoint_cron']:.1%} repeated)")]
+            if measured_opt is not None:
+                variants.append(
+                    ('cache-adjusted (optimistic estimate)',
+                     sens_for(measured_opt),
+                     f"optimistic (chat tree "
+                     f"{measured_opt['main_chat']:.1%}, cron "
+                     f"{measured_opt['checkpoint_cron']:.1%} repeated)"))
         else:
             sens = sum((tin * ((1 - ASSUMED_CACHE_SHARE)
                                * tier_rates(p, tier_for[c])[0]
@@ -278,28 +395,27 @@ def main():
                               * tier_rates(p, tier_for[c])[2])
                         + tout * tier_rates(p, tier_for[c])[1]) / 1e6
                        for c, (tin, tout) in codename_totals.items())
-            eff = ((1 - ASSUMED_CACHE_SHARE) * rin
-                   + ASSUMED_CACHE_SHARE * rcache_f)
-            upper_sens = (grand_in * eff + grand_out * rout) / 1e6
-            cache_label = 'cache-adjusted (assumed 95% share)'
-            report_lines.append(
-                f"{p['provider']}: headline (tier-matched) "
-                f"${headline_raw:,.2f} | upper bound (all at {flagship}) "
-                f"${ub:,.2f} | if {ASSUMED_CACHE_SHARE:.0%} of input "
-                f"were cache-reads: headline ${sens:,.2f}, upper "
-                f"bound ${upper_sens:,.2f} (assumed share; "
-                f"input_split_summary.csv absent)")
-        rows.append({
-            'provider': p['provider'], 'model': cache_label,
-            'scope': 'all',
-            'input_tokens': grand_in, 'output_tokens': grand_out,
-            'input_rate_usd_per_mtok': 'mixed',
-            'output_rate_usd_per_mtok': 'mixed',
-            'cache_read_rate_usd_per_mtok': 'mixed',
-            'input_cost_usd': '', 'output_cost_usd': '',
-            'total_cost_usd': f'{sens:.2f}',
-            'source_url': p['source_url'],
-        })
+            variants = [
+                ('cache-adjusted (assumed 95% share)', sens,
+                 f"ASSUMED {ASSUMED_CACHE_SHARE:.0%} cache share "
+                 f"(input_split_summary.csv absent)")]
+        report_lines.append(
+            f"{p['provider']}: all-uncached ${headline:,.2f} | "
+            f"all-cached ${all_cached:,.2f} | "
+            + ' | '.join(f"{label} ${val:,.2f} [{note}]"
+                         for label, val, note in variants))
+        for cache_label, sens, _note in variants:
+            rows.append({
+                'provider': p['provider'], 'model': cache_label,
+                'scope': 'all',
+                'input_tokens': grand_in, 'output_tokens': grand_out,
+                'input_rate_usd_per_mtok': 'mixed',
+                'output_rate_usd_per_mtok': 'mixed',
+                'cache_read_rate_usd_per_mtok': 'mixed',
+                'input_cost_usd': '', 'output_cost_usd': '',
+                'total_cost_usd': f'{sens:.2f}',
+                'source_url': p['source_url'],
+            })
 
     out = f'{repo}/metrics/cost_summary.csv'
     with open(out, 'w', newline='') as f:
@@ -309,6 +425,17 @@ def main():
     print(f'wrote {out} (snapshot {snapshot_ts})')
     for line in report_lines:
         print(line)
+    if share_rows:
+        print('estimated cache (repeated-input) share by agent type, '
+              'pessimistic / optimistic preamble bound '
+              '(metrics/cache_share_by_agent_type.csv):')
+        for r in share_rows:
+            print(f"  {r['agent_type']}: "
+                  f"{r['est_repeated_pct_of_estimable']}% / "
+                  f"{r['est_repeated_opt_pct_of_estimable']}% of "
+                  f"estimable input repeated (estimable "
+                  f"{r['estimable_input']:,}, not estimable "
+                  f"{r['not_estimable_input']:,})")
 
 
 if __name__ == '__main__':
