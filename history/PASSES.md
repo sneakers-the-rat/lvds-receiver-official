@@ -1620,6 +1620,38 @@ pass 197: GND stitch via (82.0,-18.075) d0.5 heals the fill pocket severed by pa
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 198 — 2026-11-08T08:12:30Z · commit `f06a3a3`
+
+Board: `hw/pdlvds_rx.exp228.kicad_pcb` · Commit: `f06a3a300b72a1dfb19e36c0b8ce1d6a97ff2c6f`
+
+Silk campaign 1/4: reference-designator reflow batch 1 -- 77 of 81 violating refs moved to copper/silk-clear spots (spiral search over exact item model: F pads incl. rotated-rect corner+edge distance, tracks, vias, footprint silk bboxes, live ref bboxes; text bbox from GetBoundingBox). KiCad DRC violations 150 -> 29 (silk_overlap 66->14, silk_over_copper 78->10); unconnected unchanged 13 items; check_pcb nets 12, census 109, courtyard 0, blind SH1 21 -- all identical. No copper touched.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
+
+### Pass 199 — 2026-11-08T08:13:38Z · commit `b4ecd3b`
+
+Board: `hw/pdlvds_rx.exp229.kicad_pcb` · Commit: `b4ecd3b08962e42505709309f4a96bd494873f91`
+
+Silk campaign 2/4: reflow batch 2 -- the 12 refs still violating after batch 1 (C16, C20, D11, J4, L2, Q1, R17, R20, R30, R37, U7, X1). Model fixes from batch-1 diagnosis: exact rotated-pad distance (edge-crossing test -- batch 1 corner-only test missed X1's 4.5x2.0 pads rotated 90 deg, whose long edges slice the ref bbox with all corners distant), own-footprint silk shapes as obstacles (batch 1 excluded them; DRC flags ref-vs-own-outline), Edge.Cuts as obstacles (R30 vs the HV slot edge). All 12 placed (0/90 deg text). KiCad DRC violations 29 -> 12 (silk_overlap 4, silk_over_copper 4, copper_edge 4 J1-intrinsic); unconnected unchanged 13 items. No copper touched.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
+
+### Pass 200 — 2026-11-08T08:14:44Z · commit `c2ffbf7`
+
+Board: `hw/pdlvds_rx.exp230.kicad_pcb` · Commit: `c2ffbf74138873872ed92ff9d7710703ce47ee22`
+
+Silk campaign 3/4: footprint silk-shape surgery -- SH1 shield-can rectangle replaced by its true outline drawn as 9 segments with gaps at every pad crossing (own 2.4x2.4 corner mounting pads, R8.1 east, R5/R6/U12 pads north, U12 pin-1 marker); R7's two east outline segments shortened off the can line; D1's outline rect verticals moved 0.13 out off its pad columns and its aperture circle deleted (it sits entirely on pad 1's mask opening -- unprintable silk); U9's rect verticals moved out off its pads (66.93/69.57). KiCad DRC violations 12 -> 7 (silk_overlap 3, copper_edge 4); silk_over_copper ZERO; unconnected unchanged 13. (First attempt with footprint-local coordinate transforms corrupted the shapes -- KiCad 8 shape getters/setters use board coordinates; that build was discarded unbanked and the fix is in t_al23.)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
+
+### Pass 201 — 2026-11-08T08:16:20Z · commit `8fe52bc`
+
+Board: `hw/pdlvds_rx.exp231.kicad_pcb` · Commit: `8fe52bcbc1497132736a7b07768f441fc9386aa5`
+
+Silk campaign 4/4: micro-fixes -- R7 segment ends 28.95 -> 28.88 (half-width still grazed SH1's east line edge by 0.01) and SH1's north outline piece at x[15.93,16.57] dropped (ran parallel 0.08 from R5's own outline segment; R5's segment already marks that span). KiCad DRC violations 7 -> 4: SILK AT ZERO (silk_overlap 0, silk_over_copper 0, silk_edge 0). The 4 remaining violations are the standing J1-intrinsic copper_edge items (NPTH vs the connector's own pads; S1 shell pads at the board edge -- footprint geometry / connector-at-edge by design). Unconnected unchanged 13 items; check_pcb nets 12, census 109, courtyard 0, blind SH1 21 -- identical throughout the campaign.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

@@ -1,0 +1,14 @@
+pass: 200
+description: Silk campaign 3/4: footprint silk-shape surgery -- SH1 shield-can rectangle replaced by its true outline drawn as 9 segments with gaps at every pad crossing (own 2.4x2.4 corner mounting pads, R8.1 east, R5/R6/U12 pads north, U12 pin-1 marker); R7's two east outline segments shortened off the can line; D1's outline rect verticals moved 0.13 out off its pad columns and its aperture circle deleted (it sits entirely on pad 1's mask opening -- unprintable silk); U9's rect verticals moved out off its pads (66.93/69.57). KiCad DRC violations 12 -> 7 (silk_overlap 3, copper_edge 4); silk_over_copper ZERO; unconnected unchanged 13. (First attempt with footprint-local coordinate transforms corrupted the shapes -- KiCad 8 shape getters/setters use board coordinates; that build was discarded unbanked and the fix is in t_al23.)
+timestamp (UTC): 2026-11-08T08:14:44Z
+commit: pending
+board file: hw/pdlvds_rx.exp230.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 12
+courtyard collisions: 0
+audit verdict: fail
+note: 
