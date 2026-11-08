@@ -1,0 +1,14 @@
+pass: 205
+description: pass 202: +3V3D U11.14 connected — +5V staircase SW branch ripped and detoured south on F (y22.95) freeing the channel; U11.14 F stub to via (56.75,24.00), In2 south/east at y20.8, rise via (66.55,22.35) onto C38 chain. DRC unconnected 10->9, violations 4 flat (J1 only); check_pcb nets 10->9, census 109 identical, courtyard 0
+timestamp (UTC): 2026-11-08T13:17:32Z
+commit: pending
+board file: hw/pdlvds_rx.exp235.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 9
+courtyard collisions: 0
+audit verdict: fail
+note: 
