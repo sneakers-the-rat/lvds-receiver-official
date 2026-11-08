@@ -1,0 +1,36 @@
+10:40:55: Debug: Adding duplicate image handler for 'PNG file'
+10:40:55: Debug: Adding duplicate image handler for 'JPEG file'
+10:40:55: Debug: Adding duplicate image handler for 'TIFF file'
+10:40:55: Debug: Adding duplicate image handler for 'GIF file'
+10:40:55: Debug: Adding duplicate image handler for 'PNM file'
+10:40:55: Debug: Adding duplicate image handler for 'PCX file'
+10:40:55: Debug: Adding duplicate image handler for 'IFF file'
+10:40:55: Debug: Adding duplicate image handler for 'Windows icon file'
+10:40:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:40:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:40:55: Debug: Adding duplicate image handler for 'TGA file'
+10:40:55: Debug: Adding duplicate image handler for 'XPM file'
+rips: base 14 entries, V3 extra 1, V4 extra 1
+V2 se0: 11 SHDN candidates
+V2 se1: 11 SHDN candidates
+V2 se2: 11 SHDN candidates
+V3 dx30.85 y-4.3 rx31.55 se0: 11 SHDN candidates
+V3 dx30.85 y-4.3 rx31.55 se1: 11 SHDN candidates
+V3 dx31.05 y-4.3 rx31.55 se0: 11 SHDN candidates
+V3 dx31.05 y-4.3 rx31.55 se1: 11 SHDN candidates
+V4 ys-4.6 xt30.9 se0: 11 SHDN candidates
+V4 ys-4.6 xt30.9 se1: 11 SHDN candidates
+V4 ys-4.6 xt31.15 se0: 11 SHDN candidates
+V4 ys-4.6 xt31.15 se1: 11 SHDN candidates
+V4 ys-4.85 xt30.9 se0: 11 SHDN candidates
+V4 ys-4.85 xt30.9 se1: 11 SHDN candidates
+V4 ys-4.85 xt31.15 se0: 11 SHDN candidates
+V4 ys-4.85 xt31.15 se1: 11 SHDN candidates
+stage A total: 165
+stage B fail counts: {'adds': 0, 'dives': 660, 'rises': 0, 'journey': 0}
+
+complete fast designs: 0
+
+=== exact re-gate of top designs ===
+
+NO complete design found
