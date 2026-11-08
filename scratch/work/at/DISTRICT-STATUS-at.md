@@ -97,6 +97,23 @@ exp240 DRC 4 J1 copper_edge + 7 unconnected ✓.
   band re-lay as its own A* in the leftover space. Fallback named:
   DATA B-layer south ride (In2 dive (70.62,2.18) → B x70.65 →
   (69.9,−1.9) In2) — B corridor fence-checked partially clean.
+- t_at30/t_at32 RUN: centred CLK (vias (63.55,11.95), (64.7,15.45),
+  (69.5,22.2), (73.25,21.65), (74.5,22.9)) and centred DATA both
+  complete as FIRST net; second net fails under BOTH the as-session
+  fencing (0.45/0.75) and true-rule fencing (0.40/0.70, t_at32).
+  Pair deficit is REAL, ≈0.046 (exact items, t_at28). Widest for
+  DATA-given-CLK30 (t_at31): −0.070 with binds scattered — the
+  shared west corridor + entries + hop are jointly ~0.05 short.
+- t_at33: B layer in the west corridor is NOT open — PG_3V3's B
+  braid field (staircases x60.9–67.6, y2.9–14.9) + CDR_LOL B
+  vertical x67.075 fill it. DATA-on-B would need a PG braid re-lay.
+- NEXT GEOMETRY CHANGES (posture law, in order): (1) fence-ablation
+  on the pair widest to name the minimal re-lay set (candidates:
+  THR_DAC via (64.875,6.625), SCL In2 chain, PG B braid segment,
+  +3V3D via (70.875,15.875)); (2) joint-state A* over the corridor
+  segment only, free segments fixed to the single journeys;
+  (3) DATA B south ride (via (70.62,2.18), B x70.65, In2 (69.9,−1.9))
+  + east-side north ride survey (same geography CDR_LOS needs).
 
 ## U9 WEST 1.0 — JOINT SEARCH LANDED (t_at21_joint3.py)
 138,032 joint-feasible {SCL via, chord bend, SDA via} configurations.
