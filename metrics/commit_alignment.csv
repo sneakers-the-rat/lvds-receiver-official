@@ -922,3 +922,14 @@ c8cf616341b1,2026-11-08T11:46:13Z,"tools: ao session - t_ao3 spread dive test (d
 d2733111db6a,2026-11-08T11:46:16Z,merge: passes 202-203 (HV_INTVCC connected + SE repair) + ao tools,1262241374,7930605,1270171979,83,64,not recorded
 2a9fdc3cdb7d,2026-11-08T11:46:47Z,metrics: post-merge regen,1262241374,7930605,1270171979,83,64,not recorded
 b44f645789ee,2026-11-08T12:13:11Z,metrics: watchdog export refresh,1262241374,7930605,1270171979,83,64,not recorded
+ce6624724166,2026-11-08T12:15:53Z,tools: ap J1-district diagnostics ap1-ap7 (joint re-plan attempts; DP_CON pocket),1265709943,7947432,1273657375,83,64,not recorded
+12dee50d132f,2026-11-08T12:21:55Z,tools: ap8 probe (ap7 DM-kill diagnosed: VBUS SW jog -0.030) + ap9 joint re-plan v4,1265709943,7947432,1273657375,83,64,not recorded
+dfbbdd4706cf,2026-11-08T12:32:02Z,tools: ap10 probe (CC1 stub pair-class artifact) + ap11 exact-rip joint re-plan v5,1265841161,7947486,1273788647,83,64,not recorded
+5700ee9fd81a,2026-11-08T12:41:50Z,metrics: watchdog export refresh,1265841161,7947486,1273788647,83,64,not recorded
+90293931079b,2026-11-08T12:50:46Z,"tools: ap13-ap17 J1 band/south-dive diagnostics (fences named: CC2 via, VBUS B4 escape, DM B7 via)",1265841161,7947486,1273788647,83,64,not recorded
+bcc95ccc5e94,2026-11-08T12:52:41Z,tools: ap18/ap19 south-dive v2 probes (via-exclusion overlap 0.025 named),1265841161,7947486,1273788647,83,64,not recorded
+1b9ac756ffdb,2026-11-08T12:53:39Z,tools: ap20/ap21 south-dive v3 probes (stub within 0.005-0.010 on two fences),1265841161,7947486,1273788647,83,64,not recorded
+a130ec71fed7,2026-11-08T13:00:14Z,"pass 0204: DP_CON connected: A6 south dive (stub threads DM B7 via/CC2 via gap, crosses B6 pad), CC2 B5 escape re-planned to band via (30.5,72.275), DM B7 via shrunk d0.6->d0.5, In2 main flood to D3. DRC unconnected 12->10, check_pcb nets 11->10",1265841161,7947486,1273788647,83,64,not recorded
+3c9de2ac87a5,2026-11-08T13:00:14Z,pass 0204: record commit hash,1265841161,7947486,1273788647,83,64,not recorded
+c26df2ddd04e,2026-11-08T13:00:19Z,tools: ap22 south-dive design + ap23 build (pass 204),1265841161,7947486,1273788647,83,64,not recorded
+020ca614e93f,2026-11-08T13:00:39Z,Merge branch 'mwork9' of /home/hatch/workspace/pdlvds-route into mwork9,1265841161,7947486,1273788647,83,64,not recorded
