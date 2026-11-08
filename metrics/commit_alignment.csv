@@ -950,3 +950,4 @@ e986c44f7251,2026-11-08T13:19:01Z,merge route mwork9 (pass 205 + aq tools),12997
 5f58dc8e6251,2026-11-08T18:08:53Z,merge pass 206 (SPI_MOSI + DAC_SYNC re-route) + aq tools,1314599297,8194097,1322793394,83,64,not recorded
 2d683fb00f14,2026-11-08T18:09:26Z,metrics: post-merge regen,1314599297,8194097,1322793394,83,64,not recorded
 48b72b7be267,2026-11-08T18:14:59Z,metrics: watchdog export refresh,1359605597,9085814,1368691411,83,64,not recorded
+60e0264064b2,2026-11-08T18:42:00Z,metrics: watchdog export refresh,1364548674,9105109,1373653783,83,64,not recorded
