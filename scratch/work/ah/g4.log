@@ -1,0 +1,28 @@
+23:53:59: Debug: Adding duplicate image handler for 'PNG file'
+23:53:59: Debug: Adding duplicate image handler for 'JPEG file'
+23:53:59: Debug: Adding duplicate image handler for 'TIFF file'
+23:53:59: Debug: Adding duplicate image handler for 'GIF file'
+23:53:59: Debug: Adding duplicate image handler for 'PNM file'
+23:53:59: Debug: Adding duplicate image handler for 'PCX file'
+23:53:59: Debug: Adding duplicate image handler for 'IFF file'
+23:53:59: Debug: Adding duplicate image handler for 'Windows icon file'
+23:53:59: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:53:59: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:53:59: Debug: Adding duplicate image handler for 'TGA file'
+23:53:59: Debug: Adding duplicate image handler for 'XPM file'
+23:54:09: Debug: Adding duplicate image handler for 'PNG file'
+23:54:09: Debug: Adding duplicate image handler for 'JPEG file'
+23:54:09: Debug: Adding duplicate image handler for 'TIFF file'
+23:54:09: Debug: Adding duplicate image handler for 'GIF file'
+23:54:09: Debug: Adding duplicate image handler for 'PNM file'
+23:54:09: Debug: Adding duplicate image handler for 'PCX file'
+23:54:09: Debug: Adding duplicate image handler for 'IFF file'
+23:54:09: Debug: Adding duplicate image handler for 'Windows icon file'
+23:54:09: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:54:09: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:54:09: Debug: Adding duplicate image handler for 'TGA file'
+23:54:09: Debug: Adding duplicate image handler for 'XPM file'
++3V3A: path 58 cells, cost 11.91
++3V3A: emitted 5 segs, 2 vias
+saved scratch/work/ah/g4.kicad_pcb
+reload +3V3A: 128 items
