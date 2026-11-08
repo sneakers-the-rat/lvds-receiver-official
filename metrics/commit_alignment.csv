@@ -966,15 +966,16 @@ ff941a8c9e07,2026-11-08T20:13:52Z,metrics: watchdog export refresh,1375265776,91
 8ba41a5e8c22,2026-11-08T20:42:39Z,metrics: watchdog export refresh,1379309999,9156257,1388466256,83,64,not recorded
 d670bb8b7de2,2026-11-08T20:43:43Z,tools (as): CAP campaign evidence checkpoint - escape package + journey search,1379309999,9156257,1388466256,83,64,not recorded
 3bc327971e30,2026-11-08T20:44:41Z,metrics: watchdog export refresh,1379309999,9156257,1388466256,83,64,not recorded
-faf1669ae4e9,2026-11-08T21:00:03Z,tools (as): CAP flood/bottleneck/ablation/A* evidence + SW-exit diagnosis,1379309999,9156257,1388466256,83,64,not recorded
-33224c0e4990,2026-11-08T21:00:11Z,tools (as): leftover journey_CAP_CLK.json from first t_as36 run (CLK-first order),1379309999,9156257,1388466256,83,64,not recorded
-58165c2f72dd,2026-11-08T21:00:15Z,"merge route mwork9 (CAP campaign evidence checkpoints d670bb8, faf1669, 33224c0)",1379309999,9156257,1388466256,83,64,not recorded
-f6aac86ecce1,2026-11-08T22:27:03Z,"tools (at): CAP pair synthesis evidence - slot is the SCL diagonal end not the keystone gap; HV hop topology dead; U9-west joint search 138k feasible (winner SCL via (69.35,1.40), SDA via (69.4,2.2), slot slack +0.320) but v7 pocket self-seals; as-journeys legal singles (min margin +0.030), pair deficit 0.046 exact / hop vias coincide; pair A* centred + true-rule fencing both fail second net; next: band re-lay as own A* / DATA B-ride fallback",1379309999,9156257,1388466256,83,64,not recorded
-a3be01d162fd,2026-11-08T22:27:07Z,merge route mwork9 (at-session CAP evidence f6aac86),1379309999,9156257,1388466256,83,64,not recorded
-d8c3608e387f,2026-11-08T22:28:36Z,tools (at): pair A* centred/true-rule fencing results + B corridor census (PG braid fills B) + next geometry changes,1379309999,9156257,1388466256,83,64,not recorded
-539a22ca43ae,2026-11-08T22:28:37Z,merge route mwork9 (at-session CAP evidence 2),1379309999,9156257,1388466256,83,64,not recorded
-0ccc7c262106,2026-11-08T22:54:51Z,"tools (au): CAP pair synthesis - CLK B-ride + DATA In2 plan settled in item model; entry sealed in current pocket, U9-west rebuild is the move (t_at21 geometry); PG/+3V3D/XO re-lay set named",1379309999,9156257,1388466256,83,64,not recorded
-8742a51e956b,2026-11-08T22:54:55Z,Merge branch 'mwork9' of /home/hatch/workspace/pdlvds-route into mwork9,1379309999,9156257,1388466256,83,64,not recorded
-ab552b8c1211,2026-11-08T22:55:18Z,metrics: post-merge regen,1379309999,9156257,1388466256,83,64,not recorded
-46b81d3da4f9,2026-11-08T23:04:54Z,site: current-info pages regenerate from current sources at build time,1379309999,9156257,1388466256,83,64,not recorded
-7f8b7eb7b2d2,2026-11-08T23:05:12Z,"site: regenerate docs includes from current docs/ sources (site_data stage_docs output, stale in the committed copies)",1379309999,9156257,1388466256,83,64,not recorded
+faf1669ae4e9,2026-11-08T21:00:03Z,tools (as): CAP flood/bottleneck/ablation/A* evidence + SW-exit diagnosis,1382569470,9171434,1391740904,83,64,not recorded
+33224c0e4990,2026-11-08T21:00:11Z,tools (as): leftover journey_CAP_CLK.json from first t_as36 run (CLK-first order),1382569470,9171434,1391740904,83,64,not recorded
+58165c2f72dd,2026-11-08T21:00:15Z,"merge route mwork9 (CAP campaign evidence checkpoints d670bb8, faf1669, 33224c0)",1382569470,9171434,1391740904,83,64,not recorded
+f6aac86ecce1,2026-11-08T22:27:03Z,"tools (at): CAP pair synthesis evidence - slot is the SCL diagonal end not the keystone gap; HV hop topology dead; U9-west joint search 138k feasible (winner SCL via (69.35,1.40), SDA via (69.4,2.2), slot slack +0.320) but v7 pocket self-seals; as-journeys legal singles (min margin +0.030), pair deficit 0.046 exact / hop vias coincide; pair A* centred + true-rule fencing both fail second net; next: band re-lay as own A* / DATA B-ride fallback",1410897259,9501588,1420398847,83,64,not recorded
+a3be01d162fd,2026-11-08T22:27:07Z,merge route mwork9 (at-session CAP evidence f6aac86),1410897259,9501588,1420398847,83,64,not recorded
+d8c3608e387f,2026-11-08T22:28:36Z,tools (at): pair A* centred/true-rule fencing results + B corridor census (PG braid fills B) + next geometry changes,1411009818,9502833,1420512651,83,64,not recorded
+539a22ca43ae,2026-11-08T22:28:37Z,merge route mwork9 (at-session CAP evidence 2),1411009818,9502833,1420512651,83,64,not recorded
+0ccc7c262106,2026-11-08T22:54:51Z,"tools (au): CAP pair synthesis - CLK B-ride + DATA In2 plan settled in item model; entry sealed in current pocket, U9-west rebuild is the move (t_at21 geometry); PG/+3V3D/XO re-lay set named",1428485973,9607059,1438093032,83,64,not recorded
+8742a51e956b,2026-11-08T22:54:55Z,Merge branch 'mwork9' of /home/hatch/workspace/pdlvds-route into mwork9,1428636557,9607122,1438243679,83,64,not recorded
+ab552b8c1211,2026-11-08T22:55:18Z,metrics: post-merge regen,1428636557,9607122,1438243679,83,64,not recorded
+46b81d3da4f9,2026-11-08T23:04:54Z,site: current-info pages regenerate from current sources at build time,1428787966,9607176,1438395142,83,64,not recorded
+7f8b7eb7b2d2,2026-11-08T23:05:12Z,"site: regenerate docs includes from current docs/ sources (site_data stage_docs output, stale in the committed copies)",1428787966,9607176,1438395142,83,64,not recorded
+0fd60cbac5fa,2026-11-08T23:16:35Z,"schematic: human-readable redraw — subsystem regions, drawn wires, labels only between regions; logical structure proven identical",1440444456,9657657,1450102113,83,64,not recorded
