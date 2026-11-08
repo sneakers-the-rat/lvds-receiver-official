@@ -1,0 +1,14 @@
+pass: 192
+description: APD_K slot detour: rip the 3 F segs crossing the HV slot (x17.8-18.1) + north vertical, re-lay around the slot west end (x11.25, y22.85 legs, 0.55 edge clearance, in-model gates +0.168 worst vs C33.2 GND pad); KiCad 154->151 (copper_edge 7->4, exactly the 3 APD_K items, 0 new), unconnected 15 identical; check_pcb census 109 identical, courtyard 0
+timestamp (UTC): 2026-11-08T05:53:47Z
+commit: pending
+board file: hw/pdlvds_rx.exp222.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 13
+courtyard collisions: 0
+audit verdict: fail
+note: 
