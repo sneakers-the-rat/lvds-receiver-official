@@ -1700,6 +1700,14 @@ SPI_SCK connected (U8.7->U6.111): CDR_LOL B vertical re-lay x67.375->x67.075 uns
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 7 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 208 — 2026-11-08T19:34:30Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp239.kicad_pcb` · Commit: `pending`
+
+GND heal, part 1: rip the 4 +3V3D F segs fencing the GND fill corridor east of SCK's dive via (tap segs (74.375,2.375)->(74.125,2.625)->(74.25,3.162) and bus segs (74.625,2.125)->(74.375,2.375), (74.875,1.875)->(74.625,2.125)) - the fill itself bridges around the via hole (corridor 0.28-0.5 wide); stitch-via heals were proven fenced on all four sides of the U6.38 strip blob. Also delete SPI_SCK's dangling B-B via (77.05,-8.5). KiCad DRC: GND zone pair CLOSED. Named side effect: the ripped tap was the +3V3D east staircase's only source path - a +3V3D track pair and one track_dangling (staircase west end (74.875,1.875)) appear; closed in pass 209. Census: +3V3D -4 segs, SPI_SCK -1 via, nothing else.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 8 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
