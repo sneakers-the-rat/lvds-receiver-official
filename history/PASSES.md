@@ -1628,6 +1628,14 @@ Silk campaign 1/4: reference-designator reflow batch 1 -- 77 of 81 violating ref
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 199 — 2026-11-08T08:13:38Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp229.kicad_pcb` · Commit: `pending`
+
+Silk campaign 2/4: reflow batch 2 -- the 12 refs still violating after batch 1 (C16, C20, D11, J4, L2, Q1, R17, R20, R30, R37, U7, X1). Model fixes from batch-1 diagnosis: exact rotated-pad distance (edge-crossing test -- batch 1 corner-only test missed X1's 4.5x2.0 pads rotated 90 deg, whose long edges slice the ref bbox with all corners distant), own-footprint silk shapes as obstacles (batch 1 excluded them; DRC flags ref-vs-own-outline), Edge.Cuts as obstacles (R30 vs the HV slot edge). All 12 placed (0/90 deg text). KiCad DRC violations 29 -> 12 (silk_overlap 4, silk_over_copper 4, copper_edge 4 J1-intrinsic); unconnected unchanged 13 items. No copper touched.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
