@@ -1684,6 +1684,14 @@ pass 202: +3V3D U11.14 connected — +5V staircase SW branch ripped and detoured
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 9 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 206 — 2026-11-08T18:07:26Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp236.kicad_pcb` · Commit: `pending`
+
+SPI_MOSI connected (U8.8->U6.113): F stub to the pocket's one legal via (71.9,7.25), In2 channel ride between DAC_SYNC seg2 and the BIST staircase, via (78.28,0.66), F south at x77.52, In2 south legs to the south prep via. DAC_SYNC re-routed in the same pass: old In2 braid hop replaced by sampled-router v2' channel (lands on braid at (76.55,1.45)) + north-approach B detour at the south end. R16 relocated (89.75,-19.0)->(86.9,-23.4) under posture law (prep) with BOOT0/GND webs re-laid; TP3 refdes moved north (its glyphs were clipped by R16's GND pad mask). SPI_SCK remains unconnected - see tools commit for its state. DRC unconnected 9->8, violations 4 (J1 only); check_pcb nets 9->8, census 109 flat, courtyard 0, blind 21.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 8 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
