@@ -62,8 +62,28 @@ before `jekyll build` and writes the generated, gitignored files:
 - `_data/bom.json`, `_data/sims.json`, `_data/board.json`,
   `_data/downloads.json` — BOM table, simulation blocks, asset
   presence, download list.
-- `assets/gen/`, `downloads/` — staged copies of fab renders,
-  results plots, metrics charts and per-pass history renders.
+- **Current-info pages are regenerated at build time, never
+  staged from a hand-refreshed copy.** The board renders (and
+  the board-layers PDF) are exported by the data step from the
+  current frontier board — the newest
+  `hw/pdlvds_rx.exp<N>.kicad_pcb`, selected by
+  `commit_pass.resolve_board` (`SITE_BOARD=<path>` overrides,
+  for testing); the schematic SVG and PDF are exported from the
+  current schematic the same way; the BOM is rebuilt from a
+  netlist exported from that schematic. Where a build has no
+  KiCad (CI's build-site job), staging falls back to `hw/fab/` —
+  which CI's kicad-validate job regenerates from the same
+  frontier board on every run (`scripts/make_fab.sh`, shipped as
+  the fab-outputs artefact) — and `board.json` records which
+  path produced each asset; the board/BOM/schematic/downloads
+  pages print that provenance. The simulation blocks are the one
+  display-only input: the sims are not re-run by the site build
+  (CI's sim job refreshes `results/`), and the sims page shows
+  each result file's update time.
+- `assets/gen/`, `downloads/` — staged copies of the fab
+  downloads, results plots, metrics charts and per-pass history
+  renders (the history renders are committed per-pass records and
+  are never re-rendered).
   Board render SVGs (fab top/bottom/composite/per-layer and the
   per-pass history renders) get a full-canvas `#111` background
   rect baked in at this step (`inject_svg_background()` in

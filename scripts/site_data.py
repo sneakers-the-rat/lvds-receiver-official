@@ -21,12 +21,30 @@ half of the retired scripts/build_site.py:
     the committed metrics/*.csv export (same arithmetic as the old
     generator: sums over token_series.csv, scope split from
     agents.csv). No export -> available: false, never a fake total.
-  - website/_data/bom.json     — BOM table data from hw/fab/bom.csv.
+  - website/_data/bom.json     — BOM table data, REGENERATED at
+    build time from a netlist exported from the current schematic
+    (kicad-cli), falling back to the committed results/netlist.xml
+    and then to a staged hw/fab/bom.csv; the source used is named
+    in the JSON (and on the BOM page).
   - website/_data/sims.json    — simulation summary blocks: the key
-    lines of each results/*.txt, or the file's absence.
+    lines of each results/*.txt (plus the file's mtime, shown on
+    the page — the sims themselves are NOT re-run by the site
+    build; CI refreshes results/ via the sim job's artefact), or
+    the file's absence.
   - website/_data/board.json   — which board assets exist (top /
     bottom renders, the all-layers composite, per-layer SVGs,
-    schematic SVG/PDF).
+    schematic SVG/PDF) plus provenance: the board file the renders
+    were exported from and how each schematic asset was obtained.
+    The board renders are EXPORTED AT BUILD TIME from the current
+    frontier board — the newest hw/pdlvds_rx.exp<N>.kicad_pcb,
+    selected by commit_pass.resolve_board, the pass system's own
+    rule (SITE_BOARD overrides it, for testing / reproducing an
+    older build). Only when no build-time export is possible (no
+    kicad-cli — CI's build-site job) does staging fall back to the
+    hw/fab/ copies, which CI's kicad-validate job regenerates from
+    the same frontier board on every run (scripts/make_fab.sh) and
+    ships as the fab-outputs artefact; board.json says which path
+    produced the renders, and board.md prints it.
   - Board render SVGs staged into website/assets/gen/ (the fab
     renders and the per-pass history renders) get a dark background
     rect baked in — see inject_svg_background() — so a render
@@ -34,11 +52,13 @@ half of the retired scripts/build_site.py:
     #111 ground the site's CSS panels paint behind it. The source
     SVGs (hw/fab/, history/) stay pristine KiCad output.
   - website/_data/downloads.json — the fabrication downloads list.
-  - website/assets/, website/downloads/ — staged copies of the fab
-    renders, results plots, metrics charts, per-pass history renders
-    (assets/history/<dir>/), the matplotlib TIA plot and the
-    kicad-cli schematic SVG (both best-effort, exactly as before:
-    a failure warns and the page shows "not generated").
+  - website/assets/, website/downloads/ — the board renders
+    exported at build time (above), staged copies of the remaining
+    fab downloads, results plots, metrics charts, per-pass history
+    renders (assets/history/<dir>/), the matplotlib TIA plot and
+    the kicad-cli schematic SVG/PDF (all best-effort, exactly as
+    before: a failure warns and the page shows "not generated",
+    with the fallback source named where one was used).
   - website/_includes/docs/    — docs/01, docs/02, docs/05 copied
     for Jekyll {% include %} + markdownify, heading levels shifted
     one deeper (the old converter rendered a doc's '#' as an h2
@@ -51,9 +71,13 @@ failed step and never an invented value.
 The generated files are gitignored (website/_data/*.json,
 website/assets/, website/downloads/, website/_includes/docs/);
 the committed sources of truth stay where they always were:
-results/, metrics/, hw/fab/, history/, docs/.
+results/, metrics/, history/, docs/ (hw/fab/ is a CI artefact
+staging area, regenerated per run — never a source of truth).
 """
-import csv, json, os, re, shutil, subprocess, sys
+import csv, json, os, re, shutil, subprocess, sys, tempfile
+import xml.etree.ElementTree as ET
+from collections import defaultdict
+from datetime import datetime, timezone
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WEB = os.path.join(ROOT, "website")
@@ -84,6 +108,208 @@ def copy_into(src, dst_dir, name=None):
     os.makedirs(dst_dir, exist_ok=True)
     shutil.copy2(p, os.path.join(dst_dir, name))
     return name
+
+
+# --------------------------------------------- current sources
+# The current-information pages (board, schematic, BOM, downloads)
+# derive from CURRENT sources at build time — never from a manually
+# refreshed staging directory. Board renders used to be staged from
+# hw/fab/, which only scripts/make_fab.sh regenerates, so /board
+# silently showed a long-dead board state (and make_fab exported
+# the pre-expansion BASE board at that). Now: this step exports
+# from the frontier board itself when kicad-cli is available
+# (local builds), and CI's kicad-validate job — the one place in
+# that pipeline with KiCad — regenerates hw/fab/ from the same
+# frontier board every run for the build-site job to stage.
+
+def frontier_board():
+    """Absolute path of the board the current-info pages render:
+    the newest hw/pdlvds_rx.exp<N>.kicad_pcb, selected by
+    commit_pass.resolve_board — the pass system's own rule, reused
+    verbatim, never reimplemented here and never the base board.
+    SITE_BOARD (a path) overrides it, for testing and for
+    reproducing an older build. None when no exp board exists
+    (tolerated: staging falls back to hw/fab/ and says so)."""
+    override = os.environ.get("SITE_BOARD")
+    if override:
+        p = os.path.abspath(override)
+        if os.path.exists(p):
+            return p
+        print(f"warning: SITE_BOARD={override} does not exist; "
+              f"ignoring the override")
+    try:
+        sys.path.insert(0, os.path.join(ROOT, "scripts"))
+        import commit_pass
+        return commit_pass.resolve_board(
+            None, os.path.join(ROOT, "hw"))
+    except SystemExit:
+        return None
+    except Exception as e:  # selection must never fail the build
+        print(f"warning: frontier board selection failed ({e})")
+        return None
+
+
+def have_kicad():
+    return shutil.which("kicad-cli") is not None
+
+
+def run_kicad(args, timeout=300):
+    """One kicad-cli invocation, best-effort: True iff it ran and
+    exited 0. A missing binary or a failed export warns and returns
+    False — the caller falls back and names the fallback."""
+    if not have_kicad():
+        return False
+    try:
+        r = subprocess.run(["kicad-cli"] + args,
+                           capture_output=True, timeout=timeout)
+        if r.returncode != 0:
+            print(f"warning: kicad-cli {' '.join(args[:3])}... "
+                  f"exited {r.returncode}")
+            return False
+        return True
+    except Exception as e:
+        print(f"warning: kicad-cli {' '.join(args[:3])}... "
+              f"failed ({e})")
+        return False
+
+
+# The /board gallery's export specs — layer lists and crop flags
+# identical to scripts/make_fab.sh's, so a build-time render and a
+# fab render of the same board are the same picture. A test
+# (hw/tests/test_site_data_board.py) pins the two together.
+BOARD_SVG_SPECS = [
+    ("board-layers.svg",
+     "F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS,B.SilkS,Edge.Cuts"),
+    ("board-top.svg", "F.Cu,F.SilkS,Edge.Cuts"),
+    ("board-bottom.svg", "B.Cu,B.SilkS,Edge.Cuts"),
+]
+BOARD_LAYER_SVGS = ["F.Cu", "In1.Cu", "In2.Cu", "B.Cu",
+                    "F.SilkS", "Edge.Cuts"]
+BOARD_PDF_LAYERS = "F.Cu,In1.Cu,In2.Cu,B.Cu"
+
+
+def export_board_renders(board, assets_dir, downloads_dir):
+    """Export the /board gallery (composite, top, bottom, one SVG
+    per layer in BOARD_LAYER_SVGS) and the board-layers.pdf
+    download from `board` into the staging dirs. Best-effort per
+    file. Returns (svg_names:set, layers:dict, pdf_ok:bool)."""
+    svgs, layers, pdf_ok = set(), {}, False
+    for name, spec in BOARD_SVG_SPECS:
+        out = os.path.join(assets_dir, name)
+        if run_kicad(["pcb", "export", "svg", "--layers", spec,
+                      "--page-size-mode", "2",
+                      "--exclude-drawing-sheet",
+                      "-o", out, board]) \
+                and os.path.exists(out):
+            svgs.add(name)
+    for layer in BOARD_LAYER_SVGS:
+        name = f"layer-{layer}.svg"
+        out = os.path.join(assets_dir, name)
+        if run_kicad(["pcb", "export", "svg", "--layers", layer,
+                      "--page-size-mode", "2",
+                      "--exclude-drawing-sheet",
+                      "-o", out, board]) \
+                and os.path.exists(out):
+            layers[layer] = name
+    out = os.path.join(downloads_dir, "board-layers.pdf")
+    if run_kicad(["pcb", "export", "pdf", "--layers",
+                  BOARD_PDF_LAYERS, "-o", out, board]) \
+            and os.path.exists(out):
+        pdf_ok = True
+    return svgs, layers, pdf_ok
+
+
+def export_schematic_pdf(dst):
+    """Export the schematic PDF from the CURRENT schematic at
+    build time (kicad-cli). True iff dst now holds the export."""
+    if run_kicad(["sch", "export", "pdf", "-o", dst,
+                  os.path.join(ROOT, "hw", "pdlvds_rx.kicad_sch")]) \
+            and os.path.exists(dst):
+        return True
+    return False
+
+
+# ------------------------------------------------------- bom build
+_BOM_CACHE = None
+
+
+def parse_bom_netlist(path):
+    """BOM (header, rows) from a KiCad XML netlist — the grouping
+    scripts/make_fab.sh has always used: group components by
+    (value, footprint), refs space-joined in document order,
+    groups sorted by first ref. Rows are [Refs, Qty, Value,
+    Footprint] strings, header first."""
+    groups = defaultdict(list)
+    tree = ET.parse(path)
+    for comp in tree.getroot().iter("comp"):
+        fp = comp.findtext("footprint") or ""
+        groups[(comp.findtext("value"), fp)].append(comp.get("ref"))
+    rows = [[" ".join(refs), str(len(refs)), val, fp]
+            for (val, fp), refs in
+            sorted(groups.items(), key=lambda kv: kv[1][0])]
+    return ["Refs", "Qty", "Value", "Footprint"], rows
+
+
+def bom_table():
+    """(header, rows, source) for the BOM page + bom.csv download,
+    regenerated at build time. Source, best first: a netlist
+    exported from the current schematic right now (kicad-cli);
+    the committed results/netlist.xml; a staged hw/fab/bom.csv.
+    Cached — bom_data() and stage_assets() share one computation.
+    (None, None, reason) when no source exists at all."""
+    global _BOM_CACHE
+    if _BOM_CACHE is not None:
+        return _BOM_CACHE
+    result = (None, None, "no netlist or fab BOM available")
+    sch_rel = "hw/pdlvds_rx.kicad_sch"
+    tmp = None
+    try:
+        if have_kicad():
+            tmp = tempfile.mkdtemp(prefix="site-bom-")
+            nl = os.path.join(tmp, "netlist.xml")
+            if run_kicad(["sch", "export", "netlist",
+                          "--format", "kicadxml", "-o", nl,
+                          os.path.join(ROOT, sch_rel)]):
+                header, rows = parse_bom_netlist(nl)
+                result = (header, rows,
+                          f"netlist exported from {sch_rel} at "
+                          f"build time")
+        if result[0] is None and \
+                os.path.exists(os.path.join(ROOT,
+                                            "results/netlist.xml")):
+            header, rows = parse_bom_netlist(
+                os.path.join(ROOT, "results/netlist.xml"))
+            result = (header, rows,
+                      "committed results/netlist.xml (schematic "
+                      "netlist export; not regenerated this build)")
+        if result[0] is None:
+            fab_bom = os.path.join(ROOT, "hw", "fab", "bom.csv")
+            if os.path.exists(fab_bom):
+                with open(fab_bom) as f:
+                    all_rows = list(csv.reader(f))
+                if all_rows:
+                    result = (all_rows[0], all_rows[1:],
+                              "staged hw/fab/bom.csv (CI fab "
+                              "artefact; not regenerated this build)")
+    except Exception as e:
+        print(f"warning: BOM regeneration failed ({e}); "
+              f"falling back")
+    finally:
+        if tmp:
+            shutil.rmtree(tmp, ignore_errors=True)
+    _BOM_CACHE = result
+    return result
+
+
+def file_mtime_iso(path):
+    """A file's mtime as an ISO UTC string ('' when absent) — the
+    honest freshness stamp for inputs the site build cannot
+    regenerate (simulation results)."""
+    p = os.path.join(ROOT, path)
+    if not os.path.exists(p):
+        return ""
+    return datetime.fromtimestamp(
+        os.path.getmtime(p), timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
 
 
 # --------------------------------------------- SVG background bake
@@ -457,24 +683,22 @@ def cost_data():
 
 # ------------------------------------------------------- bom + sims
 def bom_data():
-    bom_path = os.path.join(ROOT, "hw", "fab", "bom.csv")
-    rows = []
-    if os.path.exists(bom_path):
-        with open(bom_path) as f:
-            rows = list(csv.reader(f))
+    header, rows, source = bom_table()
     if not rows:
-        write_json("bom.json", {"available": False})
+        write_json("bom.json", {"available": False,
+                                "source": source})
         return
-    n_parts = sum(int(r[1]) for r in rows[1:] if r and r[1].isdigit())
-    write_json("bom.json", {"available": True, "header": rows[0],
-                            "rows": rows[1:], "n_lines": len(rows) - 1,
-                            "n_parts": n_parts})
+    n_parts = sum(int(r[1]) for r in rows if r and r[1].isdigit())
+    write_json("bom.json", {"available": True, "header": header,
+                            "rows": rows, "n_lines": len(rows),
+                            "n_parts": n_parts, "source": source})
 
 
 def sim_data():
     def block(title, path, keys):
         return {"title": title, "path": path,
-                "lines": key_lines(path, keys)}
+                "lines": key_lines(path, keys),
+                "updated": file_mtime_iso(path)}
     write_json("sims.json", {"blocks": [
         block("Link budget (requirement R2)", "results/link_budget.txt",
               ["SENSITIVITY", "sensitivity", "VERDICT", "f-3dB", "margin"]),
@@ -546,16 +770,77 @@ def stage_assets():
         if os.path.exists(d):
             shutil.rmtree(d)
         os.makedirs(d)
+
+    # ---- current board: export the /board renders + the layers
+    # PDF from the frontier board at build time. Fall back to the
+    # hw/fab staging copies (CI's fab artefact, regenerated from
+    # the same board by kicad-validate) only for whatever the
+    # build-time export did not produce.
+    board = frontier_board()
+    board_rel = os.path.relpath(board, ROOT) if board else None
+    exp_svgs, exp_layers, exp_pdf = set(), {}, False
+    if board and have_kicad():
+        exp_svgs, exp_layers, exp_pdf = export_board_renders(
+            board, ASSETS, DOWNLOADS)
+    if exp_svgs or exp_layers:
+        renders_source = (f"exported at build time from "
+                          f"{board_rel}")
+    elif board:
+        renders_source = (f"staged from hw/fab (CI fab artefact, "
+                          f"generated from {board_rel}; no "
+                          f"build-time export this build)")
+    else:
+        renders_source = ("staged from hw/fab (no frontier board "
+                          "found this build)")
+
     dl = {}
+    # schematic.pdf: regenerated from the current schematic at
+    # build time; else the CI fab artefact's copy; else the
+    # committed results/ copy (named as such — it is NOT
+    # regenerated by anything and predates schematic changes).
+    sch_pdf_src = None
+    if export_schematic_pdf(os.path.join(DOWNLOADS,
+                                         "schematic.pdf")):
+        dl["schematic.pdf"] = "schematic.pdf"
+        sch_pdf_src = ("exported at build time from "
+                       "hw/pdlvds_rx.kicad_sch")
+    elif copy_into("hw/fab/schematic.pdf", DOWNLOADS,
+                   "schematic.pdf"):
+        dl["schematic.pdf"] = "schematic.pdf"
+        sch_pdf_src = ("staged from hw/fab/schematic.pdf (CI fab "
+                       "artefact, exported from the current "
+                       "schematic by scripts/make_fab.sh)")
+    elif copy_into("results/schematic.pdf", DOWNLOADS,
+                   "schematic.pdf"):
+        dl["schematic.pdf"] = "schematic.pdf"
+        sch_pdf_src = ("staged from committed results/schematic.pdf "
+                       "(not regenerated — no kicad-cli this build "
+                       "and no CI fab artefact present)")
+    # bom.csv: the build-time-regenerated table (see bom_table);
+    # the hw/fab copy only when regeneration had no source at all.
+    bom_header, bom_rows, _bom_src = bom_table()
+    if bom_rows:
+        with open(os.path.join(DOWNLOADS, "bom.csv"), "w",
+                  newline="") as f:
+            w = csv.writer(f)
+            w.writerow(bom_header)
+            w.writerows(bom_rows)
+        dl["bom.csv"] = "bom.csv"
+    # board-layers.pdf: the build-time export above, else staged.
+    if exp_pdf:
+        dl["board-layers.pdf"] = "board-layers.pdf"
     for src, name in [("hw/fab/gerbers.zip", "gerbers.zip"),
                       ("hw/fab/bom.csv", "bom.csv"),
                       ("hw/fab/cpl.csv", "cpl.csv"),
                       ("hw/fab/board-layers.pdf", "board-layers.pdf"),
-                      ("results/schematic.pdf", "schematic.pdf"),
                       ("metrics/README.md", "token-metrics-README.md")]:
-        if copy_into(src, DOWNLOADS, name):
+        if name not in dl and copy_into(src, DOWNLOADS, name):
             dl[name] = name
     img = {}
+    for name in ("board-top.svg", "board-bottom.svg",
+                 "board-layers.svg"):
+        if name in exp_svgs:
+            img[name] = name
     for src, name in [("hw/fab/board-top.svg", "board-top.svg"),
                       ("hw/fab/board-bottom.svg", "board-bottom.svg"),
                       ("hw/fab/board-layers.svg", "board-layers.svg"),
@@ -565,13 +850,14 @@ def stage_assets():
                        "token_per_message.svg"),
                       ("metrics/progress_vs_tokens.svg",
                        "progress_vs_tokens.svg")]:
-        if copy_into(src, ASSETS, name):
+        if name not in img and copy_into(src, ASSETS, name):
             img[name] = name
-    layers = {}
+    layers = dict(exp_layers)
     fab = os.path.join(ROOT, "hw", "fab")
     if os.path.isdir(fab):
         for f in sorted(os.listdir(fab)):
-            if f.startswith("layer-") and f.endswith(".svg"):
+            if f.startswith("layer-") and f.endswith(".svg") \
+                    and f[6:-4] not in layers:
                 if copy_into(os.path.join("hw/fab", f), ASSETS, f):
                     layers[f[6:-4]] = f
     # per-pass history renders (committed image files, never
@@ -613,8 +899,17 @@ def stage_assets():
     if tia:
         img[tia] = tia
     sch = schematic_svg()
+    sch_svg_src = None
     if sch:
         img[sch] = sch
+        sch_svg_src = ("exported at build time from "
+                       "hw/pdlvds_rx.kicad_sch")
+    elif copy_into("hw/fab/schematic.svg", ASSETS, "schematic.svg"):
+        sch = "schematic.svg"
+        img[sch] = sch
+        sch_svg_src = ("staged from hw/fab/schematic.svg (CI fab "
+                       "artefact, exported from the current "
+                       "schematic by scripts/make_fab.sh)")
     write_json("board.json", {
         "top": "board-top.svg" in img,
         "bottom": "board-bottom.svg" in img,
@@ -626,6 +921,10 @@ def stage_assets():
         "has_digital_plot": "digital_sim.png" in img,
         "has_schematic_svg": sch is not None,
         "has_schematic_pdf": "schematic.pdf" in dl,
+        "board_file": board_rel,
+        "renders_source": renders_source,
+        "schematic_svg_source": sch_svg_src,
+        "schematic_pdf_source": sch_pdf_src,
     })
     labels = {"gerbers.zip": "gerbers.zip", "bom.csv": "bom.csv",
               "cpl.csv": "cpl.csv",
@@ -634,7 +933,15 @@ def stage_assets():
               "token-metrics-README.md": "token-metrics-README.md"}
     write_json("downloads.json", {
         "files": [{"name": labels.get(n, n), "file": f}
-                  for n, f in sorted(dl.items())]})
+                  for n, f in sorted(dl.items())],
+        "board_file": board_rel,
+        "fab_source": ("gerbers.zip and cpl.csv are staged from "
+                       "hw/fab — in CI, regenerated from "
+                       f"{board_rel or 'the frontier board'} on "
+                       "every run by scripts/make_fab.sh "
+                       "(kicad-validate job); a local build without "
+                       "a fab export stages the last local copy, if "
+                       "any")})
 
 
 # ------------------------------------------------------- docs includes
