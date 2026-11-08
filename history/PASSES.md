@@ -1548,6 +1548,14 @@ ULPI_D5 connected: XO In2 lane re-laid from x+y=96.5 to ~98.28 (new via (87.5,10
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 15 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 189 — 2026-11-08T00:13:00Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp219.kicad_pcb` · Commit: `pending`
+
+pass 189: U7 SW district re-fanout part 1 - XO U7.27 leg CONNECTED (groute via B corridor (76.0,10.625)->(74.125,12.25)->(72.625,12.25), F tails into C21.1 web and U7.27 stub); district rip (CK In2 vertical, +3V3A In2 vertical + F feed chain, I2C_SCL B staircase stretch) with all three nets rejoined: CK vertical hand re-laid (gate +0.125), +3V3A feed pair + staircase + main re-merged via groute webs, SCL rejoined via In2 south loop; groute defects cleaned surgically (stacked vias at (75.5,8.75)/(78.625,16.75) re-anchored to existing vias, drill-overlap via (73.875,10.5) removed + B seg re-anchored to (73.625,10.625), redundant via (68.375,17.5) that severed a GND fill neck replaced by a B joiner onto x68.625 vertical). KiCad DRC: unconnected 18->17, violations 154 byte-identical class table, zero new. check_pcb: nets 15->14, census 109 identical line set, courtyard 0, blind list SH1-only. Remaining in district: PHY_1V8A (pocket proven, V1 window killed by XO's B seg - needs re-derived start), +3V3A U7.25 (PHY fanout re-lay) and U7.6 (west pocket), both still sealed.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 14 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
