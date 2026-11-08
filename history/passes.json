@@ -6002,6 +6002,36 @@
       },
       "description": "SPI_MOSI connected (U8.8->U6.113): F stub to the pocket's one legal via (71.9,7.25), In2 channel ride between DAC_SYNC seg2 and the BIST staircase, via (78.28,0.66), F south at x77.52, In2 south legs to the south prep via. DAC_SYNC re-routed in the same pass: old In2 braid hop replaced by sampled-router v2' channel (lands on braid at (76.55,1.45)) + north-approach B detour at the south end. R16 relocated (89.75,-19.0)->(86.9,-23.4) under posture law (prep) with BOOT0/GND webs re-laid; TP3 refdes moved north (its glyphs were clipped by R16's GND pad mask). SPI_SCK remains unconnected - see tools commit for its state. DRC unconnected 9->8, violations 4 (J1 only); check_pcb nets 9->8, census 109 flat, courtyard 0, blind 21.",
       "note": ""
+    },
+    {
+      "pass": 207,
+      "timestamp": "2026-11-08T19:30:40Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp238.kicad_pcb",
+      "dir": "pass-0207",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 109,
+        "unconnected_nets": 7,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "SPI_SCK connected (U8.7->U6.111): CDR_LOL B vertical re-lay x67.375->x67.075 unsealing the (67.8,8.1) dive; In2 ride east with perpendicular saddle crossing between DAC_VREF and I2C_SDA vias; A*-found dive via (73.475,2.1); F hop over the HV_SHDN In2 band; B south chain; F arrival at U6.111. Fence mods in the same pass: DAC_SYNC F jog at the arrival box and SWCLK via (90.55,-18.05)->(90.35,-18.75). KiCad DRC: SPI_SCK pair closed; violations 4 (J1 only) + 1 via_dangling warning (B-B via (77.05,-8.5), removed pass 208). NEW GND zone-to-zone pair: the dive via's hole severs the thin F GND strip at U6.38 and island removal deletes the middle sheet (fill-diff diagnosed) - named here, healed in passes 208-209 this session. Reload census: only DAC_SYNC +1 and SPI_SCK 0->35 changed, no net renames.",
+      "note": ""
     }
   ],
   "gaps": [

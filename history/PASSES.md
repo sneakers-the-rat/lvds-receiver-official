@@ -1692,6 +1692,14 @@ SPI_MOSI connected (U8.8->U6.113): F stub to the pocket's one legal via (71.9,7.
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 8 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 207 — 2026-11-08T19:30:40Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp238.kicad_pcb` · Commit: `pending`
+
+SPI_SCK connected (U8.7->U6.111): CDR_LOL B vertical re-lay x67.375->x67.075 unsealing the (67.8,8.1) dive; In2 ride east with perpendicular saddle crossing between DAC_VREF and I2C_SDA vias; A*-found dive via (73.475,2.1); F hop over the HV_SHDN In2 band; B south chain; F arrival at U6.111. Fence mods in the same pass: DAC_SYNC F jog at the arrival box and SWCLK via (90.55,-18.05)->(90.35,-18.75). KiCad DRC: SPI_SCK pair closed; violations 4 (J1 only) + 1 via_dangling warning (B-B via (77.05,-8.5), removed pass 208). NEW GND zone-to-zone pair: the dive via's hole severs the thin F GND strip at U6.38 and island removal deletes the middle sheet (fill-diff diagnosed) - named here, healed in passes 208-209 this session. Reload census: only DAC_SYNC +1 and SPI_SCK 0->35 changed, no net renames.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 7 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
