@@ -1564,6 +1564,14 @@ pass 190: +3V3A U7.6 connected (U7 SW district part 2a). Fence named by probe mi
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 14 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 191 — 2026-11-08T01:58:31Z · commit `6cad741`
+
+Board: `hw/pdlvds_rx.exp221.kicad_pcb` · Commit: `6cad7411cc75d634e8df9fb9b944799b99db4cfc`
+
+pass 191: +3V3A U7.25 connected (U7 SW district part 2b) via joint PHY_1V8 fanout re-lay, designed by a via-position optimizer over the exact item model (t_ai11/t_ai12) with onward legs flood-verified (t_ai13). PHY_1V8 south fanout ripped (3 F segs, via (77.875,10.375) d0.8, 2 B segs) and re-laid: F stub (77.25,11.562)->(77.25,10.75)->via P (77.8688,10.0563) d0.5, B w0.6 return P->(77.35,10.0)->(76.8,10.9875)->(76.8,14.9875)->(77.8,16.2) joining the kept B run (the B path dips south first - a straight west leg passes 0.646 from Q, gate -0.154). U7.25: F stub (77.75,11.562)->via Q (77.8625,10.975) d0.5, In2 w0.6 Q->(76.6,12.15)->staircase joint (77.375,13.125). Optimizer bug found by the build gates and fixed in the design (not the gates): t_ai11/12 cross-gates used flat 0.2 clearance for power-power pairs; pair_clr says 0.25 - the winner pair survived re-gating at worst +0.005 (Q via vs PHY diagonal, F). First build used drill 0.25 on the new d0.5 vias: KiCad drill_out_of_range x2 (board min hole 0.3) - rebuilt at drill 0.3, the board's own d0.5 convention. Delta: KiCad unconnected 16->15 (U7.25 pair gone, PHY_1V8 whole), violations 154 byte-identical description multiset; check_pcb unconnected nets 14->13, census 109 identical, courtyard 0, blind SH1-only
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

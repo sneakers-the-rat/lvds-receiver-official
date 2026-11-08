@@ -1,0 +1,183 @@
+01:58:32: Debug: Adding duplicate image handler for 'PNG file'
+01:58:32: Debug: Adding duplicate image handler for 'JPEG file'
+01:58:32: Debug: Adding duplicate image handler for 'TIFF file'
+01:58:32: Debug: Adding duplicate image handler for 'GIF file'
+01:58:32: Debug: Adding duplicate image handler for 'PNM file'
+01:58:32: Debug: Adding duplicate image handler for 'PCX file'
+01:58:32: Debug: Adding duplicate image handler for 'IFF file'
+01:58:32: Debug: Adding duplicate image handler for 'Windows icon file'
+01:58:32: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:58:32: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:58:32: Debug: Adding duplicate image handler for 'TGA file'
+01:58:32: Debug: Adding duplicate image handler for 'XPM file'
+copper items: 5520
+unconnected nets: 13
+  UNCONNECTED +3V3D: 2 groups, e.g. [['C16.1', 'C27.1', 'C28.1', 'C38.1'], ['U11.14']]
+  UNCONNECTED CAP_CLK: 2 groups, e.g. [['U6.34'], ['U5.5']]
+  UNCONNECTED CAP_DATA: 2 groups, e.g. [['U6.35'], ['U5.3']]
+  UNCONNECTED CDR_LOS: 2 groups, e.g. [['U6.75'], ['U4.22']]
+  UNCONNECTED DP_CON: 3 groups, e.g. [['J1.A6'], ['J1.B6'], ['D3.1']]
+  UNCONNECTED HV_INTVCC: 2 groups, e.g. [['C31.1'], ['U10.8']]
+  UNCONNECTED PHY_1V8A: 2 groups, e.g. [['U7.29'], ['C23.1']]
+  UNCONNECTED SPI_MOSI: 2 groups, e.g. [['U8.8'], ['U6.113']]
+  UNCONNECTED SPI_SCK: 2 groups, e.g. [['U8.7'], ['U6.111']]
+  UNCONNECTED SWCLK: 2 groups, e.g. [['U6.109'], ['J4.4']]
+  UNCONNECTED ULPI_STP: 2 groups, e.g. [['U6.26'], ['U7.13']]
+  UNCONNECTED USB_RST: 2 groups, e.g. [['U6.40'], ['U7.9']]
+  UNCONNECTED XI: 2 groups, e.g. [['C20.1', 'X1.1', 'track@(75.625, 18.625)', 'track@(75.875, 18.875)'], ['U7.28']]
+clearance violations: 109
+  CLEARANCE +3V3A (U6.32) vs GND (track@(71.0, 0.27)): need 0.25 mm
+  CLEARANCE HV_OVP1 (D10.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (D10.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_R31A (R31.2) vs APD_K (R47.2): need 1.0 mm
+  CLEARANCE HV_OVP1 (D9.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE GND (U4.13) vs +3V3D_CDR (via@(66.2, 40.55)): need 0.25 mm
+  CLEARANCE TP_HV (TP1.1) vs APD_K (R34.1): need 1.0 mm
+  CLEARANCE APD_K (R34.1) vs HV_R31B (R49.2): need 1.0 mm
+  CLEARANCE APD_A (D1.4) vs APD_K (via@(9.5, 39.75)): need 1.0 mm
+  CLEARANCE APD_K (D1.5) vs APD_A (track@(9.0, 38.375)): need 1.0 mm
+  CLEARANCE APD_K (D1.5) vs APD_A (track@(7.8, 41.1)): need 1.0 mm
+  CLEARANCE APD_A (D1.6) vs APD_K (via@(9.5, 39.75)): need 1.0 mm
+  CLEARANCE +3V3A (U9.5) vs I2C_SDA (via@(69.32, 2.14)): need 0.25 mm
+  CLEARANCE HV_OVP2 (D11.1) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (R29.1) vs HV_VC (U10.1): need 1.0 mm
+  CLEARANCE HV_RAW (R29.1) vs HV_VC (track@(22.2, -4.6)): need 1.0 mm
+  CLEARANCE HV_RAW (R29.1) vs HV_VC (track@(23.5, -4.55)): need 1.0 mm
+  CLEARANCE HV_R29M (R29.2) vs HV_VC (U10.1): need 1.0 mm
+  CLEARANCE APD_K (RJ2.2) vs POST_OUT (U2.1): need 1.0 mm
+  CLEARANCE APD_K (RJ2.2) vs GND (U2.2): need 1.0 mm
+  CLEARANCE APD_K (RJ2.2) vs POST_INP (U2.3): need 1.0 mm
+  CLEARANCE APD_K (RJ2.2) vs GND (zone L0): need 1.0 mm
+  CLEARANCE NRST (C19.1) vs +3V3D (track@(81.0, 12.6)): need 0.25 mm
+  CLEARANCE GND (C19.2) vs +3V3D (track@(81.0, 12.6)): need 0.25 mm
+  CLEARANCE GND (C19.2) vs +3V3D (via@(81.625, 10.9)): need 0.25 mm
+  CLEARANCE HV_SEC (T1.10) vs GND (zone L0): need 1.0 mm
+  CLEARANCE +3V3A (track@(75.625, 8.625)) vs DAC_VREF (via@(69.51, 7.85)): need 0.25 mm
+  CLEARANCE +3V3D_CDR (via@(66.2, 40.55)) vs REFCLKN (track@(65.5, 40.44)): need 0.25 mm
+  CLEARANCE +3V3D_CDR (via@(66.2, 40.55)) vs REFCLKN (track@(65.75, 41.0)): need 0.25 mm
+  CLEARANCE +5V (track@(42.375, 50.125)) vs SET_P (track@(41.3, 50.75)): need 0.25 mm
+  CLEARANCE +5V (track@(54.875, 49.125)) vs ILIM_A (via@(52.6, 48.35)): need 0.25 mm
+  CLEARANCE +VA (via@(37.375, 35.75)) vs THR_FILT (track@(37.875, 36.125)): need 0.25 mm
+  CLEARANCE APD_A (track@(9.0, 38.375)) vs APD_K (via@(9.5, 39.75)): need 1.0 mm
+  CLEARANCE APD_K (track@(22.075, 39.25)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE APD_K (track@(22.075, 40.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE APD_K (track@(21.875, 38.625)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(12.125, -19.125)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(8.875, -22.375)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(12.875, -18.375)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(11.625, -19.625)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(13.125, -18.125)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(9.375, -21.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(6.125, -22.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(5.625, -23.375)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(5.125, -23.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(8.625, -22.625)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(9.625, -21.625)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(11.875, -19.375)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(10.875, -20.375)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(6.375, -22.625)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(12.375, -18.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(5.875, -23.125)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(11.375, -19.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(10.375, -20.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(11.125, -20.125)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(5.375, -23.625)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(9.875, -21.375)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(12.625, -18.625)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(10.625, -20.625)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(10.125, -21.125)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_RAW (track@(9.125, -22.125)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(24.9, -20.99)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(25.125, -20.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (track@(24.9, -21.24)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (via@(25.375, -20.625)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_SEC (via@(25.375, -20.625)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(31.625, -18.875)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(31.125, -19.375)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(32.125, -18.375)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(31.375, -19.125)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(31.875, -18.625)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(30.875, -19.625)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(26.375, -20.625)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(25.375, -20.625)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(30.375, -20.125)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(27.125, -20.625)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(30.625, -19.875)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(32.375, -18.125)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(27.375, -20.375)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_SEC (track@(30.125, -20.375)) vs GND (zone L31): need 1.0 mm
+  CLEARANCE HV_VC2 (via@(23.45, -3.15)) vs HV_R29M (track@(24.625, -3.875)): need 1.0 mm
+  CLEARANCE HV_VC2 (via@(23.45, -3.15)) vs HV_R29M (track@(23.375, -2.125)): need 1.0 mm
+  CLEARANCE HV_VC2 (via@(23.45, -3.15)) vs HV_R29M (track@(23.625, -2.375)): need 1.0 mm
+  CLEARANCE HV_VC2 (via@(23.45, -3.15)) vs HV_R29M (track@(23.875, -2.625)): need 1.0 mm
+  CLEARANCE HV_VC2 (via@(23.45, -3.15)) vs HV_R29M (track@(23.125, -1.875)): need 1.0 mm
+  CLEARANCE HV_VC2 (via@(23.45, -3.15)) vs HV_R29M (track@(24.125, -2.875)): need 1.0 mm
+  CLEARANCE HV_VC2 (via@(23.45, -3.15)) vs HV_R29M (track@(24.375, -3.125)): need 1.0 mm
+  CLEARANCE HV_VC2 (via@(23.45, -3.15)) vs HV_R29M (track@(22.875, -1.625)): need 1.0 mm
+  CLEARANCE HV_VC2 (via@(23.45, -3.15)) vs HV_R29M (track@(24.375, -3.625)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(23.375, -2.125)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(23.625, -2.375)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(22.375, 1.875)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(22.375, -1.125)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(23.875, -2.625)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(23.125, -1.875)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(22.625, -1.375)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(24.125, -2.875)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(24.375, -3.125)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(22.875, -1.625)): need 1.0 mm
+  CLEARANCE HV_VC2 (track@(20.725, -1.5)) vs HV_R29M (track@(24.375, -3.625)): need 1.0 mm
+  CLEARANCE HV_OVP1 (track@(8.15, -25.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP1 (track@(9.375, -24.875)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP1 (track@(8.65, -25.0)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP1 (track@(10.1, -24.75)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(15.1, -21.75)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(15.1, -20.25)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(15.375, -22.375)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(15.9, -23.25)) vs GND (zone L0): need 1.0 mm
+  CLEARANCE HV_OVP2 (track@(15.375, -22.875)) vs GND (zone L0): need 1.0 mm
+intrinsic same-footprint pad pairs below class clearance (datasheet geometry, not routable): 37
+  INTRINSIC GND (U8.4) vs +3V3D (U8.5): need 0.25 mm
+  INTRINSIC SPI_MOSI (U8.8) vs +3V3D (U8.9): need 0.25 mm
+  INTRINSIC +3V3D (U8.9) vs DAC_VREF (U8.10): need 0.25 mm
+  INTRINSIC GND (U6.16) vs +3V3D (U6.17): need 0.25 mm
+  INTRINSIC ULPI_NXT (U6.29) vs +3V3D (U6.30): need 0.25 mm
+  INTRINSIC +3V3D (U6.30) vs GND (U6.31): need 0.25 mm
+  INTRINSIC GND (U6.31) vs +3V3A (U6.32): need 0.25 mm
+  INTRINSIC +3V3A (U6.33) vs CAP_CLK (U6.34): need 0.25 mm
+  INTRINSIC GND (U6.38) vs +3V3D (U6.39): need 0.25 mm
+  INTRINSIC +3V3D (U6.39) vs USB_RST (U6.40): need 0.25 mm
+  INTRINSIC GND (U6.51) vs +3V3D (U6.52): need 0.25 mm
+  INTRINSIC GND (U6.61) vs +3V3D (U6.62): need 0.25 mm
+  INTRINSIC VCAP2 (U6.71) vs +3V3D (U6.72): need 0.25 mm
+  INTRINSIC GND (U6.83) vs +3V3D (U6.84): need 0.25 mm
+  INTRINSIC GND (U6.107) vs +3V3D (U6.108): need 0.25 mm
+  INTRINSIC GND (U6.120) vs +3V3D (U6.121): need 0.25 mm
+  INTRINSIC GND (U6.130) vs +3V3D (U6.131): need 0.25 mm
+  INTRINSIC +3V3D_CDR (U4.24) vs CDR_CLKN (U4.25): need 0.25 mm
+  INTRINSIC VBUS_RAW (J1.A4) vs CC1 (J1.A5): need 0.25 mm
+  INTRINSIC VBUS_RAW (J1.B4) vs CC2 (J1.B5): need 0.25 mm
+courtyard collisions: 0
+courtyard fallback pairs (blind footprints, reported not gated): 21
+  COURTYARD-FALLBACK C1 x SH1 (top) area=1.6471 mm^2
+  COURTYARD-FALLBACK C3 x SH1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK C39 x SH1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK C41 x SH1 (top) area=0.1341 mm^2
+  COURTYARD-FALLBACK R3 x SH1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK R39 x SH1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK R8 x SH1 (top) area=0.9788 mm^2
+  COURTYARD-FALLBACK SH1 x C33 (top) area=0.4360 mm^2
+  COURTYARD-FALLBACK SH1 x C5 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x D1 (top) area=11.4821 mm^2
+  COURTYARD-FALLBACK SH1 x R1 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x R2 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x R38 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x R4 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x R5 (top) area=1.9912 mm^2
+  COURTYARD-FALLBACK SH1 x R6 (top) area=3.4663 mm^2
+  COURTYARD-FALLBACK SH1 x R7 (top) area=2.7912 mm^2
+  COURTYARD-FALLBACK SH1 x RJ2 (top) area=4.2775 mm^2
+  COURTYARD-FALLBACK SH1 x U12 (top) area=2.4438 mm^2
+  COURTYARD-FALLBACK SH1 x U2 (top) area=13.8651 mm^2
+  COURTYARD-FALLBACK U1 x SH1 (top) area=39.8321 mm^2
+courtyard bbox fallback in use (no drawn courtyard): ['SH1']
+PCB CHECK: FAIL
