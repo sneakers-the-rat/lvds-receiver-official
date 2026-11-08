@@ -5942,6 +5942,36 @@
       },
       "description": "DP_CON connected: A6 south dive (stub threads DM B7 via/CC2 via gap, crosses B6 pad), CC2 B5 escape re-planned to band via (30.5,72.275), DM B7 via shrunk d0.6->d0.5, In2 main flood to D3. DRC unconnected 12->10, check_pcb nets 11->10",
       "note": ""
+    },
+    {
+      "pass": 205,
+      "timestamp": "2026-11-08T13:17:32Z",
+      "hash": "9e0c7dfe3b8e8868121f5000c3770936069d1e2d",
+      "short_hash": "9e0c7df",
+      "board_file": "hw/pdlvds_rx.exp235.kicad_pcb",
+      "dir": "pass-0205",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 109,
+        "unconnected_nets": 9,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 202: +3V3D U11.14 connected \u2014 +5V staircase SW branch ripped and detoured south on F (y22.95) freeing the channel; U11.14 F stub to via (56.75,24.00), In2 south/east at y20.8, rise via (66.55,22.35) onto C38 chain. DRC unconnected 10->9, violations 4 flat (J1 only); check_pcb nets 10->9, census 109 identical, courtyard 0",
+      "note": ""
     }
   ],
   "gaps": [
