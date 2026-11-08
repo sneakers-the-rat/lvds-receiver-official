@@ -1596,6 +1596,14 @@ pass 194: +3V3D U6.39 dive re-lay (via 74.25,3.50 + In2 jog + trunk via 72.875,3
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 195 — 2026-11-08T07:48:31Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp225.kicad_pcb` · Commit: `pending`
+
+pass 195: GND U6.38 island healed -- stitch via (75.9,-10.45) d0.5 in the under-U6 pocket opened by pass 194 ties the island fill to the In1 plane; KiCad DRC unconnected 15->14 (zone pair closed), violations 150 identical, check_pcb byte-identical except copper items 5520->5522
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
