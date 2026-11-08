@@ -1,0 +1,14 @@
+pass: 203
+description: SE re-fan repair: dangling tail (31.7,-5.1)->(31.375,-5.5) and orphaned kept seg (32.125,-4.875)->(31.875,-4.625) ripped; re-fan landed on the real kept joint with seg (32.0,-4.5)->(32.125,-4.875) (in-model gate +0.836). DRC violations 5->4 (track_dangling 0; only the 4 standing J1 copper_edge remain), unconnected 12, check_pcb nets 11, census line set identical to exp231.
+timestamp (UTC): 2026-11-08T11:45:08Z
+commit: pending
+board file: hw/pdlvds_rx.exp233.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 11
+courtyard collisions: 0
+audit verdict: fail
+note: 
