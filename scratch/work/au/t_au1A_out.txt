@@ -1,0 +1,56 @@
+22:32:45: Debug: Adding duplicate image handler for 'PNG file'
+22:32:45: Debug: Adding duplicate image handler for 'JPEG file'
+22:32:45: Debug: Adding duplicate image handler for 'TIFF file'
+22:32:45: Debug: Adding duplicate image handler for 'GIF file'
+22:32:45: Debug: Adding duplicate image handler for 'PNM file'
+22:32:45: Debug: Adding duplicate image handler for 'PCX file'
+22:32:45: Debug: Adding duplicate image handler for 'IFF file'
+22:32:45: Debug: Adding duplicate image handler for 'Windows icon file'
+22:32:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:32:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:32:45: Debug: Adding duplicate image handler for 'TGA file'
+22:32:45: Debug: Adding duplicate image handler for 'XPM file'
+pool sizes: [3294, 1596, 1304], sibling items: [19, 38, 5]
+fields built
+== BASE CAP_DATA widest bottleneck (sibling CAP_CLK fixed): -0.070
+binding items (16):
+   [BOARD] L0 via THR_DAC (66.625,4.875) r0.300  @ track L0 (67.05,4.55) v=-0.065
+   [BOARD] L0 seg TMP_ALERT (67.025,3.400)->(66.625,2.875) hw0.100  @ via L0 (66.20,3.10) v=-0.069
+   [SIBLING] L1 seg CAP_CLK (66.700,3.300)->(66.100,3.900) hw0.100  @ via L1 (66.20,3.10) v=-0.069
+   [BOARD] L2 seg PG_3V3 (66.625,3.875)->(66.875,3.625) hw0.125  @ via L2 (66.20,3.10) v=-0.069
+   [BOARD] L1 seg ULPI_NXT (60.250,8.250)->(68.000,0.625) hw0.100  @ track L1 (65.60,3.45) v=-0.069
+   [BOARD] L0 via ULPI_NXT (62.625,12.750) r0.250  @ track L0 (63.10,12.65) v=-0.065
+   [SIBLING] L0 seg CAP_CLK (63.850,13.600)->(64.450,14.200) hw0.100  @ via L0 (63.20,14.40) v=-0.066
+   [BOARD] L1 seg +5V (72.125,13.625)->(54.125,13.625) hw0.300  @ via L1 (63.20,14.40) v=-0.066
+   [BOARD] L2 seg ULPI_NXT (63.000,19.625)->(62.625,12.750) hw0.100  @ via L2 (63.20,14.40) v=-0.066
+   [BOARD] L0 pad +3V3A (69.225,19.500) hw0.450x0.475  @ track L0 (69.85,18.80) v=-0.065
+   [BOARD] L0 via XO (71.875,19.625) r0.300  @ track L0 (71.50,20.00) v=-0.070
+   [BOARD] L0 pad PHY_1V8 (71.725,18.000) hw0.450x0.475  @ track L0 (72.25,18.75) v=-0.065
+   [BOARD] L0 via DM_PHY (73.625,19.125) r0.300  @ via L0 (72.90,19.05) v=-0.067
+   [BOARD] L1 via DM_PHY (73.625,19.125) r0.300  @ via L1 (72.90,19.05) v=-0.067
+   [BOARD] L2 seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100  @ via L2 (72.90,19.05) v=-0.067
+   [BOARD] L1 seg ULPI_NXT (74.500,19.250)->(69.875,23.750) hw0.100  @ track L1 (74.05,20.15) v=-0.069
+-- single BOARD-item ablations (second-min):
+   - via THR_DAC (66.625,4.875) r0.300: bottleneck -0.025 (delta +0.045)
+   - seg TMP_ALERT (67.025,3.400)->(66.625,2.875) hw0.100: bottleneck -0.070 (delta +0.000)
+   - seg PG_3V3 (66.625,3.875)->(66.875,3.625) hw0.125: bottleneck -0.070 (delta +0.000)
+   - seg ULPI_NXT (60.250,8.250)->(68.000,0.625) hw0.100: bottleneck -0.070 (delta +0.000)
+   - via ULPI_NXT (62.625,12.750) r0.250: bottleneck -0.070 (delta +0.000)
+   - seg +5V (72.125,13.625)->(54.125,13.625) hw0.300: bottleneck -0.070 (delta +0.000)
+   - seg ULPI_NXT (63.000,19.625)->(62.625,12.750) hw0.100: bottleneck -0.070 (delta +0.000)
+   - pad +3V3A (69.225,19.500) hw0.450x0.475: bottleneck -0.070 (delta +0.000)
+   - via XO (71.875,19.625) r0.300: bottleneck -0.070 (delta +0.000)
+   - pad PHY_1V8 (71.725,18.000) hw0.450x0.475: bottleneck -0.070 (delta +0.000)
+   - via DM_PHY (73.625,19.125) r0.300: bottleneck -0.070 (delta +0.000)
+   - via DM_PHY (73.625,19.125) r0.300: bottleneck -0.070 (delta +0.000)
+   - seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100: bottleneck -0.070 (delta +0.000)
+   - seg ULPI_NXT (74.500,19.250)->(69.875,23.750) hw0.100: bottleneck -0.070 (delta +0.000)
+-- group ablations (full rebuild):
+   - THR_DAC via (64.875,6.625) (3 items): bottleneck -0.070 (delta +0.000)
+   - SCL In2 chain (corridor) (5 items): bottleneck -0.025 (delta +0.045)
+   - PG_3V3 B braid (corridor) (55 items): bottleneck -0.024 (delta +0.045)
+   - +3V3D via (70.875,15.875) (3 items): bottleneck -0.070 (delta +0.000)
+   - SDA via (69.9,0.82) (3 items): bottleneck -0.070 (delta +0.000)
+   - XO In2 web (rest) (65 items): bottleneck -0.070 (delta +0.000)
+   - HV band In2 (rest, x>=70.2) (33 items): bottleneck -0.025 (delta +0.045)
+done

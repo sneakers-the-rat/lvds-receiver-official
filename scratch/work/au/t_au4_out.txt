@@ -1,0 +1,38 @@
+22:41:30: Debug: Adding duplicate image handler for 'PNG file'
+22:41:30: Debug: Adding duplicate image handler for 'JPEG file'
+22:41:30: Debug: Adding duplicate image handler for 'TIFF file'
+22:41:30: Debug: Adding duplicate image handler for 'GIF file'
+22:41:30: Debug: Adding duplicate image handler for 'PNM file'
+22:41:30: Debug: Adding duplicate image handler for 'PCX file'
+22:41:30: Debug: Adding duplicate image handler for 'IFF file'
+22:41:30: Debug: Adding duplicate image handler for 'Windows icon file'
+22:41:30: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:41:30: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:41:30: Debug: Adding duplicate image handler for 'TGA file'
+22:41:30: Debug: Adding duplicate image handler for 'XPM file'
+dense items: CLK [33, 62, 58], DATA [19, 96, 7]
+== CAP_CLK: worst seg +0.009 (seg CAP_CLK (70.150,2.100)->(69.550,2.700) hw0.100 vs via I2C_SDA (69.320,2.140) r0.250)
+   worst via +0.000 (via CAP_CLK (74.250,22.900) r0.250 vs seg CDR_DATN (73.800,23.500)->(75.700,23.500) hw0.150)
+   LOW via L2 +0.000: via CAP_CLK (74.250,22.900) r0.250 vs seg CDR_DATN (73.800,23.500)->(75.700,23.500) hw0.150
+   LOW via L0 +0.006: via CAP_CLK (70.000,1.800) r0.250 vs via I2C_SCL (69.375,1.375) r0.300
+   LOW via L1 +0.006: via CAP_CLK (70.000,1.800) r0.250 vs via I2C_SCL (69.375,1.375) r0.300
+   LOW via L2 +0.006: via CAP_CLK (70.000,1.800) r0.250 vs via I2C_SCL (69.375,1.375) r0.300
+   LOW seg L2 +0.009: seg CAP_CLK (70.150,2.100)->(69.550,2.700) hw0.100 vs via I2C_SDA (69.320,2.140) r0.250
+   LOW via L0 +0.025: via CAP_CLK (64.750,16.950) r0.250 vs pad +3V3D (65.725,16.500) hw0.450x0.475
+   LOW seg L2 +0.038: seg CAP_CLK (69.550,2.700)->(69.500,2.700) hw0.100 vs via I2C_SDA (69.320,2.140) r0.250
+   LOW seg L2 +0.038: seg CAP_CLK (69.500,2.700)->(69.400,2.800) hw0.100 vs via I2C_SDA (69.320,2.140) r0.250
+   LOW via L0 +0.050: via CAP_CLK (74.250,22.900) r0.250 vs seg CDR_SQUELCH (73.625,25.375)->(73.625,22.625) hw0.125
+   LOW via L2 +0.050: via CAP_CLK (69.500,22.350) r0.250 vs seg DP_PHY (68.875,27.125)->(68.875,20.125) hw0.125
+   LOW via L2 +0.050: via CAP_CLK (73.250,21.700) r0.250 vs seg XO (72.625,20.375)->(72.625,24.625) hw0.125
+== CAP_DATA: worst seg +0.050 (seg CAP_DATA (70.650,2.150)->(70.650,1.400) hw0.100 vs seg I2C_SDA (71.375,2.125)->(71.125,1.875) hw0.125)
+   worst via +0.026 (via CAP_DATA (72.600,19.300) r0.250 vs seg DM_PHY (72.875,19.875)->(73.125,19.625) hw0.125)
+   LOW via L1 +0.026: via CAP_DATA (72.600,19.300) r0.250 vs seg DM_PHY (72.875,19.875)->(73.125,19.625) hw0.125
+   LOW via L0 +0.045: via CAP_DATA (72.600,19.300) r0.250 vs via XO (71.875,19.625) r0.300
+   LOW via L2 +0.045: via CAP_DATA (72.600,19.300) r0.250 vs via XO (71.875,19.625) r0.300
+-- PG B: 111 segs, 4 vias; nodes 112; branch nodes (deg!=2):
+   node (60.625, 9.875) deg 3
+   node (74.625, -15.375) deg 1
+   node (55.125, 27.125) deg 1
+   node (65.625, 14.875) deg 1
+   via centres: [(69.625, 16.375), (55.125, 27.125), (74.625, -15.375), (65.625, 14.875)]
+done

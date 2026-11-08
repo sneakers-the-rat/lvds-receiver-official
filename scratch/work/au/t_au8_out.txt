@@ -1,0 +1,23 @@
+22:44:31: Debug: Adding duplicate image handler for 'PNG file'
+22:44:31: Debug: Adding duplicate image handler for 'JPEG file'
+22:44:31: Debug: Adding duplicate image handler for 'TIFF file'
+22:44:31: Debug: Adding duplicate image handler for 'GIF file'
+22:44:31: Debug: Adding duplicate image handler for 'PNM file'
+22:44:31: Debug: Adding duplicate image handler for 'PCX file'
+22:44:31: Debug: Adding duplicate image handler for 'IFF file'
+22:44:31: Debug: Adding duplicate image handler for 'Windows icon file'
+22:44:31: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:44:31: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:44:31: Debug: Adding duplicate image handler for 'TGA file'
+22:44:31: Debug: Adding duplicate image handler for 'XPM file'
+== FULL: arrival widest -0.100
+   bind L0 pad REFCLK (72.550,22.925) hw0.650x0.550 @ via L0 (71.55,22.75) v=-0.100
+   bind L1 seg ULPI_NXT (74.500,19.250)->(69.875,23.750) hw0.100 @ via L1 (71.55,22.75) v=-0.100
+   bind L2 via REFCLK (71.875,23.375) r0.300 @ via L2 (71.55,22.75) v=-0.100
+   bind L2 seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100 @ track L2 (70.40,24.20) v=-0.100
+   bind L0 via GND (72.550,25.600) r0.250 @ via L0 (72.15,26.05) v=-0.098
+   bind L1 via GND (72.550,25.600) r0.250 @ via L1 (72.15,26.05) v=-0.098
+   bind L2 via GND (72.550,25.600) r0.250 @ via L2 (72.15,26.05) v=-0.098
+== NO_+3V3D_F_U5: arrival widest +0.150
+== NO_+3V3D_F_U5+XO_In2: arrival widest +0.150
+done
