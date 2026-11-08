@@ -1,0 +1,14 @@
+pass: 195
+description: pass 195: GND U6.38 island healed -- stitch via (75.9,-10.45) d0.5 in the under-U6 pocket opened by pass 194 ties the island fill to the In1 plane; KiCad DRC unconnected 15->14 (zone pair closed), violations 150 identical, check_pcb byte-identical except copper items 5520->5522
+timestamp (UTC): 2026-11-08T07:48:31Z
+commit: pending
+board file: hw/pdlvds_rx.exp225.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 13
+courtyard collisions: 0
+audit verdict: fail
+note: 
