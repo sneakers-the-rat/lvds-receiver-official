@@ -5556,8 +5556,8 @@
     {
       "pass": 192,
       "timestamp": "2026-11-08T05:53:47Z",
-      "hash": null,
-      "short_hash": null,
+      "hash": "dba8581fdb3f275cf37a6738bffa77019652365d",
+      "short_hash": "dba8581",
       "board_file": "hw/pdlvds_rx.exp222.kicad_pcb",
       "dir": "pass-0192",
       "renders": {
