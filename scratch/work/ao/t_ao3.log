@@ -1,0 +1,100 @@
+
+== V3: 336 SHDN candidates in band
+   forced (30.72, -3.55) NOT in band (via margin -0.178)
+   forced (30.6, -3.62) NOT in band (via margin -0.178)
+   SHDN (30.720,-3.55) via-marg -0.178: dives 12
+      dive +0.014 @(30.975,-2.725)
+      dive +0.010 @(30.925,-2.750)
+      dive +0.008 @(30.900,-2.775)
+      dive +0.005 @(30.950,-2.750)
+      dive +0.005 @(30.950,-2.725)
+      dive +0.003 @(30.850,-2.800)
+   SHDN (30.600,-3.62) via-marg -0.178: dives 13
+      dive +0.015 @(30.975,-2.725)
+      dive +0.010 @(30.925,-2.750)
+      dive +0.009 @(30.900,-2.775)
+      dive +0.006 @(30.950,-2.750)
+      dive +0.005 @(30.950,-2.725)
+      dive +0.003 @(30.850,-2.800)
+   SHDN (31.175,-2.95) via-marg -0.078: dives 0
+      dead -0.141 @(30.450,-2.950): via -0.141 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150; access +0.009 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+      dead -0.145 @(30.625,-2.825): via -0.145 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150; access -0.013 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+      dead -0.148 @(30.500,-2.925): via -0.148 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150; access +0.002 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+   SHDN (30.750,-3.10) via-marg -0.075: dives 0
+      dead -0.214 @(30.825,-2.550): via -0.210 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.214 vs via HV_SHDN (30.750,-3.100) r0.250
+      dead -0.214 @(30.775,-2.600): via -0.201 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.214 vs via HV_SHDN (30.750,-3.100) r0.250
+      dead -0.214 @(30.800,-2.575): via -0.205 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.214 vs via HV_SHDN (30.750,-3.100) r0.250
+   SHDN (31.075,-3.30) via-marg -0.096: dives 0
+      dead -0.050 @(31.175,-2.650): via -0.050 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access +0.005 vs via HV_SHDN (31.075,-3.300) r0.250
+      dead -0.050 @(31.150,-2.650): via -0.050 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access +0.012 vs via HV_SHDN (31.075,-3.300) r0.250
+      dead -0.050 @(31.125,-2.650): via -0.050 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access +0.017 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+   SHDN (30.825,-3.32) via-marg -0.051: dives 0
+      dead -0.045 @(30.950,-2.675): via -0.038 vs via HV_SHDN (30.825,-3.325) r0.250; access -0.045 vs via HV_SHDN (30.825,-3.325) r0.250
+      dead -0.049 @(30.975,-2.675): via -0.033 vs seg HV_SHDN (30.825,-3.325)->(31.900,-2.875) hw0.125; access -0.049 vs via HV_SHDN (30.825,-3.325) r0.250
+      dead -0.050 @(30.925,-2.675): via -0.050 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.041 vs via HV_SHDN (30.825,-3.325) r0.250
+   SHDN (30.925,-2.95) via-marg +0.100: dives 0
+      dead -0.219 @(30.450,-2.875): via -0.219 vs via HV_SHDN (30.925,-2.950) r0.250; access -0.069 vs via HV_SHDN (30.925,-2.950) r0.250
+      dead -0.222 @(30.450,-2.900): via -0.222 vs via HV_SHDN (30.925,-2.950) r0.250; access -0.072 vs via HV_SHDN (30.925,-2.950) r0.250
+      dead -0.224 @(30.450,-2.925): via -0.224 vs via HV_SHDN (30.925,-2.950) r0.250; access -0.074 vs via HV_SHDN (30.925,-2.950) r0.250
+   SHDN (30.950,-3.15) via-marg +0.073: dives 0
+      dead -0.125 @(31.075,-2.575): via -0.125 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access -0.123 vs via HV_SHDN (30.950,-3.150) r0.250
+      dead -0.125 @(31.050,-2.575): via -0.125 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access -0.116 vs via HV_SHDN (30.950,-3.150) r0.250
+      dead -0.125 @(31.025,-2.575): via -0.125 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access -0.110 vs via HV_SHDN (30.950,-3.150) r0.250
+   SHDN (30.650,-3.38) via-marg -0.095: dives 0
+      dead -0.085 @(30.950,-2.625): via -0.075 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access -0.085 vs via HV_SHDN (30.650,-3.375) r0.250
+      dead -0.085 @(30.900,-2.650): via -0.085 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.085 vs via HV_SHDN (30.650,-3.375) r0.250
+      dead -0.085 @(30.875,-2.675): via -0.080 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.085 vs via HV_SHDN (30.650,-3.375) r0.250
+   SHDN (31.175,-3.15) via-marg -0.100: dives 0
+      dead -0.101 @(30.625,-2.900): via -0.101 vs seg HV_SHDN (30.375,-3.500)->(31.175,-3.150) hw0.100; access +0.026 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+      dead -0.104 @(30.675,-2.825): via -0.104 vs via HV_SHDN (31.175,-3.150) r0.250; access +0.002 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+      dead -0.106 @(30.950,-2.600): via -0.106 vs via HV_SHDN (31.175,-3.150) r0.250; access -0.013 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+
+== V4: 336 SHDN candidates in band
+   forced (30.72, -3.55) NOT in band (via margin -0.178)
+   forced (30.6, -3.62) NOT in band (via margin -0.178)
+   SHDN (30.720,-3.55) via-marg -0.178: dives 12
+      dive +0.014 @(30.975,-2.725)
+      dive +0.010 @(30.925,-2.750)
+      dive +0.008 @(30.900,-2.775)
+      dive +0.005 @(30.950,-2.750)
+      dive +0.005 @(30.950,-2.725)
+      dive +0.003 @(30.850,-2.800)
+   SHDN (30.600,-3.62) via-marg -0.178: dives 13
+      dive +0.015 @(30.975,-2.725)
+      dive +0.010 @(30.925,-2.750)
+      dive +0.009 @(30.900,-2.775)
+      dive +0.006 @(30.950,-2.750)
+      dive +0.005 @(30.950,-2.725)
+      dive +0.003 @(30.850,-2.800)
+   SHDN (31.175,-2.95) via-marg -0.078: dives 0
+      dead -0.141 @(30.450,-2.950): via -0.141 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150; access +0.009 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+      dead -0.145 @(30.625,-2.825): via -0.145 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150; access -0.013 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+      dead -0.148 @(30.500,-2.925): via -0.148 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150; access +0.002 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+   SHDN (30.750,-3.10) via-marg -0.075: dives 0
+      dead -0.214 @(30.825,-2.550): via -0.210 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.214 vs via HV_SHDN (30.750,-3.100) r0.250
+      dead -0.214 @(30.775,-2.600): via -0.201 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.214 vs via HV_SHDN (30.750,-3.100) r0.250
+      dead -0.214 @(30.800,-2.575): via -0.205 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.214 vs via HV_SHDN (30.750,-3.100) r0.250
+   SHDN (31.075,-3.30) via-marg -0.096: dives 0
+      dead -0.050 @(31.175,-2.650): via -0.050 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access +0.005 vs via HV_SHDN (31.075,-3.300) r0.250
+      dead -0.050 @(31.150,-2.650): via -0.050 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access +0.012 vs via HV_SHDN (31.075,-3.300) r0.250
+      dead -0.050 @(31.125,-2.650): via -0.050 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access +0.017 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+   SHDN (30.825,-3.32) via-marg -0.051: dives 0
+      dead -0.045 @(30.950,-2.675): via -0.038 vs via HV_SHDN (30.825,-3.325) r0.250; access -0.045 vs via HV_SHDN (30.825,-3.325) r0.250
+      dead -0.049 @(30.975,-2.675): via -0.033 vs seg HV_SHDN (30.825,-3.325)->(31.900,-2.875) hw0.125; access -0.049 vs via HV_SHDN (30.825,-3.325) r0.250
+      dead -0.050 @(30.925,-2.675): via -0.050 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.041 vs via HV_SHDN (30.825,-3.325) r0.250
+   SHDN (30.925,-2.95) via-marg +0.100: dives 0
+      dead -0.219 @(30.450,-2.875): via -0.219 vs via HV_SHDN (30.925,-2.950) r0.250; access -0.069 vs via HV_SHDN (30.925,-2.950) r0.250
+      dead -0.222 @(30.450,-2.900): via -0.222 vs via HV_SHDN (30.925,-2.950) r0.250; access -0.072 vs via HV_SHDN (30.925,-2.950) r0.250
+      dead -0.224 @(30.450,-2.925): via -0.224 vs via HV_SHDN (30.925,-2.950) r0.250; access -0.074 vs via HV_SHDN (30.925,-2.950) r0.250
+   SHDN (30.950,-3.15) via-marg +0.073: dives 0
+      dead -0.125 @(31.075,-2.575): via -0.125 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access -0.123 vs via HV_SHDN (30.950,-3.150) r0.250
+      dead -0.125 @(31.050,-2.575): via -0.125 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access -0.116 vs via HV_SHDN (30.950,-3.150) r0.250
+      dead -0.125 @(31.025,-2.575): via -0.125 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access -0.110 vs via HV_SHDN (30.950,-3.150) r0.250
+   SHDN (30.650,-3.38) via-marg -0.095: dives 0
+      dead -0.085 @(30.950,-2.625): via -0.075 vs seg HV_FBX (30.625,-2.125)->(32.375,-2.125) hw0.125; access -0.085 vs via HV_SHDN (30.650,-3.375) r0.250
+      dead -0.085 @(30.900,-2.650): via -0.085 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.085 vs via HV_SHDN (30.650,-3.375) r0.250
+      dead -0.085 @(30.875,-2.675): via -0.080 vs seg HV_GATE (30.375,-2.500)->(31.600,-1.550) hw0.075; access -0.085 vs via HV_SHDN (30.650,-3.375) r0.250
+   SHDN (31.175,-3.15) via-marg -0.100: dives 0
+      dead -0.101 @(30.625,-2.900): via -0.101 vs seg HV_SHDN (30.375,-3.500)->(31.175,-3.150) hw0.100; access +0.026 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+      dead -0.104 @(30.675,-2.825): via -0.104 vs via HV_SHDN (31.175,-3.150) r0.250; access +0.002 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
+      dead -0.106 @(30.950,-2.600): via -0.106 vs via HV_SHDN (31.175,-3.150) r0.250; access -0.013 vs pad HV_GATE (29.650,-2.500) hw0.725x0.150
