@@ -1,0 +1,40 @@
+12:31:17: Debug: Adding duplicate image handler for 'PNG file'
+12:31:17: Debug: Adding duplicate image handler for 'JPEG file'
+12:31:17: Debug: Adding duplicate image handler for 'TIFF file'
+12:31:17: Debug: Adding duplicate image handler for 'GIF file'
+12:31:17: Debug: Adding duplicate image handler for 'PNM file'
+12:31:17: Debug: Adding duplicate image handler for 'PCX file'
+12:31:17: Debug: Adding duplicate image handler for 'IFF file'
+12:31:17: Debug: Adding duplicate image handler for 'Windows icon file'
+12:31:17: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:31:17: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:31:17: Debug: Adding duplicate image handler for 'TGA file'
+12:31:17: Debug: Adding duplicate image handler for 'XPM file'
+rips: 31 entries (expect 27)
+CC2 B5 vias: 79; best [(-0.0, 30.125, 72.375), (-0.0, 30.15, 72.30000000000001), (-0.0, 30.15, 72.325)]
+  CC2 via (30.125,72.375): join flood 0.007574559139543635
+CC1 configs feasible: 10; [(0.185, (29.25, 69.6), (30.3, 69.6)), (0.185, (29.25, 69.35), (30.3, 69.35)), (0.185, (29.25, 69.35), (30.55, 69.35)), (0.185, (29.25, 69.1), (30.3, 69.1))]
+  CC1 ty=69.6 ex=30.3: DM vias 163; best [(0.05, 29.85, 70.22500000000001), (0.05, 29.85, 70.25), (0.05, 29.85, 70.275), (0.05, 29.85, 70.30000000000001)]
+    DM (29.85,70.23): joins +0.423/+0.009
+    VBUS rejoin: (-0.34569881716587353, (30.45, 70.55))
+    DM (29.85,70.25): joins +0.423/+0.009
+    VBUS rejoin: (-0.34569881716587353, (30.45, 70.55))
+    DM (29.85,70.28): joins +0.423/+0.009
+    VBUS rejoin: (-0.34569881716587353, (30.45, 70.55))
+  CC1 ty=69.35 ex=30.3: DM vias 366; best [(0.05, 29.85, 70.17500000000001), (0.05, 29.85, 70.2), (0.05, 29.85, 70.22500000000001), (0.05, 29.85, 70.25)]
+    DM (29.85,70.18): joins +0.423/+0.009
+    VBUS rejoin: (-0.34569881716587353, (30.45, 70.55))
+    DM (29.85,70.20): joins +0.423/+0.009
+    VBUS rejoin: (-0.34569881716587353, (30.45, 70.55))
+    DM (29.85,70.23): joins +0.423/+0.009
+    VBUS rejoin: (-0.34569881716587353, (30.45, 70.55))
+  CC1 ty=69.35 ex=30.55: DM vias 366; best [(0.05, 29.85, 70.17500000000001), (0.05, 29.85, 70.2), (0.05, 29.85, 70.22500000000001), (0.05, 29.85, 70.25)]
+    DM (29.85,70.18): joins +0.423/+0.009
+    VBUS rejoin: (-0.34569881716587353, (30.45, 70.55))
+    DM (29.85,70.20): joins +0.423/+0.009
+    VBUS rejoin: (-0.34569881716587353, (30.45, 70.55))
+    DM (29.85,70.23): joins +0.423/+0.009
+    VBUS rejoin: (-0.34569881716587353, (30.45, 70.55))
+
+complete assemblies: 0
+NO complete assembly
