@@ -1692,6 +1692,30 @@ SPI_MOSI connected (U8.8->U6.113): F stub to the pocket's one legal via (71.9,7.
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 8 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 207 — 2026-11-08T19:30:40Z · commit `c6cf5e2`
+
+Board: `hw/pdlvds_rx.exp238.kicad_pcb` · Commit: `c6cf5e205da4d6dc6a1876b2f3ed70c2540b8f89`
+
+SPI_SCK connected (U8.7->U6.111): CDR_LOL B vertical re-lay x67.375->x67.075 unsealing the (67.8,8.1) dive; In2 ride east with perpendicular saddle crossing between DAC_VREF and I2C_SDA vias; A*-found dive via (73.475,2.1); F hop over the HV_SHDN In2 band; B south chain; F arrival at U6.111. Fence mods in the same pass: DAC_SYNC F jog at the arrival box and SWCLK via (90.55,-18.05)->(90.35,-18.75). KiCad DRC: SPI_SCK pair closed; violations 4 (J1 only) + 1 via_dangling warning (B-B via (77.05,-8.5), removed pass 208). NEW GND zone-to-zone pair: the dive via's hole severs the thin F GND strip at U6.38 and island removal deletes the middle sheet (fill-diff diagnosed) - named here, healed in passes 208-209 this session. Reload census: only DAC_SYNC +1 and SPI_SCK 0->35 changed, no net renames.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 7 · Courtyard collisions: 0 · Audit verdict: FAIL
+
+### Pass 208 — 2026-11-08T19:34:30Z · commit `0c6a739`
+
+Board: `hw/pdlvds_rx.exp239.kicad_pcb` · Commit: `0c6a739cab2b21f43df89160be961930f975bd4a`
+
+GND heal, part 1: rip the 4 +3V3D F segs fencing the GND fill corridor east of SCK's dive via (tap segs (74.375,2.375)->(74.125,2.625)->(74.25,3.162) and bus segs (74.625,2.125)->(74.375,2.375), (74.875,1.875)->(74.625,2.125)) - the fill itself bridges around the via hole (corridor 0.28-0.5 wide); stitch-via heals were proven fenced on all four sides of the U6.38 strip blob. Also delete SPI_SCK's dangling B-B via (77.05,-8.5). KiCad DRC: GND zone pair CLOSED. Named side effect: the ripped tap was the +3V3D east staircase's only source path - a +3V3D track pair and one track_dangling (staircase west end (74.875,1.875)) appear; closed in pass 209. Census: +3V3D -4 segs, SPI_SCK -1 via, nothing else.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 8 · Courtyard collisions: 0 · Audit verdict: FAIL
+
+### Pass 209 — 2026-11-08T19:36:20Z · commit `ffe06d5`
+
+Board: `hw/pdlvds_rx.exp240.kicad_pcb` · Commit: `ffe06d50b3df5d0f3fd2c0d28cf72aae13c43b6b`
+
++3V3D staircase re-tap (heals pass 208's named split): F stub (74.875,1.875)->(75.85,1.3), dive via, B journey south of SCK's dive via then north on its west side landing on via A's barrel (72.875,3.375) - no rise via: tap3's rise at the column end violated hole_near_hole vs via B, tap4's at (74.0,2.75) re-severed the GND corridor. Gate-clean 6 items, worst +0.056 vs SCK through-via. KiCad DRC: unconnected 7 = exactly the 7 remaining nets (CAP_CLK, CAP_DATA, CDR_LOS, PHY_1V8A, ULPI_STP, USB_RST, XI); violations 4, all standing J1 copper_edge. check_pcb: nets 7, census 109 identical, courtyard 0, blind SH1 21. Census vs exp239: +3V3D +6 only.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 7 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
