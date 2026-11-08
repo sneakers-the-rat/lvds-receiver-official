@@ -1652,6 +1652,14 @@ Silk campaign 4/4: micro-fixes -- R7 segment ends 28.95 -> 28.88 (half-width sti
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 202 — 2026-11-08T11:25:56Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp232.kicad_pcb` · Commit: `pending`
+
+HV_INTVCC connected: +5V joint moved east to (31.35,-4.0), run dived to In2 (30.55,-4.45)->(31.30,-4.45), both staircases re-fanned from the new joint; SHDN via re-laid to (30.725,-3.475) d0.5 with lazy diagonal In2 web to (32.4,-2.875); INTVCC dive (30.975,-2.75) d0.5, B journey (32.25,-1.8125)->(32.25,-1.1875) to rise (31.7,0.6). DRC unconnected 13->12, check_pcb nets 12->11, census identical. Side effect: SE re-fan tail dangles at (31.375,-5.5), a phantom rejoin point inherited from an-lineage geometry (no such joint on this board) -- track_dangling 1, healed next pass.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 11 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
