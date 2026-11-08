@@ -89,3 +89,34 @@ C16, or (f) leave one of XO/PHY_1V8A unconnected. The proven
 t_aj7 design still emits verbatim the moment the notch frees by
 either route. Q micro-adjust was not searched: Q's fences are
 >=1.0 mm from every lobe point and cannot bind.
+
+## 3. SWCLK — DAC-move + dive pair PROVEN empty (t_ak8_swclk.py)
+
+Optimizer scan on exp221 (DAC via ripped in-model, d0.6; SWCLK
+dive d0.5; both gated on 3 layers + stubs; journey floods on B
+and In2 to J4.4): DAC_SYNC's via has only 12 feasible positions,
+ALL within 0.13 of its current (90.125,-17.875), best margin
++0.017 — it is pinned by R16.1/R16.2/U6.110's pad. (D,S) pairs
+passing via+stub gates: ZERO. With D pinned at the window's west
+edge, its 0.75 via-via exclusion covers the whole SWCLK window
+(+3V3D In2 vertical caps S at x<=90.575; R16.2's rect caps S at
+y>=-18.075 in range; the two caps leave only points <0.75 from D).
+
+The aj survey's hand pair is REFUTED: DAC at (89.8,-18.35) gates
++0.006 vs R16.1's CORNER but -0.086 vs R16.2's pad (corner dist
+0.414 - 0.30 - 0.20) — the survey gated DAC vs R16.1 only.
+
+F-jog escapes were hand-checked and each dies on a named fence
+within two moves: the strip south of U6's row is sealed
+x[89.5,90.7] for all y in [-17.7,-18.475] by DAC's via disc
+(r0.60 for tracks) union R16.2's shadow (from y-18.225); the
+x[89.625,89.875] slot between R16.1's and R16.2's shadows is
+reachable only through that disc. Between-pad channels in the
+0.5-pitch row are impossible (0.2 gap vs 0.6 needed).
+
+Remaining vehicles (not attempted): (i) DAC_SYNC west-dive
+re-lay — F strip run west at y~-17.75 (gates +0.047 vs the row
+pads) to a dive ~x87.5, B seg rejoining its chain at
+(89.625,-15.625), old B chain ripped back from (90.125,-16.125);
+then SWCLK's window has no DAC via in it. (ii) SWDIO staircase
+re-lay as a third net. Either is a full district job.
