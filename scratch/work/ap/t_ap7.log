@@ -1,0 +1,23 @@
+12:15:28: Debug: Adding duplicate image handler for 'PNG file'
+12:15:28: Debug: Adding duplicate image handler for 'JPEG file'
+12:15:28: Debug: Adding duplicate image handler for 'TIFF file'
+12:15:28: Debug: Adding duplicate image handler for 'GIF file'
+12:15:28: Debug: Adding duplicate image handler for 'PNM file'
+12:15:28: Debug: Adding duplicate image handler for 'PCX file'
+12:15:28: Debug: Adding duplicate image handler for 'IFF file'
+12:15:28: Debug: Adding duplicate image handler for 'Windows icon file'
+12:15:28: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:15:28: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:15:28: Debug: Adding duplicate image handler for 'TGA file'
+12:15:28: Debug: Adding duplicate image handler for 'XPM file'
+rips: 35 entries
+VBUS rejoin: best (0.5557764064044152, (30.3, 70.75))
+CC1 re-lay: best (0.21002604131346192, [(29.25, 69.98), (29.25, 69.6), (30.3, 69.6), (30.925, 67.25)])
+CC2 B5 vias: 79; best [(-0.0, 30.125, 72.375), (-0.0, 30.15, 72.30000000000001), (-0.0, 30.15, 72.325), (-0.0, 30.15, 72.35000000000001)]
+  CC2 via (30.125,72.375): join flood 0.004116097344299546
+  DM A7 vias: 0; best []
+  CC2 via (30.150,72.300): join flood 0.004116097344299546
+  DM A7 vias: 0; best []
+
+complete assemblies: 0
+NO complete assembly

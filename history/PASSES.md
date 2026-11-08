@@ -1668,6 +1668,14 @@ SE re-fan repair: dangling tail (31.7,-5.1)->(31.375,-5.5) and orphaned kept seg
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 11 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 204 — 2026-11-08T12:58:30Z · commit `a130ec7`
+
+Board: `hw/pdlvds_rx.exp234.kicad_pcb` · Commit: `a130ec71fed753384eaf759fd665511a3549bb3f`
+
+DP_CON connected: A6 south dive (stub threads DM B7 via/CC2 via gap, crosses B6 pad), CC2 B5 escape re-planned to band via (30.5,72.275), DM B7 via shrunk d0.6->d0.5, In2 main flood to D3. DRC unconnected 12->10, check_pcb nets 11->10
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 10 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

@@ -1,0 +1,19 @@
+12:21:46: Debug: Adding duplicate image handler for 'PNG file'
+12:21:46: Debug: Adding duplicate image handler for 'JPEG file'
+12:21:46: Debug: Adding duplicate image handler for 'TIFF file'
+12:21:46: Debug: Adding duplicate image handler for 'GIF file'
+12:21:46: Debug: Adding duplicate image handler for 'PNM file'
+12:21:46: Debug: Adding duplicate image handler for 'PCX file'
+12:21:46: Debug: Adding duplicate image handler for 'IFF file'
+12:21:46: Debug: Adding duplicate image handler for 'Windows icon file'
+12:21:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:21:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:21:46: Debug: Adding duplicate image handler for 'TGA file'
+12:21:46: Debug: Adding duplicate image handler for 'XPM file'
+rips: 35 entries
+CC2 B5 vias: 79; best [(-0.0, 30.125, 72.375), (-0.0, 30.15, 72.30000000000001), (-0.0, 30.15, 72.325)]
+  CC2 via (30.125,72.375): join flood 0.007574559139543635
+CC1 configs feasible: 0; []
+
+complete assemblies: 0
+NO complete assembly
