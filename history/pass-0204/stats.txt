@@ -1,0 +1,14 @@
+pass: 204
+description: DP_CON connected: A6 south dive (stub threads DM B7 via/CC2 via gap, crosses B6 pad), CC2 B5 escape re-planned to band via (30.5,72.275), DM B7 via shrunk d0.6->d0.5, In2 main flood to D3. DRC unconnected 12->10, check_pcb nets 11->10
+timestamp (UTC): 2026-11-08T12:58:30Z
+commit: pending
+board file: hw/pdlvds_rx.exp234.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 10
+courtyard collisions: 0
+audit verdict: fail
+note: 

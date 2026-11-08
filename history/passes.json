@@ -5912,6 +5912,36 @@
       },
       "description": "SE re-fan repair: dangling tail (31.7,-5.1)->(31.375,-5.5) and orphaned kept seg (32.125,-4.875)->(31.875,-4.625) ripped; re-fan landed on the real kept joint with seg (32.0,-4.5)->(32.125,-4.875) (in-model gate +0.836). DRC violations 5->4 (track_dangling 0; only the 4 standing J1 copper_edge remain), unconnected 12, check_pcb nets 11, census line set identical to exp231.",
       "note": ""
+    },
+    {
+      "pass": 204,
+      "timestamp": "2026-11-08T12:58:30Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp234.kicad_pcb",
+      "dir": "pass-0204",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 109,
+        "unconnected_nets": 10,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "DP_CON connected: A6 south dive (stub threads DM B7 via/CC2 via gap, crosses B6 pad), CC2 B5 escape re-planned to band via (30.5,72.275), DM B7 via shrunk d0.6->d0.5, In2 main flood to D3. DRC unconnected 12->10, check_pcb nets 11->10",
+      "note": ""
     }
   ],
   "gaps": [
