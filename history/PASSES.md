@@ -1556,9 +1556,9 @@ pass 189: U7 SW district re-fanout part 1 - XO U7.27 leg CONNECTED (groute via B
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 14 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 190 — 2026-11-08T01:47:31Z · commit `pending`
+### Pass 190 — 2026-11-08T01:47:31Z · commit `87c0865`
 
-Board: `hw/pdlvds_rx.exp220.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp220.kicad_pcb` · Commit: `87c08658b8bd78e9010ec553e18417ab5dfaaf20`
 
 pass 190: +3V3A U7.6 connected (U7 SW district part 2a). Fence named by probe midpoint blockers: C23.2 GND pad + GND stitch via (72.0,14.65) + +5V fanout (U7.4 segs, via (72.125,13.625)) seal the F exits; 0.5-pitch row theorem seals via-in-pad. Ripped +5V fanout + stitch via (floods meet on the rip trial); groute all-F w0.2 path (7 segs) west along y13.875 to the (68.375,17.5) web joint; +5V re-laid same pass (F jog to via (72.2,13.1) d0.8, In2 w0.6 joiners onto the y13.625 trunk end). New F track severed four GND fill islands (polygon diff) and the stitch via was C23.2 island's only tie: five GND stitch vias added ((71.8,14.9) in C23.2 pad, (67.3,16.9) in C27.2 pad, (75.6,14.75) in U7 EP, (70.925,9.975), (69.5,18.125)); KiCad GND zone pairs back to the pre-existing 1. Stitch via proven redundant for connectivity (check_pcb: GND whole without it). Delta: KiCad unconnected 17->16, violations 154 byte-identical description multiset; check_pcb +3V3A groups 3->2, census 109 identical, courtyard 0, blind SH1-only
 
