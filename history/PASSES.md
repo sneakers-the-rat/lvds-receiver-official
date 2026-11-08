@@ -1660,9 +1660,9 @@ HV_INTVCC connected: +5V joint moved east to (31.35,-4.0), run dived to In2 (30.
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 11 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 203 — 2026-11-08T11:45:08Z · commit `pending`
+### Pass 203 — 2026-11-08T11:45:08Z · commit `ca12477`
 
-Board: `hw/pdlvds_rx.exp233.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp233.kicad_pcb` · Commit: `ca124779748d42ad64375c1752b627c1d3e11bbd`
 
 SE re-fan repair: dangling tail (31.7,-5.1)->(31.375,-5.5) and orphaned kept seg (32.125,-4.875)->(31.875,-4.625) ripped; re-fan landed on the real kept joint with seg (32.0,-4.5)->(32.125,-4.875) (in-model gate +0.836). DRC violations 5->4 (track_dangling 0; only the 4 standing J1 copper_edge remain), unconnected 12, check_pcb nets 11, census line set identical to exp231.
 
