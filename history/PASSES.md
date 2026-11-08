@@ -1676,9 +1676,9 @@ DP_CON connected: A6 south dive (stub threads DM B7 via/CC2 via gap, crosses B6 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 10 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 205 — 2026-11-08T13:17:32Z · commit `pending`
+### Pass 205 — 2026-11-08T13:17:32Z · commit `9e0c7df`
 
-Board: `hw/pdlvds_rx.exp235.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp235.kicad_pcb` · Commit: `9e0c7dfe3b8e8868121f5000c3770936069d1e2d`
 
 pass 202: +3V3D U11.14 connected — +5V staircase SW branch ripped and detoured south on F (y22.95) freeing the channel; U11.14 F stub to via (56.75,24.00), In2 south/east at y20.8, rise via (66.55,22.35) onto C38 chain. DRC unconnected 10->9, violations 4 flat (J1 only); check_pcb nets 10->9, census 109 identical, courtyard 0
 
