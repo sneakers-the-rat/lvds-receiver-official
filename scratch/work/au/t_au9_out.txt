@@ -1,0 +1,17 @@
+22:46:23: Debug: Adding duplicate image handler for 'PNG file'
+22:46:23: Debug: Adding duplicate image handler for 'JPEG file'
+22:46:23: Debug: Adding duplicate image handler for 'TIFF file'
+22:46:23: Debug: Adding duplicate image handler for 'GIF file'
+22:46:23: Debug: Adding duplicate image handler for 'PNM file'
+22:46:23: Debug: Adding duplicate image handler for 'PCX file'
+22:46:23: Debug: Adding duplicate image handler for 'IFF file'
+22:46:23: Debug: Adding duplicate image handler for 'Windows icon file'
+22:46:23: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:46:23: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:46:23: Debug: Adding duplicate image handler for 'TGA file'
+22:46:23: Debug: Adding duplicate image handler for 'XPM file'
+CLK arrival (XO ablated=False): NONE
+CLK arrival (XO ablated=True): FOUND
+   arrival vias [[70.1, 21.8], [73.25, 21.75], [74.4, 22.9]]; exact worst +0.000 (via CAP_CLK (74.400,22.900) r0.250 vs seg CDR_DATN (73.800,23.500)->(75.700,23.500) hw0.150)
+DATA A* (XO ablated=True): NONE
+done

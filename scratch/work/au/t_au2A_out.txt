@@ -1,0 +1,18 @@
+22:37:27: Debug: Adding duplicate image handler for 'PNG file'
+22:37:27: Debug: Adding duplicate image handler for 'JPEG file'
+22:37:27: Debug: Adding duplicate image handler for 'TIFF file'
+22:37:27: Debug: Adding duplicate image handler for 'GIF file'
+22:37:27: Debug: Adding duplicate image handler for 'PNM file'
+22:37:27: Debug: Adding duplicate image handler for 'PCX file'
+22:37:27: Debug: Adding duplicate image handler for 'IFF file'
+22:37:27: Debug: Adding duplicate image handler for 'Windows icon file'
+22:37:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:37:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:37:27: Debug: Adding duplicate image handler for 'TGA file'
+22:37:27: Debug: Adding duplicate image handler for 'XPM file'
+== A combo PG+SCL (60 items out): CAP_DATA widest -0.024
+== A combo PG+THR66 (58 items out): CAP_DATA widest -0.024
+== A combo PG+HVREST (88 items out): CAP_DATA widest -0.024
+== A combo SCL+THR66 (8 items out): CAP_DATA widest -0.025
+== A combo PG+SCL+THR66 (63 items out): CAP_DATA widest -0.024
+done

@@ -1,0 +1,35 @@
+22:47:08: Debug: Adding duplicate image handler for 'PNG file'
+22:47:08: Debug: Adding duplicate image handler for 'JPEG file'
+22:47:08: Debug: Adding duplicate image handler for 'TIFF file'
+22:47:08: Debug: Adding duplicate image handler for 'GIF file'
+22:47:08: Debug: Adding duplicate image handler for 'PNM file'
+22:47:08: Debug: Adding duplicate image handler for 'PCX file'
+22:47:08: Debug: Adding duplicate image handler for 'IFF file'
+22:47:08: Debug: Adding duplicate image handler for 'Windows icon file'
+22:47:08: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:47:08: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:47:08: Debug: Adding duplicate image handler for 'TGA file'
+22:47:08: Debug: Adding duplicate image handler for 'XPM file'
+DATA widest: -0.070
+   bind L0 via THR_DAC (66.625,4.875) r0.300 @ track L0 (67.05,4.55) v=-0.065
+   bind L0 via GND (67.375,4.125) r0.300 @ via L0 (66.70,4.00) v=-0.064
+   bind L1 via GND (67.375,4.125) r0.300 @ via L1 (66.70,4.00) v=-0.064
+   bind L2 via GND (67.375,4.125) r0.300 @ via L2 (66.70,4.00) v=-0.064
+   bind L1 via THR_DAC (64.875,6.625) r0.300 @ track L1 (64.45,6.95) v=-0.065
+   bind L0 via THR_DAC (64.875,6.625) r0.300 @ via L0 (65.00,7.30) v=-0.064
+   bind L2 via THR_DAC (64.875,6.625) r0.300 @ via L2 (65.00,7.30) v=-0.064
+   bind L0 via ULPI_NXT (62.625,12.750) r0.250 @ track L0 (63.10,12.65) v=-0.065
+   bind L0 seg ULPI_DIR (62.625,24.750)->(61.375,11.750) hw0.100 @ via L0 (63.20,14.40) v=-0.066
+   bind L1 seg +5V (72.125,13.625)->(54.125,13.625) hw0.300 @ via L1 (63.20,14.40) v=-0.066
+   bind L2 seg ULPI_NXT (63.000,19.625)->(62.625,12.750) hw0.100 @ via L2 (63.20,14.40) v=-0.066
+   bind L1 via PG_3V3 (69.625,16.375) r0.300 @ track L1 (70.05,16.05) v=-0.065
+   bind L1 via +3V3D (70.875,15.875) r0.400 @ track L1 (70.50,16.45) v=-0.064
+   bind L1 via DP_PHY (72.125,15.875) r0.300 @ track L1 (71.70,16.20) v=-0.065
+   bind L0 via DP_PHY (72.125,15.875) r0.300 @ via L0 (72.40,16.50) v=-0.067
+   bind L2 via DP_PHY (72.125,15.875) r0.300 @ via L2 (72.40,16.50) v=-0.067
+   bind L0 pad PHY_1V8 (71.725,18.000) hw0.450x0.475 @ track L0 (72.35,17.30) v=-0.065
+   bind L0 via DM_PHY (73.625,19.125) r0.300 @ via L0 (72.90,19.05) v=-0.067
+   bind L1 via DM_PHY (73.625,19.125) r0.300 @ via L1 (72.90,19.05) v=-0.067
+   bind L2 seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100 @ via L2 (72.90,19.05) v=-0.067
+   bind L1 seg ULPI_NXT (74.500,19.250)->(69.875,23.750) hw0.100 @ track L1 (74.05,20.15) v=-0.069
+done

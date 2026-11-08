@@ -1,0 +1,45 @@
+22:35:07: Debug: Adding duplicate image handler for 'PNG file'
+22:35:07: Debug: Adding duplicate image handler for 'JPEG file'
+22:35:07: Debug: Adding duplicate image handler for 'TIFF file'
+22:35:07: Debug: Adding duplicate image handler for 'GIF file'
+22:35:07: Debug: Adding duplicate image handler for 'PNM file'
+22:35:07: Debug: Adding duplicate image handler for 'PCX file'
+22:35:07: Debug: Adding duplicate image handler for 'IFF file'
+22:35:07: Debug: Adding duplicate image handler for 'Windows icon file'
+22:35:07: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:35:07: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:35:07: Debug: Adding duplicate image handler for 'TGA file'
+22:35:07: Debug: Adding duplicate image handler for 'XPM file'
+pool sizes: [3294, 1596, 1304], sibling items: [10, 40, 9]
+fields built
+== BASE CAP_CLK widest bottleneck (sibling CAP_DATA fixed): -0.101
+binding items (10):
+   [BOARD] L1 via +3V3A (69.125,4.375) r0.400  @ track L1 (68.50,4.20) v=-0.101
+   [BOARD] L1 seg I2C_SCL (67.875,5.125)->(68.875,1.625) hw0.100  @ track L1 (68.15,5.25) v=-0.098
+   [BOARD] L1 seg I2C_SCL (66.875,6.750)->(67.875,5.125) hw0.100  @ track L1 (68.00,5.50) v=-0.097
+   [BOARD] L1 seg I2C_SCL (65.250,8.500)->(66.875,6.750) hw0.100  @ track L1 (66.50,7.60) v=-0.096
+   [BOARD] L1 seg I2C_SCL (64.750,12.000)->(65.250,8.500) hw0.100  @ track L1 (65.50,8.90) v=-0.096
+   [BOARD] L0 seg +3V3D (66.375,9.375)->(66.300,8.750) hw0.300  @ via L0 (65.60,9.25) v=-0.097
+   [BOARD] L2 seg CDR_LOL (67.075,14.125)->(67.075,6.875) hw0.125  @ via L2 (65.60,9.25) v=-0.097
+   [BOARD] L0 via ULPI_NXT (62.625,12.750) r0.250  @ track L0 (63.00,12.50) v=-0.099
+   [SIBLING] L0 via CAP_DATA (72.600,19.300) r0.250  @ track L0 (73.05,19.25) v=-0.097
+   [BOARD] L0 seg CDR_SQUELCH (73.625,25.375)->(73.625,22.625) hw0.125  @ track L0 (73.95,22.80) v=-0.100
+-- single BOARD-item ablations (second-min):
+   - via +3V3A (69.125,4.375) r0.400: bottleneck -0.025 (delta +0.076)
+   - seg I2C_SCL (67.875,5.125)->(68.875,1.625) hw0.100: bottleneck -0.025 (delta +0.076)
+   - seg I2C_SCL (66.875,6.750)->(67.875,5.125) hw0.100: bottleneck -0.101 (delta +0.000)
+   - seg I2C_SCL (65.250,8.500)->(66.875,6.750) hw0.100: bottleneck -0.101 (delta +0.000)
+   - seg I2C_SCL (64.750,12.000)->(65.250,8.500) hw0.100: bottleneck -0.101 (delta +0.000)
+   - seg +3V3D (66.375,9.375)->(66.300,8.750) hw0.300: bottleneck -0.101 (delta +0.000)
+   - seg CDR_LOL (67.075,14.125)->(67.075,6.875) hw0.125: bottleneck -0.101 (delta +0.000)
+   - via ULPI_NXT (62.625,12.750) r0.250: bottleneck -0.101 (delta +0.000)
+   - seg CDR_SQUELCH (73.625,25.375)->(73.625,22.625) hw0.125: bottleneck -0.101 (delta +0.000)
+-- group ablations (full rebuild):
+   - THR_DAC via (64.875,6.625) (3 items): bottleneck -0.101 (delta +0.000)
+   - SCL In2 chain (corridor) (5 items): bottleneck -0.025 (delta +0.076)
+   - PG_3V3 B braid (corridor) (55 items): bottleneck +0.006 (delta +0.107)
+   - +3V3D via (70.875,15.875) (3 items): bottleneck -0.101 (delta +0.000)
+   - SDA via (69.9,0.82) (3 items): bottleneck -0.101 (delta +0.000)
+   - XO In2 web (rest) (65 items): bottleneck -0.101 (delta +0.000)
+   - HV band In2 (rest, x>=70.2) (33 items): bottleneck -0.025 (delta +0.076)
+done

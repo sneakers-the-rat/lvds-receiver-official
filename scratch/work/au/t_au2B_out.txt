@@ -1,0 +1,23 @@
+22:39:17: Debug: Adding duplicate image handler for 'PNG file'
+22:39:17: Debug: Adding duplicate image handler for 'JPEG file'
+22:39:17: Debug: Adding duplicate image handler for 'TIFF file'
+22:39:17: Debug: Adding duplicate image handler for 'GIF file'
+22:39:17: Debug: Adding duplicate image handler for 'PNM file'
+22:39:17: Debug: Adding duplicate image handler for 'PCX file'
+22:39:17: Debug: Adding duplicate image handler for 'IFF file'
+22:39:17: Debug: Adding duplicate image handler for 'Windows icon file'
+22:39:17: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:39:17: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:39:17: Debug: Adding duplicate image handler for 'TGA file'
+22:39:17: Debug: Adding duplicate image handler for 'XPM file'
+== B combo PG (55 items out): CAP_CLK widest +0.006
+   A* journey: FOUND
+   vias: [[70.0, 1.8], [64.75, 16.95], [69.5, 22.35], [73.25, 21.7], [74.25, 22.9]]
+   L1: [70.0, 1.85] -> [70.0, 1.8] (2 pts)
+   L2: [70.0, 1.8] -> [64.75, 16.95] (349 pts)
+   L1: [64.75, 16.95] -> [69.5, 22.35] (126 pts)
+   L0: [69.5, 22.35] -> [73.25, 21.7] (76 pts)
+   L1: [73.25, 21.7] -> [74.25, 22.9] (26 pts)
+   L0: [74.25, 22.9] -> [75.45, 25.4] (52 pts)
+   wrote scratch/work/au/journey_au2_CAP_CLK_B_PG.json
+done
