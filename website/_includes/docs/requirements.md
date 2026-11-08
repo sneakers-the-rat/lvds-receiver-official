@@ -103,6 +103,11 @@ R9  APD bias: programmable over the full range of the fitted APD, resolution
     temperature compensation using the APD tempco and an on-board temperature
     sensor, hardware over-voltage clamp independent of firmware, HV enable
     interlock, bleeder so the rail falls below 60 V within 10 s of disable.
+    (As fitted: the over-voltage bound is the set-point network's own
+    hardware ceiling — 253.2 V nominal / 259.4 V worst-case for the
+    C30737 fit, docs/03 — and the interlock is the J5 deliberate-action
+    jumper in series in the SHDN enable path, sensed on PA6;
+    owner decision recorded in docs/06.)
 R10 EMI: metal enclosure / shield can over the analog frontend, frontend ground
     partitioning and supply filtering sized for the 6.63 MHz QSCR field
     environment described in the paper.

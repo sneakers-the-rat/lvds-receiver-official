@@ -976,3 +976,4 @@ d8c3608e387f,2026-11-08T22:28:36Z,tools (at): pair A* centred/true-rule fencing 
 0ccc7c262106,2026-11-08T22:54:51Z,"tools (au): CAP pair synthesis - CLK B-ride + DATA In2 plan settled in item model; entry sealed in current pocket, U9-west rebuild is the move (t_at21 geometry); PG/+3V3D/XO re-lay set named",1379309999,9156257,1388466256,83,64,not recorded
 8742a51e956b,2026-11-08T22:54:55Z,Merge branch 'mwork9' of /home/hatch/workspace/pdlvds-route into mwork9,1379309999,9156257,1388466256,83,64,not recorded
 ab552b8c1211,2026-11-08T22:55:18Z,metrics: post-merge regen,1379309999,9156257,1388466256,83,64,not recorded
+46b81d3da4f9,2026-11-08T23:04:54Z,site: current-info pages regenerate from current sources at build time,1379309999,9156257,1388466256,83,64,not recorded
