@@ -5822,6 +5822,36 @@
       },
       "description": "Silk campaign 3/4: footprint silk-shape surgery -- SH1 shield-can rectangle replaced by its true outline drawn as 9 segments with gaps at every pad crossing (own 2.4x2.4 corner mounting pads, R8.1 east, R5/R6/U12 pads north, U12 pin-1 marker); R7's two east outline segments shortened off the can line; D1's outline rect verticals moved 0.13 out off its pad columns and its aperture circle deleted (it sits entirely on pad 1's mask opening -- unprintable silk); U9's rect verticals moved out off its pads (66.93/69.57). KiCad DRC violations 12 -> 7 (silk_overlap 3, copper_edge 4); silk_over_copper ZERO; unconnected unchanged 13. (First attempt with footprint-local coordinate transforms corrupted the shapes -- KiCad 8 shape getters/setters use board coordinates; that build was discarded unbanked and the fix is in t_al23.)",
       "note": ""
+    },
+    {
+      "pass": 201,
+      "timestamp": "2026-11-08T08:16:20Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp231.kicad_pcb",
+      "dir": "pass-0201",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 109,
+        "unconnected_nets": 12,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "Silk campaign 4/4: micro-fixes -- R7 segment ends 28.95 -> 28.88 (half-width still grazed SH1's east line edge by 0.01) and SH1's north outline piece at x[15.93,16.57] dropped (ran parallel 0.08 from R5's own outline segment; R5's segment already marks that span). KiCad DRC violations 7 -> 4: SILK AT ZERO (silk_overlap 0, silk_over_copper 0, silk_edge 0). The 4 remaining violations are the standing J1-intrinsic copper_edge items (NPTH vs the connector's own pads; S1 shell pads at the board edge -- footprint geometry / connector-at-edge by design). Unconnected unchanged 13 items; check_pcb nets 12, census 109, courtyard 0, blind SH1 21 -- identical throughout the campaign.",
+      "note": ""
     }
   ],
   "gaps": [
