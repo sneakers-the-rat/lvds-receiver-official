@@ -1,5 +1,5 @@
 pass: 198
-description: Silk campaign 1/4: reference-designator reflow batch 1 -- 77 of 81 violating refs moved to copper/silk-clear spots (spiral search over exact item model: F pads incl. rotated-rect corner+edge distance, tracks, vias, footprint silk bboxes, live ref bboxes; text bbox from GetBoundingBox). KiCad DRC violations 150 -> 29 (silk_overlap 66->14, silk_over_copper 78->10); unconnected unchanged 15... correction: 13 items; check_pcb nets 12, census 109, courtyard 0, blind SH1 21 -- all identical. No copper touched.
+description: Silk campaign 1/4: reference-designator reflow batch 1 -- 77 of 81 violating refs moved to copper/silk-clear spots (spiral search over exact item model: F pads incl. rotated-rect corner+edge distance, tracks, vias, footprint silk bboxes, live ref bboxes; text bbox from GetBoundingBox). KiCad DRC violations 150 -> 29 (silk_overlap 66->14, silk_over_copper 78->10); unconnected unchanged 13 items; check_pcb nets 12, census 109, courtyard 0, blind SH1 21 -- all identical. No copper touched.
 timestamp (UTC): 2026-11-08T08:12:30Z
 commit: pending
 board file: hw/pdlvds_rx.exp228.kicad_pcb
