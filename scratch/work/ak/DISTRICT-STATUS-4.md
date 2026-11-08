@@ -120,3 +120,29 @@ pads) to a dive ~x87.5, B seg rejoining its chain at
 (89.625,-15.625), old B chain ripped back from (90.125,-16.125);
 then SWCLK's window has no DAC via in it. (ii) SWDIO staircase
 re-lay as a third net. Either is a full district job.
+
+## 4. HV pocket — 4-net joint re-fanout proven necessary (t_ak9/t_ak10)
+
+HV_INTVCC is default-class (0.20), NOT in router.HV_NETS — the
+1.0 mm class list is only the 260 V domain nets. Experiments on
+exp221 (all groute, DRC-rule model):
+- INTVCC standing: NO PATH.
+- Rip GND EP via (28.25,-3) + F seg (BOTH REDUNDANT — the EP
+  stays connected via the x28.125 vertical) + GATE needle set:
+  still NO PATH.
+- Full prep (also SHDN F web + via + In2 run, FBX In2 staircase
+  segs in the box): INTVCC ROUTES — 2 F segs (30.375,-3.0)->
+  (30.75,-2.875)->(30.875,-1.0). But then GATE pad-to-pad:
+  NO PATH (INTVCC's diagonal seals GATE's pad exit; via probes
+  east of U10.7 fail INTVCC seg2 by -0.2..-0.44).
+- Order swap on the same prep: GATE ROUTES (3 segs, 2 vias),
+  then INTVCC: NO PATH.
+The two nets' channels overlap and each single-net solution
+takes the shared channel — a joint optimizer over INTVCC x GATE
+x SHDN x FBX (with the GND via rip, which is free) is the only
+vehicle. Fence inventory for that design is the t_ak1 dump of
+x[24,36] y[-8,4] plus this section: SHDN's via (30.875,-2.875)
+cannot re-lay verbatim against INTVCC's diagonal (-0.475);
+SHDN's west escape beside the EP (x28.63 w0.15 slot) dies on B
+vs GATE's diagonal (27.5,-2.875)->(29.375,0.125). Nothing banked;
+exp221 untouched (all trials in /tmp).
