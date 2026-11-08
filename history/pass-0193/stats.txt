@@ -1,0 +1,14 @@
+pass: 193
+description: Delete one of two identical co-located NEG_RAW vias at (24.875,48.875) (both d0.80/drill0.40, a stacked duplicate); KiCad 151->150 (holes_co_located 1->0, 0 new), unconnected 15 identical; check_pcb census 109 identical, courtyard 0
+timestamp (UTC): 2026-11-08T05:56:44Z
+commit: pending
+board file: hw/pdlvds_rx.exp223.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 13
+courtyard collisions: 0
+audit verdict: fail
+note: 

@@ -5582,6 +5582,36 @@
       },
       "description": "APD_K slot detour: rip the 3 F segs crossing the HV slot (x17.8-18.1) + north vertical, re-lay around the slot west end (x11.25, y22.85 legs, 0.55 edge clearance, in-model gates +0.168 worst vs C33.2 GND pad); KiCad 154->151 (copper_edge 7->4, exactly the 3 APD_K items, 0 new), unconnected 15 identical; check_pcb census 109 identical, courtyard 0",
       "note": ""
+    },
+    {
+      "pass": 193,
+      "timestamp": "2026-11-08T05:56:44Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp223.kicad_pcb",
+      "dir": "pass-0193",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 109,
+        "unconnected_nets": 13,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "Delete one of two identical co-located NEG_RAW vias at (24.875,48.875) (both d0.80/drill0.40, a stacked duplicate); KiCad 151->150 (holes_co_located 1->0, 0 new), unconnected 15 identical; check_pcb census 109 identical, courtyard 0",
+      "note": ""
     }
   ],
   "gaps": [
