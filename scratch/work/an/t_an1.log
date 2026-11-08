@@ -1,0 +1,31 @@
+09:26:11: Debug: Adding duplicate image handler for 'PNG file'
+09:26:11: Debug: Adding duplicate image handler for 'JPEG file'
+09:26:11: Debug: Adding duplicate image handler for 'TIFF file'
+09:26:11: Debug: Adding duplicate image handler for 'GIF file'
+09:26:11: Debug: Adding duplicate image handler for 'PNM file'
+09:26:11: Debug: Adding duplicate image handler for 'PCX file'
+09:26:11: Debug: Adding duplicate image handler for 'IFF file'
+09:26:11: Debug: Adding duplicate image handler for 'Windows icon file'
+09:26:11: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:26:11: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:26:11: Debug: Adding duplicate image handler for 'TGA file'
+09:26:11: Debug: Adding duplicate image handler for 'XPM file'
+rips: SHDN 8 entries, +5V 4 entries (V1)
+fast-margin sanity: 300 probes identical to library
+V0: 0 SHDN via+web candidates pass stage A
+V1 dx30.6 y-4.0 rx31.35: variant adds fail vs statics -0.134 (L0 +5V via vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150)
+V1 dx30.6 y-4.0 rx31.6: variant adds fail vs statics -0.134 (L0 +5V via vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150)
+V1 dx30.6 y-4.3 rx31.35: 0 SHDN via+web candidates pass stage A
+V1 dx30.6 y-4.3 rx31.6: 0 SHDN via+web candidates pass stage A
+V1 dx30.8 y-4.0 rx31.35: 0 SHDN via+web candidates pass stage A
+V1 dx30.8 y-4.0 rx31.6: 0 SHDN via+web candidates pass stage A
+V1 dx30.8 y-4.3 rx31.35: 0 SHDN via+web candidates pass stage A
+V1 dx30.8 y-4.3 rx31.6: 0 SHDN via+web candidates pass stage A
+stage A total survivors: 0
+stage B configs: 0
+
+complete fast designs: 0
+
+=== exact re-gate of top designs ===
+
+NO complete design found
