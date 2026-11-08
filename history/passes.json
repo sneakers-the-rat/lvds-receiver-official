@@ -5672,6 +5672,36 @@
       },
       "description": "pass 195: GND U6.38 island healed -- stitch via (75.9,-10.45) d0.5 in the under-U6 pocket opened by pass 194 ties the island fill to the In1 plane; KiCad DRC unconnected 15->14 (zone pair closed), violations 150 identical, check_pcb byte-identical except copper items 5520->5522",
       "note": ""
+    },
+    {
+      "pass": 196,
+      "timestamp": "2026-11-08T07:57:04Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp226.kicad_pcb",
+      "dir": "pass-0196",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 109,
+        "unconnected_nets": 12,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 196: SWCLK connected -- DAC_SYNC west-dive re-lay (dive 87.3,-18.15, B rejoin) frees the pinned via (90.125,-17.875); SWCLK dives at (90.55,-18.05) and runs B to a south approach into J4.4; joint exact-model gates all pass (worst +0.014). Side effect: the DAC west run severs a GND fill pocket south of U6 (zone pair reappears) -- healed in pass 197",
+      "note": ""
     }
   ],
   "gaps": [

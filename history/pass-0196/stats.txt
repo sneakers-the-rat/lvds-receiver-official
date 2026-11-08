@@ -1,0 +1,14 @@
+pass: 196
+description: pass 196: SWCLK connected -- DAC_SYNC west-dive re-lay (dive 87.3,-18.15, B rejoin) frees the pinned via (90.125,-17.875); SWCLK dives at (90.55,-18.05) and runs B to a south approach into J4.4; joint exact-model gates all pass (worst +0.014). Side effect: the DAC west run severs a GND fill pocket south of U6 (zone pair reappears) -- healed in pass 197
+timestamp (UTC): 2026-11-08T07:57:04Z
+commit: pending
+board file: hw/pdlvds_rx.exp226.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 12
+courtyard collisions: 0
+audit verdict: fail
+note: 
