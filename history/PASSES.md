@@ -1644,6 +1644,14 @@ Silk campaign 3/4: footprint silk-shape surgery -- SH1 shield-can rectangle repl
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 201 — 2026-11-08T08:16:20Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp231.kicad_pcb` · Commit: `pending`
+
+Silk campaign 4/4: micro-fixes -- R7 segment ends 28.95 -> 28.88 (half-width still grazed SH1's east line edge by 0.01) and SH1's north outline piece at x[15.93,16.57] dropped (ran parallel 0.08 from R5's own outline segment; R5's segment already marks that span). KiCad DRC violations 7 -> 4: SILK AT ZERO (silk_overlap 0, silk_over_copper 0, silk_edge 0). The 4 remaining violations are the standing J1-intrinsic copper_edge items (NPTH vs the connector's own pads; S1 shell pads at the board edge -- footprint geometry / connector-at-edge by design). Unconnected unchanged 13 items; check_pcb nets 12, census 109, courtyard 0, blind SH1 21 -- identical throughout the campaign.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
