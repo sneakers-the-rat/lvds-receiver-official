@@ -1,0 +1,43 @@
+09:28:48: Debug: Adding duplicate image handler for 'PNG file'
+09:28:48: Debug: Adding duplicate image handler for 'JPEG file'
+09:28:48: Debug: Adding duplicate image handler for 'TIFF file'
+09:28:48: Debug: Adding duplicate image handler for 'GIF file'
+09:28:48: Debug: Adding duplicate image handler for 'PNM file'
+09:28:48: Debug: Adding duplicate image handler for 'PCX file'
+09:28:48: Debug: Adding duplicate image handler for 'IFF file'
+09:28:48: Debug: Adding duplicate image handler for 'Windows icon file'
+09:28:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:28:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:28:48: Debug: Adding duplicate image handler for 'TGA file'
+09:28:48: Debug: Adding duplicate image handler for 'XPM file'
+rips: base 14 entries, V3 extra 1
+V2 se0: 11 SHDN candidates pass stage A
+V2 se1: 11 SHDN candidates pass stage A
+V2 se2: 11 SHDN candidates pass stage A
+V3 dx30.85 y-4.3 rx31.55 se0: 11 SHDN candidates pass stage A
+V3 dx30.85 y-4.3 rx31.55 se1: 11 SHDN candidates pass stage A
+V3 dx31.05 y-4.3 rx31.55 se0: 11 SHDN candidates pass stage A
+V3 dx31.05 y-4.3 rx31.55 se1: 11 SHDN candidates pass stage A
+stage A total: 77
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (31.05,-3.10) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (31.05,-3.15) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (31.05,-3.20) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (31.00,-3.15) d0.6
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (31.00,-3.15) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (31.00,-3.20) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (30.95,-3.15) d0.6
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (30.95,-3.15) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (30.95,-3.20) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (30.90,-3.20) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se1 SHDN via (30.85,-3.25) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se0 SHDN via (31.05,-3.10) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se0 SHDN via (31.05,-3.15) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se0 SHDN via (31.05,-3.20) d0.5
+   A -0.000 V3 dx31.05 y-4.3 rx31.55 se0 SHDN via (31.00,-3.15) d0.6
+stage B configs: 40
+
+complete fast designs: 0
+
+=== exact re-gate of top designs ===
+
+NO complete design found
