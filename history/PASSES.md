@@ -1636,6 +1636,14 @@ Silk campaign 2/4: reflow batch 2 -- the 12 refs still violating after batch 1 (
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 200 — 2026-11-08T08:14:44Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp230.kicad_pcb` · Commit: `pending`
+
+Silk campaign 3/4: footprint silk-shape surgery -- SH1 shield-can rectangle replaced by its true outline drawn as 9 segments with gaps at every pad crossing (own 2.4x2.4 corner mounting pads, R8.1 east, R5/R6/U12 pads north, U12 pin-1 marker); R7's two east outline segments shortened off the can line; D1's outline rect verticals moved 0.13 out off its pad columns and its aperture circle deleted (it sits entirely on pad 1's mask opening -- unprintable silk); U9's rect verticals moved out off its pads (66.93/69.57). KiCad DRC violations 12 -> 7 (silk_overlap 3, copper_edge 4); silk_over_copper ZERO; unconnected unchanged 13. (First attempt with footprint-local coordinate transforms corrupted the shapes -- KiCad 8 shape getters/setters use board coordinates; that build was discarded unbanked and the fix is in t_al23.)
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
