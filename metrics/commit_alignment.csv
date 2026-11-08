@@ -977,3 +977,4 @@ d8c3608e387f,2026-11-08T22:28:36Z,tools (at): pair A* centred/true-rule fencing 
 8742a51e956b,2026-11-08T22:54:55Z,Merge branch 'mwork9' of /home/hatch/workspace/pdlvds-route into mwork9,1379309999,9156257,1388466256,83,64,not recorded
 ab552b8c1211,2026-11-08T22:55:18Z,metrics: post-merge regen,1379309999,9156257,1388466256,83,64,not recorded
 46b81d3da4f9,2026-11-08T23:04:54Z,site: current-info pages regenerate from current sources at build time,1379309999,9156257,1388466256,83,64,not recorded
+7f8b7eb7b2d2,2026-11-08T23:05:12Z,"site: regenerate docs includes from current docs/ sources (site_data stage_docs output, stale in the committed copies)",1379309999,9156257,1388466256,83,64,not recorded
