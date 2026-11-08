@@ -1652,6 +1652,22 @@ Silk campaign 4/4: micro-fixes -- R7 segment ends 28.95 -> 28.88 (half-width sti
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 202 — 2026-11-08T11:25:56Z · commit `b00463c`
+
+Board: `hw/pdlvds_rx.exp232.kicad_pcb` · Commit: `b00463ce1d2d88f022b3887737551d6f1939559f`
+
+HV_INTVCC connected: +5V joint moved east to (31.35,-4.0), run dived to In2 (30.55,-4.45)->(31.30,-4.45), both staircases re-fanned from the new joint; SHDN via re-laid to (30.725,-3.475) d0.5 with lazy diagonal In2 web to (32.4,-2.875); INTVCC dive (30.975,-2.75) d0.5, B journey (32.25,-1.8125)->(32.25,-1.1875) to rise (31.7,0.6). DRC unconnected 13->12, check_pcb nets 12->11, census identical. Side effect: SE re-fan tail dangles at (31.375,-5.5), a phantom rejoin point inherited from an-lineage geometry (no such joint on this board) -- track_dangling 1, healed next pass.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 11 · Courtyard collisions: 0 · Audit verdict: FAIL
+
+### Pass 203 — 2026-11-08T11:45:08Z · commit `ca12477`
+
+Board: `hw/pdlvds_rx.exp233.kicad_pcb` · Commit: `ca124779748d42ad64375c1752b627c1d3e11bbd`
+
+SE re-fan repair: dangling tail (31.7,-5.1)->(31.375,-5.5) and orphaned kept seg (32.125,-4.875)->(31.875,-4.625) ripped; re-fan landed on the real kept joint with seg (32.0,-4.5)->(32.125,-4.875) (in-model gate +0.836). DRC violations 5->4 (track_dangling 0; only the 4 standing J1 copper_edge remain), unconnected 12, check_pcb nets 11, census line set identical to exp231.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 11 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

@@ -1,0 +1,11 @@
+model rips: 5
+new seg in-model gate: +0.836 vs via HV_SHDN (30.725,-3.475) r0.250
+ripping 3 board objects
+   SEG +5V (32.125,-4.875)->(31.875,-4.625)
+   SEG +5V (31.700,-5.100)->(31.375,-5.500)
+   SEG +5V (32.000,-4.500)->(31.700,-5.100)
+saved hw/pdlvds_rx.exp233.kicad_pcb
+new seg present: True
+reload census: OK
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'ZONE_FILLER *', no destructor found.

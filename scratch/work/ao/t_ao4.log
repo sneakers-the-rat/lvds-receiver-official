@@ -1,0 +1,103 @@
+11:11:36: Debug: Adding duplicate image handler for 'PNG file'
+11:11:36: Debug: Adding duplicate image handler for 'JPEG file'
+11:11:36: Debug: Adding duplicate image handler for 'TIFF file'
+11:11:36: Debug: Adding duplicate image handler for 'GIF file'
+11:11:36: Debug: Adding duplicate image handler for 'PNM file'
+11:11:36: Debug: Adding duplicate image handler for 'PCX file'
+11:11:36: Debug: Adding duplicate image handler for 'IFF file'
+11:11:36: Debug: Adding duplicate image handler for 'Windows icon file'
+11:11:36: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:11:36: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:11:36: Debug: Adding duplicate image handler for 'TGA file'
+11:11:36: Debug: Adding duplicate image handler for 'XPM file'
+rips: base 14 entries, V3 extra 1, V4 extra 1
+V5 J31.35: 19 SHDN candidates
+V5 J31.45: 69 SHDN candidates
+V5 J31.55: 145 SHDN candidates
+stage A total: 233
+  B V5 J31.35 SHDN(30.73,-3.48) d0.5 cx32.4: dives 25 best +0.023 @(30.975,-2.750), rises 438, designs so far 6
+stopping stage B: designs 12, grid configs 2, floods 24
+stage B fail counts: {'adds': 0, 'dives': 0, 'rises': 0, 'journey': 0}
+
+complete fast designs: 12
+   flood +0.000 V5 J31.35 SHDN(30.725, -3.475, 0.5, 32.4) dive(30.974999999999998, -2.75) rise(31.7, 0.6) L2 chain 4 pts
+   flood +0.000 V5 J31.35 SHDN(30.725, -3.475, 0.5, 32.4) dive(30.974999999999998, -2.75) rise(31.65, 0.6) L2 chain 4 pts
+   flood +0.000 V5 J31.35 SHDN(30.725, -3.475, 0.5, 32.4) dive(31.025, -2.725) rise(31.7, 0.6) L2 chain 4 pts
+   flood +0.000 V5 J31.35 SHDN(30.725, -3.475, 0.5, 32.4) dive(31.025, -2.725) rise(31.65, 0.6) L2 chain 4 pts
+   flood +0.000 V5 J31.35 SHDN(30.725, -3.475, 0.5, 32.4) dive(31.05, -2.725) rise(31.7, 0.6) L2 chain 4 pts
+   flood +0.000 V5 J31.35 SHDN(30.725, -3.475, 0.5, 32.4) dive(31.05, -2.725) rise(31.65, 0.6) L2 chain 4 pts
+   flood +0.000 V5 J31.35 SHDN(30.725, -3.475, 0.5, 32.9) dive(30.974999999999998, -2.75) rise(31.7, 0.6) L2 chain 4 pts
+   flood +0.000 V5 J31.35 SHDN(30.725, -3.475, 0.5, 32.9) dive(30.974999999999998, -2.75) rise(31.65, 0.6) L2 chain 4 pts
+   flood +0.000 V5 J31.35 SHDN(30.725, -3.475, 0.5, 32.9) dive(31.025, -2.725) rise(31.7, 0.6) L2 chain 4 pts
+   flood +0.000 V5 J31.35 SHDN(30.725, -3.475, 0.5, 32.9) dive(31.025, -2.725) rise(31.65, 0.6) L2 chain 4 pts
+
+=== exact re-gate of top designs ===
+flood +0.000 -> exact min -0.000 (L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150)
+     -0.000 L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150
+     -0.000 L0 HV_SHDN seg vs pad +5V (29.650,-4.000) hw0.725x0.150
+     +0.000 L2 HV_INTVCC seg vs via HV_GATE (31.700,-1.500) r0.250
+     +0.013 L0 HV_SHDN via vs pad +5V (29.650,-4.000) hw0.725x0.150
+flood +0.000 -> exact min -0.000 (L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150)
+     -0.000 L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150
+     -0.000 L0 HV_SHDN seg vs pad +5V (29.650,-4.000) hw0.725x0.150
+     +0.000 L2 HV_INTVCC seg vs via HV_GATE (31.700,-1.500) r0.250
+     +0.013 L0 HV_SHDN via vs pad +5V (29.650,-4.000) hw0.725x0.150
+flood +0.000 -> exact min -0.000 (L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150)
+     -0.000 L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150
+     -0.000 L0 HV_SHDN seg vs pad +5V (29.650,-4.000) hw0.725x0.150
+     +0.000 L2 HV_INTVCC seg vs via HV_GATE (31.700,-1.500) r0.250
+     +0.013 L0 HV_SHDN via vs pad +5V (29.650,-4.000) hw0.725x0.150
+flood +0.000 -> exact min -0.000 (L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150)
+     -0.000 L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150
+     -0.000 L0 HV_SHDN seg vs pad +5V (29.650,-4.000) hw0.725x0.150
+     +0.000 L2 HV_INTVCC seg vs via HV_GATE (31.700,-1.500) r0.250
+     +0.013 L0 HV_SHDN via vs pad +5V (29.650,-4.000) hw0.725x0.150
+flood +0.000 -> exact min -0.000 (L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150)
+     -0.000 L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150
+     -0.000 L0 HV_SHDN seg vs pad +5V (29.650,-4.000) hw0.725x0.150
+     +0.000 L2 HV_INTVCC seg vs via HV_GATE (31.700,-1.500) r0.250
+     +0.013 L0 HV_SHDN via vs pad +5V (29.650,-4.000) hw0.725x0.150
+flood +0.000 -> exact min -0.000 (L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150)
+     -0.000 L0 +5V seg vs pad HV_SHDN (29.650,-3.500) hw0.725x0.150
+     -0.000 L0 HV_SHDN seg vs pad +5V (29.650,-4.000) hw0.725x0.150
+     +0.000 L2 HV_INTVCC seg vs via HV_GATE (31.700,-1.500) r0.250
+     +0.013 L0 HV_SHDN via vs pad +5V (29.650,-4.000) hw0.725x0.150
+
+BEST DESIGN saved to scratch/work/ao/hv-design.json:
+{
+ "score_exact": -2.7755575615628914e-17,
+ "variant": "V5 J31.35",
+ "shdn": {
+  "x": 30.725,
+  "y": -3.475,
+  "d": 0.5,
+  "cx": 32.4
+ },
+ "dive": [
+  30.974999999999998,
+  -2.75
+ ],
+ "rise": [
+  31.7,
+  0.6
+ ],
+ "journey_layer": 2,
+ "journey": [
+  [
+   30.974999999999998,
+   -2.75
+  ],
+  [
+   32.25,
+   -1.8125
+  ],
+  [
+   32.25,
+   -1.1875
+  ],
+  [
+   31.7,
+   0.6
+  ]
+ ]
+}
