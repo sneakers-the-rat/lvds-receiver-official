@@ -1,0 +1,22 @@
+20:54:58: Debug: Adding duplicate image handler for 'PNG file'
+20:54:58: Debug: Adding duplicate image handler for 'JPEG file'
+20:54:58: Debug: Adding duplicate image handler for 'TIFF file'
+20:54:58: Debug: Adding duplicate image handler for 'GIF file'
+20:54:58: Debug: Adding duplicate image handler for 'PNM file'
+20:54:58: Debug: Adding duplicate image handler for 'PCX file'
+20:54:58: Debug: Adding duplicate image handler for 'IFF file'
+20:54:58: Debug: Adding duplicate image handler for 'Windows icon file'
+20:54:58: Debug: Adding duplicate image handler for 'Windows cursor file'
+20:54:58: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+20:54:58: Debug: Adding duplicate image handler for 'TGA file'
+20:54:58: Debug: Adding duplicate image handler for 'XPM file'
+== CAP_CLK: 3D A* goal = True
+   vias: [[63.75, 12.15], [64.95, 15.45], [69.7, 22.05], [73.25, 21.9], [74.25, 22.9]]
+   L1: 286 pts [70.0, 1.85] -> [63.75, 12.15]
+   L0: 67 pts [63.75, 12.15] -> [64.95, 15.45]
+   L1: 145 pts [64.95, 15.45] -> [69.7, 22.05]
+   L0: 72 pts [69.7, 22.05] -> [73.25, 21.9]
+   L1: 21 pts [73.25, 21.9] -> [74.25, 22.9]
+   L0: 51 pts [74.25, 22.9] -> [75.45, 25.4]
+   wrote scratch/work/as/journey_CAP_CLK_CD.json
+== CAP_DATA: 3D A* goal = False
