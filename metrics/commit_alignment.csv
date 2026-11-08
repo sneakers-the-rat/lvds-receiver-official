@@ -876,3 +876,10 @@ dba8581fdb3f,2026-11-08T05:54:58Z,"pass 0192: APD_K slot detour: rip the 3 F seg
 c28d488821ef,2026-11-08T05:57:49Z,pass 0193: record commit hash,912134236,4585959,916720195,83,64,not recorded
 30da0735b881,2026-11-08T05:57:53Z,"tools: ak session - tail passes 192/193 build scripts (t_ak13 APD_K slot detour with in-model gates, t_ak14 NEG_RAW duplicate-via deletion) + tail/slot surveys t_ak11/t_ak12",912134236,4585959,916720195,83,64,not recorded
 b402163a573a,2026-11-08T05:58:03Z,merge route mwork9 (ak session: passes 192-193 + district proofs),912134236,4585959,916720195,83,64,not recorded
+6a4009b041e7,2026-11-08T05:58:35Z,metrics: post-merge regen,912134236,4585959,916720195,83,64,not recorded
+1f9d408bff60,2026-11-08T07:48:28Z,"pass 0194: pass 194: +3V3D U6.39 dive re-lay (via 74.25,3.50 + In2 jog + trunk via 72.875,3.375) rips the diagonal fencing the GND U6.38 island; zero delta both referees, opens the under-U6 fill pocket for the heal",912134236,4585959,916720195,83,64,not recorded
+89f487237206,2026-11-08T07:48:28Z,pass 0194: record commit hash,912134236,4585959,916720195,83,64,not recorded
+bf9d5ac58c85,2026-11-08T07:49:22Z,"pass 0195: pass 195: GND U6.38 island healed -- stitch via (75.9,-10.45) d0.5 in the under-U6 pocket opened by pass 194 ties the island fill to the In1 plane; KiCad DRC unconnected 15->14 (zone pair closed), violations 150 identical, check_pcb byte-identical except copper items 5520->5522",912134236,4585959,916720195,83,64,not recorded
+7be981537a56,2026-11-08T07:49:23Z,pass 0195: record commit hash,912134236,4585959,916720195,83,64,not recorded
+88f248b3985f,2026-11-08T07:49:27Z,"tools: al session - GND north-mouth heal (t_al0 baseline referees, t_al1 district dump, t_al2 zone props, t_al3/t_al4 gate+build of the +3V3D U6.39 dive re-lay, t_al5 census, t_al6 island via scan, t_al7 stitch-via build) + referee outputs exp223/224/225",912134236,4585959,916720195,83,64,not recorded
+bd8ebc991c0d,2026-11-08T07:49:38Z,Merge branch 'mwork9' of ../pdlvds-route into mwork9,912134236,4585959,916720195,83,64,not recorded
