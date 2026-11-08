@@ -1572,6 +1572,22 @@ pass 191: +3V3A U7.25 connected (U7 SW district part 2b) via joint PHY_1V8 fanou
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 192 — 2026-11-08T05:53:47Z · commit `dba8581`
+
+Board: `hw/pdlvds_rx.exp222.kicad_pcb` · Commit: `dba8581fdb3f275cf37a6738bffa77019652365d`
+
+APD_K slot detour: rip the 3 F segs crossing the HV slot (x17.8-18.1) + north vertical, re-lay around the slot west end (x11.25, y22.85 legs, 0.55 edge clearance, in-model gates +0.168 worst vs C33.2 GND pad); KiCad 154->151 (copper_edge 7->4, exactly the 3 APD_K items, 0 new), unconnected 15 identical; check_pcb census 109 identical, courtyard 0
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
+
+### Pass 193 — 2026-11-08T05:56:44Z · commit `779d8fe`
+
+Board: `hw/pdlvds_rx.exp223.kicad_pcb` · Commit: `779d8feac85634dc87fbbe20b027cd48be5b67bc`
+
+Delete one of two identical co-located NEG_RAW vias at (24.875,48.875) (both d0.80/drill0.40, a stacked duplicate); KiCad 151->150 (holes_co_located 1->0, 0 new), unconnected 15 identical; check_pcb census 109 identical, courtyard 0
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
