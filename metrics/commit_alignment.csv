@@ -933,3 +933,6 @@ a130ec71fed7,2026-11-08T13:00:14Z,"pass 0204: DP_CON connected: A6 south dive (s
 3c9de2ac87a5,2026-11-08T13:00:14Z,pass 0204: record commit hash,1265841161,7947486,1273788647,83,64,not recorded
 c26df2ddd04e,2026-11-08T13:00:19Z,tools: ap22 south-dive design + ap23 build (pass 204),1265841161,7947486,1273788647,83,64,not recorded
 020ca614e93f,2026-11-08T13:00:39Z,Merge branch 'mwork9' of /home/hatch/workspace/pdlvds-route into mwork9,1265841161,7947486,1273788647,83,64,not recorded
+d17ecba4f76a,2026-11-08T13:01:14Z,metrics: post-merge regen,1265841161,7947486,1273788647,83,64,not recorded
+6a5bce016c1f,2026-11-08T13:02:44Z,tools: ap24 long-haul endpoint survey on exp234 (handover survey),1265841161,7947486,1273788647,83,64,not recorded
+a4b59448aadf,2026-11-08T13:03:29Z,Merge branch 'mwork9' of /home/hatch/workspace/pdlvds-route into mwork9,1265841161,7947486,1273788647,83,64,not recorded
