@@ -1588,6 +1588,14 @@ Delete one of two identical co-located NEG_RAW vias at (24.875,48.875) (both d0.
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 194 — 2026-11-08T07:47:33Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp224.kicad_pcb` · Commit: `pending`
+
+pass 194: +3V3D U6.39 dive re-lay (via 74.25,3.50 + In2 jog + trunk via 72.875,3.375) rips the diagonal fencing the GND U6.38 island; zero delta both referees, opens the under-U6 fill pocket for the heal
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

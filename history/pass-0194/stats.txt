@@ -1,0 +1,14 @@
+pass: 194
+description: pass 194: +3V3D U6.39 dive re-lay (via 74.25,3.50 + In2 jog + trunk via 72.875,3.375) rips the diagonal fencing the GND U6.38 island; zero delta both referees, opens the under-U6 fill pocket for the heal
+timestamp (UTC): 2026-11-08T07:47:33Z
+commit: pending
+board file: hw/pdlvds_rx.exp224.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 13
+courtyard collisions: 0
+audit verdict: fail
+note: 
