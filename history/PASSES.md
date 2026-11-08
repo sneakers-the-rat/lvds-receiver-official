@@ -1612,6 +1612,14 @@ pass 196: SWCLK connected -- DAC_SYNC west-dive re-lay (dive 87.3,-18.15, B rejo
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 197 — 2026-11-08T07:57:58Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp227.kicad_pcb` · Commit: `pending`
+
+pass 197: GND stitch via (82.0,-18.075) d0.5 heals the fill pocket severed by pass 196 (pocket scan gates F +0.225 / In2 +2.409 / B +2.516); KiCad DRC unconnected 14->13, violations 150 identical; check_pcb nets 13->12 (SWCLK line removed), census 109 identical, courtyard 0
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

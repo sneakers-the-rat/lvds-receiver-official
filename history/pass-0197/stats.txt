@@ -1,0 +1,14 @@
+pass: 197
+description: pass 197: GND stitch via (82.0,-18.075) d0.5 heals the fill pocket severed by pass 196 (pocket scan gates F +0.225 / In2 +2.409 / B +2.516); KiCad DRC unconnected 14->13, violations 150 identical; check_pcb nets 13->12 (SWCLK line removed), census 109 identical, courtyard 0
+timestamp (UTC): 2026-11-08T07:57:58Z
+commit: pending
+board file: hw/pdlvds_rx.exp227.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 12
+courtyard collisions: 0
+audit verdict: fail
+note: 
