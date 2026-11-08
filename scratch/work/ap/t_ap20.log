@@ -1,0 +1,13 @@
+rips: 15 entries (expect 15)
+CC2 band vias: 6; best [(-0.0, 30.5, 72.275), (-0.0, 30.5, 72.30000000000001), (-0.0, 30.5, 72.325), (-0.0, 30.525, 72.275), (-0.0, 30.525, 72.30000000000001)]
+  CC2 via (30.500,72.275): join flood 0.025306517006340234
+  DP A6 south vias: 0; best []
+  CC2 via (30.500,72.300): join flood 0.024576118959589333
+  DP A6 south vias: 0; best []
+  CC2 via (30.500,72.325): join flood 0.023817599082561203
+  DP A6 south vias: 0; best []
+  CC2 via (30.525,72.275): join flood 0.020984702229522534
+  DP A6 south vias: 0; best []
+
+complete assemblies: 0
+NO complete assembly
