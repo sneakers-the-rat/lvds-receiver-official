@@ -5852,6 +5852,36 @@
       },
       "description": "Silk campaign 4/4: micro-fixes -- R7 segment ends 28.95 -> 28.88 (half-width still grazed SH1's east line edge by 0.01) and SH1's north outline piece at x[15.93,16.57] dropped (ran parallel 0.08 from R5's own outline segment; R5's segment already marks that span). KiCad DRC violations 7 -> 4: SILK AT ZERO (silk_overlap 0, silk_over_copper 0, silk_edge 0). The 4 remaining violations are the standing J1-intrinsic copper_edge items (NPTH vs the connector's own pads; S1 shell pads at the board edge -- footprint geometry / connector-at-edge by design). Unconnected unchanged 13 items; check_pcb nets 12, census 109, courtyard 0, blind SH1 21 -- identical throughout the campaign.",
       "note": ""
+    },
+    {
+      "pass": 202,
+      "timestamp": "2026-11-08T11:25:56Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp232.kicad_pcb",
+      "dir": "pass-0202",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 109,
+        "unconnected_nets": 11,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "HV_INTVCC connected: +5V joint moved east to (31.35,-4.0), run dived to In2 (30.55,-4.45)->(31.30,-4.45), both staircases re-fanned from the new joint; SHDN via re-laid to (30.725,-3.475) d0.5 with lazy diagonal In2 web to (32.4,-2.875); INTVCC dive (30.975,-2.75) d0.5, B journey (32.25,-1.8125)->(32.25,-1.1875) to rise (31.7,0.6). DRC unconnected 13->12, check_pcb nets 12->11, census identical. Side effect: SE re-fan tail dangles at (31.375,-5.5), a phantom rejoin point inherited from an-lineage geometry (no such joint on this board) -- track_dangling 1, healed next pass.",
+      "note": ""
     }
   ],
   "gaps": [
