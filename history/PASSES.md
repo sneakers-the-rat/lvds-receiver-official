@@ -1708,6 +1708,14 @@ GND heal, part 1: rip the 4 +3V3D F segs fencing the GND fill corridor east of S
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 8 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 209 — 2026-11-08T19:36:20Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp240.kicad_pcb` · Commit: `pending`
+
++3V3D staircase re-tap (heals pass 208's named split): F stub (74.875,1.875)->(75.85,1.3), dive via, B journey south of SCK's dive via then north on its west side landing on via A's barrel (72.875,3.375) - no rise via: tap3's rise at the column end violated hole_near_hole vs via B, tap4's at (74.0,2.75) re-severed the GND corridor. Gate-clean 6 items, worst +0.056 vs SCK through-via. KiCad DRC: unconnected 7 = exactly the 7 remaining nets (CAP_CLK, CAP_DATA, CDR_LOS, PHY_1V8A, ULPI_STP, USB_RST, XI); violations 4, all standing J1 copper_edge. check_pcb: nets 7, census 109 identical, courtyard 0, blind SH1 21. Census vs exp239: +3V3D +6 only.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 7 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
