@@ -1620,9 +1620,9 @@ pass 197: GND stitch via (82.0,-18.075) d0.5 heals the fill pocket severed by pa
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 198 — 2026-11-08T08:12:30Z · commit `pending`
+### Pass 198 — 2026-11-08T08:12:30Z · commit `f06a3a3`
 
-Board: `hw/pdlvds_rx.exp228.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp228.kicad_pcb` · Commit: `f06a3a300b72a1dfb19e36c0b8ce1d6a97ff2c6f`
 
 Silk campaign 1/4: reference-designator reflow batch 1 -- 77 of 81 violating refs moved to copper/silk-clear spots (spiral search over exact item model: F pads incl. rotated-rect corner+edge distance, tracks, vias, footprint silk bboxes, live ref bboxes; text bbox from GetBoundingBox). KiCad DRC violations 150 -> 29 (silk_overlap 66->14, silk_over_copper 78->10); unconnected unchanged 15... correction: 13 items; check_pcb nets 12, census 109, courtyard 0, blind SH1 21 -- all identical. No copper touched.
 
