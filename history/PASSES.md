@@ -1580,6 +1580,14 @@ APD_K slot detour: rip the 3 F segs crossing the HV slot (x17.8-18.1) + north ve
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 193 — 2026-11-08T05:56:44Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp223.kicad_pcb` · Commit: `pending`
+
+Delete one of two identical co-located NEG_RAW vias at (24.875,48.875) (both d0.80/drill0.40, a stacked duplicate); KiCad 151->150 (holes_co_located 1->0, 0 new), unconnected 15 identical; check_pcb census 109 identical, courtyard 0
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
