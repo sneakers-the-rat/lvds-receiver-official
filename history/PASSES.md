@@ -1604,6 +1604,22 @@ pass 195: GND U6.38 island healed -- stitch via (75.9,-10.45) d0.5 in the under-
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 13 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 196 — 2026-11-08T07:57:04Z · commit `3af72d5`
+
+Board: `hw/pdlvds_rx.exp226.kicad_pcb` · Commit: `3af72d550f1acea96f0131e925f15a34ea4e6e74`
+
+pass 196: SWCLK connected -- DAC_SYNC west-dive re-lay (dive 87.3,-18.15, B rejoin) frees the pinned via (90.125,-17.875); SWCLK dives at (90.55,-18.05) and runs B to a south approach into J4.4; joint exact-model gates all pass (worst +0.014). Side effect: the DAC west run severs a GND fill pocket south of U6 (zone pair reappears) -- healed in pass 197
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
+
+### Pass 197 — 2026-11-08T07:57:58Z · commit `94c15ad`
+
+Board: `hw/pdlvds_rx.exp227.kicad_pcb` · Commit: `94c15adb72cb0b018d0b3593ba7bd033e370fbaf`
+
+pass 197: GND stitch via (82.0,-18.075) d0.5 heals the fill pocket severed by pass 196 (pocket scan gates F +0.225 / In2 +2.409 / B +2.516); KiCad DRC unconnected 14->13, violations 150 identical; check_pcb nets 13->12 (SWCLK line removed), census 109 identical, courtyard 0
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 12 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
