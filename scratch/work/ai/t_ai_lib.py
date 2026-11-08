@@ -86,15 +86,29 @@ def fmt_it(it):
 
 
 def in_box_pool(items, box, pad=1.0):
-    """items whose geometry can touch the box (box = x0,x1,y0,y1)."""
+    """items whose geometry can touch the box (box = x0,x1,y0,y1).
+
+    FIX (aj session, 2026-11-07): the old centre-in-expanded-box test
+    for pads/vias silently DROPPED large pads whose centre lay more
+    than `pad` outside the box while their copper reached inside it
+    -- U7's EP (GND, half-size 1.55) vanished from a scan box ending
+    at y12.5 (centre y14.0), producing false-positive via points at
+    y12.5 with a fabricated +0.015 margin (true margin -0.450).
+    Now: a pad/via is included iff its bounding circle comes within
+    `pad` of the box. Over-inclusive is safe; under-inclusive lies."""
     x0, x1, y0, y1 = box
     out = {0: [], 1: [], 2: []}
     for li in range(3):
         for it in items[li]:
             k, _n, d = it[0], it[1], it[2]
+            if k == 'pad':
+                reach = math.hypot(d[2], d[3])
+            elif k == 'via':
+                reach = d[2]
             if k in ('pad', 'via'):
-                if x0 - pad <= d[0] <= x1 + pad and \
-                        y0 - pad <= d[1] <= y1 + pad:
+                dx = max(x0 - d[0], 0.0, d[0] - x1)
+                dy = max(y0 - d[1], 0.0, d[1] - y1)
+                if math.hypot(dx, dy) <= reach + pad:
                     out[li].append(it)
             else:
                 if min(d[0], d[2]) <= x1 + pad and \
