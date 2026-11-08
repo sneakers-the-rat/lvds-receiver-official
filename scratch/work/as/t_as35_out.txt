@@ -1,0 +1,46 @@
+20:50:16: Debug: Adding duplicate image handler for 'PNG file'
+20:50:16: Debug: Adding duplicate image handler for 'JPEG file'
+20:50:16: Debug: Adding duplicate image handler for 'TIFF file'
+20:50:16: Debug: Adding duplicate image handler for 'GIF file'
+20:50:16: Debug: Adding duplicate image handler for 'PNM file'
+20:50:16: Debug: Adding duplicate image handler for 'PCX file'
+20:50:16: Debug: Adding duplicate image handler for 'IFF file'
+20:50:16: Debug: Adding duplicate image handler for 'Windows icon file'
+20:50:16: Debug: Adding duplicate image handler for 'Windows cursor file'
+20:50:16: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+20:50:16: Debug: Adding duplicate image handler for 'TGA file'
+20:50:16: Debug: Adding duplicate image handler for 'XPM file'
+== CAP_CLK: comp path found = True
+   L1: 194 cells -> 2 waypoints
+   L0: 142 cells -> 2 waypoints
+   L1: 161 cells -> 2 waypoints
+   L0: 90 cells -> 2 waypoints
+   L1: 108 cells -> 2 waypoints
+   L0: 69 cells -> 2 waypoints
+   wrote scratch/work/as/path_CAP_CLK.json
+   L1 entry [70.0, 1.85] exit [64.95, 7.4]
+      [(70.0, 1.85), (64.95, 7.4)]
+   L0 entry [64.95, 7.4] exit [63.3, 14.45]
+      [(64.95, 7.4), (63.3, 14.45)]
+   L1 entry [63.3, 14.45] exit [69.5, 22.0]
+      [(63.3, 14.45), (69.5, 22.0)]
+   L0 entry [69.5, 22.0] exit [72.7, 19.2]
+      [(69.5, 22.0), (72.7, 19.2)]
+   L1 entry [72.7, 19.2] exit [75.1, 22.0]
+      [(72.7, 19.2), (75.1, 22.0)]
+   L0 entry [75.1, 22.0] exit [75.45, 25.4]
+      [(75.1, 22.0), (75.45, 25.4)]
+== CAP_DATA: comp path found = True
+   L1: 221 cells -> 2 waypoints
+   L0: 142 cells -> 2 waypoints
+   L1: 311 cells -> 2 waypoints
+   L0: 18 cells -> 2 waypoints
+   wrote scratch/work/as/path_CAP_DATA.json
+   L1 entry [69.9, 3.2] exit [64.95, 7.4]
+      [(69.9, 3.2), (64.95, 7.4)]
+   L0 entry [64.95, 7.4] exit [63.3, 14.45]
+      [(64.95, 7.4), (63.3, 14.45)]
+   L1 entry [63.3, 14.45] exit [75.1, 22.0]
+      [(63.3, 14.45), (75.1, 22.0)]
+   L0 entry [75.1, 22.0] exit [75.45, 22.85]
+      [(75.1, 22.0), (75.45, 22.85)]
