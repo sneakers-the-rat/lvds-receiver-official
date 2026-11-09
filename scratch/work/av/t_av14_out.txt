@@ -1,0 +1,41 @@
+05:52:10: Debug: Adding duplicate image handler for 'PNG file'
+05:52:10: Debug: Adding duplicate image handler for 'JPEG file'
+05:52:10: Debug: Adding duplicate image handler for 'TIFF file'
+05:52:10: Debug: Adding duplicate image handler for 'GIF file'
+05:52:10: Debug: Adding duplicate image handler for 'PNM file'
+05:52:10: Debug: Adding duplicate image handler for 'PCX file'
+05:52:10: Debug: Adding duplicate image handler for 'IFF file'
+05:52:10: Debug: Adding duplicate image handler for 'Windows icon file'
+05:52:10: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:52:10: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:52:10: Debug: Adding duplicate image handler for 'TGA file'
+05:52:10: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+L1 via margin -0.085 vs seg CAP_DATA (69.675,21.325)->(69.700,21.300) hw0.100
+L1 via margin -0.085 vs seg CAP_DATA (69.700,21.300)->(69.725,21.300) hw0.100
+L1 via margin -0.085 vs seg CAP_DATA (69.625,21.350)->(69.650,21.325) hw0.100
+L1 via margin -0.085 vs seg CAP_DATA (69.650,21.325)->(69.675,21.325) hw0.100
+L1 via margin -0.085 vs seg CAP_DATA (69.550,21.375)->(69.575,21.350) hw0.100
+L2 via margin -0.050 vs seg DP_PHY (68.875,27.125)->(68.875,20.125) hw0.125
+L1 tail margin -0.019 vs seg CAP_DATA (69.550,21.375)->(69.575,21.350) hw0.100
+L1 tail margin -0.019 vs seg CAP_DATA (69.575,21.350)->(69.625,21.350) hw0.100
+L1 tail margin -0.012 vs seg CAP_DATA (69.500,21.400)->(69.525,21.375) hw0.100
+L2 tail margin +0.125 vs seg DP_PHY (68.875,27.125)->(68.875,20.125) hw0.125
+--- r0.3 via scan around (69.45,20.85) ---
+    (0.064, 69.65, 20.6)
+    (0.049, 69.7, 20.6)
+    (0.047, 69.6, 20.6)
+    (0.047, 69.55, 20.65)
+    (0.037, 69.6, 20.65)
+    (0.027, 69.75, 20.6)
+    (0.017, 69.65, 20.65)
+    (0.011, 69.55, 20.6)
+    (0.009, 69.8, 20.6)
+    (0.009, 69.55, 20.7)
+    (0.001, 69.7, 20.65)
+    (-0.0, 69.5, 20.7)
+    (-0.0, 69.5, 20.65)
+done

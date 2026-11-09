@@ -1,0 +1,98 @@
+05:50:01: Debug: Adding duplicate image handler for 'PNG file'
+05:50:01: Debug: Adding duplicate image handler for 'JPEG file'
+05:50:01: Debug: Adding duplicate image handler for 'TIFF file'
+05:50:01: Debug: Adding duplicate image handler for 'GIF file'
+05:50:01: Debug: Adding duplicate image handler for 'PNM file'
+05:50:01: Debug: Adding duplicate image handler for 'PCX file'
+05:50:01: Debug: Adding duplicate image handler for 'IFF file'
+05:50:01: Debug: Adding duplicate image handler for 'Windows icon file'
+05:50:01: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:50:01: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:50:01: Debug: Adding duplicate image handler for 'TGA file'
+05:50:01: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+RBIAS staircase: ripped 19
+=== C49 incident webs (au93-state pool) ===
+  pad +3V3A: pad +3V3A (69.225,19.500) hw0.450x0.475
+    near L0 seg +3V3A (69.225,19.000)->(69.225,19.500) hw0.100
+    near L0 seg +3V3A (68.875,19.375)->(68.625,19.125) hw0.100
+    near L0 seg +3V3A (69.225,19.500)->(68.975,19.500) hw0.100
+    near L0 seg +3V3A (68.975,19.500)->(68.875,19.375) hw0.100
+    near L0 seg +3V3A (68.625,18.625)->(69.225,19.000) hw0.100
+    near L2 seg +3V3A (68.625,19.125)->(68.625,16.625) hw0.100
+    near L2 seg +3V3A (68.375,19.375)->(68.625,19.125) hw0.100
+  pad GND: pad GND (70.775,19.500) hw0.450x0.475
+=== C49 site scan ===
+coarse legal centres: 3
+legal centres after refine: 12
+   centre (69.50,19.50) min=+0.180 v3a=+0.241 gnd=+0.180
+   centre (69.00,18.00) min=+0.148 v3a=+0.150 gnd=+0.148
+   centre (69.75,19.50) min=+0.130 v3a=+0.130 gnd=+0.291
+   centre (70.50,19.50) min=+0.100 v3a=+0.100 gnd=+0.300
+   centre (70.25,19.50) min=+0.100 v3a=+0.100 gnd=+0.300
+   centre (69.00,17.75) min=+0.054 v3a=+0.054 gnd=+0.100
+   centre (70.75,19.50) min=+0.054 v3a=+0.100 gnd=+0.054
+   centre (70.75,19.25) min=+0.050 v3a=+0.050 gnd=+0.050
+   centre (70.50,19.25) min=+0.050 v3a=+0.050 gnd=+0.050
+   centre (70.25,19.25) min=+0.050 v3a=+0.050 gnd=+0.050
+   centre (69.75,19.25) min=+0.050 v3a=+0.050 gnd=+0.174
+   centre (69.50,19.25) min=+0.050 v3a=+0.050 gnd=+0.250
+=== C49 move attempts ===
+-- candidate centre (69.50,19.50) min margin +0.180
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+  dip A*: NONE
+   reverted
+-- candidate centre (69.00,18.00) min margin +0.148
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+  dip A*: NONE
+   reverted
+-- candidate centre (69.75,19.50) min margin +0.130
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+  dip A*: NONE
+   reverted
+-- candidate centre (70.50,19.50) min margin +0.100
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+  dip A*: NONE
+   reverted
+-- candidate centre (70.25,19.50) min margin +0.100
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+  dip A*: NONE
+   reverted
+-- candidate centre (69.00,17.75) min margin +0.054
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+  dip A*: NONE
+   reverted
+-- candidate centre (70.75,19.50) min margin +0.054
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+  dip A*: NONE
+   reverted
+-- candidate centre (70.75,19.25) min margin +0.050
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+  dip A*: NONE
+   reverted
+-- candidate centre (70.50,19.25) min margin +0.050
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+  dip A*: NONE
+   reverted
+-- candidate centre (70.25,19.25) min margin +0.050
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+  dip A*: NONE
+   reverted
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/av/t_av11_c49.py", line 263, in <module>
+    assert move_done is not None, 'C49 MOVE FAILED: no candidate closed XO'
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError: C49 MOVE FAILED: no candidate closed XO
