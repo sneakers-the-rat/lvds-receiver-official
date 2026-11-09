@@ -1,0 +1,38 @@
+12:50:44: Debug: Adding duplicate image handler for 'PNG file'
+12:50:44: Debug: Adding duplicate image handler for 'JPEG file'
+12:50:44: Debug: Adding duplicate image handler for 'TIFF file'
+12:50:44: Debug: Adding duplicate image handler for 'GIF file'
+12:50:44: Debug: Adding duplicate image handler for 'PNM file'
+12:50:44: Debug: Adding duplicate image handler for 'PCX file'
+12:50:44: Debug: Adding duplicate image handler for 'IFF file'
+12:50:44: Debug: Adding duplicate image handler for 'Windows icon file'
+12:50:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:50:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:50:44: Debug: Adding duplicate image handler for 'TGA file'
+12:50:44: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+12:50:45: Debug: Adding duplicate image handler for 'PNG file'
+12:50:45: Debug: Adding duplicate image handler for 'JPEG file'
+12:50:45: Debug: Adding duplicate image handler for 'TIFF file'
+12:50:45: Debug: Adding duplicate image handler for 'GIF file'
+12:50:45: Debug: Adding duplicate image handler for 'PNM file'
+12:50:45: Debug: Adding duplicate image handler for 'PCX file'
+12:50:45: Debug: Adding duplicate image handler for 'IFF file'
+12:50:45: Debug: Adding duplicate image handler for 'Windows icon file'
+12:50:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:50:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:50:45: Debug: Adding duplicate image handler for 'TGA file'
+12:50:45: Debug: Adding duplicate image handler for 'XPM file'
+BEFORE: {'I2C_SCL': 4, '+3V3D': 5, 'I2C_SDA': 2}
+SCL F: FOUND
+   gate worst +0.005 seg I2C_SCL (67.625,1.625)->(68.100,1.625) hw0.100 vs seg GND (68.200,1.150)->(67.850,1.220) hw0.100
+   vias: []
++3V3D F hop: FOUND
+   gate worst +0.531 seg +3V3D (69.325,-1.750)->(69.325,-2.350) hw0.100 vs seg ULPI_DIR (67.500,0.125)->(70.625,-1.250) hw0.100
+   vias: []
+   dive via (69.2,-2.6) margins: +0.525 -0.307 -0.350
++3V3D In2 south: NONE
++3V3D In2 south NONE
