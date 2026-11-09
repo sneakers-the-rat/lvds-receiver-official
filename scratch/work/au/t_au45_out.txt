@@ -1,0 +1,39 @@
+23:36:22: Debug: Adding duplicate image handler for 'PNG file'
+23:36:22: Debug: Adding duplicate image handler for 'JPEG file'
+23:36:22: Debug: Adding duplicate image handler for 'TIFF file'
+23:36:22: Debug: Adding duplicate image handler for 'GIF file'
+23:36:22: Debug: Adding duplicate image handler for 'PNM file'
+23:36:22: Debug: Adding duplicate image handler for 'PCX file'
+23:36:22: Debug: Adding duplicate image handler for 'IFF file'
+23:36:22: Debug: Adding duplicate image handler for 'Windows icon file'
+23:36:22: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:36:22: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:36:22: Debug: Adding duplicate image handler for 'TGA file'
+23:36:22: Debug: Adding duplicate image handler for 'XPM file'
+v5 model built
+DATA entry v5: FOUND
+23:36:24: Debug: Adding duplicate image handler for 'PNG file'
+23:36:24: Debug: Adding duplicate image handler for 'JPEG file'
+23:36:24: Debug: Adding duplicate image handler for 'TIFF file'
+23:36:24: Debug: Adding duplicate image handler for 'GIF file'
+23:36:24: Debug: Adding duplicate image handler for 'PNM file'
+23:36:24: Debug: Adding duplicate image handler for 'PCX file'
+23:36:24: Debug: Adding duplicate image handler for 'IFF file'
+23:36:24: Debug: Adding duplicate image handler for 'Windows icon file'
+23:36:24: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:36:24: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:36:24: Debug: Adding duplicate image handler for 'TGA file'
+23:36:24: Debug: Adding duplicate image handler for 'XPM file'
+v5 model built
+DATA entry v5: FOUND
++3V3A heal1 v5: NONE
++3V3A heal2 v5: NONE
+phase1b done
+v5 full: NONE
+minus exit: FOUND
+  vias [] [(0, [68.225, 2.75], [69.125, 4.375])]
+minus exit minus PG pocket: FOUND
+  vias [] [(0, [68.225, 2.75], [69.125, 4.375])]
+minus exit minus DATA entry: FOUND
+  vias [[68.625, 2.775], [69.025, 4.25]] [(0, [68.225, 2.75], [68.625, 2.775]), (1, [68.625, 2.775], [69.025, 4.25]), (0, [69.025, 4.25], [69.125, 4.375])]
+done

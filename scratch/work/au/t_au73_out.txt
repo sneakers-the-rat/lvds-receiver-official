@@ -1,0 +1,43 @@
+23:55:13: Debug: Adding duplicate image handler for 'PNG file'
+23:55:13: Debug: Adding duplicate image handler for 'JPEG file'
+23:55:13: Debug: Adding duplicate image handler for 'TIFF file'
+23:55:13: Debug: Adding duplicate image handler for 'GIF file'
+23:55:13: Debug: Adding duplicate image handler for 'PNM file'
+23:55:13: Debug: Adding duplicate image handler for 'PCX file'
+23:55:13: Debug: Adding duplicate image handler for 'IFF file'
+23:55:13: Debug: Adding duplicate image handler for 'Windows icon file'
+23:55:13: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:55:13: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:55:13: Debug: Adding duplicate image handler for 'TGA file'
+23:55:13: Debug: Adding duplicate image handler for 'XPM file'
+hop re-run (exit via fenced): FOUND
+DATA tail run2 re-plan (multi): NONE
+model assembled
+PG_3V3: rip 23 items
++3V3D: rip 8 items
+XO: rip 12 items
+PG detours:
+  PG_3V3: detour 1 (64.875, 14.125) -> (63.875, 13.125) vias=[[65.15, 14.45], [63.45, 14.45]]
+  PG_3V3: detour 2 (63.9, 13.1) -> (63.875, 13.125) vias=[]
+  PG_3V3: detour 3 (64.875, 14.125) -> (64.9, 14.1) vias=[]
+  PG_3V3: detour 4 (64.875, 14.125) -> (65.15, 14.45) vias=[[65.15, 14.45]]
+  PG_3V3: detour 5 (63.45, 14.45) -> (63.875, 13.125) vias=[]
+  PG_3V3: detour 6 (63.45, 14.45) -> (63.875, 13.125) vias=[]
+  PG_3V3: detour 7 (63.45, 14.45) -> (63.875, 13.125) vias=[]
+  PG_3V3: detour 8 (63.45, 14.45) -> (63.875, 13.125) vias=[]
+  PG_3V3: detour 9 (63.45, 14.45) -> (63.875, 13.125) vias=[]
+  PG_3V3: detour 10 (63.45, 14.45) -> (63.875, 13.125) vias=[]
+  PG_3V3: detour 11 (63.45, 14.45) -> (63.875, 13.125) vias=[]
+  PG_3V3: detour 12 (63.45, 14.45) -> (63.875, 13.125) vias=[]
+  PG_3V3: detour 13 (63.45, 14.45) -> (63.875, 13.125) vias=[]
++3V3D detours:
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/au/t_au73_phase2d.py", line 320, in <module>
+    detour2('+3V3D', (66.0, 78.0, 16.0, 28.0), 0.15, step=0.025)
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/au/t_au73_phase2d.py", line 300, in detour2
+    J = astar(net, (starts, p1[0], p1[1]), (l2, p2[0], p2[1]),
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/au/t_au73_phase2d.py", line 125, in astar
+    if track[l][sc[0], sc[1]]:
+       ~~~~~~~~^^^^^^^^^^^^^^
+IndexError: index 595 is out of bounds for axis 1 with size 481

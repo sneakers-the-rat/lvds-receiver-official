@@ -1,0 +1,25 @@
+23:54:00: Debug: Adding duplicate image handler for 'PNG file'
+23:54:00: Debug: Adding duplicate image handler for 'JPEG file'
+23:54:00: Debug: Adding duplicate image handler for 'TIFF file'
+23:54:00: Debug: Adding duplicate image handler for 'GIF file'
+23:54:00: Debug: Adding duplicate image handler for 'PNM file'
+23:54:00: Debug: Adding duplicate image handler for 'PCX file'
+23:54:00: Debug: Adding duplicate image handler for 'IFF file'
+23:54:00: Debug: Adding duplicate image handler for 'Windows icon file'
+23:54:00: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:54:00: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:54:00: Debug: Adding duplicate image handler for 'TGA file'
+23:54:00: Debug: Adding duplicate image handler for 'XPM file'
+hop re-run (exit via fenced): FOUND
+DATA tail run2 re-plan: NONE
+model assembled
+PG_3V3: rip 23 items
++3V3D: rip 8 items
+XO: rip 12 items
+PG detours:
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/au/t_au72_phase2c.py", line 269, in <module>
+    exec(src71[src71.index("def fragments"):src71.index("# fanout + heal2")],
+  File "<string>", line 96, in <module>
+  File "<string>", line 59, in detour
+NameError: name 'make_astar' is not defined

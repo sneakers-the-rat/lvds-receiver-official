@@ -1,0 +1,20 @@
+23:09:51: Debug: Adding duplicate image handler for 'PNG file'
+23:09:51: Debug: Adding duplicate image handler for 'JPEG file'
+23:09:51: Debug: Adding duplicate image handler for 'TIFF file'
+23:09:51: Debug: Adding duplicate image handler for 'GIF file'
+23:09:51: Debug: Adding duplicate image handler for 'PNM file'
+23:09:51: Debug: Adding duplicate image handler for 'PCX file'
+23:09:51: Debug: Adding duplicate image handler for 'IFF file'
+23:09:51: Debug: Adding duplicate image handler for 'Windows icon file'
+23:09:51: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:09:51: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:09:51: Debug: Adding duplicate image handler for 'TGA file'
+23:09:51: Debug: Adding duplicate image handler for 'XPM file'
+REJOIN (63.85, 6.3)
+widest (field units; track needs >= +0.10): 0.108
+  L0 (67.80,1.63) field +0.108 binder GND seg (68.2, 1.15, 67.85, 1.22, 0.1)
+  L1 (66.80,6.40) field +0.108 binder GND via (66.2, 6.5, 0.3)
+  L1 (66.80,6.60) field +0.108 binder GND via (66.2, 6.5, 0.3)
+  L1 (65.47,6.73) field +0.108 binder THR_DAC via (64.875, 6.625, 0.3)
+path layers: [0, 1] path states: 952
+done

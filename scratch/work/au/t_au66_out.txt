@@ -1,0 +1,27 @@
+23:47:55: Debug: Adding duplicate image handler for 'PNG file'
+23:47:55: Debug: Adding duplicate image handler for 'JPEG file'
+23:47:55: Debug: Adding duplicate image handler for 'TIFF file'
+23:47:55: Debug: Adding duplicate image handler for 'GIF file'
+23:47:55: Debug: Adding duplicate image handler for 'PNM file'
+23:47:55: Debug: Adding duplicate image handler for 'PCX file'
+23:47:55: Debug: Adding duplicate image handler for 'IFF file'
+23:47:55: Debug: Adding duplicate image handler for 'Windows icon file'
+23:47:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:47:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:47:55: Debug: Adding duplicate image handler for 'TGA file'
+23:47:55: Debug: Adding duplicate image handler for 'XPM file'
+au40 exit removed
+        68   68   68   69   69   69   69
+y=2.60 +0.11 +0.15 +0.06 +0.02 -0.03 -0.12 -0.20
+y=2.70 +0.21 +0.13 +0.03 -0.01 -0.06 -0.16 -0.25
+y=2.80 +0.21 +0.12 +0.02 -0.03 -0.08 -0.18 -0.28
+y=2.90 +0.11 +0.13 +0.03 -0.01 -0.06 -0.16 -0.25
+y=3.00 +0.02 +0.07 +0.06 +0.02 -0.03 -0.12 -0.20
+y=3.10 -0.07 +0.00 +0.09 +0.06 +0.02 -0.06 -0.13
+y=3.20 -0.14 -0.04 +0.05 +0.10 +0.08 +0.02 -0.04
+y=3.30 -0.15 -0.05 +0.05 +0.10 +0.15 +0.10 +0.05
+y=3.40 -0.15 -0.05 +0.05 +0.10 +0.15 +0.18 +0.14
+y=3.50 -0.15 -0.05 +0.05 +0.10 +0.15 +0.25 +0.24
+y=3.60 -0.14 -0.04 +0.05 +0.10 +0.15 +0.25 +0.33
+y=3.70 -0.07 +0.00 +0.09 +0.13 +0.18 +0.27 +0.37
+done

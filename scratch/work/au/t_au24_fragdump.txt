@@ -1,0 +1,56 @@
+23:08:55: Debug: Adding duplicate image handler for 'PNG file'
+23:08:55: Debug: Adding duplicate image handler for 'JPEG file'
+23:08:55: Debug: Adding duplicate image handler for 'TIFF file'
+23:08:55: Debug: Adding duplicate image handler for 'GIF file'
+23:08:55: Debug: Adding duplicate image handler for 'PNM file'
+23:08:55: Debug: Adding duplicate image handler for 'PCX file'
+23:08:55: Debug: Adding duplicate image handler for 'IFF file'
+23:08:55: Debug: Adding duplicate image handler for 'Windows icon file'
+23:08:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:08:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:08:55: Debug: Adding duplicate image handler for 'TGA file'
+23:08:55: Debug: Adding duplicate image handler for 'XPM file'
+In2 SDA seg (72.125, 30.125) -> (72.375, 29.875) hw 0.125
+In2 SDA seg (74.875, 26.875) -> (75.125, 26.625) hw 0.125
+In2 SDA seg (80.375, 18.625) -> (80.625, 18.375) hw 0.125
+In2 SDA seg (75.875, 25.875) -> (76.125, 25.625) hw 0.125
+In2 SDA seg (76.625, 24.625) -> (76.875, 24.375) hw 0.125
+In2 SDA seg (72.125, 32.625) -> (72.125, 30.125) hw 0.125
+In2 SDA seg (79.625, 21.625) -> (79.875, 21.375) hw 0.125
+In2 SDA seg (79.125, 22.125) -> (79.375, 21.875) hw 0.125
+In2 SDA seg (78.625, 22.625) -> (78.875, 22.375) hw 0.125
+In2 SDA seg (72.875, 28.875) -> (73.125, 28.625) hw 0.125
+In2 SDA seg (73.875, 27.875) -> (74.125, 27.625) hw 0.125
+In2 SDA seg (73.375, 28.375) -> (73.625, 28.125) hw 0.125
+In2 SDA seg (76.625, 24.875) -> (76.625, 24.625) hw 0.125
+In2 SDA seg (78.125, 23.125) -> (78.375, 22.875) hw 0.125
+In2 SDA seg (71.375, 3.625) -> (71.375, 2.125) hw 0.125
+In2 SDA seg (71.125, 3.875) -> (71.375, 3.625) hw 0.125
+In2 SDA seg (80.375, 20.625) -> (80.375, 18.625) hw 0.125
+In2 SDA seg (78.875, 22.375) -> (79.125, 22.125) hw 0.125
+In2 SDA seg (72.375, 29.875) -> (72.625, 29.625) hw 0.125
+In2 SDA seg (77.125, 24.125) -> (77.375, 23.875) hw 0.125
+In2 SDA seg (72.625, 29.625) -> (72.875, 29.375) hw 0.125
+In2 SDA seg (75.375, 26.375) -> (75.625, 26.125) hw 0.125
+In2 SDA seg (79.375, 21.875) -> (79.625, 21.625) hw 0.125
+In2 SDA seg (74.125, 27.625) -> (74.375, 27.375) hw 0.125
+In2 SDA seg (76.375, 25.125) -> (76.625, 24.875) hw 0.125
+In2 SDA seg (78.375, 22.875) -> (78.625, 22.625) hw 0.125
+In2 SDA seg (80.125, 21.125) -> (80.125, 20.875) hw 0.125
+In2 SDA seg (80.125, 20.875) -> (80.375, 20.625) hw 0.125
+In2 SDA seg (77.375, 23.875) -> (77.625, 23.625) hw 0.125
+In2 SDA seg (73.625, 28.125) -> (73.875, 27.875) hw 0.125
+In2 SDA seg (77.875, 23.375) -> (78.125, 23.125) hw 0.125
+In2 SDA seg (71.375, 2.125) -> (71.125, 1.875) hw 0.125
+In2 SDA seg (75.625, 26.125) -> (75.875, 25.875) hw 0.125
+In2 SDA seg (71.125, 4.125) -> (71.125, 3.875) hw 0.125
+In2 SDA seg (76.125, 25.625) -> (76.375, 25.375) hw 0.125
+In2 SDA seg (74.375, 27.375) -> (74.625, 27.125) hw 0.125
+In2 SDA seg (74.625, 27.125) -> (74.875, 26.875) hw 0.125
+In2 SDA seg (79.875, 21.375) -> (80.125, 21.125) hw 0.125
+In2 SDA seg (77.625, 23.625) -> (77.875, 23.375) hw 0.125
+In2 SDA seg (75.125, 26.625) -> (75.375, 26.375) hw 0.125
+In2 SDA seg (76.875, 24.375) -> (77.125, 24.125) hw 0.125
+In2 SDA seg (76.375, 25.375) -> (76.375, 25.125) hw 0.125
+In2 SDA seg (72.875, 29.375) -> (72.875, 28.875) hw 0.125
+In2 SDA seg (73.125, 28.625) -> (73.375, 28.375) hw 0.125

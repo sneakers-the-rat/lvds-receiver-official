@@ -1,0 +1,20 @@
+23:49:46: Debug: Adding duplicate image handler for 'PNG file'
+23:49:46: Debug: Adding duplicate image handler for 'JPEG file'
+23:49:46: Debug: Adding duplicate image handler for 'TIFF file'
+23:49:46: Debug: Adding duplicate image handler for 'GIF file'
+23:49:46: Debug: Adding duplicate image handler for 'PNM file'
+23:49:46: Debug: Adding duplicate image handler for 'PCX file'
+23:49:46: Debug: Adding duplicate image handler for 'IFF file'
+23:49:46: Debug: Adding duplicate image handler for 'Windows icon file'
+23:49:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:49:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:49:46: Debug: Adding duplicate image handler for 'TGA file'
+23:49:46: Debug: Adding duplicate image handler for 'XPM file'
+au40 exit removed
+heal1 (dive reserved): FOUND
+  heal1 vias (must be []): []
+exit F run: FOUND
+exit B join gate: +0.044 vs via CAP_DATA (69.900,3.180) r0.250
+SCL fanout: NONE
+fanout to (66.2,2.08): NONE
+done

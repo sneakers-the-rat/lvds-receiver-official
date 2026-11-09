@@ -1,0 +1,20 @@
+23:16:48: Debug: Adding duplicate image handler for 'PNG file'
+23:16:48: Debug: Adding duplicate image handler for 'JPEG file'
+23:16:48: Debug: Adding duplicate image handler for 'TIFF file'
+23:16:48: Debug: Adding duplicate image handler for 'GIF file'
+23:16:48: Debug: Adding duplicate image handler for 'PNM file'
+23:16:48: Debug: Adding duplicate image handler for 'PCX file'
+23:16:48: Debug: Adding duplicate image handler for 'IFF file'
+23:16:48: Debug: Adding duplicate image handler for 'Windows icon file'
+23:16:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:16:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:16:48: Debug: Adding duplicate image handler for 'TGA file'
+23:16:48: Debug: Adding duplicate image handler for 'XPM file'
+REJOIN (63.85, 6.3)
+SCL F/B heal: FOUND vias= [[66.3, 0.55], [63.25, 9.175], [64.975, 10.45], [69.55, 12.625]]
+   L0: [69.35, 1.4] -> [66.3, 0.55] (129 pts)
+   L2: [66.3, 0.55] -> [63.25, 9.175] (346 pts)
+   L0: [63.25, 9.175] -> [64.975, 10.45] (70 pts)
+   L1: [64.975, 10.45] -> [69.55, 12.625] (282 pts)
+   L0: [69.55, 12.625] -> [69.675, 12.75] (6 pts)
+done

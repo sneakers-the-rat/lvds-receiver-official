@@ -1,0 +1,31 @@
+23:39:54: Debug: Adding duplicate image handler for 'PNG file'
+23:39:54: Debug: Adding duplicate image handler for 'JPEG file'
+23:39:54: Debug: Adding duplicate image handler for 'TIFF file'
+23:39:54: Debug: Adding duplicate image handler for 'GIF file'
+23:39:54: Debug: Adding duplicate image handler for 'PNM file'
+23:39:54: Debug: Adding duplicate image handler for 'PCX file'
+23:39:54: Debug: Adding duplicate image handler for 'IFF file'
+23:39:54: Debug: Adding duplicate image handler for 'Windows icon file'
+23:39:54: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:39:54: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:39:54: Debug: Adding duplicate image handler for 'TGA file'
+23:39:54: Debug: Adding duplicate image handler for 'XPM file'
+SDA via (69.05,2.05): gates OK
+  hop: FOUND
+  exit: FOUND
+  heal1: NONE
+SDA via (68.45,1.9): gates OK
+  hop: FOUND
+  exit: NONE
+SDA via (68.6,1.95): gates OK
+  hop: FOUND
+  exit: NONE
+SDA via (68.7,1.8): gates OK
+  hop: FOUND
+  exit: NONE
+SDA via (68.55,1.75): gates FAIL
+SDA via (68.35,2.0): gates OK
+  hop: FOUND
+  exit: NONE
+NO WINNER
+done
