@@ -1009,3 +1009,12 @@ d614615c7fc3,2026-11-09T11:06:51Z,pass 0210: record commit hash,1490672127,99023
 65ef7d216e0c,2026-11-09T11:07:00Z,"aw: pass 210 evidence - t_aw7..t_aw39 (join-2 campaigns, C28 shrink+move closing join 2, exp241 builds v1/v2/v3, repair round: modfix M0 TMP x65.45 / M1 PG re-lay / M2 RBIAS direct In2 leg, GND stitch search, SCL bridge forensics t_aw33-37), build_aw1.json v1+v2 manifests, state caches, DISTRICT-STATUS-aw",1490672127,9902322,1500574449,83,64,not recorded
 d06842f146f5,2026-11-09T11:07:07Z,"aw: exp241 v1 DRC report (kicad-cli default output, recovered from repo root)",1490672127,9902322,1500574449,83,64,not recorded
 70caa4defd66,2026-11-09T11:07:15Z,Merge branch 'mwork9' of /home/hatch/workspace/pdlvds-route into mwork9,1490672127,9902322,1500574449,83,64,not recorded
+834eeb140ca2,2026-11-09T11:07:45Z,metrics: post-merge regen,1490672127,9902322,1500574449,83,64,not recorded
+560183b408fc,2026-11-09T11:12:25Z,"ax: exp241 baseline re-verified firsthand (DRC 6/5, check_pcb 6/109/0) before queue item 1",1490672127,9902322,1500574449,83,64,not recorded
+ae8b5058b450,2026-11-09T11:23:34Z,"ax: SCL bridge harness + surveys + baseline (A* NONE x10 on shipped pool; viafit map: legal clusters west/south/north only, zero in y3.25-7.25)",1490672127,9902322,1500574449,83,64,not recorded
+4b45a8e5677c,2026-11-09T11:53:39Z,ax evidence checkpoint: SCL bridge campaign scripts + outputs (t_ax3-t_ax27),1490672127,9902322,1500574449,83,64,not recorded
+e01b0b957835,2026-11-09T12:42:28Z,ax evidence checkpoint t_ax28-t_ax54 + exp242 build (SCL southern R20 move; GND zone split under investigation),1490672127,9902322,1500574449,83,64,not recorded
+aab6f1205d7d,2026-11-09T13:13:00Z,"ax evidence: SCL southern-R20 campaign t_ax55-t_ax79, exp248 referees (drc248/check248)",1490672127,9902322,1500574449,83,64,not recorded
+d916603fcc07,2026-11-09T13:17:15Z,"pass 0211: pass 211: I2C_SCL connected via R20 relocation to (68.5,-1.75) + southern +3V3D loop; stub ripped",1490672127,9902322,1500574449,83,64,not recorded
+462da2984423,2026-11-09T13:17:16Z,pass 0211: record commit hash,1490672127,9902322,1500574449,83,64,not recorded
+b06e14473859,2026-11-09T13:17:23Z,Merge branch 'mwork9' of /home/hatch/workspace/pdlvds-route into mwork9,1490672127,9902322,1500574449,83,64,not recorded
