@@ -1,0 +1,37 @@
+03:24:37: Debug: Adding duplicate image handler for 'PNG file'
+03:24:37: Debug: Adding duplicate image handler for 'JPEG file'
+03:24:37: Debug: Adding duplicate image handler for 'TIFF file'
+03:24:37: Debug: Adding duplicate image handler for 'GIF file'
+03:24:37: Debug: Adding duplicate image handler for 'PNM file'
+03:24:37: Debug: Adding duplicate image handler for 'PCX file'
+03:24:37: Debug: Adding duplicate image handler for 'IFF file'
+03:24:37: Debug: Adding duplicate image handler for 'Windows icon file'
+03:24:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:24:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:24:37: Debug: Adding duplicate image handler for 'TGA file'
+03:24:37: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au87
+fanout v5b worst pairs:
+   -0.075 L0 seg I2C_SCL (66.300,1.450)->(66.050,2.000) hw0.100 vs seg TMP_ALERT (65.700,2.200)->(65.700,-2.600) hw0.125
+   -0.017 L0 seg I2C_SCL (68.300,1.650)->(66.300,1.450) hw0.100 vs seg GND (68.200,1.150)->(67.850,1.220) hw0.100
+   -0.017 L0 seg I2C_SCL (68.300,1.650)->(66.300,1.450) hw0.100 vs seg GND (67.850,1.220)->(67.500,0.950) hw0.100
+   +0.003 L0 seg I2C_SCL (66.300,1.450)->(66.050,2.000) hw0.100 vs seg TMP_ALERT (65.700,3.150)->(65.700,2.200) hw0.100
+   +0.008 L0 seg I2C_SCL (68.300,1.650)->(66.300,1.450) hw0.100 vs pad I2C_SDA (67.975,2.100) hw0.225x0.150
+XO B ride x71.2 worst -0.575 L2 vs via PHY_1V8 (71.375,17.625) r0.400
+XO B ride x71.0 worst -0.625 L2 vs via +3V3D (70.875,15.875) r0.400
+XO B ride x71.35 worst -0.725 L2 vs via PHY_1V8 (71.375,17.625) r0.400
+XO fragments now: 2
+stub v7 worst pairs:
+   -0.524 L0 seg +3V3D (72.375,21.125)->(73.900,23.300) hw0.150 vs seg CDR_SQUELCH (73.625,25.375)->(73.625,22.625) hw0.125
+   -0.500 L0 seg +3V3D (72.375,21.125)->(73.900,23.300) hw0.150 vs seg CAP_CLK (71.850,21.700)->(73.200,21.700) hw0.100
+   -0.450 L2 via +3V3D (73.900,23.300) r0.250 vs seg CDR_DATN (73.800,23.500)->(75.700,23.500) hw0.150
+   -0.426 L2 via +3V3D (73.900,23.300) r0.250 vs seg CDR_DATN (73.800,25.350)->(73.800,23.500) hw0.150
+   -0.363 L0 seg +3V3D (72.375,21.125)->(73.900,23.300) hw0.150 vs seg CDR_SQUELCH (73.625,22.625)->(73.875,22.375) hw0.125
+stub v7b worst -0.548 L2 vs seg CDR_DATN (73.800,23.500)->(75.700,23.500) hw0.150
+full gate: 0 failures
+saved scratch/work/au/build_au88.json
+done
+EXITCODE=0
