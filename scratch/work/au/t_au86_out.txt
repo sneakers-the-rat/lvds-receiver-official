@@ -1,0 +1,148 @@
+02:44:13: Debug: Adding duplicate image handler for 'PNG file'
+02:44:13: Debug: Adding duplicate image handler for 'JPEG file'
+02:44:13: Debug: Adding duplicate image handler for 'TIFF file'
+02:44:13: Debug: Adding duplicate image handler for 'GIF file'
+02:44:13: Debug: Adding duplicate image handler for 'PNM file'
+02:44:13: Debug: Adding duplicate image handler for 'PCX file'
+02:44:13: Debug: Adding duplicate image handler for 'IFF file'
+02:44:13: Debug: Adding duplicate image handler for 'Windows icon file'
+02:44:13: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:44:13: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:44:13: Debug: Adding duplicate image handler for 'TGA file'
+02:44:13: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au83
+--- knot census L1/L2 x[69.5,73] y[17.5,21.5]:
+    L1 seg DM_PHY (72.375,20.375)->(72.625,20.125) hw0.125
+    L1 seg DM_PHY (71.875,20.875)->(72.125,20.625) hw0.125
+    L1 seg DM_PHY (71.625,21.125)->(71.875,20.875) hw0.125
+    L1 seg DM_PHY (71.375,21.375)->(71.625,21.125) hw0.125
+    L1 seg DM_PHY (72.625,20.125)->(72.875,19.875) hw0.125
+    L1 seg DM_PHY (72.125,20.625)->(72.375,20.375) hw0.125
+    L1 via PHY_1V8 (71.375,17.625) r0.400
+    L1 via RBIAS (69.625,20.625) r0.300
+    L1 seg RBIAS (72.125,18.125)->(71.875,18.375) hw0.125
+    L1 seg RBIAS (70.625,19.625)->(70.375,19.875) hw0.125
+    L1 seg RBIAS (71.375,18.875)->(71.125,19.125) hw0.125
+    L1 seg RBIAS (70.375,19.875)->(70.125,20.125) hw0.125
+    L1 seg RBIAS (71.125,19.125)->(70.875,19.375) hw0.125
+    L1 seg RBIAS (71.625,18.625)->(71.375,18.875) hw0.125
+    L1 seg RBIAS (71.875,18.375)->(71.625,18.625) hw0.125
+    L1 seg RBIAS (69.875,20.375)->(69.625,20.625) hw0.100
+    L1 seg RBIAS (70.125,20.125)->(69.875,20.375) hw0.100
+    L1 seg RBIAS (70.875,19.375)->(70.625,19.625) hw0.125
+    L1 seg RBIAS (72.625,17.625)->(72.375,17.875) hw0.125
+    L1 seg RBIAS (72.375,17.875)->(72.125,18.125) hw0.125
+    L1 seg XO (69.875,19.375)->(69.625,19.625) hw0.125
+    L1 seg XO (70.375,18.875)->(70.125,19.125) hw0.125
+    L1 seg XO (70.125,19.125)->(69.875,19.375) hw0.125
+    L1 seg XO (70.375,17.625)->(70.375,18.875) hw0.125
+    L1 via CAP_DATA (72.600,19.300) r0.250
+    L1 seg CAP_DATA (69.500,21.400)->(69.525,21.375) hw0.100
+    L1 seg CAP_DATA (69.525,21.375)->(69.550,21.375) hw0.100
+    L1 seg CAP_DATA (69.550,21.375)->(69.575,21.350) hw0.100
+    L1 seg CAP_DATA (69.575,21.350)->(69.625,21.350) hw0.100
+    L1 seg CAP_DATA (69.625,21.350)->(69.650,21.325) hw0.100
+    L1 seg CAP_DATA (69.650,21.325)->(69.675,21.325) hw0.100
+    L1 seg CAP_DATA (69.675,21.325)->(69.700,21.300) hw0.100
+    L1 seg CAP_DATA (69.700,21.300)->(69.725,21.300) hw0.100
+    L1 seg CAP_DATA (69.725,21.300)->(69.750,21.275) hw0.100
+    L1 seg CAP_DATA (69.750,21.275)->(69.800,21.275) hw0.100
+    L1 seg CAP_DATA (69.800,21.275)->(69.825,21.250) hw0.100
+    L1 seg CAP_DATA (69.825,21.250)->(69.850,21.250) hw0.100
+    L1 seg CAP_DATA (69.850,21.250)->(69.875,21.225) hw0.100
+    L1 seg CAP_DATA (69.875,21.225)->(69.925,21.225) hw0.100
+    L1 seg CAP_DATA (69.925,21.225)->(69.950,21.200) hw0.100
+    L1 seg CAP_DATA (69.950,21.200)->(69.975,21.200) hw0.100
+    L1 seg CAP_DATA (69.975,21.200)->(70.000,21.175) hw0.100
+    L1 seg CAP_DATA (70.000,21.175)->(70.050,21.175) hw0.100
+    L1 seg CAP_DATA (70.050,21.175)->(70.075,21.150) hw0.100
+    L1 seg CAP_DATA (70.075,21.150)->(70.100,21.150) hw0.100
+    L1 seg CAP_DATA (70.100,21.150)->(70.125,21.125) hw0.100
+    L1 seg CAP_DATA (70.125,21.125)->(70.175,21.125) hw0.100
+    L1 seg CAP_DATA (70.175,21.125)->(70.200,21.100) hw0.100
+    L1 seg CAP_DATA (70.200,21.100)->(70.225,21.100) hw0.100
+    L1 seg CAP_DATA (70.225,21.100)->(70.250,21.075) hw0.100
+    L1 seg CAP_DATA (70.250,21.075)->(70.300,21.075) hw0.100
+    L1 seg CAP_DATA (70.300,21.075)->(70.325,21.050) hw0.100
+    L1 seg CAP_DATA (70.325,21.050)->(70.350,21.050) hw0.100
+    L1 seg CAP_DATA (70.350,21.050)->(70.375,21.025) hw0.100
+    L1 seg CAP_DATA (70.375,21.025)->(70.425,21.025) hw0.100
+    L1 seg CAP_DATA (70.425,21.025)->(70.450,21.000) hw0.100
+    L1 seg CAP_DATA (70.450,21.000)->(70.500,21.000) hw0.100
+    L1 seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+    L1 seg CAP_DATA (72.300,19.200)->(72.500,19.200) hw0.100
+    L1 seg CAP_DATA (72.500,19.200)->(72.600,19.300) hw0.100
+    L2 seg DP_PHY (70.125,18.875)->(70.375,18.625) hw0.125
+    L2 seg DP_PHY (69.625,19.375)->(69.875,19.125) hw0.125
+    L2 seg DP_PHY (70.375,18.625)->(70.375,17.625) hw0.125
+    L2 seg DP_PHY (69.875,19.125)->(70.125,18.875) hw0.125
+    L2 via PHY_1V8 (71.375,17.625) r0.400
+    L2 seg PHY_1V8 (72.125,17.625)->(71.375,17.625) hw0.100
+    L2 via RBIAS (69.625,20.625) r0.300
+    L2 seg XO (71.875,19.625)->(72.125,19.875) hw0.125
+    L2 seg XO (72.125,19.875)->(72.375,20.125) hw0.125
+    L2 seg XO (72.375,20.125)->(72.625,20.375) hw0.125
+    L2 via CAP_DATA (72.600,19.300) r0.250
+--- RBIAS/DP_PHY items (any layer, x[68,76] y[14,24]):
+    L0 pad RBIAS (69.175,21.000) hw0.400x0.475
+    L0 pad DP_PHY (73.562,15.250) hw0.438x0.125
+    L0 seg DP_PHY (72.312,15.250)->(73.562,15.250) hw0.100
+    L0 seg DP_PHY (72.125,15.875)->(72.312,15.250) hw0.100
+    L0 via DP_PHY (72.125,15.875) r0.300
+    L0 seg RBIAS (69.625,20.625)->(69.425,21.000) hw0.100
+    L0 seg RBIAS (69.425,21.000)->(69.175,21.000) hw0.100
+    L0 via RBIAS (69.625,20.625) r0.300
+    L1 via DP_PHY (72.125,15.875) r0.300
+    L1 via RBIAS (69.625,20.625) r0.300
+    L1 seg RBIAS (73.625,16.625)->(73.375,16.875) hw0.125
+    L1 seg RBIAS (73.375,16.875)->(73.125,17.125) hw0.125
+    L1 seg RBIAS (73.875,12.875)->(73.875,16.375) hw0.125
+    L1 seg RBIAS (72.125,18.125)->(71.875,18.375) hw0.125
+    L1 seg RBIAS (72.875,17.375)->(72.625,17.625) hw0.125
+    L1 seg RBIAS (70.625,19.625)->(70.375,19.875) hw0.125
+    L1 seg RBIAS (71.375,18.875)->(71.125,19.125) hw0.125
+    L1 seg RBIAS (70.375,19.875)->(70.125,20.125) hw0.125
+    L1 seg RBIAS (71.125,19.125)->(70.875,19.375) hw0.125
+    L1 seg RBIAS (71.625,18.625)->(71.375,18.875) hw0.125
+    L1 seg RBIAS (71.875,18.375)->(71.625,18.625) hw0.125
+    L1 seg RBIAS (69.875,20.375)->(69.625,20.625) hw0.100
+    L1 seg RBIAS (70.125,20.125)->(69.875,20.375) hw0.100
+    L1 seg RBIAS (73.125,17.125)->(72.875,17.375) hw0.125
+    L1 seg RBIAS (73.875,16.375)->(73.625,16.625) hw0.125
+    L1 seg RBIAS (70.875,19.375)->(70.625,19.625) hw0.125
+    L1 seg RBIAS (72.625,17.625)->(72.375,17.875) hw0.125
+    L1 seg RBIAS (72.375,17.875)->(72.125,18.125) hw0.125
+    L2 via DP_PHY (72.125,15.875) r0.300
+    L2 seg DP_PHY (70.375,17.625)->(70.625,17.375) hw0.125
+    L2 seg DP_PHY (70.125,18.875)->(70.375,18.625) hw0.125
+    L2 seg DP_PHY (69.625,19.375)->(69.875,19.125) hw0.125
+    L2 seg DP_PHY (68.875,20.125)->(69.125,19.875) hw0.125
+    L2 seg DP_PHY (69.375,19.625)->(69.625,19.375) hw0.125
+    L2 seg DP_PHY (69.125,19.875)->(69.375,19.625) hw0.125
+    L2 seg DP_PHY (70.625,17.375)->(70.625,17.125) hw0.125
+    L2 seg DP_PHY (71.625,16.375)->(71.875,16.125) hw0.125
+    L2 seg DP_PHY (71.375,16.625)->(71.625,16.375) hw0.125
+    L2 seg DP_PHY (70.375,18.625)->(70.375,17.625) hw0.125
+    L2 seg DP_PHY (70.625,17.125)->(70.875,16.875) hw0.125
+    L2 seg DP_PHY (71.125,16.875)->(71.375,16.625) hw0.125
+    L2 seg DP_PHY (69.875,19.125)->(70.125,18.875) hw0.125
+    L2 seg DP_PHY (68.875,27.125)->(68.875,20.125) hw0.125
+    L2 seg DP_PHY (70.875,16.875)->(71.125,16.875) hw0.125
+    L2 seg DP_PHY (71.875,16.125)->(72.125,15.875) hw0.125
+    L2 via RBIAS (69.625,20.625) r0.300
+XO bridge scan: 0 candidates >= -0.001 (local)
+XO fragments now: 2
+DIR In2 seg found: True
+DIR dive-to-B worst +0.007 vs via ULPI_NXT (68.000,0.625) r0.250
+DIR dive EMITTED
+fanout v5 (post DIR dive) worst -0.274 vs seg GND (68.200,1.150)->(67.850,1.220) hw0.100
++3V3D stub A* goal (1, 74.625, 24.375): NONE
++3V3D stub A* goal (1, 78.375, 20.125): NONE
++3V3D stub v6b worst -0.547 vs via CAP_CLK (74.400,22.900) r0.250
+full gate: 0 failures
+saved scratch/work/au/build_au86.json
+done
+EXITCODE=0
