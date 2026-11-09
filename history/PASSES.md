@@ -1716,9 +1716,9 @@ Board: `hw/pdlvds_rx.exp240.kicad_pcb` · Commit: `ffe06d50b3df5d0f3fd2c0d28cf72
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 7 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 210 — 2026-11-09T11:01:36Z · commit `pending`
+### Pass 210 — 2026-11-09T11:01:36Z · commit `5e3e450`
 
-Board: `hw/pdlvds_rx.exp241.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp241.kicad_pcb` · Commit: `5e3e4507f60467fb2f3cad25d6b9e5407eed27c4`
 
 CAP district landing (H5 re-fan): CAP_CLK + CAP_DATA connected. X2 relocated to (75.75,32.25) (corrected pad-aware scan; REFCLK + +3V3D webs re-laid), XO F dip closes with RBIAS ride (later replaced by direct In2 leg in the repair round), DM_PHY In2 span re-laid hw0.10, C22/C24 shrunk 0603-0402, C28 shrunk 0402 + moved (73.25,20.75) closing +3V3D join 2, U9 -1.25 pocket, TMP_ALERT vertical x65.7-65.45, PG_3V3 tail re-laid (SDA via unmoved), 4 GND stitch vias for the via-less fill islands, clk_via (70.2,1.8) removed (pure F junction). DRC unconnected 7-6, violations 4-5 (+1 = I2C_SCL W-chain dangling end; the SCL bridge is OPEN - full field forensics in scratch/work/aw/DISTRICT-STATUS-aw.md). check_pcb census 109, courtyard 0.
 
