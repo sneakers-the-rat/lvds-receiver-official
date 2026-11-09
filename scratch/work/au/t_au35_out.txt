@@ -1,0 +1,16 @@
+23:19:37: Debug: Adding duplicate image handler for 'PNG file'
+23:19:37: Debug: Adding duplicate image handler for 'JPEG file'
+23:19:37: Debug: Adding duplicate image handler for 'TIFF file'
+23:19:37: Debug: Adding duplicate image handler for 'GIF file'
+23:19:37: Debug: Adding duplicate image handler for 'PNM file'
+23:19:37: Debug: Adding duplicate image handler for 'PCX file'
+23:19:37: Debug: Adding duplicate image handler for 'IFF file'
+23:19:37: Debug: Adding duplicate image handler for 'Windows icon file'
+23:19:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:19:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:19:37: Debug: Adding duplicate image handler for 'TGA file'
+23:19:37: Debug: Adding duplicate image handler for 'XPM file'
+SCL components (point-coincidence only): 3
+  comp0: 73 nodes x[68.7,80.4] y[-16.7,37.9]
+  comp1: 19 nodes x[64.8,69.7] y[1.4,12.8]
+  comp2: 31 nodes x[70.9,79.1] y[2.6,9.1]

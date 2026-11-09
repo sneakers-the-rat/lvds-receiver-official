@@ -1,0 +1,84 @@
+23:22:49: Debug: Adding duplicate image handler for 'PNG file'
+23:22:49: Debug: Adding duplicate image handler for 'JPEG file'
+23:22:49: Debug: Adding duplicate image handler for 'TIFF file'
+23:22:49: Debug: Adding duplicate image handler for 'GIF file'
+23:22:49: Debug: Adding duplicate image handler for 'PNM file'
+23:22:49: Debug: Adding duplicate image handler for 'PCX file'
+23:22:49: Debug: Adding duplicate image handler for 'IFF file'
+23:22:49: Debug: Adding duplicate image handler for 'Windows icon file'
+23:22:49: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:22:49: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:22:49: Debug: Adding duplicate image handler for 'TGA file'
+23:22:49: Debug: Adding duplicate image handler for 'XPM file'
+staircase segs ripped: 29
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (66.375,4.125)->(66.625,3.875) hw0.125
+conflict-rip L2 PG_3V3 margin -0.100: seg PG_3V3 (64.125,13.375)->(63.875,13.125) hw0.125
+conflict-rip L2 PG_3V3 margin -0.000: seg PG_3V3 (65.125,14.375)->(64.875,14.125) hw0.125
+conflict-rip L2 PG_3V3 margin -0.421: seg PG_3V3 (64.625,13.875)->(64.375,13.625) hw0.125
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (65.375,5.125)->(65.625,4.875) hw0.125
+conflict-rip L2 PG_3V3 margin -0.250: seg PG_3V3 (67.625,2.875)->(67.875,2.625) hw0.125
+conflict-rip L2 PG_3V3 margin -0.421: seg PG_3V3 (67.375,3.125)->(67.625,2.875) hw0.125
+conflict-rip L2 PG_3V3 margin -0.149: seg PG_3V3 (66.875,3.625)->(67.125,3.375) hw0.125
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (66.625,3.875)->(66.875,3.625) hw0.125
+conflict-rip L2 PG_3V3 margin -0.421: seg PG_3V3 (63.625,6.875)->(63.875,6.625) hw0.125
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (66.125,4.375)->(66.375,4.125) hw0.125
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (67.875,2.625)->(68.125,2.375) hw0.125
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (65.875,4.625)->(66.125,4.375) hw0.125
+conflict-rip L2 PG_3V3 margin -0.250: seg PG_3V3 (64.875,14.125)->(64.625,13.875) hw0.125
+conflict-rip L2 PG_3V3 margin -0.149: seg PG_3V3 (64.125,6.375)->(64.375,6.125) hw0.125
+conflict-rip L2 PG_3V3 margin -0.421: seg PG_3V3 (62.875,7.625)->(63.125,7.375) hw0.125
+conflict-rip L2 PG_3V3 margin -0.350: seg PG_3V3 (63.875,6.625)->(64.125,6.375) hw0.125
+conflict-rip L2 PG_3V3 margin -0.350: seg PG_3V3 (67.125,3.375)->(67.375,3.125) hw0.125
+conflict-rip L2 PG_3V3 margin +0.012: seg PG_3V3 (68.125,2.375)->(68.375,2.125) hw0.125
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (65.125,5.375)->(65.375,5.125) hw0.125
+conflict-rip L2 PG_3V3 margin -0.350: seg PG_3V3 (64.375,13.625)->(64.125,13.375) hw0.125
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (64.875,5.625)->(65.125,5.375) hw0.125
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (65.625,4.875)->(65.875,4.625) hw0.125
+conflict-rip L2 PG_3V3 margin -0.390: seg PG_3V3 (63.125,7.375)->(63.375,7.125) hw0.125
+conflict-rip L2 PG_3V3 margin -0.133: seg PG_3V3 (62.625,7.875)->(62.875,7.625) hw0.125
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (64.625,5.875)->(64.875,5.625) hw0.125
+conflict-rip L2 PG_3V3 margin -0.071: seg PG_3V3 (64.375,6.125)->(64.625,5.875) hw0.125
+conflict-rip L2 PG_3V3 margin -0.248: seg PG_3V3 (63.375,7.125)->(63.625,6.875) hw0.125
+conflict-rip L0 +3V3D margin -0.225: seg +3V3D (71.125,22.125)->(70.450,22.425) hw0.100
+conflict-rip L0 +3V3D margin -0.450: seg +3V3D (71.625,21.875)->(71.375,21.875) hw0.100
+conflict-rip L0 +3V3D margin -0.650: seg +3V3D (71.875,21.625)->(71.625,21.875) hw0.300
+conflict-rip L0 +3V3D margin -0.646: seg +3V3D (74.625,24.375)->(75.275,24.115) hw0.300
+conflict-rip L0 +3V3D margin -0.125: seg +3V3D (72.375,21.125)->(72.125,21.375) hw0.100
+conflict-rip L0 +3V3D margin -0.375: seg +3V3D (72.125,21.375)->(71.875,21.625) hw0.100
+conflict-rip L0 +3V3D margin -0.446: seg +3V3D (71.375,21.875)->(71.125,22.125) hw0.100
+conflict-rip L0 +3V3D margin -0.625: via +3V3D (74.625,24.375) r0.400
+conflict-rip L1 XO margin -0.600: via XO (71.875,19.625) r0.300
+conflict-rip L1 XO margin -0.149: seg XO (68.875,20.375)->(68.875,20.875) hw0.125
+conflict-rip L1 XO margin -0.425: seg XO (71.375,20.125)->(71.625,19.875) hw0.125
+conflict-rip L1 XO margin -0.425: seg XO (70.875,20.625)->(71.125,20.375) hw0.125
+conflict-rip L1 XO margin -0.425: seg XO (71.625,19.875)->(71.875,19.625) hw0.125
+conflict-rip L1 XO margin -0.425: seg XO (70.625,20.875)->(70.875,20.625) hw0.125
+conflict-rip L1 XO margin -0.149: seg XO (68.875,20.875)->(69.125,21.125) hw0.125
+conflict-rip L1 XO margin -0.354: seg XO (69.375,21.375)->(70.125,21.375) hw0.125
+conflict-rip L1 XO margin -0.425: seg XO (71.125,20.375)->(71.375,20.125) hw0.125
+conflict-rip L1 XO margin -0.354: seg XO (70.125,21.375)->(70.375,21.125) hw0.125
+conflict-rip L1 XO margin -0.149: seg XO (69.125,21.125)->(69.375,21.375) hw0.125
+conflict-rip L1 XO margin -0.400: seg XO (70.375,21.125)->(70.625,20.875) hw0.125
+conflict rips: 48
++3V3A heal1 (U9 pad -> G3 via): FOUND vias=[]
+   L0: [68.225, 2.75] -> [69.125, 4.375] (78 pts)
++3V3A heal2 (U6 stub -> G3 via, any layer): NONE
+PG open ends (gaps only): [(68.375, 2.125), (65.125, 14.375), (62.625, 7.875), (63.875, 13.125)]
+PG detour (68.375, 2.125)->(62.625, 7.875): FOUND vias=[]
+   L2: [68.4, 2.1] -> [62.6, 7.9] (238 pts)
+PG detour (65.125, 14.375)->(63.875, 13.125): FOUND vias=[[65.15, 14.45], [63.45, 14.45]]
+   L2: [65.1, 14.4] -> [65.15, 14.45] (2 pts)
+   L1: [65.15, 14.45] -> [63.45, 14.45] (35 pts)
+   L2: [63.45, 14.45] -> [63.9, 13.1] (28 pts)
+PG ends left: []
++3V3D open ends in box: [(71.125, 24.375), (72.375, 21.125), (72.725, 20.5), (75.275, 24.115), (70.45, 22.425), (68.438, 26.5)]
++3V3D heal (71.125, 24.375)->(70.45, 22.425): FOUND vias=[]
+   L0: [71.125, 24.375] -> [70.45, 22.425] (79 pts)
++3V3D heal (72.375, 21.125)->(72.725, 20.5): FOUND vias=[]
+   L0: [72.375, 21.125] -> [72.725, 20.5] (26 pts)
++3V3D heal (75.275, 24.115)->(68.438, 26.5): NONE
++3V3D heal (68.438, 26.5)->(75.275, 24.115): NONE
++3V3D ends left: [(75.275, 24.115), (68.438, 26.5)]
+XO open ends in box: [(68.875, 20.375)]
+XO ends left: [(68.875, 20.375)]
+done

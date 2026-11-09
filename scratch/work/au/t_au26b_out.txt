@@ -1,0 +1,73 @@
+23:10:52: Debug: Adding duplicate image handler for 'PNG file'
+23:10:52: Debug: Adding duplicate image handler for 'JPEG file'
+23:10:52: Debug: Adding duplicate image handler for 'TIFF file'
+23:10:52: Debug: Adding duplicate image handler for 'GIF file'
+23:10:52: Debug: Adding duplicate image handler for 'PNM file'
+23:10:52: Debug: Adding duplicate image handler for 'PCX file'
+23:10:52: Debug: Adding duplicate image handler for 'IFF file'
+23:10:52: Debug: Adding duplicate image handler for 'Windows icon file'
+23:10:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:10:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:10:52: Debug: Adding duplicate image handler for 'TGA file'
+23:10:52: Debug: Adding duplicate image handler for 'XPM file'
+REJOIN (63.85, 6.3)
+widest (field units; track needs >= +0.10): 0.073
+  VIA L0 (63.27,9.00) eff +0.073 binder THR_DAC seg (62.875, 8.625, 63.125, 8.375, 0.125)
+  track L1 (67.77,5.13) eff +0.075 binder GND seg (67.375, 5.125, 67.375, 4.125, 0.125)
+  track L1 (67.77,5.10) eff +0.075 binder GND seg (67.375, 5.125, 67.375, 4.125, 0.125)
+  track L1 (67.77,5.08) eff +0.075 binder GND seg (67.375, 5.125, 67.375, 4.125, 0.125)
+  track L1 (66.77,6.50) eff +0.075 binder GND via (66.2, 6.5, 0.3)
+path layers: [0, 1, 2] path states: 1094
+   [0] L0 (69.35,1.40) F=+0.346
+   [25] L0 (68.72,1.55) F=+0.274
+   [50] L0 (68.10,1.63) F=+0.125
+   [75] L0 (67.47,1.45) F=+0.111
+   [100] L0 (66.85,0.90) F=+0.352
+   [125] L0 (66.22,0.28) F=+0.200
+   [150] L0 (66.15,-0.35) F=+0.125
+   [175] L0 (66.15,-0.97) F=+0.125
+   [182] L1 (66.30,-1.00) F=+1.195
+   [200] L1 (65.85,-1.00) F=+1.547
+   [225] L1 (65.22,-1.00) F=+2.088
+   [231] L0 (65.10,-1.00) F=+0.275
+   [250] L0 (64.62,-1.00) F=+0.750
+   [275] L0 (64.00,-1.00) F=+1.375
+   [300] L0 (63.37,-1.00) F=+2.000
+   [325] L0 (62.75,-1.00) F=+2.625
+   [350] L0 (62.12,-1.00) F=+3.250
+   [375] L0 (62.00,-0.47) F=+3.375
+   [400] L0 (62.00,0.15) F=+3.375
+   [425] L0 (62.00,0.78) F=+3.275
+   [450] L0 (62.00,1.40) F=+2.650
+   [475] L0 (62.00,2.03) F=+2.025
+   [500] L0 (62.00,2.65) F=+1.400
+   [525] L0 (62.00,3.28) F=+0.775
+   [546] L2 (62.00,3.78) F=+2.688
+   [550] L2 (62.00,3.88) F=+2.617
+   [575] L2 (62.00,4.50) F=+2.191
+   [600] L2 (62.00,5.13) F=+1.858
+   [625] L2 (62.00,5.75) F=+1.614
+   [650] L2 (62.50,6.38) F=+1.000
+   [675] L2 (63.12,7.00) F=+0.391
+   [680] L0 (63.22,7.10) F=+0.506
+   [700] L0 (62.72,6.60) F=+1.213
+   [725] L0 (62.10,5.98) F=+1.275
+   [750] L0 (62.00,6.45) F=+1.750
+   [775] L0 (62.00,7.08) F=+1.390
+   [800] L0 (62.00,7.70) F=+0.948
+   [821] L1 (62.47,8.20) F=+0.506
+   [825] L1 (62.57,8.30) F=+0.647
+   [850] L1 (63.20,8.93) F=+0.300
+   [854] L0 (63.27,9.00) F=+0.223
+   [875] L0 (63.60,8.48) F=+0.082
+   [900] L0 (64.22,7.85) F=+0.082
+   [925] L0 (64.85,7.23) F=+0.082
+   [935] L1 (65.07,7.33) F=+0.228
+   [950] L1 (65.25,7.08) F=+0.086
+   [975] L1 (65.62,6.75) F=+0.127
+   [1000] L1 (66.25,7.08) F=+0.077
+   [1025] L1 (66.77,6.65) F=+0.094
+   [1050] L1 (67.02,6.03) F=+0.089
+   [1075] L1 (67.65,5.43) F=+0.082
+   [1093] L1 (67.87,5.13) F=+0.175
+done

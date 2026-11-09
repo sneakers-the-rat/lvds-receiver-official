@@ -1,0 +1,34 @@
+03:56:34: Debug: Adding duplicate image handler for 'PNG file'
+03:56:34: Debug: Adding duplicate image handler for 'JPEG file'
+03:56:34: Debug: Adding duplicate image handler for 'TIFF file'
+03:56:34: Debug: Adding duplicate image handler for 'GIF file'
+03:56:34: Debug: Adding duplicate image handler for 'PNM file'
+03:56:34: Debug: Adding duplicate image handler for 'PCX file'
+03:56:34: Debug: Adding duplicate image handler for 'IFF file'
+03:56:34: Debug: Adding duplicate image handler for 'Windows icon file'
+03:56:34: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:56:34: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:56:34: Debug: Adding duplicate image handler for 'TGA file'
+03:56:34: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au92
+xo_bridge worst pairs:
+   -0.425 L2 seg XO (71.875,19.625)->(69.000,19.900) hw0.100 vs seg DP_PHY (68.875,20.125)->(69.125,19.875) hw0.125
+   -0.412 L2 seg XO (71.875,19.625)->(69.000,19.900) hw0.100 vs seg DP_PHY (69.125,19.875)->(69.375,19.625) hw0.125
+   -0.397 L2 seg XO (71.875,19.625)->(69.000,19.900) hw0.100 vs seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+   -0.354 L2 seg XO (69.000,19.900)->(68.300,20.500) hw0.100 vs seg DP_PHY (68.875,20.125)->(69.125,19.875) hw0.125
+   -0.336 L2 seg XO (69.000,19.900)->(68.300,20.500) hw0.100 vs seg DP_PHY (68.875,27.125)->(68.875,20.125) hw0.125
+XO fragments now: 2
+detour_+3V3D_stub worst pairs:
+   -0.400 L0 seg +3V3D (71.300,21.300)->(69.800,21.300) hw0.150 vs pad GND (70.825,21.000) hw0.400x0.475
+   -0.378 L0 seg +3V3D (69.800,21.300)->(69.850,22.200) hw0.150 vs via CAP_CLK (70.100,21.800) r0.250
+   -0.325 L0 seg +3V3D (72.375,21.125)->(71.300,21.300) hw0.150 vs pad GND (70.825,21.000) hw0.400x0.475
+   -0.228 L0 seg +3V3D (69.800,21.300)->(69.850,22.200) hw0.150 vs seg CAP_CLK (70.100,21.800)->(70.150,21.850) hw0.100
+   -0.181 L0 seg +3V3D (69.800,21.300)->(69.850,22.200) hw0.150 vs seg CAP_CLK (70.150,21.850)->(70.200,21.850) hw0.100
++3V3D fragments now: 3
+full gate: 0 failures
+saved scratch/work/au/build_au93.json
+done
+EXITCODE=0

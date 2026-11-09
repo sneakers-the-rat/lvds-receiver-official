@@ -1,0 +1,38 @@
+03:18:32: Debug: Adding duplicate image handler for 'PNG file'
+03:18:32: Debug: Adding duplicate image handler for 'JPEG file'
+03:18:32: Debug: Adding duplicate image handler for 'TIFF file'
+03:18:32: Debug: Adding duplicate image handler for 'GIF file'
+03:18:32: Debug: Adding duplicate image handler for 'PNM file'
+03:18:32: Debug: Adding duplicate image handler for 'PCX file'
+03:18:32: Debug: Adding duplicate image handler for 'IFF file'
+03:18:32: Debug: Adding duplicate image handler for 'Windows icon file'
+03:18:32: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:18:32: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:18:32: Debug: Adding duplicate image handler for 'TGA file'
+03:18:32: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au86
+--- B items crossing x[72.2,73.0], y[12,20.5]:
+    seg PHY_1V8 (72.900,16.900)->(72.125,17.625) hw0.100
+    seg PHY_1V8 (73.400,16.200)->(72.900,16.900) hw0.100
+    seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100
+    via XO (72.625,12.250) r0.250
+    seg XO (74.125,12.250)->(72.625,12.250) hw0.100
+    seg XO (72.125,19.875)->(72.375,20.125) hw0.125
+    seg XO (72.375,20.125)->(72.625,20.375) hw0.125
+    seg CAP_DATA (72.600,19.300)->(74.800,21.500) hw0.100
+    via CAP_DATA (72.600,19.300) r0.250
+XO B ride v3.0 worst -0.525 L2 vs via CAP_DATA (72.600,19.300) r0.250
+XO B ride v3.1 worst -0.450 L2 vs via CAP_DATA (72.600,19.300) r0.250
+XO B ride v3.2 worst -0.494 L2 vs via CAP_DATA (72.600,19.300) r0.250
+XO fragments now: 2
+fanout v5b worst -0.075 L0 vs seg TMP_ALERT (65.700,2.200)->(65.700,-2.600) hw0.125
++3V3D stub A* goal (0, 71.25, 24.325): NONE
++3V3D stub A* goal (1, 71.25, 24.325): NONE
++3V3D stub A* goal (2, 71.25, 24.325): NONE
+full gate: 0 failures
+saved scratch/work/au/build_au87.json
+done
+EXITCODE=0

@@ -1,0 +1,20 @@
+23:05:20: Debug: Adding duplicate image handler for 'PNG file'
+23:05:20: Debug: Adding duplicate image handler for 'JPEG file'
+23:05:20: Debug: Adding duplicate image handler for 'TIFF file'
+23:05:20: Debug: Adding duplicate image handler for 'GIF file'
+23:05:20: Debug: Adding duplicate image handler for 'PNM file'
+23:05:20: Debug: Adding duplicate image handler for 'PCX file'
+23:05:20: Debug: Adding duplicate image handler for 'IFF file'
+23:05:20: Debug: Adding duplicate image handler for 'Windows icon file'
+23:05:20: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:05:20: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:05:20: Debug: Adding duplicate image handler for 'TGA file'
+23:05:20: Debug: Adding duplicate image handler for 'XPM file'
+last bad seg idx: 212 of 326
+  seg210 margin -0.036 from (63.9, 6.15)
+  seg211 margin -0.001 from (63.9, 6.2)
+  seg212 margin -0.001 from (63.85, 6.25)
+  seg213 margin +0.035 from (63.85, 6.3)
+  seg214 margin +0.070 from (63.85, 6.35)
+  seg215 margin +0.070 from (63.8, 6.4)
+REJOIN candidate point: (63.85, 6.3)

@@ -1,0 +1,21 @@
+23:01:57: Debug: Adding duplicate image handler for 'PNG file'
+23:01:57: Debug: Adding duplicate image handler for 'JPEG file'
+23:01:57: Debug: Adding duplicate image handler for 'TIFF file'
+23:01:57: Debug: Adding duplicate image handler for 'GIF file'
+23:01:57: Debug: Adding duplicate image handler for 'PNM file'
+23:01:57: Debug: Adding duplicate image handler for 'PCX file'
+23:01:57: Debug: Adding duplicate image handler for 'IFF file'
+23:01:57: Debug: Adding duplicate image handler for 'Windows icon file'
+23:01:57: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:01:57: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:01:57: Debug: Adding duplicate image handler for 'TGA file'
+23:01:57: Debug: Adding duplicate image handler for 'XPM file'
+-0.425 seg (68.9, 0.6)->(68.85, 0.65) vs seg HV_SHDN (68.875,0.625)->(69.125,0.375) hw0.125
+-0.425 seg (69.6, -0.05)->(69.55, -0.05) vs seg HV_SHDN (69.375,0.125)->(69.625,-0.125) hw0.125
+-0.425 seg (69.55, -0.05)->(69.5, -0.05) vs seg HV_SHDN (69.375,0.125)->(69.625,-0.125) hw0.125
+-0.425 seg (68.9, 0.55)->(68.9, 0.6) vs seg HV_SHDN (68.875,0.625)->(69.125,0.375) hw0.125
+-0.425 seg (68.85, 0.65)->(68.85, 0.7) vs seg HV_SHDN (68.625,0.875)->(68.875,0.625) hw0.125
+-0.390 seg (68.95, 0.5)->(68.9, 0.55) vs seg HV_SHDN (68.875,0.625)->(69.125,0.375) hw0.125
+-0.390 seg (68.85, 0.7)->(68.8, 0.75) vs seg HV_SHDN (68.625,0.875)->(68.875,0.625) hw0.125
+-0.390 seg (68.8, 0.75)->(68.75, 0.8) vs seg HV_SHDN (68.625,0.875)->(68.875,0.625) hw0.125
+segments with margin < 0.05: 144 of 326

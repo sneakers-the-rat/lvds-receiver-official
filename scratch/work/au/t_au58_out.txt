@@ -1,0 +1,23 @@
+23:43:41: Debug: Adding duplicate image handler for 'PNG file'
+23:43:41: Debug: Adding duplicate image handler for 'JPEG file'
+23:43:41: Debug: Adding duplicate image handler for 'TIFF file'
+23:43:41: Debug: Adding duplicate image handler for 'GIF file'
+23:43:41: Debug: Adding duplicate image handler for 'PNM file'
+23:43:41: Debug: Adding duplicate image handler for 'PCX file'
+23:43:41: Debug: Adding duplicate image handler for 'IFF file'
+23:43:41: Debug: Adding duplicate image handler for 'Windows icon file'
+23:43:41: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:43:41: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:43:41: Debug: Adding duplicate image handler for 'TGA file'
+23:43:41: Debug: Adding duplicate image handler for 'XPM file'
+heal1 F-only: FOUND
+exit: NONE all masks
+x=68.6 viafit-min y2.2..3.4: ['-0.44', '-0.25', '-0.40', '-0.55', '-0.51', '-0.37', '-0.35']
+x=68.8 viafit-min y2.2..3.4: ['-0.42', '-0.27', '-0.26', '-0.41', '-0.55', '-0.51', '-0.37']
+x=69.0 viafit-min y2.2..3.4: ['-0.54', '-0.35', '-0.15', '-0.26', '-0.41', '-0.55', '-0.54']
+x=69.2 viafit-min y2.2..3.4: ['-0.57', '-0.43', '-0.28', '-0.12', '-0.26', '-0.40', '-0.53']
+x=69.4 viafit-min y2.2..3.4: ['-0.43', '-0.53', '-0.34', '-0.14', '-0.17', '-0.25', '-0.38']
+x=69.6 viafit-min y2.2..3.4: ['-0.41', '-0.57', '-0.37', '-0.22', '-0.35', '-0.40', '-0.33']
+x=69.8 viafit-min y2.2..3.4: ['-0.55', '-0.55', '-0.42', '-0.40', '-0.49', '-0.60', '-0.46']
+x=70.0 viafit-min y2.2..3.4: ['-0.41', '-0.55', '-0.54', '-0.50', '-0.49', '-0.60', '-0.46']
+done

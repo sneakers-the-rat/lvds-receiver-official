@@ -1,0 +1,23 @@
+23:46:38: Debug: Adding duplicate image handler for 'PNG file'
+23:46:38: Debug: Adding duplicate image handler for 'JPEG file'
+23:46:38: Debug: Adding duplicate image handler for 'TIFF file'
+23:46:38: Debug: Adding duplicate image handler for 'GIF file'
+23:46:38: Debug: Adding duplicate image handler for 'PNM file'
+23:46:38: Debug: Adding duplicate image handler for 'PCX file'
+23:46:38: Debug: Adding duplicate image handler for 'IFF file'
+23:46:38: Debug: Adding duplicate image handler for 'Windows icon file'
+23:46:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:46:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:46:38: Debug: Adding duplicate image handler for 'TGA file'
+23:46:38: Debug: Adding duplicate image handler for 'XPM file'
+F (67.975,2.75): +0.125 vs pad GND (67.000,2.750) hw0.500x0.800
+F (68.3,2.72): +0.080 vs via CAP_CLK (68.975,2.800) r0.250
+F (68.4,2.65): -0.006 vs via CAP_CLK (68.975,2.800) r0.250
+F (68.52,2.95): -0.121 vs via CAP_CLK (68.975,2.800) r0.250
+F (68.58,3.3): +0.030 vs pad GND (67.975,3.400) hw0.225x0.150
+F (68.8,3.8): +0.300 vs pad GND (67.975,3.400) hw0.225x0.150
+F (69.0,4.3): +0.747 vs pad GND (67.975,3.400) hw0.225x0.150
+F (69.125,4.375): +0.727 vs seg +3V3D (69.200,5.750)->(68.625,6.125) hw0.300
+F (68.55,3.1): -0.080 vs via CAP_CLK (68.975,2.800) r0.250
+F (68.65,3.55): +0.100 vs pad GND (67.975,3.400) hw0.225x0.150
+done

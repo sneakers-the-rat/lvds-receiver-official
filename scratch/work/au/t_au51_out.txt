@@ -1,0 +1,17 @@
+23:39:26: Debug: Adding duplicate image handler for 'PNG file'
+23:39:26: Debug: Adding duplicate image handler for 'JPEG file'
+23:39:26: Debug: Adding duplicate image handler for 'TIFF file'
+23:39:26: Debug: Adding duplicate image handler for 'GIF file'
+23:39:26: Debug: Adding duplicate image handler for 'PNM file'
+23:39:26: Debug: Adding duplicate image handler for 'PCX file'
+23:39:26: Debug: Adding duplicate image handler for 'IFF file'
+23:39:26: Debug: Adding duplicate image handler for 'Windows icon file'
+23:39:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:39:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:39:26: Debug: Adding duplicate image handler for 'TGA file'
+23:39:26: Debug: Adding duplicate image handler for 'XPM file'
+removed per layer: {0: 2, 1: 1, 2: 1}
+L0 via gate: +0.016 vs via I2C_SCL (69.350,1.400) r0.250
+L1 via gate: +0.016 vs via I2C_SCL (69.350,1.400) r0.250
+L2 via gate: -0.115 vs seg PG_3V3 (68.375,2.125)->(68.625,1.875) hw0.125
+stub gate: +0.150 vs pad +3V3A (68.225,2.750) hw0.225x0.150

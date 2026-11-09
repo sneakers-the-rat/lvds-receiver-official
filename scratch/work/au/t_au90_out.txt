@@ -1,0 +1,36 @@
+03:46:14: Debug: Adding duplicate image handler for 'PNG file'
+03:46:14: Debug: Adding duplicate image handler for 'JPEG file'
+03:46:14: Debug: Adding duplicate image handler for 'TIFF file'
+03:46:14: Debug: Adding duplicate image handler for 'GIF file'
+03:46:14: Debug: Adding duplicate image handler for 'PNM file'
+03:46:14: Debug: Adding duplicate image handler for 'PCX file'
+03:46:14: Debug: Adding duplicate image handler for 'IFF file'
+03:46:14: Debug: Adding duplicate image handler for 'Windows icon file'
+03:46:14: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:46:14: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:46:14: Debug: Adding duplicate image handler for 'TGA file'
+03:46:14: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au89
+fanout v7 worst pairs:
+   -0.053 L0 seg I2C_SCL (68.300,1.600)->(66.900,1.500) hw0.100 vs seg GND (68.200,1.150)->(67.850,1.220) hw0.100
+   -0.053 L0 seg I2C_SCL (68.300,1.600)->(66.900,1.500) hw0.100 vs seg GND (67.850,1.220)->(67.500,0.950) hw0.100
+   -0.020 L0 seg I2C_SCL (66.150,1.450)->(66.220,2.050) hw0.100 vs pad GND (67.000,2.750) hw0.500x0.800
+   +0.014 L0 via I2C_SCL (69.300,1.250) r0.250 vs seg GND (69.600,0.250)->(68.900,0.850) hw0.100
+XO bridge v6 worst pairs:
+   -0.575 L2 seg XO (68.800,12.250)->(68.800,19.900) hw0.100 vs via +3V3A (68.625,19.125) r0.400
+   -0.475 L2 seg XO (72.625,12.250)->(68.800,12.250) hw0.100 vs seg +3V3A (68.625,16.625)->(68.625,4.875) hw0.300
+   -0.475 L2 seg XO (68.800,12.250)->(68.800,19.900) hw0.100 vs seg +3V3A (68.625,16.625)->(68.625,4.875) hw0.300
+   -0.450 L2 seg XO (68.800,12.250)->(68.800,19.900) hw0.100 vs seg +3V3A (68.875,12.375)->(68.375,17.500) hw0.100
+XO fragments now: 2
+stub v9 worst pairs:
+   -0.462 L1 via +3V3D (72.375,21.125) r0.250 vs seg ULPI_NXT (74.500,19.250)->(69.875,23.750) hw0.100
+   -0.375 L2 via +3V3D (72.375,21.125) r0.250 vs seg XO (72.625,20.375)->(72.625,24.625) hw0.125
+   -0.375 L2 via +3V3D (72.375,23.900) r0.250 vs seg XO (72.625,20.375)->(72.625,24.625) hw0.125
+   -0.375 L0 via +3V3D (72.375,23.900) r0.250 vs pad GND (72.550,24.575) hw0.650x0.550
+full gate: 0 failures
+saved scratch/work/au/build_au90.json
+done
+EXITCODE=0

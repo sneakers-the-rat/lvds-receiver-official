@@ -1,0 +1,33 @@
+23:49:04: Debug: Adding duplicate image handler for 'PNG file'
+23:49:04: Debug: Adding duplicate image handler for 'JPEG file'
+23:49:04: Debug: Adding duplicate image handler for 'TIFF file'
+23:49:04: Debug: Adding duplicate image handler for 'GIF file'
+23:49:04: Debug: Adding duplicate image handler for 'PNM file'
+23:49:04: Debug: Adding duplicate image handler for 'PCX file'
+23:49:04: Debug: Adding duplicate image handler for 'IFF file'
+23:49:04: Debug: Adding duplicate image handler for 'Windows icon file'
+23:49:04: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:49:04: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:49:04: Debug: Adding duplicate image handler for 'TGA file'
+23:49:04: Debug: Adding duplicate image handler for 'XPM file'
+au40 exit removed
+heal1 (dive reserved): FOUND
+  heal1 vias (must be []): []
+exit F run: FOUND
+exit B join gate: +0.044 vs via CAP_DATA (69.900,3.180) r0.250
+SCL fanout: NONE
+F (69.35,1.4): +0.166 vs via I2C_SDA (69.050,2.050) r0.250
+F (68.8,1.42): +0.085 vs seg GND (68.900,0.850)->(68.200,1.150) hw0.100
+F (68.3,1.45): -0.084 vs seg GND (68.900,0.850)->(68.200,1.150) hw0.100
+F (67.8,1.5): -0.116 vs seg GND (68.200,1.150)->(67.850,1.220) hw0.100
+F (67.4,1.58): +0.070 vs pad GND (67.000,2.750) hw0.500x0.800
+F (67.0,1.62): +0.030 vs pad GND (67.000,2.750) hw0.500x0.800
+F (66.6,1.63): +0.020 vs pad GND (67.000,2.750) hw0.500x0.800
+F (66.3,1.8): -0.050 vs pad GND (67.000,2.750) hw0.500x0.800
+F (66.15,1.9): +0.025 vs seg TMP_ALERT (65.700,2.200)->(65.700,-2.600) hw0.125
+F (66.025,2.1): -0.100 vs seg TMP_ALERT (65.700,2.200)->(65.700,-2.600) hw0.125
+F (66.4,1.4): +0.259 vs pad GND (67.000,2.750) hw0.500x0.800
+F (67.9,1.75): -0.100 vs pad I2C_SDA (67.975,2.100) hw0.225x0.150
+F (68.6,1.7): -0.029 vs seg I2C_SDA (67.975,2.100)->(69.050,2.050) hw0.100
+F (69.0,1.6): -0.097 vs via I2C_SDA (69.050,2.050) r0.250
+done

@@ -1,0 +1,54 @@
+04:03:47: Debug: Adding duplicate image handler for 'PNG file'
+04:03:47: Debug: Adding duplicate image handler for 'JPEG file'
+04:03:47: Debug: Adding duplicate image handler for 'TIFF file'
+04:03:47: Debug: Adding duplicate image handler for 'GIF file'
+04:03:47: Debug: Adding duplicate image handler for 'PNM file'
+04:03:47: Debug: Adding duplicate image handler for 'PCX file'
+04:03:47: Debug: Adding duplicate image handler for 'IFF file'
+04:03:47: Debug: Adding duplicate image handler for 'Windows icon file'
+04:03:47: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:03:47: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:03:47: Debug: Adding duplicate image handler for 'TGA file'
+04:03:47: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+XO: 3 fragments in box
+XO: 10 terminal pairs
+  pair 0 (68.875, 20.375)->(71.875, 19.625): NONE
+  pair 1 (68.875, 20.375)->(71.625, 25.625): NONE
+  pair 2 (72.625, 12.25)->(71.875, 19.625): NONE
+  pair 3 (72.375, 10.0)->(71.875, 19.625): NONE
+  pair 4 (72.125, 9.875)->(71.875, 19.625): NONE
+  pair 5 (76.0, 10.625)->(71.875, 19.625): NONE
+  pair 6 (72.625, 12.25)->(71.625, 25.625): NONE
+  pair 7 (76.0, 10.625)->(71.625, 25.625): NONE
+  pair 8 (72.375, 10.0)->(71.625, 25.625): NONE
+  pair 9 (72.125, 9.875)->(71.625, 25.625): NONE
+XO fragments now: 2
++3V3D: 4 fragments in box
++3V3D: 8 terminal pairs
+  pair 0 (71.25, 24.325)->(72.375, 21.125): NONE
+  pair 1 (71.125, 24.375)->(72.375, 21.125): NONE
+  pair 2 (74.625, 24.375)->(72.375, 21.125): NONE
+  pair 3 (66.55, 20.8)->(72.375, 21.125): NONE
+  pair 4 (78.25, 20.225)->(72.375, 21.125): NONE
+  pair 5 (66.55, 22.35)->(72.375, 21.125): NONE
+  pair 6 (78.375, 20.125)->(72.375, 21.125): NONE
+  pair 7 (67.15, 25.675)->(72.375, 21.125): NONE
++3V3D: 4 fragments in box
++3V3D: 8 terminal pairs
+  pair 0 (71.25, 24.325)->(72.375, 21.125): NONE
+  pair 1 (71.125, 24.375)->(72.375, 21.125): NONE
+  pair 2 (74.625, 24.375)->(72.375, 21.125): NONE
+  pair 3 (66.55, 20.8)->(72.375, 21.125): NONE
+  pair 4 (78.25, 20.225)->(72.375, 21.125): NONE
+  pair 5 (66.55, 22.35)->(72.375, 21.125): NONE
+  pair 6 (78.375, 20.125)->(72.375, 21.125): NONE
+  pair 7 (67.15, 25.675)->(72.375, 21.125): NONE
++3V3D fragments now: 3
+full gate: 0 failures
+saved scratch/work/au/build_au95.json
+done
+EXITCODE=0

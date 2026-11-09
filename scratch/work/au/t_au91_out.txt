@@ -1,0 +1,39 @@
+03:49:44: Debug: Adding duplicate image handler for 'PNG file'
+03:49:44: Debug: Adding duplicate image handler for 'JPEG file'
+03:49:44: Debug: Adding duplicate image handler for 'TIFF file'
+03:49:44: Debug: Adding duplicate image handler for 'GIF file'
+03:49:44: Debug: Adding duplicate image handler for 'PNM file'
+03:49:44: Debug: Adding duplicate image handler for 'PCX file'
+03:49:44: Debug: Adding duplicate image handler for 'IFF file'
+03:49:44: Debug: Adding duplicate image handler for 'Windows icon file'
+03:49:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:49:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:49:44: Debug: Adding duplicate image handler for 'TGA file'
+03:49:44: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au90
++3V3D fragments: 3
+STUB FRAGMENT items:
+   L0 pad +3V3D (72.725,20.500) hw0.450x0.475
+   L0 seg +3V3D (72.375,20.875)->(72.375,21.125) hw0.100
+   L0 seg +3V3D (72.725,20.500)->(72.725,20.750) hw0.100
+   L0 seg +3V3D (72.725,20.750)->(72.375,20.875) hw0.100
+   pads in fragment: 1
+fanout v8 worst pairs:
+   -0.130 L0 seg I2C_SCL (67.700,1.620)->(67.300,1.780) hw0.100 vs pad GND (67.000,2.750) hw0.500x0.800
+   -0.130 L0 seg I2C_SCL (67.300,1.780)->(66.900,1.600) hw0.100 vs pad GND (67.000,2.750) hw0.500x0.800
+   +0.000 L0 seg I2C_SCL (68.300,1.620)->(67.700,1.620) hw0.100 vs seg GND (68.200,1.150)->(67.850,1.220) hw0.100
+   +0.000 L0 seg I2C_SCL (68.300,1.620)->(67.700,1.620) hw0.100 vs seg GND (67.850,1.220)->(67.500,0.950) hw0.100
+XO bridge v7 worst pairs:
+   -0.398 L1 seg XO (71.625,20.600)->(70.300,20.300) hw0.100 vs seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+   -0.397 L0 seg XO (71.625,25.625)->(71.625,20.600) hw0.100 vs seg CAP_CLK (71.600,21.900)->(71.700,21.800) hw0.100
+   -0.396 L1 seg XO (70.300,20.300)->(69.600,19.900) hw0.100 vs seg RBIAS (70.125,20.125)->(69.875,20.375) hw0.100
+   -0.375 L0 seg XO (71.625,25.625)->(71.625,20.600) hw0.100 vs seg CAP_CLK (70.250,21.900)->(71.600,21.900) hw0.100
+XO fragments now: 2
+SCL fragments now: 4
+full gate: 0 failures
+saved scratch/work/au/build_au91.json
+done
+EXITCODE=0

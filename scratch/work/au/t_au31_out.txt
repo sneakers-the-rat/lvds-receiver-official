@@ -1,0 +1,18 @@
+23:13:54: Debug: Adding duplicate image handler for 'PNG file'
+23:13:54: Debug: Adding duplicate image handler for 'JPEG file'
+23:13:54: Debug: Adding duplicate image handler for 'TIFF file'
+23:13:54: Debug: Adding duplicate image handler for 'GIF file'
+23:13:54: Debug: Adding duplicate image handler for 'PNM file'
+23:13:54: Debug: Adding duplicate image handler for 'PCX file'
+23:13:54: Debug: Adding duplicate image handler for 'IFF file'
+23:13:54: Debug: Adding duplicate image handler for 'Windows icon file'
+23:13:54: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:13:54: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:13:54: Debug: Adding duplicate image handler for 'TGA file'
+23:13:54: Debug: Adding duplicate image handler for 'XPM file'
+REJOIN (63.85, 6.3)
+TEST1 chord no-DATA goal-point: FOUND vias=[]
+   L1: [69.35, 1.4] -> [67.875, 5.125] (163 pts)
+TEST2 chord no-DATA goal-NWseg: FOUND vias=[]
+   L1: [69.35, 1.4] -> [66.125, 7.575] (280 pts)
+done

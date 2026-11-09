@@ -1,0 +1,35 @@
+22:58:29: Debug: Adding duplicate image handler for 'PNG file'
+22:58:29: Debug: Adding duplicate image handler for 'JPEG file'
+22:58:29: Debug: Adding duplicate image handler for 'TIFF file'
+22:58:29: Debug: Adding duplicate image handler for 'GIF file'
+22:58:29: Debug: Adding duplicate image handler for 'PNM file'
+22:58:29: Debug: Adding duplicate image handler for 'PCX file'
+22:58:29: Debug: Adding duplicate image handler for 'IFF file'
+22:58:29: Debug: Adding duplicate image handler for 'Windows icon file'
+22:58:29: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:58:29: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:58:29: Debug: Adding duplicate image handler for 'TGA file'
+22:58:29: Debug: Adding duplicate image handler for 'XPM file'
+rips: 33
+-- fixed hand items:
+   L0 seg GND (67.625,3.875)->(67.450,3.550) hw0.100: +0.501 vs pad +3V3A (68.225,2.750) hw0.225x0.150
+   L0 seg TMP_ALERT (66.275,3.400)->(65.950,3.350) hw0.100: +0.160 vs pad GND (66.275,2.750) hw0.225x0.150
+   L0 seg TMP_ALERT (65.950,3.350)->(65.700,3.150) hw0.100: +0.114 vs pad GND (66.275,2.750) hw0.225x0.150
+   L0 seg TMP_ALERT (65.700,3.150)->(65.700,2.200) hw0.100: +0.050 vs pad GND (66.275,2.750) hw0.225x0.150
+   L0 seg TMP_ALERT (65.700,2.200)->(65.700,-2.600) hw0.125: +0.025 vs pad I2C_SCL (66.275,2.100) hw0.225x0.150
+   L0 seg TMP_ALERT (65.700,-2.600)->(66.125,-3.125) hw0.125: +1.130 vs via GND (67.520,-4.190) r0.300
+   L1 seg I2C_SDA (69.900,0.820)->(70.125,0.875) hw0.125: +0.224 vs via I2C_SCL (69.350,1.400) r0.250
+   L1 seg I2C_SDA (70.125,0.875)->(70.375,1.125) hw0.125: +0.214 vs via CAP_CLK (70.020,1.830) r0.250
+   L1 seg I2C_SDA (70.375,1.125)->(70.625,1.375) hw0.125: +0.175 vs via CAP_CLK (70.020,1.830) r0.250
+   L1 seg I2C_SDA (70.625,1.375)->(70.875,1.625) hw0.125: +0.182 vs via CAP_CLK (70.020,1.830) r0.250
+   L1 seg I2C_SDA (70.875,1.625)->(71.125,1.875) hw0.125: +0.304 vs via CAP_CLK (70.020,1.830) r0.250
+   via SCL (69.35,1.40): +0.096 L0 vs via CAP_CLK (70.020,1.830) r0.250
+-- SDA via candidates:
+   (69.4,2.2): via -0.141 (vs seg CAP_CLK (70.000,1.800)->(69.700,2.550) hw0.100), segs +0.007 (vs via CAP_CLK (70.020,1.830) r0.250) -> -0.141
+   (69.2,2.2): via -0.067 (vs seg CAP_CLK (69.700,2.550)->(68.900,2.800) hw0.100), segs +0.044 (vs via CAP_CLK (70.020,1.830) r0.250) -> -0.067
+   (69.3,2.35): via -0.240 (vs seg CAP_CLK (69.700,2.550)->(68.900,2.800) hw0.100), segs +0.093 (vs via CAP_DATA (69.900,3.180) r0.250) -> -0.240
+   (69.15,2.3): via -0.147 (vs seg CAP_CLK (69.700,2.550)->(68.900,2.800) hw0.100), segs +0.092 (vs via CAP_CLK (70.020,1.830) r0.250) -> -0.147
+   (69.3,2.1): via -0.011 (vs seg CAP_CLK (70.000,1.800)->(69.700,2.550) hw0.100), segs -0.022 (vs via CAP_CLK (70.020,1.830) r0.250) -> -0.022
+   (69.25,2.45): via -0.320 (vs seg CAP_CLK (69.700,2.550)->(68.900,2.800) hw0.100), segs +0.060 (vs via CAP_DATA (69.900,3.180) r0.250) -> -0.320
+BEST SDA via: (69.3,2.1) score -0.022
+done

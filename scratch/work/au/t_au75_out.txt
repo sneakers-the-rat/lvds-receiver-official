@@ -1,0 +1,31 @@
+00:22:46: Debug: Adding duplicate image handler for 'PNG file'
+00:22:46: Debug: Adding duplicate image handler for 'JPEG file'
+00:22:46: Debug: Adding duplicate image handler for 'TIFF file'
+00:22:46: Debug: Adding duplicate image handler for 'GIF file'
+00:22:46: Debug: Adding duplicate image handler for 'PNM file'
+00:22:46: Debug: Adding duplicate image handler for 'PCX file'
+00:22:46: Debug: Adding duplicate image handler for 'IFF file'
+00:22:46: Debug: Adding duplicate image handler for 'Windows icon file'
+00:22:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:22:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:22:46: Debug: Adding duplicate image handler for 'TGA file'
+00:22:46: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 23 items
++3V3D: rip 8 items
+XO: rip 2 items
+assembly + rips done
+arrival DATA (in2): NONE
+arrival CLK (in2): FOUND
+arrival DATA (in2): NONE
+arrival DATA (multi): NONE
+arrival CLK (multi): FOUND
+arrival DATA (in2): NONE
+arrival DATA (B): NONE
+arrival CLK (B): NONE
+arrival DATA (in2): NONE
+arrival CLK (in2): FOUND
+arrival DATA (multi): NONE
+arrivals: None
+saved stage1
+ARRIVALS UNSOLVED - stopping before detours
+EXITCODE=0

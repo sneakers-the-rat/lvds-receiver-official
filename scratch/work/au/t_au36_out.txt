@@ -1,0 +1,31 @@
+23:20:32: Debug: Adding duplicate image handler for 'PNG file'
+23:20:32: Debug: Adding duplicate image handler for 'JPEG file'
+23:20:32: Debug: Adding duplicate image handler for 'TIFF file'
+23:20:32: Debug: Adding duplicate image handler for 'GIF file'
+23:20:32: Debug: Adding duplicate image handler for 'PNM file'
+23:20:32: Debug: Adding duplicate image handler for 'PCX file'
+23:20:32: Debug: Adding duplicate image handler for 'IFF file'
+23:20:32: Debug: Adding duplicate image handler for 'Windows icon file'
+23:20:32: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:20:32: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:20:32: Debug: Adding duplicate image handler for 'TGA file'
+23:20:32: Debug: Adding duplicate image handler for 'XPM file'
+--- +3V3A F items, centres x[67,72.5] y[0,5.5]:
+   pad +3V3A (71.338,0.750) hw0.738x0.150
+   pad +3V3A (71.338,1.250) hw0.738x0.150
+   pad +3V3A (69.225,2.750) hw0.225x0.150
+   seg +3V3A (71.338,1.000)->(71.375,0.875) hw0.100
+   seg +3V3A (69.225,2.750)->(69.475,2.750) hw0.100
+   seg +3V3A (69.125,4.375)->(69.375,4.125) hw0.300
+   seg +3V3A (71.338,1.250)->(71.338,1.000) hw0.100
+   via +3V3A (69.125,4.375) r0.400
+--- PG_3V3 B chain endpoints/branch (deg!=2 nodes):
+   node (60.625, 9.875) deg 3
+   node (74.625, -15.375) deg 1
+   node (55.125, 27.125) deg 1
+   node (65.625, 14.875) deg 1
+--- PG vias:
+   via PG_3V3 (69.625,16.375) r0.300
+   via PG_3V3 (55.125,27.125) r0.300
+   via PG_3V3 (74.625,-15.375) r0.300
+   via PG_3V3 (65.625,14.875) r0.300
