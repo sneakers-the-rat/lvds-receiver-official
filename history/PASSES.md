@@ -1724,6 +1724,14 @@ CAP district landing (H5 re-fan): CAP_CLK + CAP_DATA connected. X2 relocated to 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 6 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 211 — 2026-11-09T13:13:00Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp248.kicad_pcb` · Commit: `pending`
+
+pass 211: I2C_SCL connected via R20 relocation to (68.5,-1.75) + southern +3V3D loop; stub ripped
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 5 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

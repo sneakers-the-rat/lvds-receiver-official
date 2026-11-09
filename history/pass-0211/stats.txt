@@ -1,0 +1,14 @@
+pass: 211
+description: pass 211: I2C_SCL connected via R20 relocation to (68.5,-1.75) + southern +3V3D loop; stub ripped
+timestamp (UTC): 2026-11-09T13:13:00Z
+commit: pending
+board file: hw/pdlvds_rx.exp248.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 5
+courtyard collisions: 0
+audit verdict: fail
+note: 
