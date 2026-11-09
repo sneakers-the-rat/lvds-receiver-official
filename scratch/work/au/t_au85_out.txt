@@ -1,0 +1,30 @@
+02:42:26: Debug: Adding duplicate image handler for 'PNG file'
+02:42:26: Debug: Adding duplicate image handler for 'JPEG file'
+02:42:26: Debug: Adding duplicate image handler for 'TIFF file'
+02:42:26: Debug: Adding duplicate image handler for 'GIF file'
+02:42:26: Debug: Adding duplicate image handler for 'PNM file'
+02:42:26: Debug: Adding duplicate image handler for 'PCX file'
+02:42:26: Debug: Adding duplicate image handler for 'IFF file'
+02:42:26: Debug: Adding duplicate image handler for 'Windows icon file'
+02:42:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:42:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:42:26: Debug: Adding duplicate image handler for 'TGA file'
+02:42:26: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au83
+--- (a) XO items x[74,84] y[14,20]:
+    L1 seg XO (80.125,17.875)->(80.375,17.625) hw0.125
+    L1 seg XO (80.625,17.125)->(81.200,17.100) hw0.100
+    L1 seg XO (79.875,18.125)->(80.125,17.875) hw0.125
+    L1 seg XO (79.875,20.375)->(79.875,18.125) hw0.125
+    L1 seg XO (80.375,17.625)->(80.625,17.375) hw0.125
+    L1 seg XO (80.625,17.375)->(80.625,17.125) hw0.125
+--- (b) ULPI_DIR segs all layers, endpoints in box:
+    L0 seg ULPI_DIR (67.500,0.125)->(70.625,-1.250) hw0.100
+    L1 seg ULPI_DIR (59.750,8.750)->(59.875,7.875) hw0.100
+    L1 seg ULPI_DIR (61.375,11.750)->(59.750,8.750) hw0.100
+    L1 seg ULPI_DIR (59.875,7.875)->(67.500,0.125) hw0.100
++3V3D stub detour v6 worst -0.574 L1 vs via CAP_DATA (74.900,22.300) r0.250
+done
