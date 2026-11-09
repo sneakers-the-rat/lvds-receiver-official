@@ -1,0 +1,100 @@
+23:45:07: Debug: Adding duplicate image handler for 'PNG file'
+23:45:07: Debug: Adding duplicate image handler for 'JPEG file'
+23:45:07: Debug: Adding duplicate image handler for 'TIFF file'
+23:45:07: Debug: Adding duplicate image handler for 'GIF file'
+23:45:07: Debug: Adding duplicate image handler for 'PNM file'
+23:45:07: Debug: Adding duplicate image handler for 'PCX file'
+23:45:07: Debug: Adding duplicate image handler for 'IFF file'
+23:45:07: Debug: Adding duplicate image handler for 'Windows icon file'
+23:45:07: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:45:07: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:45:07: Debug: Adding duplicate image handler for 'TGA file'
+23:45:07: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+23:45:08: Debug: Adding duplicate image handler for 'PNG file'
+23:45:08: Debug: Adding duplicate image handler for 'JPEG file'
+23:45:08: Debug: Adding duplicate image handler for 'TIFF file'
+23:45:08: Debug: Adding duplicate image handler for 'GIF file'
+23:45:08: Debug: Adding duplicate image handler for 'PNM file'
+23:45:08: Debug: Adding duplicate image handler for 'PCX file'
+23:45:08: Debug: Adding duplicate image handler for 'IFF file'
+23:45:08: Debug: Adding duplicate image handler for 'Windows icon file'
+23:45:08: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:45:08: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:45:08: Debug: Adding duplicate image handler for 'TGA file'
+23:45:08: Debug: Adding duplicate image handler for 'XPM file'
+re-laying south-loop segs: 4
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+stub rip: ['seg PHY_1V8 (77.250,10.750)->(77.869,10.056) hw0.100', 'seg PHY_1V8 (77.869,10.056)->(77.450,10.100) hw0.150', 'via PHY_1V8 (77.869,10.056) r0.250']
+sda rip: ['seg I2C_SDA (69.875,0.625)->(69.875,-9.125) hw0.125', 'seg I2C_SDA (69.900,0.820)->(69.875,0.625) hw0.125']
+hv rip: ['seg HV_SHDN (70.125,-2.125)->(70.700,-2.750) hw0.125', 'seg HV_SHDN (69.875,-2.375)->(70.125,-2.125) hw0.125']
+hv south rip: 14
+    seg HV_SHDN (68.040,-5.750)->(68.125,-5.625) hw0.100
+    seg HV_SHDN (69.625,-2.625)->(69.875,-2.375) hw0.125
+    seg HV_SHDN (68.625,-4.625)->(68.875,-4.375) hw0.125
+    seg HV_SHDN (68.875,-4.375)->(68.875,-3.375) hw0.125
+    seg HV_SHDN (69.125,-3.125)->(69.375,-2.875) hw0.125
+    seg HV_SHDN (68.040,-6.000)->(68.040,-5.750) hw0.100
+    seg HV_SHDN (68.125,-5.125)->(68.375,-4.875) hw0.100
+    seg HV_SHDN (69.375,-2.875)->(69.625,-2.625) hw0.125
+    seg HV_SHDN (68.875,-3.375)->(69.125,-3.125) hw0.125
+    seg HV_SHDN (68.375,-4.875)->(68.625,-4.625) hw0.100
+    seg HV_SHDN (68.125,-5.625)->(68.125,-5.125) hw0.100
+    seg HV_SHDN (69.875,-2.375)->(69.700,-2.900) hw0.125
+    seg HV_SHDN (69.700,-2.900)->(70.100,-3.250) hw0.125
+    seg HV_SHDN (70.100,-3.250)->(70.700,-2.750) hw0.125
+pg rip: 196
+PG re-lay: FOUND vias=[[68.5, -1.0], [69.3, -4.95]]
+HV re-lay: FOUND vias=[]
+blocker removed: 3
+23:45:09: Debug: Adding duplicate image handler for 'PNG file'
+23:45:09: Debug: Adding duplicate image handler for 'JPEG file'
+23:45:09: Debug: Adding duplicate image handler for 'TIFF file'
+23:45:09: Debug: Adding duplicate image handler for 'GIF file'
+23:45:09: Debug: Adding duplicate image handler for 'PNM file'
+23:45:09: Debug: Adding duplicate image handler for 'PCX file'
+23:45:09: Debug: Adding duplicate image handler for 'IFF file'
+23:45:09: Debug: Adding duplicate image handler for 'Windows icon file'
+23:45:09: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:45:09: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:45:09: Debug: Adding duplicate image handler for 'TGA file'
+23:45:09: Debug: Adding duplicate image handler for 'XPM file'
+pool rebound to exp251 as-built
+pad U7.28: (76.25, 11.562)
+pad U7.9: (74.25, 16.438)
+pad U7.15: (77.25, 16.438)
+pad U6.40: (74.75, 4.662)
+pad X1.1: (85.75, 18.25)
+pad X1.2: (85.75, 9.75)
+pad C20.1: (75.72, 18.73)
+pad C22.1: (72.02, 18.0)
+PHY_1V8 C22-feed probes:
+  PHY_1V8 (72.02,18.0)L0 -> (77.25,16.4375)L0: NONE
+  PHY_1V8 (72.02,18.0)L0 -> (77.9,10.08)L2: NONE
+  PHY_1V8 (72.02,18.0)L0 -> (77.9,10.08)L0: NONE
+  PHY_1V8 (72.02,18.0)L0 -> (77.9,10.08)L1: NONE
+  PHY_1V8 (72.02,18.0)L0 -> (77.8,16.2)L2: NONE
+  PHY_1V8 (72.02,18.0)L0 -> (76.95,13.0)L2: NONE
+  PHY_1V8 (71.375,17.625)L0 -> (77.25,16.4375)L0: NONE
+  PHY_1V8 (71.375,17.625)L0 -> (77.9,10.08)L2: NONE
+  PHY_1V8 (71.375,17.625)L0 -> (77.9,10.08)L0: NONE
+  PHY_1V8 (71.375,17.625)L0 -> (77.9,10.08)L1: NONE
+  PHY_1V8 (71.375,17.625)L0 -> (77.8,16.2)L2: NONE
+  PHY_1V8 (71.375,17.625)L0 -> (76.95,13.0)L2: NONE
+XI probes (start U7.28 south pad (76.25, 11.562) ):
+  XI (76.25,11.562)L0 -> (76.6,19.4)L2: NONE
+  XI (76.25,11.562)L0 -> (75.625,18.625)L2: NONE
+  XI (76.25,11.562)L0 -> (75.625,18.625)L0: NONE
+  XI (76.25,11.562)L0 -> (85.75,18.25)L0: NONE
+  XI (76.25,11.562)L0 -> (76.6,19.4)L1: NONE
+  XI (76.25,11.562)L0 -> (78.25,21.125)L2: NONE
+USB_RST probes (U7.9 -> U6.40 (74.75,4.662)):
+  USB_RST (74.25,16.4375)L0 -> (74.75,4.662)L0: NONE
+  USB_RST (74.25,16.4375)L0 -> (74.75,4.662)L2: NONE
+  USB_RST (74.25,16.4375)L0 -> (74.75,4.662)L1: NONE
