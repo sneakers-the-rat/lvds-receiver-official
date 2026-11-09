@@ -1,0 +1,14 @@
+pass: 212
+description: pass 212: CDR_LOS connected (C14 relocated (72,36.75)->(74.75,34.75); SDA U4 escape re-laid F-only; LOS A* route 4 vias; REFCLKN rejoin) - DRC unconnected 6->5 (island + 4 nets), check_pcb 5->4, violations 4 J1 only, silk 0, courtyard 0
+timestamp (UTC): 2026-11-09T14:24:16Z
+commit: pending
+board file: hw/pdlvds_rx.exp249.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 4
+courtyard collisions: 0
+audit verdict: fail
+note: 

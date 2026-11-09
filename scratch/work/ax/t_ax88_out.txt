@@ -1,0 +1,36 @@
+13:44:46: Debug: Adding duplicate image handler for 'PNG file'
+13:44:46: Debug: Adding duplicate image handler for 'JPEG file'
+13:44:46: Debug: Adding duplicate image handler for 'TIFF file'
+13:44:46: Debug: Adding duplicate image handler for 'GIF file'
+13:44:46: Debug: Adding duplicate image handler for 'PNM file'
+13:44:46: Debug: Adding duplicate image handler for 'PCX file'
+13:44:46: Debug: Adding duplicate image handler for 'IFF file'
+13:44:46: Debug: Adding duplicate image handler for 'Windows icon file'
+13:44:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:44:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:44:46: Debug: Adding duplicate image handler for 'TGA file'
+13:44:46: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+13:44:47: Debug: Adding duplicate image handler for 'PNG file'
+13:44:47: Debug: Adding duplicate image handler for 'JPEG file'
+13:44:47: Debug: Adding duplicate image handler for 'TIFF file'
+13:44:47: Debug: Adding duplicate image handler for 'GIF file'
+13:44:47: Debug: Adding duplicate image handler for 'PNM file'
+13:44:47: Debug: Adding duplicate image handler for 'PCX file'
+13:44:47: Debug: Adding duplicate image handler for 'IFF file'
+13:44:47: Debug: Adding duplicate image handler for 'Windows icon file'
+13:44:47: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:44:47: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:44:47: Debug: Adding duplicate image handler for 'TGA file'
+13:44:47: Debug: Adding duplicate image handler for 'XPM file'
+CONTROL (all foreign near U4 removed): FOUND
+none: NONE 
+-SDAweave: FOUND vias []
+-WALL: NONE 
+-SDA-WALL: FOUND vias []
+-SDA-WALL-SCL: FOUND vias [[69.4, 36.5], [70.9, 35.8]]
+-SDA-WALL full: FOUND vias [[69.4, 36.5], [73.55, 33.05], [82.0, 17.55]]
+-SDA-WALL-SCL full: FOUND vias [[69.4, 36.5], [82.0, 17.55]]

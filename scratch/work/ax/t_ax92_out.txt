@@ -1,0 +1,41 @@
+13:55:58: Debug: Adding duplicate image handler for 'PNG file'
+13:55:58: Debug: Adding duplicate image handler for 'JPEG file'
+13:55:58: Debug: Adding duplicate image handler for 'TIFF file'
+13:55:58: Debug: Adding duplicate image handler for 'GIF file'
+13:55:58: Debug: Adding duplicate image handler for 'PNM file'
+13:55:58: Debug: Adding duplicate image handler for 'PCX file'
+13:55:58: Debug: Adding duplicate image handler for 'IFF file'
+13:55:58: Debug: Adding duplicate image handler for 'Windows icon file'
+13:55:58: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:55:58: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:55:58: Debug: Adding duplicate image handler for 'TGA file'
+13:55:58: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+13:56:00: Debug: Adding duplicate image handler for 'PNG file'
+13:56:00: Debug: Adding duplicate image handler for 'JPEG file'
+13:56:00: Debug: Adding duplicate image handler for 'TIFF file'
+13:56:00: Debug: Adding duplicate image handler for 'GIF file'
+13:56:00: Debug: Adding duplicate image handler for 'PNM file'
+13:56:00: Debug: Adding duplicate image handler for 'PCX file'
+13:56:00: Debug: Adding duplicate image handler for 'IFF file'
+13:56:00: Debug: Adding duplicate image handler for 'Windows icon file'
+13:56:00: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:56:00: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:56:00: Debug: Adding duplicate image handler for 'TGA file'
+13:56:00: Debug: Adding duplicate image handler for 'XPM file'
+== items in C14 target box (73,77,33,36.5):
+   L0 pad +3V3D (74.700,33.075) hw0.650x0.550
+   L0 pad GND (76.800,33.075) hw0.650x0.550
+   L0 seg +3V3D (74.700,33.050)->(74.700,33.025) hw0.125
+   L0 seg +3V3D (74.700,33.025)->(74.700,33.000) hw0.125
+   L0 seg +3V3D (74.700,33.075)->(74.700,33.050) hw0.125
+C14 pads found: 2 stub segs: 1
+ripped: 3
+REFCLKN rejoin: FOUND
+  vias: []
+  gate worst +0.287 seg REFCLKN (71.850,37.400)->(71.700,37.550) hw0.100 vs via I2C_SCL (70.875,37.875) r0.300
+SDA re-lay: NONE
+LOS full: NONE
