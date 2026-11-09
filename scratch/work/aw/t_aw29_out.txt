@@ -1,0 +1,62 @@
+10:55:18: Debug: Adding duplicate image handler for 'PNG file'
+10:55:18: Debug: Adding duplicate image handler for 'JPEG file'
+10:55:18: Debug: Adding duplicate image handler for 'TIFF file'
+10:55:18: Debug: Adding duplicate image handler for 'GIF file'
+10:55:18: Debug: Adding duplicate image handler for 'PNM file'
+10:55:18: Debug: Adding duplicate image handler for 'PCX file'
+10:55:18: Debug: Adding duplicate image handler for 'IFF file'
+10:55:18: Debug: Adding duplicate image handler for 'Windows icon file'
+10:55:18: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:55:18: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:55:18: Debug: Adding duplicate image handler for 'TGA file'
+10:55:18: Debug: Adding duplicate image handler for 'XPM file'
+tracks before: 5034
+netcodes captured: 14
+predicate SCL via 69.375,1.375: 1 victims
+predicate SCL F segs pocket: 10 victims
+predicate SCL In2 diag ends: 3 victims
+predicate SDA via 69.320,2.140: 1 victims
+predicate GND F seg end 68.25,3.5: 2 victims
+predicate TMP_ALERT F segs W: 6 victims
+predicate +3V3A F seg 69.225,2.75: 1 victims
+predicate CAP_CLK via esc 70.020,1.830: 1 victims
+predicate CAP_CLK F seg esc approach: 1 victims
+predicate SDA In2 frag E: 4 victims
+predicate rips removed: 30
+rip2 removed: 93 board items
+U9 moved to (67.0, 2.75)
+X2 moved to (75.75,32.25)
+C22 swapped to 0402 at (72.5, 18.0): pads {'PHY_1V8': (72.02, 18.0), 'GND': (72.98, 18.0)}
+C24 swapped to 0402 at (68.75, 18.0): pads {'+3V3A': (68.27, 18.0), 'GND': (69.23, 18.0)}
+C28 swapped to 0402 at (73.25, 20.75): pads {'+3V3D': (72.77, 20.75), 'GND': (73.73, 20.75)}
+X2 pad readback matches manifest
+patch vias done; via_map sizes {k: len(v) for k, v in via_map.items() if k}
+  snap detour_+3V3D_2 via (72.85,3.4) -> (72.875, 3.375)
+  snap v3a_heal2 via (75.5,8.25) -> (75.625, 8.625)
+  snap v3a_heal2 via (69.15,4.65) -> (69.125, 4.375)
+  snap detour_+3V3D_L1 via (75.825,1.275) -> (75.85, 1.3)
+  snap detour_+3V3D_L3 via (78.25,20.225) -> (78.375, 20.125)
+  snap detour_+3V3D_L3 via (71.25,24.325) -> (71.125, 24.375)
+  snap scl_ffan via (69.3,1.25) -> (69.35, 1.4)
+  snap x2_v3a_0 via (78.25,20.25) -> (78.375, 20.125)
+  snap x2_v3a_1 via (78.25,20.25) -> (78.375, 20.125)
+journey vias snapped: 9
+emitted tracks+vias: 8295
+R13 refdes -> (80.75,32.2)
+FB1 refdes -> (71.8,28.3)
+C26 refdes -> (64.2,4.9)
+saved hw/pdlvds_rx.exp241.kicad_pcb
+10:55:25: Debug: Adding duplicate image handler for 'PNG file'
+10:55:25: Debug: Adding duplicate image handler for 'JPEG file'
+10:55:25: Debug: Adding duplicate image handler for 'TIFF file'
+10:55:25: Debug: Adding duplicate image handler for 'GIF file'
+10:55:25: Debug: Adding duplicate image handler for 'PNM file'
+10:55:25: Debug: Adding duplicate image handler for 'PCX file'
+10:55:25: Debug: Adding duplicate image handler for 'IFF file'
+10:55:25: Debug: Adding duplicate image handler for 'Windows icon file'
+10:55:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:55:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:55:25: Debug: Adding duplicate image handler for 'TGA file'
+10:55:25: Debug: Adding duplicate image handler for 'XPM file'
+census diffs: 0
+T_AW29 BUILD2 COMPLETE

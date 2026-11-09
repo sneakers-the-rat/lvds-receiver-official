@@ -1,0 +1,48 @@
+10:04:41: Debug: Adding duplicate image handler for 'PNG file'
+10:04:41: Debug: Adding duplicate image handler for 'JPEG file'
+10:04:41: Debug: Adding duplicate image handler for 'TIFF file'
+10:04:41: Debug: Adding duplicate image handler for 'GIF file'
+10:04:41: Debug: Adding duplicate image handler for 'PNM file'
+10:04:41: Debug: Adding duplicate image handler for 'PCX file'
+10:04:41: Debug: Adding duplicate image handler for 'IFF file'
+10:04:41: Debug: Adding duplicate image handler for 'Windows icon file'
+10:04:41: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:04:41: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:04:41: Debug: Adding duplicate image handler for 'TGA file'
+10:04:41: Debug: Adding duplicate image handler for 'XPM file'
+tracks before: 5034
+netcodes captured: 14
+predicate SCL via 69.375,1.375: 1 victims
+predicate SCL F segs pocket: 10 victims
+predicate SCL In2 diag ends: 3 victims
+predicate SDA via 69.320,2.140: 1 victims
+predicate GND F seg end 68.25,3.5: 2 victims
+predicate TMP_ALERT F segs W: 6 victims
+predicate +3V3A F seg 69.225,2.75: 1 victims
+predicate CAP_CLK via esc 70.020,1.830: 1 victims
+predicate CAP_CLK F seg esc approach: 1 victims
+predicate SDA In2 frag E: 4 victims
+predicate rips removed: 30
+rip2 removed: 82 board items
+U9 moved to (67.0, 2.75)
+X2 moved to (75.75,32.25)
+C22 swapped to 0402 at (72.5, 18.0): pads {'PHY_1V8': (72.02, 18.0), 'GND': (72.98, 18.0)}
+C24 swapped to 0402 at (68.75, 18.0): pads {'+3V3A': (68.27, 18.0), 'GND': (69.23, 18.0)}
+C28 swapped to 0402 at (73.25, 20.75): pads {'+3V3D': (72.77, 20.75), 'GND': (73.73, 20.75)}
+X2 pad readback matches manifest
+emitted tracks+vias: 8042
+saved hw/pdlvds_rx.exp241.kicad_pcb
+10:04:49: Debug: Adding duplicate image handler for 'PNG file'
+10:04:49: Debug: Adding duplicate image handler for 'JPEG file'
+10:04:49: Debug: Adding duplicate image handler for 'TIFF file'
+10:04:49: Debug: Adding duplicate image handler for 'GIF file'
+10:04:49: Debug: Adding duplicate image handler for 'PNM file'
+10:04:49: Debug: Adding duplicate image handler for 'PCX file'
+10:04:49: Debug: Adding duplicate image handler for 'IFF file'
+10:04:49: Debug: Adding duplicate image handler for 'Windows icon file'
+10:04:49: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:04:49: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:04:49: Debug: Adding duplicate image handler for 'TGA file'
+10:04:49: Debug: Adding duplicate image handler for 'XPM file'
+census diffs: 0
+T_AW19 BUILD COMPLETE

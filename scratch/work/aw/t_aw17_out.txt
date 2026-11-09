@@ -1,0 +1,28 @@
+09:38:55: Debug: Adding duplicate image handler for 'PNG file'
+09:38:55: Debug: Adding duplicate image handler for 'JPEG file'
+09:38:55: Debug: Adding duplicate image handler for 'TIFF file'
+09:38:55: Debug: Adding duplicate image handler for 'GIF file'
+09:38:55: Debug: Adding duplicate image handler for 'PNM file'
+09:38:55: Debug: Adding duplicate image handler for 'PCX file'
+09:38:55: Debug: Adding duplicate image handler for 'IFF file'
+09:38:55: Debug: Adding duplicate image handler for 'Windows icon file'
+09:38:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:38:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:38:55: Debug: Adding duplicate image handler for 'TGA file'
+09:38:55: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+--- cached state check ---
+fragments(XO) = 1 sizes [208]
+fragments(DM_PHY) = 1 sizes [106]
+fragments(+3V3D) = 5 sizes [825, 58, 7, 4, 3]
+old stub segs ripped; C28 pads removed
+scan candidates: 110
+pad-legal candidates seen: 0
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/aw/t_aw17_c28w.py", line 200, in <module>
+    assert join2, 'C28 W/SW scan: no legal+routable+U5-joining centre'
+           ^^^^^
+AssertionError: C28 W/SW scan: no legal+routable+U5-joining centre

@@ -1,0 +1,40 @@
+10:43:48: Debug: Adding duplicate image handler for 'PNG file'
+10:43:48: Debug: Adding duplicate image handler for 'JPEG file'
+10:43:48: Debug: Adding duplicate image handler for 'TIFF file'
+10:43:48: Debug: Adding duplicate image handler for 'GIF file'
+10:43:48: Debug: Adding duplicate image handler for 'PNM file'
+10:43:48: Debug: Adding duplicate image handler for 'PCX file'
+10:43:48: Debug: Adding duplicate image handler for 'IFF file'
+10:43:48: Debug: Adding duplicate image handler for 'Windows icon file'
+10:43:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:43:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:43:48: Debug: Adding duplicate image handler for 'TGA file'
+10:43:48: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+point (67.0,5.5):
+   L0: -0.100 vs pad THR_DAC (66.300,5.250) hw0.725x0.150
+   L1: -0.300 vs seg GND (66.875,5.625)->(67.125,5.375) hw0.100
+   L2: +0.229 vs via THR_DAC (66.625,4.875) r0.300
+point (67.5,5.0):
+   L0: +0.285 vs pad THR_DAC (66.300,5.250) hw0.725x0.150
+   L1: -0.200 vs seg GND (67.375,5.125)->(67.375,4.125) hw0.125
+   L2: +0.050 vs seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+point (66.5,5.5):
+   L0: -0.100 vs pad THR_DAC (66.300,5.250) hw0.725x0.150
+   L1: +0.054 vs seg GND (66.625,5.875)->(66.875,5.625) hw0.100
+   L2: +0.137 vs via THR_DAC (66.625,4.875) r0.300
+point (68.0,5.5):
+   L0: +0.075 vs seg +3V3D (68.625,6.125)->(67.875,6.125) hw0.300
+   L1: +0.404 vs seg GND (67.375,5.125)->(67.375,4.125) hw0.125
+   L2: -0.200 vs seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+point (66.875,5.9):
+   L0: -0.200 vs pad HV_DAC (66.300,5.750) hw0.725x0.150
+   L1: -0.106 vs seg GND (66.625,5.875)->(66.875,5.625) hw0.100
+   L2: +0.403 vs via GND (66.200,6.500) r0.300
+point (67.0,6.2):
+   L0: -0.200 vs pad GND (66.300,6.250) hw0.725x0.150
+   L1: +0.195 vs seg GND (66.625,5.875)->(66.875,5.625) hw0.100
+   L2: +0.321 vs seg CDR_LOL (67.075,6.875)->(67.625,6.625) hw0.125
