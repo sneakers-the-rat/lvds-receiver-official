@@ -6182,6 +6182,36 @@
       },
       "description": "pass 212: CDR_LOS connected (C14 relocated (72,36.75)->(74.75,34.75); SDA U4 escape re-laid F-only; LOS A* route 4 vias; REFCLKN rejoin) - DRC unconnected 6->5 (island + 4 nets), check_pcb 5->4, violations 4 J1 only, silk 0, courtyard 0",
       "note": ""
+    },
+    {
+      "pass": 213,
+      "timestamp": "2026-11-09T15:24:20Z",
+      "hash": "a18722f745cd118a3e17e07c68ab6c5947a5dd99",
+      "short_hash": "a18722f",
+      "board_file": "hw/pdlvds_rx.exp250.kicad_pcb",
+      "dir": "pass-0213",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 109,
+        "unconnected_nets": 3,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 213: PHY_1V8A connected (C16 relocated (76,9.75)->(70.25,13.0) rot 180, 5.90 mm; C23 rotated 180 in place so its PHY pad faces east; XO tail ripped and rejoined on an F south loop; aj7 B journey re-gated verbatim; goal via (71.48,15.38) north of C23 with F stub to pad centre; +3V3D vias (70.875,12.625)+(70.875,15.875) shrunk d0.8->d0.5, B vertical normalized hw0.3->hw0.1; +3V3A B vertical thinned hw0.3->hw0.1; GND stitch via (72.9,9.45) ties C21.2 fill patch) - DRC unconnected 5->4 (island + 3 nets), check_pcb 4->3, violations 4 J1 only, silk 0, courtyard 0",
+      "note": ""
     }
   ],
   "gaps": [

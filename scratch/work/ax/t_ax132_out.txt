@@ -1,0 +1,51 @@
+15:13:35: Debug: Adding duplicate image handler for 'PNG file'
+15:13:35: Debug: Adding duplicate image handler for 'JPEG file'
+15:13:35: Debug: Adding duplicate image handler for 'TIFF file'
+15:13:35: Debug: Adding duplicate image handler for 'GIF file'
+15:13:35: Debug: Adding duplicate image handler for 'PNM file'
+15:13:35: Debug: Adding duplicate image handler for 'PCX file'
+15:13:35: Debug: Adding duplicate image handler for 'IFF file'
+15:13:35: Debug: Adding duplicate image handler for 'Windows icon file'
+15:13:35: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:13:35: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:13:35: Debug: Adding duplicate image handler for 'TGA file'
+15:13:35: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:13:36: Debug: Adding duplicate image handler for 'PNG file'
+15:13:36: Debug: Adding duplicate image handler for 'JPEG file'
+15:13:36: Debug: Adding duplicate image handler for 'TIFF file'
+15:13:36: Debug: Adding duplicate image handler for 'GIF file'
+15:13:36: Debug: Adding duplicate image handler for 'PNM file'
+15:13:36: Debug: Adding duplicate image handler for 'PCX file'
+15:13:36: Debug: Adding duplicate image handler for 'IFF file'
+15:13:36: Debug: Adding duplicate image handler for 'Windows icon file'
+15:13:36: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:13:36: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:13:36: Debug: Adding duplicate image handler for 'TGA file'
+15:13:36: Debug: Adding duplicate image handler for 'XPM file'
+C16 pad 1 +3V3D (71.025, 13.0)
+C16 pad 2 GND (69.475, 13.0)
+C23 pad 1 PHY_1V8A (71.525, 14.75)
+C23 pad 2 GND (69.975, 14.75)
+C23 refdes -> (69.6,17.2)
+seg +3V3D feed: 1 victim(s)
+seg +3V3D twig: 1 victim(s)
+via GND 71.8: 1 victim(s)
+via XO notch: 1 victim(s)
+seg XO B1: 1 victim(s)
+seg XO B2: 1 victim(s)
+seg XO F end: 1 victim(s)
+via XO 72.625: 1 victim(s)
+seg XO F vert: 1 victim(s)
+seg +3V3D Bv1: 1 victim(s)
+seg +3V3D Bv2: 1 victim(s)
+seg +3V3D Bv3: 1 victim(s)
+resized +3V3D via (70.875, 12.625)
+resized +3V3D via (70.875, 15.875)
+XO journey segs 121
+PHY tail segs 132
+GND journey segs 64
+saved exp250 (v2)

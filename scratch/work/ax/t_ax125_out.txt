@@ -1,0 +1,43 @@
+15:07:28: Debug: Adding duplicate image handler for 'PNG file'
+15:07:28: Debug: Adding duplicate image handler for 'JPEG file'
+15:07:28: Debug: Adding duplicate image handler for 'TIFF file'
+15:07:28: Debug: Adding duplicate image handler for 'GIF file'
+15:07:28: Debug: Adding duplicate image handler for 'PNM file'
+15:07:28: Debug: Adding duplicate image handler for 'PCX file'
+15:07:28: Debug: Adding duplicate image handler for 'IFF file'
+15:07:28: Debug: Adding duplicate image handler for 'Windows icon file'
+15:07:28: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:07:28: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:07:28: Debug: Adding duplicate image handler for 'TGA file'
+15:07:28: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:07:28: Debug: Adding duplicate image handler for 'PNG file'
+15:07:28: Debug: Adding duplicate image handler for 'JPEG file'
+15:07:28: Debug: Adding duplicate image handler for 'TIFF file'
+15:07:28: Debug: Adding duplicate image handler for 'GIF file'
+15:07:28: Debug: Adding duplicate image handler for 'PNM file'
+15:07:28: Debug: Adding duplicate image handler for 'PCX file'
+15:07:28: Debug: Adding duplicate image handler for 'IFF file'
+15:07:28: Debug: Adding duplicate image handler for 'Windows icon file'
+15:07:28: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:07:28: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:07:28: Debug: Adding duplicate image handler for 'TGA file'
+15:07:28: Debug: Adding duplicate image handler for 'XPM file'
+patch 0 bbox (68.48,11.39,70.35,14.02):
+   vias: [(69.55, 12.65)]
+   pads: [('C16.2', 69.475, 13.0)]
+patch 1 bbox (68.62,7.62,72.46,12.58):
+   vias: [(70.925, 9.975), (71.2, 10.45)]
+   pads: [('C26.2', 70.525, 9.0), ('C47.2', 71.775, 11.0)]
+patch 2 bbox (72.68,8.93,75.5,10.72):
+   vias: []
+   pads: [('C21.2', 73.525, 9.5)]
+patch 3 bbox (75.09,7.01,77.69,10.45):
+   vias: [(76.487, 9.139)]
+   pads: []
+patch 4 bbox (68.79,14.23,72.37,21.55):
+   vias: [(69.5, 18.125)]
+   pads: [('C49.2', 70.775, 19.5), ('R17.2', 70.825, 21.0), ('C24.2', 69.23, 18.0), ('C23.2', 69.975, 14.75)]

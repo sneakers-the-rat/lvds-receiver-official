@@ -1,0 +1,63 @@
+15:18:29: Debug: Adding duplicate image handler for 'PNG file'
+15:18:29: Debug: Adding duplicate image handler for 'JPEG file'
+15:18:29: Debug: Adding duplicate image handler for 'TIFF file'
+15:18:29: Debug: Adding duplicate image handler for 'GIF file'
+15:18:29: Debug: Adding duplicate image handler for 'PNM file'
+15:18:29: Debug: Adding duplicate image handler for 'PCX file'
+15:18:29: Debug: Adding duplicate image handler for 'IFF file'
+15:18:29: Debug: Adding duplicate image handler for 'Windows icon file'
+15:18:29: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:18:29: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:18:29: Debug: Adding duplicate image handler for 'TGA file'
+15:18:29: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:18:29: Debug: Adding duplicate image handler for 'PNG file'
+15:18:29: Debug: Adding duplicate image handler for 'JPEG file'
+15:18:29: Debug: Adding duplicate image handler for 'TIFF file'
+15:18:29: Debug: Adding duplicate image handler for 'GIF file'
+15:18:29: Debug: Adding duplicate image handler for 'PNM file'
+15:18:29: Debug: Adding duplicate image handler for 'PCX file'
+15:18:29: Debug: Adding duplicate image handler for 'IFF file'
+15:18:29: Debug: Adding duplicate image handler for 'Windows icon file'
+15:18:29: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:18:29: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:18:29: Debug: Adding duplicate image handler for 'TGA file'
+15:18:29: Debug: Adding duplicate image handler for 'XPM file'
+== pads/vias in (64,74,15,19.5):
+  pad C24 +3V3A (68.27, 18.0)
+  pad C24 GND (69.23, 18.0)
+  pad C27 +3V3D (65.72, 16.5)
+  pad C27 GND (67.28, 16.5)
+  pad C22 PHY_1V8 (72.02, 18.0)
+  pad C22 GND (72.98, 18.0)
+  pad U7 DP_PHY (73.56, 15.25)
+  pad U7 DM_PHY (73.56, 15.75)
+  pad R37 PG_3V3 (69.42, 16.5)
+  pad R37 +3V3D (71.08, 16.5)
+  via +3V3A (68.62, 19.12)
+  via +3V3A (68.38, 17.5)
+  via +3V3D (70.88, 15.88)
+  via +3V3D (67.28, 15.12)
+  via CAP_CLK (64.75, 16.95)
+  via CAP_DATA (72.6, 19.3)
+  via CAP_DATA (64.7, 15.45)
+  via DM_PHY (73.62, 19.12)
+  via DP_PHY (72.12, 15.88)
+  via GND (73.43, 17.68)
+  via GND (67.3, 16.9)
+  via GND (69.5, 18.12)
+  via PG_3V3 (69.62, 16.38)
+  via PHY_1V8 (71.38, 17.62)
+  via PHY_1V8A (71.48, 15.38)
+  via XO (70.95, 18.5)
+== footprints in the box:
+   C49 (70.0, 19.5) refdes field: [(58.02, 18.75)]
+   C24 (68.75, 18.0) refdes field: [(60.37, 20.52)]
+   R46 (67.5, 14.75) refdes field: [(59.76, 14.45)]
+   C27 (66.5, 16.5) refdes field: [(63.64, 15.6)]
+   C22 (72.5, 18.0) refdes field: [(64.01, 18.3)]
+   C23 (70.75, 14.75) refdes field: [(67.3, 16.9)]
+   R37 (70.25, 16.5) refdes field: [(56.23, 10.51)]

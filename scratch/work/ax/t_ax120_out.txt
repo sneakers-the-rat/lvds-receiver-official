@@ -1,0 +1,76 @@
+15:01:01: Debug: Adding duplicate image handler for 'PNG file'
+15:01:01: Debug: Adding duplicate image handler for 'JPEG file'
+15:01:01: Debug: Adding duplicate image handler for 'TIFF file'
+15:01:01: Debug: Adding duplicate image handler for 'GIF file'
+15:01:01: Debug: Adding duplicate image handler for 'PNM file'
+15:01:01: Debug: Adding duplicate image handler for 'PCX file'
+15:01:01: Debug: Adding duplicate image handler for 'IFF file'
+15:01:01: Debug: Adding duplicate image handler for 'Windows icon file'
+15:01:01: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:01:01: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:01:01: Debug: Adding duplicate image handler for 'TGA file'
+15:01:01: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:01:01: Debug: Adding duplicate image handler for 'PNG file'
+15:01:01: Debug: Adding duplicate image handler for 'JPEG file'
+15:01:01: Debug: Adding duplicate image handler for 'TIFF file'
+15:01:01: Debug: Adding duplicate image handler for 'GIF file'
+15:01:01: Debug: Adding duplicate image handler for 'PNM file'
+15:01:01: Debug: Adding duplicate image handler for 'PCX file'
+15:01:01: Debug: Adding duplicate image handler for 'IFF file'
+15:01:01: Debug: Adding duplicate image handler for 'Windows icon file'
+15:01:01: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:01:01: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:01:01: Debug: Adding duplicate image handler for 'TGA file'
+15:01:01: Debug: Adding duplicate image handler for 'XPM file'
+exp250 PHY_1V8A: 2 frags [116, 1]
+   small: F pad PHY_1V8A (71.525,14.750) hw0.450x0.475
+   terms: [(0, (71.525, 14.75))]
+exp250 +3V3D: 3 frags [4335, 3, 8]
+   small: F pad +3V3D (71.338,-6.750) hw0.738x0.150
+   small: F seg +3V3D (71.338,-6.750)->(72.338,-6.750) hw0.100
+   small: F seg +3V3D (72.338,-6.750)->(72.625,-6.875) hw0.100
+   terms: [(0, (72.625, -6.875))]
+   small: F pad +3V3D (91.250,-22.250) hw0.500x0.500
+   small: I pad +3V3D (91.250,-22.250) hw0.500x0.500
+   small: I seg +3V3D (91.375,-15.625)->(91.375,-15.125) hw0.100
+   small: I seg +3V3D (91.250,-22.000)->(91.375,-21.875) hw0.100
+   small: I seg +3V3D (91.375,-21.875)->(91.375,-20.875) hw0.100
+   small: I seg +3V3D (91.250,-22.250)->(91.250,-22.000) hw0.100
+   small: I seg +3V3D (91.375,-20.875)->(91.375,-15.625) hw0.300
+   small: B pad +3V3D (91.250,-22.250) hw0.500x0.500
+   terms: [(0, (91.25, -22.25)), (1, (91.375, -15.125)), (2, (91.25, -22.25))]
+15:01:30: Debug: Adding duplicate image handler for 'PNG file'
+15:01:30: Debug: Adding duplicate image handler for 'JPEG file'
+15:01:30: Debug: Adding duplicate image handler for 'TIFF file'
+15:01:30: Debug: Adding duplicate image handler for 'GIF file'
+15:01:30: Debug: Adding duplicate image handler for 'PNM file'
+15:01:30: Debug: Adding duplicate image handler for 'PCX file'
+15:01:30: Debug: Adding duplicate image handler for 'IFF file'
+15:01:30: Debug: Adding duplicate image handler for 'Windows icon file'
+15:01:30: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:01:30: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:01:30: Debug: Adding duplicate image handler for 'TGA file'
+15:01:30: Debug: Adding duplicate image handler for 'XPM file'
+exp249 PHY_1V8A: 2 frags [1, 1]
+   small: F pad PHY_1V8A (75.750,11.562) hw0.125x0.438
+   terms: [(0, (75.75, 11.5625))]
+   small: F pad PHY_1V8A (69.975,14.750) hw0.450x0.475
+   terms: [(0, (69.975, 14.75))]
+exp249 +3V3D: 3 frags [4337, 3, 8]
+   small: F pad +3V3D (71.338,-6.750) hw0.738x0.150
+   small: F seg +3V3D (71.338,-6.750)->(72.338,-6.750) hw0.100
+   small: F seg +3V3D (72.338,-6.750)->(72.625,-6.875) hw0.100
+   terms: [(0, (72.625, -6.875))]
+   small: F pad +3V3D (91.250,-22.250) hw0.500x0.500
+   small: I pad +3V3D (91.250,-22.250) hw0.500x0.500
+   small: I seg +3V3D (91.375,-15.625)->(91.375,-15.125) hw0.100
+   small: I seg +3V3D (91.250,-22.000)->(91.375,-21.875) hw0.100
+   small: I seg +3V3D (91.375,-21.875)->(91.375,-20.875) hw0.100
+   small: I seg +3V3D (91.250,-22.250)->(91.250,-22.000) hw0.100
+   small: I seg +3V3D (91.375,-20.875)->(91.375,-15.625) hw0.300
+   small: B pad +3V3D (91.250,-22.250) hw0.500x0.500
+   terms: [(0, (91.25, -22.25)), (1, (91.375, -15.125)), (2, (91.25, -22.25))]
