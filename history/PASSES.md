@@ -1748,9 +1748,9 @@ pass 213: PHY_1V8A connected (C16 relocated (76,9.75)->(70.25,13.0) rot 180, 5.9
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 3 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 214 — 2026-11-09T23:36:54Z · commit `pending`
+### Pass 214 — 2026-11-09T23:36:54Z · commit `5c103e5`
 
-Board: `hw/pdlvds_rx.exp251.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp251.kicad_pcb` · Commit: `5c103e516ae2c7af8a49d71b11ccd2c4fcaf2b3e`
 
 ULPI_STP connected (split pass, pass-210 precedent): C20 shrunk 0603->0402 at (76.2,18.73); STP F stub + dive via (76.065,17.96) and the 17-leg densified B/In2 journey west/south to U6.26 (ax design D, legs emitted verbatim; joint overshoot spurs amputated DRC-guided - coincident duplicate tracks are DRC-benign and were NOT deduped); PHY_1V8 west arm + F tail ripped for leg1's crossing and the south loop re-laid (via (77.90,10.08), F stub jogged clear of the +3V3A via); SDA B jog, HV_SHDN and PG_3V3 re-lays emitted. NAMED TRADE: ripping the arm severed C22's only feed - PHY_1V8's C22 fragment {C22.1 + tail} is the opened net, healed in pass 215 jointly with XI/USB_RST (C22 feed hunt: the quadrant pocket is sealed in every configuration searched - ay evidence t_ay2..t_ay41). GND F islands stitched (vias (67.65,-0.77), (69.13,-8.94)). KiCad DRC: violations 5 (4 standing J1 copper_edge + 1 track_dangling on the opened PHY tail); unconnected 3 (PHY_1V8 fragment, USB_RST, XI). check_pcb: nets 3, census 109, courtyard 0, blind 21 SH1.
 
