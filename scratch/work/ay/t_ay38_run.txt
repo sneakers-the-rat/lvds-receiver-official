@@ -1,0 +1,17 @@
+23:28:12: Debug: Adding duplicate image handler for 'PNG file'
+23:28:12: Debug: Adding duplicate image handler for 'JPEG file'
+23:28:12: Debug: Adding duplicate image handler for 'TIFF file'
+23:28:12: Debug: Adding duplicate image handler for 'GIF file'
+23:28:12: Debug: Adding duplicate image handler for 'PNM file'
+23:28:12: Debug: Adding duplicate image handler for 'PCX file'
+23:28:12: Debug: Adding duplicate image handler for 'IFF file'
+23:28:12: Debug: Adding duplicate image handler for 'Windows icon file'
+23:28:12: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:28:12: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:28:12: Debug: Adding duplicate image handler for 'TGA file'
+23:28:12: Debug: Adding duplicate image handler for 'XPM file'
+STP pads: [((71.3375, -2.25), (0.7375, 0.15)), ((76.25, 16.4375), (0.125, 0.4375))]
+iter 0: deleting spur (78.0, 9.3) -> (78.05, 9.25) layer 31
+total spurs deleted: 1
+saved exp251 v5 (spur loop)
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.

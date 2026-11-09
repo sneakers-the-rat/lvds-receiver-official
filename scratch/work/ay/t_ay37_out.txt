@@ -1,0 +1,26 @@
+23:04:01: Debug: Adding duplicate image handler for 'PNG file'
+23:04:01: Debug: Adding duplicate image handler for 'JPEG file'
+23:04:01: Debug: Adding duplicate image handler for 'TIFF file'
+23:04:01: Debug: Adding duplicate image handler for 'GIF file'
+23:04:01: Debug: Adding duplicate image handler for 'PNM file'
+23:04:01: Debug: Adding duplicate image handler for 'PCX file'
+23:04:01: Debug: Adding duplicate image handler for 'IFF file'
+23:04:01: Debug: Adding duplicate image handler for 'Windows icon file'
+23:04:01: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:04:01: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:04:01: Debug: Adding duplicate image handler for 'TGA file'
+23:04:01: Debug: Adding duplicate image handler for 'XPM file'
+spur at (71.5, -3.3) In2: degs (0, 1)
+spur at (74.0, -1.0) In2: degs (0, 1)
+spur at (69.6, -3.6) In2: degs (1, 0)
+spur at (77.45, 8.2) B: degs (0, 1)
+spur at (75.85, 10.1) B: degs (2, 0)
+spur at (78.25, 9.2) B: degs (1, 0)
+spurs removed: 6
+saved exp251 v4 (spurs)
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.

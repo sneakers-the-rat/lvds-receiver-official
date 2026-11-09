@@ -1,0 +1,52 @@
+15:58:26: Debug: Adding duplicate image handler for 'PNG file'
+15:58:26: Debug: Adding duplicate image handler for 'JPEG file'
+15:58:26: Debug: Adding duplicate image handler for 'TIFF file'
+15:58:26: Debug: Adding duplicate image handler for 'GIF file'
+15:58:26: Debug: Adding duplicate image handler for 'PNM file'
+15:58:26: Debug: Adding duplicate image handler for 'PCX file'
+15:58:26: Debug: Adding duplicate image handler for 'IFF file'
+15:58:26: Debug: Adding duplicate image handler for 'Windows icon file'
+15:58:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:58:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:58:26: Debug: Adding duplicate image handler for 'TGA file'
+15:58:26: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:58:27: Debug: Adding duplicate image handler for 'PNG file'
+15:58:27: Debug: Adding duplicate image handler for 'JPEG file'
+15:58:27: Debug: Adding duplicate image handler for 'TIFF file'
+15:58:27: Debug: Adding duplicate image handler for 'GIF file'
+15:58:27: Debug: Adding duplicate image handler for 'PNM file'
+15:58:27: Debug: Adding duplicate image handler for 'PCX file'
+15:58:27: Debug: Adding duplicate image handler for 'IFF file'
+15:58:27: Debug: Adding duplicate image handler for 'Windows icon file'
+15:58:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:58:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:58:27: Debug: Adding duplicate image handler for 'TGA file'
+15:58:27: Debug: Adding duplicate image handler for 'XPM file'
+point (71.0, 17.3):
+   G=+0.050 seg DP_PHY (70.625,17.375)->(70.625,17.125) hw0.125
+   G=+0.057 seg DP_PHY (70.375,17.625)->(70.625,17.375) hw0.125
+   G=+0.064 seg DP_PHY (70.625,17.125)->(70.875,16.875) hw0.125
+point (70.75, 17.3):
+   G=-0.200 seg DP_PHY (70.625,17.375)->(70.625,17.125) hw0.125
+   G=-0.179 seg DP_PHY (70.375,17.625)->(70.625,17.375) hw0.125
+   G=-0.110 seg DP_PHY (70.625,17.125)->(70.875,16.875) hw0.125
+point (70.5, 17.25):
+   G=-0.200 seg DP_PHY (70.625,17.375)->(70.625,17.125) hw0.125
+   G=-0.148 seg DP_PHY (70.375,17.625)->(70.625,17.375) hw0.125
+   G=-0.148 seg DP_PHY (70.625,17.125)->(70.875,16.875) hw0.125
+point (70.6, 16.9):
+   G=-0.148 seg DP_PHY (70.625,17.125)->(70.875,16.875) hw0.125
+   G=-0.099 seg DP_PHY (70.625,17.375)->(70.625,17.125) hw0.125
+   G=-0.049 seg DP_PHY (70.875,16.875)->(71.125,16.875) hw0.125
+point (70.35, 16.4):
+   G=+0.225 via PG_3V3 (69.625,16.375) r0.300
+   G=+0.242 via +3V3D (70.875,15.875) r0.250
+   G=+0.382 seg DP_PHY (70.625,17.125)->(70.875,16.875) hw0.125
+point (70.35, 15.0):
+   G=+0.175 seg +3V3D (70.875,12.625)->(70.875,15.875) hw0.100
+   G=+0.520 via +3V3D (70.875,15.875) r0.250
+   G=+0.692 via PHY_1V8A (71.480,15.380) r0.250

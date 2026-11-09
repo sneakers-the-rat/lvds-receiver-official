@@ -1,0 +1,75 @@
+20:05:56: Debug: Adding duplicate image handler for 'PNG file'
+20:05:56: Debug: Adding duplicate image handler for 'JPEG file'
+20:05:56: Debug: Adding duplicate image handler for 'TIFF file'
+20:05:56: Debug: Adding duplicate image handler for 'GIF file'
+20:05:56: Debug: Adding duplicate image handler for 'PNM file'
+20:05:56: Debug: Adding duplicate image handler for 'PCX file'
+20:05:56: Debug: Adding duplicate image handler for 'IFF file'
+20:05:56: Debug: Adding duplicate image handler for 'Windows icon file'
+20:05:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+20:05:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+20:05:56: Debug: Adding duplicate image handler for 'TGA file'
+20:05:56: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+20:05:56: Debug: Adding duplicate image handler for 'PNG file'
+20:05:56: Debug: Adding duplicate image handler for 'JPEG file'
+20:05:56: Debug: Adding duplicate image handler for 'TIFF file'
+20:05:56: Debug: Adding duplicate image handler for 'GIF file'
+20:05:56: Debug: Adding duplicate image handler for 'PNM file'
+20:05:56: Debug: Adding duplicate image handler for 'PCX file'
+20:05:56: Debug: Adding duplicate image handler for 'IFF file'
+20:05:56: Debug: Adding duplicate image handler for 'Windows icon file'
+20:05:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+20:05:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+20:05:56: Debug: Adding duplicate image handler for 'TGA file'
+20:05:56: Debug: Adding duplicate image handler for 'XPM file'
+20:05:57: Debug: Adding duplicate image handler for 'PNG file'
+20:05:57: Debug: Adding duplicate image handler for 'JPEG file'
+20:05:57: Debug: Adding duplicate image handler for 'TIFF file'
+20:05:57: Debug: Adding duplicate image handler for 'GIF file'
+20:05:57: Debug: Adding duplicate image handler for 'PNM file'
+20:05:57: Debug: Adding duplicate image handler for 'PCX file'
+20:05:57: Debug: Adding duplicate image handler for 'IFF file'
+20:05:57: Debug: Adding duplicate image handler for 'Windows icon file'
+20:05:57: Debug: Adding duplicate image handler for 'Windows cursor file'
+20:05:57: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+20:05:57: Debug: Adding duplicate image handler for 'TGA file'
+20:05:57: Debug: Adding duplicate image handler for 'XPM file'
+=== CDR_SQUELCH F items in (74.5..77.5, 17.5..20.5) ===
+    seg CDR_SQUELCH (75.625,19.375)->(77.875,19.375) hw0.125
+    seg CDR_SQUELCH (75.375,19.625)->(75.625,19.375) hw0.125
+    seg CDR_SQUELCH (75.125,19.875)->(75.375,19.625) hw0.125
+    seg CDR_SQUELCH (75.125,21.125)->(75.125,19.875) hw0.125
+=== STP tracks near dangle points (exp251) ===
+    2 (71.7, -3.3) -> (71.65, -3.3)
+    2 (69.55, -3.6) -> (69.6, -3.6)
+    2 (73.9, -1.1) -> (73.95, -1.05)
+    2 (69.5, -3.6) -> (69.55, -3.6)
+    2 (73.95, -1.05) -> (74.0, -1.0)
+    2 (69.6, -3.6) -> (69.65, -3.6)
+    2 (73.85, -1.15) -> (73.9, -1.1)
+    2 (71.55, -3.3) -> (71.5, -3.3)
+    2 (71.6, -3.3) -> (71.55, -3.3)
+    2 (71.65, -3.3) -> (71.6, -3.3)
+    2 (69.45, -3.6) -> (69.5, -3.6)
+    31 (71.7, -3.3) -> (71.65, -3.3)
+    31 (71.55, -3.3) -> (71.5, -3.3)
+    31 (71.6, -3.3) -> (71.55, -3.3)
+    31 (75.9, 10.1) -> (75.85, 10.1)
+    31 (78.15, 9.25) -> (78.2, 9.2)
+    31 (71.5, -3.3) -> (71.45, -3.3)
+    31 (75.9, 10.05) -> (75.95, 10.0)
+    31 (75.95, 10.1) -> (75.9, 10.1)
+    31 (77.3, 8.05) -> (77.35, 8.1)
+    31 (78.25, 9.2) -> (78.3, 9.2)
+    31 (71.65, -3.3) -> (71.6, -3.3)
+    31 (77.35, 8.1) -> (77.4, 8.15)
+    31 (75.85, 10.1) -> (75.9, 10.05)
+    31 (78.2, 9.2) -> (78.25, 9.2)
+    31 (75.85, 10.1) -> (75.8, 10.15)
+    31 (71.45, -3.3) -> (71.4, -3.3)
+    31 (77.4, 8.15) -> (77.45, 8.2)
+    31 (76.0, 10.15) -> (75.95, 10.1)

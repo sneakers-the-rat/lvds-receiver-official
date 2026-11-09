@@ -1,0 +1,128 @@
+17:05:56: Debug: Adding duplicate image handler for 'PNG file'
+17:05:56: Debug: Adding duplicate image handler for 'JPEG file'
+17:05:56: Debug: Adding duplicate image handler for 'TIFF file'
+17:05:56: Debug: Adding duplicate image handler for 'GIF file'
+17:05:56: Debug: Adding duplicate image handler for 'PNM file'
+17:05:56: Debug: Adding duplicate image handler for 'PCX file'
+17:05:56: Debug: Adding duplicate image handler for 'IFF file'
+17:05:56: Debug: Adding duplicate image handler for 'Windows icon file'
+17:05:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:05:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:05:56: Debug: Adding duplicate image handler for 'TGA file'
+17:05:56: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+17:05:56: Debug: Adding duplicate image handler for 'PNG file'
+17:05:56: Debug: Adding duplicate image handler for 'JPEG file'
+17:05:56: Debug: Adding duplicate image handler for 'TIFF file'
+17:05:56: Debug: Adding duplicate image handler for 'GIF file'
+17:05:56: Debug: Adding duplicate image handler for 'PNM file'
+17:05:56: Debug: Adding duplicate image handler for 'PCX file'
+17:05:56: Debug: Adding duplicate image handler for 'IFF file'
+17:05:56: Debug: Adding duplicate image handler for 'Windows icon file'
+17:05:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:05:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:05:56: Debug: Adding duplicate image handler for 'TGA file'
+17:05:56: Debug: Adding duplicate image handler for 'XPM file'
+--- XO F items in (69,75,17.5,22):
+   seg XO (71.725,20.050)->(71.725,20.025) hw0.100
+   seg XO (71.800,19.225)->(71.800,19.200) hw0.100
+   seg XO (71.700,20.350)->(71.700,20.325) hw0.100
+   seg XO (71.650,18.925)->(71.625,18.900) hw0.100
+   seg XO (71.725,20.000)->(71.725,19.975) hw0.100
+   seg XO (71.725,19.000)->(71.700,18.975) hw0.100
+   seg XO (71.625,18.900)->(71.600,18.875) hw0.100
+   seg XO (71.725,20.475)->(71.725,20.450) hw0.100
+   seg XO (71.775,19.050)->(71.750,19.025) hw0.100
+   seg XO (71.525,18.800)->(71.500,18.775) hw0.100
+   seg XO (71.800,19.075)->(71.775,19.050) hw0.100
+   seg XO (71.725,20.425)->(71.725,20.400) hw0.100
+   seg XO (71.750,20.550)->(71.725,20.525) hw0.100
+   seg XO (71.325,18.600)->(71.300,18.575) hw0.100
+   seg XO (71.800,19.150)->(71.800,19.125) hw0.100
+   seg XO (71.750,19.025)->(71.725,19.000) hw0.100
+   seg XO (71.800,19.125)->(71.800,19.100) hw0.100
+   seg XO (71.750,19.800)->(71.750,19.775) hw0.100
+   seg XO (71.125,18.525)->(71.100,18.525) hw0.100
+   seg XO (71.400,18.675)->(71.375,18.650) hw0.100
+   seg XO (71.800,19.100)->(71.800,19.075) hw0.100
+   seg XO (71.800,19.525)->(71.800,19.500) hw0.100
+   seg XO (71.725,19.975)->(71.725,19.950) hw0.100
+   seg XO (71.750,19.850)->(71.750,19.825) hw0.100
+   seg XO (71.800,19.550)->(71.800,19.525) hw0.100
+   seg XO (71.800,19.350)->(71.800,19.325) hw0.100
+   seg XO (71.700,20.300)->(71.700,20.275) hw0.100
+   seg XO (71.725,20.375)->(71.700,20.350) hw0.100
+   seg XO (71.475,18.750)->(71.450,18.725) hw0.100
+   seg XO (71.800,19.325)->(71.800,19.300) hw0.100
+   seg XO (71.700,20.325)->(71.700,20.300) hw0.100
+   seg XO (71.725,20.125)->(71.725,20.100) hw0.100
+   seg XO (71.200,18.550)->(71.175,18.550) hw0.100
+   seg XO (71.800,19.275)->(71.800,19.250) hw0.100
+   seg XO (71.800,19.425)->(71.800,19.400) hw0.100
+   seg XO (71.700,20.225)->(71.700,20.200) hw0.100
+   seg XO (71.075,18.525)->(71.050,18.525) hw0.100
+   seg XO (71.025,18.525)->(71.000,18.500) hw0.100
+   seg XO (71.275,18.550)->(71.250,18.550) hw0.100
+   seg XO (71.800,19.650)->(71.800,19.625) hw0.100
+   seg XO (71.500,18.775)->(71.475,18.750) hw0.100
+   seg XO (71.800,19.400)->(71.800,19.375) hw0.100
+   seg XO (71.450,18.725)->(71.425,18.700) hw0.100
+   seg XO (71.800,19.475)->(71.800,19.450) hw0.100
+   seg XO (71.725,20.500)->(71.725,20.475) hw0.100
+   seg XO (71.700,20.200)->(71.700,20.175) hw0.100
+   seg XO (71.800,19.600)->(71.800,19.575) hw0.100
+   seg XO (71.725,20.100)->(71.725,20.075) hw0.100
+   seg XO (71.700,18.975)->(71.675,18.950) hw0.100
+   seg XO (71.175,18.550)->(71.150,18.525) hw0.100
+   seg XO (71.750,19.775)->(71.750,19.750) hw0.100
+   seg XO (71.725,19.875)->(71.750,19.850) hw0.100
+   seg XO (71.350,18.625)->(71.325,18.600) hw0.100
+   seg XO (71.750,19.825)->(71.750,19.800) hw0.100
+   seg XO (70.975,18.500)->(70.950,18.500) hw0.100
+   seg XO (71.800,19.375)->(71.800,19.350) hw0.100
+   seg XO (71.775,19.700)->(71.775,19.675) hw0.100
+   seg XO (71.800,19.625)->(71.800,19.600) hw0.100
+   seg XO (71.800,19.300)->(71.800,19.275) hw0.100
+   seg XO (71.700,20.150)->(71.725,20.125) hw0.100
+   seg XO (71.300,18.575)->(71.275,18.550) hw0.100
+   seg XO (71.700,20.250)->(71.700,20.225) hw0.100
+   seg XO (71.375,18.650)->(71.350,18.625) hw0.100
+   seg XO (71.225,18.550)->(71.200,18.550) hw0.100
+   seg XO (71.750,19.750)->(71.775,19.725) hw0.100
+   seg XO (71.725,19.925)->(71.725,19.900) hw0.100
+   seg XO (71.100,18.525)->(71.075,18.525) hw0.100
+   seg XO (71.250,18.550)->(71.225,18.550) hw0.100
+   seg XO (71.725,20.525)->(71.725,20.500) hw0.100
+   seg XO (71.775,19.725)->(71.775,19.700) hw0.100
+   seg XO (71.725,20.075)->(71.725,20.050) hw0.100
+   seg XO (71.775,19.675)->(71.800,19.650) hw0.100
+   seg XO (71.725,19.900)->(71.725,19.875) hw0.100
+   seg XO (71.800,19.250)->(71.800,19.225) hw0.100
+   seg XO (71.425,18.700)->(71.400,18.675) hw0.100
+   seg XO (71.700,20.275)->(71.700,20.250) hw0.100
+   seg XO (71.800,19.450)->(71.800,19.425) hw0.100
+   seg XO (71.800,19.500)->(71.800,19.475) hw0.100
+   seg XO (71.725,20.400)->(71.725,20.375) hw0.100
+   seg XO (71.800,19.175)->(71.800,19.150) hw0.100
+   seg XO (71.800,19.575)->(71.800,19.550) hw0.100
+   seg XO (71.050,18.525)->(71.025,18.525) hw0.100
+   seg XO (71.000,18.500)->(70.975,18.500) hw0.100
+   seg XO (71.550,18.825)->(71.525,18.800) hw0.100
+   seg XO (71.675,18.950)->(71.650,18.925) hw0.100
+   seg XO (71.725,20.025)->(71.725,20.000) hw0.100
+   seg XO (71.150,18.525)->(71.125,18.525) hw0.100
+   seg XO (71.725,20.450)->(71.725,20.425) hw0.100
+   seg XO (71.725,19.950)->(71.725,19.925) hw0.100
+   seg XO (71.600,18.875)->(71.575,18.850) hw0.100
+   seg XO (71.700,20.175)->(71.700,20.150) hw0.100
+   seg XO (71.800,19.200)->(71.800,19.175) hw0.100
+   seg XO (71.575,18.850)->(71.550,18.825) hw0.100
+   via XO (70.950,18.500) r0.250
+   via XO (71.750,20.550) r0.250
+--- RBIAS F items in (69,75,17.5,22):
+   seg RBIAS (69.625,20.625)->(69.425,21.000) hw0.100
+   seg RBIAS (69.425,21.000)->(69.175,21.000) hw0.100
+   via RBIAS (69.625,20.625) r0.300

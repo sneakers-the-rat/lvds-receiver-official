@@ -1,0 +1,41 @@
+19:07:34: Debug: Adding duplicate image handler for 'PNG file'
+19:07:34: Debug: Adding duplicate image handler for 'JPEG file'
+19:07:34: Debug: Adding duplicate image handler for 'TIFF file'
+19:07:34: Debug: Adding duplicate image handler for 'GIF file'
+19:07:34: Debug: Adding duplicate image handler for 'PNM file'
+19:07:34: Debug: Adding duplicate image handler for 'PCX file'
+19:07:34: Debug: Adding duplicate image handler for 'IFF file'
+19:07:34: Debug: Adding duplicate image handler for 'Windows icon file'
+19:07:34: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:07:34: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:07:34: Debug: Adding duplicate image handler for 'TGA file'
+19:07:34: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+19:07:34: Debug: Adding duplicate image handler for 'PNG file'
+19:07:34: Debug: Adding duplicate image handler for 'JPEG file'
+19:07:34: Debug: Adding duplicate image handler for 'TIFF file'
+19:07:34: Debug: Adding duplicate image handler for 'GIF file'
+19:07:34: Debug: Adding duplicate image handler for 'PNM file'
+19:07:34: Debug: Adding duplicate image handler for 'PCX file'
+19:07:34: Debug: Adding duplicate image handler for 'IFF file'
+19:07:34: Debug: Adding duplicate image handler for 'Windows icon file'
+19:07:34: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:07:34: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:07:34: Debug: Adding duplicate image handler for 'TGA file'
+19:07:34: Debug: Adding duplicate image handler for 'XPM file'
+re-laying south-loop segs: 4
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+stub rip: ['seg PHY_1V8 (77.250,10.750)->(77.869,10.056) hw0.100', 'seg PHY_1V8 (77.869,10.056)->(77.450,10.100) hw0.150', 'via PHY_1V8 (77.869,10.056) r0.250']
+F (73.5, -0.6): G=-0.175 seg +3V3D (73.475,-0.375)->(73.525,-0.375) hw0.150 | 2nd -0.174 seg +3V3D (73.425,-0.375)->(73.475,-0.375) hw0.150
+F (73.3, -0.45): G=-0.325 seg +3V3D (73.275,-0.375)->(73.325,-0.375) hw0.150 | 2nd -0.321 seg +3V3D (73.225,-0.375)->(73.275,-0.375) hw0.150
+F (72.7, -0.4): G=-0.375 seg +3V3D (72.675,-0.375)->(72.725,-0.375) hw0.150 | 2nd -0.365 seg +3V3D (72.725,-0.375)->(72.775,-0.375) hw0.150
+F (72.45, -0.45): G=-0.211 seg +3V3D (72.338,-0.250)->(72.625,-0.375) hw0.100 | 2nd -0.210 seg +3V3D (72.625,-0.375)->(72.675,-0.375) hw0.150
+F (73.6, -0.9): G=+0.120 seg +3V3D (74.025,-0.700)->(74.025,-0.650) hw0.100 | 2nd +0.120 seg +3V3D (74.050,-0.725)->(74.025,-0.700) hw0.100
+F (72.0, -0.6): G=-0.200 pad ULPI_NXT (71.338,-0.750) hw0.738x0.150 | 2nd -0.050 pad +3V3D (71.338,-0.250) hw0.738x0.150
+F (73.45, -1.05): G=+0.275 seg +3V3D (73.425,-0.375)->(73.475,-0.375) hw0.150 | 2nd +0.275 seg +3V3D (73.475,-0.375)->(73.525,-0.375) hw0.150

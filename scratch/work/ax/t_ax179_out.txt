@@ -1,0 +1,37 @@
+16:01:30: Debug: Adding duplicate image handler for 'PNG file'
+16:01:30: Debug: Adding duplicate image handler for 'JPEG file'
+16:01:30: Debug: Adding duplicate image handler for 'TIFF file'
+16:01:30: Debug: Adding duplicate image handler for 'GIF file'
+16:01:30: Debug: Adding duplicate image handler for 'PNM file'
+16:01:30: Debug: Adding duplicate image handler for 'PCX file'
+16:01:30: Debug: Adding duplicate image handler for 'IFF file'
+16:01:30: Debug: Adding duplicate image handler for 'Windows icon file'
+16:01:30: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:01:30: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:01:30: Debug: Adding duplicate image handler for 'TGA file'
+16:01:30: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+16:01:31: Debug: Adding duplicate image handler for 'PNG file'
+16:01:31: Debug: Adding duplicate image handler for 'JPEG file'
+16:01:31: Debug: Adding duplicate image handler for 'TIFF file'
+16:01:31: Debug: Adding duplicate image handler for 'GIF file'
+16:01:31: Debug: Adding duplicate image handler for 'PNM file'
+16:01:31: Debug: Adding duplicate image handler for 'PCX file'
+16:01:31: Debug: Adding duplicate image handler for 'IFF file'
+16:01:31: Debug: Adding duplicate image handler for 'Windows icon file'
+16:01:31: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:01:31: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:01:31: Debug: Adding duplicate image handler for 'TGA file'
+16:01:31: Debug: Adding duplicate image handler for 'XPM file'
+point (71.5, 17.4) layer 0: G=+0.176 pad +3V3D (71.075,16.500) hw0.400x0.475
+point (71.5, 17.4) layer 1: G=+0.450 seg XO (72.375,16.625)->(71.125,16.625) hw0.125
+point (71.5, 17.4) layer 2: G=+0.320 seg DP_PHY (71.125,16.875)->(71.375,16.625) hw0.125
+point (71.3, 17.6) layer 0: G=+0.375 pad +3V3D (71.075,16.500) hw0.400x0.475
+point (71.3, 17.6) layer 1: G=+0.387 seg XO (70.625,17.125)->(70.625,17.375) hw0.125
+point (71.3, 17.6) layer 2: G=+0.387 seg DP_PHY (70.375,17.625)->(70.625,17.375) hw0.125
+point (71.7, 17.5) layer 0: G=+0.321 pad +3V3D (71.075,16.500) hw0.400x0.475
+point (71.7, 17.5) layer 1: G=+0.550 seg XO (72.375,16.625)->(71.125,16.625) hw0.125
+point (71.7, 17.5) layer 2: G=+0.524 seg DP_PHY (71.125,16.875)->(71.375,16.625) hw0.125

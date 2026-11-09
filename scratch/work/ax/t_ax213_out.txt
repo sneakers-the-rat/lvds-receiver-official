@@ -1,0 +1,37 @@
+17:07:00: Debug: Adding duplicate image handler for 'PNG file'
+17:07:00: Debug: Adding duplicate image handler for 'JPEG file'
+17:07:00: Debug: Adding duplicate image handler for 'TIFF file'
+17:07:00: Debug: Adding duplicate image handler for 'GIF file'
+17:07:00: Debug: Adding duplicate image handler for 'PNM file'
+17:07:00: Debug: Adding duplicate image handler for 'PCX file'
+17:07:00: Debug: Adding duplicate image handler for 'IFF file'
+17:07:00: Debug: Adding duplicate image handler for 'Windows icon file'
+17:07:00: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:07:00: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:07:00: Debug: Adding duplicate image handler for 'TGA file'
+17:07:00: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+17:07:01: Debug: Adding duplicate image handler for 'PNG file'
+17:07:01: Debug: Adding duplicate image handler for 'JPEG file'
+17:07:01: Debug: Adding duplicate image handler for 'TIFF file'
+17:07:01: Debug: Adding duplicate image handler for 'GIF file'
+17:07:01: Debug: Adding duplicate image handler for 'PNM file'
+17:07:01: Debug: Adding duplicate image handler for 'PCX file'
+17:07:01: Debug: Adding duplicate image handler for 'IFF file'
+17:07:01: Debug: Adding duplicate image handler for 'Windows icon file'
+17:07:01: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:07:01: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:07:01: Debug: Adding duplicate image handler for 'TGA file'
+17:07:01: Debug: Adding duplicate image handler for 'XPM file'
+re-laying south-loop segs: 4
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+F (75.15, 18.0): G=+0.143 via ULPI_DIR (75.500,17.521) r0.250 | 2nd +0.218 seg ULPI_NXT (74.650,17.800)->(74.500,19.250) hw0.100
+F (75.5, 17.9): G=-0.071 via ULPI_DIR (75.500,17.521) r0.250 | 2nd +0.079 seg ULPI_DIR (75.750,16.875)->(75.500,17.521) hw0.100
+F (75.6, 18.0): G=+0.039 via ULPI_DIR (75.500,17.521) r0.250 | 2nd +0.125 via XI (75.625,18.625) r0.300
+F (75.3, 17.85): G=-0.065 via ULPI_DIR (75.500,17.521) r0.250 | 2nd +0.085 seg ULPI_DIR (75.750,16.875)->(75.500,17.521) hw0.100
