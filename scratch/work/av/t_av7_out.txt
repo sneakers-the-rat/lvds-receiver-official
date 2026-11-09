@@ -1,0 +1,58 @@
+04:53:06: Debug: Adding duplicate image handler for 'PNG file'
+04:53:06: Debug: Adding duplicate image handler for 'JPEG file'
+04:53:06: Debug: Adding duplicate image handler for 'TIFF file'
+04:53:06: Debug: Adding duplicate image handler for 'GIF file'
+04:53:06: Debug: Adding duplicate image handler for 'PNM file'
+04:53:06: Debug: Adding duplicate image handler for 'PCX file'
+04:53:06: Debug: Adding duplicate image handler for 'IFF file'
+04:53:06: Debug: Adding duplicate image handler for 'Windows icon file'
+04:53:06: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:53:06: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:53:06: Debug: Adding duplicate image handler for 'TGA file'
+04:53:06: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+ripped 19 staircase segs
+=== shot I: In2 long ride (87.5,10.75) -> XO vertical ===
+  goal (1, 73.125, 13.5): NONE
+  goal (1, 73.125, 11.375): NONE
+=== shot N: B ride (87.5,10.75) -> frag-1 B seg (74.125,12.25) ===
+  NONE
+=== knot footprints (pads in x[67,75] y[17,23]) ===
+04:53:42: Debug: Adding duplicate image handler for 'PNG file'
+04:53:42: Debug: Adding duplicate image handler for 'JPEG file'
+04:53:42: Debug: Adding duplicate image handler for 'TIFF file'
+04:53:42: Debug: Adding duplicate image handler for 'GIF file'
+04:53:42: Debug: Adding duplicate image handler for 'PNM file'
+04:53:42: Debug: Adding duplicate image handler for 'PCX file'
+04:53:42: Debug: Adding duplicate image handler for 'IFF file'
+04:53:42: Debug: Adding duplicate image handler for 'Windows icon file'
+04:53:42: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:53:42: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:53:42: Debug: Adding duplicate image handler for 'TGA file'
+04:53:42: Debug: Adding duplicate image handler for 'XPM file'
+X2 at (71.500,23.750) rot=0:
+    pad 3 REFCLK (72.55,22.925)
+    pad 4 +3V3D (70.45,22.925)
+C49 at (70.000,19.500) rot=0:
+    pad 1 +3V3A (69.225,19.5)
+    pad 2 GND (70.775,19.5)
+R17 at (70.000,21.000) rot=0:
+    pad 1 RBIAS (69.175,21.0)
+    pad 2 GND (70.825,21.0)
+C24 at (68.750,18.000) rot=0:
+    pad 1 +3V3A (67.975,18.0)
+    pad 2 GND (69.525,18.0)
+C28 at (73.500,20.500) rot=0:
+    pad 1 +3V3D (72.725,20.5)
+    pad 2 GND (74.275,20.5)
+L1 at (66.750,20.500) rot=0:
+    pad 2 +3V3D (67.475,20.5)
+C22 at (72.500,18.000) rot=0:
+    pad 1 PHY_1V8 (71.725,18.0)
+    pad 2 GND (73.275,18.0)
+C38 at (67.500,22.750) rot=0:
+    pad 2 GND (68.45,22.75)
+done

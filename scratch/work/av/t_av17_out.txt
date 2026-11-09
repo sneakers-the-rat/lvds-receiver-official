@@ -1,0 +1,22 @@
+05:54:23: Debug: Adding duplicate image handler for 'PNG file'
+05:54:23: Debug: Adding duplicate image handler for 'JPEG file'
+05:54:23: Debug: Adding duplicate image handler for 'TIFF file'
+05:54:23: Debug: Adding duplicate image handler for 'GIF file'
+05:54:23: Debug: Adding duplicate image handler for 'PNM file'
+05:54:23: Debug: Adding duplicate image handler for 'PCX file'
+05:54:23: Debug: Adding duplicate image handler for 'IFF file'
+05:54:23: Debug: Adding duplicate image handler for 'Windows icon file'
+05:54:23: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:54:23: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:54:23: Debug: Adding duplicate image handler for 'TGA file'
+05:54:23: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+DIR seg removed
+no dummies, step=0.025: vias=[] runs=[(2, 401)]
+no dummies, step=0.05: vias=[] runs=[(2, 202)]
+with dummies, step=0.025: NONE
+with dummies, step=0.05: NONE
+done

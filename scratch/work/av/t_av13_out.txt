@@ -1,0 +1,50 @@
+05:55:37: Debug: Adding duplicate image handler for 'PNG file'
+05:55:37: Debug: Adding duplicate image handler for 'JPEG file'
+05:55:37: Debug: Adding duplicate image handler for 'TIFF file'
+05:55:37: Debug: Adding duplicate image handler for 'GIF file'
+05:55:37: Debug: Adding duplicate image handler for 'PNM file'
+05:55:37: Debug: Adding duplicate image handler for 'PCX file'
+05:55:37: Debug: Adding duplicate image handler for 'IFF file'
+05:55:37: Debug: Adding duplicate image handler for 'Windows icon file'
+05:55:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:55:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:55:37: Debug: Adding duplicate image handler for 'TGA file'
+05:55:37: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+RBIAS staircase: ripped 19
+fragments(ULPI_DIR) = 3 sizes [38, 1, 1]
+=== C49 shift E to (70.5,19.5) ===
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+C49 moved; +3V3A web re-laid
+=== ULPI_DIR long B seg re-lay (dip corridor reserved) ===
+  DIR A*: vias=[] runs=[(2, 396)]
+dir_tail_relay worst pairs:
+dir_tail_relay EMITTED
+fragments(ULPI_DIR) = 3 sizes [130, 1, 1]
+=== dip via scan (XO fields, current pool) ===
+viafit+track cells in knot: 0
+top cells by min-field (minf, x, y, F, In2, B):
+   +0.150 (70.525,20.175) F=+0.150 In2=+0.266 B=+0.460
+   +0.141 (70.525,20.150) F=+0.141 In2=+0.283 B=+0.449
+   +0.140 (70.550,20.175) F=+0.140 In2=+0.248 B=+0.438
+   +0.132 (70.500,20.175) F=+0.132 In2=+0.283 B=+0.483
+   +0.131 (70.525,20.125) F=+0.131 In2=+0.301 B=+0.438
+   +0.126 (70.550,20.150) F=+0.126 In2=+0.266 B=+0.427
+   +0.125 (68.375,21.600) F=+0.219 In2=+0.125 B=+0.175
+   +0.125 (70.575,20.200) F=+0.125 In2=+0.213 B=+0.427
+   +0.125 (70.550,20.200) F=+0.125 In2=+0.230 B=+0.449
+   +0.125 (70.525,20.200) F=+0.125 In2=+0.248 B=+0.472
+   +0.125 (70.500,20.200) F=+0.125 In2=+0.266 B=+0.473
+   +0.125 (70.475,20.200) F=+0.125 In2=+0.283 B=+0.450
+   +0.125 (68.425,20.450) F=+0.158 In2=+0.125 B=+0.125
+   +0.125 (68.425,20.425) F=+0.164 In2=+0.125 B=+0.125
+   +0.125 (68.425,20.400) F=+0.172 In2=+0.125 B=+0.125
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/av/t_av13_design.py", line 278, in <module>
+    assert dip_done, 'DIP FAILED: no via candidate closed XO'
+           ^^^^^^^^
+AssertionError: DIP FAILED: no via candidate closed XO

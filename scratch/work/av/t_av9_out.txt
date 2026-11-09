@@ -1,0 +1,26 @@
+04:56:53: Debug: Adding duplicate image handler for 'PNG file'
+04:56:53: Debug: Adding duplicate image handler for 'JPEG file'
+04:56:53: Debug: Adding duplicate image handler for 'TIFF file'
+04:56:53: Debug: Adding duplicate image handler for 'GIF file'
+04:56:53: Debug: Adding duplicate image handler for 'PNM file'
+04:56:53: Debug: Adding duplicate image handler for 'PCX file'
+04:56:53: Debug: Adding duplicate image handler for 'IFF file'
+04:56:53: Debug: Adding duplicate image handler for 'Windows icon file'
+04:56:53: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:56:53: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:56:53: Debug: Adding duplicate image handler for 'TGA file'
+04:56:53: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+ripped 19
+B leg stub->via: vias=[] runs=[(2, 94)]
+F leg disc->via: NONE
+In2 leg via->(71.0,24.3): NONE
+In2 leg via->(69.6,24.3): NONE
+In2 leg via->(69.4,22.5): NONE
+In2 leg (69.4,22.5)->goal: NONE
+In2 leg via->goal direct: NONE
+In2 leg via->S (74.6,19.6): NONE
+done
