@@ -1,0 +1,63 @@
+00:33:05: Debug: Adding duplicate image handler for 'PNG file'
+00:33:05: Debug: Adding duplicate image handler for 'JPEG file'
+00:33:05: Debug: Adding duplicate image handler for 'TIFF file'
+00:33:05: Debug: Adding duplicate image handler for 'GIF file'
+00:33:05: Debug: Adding duplicate image handler for 'PNM file'
+00:33:05: Debug: Adding duplicate image handler for 'PCX file'
+00:33:05: Debug: Adding duplicate image handler for 'IFF file'
+00:33:05: Debug: Adding duplicate image handler for 'Windows icon file'
+00:33:05: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:33:05: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:33:05: Debug: Adding duplicate image handler for 'TGA file'
+00:33:05: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 23 items
++3V3D: rip 8 items
+XO: rip 2 items
+assembly + rips done
+J30 run2 verbatim gate - worst 6:
+  -0.600 L1 seg CAP_DATA (70.650,20.850)->(72.300,19.200) hw0.100
+      vs -0.600 via XO (71.875,19.625) r0.300
+      vs -0.425 seg XO (71.375,20.125)->(71.625,19.875) hw0.125
+      vs -0.425 seg XO (70.875,20.625)->(71.125,20.375) hw0.125
+      vs -0.425 seg XO (71.625,19.875)->(71.875,19.625) hw0.125
+      vs -0.425 seg XO (70.625,20.875)->(70.875,20.625) hw0.125
+      vs -0.425 seg XO (71.125,20.375)->(71.375,20.125) hw0.125
+      vs -0.390 seg XO (70.375,21.125)->(70.625,20.875) hw0.125
+  -0.425 L1 seg CAP_DATA (70.650,20.900)->(70.650,20.850) hw0.100
+      vs -0.107 seg XO (70.875,20.625)->(71.125,20.375) hw0.125
+      vs -0.425 seg XO (70.625,20.875)->(70.875,20.625) hw0.125
+      vs -0.400 seg XO (70.375,21.125)->(70.625,20.875) hw0.125
+  -0.390 L1 seg CAP_DATA (70.550,21.000)->(70.650,20.900) hw0.100
+      vs -0.070 seg XO (70.875,20.625)->(71.125,20.375) hw0.125
+      vs -0.390 seg XO (70.625,20.875)->(70.875,20.625) hw0.125
+      vs -0.390 seg XO (70.375,21.125)->(70.625,20.875) hw0.125
+  -0.390 L1 seg CAP_DATA (70.550,21.050)->(70.550,21.000) hw0.100
+      vs +0.071 seg XO (70.875,20.625)->(71.125,20.375) hw0.125
+      vs -0.279 seg XO (70.625,20.875)->(70.875,20.625) hw0.125
+      vs -0.390 seg XO (70.375,21.125)->(70.625,20.875) hw0.125
+  -0.354 L1 seg CAP_DATA (70.050,21.550)->(70.550,21.050) hw0.100
+      vs -0.235 seg XO (70.625,20.875)->(70.875,20.625) hw0.125
+      vs -0.354 seg XO (70.375,21.125)->(70.625,20.875) hw0.125
+      vs -0.295 via CAP_CLK (70.100,21.800) r0.250
+  -0.302 L1 seg CAP_DATA (69.900,21.650)->(70.000,21.550) hw0.100
+      vs -0.302 via CAP_CLK (70.100,21.800) r0.250
+DATA run2 [baseline]: NONE
+DATA run2 [minus PG_3V3]: NONE
+DATA run2 [minus XO]: FOUND
+DATA run2 [minus +3V3D]: NONE
+DATA run2 [minus CAP_CLK]: NONE
+DATA run2 [minus CDR_DATN]: NONE
+DATA run2 [minus CDR_DATP]: NONE
+DATA run2 [minus PG+XO+3V3D+CLK]: FOUND
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/au/t_au76_arrdiag.py", line 77, in <module>
+    w = U.widest(G, 'CAP_DATA')
+        ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/au/t_au1_lib.py", line 181, in widest
+    v0 = tval(1, sc[0], sc[1])
+         ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/au/t_au1_lib.py", line 173, in tval
+    return G[l][iy, ix] - 0.10
+           ~~~~^^^^^^^^
+KeyError: (124, 138)
+EXITCODE=1

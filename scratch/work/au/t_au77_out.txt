@@ -1,0 +1,57 @@
+00:39:04: Debug: Adding duplicate image handler for 'PNG file'
+00:39:04: Debug: Adding duplicate image handler for 'JPEG file'
+00:39:04: Debug: Adding duplicate image handler for 'TIFF file'
+00:39:04: Debug: Adding duplicate image handler for 'GIF file'
+00:39:04: Debug: Adding duplicate image handler for 'PNM file'
+00:39:04: Debug: Adding duplicate image handler for 'PCX file'
+00:39:04: Debug: Adding duplicate image handler for 'IFF file'
+00:39:04: Debug: Adding duplicate image handler for 'Windows icon file'
+00:39:04: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:39:04: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:39:04: Debug: Adding duplicate image handler for 'TGA file'
+00:39:04: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 23 items
++3V3D: rip 8 items
+XO: rip 2 items
+assembly + rips done
+PG_3V3: REF-rip 0 items
++3V3D: REF-rip 0 items
+XO: REF-rip 10 items
+arrival DATA (in2): FOUND
+arrival CLK (in2): FOUND
+arrivals: ('DATA', 'in2', 'CLK', 'in2')
+saved stage1
+PG detours:
+  PG_3V3: detour 1 (64.875, 14.125) -> (63.875, 13.125) vias=[[65.15, 14.45], [63.45, 14.45]]
+  PG_3V3: detour 2 (68.125, 2.375) -> (63.375, 7.125) vias=[]
+  PG_3V3: connected
++3V3D detours:
+  +3V3D: NO detour for 7 fragments
+XO detours:
+  XO: NO detour for 4 fragments
+SCL fanout goal (0, 66.025, 2.1): NONE
+SCL fanout goal (0, 66.45, 2.1): NONE
+SCL fanout goal (0, 66.3, 2.05): NONE
+heal2 final: NONE
+GATE FAIL L1 -0.048
+GATE FAIL L1 -0.048
+GATE FAIL L1 -0.048
+full gate: 3 failures
+fragments2 CAP_CLK: 2 sizes [199, 1]
+  small: ['pad CAP_CLK (76.525,25.385) hw0.975x0.300']
+fragments2 CAP_DATA: 3 sizes [187, 1, 1]
+  small: ['pad CAP_DATA (71.338,2.250) hw0.738x0.150']
+  small: ['pad CAP_DATA (76.525,22.845) hw0.975x0.300']
+fragments2 I2C_SCL: 2 sizes [91, 1]
+  small: ['pad I2C_SCL (66.025,2.100) hw0.225x0.150']
+fragments2 I2C_SDA: 1 sizes [120]
+fragments2 +3V3A: 8 sizes [109, 7, 6, 3, 1, 1]
+  small: ['pad +3V3A (71.338,0.750) hw0.738x0.150']
+  small: ['pad +3V3A (71.338,1.250) hw0.738x0.150', 'seg +3V3A (71.338,1.000)->(71.375,0.875) hw0.100', 'seg +3V3A (71.338,1.250)->(71.338,1.000) hw0.100']
+  small: ['pad +3V3A (73.562,14.750) hw0.438x0.125']
+  small: ['pad +3V3A (75.250,11.562) hw0.125x0.438']
+  small: ['pad +3V3A (74.750,11.562) hw0.125x0.438']
+fragments2 TMP_ALERT: 1 sizes [23]
+saved build_au77.json
+done
+EXITCODE=0
