@@ -1,0 +1,42 @@
+01:43:33: Debug: Adding duplicate image handler for 'PNG file'
+01:43:33: Debug: Adding duplicate image handler for 'JPEG file'
+01:43:33: Debug: Adding duplicate image handler for 'TIFF file'
+01:43:33: Debug: Adding duplicate image handler for 'GIF file'
+01:43:33: Debug: Adding duplicate image handler for 'PNM file'
+01:43:33: Debug: Adding duplicate image handler for 'PCX file'
+01:43:33: Debug: Adding duplicate image handler for 'IFF file'
+01:43:33: Debug: Adding duplicate image handler for 'Windows icon file'
+01:43:33: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:43:33: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:43:33: Debug: Adding duplicate image handler for 'TGA file'
+01:43:33: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+rip2 PG_3V3: removed 23 layer-copies / 23 items
+rip2 +3V3D: removed 10 layer-copies / 8 items
+rip2 XO: removed 14 layer-copies / 13 items
+model rebuilt from au79
+fanout B ride goal (2, 66.3, 1.35): NONE
+fanout B ride goal (2, 66.35, 1.3): NONE
+fanout B ride goal (2, 66.25, 1.45): NONE
+heal2 stage1: NONE
+saved scratch/work/au/build_au80_stageA.json
++3V3D: 6 fragments
+   size 54 terms [(0, (72.625, 0.625))]
+   size 3 terms [(0, (74.25, 3.162499)), (0, (74.25, 3.662499))]
+   size 430 terms [(0, (75.275, 24.115)), (0, (72.625, 3.375)), (0, (81.625, 3.375)), (0, (66.375, 10.375)), (0, (82.975, 22.845)), (0, (74.25, 3.5))]
+   size 4 terms [(0, (72.375, 21.125))]
+   size 3 terms [(0, (74.375, 7.875))]
+   size 7 terms [(1, (81.625, 10.9)), (2, (81.625, 10.9))]
+XO: 2 fragments
+   size 96 terms [(0, (71.625, 25.625)), (2, (69.625, 31.625)), (2, (87.5, 10.75)), (2, (72.125, 29.125)), (2, (71.875, 19.625))]
+   size 44 terms [(0, (72.375, 10.0)), (1, (72.625, 12.25)), (1, (76.0, 10.625)), (1, (68.875, 20.375)), (2, (72.125, 9.875))]
++3V3D detours v4:
+  +3V3D: NO detour for 6 fragments
+XO detours v4:
+  XO: NO detour for 2 fragments
+full gate: 0 failures
+saved scratch/work/au/build_au80.json
+done
+EXITCODE=0
