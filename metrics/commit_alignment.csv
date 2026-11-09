@@ -1028,3 +1028,8 @@ b73292929631,2026-11-09T13:17:42Z,metrics: post-merge regen,1564517839,10390277,
 ae36c4232510,2026-11-09T14:28:27Z,merge mwork9 pass 212 (CDR_LOS),1572252664,10426974,1582679638,83,64,not recorded
 98f0250dc092,2026-11-09T14:29:03Z,metrics: post-merge regen,1572252664,10426974,1582679638,83,64,not recorded
 8adadb86ac22,2026-11-09T14:46:13Z,metrics: watchdog export refresh,1572252664,10426974,1582679638,83,64,not recorded
+60946ad710b7,2026-11-09T15:14:19Z,metrics: watchdog export refresh,1578383390,10443308,1588826698,83,64,not recorded
+780b7ede25bd,2026-11-09T15:24:17Z,"ax evidence: PHY_1V8A item-3 design/build chain (t_ax98-t_ax142, designs ax111-ax131, referees drc250/check250)",1578383390,10443308,1588826698,83,64,not recorded
+a18722f745cd,2026-11-09T15:29:00Z,"pass 0213: pass 213: PHY_1V8A connected (C16 relocated (76,9.75)->(70.25,13.0) rot 180, 5.90 mm; C23 rotated 180 in place so its PHY pad faces east; XO tail ripped and rejoined on an F south loop; aj7 B journey re-gated verbatim; goal via (71.48,15.38) north of C23 with F stub to pad centre; +3V3D vias (70.875,12.625)+(70.875,15.875) shrunk d0.8->d0.5, B vertical normalized hw0.3->hw0.1; +3V3A B vertical thinned hw0.3->hw0.1; GND stitch via (72.9,9.45) ties C21.2 fill patch) - DRC unconnected 5->4 (island + 3 nets), check_pcb 4->3, violations 4 J1 only, silk 0, courtyard 0",1578383390,10443308,1588826698,83,64,not recorded
+15d1de5d94d8,2026-11-09T15:29:00Z,pass 0213: record commit hash,1578383390,10443308,1588826698,83,64,not recorded
+efbef1780428,2026-11-09T15:30:13Z,Merge branch 'mwork9' of /home/hatch/workspace/pdlvds-route into mwork9,1578383390,10443308,1588826698,83,64,not recorded
