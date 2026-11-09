@@ -1732,6 +1732,14 @@ pass 211: I2C_SCL connected via R20 relocation to (68.5,-1.75) + southern +3V3D 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 5 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 212 — 2026-11-09T14:24:16Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp249.kicad_pcb` · Commit: `pending`
+
+pass 212: CDR_LOS connected (C14 relocated (72,36.75)->(74.75,34.75); SDA U4 escape re-laid F-only; LOS A* route 4 vias; REFCLKN rejoin) - DRC unconnected 6->5 (island + 4 nets), check_pcb 5->4, violations 4 J1 only, silk 0, courtyard 0
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 4 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
