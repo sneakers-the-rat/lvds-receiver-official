@@ -1,0 +1,5 @@
+Loading board
+Running DRC...
+Found 5 violations
+Found 6 unconnected items
+Saved DRC Report to scratch/work/ax/drc241_base.rpt
