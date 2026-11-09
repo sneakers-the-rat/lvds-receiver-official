@@ -1,0 +1,38 @@
+12:13:31: Debug: Adding duplicate image handler for 'PNG file'
+12:13:31: Debug: Adding duplicate image handler for 'JPEG file'
+12:13:31: Debug: Adding duplicate image handler for 'TIFF file'
+12:13:31: Debug: Adding duplicate image handler for 'GIF file'
+12:13:31: Debug: Adding duplicate image handler for 'PNM file'
+12:13:31: Debug: Adding duplicate image handler for 'PCX file'
+12:13:31: Debug: Adding duplicate image handler for 'IFF file'
+12:13:31: Debug: Adding duplicate image handler for 'Windows icon file'
+12:13:31: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:13:31: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:13:31: Debug: Adding duplicate image handler for 'TGA file'
+12:13:31: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+12:13:33: Debug: Adding duplicate image handler for 'PNG file'
+12:13:33: Debug: Adding duplicate image handler for 'JPEG file'
+12:13:33: Debug: Adding duplicate image handler for 'TIFF file'
+12:13:33: Debug: Adding duplicate image handler for 'GIF file'
+12:13:33: Debug: Adding duplicate image handler for 'PNM file'
+12:13:33: Debug: Adding duplicate image handler for 'PCX file'
+12:13:33: Debug: Adding duplicate image handler for 'IFF file'
+12:13:33: Debug: Adding duplicate image handler for 'Windows icon file'
+12:13:33: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:13:33: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:13:33: Debug: Adding duplicate image handler for 'TGA file'
+12:13:33: Debug: Adding duplicate image handler for 'XPM file'
+BEFORE: {'I2C_SCL': 4, '+3V3D': 5}
+stub rip removals: 9 (expect 2+3+4=9)
+  old pad out: pad I2C_SCL (69.425,12.750) hw0.400x0.475
+  old pad out: pad +3V3D (71.075,12.750) hw0.400x0.475
+  feed rip seg +3V3D (70.875,12.625)->(70.825,12.750) hw0.100: 1
+  feed rip seg +3V3D (70.825,12.750)->(71.075,12.750) hw0.100: 1
+  feed rip seg +3V3D (70.825,12.750)->(70.625,12.375) hw0.100: 1
+re-join C' gate: +0.658
+SCL F A*: NONE
+SCL F NONE

@@ -1,0 +1,72 @@
+12:26:33: Debug: Adding duplicate image handler for 'PNG file'
+12:26:33: Debug: Adding duplicate image handler for 'JPEG file'
+12:26:33: Debug: Adding duplicate image handler for 'TIFF file'
+12:26:33: Debug: Adding duplicate image handler for 'GIF file'
+12:26:33: Debug: Adding duplicate image handler for 'PNM file'
+12:26:33: Debug: Adding duplicate image handler for 'PCX file'
+12:26:33: Debug: Adding duplicate image handler for 'IFF file'
+12:26:33: Debug: Adding duplicate image handler for 'Windows icon file'
+12:26:33: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:26:33: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:26:33: Debug: Adding duplicate image handler for 'TGA file'
+12:26:33: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+12:26:33: Debug: Adding duplicate image handler for 'PNG file'
+12:26:33: Debug: Adding duplicate image handler for 'JPEG file'
+12:26:33: Debug: Adding duplicate image handler for 'TIFF file'
+12:26:33: Debug: Adding duplicate image handler for 'GIF file'
+12:26:33: Debug: Adding duplicate image handler for 'PNM file'
+12:26:33: Debug: Adding duplicate image handler for 'PCX file'
+12:26:33: Debug: Adding duplicate image handler for 'IFF file'
+12:26:33: Debug: Adding duplicate image handler for 'Windows icon file'
+12:26:33: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:26:33: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:26:33: Debug: Adding duplicate image handler for 'TGA file'
+12:26:33: Debug: Adding duplicate image handler for 'XPM file'
+  box rips GND L1: 6 segs, 6 removals
+  box rips CDR_LOL L2: 7 segs, 7 removals
+== shrink_v3a=False
+  B W5 -> (71.625, 3.375): NONE
+  B W5 -> (72.375, 4.125): NONE
+  B W5 -> (73.375, 5.125): NONE
+  B W5 -> (70.875, 2.625): NONE
+12:26:39: Debug: Adding duplicate image handler for 'PNG file'
+12:26:39: Debug: Adding duplicate image handler for 'JPEG file'
+12:26:39: Debug: Adding duplicate image handler for 'TIFF file'
+12:26:39: Debug: Adding duplicate image handler for 'GIF file'
+12:26:39: Debug: Adding duplicate image handler for 'PNM file'
+12:26:39: Debug: Adding duplicate image handler for 'PCX file'
+12:26:39: Debug: Adding duplicate image handler for 'IFF file'
+12:26:39: Debug: Adding duplicate image handler for 'Windows icon file'
+12:26:39: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:26:39: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:26:39: Debug: Adding duplicate image handler for 'TGA file'
+12:26:39: Debug: Adding duplicate image handler for 'XPM file'
+  box rips GND L1: 6 segs, 6 removals
+  box rips CDR_LOL L2: 7 segs, 7 removals
+== shrink_v3a=True
+  B W5 -> (71.625, 3.375): NONE
+  B W5 -> (72.375, 4.125): NONE
+  B W5 -> (73.375, 5.125): NONE
+  B W5 -> (70.875, 2.625): NONE
+12:26:45: Debug: Adding duplicate image handler for 'PNG file'
+12:26:45: Debug: Adding duplicate image handler for 'JPEG file'
+12:26:45: Debug: Adding duplicate image handler for 'TIFF file'
+12:26:45: Debug: Adding duplicate image handler for 'GIF file'
+12:26:45: Debug: Adding duplicate image handler for 'PNM file'
+12:26:45: Debug: Adding duplicate image handler for 'PCX file'
+12:26:45: Debug: Adding duplicate image handler for 'IFF file'
+12:26:45: Debug: Adding duplicate image handler for 'Windows icon file'
+12:26:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:26:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:26:45: Debug: Adding duplicate image handler for 'TGA file'
+12:26:45: Debug: Adding duplicate image handler for 'XPM file'
+  box rips GND L1: 6 segs, 6 removals
+  box rips CDR_LOL L2: 7 segs, 7 removals
+W5 -> (78.125, 8.375) L1: NONE
+W5 -> (79.125, 8.375) L1: NONE
+W5 -> (77.38, 9.12) L2: NONE
+W5 -> (76.5, 9.87) L2: NONE

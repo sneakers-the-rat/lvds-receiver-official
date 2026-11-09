@@ -1,0 +1,70 @@
+12:15:46: Debug: Adding duplicate image handler for 'PNG file'
+12:15:46: Debug: Adding duplicate image handler for 'JPEG file'
+12:15:46: Debug: Adding duplicate image handler for 'TIFF file'
+12:15:46: Debug: Adding duplicate image handler for 'GIF file'
+12:15:46: Debug: Adding duplicate image handler for 'PNM file'
+12:15:46: Debug: Adding duplicate image handler for 'PCX file'
+12:15:46: Debug: Adding duplicate image handler for 'IFF file'
+12:15:46: Debug: Adding duplicate image handler for 'Windows icon file'
+12:15:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:15:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:15:46: Debug: Adding duplicate image handler for 'TGA file'
+12:15:46: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+12:15:46: Debug: Adding duplicate image handler for 'PNG file'
+12:15:46: Debug: Adding duplicate image handler for 'JPEG file'
+12:15:46: Debug: Adding duplicate image handler for 'TIFF file'
+12:15:46: Debug: Adding duplicate image handler for 'GIF file'
+12:15:46: Debug: Adding duplicate image handler for 'PNM file'
+12:15:46: Debug: Adding duplicate image handler for 'PCX file'
+12:15:46: Debug: Adding duplicate image handler for 'IFF file'
+12:15:46: Debug: Adding duplicate image handler for 'Windows icon file'
+12:15:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:15:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:15:46: Debug: Adding duplicate image handler for 'TGA file'
+12:15:46: Debug: Adding duplicate image handler for 'XPM file'
+== site (68.5,-1.75): pad1 (67.675, -1.75) pad2 (69.325, -1.75)
+   +3V3D nearest: L0 d=0.00 pad +3V3D (69.325,-1.750) hw0.400x0.475
+   SCL A*: FOUND
+     vias: []
+   +3V3D A*: FOUND
+     vias: []
+12:15:59: Debug: Adding duplicate image handler for 'PNG file'
+12:15:59: Debug: Adding duplicate image handler for 'JPEG file'
+12:15:59: Debug: Adding duplicate image handler for 'TIFF file'
+12:15:59: Debug: Adding duplicate image handler for 'GIF file'
+12:15:59: Debug: Adding duplicate image handler for 'PNM file'
+12:15:59: Debug: Adding duplicate image handler for 'PCX file'
+12:15:59: Debug: Adding duplicate image handler for 'IFF file'
+12:15:59: Debug: Adding duplicate image handler for 'Windows icon file'
+12:15:59: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:15:59: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:15:59: Debug: Adding duplicate image handler for 'TGA file'
+12:15:59: Debug: Adding duplicate image handler for 'XPM file'
+== site (68.0,-1.5): pad1 (67.175, -1.5) pad2 (68.825, -1.5)
+   +3V3D nearest: L0 d=0.00 pad +3V3D (68.825,-1.500) hw0.400x0.475
+   SCL A*: FOUND
+     vias: []
+   +3V3D A*: FOUND
+     vias: []
+12:16:08: Debug: Adding duplicate image handler for 'PNG file'
+12:16:08: Debug: Adding duplicate image handler for 'JPEG file'
+12:16:08: Debug: Adding duplicate image handler for 'TIFF file'
+12:16:08: Debug: Adding duplicate image handler for 'GIF file'
+12:16:08: Debug: Adding duplicate image handler for 'PNM file'
+12:16:08: Debug: Adding duplicate image handler for 'PCX file'
+12:16:08: Debug: Adding duplicate image handler for 'IFF file'
+12:16:08: Debug: Adding duplicate image handler for 'Windows icon file'
+12:16:08: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:16:08: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:16:08: Debug: Adding duplicate image handler for 'TGA file'
+12:16:08: Debug: Adding duplicate image handler for 'XPM file'
+== site (67.5,-1.25): pad1 (66.675, -1.25) pad2 (68.325, -1.25)
+   +3V3D nearest: L0 d=0.00 pad +3V3D (68.325,-1.250) hw0.400x0.475
+   SCL A*: FOUND
+     vias: []
+   +3V3D A*: FOUND
+     vias: []
