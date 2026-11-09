@@ -1,0 +1,141 @@
+11:38:36: Debug: Adding duplicate image handler for 'PNG file'
+11:38:36: Debug: Adding duplicate image handler for 'JPEG file'
+11:38:36: Debug: Adding duplicate image handler for 'TIFF file'
+11:38:36: Debug: Adding duplicate image handler for 'GIF file'
+11:38:36: Debug: Adding duplicate image handler for 'PNM file'
+11:38:36: Debug: Adding duplicate image handler for 'PCX file'
+11:38:36: Debug: Adding duplicate image handler for 'IFF file'
+11:38:36: Debug: Adding duplicate image handler for 'Windows icon file'
+11:38:36: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:38:36: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:38:36: Debug: Adding duplicate image handler for 'TGA file'
+11:38:36: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:38:36: Debug: Adding duplicate image handler for 'PNG file'
+11:38:36: Debug: Adding duplicate image handler for 'JPEG file'
+11:38:36: Debug: Adding duplicate image handler for 'TIFF file'
+11:38:36: Debug: Adding duplicate image handler for 'GIF file'
+11:38:36: Debug: Adding duplicate image handler for 'PNM file'
+11:38:36: Debug: Adding duplicate image handler for 'PCX file'
+11:38:36: Debug: Adding duplicate image handler for 'IFF file'
+11:38:36: Debug: Adding duplicate image handler for 'Windows icon file'
+11:38:36: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:38:36: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:38:36: Debug: Adding duplicate image handler for 'TGA file'
+11:38:36: Debug: Adding duplicate image handler for 'XPM file'
+U14 at 54.5 47.25 rot 0.0
+  pad net= centre= (54.112,46.630) size=(0.600x1.050)
+  pad net= centre= (54.112,47.870) size=(0.600x1.050)
+  pad net= centre= (54.888,46.630) size=(0.600x1.050)
+  pad net= centre= (54.888,47.870) size=(0.600x1.050)
+  pad net=+5V centre= (52.950,46.250) size=(0.650x0.300)
+  pad net=+5V centre= (52.950,46.750) size=(0.650x0.300)
+  pad net=+5V centre= (52.950,47.250) size=(0.650x0.300)
+  pad net= centre= (52.950,47.750) size=(0.650x0.300)
+  pad net=ILIM_A centre= (52.950,48.250) size=(0.650x0.300)
+  pad net=+5V centre= (56.050,48.250) size=(0.650x0.300)
+  pad net=SET_A centre= (56.050,47.750) size=(0.650x0.300)
+  pad net=GND centre= (56.050,47.250) size=(0.650x0.300)
+  pad net=+3V3A centre= (56.050,46.750) size=(0.650x0.300)
+  pad net=+3V3A centre= (56.050,46.250) size=(0.650x0.300)
+  pad net=GND centre= (54.500,47.250) size=(1.550x2.480)
+11:38:37: Debug: Adding duplicate image handler for 'PNG file'
+11:38:37: Debug: Adding duplicate image handler for 'JPEG file'
+11:38:37: Debug: Adding duplicate image handler for 'TIFF file'
+11:38:37: Debug: Adding duplicate image handler for 'GIF file'
+11:38:37: Debug: Adding duplicate image handler for 'PNM file'
+11:38:37: Debug: Adding duplicate image handler for 'PCX file'
+11:38:37: Debug: Adding duplicate image handler for 'IFF file'
+11:38:37: Debug: Adding duplicate image handler for 'Windows icon file'
+11:38:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:38:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:38:37: Debug: Adding duplicate image handler for 'TGA file'
+11:38:37: Debug: Adding duplicate image handler for 'XPM file'
+seg seg +3V3D (67.550,7.250)->(66.300,7.250) hw0.100
+  margin vs pad THR_DAC (66.300,5.250) hw0.725x0.150: +1.500
+  margin vs pad HV_DAC (66.300,5.750) hw0.725x0.150: +1.000
+  margin vs pad GND (66.300,6.250) hw0.725x0.150: +0.500
+  margin vs pad GND (66.300,6.750) hw0.725x0.150: -0.000
+  margin vs pad GND (31.950,50.500) hw0.500x0.725: +9.900
+  margin vs pad GND (41.700,47.250) hw0.500x0.725: +9.900
+  margin vs pad GND (34.862,40.000) hw0.662x0.300: +9.900
+  margin vs pad GND (62.825,27.750) hw0.400x0.475: +9.900
+  margin vs pad GND (26.775,45.750) hw0.450x0.475: +9.900
+  margin vs pad GND (33.575,68.750) hw0.400x0.475: +9.900
+  margin vs pad GND (39.325,1.750) hw0.400x0.475: +9.900
+  margin vs pad GND (45.075,50.750) hw0.400x0.475: +9.900
+  margin vs pad GND (31.775,43.500) hw0.450x0.475: +9.900
+  margin vs pad GND (33.025,42.000) hw0.450x0.475: +9.900
+  margin vs pad HV_DAC (49.425,3.500) hw0.400x0.475: +9.900
+  margin vs pad GND (31.475,-10.500) hw0.575x0.900: +9.900
+  margin vs pad GND (62.825,41.250) hw0.400x0.475: +9.900
+  margin vs pad GND (41.200,41.500) hw0.500x0.725: +9.900
+  margin vs pad GND (45.460,37.460) hw1.125x1.125: +9.900
+  margin vs pad GND (45.460,42.540) hw1.125x1.125: +9.900
+  margin vs pad GND (50.540,37.460) hw1.125x1.125: +9.900
+  margin vs pad GND (50.540,42.540) hw1.125x1.125: +9.900
+  margin vs pad GND (39.775,3.500) hw0.450x0.475: +9.900
+  margin vs pad GND (13.525,40.635) hw0.975x0.300: +9.900
+  margin vs pad GND (59.700,39.250) hw0.500x0.725: +9.900
+  margin vs pad GND (39.025,36.000) hw0.450x0.475: +9.900
+  margin vs pad THR_DAC (52.175,19.750) hw0.400x0.475: +9.900
+  margin vs pad GND (63.812,39.000) hw0.438x0.125: +9.900
+  margin vs pad GND (66.500,39.688) hw0.125x0.438: +9.900
+  margin vs pad GND (65.500,34.812) hw0.125x0.438: +9.900
+  margin vs pad GND (66.250,37.250) hw1.550x1.550: +9.900
+  margin vs pad GND (40.075,53.000) hw0.400x0.475: +9.900
+  margin vs pad GND (27.250,71.480) hw0.150x0.350: +9.900
+  margin vs pad GND (32.750,71.480) hw0.150x0.350: +9.900
+  margin vs pad GND (32.500,73.180) hw0.150x0.350: +9.900
+  margin vs pad GND (27.000,73.180) hw0.150x0.350: +9.900
+  margin vs pad GND (4.000,31.000) hw1.200x1.200: +9.900
+  margin vs pad GND (28.000,31.000) hw1.200x1.200: +9.900
+  margin vs pad GND (4.000,49.000) hw1.200x1.200: +9.900
+  margin vs pad GND (28.000,49.000) hw1.200x1.200: +9.900
+  margin vs pad GND (32.775,-0.500) hw0.450x0.475: +9.900
+  margin vs pad GND (61.775,43.750) hw0.450x0.475: +9.900
+  margin vs pad GND (65.025,33.000) hw0.450x0.475: +9.900
+  margin vs pad GND (54.775,53.000) hw0.450x0.475: +9.900
+  margin vs pad GND (28.000,62.540) hw0.800x0.800: +9.900
+  margin vs pad GND (26.825,50.000) hw0.400x0.475: +9.900
+  margin vs pad GND (59.275,29.250) hw0.450x0.475: +9.900
+  margin vs pad GND (25.825,-0.250) hw0.400x0.475: +9.900
+  margin vs pad GND (44.362,48.250) hw0.662x0.300: +9.900
+  margin vs pad GND (22.275,-1.500) hw0.450x0.475: +9.900
+  margin vs pad GND (56.575,5.750) hw0.400x0.475: +9.031
+  margin vs pad GND (26.750,18.000) hw1.100x1.100: +9.900
+  margin vs pad GND (42.450,35.750) hw0.500x0.725: +9.900
+  margin vs pad GND (46.025,29.000) hw0.450x0.475: +9.900
+  margin vs pad GND (19.175,47.500) hw0.400x0.475: +9.900
+  margin vs pad GND (15.420,72.247) hw1.250x1.150: +9.900
+  margin vs pad GND (56.250,27.688) hw0.125x0.438: +9.900
+  margin vs pad GND (56.750,27.688) hw0.125x0.438: +9.900
+  margin vs pad GND (57.250,27.688) hw0.125x0.438: +9.900
+  margin vs pad GND (56.250,24.812) hw0.125x0.438: +9.900
+  margin vs pad GND (55.750,24.812) hw0.125x0.438: +9.900
+  margin vs pad GND (56.500,26.250) hw0.725x0.725: +9.900
+  margin vs pad GND (32.575,67.250) hw0.400x0.475: +9.900
+  margin vs pad GND (66.025,2.750) hw0.225x0.150: +4.000
+  margin vs pad GND (67.000,2.750) hw0.500x0.800: +3.350
+  margin vs pad GND (54.325,50.500) hw0.400x0.475: +9.900
+  margin vs pad GND (19.400,-20.250) hw1.250x1.150: +9.900
+  margin vs pad GND (56.050,47.250) hw0.325x0.150: +9.900
+  margin vs pad GND (54.500,47.250) hw0.775x1.240: +9.900
+  margin vs pad GND (57.325,50.500) hw0.400x0.475: +9.900
+  margin vs pad GND (41.300,50.250) hw0.325x0.150: +9.900
+  margin vs pad GND (39.750,50.250) hw0.775x1.240: +9.900
+  margin vs pad GND (41.525,44.000) hw0.450x0.475: +9.900
+  margin vs pad GND (23.863,40.000) hw0.662x0.300: +9.900
+  margin vs pad GND (25.462,26.500) hw0.562x0.875: +9.900
+  margin vs pad GND (29.025,-0.500) hw0.450x0.475: +9.900
+  margin vs pad GND (25.200,52.000) hw0.500x0.725: +9.900
+  margin vs pad GND (25.350,-2.000) hw0.725x0.150: +9.900
+  margin vs pad GND (27.500,-3.000) hw0.840x0.940: +9.900
+  margin vs pad GND (32.775,40.000) hw0.450x0.475: +9.900
+  margin vs pad GND (25.962,-10.750) hw0.562x0.875: +9.900
+  margin vs pad GND (14.060,28.500) hw0.575x0.900: +9.900
+  margin vs pad GND (28.900,-21.240) hw0.800x1.600: +9.900
+  margin vs pad GND (44.525,52.750) hw0.450x0.475: +9.900

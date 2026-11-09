@@ -1,0 +1,38 @@
+11:42:38: Debug: Adding duplicate image handler for 'PNG file'
+11:42:38: Debug: Adding duplicate image handler for 'JPEG file'
+11:42:38: Debug: Adding duplicate image handler for 'TIFF file'
+11:42:38: Debug: Adding duplicate image handler for 'GIF file'
+11:42:38: Debug: Adding duplicate image handler for 'PNM file'
+11:42:38: Debug: Adding duplicate image handler for 'PCX file'
+11:42:38: Debug: Adding duplicate image handler for 'IFF file'
+11:42:38: Debug: Adding duplicate image handler for 'Windows icon file'
+11:42:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:42:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:42:38: Debug: Adding duplicate image handler for 'TGA file'
+11:42:38: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:42:39: Debug: Adding duplicate image handler for 'PNG file'
+11:42:39: Debug: Adding duplicate image handler for 'JPEG file'
+11:42:39: Debug: Adding duplicate image handler for 'TIFF file'
+11:42:39: Debug: Adding duplicate image handler for 'GIF file'
+11:42:39: Debug: Adding duplicate image handler for 'PNM file'
+11:42:39: Debug: Adding duplicate image handler for 'PCX file'
+11:42:39: Debug: Adding duplicate image handler for 'IFF file'
+11:42:39: Debug: Adding duplicate image handler for 'Windows icon file'
+11:42:39: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:42:39: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:42:39: Debug: Adding duplicate image handler for 'TGA file'
+11:42:39: Debug: Adding duplicate image handler for 'XPM file'
+BEFORE: {'I2C_SCL': 4, 'GND': 45, 'CDR_LOL': 1, '+3V3D': 5}
+approach margin now: +0.120
+M1 A*: FOUND
+M1: worst gate +0.026 seg GND (66.675,5.775)->(67.650,4.800) hw0.125 vs via I2C_SCL (67.500,5.800) r0.250
+M2 A*: FOUND
+M2: worst gate +0.016 seg CDR_LOL (67.525,4.975)->(68.375,4.125) hw0.125 vs via +3V3A (69.125,4.375) r0.400
+M3 A*: FOUND
+M3: worst gate +0.029 seg +3V3D (68.575,6.075)->(68.625,6.125) hw0.300 vs seg SPI_SCK (70.100,6.780)->(68.700,6.800) hw0.100
+M4 A*: NONE
+M4 NONE

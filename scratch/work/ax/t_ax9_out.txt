@@ -1,0 +1,124 @@
+11:31:20: Debug: Adding duplicate image handler for 'PNG file'
+11:31:20: Debug: Adding duplicate image handler for 'JPEG file'
+11:31:20: Debug: Adding duplicate image handler for 'TIFF file'
+11:31:20: Debug: Adding duplicate image handler for 'GIF file'
+11:31:20: Debug: Adding duplicate image handler for 'PNM file'
+11:31:20: Debug: Adding duplicate image handler for 'PCX file'
+11:31:20: Debug: Adding duplicate image handler for 'IFF file'
+11:31:20: Debug: Adding duplicate image handler for 'Windows icon file'
+11:31:20: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:31:20: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:31:20: Debug: Adding duplicate image handler for 'TGA file'
+11:31:20: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:31:21: Debug: Adding duplicate image handler for 'PNG file'
+11:31:21: Debug: Adding duplicate image handler for 'JPEG file'
+11:31:21: Debug: Adding duplicate image handler for 'TIFF file'
+11:31:21: Debug: Adding duplicate image handler for 'GIF file'
+11:31:21: Debug: Adding duplicate image handler for 'PNM file'
+11:31:21: Debug: Adding duplicate image handler for 'PCX file'
+11:31:21: Debug: Adding duplicate image handler for 'IFF file'
+11:31:21: Debug: Adding duplicate image handler for 'Windows icon file'
+11:31:21: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:31:21: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:31:21: Debug: Adding duplicate image handler for 'TGA file'
+11:31:21: Debug: Adding duplicate image handler for 'XPM file'
+W=(67.28, 5.8): via margins L0 -0.195 L1 -0.140 L2 +0.020 | approach +0.010
+    L0 binder: pad HV_DAC (66.300,5.750) hw0.725x0.150
+    L1 binder: seg GND (66.875,5.625)->(67.125,5.375) hw0.100
+    L2 binder: seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+    M1 A* (rip 5): FOUND
+    M1 gate worst +0.020 vs seg I2C_SCL (66.875,6.750)->(67.280,5.800) hw0.100
+11:31:27: Debug: Adding duplicate image handler for 'PNG file'
+11:31:27: Debug: Adding duplicate image handler for 'JPEG file'
+11:31:27: Debug: Adding duplicate image handler for 'TIFF file'
+11:31:27: Debug: Adding duplicate image handler for 'GIF file'
+11:31:27: Debug: Adding duplicate image handler for 'PNM file'
+11:31:27: Debug: Adding duplicate image handler for 'PCX file'
+11:31:27: Debug: Adding duplicate image handler for 'IFF file'
+11:31:27: Debug: Adding duplicate image handler for 'Windows icon file'
+11:31:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:31:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:31:27: Debug: Adding duplicate image handler for 'TGA file'
+11:31:27: Debug: Adding duplicate image handler for 'XPM file'
+W=(67.25, 5.8): via margins L0 -0.225 L1 -0.161 L2 +0.050 | approach -0.011
+    L0 binder: pad HV_DAC (66.300,5.750) hw0.725x0.150
+    L1 binder: seg GND (66.875,5.625)->(67.125,5.375) hw0.100
+    L2 binder: seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+    M1 A* (rip 5): FOUND
+    M1 gate worst +0.017 vs seg I2C_SCL (66.875,6.750)->(67.250,5.800) hw0.100
+11:31:33: Debug: Adding duplicate image handler for 'PNG file'
+11:31:33: Debug: Adding duplicate image handler for 'JPEG file'
+11:31:33: Debug: Adding duplicate image handler for 'TIFF file'
+11:31:33: Debug: Adding duplicate image handler for 'GIF file'
+11:31:33: Debug: Adding duplicate image handler for 'PNM file'
+11:31:33: Debug: Adding duplicate image handler for 'PCX file'
+11:31:33: Debug: Adding duplicate image handler for 'IFF file'
+11:31:33: Debug: Adding duplicate image handler for 'Windows icon file'
+11:31:33: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:31:33: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:31:33: Debug: Adding duplicate image handler for 'TGA file'
+11:31:33: Debug: Adding duplicate image handler for 'XPM file'
+W=(67.3, 5.85): via margins L0 -0.199 L1 -0.090 L2 +0.000 | approach +0.060
+    L0 binder: seg +3V3D (67.875,6.125)->(67.625,6.375) hw0.300
+    L1 binder: seg GND (66.875,5.625)->(67.125,5.375) hw0.100
+    L2 binder: seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+    M1 A* (rip 5): FOUND
+    M1 gate worst +0.052 vs seg I2C_SCL (66.875,6.750)->(67.300,5.850) hw0.100
+11:31:38: Debug: Adding duplicate image handler for 'PNG file'
+11:31:38: Debug: Adding duplicate image handler for 'JPEG file'
+11:31:38: Debug: Adding duplicate image handler for 'TIFF file'
+11:31:38: Debug: Adding duplicate image handler for 'GIF file'
+11:31:38: Debug: Adding duplicate image handler for 'PNM file'
+11:31:38: Debug: Adding duplicate image handler for 'PCX file'
+11:31:38: Debug: Adding duplicate image handler for 'IFF file'
+11:31:38: Debug: Adding duplicate image handler for 'Windows icon file'
+11:31:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:31:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:31:38: Debug: Adding duplicate image handler for 'TGA file'
+11:31:38: Debug: Adding duplicate image handler for 'XPM file'
+W=(67.35, 5.8): via margins L0 -0.199 L1 -0.090 L2 -0.050 | approach +0.060
+    L0 binder: seg +3V3D (67.875,6.125)->(67.625,6.375) hw0.300
+    L1 binder: seg GND (66.875,5.625)->(67.125,5.375) hw0.100
+    L2 binder: seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+    M1 A* (rip 5): FOUND
+    M1 gate worst +0.052 vs seg I2C_SCL (66.875,6.750)->(67.350,5.800) hw0.100
+11:31:43: Debug: Adding duplicate image handler for 'PNG file'
+11:31:43: Debug: Adding duplicate image handler for 'JPEG file'
+11:31:43: Debug: Adding duplicate image handler for 'TIFF file'
+11:31:43: Debug: Adding duplicate image handler for 'GIF file'
+11:31:43: Debug: Adding duplicate image handler for 'PNM file'
+11:31:43: Debug: Adding duplicate image handler for 'PCX file'
+11:31:43: Debug: Adding duplicate image handler for 'IFF file'
+11:31:43: Debug: Adding duplicate image handler for 'Windows icon file'
+11:31:43: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:31:43: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:31:43: Debug: Adding duplicate image handler for 'TGA file'
+11:31:43: Debug: Adding duplicate image handler for 'XPM file'
+W=(67.28, 5.9): via margins L0 -0.220 L1 -0.069 L2 +0.020 | approach +0.081
+    L0 binder: seg +3V3D (67.875,6.125)->(67.625,6.375) hw0.300
+    L1 binder: seg GND (66.875,5.625)->(67.125,5.375) hw0.100
+    L2 binder: seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+    M1 A* (rip 5): FOUND
+    M1 gate worst +0.074 vs seg I2C_SCL (66.875,6.750)->(67.280,5.900) hw0.100
+11:31:49: Debug: Adding duplicate image handler for 'PNG file'
+11:31:49: Debug: Adding duplicate image handler for 'JPEG file'
+11:31:49: Debug: Adding duplicate image handler for 'TIFF file'
+11:31:49: Debug: Adding duplicate image handler for 'GIF file'
+11:31:49: Debug: Adding duplicate image handler for 'PNM file'
+11:31:49: Debug: Adding duplicate image handler for 'PCX file'
+11:31:49: Debug: Adding duplicate image handler for 'IFF file'
+11:31:49: Debug: Adding duplicate image handler for 'Windows icon file'
+11:31:49: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:31:49: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:31:49: Debug: Adding duplicate image handler for 'TGA file'
+11:31:49: Debug: Adding duplicate image handler for 'XPM file'
+W=(67.32, 5.75): via margins L0 -0.155 L1 -0.147 L2 -0.020 | approach +0.003
+    L0 binder: pad HV_DAC (66.300,5.750) hw0.725x0.150
+    L1 binder: seg GND (66.875,5.625)->(67.125,5.375) hw0.100
+    L2 binder: seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+    M1 A* (rip 5): FOUND
+    M1 gate worst +0.013 vs seg I2C_SCL (66.875,6.750)->(67.320,5.750) hw0.100

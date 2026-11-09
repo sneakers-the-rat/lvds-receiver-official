@@ -56,7 +56,9 @@ def add_items(new_items):
 
 def rip_items(specs):
     """specs: list of items (exact tuples) to remove from the live pool.
-    Returns count removed; caller asserts."""
+    Removes from EVERY layer list containing the item (vias live in
+    all three). Returns total (item, layer) removals; a seg counts 1,
+    a via counts 3."""
     pool = _ns[id(g)]['pool']
     n = 0
     for it in specs:
@@ -64,5 +66,45 @@ def rip_items(specs):
             if it in pool[l]:
                 pool[l].remove(it)
                 n += 1
-                break
     return n
+
+
+def chain_segs(pool, net, l, start, end):
+    """Goal-directed walk of a net's seg chain on one layer from the
+    seg incident to start to the seg incident to end (rounded coords).
+    Returns the item list in walk order."""
+    segs = [it for it in pool[l] if it[1] == net and it[0] == 'seg']
+    bypt = {}
+    for it in segs:
+        d = it[2]
+        bypt.setdefault((round(d[0], 3), round(d[1], 3)), []).append(it)
+        bypt.setdefault((round(d[2], 3), round(d[3], 3)), []).append(it)
+    out = []
+    cur = (round(start[0], 3), round(start[1], 3))
+    goal = (round(end[0], 3), round(end[1], 3))
+    guard = 0
+    while cur != goal and guard < 500:
+        guard += 1
+        cands = []
+        for it in bypt.get(cur, []):
+            if it in out:
+                continue
+            d = it[2]
+            a = (round(d[0], 3), round(d[1], 3))
+            b = (round(d[2], 3), round(d[3], 3))
+            far = b if a == cur else a
+            dist = (far[0] - goal[0]) ** 2 + (far[1] - goal[1]) ** 2
+            cands.append((dist, it, far))
+        if not cands:
+            raise SystemExit(f'chain walk stuck at {cur} for {net} L{l}')
+        cands.sort(key=lambda t: t[0])
+        _, nxt, far = cands[0]
+        out.append(nxt)
+        cur = far
+    return out
+
+
+def fragsets(pool, net, bbox):
+    """au fragments(net, box) reads the namespace pool (kept in sync by
+    load_board_pool/add_items/rip_items); returns fragment list."""
+    return fragments(net, bbox)

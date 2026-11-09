@@ -1,0 +1,32 @@
+11:39:03: Debug: Adding duplicate image handler for 'PNG file'
+11:39:03: Debug: Adding duplicate image handler for 'JPEG file'
+11:39:03: Debug: Adding duplicate image handler for 'TIFF file'
+11:39:03: Debug: Adding duplicate image handler for 'GIF file'
+11:39:03: Debug: Adding duplicate image handler for 'PNM file'
+11:39:03: Debug: Adding duplicate image handler for 'PCX file'
+11:39:03: Debug: Adding duplicate image handler for 'IFF file'
+11:39:03: Debug: Adding duplicate image handler for 'Windows icon file'
+11:39:03: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:39:03: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:39:03: Debug: Adding duplicate image handler for 'TGA file'
+11:39:03: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:39:03: Debug: Adding duplicate image handler for 'PNG file'
+11:39:03: Debug: Adding duplicate image handler for 'JPEG file'
+11:39:03: Debug: Adding duplicate image handler for 'TIFF file'
+11:39:03: Debug: Adding duplicate image handler for 'GIF file'
+11:39:03: Debug: Adding duplicate image handler for 'PNM file'
+11:39:03: Debug: Adding duplicate image handler for 'PCX file'
+11:39:03: Debug: Adding duplicate image handler for 'IFF file'
+11:39:03: Debug: Adding duplicate image handler for 'Windows icon file'
+11:39:03: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:39:03: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:39:03: Debug: Adding duplicate image handler for 'TGA file'
+11:39:03: Debug: Adding duplicate image handler for 'XPM file'
+footprint U8 at 68.5 6.25 rot 0.0
+  pad net=GND size=(1.450x0.300) local rot 0.0
+track (67.550,7.250)->(66.300,7.250) w=0.200 layer=F.Cu
+track (67.375,6.625)->(67.550,7.250) w=0.200 layer=F.Cu

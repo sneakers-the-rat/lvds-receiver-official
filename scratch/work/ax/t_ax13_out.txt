@@ -1,0 +1,50 @@
+11:38:07: Debug: Adding duplicate image handler for 'PNG file'
+11:38:07: Debug: Adding duplicate image handler for 'JPEG file'
+11:38:07: Debug: Adding duplicate image handler for 'TIFF file'
+11:38:07: Debug: Adding duplicate image handler for 'GIF file'
+11:38:07: Debug: Adding duplicate image handler for 'PNM file'
+11:38:07: Debug: Adding duplicate image handler for 'PCX file'
+11:38:07: Debug: Adding duplicate image handler for 'IFF file'
+11:38:07: Debug: Adding duplicate image handler for 'Windows icon file'
+11:38:07: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:38:07: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:38:07: Debug: Adding duplicate image handler for 'TGA file'
+11:38:07: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:38:07: Debug: Adding duplicate image handler for 'PNG file'
+11:38:07: Debug: Adding duplicate image handler for 'JPEG file'
+11:38:07: Debug: Adding duplicate image handler for 'TIFF file'
+11:38:07: Debug: Adding duplicate image handler for 'GIF file'
+11:38:07: Debug: Adding duplicate image handler for 'PNM file'
+11:38:07: Debug: Adding duplicate image handler for 'PCX file'
+11:38:07: Debug: Adding duplicate image handler for 'IFF file'
+11:38:07: Debug: Adding duplicate image handler for 'Windows icon file'
+11:38:07: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:38:07: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:38:07: Debug: Adding duplicate image handler for 'TGA file'
+11:38:07: Debug: Adding duplicate image handler for 'XPM file'
+y= 7.4 .......##....................
+y= 7.3 .........#...................
+y= 7.2 .........##..................
+y= 7.1 ..........##.................
+y= 7.0 ..........##.................
+y= 6.9 ..........###................
+y= 6.8 ..........####...............
+y= 6.7 ..........####...............
+y= 6.6 ........S.#####..............
+y= 6.5 .............###.............
+y= 6.4 ...............#.............
+y= 6.3 ................#............
+y= 6.2 ................###..........
+y= 6.1 .................###G########
+y= 6.0 .................############
+y= 5.9 .................############
+y= 5.8 .........W........###########
+y= 5.7 .................############
+y= 5.6 .................############
+y= 5.5 .................############
+y= 5.4 ................#############
+x from 66.6 step 0.1
