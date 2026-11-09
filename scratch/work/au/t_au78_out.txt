@@ -1,0 +1,71 @@
+00:55:11: Debug: Adding duplicate image handler for 'PNG file'
+00:55:11: Debug: Adding duplicate image handler for 'JPEG file'
+00:55:11: Debug: Adding duplicate image handler for 'TIFF file'
+00:55:11: Debug: Adding duplicate image handler for 'GIF file'
+00:55:11: Debug: Adding duplicate image handler for 'PNM file'
+00:55:11: Debug: Adding duplicate image handler for 'PCX file'
+00:55:11: Debug: Adding duplicate image handler for 'IFF file'
+00:55:11: Debug: Adding duplicate image handler for 'Windows icon file'
+00:55:11: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:55:11: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:55:11: Debug: Adding duplicate image handler for 'TGA file'
+00:55:11: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+rip2 PG_3V3: removed 23/23
+rip2 +3V3D: removed 8/8
+rip2 XO: removed 12/12
+model rebuilt from au77
+--- CAP_DATA items near (71.338,2.25) on F:
+    PAD pad CAP_DATA (71.338,2.250) hw0.738x0.150
+    seg CAP_DATA (69.980,2.600)->(69.900,3.180) hw0.100
+    seg CAP_DATA (70.600,2.200)->(69.980,2.600) hw0.100
+--- CAP_CLK items near (76.525,25.385) on F:
+    PAD pad CAP_CLK (76.525,25.385) hw0.975x0.300
+    seg CAP_CLK (74.800,24.800)->(75.400,25.400) hw0.100
+    seg CAP_CLK (75.400,25.400)->(75.450,25.400) hw0.100
+hop re-run: FOUND
+hop worst margin +0.121
+saved scratch/work/au/build_au78_stageA.json
++3V3D: 10 fragments in wide box
+   size 27 terms [(0, (67.55, 7.25))]
+   size 63 terms [(0, (75.275, 24.115)), (0, (82.975, 22.845)), (1, (78.375, 20.125)), (2, (81.625, 6.375))]
+   size 33 terms [(0, (70.45, 22.425)), (2, (71.125, 24.375)), (2, (74.625, 24.375))]
+   size 2 terms [(0, (82.325, 7.0))]
+   size 4 terms [(0, (72.375, 21.125))]
+   size 8 terms [(0, (74.125, 7.125))]
+   size 3 terms [(0, (74.375, 7.875))]
+   size 7 terms [(1, (81.625, 10.9)), (2, (81.625, 10.9))]
+   size 31 terms [(0, (66.375, 10.375)), (1, (70.875, 15.875)), (1, (70.875, 12.625))]
+   size 5 terms [(0, (66.55, 22.35)), (1, (56.75, 20.8)), (2, (66.55, 22.35))]
+XO: 5 fragments in wide box
+   size 1 terms [(0, (85.75, 9.75))]
+   size 40 terms [(0, (72.375, 10.0)), (0, (76.75, 11.125)), (1, (72.625, 12.25)), (1, (76.0, 10.625)), (1, (68.875, 20.375))]
+   size 1 terms [(0, (76.75, 11.5625))]
+   size 56 terms [(0, (86.8, 10.6)), (0, (70.375, 30.875)), (2, (87.5, 10.75)), (2, (72.125, 29.125))]
+   size 21 terms [(0, (71.625, 25.625)), (1, (71.875, 19.625)), (1, (69.625, 31.625))]
++3V3D detours v2:
+  +3V3D: detour 1 (75.275, 24.115) -> (74.625, 24.375) vias=[]
+  +3V3D: detour 2 (70.45, 22.425) -> (66.55, 22.35) vias=[[67.15, 25.675], [66.55, 22.35]]
+  +3V3D: detour 3 (71.125, 24.375) -> (70.875, 15.875) vias=[[67.15, 25.675], [64.525, 24.375], [67.275, 15.125]]
+  +3V3D: NO detour for 5 fragments
+XO detours v2:
+  XO: detour 1 (76.75, 11.125) -> (76.75, 11.5625) vias=[]
+  XO: detour 2 (85.75, 9.75) -> (86.8, 10.6) vias=[]
+  XO: NO detour for 3 fragments
+saved scratch/work/au/build_au78_stageB.json
+fanout goal (0, 66.025, 2.1): NONE
+fanout goal (0, 66.45, 2.1): NONE
+fanout goal (0, 66.3, 2.05): NONE
+GND chain segs found: 2
+fanout (chain ripped) goal (0, 66.025, 2.1): NONE
+fanout (chain ripped) goal (0, 66.45, 2.1): NONE
+fanout (chain ripped) goal (0, 66.3, 2.05): NONE
+fanout still NONE - chain restored
+heal2 v3: NONE
+GATE FAIL L1 -0.600 seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+full gate: 1 failures
+saved scratch/work/au/build_au78.json
+done
+EXITCODE=0
