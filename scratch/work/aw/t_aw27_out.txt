@@ -1,0 +1,17 @@
+10:23:21: Debug: Adding duplicate image handler for 'PNG file'
+10:23:21: Debug: Adding duplicate image handler for 'JPEG file'
+10:23:21: Debug: Adding duplicate image handler for 'TIFF file'
+10:23:21: Debug: Adding duplicate image handler for 'GIF file'
+10:23:21: Debug: Adding duplicate image handler for 'PNM file'
+10:23:21: Debug: Adding duplicate image handler for 'PCX file'
+10:23:21: Debug: Adding duplicate image handler for 'IFF file'
+10:23:21: Debug: Adding duplicate image handler for 'Windows icon file'
+10:23:21: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:23:21: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:23:21: Debug: Adding duplicate image handler for 'TGA file'
+10:23:21: Debug: Adding duplicate image handler for 'XPM file'
+--- island 9 x[66.97,70.25] y[19.56,25.37]
+   pads inside: [('C46', '2', 'GND', 68.78, 24.5), ('C38', '2', 'GND', 68.45, 22.75)]
+   d0.6: best (68.17,23.51) gap +0.080
+   d0.5: best (68.17,23.51) gap +0.130
+   d0.45: best (68.17,23.51) gap +0.155

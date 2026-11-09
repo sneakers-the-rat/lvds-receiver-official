@@ -12,6 +12,7 @@ def P(ref, value, fp, sym, pins, group):
 # fp: (library, name). Custom library "pdlvds" lives in hw/pdlvds.pretty.
 R0603  = ("Resistor_SMD", "R_0603_1608Metric")
 R1206  = ("Resistor_SMD", "R_1206_3216Metric")
+C0402  = ("Capacitor_SMD", "C_0402_1005Metric")
 C0603  = ("Capacitor_SMD", "C_0603_1608Metric")
 C1206  = ("Capacitor_SMD", "C_1206_3216Metric")
 C0805  = ("Capacitor_SMD", "C_0805_2012Metric")
@@ -164,9 +165,9 @@ PARTS += [
  P("C20","33pF", C0603, "C", {"1":("","passive","XI"), "2":("","passive","GND")}, "usb"),
  P("C21","33pF", C0603, "C", {"1":("","passive","XO"), "2":("","passive","GND")}, "usb"),
  P("R17","12k 1%", R0603, "R", {"1":("","passive","RBIAS"), "2":("","passive","GND")}, "usb"),
- P("C22","4.7uF", C0603, "C", {"1":("","passive","PHY_1V8"), "2":("","passive","GND")}, "usb"),
+ P("C22","4.7uF", C0402, "C", {"1":("","passive","PHY_1V8"), "2":("","passive","GND")}, "usb"),
  P("C23","100nF", C0603, "C", {"1":("","passive","PHY_1V8A"), "2":("","passive","GND")}, "usb"),
- P("C24","100nF", C0603, "C", {"1":("","passive","+3V3A"), "2":("","passive","GND")}, "usb"),
+ P("C24","100nF", C0402, "C", {"1":("","passive","+3V3A"), "2":("","passive","GND")}, "usb"),
  P("D3","USBLC6-2SC6", ("Package_TO_SOT_SMD","SOT-23-6"), "box",
    {"1":("IO1","passive","DP_CON"), "2":("GND","pwr_in","GND"),
     "3":("IO2","passive","DM_CON"), "4":("IO2p","passive","DM_PHY"),
@@ -210,7 +211,7 @@ PARTS += [
  P("X2","ASE-25.000MHZ-L-R-T 3.3V CMOS OSC", ("Oscillator","Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm"), "box",
    {"1":("OE","in","+3V3D"), "2":("GND","pwr_in","GND"),
     "3":("OUT","out","REFCLK"), "4":("VCC","pwr_in","+3V3D")}, "cdr"),
- P("C28","100nF", C0603, "C", {"1":("","passive","+3V3D"), "2":("","passive","GND")}, "cdr"),
+ P("C28","100nF", C0402, "C", {"1":("","passive","+3V3D"), "2":("","passive","GND")}, "cdr"),
 ]
 
 PARTS += [

@@ -1,0 +1,45 @@
+09:39:48: Debug: Adding duplicate image handler for 'PNG file'
+09:39:48: Debug: Adding duplicate image handler for 'JPEG file'
+09:39:48: Debug: Adding duplicate image handler for 'TIFF file'
+09:39:48: Debug: Adding duplicate image handler for 'GIF file'
+09:39:48: Debug: Adding duplicate image handler for 'PNM file'
+09:39:48: Debug: Adding duplicate image handler for 'PCX file'
+09:39:48: Debug: Adding duplicate image handler for 'IFF file'
+09:39:48: Debug: Adding duplicate image handler for 'Windows icon file'
+09:39:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:39:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:39:48: Debug: Adding duplicate image handler for 'TGA file'
+09:39:48: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+--- cached state check ---
+fragments(XO) = 1 sizes [208]
+fragments(DM_PHY) = 1 sizes [106]
+fragments(+3V3D) = 5 sizes [825, 58, 7, 4, 3]
+old stub segs ripped; C28 pads removed
+scan candidates: 190
+detour_+3V3D_stub worst pairs:
+   +0.001 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.300,24.050)->(72.275,24.025) hw0.100
+   +0.001 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.275,24.025)->(72.275,23.975) hw0.100
+   +0.001 L0 via +3V3D (74.450,20.200) r0.250 vs pad GND (73.730,20.750) hw0.280x0.310
+   +0.004 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.275,23.975)->(72.250,23.950) hw0.100
+detour_+3V3D_stub EMITTED
+  C28 -> (73.25,20.75) margins +0.218/+0.268 stub hw=0.125 goal=(0, 70.45, 22.425) vias=[[74.45, 20.2], [71.7, 24.2]]
+pad-legal candidates seen: 7
+fragments(+3V3D) = 4 sizes [926, 58, 7, 3]
+JOIN 2 CLOSED (C28 shrunk 0402)
+fragments(DM_PHY) = 1 sizes [106]
+=== full gate (au97 semantics) ===
+full gate fails: 0
+=== final fragments ===
+fragments(CAP_CLK) = 2 sizes [199, 1]
+fragments(CAP_DATA) = 3 sizes [187, 1, 1]
+fragments(XO) = 1 sizes [208]
+fragments(RBIAS) = 1 sizes [93]
+fragments(+3V3D) = 4 sizes [926, 58, 7, 3]
+fragments(REFCLK) = 1 sizes [214]
+fragments(DM_PHY) = 1 sizes [106]
+saved build_aw1.json
+H5 MODEL COMPLETE (t_aw18 c28s)

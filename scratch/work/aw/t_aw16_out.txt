@@ -1,0 +1,31 @@
+09:37:38: Debug: Adding duplicate image handler for 'PNG file'
+09:37:38: Debug: Adding duplicate image handler for 'JPEG file'
+09:37:38: Debug: Adding duplicate image handler for 'TIFF file'
+09:37:38: Debug: Adding duplicate image handler for 'GIF file'
+09:37:38: Debug: Adding duplicate image handler for 'PNM file'
+09:37:38: Debug: Adding duplicate image handler for 'PCX file'
+09:37:38: Debug: Adding duplicate image handler for 'IFF file'
+09:37:38: Debug: Adding duplicate image handler for 'Windows icon file'
+09:37:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:37:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:37:38: Debug: Adding duplicate image handler for 'TGA file'
+09:37:38: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+--- cached state check ---
+fragments(XO) = 1 sizes [208]
+fragments(DM_PHY) = 1 sizes [106]
+fragments(+3V3D) = 5 sizes [825, 58, 7, 4, 3]
+fragments(ULPI_NXT) = 3 sizes [31, 1, 1]
+=== Phase 1: ULPI_NXT diagonal re-lay ===
+ripped seg ULPI_NXT (74.500,19.250)->(69.875,23.750) hw0.100
+  NXT relay control (no wall): FOUND
+  NXT relay inset-wall hw=0.5: NONE
+  NXT relay inset-wall hw=0.35: NONE
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/aw/t_aw16_nxt.py", line 108, in <module>
+    assert Jnxt is not None, 'ULPI_NXT re-lay NONE (wall + waypoint)'
+           ^^^^^^^^^^^^^^^^
+AssertionError: ULPI_NXT re-lay NONE (wall + waypoint)

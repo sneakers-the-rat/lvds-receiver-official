@@ -1,0 +1,50 @@
+06:58:21: Debug: Adding duplicate image handler for 'PNG file'
+06:58:21: Debug: Adding duplicate image handler for 'JPEG file'
+06:58:21: Debug: Adding duplicate image handler for 'TIFF file'
+06:58:21: Debug: Adding duplicate image handler for 'GIF file'
+06:58:21: Debug: Adding duplicate image handler for 'PNM file'
+06:58:21: Debug: Adding duplicate image handler for 'PCX file'
+06:58:21: Debug: Adding duplicate image handler for 'IFF file'
+06:58:21: Debug: Adding duplicate image handler for 'Windows icon file'
+06:58:21: Debug: Adding duplicate image handler for 'Windows cursor file'
+06:58:21: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+06:58:21: Debug: Adding duplicate image handler for 'TGA file'
+06:58:21: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+06:58:21: Debug: Adding duplicate image handler for 'PNG file'
+06:58:21: Debug: Adding duplicate image handler for 'JPEG file'
+06:58:21: Debug: Adding duplicate image handler for 'TIFF file'
+06:58:21: Debug: Adding duplicate image handler for 'GIF file'
+06:58:21: Debug: Adding duplicate image handler for 'PNM file'
+06:58:21: Debug: Adding duplicate image handler for 'PCX file'
+06:58:21: Debug: Adding duplicate image handler for 'IFF file'
+06:58:21: Debug: Adding duplicate image handler for 'Windows icon file'
+06:58:21: Debug: Adding duplicate image handler for 'Windows cursor file'
+06:58:21: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+06:58:21: Debug: Adding duplicate image handler for 'TGA file'
+06:58:21: Debug: Adding duplicate image handler for 'XPM file'
+vacating candidates scored: 2977; margin>=+0.02: 219; courtyard-OK among those: 122
+  site (75.00,33.75) rot0 disp 10.59 min_margin +9000000000.000 courtyard OK binding: pad +3V3D at (73.95,34.58) vs -
+  site (75.25,33.50) rot0 disp 10.45 min_margin +9000000000.000 courtyard OK binding: pad +3V3D at (74.20,34.33) vs -
+  site (75.25,33.75) rot0 disp 10.68 min_margin +9000000000.000 courtyard OK binding: pad +3V3D at (74.20,34.58) vs -
+  site (75.50,33.25) rot0 disp 10.31 min_margin +9000000000.000 courtyard OK binding: pad +3V3D at (74.45,34.08) vs -
+  site (75.50,33.50) rot0 disp 10.54 min_margin +9000000000.000 courtyard OK binding: pad +3V3D at (74.45,34.33) vs -
+  site (75.50,33.75) rot0 disp 10.77 min_margin +9000000000.000 courtyard OK binding: pad +3V3D at (74.45,34.58) vs -
+  site (74.25,35.50) rot90 disp 12.07 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (73.42,34.45) vs -
+  site (74.50,35.25) rot90 disp 11.88 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (73.67,34.20) vs -
+  site (74.50,35.50) rot90 disp 12.13 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (73.67,34.45) vs -
+  site (74.75,34.00) rot90 disp 10.75 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (73.92,32.95) vs -
+  site (74.75,34.25) rot90 disp 10.99 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (73.92,33.20) vs -
+  site (74.75,34.50) rot90 disp 11.23 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (73.92,33.45) vs -
+  site (74.75,34.75) rot90 disp 11.47 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (73.92,33.70) vs -
+  site (74.75,35.00) rot90 disp 11.71 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (73.92,33.95) vs -
+  site (74.75,35.25) rot90 disp 11.95 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (73.92,34.20) vs -
+  site (74.75,35.50) rot90 disp 12.19 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (73.92,34.45) vs -
+  site (75.00,33.75) rot90 disp 10.59 min_margin +9000000000.000 courtyard OK binding: pad +3V3D at (74.17,32.70) vs -
+  site (75.00,34.00) rot90 disp 10.83 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (74.17,32.95) vs -
+  site (75.00,34.25) rot90 disp 11.07 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (74.17,33.20) vs -
+  site (75.00,34.50) rot90 disp 11.31 min_margin +9000000000.000 courtyard OVERLAP C14 binding: pad +3V3D at (74.17,33.45) vs -
+done

@@ -1,0 +1,31 @@
+10:28:56: Debug: Adding duplicate image handler for 'PNG file'
+10:28:56: Debug: Adding duplicate image handler for 'JPEG file'
+10:28:56: Debug: Adding duplicate image handler for 'TIFF file'
+10:28:56: Debug: Adding duplicate image handler for 'GIF file'
+10:28:56: Debug: Adding duplicate image handler for 'PNM file'
+10:28:56: Debug: Adding duplicate image handler for 'PCX file'
+10:28:56: Debug: Adding duplicate image handler for 'IFF file'
+10:28:56: Debug: Adding duplicate image handler for 'Windows icon file'
+10:28:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:28:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:28:56: Debug: Adding duplicate image handler for 'TGA file'
+10:28:56: Debug: Adding duplicate image handler for 'XPM file'
+--- island 10 x[73.24,74.75] y[20.30,21.82]
+   GND pads inside: [('C28', '2', 73.73, 20.75)]
+   d0.6: best (73.518,21.050) gap -0.012
+   d0.5: best (73.518,21.050) gap +0.038
+   d0.45: best (73.518,21.050) gap +0.063
+   d0.4: best (73.518,21.050) gap +0.088
+--- island 14 x[71.68,73.75] y[15.79,18.97]
+   GND pads inside: [('C22', '2', 72.98, 18.0)]
+   d0.6: best (73.434,17.685) gap -0.010
+   d0.5: best (73.434,17.685) gap +0.040
+   d0.45: best (73.434,17.685) gap +0.065
+   d0.4: best (73.434,17.685) gap +0.090
+--- island 23 x[73.18,75.30] y[0.37,5.45]
+   GND pads inside: [('U6', '38', 73.75, 4.66)]
+   d0.6: best (73.725,2.816) gap +0.008
+   d0.5: best (73.725,2.816) gap +0.058
+   d0.45: best (73.725,2.816) gap +0.083
+   d0.4: best (73.725,2.816) gap +0.108
+T_AW30 COMPLETE

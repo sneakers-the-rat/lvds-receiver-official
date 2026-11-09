@@ -1,0 +1,30 @@
+10:21:25: Debug: Adding duplicate image handler for 'PNG file'
+10:21:25: Debug: Adding duplicate image handler for 'JPEG file'
+10:21:25: Debug: Adding duplicate image handler for 'TIFF file'
+10:21:25: Debug: Adding duplicate image handler for 'GIF file'
+10:21:25: Debug: Adding duplicate image handler for 'PNM file'
+10:21:25: Debug: Adding duplicate image handler for 'PCX file'
+10:21:25: Debug: Adding duplicate image handler for 'IFF file'
+10:21:25: Debug: Adding duplicate image handler for 'Windows icon file'
+10:21:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:21:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:21:25: Debug: Adding duplicate image handler for 'TGA file'
+10:21:25: Debug: Adding duplicate image handler for 'XPM file'
+island 8: best stitch (71.62,26.55) min-obstacle-dist 0.458
+  WARNING: tight stitch on island 8
+island 9: best stitch (68.22,22.81) min-obstacle-dist 0.534
+island 10: best stitch (73.49,21.05) min-obstacle-dist 0.473
+  WARNING: tight stitch on island 10
+island 11: best stitch (69.97,17.23) min-obstacle-dist 0.434
+  WARNING: tight stitch on island 11
+island 12: best stitch (67.43,17.61) min-obstacle-dist 0.420
+  WARNING: tight stitch on island 12
+island 14: best stitch (73.43,17.79) min-obstacle-dist 0.402
+  WARNING: tight stitch on island 14
+island 16: best stitch (71.65,15.48) min-obstacle-dist 0.294
+  WARNING: tight stitch on island 16
+island 23: best stitch (73.68,2.87) min-obstacle-dist 0.454
+  WARNING: tight stitch on island 23
+island 24: best stitch (75.73,-12.37) min-obstacle-dist 1.630
+placed: [(71.624467, 26.5505), (68.216058, 22.811427), (73.493497, 21.0505), (69.972997, 17.225188), (67.425499, 17.608945), (73.433723, 17.785474999999998), (71.652324, 15.4755), (73.6755, 2.866215), (75.7255, -12.372017)]
+T_AW26 COMPLETE
