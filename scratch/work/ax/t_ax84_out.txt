@@ -1,0 +1,107 @@
+13:22:56: Debug: Adding duplicate image handler for 'PNG file'
+13:22:56: Debug: Adding duplicate image handler for 'JPEG file'
+13:22:56: Debug: Adding duplicate image handler for 'TIFF file'
+13:22:56: Debug: Adding duplicate image handler for 'GIF file'
+13:22:56: Debug: Adding duplicate image handler for 'PNM file'
+13:22:56: Debug: Adding duplicate image handler for 'PCX file'
+13:22:56: Debug: Adding duplicate image handler for 'IFF file'
+13:22:56: Debug: Adding duplicate image handler for 'Windows icon file'
+13:22:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:22:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:22:56: Debug: Adding duplicate image handler for 'TGA file'
+13:22:56: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+13:22:57: Debug: Adding duplicate image handler for 'PNG file'
+13:22:57: Debug: Adding duplicate image handler for 'JPEG file'
+13:22:57: Debug: Adding duplicate image handler for 'TIFF file'
+13:22:57: Debug: Adding duplicate image handler for 'GIF file'
+13:22:57: Debug: Adding duplicate image handler for 'PNM file'
+13:22:57: Debug: Adding duplicate image handler for 'PCX file'
+13:22:57: Debug: Adding duplicate image handler for 'IFF file'
+13:22:57: Debug: Adding duplicate image handler for 'Windows icon file'
+13:22:57: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:22:57: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:22:57: Debug: Adding duplicate image handler for 'TGA file'
+13:22:57: Debug: Adding duplicate image handler for 'XPM file'
+== In2 items in (66,74,33,40):
+   via +3V3D_CDR (69.875,38.375) r0.400
+   via +3V3D_CDR (69.625,35.375) r0.400
+   seg +3V3D_CDR (69.625,36.625)->(69.625,37.375) hw0.300
+   seg +3V3D_CDR (69.625,35.375)->(69.625,36.625) hw0.100
+   seg +3V3D_CDR (66.125,37.875)->(65.875,37.625) hw0.300
+   seg +3V3D_CDR (70.125,34.875)->(69.875,35.125) hw0.100
+   seg +3V3D_CDR (66.875,38.375)->(66.625,38.375) hw0.100
+   seg +3V3D_CDR (69.875,35.125)->(69.625,35.375) hw0.100
+   seg +3V3D_CDR (66.625,38.375)->(66.375,38.125) hw0.300
+   seg +3V3D_CDR (69.875,38.375)->(67.125,38.375) hw0.100
+   seg +3V3D_CDR (67.125,38.375)->(66.875,38.375) hw0.300
+   seg +3V3D_CDR (66.450,38.550)->(66.625,38.375) hw0.125
+   seg +3V3D_CDR (70.375,34.625)->(70.125,34.875) hw0.300
+   seg +3V3D_CDR (70.625,34.375)->(70.375,34.625) hw0.300
+   seg +3V3D_CDR (69.625,37.375)->(69.625,38.375) hw0.100
+   seg +3V3D_CDR (66.375,38.125)->(66.125,37.875) hw0.300
+   via CDR_DATP (66.220,33.280) r0.250
+   via CDR_LOL (68.125,39.625) r0.300
+   via I2C_SCL (70.875,37.875) r0.300
+   seg I2C_SCL (71.125,34.875)->(71.375,34.625) hw0.125
+   seg I2C_SCL (71.375,34.625)->(71.375,28.875) hw0.125
+   seg I2C_SCL (70.875,37.875)->(70.875,35.125) hw0.125
+   seg I2C_SCL (70.875,35.125)->(71.125,34.875) hw0.125
+   via REFCLKN (71.700,37.550) r0.250
+== B items in (66,74,33,40):
+   via +3V3D_CDR (69.875,38.375) r0.400
+   via +3V3D_CDR (69.625,35.375) r0.400
+   via CDR_DATP (66.220,33.280) r0.250
+   seg CDR_DATP (66.220,33.280)->(67.375,32.875) hw0.100
+   via CDR_LOL (68.125,39.625) r0.300
+   seg CDR_LOL (67.625,37.375)->(67.375,37.125) hw0.125
+   seg CDR_LOL (66.375,34.875)->(66.125,34.625) hw0.125
+   seg CDR_LOL (67.875,39.375)->(67.625,39.125) hw0.100
+   seg CDR_LOL (67.125,35.625)->(66.875,35.375) hw0.125
+   seg CDR_LOL (67.625,38.375)->(67.625,37.375) hw0.125
+   seg CDR_LOL (66.625,35.125)->(66.375,34.875) hw0.125
+   seg CDR_LOL (67.375,37.125)->(67.375,35.875) hw0.125
+   seg CDR_LOL (67.625,39.125)->(67.625,38.375) hw0.100
+   seg CDR_LOL (68.125,39.625)->(67.875,39.375) hw0.100
+   seg CDR_LOL (66.875,35.375)->(66.625,35.125) hw0.125
+   seg CDR_LOL (66.125,34.625)->(65.875,34.375) hw0.125
+   seg CDR_LOL (67.375,35.875)->(67.125,35.625) hw0.125
+   via I2C_SCL (70.875,37.875) r0.300
+   via REFCLKN (71.700,37.550) r0.250
+== F items touching I2C_SDA / I2C_SCL near U4:
+  F pad I2C_SCL (68.688,37.500) hw0.438x0.125
+  F pad I2C_SDA (68.688,37.000) hw0.438x0.125
+  F seg I2C_SCL (68.688,37.500)->(69.438,37.500) hw0.100
+  F seg I2C_SCL (69.438,37.500)->(70.125,37.625) hw0.100
+  F seg I2C_SCL (70.125,37.625)->(70.625,37.625) hw0.125
+  F seg I2C_SCL (70.625,37.625)->(70.875,37.875) hw0.125
+  F via I2C_SCL (70.875,37.875) r0.300
+  F seg I2C_SDA (70.125,36.125)->(70.375,35.875) hw0.125
+  F seg I2C_SDA (70.875,33.875)->(71.125,33.625) hw0.125
+  F seg I2C_SDA (69.875,36.375)->(70.125,36.125) hw0.125
+  F seg I2C_SDA (70.625,34.125)->(70.875,33.875) hw0.125
+  F seg I2C_SDA (69.625,36.625)->(69.875,36.375) hw0.100
+  F seg I2C_SDA (71.875,32.875)->(72.125,32.625) hw0.125
+  F seg I2C_SDA (68.938,37.000)->(69.375,36.875) hw0.100
+  F seg I2C_SDA (70.375,35.875)->(70.375,35.625) hw0.125
+  F seg I2C_SDA (70.375,35.625)->(70.625,35.375) hw0.125
+  F seg I2C_SDA (70.625,35.375)->(70.625,34.125) hw0.125
+  F seg I2C_SDA (71.375,33.375)->(71.625,33.125) hw0.125
+  F seg I2C_SDA (71.125,33.625)->(71.375,33.375) hw0.125
+  F seg I2C_SDA (68.688,37.000)->(68.938,37.000) hw0.100
+  F seg I2C_SDA (69.375,36.875)->(69.625,36.625) hw0.100
+  F seg I2C_SDA (71.625,33.125)->(71.875,32.875) hw0.125
+  F via I2C_SDA (72.125,32.625) r0.300
+  In2 via I2C_SCL (70.875,37.875) r0.300
+  In2 seg I2C_SCL (71.125,34.875)->(71.375,34.625) hw0.125
+  In2 seg I2C_SCL (71.375,34.625)->(71.375,28.875) hw0.125
+  In2 seg I2C_SCL (70.875,37.875)->(70.875,35.125) hw0.125
+  In2 seg I2C_SCL (70.875,35.125)->(71.125,34.875) hw0.125
+  In2 via I2C_SDA (72.125,32.625) r0.300
+  In2 seg I2C_SDA (72.125,30.125)->(72.375,29.875) hw0.125
+  In2 seg I2C_SDA (72.125,32.625)->(72.125,30.125) hw0.125
+  B via I2C_SCL (70.875,37.875) r0.300
+  B via I2C_SDA (72.125,32.625) r0.300

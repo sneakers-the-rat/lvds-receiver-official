@@ -1,0 +1,15 @@
+13:55:14: Debug: Adding duplicate image handler for 'PNG file'
+13:55:14: Debug: Adding duplicate image handler for 'JPEG file'
+13:55:14: Debug: Adding duplicate image handler for 'TIFF file'
+13:55:14: Debug: Adding duplicate image handler for 'GIF file'
+13:55:14: Debug: Adding duplicate image handler for 'PNM file'
+13:55:14: Debug: Adding duplicate image handler for 'PCX file'
+13:55:14: Debug: Adding duplicate image handler for 'IFF file'
+13:55:14: Debug: Adding duplicate image handler for 'Windows icon file'
+13:55:14: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:55:14: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:55:14: Debug: Adding duplicate image handler for 'TGA file'
+13:55:14: Debug: Adding duplicate image handler for 'XPM file'
+C14 C_0603_1608Metric (72.00,36.75) rot 0.0 courtyard?
+   pad 1 REFCLKN (71.225,36.750) sz 0.90x0.95
+   pad 2 GND (72.775,36.750) sz 0.90x0.95
