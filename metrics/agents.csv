@@ -1,5 +1,5 @@
 agent_id,model,scope,role,usage_rows,input_tokens,output_tokens,first_row_utc,last_row_utc,notes
-4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",704,323189164,1088764,2026-11-03T18:34:31Z,2026-11-09T01:30:54Z,
+4925d244-018c-4b4f-9fad-7b3ad78af7c1,ipnext/watermelon-v0,chat-tree,"main agent (root of this chat: orchestration, pushes, CI merges, user reports)",705,323402114,1088913,2026-11-03T18:34:31Z,2026-11-09T01:50:38Z,
 211e6068-5645-443d-821c-d965a1288a6c,ipnext/avocado-5.17-v1,chat-tree,"build coordinator #1 (router v1-v5, repair passes 1-4, stage 7b/7c start)",1,2224018,8136,2026-11-04T00:18:30Z,2026-11-04T00:18:30Z,
 04d878b8-e46d-47c3-a3e8-19842ed9ea6c,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,3089221,53683,2026-11-03T18:42:31Z,2026-11-03T18:42:31Z,spawn prompt in agent.subagent_spawns
 6b643e67-3b72-4a34-a4e4-cb88906fc170,ipnext/avocado-5.17-v1,chat-tree,coordinator #1 child worker,1,788734,34177,2026-11-03T18:40:38Z,2026-11-03T18:40:38Z,spawn prompt in agent.subagent_spawns
@@ -399,3 +399,4 @@ ca0a2fba-81e9-44c2-9c06-b65233d28f86,ipnext/watermelon-v0,checkpoint-cron,pdlvds
 ba494333-568b-4f36-bd2f-00467cc1f7dc,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,2829345,11579,2026-11-09T00:46:19Z,2026-11-09T00:46:19Z,run scheduled 2026-11-09T00:39:16Z
 bff86916-f347-41cd-9d4f-de4c6d55c7cb,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,3511276,11786,2026-11-09T01:16:20Z,2026-11-09T01:16:20Z,run scheduled 2026-11-09T01:09:16Z
 54b7dfd9-9b3e-4de4-b832-600dd2b83ea7,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress checkpoint worker (cron job pdlvds-progress),1,101468,473,2026-11-09T01:16:30Z,2026-11-09T01:16:30Z,run scheduled 2026-11-09T01:09:16Z
+a1223dae-4bd7-42ee-8bdc-c12996a6e739,ipnext/watermelon-v0,checkpoint-cron,pdlvds-progress run/delivery agent (cron job pdlvds-progress),1,4639511,12763,2026-11-09T01:50:04Z,2026-11-09T01:50:04Z,run scheduled 2026-11-09T01:39:16Z
