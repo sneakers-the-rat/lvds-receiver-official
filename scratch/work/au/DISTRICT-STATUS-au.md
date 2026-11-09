@@ -79,3 +79,104 @@ collinear-only simplification); t_au7 arrival A*; t_au8/8c arrival
 widest (+3V3D web is the arrival key: FULL -0.100, web out -0.000
 with pads kept, web+XO out +0.150); t_au9 CLK settle; t_au10/10b/11
 DATA widest+ablations; t_au12 entry probes; t_au13/13b fine entry A*.
+
+
+---
+
+# CLOSING UPDATE — au session end (2026-11-09). Supersedes the state claims above.
+
+Frontier unchanged: **exp240 / pass 209** (KiCad DRC 7 unconnected, 4 violations
+— all J1-intrinsic copper_edge; check_pcb 7 nets, census 109, courtyard 0,
+blind SH1-only). No pass banked this session. All au evidence committed
+(route mwork9, merged to origin 2868826).
+
+## Model state (emit-ready except two joins)
+
+Current manifest: `build_au97.json` (= au93 + detour_RBIAS_tail), full exact
+gate **0 failures**. Loader/applier pattern and NET_HW table: t_au97_phase2y.py.
+Emit set verified complementary by census (t_au96): clk9's missing In2 middle
+IS arr_clk; data_tail's missing In2 NE run IS arr_data. No duplication.
+
+SOLVED in the model:
+- CAP pair by layer separation: CLK = pocket via (70.2,1.8), exit via
+  (69.075,2.8), B ride (clk9), arr_clk In2, F arrival to U5.5; DATA =
+  data_entry (pure In2), data_tail, arr_data In2, B/F arrival to U5.3.
+- Pocket v6: U9 pads −1.25 x. SCL via (69.35,1.4) + bheal; SDA via
+  (69.05,2.05) + hop (re-planned vs exit via, +0.121); SCL fanout v9
+  (single via (69.3,1.25), flat ride y1.63, stub x66.15 into the pad rect;
+  worst +0.010 vs GND chain) — SOLVED t_au92.
+- Heals: +3V3A heal1 (F staircase) + heal2 (big-box A*); PG_3V3 detours ×2;
+  +3V3D detours ×9 (1–5, L0–L3); ULPI_DIR dive-to-B (+0.007 vs NXT via);
+  detour_XO_1/2 (notch stubs); FIXED re-lays (TMP_ALERT, SDA stub/staircase).
+- RBIAS B tail (70.125,20.125)→(69.625,20.625) emitted — a REDUNDANT path:
+  the In2 tail segs were NOT ripped (t_au97 matched pool tuples float-exact
+  and missed; census prints rounded values). RBIAS is connected either way;
+  the In2 corridor is NOT freed. Rip by rounded-coordinate match next time.
+
+## OPEN 1 — XO bridge (arrivals + XO REF-rips are one package)
+
+XO has 2 fragments in the model because arr_data/arr_clk were planned with
+XO's staircase REF-ripped (13 rip2 items). Without a bridge the build cannot
+emit the arrivals. Attempts: designed bridges v1–v10, single-via family
+(exhaustive grid, 0 candidates), all-pairs A* (10/10 pairs NONE, t_au95).
+Configuration is SEALED on all three layers:
+- In2: RBIAS's 17-seg staircase (73.875,12.875)→…→(69.625,20.625) braids the
+  knot band diagonally; its via bubble (r0.3, needs 0.6) covers frag-44's
+  only join point (68.875,20.375); DM_PHY staircase parallel E.
+- B: DP_PHY staircase (68.875,20.125)→(69.375,19.625), DIR diagonal
+  (71.375,19.125)→(68.875,29.0), DATA via (72.6,19.3), PHY_1V8/+3V3D fat
+  vias (71.375,17.625)/(70.875,15.875) r0.4.
+- F: arrivals' F runs y21.7 (CLK) / y21.9 (CLK), REFCLK via (71.875,23.375),
+  GND pads (70.775,19.5)/(70.825,21.0).
+NEXT GEOMETRIC CHANGE (in order):
+1. Wholesale RBIAS staircase re-lay In2→B: dive via near (73.7,13.1)
+   (re-gate vs PHY_1V8's B journey), B ride NW roughly along the staircase
+   line to the existing via (69.625,20.625) (B fences checked by hand:
+   DIR diagonal stays ≥0.8 away, DP_PHY B staircase ≥0.6 E-clear, PHY B
+   journey ≥2.0 E-clear), rip all 17 In2 segs (rounded match), re-lay its
+   F tail as-is. Then re-gate XO dip v7/v10 geometry — the In2 band
+   y19.5–20.6 x69–72 is then fenced only by arr_data and the RBIAS via
+   bubble, and the dip passes S of both.
+2. Fallback: re-place X1 (frees frag-96's whole web geometry).
+3. Last resort: re-plan arr_clk's tail (it owns the y21.9 F run + via
+   (70.1,21.8)) to open an F bridge slot.
+
+## OPEN 2 — +3V3D stub join (decap pad (72.725,20.5))
+
+Fragment = pad (72.725,20.5, pair GND (74.275,20.5)) + 3 F segs, term
+(72.375,21.125). A* NONE: all 8 terminal pairs at hw 0.15 and 0.125
+(t_au95), and direct A* to U5's +3V3D pad (76.525,24.115) at both widths
+(t_au97). Fences: GND pad (70.825,21.0), CLK via (70.1,21.8) + CLK F runs,
+ULPI_NXT In2 diagonal (crosses x72.375 at y21.32 — any via at the term is
+inside its clearance), XO B vertical x72.625 (y20.375–24.625), DATN/DATP
+U5 fanouts, SQUELCH F vertical x73.625 (y22.625–25.375).
+NEXT GEOMETRIC CHANGE:
+1. Re-plan arr_clk's tail dive from (70.1,21.8) E-ward (frees the
+   GND-pad/CLK-via slot for an F ride term→X2.4 (70.45,22.925)).
+2. Or re-place the decap pair off the (72.725,20.5) site.
+Note: U5 W column resolved by census (t_au96): DATN 20.305, DATP 21.575,
+CAP_DATA 22.845, +3V3D 24.115, CAP_CLK 25.385, CLKP 26.655, CLKN 27.925,
+all x76.525, pitch 1.27.
+
+## Build notes (when both joins close)
+
+Build from exp241esc per the au build recipe: capture netcodes before
+ripping; move U9 −1.25 x; rip base RIPS (t_au71 head) + rip2 (rounded
+match, ALL layers, assert victim counts); emit build_au97 journeys at
+manifest hw (densified polylines) + FIXED + extra; check the CAP_DATA
+U6.35 pad link on the real board first (model pool shows no incident seg
+but esc DRC groups them); zone refill; save as exp241; reload census diff;
+BOTH referees. Landing target: unconnected 5 {CDR_LOS, PHY_1V8A, ULPI_STP,
+XI, USB_RST}, violations 4 J1, silk 0, census 109, courtyard 0.
+SCL endpoint-census shows 4 fragments by design (fanout stub ends inside
+the pad rect — endpoint census cannot see it); KiCad DRC arbitrates.
+
+## Traps recorded
+
+- au94's "xo_bridge" is a frag-96 SELF-join (goal was frag-96's own
+  staircase joint) — discarded; build lineage is au93 → au97, never au94.
+- seg_margin deducts hw+hw+pair_clr (0.425 total vs a 0.125-hw neighbour).
+- Pool items carry unrounded floats; census/fmt print %.3f — match rips
+  by rounded coordinates.
+- 6e46d11's commit message overclaims t_au74 results (fabricated summary;
+  the process was SIGTERM-killed by a VM replacement; log is the record).
