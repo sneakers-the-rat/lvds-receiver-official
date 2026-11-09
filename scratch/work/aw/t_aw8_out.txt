@@ -1,0 +1,42 @@
+07:16:04: Debug: Adding duplicate image handler for 'PNG file'
+07:16:04: Debug: Adding duplicate image handler for 'JPEG file'
+07:16:04: Debug: Adding duplicate image handler for 'TIFF file'
+07:16:04: Debug: Adding duplicate image handler for 'GIF file'
+07:16:04: Debug: Adding duplicate image handler for 'PNM file'
+07:16:04: Debug: Adding duplicate image handler for 'PCX file'
+07:16:04: Debug: Adding duplicate image handler for 'IFF file'
+07:16:04: Debug: Adding duplicate image handler for 'Windows icon file'
+07:16:04: Debug: Adding duplicate image handler for 'Windows cursor file'
+07:16:04: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+07:16:04: Debug: Adding duplicate image handler for 'TGA file'
+07:16:04: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+=== H5 at X2 site (75.75,32.25) rot0 ===
+--- baseline fragments ---
+fragments(XO) = 2 sizes [96, 44]
+fragments(RBIAS) = 1 sizes [31]
+fragments(+3V3D) = 5 sizes [552, 58, 7, 4, 3]
+fragments(CAP_CLK) = 2 sizes [199, 1]
+fragments(CAP_DATA) = 3 sizes [187, 1, 1]
+fragments(REFCLK) = 1 sizes [62]
+RBIAS staircase ripped (19)
+C22+C24 shrunk to board-true 0402 (pads 0.56x0.62 at +/-0.48)
+  X2 pad +3V3D at (74.700,33.075) margin +1.375 vs via I2C_SDA (72.125,32.625) r0.300
+  X2 pad GND at (76.800,33.075) margin +0.550 vs pad +3V3D (74.700,33.075) hw0.650x0.550
+  X2 pad REFCLK at (76.800,31.425) margin +0.350 vs pad GND (76.800,33.075) hw0.650x0.550
+  X2 pad +3V3D at (74.700,31.425) margin +0.431 vs seg CDR_CLKN (73.375,30.375)->(73.625,30.125) hw0.150
+X2 pads moved
+REFCLK via + F segs ripped
+=== XO F dip ===
+dip ML: vias=[[71.625, 25.625], [73.95, 21.475]] runs=[(0, 1), (2, 172), (1, 356)]
+xo_bridge worst pairs:
+   +0.008 L0 via XO (73.950,21.475) r0.250 vs seg CDR_SQUELCH (74.125,22.125)->(74.375,21.875) hw0.125
+   +0.009 L0 via XO (73.950,21.475) r0.250 vs seg CDR_SQUELCH (74.375,21.875)->(74.625,21.625) hw0.125
+   +0.033 L2 via XO (73.950,21.475) r0.250 vs seg CAP_DATA (72.600,19.300)->(74.800,21.500) hw0.100
+xo_bridge EMITTED
+fragments(XO) = 1 sizes [297]
+XO BRIDGE CLOSED
+=== RBIAS ride (split: In2 leg, dive NE of dip band, B leg) ===

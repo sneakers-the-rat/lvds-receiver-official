@@ -1,0 +1,31 @@
+10:40:38: Debug: Adding duplicate image handler for 'PNG file'
+10:40:38: Debug: Adding duplicate image handler for 'JPEG file'
+10:40:38: Debug: Adding duplicate image handler for 'TIFF file'
+10:40:38: Debug: Adding duplicate image handler for 'GIF file'
+10:40:38: Debug: Adding duplicate image handler for 'PNM file'
+10:40:38: Debug: Adding duplicate image handler for 'PCX file'
+10:40:38: Debug: Adding duplicate image handler for 'IFF file'
+10:40:38: Debug: Adding duplicate image handler for 'Windows icon file'
+10:40:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:40:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:40:38: Debug: Adding duplicate image handler for 'TGA file'
+10:40:38: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+start (66.875,6.75): G = [-0.2, 0.22, -0.089]
+goal (69.35,1.4): G = [0.266, 0.266, 0.266]
+L0: start-cell reachable cells=0 goal-cell track=True goal reached=False
+L1: start-cell reachable cells=13706 goal-cell track=True goal reached=False
+L2: start-cell reachable cells=0 goal-cell track=True goal reached=False
+viafit cells in corridor (64-70, 3-6): 0
+viafit cells total in box: 14291
+  viafit at x=64.0: y from -1.00 to 2.50 (n=141)
+  viafit at x=65.0: y from -1.00 to 8.50 (n=113)
+  viafit at x=66.0: NONE
+  viafit at x=67.0: y from -1.00 to -0.37 (n=26)
+  viafit at x=68.0: y from -1.00 to -0.70 (n=13)
+  viafit at x=69.0: NONE
+  viafit at x=70.0: NONE
+T_AW34 COMPLETE

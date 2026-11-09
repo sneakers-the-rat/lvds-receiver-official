@@ -1,0 +1,104 @@
+08:25:31: Debug: Adding duplicate image handler for 'PNG file'
+08:25:31: Debug: Adding duplicate image handler for 'JPEG file'
+08:25:31: Debug: Adding duplicate image handler for 'TIFF file'
+08:25:31: Debug: Adding duplicate image handler for 'GIF file'
+08:25:31: Debug: Adding duplicate image handler for 'PNM file'
+08:25:31: Debug: Adding duplicate image handler for 'PCX file'
+08:25:31: Debug: Adding duplicate image handler for 'IFF file'
+08:25:31: Debug: Adding duplicate image handler for 'Windows icon file'
+08:25:31: Debug: Adding duplicate image handler for 'Windows cursor file'
+08:25:31: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+08:25:31: Debug: Adding duplicate image handler for 'TGA file'
+08:25:31: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+=== H5 v3 at X2 site (75.75,32.25) rot0 ===
+--- baseline fragments ---
+fragments(XO) = 2 sizes [96, 44]
+fragments(+3V3D) = 5 sizes [552, 58, 7, 4, 3]
+fragments(CAP_CLK) = 2 sizes [199, 1]
+fragments(CAP_DATA) = 3 sizes [187, 1, 1]
+fragments(REFCLK) = 1 sizes [62]
+fragments(DM_PHY) = 1 sizes [61]
+RBIAS staircase ripped (19)
+C22+C24 shrunk (board-true 0402)
+  X2 pad +3V3D at (74.700,33.075) margin +1.375
+  X2 pad GND at (76.800,33.075) margin +0.550
+  X2 pad REFCLK at (76.800,31.425) margin +0.350
+  X2 pad +3V3D at (74.700,31.425) margin +0.431
+X2 pads moved; REFCLK via + F segs ripped
+=== RBIAS ride (composed) ===
+rbias_relay worst pairs:
+rbias_relay EMITTED
+fragments(RBIAS) = 1 sizes [93]
+RBIAS RIDE CLOSED
+=== DM_PHY span ablation ===
+DM_PHY In2 segs in box: 13
+   ablate seg DM_PHY (70.375,22.375)->(70.625,22.125) hw0.125
+   ablate seg DM_PHY (72.375,20.375)->(72.625,20.125) hw0.125
+   ablate seg DM_PHY (69.875,22.875)->(70.125,22.625) hw0.125
+   ablate seg DM_PHY (70.125,22.625)->(70.375,22.375) hw0.125
+   ablate seg DM_PHY (71.875,20.875)->(72.125,20.625) hw0.125
+   ablate seg DM_PHY (71.625,21.125)->(71.875,20.875) hw0.125
+   ablate seg DM_PHY (71.375,21.375)->(71.625,21.125) hw0.125
+   ablate seg DM_PHY (70.625,22.125)->(70.875,21.875) hw0.125
+   ablate seg DM_PHY (69.625,23.125)->(69.875,22.875) hw0.125
+   ablate seg DM_PHY (70.875,21.875)->(71.125,21.625) hw0.125
+   ablate seg DM_PHY (71.125,21.625)->(71.375,21.375) hw0.125
+   ablate seg DM_PHY (72.625,20.125)->(72.875,19.875) hw0.125
+   ablate seg DM_PHY (72.125,20.625)->(72.375,20.375) hw0.125
+severed endpoints touching remaining copper: [(69.625, 23.125), (72.875, 19.875)]
+fragments(DM_PHY) = 2 sizes [36, 12]
+=== XO F dip (DM_PHY span ablated) ===
+dip: vias=[[71.625, 25.625], [71.75, 20.55], [70.95, 18.5]] runs=[(0, 1), (2, 204), (0, 94), (1, 90)]
+xo_bridge worst pairs:
+   +0.000 L2 via XO (70.950,18.500) r0.250 vs seg DP_PHY (70.375,18.625)->(70.375,17.625) hw0.125
+   +0.013 L2 via XO (70.950,18.500) r0.250 vs seg DP_PHY (70.125,18.875)->(70.375,18.625) hw0.125
+   +0.016 L1 via XO (71.750,20.550) r0.250 vs seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+   +0.025 L0 via XO (71.750,20.550) r0.250 vs pad +3V3D (72.725,20.500) hw0.450x0.475
+xo_bridge EMITTED
+fragments(XO) = 1 sizes [208]
+XO BRIDGE CLOSED
+=== DM_PHY re-lay (variant search) ===
+dip run L0: n=1 x[71.62,71.62] y[25.62,25.62] first=[71.625, 25.625] last=[71.625, 25.625]
+dip run L2: n=204 x[71.60,72.33] y[20.55,25.62] first=[71.625, 25.625] last=[71.75, 20.55]
+dip run L0: n=94 x[70.95,71.80] y[18.50,20.55] first=[71.75, 20.55] last=[70.95, 18.5]
+dip run L1: n=90 x[68.88,70.95] y[18.50,20.38] first=[70.95, 18.5] last=[68.875, 20.375]
+dip vias: [[71.625, 25.625], [71.75, 20.55], [70.95, 18.5]]
+  DM V1 ML->In2 hw0.125: NONE
+  DM V1 ML->In2 hw0.1: FOUND
+dmphy_relay worst pairs:
+   +0.016 L1 seg DM_PHY (72.050,21.050)->(72.275,20.825) hw0.100 vs via XO (71.750,20.550) r0.250
+   +0.018 L1 seg DM_PHY (72.025,21.050)->(72.050,21.050) hw0.100 vs seg ULPI_NXT (74.500,19.250)->(69.875,23.750) hw0.100
+   +0.018 L1 seg DM_PHY (72.050,21.050)->(72.275,20.825) hw0.100 vs seg ULPI_NXT (74.500,19.250)->(69.875,23.750) hw0.100
+   +0.021 L1 seg DM_PHY (71.975,21.100)->(72.025,21.050) hw0.100 vs via XO (71.750,20.550) r0.250
+dmphy_relay EMITTED
+fragments(DM_PHY) = 1 sizes [106]
+DM_PHY RE-LAID
+=== REFCLK relay ===
+refclk_relay worst pairs:
+   +0.001 L0 via REFCLK (68.975,32.425) r0.250 vs seg CDR_CLKP (69.375,32.875)->(69.625,32.625) hw0.150
+   +0.002 L0 via REFCLK (68.975,32.425) r0.250 vs seg CDR_CLKP (69.125,33.125)->(69.375,32.875) hw0.150
+   +0.010 L1 seg REFCLK (70.950,23.475)->(70.250,24.175) hw0.100 vs via +3V3D (71.125,24.375) r0.400
+refclk_relay EMITTED
+fragments(REFCLK) = 1 sizes [214]
+REFCLK RELAY CLOSED
+=== +3V3D X2 links ===
+x2_v3a_0 worst pairs:
+   +0.001 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.300,24.050)->(72.275,24.025) hw0.100
+   +0.001 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.275,24.025)->(72.275,23.975) hw0.100
+   +0.004 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.275,23.975)->(72.250,23.950) hw0.100
+   +0.004 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.250,23.950)->(72.250,23.900) hw0.100
+x2_v3a_0 EMITTED
+  X2 +3V3D pad (74.70,33.08) linked via goal (0, 70.45, 22.425)
+x2_v3a_1 worst pairs:
+   +0.001 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.300,24.050)->(72.275,24.025) hw0.100
+   +0.001 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.275,24.025)->(72.275,23.975) hw0.100
+   +0.004 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.275,23.975)->(72.250,23.950) hw0.100
+   +0.004 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.250,23.950)->(72.250,23.900) hw0.100
+x2_v3a_1 EMITTED
+  X2 +3V3D pad (74.70,31.43) linked via goal (0, 70.45, 22.425)
+fragments(+3V3D) = 5 sizes [825, 58, 7, 4, 3]
+=== JOIN 2: +3V3D stub (t_aw11 campaign) ===

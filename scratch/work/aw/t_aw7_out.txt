@@ -1,0 +1,52 @@
+########## STATE A: ride first ##########
+07:03:45: Debug: Adding duplicate image handler for 'PNG file'
+07:03:45: Debug: Adding duplicate image handler for 'JPEG file'
+07:03:45: Debug: Adding duplicate image handler for 'TIFF file'
+07:03:45: Debug: Adding duplicate image handler for 'GIF file'
+07:03:45: Debug: Adding duplicate image handler for 'PNM file'
+07:03:45: Debug: Adding duplicate image handler for 'PCX file'
+07:03:45: Debug: Adding duplicate image handler for 'IFF file'
+07:03:45: Debug: Adding duplicate image handler for 'Windows icon file'
+07:03:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+07:03:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+07:03:45: Debug: Adding duplicate image handler for 'TGA file'
+07:03:45: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+ride composed: ok
+rbias_relay worst pairs:
+rbias_relay EMITTED
+ride pts near pocket (In2 leg, x<71.5):
+  In2 leg tail pts: [[70.25, 20.15], [70.225, 20.175], [70.2, 20.2], [70.175, 20.225], [70.15, 20.25], [70.125, 20.275], [70.1, 20.3], [70.075, 20.325], [70.05, 20.35], [70.025, 20.375], [70.0, 20.4], [69.975, 20.425], [69.95, 20.45], [69.925, 20.475]]
+dip goal layer 1: NONE
+dip goal layer 0: NONE
+dip goal layer 2: NONE
+########## STATE B: dip first ##########
+07:04:22: Debug: Adding duplicate image handler for 'PNG file'
+07:04:22: Debug: Adding duplicate image handler for 'JPEG file'
+07:04:22: Debug: Adding duplicate image handler for 'TIFF file'
+07:04:22: Debug: Adding duplicate image handler for 'GIF file'
+07:04:22: Debug: Adding duplicate image handler for 'PNM file'
+07:04:22: Debug: Adding duplicate image handler for 'PCX file'
+07:04:22: Debug: Adding duplicate image handler for 'IFF file'
+07:04:22: Debug: Adding duplicate image handler for 'Windows icon file'
+07:04:22: Debug: Adding duplicate image handler for 'Windows cursor file'
+07:04:22: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+07:04:22: Debug: Adding duplicate image handler for 'TGA file'
+07:04:22: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+dip: vias=[[71.625, 25.625], [73.95, 21.475]] runs=[(0, 1), (2, 172), (1, 356)]
+xo_bridge worst pairs:
+   +0.008 L0 via XO (73.950,21.475) r0.250 vs seg CDR_SQUELCH (74.125,22.125)->(74.375,21.875) hw0.125
+   +0.009 L0 via XO (73.950,21.475) r0.250 vs seg CDR_SQUELCH (74.375,21.875)->(74.625,21.625) hw0.125
+   +0.033 L2 via XO (73.950,21.475) r0.250 vs seg CAP_DATA (72.600,19.300)->(74.800,21.500) hw0.100
+xo_bridge EMITTED
+dip In2 run pts (x<72.5): [[72.475, 18.3], [72.45, 18.3], [72.425, 18.3], [72.4, 18.3], [72.375, 18.325], [72.35, 18.325], [72.325, 18.35], [72.3, 18.35], [72.275, 18.375], [72.25, 18.375], [72.225, 18.4], [72.2, 18.4], [72.175, 18.425], [72.15, 18.45], [72.125, 18.45], [72.1, 18.475], [72.075, 18.475], [72.05, 18.5], [72.025, 18.5], [72.0, 18.525], [71.975, 18.525], [71.95, 18.55], [71.925, 18.575], [71.9, 18.575], [71.875, 18.6], [71.85, 18.6], [71.825, 18.625], [71.8, 18.65], [71.775, 18.65], [71.75, 18.675], [71.725, 18.7], [71.7, 18.7], [71.675, 18.725], [71.65, 18.725], [71.625, 18.75], [71.6, 18.75], [71.575, 18.775], [71.55, 18.775], [71.525, 18.8], [71.5, 18.8], [71.475, 18.825], [71.45, 18.825], [71.425, 18.85], [71.4, 18.875], [71.375, 18.9], [71.35, 18.925], [71.325, 18.95], [71.3, 18.975], [71.275, 19.0], [71.25, 19.025], [71.225, 19.05], [71.2, 19.075], [71.175, 19.1], [71.15, 19.125], [71.125, 19.15], [71.1, 19.175], [71.075, 19.2], [71.05, 19.225], [71.025, 19.25], [71.0, 19.275], [70.975, 19.3], [70.95, 19.325], [70.925, 19.35], [70.9, 19.375], [70.875, 19.4], [70.85, 19.425], [70.825, 19.45], [70.8, 19.475], [70.775, 19.5], [70.75, 19.525], [70.725, 19.525], [70.7, 19.55], [70.675, 19.55], [70.65, 19.575], [70.625, 19.575], [70.6, 19.575], [70.575, 19.575], [70.55, 19.575], [70.525, 19.575], [70.5, 19.575], [70.475, 19.575], [70.45, 19.575], [70.425, 19.575], [70.4, 19.575], [70.375, 19.575], [70.35, 19.575], [70.325, 19.575], [70.3, 19.575], [70.275, 19.575], [70.25, 19.575], [70.225, 19.575], [70.2, 19.575], [70.175, 19.575], [70.15, 19.575], [70.125, 19.575], [70.1, 19.575], [70.075, 19.575], [70.05, 19.575], [70.025, 19.575], [70.0, 19.575], [69.975, 19.575], [69.95, 19.575], [69.925, 19.575], [69.9, 19.575], [69.875, 19.575], [69.85, 19.575], [69.825, 19.575], [69.8, 19.575], [69.775, 19.575], [69.75, 19.575], [69.725, 19.575], [69.7, 19.6], [69.675, 19.6], [69.65, 19.625], [69.625, 19.65], [69.6, 19.65], [69.575, 19.675], [69.55, 19.7], [69.525, 19.7], [69.5, 19.725], [69.475, 19.725], [69.45, 19.75], [69.425, 19.775], [69.4, 19.775], [69.375, 19.8], [69.35, 19.825], [69.325, 19.85], [69.3, 19.875], [69.275, 19.9], [69.25, 19.925], [69.225, 19.95], [69.2, 19.975], [69.175, 20.0], [69.15, 20.025], [69.125, 20.05], [69.1, 20.075], [69.075, 20.1], [69.05, 20.125], [69.025, 20.15], [69.0, 20.175], [68.975, 20.2], [68.95, 20.225], [68.925, 20.25], [68.9, 20.275], [68.875, 20.3], [68.875, 20.325], [68.875, 20.35], [68.875, 20.375]]
+ride composed over dive grid (dip emitted):
+  no dive in grid composes+emits
+done

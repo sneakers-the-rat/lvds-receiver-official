@@ -1,0 +1,53 @@
+10:53:05: Debug: Adding duplicate image handler for 'PNG file'
+10:53:05: Debug: Adding duplicate image handler for 'JPEG file'
+10:53:05: Debug: Adding duplicate image handler for 'TIFF file'
+10:53:05: Debug: Adding duplicate image handler for 'GIF file'
+10:53:05: Debug: Adding duplicate image handler for 'PNM file'
+10:53:05: Debug: Adding duplicate image handler for 'PCX file'
+10:53:05: Debug: Adding duplicate image handler for 'IFF file'
+10:53:05: Debug: Adding duplicate image handler for 'Windows icon file'
+10:53:05: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:53:05: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:53:05: Debug: Adding duplicate image handler for 'TGA file'
+10:53:05: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+detour_+3V3D_stub worst pairs:
+   +0.001 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.300,24.050)->(72.275,24.025) hw0.100
+   +0.001 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.275,24.025)->(72.275,23.975) hw0.100
+   +0.001 L0 via +3V3D (74.450,20.200) r0.250 vs pad GND (73.730,20.750) hw0.280x0.310
+   +0.004 L2 via +3V3D (71.700,24.200) r0.250 vs seg XO (72.275,23.975)->(72.250,23.950) hw0.100
+detour_+3V3D_stub EMITTED
+t_aw18 state replayed
+fragments(XO) = 1 sizes [208]
+fragments(+3V3D) = 4 sizes [936, 78, 3, 2]
+M0 pool segs moved: 4
+M0 manifest fixed segs moved: 4
+  TMP seg (65.45, 3.15, 65.45, 2.2) margin +0.050
+  TMP seg (65.45, 2.2, 65.45, -2.6) margin +0.025
+  TMP seg (65.45, -2.6, 66.125, -3.125) margin +1.130
+M1 PG pool segs ripped: 2
+pg_fix worst pairs:
+pg_fix EMITTED
+M1 PG tail re-laid (SDA via unmoved)
+ripped journey rbias_relay: 81 items
+rbias_relay worst pairs:
+rbias_relay EMITTED
+M2 RBIAS direct In2 leg CLOSED (no dive via, no B hop)
+fragments(RBIAS) = 1 sizes [74]
+fragments(I2C_SCL) = 4 sizes [65, 21, 10, 1]
+ripped journey data_entry: 49 items
+M3-pre In2 dip NONE; ML dip: NONE
+data_entry worst pairs:
+   +0.035 L1 seg CAP_DATA (63.875,6.325)->(63.850,6.300) hw0.100 vs seg HV_SHDN (63.375,6.125)->(63.625,5.875) hw0.125
+data_entry EMITTED
+M3 SCL bridge OPEN - manifest saves without scl_bridge
+rip2 additions recorded
+fragments(CAP_CLK) = 2 sizes [199, 1]
+fragments(CAP_DATA) = 3 sizes [187, 1, 1]
+fragments(+3V3D) = 4 sizes [936, 78, 3, 2]
+fragments(+3V3A) = 8 sizes [237, 62, 2, 1, 1, 1, 1, 1]
+SAVED build_aw1.json (v2) + state_aw2.pkl
+T_AW28 MODFIX COMPLETE

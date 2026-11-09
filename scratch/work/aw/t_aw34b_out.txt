@@ -1,0 +1,40 @@
+10:41:13: Debug: Adding duplicate image handler for 'PNG file'
+10:41:13: Debug: Adding duplicate image handler for 'JPEG file'
+10:41:13: Debug: Adding duplicate image handler for 'TIFF file'
+10:41:13: Debug: Adding duplicate image handler for 'GIF file'
+10:41:13: Debug: Adding duplicate image handler for 'PNM file'
+10:41:13: Debug: Adding duplicate image handler for 'PCX file'
+10:41:13: Debug: Adding duplicate image handler for 'IFF file'
+10:41:13: Debug: Adding duplicate image handler for 'Windows icon file'
+10:41:13: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:41:13: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:41:13: Debug: Adding duplicate image handler for 'TGA file'
+10:41:13: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+start (66.875,6.75): G = [-0.2, 0.22, -0.089]
+goal (69.35,1.4): G = [0.266, 0.266, 0.266]
+L0: start-cell reachable cells=0 goal-cell track=True goal reached=False
+L1: start-cell reachable cells=13706 goal-cell track=True goal reached=False
+L2: start-cell reachable cells=0 goal-cell track=True goal reached=False
+viafit cells in corridor (64-70, 3-6): 0
+viafit cells total in box: 14291
+  viafit at x=64.0: y from -1.00 to 2.50 (n=141)
+  viafit at x=65.0: y from -1.00 to 8.50 (n=113)
+  viafit at x=66.0: NONE
+  viafit at x=67.0: y from -1.00 to -0.37 (n=26)
+  viafit at x=68.0: y from -1.00 to -0.70 (n=13)
+  viafit at x=69.0: NONE
+  viafit at x=70.0: NONE
+T_AW34 COMPLETE
+--- corridor probes ---
+F col x65.2 y6.75->1.75: (65.2,6.75):-0.15 (65.2,6.0):-0.05 (65.2,5.0):+0.19 (65.2,4.0):+0.55 (65.2,3.0):+0.20 (65.2,2.5):+0.20 (65.2,2.0):+0.18 (65.2,1.75):+0.18
+B col x65.2 y6.75->1.75: (65.2,6.75):-0.15 (65.2,6.0):+0.20 (65.2,5.0):-0.16 (65.2,4.0):-0.04 (65.2,3.0):+0.10 (65.2,2.5):+0.20 (65.2,2.0):-0.04 (65.2,1.75):-0.16
+F row y1.63 x65.2->66.5: (65.2,1.63):+0.18 (65.6,1.63):-0.22 (66.0,1.63):-0.03 (66.3,1.63):+0.18 (66.5,1.63):+0.12
+In2 col x65.2 y6.75->6.0: (65.2,6.75):-0.15 (65.2,6.5):-0.18 (65.2,6.0):-0.11
+B row y-0.5 x65->69.35: (65.0,-0.5):+1.19 (66.0,-0.5):+0.82 (67.0,-0.5):+0.35 (68.0,-0.5):+0.30 (69.0,-0.5):+0.05 (69.35,-0.5):+0.20
+B col x69.35 y-0.5->1.4: (69.35,-0.5):+0.20 (69.35,0.0):+0.20 (69.35,0.5):+0.19 (69.35,1.0):+0.13 (69.35,1.4):+0.27
+F col x66.3 y3->1.63: (66.3,3.0):-0.09 (66.3,2.5):-0.09 (66.3,2.0):+0.00 (66.3,1.63):+0.18
+In2 row y6.75 x66.875->65.2: (66.875,6.75):+0.22 (66.4,6.75):-0.18 (66.0,6.75):-0.18 (65.6,6.75):+0.15 (65.2,6.75):-0.15
