@@ -1,0 +1,115 @@
+22:08:22: Debug: Adding duplicate image handler for 'PNG file'
+22:08:22: Debug: Adding duplicate image handler for 'JPEG file'
+22:08:22: Debug: Adding duplicate image handler for 'TIFF file'
+22:08:22: Debug: Adding duplicate image handler for 'GIF file'
+22:08:22: Debug: Adding duplicate image handler for 'PNM file'
+22:08:22: Debug: Adding duplicate image handler for 'PCX file'
+22:08:22: Debug: Adding duplicate image handler for 'IFF file'
+22:08:22: Debug: Adding duplicate image handler for 'Windows icon file'
+22:08:22: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:08:22: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:08:22: Debug: Adding duplicate image handler for 'TGA file'
+22:08:22: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+22:08:22: Debug: Adding duplicate image handler for 'PNG file'
+22:08:22: Debug: Adding duplicate image handler for 'JPEG file'
+22:08:22: Debug: Adding duplicate image handler for 'TIFF file'
+22:08:22: Debug: Adding duplicate image handler for 'GIF file'
+22:08:22: Debug: Adding duplicate image handler for 'PNM file'
+22:08:22: Debug: Adding duplicate image handler for 'PCX file'
+22:08:22: Debug: Adding duplicate image handler for 'IFF file'
+22:08:22: Debug: Adding duplicate image handler for 'Windows icon file'
+22:08:22: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:08:22: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:08:22: Debug: Adding duplicate image handler for 'TGA file'
+22:08:22: Debug: Adding duplicate image handler for 'XPM file'
+re-laying south-loop segs: 4
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+stub rip: ['seg PHY_1V8 (77.250,10.750)->(77.869,10.056) hw0.100', 'seg PHY_1V8 (77.869,10.056)->(77.450,10.100) hw0.150', 'via PHY_1V8 (77.869,10.056) r0.250']
+sda rip: ['seg I2C_SDA (69.875,0.625)->(69.875,-9.125) hw0.125', 'seg I2C_SDA (69.900,0.820)->(69.875,0.625) hw0.125']
+hv rip: ['seg HV_SHDN (70.125,-2.125)->(70.700,-2.750) hw0.125', 'seg HV_SHDN (69.875,-2.375)->(70.125,-2.125) hw0.125']
+hv south rip: 14
+    seg HV_SHDN (68.040,-5.750)->(68.125,-5.625) hw0.100
+    seg HV_SHDN (69.625,-2.625)->(69.875,-2.375) hw0.125
+    seg HV_SHDN (68.625,-4.625)->(68.875,-4.375) hw0.125
+    seg HV_SHDN (68.875,-4.375)->(68.875,-3.375) hw0.125
+    seg HV_SHDN (69.125,-3.125)->(69.375,-2.875) hw0.125
+    seg HV_SHDN (68.040,-6.000)->(68.040,-5.750) hw0.100
+    seg HV_SHDN (68.125,-5.125)->(68.375,-4.875) hw0.100
+    seg HV_SHDN (69.375,-2.875)->(69.625,-2.625) hw0.125
+    seg HV_SHDN (68.875,-3.375)->(69.125,-3.125) hw0.125
+    seg HV_SHDN (68.375,-4.875)->(68.625,-4.625) hw0.100
+    seg HV_SHDN (68.125,-5.625)->(68.125,-5.125) hw0.100
+    seg HV_SHDN (69.875,-2.375)->(69.700,-2.900) hw0.125
+    seg HV_SHDN (69.700,-2.900)->(70.100,-3.250) hw0.125
+    seg HV_SHDN (70.100,-3.250)->(70.700,-2.750) hw0.125
+pg rip: 196
+PG re-lay: FOUND vias=[[68.5, -1.0], [69.3, -4.95]]
+HV re-lay: FOUND vias=[]
+blocker removed: 3
+ripped prep C22 pads: 2
+region F items: 183
+shortlist (bound margin >= +0.03): 411
+    (0.9673807572403094, 82.49999999999969, 17.700000000000017, 90)
+    (0.9596731526163943, 82.49999999999969, 17.80000000000002, 90)
+    (0.9572746951703938, 82.49999999999969, 17.90000000000002, 90)
+    (0.9331110999277988, 82.49999999999969, 17.600000000000016, 90)
+    (0.8679471710269148, 82.3999999999997, 17.700000000000017, 90)
+    (0.8624004218091482, 82.3999999999997, 17.600000000000016, 90)
+    (0.8624004218091431, 82.49999999999969, 17.500000000000014, 90)
+    (0.859808464061285, 82.3999999999997, 17.80000000000002, 90)
+    (0.8580874804825723, 82.49999999999969, 18.00000000000002, 90)
+    (0.8572750707551359, 82.3999999999997, 17.90000000000002, 90)
+    (0.8572680285158695, 82.3999999999997, 18.00000000000002, 90)
+    (0.7916897436904925, 82.3999999999997, 17.500000000000014, 90)
+    (0.7916897436904874, 82.49999999999969, 17.400000000000013, 90)
+    (0.7842227870212671, 82.49999999999969, 17.400000000000013, 0)
+    (0.7830472616907859, 82.2999999999997, 17.600000000000016, 90)
+  exact centre (82.5,17.7) rot 90: PHY +1.004 GND +1.095
+  exact centre (82.5,17.8) rot 90: PHY +1.075 GND +1.095
+  exact centre (82.5,17.9) rot 90: PHY +1.146 GND +1.065
+  exact centre (82.5,17.6) rot 90: PHY +0.934 GND +1.095
+  exact centre (82.4,17.7) rot 90: PHY +0.934 GND +0.995
+  exact centre (82.4,17.6) rot 90: PHY +0.863 GND +0.995
+  exact centre (82.5,17.5) rot 90: PHY +0.863 GND +1.097
+  exact centre (82.4,17.8) rot 90: PHY +1.004 GND +0.995
+  exact centre (82.5,18.0) rot 90: PHY +1.186 GND +0.965
+  exact centre (82.4,17.9) rot 90: PHY +1.075 GND +0.995
+  exact centre (82.4,18.0) rot 90: PHY +1.091 GND +0.965
+  exact centre (82.4,17.5) rot 90: PHY +0.792 GND +0.997
+  exact centre (82.5,17.4) rot 90: PHY +0.792 GND +1.106
+  exact centre (82.5,17.4) rot 0: PHY +0.792 GND +1.471
+  exact centre (82.3,17.6) rot 90: PHY +0.792 GND +0.895
+  exact centre (82.3,17.7) rot 90: PHY +0.863 GND +0.895
+  exact centre (82.3,18.0) rot 90: PHY +0.998 GND +0.895
+  exact centre (82.3,17.8) rot 90: PHY +0.934 GND +0.895
+  exact centre (82.5,18.1) rot 90: PHY +1.156 GND +0.865
+  exact centre (82.3,17.9) rot 90: PHY +1.004 GND +0.895
+  exact centre (82.4,18.1) rot 90: PHY +1.060 GND +0.865
+  exact centre (82.3,18.1) rot 90: PHY +0.964 GND +0.865
+  exact centre (82.5,17.5) rot 0: PHY +0.750 GND +1.542
+  exact centre (82.3,17.5) rot 90: PHY +0.722 GND +0.898
+  exact centre (82.4,17.4) rot 90: PHY +0.722 GND +1.006
+  exact centre (82.5,17.3) rot 90: PHY +0.722 GND +1.120
+  exact centre (82.5,17.3) rot 0: PHY +0.722 GND +1.400
+  exact centre (82.4,17.4) rot 0: PHY +0.713 GND +1.400
+  exact centre (82.2,17.6) rot 90: PHY +0.722 GND +0.795
+  exact centre (82.5,17.6) rot 0: PHY +0.708 GND +1.612
+  exact centre (82.2,18.1) rot 90: PHY +0.869 GND +0.795
+  exact centre (82.2,17.7) rot 90: PHY +0.792 GND +0.795
+  exact centre (82.2,18.0) rot 90: PHY +0.905 GND +0.795
+  exact centre (82.2,17.8) rot 90: PHY +0.863 GND +0.795
+  exact centre (82.5,18.2) rot 90: PHY +1.132 GND +0.765
+  exact centre (82.2,17.9) rot 90: PHY +0.934 GND +0.795
+  exact centre (82.4,18.2) rot 90: PHY +1.034 GND +0.765
+  exact centre (82.3,18.2) rot 90: PHY +0.937 GND +0.765
+  exact centre (82.2,18.2) rot 90: PHY +0.840 GND +0.765
+  exact centre (82.2,17.5) rot 90: PHY +0.651 GND +0.798
+exact-pass sites: 40
+AY SCAN3 DONE, fix written: False

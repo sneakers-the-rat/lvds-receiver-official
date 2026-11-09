@@ -1,0 +1,23 @@
+23:04:24: Debug: Adding duplicate image handler for 'PNG file'
+23:04:24: Debug: Adding duplicate image handler for 'JPEG file'
+23:04:24: Debug: Adding duplicate image handler for 'TIFF file'
+23:04:24: Debug: Adding duplicate image handler for 'GIF file'
+23:04:24: Debug: Adding duplicate image handler for 'PNM file'
+23:04:24: Debug: Adding duplicate image handler for 'PCX file'
+23:04:24: Debug: Adding duplicate image handler for 'IFF file'
+23:04:24: Debug: Adding duplicate image handler for 'Windows icon file'
+23:04:24: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:04:24: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:04:24: Debug: Adding duplicate image handler for 'TGA file'
+23:04:24: Debug: Adding duplicate image handler for 'XPM file'
+STP pads: [((71.3375, -2.25), (0.7375, 0.15)), ((76.25, 16.4375), (0.125, 0.4375))]
+iter 0: deleting spur (73.9, -1.1) -> (73.95, -1.05) layer 2
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/ay/t_ay38_spurloop.py", line 52, in <module>
+    s, e = mm(t.GetStart()), mm(t.GetEnd())
+           ^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/ay/t_ay38_spurloop.py", line 9, in mm
+    return (v.x / 1e6, v.y / 1e6)
+            ^^^
+AttributeError: 'SwigPyObject' object has no attribute 'x'
+Segmentation fault

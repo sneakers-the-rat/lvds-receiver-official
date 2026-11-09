@@ -1,0 +1,75 @@
+22:50:24: Debug: Adding duplicate image handler for 'PNG file'
+22:50:24: Debug: Adding duplicate image handler for 'JPEG file'
+22:50:24: Debug: Adding duplicate image handler for 'TIFF file'
+22:50:24: Debug: Adding duplicate image handler for 'GIF file'
+22:50:24: Debug: Adding duplicate image handler for 'PNM file'
+22:50:24: Debug: Adding duplicate image handler for 'PCX file'
+22:50:24: Debug: Adding duplicate image handler for 'IFF file'
+22:50:24: Debug: Adding duplicate image handler for 'Windows icon file'
+22:50:24: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:50:24: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:50:24: Debug: Adding duplicate image handler for 'TGA file'
+22:50:24: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+22:50:25: Debug: Adding duplicate image handler for 'PNG file'
+22:50:25: Debug: Adding duplicate image handler for 'JPEG file'
+22:50:25: Debug: Adding duplicate image handler for 'TIFF file'
+22:50:25: Debug: Adding duplicate image handler for 'GIF file'
+22:50:25: Debug: Adding duplicate image handler for 'PNM file'
+22:50:25: Debug: Adding duplicate image handler for 'PCX file'
+22:50:25: Debug: Adding duplicate image handler for 'IFF file'
+22:50:25: Debug: Adding duplicate image handler for 'Windows icon file'
+22:50:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+22:50:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+22:50:25: Debug: Adding duplicate image handler for 'TGA file'
+22:50:25: Debug: Adding duplicate image handler for 'XPM file'
+re-laying south-loop segs: 4
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+stub rip: ['seg PHY_1V8 (77.250,10.750)->(77.869,10.056) hw0.100', 'seg PHY_1V8 (77.869,10.056)->(77.450,10.100) hw0.150', 'via PHY_1V8 (77.869,10.056) r0.250']
+sda rip: ['seg I2C_SDA (69.875,0.625)->(69.875,-9.125) hw0.125', 'seg I2C_SDA (69.900,0.820)->(69.875,0.625) hw0.125']
+hv rip: ['seg HV_SHDN (70.125,-2.125)->(70.700,-2.750) hw0.125', 'seg HV_SHDN (69.875,-2.375)->(70.125,-2.125) hw0.125']
+hv south rip: 14
+    seg HV_SHDN (68.040,-5.750)->(68.125,-5.625) hw0.100
+    seg HV_SHDN (69.625,-2.625)->(69.875,-2.375) hw0.125
+    seg HV_SHDN (68.625,-4.625)->(68.875,-4.375) hw0.125
+    seg HV_SHDN (68.875,-4.375)->(68.875,-3.375) hw0.125
+    seg HV_SHDN (69.125,-3.125)->(69.375,-2.875) hw0.125
+    seg HV_SHDN (68.040,-6.000)->(68.040,-5.750) hw0.100
+    seg HV_SHDN (68.125,-5.125)->(68.375,-4.875) hw0.100
+    seg HV_SHDN (69.375,-2.875)->(69.625,-2.625) hw0.125
+    seg HV_SHDN (68.875,-3.375)->(69.125,-3.125) hw0.125
+    seg HV_SHDN (68.375,-4.875)->(68.625,-4.625) hw0.100
+    seg HV_SHDN (68.125,-5.625)->(68.125,-5.125) hw0.100
+    seg HV_SHDN (69.875,-2.375)->(69.700,-2.900) hw0.125
+    seg HV_SHDN (69.700,-2.900)->(70.100,-3.250) hw0.125
+    seg HV_SHDN (70.100,-3.250)->(70.700,-2.750) hw0.125
+pg rip: 196
+PG re-lay: FOUND vias=[[68.5, -1.0], [69.3, -4.95]]
+HV re-lay: FOUND vias=[]
+blocker removed: 3
+  site (78.15,17.5) rot 0 pad PHY_1V8 (77.67,17.5): worst +0.065 vs +3V3A pad
+  site (78.15,17.5) rot 0 pad GND (78.63000000000001,17.5): worst -0.300 vs PHY_1V8 via
+    PHY pad-via centre dist 0.430 rect-disc gap 0.150 (<=0.3 = annulus overlap)
+  site (78.15,17.5): ILLEGAL
+  site (78.1,17.5) rot 0 pad PHY_1V8 (77.61999999999999,17.5): worst +0.065 vs +3V3A pad
+  site (78.1,17.5) rot 0 pad GND (78.58,17.5): worst -0.350 vs PHY_1V8 via
+    PHY pad-via centre dist 0.480 rect-disc gap 0.200 (<=0.3 = annulus overlap)
+  site (78.1,17.5): ILLEGAL
+  site (78.2,17.45) rot 0 pad PHY_1V8 (77.72,17.45): worst +0.015 vs +3V3A pad
+  site (78.2,17.45) rot 0 pad GND (78.68,17.45): worst -0.250 vs PHY_1V8 via
+    PHY pad-via centre dist 0.383 rect-disc gap 0.100 (<=0.3 = annulus overlap)
+  site (78.2,17.45): ILLEGAL
+  site (78.15,17.55) rot 0 pad PHY_1V8 (77.67,17.55): worst +0.039 vs GND via
+  site (78.15,17.55) rot 0 pad GND (78.63000000000001,17.55): worst -0.300 vs PHY_1V8 via
+    PHY pad-via centre dist 0.433 rect-disc gap 0.150 (<=0.3 = annulus overlap)
+  site (78.15,17.55): ILLEGAL
+  site (78.05,17.5) rot 0 pad PHY_1V8 (77.57,17.5): worst +0.065 vs +3V3A pad
+  site (78.05,17.5) rot 0 pad GND (78.53,17.5): worst -0.400 vs PHY_1V8 via
+    PHY pad-via centre dist 0.530 rect-disc gap 0.250 (<=0.3 = annulus overlap)
+  site (78.05,17.5): ILLEGAL
