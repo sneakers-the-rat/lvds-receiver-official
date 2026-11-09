@@ -1,0 +1,53 @@
+15:36:44: Debug: Adding duplicate image handler for 'PNG file'
+15:36:44: Debug: Adding duplicate image handler for 'JPEG file'
+15:36:44: Debug: Adding duplicate image handler for 'TIFF file'
+15:36:44: Debug: Adding duplicate image handler for 'GIF file'
+15:36:44: Debug: Adding duplicate image handler for 'PNM file'
+15:36:44: Debug: Adding duplicate image handler for 'PCX file'
+15:36:44: Debug: Adding duplicate image handler for 'IFF file'
+15:36:44: Debug: Adding duplicate image handler for 'Windows icon file'
+15:36:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:36:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:36:44: Debug: Adding duplicate image handler for 'TGA file'
+15:36:44: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:36:45: Debug: Adding duplicate image handler for 'PNG file'
+15:36:45: Debug: Adding duplicate image handler for 'JPEG file'
+15:36:45: Debug: Adding duplicate image handler for 'TIFF file'
+15:36:45: Debug: Adding duplicate image handler for 'GIF file'
+15:36:45: Debug: Adding duplicate image handler for 'PNM file'
+15:36:45: Debug: Adding duplicate image handler for 'PCX file'
+15:36:45: Debug: Adding duplicate image handler for 'IFF file'
+15:36:45: Debug: Adding duplicate image handler for 'Windows icon file'
+15:36:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:36:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:36:45: Debug: Adding duplicate image handler for 'TGA file'
+15:36:45: Debug: Adding duplicate image handler for 'XPM file'
+== ULPI_CK items (72,80,3,20):
+   F pad ULPI_CK (75.250,4.662) hw0.150x0.738
+   F pad ULPI_CK (76.750,16.438) hw0.125x0.438
+   F seg ULPI_CK (75.125,5.875)->(75.250,5.162) hw0.100
+   F seg ULPI_CK (76.750,16.438)->(76.625,17.500) hw0.100
+   F seg ULPI_CK (75.250,5.162)->(75.250,4.662) hw0.100
+   F via ULPI_CK (76.625,17.500) r0.250
+   F via ULPI_CK (75.125,5.875) r0.300
+   I via ULPI_CK (76.625,17.500) r0.250
+   I via ULPI_CK (75.125,5.875) r0.300
+   I seg ULPI_CK (76.620,13.500)->(74.625,13.500) hw0.125
+   I seg ULPI_CK (74.625,6.375)->(74.875,6.125) hw0.125
+   I seg ULPI_CK (74.875,6.125)->(75.125,5.875) hw0.100
+   I seg ULPI_CK (76.620,17.300)->(76.625,17.500) hw0.100
+   I seg ULPI_CK (76.620,17.300)->(76.620,13.500) hw0.125
+   I seg ULPI_CK (74.625,13.500)->(74.625,6.375) hw0.125
+   B via ULPI_CK (76.625,17.500) r0.250
+   B via ULPI_CK (75.125,5.875) r0.300
+== ULPI_DIR items (72,80,3,20):
+   F pad ULPI_DIR (75.750,16.438) hw0.125x0.438
+   F seg ULPI_DIR (75.750,16.875)->(75.500,17.521) hw0.100
+   F via ULPI_DIR (75.500,17.521) r0.250
+   I via ULPI_DIR (75.500,17.521) r0.250
+   B via ULPI_DIR (75.500,17.521) r0.250
+   B seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100

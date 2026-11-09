@@ -1,0 +1,37 @@
+16:18:51: Debug: Adding duplicate image handler for 'PNG file'
+16:18:51: Debug: Adding duplicate image handler for 'JPEG file'
+16:18:51: Debug: Adding duplicate image handler for 'TIFF file'
+16:18:51: Debug: Adding duplicate image handler for 'GIF file'
+16:18:51: Debug: Adding duplicate image handler for 'PNM file'
+16:18:51: Debug: Adding duplicate image handler for 'PCX file'
+16:18:51: Debug: Adding duplicate image handler for 'IFF file'
+16:18:51: Debug: Adding duplicate image handler for 'Windows icon file'
+16:18:51: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:18:51: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:18:51: Debug: Adding duplicate image handler for 'TGA file'
+16:18:51: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+16:18:52: Debug: Adding duplicate image handler for 'PNG file'
+16:18:52: Debug: Adding duplicate image handler for 'JPEG file'
+16:18:52: Debug: Adding duplicate image handler for 'TIFF file'
+16:18:52: Debug: Adding duplicate image handler for 'GIF file'
+16:18:52: Debug: Adding duplicate image handler for 'PNM file'
+16:18:52: Debug: Adding duplicate image handler for 'PCX file'
+16:18:52: Debug: Adding duplicate image handler for 'IFF file'
+16:18:52: Debug: Adding duplicate image handler for 'Windows icon file'
+16:18:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:18:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:18:52: Debug: Adding duplicate image handler for 'TGA file'
+16:18:52: Debug: Adding duplicate image handler for 'XPM file'
+re-laying south-loop segs: 4
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+STP stage -> B (76.35,18.1): FOUND vias=[]
+STP stage -> B (76.15,13.5): FOUND vias=[]
+STP stage -> B (75.8,10.15): FOUND vias=[]
+STP stage -> I (74.5,10.2): NONE 

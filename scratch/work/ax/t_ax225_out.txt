@@ -1,0 +1,39 @@
+17:26:52: Debug: Adding duplicate image handler for 'PNG file'
+17:26:52: Debug: Adding duplicate image handler for 'JPEG file'
+17:26:52: Debug: Adding duplicate image handler for 'TIFF file'
+17:26:52: Debug: Adding duplicate image handler for 'GIF file'
+17:26:52: Debug: Adding duplicate image handler for 'PNM file'
+17:26:52: Debug: Adding duplicate image handler for 'PCX file'
+17:26:52: Debug: Adding duplicate image handler for 'IFF file'
+17:26:52: Debug: Adding duplicate image handler for 'Windows icon file'
+17:26:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:26:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:26:52: Debug: Adding duplicate image handler for 'TGA file'
+17:26:52: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+17:26:52: Debug: Adding duplicate image handler for 'PNG file'
+17:26:52: Debug: Adding duplicate image handler for 'JPEG file'
+17:26:52: Debug: Adding duplicate image handler for 'TIFF file'
+17:26:52: Debug: Adding duplicate image handler for 'GIF file'
+17:26:52: Debug: Adding duplicate image handler for 'PNM file'
+17:26:52: Debug: Adding duplicate image handler for 'PCX file'
+17:26:52: Debug: Adding duplicate image handler for 'IFF file'
+17:26:52: Debug: Adding duplicate image handler for 'Windows icon file'
+17:26:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:26:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:26:52: Debug: Adding duplicate image handler for 'TGA file'
+17:26:52: Debug: Adding duplicate image handler for 'XPM file'
+re-laying south-loop segs: 4
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+stub rip: ['seg PHY_1V8 (77.250,10.750)->(77.869,10.056) hw0.100', 'seg PHY_1V8 (77.869,10.056)->(77.450,10.100) hw0.150', 'via PHY_1V8 (77.869,10.056) r0.250']
+STP stage -> B (76.35,18.1): FOUND vias=[]
+STP stage -> B (76.15,13.5): FOUND vias=[]
+STP stage -> B (75.8,10.15): FOUND vias=[]
+STP stage -> B (76.7,9.4): FOUND vias=[]
+STP stage -> B (77.8,9.3): NONE 

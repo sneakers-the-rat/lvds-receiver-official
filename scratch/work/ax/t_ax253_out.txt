@@ -1,0 +1,69 @@
+20:04:02: Debug: Adding duplicate image handler for 'PNG file'
+20:04:02: Debug: Adding duplicate image handler for 'JPEG file'
+20:04:02: Debug: Adding duplicate image handler for 'TIFF file'
+20:04:02: Debug: Adding duplicate image handler for 'GIF file'
+20:04:02: Debug: Adding duplicate image handler for 'PNM file'
+20:04:02: Debug: Adding duplicate image handler for 'PCX file'
+20:04:02: Debug: Adding duplicate image handler for 'IFF file'
+20:04:02: Debug: Adding duplicate image handler for 'Windows icon file'
+20:04:02: Debug: Adding duplicate image handler for 'Windows cursor file'
+20:04:02: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+20:04:02: Debug: Adding duplicate image handler for 'TGA file'
+20:04:02: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+20:04:02: Debug: Adding duplicate image handler for 'PNG file'
+20:04:02: Debug: Adding duplicate image handler for 'JPEG file'
+20:04:02: Debug: Adding duplicate image handler for 'TIFF file'
+20:04:02: Debug: Adding duplicate image handler for 'GIF file'
+20:04:02: Debug: Adding duplicate image handler for 'PNM file'
+20:04:02: Debug: Adding duplicate image handler for 'PCX file'
+20:04:02: Debug: Adding duplicate image handler for 'IFF file'
+20:04:02: Debug: Adding duplicate image handler for 'Windows icon file'
+20:04:02: Debug: Adding duplicate image handler for 'Windows cursor file'
+20:04:02: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+20:04:02: Debug: Adding duplicate image handler for 'TGA file'
+20:04:02: Debug: Adding duplicate image handler for 'XPM file'
+netcodes: {'ULPI_STP': 106, 'XI': 112, 'GND': 44, 'PHY_1V8': 68, 'I2C_SDA': 58, 'HV_SHDN': 53, 'PG_3V3': 67}
+C20 old pads: {'1': 'XI', '2': 'GND'} refdes at (84.336412, 25.858881)
+C20 new pad 1  (75.72, 18.75)
+C20 new pad 2  (76.68, 18.75)
+C22 pad 1 PHY_1V8 (79.12, 18.6)
+C22 pad 2 GND (80.08, 18.6)
+PHY B arm1: 1 victim(s), want 1
+PHY B arm2: 1 victim(s), want 1
+PHY B arm3: 1 victim(s), want 1
+PHY B arm4: 1 victim(s), want 1
+PHY F tail1: 1 victim(s), want 1
+PHY F tail2: 1 victim(s), want 1
+via PHY 71.375: 1 victim(s), want 1
+via GND 73.434: 1 victim(s), want 1
+via GND 76.487: 1 victim(s), want 1
+PHY loop1: 1 victim(s), want 1
+PHY loop2: 1 victim(s), want 1
+PHY loop3: 1 victim(s), want 1
+PHY loop4: 1 victim(s), want 1
+PHY stub F: 1 victim(s), want 1
+via PHY 77.869: 1 victim(s), want 1
+HV s01: 1 victim(s), want 1
+HV s02: 1 victim(s), want 1
+HV s03: 1 victim(s), want 1
+HV s04: 1 victim(s), want 1
+HV s05: 1 victim(s), want 1
+HV s06: 1 victim(s), want 1
+HV s07: 1 victim(s), want 1
+HV s08: 1 victim(s), want 1
+HV s09: 1 victim(s), want 1
+HV s10: 1 victim(s), want 1
+HV s11: 1 victim(s), want 1
+HV s12: 1 victim(s), want 1
+HV s13: 1 victim(s), want 1
+SDA B box victims: 2 (design pool items: 2)
+PG B box victims: 196 (design pool items: 196)
+total ripped: 226
+HV journey segs 89
+PG journey segs 112
+STP leg segs added (deduped): 780 vias: 6
+saved exp251

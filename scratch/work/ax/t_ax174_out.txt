@@ -1,0 +1,48 @@
+15:55:57: Debug: Adding duplicate image handler for 'PNG file'
+15:55:57: Debug: Adding duplicate image handler for 'JPEG file'
+15:55:57: Debug: Adding duplicate image handler for 'TIFF file'
+15:55:57: Debug: Adding duplicate image handler for 'GIF file'
+15:55:57: Debug: Adding duplicate image handler for 'PNM file'
+15:55:57: Debug: Adding duplicate image handler for 'PCX file'
+15:55:57: Debug: Adding duplicate image handler for 'IFF file'
+15:55:57: Debug: Adding duplicate image handler for 'Windows icon file'
+15:55:57: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:55:57: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:55:57: Debug: Adding duplicate image handler for 'TGA file'
+15:55:57: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:55:57: Debug: Adding duplicate image handler for 'PNG file'
+15:55:57: Debug: Adding duplicate image handler for 'JPEG file'
+15:55:57: Debug: Adding duplicate image handler for 'TIFF file'
+15:55:57: Debug: Adding duplicate image handler for 'GIF file'
+15:55:57: Debug: Adding duplicate image handler for 'PNM file'
+15:55:57: Debug: Adding duplicate image handler for 'PCX file'
+15:55:57: Debug: Adding duplicate image handler for 'IFF file'
+15:55:57: Debug: Adding duplicate image handler for 'Windows icon file'
+15:55:57: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:55:57: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:55:57: Debug: Adding duplicate image handler for 'TGA file'
+15:55:57: Debug: Adding duplicate image handler for 'XPM file'
+ripping PHY arm items: 12
+    seg PHY_1V8 (72.900,16.900)->(72.125,17.625) hw0.100
+    seg PHY_1V8 (72.125,17.625)->(71.375,17.625) hw0.100
+    seg PHY_1V8 (77.800,16.200)->(73.400,16.200) hw0.300
+    seg PHY_1V8 (73.400,16.200)->(72.900,16.900) hw0.100
+    seg PHY_1V8 (77.250,16.438)->(77.250,17.188) hw0.100
+    seg PHY_1V8 (77.250,11.562)->(77.250,10.750) hw0.100
+    seg PHY_1V8 (77.250,17.188)->(78.100,17.500) hw0.100
+    seg PHY_1V8 (77.250,10.750)->(77.869,10.056) hw0.100
+    seg PHY_1V8 (71.375,17.625)->(71.725,17.750) hw0.100
+    seg PHY_1V8 (71.725,17.750)->(71.725,18.000) hw0.100
+    via GND (73.434,17.685) r0.250
+    via PHY_1V8 (71.375,17.625) r0.400
+STP stage -> B (75.5,16.9): FOUND vias=[]
+STP stage -> B (73.9,16.9): FOUND vias=[]
+STP stage -> B (71.5,16.9): NONE 
+XI -> web In2 (75.625,18.625): NONE
+XI -> C20.1 F (75.72,18.75): NONE
+USB_RST: NONE
+saved design214_ax174.json keys: []

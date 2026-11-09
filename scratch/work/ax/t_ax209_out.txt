@@ -1,0 +1,57 @@
+17:05:26: Debug: Adding duplicate image handler for 'PNG file'
+17:05:26: Debug: Adding duplicate image handler for 'JPEG file'
+17:05:26: Debug: Adding duplicate image handler for 'TIFF file'
+17:05:26: Debug: Adding duplicate image handler for 'GIF file'
+17:05:26: Debug: Adding duplicate image handler for 'PNM file'
+17:05:26: Debug: Adding duplicate image handler for 'PCX file'
+17:05:26: Debug: Adding duplicate image handler for 'IFF file'
+17:05:26: Debug: Adding duplicate image handler for 'Windows icon file'
+17:05:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:05:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:05:26: Debug: Adding duplicate image handler for 'TGA file'
+17:05:26: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+17:05:26: Debug: Adding duplicate image handler for 'PNG file'
+17:05:26: Debug: Adding duplicate image handler for 'JPEG file'
+17:05:26: Debug: Adding duplicate image handler for 'TIFF file'
+17:05:26: Debug: Adding duplicate image handler for 'GIF file'
+17:05:26: Debug: Adding duplicate image handler for 'PNM file'
+17:05:26: Debug: Adding duplicate image handler for 'PCX file'
+17:05:26: Debug: Adding duplicate image handler for 'IFF file'
+17:05:26: Debug: Adding duplicate image handler for 'Windows icon file'
+17:05:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:05:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:05:26: Debug: Adding duplicate image handler for 'TGA file'
+17:05:26: Debug: Adding duplicate image handler for 'XPM file'
+re-laying south-loop segs: 4
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+point (71.7, 18.35): viafit=+0.029
+   L0 G=+0.142 seg XO (71.400,18.675)->(71.375,18.650) hw0.100
+   L1 G=+0.029 seg RBIAS (71.950,18.600)->(71.925,18.625) hw0.125
+   L2 G=+0.305 seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100
+point (71.85, 18.3): viafit=-0.042
+   L0 G=+0.283 seg XO (71.450,18.725)->(71.425,18.700) hw0.100
+   L1 G=-0.042 seg RBIAS (72.050,18.500)->(72.025,18.525) hw0.125
+   L2 G=+0.297 seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100
+point (71.6, 18.5): viafit=-0.035
+   L0 G=-0.035 seg XO (71.425,18.700)->(71.400,18.675) hw0.100
+   L1 G=-0.007 seg RBIAS (71.825,18.725)->(71.800,18.750) hw0.125
+   L2 G=+0.200 via XO (70.950,18.500) r0.250
+point (72.0, 18.2): viafit=-0.045
+   L0 G=+0.460 seg XO (71.475,18.750)->(71.450,18.725) hw0.100
+   L1 G=-0.045 seg RBIAS (72.125,18.450)->(72.100,18.475) hw0.125
+   L2 G=+0.336 seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100
+point (71.9, 18.55): viafit=-0.254
+   L0 G=+0.142 seg XO (71.600,18.875)->(71.575,18.850) hw0.100
+   L1 G=-0.254 seg RBIAS (71.950,18.600)->(71.925,18.625) hw0.125
+   L2 G=+0.046 seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100
+point (72.2, 18.4): viafit=-0.325
+   L0 G=+0.460 seg XO (71.675,18.950)->(71.650,18.925) hw0.100
+   L1 G=-0.325 seg RBIAS (72.200,18.400)->(72.175,18.425) hw0.125
+   L2 G=+0.077 seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100

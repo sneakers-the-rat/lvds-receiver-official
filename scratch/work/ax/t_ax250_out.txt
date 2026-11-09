@@ -1,0 +1,40 @@
+19:44:13: Debug: Adding duplicate image handler for 'PNG file'
+19:44:13: Debug: Adding duplicate image handler for 'JPEG file'
+19:44:13: Debug: Adding duplicate image handler for 'TIFF file'
+19:44:13: Debug: Adding duplicate image handler for 'GIF file'
+19:44:13: Debug: Adding duplicate image handler for 'PNM file'
+19:44:13: Debug: Adding duplicate image handler for 'PCX file'
+19:44:13: Debug: Adding duplicate image handler for 'IFF file'
+19:44:13: Debug: Adding duplicate image handler for 'Windows icon file'
+19:44:13: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:44:13: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:44:13: Debug: Adding duplicate image handler for 'TGA file'
+19:44:13: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+19:44:13: Debug: Adding duplicate image handler for 'PNG file'
+19:44:13: Debug: Adding duplicate image handler for 'JPEG file'
+19:44:13: Debug: Adding duplicate image handler for 'TIFF file'
+19:44:13: Debug: Adding duplicate image handler for 'GIF file'
+19:44:13: Debug: Adding duplicate image handler for 'PNM file'
+19:44:13: Debug: Adding duplicate image handler for 'PCX file'
+19:44:13: Debug: Adding duplicate image handler for 'IFF file'
+19:44:13: Debug: Adding duplicate image handler for 'Windows icon file'
+19:44:13: Debug: Adding duplicate image handler for 'Windows cursor file'
+19:44:13: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+19:44:13: Debug: Adding duplicate image handler for 'TGA file'
+19:44:13: Debug: Adding duplicate image handler for 'XPM file'
+re-laying south-loop segs: 4
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+stub rip: ['seg PHY_1V8 (77.250,10.750)->(77.869,10.056) hw0.100', 'seg PHY_1V8 (77.869,10.056)->(77.450,10.100) hw0.150', 'via PHY_1V8 (77.869,10.056) r0.250']
+sda rip: ['seg I2C_SDA (69.875,0.625)->(69.875,-9.125) hw0.125', 'seg I2C_SDA (69.900,0.820)->(69.875,0.625) hw0.125']
+hv rip: ['seg HV_SHDN (70.125,-2.125)->(70.700,-2.750) hw0.125', 'seg HV_SHDN (69.875,-2.375)->(70.125,-2.125) hw0.125']
+FULL ML from B (73.0,-1.5) -> F pad: NONE 
+FULL ML from I (72.7,-1.3) -> F pad: NONE 
+FULL ML from dive via B (76.065,17.99) -> F pad: NONE 
+FULL ML DONE

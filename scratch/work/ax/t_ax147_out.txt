@@ -1,0 +1,38 @@
+15:35:12: Debug: Adding duplicate image handler for 'PNG file'
+15:35:12: Debug: Adding duplicate image handler for 'JPEG file'
+15:35:12: Debug: Adding duplicate image handler for 'TIFF file'
+15:35:12: Debug: Adding duplicate image handler for 'GIF file'
+15:35:12: Debug: Adding duplicate image handler for 'PNM file'
+15:35:12: Debug: Adding duplicate image handler for 'PCX file'
+15:35:12: Debug: Adding duplicate image handler for 'IFF file'
+15:35:12: Debug: Adding duplicate image handler for 'Windows icon file'
+15:35:12: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:35:12: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:35:12: Debug: Adding duplicate image handler for 'TGA file'
+15:35:12: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:35:12: Debug: Adding duplicate image handler for 'PNG file'
+15:35:12: Debug: Adding duplicate image handler for 'JPEG file'
+15:35:12: Debug: Adding duplicate image handler for 'TIFF file'
+15:35:12: Debug: Adding duplicate image handler for 'GIF file'
+15:35:12: Debug: Adding duplicate image handler for 'PNM file'
+15:35:12: Debug: Adding duplicate image handler for 'PCX file'
+15:35:12: Debug: Adding duplicate image handler for 'IFF file'
+15:35:12: Debug: Adding duplicate image handler for 'Windows icon file'
+15:35:12: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:35:12: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:35:12: Debug: Adding duplicate image handler for 'TGA file'
+15:35:12: Debug: Adding duplicate image handler for 'XPM file'
+stub A*: FOUND
+  stub runs: [{'layer': 0, 'pts': [[76.25, 16.45], [76.25, 16.5], [76.25, 16.55], [76.25, 16.6], [76.25, 16.65], [76.25, 16.7], [76.25, 16.75], [76.25, 16.8], [76.25, 16.85], [76.25, 16.9], [76.25, 16.95], [76.2, 17.0], [76.2, 17.05], [76.15, 17.1], [76.15, 17.15], [76.1, 17.2], [76.1, 17.25], [76.05, 17.3], [76.05, 17.35], [76.05, 17.4], [76.05, 17.45], [76.05, 17.5], [76.05, 17.55], [76.05, 17.6], [76.05, 17.65], [76.05, 17.7], [76.05, 17.75], [76.05, 17.8], [76.05, 17.85], [76.05, 17.9], [76.05, 17.95], [76.05, 18.0]]}]
+  stub gate +0.000 vs via ULPI_DIR (75.500,17.521) r0.250
+haul -> pad F: NONE 
+haul -> mouth B: NONE 
+haul -> mouth F: NONE 
+haul -> (72,-2) B: NONE 
+haul -> (74,-3) B: NONE 
+haul -> (76,2) I: NONE 
+haul -> (76,2) B: NONE 

@@ -1,0 +1,73 @@
+15:39:05: Debug: Adding duplicate image handler for 'PNG file'
+15:39:05: Debug: Adding duplicate image handler for 'JPEG file'
+15:39:05: Debug: Adding duplicate image handler for 'TIFF file'
+15:39:05: Debug: Adding duplicate image handler for 'GIF file'
+15:39:05: Debug: Adding duplicate image handler for 'PNM file'
+15:39:05: Debug: Adding duplicate image handler for 'PCX file'
+15:39:05: Debug: Adding duplicate image handler for 'IFF file'
+15:39:05: Debug: Adding duplicate image handler for 'Windows icon file'
+15:39:05: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:39:05: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:39:05: Debug: Adding duplicate image handler for 'TGA file'
+15:39:05: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:39:05: Debug: Adding duplicate image handler for 'PNG file'
+15:39:05: Debug: Adding duplicate image handler for 'JPEG file'
+15:39:05: Debug: Adding duplicate image handler for 'TIFF file'
+15:39:05: Debug: Adding duplicate image handler for 'GIF file'
+15:39:05: Debug: Adding duplicate image handler for 'PNM file'
+15:39:05: Debug: Adding duplicate image handler for 'PCX file'
+15:39:05: Debug: Adding duplicate image handler for 'IFF file'
+15:39:05: Debug: Adding duplicate image handler for 'Windows icon file'
+15:39:05: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:39:05: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:39:05: Debug: Adding duplicate image handler for 'TGA file'
+15:39:05: Debug: Adding duplicate image handler for 'XPM file'
+== layer 2 items (73.5,79.5,9,19.5):
+   via +3V3A (77.862,10.975) r0.250
+   via +3V3A (79.375,16.625) r0.400
+   via +3V3A (73.625,10.625) r0.400
+   via +3V3A (78.625,16.750) r0.250
+   seg +3V3A (73.625,10.625)->(75.625,8.625) hw0.100
+   seg +3V3D (79.125,18.375)->(79.375,18.125) hw0.300
+   seg +3V3D (78.875,18.625)->(79.125,18.375) hw0.300
+   seg +3V3D (78.625,18.875)->(78.875,18.625) hw0.300
+   seg +3V3D (78.375,19.125)->(78.625,18.875) hw0.300
+   seg +3V3D (79.375,18.125)->(79.625,17.875) hw0.300
+   via DM_PHY (73.625,19.125) r0.300
+   via GND (75.600,14.750) r0.300
+   via GND (77.250,18.380) r0.300
+   via GND (76.487,9.139) r0.250
+   seg I2C_SCL (77.375,9.125)->(77.625,8.875) hw0.125
+   via PHY_1V8 (78.100,17.500) r0.300
+   via PHY_1V8 (77.869,10.056) r0.250
+   seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+   seg PHY_1V8 (78.100,17.500)->(77.800,16.200) hw0.100
+   seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+   seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+   seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+   seg PHY_1V8 (77.800,16.200)->(73.400,16.200) hw0.300
+   via PHY_1V8A (75.737,10.750) r0.250
+   seg PHY_1V8A (74.900,11.750)->(74.200,12.250) hw0.100
+   seg PHY_1V8A (75.300,11.350)->(74.900,11.750) hw0.100
+   seg PHY_1V8A (75.737,10.750)->(75.300,11.350) hw0.100
+   seg PHY_1V8A (74.200,12.250)->(73.500,12.550) hw0.100
+   via RBIAS (73.875,11.625) r0.300
+   via ULPI_CK (76.625,17.500) r0.250
+   via ULPI_D7 (78.625,15.875) r0.300
+   seg ULPI_D7 (78.625,14.375)->(78.625,10.625) hw0.125
+   seg ULPI_D7 (78.625,15.875)->(78.625,14.375) hw0.100
+   seg ULPI_D7 (78.875,10.375)->(78.875,-13.375) hw0.125
+   seg ULPI_D7 (78.625,10.625)->(78.875,10.375) hw0.125
+   via ULPI_DIR (75.500,17.521) r0.250
+   seg ULPI_DIR (75.500,17.521)->(71.375,19.125) hw0.100
+   via ULPI_NXT (74.500,19.250) r0.250
+   via XI (75.625,18.625) r0.300
+   seg XI (75.625,18.625)->(75.875,18.875) hw0.100
+   seg XI (75.875,18.875)->(76.125,19.125) hw0.100
+   seg XI (76.375,19.125)->(76.625,19.375) hw0.100
+   seg XI (76.125,19.125)->(76.375,19.125) hw0.100
+   seg XI (76.625,19.375)->(76.875,19.625) hw0.125
