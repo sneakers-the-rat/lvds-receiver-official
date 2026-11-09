@@ -1740,9 +1740,9 @@ pass 212: CDR_LOS connected (C14 relocated (72,36.75)->(74.75,34.75); SDA U4 esc
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 4 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 213 — 2026-11-09T15:24:20Z · commit `pending`
+### Pass 213 — 2026-11-09T15:24:20Z · commit `a18722f`
 
-Board: `hw/pdlvds_rx.exp250.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp250.kicad_pcb` · Commit: `a18722f745cd118a3e17e07c68ab6c5947a5dd99`
 
 pass 213: PHY_1V8A connected (C16 relocated (76,9.75)->(70.25,13.0) rot 180, 5.90 mm; C23 rotated 180 in place so its PHY pad faces east; XO tail ripped and rejoined on an F south loop; aj7 B journey re-gated verbatim; goal via (71.48,15.38) north of C23 with F stub to pad centre; +3V3D vias (70.875,12.625)+(70.875,15.875) shrunk d0.8->d0.5, B vertical normalized hw0.3->hw0.1; +3V3A B vertical thinned hw0.3->hw0.1; GND stitch via (72.9,9.45) ties C21.2 fill patch) - DRC unconnected 5->4 (island + 3 nets), check_pcb 4->3, violations 4 J1 only, silk 0, courtyard 0
 
