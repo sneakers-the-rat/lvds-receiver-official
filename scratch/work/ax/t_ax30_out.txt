@@ -1,0 +1,43 @@
+11:58:50: Debug: Adding duplicate image handler for 'PNG file'
+11:58:50: Debug: Adding duplicate image handler for 'JPEG file'
+11:58:50: Debug: Adding duplicate image handler for 'TIFF file'
+11:58:50: Debug: Adding duplicate image handler for 'GIF file'
+11:58:50: Debug: Adding duplicate image handler for 'PNM file'
+11:58:50: Debug: Adding duplicate image handler for 'PCX file'
+11:58:50: Debug: Adding duplicate image handler for 'IFF file'
+11:58:50: Debug: Adding duplicate image handler for 'Windows icon file'
+11:58:50: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:58:50: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:58:50: Debug: Adding duplicate image handler for 'TGA file'
+11:58:50: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:58:51: Debug: Adding duplicate image handler for 'PNG file'
+11:58:51: Debug: Adding duplicate image handler for 'JPEG file'
+11:58:51: Debug: Adding duplicate image handler for 'TIFF file'
+11:58:51: Debug: Adding duplicate image handler for 'GIF file'
+11:58:51: Debug: Adding duplicate image handler for 'PNM file'
+11:58:51: Debug: Adding duplicate image handler for 'PCX file'
+11:58:51: Debug: Adding duplicate image handler for 'IFF file'
+11:58:51: Debug: Adding duplicate image handler for 'Windows icon file'
+11:58:51: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:58:51: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:58:51: Debug: Adding duplicate image handler for 'TGA file'
+11:58:51: Debug: Adding duplicate image handler for 'XPM file'
+11:58:52: Debug: Adding duplicate image handler for 'PNG file'
+11:58:52: Debug: Adding duplicate image handler for 'JPEG file'
+11:58:52: Debug: Adding duplicate image handler for 'TIFF file'
+11:58:52: Debug: Adding duplicate image handler for 'GIF file'
+11:58:52: Debug: Adding duplicate image handler for 'PNM file'
+11:58:52: Debug: Adding duplicate image handler for 'PCX file'
+11:58:52: Debug: Adding duplicate image handler for 'IFF file'
+11:58:52: Debug: Adding duplicate image handler for 'Windows icon file'
+11:58:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:58:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:58:52: Debug: Adding duplicate image handler for 'TGA file'
+11:58:52: Debug: Adding duplicate image handler for 'XPM file'
+sum 0.00 d1 0.00 d2 0.00 centre (72.25,4.50) rot 90
+sum 0.00 d1 0.00 d2 0.00 centre (72.25,4.75) rot 90
+2 legal sites

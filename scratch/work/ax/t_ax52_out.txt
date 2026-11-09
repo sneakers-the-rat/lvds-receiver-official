@@ -1,0 +1,41 @@
+12:38:00: Debug: Adding duplicate image handler for 'PNG file'
+12:38:00: Debug: Adding duplicate image handler for 'JPEG file'
+12:38:00: Debug: Adding duplicate image handler for 'TIFF file'
+12:38:00: Debug: Adding duplicate image handler for 'GIF file'
+12:38:00: Debug: Adding duplicate image handler for 'PNM file'
+12:38:00: Debug: Adding duplicate image handler for 'PCX file'
+12:38:00: Debug: Adding duplicate image handler for 'IFF file'
+12:38:00: Debug: Adding duplicate image handler for 'Windows icon file'
+12:38:00: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:38:00: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:38:00: Debug: Adding duplicate image handler for 'TGA file'
+12:38:00: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+12:38:00: Debug: Adding duplicate image handler for 'PNG file'
+12:38:00: Debug: Adding duplicate image handler for 'JPEG file'
+12:38:00: Debug: Adding duplicate image handler for 'TIFF file'
+12:38:00: Debug: Adding duplicate image handler for 'GIF file'
+12:38:00: Debug: Adding duplicate image handler for 'PNM file'
+12:38:00: Debug: Adding duplicate image handler for 'PCX file'
+12:38:00: Debug: Adding duplicate image handler for 'IFF file'
+12:38:00: Debug: Adding duplicate image handler for 'Windows icon file'
+12:38:00: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:38:00: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:38:00: Debug: Adding duplicate image handler for 'TGA file'
+12:38:00: Debug: Adding duplicate image handler for 'XPM file'
+BEFORE +3V3D fragments:
+  frag0: 875 items, terms [(0, (66.875, 21.125)), (0, (73.75, -15.1625)), (0, (74.25, 3.162499)), (0, (78.125, 20.375)), (0, (78.25, 20.975)), (0, (84.875, 3.375))]
+  frag1: 3 items, terms [(0, (72.625, -6.875))]
+  frag2: 121 items, terms [(2, (74.45, 20.2))]
+  frag3: 433 items, terms [(0, (66.375, 10.375)), (1, (70.875, 12.625)), (2, (67.275, 15.125))]
+  frag4: 1 items, terms [(1, (56.75, 20.8)), (1, (66.55, 20.8))]
+AFTER +3V3D fragments:
+  frag0: 1016 items, terms [(0, (66.875, 21.125)), (0, (72.575, -8.975)), (0, (73.75, -15.1625)), (0, (74.25, 3.162499)), (0, (78.125, 20.375)), (0, (78.25, 20.975)), (0, (84.875, 3.375)), (1, (72.775, 1.425))]
+  frag1: 3 items, terms [(0, (72.625, -6.875))]
+  frag2: 121 items, terms [(2, (74.45, 20.2))]
+  frag3: 429 items, terms [(0, (66.375, 10.375)), (1, (70.875, 12.625)), (2, (67.275, 15.125))]
+  frag4: 1 items, terms [(0, (70.825, 12.75)), (0, (71.075, 12.75))]
+  frag5: 1 items, terms [(1, (56.75, 20.8)), (1, (66.55, 20.8))]

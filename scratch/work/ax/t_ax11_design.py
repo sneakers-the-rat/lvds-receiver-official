@@ -100,10 +100,10 @@ emit(its)
 manifest['news'] += [('seg', '+3V3D', l, tuple(it[2]))
                      for l in range(3) for it in its[l]]
 
-# M4 B ride (v3: southern loop — +3V3A's B vertical x68.625 walls
-# y4.875..16.625 and the LOL/+3V3A-via pinch seals its bottom; the
-# pocket via's B island connects around the south below PG's dive)
-astar = make_astar((65.5, 72.5, -2.6, 7.5), 0.025)
+# M4 B ride (v4: full southern loop — the pocket via's B island
+# extends SE past the ULPI field; loop south of SDA's B vertical
+# end (69.875,-9.125) and north into the island)
+astar = make_astar((65.5, 74.0, -10.5, 7.5), 0.025)
 J = astar('I2C_SCL', ((2,), W[0], W[1]), (2, 69.35, 1.4), hw=0.10,
           layer_lock=[0, 0, 1])
 print('M4 A*:', 'FOUND' if J else 'NONE', flush=True)

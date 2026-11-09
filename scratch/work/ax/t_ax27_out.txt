@@ -39,3 +39,19 @@ model rebuilt from au93
 11:51:22: Debug: Adding duplicate image handler for 'TGA file'
 11:51:22: Debug: Adding duplicate image handler for 'XPM file'
 fragments: 4; main 115 items, stub 10 items
+sum 0.00 d1 0.00 d2 0.00 centre (72.25,4.50) rot 90
+sum 0.00 d1 0.00 d2 0.00 centre (72.25,4.75) rot 90
+sum 0.00 d1 0.00 d2 0.00 centre (72.25,5.00) rot 90
+sum 0.00 d1 0.00 d2 0.00 centre (72.25,5.25) rot 90
+sum 0.00 d1 0.00 d2 0.00 centre (72.25,5.50) rot 90
+sum 0.00 d1 0.00 d2 0.00 centre (80.25,8.50) rot 0
+sum 0.00 d1 0.00 d2 0.00 centre (80.25,8.75) rot 0
+sum 0.02 d1 0.02 d2 0.00 centre (80.50,8.50) rot 0
+sum 0.02 d1 0.02 d2 0.00 centre (80.50,8.75) rot 0
+sum 0.03 d1 0.03 d2 0.00 centre (80.25,9.00) rot 0
+sum 0.09 d1 0.09 d2 0.00 centre (80.50,9.00) rot 0
+sum 0.10 d1 0.00 d2 0.10 centre (80.00,8.50) rot 0
+sum 0.10 d1 0.00 d2 0.10 centre (80.00,8.75) rot 0
+sum 0.12 d1 0.03 d2 0.10 centre (80.00,9.00) rot 0
+sum 0.19 d1 0.19 d2 0.00 centre (71.50,3.75) rot 0
+367 legal sites
