@@ -1,0 +1,92 @@
+14:13:26: Debug: Adding duplicate image handler for 'PNG file'
+14:13:26: Debug: Adding duplicate image handler for 'JPEG file'
+14:13:26: Debug: Adding duplicate image handler for 'TIFF file'
+14:13:26: Debug: Adding duplicate image handler for 'GIF file'
+14:13:26: Debug: Adding duplicate image handler for 'PNM file'
+14:13:26: Debug: Adding duplicate image handler for 'PCX file'
+14:13:26: Debug: Adding duplicate image handler for 'IFF file'
+14:13:26: Debug: Adding duplicate image handler for 'Windows icon file'
+14:13:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:13:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:13:26: Debug: Adding duplicate image handler for 'TGA file'
+14:13:26: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:13:28: Debug: Adding duplicate image handler for 'PNG file'
+14:13:28: Debug: Adding duplicate image handler for 'JPEG file'
+14:13:28: Debug: Adding duplicate image handler for 'TIFF file'
+14:13:28: Debug: Adding duplicate image handler for 'GIF file'
+14:13:28: Debug: Adding duplicate image handler for 'PNM file'
+14:13:28: Debug: Adding duplicate image handler for 'PCX file'
+14:13:28: Debug: Adding duplicate image handler for 'IFF file'
+14:13:28: Debug: Adding duplicate image handler for 'Windows icon file'
+14:13:28: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:13:28: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:13:28: Debug: Adding duplicate image handler for 'TGA file'
+14:13:28: Debug: Adding duplicate image handler for 'XPM file'
+model SDA old chain: 15 segs
+model REFCLKN stub: 1
+14:13:30: Debug: Adding duplicate image handler for 'PNG file'
+14:13:30: Debug: Adding duplicate image handler for 'JPEG file'
+14:13:30: Debug: Adding duplicate image handler for 'TIFF file'
+14:13:30: Debug: Adding duplicate image handler for 'GIF file'
+14:13:30: Debug: Adding duplicate image handler for 'PNM file'
+14:13:30: Debug: Adding duplicate image handler for 'PCX file'
+14:13:30: Debug: Adding duplicate image handler for 'IFF file'
+14:13:30: Debug: Adding duplicate image handler for 'Windows icon file'
+14:13:30: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:13:30: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:13:30: Debug: Adding duplicate image handler for 'TGA file'
+14:13:30: Debug: Adding duplicate image handler for 'XPM file'
+netcodes: {'I2C_SDA': 58, 'CDR_LOS': 23, 'REFCLKN': 75}
+rip I2C_SDA [(68.688, 37.0), (68.938, 37.0)]: 1 victim(s)
+rip I2C_SDA [(68.938, 37.0), (69.375, 36.875)]: 1 victim(s)
+rip I2C_SDA [(69.375, 36.875), (69.625, 36.625)]: 1 victim(s)
+rip I2C_SDA [(69.625, 36.625), (69.875, 36.375)]: 1 victim(s)
+rip I2C_SDA [(69.875, 36.375), (70.125, 36.125)]: 1 victim(s)
+rip I2C_SDA [(70.125, 36.125), (70.375, 35.875)]: 1 victim(s)
+rip I2C_SDA [(70.375, 35.625), (70.375, 35.875)]: 1 victim(s)
+rip I2C_SDA [(70.375, 35.625), (70.625, 35.375)]: 1 victim(s)
+rip I2C_SDA [(70.625, 34.125), (70.625, 35.375)]: 1 victim(s)
+rip I2C_SDA [(70.625, 34.125), (70.875, 33.875)]: 1 victim(s)
+rip I2C_SDA [(70.875, 33.875), (71.125, 33.625)]: 1 victim(s)
+rip I2C_SDA [(71.125, 33.625), (71.375, 33.375)]: 1 victim(s)
+rip I2C_SDA [(71.375, 33.375), (71.625, 33.125)]: 1 victim(s)
+rip I2C_SDA [(71.625, 33.125), (71.875, 32.875)]: 1 victim(s)
+rip I2C_SDA [(71.875, 32.875), (72.125, 32.625)]: 1 victim(s)
+rip REFCLKN [(71.225, 36.95), (71.7, 37.55)]: 1 victim(s)
+via template: width 0.5 drill 0.3
+C14 moved; pads: [(73.975, 34.75, 'REFCLKN'), (75.525, 34.75, 'GND')]
+added 336 segs, 4 vias
+saved hw/pdlvds_rx.exp249.kicad_pcb
+14:13:38: Debug: Adding duplicate image handler for 'PNG file'
+14:13:38: Debug: Adding duplicate image handler for 'JPEG file'
+14:13:38: Debug: Adding duplicate image handler for 'TIFF file'
+14:13:38: Debug: Adding duplicate image handler for 'GIF file'
+14:13:38: Debug: Adding duplicate image handler for 'PNM file'
+14:13:38: Debug: Adding duplicate image handler for 'PCX file'
+14:13:38: Debug: Adding duplicate image handler for 'IFF file'
+14:13:38: Debug: Adding duplicate image handler for 'Windows icon file'
+14:13:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:13:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:13:38: Debug: Adding duplicate image handler for 'TGA file'
+14:13:38: Debug: Adding duplicate image handler for 'XPM file'
+C14 at 74.75 34.75 rot 0.0
+track counts after: {'I2C_SDA': 253, 'CDR_LOS': 311, 'REFCLKN': 17}
+14:13:40: Debug: Adding duplicate image handler for 'PNG file'
+14:13:40: Debug: Adding duplicate image handler for 'JPEG file'
+14:13:40: Debug: Adding duplicate image handler for 'TIFF file'
+14:13:40: Debug: Adding duplicate image handler for 'GIF file'
+14:13:40: Debug: Adding duplicate image handler for 'PNM file'
+14:13:40: Debug: Adding duplicate image handler for 'PCX file'
+14:13:40: Debug: Adding duplicate image handler for 'IFF file'
+14:13:40: Debug: Adding duplicate image handler for 'Windows icon file'
+14:13:40: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:13:40: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:13:40: Debug: Adding duplicate image handler for 'TGA file'
+14:13:40: Debug: Adding duplicate image handler for 'XPM file'
+CDR_LOS: 1 fragment(s), sizes [321]
+I2C_SDA: 2 fragment(s), sizes [165, 112]
+REFCLKN: 1 fragment(s), sizes [23]

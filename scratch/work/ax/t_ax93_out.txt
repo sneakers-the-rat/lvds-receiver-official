@@ -1,0 +1,41 @@
+14:02:45: Debug: Adding duplicate image handler for 'PNG file'
+14:02:45: Debug: Adding duplicate image handler for 'JPEG file'
+14:02:45: Debug: Adding duplicate image handler for 'TIFF file'
+14:02:45: Debug: Adding duplicate image handler for 'GIF file'
+14:02:45: Debug: Adding duplicate image handler for 'PNM file'
+14:02:45: Debug: Adding duplicate image handler for 'PCX file'
+14:02:45: Debug: Adding duplicate image handler for 'IFF file'
+14:02:45: Debug: Adding duplicate image handler for 'Windows icon file'
+14:02:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:02:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:02:45: Debug: Adding duplicate image handler for 'TGA file'
+14:02:45: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:02:47: Debug: Adding duplicate image handler for 'PNG file'
+14:02:47: Debug: Adding duplicate image handler for 'JPEG file'
+14:02:47: Debug: Adding duplicate image handler for 'TIFF file'
+14:02:47: Debug: Adding duplicate image handler for 'GIF file'
+14:02:47: Debug: Adding duplicate image handler for 'PNM file'
+14:02:47: Debug: Adding duplicate image handler for 'PCX file'
+14:02:47: Debug: Adding duplicate image handler for 'IFF file'
+14:02:47: Debug: Adding duplicate image handler for 'Windows icon file'
+14:02:47: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:02:47: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:02:47: Debug: Adding duplicate image handler for 'TGA file'
+14:02:47: Debug: Adding duplicate image handler for 'XPM file'
+C14 move ripped: 3
+SDA re-lay: FOUND
+  vias: []
+  run L0 [[68.7, 37.0], [68.75, 37.0], [68.8, 37.0], [68.85, 37.0], [68.9, 37.0], [68.95, 37.0], [69.0, 37.0], [69.05, 37.0], [69.1, 37.0], [69.15, 37.0], [69.2, 37.0], [69.25, 37.0], [69.3, 37.0], [69.35, 37.0], [69.4, 37.0], [69.45, 37.0], [69.5, 37.0], [69.55, 37.0], [69.6, 37.0], [69.65, 37.05], [69.7, 37.05], [69.75, 37.05], [69.8, 37.05], [69.85, 37.05], [69.9, 37.05], [69.95, 37.05], [70.0, 37.05], [70.05, 37.05], [70.1, 37.05], [70.15, 37.05], [70.2, 37.05], [70.25, 37.05], [70.3, 37.05], [70.35, 37.05], [70.4, 37.05], [70.45, 37.05], [70.5, 37.05], [70.55, 37.05], [70.6, 37.05], [70.65, 37.05], [70.7, 37.05], [70.75, 37.05], [70.8, 37.05], [70.85, 37.05], [70.9, 37.05], [70.95, 37.05], [71.0, 37.05], [71.05, 37.0], [71.1, 36.95], [71.15, 36.9], [71.2, 36.85], [71.25, 36.8], [71.3, 36.75], [71.35, 36.7], [71.4, 36.65], [71.45, 36.6], [71.5, 36.55], [71.5, 36.5], [71.5, 36.45], [71.5, 36.4], [71.5, 36.35], [71.5, 36.3], [71.5, 36.25], [71.5, 36.2], [71.5, 36.15], [71.5, 36.1], [71.5, 36.05], [71.5, 36.0], [71.5, 35.95], [71.5, 35.9], [71.5, 35.85], [71.5, 35.8], [71.5, 35.75], [71.5, 35.7], [71.5, 35.65], [71.5, 35.6], [71.5, 35.55], [71.5, 35.5], [71.5, 35.45], [71.5, 35.4], [71.5, 35.35], [71.5, 35.3], [71.5, 35.25], [71.5, 35.2], [71.5, 35.15], [71.5, 35.1], [71.5, 35.05], [71.5, 35.0], [71.5, 34.95], [71.5, 34.9], [71.5, 34.85], [71.5, 34.8], [71.5, 34.75], [71.5, 34.7], [71.5, 34.65], [71.5, 34.6], [71.5, 34.55], [71.5, 34.5], [71.5, 34.45], [71.5, 34.4], [71.5, 34.35], [71.5, 34.3], [71.5, 34.25], [71.5, 34.2], [71.5, 34.15], [71.5, 34.1], [71.5, 34.05], [71.5, 34.0], [71.5, 33.95], [71.5, 33.9], [71.55, 33.85], [71.55, 33.8], [71.6, 33.75], [71.6, 33.7], [71.6, 33.65], [71.65, 33.6], [71.65, 33.55], [71.7, 33.5], [71.7, 33.45], [71.75, 33.4], [71.75, 33.35], [71.8, 33.3], [71.8, 33.25], [71.85, 33.2], [71.9, 33.15], [71.95, 33.1], [72.0, 33.05], [72.05, 33.0], [72.1, 32.95], [72.15, 32.9], [72.15, 32.85], [72.15, 32.8], [72.15, 32.75], [72.15, 32.7], [72.15, 32.65], [72.1, 32.6]]
+  SDA old chain ripped: 15
+  gate worst +0.050 seg I2C_SDA (68.700,37.000)->(69.600,37.000) hw0.125 vs pad I2C_SCL (68.688,37.500) hw0.438x0.125
+LOS full: FOUND
+  vias: [[70.3, 36.15], [73.55, 33.1], [87.9, 12.2], [93.85, 1.45]]
+  gate worst +0.000 via CDR_LOS (70.300,36.150) r0.250 vs seg I2C_SCL (70.875,37.875)->(70.875,35.125) hw0.125
+REFCLKN rejoin: FOUND
+  vias: []
+  gate worst +0.287 seg REFCLKN (71.800,37.450)->(71.700,37.550) hw0.100 vs via I2C_SCL (70.875,37.875) r0.300
+saved los_design_ax93.json
