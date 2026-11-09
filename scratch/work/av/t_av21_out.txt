@@ -1,0 +1,67 @@
+06:16:55: Debug: Adding duplicate image handler for 'PNG file'
+06:16:55: Debug: Adding duplicate image handler for 'JPEG file'
+06:16:55: Debug: Adding duplicate image handler for 'TIFF file'
+06:16:55: Debug: Adding duplicate image handler for 'GIF file'
+06:16:55: Debug: Adding duplicate image handler for 'PNM file'
+06:16:55: Debug: Adding duplicate image handler for 'PCX file'
+06:16:55: Debug: Adding duplicate image handler for 'IFF file'
+06:16:55: Debug: Adding duplicate image handler for 'Windows icon file'
+06:16:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+06:16:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+06:16:55: Debug: Adding duplicate image handler for 'TGA file'
+06:16:55: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+RBIAS staircase: ripped 19 (all In2 segs; the (73.875,11.625) via disc remains)
+=== C49 shift E to (70.5,19.5) ===
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+C49 moved; +3V3A web re-laid
+=== ULPI_DIR long B seg re-lay (no dummies) ===
+dir_tail_relay worst pairs:
+dir_tail_relay EMITTED
+DIR re-laid
+=== XO bridge: multi-layer dip ===
+dip: vias=[[73.9, 21.425]] runs=[(2, 96), (1, 354)]
+xo_bridge worst pairs:
+   +0.000 L0 via XO (73.900,21.425) r0.250 vs pad GND (74.275,20.500) hw0.450x0.475
+   +0.027 L0 via XO (73.900,21.425) r0.250 vs via CAP_CLK (73.250,21.750) r0.250
+   +0.027 L1 via XO (73.900,21.425) r0.250 vs via CAP_CLK (73.250,21.750) r0.250
+   +0.027 L2 via XO (73.900,21.425) r0.250 vs via CAP_CLK (73.250,21.750) r0.250
+xo_bridge EMITTED
+fragments(XO) = 1 sizes [300]
+XO BRIDGE CLOSED (fragments == 1)
+=== RBIAS ride (split-layer) ===
+  dive (72.5, 17.15): B leg NONE
+  dive (72.45, 17.2): B leg NONE
+  dive (72.55, 17.1): B leg NONE
+  dive (72.4, 17.3): B leg NONE
+  dive (72.6, 17.0): In2 leg NONE
+  dive (72.3, 17.4): B leg NONE
+  dive (72.7, 16.8): In2 leg NONE
+  dive (73.9, 16.4): B leg NONE
+  dive (73.85, 16.2): B leg NONE
+  dive (73.95, 16.6): B leg NONE
+  dive (73.8, 16.0): B leg NONE
+  dive (74.0, 16.9): composed runs=[(1, 212), (2, 199)]
+rbias_relay worst pairs:
+   -0.323 L0 via RBIAS (74.000,16.900) r0.250 vs pad USB_RST (74.250,16.438) hw0.125x0.438
+   -0.249 L0 via RBIAS (74.000,16.900) r0.250 vs seg DM_PHY (74.125,17.375)->(73.562,17.000) hw0.125
+   -0.112 L0 via RBIAS (74.000,16.900) r0.250 vs seg DM_PHY (73.562,17.000)->(73.562,15.750) hw0.100
+   -0.100 L2 via RBIAS (74.000,16.900) r0.250 vs seg PHY_1V8 (77.800,16.200)->(73.400,16.200) hw0.300
+  dive (73.75, 15.7): B leg NONE
+  dive (74.05, 17.2): composed runs=[(1, 224), (2, 199)]
+rbias_relay worst pairs:
+   -0.471 L0 via RBIAS (74.050,17.200) r0.250 vs seg DM_PHY (74.125,17.375)->(73.562,17.000) hw0.125
+   -0.385 L0 via RBIAS (74.050,17.200) r0.250 vs seg DM_PHY (74.125,18.625)->(74.125,17.375) hw0.125
+   -0.116 L0 via RBIAS (74.050,17.200) r0.250 vs pad USB_RST (74.250,16.438) hw0.125x0.438
+   -0.023 L0 via RBIAS (74.050,17.200) r0.250 vs seg DM_PHY (73.562,17.000)->(73.562,15.750) hw0.100
+  full-ML ride hw=0.125: NONE
+  full-ML ride hw=0.1: NONE
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/av/t_av21_full.py", line 171, in <module>
+    assert rb_done, 'RBIAS RIDE FAILED'
+           ^^^^^^^
+AssertionError: RBIAS RIDE FAILED

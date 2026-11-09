@@ -1,0 +1,165 @@
+04:54:39: Debug: Adding duplicate image handler for 'PNG file'
+04:54:39: Debug: Adding duplicate image handler for 'JPEG file'
+04:54:39: Debug: Adding duplicate image handler for 'TIFF file'
+04:54:39: Debug: Adding duplicate image handler for 'GIF file'
+04:54:39: Debug: Adding duplicate image handler for 'PNM file'
+04:54:39: Debug: Adding duplicate image handler for 'PCX file'
+04:54:39: Debug: Adding duplicate image handler for 'IFF file'
+04:54:39: Debug: Adding duplicate image handler for 'Windows icon file'
+04:54:39: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:54:39: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:54:39: Debug: Adding duplicate image handler for 'TGA file'
+04:54:39: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+ripped 19 staircase segs
+start B stub (71.875,19.625): L0 field=+0.316 track=True L1 field=-0.300 track=False L2 field=+0.307 track=True viafit=False
+    L0 worst fence: pad +3V3D (72.725,20.500) hw0.450x0.475
+    L1 worst fence: seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+    L2 worst fence: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+goal In2 (68.875,20.375): L0 field=-0.050 track=False L1 field=+0.291 track=True L2 field=-0.325 track=False viafit=False
+    L0 worst fence: pad RBIAS (69.175,21.000) hw0.400x0.475
+    L1 worst fence: via RBIAS (69.625,20.625) r0.300
+    L2 worst fence: seg DP_PHY (68.875,27.125)->(68.875,20.125) hw0.125
+--- ALL viafit cells in box (0.025 grid) ---
+viafit cells: 7
+   (73.90000000000127, 21.449999999999854)
+   (73.92500000000128, 21.449999999999854)
+   (73.95000000000128, 21.449999999999854)
+   (73.90000000000127, 21.474999999999852)
+   (73.92500000000128, 21.474999999999852)
+   (73.95000000000128, 21.474999999999852)
+   (73.92500000000128, 21.49999999999985)
+--- candidate via points: viafit + fields ---
+  (70.6,20.05): viafit=False L0=-0.125 L1=+0.301 L2=+0.224
+      worst L0: pad GND (70.775,19.500) hw0.450x0.475
+      worst L1: seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (70.6,20.1): viafit=False L0=-0.075 L1=+0.266 L2=+0.212
+      worst L0: pad GND (70.775,19.500) hw0.450x0.475
+      worst L1: seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (70.4,20.0): viafit=False L0=-0.175 L1=+0.478 L2=+0.430
+      worst L0: pad GND (70.775,19.500) hw0.450x0.475
+      worst L1: seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (70.8,19.95): viafit=False L0=-0.200 L1=+0.230 L2=+0.055
+      worst L0: pad GND (70.775,19.500) hw0.450x0.475
+      worst L1: seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (70.2,20.2): viafit=False L0=+0.057 L1=+0.215 L2=+0.215
+      worst L0: pad GND (70.775,19.500) hw0.450x0.475
+      worst L1: via RBIAS (69.625,20.625) r0.300
+      worst L2: via RBIAS (69.625,20.625) r0.300
+  (70.9,20.0): viafit=False L0=-0.175 L1=+0.124 L2=-0.054
+      worst L0: pad GND (70.775,19.500) hw0.450x0.475
+      worst L1: seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (71.0,19.9): viafit=False L0=-0.200 L1=+0.124 L2=-0.127
+      worst L0: pad GND (70.775,19.500) hw0.450x0.475
+      worst L1: seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (70.5,19.85): viafit=False L0=-0.200 L1=+0.513 L2=+0.370
+      worst L0: pad GND (70.775,19.500) hw0.450x0.475
+      worst L1: seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (71.7,20.6): viafit=False L0=+0.275 L1=-0.007 L2=+0.377
+      worst L0: pad GND (70.825,21.000) hw0.400x0.475
+      worst L1: seg DM_PHY (71.875,20.875)->(72.125,20.625) hw0.125
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (71.65,20.55): viafit=False L0=+0.225 L1=+0.064 L2=+0.316
+      worst L0: pad GND (70.825,21.000) hw0.400x0.475
+      worst L1: seg DM_PHY (71.875,20.875)->(72.125,20.625) hw0.125
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (71.75,20.7): viafit=False L0=+0.275 L1=-0.113 L2=+0.450
+      worst L0: pad +3V3D (72.725,20.500) hw0.450x0.475
+      worst L1: seg DM_PHY (71.875,20.875)->(72.125,20.625) hw0.125
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (71.6,20.5): viafit=False L0=+0.176 L1=+0.124 L2=+0.256
+      worst L0: pad GND (70.825,21.000) hw0.400x0.475
+      worst L1: seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+      worst L2: seg ULPI_DIR (71.375,19.125)->(68.875,29.000) hw0.100
+  (69.95,20.25): viafit=False L0=-0.004 L1=-0.004 L2=-0.004
+      worst L0: via RBIAS (69.625,20.625) r0.300
+      worst L1: via RBIAS (69.625,20.625) r0.300
+      worst L2: via RBIAS (69.625,20.625) r0.300
+--- map (rows y=21.2 -> 18.9 step 0.1; cols x=68.3 -> 72.6 step 0.1) ---
+legend: V=viafit, B=B-track only, I=In2-track only, X=both tracks, .=none, S=start, G=goal
+y=22.60 XXX.................BBBBBBBBBBBBBBBB.................BBBBBBBBBBBBBBXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBBBBBBBB..............
+y=22.55 XBB.................BBBBBBBBBBBBBBBB.................BBBBBBBBBBBBBBBXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBBBBBBBBBB.............
+y=22.50 BBB.................BBBBBBBBBBBBBBBBB................BBBBBBBBBBBBBBBBXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBBBBBBBBBBBB............
+y=22.45 BBB.................BBBBBBBBBBBBBBBBB................BBBBBBBBBBBBBBBBBXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBBBBBBBBBBBBBB...........
+y=22.40 BBB.................BBBBBBBBBBBBBBBBB.................BBBBBBBBBBBBBBBBBXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXBBBBBBBBBBBBBBBBB.........
+y=22.35 BBB.................BBBBBBBBBBBBBBBB..................BBBBBBBBBBBBBBBBBBXXXXXXXXXXXXXXXXXXXXXXXXXXXXBBBBBBBBBBBBBBBBBBBBBB.....
+y=22.30 BBB.................BBBBBBBBBBBB......................BBBBBBBBBBBBBBBBBBBXXXXXXXXXXXXXXXXXXXXXXXXXX.BBBBBBBBBBBBBBBBBBBBB......
+y=22.25 BBB.................BBBBBBBBBB........................BBBBBBBBBBBBBBBBBBBBXXXXXXXXXXXXXXXXXXXXX.........BBBBBBBBBBBBBBBBBX.....
+y=22.20 BBB.................BBBBBBBBB..........................BBBBBBBBBBBBBBBBBBBBXXXXXXXXXXXXXXXXXX.............BBBBBBBBBBBBBBXX.....
+y=22.15 BBB.................BBBBBBBB...........................BBBBBBBBBBBBBBBBBBBBBXXXXXXXXXXXXXXXX...............BBBBBBBBBBBBXXX.....
+y=22.10 BBB.................BBBBBBB............................BBBBBBBBBBBBBBBBBBBBBBXXXXXXXXXXXXXX.................BBBBBBBBBBXXXX.....
+y=22.05 BBB.................BBBBBBB............................BBBBBBBBBBBBBBBBBBBBBBBXXXXXXXXXXXX...................BBBBBBBBXXXXXI....
+y=22.00 BBB.................BBBBBB..............................BBBBBBBBBBBBBBBBBBBBBBBXXXXXXXXXXX...................BBBBBBBXXXXXXI....
+y=21.95 BBB..........III....BBBBBB..............................BBBBBBBBBBBBBBBBBBBBBBBBXXXXXXXXX.....................BBBBBXXXXXXXII...
+y=21.90 BBB........IIII.....BBBBBB..............................BBBBBBBBBBBBBBBBBBBBBBBBBXXXXXXXX.....................BBBBXXXXXXXXIII..
+y=21.85 BBB......II.........BBBBBB..............................BBBBBBBBBBBBBBBBBBBBBBBBBBBXXXXXX.....................BBBXXXXXXXXXIIII.
+y=21.80 BBB.....II..........BBBBB................................BBBBBBBBBBBBBBBBBBBBBBBBBBBXXXXX.....................BBXXXXXXXXXXIIIII
+y=21.75 BBB...II............BBBBBB...............................BBBBBBBBBBBBBBBBBBBBBBBBBBBBXXX......................BXXXXXXXXXXXIIIII
+y=21.70 BBB..II.............BBBBBB...............................BBBBBBBBBBBBBBBBBBBBBBBBBBBBBXXX.....................XXXXXXXXXXXXIIIII
+y=21.65 BBBIII..............BBBBBB...............................BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBXX.....................XXXXXXXXXXXXIIIII
+y=21.60 BXXI................BBBBBB................................BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBX.....................XXXXXXXXXXXIIIIII
+y=21.55 XBB.................BBBBBBB...............................BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.....................XXXXXXXXXXIIIIIII
+y=21.50 BBB.................BBBBBBB...................I...........BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB...................XXXXXXXXXXIIIIIIII
+y=21.45 BBB.................BBBBBBBB.................III..........BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB...................XXXVVXXXXIIIIIIIII
+y=21.40 BBB.................BBBBBBBBB.................III..........BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.................XXXXXXXXXIIIIIIIIII
+y=21.35 BBB.................BBBBBBBBBB..................II.........BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB...............XXXXXXXXXIIIIIIIIIII
+y=21.30 BBB.................BBBBBBBBBBBB.........BB.......I........BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.............XXXXXXXXXIIIIIIIIIIII
+y=21.25 BBB.................BBBBBBBBBBBBBBBBBBBBBBB........I.......BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.........XXXXXXXXXXIIIIIIIIIIIII
+y=21.20 BBB.................BBBB......BBBBBBBBBBBBB.........I.......BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBXXXXXXXXXXXXXXXXXIIIIIIIIIIIIII
+y=21.15 BBB.................B............BBBBBBBBBB..........I......BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBXXXXXXXXXXXXXXXIIIIIIIIIIIIIII
+y=21.10 BBB...............................BBBBBBBBBB..........I.....BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBXXXXXXXXXXXXXIIIIIIIIIIIIIIII
+y=21.05 BBB..............II................BBBBBBBBB...........I.....BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBXXXXXXXXXXXIIIIIIIIIIIIIIIII
+y=21.00 BBB.............II..................BBBBBBBB............I....BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBXXXXXXXXXIIIIIIIIIIIIIIIIII
+y=20.95 BBB............II....................BBBBBBBB............I...BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBXXXXXXXIIIIIIIIIIIIIIIIIII
+y=20.90 BBB..........III......................BBBBBBB.............I..BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBXXXXXIIIIIIIIIIIIIIIIIIII
+y=20.85 BBB.......IIIIII......................BBBBBBB..............I..BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBXXXIIIIIIIIIIIIIIIIIIIII
+y=20.80 BBB....IIIIIIIII......................BBBBBBB...............I.BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBXIIIIIIIIIIIIIIIIIIIIII
+y=20.75 BBB...IIIIIIIII........................BBBBBBB...............IBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.IIIIIIIIIIIIIIIIIIIIII
+y=20.70 BBB..IIIIIIIIII........................BBBBBBB................XBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB...IIIIIIIIIIIIIIIIIIIIX
+y=20.65 BBB.IIIIIIIIIII........................BBBBBBB.................XBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.....IIIIIIIIIIIIIIIIIIXX
+y=20.60 BBBIIIIIIIIIIII........................XXBBBBB.................BXBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.......IIIIIIIIIIIIIIIIXXX
+y=20.55 BBBIIIIIIIIIIII........................XXXBBBBB................BBXBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.........IIIIIIIIIIIIIIXXXX
+y=20.50 BBBIIIIIIIIIIII........................XXXXBBBB................BBBXBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB...........IIIIIIIIIIIIXXXXX
+y=20.45 BBXIIIIIIIIIIIII......................XXXXXXBBB.................BBBXBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB.............IIIIIIIIIIXXXXXX
+y=20.40 BBXIIIIIIIIIIIII......................XXXXXXXBB.................BBBBXBBBBBBBBBBBBBBBBBBBBBBBBBBBB...............IIIIIIIIXXXXXXX
+y=20.35 .BXIIIIIIIIIIIII......................XXXXXXXXBB................BBBBBXBBBBBBBBBBBBBBBBBBBBBBBBBB.................IIIIIIXXXXXXXX
+y=20.30 ..XIIIIIIIIIIIIII....................XXXXXXXXXXB................BBBBBBXBBBBBBBBBBBBBBBBBBBBBBBB...................IIIIXXXXXXXXX
+y=20.25 ..IIIIIIIIIIIIIIII..................XXXXXXXXXXXX.................BBBBBBXBBBBBBBBBBBBBBBBBBBBBB.....................IIXXXXXXXXXX
+y=20.20 ..IIIIIIIIIIIIIIIII................XXXXXXXXXXXXXI................BBBBBBBXBBBBBBBBBBBBBBBBBBBB.......................XXXXXXXXXXX
+y=20.15 ..IIIIIIIIIIIIIIIIII..............XXXXXXXXXXXXXXXI...............BBBBBBBBXBBBBBBBBBBBBBBBBBB.......................BBXXXXXXXXXX
+y=20.10 ..IIIIIIIIIIIIIIIIIII............XXXXXXXXXXXXXXXXII..............BBBBBBBBBXBBBBBBBBBBBBBBBB.......................BBBBXXXXXXXXX
+y=20.05 ..IIIIIIIIIIIIIIIIIIIIII......XXXXXXXXXXXXXXXXXXXIII..............BBBBBBBBBXBBBBBBBBBBBBBB.......................BBBBBBBXXXXXXX
+y=20.00 .IIIIIIIIIIIIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXXXXXXXXIIII.............BBBBBBBBBBXBBBBBBBBBBBB.......................BBBBBBBBBXXXXXX
+y=19.95 .IIIIIIIIIIIIIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXXXXXXXXIIII............BBBBBBBBBBBXBBBBBBBBBB.......................BBBBBBBBBBBXXXXX
+y=19.90 IIIIIIIIIIIIIIIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXXXXXXXIIIII...........BBBBBBBBBBBBXBBBBBBBB.......................BBBBBBBBBBBBBXXXX
+y=19.85 III........IIIIIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXXXXXXIIIIII...........BBBBBBBBBBBBXBBBBBB.......................BBBBBBBBBBBBBBBXXX
+y=19.80 ..............IIIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXXXXXIIIIIII..........BBBBBBBBBBBBBXB..........................BBBBBBBBBBBBBBBB.XX
+y=19.75 ...............IIIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXXXXXIIIIIII.........BBBBBBBBBBBBB...........................BBBBBBBBBBBBB.......
+y=19.70 .................IIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXXXXIIIIIIII........BBBBBBBBBBBB...............................BBBBBBBB.........
+y=19.65 ..................IIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXXXIIIIIIIII........BBBBBBBBBB...................................BBBB..........
+y=19.60 ...................IIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXXIIIIIIIIII.......BBBBBBBBB.....................................BB...........
+y=19.55 ...................IIIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXXIIIIIIIIII......BBBBBBBBB..................................................
+y=19.50 ....................IIIIIIIIIIIIIIIIIXXXXXXXXXXXXXXXIIIIIIIIIII.....BBBBBBBB...................................................
+y=19.45 .....................IIIIIIIIIIIIIIIIIXXXXXXXXXXXXXXIIIIIIIIIIII.....BBBBBBB...................................................
+y=19.40 .....................IIIIIIIIIIIIIIIIIIXXXXXXXXXXXXXIIIIIIIIIIIII.....BBBBBB...................................................
+y=19.35 .....................IIIIIIIIIIIIIIIIIIIXXXXXXXXXXXXXIIIIIIIIIIIII.......BBB...................................................
+y=19.30 ......................IIIIIIIIIIIIIIIIIIIXXXXXXXXXXXXIIIIIIIIIIIIII............................................................
+y=19.25 ......................IIIIIIIIIIIIIIIIIIIIXXXXXXXXXXXIIIIIIIIIIIIIII...........................................................
+y=19.20 ......................IIIIIIIIIIIIIIIIIIIIIXXXXXXXXXXIIIIIIIIIIIIIIII..........................................................
+y=19.15 ......................IIIIIIIIIIIIIIIIIIIIIIXXXXXXXXXXIIIIIIIIIIIIIIII.........................................................
+y=19.10 ......................IIIIIIIIIIIIIIIIIIIIIIIXXXXXXXXXIIIIIIIIIIIIIIIII........................................................
+y=19.05 ......................IIIIIIIIIIIIIIIIIIIIIIIIXXXXXXXXIIIIIIIIIIIIIIIIII.......................................................
+y=19.00 ......................IIIIIIIIIIIIIIIIIIIIIIIIIXXXXXXXIIIIIIIIIIIIIIIIIII......................................................
+y=18.95 ......................XIIIIIIIIIIIIIIIIIIIIIIIIIXXXXXXXIIIIIIIIIIIIIIIIIII.....................X...............................
+y=18.90 .....................XXXIIIIIIIIIIIIIIIIIIIIIIIIXXXXXXXIIIIIIIIIIIIIIIIIIII...................II...............................
+done

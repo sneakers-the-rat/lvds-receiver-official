@@ -1,0 +1,41 @@
+04:55:36: Debug: Adding duplicate image handler for 'PNG file'
+04:55:36: Debug: Adding duplicate image handler for 'JPEG file'
+04:55:36: Debug: Adding duplicate image handler for 'TIFF file'
+04:55:36: Debug: Adding duplicate image handler for 'GIF file'
+04:55:36: Debug: Adding duplicate image handler for 'PNM file'
+04:55:36: Debug: Adding duplicate image handler for 'PCX file'
+04:55:36: Debug: Adding duplicate image handler for 'IFF file'
+04:55:36: Debug: Adding duplicate image handler for 'Windows icon file'
+04:55:36: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:55:36: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:55:36: Debug: Adding duplicate image handler for 'TGA file'
+04:55:36: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+=== baseline fragment counts (au93-state model) ===
+fragments(XO) = 2 sizes [96, 44]
+fragments(+3V3D) = 5 sizes [552, 58, 7, 4, 3]
+fragments(CAP_CLK) = 2 sizes [199, 1]
+  small fragment item: L0 pad CAP_CLK (76.525,25.385) hw0.975x0.300
+fragments(CAP_DATA) = 3 sizes [187, 1, 1]
+  small fragment item: L0 pad CAP_DATA (71.338,2.250) hw0.738x0.150
+  small fragment item: L0 pad CAP_DATA (76.525,22.845) hw0.975x0.300
+fragments(RBIAS) = 1 sizes [31]
+=== JOIN 1: RBIAS staircase rip (rounded match) ===
+staircase segs to rip now: 19 (expect 19 = 17 diagonals + 2 tails)
+=== JOIN 1a: XO dip A* (dip first) ===
+  dip A*: NONE
+=== JOIN 1b: RBIAS A* re-lay ===
+  A* start=(0, 1, 2) goal_layer=2 hw=0.125: vias=[[70.0, 20.375]] runs=[(1, 365), (2, 16)]
+rbias_relay worst pairs:
+   +0.001 L0 via RBIAS (70.000,20.375) r0.250 vs pad GND (70.825,21.000) hw0.400x0.475
+   +0.015 L0 via RBIAS (70.000,20.375) r0.250 vs pad +3V3A (69.225,19.500) hw0.450x0.475
+rbias_relay EMITTED
+  ride uses the In2 vertical - it stays
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/av/t_av4_design.py", line 199, in <module>
+    assert xo_done and rb_done, 'JOIN 1 FAILED: dip/ride pair not closed'
+           ^^^^^^^^^^^^^^^^^^^
+AssertionError: JOIN 1 FAILED: dip/ride pair not closed

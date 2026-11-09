@@ -1,0 +1,69 @@
+04:44:31: Debug: Adding duplicate image handler for 'PNG file'
+04:44:31: Debug: Adding duplicate image handler for 'JPEG file'
+04:44:31: Debug: Adding duplicate image handler for 'TIFF file'
+04:44:31: Debug: Adding duplicate image handler for 'GIF file'
+04:44:31: Debug: Adding duplicate image handler for 'PNM file'
+04:44:31: Debug: Adding duplicate image handler for 'PCX file'
+04:44:31: Debug: Adding duplicate image handler for 'IFF file'
+04:44:31: Debug: Adding duplicate image handler for 'Windows icon file'
+04:44:31: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:44:31: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:44:31: Debug: Adding duplicate image handler for 'TGA file'
+04:44:31: Debug: Adding duplicate image handler for 'XPM file'
+--- au71 U9PADS collection source ---
+0.01)))
+RIPS.append(lambda l, it: l == 0 and it[1] == 'TMP_ALERT' and it[0] == 'seg'
+            and C(it)[0] < 67.3 and C(it)[1] > -3.2)
+RIPS.append(lambda l, it: l == 0 and it[1] == '+3V3A' and it[0] == 'seg'
+            and abs(it[2][0] - 69.225) < 0.01 and abs(it[2][1] - 2.75) < 0.01
+            and abs(it[2][2] - 69.475) < 0.01 and abs(it[2][3] - 2.75) < 0.01)
+RIPS.append(lambda l, it: it[0] == 'via' and it[1] == 'CAP_CLK'
+            and near(it, 70.020, 1.830))
+RIPS.append(lambda l, it: l == 0 and it[1] == 'CAP_CLK' and it[0] == 'seg'
+            and C(it)[0] > 69.8 and C(it)[1] < 2.2)
+U9PADS = []
+for it in items_full[0]:
+    if it[0] == 'pad' and 66.5 < it[2][0] < 70.0 and 1.5 < it[2][1] < 4.0 \
+            and it[1] in ('I2C_SCL', 'GND', 'TMP_ALERT', '+3V3A', 'I2C_SDA'):
+        U9PADS.append(it)
+RIPS.append(lambda l, it: it in U9PADS)
+FRAG_PRED = lambda l, it: l == 1 and it[1] == 'I2C_SDA' and it[0] == 'seg' \
+    and it[2][0] >= 71.1 and it[2][2] >= 71.1 \
+    and 1.8 < it[2][1] < 4.2 and 1.8 < it[2][3] < 4.2
+RIPS.append(FRAG_PRED)
+
+04:44:32: Debug: Adding duplicate image handler for 'PNG file'
+04:44:32: Debug: Adding duplicate image handler for 'JPEG file'
+04:44:32: Debug: Adding duplicate image handler for 'TIFF file'
+04:44:32: Debug: Adding duplicate image handler for 'GIF file'
+04:44:32: Debug: Adding duplicate image handler for 'PNM file'
+04:44:32: Debug: Adding duplicate image handler for 'PCX file'
+04:44:32: Debug: Adding duplicate image handler for 'IFF file'
+04:44:32: Debug: Adding duplicate image handler for 'Windows icon file'
+04:44:32: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:44:32: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:44:32: Debug: Adding duplicate image handler for 'TGA file'
+04:44:32: Debug: Adding duplicate image handler for 'XPM file'
+--- U9PADS: 7 items ---
+  pad I2C_SCL (67.275,2.100) hw0.225x0.150
+  pad GND (67.275,2.750) hw0.225x0.150
+  pad TMP_ALERT (67.275,3.400) hw0.225x0.150
+  pad GND (69.225,3.400) hw0.225x0.150
+  pad +3V3A (69.225,2.750) hw0.225x0.150
+  pad I2C_SDA (69.225,2.100) hw0.225x0.150
+  pad GND (68.250,2.750) hw0.500x0.800
+--- footprints with pads in x[65,71] y[-0.5,6] ---
+U8 at (68.500,6.250):
+    pad 1 THR_DAC (66.3,5.25)
+    pad 10 DAC_VREF (70.7,5.25)
+    pad 2 HV_DAC (66.3,5.75)
+    pad 9 +3V3D (70.7,5.75)
+U9 at (68.250,2.750):
+    pad 1 I2C_SCL (67.275,2.1)
+    pad 2 GND (67.275,2.75)
+    pad 3 TMP_ALERT (67.275,3.4)
+    pad 4 GND (69.225,3.4)
+    pad 5 +3V3A (69.225,2.75)
+    pad 6 I2C_SDA (69.225,2.1)
+    pad 7 GND (68.25,2.75)
+done

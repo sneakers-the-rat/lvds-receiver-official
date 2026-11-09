@@ -1,0 +1,32 @@
+04:34:24: Debug: Adding duplicate image handler for 'PNG file'
+04:34:24: Debug: Adding duplicate image handler for 'JPEG file'
+04:34:24: Debug: Adding duplicate image handler for 'TIFF file'
+04:34:24: Debug: Adding duplicate image handler for 'GIF file'
+04:34:24: Debug: Adding duplicate image handler for 'PNM file'
+04:34:24: Debug: Adding duplicate image handler for 'PCX file'
+04:34:24: Debug: Adding duplicate image handler for 'IFF file'
+04:34:24: Debug: Adding duplicate image handler for 'Windows icon file'
+04:34:24: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:34:24: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:34:24: Debug: Adding duplicate image handler for 'TGA file'
+04:34:24: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+RBIAS tail NOT FOUND: seg RBIAS (70.125,20.125)->(69.875,20.375) hw0.100
+RBIAS tail NOT FOUND: seg RBIAS (69.875,20.375)->(69.625,20.625) hw0.100
+detour_RBIAS_tail worst pairs:
+detour_RBIAS_tail EMITTED
+xo_bridge worst pairs:
+   -0.424 L1 seg XO (71.000,19.500)->(69.600,19.550) hw0.100 vs seg RBIAS (70.875,19.375)->(70.625,19.625) hw0.125
+   -0.398 L1 seg XO (71.900,20.200)->(71.000,19.500) hw0.100 vs seg CAP_DATA (70.500,21.000)->(72.300,19.200) hw0.100
+   -0.313 L1 seg XO (71.000,19.500)->(69.600,19.550) hw0.100 vs seg RBIAS (70.625,19.625)->(70.375,19.875) hw0.125
+   -0.296 L1 seg XO (71.000,19.500)->(69.600,19.550) hw0.100 vs seg RBIAS (71.125,19.125)->(70.875,19.375) hw0.125
+XO fragments now: 2
++3V3D A* to U5 pad hw 0.15: NONE
++3V3D A* to U5 pad hw 0.125: NONE
++3V3D fragments now: 3
+full gate: 0 failures
+saved scratch/work/au/build_au97.json
+done
