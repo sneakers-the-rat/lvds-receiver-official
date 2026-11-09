@@ -162,7 +162,7 @@ PARTS += [
     "33":("EP","pwr_in","GND")}, "usb"),
  P("X1","24.000MHz ECS-240-20-5PDN-TR CL20", HC49SD, "box",
    {"1":("XI","passive","XI"), "2":("XO","passive","XO")}, "usb"),
- P("C20","33pF", C0603, "C", {"1":("","passive","XI"), "2":("","passive","GND")}, "usb"),
+ P("C20","33pF", C0402, "C", {"1":("","passive","XI"), "2":("","passive","GND")}, "usb"),
  P("C21","33pF", C0603, "C", {"1":("","passive","XO"), "2":("","passive","GND")}, "usb"),
  P("R17","12k 1%", R0603, "R", {"1":("","passive","RBIAS"), "2":("","passive","GND")}, "usb"),
  P("C22","4.7uF", C0402, "C", {"1":("","passive","PHY_1V8"), "2":("","passive","GND")}, "usb"),
