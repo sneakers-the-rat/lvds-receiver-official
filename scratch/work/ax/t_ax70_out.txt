@@ -1,0 +1,31 @@
+13:04:23: Debug: Adding duplicate image handler for 'PNG file'
+13:04:23: Debug: Adding duplicate image handler for 'JPEG file'
+13:04:23: Debug: Adding duplicate image handler for 'TIFF file'
+13:04:23: Debug: Adding duplicate image handler for 'GIF file'
+13:04:23: Debug: Adding duplicate image handler for 'PNM file'
+13:04:23: Debug: Adding duplicate image handler for 'PCX file'
+13:04:23: Debug: Adding duplicate image handler for 'IFF file'
+13:04:23: Debug: Adding duplicate image handler for 'Windows icon file'
+13:04:23: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:04:23: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:04:23: Debug: Adding duplicate image handler for 'TGA file'
+13:04:23: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+13:04:24: Debug: Adding duplicate image handler for 'PNG file'
+13:04:24: Debug: Adding duplicate image handler for 'JPEG file'
+13:04:24: Debug: Adding duplicate image handler for 'TIFF file'
+13:04:24: Debug: Adding duplicate image handler for 'GIF file'
+13:04:24: Debug: Adding duplicate image handler for 'PNM file'
+13:04:24: Debug: Adding duplicate image handler for 'PCX file'
+13:04:24: Debug: Adding duplicate image handler for 'IFF file'
+13:04:24: Debug: Adding duplicate image handler for 'Windows icon file'
+13:04:24: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:04:24: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:04:24: Debug: Adding duplicate image handler for 'TGA file'
+13:04:24: Debug: Adding duplicate image handler for 'XPM file'
+BEFORE: {'I2C_SCL': 4, '+3V3D': 5, 'I2C_SDA': 2}
+SCL F: NONE
+SCL F NONE
