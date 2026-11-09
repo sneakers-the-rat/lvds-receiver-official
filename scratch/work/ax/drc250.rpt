@@ -1,0 +1,42 @@
+** Drc report for pdlvds_rx.exp250.kicad_pcb **
+** Created on 2026-11-09T15:18:48+0000 **
+
+** Found 4 DRC violations **
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3063 mm)
+    Rule: board setup constraints edge; error
+    @(33.6000 mm, 72.1400 mm): NPTH pad of J1
+    @(32.7500 mm, 71.4800 mm): Pad A12 [GND] of J1 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; error
+    @(100.0000 mm, 80.0000 mm): Segment on Edge.Cuts
+    @(25.5100 mm, 79.3400 mm): PTH pad S1 [<no net>] of J1
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2982 mm)
+    Rule: board setup constraints edge; error
+    @(33.6000 mm, 72.1400 mm): NPTH pad of J1
+    @(34.1300 mm, 73.3900 mm): PTH pad S1 [<no net>] of J1
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; error
+    @(100.0000 mm, 80.0000 mm): Segment on Edge.Cuts
+    @(34.4900 mm, 79.3400 mm): PTH pad S1 [<no net>] of J1
+
+** Found 4 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(0.3000 mm, -29.7000 mm): Zone [GND] on F.Cu
+    @(0.3000 mm, -29.7000 mm): Zone [GND] on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(71.3375 mm, -2.2500 mm): Pad 26 [ULPI_STP] of U6 on F.Cu
+    @(76.2500 mm, 16.4375 mm): Pad 13 [ULPI_STP] of U7 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(74.2500 mm, 16.4375 mm): Pad 9 [USB_RST] of U7 on F.Cu
+    @(74.7500 mm, 4.6625 mm): Pad 40 [USB_RST] of U6 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(75.7250 mm, 18.5000 mm): Pad 1 [XI] of C20 on F.Cu
+    @(76.2500 mm, 11.5625 mm): Pad 28 [XI] of U7 on F.Cu
+
+** Found 0 Footprint errors **
+
+** End of Report **

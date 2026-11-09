@@ -1,0 +1,45 @@
+14:51:33: Debug: Adding duplicate image handler for 'PNG file'
+14:51:33: Debug: Adding duplicate image handler for 'JPEG file'
+14:51:33: Debug: Adding duplicate image handler for 'TIFF file'
+14:51:33: Debug: Adding duplicate image handler for 'GIF file'
+14:51:33: Debug: Adding duplicate image handler for 'PNM file'
+14:51:33: Debug: Adding duplicate image handler for 'PCX file'
+14:51:33: Debug: Adding duplicate image handler for 'IFF file'
+14:51:33: Debug: Adding duplicate image handler for 'Windows icon file'
+14:51:33: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:51:33: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:51:33: Debug: Adding duplicate image handler for 'TGA file'
+14:51:33: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:51:33: Debug: Adding duplicate image handler for 'PNG file'
+14:51:33: Debug: Adding duplicate image handler for 'JPEG file'
+14:51:33: Debug: Adding duplicate image handler for 'TIFF file'
+14:51:33: Debug: Adding duplicate image handler for 'GIF file'
+14:51:33: Debug: Adding duplicate image handler for 'PNM file'
+14:51:33: Debug: Adding duplicate image handler for 'PCX file'
+14:51:33: Debug: Adding duplicate image handler for 'IFF file'
+14:51:33: Debug: Adding duplicate image handler for 'Windows icon file'
+14:51:33: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:51:33: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:51:33: Debug: Adding duplicate image handler for 'TGA file'
+14:51:33: Debug: Adding duplicate image handler for 'XPM file'
+C16 rip: 4
+C23 pads: 2 GND via: 1
+C23 rip: 5
+joiner gate worst +0.425 seg +3V3D (71.025,13.000)->(70.875,12.625) hw0.100 vs seg +3V3A (72.250,13.875)->(69.250,13.875) hw0.100
+XO rip: 6
+PHY stub gate worst +0.001 seg PHY_1V8A (75.750,11.562)->(75.720,11.000) hw0.100 vs pad +3V3A (75.250,11.562) hw0.125x0.438
+PHY B journey gate worst +0.014 seg PHY_1V8A (72.920,11.620)->(72.350,11.650) hw0.100 vs via XO (72.625,12.250) r0.250
+PHY tail (B): FOUND
+  vias: []
+PHY tail gate worst +0.012 seg PHY_1V8A (71.500,12.700)->(71.500,12.800) hw0.100 vs via +5V (72.200,13.100) r0.400
+PHY goal via+stub gate worst -0.589 via PHY_1V8A (72.450,14.300) r0.250 vs seg +3V3A (72.625,14.625)->(72.250,13.875) hw0.100
+XO rejoin: FOUND
+XO rejoin gate worst +0.018 seg XO (74.350,8.950)->(74.050,8.650) hw0.100 vs pad GND (73.525,9.500) hw0.450x0.475
+C16 GND: FOUND
+  vias: [[69.45, 12.7], [71.2, 10.45]]
+C16 GND gate worst -0.030 via GND (69.450,12.700) r0.250 vs seg PHY_1V8A (70.200,12.750)->(70.000,12.550) hw0.100
+saved phy_design_ax111.json

@@ -1,0 +1,46 @@
+14:59:47: Debug: Adding duplicate image handler for 'PNG file'
+14:59:47: Debug: Adding duplicate image handler for 'JPEG file'
+14:59:47: Debug: Adding duplicate image handler for 'TIFF file'
+14:59:47: Debug: Adding duplicate image handler for 'GIF file'
+14:59:47: Debug: Adding duplicate image handler for 'PNM file'
+14:59:47: Debug: Adding duplicate image handler for 'PCX file'
+14:59:47: Debug: Adding duplicate image handler for 'IFF file'
+14:59:47: Debug: Adding duplicate image handler for 'Windows icon file'
+14:59:47: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:59:47: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:59:47: Debug: Adding duplicate image handler for 'TGA file'
+14:59:47: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:59:48: Debug: Adding duplicate image handler for 'PNG file'
+14:59:48: Debug: Adding duplicate image handler for 'JPEG file'
+14:59:48: Debug: Adding duplicate image handler for 'TIFF file'
+14:59:48: Debug: Adding duplicate image handler for 'GIF file'
+14:59:48: Debug: Adding duplicate image handler for 'PNM file'
+14:59:48: Debug: Adding duplicate image handler for 'PCX file'
+14:59:48: Debug: Adding duplicate image handler for 'IFF file'
+14:59:48: Debug: Adding duplicate image handler for 'Windows icon file'
+14:59:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:59:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:59:48: Debug: Adding duplicate image handler for 'TGA file'
+14:59:48: Debug: Adding duplicate image handler for 'XPM file'
+via template w 500000 drill 300000
+C16 from (76.0, 9.75) orient 0.0
+  C16 pad 1 +3V3D (71.025, 13.0)
+  C16 pad 2 GND (69.475, 13.0)
+C23 from (70.75, 14.75) orient 0.0
+  C23 pad 1 PHY_1V8A (71.525, 14.75)
+  C23 pad 2 GND (69.975, 14.75)
+feed victims 1
+B vert seg victims 1 (70.875, 15.875)
+B vert seg victims 1 (70.875, 15.125)
+B vert seg victims 1 (70.875, 14.125)
+total rip victims: 9
+resized +3V3D via (70.875, 12.625)
+resized +3V3D via (70.875, 15.875)
+XO journey segs 125 vias 0
+PHY tail segs 92
+GND journey segs 63 vias 2
+saved exp250

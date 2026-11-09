@@ -1,0 +1,59 @@
+15:05:45: Debug: Adding duplicate image handler for 'PNG file'
+15:05:45: Debug: Adding duplicate image handler for 'JPEG file'
+15:05:45: Debug: Adding duplicate image handler for 'TIFF file'
+15:05:45: Debug: Adding duplicate image handler for 'GIF file'
+15:05:45: Debug: Adding duplicate image handler for 'PNM file'
+15:05:45: Debug: Adding duplicate image handler for 'PCX file'
+15:05:45: Debug: Adding duplicate image handler for 'IFF file'
+15:05:45: Debug: Adding duplicate image handler for 'Windows icon file'
+15:05:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:05:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:05:45: Debug: Adding duplicate image handler for 'TGA file'
+15:05:45: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:05:46: Debug: Adding duplicate image handler for 'PNG file'
+15:05:46: Debug: Adding duplicate image handler for 'JPEG file'
+15:05:46: Debug: Adding duplicate image handler for 'TIFF file'
+15:05:46: Debug: Adding duplicate image handler for 'GIF file'
+15:05:46: Debug: Adding duplicate image handler for 'PNM file'
+15:05:46: Debug: Adding duplicate image handler for 'PCX file'
+15:05:46: Debug: Adding duplicate image handler for 'IFF file'
+15:05:46: Debug: Adding duplicate image handler for 'Windows icon file'
+15:05:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:05:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:05:46: Debug: Adding duplicate image handler for 'TGA file'
+15:05:46: Debug: Adding duplicate image handler for 'XPM file'
+== tracks touching (74.875,8.875)/(74.875,8.625):
+   +3V3D (74.875, 8.625) -> (74.625, 8.375) seg
+   +3V3D (75.225, 9.5) -> (74.875, 8.875) seg
+   +3V3D (74.875, 8.875) -> (74.875, 8.625) seg
+C16 pos (70.25, 13.0) refdes via fields:
+   field Reference (64.14, 20.6)
+   field Value (70.25, 11.57)
+   field Footprint (70.25, 13.0)
+   field Datasheet (70.25, 13.0)
+   field Description (70.25, 13.0)
+C23 pos (70.75, 14.75) refdes via fields:
+   field Reference (81.65, 13.25)
+   field Value (70.75, 13.32)
+   field Footprint (70.75, 14.75)
+   field Datasheet (70.75, 14.75)
+   field Description (70.75, 14.75)
+15:05:47: Debug: Adding duplicate image handler for 'PNG file'
+15:05:47: Debug: Adding duplicate image handler for 'JPEG file'
+15:05:47: Debug: Adding duplicate image handler for 'TIFF file'
+15:05:47: Debug: Adding duplicate image handler for 'GIF file'
+15:05:47: Debug: Adding duplicate image handler for 'PNM file'
+15:05:47: Debug: Adding duplicate image handler for 'PCX file'
+15:05:47: Debug: Adding duplicate image handler for 'IFF file'
+15:05:47: Debug: Adding duplicate image handler for 'Windows icon file'
+15:05:47: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:05:47: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:05:47: Debug: Adding duplicate image handler for 'TGA file'
+15:05:47: Debug: Adding duplicate image handler for 'XPM file'
+terminate called after throwing an instance of 'std::out_of_range'
+  what():  map::at
+Aborted

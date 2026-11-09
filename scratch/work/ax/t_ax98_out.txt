@@ -1,0 +1,92 @@
+14:29:44: Debug: Adding duplicate image handler for 'PNG file'
+14:29:44: Debug: Adding duplicate image handler for 'JPEG file'
+14:29:44: Debug: Adding duplicate image handler for 'TIFF file'
+14:29:44: Debug: Adding duplicate image handler for 'GIF file'
+14:29:44: Debug: Adding duplicate image handler for 'PNM file'
+14:29:44: Debug: Adding duplicate image handler for 'PCX file'
+14:29:44: Debug: Adding duplicate image handler for 'IFF file'
+14:29:44: Debug: Adding duplicate image handler for 'Windows icon file'
+14:29:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:29:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:29:44: Debug: Adding duplicate image handler for 'TGA file'
+14:29:44: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:29:45: Debug: Adding duplicate image handler for 'PNG file'
+14:29:45: Debug: Adding duplicate image handler for 'JPEG file'
+14:29:45: Debug: Adding duplicate image handler for 'TIFF file'
+14:29:45: Debug: Adding duplicate image handler for 'GIF file'
+14:29:45: Debug: Adding duplicate image handler for 'PNM file'
+14:29:45: Debug: Adding duplicate image handler for 'PCX file'
+14:29:45: Debug: Adding duplicate image handler for 'IFF file'
+14:29:45: Debug: Adding duplicate image handler for 'Windows icon file'
+14:29:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:29:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:29:45: Debug: Adding duplicate image handler for 'TGA file'
+14:29:45: Debug: Adding duplicate image handler for 'XPM file'
+PHY_1V8A: 2 fragment(s)
+   size 1 terms [(0, (75.75, 11.5625))]
+   size 1 terms [(0, (69.975, 14.75))]
+14:29:46: Debug: Adding duplicate image handler for 'PNG file'
+14:29:46: Debug: Adding duplicate image handler for 'JPEG file'
+14:29:46: Debug: Adding duplicate image handler for 'TIFF file'
+14:29:46: Debug: Adding duplicate image handler for 'GIF file'
+14:29:46: Debug: Adding duplicate image handler for 'PNM file'
+14:29:46: Debug: Adding duplicate image handler for 'PCX file'
+14:29:46: Debug: Adding duplicate image handler for 'IFF file'
+14:29:46: Debug: Adding duplicate image handler for 'Windows icon file'
+14:29:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:29:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:29:46: Debug: Adding duplicate image handler for 'TGA file'
+14:29:46: Debug: Adding duplicate image handler for 'XPM file'
+C16 at (76.00,9.75) rot 0.0
+   pad 1 +3V3D (75.225,9.750)
+   pad 2 GND (76.775,9.750)
+C23 at (70.75,14.75) rot 0.0
+   pad 1 PHY_1V8A (69.975,14.750)
+   pad 2 GND (71.525,14.750)
+U7 at (76.00,14.00) rot 0.0
+   pad   (74.970,12.970)
+   pad   (74.970,14.000)
+   pad   (74.970,15.030)
+   pad   (76.000,12.970)
+   pad   (76.000,14.000)
+   pad   (76.000,15.030)
+   pad   (77.030,12.970)
+   pad   (77.030,14.000)
+   pad   (77.030,15.030)
+   pad 1 GND (73.562,12.250)
+   pad 2 GND (73.562,12.750)
+   pad 3  (73.562,13.250)
+   pad 4 +5V (73.562,13.750)
+   pad 5 GND (73.562,14.250)
+   pad 6 +3V3A (73.562,14.750)
+   pad 7 DP_PHY (73.562,15.250)
+   pad 8 DM_PHY (73.562,15.750)
+   pad 9 USB_RST (74.250,16.438)
+   pad 10 GND (74.750,16.438)
+   pad 11 ULPI_NXT (75.250,16.438)
+   pad 12 ULPI_DIR (75.750,16.438)
+   pad 13 ULPI_STP (76.250,16.438)
+   pad 14 ULPI_CK (76.750,16.438)
+   pad 15 PHY_1V8 (77.250,16.438)
+   pad 16 +3V3A (77.750,16.438)
+   pad 17 ULPI_D7 (78.438,15.750)
+   pad 18 ULPI_D6 (78.438,15.250)
+   pad 19 ULPI_D5 (78.438,14.750)
+   pad 20 ULPI_D4 (78.438,14.250)
+   pad 21 ULPI_D3 (78.438,13.750)
+   pad 22 ULPI_D2 (78.438,13.250)
+   pad 23 ULPI_D1 (78.438,12.750)
+   pad 24 ULPI_D0 (78.438,12.250)
+   pad 25 +3V3A (77.750,11.562)
+   pad 26 PHY_1V8 (77.250,11.562)
+   pad 27 XO (76.750,11.562)
+   pad 28 XI (76.250,11.562)
+   pad 29 PHY_1V8A (75.750,11.562)
+   pad 30 +3V3A (75.250,11.562)
+   pad 31 +3V3A (74.750,11.562)
+   pad 32 RBIAS (74.250,11.562)
+   pad 33 GND (76.000,14.000)

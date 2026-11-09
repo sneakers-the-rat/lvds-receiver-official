@@ -1,0 +1,53 @@
+14:40:06: Debug: Adding duplicate image handler for 'PNG file'
+14:40:06: Debug: Adding duplicate image handler for 'JPEG file'
+14:40:06: Debug: Adding duplicate image handler for 'TIFF file'
+14:40:06: Debug: Adding duplicate image handler for 'GIF file'
+14:40:06: Debug: Adding duplicate image handler for 'PNM file'
+14:40:06: Debug: Adding duplicate image handler for 'PCX file'
+14:40:06: Debug: Adding duplicate image handler for 'IFF file'
+14:40:06: Debug: Adding duplicate image handler for 'Windows icon file'
+14:40:06: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:40:06: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:40:06: Debug: Adding duplicate image handler for 'TGA file'
+14:40:06: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:40:07: Debug: Adding duplicate image handler for 'PNG file'
+14:40:07: Debug: Adding duplicate image handler for 'JPEG file'
+14:40:07: Debug: Adding duplicate image handler for 'TIFF file'
+14:40:07: Debug: Adding duplicate image handler for 'GIF file'
+14:40:07: Debug: Adding duplicate image handler for 'PNM file'
+14:40:07: Debug: Adding duplicate image handler for 'PCX file'
+14:40:07: Debug: Adding duplicate image handler for 'IFF file'
+14:40:07: Debug: Adding duplicate image handler for 'Windows icon file'
+14:40:07: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:40:07: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:40:07: Debug: Adding duplicate image handler for 'TGA file'
+14:40:07: Debug: Adding duplicate image handler for 'XPM file'
+14:40:09: Debug: Adding duplicate image handler for 'PNG file'
+14:40:09: Debug: Adding duplicate image handler for 'JPEG file'
+14:40:09: Debug: Adding duplicate image handler for 'TIFF file'
+14:40:09: Debug: Adding duplicate image handler for 'GIF file'
+14:40:09: Debug: Adding duplicate image handler for 'PNM file'
+14:40:09: Debug: Adding duplicate image handler for 'PCX file'
+14:40:09: Debug: Adding duplicate image handler for 'IFF file'
+14:40:09: Debug: Adding duplicate image handler for 'Windows icon file'
+14:40:09: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:40:09: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:40:09: Debug: Adding duplicate image handler for 'TGA file'
+14:40:09: Debug: Adding duplicate image handler for 'XPM file'
+595 legal sites with d1<=3; testing GND reachability on best 12:
+  (76.00,9.75) rot 0 d1 0.00 d2 0.00: ON-GND
+  (70.25,13.00) rot 180 d1 0.00 d2 1.40: REACHES (71.775, 11.0)
+  (70.25,12.75) rot 180 d1 0.00 d2 1.56: REACHES (71.775, 11.0)
+  (66.00,9.00) rot 180 d1 0.00 d2 1.62: REACHES (66.3, 6.75)
+  (65.75,9.00) rot 180 d1 0.00 d2 1.63: REACHES (66.3, 6.75)
+  (65.50,9.00) rot 180 d1 0.00 d2 1.67: REACHES (66.3, 6.75)
+  (65.25,9.00) rot 180 d1 0.00 d2 1.75: REACHES (66.3, 6.75)
+  (65.00,9.00) rot 180 d1 0.00 d2 1.86: REACHES (66.3, 6.75)
+  (66.00,9.25) rot 180 d1 0.00 d2 1.88: REACHES (66.3, 6.75)
+  (65.75,9.25) rot 180 d1 0.00 d2 1.88: REACHES (66.3, 6.75)
+  (65.50,9.25) rot 180 d1 0.00 d2 1.92: REACHES (66.3, 6.75)
+  (65.25,9.25) rot 180 d1 0.00 d2 1.98: REACHES (66.3, 6.75)

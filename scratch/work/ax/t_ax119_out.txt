@@ -1,0 +1,51 @@
+15:00:17: Debug: Adding duplicate image handler for 'PNG file'
+15:00:17: Debug: Adding duplicate image handler for 'JPEG file'
+15:00:17: Debug: Adding duplicate image handler for 'TIFF file'
+15:00:17: Debug: Adding duplicate image handler for 'GIF file'
+15:00:17: Debug: Adding duplicate image handler for 'PNM file'
+15:00:17: Debug: Adding duplicate image handler for 'PCX file'
+15:00:17: Debug: Adding duplicate image handler for 'IFF file'
+15:00:17: Debug: Adding duplicate image handler for 'Windows icon file'
+15:00:17: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:00:17: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:00:17: Debug: Adding duplicate image handler for 'TGA file'
+15:00:17: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:00:17: Debug: Adding duplicate image handler for 'PNG file'
+15:00:17: Debug: Adding duplicate image handler for 'JPEG file'
+15:00:17: Debug: Adding duplicate image handler for 'TIFF file'
+15:00:17: Debug: Adding duplicate image handler for 'GIF file'
+15:00:17: Debug: Adding duplicate image handler for 'PNM file'
+15:00:17: Debug: Adding duplicate image handler for 'PCX file'
+15:00:17: Debug: Adding duplicate image handler for 'IFF file'
+15:00:17: Debug: Adding duplicate image handler for 'Windows icon file'
+15:00:17: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:00:17: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:00:17: Debug: Adding duplicate image handler for 'TGA file'
+15:00:17: Debug: Adding duplicate image handler for 'XPM file'
+PHY_1V8A fragments: 2 sizes: [116, 1]
+XO fragments: 1 sizes: [684]
++3V3D fragments: 3 sizes: [4335, 3, 8]
+GND fragments: 20 sizes: [1, 1, 1, 1, 1, 71, 1, 1, 1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 3, 2]
+15:00:51: Debug: Adding duplicate image handler for 'PNG file'
+15:00:51: Debug: Adding duplicate image handler for 'JPEG file'
+15:00:51: Debug: Adding duplicate image handler for 'TIFF file'
+15:00:51: Debug: Adding duplicate image handler for 'GIF file'
+15:00:51: Debug: Adding duplicate image handler for 'PNM file'
+15:00:51: Debug: Adding duplicate image handler for 'PCX file'
+15:00:51: Debug: Adding duplicate image handler for 'IFF file'
+15:00:51: Debug: Adding duplicate image handler for 'Windows icon file'
+15:00:51: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:00:51: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:00:51: Debug: Adding duplicate image handler for 'TGA file'
+15:00:51: Debug: Adding duplicate image handler for 'XPM file'
+C16 pad 1 +3V3D (71.025, 13.0)
+C16 pad 2 GND (69.475, 13.0)
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/ax/t_ax119_verify250.py", line 20, in <module>
+    (round(fp.GetReferenceText().GetPosition().x / 1e6, 2),
+           ^^^^^^^^^^^^^^^^^^^
+AttributeError: 'FOOTPRINT' object has no attribute 'GetReferenceText'. Did you mean: 'GetReference'?
