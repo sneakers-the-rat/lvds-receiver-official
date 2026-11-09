@@ -1,0 +1,32 @@
+02:27:10: Debug: Adding duplicate image handler for 'PNG file'
+02:27:10: Debug: Adding duplicate image handler for 'JPEG file'
+02:27:10: Debug: Adding duplicate image handler for 'TIFF file'
+02:27:10: Debug: Adding duplicate image handler for 'GIF file'
+02:27:10: Debug: Adding duplicate image handler for 'PNM file'
+02:27:10: Debug: Adding duplicate image handler for 'PCX file'
+02:27:10: Debug: Adding duplicate image handler for 'IFF file'
+02:27:10: Debug: Adding duplicate image handler for 'Windows icon file'
+02:27:10: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:27:10: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:27:10: Debug: Adding duplicate image handler for 'TGA file'
+02:27:10: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au80
+XO bridge via (70.9,19.5) worst -0.469 vs seg RBIAS (70.875,19.375)->(70.625,19.625) hw0.125
+XO bridge via (70.8,19.45) worst -0.575 vs seg RBIAS (70.875,19.375)->(70.625,19.625) hw0.125
+XO bridge via (71.0,19.55) worst -0.450 vs pad GND (70.775,19.500) hw0.450x0.475
+XO fragments now: 2
+fanout v5.0 worst -0.476 vs seg ULPI_DIR (59.875,7.875)->(67.500,0.125) hw0.100
+fanout v5.1 worst -0.405 vs seg ULPI_DIR (59.875,7.875)->(67.500,0.125) hw0.100
+heal2 big-box: FOUND
+saved scratch/work/au/build_au82_stageA.json
++3V3D detours (box y2):
+  +3V3D: detour 1 (74.25, 3.662499) -> (74.25, 3.5) vias=[]
+  +3V3D: detour 2 (74.25, 3.5) -> (74.375, 7.875) vias=[[72.85, 3.4]]
+  +3V3D: NO detour for 5 fragments
+full gate: 0 failures
+saved scratch/work/au/build_au82.json
+done
+EXITCODE=0
