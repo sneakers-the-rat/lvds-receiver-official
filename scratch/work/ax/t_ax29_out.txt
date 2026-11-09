@@ -1,0 +1,62 @@
+11:57:42: Debug: Adding duplicate image handler for 'PNG file'
+11:57:42: Debug: Adding duplicate image handler for 'JPEG file'
+11:57:42: Debug: Adding duplicate image handler for 'TIFF file'
+11:57:42: Debug: Adding duplicate image handler for 'GIF file'
+11:57:42: Debug: Adding duplicate image handler for 'PNM file'
+11:57:42: Debug: Adding duplicate image handler for 'PCX file'
+11:57:42: Debug: Adding duplicate image handler for 'IFF file'
+11:57:42: Debug: Adding duplicate image handler for 'Windows icon file'
+11:57:42: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:57:42: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:57:42: Debug: Adding duplicate image handler for 'TGA file'
+11:57:42: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:57:42: Debug: Adding duplicate image handler for 'PNG file'
+11:57:42: Debug: Adding duplicate image handler for 'JPEG file'
+11:57:42: Debug: Adding duplicate image handler for 'TIFF file'
+11:57:42: Debug: Adding duplicate image handler for 'GIF file'
+11:57:42: Debug: Adding duplicate image handler for 'PNM file'
+11:57:42: Debug: Adding duplicate image handler for 'PCX file'
+11:57:42: Debug: Adding duplicate image handler for 'IFF file'
+11:57:42: Debug: Adding duplicate image handler for 'Windows icon file'
+11:57:42: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:57:42: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:57:42: Debug: Adding duplicate image handler for 'TGA file'
+11:57:42: Debug: Adding duplicate image handler for 'XPM file'
+STUB fragment items:
+   L0 pad I2C_SCL (69.425,12.750) hw0.400x0.475
+   L0 seg I2C_SCL (69.675,12.750)->(69.625,12.625) hw0.100
+   L0 seg I2C_SCL (69.425,12.750)->(69.675,12.750) hw0.100
+   L0 via I2C_SCL (69.625,12.625) r0.300
+   L1 seg I2C_SCL (69.625,12.625)->(65.000,12.500) hw0.100
+   L1 seg I2C_SCL (65.000,12.500)->(64.750,12.000) hw0.100
+   L1 seg I2C_SCL (64.750,12.000)->(65.250,8.500) hw0.100
+   L1 seg I2C_SCL (65.250,8.500)->(66.875,6.750) hw0.100
++3V3D F items incident to (71.075,12.75) pad:
+   seg +3V3D (70.875,12.625)->(70.825,12.750) hw0.100
+   seg +3V3D (70.625,12.375)->(70.375,12.125) hw0.100
+   seg +3V3D (70.825,12.750)->(71.075,12.750) hw0.100
+   seg +3V3D (71.075,12.750)->(70.825,12.750) hw0.100
+   seg +3V3D (70.825,12.750)->(70.625,12.375) hw0.100
+SCL In2 items in (78,84,6,12):
+   via I2C_SCL (78.125,8.375) r0.300
+   seg I2C_SCL (78.125,8.375)->(79.125,8.375) hw0.125
++3V3D In2 items with x in (81.2,81.8):
+   seg +3V3D (81.375,6.125)->(81.425,6.175) hw0.150
+   via +3V3D (81.375,6.125) r0.400
+   seg +3V3D (81.425,6.175)->(81.425,6.225) hw0.150
+   seg +3V3D (81.425,6.225)->(81.425,6.275) hw0.150
+   seg +3V3D (81.425,6.275)->(81.475,6.325) hw0.150
+   seg +3V3D (81.475,6.325)->(81.475,6.375) hw0.150
+   ... total 98
+via cand I2C_SCL (78.62,8.45):
+   L0: +0.180 binder seg ULPI_D1 (79.350,10.350)->(79.350,7.550) hw0.100
+   L1: +0.638 binder via ULPI_D2 (80.000,8.300) r0.300
+   L2: -0.320 binder seg ULPI_D7 (78.875,10.375)->(78.875,-13.375) hw0.125
+via cand +3V3D (81.3,8.9):
+   L0: +0.010 binder seg NRST (80.625,9.375)->(80.675,8.750) hw0.125
+   L1: +0.632 binder via ULPI_D2 (80.000,8.300) r0.300
+   L2: +0.450 binder seg I2C_SDA (82.375,10.625)->(82.375,6.125) hw0.125

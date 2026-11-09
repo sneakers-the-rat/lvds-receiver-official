@@ -1,0 +1,41 @@
+11:42:00: Debug: Adding duplicate image handler for 'PNG file'
+11:42:00: Debug: Adding duplicate image handler for 'JPEG file'
+11:42:00: Debug: Adding duplicate image handler for 'TIFF file'
+11:42:00: Debug: Adding duplicate image handler for 'GIF file'
+11:42:00: Debug: Adding duplicate image handler for 'PNM file'
+11:42:00: Debug: Adding duplicate image handler for 'PCX file'
+11:42:00: Debug: Adding duplicate image handler for 'IFF file'
+11:42:00: Debug: Adding duplicate image handler for 'Windows icon file'
+11:42:00: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:42:00: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:42:00: Debug: Adding duplicate image handler for 'TGA file'
+11:42:00: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:42:00: Debug: Adding duplicate image handler for 'PNG file'
+11:42:00: Debug: Adding duplicate image handler for 'JPEG file'
+11:42:00: Debug: Adding duplicate image handler for 'TIFF file'
+11:42:00: Debug: Adding duplicate image handler for 'GIF file'
+11:42:00: Debug: Adding duplicate image handler for 'PNM file'
+11:42:00: Debug: Adding duplicate image handler for 'PCX file'
+11:42:00: Debug: Adding duplicate image handler for 'IFF file'
+11:42:00: Debug: Adding duplicate image handler for 'Windows icon file'
+11:42:00: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:42:00: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:42:00: Debug: Adding duplicate image handler for 'TGA file'
+11:42:00: Debug: Adding duplicate image handler for 'XPM file'
+B (68.2,5.75): track-pt margin -0.225 binder seg +3V3A (68.625,16.625)->(68.625,4.875) hw0.300
+B (69.0,5.75): track-pt margin -0.275 binder seg +3V3A (68.625,16.625)->(68.625,4.875) hw0.300
+B (69.8,5.75): track-pt margin -0.292 binder seg +3V3A (69.750,5.900)->(69.700,5.900) hw0.100
+B (70.4,5.75): track-pt margin +0.045 binder seg +3V3A (70.100,6.150)->(70.050,6.100) hw0.100
+B (71.1,4.5): track-pt margin -0.224 binder via I2C_SDA (71.125,4.125) r0.300
+B (71.1,3.6): track-pt margin -0.074 binder via CDR_LOL (70.625,3.375) r0.300
+B (71.1,3.0): track-pt margin +0.005 binder via CDR_LOL (70.625,3.375) r0.300
+B (70.9,2.2): track-pt margin +0.607 binder via CDR_LOL (70.625,3.375) r0.300
+B (70.0,1.6): track-pt margin +0.236 binder via I2C_SDA (69.900,0.820) r0.250
+B (69.35,1.4): track-pt margin +0.166 binder via I2C_SDA (69.050,2.050) r0.250
+B (68.6,3.4): track-pt margin -0.199 binder seg CDR_LOL (68.375,3.875)->(68.625,3.625) hw0.125
+B (67.5,4.6): track-pt margin -0.142 binder seg CDR_LOL (67.525,4.975)->(68.375,4.125) hw0.125
+B (67.5,4.0): track-pt margin -0.423 binder via GND (67.375,4.125) r0.300

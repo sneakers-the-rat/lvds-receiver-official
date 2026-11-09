@@ -1,0 +1,36 @@
+11:29:02: Debug: Adding duplicate image handler for 'PNG file'
+11:29:02: Debug: Adding duplicate image handler for 'JPEG file'
+11:29:02: Debug: Adding duplicate image handler for 'TIFF file'
+11:29:02: Debug: Adding duplicate image handler for 'GIF file'
+11:29:02: Debug: Adding duplicate image handler for 'PNM file'
+11:29:02: Debug: Adding duplicate image handler for 'PCX file'
+11:29:02: Debug: Adding duplicate image handler for 'IFF file'
+11:29:02: Debug: Adding duplicate image handler for 'Windows icon file'
+11:29:02: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:29:02: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:29:02: Debug: Adding duplicate image handler for 'TGA file'
+11:29:02: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:29:03: Debug: Adding duplicate image handler for 'PNG file'
+11:29:03: Debug: Adding duplicate image handler for 'JPEG file'
+11:29:03: Debug: Adding duplicate image handler for 'TIFF file'
+11:29:03: Debug: Adding duplicate image handler for 'GIF file'
+11:29:03: Debug: Adding duplicate image handler for 'PNM file'
+11:29:03: Debug: Adding duplicate image handler for 'PCX file'
+11:29:03: Debug: Adding duplicate image handler for 'IFF file'
+11:29:03: Debug: Adding duplicate image handler for 'Windows icon file'
+11:29:03: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:29:03: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:29:03: Debug: Adding duplicate image handler for 'TGA file'
+11:29:03: Debug: Adding duplicate image handler for 'XPM file'
+BEFORE: {'I2C_SCL': 4, 'GND': 45, 'CDR_LOL': 1, '+3V3D': 5}
+In2 approach seg margin (pre-move): -0.011
+  via margin L0 (pre-move): -0.128
+  via margin L1 (pre-move): -0.161
+  via margin L2 (pre-move): -0.100
+M1 rip 5 GND In2 segs
+M1 A*: NONE
+chain walk stuck at (70.625, 3.375) for CDR_LOL L2

@@ -1,0 +1,58 @@
+13:05:52: Debug: Adding duplicate image handler for 'PNG file'
+13:05:52: Debug: Adding duplicate image handler for 'JPEG file'
+13:05:52: Debug: Adding duplicate image handler for 'TIFF file'
+13:05:52: Debug: Adding duplicate image handler for 'GIF file'
+13:05:52: Debug: Adding duplicate image handler for 'PNM file'
+13:05:52: Debug: Adding duplicate image handler for 'PCX file'
+13:05:52: Debug: Adding duplicate image handler for 'IFF file'
+13:05:52: Debug: Adding duplicate image handler for 'Windows icon file'
+13:05:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:05:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:05:52: Debug: Adding duplicate image handler for 'TGA file'
+13:05:52: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+13:05:53: Debug: Adding duplicate image handler for 'PNG file'
+13:05:53: Debug: Adding duplicate image handler for 'JPEG file'
+13:05:53: Debug: Adding duplicate image handler for 'TIFF file'
+13:05:53: Debug: Adding duplicate image handler for 'GIF file'
+13:05:53: Debug: Adding duplicate image handler for 'PNM file'
+13:05:53: Debug: Adding duplicate image handler for 'PCX file'
+13:05:53: Debug: Adding duplicate image handler for 'IFF file'
+13:05:53: Debug: Adding duplicate image handler for 'Windows icon file'
+13:05:53: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:05:53: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:05:53: Debug: Adding duplicate image handler for 'TGA file'
+13:05:53: Debug: Adding duplicate image handler for 'XPM file'
+netcodes: {'I2C_SCL': 57, '+3V3D': 2, 'GND': 44}
+W chain track layer: In2.Cu
+rip I2C_SCL L0 (69.675, 12.75)->(69.625, 12.625): 1 (expect 1)
+rip I2C_SCL L0 (69.425, 12.75)->(69.675, 12.75): 1 (expect 1)
+rip I2C_SCL L1 (69.625, 12.625)->(65.0, 12.5): 1 (expect 1)
+rip I2C_SCL L1 (65.0, 12.5)->(64.75, 12.0): 1 (expect 1)
+rip I2C_SCL L1 (64.75, 12.0)->(65.25, 8.5): 1 (expect 1)
+rip I2C_SCL L1 (65.25, 8.5)->(66.875, 6.75): 1 (expect 1)
+rip +3V3D L0 (70.875, 12.625)->(70.825, 12.75): 1 (expect 1)
+rip +3V3D L0 (70.825, 12.75)->(71.075, 12.75): 2 (expect 2)
+rip +3V3D L0 (70.825, 12.75)->(70.625, 12.375): 1 (expect 1)
+stub via victims: 1 (expect 1)
+R20 moved; pads: [(67.675, -1.75, 'I2C_SCL'), (69.325, -1.75, '+3V3D')]
+via template: width 0.5 drill 0.3
+added 247 segs, 6 vias
+saved hw/pdlvds_rx.exp248.kicad_pcb
+13:05:56: Debug: Adding duplicate image handler for 'PNG file'
+13:05:56: Debug: Adding duplicate image handler for 'JPEG file'
+13:05:56: Debug: Adding duplicate image handler for 'TIFF file'
+13:05:56: Debug: Adding duplicate image handler for 'GIF file'
+13:05:56: Debug: Adding duplicate image handler for 'PNM file'
+13:05:56: Debug: Adding duplicate image handler for 'PCX file'
+13:05:56: Debug: Adding duplicate image handler for 'IFF file'
+13:05:56: Debug: Adding duplicate image handler for 'Windows icon file'
+13:05:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:05:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:05:56: Debug: Adding duplicate image handler for 'TGA file'
+13:05:56: Debug: Adding duplicate image handler for 'XPM file'
+R20 at 68.5 -1.75 rot 0.0
+track counts after: {'I2C_SCL': 272, '+3V3D': 4252}

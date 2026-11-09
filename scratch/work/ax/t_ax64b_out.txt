@@ -1,0 +1,110 @@
+13:02:25: Debug: Adding duplicate image handler for 'PNG file'
+13:02:25: Debug: Adding duplicate image handler for 'JPEG file'
+13:02:25: Debug: Adding duplicate image handler for 'TIFF file'
+13:02:25: Debug: Adding duplicate image handler for 'GIF file'
+13:02:25: Debug: Adding duplicate image handler for 'PNM file'
+13:02:25: Debug: Adding duplicate image handler for 'PCX file'
+13:02:25: Debug: Adding duplicate image handler for 'IFF file'
+13:02:25: Debug: Adding duplicate image handler for 'Windows icon file'
+13:02:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:02:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:02:25: Debug: Adding duplicate image handler for 'TGA file'
+13:02:25: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+13:02:25: Debug: Adding duplicate image handler for 'PNG file'
+13:02:25: Debug: Adding duplicate image handler for 'JPEG file'
+13:02:25: Debug: Adding duplicate image handler for 'TIFF file'
+13:02:25: Debug: Adding duplicate image handler for 'GIF file'
+13:02:25: Debug: Adding duplicate image handler for 'PNM file'
+13:02:25: Debug: Adding duplicate image handler for 'PCX file'
+13:02:25: Debug: Adding duplicate image handler for 'IFF file'
+13:02:25: Debug: Adding duplicate image handler for 'Windows icon file'
+13:02:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:02:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:02:25: Debug: Adding duplicate image handler for 'TGA file'
+13:02:25: Debug: Adding duplicate image handler for 'XPM file'
+13:02:26: Debug: Adding duplicate image handler for 'PNG file'
+13:02:26: Debug: Adding duplicate image handler for 'JPEG file'
+13:02:26: Debug: Adding duplicate image handler for 'TIFF file'
+13:02:26: Debug: Adding duplicate image handler for 'GIF file'
+13:02:26: Debug: Adding duplicate image handler for 'PNM file'
+13:02:26: Debug: Adding duplicate image handler for 'PCX file'
+13:02:26: Debug: Adding duplicate image handler for 'IFF file'
+13:02:26: Debug: Adding duplicate image handler for 'Windows icon file'
+13:02:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:02:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:02:26: Debug: Adding duplicate image handler for 'TGA file'
+13:02:26: Debug: Adding duplicate image handler for 'XPM file'
+exp244 fill components in box: 10
+sizes: [157, 20, 10, 295, 6, 10, 5, 390, 2, 85]
+map: digit = component%10, . = no fill, X = fill in 241 only
+y=  4.38 00000000.0000000..............................
+y=  4.12 0000000000000000..............................
+y=  3.88 0000000000000000..............................
+y=  3.62 0000....00000000....................1.........
+y=  3.38 000.....0000000.....................1.........
+y=  3.12 00......00000......................111........
+y=  2.88 00...0000000.......................111........
+y=  2.62 00...0000000.......................111111.....
+y=  2.38 00......0000..........................111.....
+y=  2.12 00......0000..........................11......
+y=  1.88 00....................................1.......
+y=  1.62 00.....................................2......
+y=  1.38 00.....................................22.....
+y=  1.12 00...3.XXXX44..55X......................222...
+y=  0.88 00...33XXX44....555......................22...
+y=  0.62 00...33XXX44.....555.....................2....
+y=  0.38 00...33XXX.........55..6.................2...7
+y=  0.12 00...33XXX...........666.....................7
+y= -0.12 00...33XXX............6......................7
+y= -0.38 00...33XXXXXX...............................77
+y= -0.62 00...33XXXXXXXX............................777
+y= -0.88 00...333XXXXXXXXXX.................77X..777777
+y= -1.12 00...3333XXXXXXXXXXX...............77XXX777777
+y= -1.38 00...33333XXXXXXXXXXXX.............77XXX777777
+y= -1.62 00...33333XXXXXXXXXXXX3............77XXX777777
+y= -1.88 00...33333XXXXXXXXXXXX3............77XXX777777
+y= -2.12 00...33333XXXXXXXXXXXX3............77XXX777777
+y= -2.38 00...333333XXXXXXXXXX33............77XXX777777
+y= -2.62 00....3333333XXXX33333.............77XXX777777
+y= -2.88 000.....33333XXXX33333.............77XXX777777
+y= -3.12 0000....333333XX33333..............77XXX777777
+y= -3.38 000.....3333333333333..............77XXX777777
+y= -3.62 00.....33333333333333..............77XXX777777
+y= -3.88 0.....33333333333333...............77XXX777777
+y= -4.12 .....333333333333333...............77XXX777777
+y= -4.38 ....3333XX3333333333...............77XXX777777
+y= -4.62 ...3333XXXX333333333...............77XXX777777
+y= -4.88 ..33333XXXX333333333...............77XXX77..77
+y= -5.12 ........XXX......333...............77XXX7....7
+y= -5.38 ........XXX.......33...............77XXXX....7
+y= -5.62 ........XX........33...............77XXXX7...7
+y= -5.88 ........XX.........3...............77XXX777777
+y= -6.12 ........XX.........3..............77777777.777
+y= -6.38 ........XX........33..............7777777...77
+y= -6.62 ........XXX.......33..............777777.....7
+y= -6.88 ........XXX......333..............77777.....77
+y= -7.12 ..XXXXXXXXX33333333....8..........7777.....777
+y= -7.38 ...XXXXXXXX3333333.....8..........777.....7777
+y= -7.62 ....XXXXXXX333333.....3............7.....77777
+y= -7.88 .....XXXXXXX33333....33.................777777
+y= -8.12 9....XXXXXXXXX33.....33................7777777
+y= -8.38 99....XXXXXXXXX33...333...............77777777
+y= -8.62 9999...XXXXXXXX333.3333............7.777777777
+y= -8.88 999.....X....X333333333............77777777777
+y= -9.12 99............333333333............77777777777
+y= -9.38 99............333333333............77777777777
+y= -9.62 99.............33333333............77777777777
+y= -9.88 99...............333333............77777777777
+y=-10.12 999................3333............77777777777
+y=-10.38 9999999.............333............77777777777
+y=-10.62 9999999..............33............77777777777
+y=-10.88 99999999..............3............77777777777
+y=-11.12 999999999..........................77777777777
+y=-11.38 9999999999.........................77777777777
+y=-11.62 99999999999.......................777777777777
+y=-11.88 999999999999.......................77777777777
+x from 64.5 step 0.25

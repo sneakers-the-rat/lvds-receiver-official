@@ -1,0 +1,51 @@
+11:49:13: Debug: Adding duplicate image handler for 'PNG file'
+11:49:13: Debug: Adding duplicate image handler for 'JPEG file'
+11:49:13: Debug: Adding duplicate image handler for 'TIFF file'
+11:49:13: Debug: Adding duplicate image handler for 'GIF file'
+11:49:13: Debug: Adding duplicate image handler for 'PNM file'
+11:49:13: Debug: Adding duplicate image handler for 'PCX file'
+11:49:13: Debug: Adding duplicate image handler for 'IFF file'
+11:49:13: Debug: Adding duplicate image handler for 'Windows icon file'
+11:49:13: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:49:13: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:49:13: Debug: Adding duplicate image handler for 'TGA file'
+11:49:13: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:49:14: Debug: Adding duplicate image handler for 'PNG file'
+11:49:14: Debug: Adding duplicate image handler for 'JPEG file'
+11:49:14: Debug: Adding duplicate image handler for 'TIFF file'
+11:49:14: Debug: Adding duplicate image handler for 'GIF file'
+11:49:14: Debug: Adding duplicate image handler for 'PNM file'
+11:49:14: Debug: Adding duplicate image handler for 'PCX file'
+11:49:14: Debug: Adding duplicate image handler for 'IFF file'
+11:49:14: Debug: Adding duplicate image handler for 'Windows icon file'
+11:49:14: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:49:14: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:49:14: Debug: Adding duplicate image handler for 'TGA file'
+11:49:14: Debug: Adding duplicate image handler for 'XPM file'
+— descent corridor binders (B):
+B (70.5,12.0): -0.021 binder via +3V3D (70.875,12.625) r0.400
+B (71.5,11.0): -0.434 binder seg +3V3A (75.625,8.625)->(71.250,11.125) hw0.100
+B (72.3,10.0): -0.385 binder via XO (72.125,9.875) r0.300
+B (71.85,9.0): -0.275 binder seg +3V3A (75.625,8.625)->(68.625,8.625) hw0.300
+B (71.5,7.25): -0.158 binder seg +3V3A (71.250,7.400)->(71.200,7.350) hw0.100
+B (72.5,6.0): -0.071 binder seg I2C_SDA (72.875,5.875)->(72.625,5.625) hw0.125
+B (72.5,4.5): +0.282 binder seg I2C_SDA (72.125,5.125)->(71.875,4.875) hw0.125
+B (72.5,3.4): -0.224 binder via +3V3D (72.875,3.375) r0.250
+B (71.5,2.6): +0.569 binder via CDR_LOL (70.625,3.375) r0.300
+B (70.5,1.9): +0.685 binder via I2C_SDA (69.900,0.820) r0.250
+B (71.85,11.5): +0.173 binder seg +3V3A (75.625,8.625)->(71.250,11.125) hw0.100
+B (73.0,11.94): -0.090 binder seg XO (74.125,12.250)->(72.625,12.250) hw0.100
+B (70.15,10.0): +0.175 binder via GND (70.925,9.975) r0.300
+B (70.15,8.0): -0.025 binder seg +3V3A (75.625,8.625)->(68.625,8.625) hw0.300
+— In2 binders:
+In2 (71.85,9.0): +0.176 binder seg BIST_DRV (71.375,8.625)->(71.625,8.375) hw0.125
+In2 (72.5,6.0): -0.146 binder seg SPI_MOSI (71.900,7.250)->(73.400,5.200) hw0.100
+In2 (70.15,10.0): -0.319 binder seg BIST_DRV (69.875,10.125)->(70.125,9.875) hw0.125
+— F binders:
+F (71.85,9.0): -0.275 binder pad XO (71.975,9.500) hw0.450x0.475
+F (72.5,6.0): -0.522 binder seg +3V3D (73.000,6.300)->(72.500,5.900) hw0.250
+F (70.15,10.0): +0.175 binder pad +3V3D (70.225,11.000) hw0.450x0.475

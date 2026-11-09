@@ -1,0 +1,71 @@
+11:56:44: Debug: Adding duplicate image handler for 'PNG file'
+11:56:44: Debug: Adding duplicate image handler for 'JPEG file'
+11:56:44: Debug: Adding duplicate image handler for 'TIFF file'
+11:56:44: Debug: Adding duplicate image handler for 'GIF file'
+11:56:44: Debug: Adding duplicate image handler for 'PNM file'
+11:56:44: Debug: Adding duplicate image handler for 'PCX file'
+11:56:44: Debug: Adding duplicate image handler for 'IFF file'
+11:56:44: Debug: Adding duplicate image handler for 'Windows icon file'
+11:56:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:56:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:56:44: Debug: Adding duplicate image handler for 'TGA file'
+11:56:44: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:56:46: Debug: Adding duplicate image handler for 'PNG file'
+11:56:46: Debug: Adding duplicate image handler for 'JPEG file'
+11:56:46: Debug: Adding duplicate image handler for 'TIFF file'
+11:56:46: Debug: Adding duplicate image handler for 'GIF file'
+11:56:46: Debug: Adding duplicate image handler for 'PNM file'
+11:56:46: Debug: Adding duplicate image handler for 'PCX file'
+11:56:46: Debug: Adding duplicate image handler for 'IFF file'
+11:56:46: Debug: Adding duplicate image handler for 'Windows icon file'
+11:56:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:56:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:56:46: Debug: Adding duplicate image handler for 'TGA file'
+11:56:46: Debug: Adding duplicate image handler for 'XPM file'
+11:56:49: Debug: Adding duplicate image handler for 'PNG file'
+11:56:49: Debug: Adding duplicate image handler for 'JPEG file'
+11:56:49: Debug: Adding duplicate image handler for 'TIFF file'
+11:56:49: Debug: Adding duplicate image handler for 'GIF file'
+11:56:49: Debug: Adding duplicate image handler for 'PNM file'
+11:56:49: Debug: Adding duplicate image handler for 'PCX file'
+11:56:49: Debug: Adding duplicate image handler for 'IFF file'
+11:56:49: Debug: Adding duplicate image handler for 'Windows icon file'
+11:56:49: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:56:49: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:56:49: Debug: Adding duplicate image handler for 'TGA file'
+11:56:49: Debug: Adding duplicate image handler for 'XPM file'
+== site (80.0,8.5) rot 0: pad1 (79.175, 8.5) pad2 (80.825, 8.5)
+   SCL L1 d=0.000: seg I2C_SCL (78.125,8.375)->(79.125,8.375) hw0.125
+   SCL L0 d=0.350: via I2C_SCL (78.125,8.375) r0.300
+   SCL L1 d=0.350: via I2C_SCL (78.125,8.375) r0.300
+   +3V3D L1 d=0.100: seg +3V3D (81.475,7.975)->(81.475,8.025) hw0.150
+   +3V3D L1 d=0.100: seg +3V3D (81.475,8.025)->(81.475,8.075) hw0.150
+   +3V3D L1 d=0.100: seg +3V3D (81.475,8.075)->(81.475,8.125) hw0.150
+   near pad: (1.4206072645175358, 'R15', 'NRST', 80.67, 7.25)
+   near pad: (2.6397206291575657, 'R15', '+3V3D', 82.33, 7.25)
+== site (71.5,3.75) rot 0: pad1 (70.675, 3.75) pad2 (72.325, 3.75)
+   SCL L2 d=0.194: seg I2C_SCL (71.125,2.875)->(71.375,3.125) hw0.125
+   SCL L2 d=0.210: seg I2C_SCL (71.375,3.125)->(71.625,3.375) hw0.125
+   SCL L2 d=0.278: seg I2C_SCL (70.875,2.625)->(71.125,2.875) hw0.125
+   +3V3D L0 d=0.000: seg +3V3D (72.125,4.375)->(72.125,5.125) hw0.300
+   +3V3D L0 d=0.000: seg +3V3D (72.300,3.700)->(72.300,3.750) hw0.150
+   +3V3D L0 d=0.000: seg +3V3D (72.300,3.750)->(72.300,3.800) hw0.150
+   near pad: (1.0131170958976057, 'U6', 'CDR_LOL', 71.34, 2.75)
+   near pad: (1.5087764082195871, 'U6', 'CAP_DATA', 71.34, 2.25)
+   near pad: (1.6999999999999986, 'U8', 'DAC_VREF', 70.7, 5.25)
+   near pad: (1.9736150207170595, 'U6', 'ULPI_D0', 73.25, 4.66)
+   near pad: (2.0065907031579706, 'U6', 'CAP_CLK', 71.34, 1.75)
+   near pad: (2.1540659228538006, 'U8', '+3V3D', 70.7, 5.75)
+== site (80.0,8.75) rot 0: pad1 (79.175, 8.75) pad2 (80.825, 8.75)
+   SCL L1 d=0.000: seg I2C_SCL (78.125,8.375)->(79.125,8.375) hw0.125
+   SCL L0 d=0.350: via I2C_SCL (78.125,8.375) r0.300
+   SCL L1 d=0.350: via I2C_SCL (78.125,8.375) r0.300
+   +3V3D L1 d=0.100: seg +3V3D (81.475,8.225)->(81.475,8.275) hw0.150
+   +3V3D L1 d=0.100: seg +3V3D (81.475,8.275)->(81.475,8.325) hw0.150
+   +3V3D L1 d=0.100: seg +3V3D (81.475,8.325)->(81.475,8.375) hw0.150
+   near pad: (1.644878414959597, 'R15', 'NRST', 80.67, 7.25)
+   near pad: (2.76688001185451, 'R15', '+3V3D', 82.33, 7.25)

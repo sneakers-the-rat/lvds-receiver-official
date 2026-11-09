@@ -1,0 +1,36 @@
+11:28:13: Debug: Adding duplicate image handler for 'PNG file'
+11:28:13: Debug: Adding duplicate image handler for 'JPEG file'
+11:28:13: Debug: Adding duplicate image handler for 'TIFF file'
+11:28:13: Debug: Adding duplicate image handler for 'GIF file'
+11:28:13: Debug: Adding duplicate image handler for 'PNM file'
+11:28:13: Debug: Adding duplicate image handler for 'PCX file'
+11:28:13: Debug: Adding duplicate image handler for 'IFF file'
+11:28:13: Debug: Adding duplicate image handler for 'Windows icon file'
+11:28:13: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:28:13: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:28:13: Debug: Adding duplicate image handler for 'TGA file'
+11:28:13: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:28:13: Debug: Adding duplicate image handler for 'PNG file'
+11:28:13: Debug: Adding duplicate image handler for 'JPEG file'
+11:28:13: Debug: Adding duplicate image handler for 'TIFF file'
+11:28:13: Debug: Adding duplicate image handler for 'GIF file'
+11:28:13: Debug: Adding duplicate image handler for 'PNM file'
+11:28:13: Debug: Adding duplicate image handler for 'PCX file'
+11:28:13: Debug: Adding duplicate image handler for 'IFF file'
+11:28:13: Debug: Adding duplicate image handler for 'Windows icon file'
+11:28:13: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:28:13: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:28:13: Debug: Adding duplicate image handler for 'TGA file'
+11:28:13: Debug: Adding duplicate image handler for 'XPM file'
+(66.875, 6.75)->(67.4, 5.65): -0.011 binder: seg GND (67.125,5.375)->(67.375,5.125) hw0.100
+(66.875, 6.75)->(67.05, 6.2): +0.119 binder: via GND (66.200,6.500) r0.300
+(66.875, 6.75)->(67.15, 6.1): +0.120 binder: via GND (66.200,6.500) r0.300
+(66.875, 6.75)->(67.3, 6.0): +0.120 binder: via GND (66.200,6.500) r0.300
+knuckle (67.05, 6.2): seg1 +0.119 (via GND (66.200,6.500) r0.300) seg2 -0.011 (seg GND (67.125,5.375)->(67.375,5.125) hw0.100)
+knuckle (67.15, 6.1): seg1 +0.120 (via GND (66.200,6.500) r0.300) seg2 -0.011 (seg GND (67.125,5.375)->(67.375,5.125) hw0.100)
+knuckle (67.3, 6.0): seg1 +0.120 (via GND (66.200,6.500) r0.300) seg2 -0.011 (seg GND (67.125,5.375)->(67.375,5.125) hw0.100)
+knuckle (67.2, 5.95): seg1 +0.060 (seg GND (66.625,5.875)->(66.875,5.625) hw0.100) seg2 -0.011 (seg GND (67.125,5.375)->(67.375,5.125) hw0.100)
