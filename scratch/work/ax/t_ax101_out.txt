@@ -1,0 +1,108 @@
+14:30:44: Debug: Adding duplicate image handler for 'PNG file'
+14:30:44: Debug: Adding duplicate image handler for 'JPEG file'
+14:30:44: Debug: Adding duplicate image handler for 'TIFF file'
+14:30:44: Debug: Adding duplicate image handler for 'GIF file'
+14:30:44: Debug: Adding duplicate image handler for 'PNM file'
+14:30:44: Debug: Adding duplicate image handler for 'PCX file'
+14:30:44: Debug: Adding duplicate image handler for 'IFF file'
+14:30:44: Debug: Adding duplicate image handler for 'Windows icon file'
+14:30:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:30:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:30:44: Debug: Adding duplicate image handler for 'TGA file'
+14:30:44: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:30:44: Debug: Adding duplicate image handler for 'PNG file'
+14:30:44: Debug: Adding duplicate image handler for 'JPEG file'
+14:30:44: Debug: Adding duplicate image handler for 'TIFF file'
+14:30:44: Debug: Adding duplicate image handler for 'GIF file'
+14:30:44: Debug: Adding duplicate image handler for 'PNM file'
+14:30:44: Debug: Adding duplicate image handler for 'PCX file'
+14:30:44: Debug: Adding duplicate image handler for 'IFF file'
+14:30:44: Debug: Adding duplicate image handler for 'Windows icon file'
+14:30:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:30:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:30:44: Debug: Adding duplicate image handler for 'TGA file'
+14:30:44: Debug: Adding duplicate image handler for 'XPM file'
+== footprints in (71,82,4,13):
+  R15 (81.50,7.25) rot 0.0
+  C16 (76.00,9.75) rot 0.0
+  R21 (73.75,7.75) rot 0.0
+  C21 (72.75,9.50) rot 0.0
+  C19 (81.00,12.00) rot 0.0
+14:30:45: Debug: Adding duplicate image handler for 'PNG file'
+14:30:45: Debug: Adding duplicate image handler for 'JPEG file'
+14:30:45: Debug: Adding duplicate image handler for 'TIFF file'
+14:30:45: Debug: Adding duplicate image handler for 'GIF file'
+14:30:45: Debug: Adding duplicate image handler for 'PNM file'
+14:30:45: Debug: Adding duplicate image handler for 'PCX file'
+14:30:45: Debug: Adding duplicate image handler for 'IFF file'
+14:30:45: Debug: Adding duplicate image handler for 'Windows icon file'
+14:30:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:30:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:30:45: Debug: Adding duplicate image handler for 'TGA file'
+14:30:45: Debug: Adding duplicate image handler for 'XPM file'
+== +3V3D items in (72,80,6,13):
+   L0 pad +3V3D (75.225,9.750) hw0.450x0.475
+   L0 pad +3V3D (74.575,7.750) hw0.400x0.475
+   L0 seg +3V3D (73.850,6.750)->(73.900,6.800) hw0.150
+   L0 seg +3V3D (74.125,7.125)->(73.875,6.875) hw0.100
+   L0 seg +3V3D (73.600,6.650)->(73.650,6.650) hw0.150
+   L0 seg +3V3D (74.325,7.750)->(74.375,7.875) hw0.100
+   L0 seg +3V3D (73.400,6.550)->(73.450,6.600) hw0.150
+   L0 seg +3V3D (74.500,7.600)->(74.500,7.650) hw0.150
+   L0 seg +3V3D (72.850,6.250)->(72.900,6.300) hw0.150
+   L0 seg +3V3D (73.250,6.550)->(73.300,6.550) hw0.150
+   L0 seg +3V3D (74.375,7.375)->(74.125,7.125) hw0.100
+   L0 seg +3V3D (74.200,7.100)->(74.250,7.150) hw0.150
+   L0 seg +3V3D (74.000,6.900)->(74.050,6.950) hw0.150
+   L0 seg +3V3D (74.500,7.700)->(74.500,7.750) hw0.150
+   L0 seg +3V3D (73.000,6.300)->(72.500,5.900) hw0.250
+   L0 seg +3V3D (74.450,7.400)->(74.450,7.450) hw0.150
+   L0 seg +3V3D (73.550,6.600)->(73.600,6.650) hw0.150
+   L0 seg +3V3D (74.500,7.500)->(74.500,7.550) hw0.150
+   L0 seg +3V3D (73.000,6.400)->(73.050,6.450) hw0.150
+   L0 seg +3V3D (74.100,7.000)->(74.150,7.050) hw0.150
+   L0 seg +3V3D (73.900,6.800)->(73.950,6.850) hw0.150
+   L0 seg +3V3D (74.875,8.625)->(74.625,8.375) hw0.100
+   L0 seg +3V3D (74.500,7.550)->(74.500,7.600) hw0.150
+   L0 seg +3V3D (74.375,8.125)->(74.375,7.375) hw0.100
+   L0 seg +3V3D (74.350,7.300)->(74.400,7.350) hw0.150
+   L0 seg +3V3D (73.875,6.875)->(73.000,6.300) hw0.250
+   L0 seg +3V3D (74.050,6.950)->(74.100,7.000) hw0.150
+   L0 seg +3V3D (74.150,7.050)->(74.200,7.100) hw0.150
+   L0 seg +3V3D (73.800,6.700)->(73.850,6.750) hw0.150
+   L0 seg +3V3D (73.200,6.550)->(73.250,6.550) hw0.150
+   L0 seg +3V3D (73.500,6.600)->(73.550,6.600) hw0.150
+   L0 seg +3V3D (75.225,9.750)->(75.225,9.500) hw0.100
+   L0 seg +3V3D (73.950,6.850)->(74.000,6.900) hw0.150
+   L0 seg +3V3D (73.750,6.700)->(73.800,6.700) hw0.150
+   L0 seg +3V3D (74.400,7.350)->(74.450,7.400) hw0.150
+   L0 seg +3V3D (72.700,6.100)->(72.750,6.150) hw0.150
+   L0 seg +3V3D (74.500,7.800)->(74.450,7.850) hw0.150
+   L0 seg +3V3D (74.500,7.750)->(74.500,7.800) hw0.150
+   L0 seg +3V3D (72.800,6.200)->(72.850,6.250) hw0.150
+   L0 seg +3V3D (74.250,7.150)->(74.300,7.200) hw0.150
+   L0 seg +3V3D (72.700,6.050)->(72.700,6.100) hw0.150
+   L0 seg +3V3D (73.650,6.650)->(73.700,6.650) hw0.150
+   L0 seg +3V3D (73.150,6.500)->(73.200,6.550) hw0.150
+   L0 seg +3V3D (74.500,7.650)->(74.500,7.700) hw0.150
+   L0 seg +3V3D (74.625,8.375)->(74.375,8.125) hw0.100
+   L0 seg +3V3D (73.450,6.600)->(73.500,6.600) hw0.150
+   L0 seg +3V3D (75.225,9.500)->(74.875,8.875) hw0.100
+   L0 seg +3V3D (73.300,6.550)->(73.350,6.550) hw0.150
+   L0 seg +3V3D (74.450,7.450)->(74.500,7.500) hw0.150
+   L0 seg +3V3D (72.900,6.300)->(72.950,6.350) hw0.150
+   L0 seg +3V3D (72.750,6.150)->(72.800,6.200) hw0.150
+   L0 seg +3V3D (74.300,7.250)->(74.350,7.300) hw0.150
+   L0 seg +3V3D (74.575,7.750)->(74.325,7.750) hw0.100
+   L0 seg +3V3D (73.050,6.450)->(73.100,6.500) hw0.150
+   L0 seg +3V3D (72.950,6.350)->(73.000,6.400) hw0.150
+   L0 seg +3V3D (74.875,8.875)->(74.875,8.625) hw0.100
+   L0 seg +3V3D (73.700,6.650)->(73.750,6.700) hw0.150
+   L0 seg +3V3D (73.100,6.500)->(73.150,6.500) hw0.150
+   L0 seg +3V3D (74.300,7.200)->(74.300,7.250) hw0.150
+   L0 seg +3V3D (74.450,7.850)->(74.375,7.875) hw0.150
+   L0 seg +3V3D (73.350,6.550)->(73.400,6.550) hw0.150

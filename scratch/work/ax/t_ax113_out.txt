@@ -1,0 +1,44 @@
+14:53:29: Debug: Adding duplicate image handler for 'PNG file'
+14:53:29: Debug: Adding duplicate image handler for 'JPEG file'
+14:53:29: Debug: Adding duplicate image handler for 'TIFF file'
+14:53:29: Debug: Adding duplicate image handler for 'GIF file'
+14:53:29: Debug: Adding duplicate image handler for 'PNM file'
+14:53:29: Debug: Adding duplicate image handler for 'PCX file'
+14:53:29: Debug: Adding duplicate image handler for 'IFF file'
+14:53:29: Debug: Adding duplicate image handler for 'Windows icon file'
+14:53:29: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:53:29: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:53:29: Debug: Adding duplicate image handler for 'TGA file'
+14:53:29: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:53:30: Debug: Adding duplicate image handler for 'PNG file'
+14:53:30: Debug: Adding duplicate image handler for 'JPEG file'
+14:53:30: Debug: Adding duplicate image handler for 'TIFF file'
+14:53:30: Debug: Adding duplicate image handler for 'GIF file'
+14:53:30: Debug: Adding duplicate image handler for 'PNM file'
+14:53:30: Debug: Adding duplicate image handler for 'PCX file'
+14:53:30: Debug: Adding duplicate image handler for 'IFF file'
+14:53:30: Debug: Adding duplicate image handler for 'Windows icon file'
+14:53:30: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:53:30: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:53:30: Debug: Adding duplicate image handler for 'TGA file'
+14:53:30: Debug: Adding duplicate image handler for 'XPM file'
+diag segs: ['seg +3V3A (72.625,14.625)->(72.250,13.875) hw0.100']
++3V3A -> (72.9,14.3): NONE
++3V3A -> (73.3,14.7): NONE
++3V3A -> (73.562,14.75) pad: NONE
+== F items (72,74.5,13.5,15.6):
+   pad +5V (73.562,13.750) hw0.438x0.125
+   pad GND (73.562,14.250) hw0.438x0.125
+   pad +3V3A (73.562,14.750) hw0.438x0.125
+   pad DP_PHY (73.562,15.250) hw0.438x0.125
+   seg +3V3A (73.125,14.750)->(72.625,14.625) hw0.100
+   seg +3V3A (72.250,13.875)->(69.250,13.875) hw0.100
+   seg +5V (73.562,13.750)->(72.812,13.750) hw0.100
+   seg +5V (72.812,13.750)->(72.200,13.100) hw0.100
+   seg DP_PHY (72.312,15.250)->(73.562,15.250) hw0.100
+   seg PHY_1V8A (72.300,14.450)->(72.000,14.550) hw0.100
+   via PHY_1V8A (72.300,14.450) r0.250

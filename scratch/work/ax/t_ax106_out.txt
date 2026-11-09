@@ -1,0 +1,36 @@
+14:37:38: Debug: Adding duplicate image handler for 'PNG file'
+14:37:38: Debug: Adding duplicate image handler for 'JPEG file'
+14:37:38: Debug: Adding duplicate image handler for 'TIFF file'
+14:37:38: Debug: Adding duplicate image handler for 'GIF file'
+14:37:38: Debug: Adding duplicate image handler for 'PNM file'
+14:37:38: Debug: Adding duplicate image handler for 'PCX file'
+14:37:38: Debug: Adding duplicate image handler for 'IFF file'
+14:37:38: Debug: Adding duplicate image handler for 'Windows icon file'
+14:37:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:37:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:37:38: Debug: Adding duplicate image handler for 'TGA file'
+14:37:38: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:37:39: Debug: Adding duplicate image handler for 'PNG file'
+14:37:39: Debug: Adding duplicate image handler for 'JPEG file'
+14:37:39: Debug: Adding duplicate image handler for 'TIFF file'
+14:37:39: Debug: Adding duplicate image handler for 'GIF file'
+14:37:39: Debug: Adding duplicate image handler for 'PNM file'
+14:37:39: Debug: Adding duplicate image handler for 'PCX file'
+14:37:39: Debug: Adding duplicate image handler for 'IFF file'
+14:37:39: Debug: Adding duplicate image handler for 'Windows icon file'
+14:37:39: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:37:39: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:37:39: Debug: Adding duplicate image handler for 'TGA file'
+14:37:39: Debug: Adding duplicate image handler for 'XPM file'
+GND (69.475,13)->(69.6,12.3)F: FOUND
+GND dive->(69.6,14.55)In2: NONE
+GND dive->C23.2: NONE
+PHY v2 gate worst -0.388 via PHY_1V8A (69.350,14.350) r0.250 vs seg +3V3A (69.250,13.875)->(69.125,14.375) hw0.100
+XO rejoin v2: FOUND
+  vias: []
+  gate worst +0.018 seg XO (74.350,8.950)->(74.050,8.650) hw0.100 vs pad GND (73.525,9.500) hw0.450x0.475
+C16 GND re-lay v2: NONE

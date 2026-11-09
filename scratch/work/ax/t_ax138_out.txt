@@ -1,0 +1,31 @@
+15:16:32: Debug: Adding duplicate image handler for 'PNG file'
+15:16:32: Debug: Adding duplicate image handler for 'JPEG file'
+15:16:32: Debug: Adding duplicate image handler for 'TIFF file'
+15:16:32: Debug: Adding duplicate image handler for 'GIF file'
+15:16:32: Debug: Adding duplicate image handler for 'PNM file'
+15:16:32: Debug: Adding duplicate image handler for 'PCX file'
+15:16:32: Debug: Adding duplicate image handler for 'IFF file'
+15:16:32: Debug: Adding duplicate image handler for 'Windows icon file'
+15:16:32: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:16:32: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:16:32: Debug: Adding duplicate image handler for 'TGA file'
+15:16:32: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:16:32: Debug: Adding duplicate image handler for 'PNG file'
+15:16:32: Debug: Adding duplicate image handler for 'JPEG file'
+15:16:32: Debug: Adding duplicate image handler for 'TIFF file'
+15:16:32: Debug: Adding duplicate image handler for 'GIF file'
+15:16:32: Debug: Adding duplicate image handler for 'PNM file'
+15:16:32: Debug: Adding duplicate image handler for 'PCX file'
+15:16:32: Debug: Adding duplicate image handler for 'IFF file'
+15:16:32: Debug: Adding duplicate image handler for 'Windows icon file'
+15:16:32: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:16:32: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:16:32: Debug: Adding duplicate image handler for 'TGA file'
+15:16:32: Debug: Adding duplicate image handler for 'XPM file'
+B vertical segs: ['seg +3V3A (73.625,10.625)->(73.625,8.625) hw0.300']
+stitch via (72.9,9.6) gate worst -0.095 vs seg +3V3A (75.625,8.625)->(71.250,11.125) hw0.100
+ABORT

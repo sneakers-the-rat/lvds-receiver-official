@@ -1,0 +1,38 @@
+14:39:43: Debug: Adding duplicate image handler for 'PNG file'
+14:39:43: Debug: Adding duplicate image handler for 'JPEG file'
+14:39:43: Debug: Adding duplicate image handler for 'TIFF file'
+14:39:43: Debug: Adding duplicate image handler for 'GIF file'
+14:39:43: Debug: Adding duplicate image handler for 'PNM file'
+14:39:43: Debug: Adding duplicate image handler for 'PCX file'
+14:39:43: Debug: Adding duplicate image handler for 'IFF file'
+14:39:43: Debug: Adding duplicate image handler for 'Windows icon file'
+14:39:43: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:39:43: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:39:43: Debug: Adding duplicate image handler for 'TGA file'
+14:39:43: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:39:43: Debug: Adding duplicate image handler for 'PNG file'
+14:39:43: Debug: Adding duplicate image handler for 'JPEG file'
+14:39:43: Debug: Adding duplicate image handler for 'TIFF file'
+14:39:43: Debug: Adding duplicate image handler for 'GIF file'
+14:39:43: Debug: Adding duplicate image handler for 'PNM file'
+14:39:43: Debug: Adding duplicate image handler for 'PCX file'
+14:39:43: Debug: Adding duplicate image handler for 'IFF file'
+14:39:43: Debug: Adding duplicate image handler for 'Windows icon file'
+14:39:43: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:39:43: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:39:43: Debug: Adding duplicate image handler for 'TGA file'
+14:39:43: Debug: Adding duplicate image handler for 'XPM file'
+== F items in (68,71,11.5,13.5):
+   seg +3V3D (70.375,12.125)->(70.125,11.875) hw0.100
+   seg +3V3D (70.125,11.875)->(69.875,11.875) hw0.100
+   seg +3V3D (70.625,12.375)->(70.375,12.125) hw0.100
+   seg +3V3D (70.625,12.375)->(70.875,12.625) hw0.100
+   seg +3V3D (69.625,11.625)->(69.375,11.375) hw0.100
+   seg +3V3D (69.875,11.875)->(69.625,11.625) hw0.100
+   via +3V3D (70.875,12.625) r0.400
+   seg BIST_A (68.325,13.250)->(68.325,14.750) hw0.100
+GND F run pad2 -> via (66.2,6.5): NONE

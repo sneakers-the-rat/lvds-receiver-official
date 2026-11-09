@@ -1,0 +1,36 @@
+14:39:10: Debug: Adding duplicate image handler for 'PNG file'
+14:39:10: Debug: Adding duplicate image handler for 'JPEG file'
+14:39:10: Debug: Adding duplicate image handler for 'TIFF file'
+14:39:10: Debug: Adding duplicate image handler for 'GIF file'
+14:39:10: Debug: Adding duplicate image handler for 'PNM file'
+14:39:10: Debug: Adding duplicate image handler for 'PCX file'
+14:39:10: Debug: Adding duplicate image handler for 'IFF file'
+14:39:10: Debug: Adding duplicate image handler for 'Windows icon file'
+14:39:10: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:39:10: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:39:10: Debug: Adding duplicate image handler for 'TGA file'
+14:39:10: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:39:10: Debug: Adding duplicate image handler for 'PNG file'
+14:39:10: Debug: Adding duplicate image handler for 'JPEG file'
+14:39:10: Debug: Adding duplicate image handler for 'TIFF file'
+14:39:10: Debug: Adding duplicate image handler for 'GIF file'
+14:39:10: Debug: Adding duplicate image handler for 'PNM file'
+14:39:10: Debug: Adding duplicate image handler for 'PCX file'
+14:39:10: Debug: Adding duplicate image handler for 'IFF file'
+14:39:10: Debug: Adding duplicate image handler for 'Windows icon file'
+14:39:10: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:39:10: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:39:10: Debug: Adding duplicate image handler for 'TGA file'
+14:39:10: Debug: Adding duplicate image handler for 'XPM file'
+via (69.6,12.3): F -0.094 In2 +0.416 B -0.217
+via (69.3,12.4): F +0.178 In2 +0.425 B -0.321
+via (68.9,12.6): F +0.175 In2 +0.225 B -0.553
+via (69.6,13.0): F +0.275 In2 -0.175 B +0.175
+via (70.3,13.3): F -0.025 In2 -0.475 B -0.025
+via (68.5,14.3): F -0.450 In2 -0.125 B -0.675
+via (69.05,14.55): F -0.525 In2 -0.203 B -0.375
+GND pad2(12.75) -> GND via (71.8,14.9): NONE

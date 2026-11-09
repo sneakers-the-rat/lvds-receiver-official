@@ -1,0 +1,38 @@
+14:35:37: Debug: Adding duplicate image handler for 'PNG file'
+14:35:37: Debug: Adding duplicate image handler for 'JPEG file'
+14:35:37: Debug: Adding duplicate image handler for 'TIFF file'
+14:35:37: Debug: Adding duplicate image handler for 'GIF file'
+14:35:37: Debug: Adding duplicate image handler for 'PNM file'
+14:35:37: Debug: Adding duplicate image handler for 'PCX file'
+14:35:37: Debug: Adding duplicate image handler for 'IFF file'
+14:35:37: Debug: Adding duplicate image handler for 'Windows icon file'
+14:35:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:35:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:35:37: Debug: Adding duplicate image handler for 'TGA file'
+14:35:37: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+14:35:37: Debug: Adding duplicate image handler for 'PNG file'
+14:35:37: Debug: Adding duplicate image handler for 'JPEG file'
+14:35:37: Debug: Adding duplicate image handler for 'TIFF file'
+14:35:37: Debug: Adding duplicate image handler for 'GIF file'
+14:35:37: Debug: Adding duplicate image handler for 'PNM file'
+14:35:37: Debug: Adding duplicate image handler for 'PCX file'
+14:35:37: Debug: Adding duplicate image handler for 'IFF file'
+14:35:37: Debug: Adding duplicate image handler for 'Windows icon file'
+14:35:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:35:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:35:37: Debug: Adding duplicate image handler for 'TGA file'
+14:35:37: Debug: Adding duplicate image handler for 'XPM file'
+C16 pads: 2 feed segs: 2
+ripped: 4
+XO via: 1 B chain: 2 F end: 1
+ripped (via counts 3): 6
++3V3D via items: 1
+shrunk; ripped: 3
+joiner gate +0.425 seg +3V3D (71.025,13.000)->(70.875,12.625) hw0.100 vs seg +3V3A (72.250,13.875)->(69.250,13.875) hw0.100
+PHY gate worst -0.588 via PHY_1V8A (69.938,15.375) r0.250 vs seg +3V3D (69.950,15.300)->(69.975,15.325) hw0.150
+XO rejoin: NONE
+C16 GND re-lay: NONE
