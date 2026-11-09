@@ -1,0 +1,57 @@
+15:55:21: Debug: Adding duplicate image handler for 'PNG file'
+15:55:21: Debug: Adding duplicate image handler for 'JPEG file'
+15:55:21: Debug: Adding duplicate image handler for 'TIFF file'
+15:55:21: Debug: Adding duplicate image handler for 'GIF file'
+15:55:21: Debug: Adding duplicate image handler for 'PNM file'
+15:55:21: Debug: Adding duplicate image handler for 'PCX file'
+15:55:21: Debug: Adding duplicate image handler for 'IFF file'
+15:55:21: Debug: Adding duplicate image handler for 'Windows icon file'
+15:55:21: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:55:21: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:55:21: Debug: Adding duplicate image handler for 'TGA file'
+15:55:21: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:55:21: Debug: Adding duplicate image handler for 'PNG file'
+15:55:21: Debug: Adding duplicate image handler for 'JPEG file'
+15:55:21: Debug: Adding duplicate image handler for 'TIFF file'
+15:55:21: Debug: Adding duplicate image handler for 'GIF file'
+15:55:21: Debug: Adding duplicate image handler for 'PNM file'
+15:55:21: Debug: Adding duplicate image handler for 'PCX file'
+15:55:21: Debug: Adding duplicate image handler for 'IFF file'
+15:55:21: Debug: Adding duplicate image handler for 'Windows icon file'
+15:55:21: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:55:21: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:55:21: Debug: Adding duplicate image handler for 'TGA file'
+15:55:21: Debug: Adding duplicate image handler for 'XPM file'
+U5: centre (79.000,24.750) rot 0 fp SOIC-16_3.9x9.9mm_P1.27mm
+   pad 1 net CDR_DATN (76.525,20.305) size (1.95x0.60)
+   pad 2 net CDR_DATP (76.525,21.575) size (1.95x0.60)
+   pad 3 net CAP_DATA (76.525,22.845) size (1.95x0.60)
+   pad 4 net +3V3D (76.525,24.115) size (1.95x0.60)
+   pad 5 net CAP_CLK (76.525,25.385) size (1.95x0.60)
+   pad 6 net CDR_CLKP (76.525,26.655) size (1.95x0.60)
+   pad 7 net CDR_CLKN (76.525,27.925) size (1.95x0.60)
+   pad 8 net GND (76.525,29.195) size (1.95x0.60)
+   pad 9 net GND (81.475,29.195) size (1.95x0.60)
+   pad 10 net +3V3D (81.475,27.925) size (1.95x0.60)
+   pad 11 net  (81.475,26.655) size (1.95x0.60)
+   pad 12 net GND (81.475,25.385) size (1.95x0.60)
+   pad 13 net  (81.475,24.115) size (1.95x0.60)
+   pad 14 net +3V3D (81.475,22.845) size (1.95x0.60)
+   pad 15 net GND (81.475,21.575) size (1.95x0.60)
+   pad 16 net +3V3D (81.475,20.305) size (1.95x0.60)
+C28: centre (73.250,20.750) rot 0 fp C_0402_1005Metric
+   pad 1 net +3V3D (72.770,20.750) size (0.56x0.62)
+   pad 2 net GND (73.730,20.750) size (0.56x0.62)
+C24: centre (68.750,18.000) rot 0 fp C_0402_1005Metric
+   pad 1 net +3V3A (68.270,18.000) size (0.56x0.62)
+   pad 2 net GND (69.230,18.000) size (0.56x0.62)
+C22: centre (72.500,18.000) rot 0 fp C_0402_1005Metric
+   pad 1 net PHY_1V8 (72.020,18.000) size (0.56x0.62)
+   pad 2 net GND (72.980,18.000) size (0.56x0.62)
+C20: centre (76.500,18.500) rot 0 fp C_0603_1608Metric
+   pad 1 net XI (75.725,18.500) size (0.90x0.95)
+   pad 2 net GND (77.275,18.500) size (0.90x0.95)

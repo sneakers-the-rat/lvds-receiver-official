@@ -1,0 +1,39 @@
+17:15:14: Debug: Adding duplicate image handler for 'PNG file'
+17:15:14: Debug: Adding duplicate image handler for 'JPEG file'
+17:15:14: Debug: Adding duplicate image handler for 'TIFF file'
+17:15:14: Debug: Adding duplicate image handler for 'GIF file'
+17:15:14: Debug: Adding duplicate image handler for 'PNM file'
+17:15:14: Debug: Adding duplicate image handler for 'PCX file'
+17:15:14: Debug: Adding duplicate image handler for 'IFF file'
+17:15:14: Debug: Adding duplicate image handler for 'Windows icon file'
+17:15:14: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:15:14: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:15:14: Debug: Adding duplicate image handler for 'TGA file'
+17:15:14: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+17:15:15: Debug: Adding duplicate image handler for 'PNG file'
+17:15:15: Debug: Adding duplicate image handler for 'JPEG file'
+17:15:15: Debug: Adding duplicate image handler for 'TIFF file'
+17:15:15: Debug: Adding duplicate image handler for 'GIF file'
+17:15:15: Debug: Adding duplicate image handler for 'PNM file'
+17:15:15: Debug: Adding duplicate image handler for 'PCX file'
+17:15:15: Debug: Adding duplicate image handler for 'IFF file'
+17:15:15: Debug: Adding duplicate image handler for 'Windows icon file'
+17:15:15: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:15:15: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:15:15: Debug: Adding duplicate image handler for 'TGA file'
+17:15:15: Debug: Adding duplicate image handler for 'XPM file'
+re-laying south-loop segs: 4
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+B (76.65, 8.95): G=+0.064 seg I2C_SCL (76.875,8.625)->(77.125,8.875) hw0.125 | 2nd +0.070 seg I2C_SCL (76.625,8.375)->(76.875,8.625) hw0.125
+B (76.7, 9.4): G=+0.347 seg I2C_SCL (77.125,8.875)->(77.375,9.125) hw0.125 | 2nd +0.350 seg I2C_SCL (76.875,8.625)->(77.125,8.875) hw0.125
+B (76.4, 9.6): G=+0.595 via +3V3A (75.625,8.625) r0.400 | 2nd +0.631 seg PHY_1V8 (77.350,10.000)->(76.950,11.050) hw0.150
+B (76.2, 9.8): G=+0.557 via PHY_1V8A (75.737,10.750) r0.250 | 2nd +0.658 via +3V3A (75.625,8.625) r0.400
+B (76.9, 9.3): G=+0.135 seg I2C_SCL (77.125,8.875)->(77.375,9.125) hw0.125 | 2nd +0.156 seg I2C_SCL (76.875,8.625)->(77.125,8.875) hw0.125
+B (77.0, 9.6): G=+0.132 seg PHY_1V8 (77.350,10.000)->(76.950,11.050) hw0.150 | 2nd +0.132 seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.150

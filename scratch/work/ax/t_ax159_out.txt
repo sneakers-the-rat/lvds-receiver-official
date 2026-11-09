@@ -1,0 +1,46 @@
+15:42:08: Debug: Adding duplicate image handler for 'PNG file'
+15:42:08: Debug: Adding duplicate image handler for 'JPEG file'
+15:42:08: Debug: Adding duplicate image handler for 'TIFF file'
+15:42:08: Debug: Adding duplicate image handler for 'GIF file'
+15:42:08: Debug: Adding duplicate image handler for 'PNM file'
+15:42:08: Debug: Adding duplicate image handler for 'PCX file'
+15:42:08: Debug: Adding duplicate image handler for 'IFF file'
+15:42:08: Debug: Adding duplicate image handler for 'Windows icon file'
+15:42:08: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:42:08: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:42:08: Debug: Adding duplicate image handler for 'TGA file'
+15:42:08: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:42:09: Debug: Adding duplicate image handler for 'PNG file'
+15:42:09: Debug: Adding duplicate image handler for 'JPEG file'
+15:42:09: Debug: Adding duplicate image handler for 'TIFF file'
+15:42:09: Debug: Adding duplicate image handler for 'GIF file'
+15:42:09: Debug: Adding duplicate image handler for 'PNM file'
+15:42:09: Debug: Adding duplicate image handler for 'PCX file'
+15:42:09: Debug: Adding duplicate image handler for 'IFF file'
+15:42:09: Debug: Adding duplicate image handler for 'Windows icon file'
+15:42:09: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:42:09: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:42:09: Debug: Adding duplicate image handler for 'TGA file'
+15:42:09: Debug: Adding duplicate image handler for 'XPM file'
+W (75.9,17.99): FOUND
+S (76.065,17.8): FOUND
+E (76.2,17.99): FOUND
+N (76.065,18.2): FOUND
+SW (75.9,18.15): NONE
+closure vars: ['GXm', 'NXm', 'NYm', 'X0', 'X1', 'Y0', 'Y1', 'bb', 'df', 'step', 'xs', 'ys']
+  GXm <class 'cell'> <cell at 0x7be5fd5003a0: numpy.ndarray object at 0x7be5fbf0a670>
+  NXm <class 'cell'> <cell at 0x7be5fd5004c0: int object at 0xb375a8>
+  NYm <class 'cell'> <cell at 0x7be5fd500490: int object at 0xb375a8>
+  X0 <class 'cell'> <cell at 0x7be5fd500520: float object at 0x7be62493f210>
+  X1 <class 'cell'> <cell at 0x7be5fd5004f0: float object at 0x7be62493f370>
+  Y0 <class 'cell'> <cell at 0x7be5fd500580: float object at 0x7be62493ffb0>
+  Y1 <class 'cell'> <cell at 0x7be5fd500310: float object at 0x7be6247f00d0>
+  bb <class 'cell'> <cell at 0x7be5fd5002e0: function object at 0x7be5f97487c0>
+  df <class 'cell'> <cell at 0x7be5fd500460: function object at 0x7be6249fe2a0>
+  step <class 'cell'> <cell at 0x7be62484dc60: float object at 0x7be6247f1010>
+  xs <class 'cell'> <cell at 0x7be5fd500370: numpy.ndarray object at 0x7be5fbf0ad30>
+  ys <class 'cell'> <cell at 0x7be5fd500550: numpy.ndarray object at 0x7be5fbf0a850>

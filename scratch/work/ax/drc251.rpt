@@ -1,0 +1,154 @@
+** Drc report for pdlvds_rx.exp251.kicad_pcb **
+** Created on 2026-11-09T20:04:28+0000 **
+
+** Found 34 DRC violations **
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(69.8594 mm, 18.9900 mm): Segment on F.Silkscreen
+    @(71.1053 mm, 18.9000 mm): Reference 'C22'
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(79.0000 mm, 18.8500 mm): Reference 'U5'
+    @(79.4922 mm, 18.2400 mm): Segment on F.Silkscreen
+[silk_overlap]: Silkscreen overlap
+    Rule: board setup constraints silk; warning
+    @(79.0000 mm, 18.8500 mm): Reference 'U5'
+    @(79.4922 mm, 18.9600 mm): Segment on F.Silkscreen
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(79.0000 mm, 18.8500 mm): Reference 'U5'
+[silk_over_copper]: Silkscreen clipped by solder mask
+    Local override; warning
+    @(71.1053 mm, 18.9000 mm): Reference 'C22'
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(78.8750 mm, 18.3750 mm): Track [CDR_SQUELCH] on F.Cu, length 0.3536 mm
+    @(79.1200 mm, 18.6000 mm): Pad 1 [PHY_1V8] of C22 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(78.6250 mm, 18.6250 mm): Track [CDR_SQUELCH] on F.Cu, length 0.3536 mm
+    @(79.1200 mm, 18.6000 mm): Pad 1 [PHY_1V8] of C22 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(80.6250 mm, 18.3750 mm): Via [I2C_SDA] on F.Cu - B.Cu
+    @(80.0800 mm, 18.6000 mm): Pad 2 [GND] of C22 on F.Cu
+[solder_mask_bridge]: Front solder mask aperture bridges items with different nets
+    Rule: board setup solder mask min width; error
+    @(75.6250 mm, 18.6250 mm): Via [XI] on F.Cu - B.Cu
+    @(75.7200 mm, 18.7500 mm): Pad 1 [<no net>] of C20 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3063 mm)
+    Rule: board setup constraints edge; error
+    @(33.6000 mm, 72.1400 mm): NPTH pad of J1
+    @(32.7500 mm, 71.4800 mm): Pad A12 [GND] of J1 on F.Cu
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; error
+    @(100.0000 mm, 80.0000 mm): Segment on Edge.Cuts
+    @(25.5100 mm, 79.3400 mm): PTH pad S1 [<no net>] of J1
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2982 mm)
+    Rule: board setup constraints edge; error
+    @(33.6000 mm, 72.1400 mm): NPTH pad of J1
+    @(34.1300 mm, 73.3900 mm): PTH pad S1 [<no net>] of J1
+[copper_edge_clearance]: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)
+    Rule: board setup constraints edge; error
+    @(100.0000 mm, 80.0000 mm): Segment on Edge.Cuts
+    @(34.4900 mm, 79.3400 mm): PTH pad S1 [<no net>] of J1
+[tracks_crossing]: Tracks crossing
+    Rule: netclass 'Default'; error
+    @(79.1200 mm, 18.6000 mm): Track [PHY_1V8] on F.Cu, length 0.9335 mm
+    @(78.8750 mm, 18.3750 mm): Track [CDR_SQUELCH] on F.Cu, length 0.3536 mm
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1836 mm)
+    Rule: netclass 'Default'; error
+    @(77.9800 mm, 10.0200 mm): Via [PHY_1V8] on F.Cu - B.Cu
+    @(78.6250 mm, 9.8750 mm): Track [ULPI_D0] on F.Cu, length 0.3536 mm
+[shorting_items]: Items shorting two nets (nets CDR_SQUELCH and PHY_1V8)
+    Local override; error
+    @(78.8750 mm, 18.3750 mm): Track [CDR_SQUELCH] on F.Cu, length 0.3536 mm
+    @(79.1200 mm, 18.6000 mm): Pad 1 [PHY_1V8] of C22 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1900 mm)
+    Rule: netclass 'Default'; error
+    @(75.6250 mm, 19.3750 mm): Track [CDR_SQUELCH] on F.Cu, length 2.2500 mm
+    @(75.7200 mm, 18.7500 mm): Pad 1 [<no net>] of C20 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1900 mm)
+    Rule: netclass 'Default'; error
+    @(75.3750 mm, 19.6250 mm): Track [CDR_SQUELCH] on F.Cu, length 0.3536 mm
+    @(75.7200 mm, 18.7500 mm): Pad 1 [<no net>] of C20 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0400 mm)
+    Rule: netclass 'Default'; error
+    @(79.1250 mm, 18.1250 mm): Track [CDR_SQUELCH] on F.Cu, length 0.3536 mm
+    @(79.1200 mm, 18.6000 mm): Pad 1 [PHY_1V8] of C22 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0900 mm)
+    Rule: netclass 'Default'; error
+    @(78.3750 mm, 18.8750 mm): Track [CDR_SQUELCH] on F.Cu, length 0.3536 mm
+    @(79.1200 mm, 18.6000 mm): Pad 1 [PHY_1V8] of C22 on F.Cu
+[shorting_items]: Items shorting two nets (nets CDR_SQUELCH and PHY_1V8)
+    Local override; error
+    @(78.6250 mm, 18.6250 mm): Track [CDR_SQUELCH] on F.Cu, length 0.3536 mm
+    @(79.1200 mm, 18.6000 mm): Pad 1 [PHY_1V8] of C22 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0342 mm)
+    Rule: netclass 'Default'; error
+    @(77.2500 mm, 18.3800 mm): Via [GND] on F.Cu - B.Cu
+    @(76.6800 mm, 18.7500 mm): Pad 2 [<no net>] of C20 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1836 mm)
+    Rule: netclass 'Default'; error
+    @(78.3750 mm, 9.6250 mm): Track [ULPI_D0] on F.Cu, length 0.3536 mm
+    @(77.9800 mm, 10.0200 mm): Via [PHY_1V8] on F.Cu - B.Cu
+[shorting_items]: Items shorting two nets (nets I2C_SDA and GND)
+    Local override; error
+    @(80.6250 mm, 18.3750 mm): Via [I2C_SDA] on F.Cu - B.Cu
+    @(80.0800 mm, 18.6000 mm): Pad 2 [GND] of C22 on F.Cu
+[clearance]: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0000 mm)
+    Rule: netclass 'Default'; error
+    @(75.6250 mm, 18.6250 mm): Via [XI] on F.Cu - B.Cu
+    @(75.7200 mm, 18.7500 mm): Pad 1 [<no net>] of C20 on F.Cu
+[hole_clearance]: Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0000 mm)
+    Rule: board setup constraints hole; error
+    @(75.7200 mm, 18.7500 mm): Pad 1 [<no net>] of C20 on F.Cu
+    @(75.6250 mm, 18.6250 mm): Via [XI] on F.Cu - B.Cu
+[hole_clearance]: Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.1842 mm)
+    Rule: board setup constraints hole; error
+    @(76.6800 mm, 18.7500 mm): Pad 2 [<no net>] of C20 on F.Cu
+    @(77.2500 mm, 18.3800 mm): Via [GND] on F.Cu - B.Cu
+[hole_clearance]: Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.1187 mm)
+    Rule: board setup constraints hole; error
+    @(80.0800 mm, 18.6000 mm): Pad 2 [GND] of C22 on F.Cu
+    @(80.6250 mm, 18.3750 mm): Via [I2C_SDA] on F.Cu - B.Cu
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(73.9500 mm, -1.0500 mm): Track [ULPI_STP] on In2.Cu, length 0.0707 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(69.6000 mm, -3.6000 mm): Track [ULPI_STP] on In2.Cu, length 0.0500 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(71.5500 mm, -3.3000 mm): Track [ULPI_STP] on In2.Cu, length 0.0500 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(78.2500 mm, 9.2000 mm): Track [ULPI_STP] on B.Cu, length 0.0500 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(75.8500 mm, 10.1000 mm): Track [ULPI_STP] on B.Cu, length 0.0707 mm
+[track_dangling]: Track has unconnected end
+    Local override; warning
+    @(77.4000 mm, 8.1500 mm): Track [ULPI_STP] on B.Cu, length 0.0707 mm
+
+** Found 4 unconnected pads **
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(0.3000 mm, -29.7000 mm): Zone [GND] on F.Cu
+    @(0.3000 mm, -29.7000 mm): Zone [GND] on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(0.3000 mm, -29.7000 mm): Zone [GND] on In1.Cu
+    @(0.3000 mm, -29.7000 mm): Zone [GND] on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(74.2500 mm, 16.4375 mm): Pad 9 [USB_RST] of U7 on F.Cu
+    @(74.7500 mm, 4.6625 mm): Pad 40 [USB_RST] of U6 on F.Cu
+[unconnected_items]: Missing connection between items
+    Local override; error
+    @(76.2500 mm, 11.5625 mm): Pad 28 [XI] of U7 on F.Cu
+    @(75.6250 mm, 18.6250 mm): Via [XI] on F.Cu - B.Cu
+
+** Found 0 Footprint errors **
+
+** End of Report **

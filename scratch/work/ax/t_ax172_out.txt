@@ -1,0 +1,62 @@
+15:54:43: Debug: Adding duplicate image handler for 'PNG file'
+15:54:43: Debug: Adding duplicate image handler for 'JPEG file'
+15:54:43: Debug: Adding duplicate image handler for 'TIFF file'
+15:54:43: Debug: Adding duplicate image handler for 'GIF file'
+15:54:43: Debug: Adding duplicate image handler for 'PNM file'
+15:54:43: Debug: Adding duplicate image handler for 'PCX file'
+15:54:43: Debug: Adding duplicate image handler for 'IFF file'
+15:54:43: Debug: Adding duplicate image handler for 'Windows icon file'
+15:54:43: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:54:43: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:54:43: Debug: Adding duplicate image handler for 'TGA file'
+15:54:43: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:54:44: Debug: Adding duplicate image handler for 'PNG file'
+15:54:44: Debug: Adding duplicate image handler for 'JPEG file'
+15:54:44: Debug: Adding duplicate image handler for 'TIFF file'
+15:54:44: Debug: Adding duplicate image handler for 'GIF file'
+15:54:44: Debug: Adding duplicate image handler for 'PNM file'
+15:54:44: Debug: Adding duplicate image handler for 'PCX file'
+15:54:44: Debug: Adding duplicate image handler for 'IFF file'
+15:54:44: Debug: Adding duplicate image handler for 'Windows icon file'
+15:54:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:54:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:54:44: Debug: Adding duplicate image handler for 'TGA file'
+15:54:44: Debug: Adding duplicate image handler for 'XPM file'
+PHY_1V8 layer 0: 12 items
+    pad PHY_1V8 (72.020,18.000) hw0.280x0.310
+    pad PHY_1V8 (77.250,16.438) hw0.125x0.438
+    pad PHY_1V8 (77.250,11.562) hw0.125x0.438
+    seg PHY_1V8 (77.250,16.438)->(77.250,17.188) hw0.100
+    seg PHY_1V8 (77.250,11.562)->(77.250,10.750) hw0.100
+    seg PHY_1V8 (77.250,17.188)->(78.100,17.500) hw0.100
+    seg PHY_1V8 (77.250,10.750)->(77.869,10.056) hw0.100
+    seg PHY_1V8 (71.375,17.625)->(71.725,17.750) hw0.100
+    seg PHY_1V8 (71.725,17.750)->(71.725,18.000) hw0.100
+    via PHY_1V8 (71.375,17.625) r0.400
+    via PHY_1V8 (78.100,17.500) r0.300
+    via PHY_1V8 (77.869,10.056) r0.250
+PHY_1V8 layer 1: 3 items
+    via PHY_1V8 (71.375,17.625) r0.400
+    via PHY_1V8 (78.100,17.500) r0.300
+    via PHY_1V8 (77.869,10.056) r0.250
+PHY_1V8 layer 2: 12 items
+    via PHY_1V8 (71.375,17.625) r0.400
+    via PHY_1V8 (78.100,17.500) r0.300
+    via PHY_1V8 (77.869,10.056) r0.250
+    seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.300
+    seg PHY_1V8 (78.100,17.500)->(77.800,16.200) hw0.100
+    seg PHY_1V8 (77.869,10.056)->(77.350,10.000) hw0.300
+    seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.300
+    seg PHY_1V8 (76.800,14.988)->(77.800,16.200) hw0.300
+    seg PHY_1V8 (72.900,16.900)->(72.125,17.625) hw0.100
+    seg PHY_1V8 (72.125,17.625)->(71.375,17.625) hw0.100
+    seg PHY_1V8 (77.800,16.200)->(73.400,16.200) hw0.300
+    seg PHY_1V8 (73.400,16.200)->(72.900,16.900) hw0.100
+PHY_1V8 fragments: [2, 2]
+pad: (72.02, 18.0, 0.28, 0.31, 0.0)
+pad: (77.25, 16.4375, 0.125, 0.4375, 0.0)
+pad: (77.25, 11.5625, 0.125, 0.4375, 0.0)

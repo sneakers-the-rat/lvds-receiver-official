@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/ax/t_ax256_c22scan.py", line 7, in <module>
+    exec(head)
+  File "<string>", line 3, in <module>
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/ax/t_ax0_pre.py", line 7, in <module>
+    import wx
+ModuleNotFoundError: No module named 'wx'

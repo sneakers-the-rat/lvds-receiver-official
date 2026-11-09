@@ -1,0 +1,37 @@
+15:33:40: Debug: Adding duplicate image handler for 'PNG file'
+15:33:40: Debug: Adding duplicate image handler for 'JPEG file'
+15:33:40: Debug: Adding duplicate image handler for 'TIFF file'
+15:33:40: Debug: Adding duplicate image handler for 'GIF file'
+15:33:40: Debug: Adding duplicate image handler for 'PNM file'
+15:33:40: Debug: Adding duplicate image handler for 'PCX file'
+15:33:40: Debug: Adding duplicate image handler for 'IFF file'
+15:33:40: Debug: Adding duplicate image handler for 'Windows icon file'
+15:33:40: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:33:40: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:33:40: Debug: Adding duplicate image handler for 'TGA file'
+15:33:40: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:33:40: Debug: Adding duplicate image handler for 'PNG file'
+15:33:40: Debug: Adding duplicate image handler for 'JPEG file'
+15:33:40: Debug: Adding duplicate image handler for 'TIFF file'
+15:33:40: Debug: Adding duplicate image handler for 'GIF file'
+15:33:40: Debug: Adding duplicate image handler for 'PNM file'
+15:33:40: Debug: Adding duplicate image handler for 'PCX file'
+15:33:40: Debug: Adding duplicate image handler for 'IFF file'
+15:33:40: Debug: Adding duplicate image handler for 'Windows icon file'
+15:33:40: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:33:40: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:33:40: Debug: Adding duplicate image handler for 'TGA file'
+15:33:40: Debug: Adding duplicate image handler for 'XPM file'
+== XI items touching (75.625,18.625):
+   F via XI (75.625,18.625) r0.300
+   I via XI (75.625,18.625) r0.300
+   B via XI (75.625,18.625) r0.300
+   B seg XI (75.625,18.625)->(75.875,18.875) hw0.100
+C20 rip: 2
+staircase via rip: 3
+STP stub+dive gate worst -0.077 seg ULPI_STP (76.180,17.300)->(76.060,17.990) hw0.100 vs via ULPI_CK (76.625,17.500) r0.250
+STP haul: NONE

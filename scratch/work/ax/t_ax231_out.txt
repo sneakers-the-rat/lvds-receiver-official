@@ -1,0 +1,35 @@
+17:46:59: Debug: Adding duplicate image handler for 'PNG file'
+17:46:59: Debug: Adding duplicate image handler for 'JPEG file'
+17:46:59: Debug: Adding duplicate image handler for 'TIFF file'
+17:46:59: Debug: Adding duplicate image handler for 'GIF file'
+17:46:59: Debug: Adding duplicate image handler for 'PNM file'
+17:46:59: Debug: Adding duplicate image handler for 'PCX file'
+17:46:59: Debug: Adding duplicate image handler for 'IFF file'
+17:46:59: Debug: Adding duplicate image handler for 'Windows icon file'
+17:46:59: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:46:59: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:46:59: Debug: Adding duplicate image handler for 'TGA file'
+17:46:59: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+17:47:00: Debug: Adding duplicate image handler for 'PNG file'
+17:47:00: Debug: Adding duplicate image handler for 'JPEG file'
+17:47:00: Debug: Adding duplicate image handler for 'TIFF file'
+17:47:00: Debug: Adding duplicate image handler for 'GIF file'
+17:47:00: Debug: Adding duplicate image handler for 'PNM file'
+17:47:00: Debug: Adding duplicate image handler for 'PCX file'
+17:47:00: Debug: Adding duplicate image handler for 'IFF file'
+17:47:00: Debug: Adding duplicate image handler for 'Windows icon file'
+17:47:00: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:47:00: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:47:00: Debug: Adding duplicate image handler for 'TGA file'
+17:47:00: Debug: Adding duplicate image handler for 'XPM file'
+Counter({'+3V3A': 190, '+3V3D': 29, 'I2C_SCL': 10, 'I2C_SDA': 3, '+3V3D via': 2, 'SPI_SCK via': 2, '+3V3A via': 1, 'GND via': 1, 'HV_SHDN via': 1, 'SPI_MOSI via': 1, 'ULPI_CK via': 1})
+--- CAP_CLK B items:
+--- CAP_DATA B items:
+--- ULPI_CK B items:
+   via ULPI_CK (75.125,5.875) r0.300
+--- ULPI_D0 B items:
+--- BIST_DRV0 B items:

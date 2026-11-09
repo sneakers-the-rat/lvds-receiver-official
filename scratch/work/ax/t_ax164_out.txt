@@ -1,0 +1,171 @@
+15:45:08: Debug: Adding duplicate image handler for 'PNG file'
+15:45:08: Debug: Adding duplicate image handler for 'JPEG file'
+15:45:08: Debug: Adding duplicate image handler for 'TIFF file'
+15:45:08: Debug: Adding duplicate image handler for 'GIF file'
+15:45:08: Debug: Adding duplicate image handler for 'PNM file'
+15:45:08: Debug: Adding duplicate image handler for 'PCX file'
+15:45:08: Debug: Adding duplicate image handler for 'IFF file'
+15:45:08: Debug: Adding duplicate image handler for 'Windows icon file'
+15:45:08: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:45:08: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:45:08: Debug: Adding duplicate image handler for 'TGA file'
+15:45:08: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+15:45:09: Debug: Adding duplicate image handler for 'PNG file'
+15:45:09: Debug: Adding duplicate image handler for 'JPEG file'
+15:45:09: Debug: Adding duplicate image handler for 'TIFF file'
+15:45:09: Debug: Adding duplicate image handler for 'GIF file'
+15:45:09: Debug: Adding duplicate image handler for 'PNM file'
+15:45:09: Debug: Adding duplicate image handler for 'PCX file'
+15:45:09: Debug: Adding duplicate image handler for 'IFF file'
+15:45:09: Debug: Adding duplicate image handler for 'Windows icon file'
+15:45:09: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:45:09: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:45:09: Debug: Adding duplicate image handler for 'TGA file'
+15:45:09: Debug: Adding duplicate image handler for 'XPM file'
+== layer 2:
+   via +3V3A (73.625,10.625) r0.400
+   seg +3V3A (73.625,8.625)->(73.625,10.625) hw0.100
+   seg +3V3A (73.625,10.625)->(75.625,8.625) hw0.100
+   seg +3V3A (75.625,8.625)->(71.250,11.125) hw0.100
+   seg +3V3A (71.250,11.125)->(70.500,11.125) hw0.100
+   via +5V (72.200,13.100) r0.400
+   via DP_PHY (72.125,15.875) r0.300
+   seg DP_PHY (71.625,16.375)->(71.875,16.125) hw0.125
+   seg DP_PHY (71.375,16.625)->(71.625,16.375) hw0.125
+   seg DP_PHY (71.125,16.875)->(71.375,16.625) hw0.125
+   seg DP_PHY (70.875,16.875)->(71.125,16.875) hw0.125
+   seg DP_PHY (71.875,16.125)->(72.125,15.875) hw0.125
+   seg PHY_1V8 (72.900,16.900)->(72.125,17.625) hw0.100
+   seg PHY_1V8 (77.800,16.200)->(73.400,16.200) hw0.300
+   seg PHY_1V8 (73.400,16.200)->(72.900,16.900) hw0.100
+   via PHY_1V8A (71.480,15.380) r0.250
+   seg PHY_1V8A (72.350,11.650)->(71.900,11.950) hw0.100
+   seg PHY_1V8A (72.550,14.450)->(72.500,14.500) hw0.100
+   seg PHY_1V8A (71.550,15.200)->(71.550,15.250) hw0.100
+   seg PHY_1V8A (73.050,13.950)->(73.000,14.000) hw0.100
+   seg PHY_1V8A (72.800,14.200)->(72.750,14.250) hw0.100
+   seg PHY_1V8A (73.220,11.940)->(72.920,11.620) hw0.100
+   seg PHY_1V8A (73.100,12.350)->(73.150,12.400) hw0.100
+   seg PHY_1V8A (71.950,14.750)->(71.900,14.800) hw0.100
+   seg PHY_1V8A (72.250,14.750)->(72.200,14.750) hw0.100
+   seg PHY_1V8A (72.050,14.750)->(72.000,14.750) hw0.100
+   seg PHY_1V8A (72.800,12.050)->(72.850,12.100) hw0.100
+   seg PHY_1V8A (72.500,11.900)->(72.550,11.950) hw0.100
+   seg PHY_1V8A (72.400,11.900)->(72.450,11.900) hw0.100
+   seg PHY_1V8A (71.900,11.900)->(71.950,11.900) hw0.100
+   seg PHY_1V8A (73.400,13.200)->(73.400,13.250) hw0.100
+   seg PHY_1V8A (72.450,11.900)->(72.500,11.900) hw0.100
+   seg PHY_1V8A (70.950,11.800)->(71.000,11.800) hw0.100
+   seg PHY_1V8A (71.400,11.900)->(71.450,11.900) hw0.100
+   seg PHY_1V8A (72.850,12.100)->(72.900,12.150) hw0.100
+   seg PHY_1V8A (72.100,14.750)->(72.050,14.750) hw0.100
+   seg PHY_1V8A (71.450,11.900)->(71.500,11.900) hw0.100
+   seg PHY_1V8A (71.050,11.800)->(71.100,11.800) hw0.100
+   seg PHY_1V8A (71.850,14.850)->(71.800,14.900) hw0.100
+   seg PHY_1V8A (72.100,11.900)->(72.150,11.900) hw0.100
+   seg PHY_1V8A (71.750,11.900)->(71.800,11.900) hw0.100
+   seg PHY_1V8A (74.900,11.750)->(74.200,12.250) hw0.100
+   seg PHY_1V8A (72.920,11.620)->(72.350,11.650) hw0.100
+   seg PHY_1V8A (72.550,11.950)->(72.600,11.950) hw0.100
+   seg PHY_1V8A (71.700,11.900)->(71.750,11.900) hw0.100
+   seg PHY_1V8A (73.350,12.700)->(73.350,12.750) hw0.100
+   seg PHY_1V8A (72.000,11.900)->(72.050,11.900) hw0.100
+   seg PHY_1V8A (72.900,12.150)->(72.950,12.200) hw0.100
+   seg PHY_1V8A (72.300,14.700)->(72.250,14.750) hw0.100
+   seg PHY_1V8A (73.150,12.400)->(73.200,12.450) hw0.100
+   seg PHY_1V8A (71.500,15.300)->(71.500,15.350) hw0.100
+   seg PHY_1V8A (71.800,14.900)->(71.750,14.950) hw0.100
+   seg PHY_1V8A (73.250,12.500)->(73.300,12.550) hw0.100
+   seg PHY_1V8A (73.400,12.950)->(73.400,13.000) hw0.100
+   seg PHY_1V8A (73.000,14.000)->(72.950,14.050) hw0.100
+   seg PHY_1V8A (73.300,13.600)->(73.300,13.650) hw0.100
+   seg PHY_1V8A (71.950,11.900)->(72.000,11.900) hw0.100
+   seg PHY_1V8A (73.300,12.600)->(73.350,12.650) hw0.100
+   seg PHY_1V8A (73.200,13.800)->(73.150,13.850) hw0.100
+   seg PHY_1V8A (73.350,12.750)->(73.400,12.800) hw0.100
+   seg PHY_1V8A (71.700,15.000)->(71.650,15.050) hw0.100
+   seg PHY_1V8A (71.600,15.100)->(71.600,15.150) hw0.100
+   seg PHY_1V8A (72.850,14.150)->(72.800,14.200) hw0.100
+   seg PHY_1V8A (72.350,14.650)->(72.300,14.700) hw0.100
+   seg PHY_1V8A (72.400,14.600)->(72.350,14.650) hw0.100
+   seg PHY_1V8A (72.650,11.950)->(72.700,12.000) hw0.100
+   seg PHY_1V8A (73.400,13.250)->(73.400,13.300) hw0.100
+   seg PHY_1V8A (73.150,13.850)->(73.100,13.900) hw0.100
+   seg PHY_1V8A (71.600,15.150)->(71.550,15.200) hw0.100
+   seg PHY_1V8A (72.200,11.900)->(72.250,11.900) hw0.100
+   seg PHY_1V8A (73.400,13.100)->(73.400,13.150) hw0.100
+   seg PHY_1V8A (72.500,14.500)->(72.450,14.550) hw0.100
+   seg PHY_1V8A (73.400,12.850)->(73.400,12.900) hw0.100
+   seg PHY_1V8A (72.700,12.000)->(72.750,12.000) hw0.100
+   seg PHY_1V8A (73.400,13.300)->(73.400,13.350) hw0.100
+   seg PHY_1V8A (72.300,11.900)->(72.350,11.900) hw0.100
+   seg PHY_1V8A (73.350,13.550)->(73.300,13.600) hw0.100
+   seg PHY_1V8A (73.400,13.350)->(73.400,13.400) hw0.100
+   seg PHY_1V8A (71.550,15.250)->(71.500,15.300) hw0.100
+   seg PHY_1V8A (73.350,13.450)->(73.350,13.500) hw0.100
+   seg PHY_1V8A (72.600,11.950)->(72.650,11.950) hw0.100
+   seg PHY_1V8A (71.900,14.800)->(71.850,14.850) hw0.100
+   seg PHY_1V8A (71.200,11.850)->(71.250,11.850) hw0.100
+   seg PHY_1V8A (75.300,11.350)->(74.900,11.750) hw0.100
+   seg PHY_1V8A (72.750,14.250)->(72.700,14.300) hw0.100
+   seg PHY_1V8A (75.737,10.750)->(75.300,11.350) hw0.100
+   seg PHY_1V8A (71.900,11.950)->(71.300,12.100) hw0.100
+   seg PHY_1V8A (73.000,12.250)->(73.050,12.300) hw0.100
+   seg PHY_1V8A (72.750,12.000)->(72.800,12.050) hw0.100
+   seg PHY_1V8A (73.400,13.150)->(73.400,13.200) hw0.100
+   seg PHY_1V8A (71.850,11.900)->(71.900,11.900) hw0.100
+   seg PHY_1V8A (73.350,12.650)->(73.350,12.700) hw0.100
+   seg PHY_1V8A (71.750,14.950)->(71.700,15.000) hw0.100
+   seg PHY_1V8A (73.200,12.450)->(73.250,12.500) hw0.100
+   seg PHY_1V8A (71.650,11.900)->(71.700,11.900) hw0.100
+   seg PHY_1V8A (74.200,12.250)->(73.500,12.550) hw0.100
+   seg PHY_1V8A (71.500,15.350)->(71.500,15.400) hw0.100
+   seg PHY_1V8A (71.250,11.850)->(71.300,11.850) hw0.100
+   seg PHY_1V8A (73.400,13.000)->(73.400,13.050) hw0.100
+   seg PHY_1V8A (72.150,11.900)->(72.200,11.900) hw0.100
+   seg PHY_1V8A (73.250,13.750)->(73.200,13.800) hw0.100
+   seg PHY_1V8A (72.650,14.350)->(72.600,14.400) hw0.100
+   seg PHY_1V8A (72.250,11.900)->(72.300,11.900) hw0.100
+   seg PHY_1V8A (71.300,12.100)->(70.700,11.850) hw0.100
+   seg PHY_1V8A (72.200,14.750)->(72.150,14.750) hw0.100
+   seg PHY_1V8A (73.400,13.400)->(73.350,13.450) hw0.100
+   seg PHY_1V8A (73.300,13.650)->(73.250,13.700) hw0.100
+   seg PHY_1V8A (73.300,12.200)->(73.220,11.940) hw0.100
+   seg PHY_1V8A (73.500,12.550)->(73.300,12.200) hw0.100
+   seg PHY_1V8A (72.450,14.550)->(72.400,14.600) hw0.100
+   seg PHY_1V8A (73.400,12.800)->(73.400,12.850) hw0.100
+   seg PHY_1V8A (71.100,11.800)->(71.150,11.800) hw0.100
+   seg PHY_1V8A (73.300,12.550)->(73.300,12.600) hw0.100
+   seg PHY_1V8A (72.000,14.750)->(71.950,14.750) hw0.100
+   seg PHY_1V8A (73.100,13.900)->(73.050,13.950) hw0.100
+   seg PHY_1V8A (73.050,12.300)->(73.100,12.350) hw0.100
+   seg PHY_1V8A (71.800,11.900)->(71.850,11.900) hw0.100
+   seg PHY_1V8A (72.700,14.300)->(72.650,14.350) hw0.100
+   seg PHY_1V8A (73.400,13.050)->(73.400,13.100) hw0.100
+   seg PHY_1V8A (72.600,14.400)->(72.550,14.450) hw0.100
+   seg PHY_1V8A (71.600,11.900)->(71.650,11.900) hw0.100
+   seg PHY_1V8A (73.350,13.500)->(73.350,13.550) hw0.100
+   seg PHY_1V8A (71.150,11.800)->(71.200,11.850) hw0.100
+   seg PHY_1V8A (72.350,11.900)->(72.400,11.900) hw0.100
+   seg PHY_1V8A (71.000,11.800)->(71.050,11.800) hw0.100
+   seg PHY_1V8A (73.400,12.900)->(73.400,12.950) hw0.100
+   seg PHY_1V8A (71.500,11.900)->(71.550,11.900) hw0.100
+   seg PHY_1V8A (72.050,11.900)->(72.100,11.900) hw0.100
+   seg PHY_1V8A (72.950,12.200)->(73.000,12.250) hw0.100
+   seg PHY_1V8A (71.350,11.850)->(71.400,11.900) hw0.100
+   seg PHY_1V8A (71.300,11.850)->(71.350,11.850) hw0.100
+   seg PHY_1V8A (71.550,11.900)->(71.600,11.900) hw0.100
+   seg PHY_1V8A (72.900,14.100)->(72.850,14.150) hw0.100
+   seg PHY_1V8A (72.950,14.050)->(72.900,14.100) hw0.100
+   seg PHY_1V8A (72.150,14.750)->(72.100,14.750) hw0.100
+   seg PHY_1V8A (73.250,13.700)->(73.250,13.750) hw0.100
+   seg PHY_1V8A (71.650,15.050)->(71.600,15.100) hw0.100
+   via RBIAS (73.875,11.625) r0.300
+PHY_1V8 fragments B chain check:
+PHY_1V8 fragments: [2, 2]
+DM_PHY fragments: [2]
+XO fragments: [2, 2]

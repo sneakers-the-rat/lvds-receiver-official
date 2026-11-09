@@ -1,0 +1,50 @@
+16:07:11: Debug: Adding duplicate image handler for 'PNG file'
+16:07:11: Debug: Adding duplicate image handler for 'JPEG file'
+16:07:11: Debug: Adding duplicate image handler for 'TIFF file'
+16:07:11: Debug: Adding duplicate image handler for 'GIF file'
+16:07:11: Debug: Adding duplicate image handler for 'PNM file'
+16:07:11: Debug: Adding duplicate image handler for 'PCX file'
+16:07:11: Debug: Adding duplicate image handler for 'IFF file'
+16:07:11: Debug: Adding duplicate image handler for 'Windows icon file'
+16:07:11: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:07:11: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:07:11: Debug: Adding duplicate image handler for 'TGA file'
+16:07:11: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+16:07:12: Debug: Adding duplicate image handler for 'PNG file'
+16:07:12: Debug: Adding duplicate image handler for 'JPEG file'
+16:07:12: Debug: Adding duplicate image handler for 'TIFF file'
+16:07:12: Debug: Adding duplicate image handler for 'GIF file'
+16:07:12: Debug: Adding duplicate image handler for 'PNM file'
+16:07:12: Debug: Adding duplicate image handler for 'PCX file'
+16:07:12: Debug: Adding duplicate image handler for 'IFF file'
+16:07:12: Debug: Adding duplicate image handler for 'Windows icon file'
+16:07:12: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:07:12: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:07:12: Debug: Adding duplicate image handler for 'TGA file'
+16:07:12: Debug: Adding duplicate image handler for 'XPM file'
+y=11.2: +0.05 +0.11 +0.15 +0.05 -0.05 
+y=11.0: -0.10 -0.02 +0.07 +0.05 -0.05 
+y=10.8: -0.18 -0.08 +0.01 +0.09 -0.00 
+y=10.6: -0.15 -0.06 +0.03 +0.13 +0.09 
+y=10.4: -0.03 +0.04 +0.12 +0.21 +0.19 
+x cols: 76.05 76.15 76.25 76.35 76.45
+point (76.25, 11.0):
+   G=+0.070 via PHY_1V8A (75.737,10.750) r0.250
+   G=+0.150 seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.150
+   G=+0.150 seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.150
+point (76.35, 10.8):
+   G=+0.088 seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.150
+   G=+0.088 seg PHY_1V8 (77.350,10.000)->(76.800,10.988) hw0.150
+   G=+0.115 via PHY_1V8A (75.737,10.750) r0.250
+point (76.25, 10.8):
+   G=+0.015 via PHY_1V8A (75.737,10.750) r0.250
+   G=+0.165 seg PHY_1V8A (75.737,10.750)->(75.300,11.350) hw0.100
+   G=+0.181 seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.150
+point (76.15, 11.0):
+   G=-0.018 via PHY_1V8A (75.737,10.750) r0.250
+   G=+0.132 seg PHY_1V8A (75.737,10.750)->(75.300,11.350) hw0.100
+   G=+0.250 seg PHY_1V8 (76.800,10.988)->(76.800,14.988) hw0.150
