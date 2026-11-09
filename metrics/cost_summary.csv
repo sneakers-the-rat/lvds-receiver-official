@@ -1,37 +1,37 @@
 provider,model,scope,input_tokens,output_tokens,input_rate_usd_per_mtok,output_rate_usd_per_mtok,cache_read_rate_usd_per_mtok,input_cost_usd,output_cost_usd,total_cost_usd,source_url
-Meta - Muse (Meta Model API),muse-wonder-1.0,main_chat,324058077,1089111,4.00,20.00,0.20,1296.23,21.78,1318.01,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),muse-wonder-1.0,main_chat,324283125,1089485,4.00,20.00,0.20,1297.13,21.79,1318.92,https://dev.meta.ai/docs/pricing-rate-limits
 Meta - Muse (Meta Model API),muse-spark-1.3,subagents,835076955,7126554,1.25,4.25,0.15,1043.85,30.29,1074.13,https://dev.meta.ai/docs/pricing-rate-limits
-Meta - Muse (Meta Model API),muse-wonder-1.0,checkpoint_cron,320448913,1653136,4.00,20.00,0.20,1281.80,33.06,1314.86,https://dev.meta.ai/docs/pricing-rate-limits
-Meta - Muse (Meta Model API),muse-wonder-1.0,all,644506990,2742247,4.00,20.00,0.20,2578.03,54.84,2632.87,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),muse-wonder-1.0,checkpoint_cron,323472421,1663009,4.00,20.00,0.20,1293.89,33.26,1327.15,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),muse-wonder-1.0,all,647755546,2752494,4.00,20.00,0.20,2591.02,55.05,2646.07,https://dev.meta.ai/docs/pricing-rate-limits
 Meta - Muse (Meta Model API),muse-spark-1.3,all,835076955,7126554,1.25,4.25,0.15,1043.85,30.29,1074.14,https://dev.meta.ai/docs/pricing-rate-limits
-Meta - Muse (Meta Model API),all-uncached (tier-matched),main_chat,324058077,1089111,mixed,mixed,mixed,1296.23,21.78,1318.01,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),all-uncached (tier-matched),main_chat,324283125,1089485,mixed,mixed,mixed,1297.13,21.79,1318.92,https://dev.meta.ai/docs/pricing-rate-limits
 Meta - Muse (Meta Model API),all-uncached (tier-matched),subagents,835076955,7126554,mixed,mixed,mixed,1043.85,30.29,1074.14,https://dev.meta.ai/docs/pricing-rate-limits
-Meta - Muse (Meta Model API),all-uncached (tier-matched),checkpoint_cron,320448913,1653136,mixed,mixed,mixed,1281.80,33.06,1314.86,https://dev.meta.ai/docs/pricing-rate-limits
-Meta - Muse (Meta Model API),all-uncached (tier-matched),all,1479583945,9868801,mixed,mixed,mixed,,,3707.01,https://dev.meta.ai/docs/pricing-rate-limits
-Meta - Muse (Meta Model API),all-cached (tier-matched),all,1479583945,9868801,mixed,mixed,mixed,,,339.30,https://dev.meta.ai/docs/pricing-rate-limits
-Meta - Muse (Meta Model API),cache-adjusted (pessimistic estimate),all,1479583945,9868801,mixed,mixed,mixed,,,2450.31,https://dev.meta.ai/docs/pricing-rate-limits
-Meta - Muse (Meta Model API),cache-adjusted (optimistic estimate),all,1479583945,9868801,mixed,mixed,mixed,,,456.10,https://dev.meta.ai/docs/pricing-rate-limits
-Anthropic - Claude API,claude-opus-5-5,main_chat,324058077,1089111,4.00,20.00,0.20,1296.23,21.78,1318.01,https://platform.claude.com/docs/en/about-claude/pricing
+Meta - Muse (Meta Model API),all-uncached (tier-matched),checkpoint_cron,323472421,1663009,mixed,mixed,mixed,1293.89,33.26,1327.15,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),all-uncached (tier-matched),all,1482832501,9879048,mixed,mixed,mixed,,,3720.21,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),all-cached (tier-matched),all,1482832501,9879048,mixed,mixed,mixed,,,340.15,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),cache-adjusted (pessimistic estimate),all,1482832501,9879048,mixed,mixed,mixed,,,2461.13,https://dev.meta.ai/docs/pricing-rate-limits
+Meta - Muse (Meta Model API),cache-adjusted (optimistic estimate),all,1482832501,9879048,mixed,mixed,mixed,,,457.72,https://dev.meta.ai/docs/pricing-rate-limits
+Anthropic - Claude API,claude-opus-5-5,main_chat,324283125,1089485,4.00,20.00,0.20,1297.13,21.79,1318.92,https://platform.claude.com/docs/en/about-claude/pricing
 Anthropic - Claude API,claude-sonnet-5-5,subagents,835076955,7126554,2.00,10.00,0.10,1670.15,71.27,1741.42,https://platform.claude.com/docs/en/about-claude/pricing
-Anthropic - Claude API,claude-opus-5-5,checkpoint_cron,320448913,1653136,4.00,20.00,0.20,1281.80,33.06,1314.86,https://platform.claude.com/docs/en/about-claude/pricing
-Anthropic - Claude API,claude-opus-5-5,all,644506990,2742247,4.00,20.00,0.20,2578.03,54.84,2632.87,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,claude-opus-5-5,checkpoint_cron,323472421,1663009,4.00,20.00,0.20,1293.89,33.26,1327.15,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,claude-opus-5-5,all,647755546,2752494,4.00,20.00,0.20,2591.02,55.05,2646.07,https://platform.claude.com/docs/en/about-claude/pricing
 Anthropic - Claude API,claude-sonnet-5-5,all,835076955,7126554,2.00,10.00,0.10,1670.15,71.27,1741.42,https://platform.claude.com/docs/en/about-claude/pricing
-Anthropic - Claude API,all-uncached (tier-matched),main_chat,324058077,1089111,mixed,mixed,mixed,1296.23,21.78,1318.01,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,all-uncached (tier-matched),main_chat,324283125,1089485,mixed,mixed,mixed,1297.13,21.79,1318.92,https://platform.claude.com/docs/en/about-claude/pricing
 Anthropic - Claude API,all-uncached (tier-matched),subagents,835076955,7126554,mixed,mixed,mixed,1670.15,71.27,1741.42,https://platform.claude.com/docs/en/about-claude/pricing
-Anthropic - Claude API,all-uncached (tier-matched),checkpoint_cron,320448913,1653136,mixed,mixed,mixed,1281.80,33.06,1314.86,https://platform.claude.com/docs/en/about-claude/pricing
-Anthropic - Claude API,all-uncached (tier-matched),all,1479583945,9868801,mixed,mixed,mixed,,,4374.29,https://platform.claude.com/docs/en/about-claude/pricing
-Anthropic - Claude API,all-cached (tier-matched),all,1479583945,9868801,mixed,mixed,mixed,,,338.52,https://platform.claude.com/docs/en/about-claude/pricing
-Anthropic - Claude API,cache-adjusted (pessimistic estimate),all,1479583945,9868801,mixed,mixed,mixed,,,2791.85,https://platform.claude.com/docs/en/about-claude/pricing
-Anthropic - Claude API,cache-adjusted (optimistic estimate),all,1479583945,9868801,mixed,mixed,mixed,,,466.95,https://platform.claude.com/docs/en/about-claude/pricing
-OpenAI API,gpt-6-astra,main_chat,324058077,1089111,10.00,50.00,1.00,3240.58,54.46,3295.04,https://developers.openai.com/api/docs/pricing
+Anthropic - Claude API,all-uncached (tier-matched),checkpoint_cron,323472421,1663009,mixed,mixed,mixed,1293.89,33.26,1327.15,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,all-uncached (tier-matched),all,1482832501,9879048,mixed,mixed,mixed,,,4387.49,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,all-cached (tier-matched),all,1482832501,9879048,mixed,mixed,mixed,,,339.37,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,cache-adjusted (pessimistic estimate),all,1482832501,9879048,mixed,mixed,mixed,,,2802.67,https://platform.claude.com/docs/en/about-claude/pricing
+Anthropic - Claude API,cache-adjusted (optimistic estimate),all,1482832501,9879048,mixed,mixed,mixed,,,468.57,https://platform.claude.com/docs/en/about-claude/pricing
+OpenAI API,gpt-6-astra,main_chat,324283125,1089485,10.00,50.00,1.00,3242.83,54.47,3297.31,https://developers.openai.com/api/docs/pricing
 OpenAI API,gpt-6.1-sol,subagents,835076955,7126554,2.00,10.00,0.10,1670.15,71.27,1741.42,https://developers.openai.com/api/docs/pricing
-OpenAI API,gpt-6-astra,checkpoint_cron,320448913,1653136,10.00,50.00,1.00,3204.49,82.66,3287.15,https://developers.openai.com/api/docs/pricing
-OpenAI API,gpt-6-astra,all,644506990,2742247,10.00,50.00,1.00,6445.07,137.12,6582.19,https://developers.openai.com/api/docs/pricing
+OpenAI API,gpt-6-astra,checkpoint_cron,323472421,1663009,10.00,50.00,1.00,3234.72,83.15,3317.87,https://developers.openai.com/api/docs/pricing
+OpenAI API,gpt-6-astra,all,647755546,2752494,10.00,50.00,1.00,6477.55,137.62,6615.17,https://developers.openai.com/api/docs/pricing
 OpenAI API,gpt-6.1-sol,all,835076955,7126554,2.00,10.00,0.10,1670.15,71.27,1741.42,https://developers.openai.com/api/docs/pricing
-OpenAI API,all-uncached (tier-matched),main_chat,324058077,1089111,mixed,mixed,mixed,3240.58,54.46,3295.04,https://developers.openai.com/api/docs/pricing
+OpenAI API,all-uncached (tier-matched),main_chat,324283125,1089485,mixed,mixed,mixed,3242.83,54.47,3297.30,https://developers.openai.com/api/docs/pricing
 OpenAI API,all-uncached (tier-matched),subagents,835076955,7126554,mixed,mixed,mixed,1670.15,71.27,1741.42,https://developers.openai.com/api/docs/pricing
-OpenAI API,all-uncached (tier-matched),checkpoint_cron,320448913,1653136,mixed,mixed,mixed,3204.49,82.66,3287.15,https://developers.openai.com/api/docs/pricing
-OpenAI API,all-uncached (tier-matched),all,1479583945,9868801,mixed,mixed,mixed,,,8323.61,https://developers.openai.com/api/docs/pricing
-OpenAI API,all-cached (tier-matched),all,1479583945,9868801,mixed,mixed,mixed,,,936.39,https://developers.openai.com/api/docs/pricing
-OpenAI API,cache-adjusted (pessimistic estimate),all,1479583945,9868801,mixed,mixed,mixed,,,5634.40,https://developers.openai.com/api/docs/pricing
-OpenAI API,cache-adjusted (optimistic estimate),all,1479583945,9868801,mixed,mixed,mixed,,,1202.79,https://developers.openai.com/api/docs/pricing
+OpenAI API,all-uncached (tier-matched),checkpoint_cron,323472421,1663009,mixed,mixed,mixed,3234.72,83.15,3317.87,https://developers.openai.com/api/docs/pricing
+OpenAI API,all-uncached (tier-matched),all,1482832501,9879048,mixed,mixed,mixed,,,8356.59,https://developers.openai.com/api/docs/pricing
+OpenAI API,all-cached (tier-matched),all,1482832501,9879048,mixed,mixed,mixed,,,940.15,https://developers.openai.com/api/docs/pricing
+OpenAI API,cache-adjusted (pessimistic estimate),all,1482832501,9879048,mixed,mixed,mixed,,,5661.75,https://developers.openai.com/api/docs/pricing
+OpenAI API,cache-adjusted (optimistic estimate),all,1482832501,9879048,mixed,mixed,mixed,,,1208.36,https://developers.openai.com/api/docs/pricing
