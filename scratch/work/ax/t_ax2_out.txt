@@ -1,0 +1,91 @@
+11:14:19: Debug: Adding duplicate image handler for 'PNG file'
+11:14:19: Debug: Adding duplicate image handler for 'JPEG file'
+11:14:19: Debug: Adding duplicate image handler for 'TIFF file'
+11:14:19: Debug: Adding duplicate image handler for 'GIF file'
+11:14:19: Debug: Adding duplicate image handler for 'PNM file'
+11:14:19: Debug: Adding duplicate image handler for 'PCX file'
+11:14:19: Debug: Adding duplicate image handler for 'IFF file'
+11:14:19: Debug: Adding duplicate image handler for 'Windows icon file'
+11:14:19: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:14:19: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:14:19: Debug: Adding duplicate image handler for 'TGA file'
+11:14:19: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:14:20: Debug: Adding duplicate image handler for 'PNG file'
+11:14:20: Debug: Adding duplicate image handler for 'JPEG file'
+11:14:20: Debug: Adding duplicate image handler for 'TIFF file'
+11:14:20: Debug: Adding duplicate image handler for 'GIF file'
+11:14:20: Debug: Adding duplicate image handler for 'PNM file'
+11:14:20: Debug: Adding duplicate image handler for 'PCX file'
+11:14:20: Debug: Adding duplicate image handler for 'IFF file'
+11:14:20: Debug: Adding duplicate image handler for 'Windows icon file'
+11:14:20: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:14:20: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:14:20: Debug: Adding duplicate image handler for 'TGA file'
+11:14:20: Debug: Adding duplicate image handler for 'XPM file'
+I2C_SCL L0 hw0.100 n=5: (69.35,1.40)->(68.30,1.63)->(66.50,1.63)->(66.15,1.45)->(66.15,2.10)
+I2C_SCL L1 hw0.100 n=5: (69.62,12.62)->(65.00,12.50)->(64.75,12.00)->(65.25,8.50)->(66.88,6.75)
+I2C_SCL L2 hw0.125 n=105: (69.35,1.40)->(77.38,9.12)->(78.12,8.38)
+GND L0 hw0.100 n=6: (71.00,0.27)->(69.60,0.25)->(68.90,0.85)->(68.20,1.15)->(67.85,1.22)->(67.50,0.95)
+GND L0 hw0.100 n=3: (67.38,4.12)->(67.62,3.88)->(67.45,3.55)
+GND L1 hw0.125 n=8: (66.12,6.62)->(66.12,6.38)->(67.38,5.12)->(67.38,4.12)
+CDR_LOL L0 hw0.100 n=3: (70.62,3.38)->(70.84,2.75)->(71.34,2.75)
+CDR_LOL L2 hw0.125 n=24: (65.62,23.88)->(65.62,15.88)->(67.12,14.38)->(67.08,14.12)->(67.08,6.88)->(67.62,6.62)->(67.88,6.38)->(67.88,4.62)->(68.38,4.12)->(68.38,3.88)->(68.62,3.62)->(68.88,3.62)->(69.12,3.38)->(69.30,3.58)->(69.75,3.78)->(70.30,3.85)->(70.50,3.60)->(70.62,3.38)
+CAP_CLK L0 hw0.100 n=47: (70.60,1.78)->(69.08,2.80)
+CAP_CLK L2 hw0.100 n=332: (69.08,2.80)->(64.75,16.95)
+CAP_DATA L0 hw0.100 n=3: (70.60,2.20)->(69.98,2.60)->(69.90,3.18)
+CAP_DATA L1 hw0.100 n=359: (69.90,3.17)->(63.55,11.95)
+I2C_SDA L0 hw0.100 n=2: (67.97,2.10)->(69.05,2.05)
+I2C_SDA L1 hw0.125 n=102: (69.05,2.05)->(70.12,0.88)->(69.90,0.82)
+I2C_SDA L1 hw0.125 n=4: (71.12,1.88)->(71.60,2.40)->(71.70,3.55)->(71.12,4.12)
+I2C_SDA L2 hw0.125 n=12: (73.38,7.62)->(73.12,7.38)->(73.12,6.12)->(71.12,4.12)
+I2C_SDA L2 hw0.125 n=28: (69.90,0.82)->(69.88,0.62)->(69.88,-9.12)->(76.12,-15.38)
++3V3A L0 hw0.100 n=76: (67.97,2.75)->(69.38,4.12)
++3V3A L0 hw0.100 n=6: (69.12,4.38)->(69.10,4.40)
++3V3A L0 hw0.100 n=3: (71.34,1.25)->(71.38,0.88)
++3V3A L2 hw0.300 n=211: (55.88,38.88)->(55.88,36.38)->(58.62,33.62)->(58.62,33.12)->(67.12,24.62)->(67.12,24.38)->(67.38,24.12)->(67.38,20.38)->(68.62,19.12)->(68.62,4.88)->(69.12,4.38)->(69.20,4.70)->(75.45,8.30)->(75.62,8.62)->(73.62,10.62)->(73.62,8.62)
++3V3A L2 hw0.100 n=223: (71.40,0.90)->(76.10,6.45)
++3V3A L2 hw0.100 n=7: (68.62,8.62)->(75.62,8.62)->(71.25,11.12)->(70.50,11.12)->(68.88,12.38)->(68.38,17.50)->(68.62,17.50)
+TMP_ALERT L0 hw0.125 n=26: (66.03,3.40)->(65.45,3.15)->(65.45,-2.60)->(66.12,-3.12)->(64.12,-5.12)->(64.12,-6.88)->(66.12,-8.88)->(65.88,-9.12)->(65.67,-9.25)->(65.67,-9.50)
+HV_SHDN L1 hw0.125 n=58: (60.88,8.62)->(70.88,-1.38)->(75.12,2.88)
+PG_3V3 L2 hw0.125 n=475: (63.45,14.45)->(63.88,13.12)->(60.62,9.88)->(63.38,7.12)->(68.12,2.38)->(68.38,2.12)->(69.38,-5.12)->(69.38,-6.88)->(68.38,-7.88)->(68.38,-9.12)->(74.62,-15.38)
+--- vias in box ---
+  via +3V3A (69.125,4.375) r0.400
+  via CAP_CLK (69.075,2.800) r0.250
+  via CAP_DATA (69.900,3.180) r0.250
+  via CDR_LOL (70.625,3.375) r0.300
+  via DAC_SYNC (70.700,7.800) r0.250
+  via DAC_VREF (70.300,5.000) r0.250
+  via DAC_VREF (69.510,7.850) r0.250
+  via GND (66.200,6.500) r0.300
+  via GND (67.375,4.125) r0.300
+  via I2C_SCL (69.350,1.400) r0.250
+  via I2C_SDA (69.900,0.820) r0.250
+  via I2C_SDA (69.050,2.050) r0.250
+  via SPI_SCK (67.800,8.100) r0.250
+  via THR_DAC (64.875,6.625) r0.300
+  via THR_DAC (66.625,4.875) r0.300
+  via ULPI_DIR (67.500,0.125) r0.250
+  via ULPI_DIR (64.000,3.660) r0.250
+  via ULPI_NXT (68.000,0.625) r0.250
+--- pads in box ---
+  pad THR_DAC (66.300,5.250) hw0.725x0.150 rot0.00
+  pad HV_DAC (66.300,5.750) hw0.725x0.150 rot0.00
+  pad GND (66.300,6.250) hw0.725x0.150 rot0.00
+  pad GND (66.300,6.750) hw0.725x0.150 rot0.00
+  pad +3V3D (66.300,7.250) hw0.725x0.150 rot0.00
+  pad DAC_SYNC (70.700,7.250) hw0.725x0.150 rot0.00
+  pad SPI_SCK (70.700,6.750) hw0.725x0.150 rot0.00
+  pad SPI_MOSI (70.700,6.250) hw0.725x0.150 rot0.00
+  pad +3V3D (70.700,5.750) hw0.725x0.150 rot0.00
+  pad DAC_VREF (70.700,5.250) hw0.725x0.150 rot0.00
+  pad I2C_SCL (66.025,2.100) hw0.225x0.150 rot0.00
+  pad GND (66.025,2.750) hw0.225x0.150 rot0.00
+  pad TMP_ALERT (66.025,3.400) hw0.225x0.150 rot0.00
+  pad GND (67.975,3.400) hw0.225x0.150 rot0.00
+  pad +3V3A (67.975,2.750) hw0.225x0.150 rot0.00
+  pad I2C_SDA (67.975,2.100) hw0.225x0.150 rot0.00
+  pad GND (67.000,2.750) hw0.500x0.800 rot0.00
