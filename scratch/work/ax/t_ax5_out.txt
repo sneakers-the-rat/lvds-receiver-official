@@ -1,0 +1,90 @@
+11:25:05: Debug: Adding duplicate image handler for 'PNG file'
+11:25:05: Debug: Adding duplicate image handler for 'JPEG file'
+11:25:05: Debug: Adding duplicate image handler for 'TIFF file'
+11:25:05: Debug: Adding duplicate image handler for 'GIF file'
+11:25:05: Debug: Adding duplicate image handler for 'PNM file'
+11:25:05: Debug: Adding duplicate image handler for 'PCX file'
+11:25:05: Debug: Adding duplicate image handler for 'IFF file'
+11:25:05: Debug: Adding duplicate image handler for 'Windows icon file'
+11:25:05: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:25:05: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:25:05: Debug: Adding duplicate image handler for 'TGA file'
+11:25:05: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:25:06: Debug: Adding duplicate image handler for 'PNG file'
+11:25:06: Debug: Adding duplicate image handler for 'JPEG file'
+11:25:06: Debug: Adding duplicate image handler for 'TIFF file'
+11:25:06: Debug: Adding duplicate image handler for 'GIF file'
+11:25:06: Debug: Adding duplicate image handler for 'PNM file'
+11:25:06: Debug: Adding duplicate image handler for 'PCX file'
+11:25:06: Debug: Adding duplicate image handler for 'IFF file'
+11:25:06: Debug: Adding duplicate image handler for 'Windows icon file'
+11:25:06: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:25:06: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:25:06: Debug: Adding duplicate image handler for 'TGA file'
+11:25:06: Debug: Adding duplicate image handler for 'XPM file'
+--- CAP_DATA L1: 42 segs ---
+  seg CAP_DATA (66.275,4.150)->(66.250,4.175) hw0.100
+  seg CAP_DATA (65.950,4.475)->(65.925,4.500) hw0.100
+  seg CAP_DATA (66.175,4.250)->(66.150,4.275) hw0.100
+  seg CAP_DATA (66.150,4.275)->(66.125,4.300) hw0.100
+  seg CAP_DATA (66.750,3.675)->(66.725,3.700) hw0.100
+  seg CAP_DATA (66.225,4.200)->(66.200,4.225) hw0.100
+  seg CAP_DATA (66.200,4.225)->(66.175,4.250) hw0.100
+  seg CAP_DATA (66.125,4.300)->(66.100,4.325) hw0.100
+  seg CAP_DATA (66.100,4.325)->(66.075,4.350) hw0.100
+  seg CAP_DATA (66.775,3.650)->(66.750,3.675) hw0.100
+  seg CAP_DATA (66.325,4.100)->(66.300,4.125) hw0.100
+  seg CAP_DATA (65.900,4.525)->(65.875,4.550) hw0.100
+  seg CAP_DATA (66.725,3.700)->(66.700,3.725) hw0.100
+  seg CAP_DATA (66.400,4.025)->(66.375,4.050) hw0.100
+--- GND L0: 2 segs ---
+  seg GND (67.375,4.125)->(67.625,3.875) hw0.100
+--- GND L1: 7 segs ---
+  seg GND (67.375,5.125)->(67.375,4.125) hw0.125
+  seg GND (66.125,6.375)->(66.375,6.125) hw0.100
+  seg GND (66.375,6.125)->(66.625,5.875) hw0.100
+--- CDR_LOL L2: 4 segs ---
+  seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+  seg CDR_LOL (67.625,6.625)->(67.875,6.375) hw0.125
+--- CAP_CLK L2: 12 segs ---
+  seg CAP_CLK (66.000,4.000)->(65.950,4.050) hw0.100
+  seg CAP_CLK (65.950,4.050)->(65.900,4.100) hw0.100
+  seg CAP_CLK (66.100,3.900)->(66.050,3.950) hw0.100
+  seg CAP_CLK (65.900,4.100)->(65.850,4.150) hw0.100
+=== fine viafit (66.6,68.6,4.2,6.4) step 0.05 ===
+(66.75,4.25) min -0.143
+   L0 -0.113 binder: via THR_DAC (66.625,4.875) r0.300
+   L1 -0.143 binder: seg CAP_DATA (66.475,3.950)->(66.450,3.975) hw0.100
+   L2 -0.113 binder: via THR_DAC (66.625,4.875) r0.300
+(66.8,4.3) min -0.149
+   L0 -0.149 binder: via THR_DAC (66.625,4.875) r0.300
+   L1 -0.149 binder: via THR_DAC (66.625,4.875) r0.300
+   L2 -0.149 binder: via THR_DAC (66.625,4.875) r0.300
+(67.35,5.7) min -0.161
+   L0 -0.128 binder: seg +3V3D (67.875,6.125)->(67.625,6.375) hw0.300
+   L1 -0.161 binder: seg GND (66.875,5.625)->(67.125,5.375) hw0.100
+   L2 -0.050 binder: seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+(67.4,5.65) min -0.161
+   L0 -0.128 binder: seg +3V3D (68.625,6.125)->(67.875,6.125) hw0.300
+   L1 -0.161 binder: seg GND (67.125,5.375)->(67.375,5.125) hw0.100
+   L2 -0.100 binder: seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+(67.45,5.6) min -0.161
+   L0 -0.125 binder: seg +3V3D (68.625,6.125)->(67.875,6.125) hw0.300
+   L1 -0.161 binder: seg GND (67.125,5.375)->(67.375,5.125) hw0.100
+   L2 -0.150 binder: seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125
+(66.8,4.25) min -0.162
+   L0 -0.162 binder: via GND (67.375,4.125) r0.300
+   L1 -0.162 binder: via GND (67.375,4.125) r0.300
+   L2 -0.162 binder: via GND (67.375,4.125) r0.300
+(66.75,4.3) min -0.162
+   L0 -0.162 binder: via THR_DAC (66.625,4.875) r0.300
+   L1 -0.162 binder: via THR_DAC (66.625,4.875) r0.300
+   L2 -0.162 binder: via THR_DAC (66.625,4.875) r0.300
+(67.45,5.65) min -0.163
+   L0 -0.163 binder: seg +3V3D (68.625,6.125)->(67.875,6.125) hw0.300
+   L1 -0.126 binder: seg GND (67.125,5.375)->(67.375,5.125) hw0.100
+   L2 -0.150 binder: seg CDR_LOL (67.875,6.375)->(67.875,4.625) hw0.125

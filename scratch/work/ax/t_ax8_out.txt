@@ -1,0 +1,75 @@
+11:30:19: Debug: Adding duplicate image handler for 'PNG file'
+11:30:19: Debug: Adding duplicate image handler for 'JPEG file'
+11:30:19: Debug: Adding duplicate image handler for 'TIFF file'
+11:30:19: Debug: Adding duplicate image handler for 'GIF file'
+11:30:19: Debug: Adding duplicate image handler for 'PNM file'
+11:30:19: Debug: Adding duplicate image handler for 'PCX file'
+11:30:19: Debug: Adding duplicate image handler for 'IFF file'
+11:30:19: Debug: Adding duplicate image handler for 'Windows icon file'
+11:30:19: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:30:19: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:30:19: Debug: Adding duplicate image handler for 'TGA file'
+11:30:19: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+11:30:19: Debug: Adding duplicate image handler for 'PNG file'
+11:30:19: Debug: Adding duplicate image handler for 'JPEG file'
+11:30:19: Debug: Adding duplicate image handler for 'TIFF file'
+11:30:19: Debug: Adding duplicate image handler for 'GIF file'
+11:30:19: Debug: Adding duplicate image handler for 'PNM file'
+11:30:19: Debug: Adding duplicate image handler for 'PCX file'
+11:30:19: Debug: Adding duplicate image handler for 'IFF file'
+11:30:19: Debug: Adding duplicate image handler for 'Windows icon file'
+11:30:19: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:30:19: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:30:19: Debug: Adding duplicate image handler for 'TGA file'
+11:30:19: Debug: Adding duplicate image handler for 'XPM file'
+netclass GND: (0.25, 0.2)  SCL: (0.25, 0.2)
+y= 7.0 #######............#######...
+y= 6.9 .#######...........########..
+y= 6.8 .########..........#########.
+y= 6.7 .#########.........#########.
+y= 6.6 ..#########........##########
+y= 6.5 ...#####g###.......##########
+y= 6.4 ....#########.....###########
+y= 6.3 .....########################
+y= 6.2 ......#############...#######
+y= 6.1 .......###S######.......#####
+y= 6.0 ........########.........####
+y= 5.9 .........######...........###
+y= 5.8 ..........#####...........###
+y= 5.7 ...........####.....W.....###
+y= 5.6 ............###.....W.....###
+y= 5.5 .............##...........###
+y= 5.4 ..........................###
+y= 5.3 .........................####
+y= 5.2 ........................#####
+y= 5.1 ......................#######
+y= 5.0 ...................##########
+y= 4.9 ............T......##########
+y= 4.8 ...................##########
+y= 4.7 ...................##########
+y= 4.6 ..................###########
+y= 4.5 ..................###########
+y= 4.4 .................############
+y= 4.3 ...............##############
+y= 4.2 ...............##############
+y= 4.1 ................####G########
+y= 4.0 .................############
+y= 3.9 ..................###########
+y= 3.8 ...................#######...
+y= 3.7 ....................#####....
+y= 3.6 ......................##.....
+y= 3.5 .............................
+y= 3.4 .............................
+x from 65.4 step 0.1; start passable: True goal passable: True
+/home/hatch/workspace/pdlvds-route/scratch/work/ax/t_ax8_field.py:90: DeprecationWarning: Conversion of an array with ndim > 0 to a scalar is deprecated, and will error in future. Ensure you extract a single element from your array before performing this operation. (Deprecated NumPy 1.25.)
+  v = float(np.hypot(np.maximum(np.abs(lx) - hw, 0.0),
+cell (66.0,5.4): field -0.229 binder seg THR_DAC (65.875,5.625)->(66.125,5.375) hw0.100
+cell (66.5,5.4): field -0.017 binder seg THR_DAC (66.125,5.375)->(66.375,5.125) hw0.100
+cell (67.0,5.45): field -0.003 binder via I2C_SCL (67.400,5.650) r0.250
+cell (66.8,5.5): field +0.149 binder via THR_DAC (66.625,4.875) r0.300
+cell (66.6,5.2): field -0.174 binder via THR_DAC (66.625,4.875) r0.300
+cell (67.2,5.3): field -0.047 binder via I2C_SCL (67.400,5.650) r0.250
