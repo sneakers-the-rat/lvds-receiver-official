@@ -1,0 +1,19 @@
+23:45:44: Debug: Adding duplicate image handler for 'PNG file'
+23:45:44: Debug: Adding duplicate image handler for 'JPEG file'
+23:45:44: Debug: Adding duplicate image handler for 'TIFF file'
+23:45:44: Debug: Adding duplicate image handler for 'GIF file'
+23:45:44: Debug: Adding duplicate image handler for 'PNM file'
+23:45:44: Debug: Adding duplicate image handler for 'PCX file'
+23:45:44: Debug: Adding duplicate image handler for 'IFF file'
+23:45:44: Debug: Adding duplicate image handler for 'Windows icon file'
+23:45:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:45:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:45:44: Debug: Adding duplicate image handler for 'TGA file'
+23:45:44: Debug: Adding duplicate image handler for 'XPM file'
+stubF1 L0 (67.975, 2.75)->(68.3, 2.85): +0.062 vs pad GND (67.975,3.400) hw0.225x0.150
+via1 via (68.3, 2.95): worst -0.184 L0 vs pad GND (67.975,3.400) hw0.225x0.150
+ride1 L1 (68.3, 2.95)->(68.55, 3.6): +0.084 vs via CAP_CLK (68.975,2.800) r0.250
+ride2 L1 (68.55, 3.6)->(69.0, 4.3): +0.306 vs via CAP_CLK (68.975,2.800) r0.250
+via2 via (69.0, 4.3): worst +0.024 L2 vs seg CDR_LOL (68.375,4.125)->(68.375,3.875) hw0.125
+stubF2 L0 (69.0, 4.3)->(69.125, 4.375): +0.727 vs seg +3V3D (69.200,5.750)->(68.625,6.125) hw0.300
+done

@@ -1,0 +1,20 @@
+23:45:58: Debug: Adding duplicate image handler for 'PNG file'
+23:45:58: Debug: Adding duplicate image handler for 'JPEG file'
+23:45:58: Debug: Adding duplicate image handler for 'TIFF file'
+23:45:58: Debug: Adding duplicate image handler for 'GIF file'
+23:45:58: Debug: Adding duplicate image handler for 'PNM file'
+23:45:58: Debug: Adding duplicate image handler for 'PCX file'
+23:45:58: Debug: Adding duplicate image handler for 'IFF file'
+23:45:58: Debug: Adding duplicate image handler for 'Windows icon file'
+23:45:58: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:45:58: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:45:58: Debug: Adding duplicate image handler for 'TGA file'
+23:45:58: Debug: Adding duplicate image handler for 'XPM file'
+stubF1 L0 (67.975, 2.75)->(68.3, 2.5): -0.081 vs pad I2C_SDA (67.975,2.100) hw0.225x0.150
+via1 via (68.3, 2.5): worst -0.231 L0 vs pad I2C_SDA (67.975,2.100) hw0.225x0.150
+ride1 L1 (68.3, 2.5)->(68.25, 3.3): -0.309 vs seg CAP_DATA (68.275,3.525)->(68.050,3.300) hw0.100
+ride2 L1 (68.25, 3.3)->(68.45, 3.9): -0.446 vs seg CAP_DATA (68.675,3.525)->(68.275,3.525) hw0.100
+ride3 L1 (68.45, 3.9)->(69.0, 4.3): -0.075 vs seg CAP_DATA (68.675,3.525)->(68.275,3.525) hw0.100
+via2 via (69.0, 4.3): worst +0.024 L2 vs seg CDR_LOL (68.375,4.125)->(68.375,3.875) hw0.125
+stubF2 L0 (69.0, 4.3)->(69.125, 4.375): +0.727 vs seg +3V3D (69.200,5.750)->(68.625,6.125) hw0.300
+done

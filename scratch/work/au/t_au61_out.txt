@@ -1,0 +1,55 @@
+23:45:23: Debug: Adding duplicate image handler for 'PNG file'
+23:45:23: Debug: Adding duplicate image handler for 'JPEG file'
+23:45:23: Debug: Adding duplicate image handler for 'TIFF file'
+23:45:23: Debug: Adding duplicate image handler for 'GIF file'
+23:45:23: Debug: Adding duplicate image handler for 'PNM file'
+23:45:23: Debug: Adding duplicate image handler for 'PCX file'
+23:45:23: Debug: Adding duplicate image handler for 'IFF file'
+23:45:23: Debug: Adding duplicate image handler for 'Windows icon file'
+23:45:23: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:45:23: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:45:23: Debug: Adding duplicate image handler for 'TGA file'
+23:45:23: Debug: Adding duplicate image handler for 'XPM file'
+--- x=68.3 (net +3V3A, track hw0.1) ---
+  y=2.0: L0 -0.37 | L1 +0.09 | L2 -0.33
+  y=2.25: L0 -0.29 | L1 +0.18 | L2 -0.44
+  y=2.5: L0 -0.08 | L1 +0.14 | L2 -0.26
+  y=2.75: L0 +0.08 | L1 +0.08 | L2 -0.09
+  y=3.0: L0 -0.08 | L1 +0.10 | L2 +0.09
+  y=3.25: L0 -0.25 | L1 +0.21 | L2 +0.02
+  y=3.5: L0 -0.25 | L1 +0.37 | L2 -0.16
+  y=3.75: L0 -0.13 | L1 +0.35 | L2 -0.33
+  y=4.0: L0 +0.11 | L1 +0.28 | L2 -0.40
+  y=4.25: L0 +0.28 | L1 +0.28 | L2 -0.44
+  y=4.5: L0 +0.35 | L1 +0.35 | L2 -0.26
+  y=4.75: L0 +0.47 | L1 +0.45 | L2 -0.09
+  y=5.0: L0 +0.47 | L1 +0.45 | L2 -0.05
+--- x=68.6 (net +3V3A, track hw0.1) ---
+  y=2.0: L0 -0.38 | L1 -0.15 | L2 -0.40
+  y=2.25: L0 -0.27 | L1 -0.11 | L2 -0.23
+  y=2.5: L0 -0.12 | L1 -0.12 | L2 -0.12
+  y=2.75: L0 -0.22 | L1 -0.22 | L2 -0.22
+  y=3.0: L0 -0.17 | L1 -0.17 | L2 -0.17
+  y=3.25: L0 -0.01 | L1 -0.01 | L2 -0.10
+  y=3.5: L0 +0.05 | L1 +0.19 | L2 -0.35
+  y=3.75: L0 +0.10 | L1 +0.42 | L2 -0.40
+  y=4.0: L0 +0.25 | L1 +0.58 | L2 -0.25
+  y=4.25: L0 +0.46 | L1 +0.58 | L2 -0.22
+  y=4.5: L0 +0.63 | L1 +0.63 | L2 -0.05
+  y=4.75: L0 +0.52 | L1 +0.62 | L2 +0.13
+  y=5.0: L0 +0.31 | L1 +0.51 | L2 +0.25
+--- x=68.9 (net +3V3A, track hw0.1) ---
+  y=2.0: L0 -0.44 | L1 -0.44 | L2 -0.44
+  y=2.25: L0 -0.35 | L1 -0.35 | L2 -0.35
+  y=2.5: L0 -0.29 | L1 -0.29 | L2 -0.29
+  y=2.75: L0 -0.51 | L1 -0.51 | L2 -0.51
+  y=3.0: L0 -0.39 | L1 -0.39 | L2 -0.39
+  y=3.25: L0 -0.14 | L1 -0.14 | L2 -0.23
+  y=3.5: L0 +0.10 | L1 +0.10 | L2 -0.40
+  y=3.75: L0 +0.35 | L1 +0.35 | L2 -0.35
+  y=4.0: L0 +0.48 | L1 +0.60 | L2 -0.10
+  y=4.25: L0 +0.64 | L1 +0.57 | L2 +0.06
+  y=4.5: L0 +0.64 | L1 +0.46 | L2 +0.17
+  y=4.75: L0 +0.39 | L1 +0.35 | L2 +0.34
+  y=5.0: L0 +0.16 | L1 +0.24 | L2 +0.51
+done

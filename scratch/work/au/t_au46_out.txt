@@ -1,0 +1,18 @@
+23:36:56: Debug: Adding duplicate image handler for 'PNG file'
+23:36:56: Debug: Adding duplicate image handler for 'JPEG file'
+23:36:56: Debug: Adding duplicate image handler for 'TIFF file'
+23:36:56: Debug: Adding duplicate image handler for 'GIF file'
+23:36:56: Debug: Adding duplicate image handler for 'PNM file'
+23:36:56: Debug: Adding duplicate image handler for 'PCX file'
+23:36:56: Debug: Adding duplicate image handler for 'IFF file'
+23:36:56: Debug: Adding duplicate image handler for 'Windows icon file'
+23:36:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:36:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:36:56: Debug: Adding duplicate image handler for 'TGA file'
+23:36:56: Debug: Adding duplicate image handler for 'XPM file'
+model (no exit) built
+heal1 (no exit): FOUND
+exit (after heal1): NONE
+DATA entry (final cfg): NONE
+heal2 (final cfg): NONE
+done

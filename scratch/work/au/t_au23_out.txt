@@ -1,0 +1,20 @@
+23:07:40: Debug: Adding duplicate image handler for 'PNG file'
+23:07:40: Debug: Adding duplicate image handler for 'JPEG file'
+23:07:40: Debug: Adding duplicate image handler for 'TIFF file'
+23:07:40: Debug: Adding duplicate image handler for 'GIF file'
+23:07:40: Debug: Adding duplicate image handler for 'PNM file'
+23:07:40: Debug: Adding duplicate image handler for 'PCX file'
+23:07:40: Debug: Adding duplicate image handler for 'IFF file'
+23:07:40: Debug: Adding duplicate image handler for 'Windows icon file'
+23:07:40: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:07:40: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:07:40: Debug: Adding duplicate image handler for 'TGA file'
+23:07:40: Debug: Adding duplicate image handler for 'XPM file'
+REJOIN (63.85, 6.3)
+L1: start field +0.346, goal field +0.175, widest to goal -0.060
+   bottleneck at (71.02,3.60) field -0.060 binder: I2C_SDA seg (71.125, 3.875, 71.375, 3.625, 0.125)
+L0: start field +0.346, goal field +0.450, widest to goal -0.009
+   bottleneck at (69.62,2.03) field -0.009 binder: CAP_CLK via (70.02, 1.83, 0.25)
+L2: start field +0.346, goal field -0.325, widest to goal -0.325
+   bottleneck at (67.87,5.13) field -0.325 binder: CDR_LOL seg (67.875, 6.375, 67.875, 4.625, 0.125)
+done

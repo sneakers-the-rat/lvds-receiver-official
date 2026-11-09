@@ -1,0 +1,23 @@
+00:04:18: Debug: Adding duplicate image handler for 'PNG file'
+00:04:18: Debug: Adding duplicate image handler for 'JPEG file'
+00:04:18: Debug: Adding duplicate image handler for 'TIFF file'
+00:04:18: Debug: Adding duplicate image handler for 'GIF file'
+00:04:18: Debug: Adding duplicate image handler for 'PNM file'
+00:04:18: Debug: Adding duplicate image handler for 'PCX file'
+00:04:18: Debug: Adding duplicate image handler for 'IFF file'
+00:04:18: Debug: Adding duplicate image handler for 'Windows icon file'
+00:04:18: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:04:18: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:04:18: Debug: Adding duplicate image handler for 'TGA file'
+00:04:18: Debug: Adding duplicate image handler for 'XPM file'
+hop re-run (exit via fenced): FOUND
+CLK run2 re-plan (multi): NONE
+model assembled
+PG_3V3: rip 23 items
++3V3D: rip 8 items
+XO: rip 12 items
+PG detours:
+  PG_3V3: detour 1 (64.875, 14.125) -> (63.875, 13.125) vias=[[65.15, 14.45], [63.45, 14.45]]
+  PG_3V3: detour 2 (68.125, 2.375) -> (63.375, 7.125) vias=[]
+  PG_3V3: connected
++3V3D detours:

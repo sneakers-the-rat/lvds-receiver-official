@@ -1,0 +1,53 @@
+23:17:16: Debug: Adding duplicate image handler for 'PNG file'
+23:17:16: Debug: Adding duplicate image handler for 'JPEG file'
+23:17:16: Debug: Adding duplicate image handler for 'TIFF file'
+23:17:16: Debug: Adding duplicate image handler for 'GIF file'
+23:17:16: Debug: Adding duplicate image handler for 'PNM file'
+23:17:16: Debug: Adding duplicate image handler for 'PCX file'
+23:17:16: Debug: Adding duplicate image handler for 'IFF file'
+23:17:16: Debug: Adding duplicate image handler for 'Windows icon file'
+23:17:16: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:17:16: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:17:16: Debug: Adding duplicate image handler for 'TGA file'
+23:17:16: Debug: Adding duplicate image handler for 'XPM file'
+--- SCL B items:
+   via I2C_SCL (78.125,8.375) r0.300
+   via I2C_SCL (79.625,2.375) r0.300
+   via I2C_SCL (69.375,1.375) r0.300
+   via I2C_SCL (69.625,12.625) r0.300
+   via I2C_SCL (70.875,37.875) r0.300
+   seg I2C_SCL (77.125,8.875)->(77.375,9.125) hw0.125
+   seg I2C_SCL (73.875,5.625)->(74.125,5.875) hw0.125
+   seg I2C_SCL (75.875,7.625)->(76.125,7.875) hw0.125
+   seg I2C_SCL (77.625,8.875)->(77.875,8.625) hw0.125
+   seg I2C_SCL (71.625,3.375)->(71.875,3.625) hw0.125
+   seg I2C_SCL (73.375,5.125)->(73.625,5.375) hw0.125
+   seg I2C_SCL (74.875,6.625)->(75.125,6.875) hw0.125
+   seg I2C_SCL (74.625,6.375)->(74.875,6.625) hw0.125
+   seg I2C_SCL (72.875,4.625)->(73.125,4.875) hw0.125
+   seg I2C_SCL (73.125,4.875)->(73.375,5.125) hw0.125
+   seg I2C_SCL (76.875,8.625)->(77.125,8.875) hw0.125
+   seg I2C_SCL (75.125,6.875)->(75.375,7.125) hw0.125
+   seg I2C_SCL (76.125,7.875)->(76.375,8.125) hw0.125
+   seg I2C_SCL (77.875,8.625)->(78.125,8.375) hw0.125
+   seg I2C_SCL (70.875,2.625)->(71.125,2.875) hw0.125
+   seg I2C_SCL (77.375,9.125)->(77.625,8.875) hw0.125
+   seg I2C_SCL (71.375,3.125)->(71.625,3.375) hw0.125
+   seg I2C_SCL (76.625,8.375)->(76.875,8.625) hw0.125
+   seg I2C_SCL (71.875,3.625)->(72.125,3.875) hw0.125
+   seg I2C_SCL (72.625,4.375)->(72.875,4.625) hw0.125
+   seg I2C_SCL (75.625,7.375)->(75.875,7.625) hw0.125
+   seg I2C_SCL (72.375,4.125)->(72.625,4.375) hw0.125
+   seg I2C_SCL (73.625,5.375)->(73.875,5.625) hw0.125
+   seg I2C_SCL (72.125,3.875)->(72.375,4.125) hw0.125
+   seg I2C_SCL (71.125,2.875)->(71.375,3.125) hw0.125
+   seg I2C_SCL (76.375,8.125)->(76.625,8.375) hw0.125
+   seg I2C_SCL (75.375,7.125)->(75.625,7.375) hw0.125
+   seg I2C_SCL (74.125,5.875)->(74.375,6.125) hw0.125
+   seg I2C_SCL (74.375,6.125)->(74.625,6.375) hw0.125
+--- SCL In2 vias and their B/In2 seg touches near staircase:
+  via (78.125, 8.375, 0.3)
+  via (79.625, 2.375, 0.3)
+  via (69.375, 1.375, 0.3)
+  via (69.625, 12.625, 0.3)
+  via (70.875, 37.875, 0.3)

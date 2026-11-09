@@ -1,0 +1,18 @@
+23:30:43: Debug: Adding duplicate image handler for 'PNG file'
+23:30:43: Debug: Adding duplicate image handler for 'JPEG file'
+23:30:43: Debug: Adding duplicate image handler for 'TIFF file'
+23:30:43: Debug: Adding duplicate image handler for 'GIF file'
+23:30:43: Debug: Adding duplicate image handler for 'PNM file'
+23:30:43: Debug: Adding duplicate image handler for 'PCX file'
+23:30:43: Debug: Adding duplicate image handler for 'IFF file'
+23:30:43: Debug: Adding duplicate image handler for 'Windows icon file'
+23:30:43: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:30:43: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:30:43: Debug: Adding duplicate image handler for 'TGA file'
+23:30:43: Debug: Adding duplicate image handler for 'XPM file'
+tried 22 orderings
+WINNER old (70.2, 1.8) ('bheal', 'hop', 'exit')
+  bheal vias [] [(2, [69.35, 1.4], [70.875, 2.625])]
+  hop vias [] [(1, [69.05, 2.05], [71.125, 1.875])]
+  exit vias [[68.975, 2.8]] [(0, [70.2, 1.8], [68.975, 2.8]), (2, [68.975, 2.8], [69.55, 2.7])]
+done

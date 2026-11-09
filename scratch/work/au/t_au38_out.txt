@@ -1,0 +1,32 @@
+23:25:27: Debug: Adding duplicate image handler for 'PNG file'
+23:25:27: Debug: Adding duplicate image handler for 'JPEG file'
+23:25:27: Debug: Adding duplicate image handler for 'TIFF file'
+23:25:27: Debug: Adding duplicate image handler for 'GIF file'
+23:25:27: Debug: Adding duplicate image handler for 'PNM file'
+23:25:27: Debug: Adding duplicate image handler for 'PCX file'
+23:25:27: Debug: Adding duplicate image handler for 'IFF file'
+23:25:27: Debug: Adding duplicate image handler for 'Windows icon file'
+23:25:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+23:25:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+23:25:27: Debug: Adding duplicate image handler for 'TGA file'
+23:25:27: Debug: Adding duplicate image handler for 'XPM file'
+model rips: 41
+  GATE FAIL L0 via CAP_CLK (70.150,2.500) r0.250 -0.542 vs seg CAP_DATA (70.600,2.200)->(69.980,2.600) hw0.100
+  GATE FAIL L0 seg CAP_CLK (71.338,1.750)->(70.150,2.500) hw0.100 -0.392 vs seg CAP_DATA (70.600,2.200)->(69.980,2.600) hw0.100
+  GATE FAIL L1 via I2C_SCL (69.350,1.400) r0.250 -0.011 vs seg I2C_SDA (69.050,2.050)->(69.900,1.850) hw0.125
+  GATE FAIL L1 via I2C_SDA (69.050,2.050) r0.250 -0.090 vs seg I2C_SCL (68.875,1.625)->(69.375,1.375) hw0.100
+  GATE FAIL L1 seg I2C_SDA (69.050,2.050)->(69.900,1.850) hw0.125 -0.325 vs seg CAP_CLK (70.000,1.850)->(70.000,1.800) hw0.100
+  GATE FAIL L1 seg I2C_SDA (69.900,1.850)->(70.600,1.820) hw0.125 -0.425 vs seg CAP_CLK (70.000,1.850)->(70.000,1.800) hw0.100
+  GATE FAIL L2 via I2C_SDA (69.050,2.050) r0.250 -0.115 vs seg PG_3V3 (68.375,2.125)->(68.625,1.875) hw0.125
+  GATE FAIL L2 via CAP_CLK (70.150,2.500) r0.250 -0.095 vs seg I2C_SCL (70.000,1.900)->(70.550,2.200) hw0.100
+  GATE FAIL L2 seg I2C_SCL (70.000,1.900)->(70.550,2.200) hw0.100 -0.095 vs via CAP_CLK (70.150,2.500) r0.250
+  GATE FAIL L2 seg I2C_SCL (70.550,2.200)->(70.875,2.625) hw0.100 -0.050 vs via CAP_CLK (70.150,2.500) r0.250
+fixed-item gate failures: 10
+DATA entry v4: FOUND vias=[]
+   L1: [69.9, 3.175] -> [63.85, 6.3] (246 pts)
+SCL F fanout v4: FOUND vias=[]
+   L0: [69.35, 1.4] -> [66.275, 2.1] (128 pts)
++3V3A heal1 v4: FOUND vias=[]
+   L0: [68.225, 2.75] -> [69.125, 4.375] (76 pts)
++3V3A heal2 v4: NONE
+phase1 done
