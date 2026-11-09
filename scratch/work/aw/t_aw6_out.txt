@@ -1,0 +1,77 @@
+07:01:28: Debug: Adding duplicate image handler for 'PNG file'
+07:01:28: Debug: Adding duplicate image handler for 'JPEG file'
+07:01:28: Debug: Adding duplicate image handler for 'TIFF file'
+07:01:28: Debug: Adding duplicate image handler for 'GIF file'
+07:01:28: Debug: Adding duplicate image handler for 'PNM file'
+07:01:28: Debug: Adding duplicate image handler for 'PCX file'
+07:01:28: Debug: Adding duplicate image handler for 'IFF file'
+07:01:28: Debug: Adding duplicate image handler for 'Windows icon file'
+07:01:28: Debug: Adding duplicate image handler for 'Windows cursor file'
+07:01:28: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+07:01:28: Debug: Adding duplicate image handler for 'TGA file'
+07:01:28: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+--- site (71.5,27.5) rot0 ---
+   pad +3V3D (70.45,28.32): -0.364 vs seg CDR_SQUELCH (70.875,28.125)->(71.125,27.875) hw0.125
+   pad GND (72.55,28.32): -0.248 vs via XO (72.125,29.125) r0.300
+   pad REFCLK (72.55,26.68): -0.314 vs seg CDR_SQUELCH (71.875,27.125)->(72.125,26.875) hw0.125
+   pad +3V3D (70.45,26.68): -0.540 vs via +3V3D_CDR (70.625,27.125) r0.400
+--- site (72.0,27.5) rot0 ---
+   pad +3V3D (70.95,28.32): -0.364 vs seg CDR_SQUELCH (71.125,27.875)->(71.375,27.625) hw0.125
+   pad GND (73.05,28.32): -0.346 vs seg CDR_CLKP (73.625,28.625)->(73.875,28.375) hw0.150
+   pad REFCLK (73.05,26.68): -0.300 vs seg CDR_SQUELCH (72.375,26.625)->(72.625,26.375) hw0.125
+   pad +3V3D (70.95,26.68): -0.531 vs via +3V3D_CDR (70.625,27.125) r0.400
+--- site (72.5,27.5) rot0 ---
+   pad +3V3D (71.45,28.32): -0.364 vs seg CDR_SQUELCH (70.625,28.375)->(70.875,28.125) hw0.125
+   pad GND (73.55,28.32): -0.318 vs seg CDR_CLKP (73.375,28.875)->(73.625,28.625) hw0.150
+   pad REFCLK (73.55,26.68): -0.307 vs seg CDR_SQUELCH (72.875,26.125)->(73.125,25.875) hw0.125
+   pad +3V3D (71.45,26.68): -0.475 vs via +3V3D_CDR (70.625,27.125) r0.400
+--- site (71.5,28.0) rot0 ---
+   pad +3V3D (70.45,28.82): -0.364 vs seg CDR_SQUELCH (70.625,28.375)->(70.875,28.125) hw0.125
+   pad GND (72.55,28.82): -0.346 vs seg CDR_CLKP (73.125,29.125)->(73.375,28.875) hw0.150
+   pad REFCLK (72.55,27.18): -0.300 vs seg CDR_SQUELCH (71.875,27.125)->(72.125,26.875) hw0.125
+   pad +3V3D (70.45,27.18): -0.468 vs via +3V3D_CDR (70.625,27.125) r0.400
+--- site (72.0,28.0) rot0 ---
+   pad +3V3D (70.95,28.82): -0.364 vs seg CDR_SQUELCH (70.125,28.875)->(70.375,28.625) hw0.125
+   pad GND (73.05,28.82): -0.318 vs seg CDR_CLKP (72.875,29.375)->(73.125,29.125) hw0.150
+   pad REFCLK (73.05,27.18): -0.307 vs seg CDR_SQUELCH (72.375,26.625)->(72.625,26.375) hw0.125
+   pad +3V3D (70.95,27.18): -0.371 vs seg CDR_SQUELCH (71.375,27.625)->(71.625,27.375) hw0.125
+--- site (73.25,27.0) rot90 ---
+   pad +3V3D (72.42,25.95): -0.357 vs seg CDR_SQUELCH (72.375,26.625)->(72.625,26.375) hw0.125
+   pad GND (72.42,28.05): -0.131 vs seg CDR_SQUELCH (71.625,27.375)->(71.875,27.125) hw0.125
+   pad REFCLK (74.08,28.05): -0.332 vs seg CDR_CLKP (73.375,28.875)->(73.625,28.625) hw0.150
+   pad +3V3D (74.08,25.95): -0.365 vs seg CDR_SQUELCH (73.625,25.375)->(73.625,22.625) hw0.125
+--- site (73.0,27.5) rot90 ---
+   pad +3V3D (72.17,26.45): -0.375 vs via XO (71.625,25.625) r0.300
+   pad GND (72.17,28.55): -0.410 vs via XO (72.125,29.125) r0.300
+   pad REFCLK (73.83,28.55): -0.332 vs seg CDR_CLKP (74.125,28.125)->(74.375,27.875) hw0.150
+   pad +3V3D (73.83,26.45): -0.322 vs seg CDR_SQUELCH (73.125,25.875)->(73.375,25.625) hw0.125
+--- site (70.0,27.0) rot0 ---
+   pad +3V3D (68.95,27.82): -0.335 vs seg FB_3V3 (69.325,28.250)->(69.325,28.500) hw0.100
+   pad GND (71.05,27.82): -0.496 vs via +3V3D_CDR (70.625,27.125) r0.400
+   pad REFCLK (71.05,26.18): -0.445 vs via XO (71.625,25.625) r0.300
+   pad +3V3D (68.95,26.18): +0.275 vs pad +3V3D_CDR (70.562,26.500) hw0.438x0.600
+--- site (74.0,26.5) rot90 ---
+   pad +3V3D (73.17,25.45): -0.422 vs via GND (72.550,25.600) r0.250
+   pad GND (73.17,27.55): -0.120 vs seg CDR_CLKP (73.875,28.375)->(74.125,28.125) hw0.150
+   pad REFCLK (74.83,27.55): -0.325 vs seg CDR_CLKP (74.125,28.125)->(74.375,27.875) hw0.150
+   pad +3V3D (74.83,25.45): -0.332 vs seg CAP_CLK (74.800,24.800)->(75.400,25.400) hw0.100
+--- site (71.0,27.5) rot0 ---
+   pad +3V3D (69.95,28.32): -0.350 vs seg CDR_SQUELCH (70.375,28.625)->(70.625,28.375) hw0.125
+   pad GND (72.05,28.32): -0.244 vs via XO (72.125,29.125) r0.300
+   pad REFCLK (72.05,26.68): -0.314 vs seg CDR_SQUELCH (71.625,27.375)->(71.875,27.125) hw0.125
+   pad +3V3D (69.95,26.68): -0.623 vs via +3V3D_CDR (70.625,27.125) r0.400
+--- site (72.5,28.5) rot0 ---
+   pad +3V3D (71.45,29.32): -0.518 vs via XO (72.125,29.125) r0.300
+   pad GND (73.55,29.32): -0.346 vs seg CDR_CLKN (74.125,29.625)->(74.375,29.375) hw0.150
+   pad REFCLK (73.55,27.68): -0.318 vs seg CDR_CLKP (74.125,28.125)->(74.375,27.875) hw0.150
+   pad +3V3D (71.45,27.68): -0.475 vs via +3V3D_CDR (70.625,27.125) r0.400
+--- site (73.5,28.0) rot90 ---
+   pad +3V3D (72.67,26.95): -0.357 vs seg CDR_SQUELCH (72.625,26.375)->(72.875,26.125) hw0.125
+   pad GND (72.67,29.05): -0.445 vs via XO (72.125,29.125) r0.300
+   pad REFCLK (74.33,29.05): -0.325 vs seg CDR_CLKP (73.625,28.625)->(73.875,28.375) hw0.150
+   pad +3V3D (74.33,26.95): -0.396 vs seg CDR_CLKP (74.625,27.625)->(74.875,27.375) hw0.150
+done

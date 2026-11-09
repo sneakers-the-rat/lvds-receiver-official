@@ -1,0 +1,55 @@
+07:00:12: Debug: Adding duplicate image handler for 'PNG file'
+07:00:12: Debug: Adding duplicate image handler for 'JPEG file'
+07:00:12: Debug: Adding duplicate image handler for 'TIFF file'
+07:00:12: Debug: Adding duplicate image handler for 'GIF file'
+07:00:12: Debug: Adding duplicate image handler for 'PNM file'
+07:00:12: Debug: Adding duplicate image handler for 'PCX file'
+07:00:12: Debug: Adding duplicate image handler for 'IFF file'
+07:00:12: Debug: Adding duplicate image handler for 'Windows icon file'
+07:00:12: Debug: Adding duplicate image handler for 'Windows cursor file'
+07:00:12: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+07:00:12: Debug: Adding duplicate image handler for 'TGA file'
+07:00:12: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+--- baseline fragments ---
+fragments(XO) = 2 sizes [96, 44]
+fragments(+3V3D) = 5 sizes [552, 58, 7, 4, 3]
+fragments(CAP_CLK) = 2 sizes [199, 1]
+fragments(CAP_DATA) = 3 sizes [187, 1, 1]
+RBIAS staircase ripped (19)
+C22+C24 shrunk (board-true 0402)
+=== C49 shift E to (70.5,19.5) ===
+c49_web_v3a worst pairs:
+c49_web_v3a EMITTED
+C49 moved; +3V3A web re-laid
+=== ULPI_DIR long B seg re-lay ===
+dir_tail_relay worst pairs:
+dir_tail_relay EMITTED
+DIR re-laid
+arr_data: vias=[] runs=[(1, [64.7, 15.45], [72.6, 19.3])]
+arr_data ablated
+=== XO bridge: S-route dip (arr_data ablated) ===
+dip: vias=[[73.9, 21.425]] runs=[(2, 96), (1, 354)]
+xo_bridge worst pairs:
+   +0.000 L0 via XO (73.900,21.425) r0.250 vs pad GND (74.275,20.500) hw0.450x0.475
+   +0.027 L0 via XO (73.900,21.425) r0.250 vs via CAP_CLK (73.250,21.750) r0.250
+   +0.027 L1 via XO (73.900,21.425) r0.250 vs via CAP_CLK (73.250,21.750) r0.250
+   +0.027 L2 via XO (73.900,21.425) r0.250 vs via CAP_CLK (73.250,21.750) r0.250
+xo_bridge EMITTED
+fragments(XO) = 1 sizes [296]
+XO BRIDGE CLOSED
+=== RBIAS ride ===
+  dive (69.925, 20.475): In2 leg NONE
+  dive (70.0, 20.375): In2 leg NONE
+  dive (69.85, 20.55): In2 leg NONE
+  dive (70.1, 20.3): In2 leg NONE
+  full-ML ride hw=0.125: NONE
+  full-ML ride hw=0.1: NONE
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/aw/t_aw5_e1.py", line 186, in <module>
+    assert rb_done, 'RBIAS RIDE FAILED (E1 pair does not close)'
+           ^^^^^^^
+AssertionError: RBIAS RIDE FAILED (E1 pair does not close)
