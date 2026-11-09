@@ -1021,8 +1021,9 @@ b06e14473859,2026-11-09T13:17:23Z,Merge branch 'mwork9' of /home/hatch/workspace
 b73292929631,2026-11-09T13:17:42Z,metrics: post-merge regen,1564517839,10390277,1574908116,83,64,not recorded
 2b78d1cb53be,2026-11-09T13:45:28Z,metrics: watchdog export refresh,1564517839,10390277,1574908116,83,64,not recorded
 757433d34449,2026-11-09T14:13:34Z,metrics: watchdog export refresh,1568990299,10417044,1579407343,83,64,not recorded
-2c1ada34bf54,2026-11-09T14:24:09Z,"ax evidence: CDR_LOS design pass (t_ax80-t_ax97, los_design_ax93, exp249 referees)",1568990299,10417044,1579407343,83,64,not recorded
-13b756d53978,2026-11-09T14:24:15Z,ax evidence: CDR_LOS pass outputs,1568990299,10417044,1579407343,83,64,not recorded
-6f50259a41ec,2026-11-09T14:28:18Z,"pass 0212: pass 212: CDR_LOS connected (C14 relocated (72,36.75)->(74.75,34.75); SDA U4 escape re-laid F-only; LOS A* route 4 vias; REFCLKN rejoin) - DRC unconnected 6->5 (island + 4 nets), check_pcb 5->4, violations 4 J1 only, silk 0, courtyard 0",1568990299,10417044,1579407343,83,64,not recorded
-62ac441ec0d6,2026-11-09T14:28:18Z,pass 0212: record commit hash,1568990299,10417044,1579407343,83,64,not recorded
-ae36c4232510,2026-11-09T14:28:27Z,merge mwork9 pass 212 (CDR_LOS),1568990299,10417044,1579407343,83,64,not recorded
+2c1ada34bf54,2026-11-09T14:24:09Z,"ax evidence: CDR_LOS design pass (t_ax80-t_ax97, los_design_ax93, exp249 referees)",1572252664,10426974,1582679638,83,64,not recorded
+13b756d53978,2026-11-09T14:24:15Z,ax evidence: CDR_LOS pass outputs,1572252664,10426974,1582679638,83,64,not recorded
+6f50259a41ec,2026-11-09T14:28:18Z,"pass 0212: pass 212: CDR_LOS connected (C14 relocated (72,36.75)->(74.75,34.75); SDA U4 escape re-laid F-only; LOS A* route 4 vias; REFCLKN rejoin) - DRC unconnected 6->5 (island + 4 nets), check_pcb 5->4, violations 4 J1 only, silk 0, courtyard 0",1572252664,10426974,1582679638,83,64,not recorded
+62ac441ec0d6,2026-11-09T14:28:18Z,pass 0212: record commit hash,1572252664,10426974,1582679638,83,64,not recorded
+ae36c4232510,2026-11-09T14:28:27Z,merge mwork9 pass 212 (CDR_LOS),1572252664,10426974,1582679638,83,64,not recorded
+98f0250dc092,2026-11-09T14:29:03Z,metrics: post-merge regen,1572252664,10426974,1582679638,83,64,not recorded
