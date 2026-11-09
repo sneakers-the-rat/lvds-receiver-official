@@ -1,0 +1,39 @@
+03:52:28: Debug: Adding duplicate image handler for 'PNG file'
+03:52:28: Debug: Adding duplicate image handler for 'JPEG file'
+03:52:28: Debug: Adding duplicate image handler for 'TIFF file'
+03:52:28: Debug: Adding duplicate image handler for 'GIF file'
+03:52:28: Debug: Adding duplicate image handler for 'PNM file'
+03:52:28: Debug: Adding duplicate image handler for 'PCX file'
+03:52:28: Debug: Adding duplicate image handler for 'IFF file'
+03:52:28: Debug: Adding duplicate image handler for 'Windows icon file'
+03:52:28: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:52:28: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:52:28: Debug: Adding duplicate image handler for 'TGA file'
+03:52:28: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au91
+scl_ffan worst pairs:
+   +0.010 L0 seg I2C_SCL (68.300,1.630)->(66.500,1.630) hw0.100 vs seg GND (68.200,1.150)->(67.850,1.220) hw0.100
+   +0.010 L0 seg I2C_SCL (68.300,1.630)->(66.500,1.630) hw0.100 vs seg GND (67.850,1.220)->(67.500,0.950) hw0.100
+   +0.014 L0 via I2C_SCL (69.300,1.250) r0.250 vs seg GND (69.600,0.250)->(68.900,0.850) hw0.100
+   +0.016 L0 via I2C_SCL (69.300,1.250) r0.250 vs seg GND (68.900,0.850)->(68.200,1.150) hw0.100
+scl_ffan EMITTED
+xo_bridge worst pairs:
+   -0.575 L0 seg XO (71.900,25.300)->(71.900,20.200) hw0.100 vs via REFCLK (71.875,23.375) r0.300
+   -0.424 L1 seg XO (71.000,19.500)->(69.600,19.550) hw0.100 vs seg RBIAS (70.875,19.375)->(70.625,19.625) hw0.125
+   -0.400 L0 seg XO (71.900,25.300)->(71.900,20.200) hw0.100 vs seg CAP_CLK (71.850,21.700)->(73.200,21.700) hw0.100
+   -0.399 L0 seg XO (71.900,25.300)->(71.900,20.200) hw0.100 vs seg REFCLK (71.875,23.375)->(72.300,22.925) hw0.100
+XO fragments now: 2
+detour_+3V3D_stub worst pairs:
+   -0.500 L0 seg +3V3D (71.600,21.350)->(71.200,21.900) hw0.150 vs seg CAP_CLK (70.250,21.900)->(71.600,21.900) hw0.100
+   -0.500 L0 seg +3V3D (71.200,21.900)->(70.600,22.600) hw0.150 vs seg CAP_CLK (70.250,21.900)->(71.600,21.900) hw0.100
+   -0.176 L0 seg +3V3D (71.600,21.350)->(71.200,21.900) hw0.150 vs seg CAP_CLK (71.600,21.900)->(71.700,21.800) hw0.100
+   -0.170 L0 seg +3V3D (71.600,21.350)->(71.200,21.900) hw0.150 vs pad GND (70.825,21.000) hw0.400x0.475
++3V3D fragments now: 3
+SCL fragments now: 4
+full gate: 0 failures
+saved scratch/work/au/build_au92.json
+done
+EXITCODE=0

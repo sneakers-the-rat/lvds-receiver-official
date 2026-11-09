@@ -1,0 +1,30 @@
+04:00:55: Debug: Adding duplicate image handler for 'PNG file'
+04:00:55: Debug: Adding duplicate image handler for 'JPEG file'
+04:00:55: Debug: Adding duplicate image handler for 'TIFF file'
+04:00:55: Debug: Adding duplicate image handler for 'GIF file'
+04:00:55: Debug: Adding duplicate image handler for 'PNM file'
+04:00:55: Debug: Adding duplicate image handler for 'PCX file'
+04:00:55: Debug: Adding duplicate image handler for 'IFF file'
+04:00:55: Debug: Adding duplicate image handler for 'Windows icon file'
+04:00:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:00:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:00:55: Debug: Adding duplicate image handler for 'TGA file'
+04:00:55: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+XO A* (0, 1, 2)->(1, 68.875, 20.375): NONE
+XO A* (2,)->(1, 68.875, 20.375): NONE
+XO A* (0, 1, 2)->(2, 72.625, 20.375): FOUND vias=[]
+   densified gate worst +9.900
+xo_bridge EMITTED
+XO fragments now: 2
++3V3D A* lock (True, False, False) hw 0.15: NONE
++3V3D A* lock None hw 0.15: NONE
++3V3D A* lock None hw 0.125: NONE
++3V3D fragments now: 3
+full gate: 0 failures
+saved scratch/work/au/build_au94.json
+done
+EXITCODE=0
