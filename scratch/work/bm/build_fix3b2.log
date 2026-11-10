@@ -1,0 +1,65 @@
+16:51:31: Debug: Adding duplicate image handler for 'PNG file'
+16:51:31: Debug: Adding duplicate image handler for 'JPEG file'
+16:51:31: Debug: Adding duplicate image handler for 'TIFF file'
+16:51:31: Debug: Adding duplicate image handler for 'GIF file'
+16:51:31: Debug: Adding duplicate image handler for 'PNM file'
+16:51:31: Debug: Adding duplicate image handler for 'PCX file'
+16:51:31: Debug: Adding duplicate image handler for 'IFF file'
+16:51:31: Debug: Adding duplicate image handler for 'Windows icon file'
+16:51:31: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:51:31: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:51:31: Debug: Adding duplicate image handler for 'TGA file'
+16:51:31: Debug: Adding duplicate image handler for 'XPM file'
+16:51:32: Debug: Adding duplicate image handler for 'PNG file'
+16:51:32: Debug: Adding duplicate image handler for 'JPEG file'
+16:51:32: Debug: Adding duplicate image handler for 'TIFF file'
+16:51:32: Debug: Adding duplicate image handler for 'GIF file'
+16:51:32: Debug: Adding duplicate image handler for 'PNM file'
+16:51:32: Debug: Adding duplicate image handler for 'PCX file'
+16:51:32: Debug: Adding duplicate image handler for 'IFF file'
+16:51:32: Debug: Adding duplicate image handler for 'Windows icon file'
+16:51:32: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:51:32: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:51:32: Debug: Adding duplicate image handler for 'TGA file'
+16:51:32: Debug: Adding duplicate image handler for 'XPM file'
+16:51:35: Debug: Adding duplicate image handler for 'PNG file'
+16:51:35: Debug: Adding duplicate image handler for 'JPEG file'
+16:51:35: Debug: Adding duplicate image handler for 'TIFF file'
+16:51:35: Debug: Adding duplicate image handler for 'GIF file'
+16:51:35: Debug: Adding duplicate image handler for 'PNM file'
+16:51:35: Debug: Adding duplicate image handler for 'PCX file'
+16:51:35: Debug: Adding duplicate image handler for 'IFF file'
+16:51:35: Debug: Adding duplicate image handler for 'Windows icon file'
+16:51:35: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:51:35: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:51:35: Debug: Adding duplicate image handler for 'TGA file'
+16:51:35: Debug: Adding duplicate image handler for 'XPM file'
+PHY_1V8A F.Cu (76.3, 10.85)->(76.18, 10.82): negatives=1 worst=[(-0.041, 'pad +3V3A rect(75.875, 11.125, 76.125, 12.0)'), (0.016, 'trk XI (76.08, 10.33)->(76.5, 10.48)')]
+PHY_1V8A F.Cu (76.18, 10.82)->(75.9, 10.84): negatives=1 worst=[(-0.04, 'pad +3V3A rect(75.875, 11.125, 76.125, 12.0)'), (0.021, 'via XI@(75.82, 10.3)')]
+PHY_1V8A F.Cu (75.9, 10.84)->(75.45, 10.815): negatives=2 worst=[(-0.04, 'pad +3V3A rect(75.875, 11.125, 76.125, 12.0)'), (-0.025, 'pad +3V3A rect(75.375, 11.125, 75.625, 12.0)')]
+PHY_1V8A F.Cu (75.45, 10.815)->(75.2, 10.5): negatives=1 worst=[(-0.04, 'pad +3V3A rect(75.375, 11.125, 75.625, 12.0)'), (0.06, 'via XI@(75.82, 10.3)')]
+PHY_1V8A F.Cu (75.2, 10.5)->(74.99, 10.28): negatives=0 worst=[(0.101, 'via XI@(75.82, 10.3)'), (0.251, 'trk XI (75.82, 10.3)->(76.1, 10.25)')]
++3V3A F.Cu (75.5, 11.562)->(76.0, 11.562): negatives=0 worst=[(0.05, 'pad PHY_1V8A rect(76.375, 11.125, 76.625, 12.0)'), (0.05, 'pad RBIAS rect(74.875, 11.125, 75.125, 12.0)')]
+gate negatives: 0
+gate clean; building
+netcodes: {'XI': 112, 'PHY_1V8A': 69, '+3V3A': 1}
+found PHY_1V8A seg (76.3, 10.85)->(76.18, 10.8) (w=0.2)
+found PHY_1V8A seg (76.18, 10.8)->(75.9, 10.77) (w=0.2)
+found PHY_1V8A seg (75.9, 10.77)->(75.62, 10.7) (w=0.2)
+found PHY_1V8A seg (75.62, 10.7)->(75.34, 10.38) (w=0.2)
+found PHY_1V8A seg (75.34, 10.38)->(75.2, 10.35) (w=0.2)
+found PHY_1V8A seg (75.2, 10.35)->(74.99, 10.28) (w=0.2)
+found +3V3A seg (75.85, 11.75)->(76.0, 11.562) (w=0.2)
+found +3V3A seg (75.85, 11.75)->(76.6, 12.15) (w=0.2)
+found +3V3A via @(75.85, 11.75)
+found +3V3A via @(73.625, 10.625)
+removed 10 items
+saved hw/pdlvds_rx.exp269.kicad_pcb
+reload census diff (net, kind): base -> now
+  ('+3V3A', 'trk'): 610 -> 609
+  ('+3V3A', 'via'): 14 -> 12
+  ('PHY_1V8A', 'trk'): 155 -> 154
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
