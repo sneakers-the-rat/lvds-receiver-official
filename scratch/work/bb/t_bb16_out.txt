@@ -1,0 +1,41 @@
+05:25:29: Debug: Adding duplicate image handler for 'PNG file'
+05:25:29: Debug: Adding duplicate image handler for 'JPEG file'
+05:25:29: Debug: Adding duplicate image handler for 'TIFF file'
+05:25:29: Debug: Adding duplicate image handler for 'GIF file'
+05:25:29: Debug: Adding duplicate image handler for 'PNM file'
+05:25:29: Debug: Adding duplicate image handler for 'PCX file'
+05:25:29: Debug: Adding duplicate image handler for 'IFF file'
+05:25:29: Debug: Adding duplicate image handler for 'Windows icon file'
+05:25:29: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:25:29: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:25:29: Debug: Adding duplicate image handler for 'TGA file'
+05:25:29: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+05:25:29: Debug: Adding duplicate image handler for 'PNG file'
+05:25:29: Debug: Adding duplicate image handler for 'JPEG file'
+05:25:29: Debug: Adding duplicate image handler for 'TIFF file'
+05:25:29: Debug: Adding duplicate image handler for 'GIF file'
+05:25:29: Debug: Adding duplicate image handler for 'PNM file'
+05:25:29: Debug: Adding duplicate image handler for 'PCX file'
+05:25:29: Debug: Adding duplicate image handler for 'IFF file'
+05:25:29: Debug: Adding duplicate image handler for 'Windows icon file'
+05:25:29: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:25:29: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:25:29: Debug: Adding duplicate image handler for 'TGA file'
+05:25:29: Debug: Adding duplicate image handler for 'XPM file'
+A3 exact (B): worst 8 [(0.005, 'GND', 'via'), (0.014, 'GND', 'via'), (0.075, 'PHY_1V8', 'seg'), (0.075, 'PHY_1V8', 'seg'), (0.078, 'PHY_1V8', 'seg'), (0.169, 'I2C_SCL', 'seg'), (0.169, 'I2C_SCL', 'seg'), (0.21, '+3V3A', 'via')]
+STP frags: 2 (base 2)
+CK frags: 1 (base 1)
+1V8A frags: 1 (base 1)
+XO rip: 8 (expect 8 incl. the 10.40 piece)
+XO gate (model): worst 6 [(-0.309, 'F', ('pad', 'PHY_1V8', (77.17, 10.43, 0.28, 0.31, 1.5707963267948966), 0.25)), (-0.309, 'F', ('pad', 'PHY_1V8', (77.17, 10.43, 0.28, 0.31, 1.5707963267948966), 0.25)), (-0.019, 'F', ('seg', 'PHY_1V8', (77.25, 11.562, 77.25, 10.75, 0.1), 0.25)), (-0.019, 'F', ('seg', 'PHY_1V8', (77.25, 10.75, 77.55, 10.35, 0.1), 0.25)), (-0.019, 'F', ('seg', 'PHY_1V8', (77.25, 11.562, 77.25, 10.75, 0.1), 0.25)), (-0.019, 'F', ('seg', 'PHY_1V8', (77.25, 10.75, 77.55, 10.35, 0.1), 0.25))]
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/bb/t_bb16_xi_v9.py", line 170, in <module>
+    exact_gate([((76.55, 10.40), (76.82, 10.72), 0.1),
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/bb/t_bb16_xi_v9.py", line 59, in exact_gate
+    hx, hy = o[3][0], o[3][1]
+             ~~~~^^^
+TypeError: 'float' object is not subscriptable

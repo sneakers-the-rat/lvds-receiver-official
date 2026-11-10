@@ -1,0 +1,37 @@
+05:40:33: Debug: Adding duplicate image handler for 'PNG file'
+05:40:33: Debug: Adding duplicate image handler for 'JPEG file'
+05:40:33: Debug: Adding duplicate image handler for 'TIFF file'
+05:40:33: Debug: Adding duplicate image handler for 'GIF file'
+05:40:33: Debug: Adding duplicate image handler for 'PNM file'
+05:40:33: Debug: Adding duplicate image handler for 'PCX file'
+05:40:33: Debug: Adding duplicate image handler for 'IFF file'
+05:40:33: Debug: Adding duplicate image handler for 'Windows icon file'
+05:40:33: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:40:33: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:40:33: Debug: Adding duplicate image handler for 'TGA file'
+05:40:33: Debug: Adding duplicate image handler for 'XPM file'
+START reach per layer F/In2/B: [43712, 55281, 56134]
+GOAL reach per layer F/In2/B: [25, 0, 0]
+probe (66.5,30.375): cell (92,275) start_reach=[True, True, True] goal_reach=[False, False, False] via_ok=True trk_ok=[True, True, True]
+probe (67.25,29.625): cell (98,269) start_reach=[False, False, False] goal_reach=[False, False, False] via_ok=False trk_ok=[False, False, False]
+probe (69.3,-0.65): cell (114,27) start_reach=[True, True, False] goal_reach=[False, False, False] via_ok=False trk_ok=[True, True, False]
+probe (74.95,17.5): cell (160,172) start_reach=[False, True, True] goal_reach=[False, False, False] via_ok=False trk_ok=[False, True, True]
+probe (75.875,17.375): cell (167,171) start_reach=[False, True, False] goal_reach=[False, False, False] via_ok=False trk_ok=[False, True, False]
+probe (62.625,12.75): cell (61,134) start_reach=[False, False, False] goal_reach=[False, False, False] via_ok=False trk_ok=[False, False, False]
+probe (60.25,8.5): cell (42,100) start_reach=[True, False, True] goal_reach=[False, False, False] via_ok=False trk_ok=[True, False, True]
+probe (71.375,19.125): cell (131,185) start_reach=[False, False, True] goal_reach=[False, False, False] via_ok=False trk_ok=[False, False, True]
+probe (69.25,27.625): cell (114,253) start_reach=[False, False, True] goal_reach=[False, False, False] via_ok=False trk_ok=[False, False, True]
+probe (75.82,10.3): cell (167,114) start_reach=[False, False, True] goal_reach=[False, False, False] via_ok=False trk_ok=[True, True, True]
+probe (75.05,18.35): cell (160,179) start_reach=[True, True, True] goal_reach=[False, False, False] via_ok=False trk_ok=[True, True, True]
+probe (72.25,17.3): cell (138,170) start_reach=[True, True, True] goal_reach=[False, False, False] via_ok=False trk_ok=[True, True, True]
+probe (74.9,16.85): cell (159,167) start_reach=[False, True, True] goal_reach=[False, False, False] via_ok=False trk_ok=[False, True, True]
+START strip x70-78 layer F: ymin 15.62 ymax 36.00
+START strip x70-78 layer In2: ymin -1.62 ymax 36.00
+START strip x70-78 layer B: ymin 9.38 ymax 36.00
+START strip x64-70 layer F: ymin -4.00 ymax 34.38
+START strip x64-70 layer In2: ymin -4.00 ymax 36.00
+START strip x64-70 layer B: ymin -4.00 ymax 36.00
+START strip x58-64 layer F: ymin -4.00 ymax 36.00
+START strip x58-64 layer In2: ymin -4.00 ymax 36.00
+START strip x58-64 layer B: ymin -4.00 ymax 36.00
+overlap cells: 0

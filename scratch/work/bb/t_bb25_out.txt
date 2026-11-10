@@ -1,0 +1,37 @@
+05:35:15: Debug: Adding duplicate image handler for 'PNG file'
+05:35:15: Debug: Adding duplicate image handler for 'JPEG file'
+05:35:15: Debug: Adding duplicate image handler for 'TIFF file'
+05:35:15: Debug: Adding duplicate image handler for 'GIF file'
+05:35:15: Debug: Adding duplicate image handler for 'PNM file'
+05:35:15: Debug: Adding duplicate image handler for 'PCX file'
+05:35:15: Debug: Adding duplicate image handler for 'IFF file'
+05:35:15: Debug: Adding duplicate image handler for 'Windows icon file'
+05:35:15: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:35:15: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:35:15: Debug: Adding duplicate image handler for 'TGA file'
+05:35:15: Debug: Adding duplicate image handler for 'XPM file'
+pads:
+  U6.28 at (71.338,-1.250)
+  U7.12 at (75.750,16.438)
+tracks/vias:
+  F seg (66.750,30.125)->(66.250,28.625) w0.20
+  F seg (62.625,24.750)->(61.375,11.750) w0.20
+  F seg (67.500,0.125)->(70.625,-1.250) w0.20
+  F seg (75.750,16.875)->(75.500,17.521) w0.20
+  via (67.500,0.125) w0.50
+  via (75.500,17.521) w0.50
+  via (66.250,28.625) w0.50
+  via (61.375,11.750) w0.50
+  via (62.625,24.750) w0.50
+  via (64.000,3.660) w0.50
+  via (66.750,30.125) w0.50
+  In2 seg (59.750,8.750)->(59.875,7.875) w0.20
+  In2 seg (59.875,7.875)->(64.000,3.660) w0.20
+  In2 seg (61.375,11.750)->(59.750,8.750) w0.20
+  In2 seg (66.250,28.625)->(62.625,24.750) w0.20
+  B seg (65.500,0.900)->(67.500,0.125) w0.20
+  B seg (75.500,17.521)->(71.375,19.125) w0.20
+  B seg (64.000,3.660)->(65.500,0.900) w0.20
+  B seg (67.375,30.250)->(66.750,30.125) w0.20
+  B seg (71.375,19.125)->(68.875,29.000) w0.20
+  B seg (68.875,29.000)->(67.375,30.250) w0.20

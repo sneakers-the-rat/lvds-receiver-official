@@ -1,0 +1,58 @@
+05:23:48: Debug: Adding duplicate image handler for 'PNG file'
+05:23:48: Debug: Adding duplicate image handler for 'JPEG file'
+05:23:48: Debug: Adding duplicate image handler for 'TIFF file'
+05:23:48: Debug: Adding duplicate image handler for 'GIF file'
+05:23:48: Debug: Adding duplicate image handler for 'PNM file'
+05:23:48: Debug: Adding duplicate image handler for 'PCX file'
+05:23:48: Debug: Adding duplicate image handler for 'IFF file'
+05:23:48: Debug: Adding duplicate image handler for 'Windows icon file'
+05:23:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:23:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:23:48: Debug: Adding duplicate image handler for 'TGA file'
+05:23:48: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+05:23:48: Debug: Adding duplicate image handler for 'PNG file'
+05:23:48: Debug: Adding duplicate image handler for 'JPEG file'
+05:23:48: Debug: Adding duplicate image handler for 'TIFF file'
+05:23:48: Debug: Adding duplicate image handler for 'GIF file'
+05:23:48: Debug: Adding duplicate image handler for 'PNM file'
+05:23:48: Debug: Adding duplicate image handler for 'PCX file'
+05:23:48: Debug: Adding duplicate image handler for 'IFF file'
+05:23:48: Debug: Adding duplicate image handler for 'Windows icon file'
+05:23:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:23:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:23:48: Debug: Adding duplicate image handler for 'TGA file'
+05:23:48: Debug: Adding duplicate image handler for 'XPM file'
+tail candidates: 80
+1V8A frags 1->3; terms equal: False
+  terms before: [(1, (71.48, 15.38)), (1, (75.45, 10.6))]
+  terms after : [(1, (71.48, 15.38)), (1, (75.45, 10.6)), (2, (72.35, 11.65)), (2, (73.22, 11.94)), (2, (73.3, 12.2)), (2, (73.35, 12.75))]
+A2 gate: worst 8 [(0.011, 'B', 'GND'), (0.099, 'B', 'GND')]
+STP frags: 2 (base 2)
+CK frags: 1 (base 1)
+1V8A after notch: frags 3, terms == post-tail terms: False
+XO rip: 8 (expect 7)
+    ('seg', 'XO', (76.5, 10.75, 76.55, 10.7, 0.1), 0.2)
+    ('seg', 'XO', (76.55, 10.65, 76.55, 10.6, 0.1), 0.2)
+    ('seg', 'XO', (76.55, 10.6, 76.55, 10.55, 0.1), 0.2)
+    ('seg', 'XO', (76.55, 10.45, 76.55, 10.4, 0.1), 0.2)
+    ('seg', 'XO', (76.55, 10.55, 76.55, 10.5, 0.1), 0.2)
+    ('seg', 'XO', (76.55, 10.5, 76.55, 10.45, 0.1), 0.2)
+    ('seg', 'XO', (76.75, 11.125, 76.5, 10.75, 0.1), 0.2)
+    ('seg', 'XO', (76.55, 10.7, 76.55, 10.65, 0.1), 0.2)
+XO gate: worst 8 [(-0.309, 'F', 'PHY_1V8'), (-0.309, 'F', 'PHY_1V8'), (-0.019, 'F', 'PHY_1V8'), (-0.019, 'F', 'PHY_1V8'), (-0.019, 'F', 'PHY_1V8'), (-0.019, 'F', 'PHY_1V8'), (-0.016, 'F', 'PHY_1V8'), (-0.016, 'F', 'PHY_1V8')]
+XO frags: 2
+PV gate: worst 6 [(-0.045, 'B', ('seg', 'ULPI_STP', (76.4, 9.9, 76.3, 11.2, 0.1), 0.2)), (-0.032, 'F', ('seg', 'PHY_1V8A', (75.72, 11.0, 74.99, 10.28, 0.1), 0.25)), (-0.026, 'In2', ('seg', '+3V3A', (76.25, 9.875, 76.625, 10.5, 0.1), 0.25)), (0.002, 'F', ('seg', 'XO', (76.25, 9.95, 76.2, 9.9, 0.1), 0.2)), (0.002, 'F', ('seg', 'XO', (76.3, 10.0, 76.25, 9.95, 0.1), 0.2)), (0.006, 'F', ('seg', 'XO', (76.35, 10.05, 76.3, 10.0, 0.1), 0.2))]
+F leg gate: worst 8 [(-0.012, 'F', 'PHY_1V8A'), (-0.006, 'F', 'PHY_1V8A'), (-0.006, 'F', 'PHY_1V8A'), (0.019, 'F', 'PHY_1V8A'), (0.032, 'F', 'PHY_1V8A'), (0.032, 'F', 'PHY_1V8A'), (0.075, 'F', 'XO'), (0.076, 'F', 'XO')]
+ride gate: worst 8 [(-0.6, 'B', 'XO'), (-0.55, 'B', 'GND'), (-0.474, 'B', '+3V3A'), (-0.474, 'B', '+3V3A'), (-0.473, 'B', '+3V3A'), (-0.472, 'B', '+3V3A'), (-0.45, 'B', 'DP_PHY'), (-0.448, 'B', '+3V3D')]
+frags ULPI_STP: 2
+frags PHY_1V8A: 3
+frags ULPI_CK: 1
+frags ULPI_DIR: 3
+frags XO: 2
+frags XI: 2
+  XI frag0 terms: [(0, (75.72, 18.73))]
+  XI frag1 terms: [(0, (75.625, 18.625)), (1, (75.625, 18.625)), (1, (85.125, 19.125)), (1, (75.86, 10.34))]
