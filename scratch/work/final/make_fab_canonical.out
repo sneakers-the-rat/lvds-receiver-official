@@ -1,0 +1,109 @@
+make_fab: board = hw/pdlvds_rx.kicad_pcb
+Loading board
+Plotted to 'hw/fab/pdlvds_rx-F_Cu.gtl'.
+Plotted to 'hw/fab/pdlvds_rx-In1_Cu.g2'.
+Plotted to 'hw/fab/pdlvds_rx-In2_Cu.g3'.
+Plotted to 'hw/fab/pdlvds_rx-B_Cu.gbl'.
+Plotted to 'hw/fab/pdlvds_rx-F_Adhesive.gta'.
+Plotted to 'hw/fab/pdlvds_rx-B_Adhesive.gba'.
+Plotted to 'hw/fab/pdlvds_rx-F_Paste.gtp'.
+Plotted to 'hw/fab/pdlvds_rx-B_Paste.gbp'.
+Plotted to 'hw/fab/pdlvds_rx-F_Silkscreen.gto'.
+Plotted to 'hw/fab/pdlvds_rx-B_Silkscreen.gbo'.
+Plotted to 'hw/fab/pdlvds_rx-F_Mask.gts'.
+Plotted to 'hw/fab/pdlvds_rx-B_Mask.gbs'.
+Plotted to 'hw/fab/pdlvds_rx-User_Drawings.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_Comments.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_Eco1.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_Eco2.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-Edge_Cuts.gm1'.
+Plotted to 'hw/fab/pdlvds_rx-Margin.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-F_Courtyard.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-B_Courtyard.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-F_Fab.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-B_Fab.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_1.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_2.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_3.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_4.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_5.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_6.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_7.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_8.gbr'.
+Plotted to 'hw/fab/pdlvds_rx-User_9.gbr'.
+Loading board
+Created file 'hw/fab/pdlvds_rx.drl'
+Done.
+Loading board
+Loading board
+Successfully created svg file
+Loading board
+Loading board
+Successfully created svg file
+Loading board
+Successfully created svg file
+Loading board
+Successfully created svg file
+Loading board
+Successfully created svg file
+Loading board
+Successfully created svg file
+Loading board
+Successfully created svg file
+BOM rows: 83
+Plotted to 'hw/fab/schematic.pdf'.
+Done.
+Plotted to '/home/hatch/workspace/pdlvds-route/hw/fab/.sch-svg/pdlvds_rx.svg'.
+Done
+Loading board
+Successfully created svg file
+Loading board
+Successfully created svg file
+board-bottom.svg
+board-layers.pdf
+board-layers.svg
+board-top.svg
+bom.csv
+cpl.csv
+gerbers.zip
+layer-B.Cu.svg
+layer-Edge.Cuts.svg
+layer-F.Cu.svg
+layer-F.SilkS.svg
+layer-In1.Cu.svg
+layer-In2.Cu.svg
+pdlvds_rx-B_Adhesive.gba
+pdlvds_rx-B_Courtyard.gbr
+pdlvds_rx-B_Cu.gbl
+pdlvds_rx-B_Fab.gbr
+pdlvds_rx-B_Mask.gbs
+pdlvds_rx-B_Paste.gbp
+pdlvds_rx-B_Silkscreen.gbo
+pdlvds_rx-Edge_Cuts.gm1
+pdlvds_rx-F_Adhesive.gta
+pdlvds_rx-F_Courtyard.gbr
+pdlvds_rx-F_Cu.gtl
+pdlvds_rx-F_Fab.gbr
+pdlvds_rx-F_Mask.gts
+pdlvds_rx-F_Paste.gtp
+pdlvds_rx-F_Silkscreen.gto
+pdlvds_rx-In1_Cu.g2
+pdlvds_rx-In2_Cu.g3
+pdlvds_rx-Margin.gbr
+pdlvds_rx-User_1.gbr
+pdlvds_rx-User_2.gbr
+pdlvds_rx-User_3.gbr
+pdlvds_rx-User_4.gbr
+pdlvds_rx-User_5.gbr
+pdlvds_rx-User_6.gbr
+pdlvds_rx-User_7.gbr
+pdlvds_rx-User_8.gbr
+pdlvds_rx-User_9.gbr
+pdlvds_rx-User_Comments.gbr
+pdlvds_rx-User_Drawings.gbr
+pdlvds_rx-User_Eco1.gbr
+pdlvds_rx-User_Eco2.gbr
+pdlvds_rx-job.gbrjob
+pdlvds_rx.drl
+schematic.pdf
+schematic.svg

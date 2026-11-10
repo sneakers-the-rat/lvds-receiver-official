@@ -1,0 +1,84 @@
+Refs,Qty,Value,Footprint
+C1,1,0.4pF NP0,Capacitor_SMD:C_0402_1005Metric
+C15,1,0.47uF,Capacitor_SMD:C_0603_1608Metric
+C17 C18,2,2.2uF,Capacitor_SMD:C_0603_1608Metric
+C2 C3 C7 C8 C9 C10 C11 C13 C14 C16 C19 C23 C24 C26 C27 C28 C30 C47 C48 C50,20,100nF,Capacitor_SMD:C_0603_1608Metric
+C20 C21,2,18pF,Capacitor_SMD:C_0603_1608Metric
+C22 C31 C42 C43 C44 C45 C46 C49,8,4.7uF,Capacitor_SMD:C_0603_1608Metric
+C29,1,10nF,Capacitor_SMD:C_0603_1608Metric
+C32 C33,2,100nF 630V,Capacitor_SMD:C_1206_3216Metric
+C36 C39,2,3.3nF,Capacitor_SMD:C_0603_1608Metric
+C38 C40 C41,3,22uF,Capacitor_SMD:C_0805_2012Metric
+C4 C12,2,1uF,Capacitor_SMD:C_0603_1608Metric
+C5 C34,2,1nF,Capacitor_SMD:C_0603_1608Metric
+C6 C25 C35 C37 C51,5,10uF,Capacitor_SMD:C_0805_2012Metric
+D1,1,C30737LH-500-90,pdlvds:C30737LH_LCC6
+D2,1,S8664-20K (DNP alt),pdlvds:S8664_TO5
+D3,1,USBLC6-2SC6,Package_TO_SOT_SMD:SOT-23-6
+D4,1,SMBJ5.0A,Diode_SMD:D_SMA
+D5,1,ES1J,Diode_SMD:D_SMA
+D6,1,LED green PWR,LED_SMD:LED_0603_1608Metric
+D7,1,LED green STAT,LED_SMD:LED_0603_1608Metric
+D8,1,LED 740nm BIST source,LED_SMD:LED_1206_3216Metric
+F1,1,PTC 1.1A,Fuse:Fuse_1812_4532Metric
+FB1 FB2,2,600R@100MHz,Inductor_SMD:L_0805_2012Metric
+J1,1,USB-C receptacle,Connector_USB:USB_C_Receptacle_Amphenol_12401610E4-2A
+J2,1,LVDS out 2x3,Connector_PinHeader_2.54mm:PinHeader_2x03_P2.54mm_Vertical
+J3,1,SMA test in,Connector_Coaxial:SMA_Amphenol_132134_Vertical
+J4,1,SWD 2x5 1.27,Connector_PinHeader_1.27mm:PinHeader_2x05_P1.27mm_Vertical
+J5,1,HV enable jumper,Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical
+L1 L2,2,2.2uH,Inductor_SMD:L_0805_2012Metric
+MH1 MH2 MH3 MH4,4,M3 corner,MountingHole:MountingHole_3.2mm_M3
+MH5 MH6,2,M2.5 lens holder,MountingHole:MountingHole_2.7mm_M2.5
+Q1,1,IRLML0030 SOT-23,Package_TO_SOT_SMD:SOT-23
+R1,1,3.3k,Resistor_SMD:R_0603_1608Metric
+R11,1,49.9R DNP,Resistor_SMD:R_0603_1608Metric
+R13 R14 R46,3,100R,Resistor_SMD:R_0603_1608Metric
+R17,1,12k 1%,Resistor_SMD:R_0603_1608Metric
+R18 R19,2,5.1k,Resistor_SMD:R_0603_1608Metric
+R2 R10 R44 R45,4,1k,Resistor_SMD:R_0603_1608Metric
+R20 R21,2,4.7k,Resistor_SMD:R_0603_1608Metric
+R24,1,"24.9k (RT, VERIFY f=250k)",Resistor_SMD:R_0603_1608Metric
+R25,1,143k,Resistor_SMD:R_0603_1608Metric
+R26,1,33k,Resistor_SMD:R_0603_1608Metric
+R28,1,0.05R,Resistor_SMD:R_1206_3216Metric
+R29,1,10k HV,Resistor_SMD:R_1206_3216Metric
+R3,1,806R,Resistor_SMD:R_0603_1608Metric
+R30,1,4.7M bleeder,Resistor_SMD:R_1206_3216Metric
+R31,1,7.68M 0.1% HV divider top,Resistor_SMD:R_1206_3216Metric
+R32,1,75.0k 0.1%,Resistor_SMD:R_0603_1608Metric
+R33,1,140k 0.1% DAC inject,Resistor_SMD:R_0603_1608Metric
+R34,1,10M HV probe,Resistor_SMD:R_1206_3216Metric
+R35,1,312k,Resistor_SMD:R_0603_1608Metric
+R36 R39,2,100k,Resistor_SMD:R_0603_1608Metric
+R38,1,587k,Resistor_SMD:R_0603_1608Metric
+R4,1,200R,Resistor_SMD:R_0603_1608Metric
+R40,1,46k RSET=+4.6V,Resistor_SMD:R_0603_1608Metric
+R41 R43,2,1k ILIM=125mA,Resistor_SMD:R_0603_1608Metric
+R42,1,33.2k RSET=+3.32V,Resistor_SMD:R_0603_1608Metric
+R5 R6 R12 R15 R16 R22 R23 R27 R37,9,10k,Resistor_SMD:R_0603_1608Metric
+R7,1,0R (fit for TIA direct),Resistor_SMD:R_0603_1608Metric
+R8,1,0R DNP (fit for post-amp),Resistor_SMD:R_0603_1608Metric
+R9,1,100k (hysteresis),Resistor_SMD:R_0603_1608Metric
+RJ1 RJ2,2,0R DNP,Resistor_SMD:R_0603_1608Metric
+SH1,1,Shield can frontend,pdlvds:SHIELD_CAN_26x20
+T1,1,Flyback xfmr 1:20,pdlvds:XFMR_FLYBACK_6P
+TP1,1,HV test point,TestPoint:TestPoint_Pad_D1.5mm
+TP2,1,DBG TX test point,TestPoint:TestPoint_Pad_D1.5mm
+TP3,1,DBG RX test point,TestPoint:TestPoint_Pad_D1.5mm
+U1,1,OPA657N,Package_SO:SOIC-8_3.9x4.9mm_P1.27mm
+U10,1,LT3757EMSE,Package_SO:MSOP-10-1EP_3x3mm_P0.5mm_EP1.68x1.88mm
+U11,1,TPS62130RGT,Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.45x1.45mm
+U12,1,TPS62130RGT (inv),Package_DFN_QFN:QFN-16-1EP_3x3mm_P0.5mm_EP1.45x1.45mm
+U13,1,LT3042EDD (+VA),Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.55x2.48mm
+U14,1,LT3042EDD (+3V3A),Package_DFN_QFN:DFN-10-1EP_3x3mm_P0.5mm_EP1.55x2.48mm
+U2,1,THS4304DBV,Package_TO_SOT_SMD:SOT-23-5
+U3,1,LMH7220MK,Package_TO_SOT_SMD:TSOT-23-6
+U4,1,ADN2813ACPZ,Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm
+U5,1,SN65LVDS32D,Package_SO:SOIC-16_3.9x9.9mm_P1.27mm
+U6,1,STM32H723ZGT6,Package_QFP:LQFP-144_20x20mm_P0.5mm
+U7,1,USB3300-EZK,Package_DFN_QFN:QFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm
+U8,1,DAC8562SDGS,Package_SO:VSSOP-10_3x3mm_P0.5mm
+U9,1,TMP117NAI,pdlvds:TMP117_WSON6
+X1,1,24MHz,Crystal:Crystal_SMD_3225-4Pin_3.2x2.5mm
+X2,1,25MHz OSC,Oscillator:Oscillator_SMD_Abracon_ASE-4Pin_3.2x2.5mm

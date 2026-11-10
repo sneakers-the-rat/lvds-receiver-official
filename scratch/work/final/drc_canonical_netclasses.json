@@ -1,0 +1,4841 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-10T15:44:53-0800",
+    "kicad_version": "8.0.9",
+    "schematic_parity": [],
+    "source": "pdlvds_rx.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3063 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of J1",
+                    "pos": {
+                        "x": 33.6,
+                        "y": 72.14
+                    },
+                    "uuid": "42a95997-ef9d-446f-870a-8a312445bcec"
+                },
+                {
+                    "description": "Pad A12 [GND] of J1 on F.Cu",
+                    "pos": {
+                        "x": 32.75,
+                        "y": 71.48
+                    },
+                    "uuid": "6663d430-cb58-4d62-9277-18e2a558e0a3"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "9c5c4aef-8d41-4e4f-afb0-8acad9f18a0a"
+                },
+                {
+                    "description": "PTH pad S1 [<no net>] of J1",
+                    "pos": {
+                        "x": 25.51,
+                        "y": 79.34
+                    },
+                    "uuid": "1c6ca1c1-67a3-4dea-ba49-c6281fc9d406"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2982 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of J1",
+                    "pos": {
+                        "x": 33.6,
+                        "y": 72.14
+                    },
+                    "uuid": "42a95997-ef9d-446f-870a-8a312445bcec"
+                },
+                {
+                    "description": "PTH pad S1 [<no net>] of J1",
+                    "pos": {
+                        "x": 34.13,
+                        "y": 73.39
+                    },
+                    "uuid": "6831ac38-57a9-41a7-a30c-a7b383a2b621"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "9c5c4aef-8d41-4e4f-afb0-8acad9f18a0a"
+                },
+                {
+                    "description": "PTH pad S1 [<no net>] of J1",
+                    "pos": {
+                        "x": 34.49,
+                        "y": 79.34
+                    },
+                    "uuid": "eda871f6-0a88-4c19-8352-cabbd7a9a51c"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2450 mm)",
+            "items": [
+                {
+                    "description": "Via [+3V3A] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 78.8,
+                        "y": 11.62
+                    },
+                    "uuid": "678abfff-722f-4ed1-9206-64b13d420eba"
+                },
+                {
+                    "description": "Track [ULPI_D0] on F.Cu, length 0.4500 mm",
+                    "pos": {
+                        "x": 79.42,
+                        "y": 11.9
+                    },
+                    "uuid": "e7670a56-6aef-419d-a94c-fb096fa0eaef"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2461 mm)",
+            "items": [
+                {
+                    "description": "Via [+3V3A] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 75.58,
+                        "y": 11.7
+                    },
+                    "uuid": "d7e62303-62dd-4ec4-88e2-2653fc97657b"
+                },
+                {
+                    "description": "Track [RBIAS] on F.Cu, length 1.0000 mm",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 11.5625
+                    },
+                    "uuid": "1fa8413c-a3d5-45e4-bf0b-ea4d99531d9f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2374 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3A] on In2.Cu, length 0.7289 mm",
+                    "pos": {
+                        "x": 76.25,
+                        "y": 9.875
+                    },
+                    "uuid": "0e4718a0-98b3-4e7b-83f4-ddf8b6790bc1"
+                },
+                {
+                    "description": "Via [XI] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 75.82,
+                        "y": 10.3
+                    },
+                    "uuid": "7bbdedfa-8c05-4aba-83d2-50e54ff84e29"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2051 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3A] on In2.Cu, length 0.0707 mm",
+                    "pos": {
+                        "x": 75.6,
+                        "y": 7.0
+                    },
+                    "uuid": "46bdb508-34df-463f-bc2c-1ccd3dd03677"
+                },
+                {
+                    "description": "Track [ULPI_CK] on In2.Cu, length 0.9235 mm",
+                    "pos": {
+                        "x": 75.48,
+                        "y": 5.92
+                    },
+                    "uuid": "7d85e091-d20f-4c74-aa10-c846c74e80b6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2493 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3A] on In2.Cu, length 0.0707 mm",
+                    "pos": {
+                        "x": 75.7,
+                        "y": 6.9
+                    },
+                    "uuid": "6ce2d857-bc62-4cd9-ac48-3e201278338a"
+                },
+                {
+                    "description": "Track [ULPI_CK] on In2.Cu, length 0.9235 mm",
+                    "pos": {
+                        "x": 75.48,
+                        "y": 5.92
+                    },
+                    "uuid": "7d85e091-d20f-4c74-aa10-c846c74e80b6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2222 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3A] on In2.Cu, length 0.0707 mm",
+                    "pos": {
+                        "x": 75.65,
+                        "y": 6.95
+                    },
+                    "uuid": "71143ee7-ae17-45d1-9e79-0bd4b4d4f7bb"
+                },
+                {
+                    "description": "Track [ULPI_CK] on In2.Cu, length 0.9235 mm",
+                    "pos": {
+                        "x": 75.48,
+                        "y": 5.92
+                    },
+                    "uuid": "7d85e091-d20f-4c74-aa10-c846c74e80b6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2051 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3A] on In2.Cu, length 0.0500 mm",
+                    "pos": {
+                        "x": 75.55,
+                        "y": 7.05
+                    },
+                    "uuid": "7a44c6b6-5411-4d90-9a55-0ca6dcc513cc"
+                },
+                {
+                    "description": "Track [ULPI_CK] on In2.Cu, length 0.9235 mm",
+                    "pos": {
+                        "x": 75.48,
+                        "y": 5.92
+                    },
+                    "uuid": "7d85e091-d20f-4c74-aa10-c846c74e80b6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2360 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3A] on In2.Cu, length 0.0500 mm",
+                    "pos": {
+                        "x": 75.55,
+                        "y": 7.1
+                    },
+                    "uuid": "a5fd64b4-aed2-4d1d-94ff-0f53f7508298"
+                },
+                {
+                    "description": "Track [ULPI_CK] on In2.Cu, length 0.9235 mm",
+                    "pos": {
+                        "x": 75.48,
+                        "y": 5.92
+                    },
+                    "uuid": "7d85e091-d20f-4c74-aa10-c846c74e80b6"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2377 mm)",
+            "items": [
+                {
+                    "description": "Via [PHY_1V8] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 77.9,
+                        "y": 10.08
+                    },
+                    "uuid": "c1aa3494-92aa-4a4a-b5dd-3ed1970cf4dd"
+                },
+                {
+                    "description": "Track [ULPI_D0] on F.Cu, length 0.6629 mm",
+                    "pos": {
+                        "x": 79.0,
+                        "y": 10.72
+                    },
+                    "uuid": "064c4eac-52fd-4bc3-a877-d073df50ee58"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2200 mm)",
+            "items": [
+                {
+                    "description": "Via [PHY_1V8] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 78.1,
+                        "y": 17.5
+                    },
+                    "uuid": "c1c1be01-c71f-4556-b35c-23ee251fec90"
+                },
+                {
+                    "description": "Track [ULPI_CK] on F.Cu, length 0.6800 mm",
+                    "pos": {
+                        "x": 77.48,
+                        "y": 17.3
+                    },
+                    "uuid": "cfeed5ce-c5a7-42b5-b115-3e04ffccc2d2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2341 mm)",
+            "items": [
+                {
+                    "description": "Via [PHY_1V8] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 78.1,
+                        "y": 17.5
+                    },
+                    "uuid": "c1c1be01-c71f-4556-b35c-23ee251fec90"
+                },
+                {
+                    "description": "Via [ULPI_CK] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 77.48,
+                        "y": 17.98
+                    },
+                    "uuid": "9230425f-3c18-4e6c-acfe-4337d97161e9"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2209 mm)",
+            "items": [
+                {
+                    "description": "Track [PHY_1V8A] on F.Cu, length 0.2807 mm",
+                    "pos": {
+                        "x": 76.18,
+                        "y": 10.82
+                    },
+                    "uuid": "224ca487-c3a4-4364-99ba-6c7c803de30e"
+                },
+                {
+                    "description": "Via [XI] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 75.82,
+                        "y": 10.3
+                    },
+                    "uuid": "7bbdedfa-8c05-4aba-83d2-50e54ff84e29"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2157 mm)",
+            "items": [
+                {
+                    "description": "Track [PHY_1V8A] on F.Cu, length 0.1500 mm",
+                    "pos": {
+                        "x": 76.42,
+                        "y": 10.94
+                    },
+                    "uuid": "248cf6b5-81ca-4e59-83cc-5f72e06e3121"
+                },
+                {
+                    "description": "Track [XI] on F.Cu, length 0.4460 mm",
+                    "pos": {
+                        "x": 76.08,
+                        "y": 10.33
+                    },
+                    "uuid": "b049837f-1912-4f02-909b-78073cf427b2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2097 mm)",
+            "items": [
+                {
+                    "description": "Track [PHY_1V8A] on F.Cu, length 0.4507 mm",
+                    "pos": {
+                        "x": 75.9,
+                        "y": 10.84
+                    },
+                    "uuid": "7dcb19bb-db2e-409d-b024-d020709a7789"
+                },
+                {
+                    "description": "Via [XI] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 75.82,
+                        "y": 10.3
+                    },
+                    "uuid": "7bbdedfa-8c05-4aba-83d2-50e54ff84e29"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2157 mm)",
+            "items": [
+                {
+                    "description": "Track [PHY_1V8A] on F.Cu, length 0.1237 mm",
+                    "pos": {
+                        "x": 76.3,
+                        "y": 10.85
+                    },
+                    "uuid": "ca2aa430-6d0b-4171-a8e1-61ad89ac2819"
+                },
+                {
+                    "description": "Track [XI] on F.Cu, length 0.4460 mm",
+                    "pos": {
+                        "x": 76.08,
+                        "y": 10.33
+                    },
+                    "uuid": "b049837f-1912-4f02-909b-78073cf427b2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2100 mm)",
+            "items": [
+                {
+                    "description": "Track [PHY_1V8A] on F.Cu, length 0.4022 mm",
+                    "pos": {
+                        "x": 75.45,
+                        "y": 10.815
+                    },
+                    "uuid": "de60b348-2aac-44e7-bec1-f24933a425e5"
+                },
+                {
+                    "description": "Pad 31 [+3V3A] of U7 on F.Cu",
+                    "pos": {
+                        "x": 75.5,
+                        "y": 11.5625
+                    },
+                    "uuid": "6d8da0ff-3c8a-4d63-a230-4d8d9b70837a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2237 mm)",
+            "items": [
+                {
+                    "description": "Track [PHY_1V8A] on F.Cu, length 0.6271 mm",
+                    "pos": {
+                        "x": 76.5,
+                        "y": 11.562
+                    },
+                    "uuid": "ffb25de9-1074-437c-ab68-2929417a21f1"
+                },
+                {
+                    "description": "Pad 30 [+3V3A] of U7 on F.Cu",
+                    "pos": {
+                        "x": 76.0,
+                        "y": 11.5625
+                    },
+                    "uuid": "d8defcc0-480e-4284-ae1c-4058f14e8fd3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2025 mm)",
+            "items": [
+                {
+                    "description": "Via [PHY_1V8A] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.99,
+                        "y": 10.28
+                    },
+                    "uuid": "28320721-da01-4a48-9cd0-85097178c114"
+                },
+                {
+                    "description": "Track [ULPI_CK] on In2.Cu, length 0.7605 mm",
+                    "pos": {
+                        "x": 74.38,
+                        "y": 10.28
+                    },
+                    "uuid": "3fba1720-13d9-4dc5-b21c-4b515a0c8374"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2423 mm)",
+            "items": [
+                {
+                    "description": "Via [PHY_1V8A] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.99,
+                        "y": 10.28
+                    },
+                    "uuid": "28320721-da01-4a48-9cd0-85097178c114"
+                },
+                {
+                    "description": "Track [XI] on B.Cu, length 0.9335 mm",
+                    "pos": {
+                        "x": 75.82,
+                        "y": 10.3
+                    },
+                    "uuid": "760aa66d-1908-4076-b9b0-156d7aa79e15"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2250 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3A] on B.Cu, length 7.0000 mm",
+                    "pos": {
+                        "x": 75.625,
+                        "y": 8.625
+                    },
+                    "uuid": "e155c380-f3dc-450d-b429-84e068b0bc2f"
+                },
+                {
+                    "description": "Via [DAC_VREF] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 69.51,
+                        "y": 7.85
+                    },
+                    "uuid": "ebbd0337-ca17-42d9-8f89-71802d5745f3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2207 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3D] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 81.375,
+                        "y": 15.375
+                    },
+                    "uuid": "4cc4edee-8086-40db-9d78-1fed29d2a342"
+                },
+                {
+                    "description": "Via [ULPI_D6] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.85,
+                        "y": 14.81
+                    },
+                    "uuid": "618bd23f-dc0c-4819-8724-2fe0e880c0a5"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2250 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3D] on B.Cu, length 6.5000 mm",
+                    "pos": {
+                        "x": 81.625,
+                        "y": 15.125
+                    },
+                    "uuid": "96b7ebc9-6dd8-417a-9269-a63a637d2c75"
+                },
+                {
+                    "description": "Via [ULPI_D6] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.85,
+                        "y": 14.81
+                    },
+                    "uuid": "618bd23f-dc0c-4819-8724-2fe0e880c0a5"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2213 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3D] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 81.125,
+                        "y": 15.625
+                    },
+                    "uuid": "f5b20912-a052-4826-bf4f-8630aed45f9b"
+                },
+                {
+                    "description": "Via [ULPI_D6] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 80.85,
+                        "y": 14.81
+                    },
+                    "uuid": "618bd23f-dc0c-4819-8724-2fe0e880c0a5"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2298 mm)",
+            "items": [
+                {
+                    "description": "Via [+3V3D_CDR] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 66.2,
+                        "y": 40.55
+                    },
+                    "uuid": "0adca455-8b66-4626-a643-9f6ee9ee8806"
+                },
+                {
+                    "description": "Pad 13 [GND] of U4 on F.Cu",
+                    "pos": {
+                        "x": 66.5,
+                        "y": 39.6875
+                    },
+                    "uuid": "309b7b55-f33d-4254-845e-7197688c2776"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2250 mm)",
+            "items": [
+                {
+                    "description": "Track [+5V] on F.Cu, length 1.5000 mm",
+                    "pos": {
+                        "x": 42.375,
+                        "y": 50.125
+                    },
+                    "uuid": "18445d61-b7fd-42ff-981c-5fd7fff2b0d6"
+                },
+                {
+                    "description": "Track [SET_P] on F.Cu, length 1.8000 mm",
+                    "pos": {
+                        "x": 41.3,
+                        "y": 50.75
+                    },
+                    "uuid": "79b058c1-9971-4831-95cd-e99cbc19c8d4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2260 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3D] on F.Cu, length 1.0470 mm",
+                    "pos": {
+                        "x": 73.875,
+                        "y": 6.875
+                    },
+                    "uuid": "64021a18-cfa3-4b99-ab9c-75a5ed49a459"
+                },
+                {
+                    "description": "Track [ULPI_D0] on F.Cu, length 0.6505 mm",
+                    "pos": {
+                        "x": 74.14,
+                        "y": 6.29
+                    },
+                    "uuid": "6d2db4e9-50de-45c7-990e-0ab7b8c22e38"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2250 mm)",
+            "items": [
+                {
+                    "description": "Track [+5V] on F.Cu, length 2.5000 mm",
+                    "pos": {
+                        "x": 54.875,
+                        "y": 49.125
+                    },
+                    "uuid": "e495a78f-5166-4b8a-92e0-92ed3ab0cc65"
+                },
+                {
+                    "description": "Via [ILIM_A] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 52.6,
+                        "y": 48.35
+                    },
+                    "uuid": "a86a9bc9-6647-43f8-9dfe-301a400be612"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2339 mm)",
+            "items": [
+                {
+                    "description": "Track [+3V3D] on F.Cu, length 1.4235 mm",
+                    "pos": {
+                        "x": 81.3,
+                        "y": 13.0
+                    },
+                    "uuid": "71e120f3-4c58-4112-bd7e-9864f51b7f3b"
+                },
+                {
+                    "description": "Pad 2 [GND] of C48 on F.Cu",
+                    "pos": {
+                        "x": 82.08,
+                        "y": 13.6
+                    },
+                    "uuid": "b5ed95a1-f95d-48c2-94c5-f6602c450839"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2437 mm)",
+            "items": [
+                {
+                    "description": "Via [+VA] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 37.375,
+                        "y": 35.75
+                    },
+                    "uuid": "0961be89-5c56-4ba8-9fcc-f5b8a8841fe9"
+                },
+                {
+                    "description": "Track [THR_FILT] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 37.875,
+                        "y": 36.125
+                    },
+                    "uuid": "7d133a78-a367-444a-ac27-a473e23a87ff"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.6362 mm)",
+            "items": [
+                {
+                    "description": "Track [APD_A] on F.Cu, length 0.5250 mm",
+                    "pos": {
+                        "x": 9.0,
+                        "y": 38.375
+                    },
+                    "uuid": "62499424-1509-4d1c-845b-416d36fe4e86"
+                },
+                {
+                    "description": "Via [APD_K] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 9.5,
+                        "y": 39.75
+                    },
+                    "uuid": "b2e53ca7-741b-42d6-aba3-7646e9d8d27e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "Track [APD_A] on F.Cu, length 1.0500 mm",
+                    "pos": {
+                        "x": 7.8,
+                        "y": 41.1
+                    },
+                    "uuid": "afce1d6a-4c40-4771-bdad-265404015052"
+                },
+                {
+                    "description": "Pad 5 [APD_K] of D1 on F.Cu",
+                    "pos": {
+                        "x": 8.85,
+                        "y": 40.0
+                    },
+                    "uuid": "85d784e6-0507-438e-8622-706eede6cbcb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [APD_K] on F.Cu, length 0.6562 mm",
+                    "pos": {
+                        "x": 22.075,
+                        "y": 39.25
+                    },
+                    "uuid": "6c53afa9-283f-452e-838a-889c0b6128f6"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2507 mm)",
+            "items": [
+                {
+                    "description": "Track [APD_K] on F.Cu, length 0.7500 mm",
+                    "pos": {
+                        "x": 22.075,
+                        "y": 40.0
+                    },
+                    "uuid": "8242225c-878f-4f0d-a5c3-4818feb5e8ac"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [APD_K] on F.Cu, length 7.7500 mm",
+                    "pos": {
+                        "x": 21.875,
+                        "y": 38.625
+                    },
+                    "uuid": "f22d973a-3c76-40ae-b3f9-26d6553a41db"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Via [APD_K] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 22.125,
+                        "y": 10.375
+                    },
+                    "uuid": "19a3ab72-2178-4eac-b2d4-a204779d0c81"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Via [APD_K] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 24.125,
+                        "y": 8.125
+                    },
+                    "uuid": "78de0a90-9c89-43eb-bca0-f91f965c5959"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3000 mm)",
+            "items": [
+                {
+                    "description": "Via [APD_K] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 9.5,
+                        "y": 39.75
+                    },
+                    "uuid": "b2e53ca7-741b-42d6-aba3-7646e9d8d27e"
+                },
+                {
+                    "description": "Pad 6 [APD_A] of D1 on F.Cu",
+                    "pos": {
+                        "x": 8.85,
+                        "y": 38.9
+                    },
+                    "uuid": "5dfda4b1-e3ab-4b88-a5bb-5f32683dc237"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Via [APD_K] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 9.5,
+                        "y": 39.75
+                    },
+                    "uuid": "b2e53ca7-741b-42d6-aba3-7646e9d8d27e"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Via [APD_K] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 10.5,
+                        "y": 29.375
+                    },
+                    "uuid": "b4865df2-edf5-4bcd-9cdc-d6077fd6809b"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.7250 mm)",
+            "items": [
+                {
+                    "description": "Track [FLY_PRI] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -19.375
+                    },
+                    "uuid": "04644a23-7440-4a25-a6ba-52d5c6fb9e03"
+                },
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3764 mm)",
+            "items": [
+                {
+                    "description": "Track [FLY_PRI] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 25.875,
+                        "y": -19.875
+                    },
+                    "uuid": "19f24e13-b2aa-4afe-a542-f059a1339d8a"
+                },
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.5058 mm)",
+            "items": [
+                {
+                    "description": "Track [FLY_PRI] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 26.625,
+                        "y": -20.625
+                    },
+                    "uuid": "4a437b55-4d67-43a4-b17d-3d1132e1ac51"
+                },
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3764 mm)",
+            "items": [
+                {
+                    "description": "Track [FLY_PRI] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 26.375,
+                        "y": -20.375
+                    },
+                    "uuid": "9455ba4b-1bf9-4033-bb20-28e16ebe9b48"
+                },
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9957 mm)",
+            "items": [
+                {
+                    "description": "Track [FLY_PRI] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 25.125,
+                        "y": -19.125
+                    },
+                    "uuid": "96bf5f78-3f32-49ff-a697-de38277f7180"
+                },
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9957 mm)",
+            "items": [
+                {
+                    "description": "Track [FLY_PRI] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 27.125,
+                        "y": -21.125
+                    },
+                    "uuid": "b2f85db4-9c30-43fe-b392-1c573fa7fa8c"
+                },
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3589 mm)",
+            "items": [
+                {
+                    "description": "Track [FLY_PRI] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 26.125,
+                        "y": -20.125
+                    },
+                    "uuid": "c1884b5e-80b5-45c5-b24b-fcfc93c7aab5"
+                },
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.5058 mm)",
+            "items": [
+                {
+                    "description": "Track [FLY_PRI] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 25.625,
+                        "y": -19.625
+                    },
+                    "uuid": "e2ae4bb5-e37e-4253-8163-e895b25fbc48"
+                },
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.7250 mm)",
+            "items": [
+                {
+                    "description": "Track [FLY_PRI] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 26.875,
+                        "y": -20.875
+                    },
+                    "uuid": "f759d421-6f7c-478a-afc5-996644599b5b"
+                },
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2057 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.3677 mm",
+                    "pos": {
+                        "x": 80.995,
+                        "y": 10.24
+                    },
+                    "uuid": "4d355e1b-81be-4bf5-9587-e3cd9f722f18"
+                },
+                {
+                    "description": "Via [+3V3D] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 81.7,
+                        "y": 10.25
+                    },
+                    "uuid": "f22dcad8-729a-4b34-8831-3f31a30185e8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2300 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 1.4001 mm",
+                    "pos": {
+                        "x": 71.0,
+                        "y": 0.27
+                    },
+                    "uuid": "642f4f1d-369c-41f3-a59a-f8f85ba8e2f6"
+                },
+                {
+                    "description": "Pad 32 [+3V3A] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": 0.75
+                    },
+                    "uuid": "033636f4-fcc8-40c9-92d9-689a24c6fe4f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2470 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on F.Cu, length 0.9657 mm",
+                    "pos": {
+                        "x": 82.08,
+                        "y": 11.08
+                    },
+                    "uuid": "8f202e00-5854-4106-889c-f99bf20031eb"
+                },
+                {
+                    "description": "Via [+3V3D] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 81.7,
+                        "y": 10.25
+                    },
+                    "uuid": "f22dcad8-729a-4b34-8831-3f31a30185e8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2317 mm)",
+            "items": [
+                {
+                    "description": "Via [GND] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.518,
+                        "y": 21.05
+                    },
+                    "uuid": "cc56e6c3-cdc0-4cce-9972-e46ad96bbdcd"
+                },
+                {
+                    "description": "Pad 1 [+3V3D] of C28 on F.Cu",
+                    "pos": {
+                        "x": 72.77,
+                        "y": 20.75
+                    },
+                    "uuid": "6ce8d58c-a4eb-4dcf-951c-0822e1e3861e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2444 mm)",
+            "items": [
+                {
+                    "description": "Track [REFCLKN] on F.Cu, length 0.6133 mm",
+                    "pos": {
+                        "x": 65.5,
+                        "y": 40.44
+                    },
+                    "uuid": "443ff55f-3641-400b-a566-609e5d49628f"
+                },
+                {
+                    "description": "Via [+3V3D_CDR] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 66.2,
+                        "y": 40.55
+                    },
+                    "uuid": "0adca455-8b66-4626-a643-9f6ee9ee8806"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2267 mm)",
+            "items": [
+                {
+                    "description": "Track [REFCLKN] on F.Cu, length 0.5852 mm",
+                    "pos": {
+                        "x": 65.75,
+                        "y": 41.0
+                    },
+                    "uuid": "64ef53cc-03db-4655-94e9-e43ead78bde0"
+                },
+                {
+                    "description": "Via [+3V3D_CDR] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 66.2,
+                        "y": 40.55
+                    },
+                    "uuid": "0adca455-8b66-4626-a643-9f6ee9ee8806"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.7250 mm)",
+            "items": [
+                {
+                    "description": "Track [GND] on In2.Cu, length 11.7500 mm",
+                    "pos": {
+                        "x": 28.125,
+                        "y": -7.125
+                    },
+                    "uuid": "437df947-0a0d-4920-98bb-33c52e1724f7"
+                },
+                {
+                    "description": "Via [HV_RAW] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 29.375,
+                        "y": -11.125
+                    },
+                    "uuid": "0699df08-0dba-43b2-817c-656fc4ec1490"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 12.125,
+                        "y": -19.125
+                    },
+                    "uuid": "1310c5ad-6f1d-49b9-b363-842b5a7ab0d2"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 8.875,
+                        "y": -22.375
+                    },
+                    "uuid": "18acccab-87e5-45f4-8e13-0e9ae5d1b5e5"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.6750 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 12.875,
+                        "y": -18.375
+                    },
+                    "uuid": "1cf16c10-a161-445c-9dca-7c9ba6004425"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 11.625,
+                        "y": -19.625
+                    },
+                    "uuid": "29d49103-5d8f-4ab5-9de2-aaf1a08f772c"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9250 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 13.125,
+                        "y": -18.125
+                    },
+                    "uuid": "2e3d3075-4f3d-4d74-9d19-ac03c7757c36"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 9.375,
+                        "y": -21.875
+                    },
+                    "uuid": "33a7d9e6-c6c5-4074-90da-05cc5279b50e"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 6.125,
+                        "y": -22.875
+                    },
+                    "uuid": "3ecaad7e-e3c9-449f-a23a-37b8b1c52329"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.4273 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 5.625,
+                        "y": -23.375
+                    },
+                    "uuid": "4c3e71e4-0b3b-4cc3-b161-fb3e1aee2012"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9250 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 5.125,
+                        "y": -23.875
+                    },
+                    "uuid": "5bc76f61-9f46-4d48-8ab9-a4382030694b"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 8.625,
+                        "y": -22.625
+                    },
+                    "uuid": "5d71c287-b3d1-4b44-96e2-febc3f24db64"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 9.625,
+                        "y": -21.625
+                    },
+                    "uuid": "6207521b-851a-4777-969c-f7e3b3368dc6"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 11.875,
+                        "y": -19.375
+                    },
+                    "uuid": "758b40a5-34b2-4ba8-9063-f8e38733cc62"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 10.875,
+                        "y": -20.375
+                    },
+                    "uuid": "7eabc2ef-9128-4888-ac3a-b28fcc6cddf5"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 2.2500 mm",
+                    "pos": {
+                        "x": 6.375,
+                        "y": -22.625
+                    },
+                    "uuid": "826cde9b-bcb5-43f5-bdd7-8180745c0c4b"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2638 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 12.375,
+                        "y": -18.875
+                    },
+                    "uuid": "91b4270a-3e94-49b4-8d2f-fa9ca299634d"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2638 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 5.875,
+                        "y": -23.125
+                    },
+                    "uuid": "9776efc8-5f49-483b-ad17-8885ea3c1fab"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 11.375,
+                        "y": -19.875
+                    },
+                    "uuid": "989cc788-fbdf-41ce-8dd9-388e2835f054"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 10.375,
+                        "y": -20.875
+                    },
+                    "uuid": "9946bdfd-97d7-4dc7-bebd-393605e350d9"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 11.125,
+                        "y": -20.125
+                    },
+                    "uuid": "ab06864e-4f39-4466-a895-238287751f62"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.6750 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 5.375,
+                        "y": -23.625
+                    },
+                    "uuid": "ac622189-f85d-4e5f-bb40-2c0b67821e6f"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 9.875,
+                        "y": -21.375
+                    },
+                    "uuid": "c42f17a7-cb1c-458d-8d12-5661746028bb"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.4273 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 12.625,
+                        "y": -18.625
+                    },
+                    "uuid": "e79de4b7-5d1c-48e7-b5d3-8867d5425a8d"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 10.625,
+                        "y": -20.625
+                    },
+                    "uuid": "ec353288-ec18-46d8-9315-e5d819bedeb9"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 10.125,
+                        "y": -21.125
+                    },
+                    "uuid": "ee5b5836-d3d7-49f6-bed7-90404c1ddff0"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_RAW] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 9.125,
+                        "y": -22.125
+                    },
+                    "uuid": "f2851aec-03f0-4522-a2ec-506858b1abb8"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Via [HV_RAW] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 29.375,
+                        "y": -11.125
+                    },
+                    "uuid": "0699df08-0dba-43b2-817c-656fc4ec1490"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Via [HV_RAW] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 34.375,
+                        "y": -11.625
+                    },
+                    "uuid": "ec715604-f896-4855-91ff-82830e22fedd"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.7299 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on F.Cu, length 0.2527 mm",
+                    "pos": {
+                        "x": 24.9,
+                        "y": -20.99
+                    },
+                    "uuid": "29b8cca7-e99a-4f2d-a61e-226f25a0e025"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.5505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 25.125,
+                        "y": -20.875
+                    },
+                    "uuid": "352f3719-da68-48e7-9776-504fa8bec651"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on F.Cu, length 0.2500 mm",
+                    "pos": {
+                        "x": 24.9,
+                        "y": -21.24
+                    },
+                    "uuid": "9b362d76-a15a-408c-8607-6c52e421dbf0"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 33.875,
+                        "y": -16.625
+                    },
+                    "uuid": "4d1bb4d5-a9a8-487d-9701-6bc19cca4d5b"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Via [HV_SEC] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "bce183f4-7cbe-470c-98d5-a669f5244ced"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2638 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 31.625,
+                        "y": -18.875
+                    },
+                    "uuid": "1aaf08e6-8776-4096-acff-89b992d6605b"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 31.125,
+                        "y": -19.375
+                    },
+                    "uuid": "4d40f51a-73c8-45e2-8833-5fb91c22e744"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.6750 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 32.125,
+                        "y": -18.375
+                    },
+                    "uuid": "76243f64-937e-43b4-8628-c6f51762c811"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 31.375,
+                        "y": -19.125
+                    },
+                    "uuid": "7acc21e8-ee95-40ee-8714-269b203dddae"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.4273 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 31.875,
+                        "y": -18.625
+                    },
+                    "uuid": "8e7527dd-8edd-4131-b5b0-9eaaf07ea817"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 30.875,
+                        "y": -19.625
+                    },
+                    "uuid": "901e6f65-45ff-49a1-a63e-da342c70d4a6"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.7500 mm",
+                    "pos": {
+                        "x": 26.375,
+                        "y": -20.625
+                    },
+                    "uuid": "93c2a4b0-ebc5-4549-96f9-e9960a0b6d23"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 1.0000 mm",
+                    "pos": {
+                        "x": 25.375,
+                        "y": -20.625
+                    },
+                    "uuid": "94543594-0c84-4885-9971-98130b2ec95e"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 30.375,
+                        "y": -20.125
+                    },
+                    "uuid": "ae0d9754-94af-413e-9db7-aaca3f93981f"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 27.125,
+                        "y": -20.625
+                    },
+                    "uuid": "d67b01ea-d93c-4e0c-b98d-e61aa946f0c8"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 30.625,
+                        "y": -19.875
+                    },
+                    "uuid": "df92b5d1-45d4-4e89-b4e9-dcc3bc968339"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9250 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 32.375,
+                        "y": -18.125
+                    },
+                    "uuid": "e56cd372-a74a-427f-bf24-d942e1ac770f"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 2.7500 mm",
+                    "pos": {
+                        "x": 27.375,
+                        "y": -20.375
+                    },
+                    "uuid": "ed28c41e-ce17-425e-9556-51951a2ad768"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_SEC] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 30.125,
+                        "y": -20.375
+                    },
+                    "uuid": "fdb2bf36-cbb6-4ed2-b51c-94bd15ad73df"
+                },
+                {
+                    "description": "Zone [GND] on B.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "83b45554-d908-486e-adca-76ef5cfba078"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2127 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_CK] on In2.Cu, length 0.9135 mm",
+                    "pos": {
+                        "x": 74.625,
+                        "y": 9.4
+                    },
+                    "uuid": "84197c80-cb08-43ed-b216-6216bcc9320c"
+                },
+                {
+                    "description": "Via [PHY_1V8A] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.99,
+                        "y": 10.28
+                    },
+                    "uuid": "28320721-da01-4a48-9cd0-85097178c114"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2051 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_CK] on In2.Cu, length 0.5148 mm",
+                    "pos": {
+                        "x": 75.2,
+                        "y": 6.8
+                    },
+                    "uuid": "b6dc2ec8-fddf-438a-9e62-59f8422d49ae"
+                },
+                {
+                    "description": "Track [+3V3A] on In2.Cu, length 0.0707 mm",
+                    "pos": {
+                        "x": 75.6,
+                        "y": 7.0
+                    },
+                    "uuid": "46bdb508-34df-463f-bc2c-1ccd3dd03677"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.6906 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_VC] on F.Cu, length 1.3010 mm",
+                    "pos": {
+                        "x": 22.2,
+                        "y": -4.6
+                    },
+                    "uuid": "f9600c47-15bc-43ce-993d-c06c1faab8de"
+                },
+                {
+                    "description": "Pad 1 [HV_RAW] of R29 on F.Cu",
+                    "pos": {
+                        "x": 24.425,
+                        "y": -5.5
+                    },
+                    "uuid": "3888efaa-94d9-4e04-80e6-cbae37ecf2b7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.5758 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_VC] on F.Cu, length 1.4295 mm",
+                    "pos": {
+                        "x": 23.5,
+                        "y": -4.55
+                    },
+                    "uuid": "fd13c6a4-35ef-4936-8fa8-64d2af5c3b33"
+                },
+                {
+                    "description": "Pad 1 [HV_RAW] of R29 on F.Cu",
+                    "pos": {
+                        "x": 24.425,
+                        "y": -5.5
+                    },
+                    "uuid": "3888efaa-94d9-4e04-80e6-cbae37ecf2b7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3445 mm)",
+            "items": [
+                {
+                    "description": "Via [HV_VC2] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 23.45,
+                        "y": -3.15
+                    },
+                    "uuid": "8afe370b-f2ff-4643-93b7-15905c53f9b3"
+                },
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 23.375,
+                        "y": -2.125
+                    },
+                    "uuid": "1c4f0e58-fb9c-4839-adcc-5cdc9b0bdf8a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.4536 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                },
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 23.375,
+                        "y": -2.125
+                    },
+                    "uuid": "1c4f0e58-fb9c-4839-adcc-5cdc9b0bdf8a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2291 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_D0] on F.Cu, length 0.3021 mm",
+                    "pos": {
+                        "x": 78.5,
+                        "y": 10.15
+                    },
+                    "uuid": "30c9386c-814b-4265-a7ca-94084c67457c"
+                },
+                {
+                    "description": "Via [PHY_1V8] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 77.9,
+                        "y": 10.08
+                    },
+                    "uuid": "c1aa3494-92aa-4a4a-b5dd-3ed1970cf4dd"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2241 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_D0] on F.Cu, length 0.2062 mm",
+                    "pos": {
+                        "x": 78.45,
+                        "y": 10.35
+                    },
+                    "uuid": "e9976bae-f94a-41c4-a6a7-b9e6deebf285"
+                },
+                {
+                    "description": "Via [PHY_1V8] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 77.9,
+                        "y": 10.08
+                    },
+                    "uuid": "c1aa3494-92aa-4a4a-b5dd-3ed1970cf4dd"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2051 mm)",
+            "items": [
+                {
+                    "description": "Via [ULPI_D7] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 79.1,
+                        "y": 15.88
+                    },
+                    "uuid": "037c8e3a-8172-491a-b3b0-104008f067c9"
+                },
+                {
+                    "description": "Pad 16 [+3V3A] of U7 on F.Cu",
+                    "pos": {
+                        "x": 78.5,
+                        "y": 16.4375
+                    },
+                    "uuid": "076a8940-4a34-481b-9e48-af19669db11f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2401 mm)",
+            "items": [
+                {
+                    "description": "Track [XI] on F.Cu, length 0.5642 mm",
+                    "pos": {
+                        "x": 76.95,
+                        "y": 11.0
+                    },
+                    "uuid": "721e6a30-65f3-4c7a-adda-d509397095ea"
+                },
+                {
+                    "description": "Pad 29 [PHY_1V8A] of U7 on F.Cu",
+                    "pos": {
+                        "x": 76.5,
+                        "y": 11.5625
+                    },
+                    "uuid": "4b54a4f3-64c5-48e9-9bf7-7a304fa6b2b1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2206 mm)",
+            "items": [
+                {
+                    "description": "Track [XI] on F.Cu, length 0.3046 mm",
+                    "pos": {
+                        "x": 76.5,
+                        "y": 10.48
+                    },
+                    "uuid": "accf17f0-a200-4d8b-92b0-c6185b3b6bf0"
+                },
+                {
+                    "description": "Track [PHY_1V8A] on F.Cu, length 0.1237 mm",
+                    "pos": {
+                        "x": 76.3,
+                        "y": 10.85
+                    },
+                    "uuid": "ca2aa430-6d0b-4171-a8e1-61ad89ac2819"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Via [HV_R29M] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 26.375,
+                        "y": -5.625
+                    },
+                    "uuid": "3606ec7e-d6a2-4466-af10-981e78256f8c"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Via [HV_R29M] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 22.375,
+                        "y": 1.875
+                    },
+                    "uuid": "f2868b15-f47f-494f-aba1-e37b7179884e"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9307 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 24.625,
+                        "y": -3.875
+                    },
+                    "uuid": "0e94b414-0706-4823-9e85-dd15e7abdee5"
+                },
+                {
+                    "description": "Via [HV_VC2] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 23.45,
+                        "y": -3.15
+                    },
+                    "uuid": "8afe370b-f2ff-4643-93b7-15905c53f9b3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3755 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 23.625,
+                        "y": -2.375
+                    },
+                    "uuid": "54c1b4ec-aaa5-47fe-bd3e-4924730bfa8c"
+                },
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.8754 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 3.0000 mm",
+                    "pos": {
+                        "x": 22.375,
+                        "y": 1.875
+                    },
+                    "uuid": "5b3824aa-edfd-4c05-ae27-561421eb8511"
+                },
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.7910 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 22.375,
+                        "y": -1.125
+                    },
+                    "uuid": "5ddcd8c3-cda3-4c2b-b39f-64fe76fc05f1"
+                },
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3718 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 23.875,
+                        "y": -2.625
+                    },
+                    "uuid": "889646eb-1cb0-4253-9106-dd16ae136623"
+                },
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.5379 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 23.125,
+                        "y": -1.875
+                    },
+                    "uuid": "8ed7501a-6aee-49e8-9c42-6bef9c586263"
+                },
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.7067 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 22.625,
+                        "y": -1.375
+                    },
+                    "uuid": "b03c5ab4-b2db-4180-9bd6-4b79f1c4efa2"
+                },
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.4289 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 24.125,
+                        "y": -2.875
+                    },
+                    "uuid": "c3b69527-63a2-478d-8e99-b2789d4f6574"
+                },
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.6250 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.5000 mm",
+                    "pos": {
+                        "x": 24.375,
+                        "y": -3.125
+                    },
+                    "uuid": "cd10647a-6a34-41d9-9321-f194d7e83d8f"
+                },
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.6223 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 22.875,
+                        "y": -1.625
+                    },
+                    "uuid": "dd7cf553-519f-497c-a0d6-51c323ce52c2"
+                },
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.7398 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_R29M] on B.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 24.375,
+                        "y": -3.625
+                    },
+                    "uuid": "e44b2098-eb5b-405c-87dc-7e650b35de95"
+                },
+                {
+                    "description": "Track [HV_VC2] on B.Cu, length 3.1856 mm",
+                    "pos": {
+                        "x": 20.725,
+                        "y": -1.5
+                    },
+                    "uuid": "127cc3f3-f87d-48c6-a93a-e1ecd0fd1c72"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9622 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_OVP1] on F.Cu, length 0.5000 mm",
+                    "pos": {
+                        "x": 8.15,
+                        "y": -25.0
+                    },
+                    "uuid": "1621f3ae-e3f1-45bc-a00d-d5bb90a02866"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_OVP1] on F.Cu, length 0.7357 mm",
+                    "pos": {
+                        "x": 9.375,
+                        "y": -24.875
+                    },
+                    "uuid": "7be276ab-b579-403b-9a5a-cb4eaf5e470e"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.4215 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_OVP1] on F.Cu, length 0.7357 mm",
+                    "pos": {
+                        "x": 8.65,
+                        "y": -25.0
+                    },
+                    "uuid": "ee5cede3-7282-43ff-b30b-f73991183791"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_OVP1] on F.Cu, length 1.5000 mm",
+                    "pos": {
+                        "x": 10.1,
+                        "y": -24.75
+                    },
+                    "uuid": "f4451fc9-9ed2-4764-b05f-f65dc0096493"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_OVP2] on F.Cu, length 0.6828 mm",
+                    "pos": {
+                        "x": 15.1,
+                        "y": -21.75
+                    },
+                    "uuid": "00254bee-0708-4a9f-bde0-63f376506814"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_OVP2] on F.Cu, length 1.5000 mm",
+                    "pos": {
+                        "x": 15.1,
+                        "y": -20.25
+                    },
+                    "uuid": "250c3146-109e-4445-9d10-3fefb3e6a195"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_OVP2] on F.Cu, length 0.5000 mm",
+                    "pos": {
+                        "x": 15.375,
+                        "y": -22.375
+                    },
+                    "uuid": "2d39261c-e375-4048-a467-2b2feae67780"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_OVP2] on F.Cu, length 1.5000 mm",
+                    "pos": {
+                        "x": 15.9,
+                        "y": -23.25
+                    },
+                    "uuid": "82c7bec8-1b15-49e1-9984-72ccc3801e64"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Track [HV_OVP2] on F.Cu, length 0.6452 mm",
+                    "pos": {
+                        "x": 15.375,
+                        "y": -22.875
+                    },
+                    "uuid": "aa649390-d1b7-45ac-a4b9-8b69ade89f22"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 4 [GND] of U8 on F.Cu",
+                    "pos": {
+                        "x": 66.3,
+                        "y": 6.75
+                    },
+                    "uuid": "7ca875b3-14c1-4571-815f-68d072c821b2"
+                },
+                {
+                    "description": "Pad 5 [+3V3D] of U8 on F.Cu",
+                    "pos": {
+                        "x": 66.3,
+                        "y": 7.25
+                    },
+                    "uuid": "cb3a5d18-5745-4cd8-a483-59911d819f05"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 8 [SPI_MOSI] of U8 on F.Cu",
+                    "pos": {
+                        "x": 70.7,
+                        "y": 6.25
+                    },
+                    "uuid": "6dce62f3-db56-43e9-a8bf-6f20ddb340d3"
+                },
+                {
+                    "description": "Pad 9 [+3V3D] of U8 on F.Cu",
+                    "pos": {
+                        "x": 70.7,
+                        "y": 5.75
+                    },
+                    "uuid": "f688d2be-ce35-47a9-864a-7a0371df3b56"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [+3V3D] of U8 on F.Cu",
+                    "pos": {
+                        "x": 70.7,
+                        "y": 5.75
+                    },
+                    "uuid": "f688d2be-ce35-47a9-864a-7a0371df3b56"
+                },
+                {
+                    "description": "Pad 10 [DAC_VREF] of U8 on F.Cu",
+                    "pos": {
+                        "x": 70.7,
+                        "y": 5.25
+                    },
+                    "uuid": "8352ca4a-9623-436d-89cb-8312601c5daa"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 5 [<no net>] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -12.75
+                    },
+                    "uuid": "5d8dca72-4e09-4b35-afb1-467aa23feb30"
+                },
+                {
+                    "description": "Pad 6 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -12.25
+                    },
+                    "uuid": "97907fd4-bc8d-4b22-9faf-f2fb4c4fb2b2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 6 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -12.25
+                    },
+                    "uuid": "97907fd4-bc8d-4b22-9faf-f2fb4c4fb2b2"
+                },
+                {
+                    "description": "Pad 7 [<no net>] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -11.75
+                    },
+                    "uuid": "ed760fab-bcad-44d9-b421-f279f2217d74"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 16 [GND] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -7.25
+                    },
+                    "uuid": "ffc611a4-85cd-4204-8992-f33eb579502e"
+                },
+                {
+                    "description": "Pad 17 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -6.75
+                    },
+                    "uuid": "dd7d4a15-5d03-41de-8dae-6185d8042b3a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 17 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -6.75
+                    },
+                    "uuid": "dd7d4a15-5d03-41de-8dae-6185d8042b3a"
+                },
+                {
+                    "description": "Pad 18 [<no net>] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -6.25
+                    },
+                    "uuid": "422cd755-d2a0-44fa-8a22-ebcd410c00b4"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 29 [ULPI_NXT] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -0.75
+                    },
+                    "uuid": "768cb6aa-3bbf-4106-b12c-009b6f1a4a63"
+                },
+                {
+                    "description": "Pad 30 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -0.25
+                    },
+                    "uuid": "601630e0-b28b-4e3b-9a57-060073e91fba"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 30 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": -0.25
+                    },
+                    "uuid": "601630e0-b28b-4e3b-9a57-060073e91fba"
+                },
+                {
+                    "description": "Pad 31 [GND] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": 0.25
+                    },
+                    "uuid": "12e10a74-57bb-40df-89fb-cfafabd49fae"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 31 [GND] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": 0.25
+                    },
+                    "uuid": "12e10a74-57bb-40df-89fb-cfafabd49fae"
+                },
+                {
+                    "description": "Pad 32 [+3V3A] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": 0.75
+                    },
+                    "uuid": "033636f4-fcc8-40c9-92d9-689a24c6fe4f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 33 [+3V3A] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": 1.25
+                    },
+                    "uuid": "9b8d5539-4d1f-4b65-af68-c54fdb483e47"
+                },
+                {
+                    "description": "Pad 34 [CAP_CLK] of U6 on F.Cu",
+                    "pos": {
+                        "x": 71.3375,
+                        "y": 1.75
+                    },
+                    "uuid": "6d782ab3-a081-421d-abbb-73a967468000"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 38 [GND] of U6 on F.Cu",
+                    "pos": {
+                        "x": 73.75,
+                        "y": 4.6625
+                    },
+                    "uuid": "b03475b9-f64c-4e6f-92d7-16529e87d7a8"
+                },
+                {
+                    "description": "Pad 39 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 74.25,
+                        "y": 4.6625
+                    },
+                    "uuid": "eed1b29f-7065-463a-85ed-cf44331015d0"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 39 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 74.25,
+                        "y": 4.6625
+                    },
+                    "uuid": "eed1b29f-7065-463a-85ed-cf44331015d0"
+                },
+                {
+                    "description": "Pad 40 [USB_RST] of U6 on F.Cu",
+                    "pos": {
+                        "x": 74.75,
+                        "y": 4.6625
+                    },
+                    "uuid": "d61e3b04-5616-4f73-9376-aaba493fb953"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 51 [GND] of U6 on F.Cu",
+                    "pos": {
+                        "x": 80.25,
+                        "y": 4.6625
+                    },
+                    "uuid": "f21ce5ed-44bb-49b1-aa95-3c866dd1d235"
+                },
+                {
+                    "description": "Pad 52 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 4.6625
+                    },
+                    "uuid": "1103ce70-e8d1-40d6-955d-797f157052ca"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 52 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 80.75,
+                        "y": 4.6625
+                    },
+                    "uuid": "1103ce70-e8d1-40d6-955d-797f157052ca"
+                },
+                {
+                    "description": "Pad 53 [<no net>] of U6 on F.Cu",
+                    "pos": {
+                        "x": 81.25,
+                        "y": 4.6625
+                    },
+                    "uuid": "90cdc84a-28d0-49a6-a7dd-792c50197530"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 61 [GND] of U6 on F.Cu",
+                    "pos": {
+                        "x": 85.25,
+                        "y": 4.6625
+                    },
+                    "uuid": "05e9c6a4-09c9-4a94-b6cc-37e104056611"
+                },
+                {
+                    "description": "Pad 62 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 85.75,
+                        "y": 4.6625
+                    },
+                    "uuid": "8de8ace9-705b-4258-a5c6-1ea9b5da3bf5"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 62 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 85.75,
+                        "y": 4.6625
+                    },
+                    "uuid": "8de8ace9-705b-4258-a5c6-1ea9b5da3bf5"
+                },
+                {
+                    "description": "Pad 63 [<no net>] of U6 on F.Cu",
+                    "pos": {
+                        "x": 86.25,
+                        "y": 4.6625
+                    },
+                    "uuid": "71e345e6-2db8-4a14-883f-fbcfa1573d3e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 71 [VCAP2] of U6 on F.Cu",
+                    "pos": {
+                        "x": 90.25,
+                        "y": 4.6625
+                    },
+                    "uuid": "b5a1ff93-0784-4e81-9b08-9ef7afee2127"
+                },
+                {
+                    "description": "Pad 72 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 90.75,
+                        "y": 4.6625
+                    },
+                    "uuid": "d76ebb53-607f-4c36-be7d-3621bb9d85c3"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 83 [GND] of U6 on F.Cu",
+                    "pos": {
+                        "x": 92.6625,
+                        "y": -2.25
+                    },
+                    "uuid": "264a5a95-4a8b-43b0-a725-8a9555d177ed"
+                },
+                {
+                    "description": "Pad 84 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 92.6625,
+                        "y": -2.75
+                    },
+                    "uuid": "3cef3bf5-411a-4970-8783-7a82313d8de1"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 84 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 92.6625,
+                        "y": -2.75
+                    },
+                    "uuid": "3cef3bf5-411a-4970-8783-7a82313d8de1"
+                },
+                {
+                    "description": "Pad 85 [<no net>] of U6 on F.Cu",
+                    "pos": {
+                        "x": 92.6625,
+                        "y": -3.25
+                    },
+                    "uuid": "8145ae82-0b4f-40bd-a074-c0c6efc44329"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 107 [GND] of U6 on F.Cu",
+                    "pos": {
+                        "x": 92.6625,
+                        "y": -14.25
+                    },
+                    "uuid": "1c9957a5-2da1-4a21-9011-a18255b03901"
+                },
+                {
+                    "description": "Pad 108 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 92.6625,
+                        "y": -14.75
+                    },
+                    "uuid": "9a4c5147-f94c-47ed-b52c-97a022e9cde2"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 120 [GND] of U6 on F.Cu",
+                    "pos": {
+                        "x": 85.25,
+                        "y": -16.6625
+                    },
+                    "uuid": "efb80b8e-e8d6-47b3-887a-fe08e35a20e8"
+                },
+                {
+                    "description": "Pad 121 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 84.75,
+                        "y": -16.6625
+                    },
+                    "uuid": "62e74115-ecdc-4e48-97ab-b157c79b9e6c"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 121 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 84.75,
+                        "y": -16.6625
+                    },
+                    "uuid": "62e74115-ecdc-4e48-97ab-b157c79b9e6c"
+                },
+                {
+                    "description": "Pad 122 [<no net>] of U6 on F.Cu",
+                    "pos": {
+                        "x": 84.25,
+                        "y": -16.6625
+                    },
+                    "uuid": "cc39be91-9c28-4241-81d7-c035504460c7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 130 [GND] of U6 on F.Cu",
+                    "pos": {
+                        "x": 80.25,
+                        "y": -16.6625
+                    },
+                    "uuid": "c2dbda3b-1f25-4c2c-82d4-05424c1a9ff8"
+                },
+                {
+                    "description": "Pad 131 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 79.75,
+                        "y": -16.6625
+                    },
+                    "uuid": "7c9d85f6-0b0b-4f81-87b2-0b5cb2b15a43"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 131 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 79.75,
+                        "y": -16.6625
+                    },
+                    "uuid": "7c9d85f6-0b0b-4f81-87b2-0b5cb2b15a43"
+                },
+                {
+                    "description": "Pad 132 [<no net>] of U6 on F.Cu",
+                    "pos": {
+                        "x": 79.25,
+                        "y": -16.6625
+                    },
+                    "uuid": "9cc3e580-d186-4ed7-b9bd-2abe5ee7b876"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 142 [<no net>] of U6 on F.Cu",
+                    "pos": {
+                        "x": 74.25,
+                        "y": -16.6625
+                    },
+                    "uuid": "c36f104f-6fd1-4ff6-848c-bae3eb036b5d"
+                },
+                {
+                    "description": "Pad 143 [+3V3D] of U6 on F.Cu",
+                    "pos": {
+                        "x": 73.75,
+                        "y": -16.6625
+                    },
+                    "uuid": "73c3febd-54ee-405b-9d1e-42472cec22ec"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [HV_OVP1] of D10 on F.Cu",
+                    "pos": {
+                        "x": 11.6,
+                        "y": -24.75
+                    },
+                    "uuid": "a552a19c-adad-48d9-92ed-a5696e0a5310"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [HV_OVP2] of D10 on F.Cu",
+                    "pos": {
+                        "x": 15.9,
+                        "y": -24.75
+                    },
+                    "uuid": "375f8f6c-d691-4ba7-bb63-97867a6ea1fe"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9994 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [APD_K] of R31 on F.Cu",
+                    "pos": {
+                        "x": 21.2875,
+                        "y": 11.0
+                    },
+                    "uuid": "37f8844d-cdfc-4d7f-be74-0e6cc10f1baa"
+                },
+                {
+                    "description": "Pad 1 [HV_R29M] of R47 on F.Cu",
+                    "pos": {
+                        "x": 22.175,
+                        "y": 8.25
+                    },
+                    "uuid": "66a04e9c-7288-41d3-bc62-ca3d59b53d40"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9500 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [HV_R31A] of R31 on F.Cu",
+                    "pos": {
+                        "x": 24.2125,
+                        "y": 11.0
+                    },
+                    "uuid": "4d4a105b-29d4-4164-9854-29e623ea74f6"
+                },
+                {
+                    "description": "Pad 2 [APD_K] of R47 on F.Cu",
+                    "pos": {
+                        "x": 23.825,
+                        "y": 8.25
+                    },
+                    "uuid": "77e88a16-6a4a-4e87-8dec-f128159812b7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [HV_OVP1] of D9 on F.Cu",
+                    "pos": {
+                        "x": 8.15,
+                        "y": -25.0
+                    },
+                    "uuid": "c4156c77-33be-47d7-8f0f-e349cb74d8bc"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2286 mm)",
+            "items": [
+                {
+                    "description": "Pad 24 [+3V3D_CDR] of U4 on F.Cu",
+                    "pos": {
+                        "x": 68.6875,
+                        "y": 35.5
+                    },
+                    "uuid": "f7462d19-108e-494f-8179-2963ff53c5a4"
+                },
+                {
+                    "description": "Pad 25 [CDR_CLKN] of U4 on F.Cu",
+                    "pos": {
+                        "x": 68.0,
+                        "y": 34.8125
+                    },
+                    "uuid": "78f066ed-519e-47eb-b9bf-5cd48990ea23"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad A3 [<no net>] of J1 on F.Cu",
+                    "pos": {
+                        "x": 28.25,
+                        "y": 71.48
+                    },
+                    "uuid": "0b74b2ba-d047-4673-9f5e-2864a34149e6"
+                },
+                {
+                    "description": "Pad A4 [VBUS_RAW] of J1 on F.Cu",
+                    "pos": {
+                        "x": 28.75,
+                        "y": 71.48
+                    },
+                    "uuid": "fac0cd32-6613-4e60-bbac-1c3596c17fdf"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad A4 [VBUS_RAW] of J1 on F.Cu",
+                    "pos": {
+                        "x": 28.75,
+                        "y": 71.48
+                    },
+                    "uuid": "fac0cd32-6613-4e60-bbac-1c3596c17fdf"
+                },
+                {
+                    "description": "Pad A5 [CC1] of J1 on F.Cu",
+                    "pos": {
+                        "x": 29.25,
+                        "y": 71.48
+                    },
+                    "uuid": "50af37c6-0a0a-4796-b7a9-5ca48f405a9f"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad A8 [<no net>] of J1 on F.Cu",
+                    "pos": {
+                        "x": 30.75,
+                        "y": 71.48
+                    },
+                    "uuid": "cc883102-047a-4650-8d25-622452509291"
+                },
+                {
+                    "description": "Pad A9 [VBUS_RAW] of J1 on F.Cu",
+                    "pos": {
+                        "x": 31.25,
+                        "y": 71.48
+                    },
+                    "uuid": "4cbeb33f-ad0b-4106-b7ea-5f281e8ce209"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad A9 [VBUS_RAW] of J1 on F.Cu",
+                    "pos": {
+                        "x": 31.25,
+                        "y": 71.48
+                    },
+                    "uuid": "4cbeb33f-ad0b-4106-b7ea-5f281e8ce209"
+                },
+                {
+                    "description": "Pad A10 [<no net>] of J1 on F.Cu",
+                    "pos": {
+                        "x": 31.75,
+                        "y": 71.48
+                    },
+                    "uuid": "8a719cb8-06de-463b-b621-a0439f6c4a14"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad B3 [<no net>] of J1 on F.Cu",
+                    "pos": {
+                        "x": 31.5,
+                        "y": 73.18
+                    },
+                    "uuid": "14be53ad-e45f-4e78-8aaa-ecb1d8dabfc5"
+                },
+                {
+                    "description": "Pad B4 [VBUS_RAW] of J1 on F.Cu",
+                    "pos": {
+                        "x": 31.0,
+                        "y": 73.18
+                    },
+                    "uuid": "49b96694-4e47-4f21-9d1a-07fd9f46aac7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad B4 [VBUS_RAW] of J1 on F.Cu",
+                    "pos": {
+                        "x": 31.0,
+                        "y": 73.18
+                    },
+                    "uuid": "49b96694-4e47-4f21-9d1a-07fd9f46aac7"
+                },
+                {
+                    "description": "Pad B5 [CC2] of J1 on F.Cu",
+                    "pos": {
+                        "x": 30.5,
+                        "y": 73.18
+                    },
+                    "uuid": "3bdde703-a373-42ac-96a5-242fbf628171"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad B8 [<no net>] of J1 on F.Cu",
+                    "pos": {
+                        "x": 29.0,
+                        "y": 73.18
+                    },
+                    "uuid": "a63dd76f-bc41-4aa8-97cf-91388827ffae"
+                },
+                {
+                    "description": "Pad B9 [VBUS_RAW] of J1 on F.Cu",
+                    "pos": {
+                        "x": 28.5,
+                        "y": 73.18
+                    },
+                    "uuid": "c7e6d379-4f7d-411e-b7c7-3c2d68d0c87e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad B9 [VBUS_RAW] of J1 on F.Cu",
+                    "pos": {
+                        "x": 28.5,
+                        "y": 73.18
+                    },
+                    "uuid": "c7e6d379-4f7d-411e-b7c7-3c2d68d0c87e"
+                },
+                {
+                    "description": "Pad B10 [<no net>] of J1 on F.Cu",
+                    "pos": {
+                        "x": 28.0,
+                        "y": 73.18
+                    },
+                    "uuid": "0e7cb533-c5dc-4e73-b043-8c16f0499b96"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.9845 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [TP_HV] of TP1 on F.Cu",
+                    "pos": {
+                        "x": 32.5,
+                        "y": 11.75
+                    },
+                    "uuid": "8a9651ba-cb3d-42af-b807-4b53b1136f04"
+                },
+                {
+                    "description": "Pad 1 [APD_K] of R34 on F.Cu",
+                    "pos": {
+                        "x": 31.5375,
+                        "y": 9.25
+                    },
+                    "uuid": "4701a92e-c027-41f7-8549-9ceb3cdb090a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2286 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [SW2] of U12 on F.Cu",
+                    "pos": {
+                        "x": 18.5625,
+                        "y": 51.25
+                    },
+                    "uuid": "2af4d758-fddb-44ed-b857-b07c3196f3b7"
+                },
+                {
+                    "description": "Pad 16 [NEG_RAW] of U12 on F.Cu",
+                    "pos": {
+                        "x": 19.25,
+                        "y": 50.5625
+                    },
+                    "uuid": "057cbbf6-ed99-4c41-98ff-8487cf76f902"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2286 mm)",
+            "items": [
+                {
+                    "description": "Pad 8 [NEG_RAW] of U12 on F.Cu",
+                    "pos": {
+                        "x": 20.75,
+                        "y": 53.4375
+                    },
+                    "uuid": "2df13d58-aa70-4329-9b18-2fd186470b6c"
+                },
+                {
+                    "description": "Pad 9 [SS_NEG] of U12 on F.Cu",
+                    "pos": {
+                        "x": 21.4375,
+                        "y": 52.75
+                    },
+                    "uuid": "0004c130-2ba0-40c4-ad8f-2bdf5cdaccf8"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2286 mm)",
+            "items": [
+                {
+                    "description": "Pad 16 [+3V3A] of U7 on F.Cu",
+                    "pos": {
+                        "x": 78.5,
+                        "y": 16.4375
+                    },
+                    "uuid": "076a8940-4a34-481b-9e48-af19669db11f"
+                },
+                {
+                    "description": "Pad 17 [ULPI_D7] of U7 on F.Cu",
+                    "pos": {
+                        "x": 79.1875,
+                        "y": 15.75
+                    },
+                    "uuid": "c5ff688f-2948-4ade-a711-b2ffd7466e64"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2286 mm)",
+            "items": [
+                {
+                    "description": "Pad 24 [ULPI_D0] of U7 on F.Cu",
+                    "pos": {
+                        "x": 79.1875,
+                        "y": 12.25
+                    },
+                    "uuid": "a706f727-704c-432d-84ff-1575814decdf"
+                },
+                {
+                    "description": "Pad 25 [+3V3A] of U7 on F.Cu",
+                    "pos": {
+                        "x": 78.5,
+                        "y": 11.5625
+                    },
+                    "uuid": "8fab3bd0-e4b0-459c-bb84-ee572c9e5c84"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.7000 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [APD_K] of R34 on F.Cu",
+                    "pos": {
+                        "x": 31.5375,
+                        "y": 9.25
+                    },
+                    "uuid": "4701a92e-c027-41f7-8549-9ceb3cdb090a"
+                },
+                {
+                    "description": "Pad 2 [HV_R31B] of R49 on F.Cu",
+                    "pos": {
+                        "x": 29.7125,
+                        "y": 7.75
+                    },
+                    "uuid": "81ecdbcb-f51a-44bc-bed6-cf0558b8fca7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.6403 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [APD_A] of D1 on F.Cu",
+                    "pos": {
+                        "x": 7.15,
+                        "y": 38.9
+                    },
+                    "uuid": "34c10fda-0e42-4fc9-84c2-7ed53e382b55"
+                },
+                {
+                    "description": "Pad 5 [APD_K] of D1 on F.Cu",
+                    "pos": {
+                        "x": 8.85,
+                        "y": 40.0
+                    },
+                    "uuid": "85d784e6-0507-438e-8622-706eede6cbcb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.4000 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [APD_A] of D1 on F.Cu",
+                    "pos": {
+                        "x": 7.15,
+                        "y": 40.0
+                    },
+                    "uuid": "271f8568-ebcc-4df8-b753-f794e7a5c661"
+                },
+                {
+                    "description": "Pad 5 [APD_K] of D1 on F.Cu",
+                    "pos": {
+                        "x": 8.85,
+                        "y": 40.0
+                    },
+                    "uuid": "85d784e6-0507-438e-8622-706eede6cbcb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.6403 mm)",
+            "items": [
+                {
+                    "description": "Pad 3 [APD_A] of D1 on F.Cu",
+                    "pos": {
+                        "x": 7.15,
+                        "y": 41.1
+                    },
+                    "uuid": "3dfa1f04-e347-498f-8853-e592fd8ad403"
+                },
+                {
+                    "description": "Pad 5 [APD_K] of D1 on F.Cu",
+                    "pos": {
+                        "x": 8.85,
+                        "y": 40.0
+                    },
+                    "uuid": "85d784e6-0507-438e-8622-706eede6cbcb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.5000 mm)",
+            "items": [
+                {
+                    "description": "Pad 4 [APD_A] of D1 on F.Cu",
+                    "pos": {
+                        "x": 8.85,
+                        "y": 41.1
+                    },
+                    "uuid": "78946b34-ba8f-46b6-a707-f6d09df65746"
+                },
+                {
+                    "description": "Pad 5 [APD_K] of D1 on F.Cu",
+                    "pos": {
+                        "x": 8.85,
+                        "y": 40.0
+                    },
+                    "uuid": "85d784e6-0507-438e-8622-706eede6cbcb"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.5000 mm)",
+            "items": [
+                {
+                    "description": "Pad 5 [APD_K] of D1 on F.Cu",
+                    "pos": {
+                        "x": 8.85,
+                        "y": 40.0
+                    },
+                    "uuid": "85d784e6-0507-438e-8622-706eede6cbcb"
+                },
+                {
+                    "description": "Pad 6 [APD_A] of D1 on F.Cu",
+                    "pos": {
+                        "x": 8.85,
+                        "y": 38.9
+                    },
+                    "uuid": "5dfda4b1-e3ab-4b88-a5bb-5f32683dc237"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.3505 mm)",
+            "items": [
+                {
+                    "description": "PTH pad 1 [APD_K] of C4",
+                    "pos": {
+                        "x": 11.75,
+                        "y": 18.0
+                    },
+                    "uuid": "77db80e8-4e2e-4c40-a1c4-0c27894c9d9b"
+                },
+                {
+                    "description": "Zone [GND] on In1.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e5edeca0-599a-4299-af88-839aabe64cde"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [HV_OVP2] of D11 on F.Cu",
+                    "pos": {
+                        "x": 15.1,
+                        "y": -20.25
+                    },
+                    "uuid": "07ab2e6a-665c-4206-8dc4-dc9a6553363c"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.8500 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [HV_RAW] of R29 on F.Cu",
+                    "pos": {
+                        "x": 24.425,
+                        "y": -5.5
+                    },
+                    "uuid": "3888efaa-94d9-4e04-80e6-cbae37ecf2b7"
+                },
+                {
+                    "description": "Pad 2 [HV_R29M] of R29 on F.Cu",
+                    "pos": {
+                        "x": 26.075,
+                        "y": -5.5
+                    },
+                    "uuid": "55737c48-5ac5-462d-bf13-94856615b466"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.8774 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [HV_RAW] of R29 on F.Cu",
+                    "pos": {
+                        "x": 24.425,
+                        "y": -5.5
+                    },
+                    "uuid": "3888efaa-94d9-4e04-80e6-cbae37ecf2b7"
+                },
+                {
+                    "description": "Pad 1 [HV_VC] of U10 on F.Cu",
+                    "pos": {
+                        "x": 25.35,
+                        "y": -4.0
+                    },
+                    "uuid": "7b886f0f-1f3a-4fb9-8e65-f4d6a45fe5ad"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.8750 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [HV_R29M] of R29 on F.Cu",
+                    "pos": {
+                        "x": 26.075,
+                        "y": -5.5
+                    },
+                    "uuid": "55737c48-5ac5-462d-bf13-94856615b466"
+                },
+                {
+                    "description": "Pad 1 [HV_VC] of U10 on F.Cu",
+                    "pos": {
+                        "x": 25.35,
+                        "y": -4.0
+                    },
+                    "uuid": "7b886f0f-1f3a-4fb9-8e65-f4d6a45fe5ad"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 3 [+5V] of U14 on F.Cu",
+                    "pos": {
+                        "x": 52.95,
+                        "y": 47.25
+                    },
+                    "uuid": "8de0c525-f19f-4e4e-9659-bbe505a10bb0"
+                },
+                {
+                    "description": "Pad 4 [<no net>] of U14 on F.Cu",
+                    "pos": {
+                        "x": 52.95,
+                        "y": 47.75
+                    },
+                    "uuid": "3c54c20b-e105-44b9-aa6d-69221b2c119a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 6 [+5V] of U14 on F.Cu",
+                    "pos": {
+                        "x": 56.05,
+                        "y": 48.25
+                    },
+                    "uuid": "b5095438-7638-41e0-bf84-69c897fcb640"
+                },
+                {
+                    "description": "Pad 7 [SET_A] of U14 on F.Cu",
+                    "pos": {
+                        "x": 56.05,
+                        "y": 47.75
+                    },
+                    "uuid": "f0154dd8-1883-4776-b41b-2c3eb5f3b621"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 8 [GND] of U14 on F.Cu",
+                    "pos": {
+                        "x": 56.05,
+                        "y": 47.25
+                    },
+                    "uuid": "d87d761d-263a-406c-9deb-04384bff9434"
+                },
+                {
+                    "description": "Pad 9 [+3V3A] of U14 on F.Cu",
+                    "pos": {
+                        "x": 56.05,
+                        "y": 46.75
+                    },
+                    "uuid": "0185902a-a405-4985-aee0-b70df8c8ad28"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 3 [+5V] of U13 on F.Cu",
+                    "pos": {
+                        "x": 38.2,
+                        "y": 50.25
+                    },
+                    "uuid": "6d17ef99-7e28-47cd-83a3-a8ae0a955e83"
+                },
+                {
+                    "description": "Pad 4 [<no net>] of U13 on F.Cu",
+                    "pos": {
+                        "x": 38.2,
+                        "y": 50.75
+                    },
+                    "uuid": "7fb67e4e-7625-40b0-b4d7-c52e5a577d4e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 6 [+5V] of U13 on F.Cu",
+                    "pos": {
+                        "x": 41.3,
+                        "y": 51.25
+                    },
+                    "uuid": "82e2db05-c6ac-4406-a3c7-56e29f0c7190"
+                },
+                {
+                    "description": "Pad 7 [SET_P] of U13 on F.Cu",
+                    "pos": {
+                        "x": 41.3,
+                        "y": 50.75
+                    },
+                    "uuid": "db39a902-4a88-4daf-b684-8ed805c3cb30"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 8 [GND] of U13 on F.Cu",
+                    "pos": {
+                        "x": 41.3,
+                        "y": 50.25
+                    },
+                    "uuid": "4dac5bc0-1ebb-478c-a83c-239335f8dcbf"
+                },
+                {
+                    "description": "Pad 9 [+VA] of U13 on F.Cu",
+                    "pos": {
+                        "x": 41.3,
+                        "y": 49.75
+                    },
+                    "uuid": "fe82a8f1-820b-4527-9713-6f581268fe54"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.8500 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [APD_K_ALT] of RJ2 on F.Cu",
+                    "pos": {
+                        "x": 20.425,
+                        "y": 40.0
+                    },
+                    "uuid": "aae6cdb1-9f73-4fdb-bacc-cef16e21f15a"
+                },
+                {
+                    "description": "Pad 2 [APD_K] of RJ2 on F.Cu",
+                    "pos": {
+                        "x": 22.075,
+                        "y": 40.0
+                    },
+                    "uuid": "dc395192-5371-4a66-baec-82dea3209d1a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.8463 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [APD_K] of RJ2 on F.Cu",
+                    "pos": {
+                        "x": 22.075,
+                        "y": 40.0
+                    },
+                    "uuid": "dc395192-5371-4a66-baec-82dea3209d1a"
+                },
+                {
+                    "description": "Pad 3 [POST_INP] of U2 on F.Cu",
+                    "pos": {
+                        "x": 23.8625,
+                        "y": 40.95
+                    },
+                    "uuid": "817ff64b-3600-4253-b62f-06ed23ee3eca"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.8463 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [APD_K] of RJ2 on F.Cu",
+                    "pos": {
+                        "x": 22.075,
+                        "y": 40.0
+                    },
+                    "uuid": "dc395192-5371-4a66-baec-82dea3209d1a"
+                },
+                {
+                    "description": "Pad 1 [POST_OUT] of U2 on F.Cu",
+                    "pos": {
+                        "x": 23.8625,
+                        "y": 39.05
+                    },
+                    "uuid": "bf82aff2-172c-4e43-a8f6-89f7663cdec7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.7250 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [APD_K] of RJ2 on F.Cu",
+                    "pos": {
+                        "x": 22.075,
+                        "y": 40.0
+                    },
+                    "uuid": "dc395192-5371-4a66-baec-82dea3209d1a"
+                },
+                {
+                    "description": "Pad 2 [GND] of U2 on F.Cu",
+                    "pos": {
+                        "x": 23.8625,
+                        "y": 40.0
+                    },
+                    "uuid": "bd7ebbb5-d2b2-40d6-96df-95244bc3ec8d"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Pad 2 [APD_K] of RJ2 on F.Cu",
+                    "pos": {
+                        "x": 22.075,
+                        "y": 40.0
+                    },
+                    "uuid": "dc395192-5371-4a66-baec-82dea3209d1a"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.8500 mm)",
+            "items": [
+                {
+                    "description": "Pad 1 [HV_R29M] of R47 on F.Cu",
+                    "pos": {
+                        "x": 22.175,
+                        "y": 8.25
+                    },
+                    "uuid": "66a04e9c-7288-41d3-bc62-ca3d59b53d40"
+                },
+                {
+                    "description": "Pad 2 [APD_K] of R47 on F.Cu",
+                    "pos": {
+                        "x": 23.825,
+                        "y": 8.25
+                    },
+                    "uuid": "77e88a16-6a4a-4e87-8dec-f128159812b7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Power' clearance 0.2500 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Pad 9 [HV_SHDN] of U10 on F.Cu",
+                    "pos": {
+                        "x": 29.65,
+                        "y": -3.5
+                    },
+                    "uuid": "c0f137d5-d6cb-40b6-a5c2-58b80c6e30ab"
+                },
+                {
+                    "description": "Pad 10 [+5V] of U10 on F.Cu",
+                    "pos": {
+                        "x": 29.65,
+                        "y": -4.0
+                    },
+                    "uuid": "75a5352a-b057-4b42-aa7d-898114721089"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'HV' clearance 1.0000 mm; actual 0.2505 mm)",
+            "items": [
+                {
+                    "description": "Pad 10 [HV_SEC] of T1 on F.Cu",
+                    "pos": {
+                        "x": 24.9,
+                        "y": -21.24
+                    },
+                    "uuid": "e1698634-068e-403f-a0bd-152c9860a33a"
+                },
+                {
+                    "description": "Zone [GND] on F.Cu",
+                    "pos": {
+                        "x": 0.3,
+                        "y": -29.7
+                    },
+                    "uuid": "e71aa1de-3d84-4d7e-b1c4-02a92cccfff7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        }
+    ]
+}
