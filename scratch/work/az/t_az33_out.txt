@@ -1,0 +1,64 @@
+01:21:27: Debug: Adding duplicate image handler for 'PNG file'
+01:21:27: Debug: Adding duplicate image handler for 'JPEG file'
+01:21:27: Debug: Adding duplicate image handler for 'TIFF file'
+01:21:27: Debug: Adding duplicate image handler for 'GIF file'
+01:21:27: Debug: Adding duplicate image handler for 'PNM file'
+01:21:27: Debug: Adding duplicate image handler for 'PCX file'
+01:21:27: Debug: Adding duplicate image handler for 'IFF file'
+01:21:27: Debug: Adding duplicate image handler for 'Windows icon file'
+01:21:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:21:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:21:27: Debug: Adding duplicate image handler for 'TGA file'
+01:21:27: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:21:28: Debug: Adding duplicate image handler for 'PNG file'
+01:21:28: Debug: Adding duplicate image handler for 'JPEG file'
+01:21:28: Debug: Adding duplicate image handler for 'TIFF file'
+01:21:28: Debug: Adding duplicate image handler for 'GIF file'
+01:21:28: Debug: Adding duplicate image handler for 'PNM file'
+01:21:28: Debug: Adding duplicate image handler for 'PCX file'
+01:21:28: Debug: Adding duplicate image handler for 'IFF file'
+01:21:28: Debug: Adding duplicate image handler for 'Windows icon file'
+01:21:28: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:21:28: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:21:28: Debug: Adding duplicate image handler for 'TGA file'
+01:21:28: Debug: Adding duplicate image handler for 'XPM file'
+faithful: STP 1 PHY 3
+STP zigzag ripped: 14
+STP zigzag re-lay gate: 17 pairs < 0.3; worst 6:
+    (-0.5, 2, ('seg', 'ULPI_STP', (77.1, 10.8, 77.15, 9.95, 0.1), 0.2), ('seg', 'PHY_1V8', (77.45, 10.1, 76.95, 11.05, 0.15), 0.25))
+    (-0.497, 2, ('seg', 'ULPI_STP', (76.45, 10.65, 77.1, 10.8, 0.1), 0.2), ('seg', 'PHY_1V8', (77.45, 10.1, 76.95, 11.05, 0.15), 0.25))
+    (-0.223, 2, ('seg', 'ULPI_STP', (76.45, 10.65, 77.1, 10.8, 0.1), 0.2), ('seg', 'PHY_1V8', (76.95, 11.05, 76.95, 14.988, 0.15), 0.25))
+    (-0.208, 2, ('seg', 'ULPI_STP', (77.1, 10.8, 77.15, 9.95, 0.1), 0.2), ('seg', 'PHY_1V8', (76.95, 11.05, 76.95, 14.988, 0.15), 0.25))
+    (-0.192, 2, ('seg', 'ULPI_STP', (77.1, 10.8, 77.15, 9.95, 0.1), 0.2), ('seg', 'PHY_1V8', (77.9, 10.08, 77.45, 10.1, 0.15), 0.25))
+    (-0.165, 2, ('seg', 'ULPI_STP', (77.15, 9.95, 76.6, 9.65, 0.1), 0.2), ('seg', 'PHY_1V8', (77.45, 10.1, 76.95, 11.05, 0.15), 0.25))
+STP frags: 1
+PHY loop pair-ripped: 4
+PHY loop gate: 27 pairs < 0.3; worst 6:
+    (-0.276, 2, ('seg', 'PHY_1V8', (77.28, 10.8, 77.15, 11.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.45, 10.65, 77.1, 10.8, 0.1), 0.2))
+    (-0.276, 2, ('seg', 'PHY_1V8', (77.28, 10.8, 77.15, 11.3, 0.1), 0.25), ('seg', 'ULPI_STP', (77.1, 10.8, 77.15, 9.95, 0.1), 0.2))
+    (-0.27, 2, ('seg', 'PHY_1V8', (77.5, 10.25, 77.28, 10.8, 0.1), 0.25), ('seg', 'ULPI_STP', (76.45, 10.65, 77.1, 10.8, 0.1), 0.2))
+    (-0.27, 2, ('seg', 'PHY_1V8', (77.5, 10.25, 77.28, 10.8, 0.1), 0.25), ('seg', 'ULPI_STP', (77.1, 10.8, 77.15, 9.95, 0.1), 0.2))
+    (-0.133, 2, ('seg', 'PHY_1V8', (77.9, 10.08, 77.5, 10.25, 0.15), 0.25), ('seg', 'ULPI_STP', (77.1, 10.8, 77.15, 9.95, 0.1), 0.2))
+    (-0.039, 2, ('seg', 'PHY_1V8', (77.9, 10.08, 77.5, 10.25, 0.15), 0.25), ('seg', 'ULPI_STP', (77.15, 9.95, 76.6, 9.65, 0.1), 0.2))
+PHY A* west: FOUND vias=[[71.9, 17.8]]
+PHY A* west gate: 150 pairs < 0.3; worst 6:
+    (0.024, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.525, 17.975, 72.525, 18.0, 0.125), 0.2))
+    (0.024, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.55, 17.95, 72.525, 17.975, 0.125), 0.2))
+    (0.025, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.5, 18.05, 72.5, 18.075, 0.125), 0.2))
+    (0.025, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.525, 18.025, 72.5, 18.05, 0.125), 0.2))
+    (0.029, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.575, 17.85, 72.55, 17.875, 0.125), 0.2))
+    (0.029, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.55, 17.875, 72.55, 17.9, 0.125), 0.2))
+PHY hand tail gate: 229 pairs < 0.3; worst 6:
+    (-0.449, 2, ('seg', 'PHY_1V8', (76.5, 10.15, 76.95, 11.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.45, 10.65, 77.1, 10.8, 0.1), 0.2))
+    (-0.236, 2, ('seg', 'PHY_1V8', (75.95, 11.2, 76.15, 10.7, 0.1), 0.25), ('via', 'PHY_1V8A', (75.7375, 10.75, 0.25), 0.25))
+    (-0.224, 2, ('seg', 'PHY_1V8', (76.15, 10.7, 76.5, 10.15, 0.1), 0.25), ('seg', 'ULPI_STP', (76.45, 10.7, 76.45, 10.65, 0.1), 0.2))
+    (-0.224, 2, ('seg', 'PHY_1V8', (76.15, 10.7, 76.5, 10.15, 0.1), 0.25), ('seg', 'ULPI_STP', (76.45, 10.65, 77.1, 10.8, 0.1), 0.2))
+    (-0.221, 2, ('seg', 'PHY_1V8', (76.5, 10.15, 76.95, 11.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.45, 10.7, 76.45, 10.65, 0.1), 0.2))
+    (-0.203, 2, ('seg', 'PHY_1V8', (76.5, 10.15, 76.95, 11.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.45, 10.75, 76.45, 10.7, 0.1), 0.2))
+PHY tail ripped: 2
+final: STP 1 PHY 1 CK 1 XI 3
+=== done ===

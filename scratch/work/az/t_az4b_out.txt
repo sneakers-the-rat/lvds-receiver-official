@@ -1,0 +1,84 @@
+00:01:07: Debug: Adding duplicate image handler for 'PNG file'
+00:01:07: Debug: Adding duplicate image handler for 'JPEG file'
+00:01:07: Debug: Adding duplicate image handler for 'TIFF file'
+00:01:07: Debug: Adding duplicate image handler for 'GIF file'
+00:01:07: Debug: Adding duplicate image handler for 'PNM file'
+00:01:07: Debug: Adding duplicate image handler for 'PCX file'
+00:01:07: Debug: Adding duplicate image handler for 'IFF file'
+00:01:07: Debug: Adding duplicate image handler for 'Windows icon file'
+00:01:07: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:01:07: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:01:07: Debug: Adding duplicate image handler for 'TGA file'
+00:01:07: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+00:01:08: Debug: Adding duplicate image handler for 'PNG file'
+00:01:08: Debug: Adding duplicate image handler for 'JPEG file'
+00:01:08: Debug: Adding duplicate image handler for 'TIFF file'
+00:01:08: Debug: Adding duplicate image handler for 'GIF file'
+00:01:08: Debug: Adding duplicate image handler for 'PNM file'
+00:01:08: Debug: Adding duplicate image handler for 'PCX file'
+00:01:08: Debug: Adding duplicate image handler for 'IFF file'
+00:01:08: Debug: Adding duplicate image handler for 'Windows icon file'
+00:01:08: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:01:08: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:01:08: Debug: Adding duplicate image handler for 'TGA file'
+00:01:08: Debug: Adding duplicate image handler for 'XPM file'
+##### PHY_1V8: 3 fragments in box
+  frag0: 1 items: ['pad PHY_1V8 (72.020,18.000) hw0.280x0.310']
+  frag1: 18 items: ['pad PHY_1V8 (77.250,16.438) hw0.125x0.438', 'pad PHY_1V8 (77.250,11.562) hw0.125x0.438', 'seg PHY_1V8 (77.250,16.438)->(77.250,17.188) hw0.100', 'seg PHY_1V8 (77.250,11.562)->(77.250,10.750) hw0.100']
+  frag2: 2 items: ['seg PHY_1V8 (71.375,17.625)->(71.725,17.750) hw0.100', 'seg PHY_1V8 (71.725,17.750)->(71.725,18.000) hw0.100']
+  start fragment: 0
+  reached L0: x[69.75,79.12] y[9.62,18.88] cells=401
+  reached L1: x[70.88,79.12] y[8.62,19.50] cells=601
+  reached L2: x[70.88,79.12] y[9.00,18.62] cells=1535
+  frag1: REACHED closest=(0, 77.25, 16.4375) from=None
+  frag2: REACHED closest=(0, 71.375, 17.625) from=None
+##### XI: 3 fragments in box
+  frag0: 1 items: ['pad XI (75.720,18.730) hw0.280x0.310']
+  frag1: 30 items: ['pad XI (85.750,18.250) hw2.250x1.000', 'seg XI (85.750,18.750)->(85.750,18.250) hw0.100', 'seg XI (85.125,19.125)->(85.750,18.750) hw0.100', 'via XI (75.625,18.625) r0.300']
+  frag2: 1 items: ['pad XI (76.250,11.562) hw0.125x0.438']
+  start fragment: 0
+  reached L0: x[73.62,92.00] y[0.00,26.00] cells=12114
+  reached L1: x[72.50,92.00] y[0.00,26.00] cells=15650
+  reached L2: x[74.00,92.00] y[0.00,26.00] cells=17061
+  frag1: REACHED closest=(0, 85.75, 18.25) from=None
+  frag2: REACHED closest=(0, 76.25, 11.5625) from=None
+##### USB_RST: 2 fragments in box
+  frag0: 1 items: ['pad USB_RST (74.750,4.662) hw0.150x0.738']
+  frag1: 1 items: ['pad USB_RST (74.250,16.438) hw0.125x0.438']
+  start fragment: 1
+  reached L0: x[74.00,74.75] y[3.88,16.88] cells=18
+  frag0: gap 0.787 closest=(0, 74.75, 4.6625) from=(0, 74.75, 3.875)
+    strait mid (74.750,4.269) L0; fence items within 0.75mm of the strait segment:
+      L0 pad +3V3D (74.250,4.662) hw0.150x0.738 clr=0.25 dist-to-strait=0.350
+      L0 pad ULPI_CK (75.250,4.662) hw0.150x0.738 clr=0.2 dist-to-strait=0.350
+      L0 seg +3V3D (74.250,3.600)->(74.250,3.550) hw0.150 clr=0.25 dist-to-strait=0.421
+      L0 seg +3V3D (74.250,3.162)->(74.250,4.662) hw0.100 clr=0.25 dist-to-strait=0.400
+      L0 seg +3V3D (74.250,3.550)->(74.250,3.500) hw0.150 clr=0.25 dist-to-strait=0.446
+      L0 seg +3V3D (74.250,3.662)->(74.250,3.600) hw0.150 clr=0.25 dist-to-strait=0.393
+      L0 seg +3V3D (74.250,4.662)->(74.250,3.662) hw0.100 clr=0.25 dist-to-strait=0.400
+      L0 via +3V3D (74.250,3.500) r0.250 clr=0.25 dist-to-strait=0.375
+      L0 seg ULPI_CK (75.125,5.875)->(75.250,5.162) hw0.100 clr=0.2 dist-to-strait=0.607
+      L0 seg ULPI_CK (75.250,5.162)->(75.250,4.662) hw0.100 clr=0.2 dist-to-strait=0.400
+      L1 via +3V3D (74.250,3.500) r0.250 clr=0.25 dist-to-strait=0.375
+      L1 seg +3V3D (74.250,3.500)->(72.875,3.375) hw0.125 clr=0.25 dist-to-strait=0.500
+      L1 seg BIST_DRV (74.375,5.625)->(74.625,5.375) hw0.125 clr=0.2 dist-to-strait=0.598
+      L1 seg BIST_DRV (75.375,5.125)->(75.625,4.875) hw0.125 clr=0.2 dist-to-strait=0.653
+      L1 seg BIST_DRV (74.875,5.125)->(75.375,5.125) hw0.125 clr=0.2 dist-to-strait=0.354
+      L1 seg BIST_DRV (74.625,5.375)->(74.875,5.125) hw0.125 clr=0.2 dist-to-strait=0.354
+      L1 seg DAC_SYNC (75.500,3.500)->(76.550,1.450) hw0.100 clr=0.2 dist-to-strait=0.739
+      L1 seg DAC_SYNC (71.375,5.875)->(75.500,3.500) hw0.100 clr=0.2 dist-to-strait=-0.064
+      L1 seg SPI_MOSI (75.100,4.550)->(76.400,3.350) hw0.100 clr=0.2 dist-to-strait=0.250
+      L1 seg SPI_MOSI (73.400,5.200)->(75.100,4.550) hw0.100 clr=0.2 dist-to-strait=-0.080
+      L2 via +3V3D (74.250,3.500) r0.250 clr=0.25 dist-to-strait=0.375
+      L2 seg +3V3D (74.100,3.500)->(74.050,3.500) hw0.150 clr=0.25 dist-to-strait=0.600
+      L2 seg +3V3D (74.250,3.500)->(74.200,3.500) hw0.150 clr=0.25 dist-to-strait=0.475
+      L2 seg +3V3D (74.000,3.500)->(73.950,3.500) hw0.150 clr=0.25 dist-to-strait=0.689
+      L2 seg +3V3D (73.950,3.500)->(73.900,3.500) hw0.150 clr=0.25 dist-to-strait=0.734
+      L2 seg +3V3D (74.150,3.500)->(74.100,3.500) hw0.150 clr=0.25 dist-to-strait=0.558
+      L2 seg +3V3D (74.200,3.500)->(74.150,3.500) hw0.150 clr=0.25 dist-to-strait=0.516
+      L2 seg +3V3D (74.050,3.500)->(74.000,3.500) hw0.150 clr=0.25 dist-to-strait=0.644
+=== done ===

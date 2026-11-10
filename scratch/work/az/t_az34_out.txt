@@ -1,0 +1,54 @@
+01:27:10: Debug: Adding duplicate image handler for 'PNG file'
+01:27:10: Debug: Adding duplicate image handler for 'JPEG file'
+01:27:10: Debug: Adding duplicate image handler for 'TIFF file'
+01:27:10: Debug: Adding duplicate image handler for 'GIF file'
+01:27:10: Debug: Adding duplicate image handler for 'PNM file'
+01:27:10: Debug: Adding duplicate image handler for 'PCX file'
+01:27:10: Debug: Adding duplicate image handler for 'IFF file'
+01:27:10: Debug: Adding duplicate image handler for 'Windows icon file'
+01:27:10: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:27:10: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:27:10: Debug: Adding duplicate image handler for 'TGA file'
+01:27:10: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:27:10: Debug: Adding duplicate image handler for 'PNG file'
+01:27:10: Debug: Adding duplicate image handler for 'JPEG file'
+01:27:10: Debug: Adding duplicate image handler for 'TIFF file'
+01:27:10: Debug: Adding duplicate image handler for 'GIF file'
+01:27:10: Debug: Adding duplicate image handler for 'PNM file'
+01:27:10: Debug: Adding duplicate image handler for 'PCX file'
+01:27:10: Debug: Adding duplicate image handler for 'IFF file'
+01:27:10: Debug: Adding duplicate image handler for 'Windows icon file'
+01:27:10: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:27:10: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:27:10: Debug: Adding duplicate image handler for 'TGA file'
+01:27:10: Debug: Adding duplicate image handler for 'XPM file'
+faithful: STP 1 PHY 3
+STP chain ripped: 94
+STP frags after rip: 2
+PHY loop pair-ripped: 4
+PHY loop gate: 17 pairs < 0.3; worst 6:
+    (0.006, 2, ('seg', 'PHY_1V8', (77.5, 10.25, 77.28, 10.8, 0.1), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.008, 2, ('seg', 'PHY_1V8', (77.28, 10.8, 77.15, 11.3, 0.1), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.133, 2, ('seg', 'PHY_1V8', (77.15, 11.3, 77.15, 13.0, 0.15), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.159, 2, ('seg', 'PHY_1V8', (77.9, 10.08, 77.5, 10.25, 0.15), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.17, 2, ('seg', 'PHY_1V8', (77.9, 10.08, 77.5, 10.25, 0.15), 0.25), ('via', 'ULPI_STP', (77.0, 9.6, 0.25), 0.2))
+    (0.176, 2, ('seg', 'PHY_1V8', (77.9, 10.08, 77.5, 10.25, 0.15), 0.25), ('seg', 'ULPI_STP', (77.3, 9.6, 77.25, 9.6, 0.1), 0.2))
+STP A*: FOUND vias=[]
+STP A* gate: 35 pairs < 0.3; worst 6:
+    (0.18, 2, ('seg', 'ULPI_STP', (76.9, 9.7, 77.0, 9.6, 0.1), 0.2), ('seg', 'I2C_SCL', (77.125, 8.875, 77.375, 9.125, 0.125), 0.2))
+    (0.18, 2, ('seg', 'ULPI_STP', (76.9, 9.7, 77.0, 9.6, 0.1), 0.2), ('seg', 'I2C_SCL', (77.375, 9.125, 77.625, 8.875, 0.125), 0.2))
+    (0.194, 2, ('seg', 'ULPI_STP', (76.45, 11.2, 76.45, 11.1, 0.1), 0.2), ('via', 'PHY_1V8A', (75.7375, 10.75, 0.25), 0.25))
+    (0.194, 2, ('seg', 'ULPI_STP', (76.45, 11.1, 76.5, 11.05, 0.1), 0.2), ('via', 'PHY_1V8A', (75.7375, 10.75, 0.25), 0.25))
+    (0.195, 2, ('seg', 'ULPI_STP', (76.5, 11.0, 76.55, 10.95, 0.1), 0.2), ('seg', 'PHY_1V8', (77.15, 11.3, 77.15, 13.0, 0.15), 0.25))
+    (0.195, 2, ('seg', 'ULPI_STP', (76.55, 10.95, 76.55, 10.8, 0.1), 0.2), ('seg', 'PHY_1V8', (77.15, 11.3, 77.15, 13.0, 0.15), 0.25))
+STP frags: 1
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/az/t_az34_stpfirst.py", line 95, in <module>
+    r2 = astar('PHY_1V8', ((0,), 72.02, 18.0), (2, 77.15, 13.0), 0.10)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<string>", line 113, in astar
+IndexError: index 210 is out of bounds for axis 0 with size 161

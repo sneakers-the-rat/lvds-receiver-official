@@ -1,0 +1,52 @@
+01:29:34: Debug: Adding duplicate image handler for 'PNG file'
+01:29:34: Debug: Adding duplicate image handler for 'JPEG file'
+01:29:34: Debug: Adding duplicate image handler for 'TIFF file'
+01:29:34: Debug: Adding duplicate image handler for 'GIF file'
+01:29:34: Debug: Adding duplicate image handler for 'PNM file'
+01:29:34: Debug: Adding duplicate image handler for 'PCX file'
+01:29:34: Debug: Adding duplicate image handler for 'IFF file'
+01:29:34: Debug: Adding duplicate image handler for 'Windows icon file'
+01:29:34: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:29:34: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:29:34: Debug: Adding duplicate image handler for 'TGA file'
+01:29:34: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:29:35: Debug: Adding duplicate image handler for 'PNG file'
+01:29:35: Debug: Adding duplicate image handler for 'JPEG file'
+01:29:35: Debug: Adding duplicate image handler for 'TIFF file'
+01:29:35: Debug: Adding duplicate image handler for 'GIF file'
+01:29:35: Debug: Adding duplicate image handler for 'PNM file'
+01:29:35: Debug: Adding duplicate image handler for 'PCX file'
+01:29:35: Debug: Adding duplicate image handler for 'IFF file'
+01:29:35: Debug: Adding duplicate image handler for 'Windows icon file'
+01:29:35: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:29:35: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:29:35: Debug: Adding duplicate image handler for 'TGA file'
+01:29:35: Debug: Adding duplicate image handler for 'XPM file'
+STP chain ripped: 94
+PHY loop pair-ripped: 4
+notch via/stub ripped: 1 2
+notch re-lay v2 gate: 48 pairs < 0.3; worst 6:
+    (0.001, 0, ('seg', 'PHY_1V8A', (75.72, 11.0, 75.48, 10.68, 0.1), 0.25), ('pad', '+3V3A', (75.25, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (0.05, 0, ('via', 'PHY_1V8A', (75.3, 10.3, 0.25), 0.25), ('seg', 'XO', (75.35, 9.65, 75.3, 9.65, 0.1), 0.2))
+    (0.05, 0, ('via', 'PHY_1V8A', (75.3, 10.3, 0.25), 0.25), ('seg', 'XO', (75.3, 9.65, 75.25, 9.65, 0.1), 0.2))
+    (0.05, 1, ('via', 'PHY_1V8A', (75.3, 10.3, 0.25), 0.25), ('seg', 'ULPI_CK', (74.625, 13.5, 74.625, 6.375, 0.125), 0.2))
+    (0.052, 0, ('via', 'PHY_1V8A', (75.3, 10.3, 0.25), 0.25), ('seg', 'XO', (75.25, 9.65, 75.2, 9.6, 0.1), 0.2))
+    (0.052, 0, ('via', 'PHY_1V8A', (75.3, 10.3, 0.25), 0.25), ('seg', 'XO', (75.4, 9.65, 75.35, 9.65, 0.1), 0.2))
+1V8A frags: 1
+STP A* (west forced): none
+blockers removed: 3
+PHY A*: FOUND vias=[[71.9, 17.8]]
+PHY A* gate: 150 pairs < 0.3; worst 6:
+    (0.024, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.525, 17.975, 72.525, 18.0, 0.125), 0.2))
+    (0.024, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.55, 17.95, 72.525, 17.975, 0.125), 0.2))
+    (0.025, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.5, 18.05, 72.5, 18.075, 0.125), 0.2))
+    (0.025, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.525, 18.025, 72.5, 18.05, 0.125), 0.2))
+    (0.029, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.575, 17.85, 72.55, 17.875, 0.125), 0.2))
+    (0.029, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.2), ('seg', 'RBIAS', (72.55, 17.875, 72.55, 17.9, 0.125), 0.2))
+PHY tail ripped: 2
+final: STP 2 PHY 1 CK 1 XI 3 1V8A 1 XO 1
+=== done ===

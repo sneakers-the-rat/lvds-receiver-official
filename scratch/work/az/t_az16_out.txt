@@ -1,0 +1,44 @@
+00:42:22: Debug: Adding duplicate image handler for 'PNG file'
+00:42:22: Debug: Adding duplicate image handler for 'JPEG file'
+00:42:22: Debug: Adding duplicate image handler for 'TIFF file'
+00:42:22: Debug: Adding duplicate image handler for 'GIF file'
+00:42:22: Debug: Adding duplicate image handler for 'PNM file'
+00:42:22: Debug: Adding duplicate image handler for 'PCX file'
+00:42:22: Debug: Adding duplicate image handler for 'IFF file'
+00:42:22: Debug: Adding duplicate image handler for 'Windows icon file'
+00:42:22: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:42:22: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:42:22: Debug: Adding duplicate image handler for 'TGA file'
+00:42:22: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+00:42:23: Debug: Adding duplicate image handler for 'PNG file'
+00:42:23: Debug: Adding duplicate image handler for 'JPEG file'
+00:42:23: Debug: Adding duplicate image handler for 'TIFF file'
+00:42:23: Debug: Adding duplicate image handler for 'GIF file'
+00:42:23: Debug: Adding duplicate image handler for 'PNM file'
+00:42:23: Debug: Adding duplicate image handler for 'PCX file'
+00:42:23: Debug: Adding duplicate image handler for 'IFF file'
+00:42:23: Debug: Adding duplicate image handler for 'Windows icon file'
+00:42:23: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:42:23: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:42:23: Debug: Adding duplicate image handler for 'TGA file'
+00:42:23: Debug: Adding duplicate image handler for 'XPM file'
+1V8A fragments faithful: 1
+ripped notch items (entries): 6
+1V8A fragments after re-lay: 1
+notch re-lay gate: 41 pairs < 0.30; worst 8:
+    (-0.287, 0, ('seg', 'PHY_1V8A', (75.45, 11.15, 75.2, 10.4, 0.1), 0.25), ('pad', '+3V3A', (75.25, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (-0.275, 0, ('seg', 'PHY_1V8A', (75.75, 11.562, 75.45, 11.15, 0.1), 0.25), ('pad', '+3V3A', (75.25, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (-0.15, 0, ('seg', 'PHY_1V8A', (75.45, 11.15, 75.2, 10.4, 0.1), 0.25), ('seg', '+3V3A', (75.125, 11.125, 74.25, 10.625, 0.1), 0.25))
+    (-0.15, 0, ('seg', 'PHY_1V8A', (75.45, 11.15, 75.2, 10.4, 0.1), 0.25), ('seg', '+3V3A', (74.875, 11.125, 75.125, 11.125, 0.1), 0.25))
+    (-0.124, 0, ('seg', 'PHY_1V8A', (75.75, 11.562, 75.45, 11.15, 0.1), 0.25), ('seg', '+3V3A', (75.125, 11.125, 74.25, 10.625, 0.1), 0.25))
+    (-0.124, 0, ('seg', 'PHY_1V8A', (75.75, 11.562, 75.45, 11.15, 0.1), 0.25), ('seg', '+3V3A', (74.875, 11.125, 75.125, 11.125, 0.1), 0.25))
+    (-0.05, 1, ('via', 'PHY_1V8A', (75.2, 10.4, 0.25), 0.25), ('seg', 'ULPI_CK', (74.625, 13.5, 74.625, 6.375, 0.125), 0.2))
+    (0.025, 0, ('seg', 'PHY_1V8A', (75.75, 11.562, 75.45, 11.15, 0.1), 0.25), ('pad', 'XI', (76.25, 11.5625, 0.125, 0.4375, 0.0), 0.2))
+XI -> L2 (75.625,18.625): none
+XI -> L0 (75.72,18.73): none
+XI -> L2 (78.375,21.125): none
+=== done ===

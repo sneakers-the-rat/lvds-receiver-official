@@ -1,0 +1,37 @@
+00:37:20: Debug: Adding duplicate image handler for 'PNG file'
+00:37:20: Debug: Adding duplicate image handler for 'JPEG file'
+00:37:20: Debug: Adding duplicate image handler for 'TIFF file'
+00:37:20: Debug: Adding duplicate image handler for 'GIF file'
+00:37:20: Debug: Adding duplicate image handler for 'PNM file'
+00:37:20: Debug: Adding duplicate image handler for 'PCX file'
+00:37:20: Debug: Adding duplicate image handler for 'IFF file'
+00:37:20: Debug: Adding duplicate image handler for 'Windows icon file'
+00:37:20: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:37:20: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:37:20: Debug: Adding duplicate image handler for 'TGA file'
+00:37:20: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+00:37:20: Debug: Adding duplicate image handler for 'PNG file'
+00:37:20: Debug: Adding duplicate image handler for 'JPEG file'
+00:37:20: Debug: Adding duplicate image handler for 'TIFF file'
+00:37:20: Debug: Adding duplicate image handler for 'GIF file'
+00:37:20: Debug: Adding duplicate image handler for 'PNM file'
+00:37:20: Debug: Adding duplicate image handler for 'PCX file'
+00:37:20: Debug: Adding duplicate image handler for 'IFF file'
+00:37:20: Debug: Adding duplicate image handler for 'Windows icon file'
+00:37:20: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:37:20: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:37:20: Debug: Adding duplicate image handler for 'TGA file'
+00:37:20: Debug: Adding duplicate image handler for 'XPM file'
+faithful fragments: {'ULPI_STP': 1, 'PHY_1V8A': 1, 'XO': 1, 'PHY_1V8': 3, 'XI': 3}
+v6 fragments: {'ULPI_STP': 3, 'PHY_1V8A': 1, 'XO': 2, 'PHY_1V8': 3, 'XI': 3}
+XI -> L2 (75.625,18.625): none
+XI -> L0 (75.72,18.73): none
+XI -> L2 (78.375,21.125): none
+PHY -> L2 (77.8,16.2): none
+PHY -> L0 (77.25,16.4375): none
+PHY -> L2 (76.95,13.0): none
+=== done ===

@@ -1,0 +1,64 @@
+01:13:25: Debug: Adding duplicate image handler for 'PNG file'
+01:13:25: Debug: Adding duplicate image handler for 'JPEG file'
+01:13:25: Debug: Adding duplicate image handler for 'TIFF file'
+01:13:25: Debug: Adding duplicate image handler for 'GIF file'
+01:13:25: Debug: Adding duplicate image handler for 'PNM file'
+01:13:25: Debug: Adding duplicate image handler for 'PCX file'
+01:13:25: Debug: Adding duplicate image handler for 'IFF file'
+01:13:25: Debug: Adding duplicate image handler for 'Windows icon file'
+01:13:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:13:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:13:25: Debug: Adding duplicate image handler for 'TGA file'
+01:13:25: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:13:25: Debug: Adding duplicate image handler for 'PNG file'
+01:13:25: Debug: Adding duplicate image handler for 'JPEG file'
+01:13:25: Debug: Adding duplicate image handler for 'TIFF file'
+01:13:25: Debug: Adding duplicate image handler for 'GIF file'
+01:13:25: Debug: Adding duplicate image handler for 'PNM file'
+01:13:25: Debug: Adding duplicate image handler for 'PCX file'
+01:13:25: Debug: Adding duplicate image handler for 'IFF file'
+01:13:25: Debug: Adding duplicate image handler for 'Windows icon file'
+01:13:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:13:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:13:25: Debug: Adding duplicate image handler for 'TGA file'
+01:13:25: Debug: Adding duplicate image handler for 'XPM file'
+faithful fragments: {'ULPI_STP': 1, 'PHY_1V8': 3, 'ULPI_CK': 1, 'XI': 3}
+  STP frag0: 761 items, sample: ['pad ULPI_STP (71.338,-2.250) hw0.738x0.150', 'pad ULPI_STP (76.250,16.438) hw0.125x0.438']
+CK vertical ripped: 1
+CK jog v3 gate: 125 pairs < 0.3; worst 6:
+    (-0.05, 1, ('seg', 'ULPI_CK', (74.45, 12.7, 74.45, 10.2, 0.125), 0.2), ('via', 'RBIAS', (73.875, 11.625, 0.3), 0.2))
+    (0.05, 1, ('seg', 'ULPI_CK', (74.45, 12.7, 74.45, 10.2, 0.125), 0.2), ('via', '+3V3A', (73.625, 10.625, 0.4), 0.25))
+    (0.125, 1, ('seg', 'ULPI_CK', (74.625, 13.5, 74.45, 12.7, 0.125), 0.2), ('seg', 'RBIAS', (73.875, 12.675, 73.875, 12.7, 0.125), 0.2))
+    (0.125, 1, ('seg', 'ULPI_CK', (74.625, 13.5, 74.45, 12.7, 0.125), 0.2), ('seg', 'RBIAS', (73.875, 12.7, 73.875, 12.725, 0.125), 0.2))
+    (0.125, 1, ('seg', 'ULPI_CK', (74.45, 12.7, 74.45, 10.2, 0.125), 0.2), ('seg', 'RBIAS', (73.875, 11.875, 73.875, 11.9, 0.125), 0.2))
+    (0.125, 1, ('seg', 'ULPI_CK', (74.45, 12.7, 74.45, 10.2, 0.125), 0.2), ('seg', 'RBIAS', (73.875, 12.0, 73.875, 12.025, 0.125), 0.2))
+STP mega-ripped: 91
+STP fragments after mega-rip: 4
+  frag0: 513 items, sample: ['pad ULPI_STP (71.338,-2.250) hw0.738x0.150', 'seg ULPI_STP (70.650,-2.250)->(70.700,-2.250) hw0.100']
+  frag1: 150 items, sample: ['pad ULPI_STP (76.250,16.438) hw0.125x0.438', 'seg ULPI_STP (76.050,17.600)->(76.050,17.650) hw0.100']
+  frag2: 5 items, sample: ['seg ULPI_STP (77.200,9.600)->(77.150,9.600) hw0.100', 'seg ULPI_STP (77.100,9.600)->(77.150,9.600) hw0.100']
+  frag3: 2 items, sample: ['seg ULPI_STP (76.700,9.400)->(76.750,9.450) hw0.100', 'seg ULPI_STP (76.650,9.450)->(76.700,9.400) hw0.100']
+STP re-lay v2 gate: 69 pairs < 0.3; worst 6:
+    (-0.466, 2, ('via', 'ULPI_STP', (74.92, 11.9, 0.25), 0.2), ('seg', 'PHY_1V8A', (74.9, 11.75, 74.2, 12.25, 0.1), 0.25))
+    (-0.455, 0, ('via', 'ULPI_STP', (74.92, 11.9, 0.25), 0.2), ('pad', '+3V3A', (74.75, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (-0.449, 2, ('via', 'ULPI_STP', (74.92, 11.9, 0.25), 0.2), ('seg', 'PHY_1V8A', (75.3, 11.35, 74.9, 11.75, 0.1), 0.25))
+    (-0.425, 0, ('via', 'ULPI_STP', (75.95, 11.15, 0.25), 0.2), ('pad', 'PHY_1V8A', (75.75, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (-0.378, 0, ('via', 'ULPI_STP', (75.95, 11.15, 0.25), 0.2), ('seg', 'PHY_1V8A', (75.75, 11.5625, 75.72, 11.0, 0.1), 0.25))
+    (-0.325, 0, ('via', 'ULPI_STP', (75.95, 11.15, 0.25), 0.2), ('seg', 'PHY_1V8A', (75.72, 11.0, 75.7375, 10.75, 0.1), 0.25))
+STP fragments after re-lay: 3
+PHY loop pair-ripped: 4
+PHY loop gate: 23 pairs < 0.3; worst 6:
+    (0.006, 2, ('seg', 'PHY_1V8', (77.5, 10.25, 77.28, 10.8, 0.1), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.008, 2, ('seg', 'PHY_1V8', (77.28, 10.8, 77.15, 11.3, 0.1), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.133, 2, ('seg', 'PHY_1V8', (77.15, 11.3, 77.15, 15.1, 0.15), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.154, 2, ('seg', 'PHY_1V8', (77.5, 10.25, 77.28, 10.8, 0.1), 0.25), ('seg', 'ULPI_STP', (76.3, 11.55, 76.75, 10.5, 0.1), 0.2))
+    (0.154, 2, ('seg', 'PHY_1V8', (77.5, 10.25, 77.28, 10.8, 0.1), 0.25), ('seg', 'ULPI_STP', (76.75, 10.5, 76.9, 9.7, 0.1), 0.2))
+    (0.155, 2, ('seg', 'PHY_1V8', (77.28, 10.8, 77.15, 11.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.3, 11.55, 76.75, 10.5, 0.1), 0.2))
+PHY A* on final pool: none
+PHY tail ripped: 2
+final fragments: {'ULPI_STP': 3, 'PHY_1V8': 2, 'ULPI_CK': 1, 'XI': 3} (faithful: {'ULPI_STP': 1, 'PHY_1V8': 3, 'ULPI_CK': 1, 'XI': 3} )
+=== done ===
