@@ -1796,6 +1796,14 @@ XI connected: ULPI_NXT escape re-laid (short F stub to new via (74.94,17.36), In
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 120 · Unconnected nets: 1 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 220 — 2026-11-10T20:29:22Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp272.kicad_pcb` · Commit: `pending`
+
+U7 re-place repair finished: east D-fan knot re-fanned (C48 + C19 shrunk 0603 to 0402, ULPI_D4 via re-placed, D2 two-leg In2 escape, +3V3D east channel, GND fill-island heal); KiCad DRC 4 J1 only, unconnected USB_RST only
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 138 · Unconnected nets: 1 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

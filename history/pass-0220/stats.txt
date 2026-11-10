@@ -1,0 +1,14 @@
+pass: 220
+description: U7 re-place repair finished: east D-fan knot re-fanned (C48 + C19 shrunk 0603 to 0402, ULPI_D4 via re-placed, D2 two-leg In2 escape, +3V3D east channel, GND fill-island heal); KiCad DRC 4 J1 only, unconnected USB_RST only
+timestamp (UTC): 2026-11-10T20:29:22Z
+commit: pending
+board file: hw/pdlvds_rx.exp272.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 138
+unconnected nets: 1
+courtyard collisions: 0
+audit verdict: fail
+note: 
