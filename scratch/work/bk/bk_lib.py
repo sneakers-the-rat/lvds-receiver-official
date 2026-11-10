@@ -157,12 +157,11 @@ rbias_bnd = [it for it in items if it.net == 'RBIAS' and it.kind == 'trk' and it
              and in_win(it.a) != in_win(it.b)]
 for it in rbias_bnd:
     RIPS.append(('trk', 'RBIAS', 'In2', it.a, it.b))
-# +3V3A west via + its F horizontal + B vertical + B diagonal (DELETED via)
-rip_via('+3V3A', (73.625, 10.625))
-rip_trk('+3V3A', 'F', (74.375, 10.625), (73.625, 10.625))
-rip_trk('+3V3A', 'F', (75.125, 11.125), (74.250, 10.625))
-rip_trk('+3V3A', 'B', (73.625, 8.625), (73.625, 10.625))
-rip_trk('+3V3A', 'B', (73.625, 10.625), (75.625, 8.625))
+# +3V3A: NO changes in the candidate (every re-place/re-feed priced sealed;
+# the d0.8 via at (73.625,10.625) stays and is the expected referee fence)
+# CK jog re-lay shallower (west point (74.38,10.28))
+rip_trk('ULPI_CK', 'In2', (74.625, 9.400), (74.320, 10.200))
+rip_trk('ULPI_CK', 'In2', (74.320, 10.200), (74.625, 11.000))
 # BIST window (bh3: 5 segs)
 rip_trk('BIST_DRV', 'In2', (73.875, 6.125), (74.125, 5.875))
 rip_trk('BIST_DRV', 'In2', (74.125, 5.875), (74.375, 5.625))
@@ -212,27 +211,37 @@ add_poly('DM-west', 'DM_PHY', 'F',
 # RST F stub + dive via
 add_poly('RST-stub', 'USB_RST', 'F', [(74.250, 16.878), (74.320, 17.550), (74.450, 18.250)], 0.20)
 add_via('RST-dive', 'USB_RST', (74.450, 18.250), 0.50)
-# RST In2 journey: dive -> channel -> jog thread (east approach) -> arrival
+# RST In2 journey: dive -> channel -> thread (tangent x74.10 past RBIAS via,
+# west exit under shallow-jog vertex) -> arrival diagonal
 JOURNEY = [(74.450, 18.250), (74.300, 17.350), (74.160, 16.550), (74.160, 12.000),
-           (74.200, 10.620), (73.960, 10.550), (73.800, 9.900), (74.140, 9.000),
-           (74.140, 7.050), (74.820, 5.840)]
+           (74.130, 11.350), (74.100, 10.900), (74.100, 10.650), (73.900, 10.300),
+           (73.950, 10.000), (74.140, 9.000), (74.140, 7.050), (74.820, 5.840)]
 add_poly('RST-journey', 'USB_RST', 'In2', JOURNEY, 0.20)
+# CK jog shallower re-lay
+add_poly('CK-jog', 'ULPI_CK', 'In2', [(74.625, 9.400), (74.380, 10.280), (74.625, 11.000)], 0.25)
 # arrival (bh shape, CK via shifted to (75.48,5.92): D0-vs-surf jaw solution)
 add_via('CK-via', 'ULPI_CK', (75.480, 5.920), 0.50)
-add_poly('CK-F', 'ULPI_CK', 'F', [(75.250, 5.162), (75.280, 5.600), (75.480, 5.920)], 0.20)
+add_poly('CK-F', 'ULPI_CK', 'F', [(75.250, 5.162), (75.220, 5.600), (75.480, 5.920)], 0.20)
 add_poly('CK-bow', 'ULPI_CK', 'In2',
          [(75.480, 5.920), (75.050, 6.600), (74.700, 7.000), (74.625, 7.350)], 0.25)
 add_poly('CK-col', 'ULPI_CK', 'In2', [(74.625, 7.350), (74.625, 9.400)], 0.25)
 add_via('RST-surf', 'USB_RST', (74.820, 5.840), 0.40)
 add_poly('RST-hop', 'USB_RST', 'F', [(74.820, 5.840), (74.780, 5.500), (74.780, 5.300)], 0.20)
-# +3V3A In2 re-feed: U7.25 pad south edge -> staircase -> via (75.625,8.625)
-add_poly('P3V3A-feed', '+3V3A', 'In2',
-         [(75.250, 11.200), (75.300, 10.000), (75.450, 9.350), (75.580, 8.950),
-          (75.625, 8.625)], 0.20)
-# RBIAS via west-north + F stub + In2 connector (bowed east vs XO endpoint)
-add_via('RBIAS-via', 'RBIAS', (73.510, 10.950), 0.60)
-add_poly('RBIAS-F', 'RBIAS', 'F', [(74.000, 11.562), (73.510, 10.950)], 0.20)
-add_poly('RBIAS-conn', 'RBIAS', 'In2', [(73.510, 10.950), (73.680, 11.150), (73.575, 11.625)], 0.25)
+# RBIAS via west (d0.5) + F stub + In2 connector (bowed east vs XO endpoint)
+add_via('RBIAS-via', 'RBIAS', (73.520, 10.880), 0.50)
+add_poly('RBIAS-F', 'RBIAS', 'F', [(74.000, 11.562), (73.520, 10.880)], 0.20)
+add_poly('RBIAS-conn', 'RBIAS', 'In2', [(73.520, 10.880), (73.660, 11.200), (73.575, 11.625)], 0.25)
+# DIR fanout: F south-first stub -> via (75.10,19.30) -> B elbow -> (73.30,18.42)
+add_poly('DIR-F', 'ULPI_DIR', 'F',
+         [(75.750, 16.875), (75.720, 17.350), (74.920, 17.800), (75.100, 19.300)], 0.20)
+add_via('DIR-via', 'ULPI_DIR', (75.100, 19.300), 0.50)
+add_poly('DIR-B', 'ULPI_DIR', 'B', [(75.100, 19.300), (74.000, 18.600), (73.300, 18.420)], 0.25)
+# NXT fanout: F stub -> via (74.90,17.40) -> In2 west rejoin -> (74.50,19.25)
+add_poly('NXT-F', 'ULPI_NXT', 'F', [(75.250, 16.875), (74.900, 17.400)], 0.20)
+add_via('NXT-via', 'ULPI_NXT', (74.900, 17.400), 0.50)
+add_poly('NXT-In2', 'ULPI_NXT', 'In2',
+         [(74.900, 17.400), (74.400, 17.500), (73.860, 17.920), (73.840, 18.650),
+          (74.500, 19.250)], 0.25)
 # RBIAS column shifted -0.30 + boundary connectors (bj machinery)
 for it in rbias_col:
     ADDS.append(('RBIAS-col', G.Item('RBIAS', 'trk', layer='In2',
