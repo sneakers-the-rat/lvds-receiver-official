@@ -1,20 +1,19 @@
 RIP VERIFICATION (unmatched rips):
   unmatched: 0
-adds: 55; env full 15565
+adds: 256; env full 15565
 FIXED ADD MARGINS (worst 30):
-  -0.330 RST-journey  trk[In2] USB_RST (74.16, 12.0) -> via RBIAS@(73.875, 11.625)
-  -0.307 RST-journey  trk[In2] USB_RST (74.14, 11.5) -> via RBIAS@(73.875, 11.625)
   -0.283 RST-journey  trk[In2] USB_RST (74.13, 10.85) -> via +3V3A@(73.625, 10.625)
-  -0.265 RST-journey  trk[In2] USB_RST (74.16, 16.55) -> trk[In2] RBIAS (74.0, 15.25)->(74.0, 15.275)
   -0.215 RST-journey  trk[In2] USB_RST (74.05, 10.3) -> via +3V3A@(73.625, 10.625)
+  -0.197 RST-journey  trk[In2] USB_RST (74.14, 11.5) -> via +3V3A@(73.625, 10.625)
+  -0.180 RBIAS-via    via[None] RBIAS (73.52, 11.55) -> trk[In2] XO (73.125, 11.375)->(73.125, 15.875)
   -0.167 DIR-via      via[None] ULPI_DIR (75.0, 19.2) -> trk[In2] ULPI_NXT (75.05, 18.3)->(74.5, 19.25)
   -0.167 NXT-In2      trk[In2] ULPI_NXT (75.05, 18.3) -> via ULPI_DIR@(75.0, 19.2)
   -0.096 CK-jog       trk[In2] ULPI_CK (74.625, 9.4) -> trk[In2] USB_RST (74.13, 10.85)->(74.05, 10.3)
   -0.096 CK-jog       trk[In2] ULPI_CK (74.38, 10.28) -> trk[In2] USB_RST (74.13, 10.85)->(74.05, 10.3)
-  -0.081 RST-journey  trk[In2] USB_RST (74.3, 17.35) -> trk[In2] RBIAS (73.9, 16.325)->(73.875, 16.35)
   -0.074 DIR-F        trk[F] ULPI_DIR (75.75, 16.875) -> trk[F] ULPI_STP (76.05, 17.3)->(76.05, 17.35)
   -0.070 DIR-F        trk[F] ULPI_DIR (75.72, 17.35) -> trk[F] ULPI_STP (76.05, 17.3)->(76.05, 17.35)
   -0.068 NXT-via      via[None] ULPI_NXT (74.9, 17.4) -> trk[F] ULPI_DIR (75.72, 17.35)->(75.05, 17.9)
+  -0.055 RBIAS-conn   trk[In2] RBIAS (73.52, 11.55) -> trk[In2] XO (73.125, 11.375)->(73.125, 15.875)
   -0.046 CK-F         trk[F] ULPI_CK (75.25, 5.162) -> pad HV_SHDN (75.6, 3.925, 75.9, 5.4)
   -0.032 DIR-B        trk[B] ULPI_DIR (75.0, 19.2) -> via DM_PHY@(73.625, 19.125)
   -0.032 DIR-B        trk[B] ULPI_DIR (74.15, 18.85) -> via DM_PHY@(73.625, 19.125)
@@ -28,7 +27,8 @@ FIXED ADD MARGINS (worst 30):
   -0.001 MOSI         trk[In2] SPI_MOSI (73.4, 5.186) -> trk[In2] BIST_DRV (74.625, 5.326)->(74.875, 5.076)
   -0.001 BIST         trk[In2] BIST_DRV (74.625, 5.326) -> trk[In2] SPI_MOSI (73.4, 5.186)->(75.1, 4.536)
   -0.001 BIST         trk[In2] BIST_DRV (74.875, 5.076) -> trk[In2] SPI_MOSI (73.4, 5.186)->(75.1, 4.536)
-  +0.003 DIR-B        trk[B] ULPI_DIR (73.95, 18.55) -> via DM_PHY@(73.625, 19.125)
-  +0.009 NXT-In2      trk[In2] ULPI_NXT (74.9, 17.4) -> via USB_RST@(74.45, 18.25)
-  +0.012 NXT-F        trk[F] ULPI_NXT (75.25, 16.875) -> pad GND (74.625, 16.0, 74.875, 16.875)
-  +0.012 DM-west      trk[F] DM_PHY (73.1, 17.12) -> via GND@(73.434, 17.685)
+  +0.000 RBIAS-col    trk[In2] RBIAS (73.575, 12.95) -> trk[In2] XO (73.125, 11.375)->(73.125, 15.875)
+  +0.000 RBIAS-col    trk[In2] RBIAS (73.575, 13.375) -> trk[In2] XO (73.125, 11.375)->(73.125, 15.875)
+  +0.000 RBIAS-col    trk[In2] RBIAS (73.575, 11.875) -> trk[In2] XO (73.125, 11.375)->(73.125, 15.875)
+  +0.000 RBIAS-col    trk[In2] RBIAS (73.575, 12.0) -> trk[In2] XO (73.125, 11.375)->(73.125, 15.875)
+  +0.000 RBIAS-col    trk[In2] RBIAS (73.575, 11.625) -> trk[In2] XO (73.125, 11.375)->(73.125, 15.875)

@@ -143,13 +143,20 @@ rip_trk('ULPI_CK', 'F', (75.125, 5.875), (75.250, 5.162))
 rip_trk('ULPI_CK', 'In2', (74.625, 6.375), (74.875, 6.125))
 rip_trk('ULPI_CK', 'In2', (74.875, 6.125), (75.125, 5.875))
 rip_trk('ULPI_CK', 'In2', (74.625, 6.375), (74.625, 9.400))
-# RBIAS: ORIGINAL in the candidate (its via has no legal re-place while the
-# +3V3A via stays: west pocket = +3V3A via itself, south = XO column, east =
-# the channel). rbias_col/rbias_bnd kept empty for the build translation.
+# RBIAS via re-place (73.52,11.55) d0.5 + column shift -0.30 (load-bearing
+# for the journey's north leg: RBIAS has an x74.0 section at y~15.25)
+rip_via('RBIAS', (73.875, 11.625))
+rip_trk('RBIAS', 'F', (74.000, 11.562), (73.875, 11.625))
 def in_win(p):
     return 73.7 <= p[0] <= 74.2 and 11.4 <= p[1] <= 16.7
-rbias_col = []
-rbias_bnd = []
+rbias_col = [it for it in items if it.net == 'RBIAS' and it.kind == 'trk' and it.layer == 'In2'
+             and in_win(it.a) and in_win(it.b)]
+for it in rbias_col:
+    RIPS.append(('trk', 'RBIAS', 'In2', it.a, it.b))
+rbias_bnd = [it for it in items if it.net == 'RBIAS' and it.kind == 'trk' and it.layer == 'In2'
+             and in_win(it.a) != in_win(it.b)]
+for it in rbias_bnd:
+    RIPS.append(('trk', 'RBIAS', 'In2', it.a, it.b))
 # +3V3A: NO changes in the candidate (every re-place/re-feed priced sealed;
 # the d0.8 via at (73.625,10.625) stays and is the expected referee fence)
 # CK jog re-lay shallower (west point (74.38,10.28))
@@ -220,6 +227,10 @@ add_poly('CK-bow', 'ULPI_CK', 'In2',
 add_poly('CK-col', 'ULPI_CK', 'In2', [(74.625, 7.350), (74.625, 9.400)], 0.25)
 add_via('RST-surf', 'USB_RST', (74.820, 5.840), 0.40)
 add_poly('RST-hop', 'USB_RST', 'F', [(74.820, 5.840), (74.780, 5.500), (74.780, 5.300)], 0.20)
+# RBIAS re-place adds: via (73.52,11.55) d0.5, F stub, In2 conn to shifted column
+add_via('RBIAS-via', 'RBIAS', (73.520, 11.550), 0.50)
+add_poly('RBIAS-F', 'RBIAS', 'F', [(74.000, 11.562), (73.520, 11.550)], 0.20)
+add_poly('RBIAS-conn', 'RBIAS', 'In2', [(73.520, 11.550), (73.575, 11.625)], 0.25)
 # DIR fanout: F stub -> via (75.00,19.20) -> B chain -> (73.30,18.42)
 add_poly('DIR-F', 'ULPI_DIR', 'F',
          [(75.750, 16.875), (75.720, 17.350), (75.050, 17.900), (75.000, 19.200)], 0.20)
