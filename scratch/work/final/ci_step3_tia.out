@@ -1,0 +1,10 @@
+CI steps selected: 3
+
+=== 3/11 ngspice TIA simulation check ===
+PASS  peaking < 3 dB
+PASS  step settles to 5% within 1 UI (20 ns)
+PASS  noise within 3 dB of link budget 0.569 mV
+
+TIA NGSPICE VERDICT: PASS
+
+CI: ALL STEPS PASS

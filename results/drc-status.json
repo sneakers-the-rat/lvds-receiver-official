@@ -1,0 +1,18 @@
+{
+  "baseline_file": "ci/drc-baseline.json",
+  "baseline_unconnected": 0,
+  "baseline_violations": 0,
+  "board_state": "DRC REGRESSION: 210 violations, 0 unconnected \u2014 ABOVE baseline 0/0 + jitter tolerance +0/+0 (routing regressed, or the checker changed behaviour)",
+  "case": "regression",
+  "census": 210,
+  "over_unconnected": 0,
+  "over_violations": 210,
+  "regression": true,
+  "report": "results/drc-report.txt",
+  "tolerance_unconnected": 0,
+  "tolerance_violations": 0,
+  "tool_health": "ok",
+  "unconnected": 0,
+  "verdict": "REGRESSION",
+  "violations": 210
+}

@@ -1,0 +1,99 @@
+CI steps selected: 1,2,3,4,5,6,7,8,9,10,11
+
+=== 1/11 python codec unit tests ===
+/usr/bin/python3: No module named pytest
+PASS test_all_k_codes_both_rd
+PASS test_code_and_disparity_errors
+PASS test_comma_alignment_bit_shifted
+PASS test_disparity_invariant_long_stream
+PASS test_exhaustive_round_trip_both_rd
+PASS test_known_data_vectors
+PASS test_manchester_invalid_pairs
+PASS test_manchester_round_trip_random
+PASS test_packet_build_and_parse
+PASS test_prbs_checker_counts_injected_errors
+PASS test_prbs_determinism_and_seed_rule
+PASS: all 11 codec tests passed
+
+=== 2/11 link budget check (R2 must PASS) ===
+link budget PASS
+
+=== 3/11 ngspice TIA simulation check ===
+  File "/usr/lib/python3.12/subprocess.py", line 1026, in __init__
+    self._execute_child(args, executable, preexec_fn, close_fds,
+  File "/usr/lib/python3.12/subprocess.py", line 1955, in _execute_child
+    raise child_exception_type(errno_num, err_msg, err_filename)
+FileNotFoundError: [Errno 2] No such file or directory: 'ngspice'
+STEP FAILED: TIA sim
+
+=== 4/11 digital simulation (8b/10b / Manchester / PRBS-15) ===
+PASS: digital_sim -- all checks passed
+plot: results/digital_sim.png
+wrote /home/hatch/workspace/pdlvds-route/results/digital_sim.txt
+
+=== 5/11 HV analytical design check ===
+PASS  Bleeder 420->60 V in < 10 s (R9)
+
+HV DESIGN VERDICT: PASS
+
+=== 6/11 impedance calculation ===
+DIFF_W_MM   = 0.300
+DIFF_GAP_MM = 0.349
+VERDICT: PASS — closed-form solution converges to 50.0 / 100.0 ohm within 1 ohm; fab coupon verification is in the test plan (docs/05).
+
+=== 7/11 firmware host unit tests ===
+PASS disabled update publishes J5 fitted
+PASS disabled update publishes J5 absent
+test_hv_ctrl: all checks passed
+
+=== 8/11 firmware ARM cross-compile ===
+   text	   data	    bss	    dec	    hex	filename
+  18244	     36	  19848	  38128	   94f0	build/rxfw.elf
+Built build/rxfw.elf and build/rxfw.bin
+
+=== 9/11 host tool simulation smoke test ===
+selftest: BIST LED -> APD -> TIA -> comparator -> CDR -> MCU (simulated with the real codec)
+  packet loopback (8b10b): PASS
+  PRBS-15 checker on clean channel: PASS
+  control plane (bias/threshold/status): PASS
+selftest: PASS
+rxhost simulate PASS
+
+=== 10/11 KiCad ERC (HARD GATE: 0 errors, gated on the parsed report) ===
+kicad-cli with native ERC/DRC found — running native ERC
+Running ERC...
+Checking sheet names...
+Checking bus conflicts...
+Checking conflicts...
+Checking units...
+Checking footprints...
+Checking pins...
+Checking labels...
+Checking for unresolved variables...
+Checking no connect pins for connections...
+Checking for library symbol issues...
+Checking for off grid pins and wires...
+Checking for undefined netclasses...
+Found 0 violations
+Saved ERC Report to results/erc-report.txt
+kicad-cli sch erc exit code: 0 (informational only — the gate below decides)
+
+========================================================================
+ERC: 0 errors, 0 warnings
+ERC tool health: ok; verdict: PASS
+========================================================================
+
+=== 11/11 KiCad DRC (tool health + baseline ratchet — board state, not a raw-count gate) ===
+Loading board
+Running DRC...
+Found 210 violations
+Found 0 unconnected items
+Saved DRC Report to results/drc-report.txt
+
+========================================================================
+DRC REGRESSION: 210 violations, 0 unconnected — ABOVE baseline 0/0 + jitter tolerance +0/+0 (routing regressed, or the checker changed behaviour)
+DRC tool health: ok; regression: True; verdict: REGRESSION
+========================================================================
+STEP FAILED: DRC gate (tool health / baseline ratchet)
+
+CI: FAILURES PRESENT
