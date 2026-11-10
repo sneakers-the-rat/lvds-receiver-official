@@ -66,6 +66,53 @@ violations, 6 nets); each partner's move re-fences the others, so
 the constraint is joint (az's leave-one-out result said the same).
 No scan written pending go-ahead.
 
+## SCAN OUTCOME (go-ahead granted; run 2026-11-10. NO configuration;
+## framing failed — stopped per term 1 of the go-ahead, no 2nd design)
+Machinery: hw/gridroute.py (rasterizer with referee-class pair
+inflation + 3-layer A*); driver scratch/work/bd/scan_rst.py; log
+scan_rst.log; diagnostics scan_debug.py / scan_debug2.py /
+scan_debug3.py. The one declared design: district x[70.0,77.6]
+y[3.4,20.6], pitch 0.05, eps 0.02, partners' re-lay spans removed,
+kept tails/pads as obstacles, 6 routing orders x GND-via legal
+cells ranked from current (budget 48 attempts).
+Result: NO CONFIGURATION in 48 attempts. Failure histogram:
+ULPI_DIR "no path" x32 (every attempt that reached DIR); USB_RST
+"terminal blocked" x16 (every attempt that reached RST first or
+second); ULPI_NXT routed in all 48; DM_PHY never reached.
+Two distinct bindings:
+1. FRAMING (DIR leg): the raster cannot represent DIR's EXISTING
+   referee-legal pass-219 journey. Dense samples of the built
+   journey are free except 3 cells, all on F leg1 in the pad
+   mouth, all stamped by FIXED ULPI_STP's F stub. Leg tests:
+   F start->DV SEALED, B DV->goal PATH. The mouth map
+   (scan_debug3) shows DIR's pad exit connects south only via a
+   one-cell diagonal thread at y16.98-17.07, severed by the
+   corner-cut rule — the built leg runs at exact clearances
+   0.20-0.24 vs STP's stub (centreline 0.40-0.42), below the
+   raster's representable resolution (~0.47). A scan that cannot
+   reproduce the status quo cannot judge joint re-lays.
+2. SUBSTANTIVE, EXACT (RST arrival): the "terminal blocked" is
+   real geometry, not raster. Strengthens the F-arrival fence
+   above: the CK via seals not just the feed via but the DROP
+   LEG itself. Pad-legal entry into U6.40 is x in [74.75,74.80]
+   on the north edge (pads 39/41 corner discs), but a drop leg
+   there must join its horizontal at y <= 5.388 (x74.75) or
+   y <= 5.371 (x74.80) to stay 0.6 from CK via centre
+   (75.125,5.875) r0.3 — below the pad edge y5.400. Every
+   approach to the pad crosses the via's 0.6 disc or a neighbour
+   pad. ULPI_CK is NOT in the approved movable set, so the named
+   question answers NO for a reason outside the joint re-lay set.
+Next geometry change (posture law; needs a NEW go-ahead): widen
+the re-lay set to ULPI_CK's U6-side escape (its via + first In2
+leg). Candidate neighbourhood for the CK via ~(75.4,5.9) —
+distances: 0.656 to the RST drop join (74.775,5.7), 0.552 to
+its own pad41 rect, ~0.97 to D0's NE stairs (exact gating still
+owed); its In2 leg then re-lays west to the existing x74.625
+column (fences: DAC_SYNC In2 diagonal south of it, SPI_MOSI
+In2 west). DIR's escape stays build-first exact geometry, as
+pass 219 proved works. USB_RST remains OPEN; exp257 is the tip;
+no pass 220.
+
 ## Carried opens (unchanged)
 SH1 courtyard blind list (21); 2 gated D1 clearance lines; project
 completion sequence is a later phase. Split-tree dirtiness (above).
