@@ -34,3 +34,11 @@ Updated: 2026-11-10 ~06:00 PST. WORKING STATE — updated as I go.
   nets/courtyard, not the census count.
 - Save-rename is CONTACT: reload + netname-verify after every save.
 - Zone refill before DRC.
+
+## exp262 refereed: DRC 85 (55 clr, 12 short, 6 mask, 5 hole, 4 J1, 2 dangl, 1 cross), nets 1 {USB_RST}, courtyard 0
+fix1's 5 new items = gate hole: new-track vs new-via cross terms unchecked. fix2 fixes gate + geometry:
+- STP via (76.065,17.96)->(76.6,17.8): DIR lane cannot pass between NXT bend pt (75.45,17.32) and STP via (needs 0.95, gap 0.888) nor south of it (X1 pad). DIR F re-lane north of new via.
+- CK via ->(77.5,17.95); GND stitch via ->(78.15,18.35).
+- +3V3A via (77.862,10.975) DELETED (redundant feed; In2 web fed from north via (76.625,10.5)->(78.0,16.375)).
+- C22 moves (77.17,9.95)->(77.45,9.6): un-braids XO (C22.1 NW corner sat on XO's only lane). PHY via ->(78.25,9.95), GND tie via ->(76.7,9.25).
+- South lanes (parallel, no crossings): A west, XI mid, XO east-then-west, +3V3A SW west.
