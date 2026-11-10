@@ -1,0 +1,48 @@
+-0.074 CKvia=(75.45, 5.9) esc=E1 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.074
+-0.074 CKvia=(75.45, 5.9) esc=E2 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.074
+-0.074 CKvia=(75.45, 5.9) esc=E3 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.074
+-0.124 CKvia=(75.55, 5.85) esc=E1 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.124
+-0.124 CKvia=(75.55, 5.85) esc=E2 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.124
+-0.124 CKvia=(75.55, 5.85) esc=E3 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.124
+-0.161 CKvia=(75.45, 5.9) esc=E1 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.45, 5.9) esc=E1 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.45, 5.9) esc=E2 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.45, 5.9) esc=E2 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.45, 5.9) esc=E3 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.45, 5.9) esc=E3 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.55, 5.85) esc=E1 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.55, 5.85) esc=E1 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.55, 5.85) esc=E2 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.55, 5.85) esc=E2 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.55, 5.85) esc=E3 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.161 CKvia=(75.55, 5.85) esc=E3 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: MOSI trk DAC_SYNC (71.375, 5.875)->(75.5, 3.5) -0.161
+-0.204 CKvia=(75.45, 5.9) esc=E1 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: BIST trk SPI_MOSI (73.4, 5.2)->(75.1, 4.55) -0.204
+-0.204 CKvia=(75.45, 5.9) esc=E2 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: BIST trk SPI_MOSI (73.4, 5.2)->(75.1, 4.55) -0.204
+-0.204 CKvia=(75.45, 5.9) esc=E3 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: BIST trk SPI_MOSI (73.4, 5.2)->(75.1, 4.55) -0.204
+-0.204 CKvia=(75.55, 5.85) esc=E1 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: BIST trk SPI_MOSI (73.4, 5.2)->(75.1, 4.55) -0.204
+-0.204 CKvia=(75.55, 5.85) esc=E2 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: BIST trk SPI_MOSI (73.4, 5.2)->(75.1, 4.55) -0.204
+-0.204 CKvia=(75.55, 5.85) esc=E3 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: BIST trk SPI_MOSI (73.4, 5.2)->(75.1, 4.55) -0.204
+-0.238 CKvia=(75.75, 5.75) esc=E1 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E1 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E1 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E1 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E2 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E2 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E2 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E2 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E3 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E3 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E3 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.238 CKvia=(75.75, 5.75) esc=E3 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.238
+-0.310 CKvia=(75.9, 5.7) esc=E1 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E1 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E1 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E1 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E2 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E2 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E2 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E2 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E3 bist_dy=0.0 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E3 bist_dy=0.0 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E3 bist_dy=-0.145 mosi_dy=0.0 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
+-0.310 CKvia=(75.9, 5.7) esc=E3 bist_dy=-0.145 mosi_dy=-0.1 RSTvia=None bind: pre: CKF pad HV_SHDN (75.6, 3.925, 75.9, 5.4) -0.310
