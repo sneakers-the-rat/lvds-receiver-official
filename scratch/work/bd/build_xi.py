@@ -2,11 +2,12 @@
 
 exp256 -> exp257:
 - ULPI_NXT escape re-laid bowed west, passing EAST then south of
-  the DIR stub fan: F (75.25,16.875) -> (75.55,17.85) ->
+  the DIR stub fan: F (75.25,16.875) -> (75.45,17.90) ->
   (74.55,18.70) -> kept dive via (74.5,19.25).
-- ULPI_DIR via nudged west along its row to (74.90,17.521)
-  (waist to STP dive = 1.245); F stub re-laid with a short east
-  step; B seg re-laid straight to (71.375,19.125).
+- ULPI_DIR via nudged west along its row to (74.80,17.521)
+  (waist to STP dive = 1.339); F stub dives steeply west passing
+  below the NXT pad corner; B journey bends at (74.35,18.22)
+  around the GND via (v1 referee fences, drc257.json).
 - XI bent ride on B: arc via (75.625,18.625) -> waist -> east lane
   x75.60 -> west jog -> lane x74.98 -> NE jog -> PV (75.82,10.30).
 Judge: KiCad DRC + check_pcb on the built board only.
@@ -32,14 +33,15 @@ S.remove(victims)
 
 # ---- NXT escape, bowed west (underpass of the DIR stub fan) ----
 S.add_polyline('ULPI_NXT', BL.F,
-               [(75.25, 16.875), (75.55, 17.85), (74.55, 18.70),
+               [(75.25, 16.875), (75.45, 17.90), (74.55, 18.70),
                 (74.5, 19.25)], w_nxt)
 
 # ---- DIR via west + stub + B journey head ----
-S.add_via('ULPI_DIR', 74.90, 17.521)
+S.add_via('ULPI_DIR', 74.80, 17.521)
 S.add_polyline('ULPI_DIR', BL.F,
-               [(75.75, 16.875), (75.72, 17.30), (74.90, 17.521)], w_dir)
-S.add_track('ULPI_DIR', BL.B, (74.90, 17.521), (71.375, 19.125), w_dir)
+               [(75.75, 16.875), (74.94, 17.47), (74.80, 17.521)], w_dir)
+S.add_polyline('ULPI_DIR', BL.B,
+               [(74.80, 17.521), (74.35, 18.22), (71.375, 19.125)], w_dir)
 
 # ---- XI bent ride on B into PV ----
 S.add_polyline('XI', BL.B,
