@@ -1,0 +1,63 @@
+05:09:20: Debug: Adding duplicate image handler for 'PNG file'
+05:09:20: Debug: Adding duplicate image handler for 'JPEG file'
+05:09:20: Debug: Adding duplicate image handler for 'TIFF file'
+05:09:20: Debug: Adding duplicate image handler for 'GIF file'
+05:09:20: Debug: Adding duplicate image handler for 'PNM file'
+05:09:20: Debug: Adding duplicate image handler for 'PCX file'
+05:09:20: Debug: Adding duplicate image handler for 'IFF file'
+05:09:20: Debug: Adding duplicate image handler for 'Windows icon file'
+05:09:20: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:09:20: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:09:20: Debug: Adding duplicate image handler for 'TGA file'
+05:09:20: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+05:09:21: Debug: Adding duplicate image handler for 'PNG file'
+05:09:21: Debug: Adding duplicate image handler for 'JPEG file'
+05:09:21: Debug: Adding duplicate image handler for 'TIFF file'
+05:09:21: Debug: Adding duplicate image handler for 'GIF file'
+05:09:21: Debug: Adding duplicate image handler for 'PNM file'
+05:09:21: Debug: Adding duplicate image handler for 'PCX file'
+05:09:21: Debug: Adding duplicate image handler for 'IFF file'
+05:09:21: Debug: Adding duplicate image handler for 'Windows icon file'
+05:09:21: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:09:21: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:09:21: Debug: Adding duplicate image handler for 'TGA file'
+05:09:21: Debug: Adding duplicate image handler for 'XPM file'
+XI frags BASE: 3
+   frag0: keys=['items', 'terms']
+      items: [(0, ('pad', 'XI', (75.72, 18.73, 0.28, 0.31, 0.0), 0.2))]
+      terms: [(0, (75.72, 18.73))]
+   frag1: keys=['items', 'terms']
+      items: [(0, ('pad', 'XI', (85.75, 18.25, 2.25, 1.0, 1.5707963267948966), 0.2)), (0, ('seg', 'XI', (85.75, 18.75, 85.75, 18.25, 0.1), 0.2)), (0, ('seg', 'XI', (85.125, 19.125, 85.75, 18.75, 0.1), 0.2)), (0, ('via', 'XI', (75.625, 18.625, 0.3), 0.2)), (0, ('via', 'XI', (85.125, 19.125, 0.3), 0.2)), (1, ('via
+      terms: [(0, (75.625, 18.625)), (1, (75.625, 18.625)), (1, (85.125, 19.125))]
+   frag2: keys=['items', 'terms']
+      items: [(0, ('pad', 'XI', (76.25, 11.5625, 0.125, 0.4375, 0.0), 0.2))]
+      terms: [(0, (76.25, 11.5625))]
+A gate: worst 6 [(-0.016, 'B', ('via', 'GND', (76.975, 9.6, 0.25), 0.2)), (-0.0, 'B', ('seg', 'PHY_1V8', (76.95, 11.05, 76.95, 14.988, 0.15), 0.25)), (-0.0, 'B', ('seg', 'PHY_1V8', (76.95, 11.05, 76.95, 14.988, 0.15), 0.25)), (0.005, 'B', ('seg', 'PHY_1V8', (77.45, 10.1, 76.95, 11.05, 0.15), 0.25))]
+B gate: worst 6 [(0.026, 'In2', ('via', '+3V3A', (73.625, 10.625, 0.4), 0.25)), (0.04, 'In2', ('via', '+3V3A', (73.625, 10.625, 0.4), 0.25)), (0.125, 'In2', ('via', 'RBIAS', (73.875, 11.625, 0.3), 0.2))]
+C gate: worst 6 [(-0.019, 'F', ('pad', '+3V3A', (75.25, 11.5625, 0.125, 0.4375, 0.0), 0.25)), (0.057, 'F', ('seg', '+3V3A', (75.125, 11.125, 74.25, 10.625, 0.1), 0.25)), (0.057, 'F', ('seg', '+3V3A', (74.875, 11.125, 75.125, 11.125, 0.1), 0.25)), (0.074, 'F', ('pad', 'XI', (76.25, 11.5625, 0.125, 0.4375, 0.0), 0.2))]
+pocket via gate: worst 6 [(-0.031, 'F', ('seg', 'PHY_1V8A', (75.72, 11.0, 74.99, 10.28, 0.1), 0.25)), (-0.009, 'F', ('seg', 'XO', (76.05, 9.8, 76.0, 9.75, 0.1), 0.2)), (-0.009, 'F', ('seg', 'XO', (76.1, 9.8, 76.05, 9.8, 0.1), 0.2)), (-0.006, 'In2', ('seg', '+3V3A', (76.25, 9.875, 76.625, 10.5, 0.1), 0.25)), (0.001, 'F', ('seg', 'XO', (76.0, 9.75, 75.95, 9.75, 0.1), 0.2)), (0.001, 'F', ('seg', 'XO', (75.95, 9.75, 75.9, 9.7, 0.1), 0.2))]
+F leg gate: worst 6 [(-0.087, 'F', ('seg', 'XO', (76.5, 10.75, 76.55, 10.7, 0.1), 0.2)), (-0.087, 'F', ('seg', 'XO', (76.75, 11.125, 76.5, 10.75, 0.1), 0.2)), (-0.076, 'F', ('seg', 'XO', (76.5, 10.75, 76.55, 10.7, 0.1), 0.2)), (-0.076, 'F', ('seg', 'XO', (76.75, 11.125, 76.5, 10.75, 0.1), 0.2)), (-0.032, 'F', ('seg', 'XO', (76.55, 10.7, 76.55, 10.65, 0.1), 0.2)), (-0.03, 'F', ('seg', 'XO', (76.55, 10.7, 76.55, 10.65, 0.1), 0.2))]
+arc leg gate: worst 6 []
+via S gate: worst 6 [(-0.096, 'F', ('seg', 'ULPI_NXT', (74.65, 17.8, 74.5, 19.25, 0.1), 0.2)), (0.06, 'B', ('seg', 'ULPI_DIR', (75.5, 17.521, 71.375, 19.125, 0.1), 0.2)), (0.13, 'F', ('seg', 'ULPI_NXT', (75.25, 16.875, 74.65, 17.8, 0.1), 0.2))]
+In2 hop gate: worst 6 [(-0.056, 'In2', ('seg', 'RBIAS', (73.825, 16.399999, 73.825, 16.425, 0.125), 0.2)), (-0.056, 'In2', ('seg', 'RBIAS', (73.825, 16.425, 73.8, 16.45, 0.125), 0.2)), (-0.054, 'In2', ('seg', 'RBIAS', (73.9, 16.325, 73.875, 16.35, 0.125), 0.2)), (-0.053, 'In2', ('seg', 'RBIAS', (73.9, 16.3, 73.9, 16.325, 0.125), 0.2)), (-0.053, 'In2', ('seg', 'RBIAS', (73.875, 16.35, 73.85, 16.375, 0.125), 0.2)), (-0.05, 'In2', ('seg', 'RBIAS', (73.85, 16.375, 73.825, 16.399999, 0.125), 0.2))]
+via N gate: worst 6 [(-0.45, 'F', ('pad', 'USB_RST', (74.25, 16.4375, 0.125, 0.4375, 0.0), 0.2)), (-0.206, 'In2', ('seg', 'RBIAS', (73.825, 16.399999, 73.825, 16.425, 0.125), 0.2)), (-0.206, 'In2', ('seg', 'RBIAS', (73.825, 16.425, 73.8, 16.45, 0.125), 0.2)), (-0.204, 'In2', ('seg', 'RBIAS', (73.9, 16.325, 73.875, 16.35, 0.125), 0.2)), (-0.203, 'In2', ('seg', 'RBIAS', (73.9, 16.3, 73.9, 16.325, 0.125), 0.2)), (-0.203, 'In2', ('seg', 'RBIAS', (73.875, 16.35, 73.85, 16.375, 0.125), 0.2))]
+B ride gate: worst 6 [(0.009, 'B', ('seg', 'PHY_1V8A', (74.45, 12.1, 73.5, 12.55, 0.1), 0.25)), (0.009, 'B', ('seg', 'PHY_1V8A', (74.45, 12.1, 73.5, 12.55, 0.1), 0.25))]
+frags ULPI_STP: 2
+frags PHY_1V8A: 1
+frags ULPI_CK: 1
+frags XI: 3
+frags ULPI_DIR: 3
+XI frags AFTER: 3
+   frag0: keys=['items', 'terms']
+      items: [(0, ('pad', 'XI', (75.72, 18.73, 0.28, 0.31, 0.0), 0.2))]
+      terms: [(0, (75.72, 18.73))]
+   frag1: keys=['items', 'terms']
+      items: [(0, ('pad', 'XI', (85.75, 18.25, 2.25, 1.0, 1.5707963267948966), 0.2)), (0, ('seg', 'XI', (85.75, 18.75, 85.75, 18.25, 0.1), 0.2)), (0, ('seg', 'XI', (85.125, 19.125, 85.75, 18.75, 0.1), 0.2)), (0, ('via', 'XI', (75.625, 18.625, 0.3), 0.2)), (0, ('via', 'XI', (85.125, 19.125, 0.3), 0.2)), (0, ('via
+      terms: [(0, (75.625, 18.625)), (0, (76.25, 11.4)), (0, (75.05, 18.35)), (0, (74.15, 16.6)), (1, (75.625, 18.625)), (1, (85.125, 19.125)), (1, (75.8, 10.28))]
+   frag2: keys=['items', 'terms']
+      items: [(0, ('pad', 'XI', (76.25, 11.5625, 0.125, 0.4375, 0.0), 0.2))]
+      terms: [(0, (76.25, 11.5625))]

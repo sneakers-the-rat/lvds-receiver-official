@@ -1,0 +1,43 @@
+05:29:58: Debug: Adding duplicate image handler for 'PNG file'
+05:29:58: Debug: Adding duplicate image handler for 'JPEG file'
+05:29:58: Debug: Adding duplicate image handler for 'TIFF file'
+05:29:58: Debug: Adding duplicate image handler for 'GIF file'
+05:29:58: Debug: Adding duplicate image handler for 'PNM file'
+05:29:58: Debug: Adding duplicate image handler for 'PCX file'
+05:29:58: Debug: Adding duplicate image handler for 'IFF file'
+05:29:58: Debug: Adding duplicate image handler for 'Windows icon file'
+05:29:58: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:29:58: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:29:58: Debug: Adding duplicate image handler for 'TGA file'
+05:29:58: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+05:29:59: Debug: Adding duplicate image handler for 'PNG file'
+05:29:59: Debug: Adding duplicate image handler for 'JPEG file'
+05:29:59: Debug: Adding duplicate image handler for 'TIFF file'
+05:29:59: Debug: Adding duplicate image handler for 'GIF file'
+05:29:59: Debug: Adding duplicate image handler for 'PNM file'
+05:29:59: Debug: Adding duplicate image handler for 'PCX file'
+05:29:59: Debug: Adding duplicate image handler for 'IFF file'
+05:29:59: Debug: Adding duplicate image handler for 'Windows icon file'
+05:29:59: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:29:59: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:29:59: Debug: Adding duplicate image handler for 'TGA file'
+05:29:59: Debug: Adding duplicate image handler for 'XPM file'
+XO F: vias [(69.62, 31.62), (70.95, 18.5), (71.62, 25.62), (71.75, 20.55), (72.12, 29.12)] tips [(69.62, 31.62), (70.95, 18.5), (71.75, 20.55), (72.12, 29.12)]
+XO In2: vias [(69.62, 31.62), (70.95, 18.5), (71.62, 25.62), (71.75, 20.55), (72.12, 29.12)] tips [(69.62, 31.62), (70.95, 18.5), (71.62, 25.62), (72.12, 29.12)]
+XO B: vias [(69.62, 31.62), (70.95, 18.5), (71.62, 25.62), (71.75, 20.55), (72.12, 29.12)] tips [(71.62, 25.62), (71.75, 20.55)]
+RBIAS F: vias [(69.62, 20.62)] tips [(69.17, 21.0), (69.62, 20.62)]
+RBIAS In2: vias [(69.62, 20.62)] tips [(69.62, 20.62)]
+RBIAS B: vias [(69.62, 20.62)] tips []
+CAP_DATA F: vias [(64.7, 15.45), (72.6, 19.3), (74.9, 22.3)] tips [(64.7, 15.45), (74.9, 22.3), (75.75, 22.84)]
+CAP_DATA In2: vias [(64.7, 15.45), (72.6, 19.3), (74.9, 22.3)] tips [(64.7, 15.45), (72.6, 19.3)]
+CAP_DATA B: vias [(64.7, 15.45), (72.6, 19.3), (74.9, 22.3)] tips [(72.6, 19.3), (74.9, 22.3)]
+CDR_DATN F: vias [(66.9, 32.4), (76.88, 20.62)] tips [(66.5, 34.4), (66.9, 32.4), (76.53, 20.3), (76.88, 20.62)]
+CDR_DATN In2: vias [(66.9, 32.4), (76.88, 20.62)] tips []
+CDR_DATN B: vias [(66.9, 32.4), (76.88, 20.62)] tips [(66.9, 32.4), (76.88, 20.62)]
+CAP_CLK F: vias [(64.75, 16.95), (70.1, 21.8), (73.25, 21.75), (74.4, 22.9)] tips [(70.1, 21.8), (73.25, 21.75), (74.4, 22.9), (75.75, 25.4)]
+CAP_CLK In2: vias [(64.75, 16.95), (70.1, 21.8), (73.25, 21.75), (74.4, 22.9)] tips [(64.75, 16.95), (70.1, 21.8), (73.25, 21.75), (74.4, 22.9)]
+CAP_CLK B: vias [(64.75, 16.95), (70.1, 21.8), (73.25, 21.75), (74.4, 22.9)] tips [(64.75, 16.95)]

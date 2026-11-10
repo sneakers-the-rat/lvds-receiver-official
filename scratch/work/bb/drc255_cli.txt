@@ -1,0 +1,5 @@
+Loading board
+Running DRC...
+Found 18 violations
+Found 1 unconnected items
+Saved DRC Report to scratch/work/bb/drc255_bb.json
