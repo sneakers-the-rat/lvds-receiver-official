@@ -1,0 +1,37 @@
+04:14:39: Debug: Adding duplicate image handler for 'PNG file'
+04:14:39: Debug: Adding duplicate image handler for 'JPEG file'
+04:14:39: Debug: Adding duplicate image handler for 'TIFF file'
+04:14:39: Debug: Adding duplicate image handler for 'GIF file'
+04:14:39: Debug: Adding duplicate image handler for 'PNM file'
+04:14:39: Debug: Adding duplicate image handler for 'PCX file'
+04:14:39: Debug: Adding duplicate image handler for 'IFF file'
+04:14:39: Debug: Adding duplicate image handler for 'Windows icon file'
+04:14:39: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:14:39: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:14:39: Debug: Adding duplicate image handler for 'TGA file'
+04:14:39: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+04:14:39: Debug: Adding duplicate image handler for 'PNG file'
+04:14:39: Debug: Adding duplicate image handler for 'JPEG file'
+04:14:39: Debug: Adding duplicate image handler for 'TIFF file'
+04:14:39: Debug: Adding duplicate image handler for 'GIF file'
+04:14:39: Debug: Adding duplicate image handler for 'PNM file'
+04:14:39: Debug: Adding duplicate image handler for 'PCX file'
+04:14:39: Debug: Adding duplicate image handler for 'IFF file'
+04:14:39: Debug: Adding duplicate image handler for 'Windows icon file'
+04:14:39: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:14:39: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:14:39: Debug: Adding duplicate image handler for 'TGA file'
+04:14:39: Debug: Adding duplicate image handler for 'XPM file'
+excursion ripped 76
+XO frags before: 1
+XO run rip: 58 segs
+XO frags mid: 4
+XO new run: neg 6, worst 6: [(-0.4, 'F', 'GND', (74.1, 9.3), (72.9, 9.45)), (-0.3, 'F', 'GND', (74.1, 9.3), (73.53, 9.5)), (-0.075, 'F', '+3V3A', (74.1, 9.3), (75.62, 8.62)), (-0.025, 'F', '+3V3D', (74.1, 9.3), (74.88, 8.75)), (-0.025, 'F', '+3V3D', (74.1, 9.3), (74.62, 8.5)), (-0.021, 'F', '+3V3A', (76.05, 9.6), (75.62, 8.62))]
+XO frags after: 3
+XI A* mid->south: NONE
+XI hand B legs: neg 6, worst 6: [(-0.442, 'B', 'ULPI_DIR', (75.61, 17.81), (75.5, 17.52)), (-0.292, 'B', 'ULPI_DIR', (75.61, 17.81), (73.44, 18.32)), (-0.246, 'B', 'PHY_1V8A', (75.28, 9.97), (75.27, 10.33)), (-0.1, 'B', 'ULPI_STP', (75.61, 17.81), (76.06, 17.96)), (-0.096, 'B', 'PHY_1V8A', (75.28, 9.97), (75.16, 10.64)), (-0.061, 'B', '+3V3A', (75.28, 9.97), (74.62, 9.62))]
+=== done ===

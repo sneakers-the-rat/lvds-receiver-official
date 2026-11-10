@@ -1,0 +1,49 @@
+04:20:23: Debug: Adding duplicate image handler for 'PNG file'
+04:20:23: Debug: Adding duplicate image handler for 'JPEG file'
+04:20:23: Debug: Adding duplicate image handler for 'TIFF file'
+04:20:23: Debug: Adding duplicate image handler for 'GIF file'
+04:20:23: Debug: Adding duplicate image handler for 'PNM file'
+04:20:23: Debug: Adding duplicate image handler for 'PCX file'
+04:20:23: Debug: Adding duplicate image handler for 'IFF file'
+04:20:23: Debug: Adding duplicate image handler for 'Windows icon file'
+04:20:23: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:20:23: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:20:23: Debug: Adding duplicate image handler for 'TGA file'
+04:20:23: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+04:20:24: Debug: Adding duplicate image handler for 'PNG file'
+04:20:24: Debug: Adding duplicate image handler for 'JPEG file'
+04:20:24: Debug: Adding duplicate image handler for 'TIFF file'
+04:20:24: Debug: Adding duplicate image handler for 'GIF file'
+04:20:24: Debug: Adding duplicate image handler for 'PNM file'
+04:20:24: Debug: Adding duplicate image handler for 'PCX file'
+04:20:24: Debug: Adding duplicate image handler for 'IFF file'
+04:20:24: Debug: Adding duplicate image handler for 'Windows icon file'
+04:20:24: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:20:24: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:20:24: Debug: Adding duplicate image handler for 'TGA file'
+04:20:24: Debug: Adding duplicate image handler for 'XPM file'
+STP north rip: 173 items; frags mid: 2
+STP In2 underpass: neg 231, worst 5: [(-0.425, 'In2', 'BIST_DRV', (74.15, 8.75), (74.25, 5.75)), (-0.423, 'In2', 'BIST_DRV', (75.53, 5.67), (74.5, 5.5)), (-0.4, 'In2', 'BIST_DRV', (74.15, 8.75), (74.0, 6.0)), (-0.351, 'In2', 'ULPI_CK', (75.53, 5.67), (75.12, 5.88)), (-0.329, 'In2', 'BIST_DRV', (75.53, 5.67), (74.25, 5.75))]
+STP dive (76.9,5.85): neg 0, worst 5: [(-0.0, 'F', '', (76.9, 5.85), (76.75, 4.66)), (0.042, 'F', '', (76.9, 5.85), (77.25, 4.66)), (0.05, 'B', '+3V3A', (76.9, 5.85), (76.25, 5.88)), (0.05, 'B', '+3V3A', (76.9, 5.85), (76.25, 5.82)), (0.052, 'B', '+3V3A', (76.9, 5.85), (76.25, 5.93))]
+STP frags after underpass: 2
+DIR rip: 2 items; frags mid: 3
+DIR relay: neg 6, worst 5: [(-0.3, 'F', 'ULPI_NXT', (75.33, 16.67), (75.25, 16.44)), (-0.265, 'F', 'GND', (75.33, 16.67), (74.75, 16.44)), (-0.265, 'F', 'GND', (74.8, 17.1), (74.75, 16.44)), (-0.255, 'F', 'ULPI_NXT', (75.33, 16.67), (74.95, 17.34)), (-0.17, 'F', 'ULPI_NXT', (74.8, 17.1), (74.95, 17.34))]
+DIR via (74.7,17.3): neg 5, worst 5: [(-0.32, 'F', 'ULPI_NXT', (74.7, 17.3), (74.95, 17.34)), (-0.14, 'In2', 'ULPI_STP', (74.7, 17.3), (74.22, 14.85)), (-0.096, 'In2', 'ULPI_STP', (74.7, 17.3), (75.18, 17.83)), (-0.048, 'F', 'ULPI_NXT', (74.7, 17.3), (74.58, 18.52)), (-0.025, 'F', 'GND', (74.7, 17.3), (74.75, 16.44))]
+DIR frags after: 3
+1V8A notch rip: 9 items
+1V8A notch v2 segs: neg 0, worst 5: [(0.006, 'F', '+3V3A', (75.59, 10.8), (75.25, 11.56)), (0.025, 'B', 'RBIAS', (73.97, 12.32), (73.88, 11.62)), (0.074, 'F', 'XI', (75.59, 10.8), (76.25, 11.56)), (0.096, 'B', 'RBIAS', (74.72, 11.8), (73.88, 11.62)), (0.113, 'F', '+3V3A', (75.59, 10.8), (74.69, 10.88))]
+1V8A via (75.45,10.6): neg 0, worst 5: [(0.017, 'F', '+3V3A', (75.45, 10.6), (74.69, 10.88)), (0.017, 'F', '+3V3A', (75.45, 10.6), (75.0, 11.12)), (0.03, 'F', '+3V3A', (75.45, 10.6), (75.25, 11.56))]
+1V8A frags after v2: 1
+XO frags after jog: 2
+XI B drop: neg 7, worst 5: [(-0.369, 'B', 'GND', (75.82, 15.3), (75.6, 14.75)), (-0.228, 'B', 'ULPI_STP', (75.71, 18.11), (76.06, 17.96)), (-0.173, 'B', 'PHY_1V8A', (75.86, 11.69), (75.45, 10.6)), (-0.103, 'B', 'ULPI_STP', (75.82, 15.3), (76.06, 17.96)), (-0.099, 'B', 'ULPI_DIR', (75.82, 15.3), (73.44, 18.32))]
+XI pocket via (75.88,10.38): neg 7, worst 5: [(-0.267, 'F', 'PHY_1V8A', (75.88, 10.38), (75.45, 10.6)), (-0.267, 'In2', 'PHY_1V8A', (75.88, 10.38), (75.45, 10.6)), (-0.267, 'B', 'PHY_1V8A', (75.88, 10.38), (75.45, 10.6)), (-0.121, 'F', 'PHY_1V8A', (75.88, 10.38), (75.59, 10.8)), (-0.117, 'B', 'PHY_1V8A', (75.88, 10.38), (75.22, 11.05))]
+XI F legs: neg 6, worst 5: [(-0.117, 'F', 'PHY_1V8A', (76.02, 10.59), (75.45, 10.6)), (-0.047, 'F', 'XO', (76.2, 11.07), (76.53, 10.72)), (-0.047, 'F', 'XO', (76.2, 11.07), (76.62, 10.94)), (-0.046, 'F', 'XO', (76.02, 10.59), (76.53, 10.72)), (-0.046, 'F', 'XO', (76.02, 10.59), (76.62, 10.94))]
+XI frags final: 3
+   terms: [(0, (75.72, 18.73))]
+   terms: [(0, (75.625, 18.625)), (0, (76.25, 11.35)), (1, (75.625, 18.625)), (1, (75.88, 10.38)), (1, (85.125, 19.125))]
+   terms: [(0, (76.25, 11.5625))]
+=== done ===

@@ -1,0 +1,37 @@
+04:12:25: Debug: Adding duplicate image handler for 'PNG file'
+04:12:25: Debug: Adding duplicate image handler for 'JPEG file'
+04:12:25: Debug: Adding duplicate image handler for 'TIFF file'
+04:12:25: Debug: Adding duplicate image handler for 'GIF file'
+04:12:25: Debug: Adding duplicate image handler for 'PNM file'
+04:12:25: Debug: Adding duplicate image handler for 'PCX file'
+04:12:25: Debug: Adding duplicate image handler for 'IFF file'
+04:12:25: Debug: Adding duplicate image handler for 'Windows icon file'
+04:12:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:12:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:12:25: Debug: Adding duplicate image handler for 'TGA file'
+04:12:25: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+04:12:25: Debug: Adding duplicate image handler for 'PNG file'
+04:12:25: Debug: Adding duplicate image handler for 'JPEG file'
+04:12:25: Debug: Adding duplicate image handler for 'TIFF file'
+04:12:25: Debug: Adding duplicate image handler for 'GIF file'
+04:12:25: Debug: Adding duplicate image handler for 'PNM file'
+04:12:25: Debug: Adding duplicate image handler for 'PCX file'
+04:12:25: Debug: Adding duplicate image handler for 'IFF file'
+04:12:25: Debug: Adding duplicate image handler for 'Windows icon file'
+04:12:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:12:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:12:25: Debug: Adding duplicate image handler for 'TGA file'
+04:12:25: Debug: Adding duplicate image handler for 'XPM file'
+excursion ripped 76
+notch journey rip found: 9 (expect 9: 2F+4B segs + via x3 layers)
+1V8A frags mid: 2
+1V8A relay: neg 11, worst 6: [(-0.215, 'F', '+3V3A', (75.45, 10.85), (75.25, 11.56)), (-0.174, 'F', '+3V3A', (75.45, 10.85), (74.69, 10.88)), (-0.174, 'F', '+3V3A', (75.45, 10.85), (75.0, 11.12)), (-0.135, 'B', 'RBIAS', (73.9, 12.25), (73.88, 11.62)), (-0.115, 'B', 'RBIAS', (74.6, 11.65), (73.88, 11.62)), (-0.103, 'F', '+3V3A', (75.63, 10.97), (75.25, 11.56))]
+1V8A frags after relay: 1
+XI B drop (0.125): NONE
+XI F legs: neg 14, worst 6: [(-0.316, 'F', 'PHY_1V8A', (75.64, 10.62), (75.45, 10.85)), (-0.166, 'F', 'PHY_1V8A', (75.64, 10.62), (75.5, 10.9)), (-0.147, 'F', 'PHY_1V8A', (75.64, 10.62), (75.73, 11.28)), (-0.147, 'F', 'PHY_1V8A', (75.64, 10.62), (75.63, 10.97)), (-0.142, 'F', 'PHY_1V8A', (76.05, 10.85), (75.73, 11.28)), (-0.142, 'F', 'PHY_1V8A', (76.05, 10.85), (75.63, 10.97))]
+XI final via: neg 6, worst 6: [(-0.392, 'F', 'PHY_1V8A', (75.38, 10.5), (75.45, 10.85)), (-0.392, 'In2', 'PHY_1V8A', (75.38, 10.5), (75.45, 10.85)), (-0.392, 'B', 'PHY_1V8A', (75.38, 10.5), (75.45, 10.85)), (-0.242, 'F', 'PHY_1V8A', (75.38, 10.5), (75.5, 10.9)), (-0.242, 'B', 'PHY_1V8A', (75.38, 10.5), (75.18, 11.1)), (-0.117, 'F', 'PHY_1V8A', (75.38, 10.5), (75.63, 10.97))]
+=== done ===
