@@ -1,15 +1,27 @@
-14:50:06: Debug: Adding duplicate image handler for 'PNG file'
-14:50:06: Debug: Adding duplicate image handler for 'JPEG file'
-14:50:06: Debug: Adding duplicate image handler for 'TIFF file'
-14:50:06: Debug: Adding duplicate image handler for 'GIF file'
-14:50:06: Debug: Adding duplicate image handler for 'PNM file'
-14:50:06: Debug: Adding duplicate image handler for 'PCX file'
-14:50:06: Debug: Adding duplicate image handler for 'IFF file'
-14:50:06: Debug: Adding duplicate image handler for 'Windows icon file'
-14:50:06: Debug: Adding duplicate image handler for 'Windows cursor file'
-14:50:06: Debug: Adding duplicate image handler for 'Windows animated cursor file'
-14:50:06: Debug: Adding duplicate image handler for 'TGA file'
-14:50:06: Debug: Adding duplicate image handler for 'XPM file'
+14:51:39: Debug: Adding duplicate image handler for 'PNG file'
+14:51:39: Debug: Adding duplicate image handler for 'JPEG file'
+14:51:39: Debug: Adding duplicate image handler for 'TIFF file'
+14:51:39: Debug: Adding duplicate image handler for 'GIF file'
+14:51:39: Debug: Adding duplicate image handler for 'PNM file'
+14:51:39: Debug: Adding duplicate image handler for 'PCX file'
+14:51:39: Debug: Adding duplicate image handler for 'IFF file'
+14:51:39: Debug: Adding duplicate image handler for 'Windows icon file'
+14:51:39: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:51:39: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:51:39: Debug: Adding duplicate image handler for 'TGA file'
+14:51:39: Debug: Adding duplicate image handler for 'XPM file'
+14:51:44: Debug: Adding duplicate image handler for 'PNG file'
+14:51:44: Debug: Adding duplicate image handler for 'JPEG file'
+14:51:44: Debug: Adding duplicate image handler for 'TIFF file'
+14:51:44: Debug: Adding duplicate image handler for 'GIF file'
+14:51:44: Debug: Adding duplicate image handler for 'PNM file'
+14:51:44: Debug: Adding duplicate image handler for 'PCX file'
+14:51:44: Debug: Adding duplicate image handler for 'IFF file'
+14:51:44: Debug: Adding duplicate image handler for 'Windows icon file'
+14:51:44: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:51:44: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:51:44: Debug: Adding duplicate image handler for 'TGA file'
+14:51:44: Debug: Adding duplicate image handler for 'XPM file'
 ULPI_NXT F.Cu (76.0, 16.438)->(75.8, 17.05): negatives=0 worst=[(0.851, 'via ULPI_DIR@(74.84, 18.07)'), (0.985, 'via XI@(75.62, 18.62)')]
 ULPI_NXT F.Cu (75.8, 17.05)->(75.05, 17.25): negatives=0 worst=[(0.296, 'via ULPI_DIR@(74.84, 18.07)'), (0.508, 'trk DM_PHY (74.125, 17.375)->(73.5625, 17.0)')]
 ULPI_NXT F.Cu (75.05, 17.25)->(74.94, 17.36): negatives=0 worst=[(0.167, 'via ULPI_DIR@(74.84, 18.07)'), (0.39, 'trk DM_PHY (74.125, 17.375)->(73.5625, 17.0)')]
@@ -37,27 +49,72 @@ ULPI_CK In2.Cu (75.9, 16.9)->(76.62, 16.9): negatives=0 worst=[(0.515, 'via ULPI
 +3V3A F.Cu (75.5, 11.562)->(75.22, 11.1): negatives=0 worst=[(0.028, 'trk RBIAS (75.0, 11.5625)->(74.0, 11.5625)'), (0.302, 'via PHY_1V8A@(74.99, 10.28)')]
 +3V3A F.Cu (75.22, 11.1)->(74.85, 10.9): negatives=0 worst=[(0.086, 'via PHY_1V8A@(74.99, 10.28)'), (0.112, 'trk RBIAS (75.0, 11.5625)->(74.0, 11.5625)')]
 +3V3A F.Cu (74.85, 10.9)->(74.7, 10.76): negatives=0 worst=[(0.011, 'via PHY_1V8A@(74.99, 10.28)'), (0.262, 'trk RBIAS (75.0, 11.5625)->(74.0, 11.5625)')]
-PHY_1V8A F.Cu (76.5, 11.562)->(76.22, 11.22): negatives=0 worst=[(0.453, 'via XI@(75.82, 10.3)'), (0.82, 'trk XO (76.2, 10.0)->(76.05, 9.8)')]
-PHY_1V8A F.Cu (76.22, 11.22)->(75.8, 11.0): negatives=0 worst=[(0.15, 'via XI@(75.82, 10.3)'), (0.578, 'trk RBIAS (75.0, 11.5625)->(74.0, 11.5625)')]
+PHY_1V8A F.Cu (76.5, 11.562)->(76.1, 11.3): negatives=0 worst=[(0.488, 'via XI@(75.82, 10.3)'), (0.731, 'trk RBIAS (75.0, 11.5625)->(74.0, 11.5625)')]
+PHY_1V8A F.Cu (76.1, 11.3)->(75.8, 11.0): negatives=0 worst=[(0.15, 'via XI@(75.82, 10.3)'), (0.578, 'trk RBIAS (75.0, 11.5625)->(74.0, 11.5625)')]
 PHY_1V8A F.Cu (75.8, 11.0)->(75.2, 10.52): negatives=0 worst=[(0.009, 'via XI@(75.82, 10.3)'), (0.105, 'trk +3V3A (74.7, 10.76)->(74.375, 10.625)')]
 PHY_1V8A F.Cu (75.2, 10.52)->(74.99, 10.28): negatives=0 worst=[(0.084, 'trk +3V3A (74.7, 10.76)->(74.375, 10.625)'), (0.108, 'via XI@(75.82, 10.3)')]
-PHY_1V8 F.Cu (77.17, 10.43)->(77.6, 10.28): negatives=0 worst=[(0.298, 'via GND@(76.97, 9.6)'), (0.428, 'trk ULPI_D0 (78.45, 10.35)->(78.5, 10.15)')]
-PHY_1V8 F.Cu (77.6, 10.28)->(77.9, 10.08): negatives=0 worst=[(0.174, 'trk ULPI_D0 (78.45, 10.35)->(78.5, 10.15)'), (0.179, 'trk ULPI_D0 (78.5, 10.15)->(78.625, 9.875)')]
+PHY_1V8 F.Cu (77.17, 10.43)->(77.65, 10.22): negatives=0 worst=[(0.289, 'via GND@(76.97, 9.6)'), (0.385, 'trk ULPI_D0 (78.45, 10.35)->(78.5, 10.15)')]
+PHY_1V8 F.Cu (77.65, 10.22)->(77.9, 10.08): negatives=0 worst=[(0.174, 'trk ULPI_D0 (78.45, 10.35)->(78.5, 10.15)'), (0.179, 'trk ULPI_D0 (78.5, 10.15)->(78.625, 9.875)')]
 XI F.Cu (75.82, 10.3)->(76.1, 10.52): negatives=0 worst=[(0.071, 'trk XO (76.2, 10.0)->(76.05, 9.8)'), (0.15, 'trk XO (76.05, 9.8)->(76.0, 9.75)')]
-XI F.Cu (76.1, 10.52)->(76.4, 10.7): negatives=0 worst=[(0.13, 'trk XO (76.2, 10.0)->(76.05, 9.8)'), (0.322, 'trk XO (76.05, 9.8)->(76.0, 9.75)')]
-XI F.Cu (76.4, 10.7)->(77.0, 11.562): negatives=0 worst=[(0.328, 'trk XO (76.2, 10.0)->(76.05, 9.8)'), (0.566, 'trk XO (76.05, 9.8)->(76.0, 9.75)')]
+XI F.Cu (76.1, 10.52)->(76.32, 10.78): negatives=0 worst=[(0.13, 'trk XO (76.2, 10.0)->(76.05, 9.8)'), (0.322, 'trk XO (76.05, 9.8)->(76.0, 9.75)')]
+XI F.Cu (76.32, 10.78)->(76.85, 11.3): negatives=0 worst=[(0.389, 'trk XO (76.2, 10.0)->(76.05, 9.8)'), (0.617, 'trk XO (76.05, 9.8)->(76.0, 9.75)')]
+XI F.Cu (76.85, 11.3)->(77.0, 11.562): negatives=0 worst=[(1.05, 'trk +3V3A (78.5, 11.562)->(78.8, 11.62)'), (1.053, 'trk XO (76.2, 10.0)->(76.05, 9.8)')]
 XO F.Cu (77.5, 11.562)->(77.45, 11.05): negatives=0 worst=[(0.519, 'via PHY_1V8@(77.9, 10.08)'), (0.55, 'trk +3V3A (78.5, 11.562)->(78.8, 11.62)')]
-XO F.Cu (77.45, 11.05)->(77.15, 10.95): negatives=0 worst=[(0.519, 'via PHY_1V8@(77.9, 10.08)'), (0.718, 'trk +3V3A (78.5, 11.562)->(78.8, 11.62)')]
-XO F.Cu (77.15, 10.95)->(76.98, 10.72): negatives=0 worst=[(0.57, 'via GND@(76.97, 9.6)'), (0.57, 'via PHY_1V8@(77.9, 10.08)')]
-XO F.Cu (76.98, 10.72)->(76.74, 10.42): negatives=0 worst=[(0.303, 'via GND@(76.97, 9.6)'), (0.378, 'via XI@(75.82, 10.3)')]
-XO F.Cu (76.74, 10.42)->(76.3, 10.0): negatives=0 worst=[(0.016, 'via XI@(75.82, 10.3)'), (0.205, 'via GND@(76.97, 9.6)')]
+XO F.Cu (77.45, 11.05)->(77.18, 10.98): negatives=0 worst=[(0.519, 'via PHY_1V8@(77.9, 10.08)'), (0.718, 'trk +3V3A (78.5, 11.562)->(78.8, 11.62)')]
+XO F.Cu (77.18, 10.98)->(76.86, 10.74): negatives=0 worst=[(0.579, 'via XI@(75.82, 10.3)'), (0.596, 'via GND@(76.97, 9.6)')]
+XO F.Cu (76.86, 10.74)->(76.6, 10.35): negatives=0 worst=[(0.232, 'via XI@(75.82, 10.3)'), (0.289, 'via GND@(76.97, 9.6)')]
+XO F.Cu (76.6, 10.35)->(76.3, 10.0): negatives=0 worst=[(0.016, 'via XI@(75.82, 10.3)'), (0.223, 'via GND@(76.97, 9.6)')]
 XO F.Cu (76.3, 10.0)->(76.25, 9.95): negatives=0 worst=[(0.004, 'via XI@(75.82, 10.3)'), (0.235, 'via GND@(76.97, 9.6)')]
 PHY_1V8 F.Cu (78.0, 11.562)->(78.1, 11.3): negatives=0 worst=[(0.017, 'trk +3V3A (78.5, 11.562)->(78.8, 11.62)'), (0.168, 'via +3V3A@(78.8, 11.62)')]
 PHY_1V8 F.Cu (78.1, 11.3)->(78.05, 10.5): negatives=0 worst=[(0.002, 'trk ULPI_D0 (78.45, 10.35)->(78.5, 10.15)'), (0.002, 'trk ULPI_D0 (79.0, 10.72)->(78.45, 10.35)')]
 PHY_1V8 F.Cu (78.05, 10.5)->(77.9, 10.08): negatives=0 worst=[(0.002, 'trk ULPI_D0 (78.45, 10.35)->(78.5, 10.15)'), (0.002, 'trk ULPI_D0 (79.0, 10.72)->(78.45, 10.35)')]
 via ULPI_STP (76.74, 17.88): negatives=0 worst=[(0.017, 'trk[In2.Cu] ULPI_CK (76.62, 17.3)->(76.62, 13.5)'), (0.09, 'pad[F] GND rect(76.4, 18.42, 76.96, 19.04)')]
 via ULPI_CK (77.48, 17.98): negatives=0 worst=[(0.034, 'via PHY_1V8@(78.1, 17.5)'), (0.231, 'pad[F] GND rect(76.4, 18.42, 76.96, 19.04)')]
-NN trk-trk PHY_1V8 (77.17, 10.43)->(77.6, 10.28) vs XO (77.15, 10.95)->(76.98, 10.72): -0.053
-NN trk-trk PHY_1V8 (77.17, 10.43)->(77.6, 10.28) vs XO (76.98, 10.72)->(76.74, 10.42): -0.070
-gate negatives: 2
-GATE FAILED — not building
+gate negatives: 0
+gate clean; building
+netcodes: {'ULPI_NXT': 105, 'ULPI_DIR': 104, 'ULPI_STP': 106, 'ULPI_CK': 95, 'GND': 44, '+3V3A': 1, 'PHY_1V8A': 69, 'XI': 112, 'XO': 113, 'PHY_1V8': 68}
+find ULPI_NXT F.Cu (74.8, 16.3, 76.2, 17.6): 3
+find ULPI_DIR F.Cu (74.8, 16.3, 77.2, 18.6): 4
+find ULPI_STP F.Cu (75.9, 16.3, 77.2, 18.3): 3
+find ULPI_STP B.Cu (75.9, 12.8, 77.2, 18.2): 3
+find ULPI_CK F.Cu (76.4, 16.3, 77.9, 18.2): 2
+find PHY_1V8A F.Cu (74.9, 10.2, 76.6, 11.7): 4
+find XI F.Cu (75.7, 10.2, 77.1, 11.7): 2
+find XO F.Cu (76.1, 9.8, 77.6, 11.7): 4
+find PHY_1V8 F.Cu (77.85, 9.9, 78.8, 11.7): 4
+found PHY_1V8 seg (77.17, 10.43)->(77.9, 10.08) (w=0.2)
+found ULPI_CK seg (77.4, 17.85)->(77.5, 18.4) (w=0.2)
+found ULPI_CK seg (77.5, 18.4)->(77.05, 18.8) (w=0.2)
+found ULPI_CK seg (77.05, 18.8)->(76.7, 18.85) (w=0.2)
+found ULPI_CK seg (76.7, 18.85)->(76.62, 18.3) (w=0.2)
+found ULPI_CK seg (76.62, 18.3)->(76.62, 17.3) (w=0.2)
+found +3V3A seg (75.625, 11.125)->(75.875, 11.125) (w=0.2)14:51:51: Debug: Adding duplicate image handler for 'PNG file'
+14:51:51: Debug: Adding duplicate image handler for 'JPEG file'
+14:51:51: Debug: Adding duplicate image handler for 'TIFF file'
+14:51:51: Debug: Adding duplicate image handler for 'GIF file'
+14:51:51: Debug: Adding duplicate image handler for 'PNM file'
+14:51:51: Debug: Adding duplicate image handler for 'PCX file'
+14:51:51: Debug: Adding duplicate image handler for 'IFF file'
+14:51:51: Debug: Adding duplicate image handler for 'Windows icon file'
+14:51:51: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:51:51: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:51:51: Debug: Adding duplicate image handler for 'TGA file'
+14:51:51: Debug: Adding duplicate image handler for 'XPM file'
+
+found +3V3A seg (75.875, 11.125)->(75.62, 10.78) (w=0.2)
+found +3V3A seg (75.62, 10.78)->(74.7, 10.76) (w=0.2)
+found +3V3A seg (77.862, 10.975)->(76.6, 12.15) (w=0.6)
+found ULPI_STP via @(76.065, 17.96)
+found ULPI_CK via @(77.4, 17.85)
+found GND via @(78.0, 18.3)
+found +3V3A via @(77.862, 10.975)
+removed 43 items
+saved hw/pdlvds_rx.exp263.kicad_pcb
+reload census diff (net, kind): base -> now
+  ('+3V3A', 'trk'): 612 -> 611
+  ('+3V3A', 'via'): 13 -> 12
+  ('GND', 'via'): 49 -> 48
+  ('ULPI_CK', 'trk'): 17 -> 20
+  ('ULPI_DIR', 'trk'): 18 -> 19
+  ('XI', 'trk'): 33 -> 35
+  ('XO', 'trk'): 619 -> 621
