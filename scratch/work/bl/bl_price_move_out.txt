@@ -1,0 +1,22 @@
+12:51:56: Debug: Adding duplicate image handler for 'PNG file'
+12:51:56: Debug: Adding duplicate image handler for 'JPEG file'
+12:51:56: Debug: Adding duplicate image handler for 'TIFF file'
+12:51:56: Debug: Adding duplicate image handler for 'GIF file'
+12:51:56: Debug: Adding duplicate image handler for 'PNM file'
+12:51:56: Debug: Adding duplicate image handler for 'PCX file'
+12:51:56: Debug: Adding duplicate image handler for 'IFF file'
+12:51:56: Debug: Adding duplicate image handler for 'Windows icon file'
+12:51:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:51:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:51:56: Debug: Adding duplicate image handler for 'TGA file'
+12:51:56: Debug: Adding duplicate image handler for 'XPM file'
+U7 courtyard shapes:
+  shape bbox x[72.845,72.895] y[10.845,17.155]
+  shape bbox x[72.845,79.155] y[17.105,17.155]
+  shape bbox x[72.845,79.155] y[10.845,10.895]
+  shape bbox x[79.105,79.155] y[10.845,17.155]
+delta +0.75: pad-rect collisions: 0
+delta +1.0: pad-rect collisions: 1
+    U7.24/ULPI_D0 vs C19/NRST
+delta +1.25: pad-rect collisions: 1
+    U7.24/ULPI_D0 vs C19/NRST

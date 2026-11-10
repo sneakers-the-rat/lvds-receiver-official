@@ -1,0 +1,36 @@
+11:39:47: Debug: Adding duplicate image handler for 'PNG file'
+11:39:47: Debug: Adding duplicate image handler for 'JPEG file'
+11:39:47: Debug: Adding duplicate image handler for 'TIFF file'
+11:39:47: Debug: Adding duplicate image handler for 'GIF file'
+11:39:47: Debug: Adding duplicate image handler for 'PNM file'
+11:39:47: Debug: Adding duplicate image handler for 'PCX file'
+11:39:47: Debug: Adding duplicate image handler for 'IFF file'
+11:39:47: Debug: Adding duplicate image handler for 'Windows icon file'
+11:39:47: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:39:47: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:39:47: Debug: Adding duplicate image handler for 'TGA file'
+11:39:47: Debug: Adding duplicate image handler for 'XPM file'
+  ULPI_D2 U7.22: NO STUB FOUND
+  ULPI_D3 U7.21: NO STUB FOUND
+  ULPI_D5 U7.19: NO STUB FOUND
+  ULPI_DIR U7.12: stub (75.75,16.80)->(75.75,17.38) w=0.25
+  ULPI_NXT U7.11: stub (75.25,16.80)->(75.25,17.38) w=0.25
+  ULPI_STP U7.13: stub (76.25,16.80)->(76.25,17.38) w=0.25
+  USB_RST U7.9: NO STUB FOUND
+  +3V3A U7.6: NO STUB FOUND
+  +3V3A U7.25: stub (77.81,11.56)->(78.38,11.56) w=0.25
+  XI U7.28: NO STUB FOUND
+  XO U7.27: NO STUB FOUND
+11:39:57: Debug: Adding duplicate image handler for 'PNG file'
+11:39:57: Debug: Adding duplicate image handler for 'JPEG file'
+11:39:57: Debug: Adding duplicate image handler for 'TIFF file'
+11:39:57: Debug: Adding duplicate image handler for 'GIF file'
+11:39:57: Debug: Adding duplicate image handler for 'PNM file'
+11:39:57: Debug: Adding duplicate image handler for 'PCX file'
+11:39:57: Debug: Adding duplicate image handler for 'IFF file'
+11:39:57: Debug: Adding duplicate image handler for 'Windows icon file'
+11:39:57: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:39:57: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:39:57: Debug: Adding duplicate image handler for 'TGA file'
+11:39:57: Debug: Adding duplicate image handler for 'XPM file'
+hand_stub done: 4/11 stubs placed

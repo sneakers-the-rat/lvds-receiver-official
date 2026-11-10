@@ -1,0 +1,2433 @@
+                                                         Product          Sample &          Technical         Tools &                Support &
+                                                         Folder           Buy               Documents         Software               Community
+
+
+
+                                                                                                                                                             OPA657
+                                                                                                                  SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+                                                OPA657 1.6-GHz, Low-Noise, FET-Input Operational Amplifier
+1 Features                                                                                        3 Description
+•
+1                     High Gain Bandwidth Product: 1.6 GHz                                        The OPA657 device combines a high-gain bandwidth,
+                                                                                                  low-distortion, voltage-feedback operational amplifier
+•                     High Bandwidth 275 MHz (G = 10)                                             with a low-voltage noise JFET-input stage to offer a
+•                     Slew Rate 700 V/µs (G = 10, 1-V Step)                                       very high dynamic range amplifier for high-precision
+•                     Available in High Grade With Improved DC                                    ADC (analog-to-digital converter) driving or wideband
+                      Specifications                                                              transimpedance applications. Photodiode applications
+                                                                                                  see improved noise and bandwidth using this
+•                     Operating Temperature Range: –40°C to 85°C
+                                                                                                  decompensated, high-gain bandwidth amplifier.
+•                     Low-Input Offset Voltage: ±250 µV
+                                                                                                  Very low level signals can be significantly amplified in
+•                     Low-Input Bias Current: 2 pA                                                a single OPA657 gain stage with exceptional
+•                     Low-Input Voltage Noise: 4.8 nV/√Hz                                         bandwidth and accuracy. Having a high 1.6-GHz gain
+•                     High-Output Current: 70 mA                                                  bandwidth product gives greater than 10-MHz signal
+•                     Fast Overdrive Recovery                                                     bandwidths up to gains of 160 V/V (44 dB). The very
+                                                                                                  low input bias current and capacitance supports this
+                                                                                                  performance even for relatively high source
+2 Applications                                                                                    impedances.
+•                     Wideband Photodiode Amplifier                                               Broadband photodetector applications benefit from
+•                     Wafer Scanning Equipment                                                    the low-voltage noise JFET inputs for the OPA657.
+•                     ADC Input Amplifier                                                         The JFET input contributes virtually no current noise
+•                     Test and Measurement Front End                                              while for broadband applications, a low voltage noise
+                                                                                                  is also required. The low 4.8 nV/√Hz input voltage
+•                     High Gain Precision Amplifier                                               noise provides exceptional input sensitivity for higher
+•                     Optical Time Domain Reflectometry (OTDR)                                    bandwidth applications. The example shown below
+                                                                                                  gives a total equivalent input noise current of 1.8
+                                                                                                  pA/√Hz over a 10-MHz bandwidth.
+
+                                                                                                                         Device Information(1)
+                                                                                                        PART NUMBER             PACKAGE            BODY SIZE (NOM)
+                                                                                                                            SOT-23 (5)             2.90 mm × 1.60 mm
+                                                                                                   OPA657
+                                                                                                                            SOIC (8)               4.90 mm × 3.91 mm
+                                                                                                   (1) For all available packages, see the orderable addendum at
+                                                                                                       the end of the data sheet.
+    Frequency Response of 200-kΩ Transimpedance
+                     Amplifier                                                                     Wideband Photodiode Transimpedance Amplifier
+                                116                                                                                                        0.1pF
+
+                                                                        10MHz Bandwidth
+                                                                                                                                           200kΩ
+     Transimpedance Gain (dB)
+
+
+
+
+                                106
+
+
+                                 96
+                                                                                                              l                           OPA657        VO
+                                                                                                                            (12pF)
+                                 86
+
+                                                                                                                      -Vb
+                                 76
+
+
+                                 66
+                                   100k               1M                  10M         50M
+                                                       Frequency (Hz)
+
+
+
+
+1
+
+
+
+
+                                 An IMPORTANT NOTICE at the end of this data sheet addresses availability, warranty, changes, use in safety-critical applications,
+                                 intellectual property matters and other important disclaimers. PRODUCTION DATA.
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                                                                       www.ti.com
+
+
+                                                                          Table of Contents
+    1   Features .................................................................. 1              8.2 Feature Description................................................. 13
+    2   Applications ........................................................... 1                 8.3 Device Functional Modes........................................ 13
+    3   Description ............................................................. 1          9    Application and Implementation ........................ 14
+    4   Revision History..................................................... 2                    9.1 Application Information............................................ 14
+                                                                                                   9.2 Typical Application .................................................. 21
+    5   Related Operational Amplifier Products.............. 3
+    6   Pin Configuration and Functions ......................... 3                          10 Power Supply Recommendations ..................... 24
+    7   Specifications......................................................... 4            11 Layout................................................................... 24
+                                                                                                   11.1 Layout Guidelines ................................................. 24
+        7.1 Absolute Maximum Ratings ...................................... 4
+                                                                                                   11.2 Layout Example .................................................... 26
+        7.2 ESD Ratings.............................................................. 4
+                                                                                                   11.3 Thermal Considerations ........................................ 26
+        7.3 Recommended Operating Conditions....................... 4
+        7.4 Thermal Information .................................................. 4         12 Device and Documentation Support ................. 28
+        7.5 Electrical Characteristics: VS = ±5 V......................... 5                       12.1    Community Resources.......................................... 28
+        7.6 Electrical Characteristics: VS - ±5 V, High-Grade DC                                   12.2    Trademarks ........................................................... 28
+            Specifications ............................................................. 7         12.3    Electrostatic Discharge Caution ............................ 28
+        7.7 Typical Characteristics: VS = ±5 V ............................ 8                      12.4    Glossary ................................................................ 28
+    8   Detailed Description ............................................ 13                 13 Mechanical, Packaging, and Orderable
+        8.1 Overview ................................................................. 13       Information ........................................................... 28
+
+
+
+4 Revision History
+NOTE: Page numbers for previous revisions may differ from page numbers in the current version.
+
+Changes from Revision E (December 2008) to Revision F                                                                                                                         Page
+
+•   Added ESD Ratings table, Feature Description section, Device Functional Modes, Application and Implementation
+    section, Power Supply Recommendations section, Layout section, Device and Documentation Support section, and
+    Mechanical, Packaging, and Orderable Information section ................................................................................................. 1
+•   Deleted lead temperature parameter from Absolute Maximum Ratings table ....................................................................... 4
+•   Added Power Supply, Minimum Operating Voltage specification to ±5V Electrical Characteristics table ............................. 6
+
+
+Changes from Revision D (March 2006) to Revision E                                                                                                                            Page
+
+•   Changed minimum storage temperature range from –40°C to –65°C ................................................................................... 4
+
+
+
+
+2       Submit Documentation Feedback                                                                         Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                                         Product Folder Links: OPA657
+                                                                                                                                           OPA657
+www.ti.com                                                                                      SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+5 Related Operational Amplifier Products
+
+                                                          SLEW RATE            VOLTAGE NOISE
+       DEVICE                VS (V)     BW (MHz)            (V/μs)                (nV/√Hz)                      AMPLIFIER DESCRIPTION
+       OPA657                 ±5            1600                 700                      4.8           Gain of +7 stable FET Input
+       OPA656                 ±5            230                  290                      7             Unity-Gain Stable FET-Input
+       OPA659                 ±6            350                 2550                      8.9           Unity-Gain Stable FET-Input
+       LMH6629                 5            4000                1600                  0.69              Gain of +10 stable Bipolar Input
+       THS4631                ±15           210                 1000                      7             Unity-Gain Stable FET-Input
+                                                                                                        Programmable Gain (5 kΩ / 20 kΩ)
+       OPA857                  5            4750                 220                      —
+                                                                                                        Transimpedance Amplifier
+
+
+
+6 Pin Configuration and Functions
+
+                              D Package
+                       8-Pin SOIC Surface-Mount                                                               DBV Package
+                               Top View                                                                       5-Pin SOT-23
+                                                                                                                Top View
+
+                 NC      1                     8   NC
+                                                                                                VOUT     1                     5   +VS
+                VIN–     2                     7   +VS
+
+                VIN+     3                     6   VOUT                                          -VS     2
+
+                 -VS     4                     5   NC
+                                                                                                 VIN+    3                     4   VIN–
+
+
+
+
+                                                                                                          5
+
+
+
+
+                                                                                                                             4
+                                                                                                             A57    2
+                                                                                                          1
+
+
+
+
+                                                                                                                             3
+
+
+
+                                                                                                    Pin Orientation/Package Marking
+
+
+                                                                    Pin Functions
+                        PIN
+                                                         I/O                                       DESCRIPTION
+NAME                   SOIC           SOT-23
+                        1
+NC                      5               —                —          No Connection
+                        8
+VIN–                    2               4                 I         Inverting Input
+VIN+                    3               3                 I         Noninverting Input
+–VS                     4               2               POW         Negative Power Supply
+VOUT                    6               1                O          Output of amplifier
++VS                     7               5               POW         Positive Power Supply
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                                        Submit Documentation Feedback      3
+                                                               Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                                       www.ti.com
+
+
+7 Specifications
+7.1 Absolute Maximum Ratings
+over operating free-air temperature range (unless otherwise noted) (1)
+                                                                             MIN                             MAX                      UNIT
+Supply voltage (Total Bipolar Supplies)                                                                      ±6.5                      V
+Internal power dissipation                                                         See Thermal Information
+Differential input voltage                                                   –VS                             +VS                       V
+Input voltage                                                                –VS                             +VS                       V
+Junction temperature (TJ)                                                                                    175                       °C
+Storage temperature                                                          –65                             125                       °C
+
+(1)   Stresses beyond those listed under Absolute Maximum Ratings may cause permanent damage to the device. These are stress ratings
+      only, which do not imply functional operation of the device at these or any other conditions beyond those indicated under Recommended
+      Operating Conditions. Exposure to absolute-maximum-rated conditions for extended periods may affect device reliability.
+
+7.2 ESD Ratings
+                                                                                                                       VALUE           UNIT
+                                          Human-body model (HBM), per ANSI/ESDA/JEDEC JS-001 (1)                        ±2000
+                                          Charged-device model (CDM), per JEDEC specification JESD22-
+V(ESD)      Electrostatic discharge                                                                                      ±500            V
+                                          C101 (2)
+                                          Machine Model (MM)                                                             ±200
+
+(1)   JEDEC document JEP155 states that 500-V HBM allows safe manufacturing with a standard ESD control process.
+(2)   JEDEC document JEP157 states that 250-V CDM allows safe manufacturing with a standard ESD control process.
+
+7.3 Recommended Operating Conditions
+over operating free-air temperature range (unless otherwise noted)
+                                                                                              MIN            NOM             MAX      UNIT
+VS               Total supply voltage                                                            8             10               12      V
+TA               Ambient temperature                                                          –40              25               85      °C
+
+
+7.4 Thermal Information
+                                                                                                          OPA657
+                                                         (1)
+                                      THERMAL METRIC                                           D (SOIC)         DBV (SOT-23)          UNIT
+                                                                                                8 PINS              5 PINS
+RθJA            Junction-to-ambient thermal resistance                                            125                150              °C/W
+RθJC(top)       Junction-to-case (top) thermal resistance                                        85.2               140.8             °C/W
+RθJB            Junction-to-board thermal resistance                                             75.9                62.8             °C/W
+ψJT             Junction-to-top characterization parameter                                       26.2                24.4             °C/W
+ψJB             Junction-to-board characterization parameter                                     75.4                61.8             °C/W
+RθJC(bot)       Junction-to-case (bottom) thermal resistance                                        —                 —               °C/W
+
+(1)   For more information about traditional and new thermal metrics, see the Semiconductor and IC Package Thermal Metrics application
+      report, SPRA953.
+
+
+
+
+4        Submit Documentation Feedback                                                      Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                          Product Folder Links: OPA657
+                                                                                                                                             OPA657
+www.ti.com                                                                                             SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+7.5 Electrical Characteristics: VS = ±5 V
+At RF = +453 Ω, RL = +100 Ω, and G = +10 V/V, unless otherwise noted. See Figure 29 for AC performance.
+                                                                                                                                              TEST
+              PARAMETER                                    TEST CONDITIONS                                MIN        TYP     MAX    UNIT
+                                                                                                                                             LEVEL (1)
+AC PERFORMANCE (see Figure 29)
+                                           G = +7 V/V, VO = 200 mVPP      TJ = 25°C                                  350
+Small-signal bandwidth                     G = +10 V/V, VO = 200 mVPP     TJ = 25°C                                  275             MHz         C
+                                           G = +20 V/V, VO = 200 mVPP     TJ = 25°C                                   90
+Gain-bandwidth product                     G > +40 V/V                    TJ = 25°C                                 1600             dB          C
+Bandwidth for 0.1dB Flatness               G = +10 V/V, 2 VPP             TJ = 25°C                                   30             MHz         C
+Peaking at a Gain of +7                                                   TJ = 25°C                                    7             dB          C
+Large-Signal Bandwidth                     G = +10 V/V, 2 VPP             TJ = 25°C                                  180             MHz         C
+Slew Rate                                  G = +10 V/V, 1-V Step          TJ = 25°C                                  700             V/μs        C
+Rise-and-Fall Time                         0.2-V Step                     TJ = 25°C                                    1              ns         C
+Settling Time to 0.02%                     G = +10 V/V, VO = 2-V Step     TJ = 25°C                                   20              ns         C
+Harmonic Distortion                        G = +10 V/V, f = 5 MHz, VO = 2 VPP                                                                    C
+                                           RL = 200 Ω                     TJ = 25°C                                  –70             dBc         C
+            2nd-Harmonic
+                                           RL > 500 Ω                     TJ = 25°C                                  –74             dBc         C
+                                           RL = 200 Ω                     TJ = 25°C                                  –99             dBc         C
+            3rd-Harmonic
+                                           RL > 500 Ω                     TJ = 25°C                                 –106             dBc         C
+Input Voltage Noise                        f > 100 kHz                    TJ = 25°C                                   4.8           nV/√Hz       C
+Input Current Noise                        f > 100 kHz                    TJ = 25°C                                   1.3           fA/√Hz       C
+DC PERFORMANCE (2)
+                                                                          TJ = 25°C                        65         70
+Open-Loop Voltage Gain (AOL)               VCM = 0 V, RL = 100 Ω          TJ = 0°C to 70°C (3)             64                        dB          A
+                                                                          TJ = –40°C to 85°C (3)           63
+                                                                          TJ = 25°C                                 ±0.25    ±1.8
+Input Offset Voltage                       VCM = 0 V                      TJ = 0°C to 70°C (3)                               ±2.2    mV          A
+                                                                          TJ = –40°C to 85°C (3)                             ±2.6
+                                                                          TJ = 25°C                       ±12         ±2
+            Average Offset Voltage Drift   VCM = 0 V                      TJ = 0°C to 70°C (3)            ±12                       μV/°C        A
+                                                                          TJ = –40°C to 85°C (3)          ±12
+                                                                          TJ = 25°C                                   ±2      ±20
+Input Bias Current                         VCM = 0 V                      TJ = 0°C to 70°C (3)                              ±1800    pA          A
+                                                                                                 (3)
+                                                                          TJ = –40°C to 85°C                                ±5000
+                                                                          TJ = 25°C                                   ±1      ±10
+Input Offset Current                       VCM = 0 V                      TJ = 0°C to 70°C (3)                               ±900    pA          A
+                                                                          TJ = –40°C to 85°C (3)                            ±2500
+INPUT
+                                                                          TJ = 25°C                         2         2.5
+Most Positive Input Voltage (4)                                           TJ = 0°C to 70°C (3)             1.9                        V          A
+                                                                          TJ = –40°C to 85°C (3)           1.8
+                                                                          TJ = 25°C                       –3.5        –4
+Most Negative Input Voltage (4)                                           TJ = 0°C to 70°C (3)            –3.4                        V          A
+                                                                          TJ = –40°C to 85°C (3)          –3.3
+                                                                          TJ = 25°C                        83         89
+Common-Mode Rejection Ratio (CMRR)         VCM = ±0.5 V                   TJ = 0°C to 70°C (3)             81                        dB          A
+                                                                          TJ = –40°C to 85°C (3)           79
+Input Impendance
+
+(1)   Test Levels: (A) 100% tested at +25°C. Over-temperature limits by characterization and simulation. (B) Limits set by characterization
+      and simulation. (C) Typical value only for information.
+(2)   Current is considered positive out-of-node. VCM is the input common-mode voltage.
+(3)   Junction temperature = ambient at low temperature limit: junction temperature = ambient +20°C at high temperature limit for over
+      temperature specifications.
+(4)   Tested < 3dB below minimum specified CMRR at ±CMIR limits.
+Copyright © 2001–2015, Texas Instruments Incorporated                                                            Submit Documentation Feedback           5
+                                                             Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                                         www.ti.com
+
+
+Electrical Characteristics: VS = ±5 V (continued)
+At RF = +453 Ω, RL = +100 Ω, and G = +10 V/V, unless otherwise noted. See Figure 29 for AC performance.
+                                                                                                                                         TEST
+             PARAMETER                                  TEST CONDITIONS                        MIN           TYP      MAX    UNIT
+                                                                                                                                        LEVEL (1)
+           Differential                                             TJ = 25°C                        1012 || 0.7             Ω || pF       C
+           Common-Mode                                              TJ = 25°C                           12                   Ω || pF       C
+                                                                                                     10      || 4.5
+OUTPUT
+                                                                    TJ = 25°C                                ±3.9
+                                       No load                                                                                 V           A
+                                                                    TJ = 0°C to 70°C (3)                     ±3.7
+Voltage Output Swing                                                TJ = 25°C                 ±3.3           ±3.5
+                                       RL = 100 Ω                   TJ = 0°C to 70°C (3)      ±3.2                             V           B
+                                                                    TJ = –40°C to 85°C (3)    ±3.1
+                                                                    TJ = 25°C                   50              70
+Current Output, Sourcing                                            TJ = 0°C to 70°C (3)        48                            mA           A
+                                                                    TJ = –40°C to 85°C (3)      46
+                                                                    TJ = 25°C                  –50            –70
+Current Output, Sinking                                             TJ = 0°C to 70°C (3)       –48                            mA           A
+                                                                    TJ = –40°C to 85°C (3)     –46
+Closed-Loop Output Impedance           G = +10 V/V, f = 0.1 MHz     TJ = 25°C                                0.02              Ω           A
+POWER SUPPLY
+Specified Operating Voltage                                         TJ = 25°C                                   ±5             V           A
+Minimum Operating Voltage                                           TJ = 25°C                                   ±4             V           C
+                                                                    TJ = 25°C                                          ±6
+Maximum Operating Voltage Range                                     TJ = 0°C to 70°C (3)                               ±6      V           A
+                                                                    TJ = –40°C to 85°C (3)                             ±6
+                                                                    TJ = 25°C                                   14     16
+Maximum Quiescent Current                                           TJ = 0°C to 70°C (3)                              16.2    mA           A
+                                                                    TJ = –40°C to 85°C (3)                            16.3
+                                                                    TJ = 25°C                 11.7              14
+Minimum Quiescent Current                                           TJ = 0°C to 70°C (3)      11.4                            mA           A
+                                                                    TJ = –40°C to 85°C (3)    11.1
+                                                                    TJ = 25°C                   76              80
+Power-Supply Rejection Ratio (+PSRR)   +VS = 4.5 V to 5.5 V         TJ = 0°C to 70°C (3)        74                             dB          A
+                                                                    TJ = –40°C to 85°C (3)      72
+                                                                    TJ = 25°C                   62              68
+Power-Supply Rejection Ratio (–PSRR)   –VS = 4.5 V to 5.5 V         TJ = 0°C to 70°C (3)        60                             dB          A
+                                                                    TJ = –40°C to 85°C (3)      58
+TEMPERATURE RANGE
+Specified Operating Range: U, N
+                                                                    TJ = 25°C                        –40 to +85                °C
+Package
+Thermal Resistance, RθJA               Junction-to-Ambient
+U: SO-8                                                             TJ = 25°C                                 125            °C/W
+N: SOT23-5                                                          TJ = 25°C                                 150            °C/W
+
+
+
+
+6         Submit Documentation Feedback                                                      Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                         Product Folder Links: OPA657
+                                                                                                                                        OPA657
+www.ti.com                                                                                SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+7.6 Electrical Characteristics: VS - ±5 V, High-Grade DC Specifications
+At RF = 453 Ω, RL = 100 Ω, and G = +10 V/V, unless otherwise noted. (1)
+                                                                                                                                          TEST
+        PARAMETER                                   TEST CONDITIONS                             MIN        TYP       MAX         UNIT    LEVEL (
+                                                                                                                                           2)
+
+                                                                                                                           (3)
+                                                           TJ = 25°C                                       ±0.1     ±0.6
+Input Offset Voltage            VCM = 0 V                  TJ = 0°C to 70°C (4)                                      ±0.85       mV        A
+                                                                                    (4)
+                                                           TJ = –40°C to 85°C                                         ±0.9
+                                                           TJ = 25°C                                         ±2       ±6 (3)
+Input Offset Voltage Drift      VCM = 0 V                  TJ = 0°C to 70°C (4)                                         ±6 μV/°C           A
+                                                                                    (4)
+                                                           TJ = –40°C to 85°C                                           ±6
+                                                           TJ = 25°C                                         ±1       ±5 (3)
+Input Bias Current              VCM = 0 V                  TJ = 0°C to 70°C (4)                                      ±450        pA        A
+                                                           TJ = –40°C to 85°C (4)                                   ±1250
+                                                           TJ = 25°C                                       ±0.5       ±5 (3)
+                                                                              (4)
+Input Offset Current            VCM = 0 V                  TJ = 0°C to 70°C                                          ±450        pA        A
+                                                           TJ = –40°C to 85°C (4)                                   ±1250
+                                                           TJ = 25°C                           91 (3)        98
+Common-Mode Rejection                                                         (4)
+                                VCM = ±0.5 V               TJ = 0°C to 70°C                       89                             dB        A
+Ratio (CMRR)
+                                                           TJ = –40°C to 85°C (4)                 87
+                                                           TJ = 25°C                           78 (3)        82
+Power-Supply Rejection                                                        (4)
+                                +VS = 4.5 V to 5.5 V       TJ = 0°C to 70°C                       76                             dB        A
+Ratio (+PSRR)
+                                                           TJ = –40°C to 85°C (4)                 74
+                                                           TJ = 25°C                           68 (3)        74
+Power-Supply Rejection                                                        (4)
+                                –VS = –4.5 V to –5.5 V     TJ = 0°C to 70°C                       66                             dB        A
+Ratio (–PSRR)
+                                                           TJ = –40°C to 85°C (4)                 64
+
+(1)   All other specifications are the same as the standard-grade.
+(2)   Test Levels: (A) 100% tested at +25°C. Over temperature limits by characterization and simulation.
+(3)   Junction temperature = ambient for +25°C specifications.
+(4)   Junction temperature = ambient at low temperature limit: junction temperature = ambient +20°C at high temperature limit for over
+      temperature specifications.
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                               Submit Documentation Feedback               7
+                                                         Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                                                                                                                                                                                                                             www.ti.com
+
+
+7.7 Typical Characteristics: VS = ±5 V
+At TA = 25°C, G = 10 V/V, RF = 453 Ω, and RL = 100 Ω, unless otherwise noted.
+
+                                                                       9                                                                                                                                                                                        9
+                                                                                      VO = 0.2VPP                                                                                                                                                                             VO = 0.2VPP
+                                                                       6                                                                                                                                                                                        6
+                                                                                                                    G = +7                                                                                                                                                    RG = 50W                     G = -12
+                                                                       3                                                                                                                                                                                        3
+                                           Normalized Gain (dB)
+
+
+
+
+                                                                                                                                                                                                                                    Normalized Gain (dB)
+                                                                       0                                                                                                                                                                                        0
+                                                                      -3                                                                                                                                                                                       -3
+                                                                                                          G = +10                                                                                                                                                                                          G = -20
+                                                                      -6                                                                                                                                                                                       -6
+                                                                      -9                                                                                                                                                                                       -9
+                                                                                                           G = +20
+                                                                  -12                                                                                                                                                                                      -12
+                                                                                                                                                                                                                                                                                                           G = -50
+                                                                  -15                                                                                                                                                                                      -15
+                                                                                     See Figure 28           G = +50                                                                                                                                                          See Figure 29
+                                                                  -18                                                                                                                                                                                      -18
+                                                                  -21                                                                                                                                                                                      -21
+                                                                           0.5   1                      10                   100         500                                                                                                                        0.5   1                      10                  100      500
+                                                                                                     Frequency (MHz)                                                                                                                                                                          Frequency (MHz)
+
+
+
+                                                                  Figure 1. Noninverting Small-Signal Frequency Response                                                                                                                                       Figure 2. Inverting Small-Signal Frequency Response
+                                                                      26                                                                                                                                                                                       32
+                                                                                      G = +10                    VO = 0.2VPP                                                                                                                                                  G = -20               VO = 0.2VPP
+                                                                      23                                                                                                                                                                                       29             RF = 1kW
+                                                                      20                                                                                                                                                                                       26
+                                                                                                            VO = 1VPP                                                                                                                                                                               VO = 1VPP
+                                                                      17                                                                                                                                                                                       23
+                                                                      14                                                                                                                                                                                       20
+                                              Gain (dB)
+
+
+
+
+                                                                                                                                                                                                                                    Gain (dB)
+
+
+
+                                                                                                               VO = 2VPP                                                                                                                                                                            VO = 1VPP
+                                                                      11                                                                                                                                                                                       17
+                                                                       8                                                                                                                                                                                       14
+                                                                                                                 VO = 5VPP                                                                                                                                                                              VO = 5VPP
+                                                                       5                                                                                                                                                                                       11
+                                                                       2                                                                                                                                                                                        8
+                                                                                     See Figure 28                                                                                                                                                                            See Figure 29
+                                                                      -1                                                                                                                                                                                        5
+                                                                      -4                                                                                                                                                                                        2
+                                                                           0.5   1                      10                   100         500                                                                                                                        0.5   1                      10                  100      500
+                                                                                                     Frequency (MHz)                                                                                                                                                                          Frequency (MHz)
+
+
+
+                                                                  Figure 3. Noninverting Large-Signal Frequency Response                                                                                                                                       Figure 4. Inverting Large-Signal Frequency Response
+                                                    0.8                                                                                  1.6                                                                                            0.8                                                                                  1.6
+ Small-Signal Output Voltage (200mV/div)
+
+
+
+
+                                                                                                                                                Large-Signal Output Voltage (400mV/div)
+
+                                                                                                                                                                                          Small-Signal Output Voltage (200mV/div)
+
+
+
+
+                                                                                                                                                                                                                                                                                                                                    Large-Signal Output Voltage (400mV/div)
+                                                                                 G = +10                                                                                                                                                                            G = -20
+                                                    0.6                                                                                  1.2                                                                                            0.6                                                                                  1.2
+
+                                                    0.4                                                                                  0.8                                                                                            0.4                                                                                  0.8
+                                                                                                Large-Signal Right Scale                                                                                                                                                             Large-Signal Right Scale
+                                                    0.2                                                                                  0.4                                                                                            0.2                                                                                  0.4
+                                                                                                Small-Signal Left Scale                                                                                                                                                               Small-Signal Left Scale
+                                                                  0                                                                      0                                                                                                                 0                                                                 0
+
+                                           -0.2                                                                                          -0.4                                                                                       -0.2                                                                                     -0.4
+
+                                           -0.4                                                                                          -0.8                                                                                       -0.4                                                                                     -0.8
+
+                                           -0.6                                                                                          -1.2                                                                                       -0.6                                                                                     -1.2
+                                                                           See Figure 28                                                                                                                                                                            See Figure 29
+                                           -0.8                                                                                          -1.6                                                                                       -0.8                                                                                     -1.6
+                                                                                                  Time (10ns/div)                                                                                                                                                                        Time (10ns/div)
+
+
+
+                                                                                 Figure 5. Noninverting Pulse Response                                                                                                                                                         Figure 6. Inverting Pulse Response
+
+
+
+
+8                                                                     Submit Documentation Feedback                                                                                                                                                                             Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                                                                                                   Product Folder Links: OPA657
+                                                                                                                                                                                                           OPA657
+www.ti.com                                                                                                                                                        SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+Typical Characteristics: VS = ±5 V (continued)
+At TA = 25°C, G = 10 V/V, RF = 453 Ω, and RL = 100 Ω, unless otherwise noted.
+                                   -60                                                                                                            -60
+                                               2nd Harmonic                                 VO = 2VPP
+                                   -65                                                                                                            -65          f = 5MHz
+                                                                                             f = 5MHz                                                          RL = 200W         2nd Harmonic
+                                   -70
+    Harmonic Distortion (dBc)
+
+
+
+
+                                                                                                                     Harmonic Distortion (dBc)
+                                                                                                                                                  -70
+                                   -75
+                                               3rd Harmonic                                                                                       -75
+                                   -80
+                                                                                                                                                  -80
+                                   -85
+                                                                                                                                                  -85
+                                   -90
+                                                                                                                                                  -90
+                                   -95
+                                  -100                                                                                                            -95
+                                               See Figure 28                                                                                              See Figure 28          3rd Harmonic
+                                  -105                                                                                                           -100
+                                  -110                                                                                                           -105
+                                         100                                                            1k                                              0.5                 1                                  5
+                                                                     Resistance (W)                                                                                        Output Voltage Swing (VPP)
+
+
+
+                                     Figure 7. Harmonic Distortion vs Load Resistance                                                            Figure 8. Harmonic Distortion vs Output Voltage (5 MHz)
+                                   -50                                                                                                            -70
+                                               VO = 2VPP
+                                               RL = 200W                                                                                                       f = 1MHz
+                                                                                                                                                  -75
+                                   -60                                                                                                                         RL = 200W         2nd Harmonic
+     Harmonic Distortion (dBc)
+
+
+
+
+                                                                                                                     Harmonic Distortion (dBc)    -80
+                                   -70
+                                                                                                                                                  -85
+                                                  2nd Harmonic
+                                   -80                                                                                                            -90
+
+                                                                                                                                                  -95
+                                   -90
+                                                                                                                                                                                  3rd Harmonic
+                                                                                                                                                 -100
+                                                   3rd Harmonic
+                                  -100                                                                                                                        See Figure 28
+                                                                                                                                                 -105
+                                                                         See Figure 28
+                                  -110                                                                                                           -110
+                                         0.2                        1                         10          20                                            0.5                    1                               5
+                                                                     Frequency (MHz)                                                                                          Output Voltage Swing (VPP)
+
+
+
+                                             Figure 9. Harmonic Distortion vs Frequency                                                          Figure 10. Harmonic Distortion vs Output Voltage (1 MHz)
+                                   -40                                                                                                            -40
+                                               VO = 2VPP                                                                                                       VO = 2VPP
+                                   -50         f = 5MHz                                                                                           -50          RG = 50W
+                                                                                                               Harmonic Distortion (dBc)
+      Harmonic Distortion (dBc)
+
+
+
+
+                                               RL = 200W                                                                                                       f = 5MHz
+                                   -60                                                                                                            -60          RL = 200W
+                                                                2nd Harmonic                                                                                                           2nd Harmonic
+                                   -70                                                                                                            -70
+
+                                   -80                                                                                                            -80
+                                                                                                                                                                                       3rd Harmonic
+                                                                            3rd Harmonic
+                                   -90                                                                                                            -90
+
+                                  -100                                                                                                           -100
+                                                                             See Figure 28, RG Adjusted                                                       See Figure 29, RF Adjusted
+                                  -110                                                                                                           -110
+                                         5                     10                                       50                                              10                                                     50
+                                                                       Gain (V/V)                                                                                                    Gain (V/V)
+
+
+
+                                    Figure 11. Harmonic Distortion vs Noninverting Gain                                                                 Figure 12. Harmonic Distortion vs Inverting Gain
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                                                                                                          Submit Documentation Feedback        9
+                                                                                             Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                                                                                                                                                                www.ti.com
+
+
+Typical Characteristics: VS = ±5 V (continued)
+At TA = 25°C, G = 10 V/V, RF = 453 Ω, and RL = 100 Ω, unless otherwise noted.
+                                       100                                                                                                                                 -50
+                                                                                                                                                                                          PI                                50W                    20MHz
+
+
+
+
+                                                                                                                         3rd-Order Spurious Level (dBc)
+                                                                                                                                                                                                     50W OPA657                        PO
+                                                                                                                                                                           -60
+            en (nV/ÖHz), in (fA/ÖHz)
+
+
+
+
+                                                                                                                                                                                                                                     50W
+                                                                                                                                                                                                              453W                           15MHz
+
+                                                                                                                                                                           -70                          50W
+                                        10
+                                                                           Input Voltage Noise 4.8nV/ÖHz                                                                   -80
+
+                                                                                                                                                                                                                                                              10MHz
+                                                                                                                                                                           -90
+                                                                           Input Current Noise 1.3fA/ÖHz
+                                                                                                                                                                                                                                                       5MHz
+                                         1                                                                                                                                -100
+                                             10        100       1k        10k      100k      1M       10M                                                                       -10            -8       -6    -4    -2     0     2     4                     6          8
+                                                                      Frequency (Hz)                                                                                                                       Single-Tone Load Power (dBm)
+
+
+
+                                         Figure 13. Input Current And Voltage Noise Density                                                                                               Figure 14. 2-Tone, 3rd-Order IMD Spurious
+                                       110                                                                                                                           100                                                                                           45
+
+                                       100        CMRR
+                                                                                                                 Open Loop Gain - Magnitude (dB)
+                                                                                                                                                                          80                                                                                       0
+
+
+
+
+                                                                                                                                                                                                                                                                             Open Loop Gain - Phase (°)
+                                        90                                                                                                                                           20log10(AOL)
+                                                                                                                                                                          60                                                                                       –45
+     CMRR, PSRR (dB)
+
+
+
+
+                                        80        +PSRR
+                                                                                                                                                                          40                                                ÐA OL                                  –90
+                                        70
+                                                  -PSRR
+                                                                                                                                                                          20                                                                                       –135
+                                        60
+
+                                        50                                                                                                                                 0                                                                                       –180
+
+                                        40                                                                                                                           –20                       Aol Magnitude                                                       –225
+                                        30                                                                                                                                                     Aol Phase
+                                                                                                                                                                     –40                                                                                           –270
+                                        20                                                                                                                                     100             1k       10k          100k    1M         10M       100M        1G
+                                                                                                                                                                                                                    Frequency (Hz)
+                                             1k          10k       100k          1M         10M       100M                                                                                                                                                                   D001
+
+                                                                      Frequency (Hz)
+
+
+
+                                        Figure 15. Common-Mode Rejection Ratio and Power-                                                                                                      Figure 16. Open-Loop Gain and Phase
+                                                Supply Rejection Ratio vs Frequency
+                                       100                                                                                                                                23
+                                                                                                                                Normalized Gain to Capacitive Load (dB)
+
+
+
+
+                                                                                                                                                                                                                                                        CL = 10pF
+                                                                                                                                                                          20
+                                                                                                                                                                                                                           CL = 22pF
+                                                                                                                                                                          17
+                                                                                                                                                                                                                          CL = 100pF
+                                                                                                                                                                          14
+         RS (W)
+
+
+
+
+                                        10                                                                                                                                           VI                                    RS
+                                                                                                                                                                          11                        50W OPA657                              VO
+                                                                                                                                                                                                                            CL         1kW
+                                                                                                                                                                           8                                 453W
+
+
+                                                                                                                                                                           5                           50W
+                                                  For Maximally-Flat Frequency Response
+                                         1                                                                                                                                 2
+                                             10                            100                             1k                                                                   1                                    10                          100                   500
+                                                                  Capacitive Load (pF)                                                                                                                               Frequency (MHz)
+
+
+
+                                             Figure 17. Recommended RS vs Capacitive Load                                                                                      Figure 18. Frequency Response vs Capacitive Load
+
+
+
+
+10                                     Submit Documentation Feedback                                                                                                                                 Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                                                               Product Folder Links: OPA657
+                                                                                                                                                                                                                                                                                      OPA657
+www.ti.com                                                                                                                                                                                                                        SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+Typical Characteristics: VS = ±5 V (continued)
+At TA = 25°C, G = 10 V/V, RF = 453 Ω, and RL = 100 Ω, unless otherwise noted.
+                                                           1                                                                                                                                                          2
+
+                                                                                                                                                                                                                    1.5
+                         Input Offset Voltage (mV)
+
+
+
+
+                                                                                                                                                                                      Input Bias Current (pA)
+                                                          0.5                                                                                                                                                         1
+
+                                                                                                                                                                                                                    0.5
+
+                                                           0                                                                                                                                                          0
+
+                                                                                                                                                                                                                -0.5
+
+                                                         -0.5                                                                                                                                                        -1
+
+                                                                                                                                                                                                                -1.5
+
+                                                          -1                                                                                                                                                         -2
+                                                                -50      -25      0         25      50   75   100   125                                                                                                   -3         -2          -1            0       1         2              3
+                                                                                   Ambient Temperature (°C)                                                                                                                               Common-Mode Input Voltage (V)
+
+
+
+                                                         Figure 19. Typical Input Offset Voltage Over Temperature                                                                                               Figure 20. Typical Input Bias Current vs Common-Mode
+                                                                                                                                                                                                                                      Input Voltage
+                                                     1000                                                                                                                              150                                                                                                  18
+                                                         900                                                                                                                                                                                  Supply Current       Right Scale
+                                                                                                                                                                                       125                                                                                                  15
+                                                                                                                                                          Output Current (25mA/div)
+
+                                                         800
+
+
+
+
+                                                                                                                                                                                                                                                                                                    Supply Current (3mA/div)
+                      Input Bias Current (pA)
+
+
+
+
+                                                         700                                                                                                                                                                                    Left Scale         Sourcing Current
+                                                                                                                                                                                       100                                                                                                  12
+                                                         600
+                                                         500                                                                                                                                         75                                                                                     9
+                                                         400
+                                                                                                                                                                                                     50                                                                                     6
+                                                         300                                                                                                                                                              Left Scale          Sinking Current
+                                                         200
+                                                                                                                                                                                                     25                                                                                     3
+                                                         100
+                                                            0                                                                                                                                                   0                                                                           0
+                                                                -50      -25       0        25      50   75   100   125                                                                                             -50        -25        0        25        50       75     100      125
+                                                                                   Ambient Temperature (°C)                                                                                                                               Ambient Temperature (°C)
+
+
+
+                                                         Figure 21. Typical Input Bias Current Over Temperature                                                                                                     Figure 22. Supply And Output Current vs Temperature
+                                                     5                                                              0.5                                                                    5                                                                                           0.25
+                                                                                                                                                                                                                                               Input Voltage
+                                                     4                                  Input Voltage               0.4                                                                    4                         G = -20                                                           0.2
+                                                                                                                                                                                                                                                Right Scale
+                                                     3                                   Right Scale                0.3                                                                    3                                                                                           0.15
+                                                     2                                                              0.2
+ Output Voltage (V)
+
+
+
+
+                                                                                                                                                                                           2
+                                                                                                                                               Output Voltage (V)
+
+
+
+
+                                                                                                                                                                                                                                                                                       0.1
+                                                                                                                           Input Voltage (V)
+
+
+
+
+                                                                                                                                                                                                                                                                                                                  Input Voltage (V)
+                                                                      Output Voltage
+                                                     1                  Left Scale                                  0.1                                                                    1                                                                                           0.05
+                                                     0                                                              0                                                                      0                                                                                           0
+                                    -1                                                                              -0.1                                                              -1                                                                                               -0.05
+                                                                        G = +10                                                                                                                                                Output Voltage
+                                    -2                                                                              -0.2                                                              -2                                         Left Scale                                            -0.1
+                                    -3                                                                              -0.3                                                              -3                                                                                               -0.15
+                                                                      See Figure 28
+                                    -4                                                                              -0.4                                                              -4                                                                                               -0.2
+                                                                                                                                                                                                                     See Figure 29
+                                    -5                                                                              -0.5                                                              -5                                                                                               -0.25
+                                                                                      Time (20ns/div)                                                                                                                                          Time (20ns/div)
+
+
+
+                                                                Figure 23. Noninverting Input Overdrive Recovery                                                                                                           Figure 24. Inverting Input Overdrive Recovery
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                                                                                                                                                                            Submit Documentation Feedback                                          11
+                                                                                                              Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                                                                                             www.ti.com
+
+
+Typical Characteristics: VS = ±5 V (continued)
+At TA = 25°C, G = 10 V/V, RF = 453 Ω, and RL = 100 Ω, unless otherwise noted.
+               5                                                                                                                 10
+                      1W Internal Power
+               4
+                                                                                                                                                  OPA657
+               3                                                                                                                                                       ZO
+
+
+
+
+                                                                                                         Output Impedance (W)
+                                    RL = 100W
+               2                                                                                                                                     453 Ω
+                                     RL = 50W                                                                                       1
+               1
+     VO (V)
+
+
+
+
+                                                                                                                                                  50 Ω
+               0
+                                                                           RL = 25W
+              -1
+                                                                                                                                 0.1
+              -2
+              -3
+              -4
+                                                                 1W Internal Power
+              -5                                                                                                                0.01
+                -100 -80    -60 -40 -20         0           20        40     60       80    100                                         0.1                      1                 10           100
+                                           IO (mA)                                                                                                                   Frequency (MHz)
+
+
+
+                   Figure 25. Output Voltage and Current Limitations                                                            Figure 26. Closed-Loop Output Impedance vs Frequency
+                                                                110
+
+
+
+
+                                                                 90
+                                                    CMRR (dB)
+
+
+
+
+                                                                 70
+
+
+
+
+                                                                 50
+                                                                      -5      -4      -3     -2    -1   0                       1        2    3          4   5
+                                                                                           Common-Mode Input Voltage (V)
+
+
+
+                                          Figure 27. Common-Mode Rejection Ratio vs Common-Mode Input Voltage
+
+
+
+
+12            Submit Documentation Feedback                                                                                                        Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                                                   Product Folder Links: OPA657
+                                                                                                                              OPA657
+www.ti.com                                                                             SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+8 Detailed Description
+
+8.1 Overview
+The OPA657 is high gain-bandwidth, voltage feedback operational amplifier featuring a low noise JFET input
+stage. The OPA657 has been decompensated to allow for optimized Bandwidth to Quiescent current
+performance and better optimize its voltage noise performance. The OPA657 finds wide use in optical front-end
+applications and in test and measurement systems that require high input impedance. It is built using a very high
+speed complementary bipolar process.
+
+8.2 Feature Description
+
+8.2.1 Input and ESD Protection
+The internal junction breakdown voltages are relatively low for these very small geometry devices. These
+breakdowns are reflected in the Absolute Maximum Ratings table. All device pins are protected with internal ESD
+protection diodes to the power supplies, as shown in Figure 28.
+These diodes provide moderate protection to input overdrive voltages above the supplies as well. The protection
+diodes can typically support 30-mA continuous current. Where higher currents are possible (that is, in systems
+with ±12-V supply parts driving into the OPA657), current limiting series resistors should be added into the two
+inputs. Keep these resistor values as low as possible because high values degrade both noise performance and
+frequency response.
+                                                                 +VCC
+
+
+
+                                             External                                   Internal
+                                                 Pin                                    Circuitry
+
+
+
+                                                                 -VCC
+
+                                                  Figure 28. Internal ESD Protection
+
+
+8.3 Device Functional Modes
+8.3.1 Split-Supply Operation (±4-V to ±6-V)
+To facilitate testing with common lab equipment, the OPA657 may be configured to allow for split-supply
+operation. This configuration eases lab testing because the mid-point between the power rails is ground, and
+most signal generators, network analyzers, oscilloscopes, spectrum analyzers and other lab equipment reference
+their inputs and outputs to ground. Figure 29 and Figure 30 show the OPA657 configured in a simple
+noninverting and inverting configuration respectively with ±5-V supplies. The input and output will swing
+symmetrically around ground. Due to its ease of use, split-supply operation is preferred in systems where signals
+swing around ground, but it requires generation of two supply rails.
+
+8.3.2 Single-Supply Operation (8-V to 12-V)
+Many newer systems use single power supply to improve efficiency and reduce the cost of the extra power
+supply. The OPA657 is designed for use with split-supply configuration; however, it can be used with a single-
+supply with no change in performance, as long as the input and output are biased within the linear operation of
+the device. To change the circuit from split supply to single supply, level shift all the voltages by 1/2 the
+difference between the power supply rails. An additional advantage of configuring an amplifier for single-supply
+operation is that the effects of -PSRR will be minimized because the low supply rail has been grounded.
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                               Submit Documentation Feedback   13
+                                                        Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                                          www.ti.com
+
+
+9 Application and Implementation
+
+                                                        NOTE
+            Information in the following applications sections is not part of the TI component
+            specification, and TI does not warrant its accuracy or completeness. TI’s customers are
+            responsible for determining suitability of components for their purposes. Customers should
+            validate and test their design implementation to confirm system functionality.
+
+
+9.1 Application Information
+
+9.1.1 Wideband, Noninverting Operation
+The OPA657 provides a unique combination of low-input voltage noise, very high-gain bandwidth, and the DC
+precision of a trimmed JFET-input stage to give an exceptional high input impedance, high-gain stage amplifier.
+Its very high gain bandwidth product (GBP) can be used to either deliver high-signal bandwidths at high gains, or
+to extend the achievable bandwidth or gain in photodiode-transimpedance applications. To achieve the full
+performance of the OPA657, careful attention to printed circuit board (PCB) layout and component selection is
+required as discussed in the following sections of this data sheet.
+Figure 29 shows the noninverting gain of +10-V/V circuit used as the basis for most of the Typical
+Characteristics: VS = ±5 V. Most of the curves are characterized using signal sources with 50-Ω driving
+impedance, and with measurement equipment presenting a 50-Ω load impedance. In Figure 29, the 50-Ω shunt
+resistor at the VI terminal matches the source impedance of the test generator, while the 50-Ω series resistor at
+the VO terminal provides a matching resistor for the measurement equipment load. Generally, data sheet voltage
+swing specifications are at the output pin (VO in Figure 29) while output power specifications are at the matched
+50-Ω load. The total 100-Ω load at the output combined with the 500-Ω total feedback network load presents the
+OPA657 with an effective output load of 83 Ω for the circuit of Figure 29.
+                                                               +5V
+                                                                     +VS
+                                                       0.1mF           6.8mF
+                                                                       +
+
+
+                                    50W Source
+                                                                                                50W Load
+                                       VI                                          VO   50W
+                                                 50W
+                                                               OPA657
+
+
+                                                                       RF
+                                                                      453W
+
+
+
+                                                        RG
+                                                       50W
+                                                                               6.8mF    0.1mF
+                                                                           +
+
+
+                                                                     -VS
+                                                               -5V
+
+                      Figure 29. Noninverting G = +10 V/V Specifications and Test Circuit
+
+Voltage-feedback operational amplifiers, unlike current-feedback amplifiers, can use a wide range of resistor
+values to set the gain. To retain a controlled frequency response for the noninverting voltage amplifier of
+Figure 29, the parallel combination of RF || RG should always be less than 150 Ω. In the noninverting
+configuration, the parallel combination of RF || RG forms a pole with the parasitic input capacitance at the
+inverting node of the OPA657 (including layout parasitics). For best performance, this pole should be at a
+frequency greater than the closed-loop bandwidth for the OPA657. For lower noninverting gains than the
+minimum recommended gain of +7 for the OPA657, consider the unity-gain stable JFET input OPA656 or high
+slew rate, low gain stable OPA659.
+
+
+14     Submit Documentation Feedback                                                            Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                  Product Folder Links: OPA657
+                                                                                                                                    OPA657
+www.ti.com                                                                                    SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+Application Information (continued)
+9.1.2 Wideband, Inverting Gain Operation
+There can be significant benefits to operating the OPA657 as an inverting amplifier. This is particularly true when
+a matched input impedance is required. Figure 30 shows the inverting gain circuit used as a starting point for the
+Typical Characteristics showing inverting-mode performance.
+Driving this circuit from a 50-Ω source, and constraining the gain resistor (RG) to equal 50 Ω gives both a signal
+bandwidth and noise advantage. RG in this case is acting as both the input termination resistor and the gain
+setting resistor for the circuit. Although the signal gain for the circuit of Figure 30 is double that for Figure 29, the
+noise gains are equal when the 50-Ω source resistor is included. This has the interesting effect of doubling the
+equivalent GBP for the amplifier. This can be seen in comparing the G = +10 V/V and G = –20 V/V small-signal
+frequency response curves. Both show about 250-MHz bandwidth, but the inverting configuration of Figure 30 is
+giving 6-dB higher signal gain. If the signal source is actually the low-impedance output of another amplifier, RG
+should be increased to the minimum value allowed at the output of that amplifier and RF adjusted to get the
+desired gain. It is critical for stable operation of the OPA657 that this driving amplifier show a very low output
+impedance through frequencies exceeding the expected closed-loop bandwidth for the OPA657.
+                                                                   +5V
+                                                                     +VS
+
+
+                                                                                       +
+                                                                              0.1mF        6.8mF
+
+
+                                                                                                   50W Load
+                                                                                  VO       50W
+                                                                   OPA657
+
+
+                                           50W Source    RG                  RF
+                                                        50W                 1kW
+                                              VI
+
+
+
+                                                                              0.1mF        6.8mF
+                                                                                       +
+
+
+                                                                      -VS
+                                                                   -5V
+
+                             Figure 30. Inverting G = –20 V/V Specifications and Test Circuit
+
+Figure 30 also shows the noninverting input tied directly to ground. Often, a bias current canceling resistor to
+ground is included here to null out the DC errors caused by the input bias currents. This is only useful when the
+input bias currents are matched. For a JFET part like the OPA657, the input bias currents do not match but are
+so low to begin with (< 5 pA) that DC errors as a result of input bias currents are negligible. Hence, no resistor is
+recommended at the noninverting input for the inverting signal gain condition.
+
+9.1.3 Low-Gain Compensation
+Where a low gain is desired, and inverting operation is acceptable, a new external compensation technique may
+be used to retain the full slew rate and noise benefits of the OPA657 while maintaining the increased loop gain
+and the associated improvement in distortion offered by the decompensated architecture. This technique shapes
+the loop gain for good stability while giving an easily-controlled second-order low-pass frequency response.
+Considering only the noise gain for the circuit of Figure 31, the low-frequency noise gain, (NG1) is set by the
+resistor ratios while the high frequency noise gain (NG2) is set by the capacitor ratios. The capacitor values set
+both the transition frequencies and the high-frequency noise gain. If this noise gain, determined by NG2 = 1 +
+CS/CF, is set to a value greater than the recommended minimum stable gain for the operational amplifier and the
+noise gain pole, set by 1/RFCF, is placed correctly, a very well controlled second-order low-pass frequency
+response results.
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                                     Submit Documentation Feedback   15
+                                                         Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                                  www.ti.com
+
+
+Application Information (continued)
+
+                                                                   +5V
+
+
+
+
+                                                                   OPA657             VO = -2 ´ VI
+
+
+                                                RG                           RF
+                                               250W                         500W
+                                         VI
+                                                            CS                CF
+                                                            27pF            2.9pF
+
+                                                                   -5V
+
+                          Figure 31. Broadband Low-Gain Inverting External Compensation
+
+To choose the values for both CS and CF, two parameters and only three equations must be solved. The first
+parameter is the target high-frequency noise gain NG2, which should be greater than the minimum stable gain for
+the OPA657. Here, a target NG2 of 10.5 V/V is used. The second parameter is the desired low-frequency signal
+gain, which also sets the low-frequency noise gain NG1. To simplify this discussion, target a maximally-flat
+second-order low-pass Butterworth frequency response (Q = 0.707). The signal gain of –2 V/V shown in
+Figure 31 sets the low-frequency noise gain to NG1 = 1 + RF/RG (= 3 in this example). Then, using only these two
+gains and the GBP for the OPA657 (1600 MHz), the key frequency in the compensation can be determined as:
+
+                GBP            NG1                    NG1
+      ZO =            2
+                          1-         -        1-2
+                NG   1
+                               NG2                    NG2
+                                                                                                                                         (1)
+Physically, this ZO (10.6 MHz for the values shown above) is set by 1/(2π × RF(CF + CS)) and is the frequency at
+which the rising portion of the noise gain would intersect unity gain if projected back to 0-dB gain. The actual
+zero in the noise gain occurs at NG1 × ZO and the pole in the noise gain occurs at NG2 × ZO. Because GBP is
+expressed in Hz, multiply ZO by 2π and use this to get CF by solving:
+                   1
+      CF =                       (= 2.86pF)
+            2p ´ RFZONG2                                                                                      (2)
+Finally, because CS and CF set the high-frequency noise gain, determine CS by using [NG2 = 10.5]:
+      CS = (NG2 - 1)CF      (= 27.2pF)                                                                                                   (3)
+The resulting closed-loop bandwidth is approximately equal to:
+      f-3dB @    ZO GBP          (= 130MHz)
+                                                                                                                                         (4)
+For the values shown in Figure 31, the f–3 dB is approximately 130 MHz. This is less than that predicted by simply
+dividing the GBP product by NG1. The compensation network controls the bandwidth to a lower value while
+providing the full slew rate at the output and an exceptional distortion performance due to increased loop gain at
+frequencies below NG1 × ZO. The capacitor values shown in Figure 31 are calculated for NG1 = 3 and NG2 =
+10.5 with no adjustment for parasitics.
+Figure 32 shows the gain of –2 V/V (6 dB) measured frequency response for the circuit of Figure 31. The
+amplifier displays exceptional gain flatness through 70 MHz and a –3-dB bandwidth of 170 MHz.
+
+
+
+
+16     Submit Documentation Feedback                                                    Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                       Product Folder Links: OPA657
+                                                                                                                                                         OPA657
+www.ti.com                                                                                                         SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+Application Information (continued)
+
+                                                           12
+                                                            9
+                                                            6
+                                                            3
+
+
+
+
+                                          Gain (3dB/div)
+                                                            0
+                                                                                                        170MHz
+                                                            -3
+                                                            -6
+                                                            -9
+                                                           -12
+                                                           -15
+                                                           -18
+                                                                 1                    10                     100              500
+                                                                                      Frequency (MHz)
+
+                          Figure 32. G = –2 Frequency Response With External Compensation
+
+The real benefit to this compensation is to allow a high slew rate, exceptional DC precision operational amplifier
+to provide a low overshoot, fast settling pulse response. For a 1-V output step, the 700-V/μs slew rate of the
+OPA657 allows a rise time limited edge rate (2ns for a 170-MHz bandwidth). While unity-gain stable operational
+amplifiers may offer comparable bandwidths, the lower slew rates extend the settling time for larger steps. For
+instance, the OPA656 can also provide a 150-MHz gain of –2-V/V bandwidth implying a 2.3-ns transition time.
+However, the lower slew rate of this unity-gain stable amplifier (290 V/μs) limits a 1-V step transition to 3.5 ns
+and delays the settling time as the slewing transition is recovered. The combination of higher slew rate and
+exceptional DC precision for the OPA657 can yield one of the fastest, most precise, pulse amplifiers using the
+circuit of Figure 31.
+An added benefit to the compensation of Figure 31 is to increase the loop gain above that achievable at
+comparable gains by internally-compensated amplifiers. The circuit of Figure 31 has lower harmonic distortion
+through 10 MHz than the OPA656 operated at a gain of –2 V/V.
+
+9.1.4 Operating Suggestions
+
+9.1.4.1 Setting Resistor Values to Minimize Noise
+The OPA657 provides a very low input noise voltage while requiring a low 14 mA of quiescent current. To take
+full advantage of this low input noise, careful attention to the other possible noise contributors is required.
+Figure 33 shows the operational amplifier noise analysis model with all the noise terms included. In this model,
+all the noise terms are taken to be noise voltage or current density terms in either nV/√Hz or pA/√Hz.
+                                                                                ENI
+
+                                                                                 *
+                                                                                            OPA657                             EO
+                                                  RS
+                                                                          IBN
+
+
+
+                                         ERS
+                                                            *                                          RF
+                                                                 Ö4kTRS
+                                                                                                                   *
+                                                                                                              Ö4kTRF
+                                                                                       RG        IBI
+                                                                 4kT
+                                                                                                            4kT = 1.6E -20J
+                                                                 RG
+                                                                                                               at 290°K
+
+
+                                    Figure 33. Operational Amplifier Noise Analysis Model
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                                                          Submit Documentation Feedback   17
+                                                                          Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                          www.ti.com
+
+
+Application Information (continued)
+The total output spot noise voltage can be computed as the square root of the squared contributing terms to the
+output noise voltage. This computation is adding all the contributing noise powers at the output by superposition,
+then taking the square root to get back to a spot noise voltage. Equation 5 shows the general form for this output
+noise voltage using the terms shown in Figure 28:
+
+     EO =       ENI2 + (IBNRS)2 + 4kTRS NG2 + (IBIRF)2 + 4kTRFNG
+                                                                                                                                 (5)
+Dividing this expression by the noise gain (GN = 1 + RF/RG) gives the equivalent input referred spot noise voltage
+at the noninverting input, as shown in Equation 6:
+                                                     2
+                                             IBIRF           4kTRF
+     EN =      ENI2 + (IBNRS)2 + 4kTRS +                 +
+                                             NG               NG
+                                                                                                                                 (6)
+Putting high resistor values into Equation 6 can quickly dominate the total equivalent input referred noise. A
+source impedance on the noninverting input of 1.6 kΩ adds a Johnson voltage noise term equal to just that for
+the amplifier itself (5 nV/√Hz). While the JFET input of the OPA657 is ideal for high source impedance
+applications, both the overall bandwidth and noise may be limited by these higher source impedances in the
+noninverting configuration of Figure 29.
+
+9.1.4.2 Frequency Response Control
+Voltage-feedback operational amplifiers exhibit decreasing closed-loop bandwidth as the signal gain is increased.
+In theory, this relationship is described by the gain bandwidth product (GBP) shown in the Electrical
+Characteristics: VS = ±5 V. Ideally, dividing GBP by the noninverting signal gain (also called the noise gain, or
+NG) predicts the closed-loop bandwidth. In practice, this only holds true when the phase margin approaches 90°,
+as it does in high-gain configurations. At low gains (increased feedback factors), most high-speed amplifiers
+exhibit a more complex response with lower phase margin. The OPA657 is compensated to give a maximally-
+flat, second-order, Butterworth, closed-loop response at a noninverting gain of +10 V/V (see Figure 29). This
+results in a typical gain of +10-V/V bandwidth of 275 MHz, far exceeding that predicted by dividing the 1600-MHz
+GBP by 10. Increasing the gain causes the phase margin to approach 90° and the bandwidth to more closely
+approach the predicted value of (GBP/NG). At a gain of +50 V/V the OPA657 shows the 32-MHz bandwidth
+predicted using the simple formula and the typical GBP of 1600 MHz. Inverting operation offers some interesting
+opportunities to increase the available gain-bandwidth product. When the source impedance is matched by the
+gain resistor (see Figure 30), the signal gain is –(RF/RG) while the noise gain for bandwidth purposes is (1 +
+RF/RG). This cuts the noise gain in half, increasing the minimum stable gain for inverting operation under these
+conditions to –12 V/V and the equivalent gain bandwidth product to 3.2 GHz.
+
+9.1.4.3 Driving Capacitive Loads
+One of the most demanding and yet very common load conditions for an operational amplifier is capacitive
+loading. Often, the capacitive load is the input of an ADC—including additional external capacitance which may
+be recommended to improve A/D linearity. A high-speed, high open-loop gain amplifier such as the OPA657 can
+be very susceptible to decreased stability and closed-loop response peaking when a capacitive load is placed
+directly on the output pin. When the amplifier open-loop output resistance is considered, this capacitive load
+introduces an additional pole in the signal path that can decrease the phase margin. Several external solutions to
+this problem have been suggested. When the primary considerations are frequency response flatness, pulse
+response fidelity, and/or distortion, the simplest and most effective solution is to isolate the capacitive load from
+the feedback loop by inserting a series isolation resistor between the amplifier output and the capacitive load.
+This does not eliminate the pole from the loop response, but rather shifts it and adds a zero at a higher
+frequency. The additional zero acts to cancel the phase lag from the capacitive load pole, thus increasing the
+phase margin and improving stability.
+
+
+
+
+18     Submit Documentation Feedback                                            Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                 Product Folder Links: OPA657
+                                                                                                                           OPA657
+www.ti.com                                                                             SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+Application Information (continued)
+The Typical Characteristics illustrate the Recommended RS vs Capacitive Load (Figure 17) and the resulting
+frequency response at the load. In this case, a design target of a maximally-flat frequency response is used.
+Lower values of RS may be used if some peaking can be tolerated. Also, operating at higher gains (than the +10
+V/V used in the Typical Characteristics) require lower values of RS for a minimally-peaked frequency response.
+Parasitic capacitive loads greater than 2 pF can begin to degrade the performance of the OPA657. Long PC
+board traces, unmatched cables, and connections to multiple devices can easily cause this value to be
+exceeded. Always consider this effect carefully, and add the recommended series resistor as close as possible to
+the OPA657 output pin (see the Layout Guidelines section).
+
+9.1.4.4 Distortion Performance
+The OPA657 is capable of delivering a low-distortion signal at high frequencies over a wide range of gains. The
+distortion plots in the Typical Characteristics: VS = ±5 V show the typical distortion under a wide variety of
+conditions.
+Generally, until the fundamental signal reaches very high frequencies or powers, the second-harmonic dominates
+the distortion with a negligible third-harmonic component. Focusing then on the second-harmonic, increasing the
+load impedance improves distortion directly. Remember that the total load includes the feedback network—in the
+noninverting configuration this is sum of RF + RG, while in the inverting configuration this is just RF (see
+Figure 29). Increasing output voltage swing increases harmonic distortion directly. A 6-dB increase in output
+swing generally increases the second-harmonic 12 dB and the third-harmonic 18 dB. Increasing the signal gain
+also increases the second-harmonic distortion. Again, a 6-dB increase in gain increases the second- and third-
+harmonic by approximately 6 dB, even with a constant output power and frequency. And finally, the distortion
+increases as the fundamental frequency increases due to the roll-off in the loop gain with frequency. Conversely,
+the distortion improves going to lower frequencies down to the dominant open-loop pole at approximately 100
+kHz. Starting from the –70-dBc second-harmonic for a 5-MHz, 2 VPP fundamental into a 200-Ω load at G = +10
+V/V (from the Typical Characteristics: VS = ±5 V), the second-harmonic distortion for frequencies lower than 100
+kHz is approximately less than –90 dBc.
+The OPA657 has an extremely low third-order harmonic distortion. This also shows up in the two-tone, third-
+order, intermodulation spurious (IM3) response curves. The third-order spurious levels are extremely low (< –80
+dBc) at low output power levels. The output stage continues to hold them low even as the fundamental power
+reaches higher levels. As shown in Typical Characteristics: VS = ±5 V, the spurious intermodulation powers do
+not increase as predicted by a traditional intercept model. As the fundamental power level increases, the
+dynamic range does not decrease significantly. For two tones centered at 10 MHz, with 4 dBm/tone into a
+matched 50-Ω load (that is, 1 VPP for each tone at the load, which requires 4 VPP for the overall two-tone
+envelope at the output pin), the Typical Characteristics: VS = ±5 V show a 82-dBc difference between the test
+tone and the third-order intermodulation spurious levels. This exceptional performance improves further when
+operating at lower frequencies and/or higher load impedances.
+
+9.1.4.5 DC Accuracy and Offset Control
+The OPA657 can provide excellent DC accuracy due to its high open-loop gain, high common-mode rejection,
+high power-supply rejection, and its trimmed input offset voltage (and drift) along with the negligible errors
+introduced by the low input bias current. For the best DC precision, a high-grade version (OPA657UB or
+OPA657NB) screens the key DC parameters to an even tighter limit. Both standard- and high-grade versions
+take advantage of a new final test technique to 100% test input offset voltage drift over temperature. This
+discussion uses the high-grade typical and min/max Electrical Characteristics: VS = ±5 V for illustration; however,
+an identical analysis applies to the standard-grade version.
+The total output DC offset voltage in any configuration and temperature is the combination of a number of
+possible error terms. In a JFET part such as the OPA657, the input bias current terms are typically quite low but
+are unmatched. Using bias-current cancellation techniques, more typical in bipolar input amplifiers, does not
+improve output DC offset errors. Errors due to the input bias current only become dominant at elevated
+temperatures. The OPA657 shows the typical 2× increase in every 10°C common to JFET-input stage amplifiers.
+Using the 5-pA maximum tested value at +25°C, and a +20°C internal self heating (see thermal analysis), the
+maximum input bias current at +85°C ambient is 5 pA × 2(105 – 25)/10 = 1280 pA. For noninverting configurations,
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                          Submit Documentation Feedback      19
+                                                        Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                          www.ti.com
+
+
+Application Information (continued)
+this term only begins to be a significant term versus the input offset voltage for source impedances greater than
+750 kΩ. This would also be the feedback resistor value for transimpedance applications (see Figure 34) where
+the output DC error due to inverting input bias current is on the order of that contributed by the input offset
+voltage. In general, except for these extremely high-impedance values, the output DC errors due to the input bias
+current may be neglected.
+After the input offset voltage itself, the most significant term contributing to output offset voltage is the PSRR for
+the negative supply. This term is modeled as an input offset voltage shift due to changes in the negative power-
+supply voltage (and similarly for the +PSRR). The high-grade test limit for –PSRR is 68 dB. This translates into
+0.4-mV/V input offset voltage shift = 10(–68/20). This low sensitivity to the negative supply voltage requires a 1.5-V
+change in the negative supply to match the ±0.6mV input offset voltage error. The +PSRR is tested to a
+minimum value of 78 dB. This translates into 10(–78/20) = 0.125 mV/V sensitivity for the input offset voltage to
+positive power-supply changes.
+As an example, compute the worst-case output DC error for the transimpedance circuit of Figure 34 at 25°C and
+then the shift over the 0°C to 70°C range given the following assumptions.
+Negative Power Supply
+   = –5 V ±0.2 V with a ±5 mV/°C worst-case shift
+Positive Power Supply
+   = +5 V ±0.2 V with a ±5 mV/°C worst-case shift
+Initial 25°C Output DC Error Band
+     = ±0.6 mV (OPA657 high-grade input offset voltage limit)
+     ±0.08 mV (due to the –PSRR = 0.4 mV/V × ±0.2 V)
+     ±0.04 mV (due to the +PSRR = 0.2 mV/V × ±0.2 V)
+Total = ±0.72mV
+This would be the worst-case error band in volume production at 25°C acceptance testing given the conditions
+stated. Over the temperature range (0°C to 70°C), expect the following worst-case shifting from initial value. A
+20°C internal junction self-heating is assumed here.
+±0.36 mV (OPA657 high-grade input offset drift)
+    = ±6 μV/°C × (70°C + 20°C – 25°C)
+±0.11 mV (–PSRR of 66dB with 5mV × (70°C – 25°C) supply shift)
+±0.04 mV (+PSRR of 76dB with 5mV × (70°C – 25°C) supply shift)
+Total = ±0.51mV
+This would be the worst-case shift from an initial offset over a 0°C to 70°C ambient for the conditions stated.
+Typical initial output DC error bands and shifts over temperature are much lower than these worst-case
+estimates.
+In the transimpedance configuration, the CMRR errors can be neglected because the input common-mode
+voltage is held at ground. For noninverting gain configurations (see Figure 29), the CMRR term needs to be
+considered but is typically far lower than the input offset voltage term. With a tested minimum of 91 dB (28 μV/V),
+the added apparent DC error is no more than ±0.06 mV for a ±2-V input swing to the circuit of Figure 29.
+
+
+
+
+20     Submit Documentation Feedback                                            Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                 Product Folder Links: OPA657
+                                                                                                                                    OPA657
+www.ti.com                                                                                      SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+9.2 Typical Application
+The high GBP and low input voltage and current noise for the OPA657 make it an ideal wideband
+transimpedance amplifier for moderate to high transimpedance gains. Unity-gain stability in the operational
+amplifier is not required for application as a transimpedance amplifier.
+                                VB
+                                                                        Supply Decoupling not
+                                                                               shown
+                                                                 +5 V
+                                                                                         RS
+                                                               +                        50
+                                                                                                        Oscilloscope
+                                                               OPA657
+                                                                                                       with 50 Inputs
+
+
+
+                              CD                   CPCB          -5 V
+                             49 pF                0.3 pF           RF
+                                                                 200 k 
+
+
+
+
+                                                                 CF + CPCB
+                                                                  0.55 pF
+
+                     Figure 34. Wideband, High-Sensitivity, Transimpedance Amplifier Diagram
+
+9.2.1 Design Requirements
+Design a high-bandwidth, high-gain transimpedance amplifier with the design requirements shown in Table 1.
+
+                                                        Table 1. Design Requirements
+                   TARGET BANDWIDTH (MHz)               TRANSIMPEDANCE GAIN (kΩ)              PHOTODIODE CAPACITANCE (pF)
+                                  1                                 200                                      49
+
+9.2.2 Detailed Design Procedure
+Designs that require high bandwidth from a large area detector with relatively high transimpedance gain benefit
+from the low input voltage noise of the OPA657. This input voltage noise is peaked up over frequency by the
+diode source capacitance, and can, in many cases, become the limiting factor to input sensitivity. The key
+elements to the design are the expected diode capacitance (CD) with the reverse bias voltage (VB) applied, the
+desired transimpedance gain, RF, and the GBP for the OPA657 (1600 MHz). Figure 34 shows a transimpedance
+circuit with the parameters as described in Table 1. With these three variables set (and including the parasitic
+input capacitance for the OPA657 and the PCB added to CD), the feedback capacitor value (CF) may be set to
+control the frequency response. To achieve a maximally-flat second-order Butterworth frequency response, the
+feedback pole should be set to:
+          1                   GBP
+               =
+        2pRFCF               4pRFCD
+                                                                                                                                           (7)
+Adding the common-mode and differential mode input capacitance (0.7 + 4.5) pF and the trace PCB capacitance
+of approximately 0.3 pF to the 49-pF diode source capacitance of Figure 34, and targeting a 200-kΩ
+transimpedance gain using the 1600-MHz GBP for the OPA657 requires a feedback pole set to 3.5 MHz. This
+requires a total feedback capacitance of 0.2 pF. Such low capacitance values are difficult to achieve due to
+parasitics from the PCB and the surface mount components.
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                                    Submit Documentation Feedback     21
+                                                           Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                                                                           www.ti.com
+
+
+Equation 8 gives the approximate closed loop bandwidth of the system to be 4.8 MHz. Because the target
+bandwidth is only 1 MHz, the feedback capacitance can be increased to a more practical value while maintaining
+the bandwidth requirements of the design. A feedback capacitance of 0.550 pf was chosen. This includes the
+physical 0.4-pF feedback capacitor in addition to the 0.1-pF parasitic capacitance from the feedback resistor and
+around 50-fF capacitance from the PCB traces. Removing the ground and power planes from under the surface
+mount components helps to minimize this parasitic capacitance. The simulated closed loop bandwidth of
+Figure 34 was 1.7 MHz. The phase margin was close to 82°. This design should result in a system with
+negligible overshoot to a pulsed input.
+                             f-3dB = GBP / (2pRFCD ) Hz                                                                                                                              (8)
+Figure 35 shows the measured output noise of the system which matches the simulated output noise in
+Figure 36 very closely. The low-frequency output noise of 60 nV/√Hz gets input-referred to 0.3 pA/√Hz. The
+transimpedance gain resistor is the dominant noise source with the operational amplifier itself contributing a
+negligible amount, reflecting one of the main benefits in using a JFET input amplifier in a high-gain
+transimpedance application. If the total output noise of the TIA is bandlimited to a frequency less than the
+feedback pole frequency, a very simple expression for the equivalent output noise voltage can be derived as: see
+Equation 9. Figure 37 shows the measured pulse response to a 5-µA input current pulse. The output voltage
+measured on the scope is 0.5 V because of the 50-Ω termination to the scope.
+
+
+
+
+                             where
+                                    •   VOUTN = Equivalent output noise when band limited to F < 1 / (2ΩRfCf)
+                                    •   IN = Input current noise for the operational amplifier inverting input
+                                    •   EN = Input voltage noise for the operational amplifier
+                                    •   CD = Diode capacitance including operational amplifier and PCB parasitic capacitance
+                                    •   F = Band-limiting frequency in Hz (usually a postfilter before further signal processing)
+                                    •   4 kT = 1.6 e – 20 J at T = 290°K                                                                                                             (9)
+
+9.2.3 Application Curves
+
+                             1000                                                                                     1000
+                              700                                                                                      700
+                              500                                                                                      500
+
+                              300                                                                                      300
+     Output Noise (nV/vHz)
+
+
+
+
+                                                                                              Output Noise (nV/vHz)
+
+
+
+
+                              200                                                                                      200
+
+                              100                                                                                      100
+                               70                                                                                       70
+                               50                                                                                       50
+
+                               30                                                                                       30
+                               20                                                                                       20
+
+                               10                                                                                       10
+                                100       1k      10k       100k       1M   10M   100M                                   100    1k      10k       100k       1M    10M      100M
+                                                        Frequency (Hz)              D002
+                                                                                                                                              Frequency (Hz)                  D004
+
+
+
+
+                                         Figure 35. Measured Total TIA Noise                                                   Figure 36. Simulated TIA Output Noise
+
+
+
+
+22                            Submit Documentation Feedback                                                                      Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                                             Product Folder Links: OPA657
+                                                                                                                                                        OPA657
+www.ti.com                                                                                                          SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+                                                               0.1
+
+                                                                 0
+
+                                                               -0.1
+
+
+
+
+                                          Output Voltage (V)
+                                                               -0.2
+
+                                                               -0.3
+
+                                                               -0.4
+
+                                                               -0.5
+
+                                                               -0.6
+                                                                      0   5    10    15    20    25      30    35     40     45
+                                                                                          Time (usec)                        D003
+                                                                 Rise Time = 239 ns                     Fall Time = 224 ns
+
+                                         Figure 37. Transient Pulse Response to 5-µA Input Current Pulse
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                                                         Submit Documentation Feedback    23
+                                                                              Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                          www.ti.com
+
+
+10 Power Supply Recommendations
+The OPA657 is principally intended to work in a supply range of ±4 V to ±6 V. Good power-supply bypassing is
+required. Minimize the distance (<0.1 inch) from the power-supply pins to high frequency, 0.1-μF decoupling
+capacitors. Often a larger capacitor (2.2 µF is typical) is used along with a high-frequency, 0.1-µF supply
+decoupling capacitor at the device supply pins. For single-supply operation, only the positive supply has these
+capacitors. When a split supply is used, use these capacitors for each supply to ground. If necessary, place the
+larger capacitors somewhat farther from the device and share these capacitors among several devices in the
+same area of the PCB. Avoid narrow power and ground traces to minimize inductance between the pins and the
+decoupling capacitors. An optional supply decoupling capacitor across the two power supplies (for bipolar
+operation) improves second harmonic distortion performance.
+
+11 Layout
+
+11.1 Layout Guidelines
+Achieving optimum performance with a high-frequency amplifier such as the OPA657 requires careful attention to
+board layout parasitics and external component types. Recommendations that optimize performance include:
+ 1. Minimize parasitic capacitance to any AC ground for all of the signal I/O pins. Parasitic capacitance on the
+    output and inverting input pins can cause instability—on the noninverting input, it can react with the source
+    impedance to cause unintentional bandlimiting. To reduce unwanted capacitance, a window around the
+    signal I/O pins should be opened in all of the ground and power planes around those pins. Otherwise, ground
+    and power planes should be unbroken elsewhere on the board.
+ 2. Minimize the distance (< 0.25") from the power-supply pins to high-frequency 0.1-μF decoupling capacitors.
+    At the device pins, the ground and power-plane layout should not be in close proximity to the signal I/O pins.
+    Avoid narrow power and ground traces to minimize inductance between the pins and the decoupling
+    capacitors. The power-supply connections should always be decoupled with these capacitors. Larger (2.2 μF
+    to 6.8 μF) decoupling capacitors, effective at lower frequency, should also be used on the supply pins. These
+    may be placed somewhat farther from the device and may be shared among several devices in the same
+    area of the PC board.
+ 3. Careful selection and placement of external components preserve the high-frequency performance of
+    the OPA657. Resistors should be a very low reactance type. Surface-mount resistors work best and allow a
+    tighter overall layout. Metal film and carbon composition axially leaded resistors can also provide good high-
+    frequency performance. Again, keep the leads and PCB trace length as short as possible. Never use
+    wirewound-type resistors in a high-frequency application. Because the output pin and inverting input pin are
+    the most sensitive to parasitic capacitance, always position the feedback and series output resistor, if any, as
+    close as possible to the output pin. Other network components, such as noninverting input termination
+    resistors, should also be placed close to the package. Where double-side component mounting is allowed,
+    place the feedback resistor directly under the package on the other side of the board between the output and
+    inverting input pins. Even with a low parasitic capacitance shunting the external resistors, excessively high
+    resistor values can create significant time constants that can degrade performance. Good axial metal film or
+    surface-mount resistors have approximately 0.2 pF in shunt with the resistor. For resistor values greater than
+    1.5 kΩ, this parasitic capacitance can add a pole and/or zero below 500 MHz that can effect circuit operation.
+    Keep resistor values as low as possible consistent with load driving considerations. It has been suggested
+    here that a good starting point for design would be to keep RF || RG < 150 Ω for voltage amplifier
+    applications. Doing this automatically keeps the resistor noise terms low, and minimizes the effect of the
+    parasitic capacitance. Transimpedance applications (see Figure 34) can use whatever feedback resistor is
+    required by the application as long as the feedback-compensation capacitor is set considering all parasitic
+    capacitance terms on the inverting node.
+ 4. Connections to other wideband devices on the board may be made with short direct traces or through
+    onboard transmission lines. For short connections, consider the trace and the input to the next device as a
+    lumped capacitive load. Relatively wide traces (50 mils to 100 mils) should be used, preferably with ground
+    and power planes opened up around them. Estimate the total capacitive load and set RS from the plot of
+    Recommended RS vs Capacitive Load (Figure 17). Low parasitic capacitive loads (< 5 pF) may not need an
+    RS because the OPA657 is nominally compensated to operate with a 2-pF parasitic load. Higher parasitic
+    capacitive loads without an RS are allowed as the signal gain increases (increasing the unloaded phase
+    margin). If a long trace is required, and the 6-dB signal loss intrinsic to a doubly-terminated transmission line
+    is acceptable, implement a matched-impedance transmission line using microstrip or stripline techniques
+24     Submit Documentation Feedback                                            Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                 Product Folder Links: OPA657
+                                                                                                                           OPA657
+www.ti.com                                                                             SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+Layout Guidelines (continued)
+   (consult an ECL design handbook for microstrip and stripline layout techniques). A 50-Ω environment is
+   normally not necessary onboard, and in fact a higher impedance environment improves distortion, as shown
+   in the distortion versus load plots. With a characteristic board trace impedance defined based on board
+   material and trace dimensions, a matching series resistor into the trace from the output of the OPA657 is
+   used as well as a terminating shunt resistor at the input of the destination device. Remember also that the
+   terminating impedance is the parallel combination of the shunt resistor and the input impedance of the
+   destination device—this total effective impedance should be set to match the trace impedance. If the 6-dB
+   attenuation of a doubly-terminated transmission line is unacceptable, a long trace can be series-terminated
+   at the source end only. Treat the trace as a capacitive load in this case and set the series resistor value as
+   shown in the plot of RS vs Capacitive Load. This does not preserve signal integrity as well as a doubly-
+   terminated line. If the input impedance of the destination device is low, there will be some signal attenuation
+   due to the voltage divider formed by the series output into the terminating impedance.
+5. Socketing a high-speed part like the OPA657 is not recommended. The additional lead length and pin-
+   to-pin capacitance introduced by the socket can create an extremely troublesome parasitic network which
+   can make it almost impossible to achieve a smooth, stable frequency response. Best results are obtained by
+   soldering the OPA657 onto the board.
+
+11.1.1 Demonstration Fixtures
+Two printed circuit boards (PCBs) are available to assist in the initial evaluation of circuit performance using the
+OPA657 in its two package options. Both of these are offered free of charge as unpopulated PCBs, delivered
+with a user's guide. The summary information for these fixtures is shown in Table 2.
+
+                                            Table 2. Demonstration Fixtures by Package
+       PRODUCT                   PACKAGE                     ORDERING NUMBER                          LITERATURE NUMBER
+        OPA657U                    SO-8                        DEM-OPA-SO-1A                                SBOU009
+        OPA657N                   SOT23-5                     DEM-OPA-SOT-1A                                SBOU010
+
+The demonstration fixtures can be requested at the Texas Instruments website (www.ti.com) through the
+OPA657 product folder.
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                          Submit Documentation Feedback      25
+                                                        Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                          www.ti.com
+
+
+11.2 Layout Example
+
+                    Ground Plane                           Feedback element
+                  removed under VIN-                    trace length minimized
+
+
+                                                                          Bypass Cap.
+
+
+
+
+                         Bypass Cap.
+
+
+
+
+                                         Figure 38. Layout Recommendation
+
+
+11.3 Thermal Considerations
+The OPA657 does not require heatsinking or airflow in most applications. Maximum desired junction temperature
+sets the maximum allowed internal power dissipation as described below. In no case should the maximum
+junction temperature be allowed to exceed +175°C.
+
+
+
+26     Submit Documentation Feedback                                            Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                 Product Folder Links: OPA657
+                                                                                                                           OPA657
+www.ti.com                                                                             SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015
+
+
+Thermal Considerations (continued)
+Operating junction temperature (TJ) is given by TA + PD × θJA. The total internal power dissipation (PD) is the sum
+of quiescent power (PDQ) and additional power dissipated in the output stage (PDL) to deliver load power.
+Quiescent power is simply the specified no-load supply current times the total supply voltage across the part. PDL
+depends on the required output signal and load but will—for a grounded resistive load—be at a maximum when
+the output is fixed at a voltage equal to 1/2 of either supply voltage (for equal bipolar supplies). Under this
+condition PDL = VS 2 / (4 × RL) where RL includes feedback network loading.
+It is the power in the output stage and not into the load that determines internal power dissipation.
+As a worst-case example, compute the maximum TJ using an OPA657N (SOT23-5 package) in the circuit of
+Figure 29 operating at the maximum specified ambient temperature of +85°C and driving a grounded 100-Ω load.
+       PD = 10V ´ 16.1mA + 52/(4 ´ (100W||500W)) = 236mW                                                                         (10)
+       Maximum TJ = +85°C + (0.25W ´ 150°C/W) = 121°C                                                                            (11)
+All actual applications are operating at lower internal power and junction temperature.
+
+
+
+
+Copyright © 2001–2015, Texas Instruments Incorporated                                          Submit Documentation Feedback      27
+                                                        Product Folder Links: OPA657
+OPA657
+SBOS197F – DECEMBER 2001 – REVISED AUGUST 2015                                                                                 www.ti.com
+
+
+12 Device and Documentation Support
+
+12.1 Community Resources
+The following links connect to TI community resources. Linked contents are provided "AS IS" by the respective
+contributors. They do not constitute TI specifications and do not necessarily reflect TI's views; see TI's Terms of
+Use.
+TI E2E™ Online Community TI's Engineer-to-Engineer (E2E) Community. Created to foster collaboration
+           among engineers. At e2e.ti.com, you can ask questions, share knowledge, explore ideas and help
+           solve problems with fellow engineers.
+Design Support TI's Design Support Quickly find helpful E2E forums along with design support tools and
+           contact information for technical support.
+
+12.2 Trademarks
+E2E is a trademark of Texas Instruments.
+All other trademarks are the property of their respective owners.
+12.3 Electrostatic Discharge Caution
+        These devices have limited built-in ESD protection. The leads should be shorted together or the device placed in conductive foam
+        during storage or handling to prevent electrostatic damage to the MOS gates.
+
+
+12.4 Glossary
+SLYZ022 — TI Glossary.
+   This glossary lists and explains terms, acronyms, and definitions.
+
+13 Mechanical, Packaging, and Orderable Information
+The following pages include mechanical, packaging, and orderable information. This information is the most
+current data available for the designated devices. This data is subject to change without notice and revision of
+this document. For browser-based versions of this data sheet, refer to the left-hand navigation.
+
+
+
+
+28     Submit Documentation Feedback                                                   Copyright © 2001–2015, Texas Instruments Incorporated
+
+                                                    Product Folder Links: OPA657
+                                                                                                                                                                    PACKAGE OPTION ADDENDUM
+
+       www.ti.com                                                                                                                                                                                                   10-Nov-2025
+
+
+
+
+PACKAGING INFORMATION
+
+       Orderable part number          Status     Material type      Package | Pins     Package qty | Carrier       RoHS             Lead finish/             MSL rating/             Op temp (°C)               Part marking
+                                        (1)            (2)                                                            (3)           Ball material            Peak reflow                                              (6)
+                                                                                                                                          (4)                      (5)
+
+            OPA657N/250               Active      Production       SOT-23 (DBV) | 5      250 | SMALL T&R             Yes                Call TI         Level-2-260C-1 YEAR             -40 to 85                    A57
+           OPA657N/250.A              Active      Production       SOT-23 (DBV) | 5      250 | SMALL T&R             Yes                Call TI         Level-2-260C-1 YEAR             -40 to 85                    A57
+           OPA657NB/250               Active      Production       SOT-23 (DBV) | 5      250 | SMALL T&R             Yes                Call TI         Level-2-260C-1 YEAR             -40 to 85                    A57
+          OPA657NB/250.A              Active      Production       SOT-23 (DBV) | 5      250 | SMALL T&R             Yes                Call TI         Level-2-260C-1 YEAR             -40 to 85                    A57
+         OPA657NB/250G4               Active      Production       SOT-23 (DBV) | 5      250 | SMALL T&R              -                 Call TI                 Call TI                 -40 to 85
+              OPA657U                 Active      Production            SOIC (D) | 8         75 | TUBE               Yes                Call TI          Level-3-260C-168 HR            -40 to 85                   OPA
+                                                                                                                                                                                                                    657U
+             OPA657U.A                Active      Production            SOIC (D) | 8         75 | TUBE               Yes                Call TI          Level-3-260C-168 HR            -40 to 85                   OPA
+                                                                                                                                                                                                                    657U
+            OPA657U/2K5               Active      Production            SOIC (D) | 8    2500 | LARGE T&R             Yes                Call TI          Level-3-260C-168 HR            -40 to 85                   OPA
+                                                                                                                                                                                                                    657U
+          OPA657U/2K5.A               Active      Production            SOIC (D) | 8    2500 | LARGE T&R             Yes                Call TI          Level-3-260C-168 HR            -40 to 85                   OPA
+                                                                                                                                                                                                                    657U
+             OPA657UB                 Active      Production            SOIC (D) | 8         75 | TUBE               Yes                Call TI          Level-3-260C-168 HR            -40 to 85                   OPA
+                                                                                                                                                                                                                    657U
+                                                                                                                                                                                                                      B
+            OPA657UB.A                Active      Production            SOIC (D) | 8         75 | TUBE               Yes                Call TI          Level-3-260C-168 HR            -40 to 85                   OPA
+                                                                                                                                                                                                                    657U
+                                                                                                                                                                                                                      B
+            OPA657UBG4                Active      Production            SOIC (D) | 8         75 | TUBE                -                 Call TI                 Call TI                 -40 to 85
+            OPA657UG4                 Active      Production            SOIC (D) | 8         75 | TUBE                -                 Call TI                 Call TI                 -40 to 85
+
+(1)
+      Status: For more details on status, see our product life cycle.
+
+(2)
+   Material type: When designated, preproduction parts are prototypes/experimental devices, and are not yet approved or released for full production. Testing and final process, including without limitation quality assurance,
+reliability performance testing, and/or process qualification, may not yet be complete, and this item is subject to further changes or possible discontinuation. If available for ordering, purchases will be subject to an additional
+waiver at checkout, and are intended for early internal evaluation purposes only. These items are sold without warranties of any kind.
+
+(3)
+      RoHS values: Yes, No, RoHS Exempt. See the TI RoHS Statement for additional information and value definition.
+
+(4)
+   Lead finish/Ball material: Parts may have multiple material finish options. Finish options are separated by a vertical ruled line. Lead finish/Ball material values may wrap to two lines if the finish value exceeds the maximum
+column width.
+
+
+
+                                                                                                         Addendum-Page 1
+                                                                                                                                                                      PACKAGE OPTION ADDENDUM
+
+       www.ti.com                                                                                                                                                                                                10-Nov-2025
+
+
+
+
+(5)
+  MSL rating/Peak reflow: The moisture sensitivity level ratings and peak solder (reflow) temperatures. In the event that a part has multiple moisture sensitivity ratings, only the lowest level per JEDEC standards is shown.
+Refer to the shipping label for the actual reflow temperature that will be used to mount the part to the printed circuit board.
+
+(6)
+      Part marking: There may be an additional marking, which relates to the logo, the lot trace code information, or the environmental category of the part.
+
+Multiple part markings will be inside parentheses. Only one part marking contained in parentheses and separated by a "~" will appear on a part. If a line is indented then it is a continuation of the previous line and the two
+combined represent the entire part marking for that device.
+
+Important Information and Disclaimer:The information provided on this page represents TI's knowledge and belief as of the date that it is provided. TI bases its knowledge and belief on information provided by third parties, and
+makes no representation or warranty as to the accuracy of such information. Efforts are underway to better integrate information from third parties. TI has taken and continues to take reasonable steps to provide representative
+and accurate information but may not have conducted destructive testing or chemical analysis on incoming materials and chemicals. TI and TI suppliers consider certain information to be proprietary, and thus CAS numbers
+and other limited information may not be available for release.
+
+In no event shall TI's liability arising out of such information exceed the total purchase price of the TI part(s) at issue in this document sold by TI to Customer on an annual basis.
+
+
+
+
+                                                                                                          Addendum-Page 2
+                                                                               PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                                                       10-Aug-2026
+
+
+
+TAPE AND REEL INFORMATION
+
+       REEL DIMENSIONS                                                                      TAPE DIMENSIONS
+                                                                                       K0         P1
+
+
+
+                                                                                                                         B0 W
+                                         Reel
+                                       Diameter
+                                                                                    Cavity             A0
+                                                                A0   Dimension designed to accommodate the component width
+                                                                B0   Dimension designed to accommodate the component length
+                                                                K0   Dimension designed to accommodate the component thickness
+                                                                W    Overall width of the carrier tape
+                                                                P1   Pitch between successive cavity centers
+
+
+                                        Reel Width (W1)
+                              QUADRANT ASSIGNMENTS FOR PIN 1 ORIENTATION IN TAPE
+
+                                                                                                        Sprocket Holes
+
+
+                                                  Q1       Q2          Q1    Q2
+
+                                                  Q3       Q4          Q3    Q4                    User Direction of Feed
+
+
+
+                                                            Pocket Quadrants
+
+
+*All dimensions are nominal
+             Device           Package Package Pins              SPQ        Reel   Reel   A0                    B0         K0     P1     W     Pin1
+                               Type Drawing                              Diameter Width (mm)                  (mm)       (mm)   (mm)   (mm) Quadrant
+                                                                           (mm) W1 (mm)
+      OPA657N/250             SOT-23     DBV           5         250        180.0           8.4        3.15    3.1       1.55   4.0    8.0     Q3
+     OPA657NB/250             SOT-23     DBV           5         250        180.0           8.4        3.15    3.1       1.55   4.0    8.0     Q3
+      OPA657U/2K5              SOIC        D           8        2500        330.0        12.4          6.4     5.2       2.1    8.0    12.0    Q1
+
+
+
+
+                                                                       Pack Materials-Page 1
+                                                                PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                              10-Aug-2026
+
+
+
+ TAPE AND REEL BOX DIMENSIONS
+
+
+
+
+                                                               Width (mm)
+                                                                              H
+                      W
+
+
+
+
+                                                          L
+
+
+
+
+*All dimensions are nominal
+             Device           Package Type   Package Drawing   Pins         SPQ    Length (mm)   Width (mm)   Height (mm)
+       OPA657N/250              SOT-23            DBV           5           250       213.0        191.0         35.0
+      OPA657NB/250              SOT-23            DBV           5           250       213.0        191.0         35.0
+      OPA657U/2K5                SOIC              D            8           2500      353.0        353.0         32.0
+
+
+
+
+                                                        Pack Materials-Page 2
+                                                                 PACKAGE MATERIALS INFORMATION
+
+www.ti.com                                                                                                   10-Aug-2026
+
+
+
+TUBE
+
+       T - Tube
+        height                                                     L - Tube length
+
+
+                      W - Tube
+                       width
+
+
+         B - Alignment groove width
+
+*All dimensions are nominal
+             Device           Package Name   Package Type   Pins       SPQ     L (mm)   W (mm)   T (µm)   B (mm)
+         OPA657U                   D            SOIC         8          75      506.6     8      3940      4.32
+        OPA657U.A                  D            SOIC         8          75      506.6     8      3940      4.32
+        OPA657UB                   D            SOIC         8          75      506.6     8      3940      4.32
+       OPA657UB.A                  D            SOIC         8          75      506.6     8      3940      4.32
+
+
+
+
+                                                       Pack Materials-Page 3
+                                                                                                            PACKAGE OUTLINE
+DBV0005A                                                          SCALE 4.000
+                                                                                                     SOT-23 - 1.45 mm max height
+                                                                                                              SMALL OUTLINE TRANSISTOR
+
+
+
+
+                                            3.0                                                                       C
+                                            2.6
+                                          1.75                                                                0.1 C
+                                                           B                               A
+                                          1.45
+            PIN 1
+      INDEX AREA
+
+                        1                                        5
+
+
+              2X 0.95                                            (0.1)
+                                                                                          3.05
+                                                                                          2.75
+        1.9                                                                         1.9
+                        2
+                                                                 (0.15)
+
+
+
+                                                                 4
+                            3
+              0.5
+           5X
+              0.3
+                                                                                                                             0.15
+               0.2      C A B                                                   NOTE 5           4X 0 -15      (1.1)              TYP
+                                                                                                                             0.00
+                                                                                                                1.45
+                                                                                                                0.90
+                                                               4X 4 -15
+
+
+
+          0.25
+ GAGE PLANE                                                                          0.22
+                                                                                          TYP
+                                                                                     0.08
+
+
+
+   8
+     TYP                          0.6
+   0                                  TYP            SEATING PLANE
+                                  0.3
+
+
+
+
+                                                                                                                          4214839/K 08/2024
+
+NOTES:
+
+1. All linear dimensions are in millimeters. Any dimensions in parenthesis are for reference only. Dimensioning and tolerancing
+   per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. Refernce JEDEC MO-178.
+4. Body dimensions do not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+   exceed 0.25 mm per side.
+5. Support pin may differ or may not be present.
+
+
+
+
+                                                                                www.ti.com
+                                                                               EXAMPLE BOARD LAYOUT
+DBV0005A                                                                             SOT-23 - 1.45 mm max height
+                                                                                                     SMALL OUTLINE TRANSISTOR
+
+
+
+
+                                                                 PKG
+                                                 5X (1.1)
+                                             1
+                                                                                         5
+                                  5X (0.6)
+
+
+                                                                                             SYMM
+                                                                                                     (1.9)
+                                             2
+                              2X (0.95)
+
+
+                                             3                                           4
+
+                             (R0.05) TYP                         (2.6)
+
+
+                                                     LAND PATTERN EXAMPLE
+                                                       EXPOSED METAL SHOWN
+                                                            SCALE:15X
+
+
+
+
+                                                                                                         SOLDER MASK
+                 SOLDER MASK                     METAL                   METAL UNDER                     OPENING
+                 OPENING                                                 SOLDER MASK
+
+
+
+
+         EXPOSED METAL                                        EXPOSED METAL
+
+                                          0.07 MAX                                           0.07 MIN
+                                          ARROUND                                            ARROUND
+
+                                NON SOLDER MASK                                        SOLDER MASK
+                                    DEFINED                                              DEFINED
+                                  (PREFERRED)
+
+                                                      SOLDER MASK DETAILS
+
+
+
+
+                                                                                                               4214839/K 08/2024
+
+NOTES: (continued)
+
+6. Publication IPC-7351 may have alternate designs.
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+
+
+
+
+                                                                www.ti.com
+                                                                               EXAMPLE STENCIL DESIGN
+ DBV0005A                                                                              SOT-23 - 1.45 mm max height
+                                                                                                       SMALL OUTLINE TRANSISTOR
+
+
+
+
+                                                                 PKG
+                                                 5X (1.1)
+                                             1
+                                                                                         5
+                                  5X (0.6)
+
+
+
+                                                                                             SYMM
+                                             2                                                      (1.9)
+                             2X(0.95)
+
+
+                                             3                                           4
+
+                            (R0.05) TYP
+                                                                (2.6)
+
+
+                                                   SOLDER PASTE EXAMPLE
+                                                 BASED ON 0.125 mm THICK STENCIL
+                                                            SCALE:15X
+
+
+
+
+                                                                                                                   4214839/K 08/2024
+
+NOTES: (continued)
+
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+    design recommendations.
+9. Board assembly site may have different recommendations for stencil design.
+
+
+
+
+                                                                  www.ti.com
+                                                                                                                  PACKAGE OUTLINE
+D0008A                                                           SCALE 2.800
+                                                                                                          SOIC - 1.75 mm max height
+                                                                                                              SMALL OUTLINE INTEGRATED CIRCUIT
+
+
+
+                                                                                                                                        C
+
+                                                                                                                     SEATING PLANE
+                                      .228-.244 TYP
+                                      [5.80-6.19]
+                                                                                                                             .004 [0.1] C
+         A                                    PIN 1 ID AREA
+                                                                                           6X .050
+                                                                                              [1.27]
+                                                                               8
+                   1
+
+
+
+
+     .189-.197                                                                              2X
+     [4.81-5.00]                                                                          .150
+       NOTE 3                                                                             [3.81]
+
+
+                                                                                                               4X (0 -15 )
+
+                   4
+                                                                               5
+                                                                                           8X .012-.020
+                       B                .150-.157                                             [0.31-0.51]
+                                                                                                                                    .069 MAX
+                                        [3.81-3.98]                                       .010 [0.25]     C A B                      [1.75]
+                                          NOTE 4
+
+
+
+
+                                                                                            .005-.010 TYP
+                                                                                            [0.13-0.25]
+
+
+                                        4X (0 -15 )
+
+                       SEE DETAIL A
+                                                                                     .010
+                                                                                     [0.25]
+
+
+
+
+                                                                                                                                        .004-.010
+                                                                                   0 -8                                                 [0.11-0.25]
+                                                                                          .016-.050
+                                                                                          [0.41-1.27]                        DETAIL A
+                                                                                                            (.041)           TYPICAL
+                                                                                                            [1.04]
+
+                                                                                                                                     4214825/C 02/2019
+
+NOTES:
+
+1. Linear dimensions are in inches [millimeters]. Dimensions in parenthesis are for reference only. Controlling dimensions are in inches.
+   Dimensioning and tolerancing per ASME Y14.5M.
+2. This drawing is subject to change without notice.
+3. This dimension does not include mold flash, protrusions, or gate burrs. Mold flash, protrusions, or gate burrs shall not
+   exceed .006 [0.15] per side.
+4. This dimension does not include interlead flash.
+5. Reference JEDEC registration MS-012, variation AA.
+
+
+
+
+                                                                        www.ti.com
+                                                                              EXAMPLE BOARD LAYOUT
+D0008A                                                                                  SOIC - 1.75 mm max height
+                                                                                           SMALL OUTLINE INTEGRATED CIRCUIT
+
+
+
+
+                                8X (.061 )
+                                    [1.55]
+                                                               SYMM                        SEE
+                                                                                           DETAILS
+                                             1
+                                                                                       8
+
+                             8X (.024)
+                                 [0.6]                                                      SYMM
+
+
+
+                                                                                             (R.002 ) TYP
+                                                                                               [0.05]
+                                                                                       5
+                                             4
+                         6X (.050 )
+                             [1.27]
+                                                               (.213)
+                                                                [5.4]
+
+                                                   LAND PATTERN EXAMPLE
+                                                     EXPOSED METAL SHOWN
+                                                           SCALE:8X
+
+
+
+
+                                                 SOLDER MASK            SOLDER MASK
+                     METAL                                                                                  METAL UNDER
+                                                 OPENING                    OPENING                         SOLDER MASK
+
+
+           EXPOSED
+             METAL                                                      EXPOSED
+                                                                          METAL
+                                      .0028 MAX                                              .0028 MIN
+                                      [0.07]                                                 [0.07]
+                                      ALL AROUND                                             ALL AROUND
+
+                           NON SOLDER MASK                                                 SOLDER MASK
+                               DEFINED                                                       DEFINED
+
+
+                                                      SOLDER MASK DETAILS
+
+
+
+
+                                                                                                               4214825/C 02/2019
+
+NOTES: (continued)
+
+6. Publication IPC-7351 may have alternate designs.
+7. Solder mask tolerances between and around signal pads can vary based on board fabrication site.
+
+
+
+
+                                                                www.ti.com
+                                                                              EXAMPLE STENCIL DESIGN
+D0008A                                                                                   SOIC - 1.75 mm max height
+                                                                                            SMALL OUTLINE INTEGRATED CIRCUIT
+
+
+
+
+                                   8X (.061 )
+                                       [1.55]                       SYMM
+
+                                                 1
+                                                                                             8
+
+                                 8X (.024)
+                                     [0.6]                                                       SYMM
+
+
+
+
+                                                                                                   (R.002 ) TYP
+                                                                                             5       [0.05]
+                                                 4
+                             6X (.050 )
+                                 [1.27]
+                                                                    (.213)
+                                                                     [5.4]
+
+
+                                                       SOLDER PASTE EXAMPLE
+                                                BASED ON .005 INCH [0.125 MM] THICK STENCIL
+                                                                 SCALE:8X
+
+
+
+
+                                                                                                                  4214825/C 02/2019
+
+NOTES: (continued)
+
+8. Laser cutting apertures with trapezoidal walls and rounded corners may offer better paste release. IPC-7525 may have alternate
+   design recommendations.
+9. Board assembly site may have different recommendations for stencil design.
+
+
+
+
+                                                                 www.ti.com
+                                         IMPORTANT NOTICE AND DISCLAIMER
+TI PROVIDES TECHNICAL AND RELIABILITY DATA (INCLUDING DATASHEETS), DESIGN RESOURCES (INCLUDING REFERENCE
+DESIGNS), APPLICATION OR OTHER DESIGN ADVICE, WEB TOOLS, SAFETY INFORMATION, AND OTHER RESOURCES “AS IS”
+AND WITH ALL FAULTS, AND DISCLAIMS ALL WARRANTIES, EXPRESS AND IMPLIED, INCLUDING WITHOUT LIMITATION ANY
+IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR NON-INFRINGEMENT OF THIRD
+PARTY INTELLECTUAL PROPERTY RIGHTS.
+These resources are intended for skilled developers designing with TI products. You are solely responsible for (1) selecting the appropriate
+TI products for your application, (2) designing, validating and testing your application, and (3) ensuring your application meets applicable
+standards, and any other safety, security, regulatory or other requirements.
+These resources are subject to change without notice. TI grants you permission to use these resources only for development of an
+application that uses the TI products described in the resource. Other reproduction and display of these resources is prohibited. No license
+is granted to any other TI intellectual property right or to any third party intellectual property right. TI disclaims responsibility for, and you fully
+indemnify TI and its representatives against any claims, damages, costs, losses, and liabilities arising out of your use of these resources.
+TI’s products are provided subject to TI’s Terms of Sale, TI’s General Quality Guidelines, or other applicable terms available either on
+ti.com or provided in conjunction with such TI products. TI’s provision of these resources does not expand or otherwise alter TI’s applicable
+warranties or warranty disclaimers for TI products. Unless TI explicitly designates a product as custom or customer-specified, TI products
+are standard, catalog, general purpose devices.
+TI objects to and rejects any additional or different terms you may propose.
+IMPORTANT NOTICE
+
+                                                Copyright © 2026, Texas Instruments Incorporated
+                                                                Last updated 10/2025
+

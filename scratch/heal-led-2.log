@@ -1,0 +1,7 @@
+LED_PWR_K: 2 groups, main group 1 items
+  LED_PWR_K: group (1 items, ['R44.1']) STILL isolated (0s)
+LED_STAT: 2 groups, main group 39 items
+  LED_STAT: group (1 items, ['D7.1']) STILL isolated (0s)
+LED_STAT_A: 2 groups, main group 30 items
+  LED_STAT_A: group (1 items, ['D7.2']) STILL isolated (0s)
+heal_nets done: 0 groups connected in 5s, output hw/pdlvds_rx.exp147.kicad_pcb

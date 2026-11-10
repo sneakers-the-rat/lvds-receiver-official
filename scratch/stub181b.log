@@ -1,0 +1,36 @@
+11:38:12: Debug: Adding duplicate image handler for 'PNG file'
+11:38:12: Debug: Adding duplicate image handler for 'JPEG file'
+11:38:12: Debug: Adding duplicate image handler for 'TIFF file'
+11:38:12: Debug: Adding duplicate image handler for 'GIF file'
+11:38:12: Debug: Adding duplicate image handler for 'PNM file'
+11:38:12: Debug: Adding duplicate image handler for 'PCX file'
+11:38:12: Debug: Adding duplicate image handler for 'IFF file'
+11:38:12: Debug: Adding duplicate image handler for 'Windows icon file'
+11:38:12: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:38:12: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:38:12: Debug: Adding duplicate image handler for 'TGA file'
+11:38:12: Debug: Adding duplicate image handler for 'XPM file'
+  ULPI_D2 U7.22: NO STUB FOUND
+  ULPI_D3 U7.21: NO STUB FOUND
+  ULPI_D5 U7.19: NO STUB FOUND
+  ULPI_DIR U7.12: NO STUB FOUND
+  ULPI_NXT U7.11: NO STUB FOUND
+  ULPI_STP U7.13: NO STUB FOUND
+  USB_RST U7.9: NO STUB FOUND
+  +3V3A U7.6: NO STUB FOUND
+  +3V3A U7.25: NO STUB FOUND
+  XI U7.28: NO STUB FOUND
+  XO U7.27: NO STUB FOUND
+11:38:34: Debug: Adding duplicate image handler for 'PNG file'
+11:38:34: Debug: Adding duplicate image handler for 'JPEG file'
+11:38:34: Debug: Adding duplicate image handler for 'TIFF file'
+11:38:34: Debug: Adding duplicate image handler for 'GIF file'
+11:38:34: Debug: Adding duplicate image handler for 'PNM file'
+11:38:34: Debug: Adding duplicate image handler for 'PCX file'
+11:38:34: Debug: Adding duplicate image handler for 'IFF file'
+11:38:34: Debug: Adding duplicate image handler for 'Windows icon file'
+11:38:34: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:38:34: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:38:34: Debug: Adding duplicate image handler for 'TGA file'
+11:38:34: Debug: Adding duplicate image handler for 'XPM file'
+hand_stub done: 0/11 stubs placed

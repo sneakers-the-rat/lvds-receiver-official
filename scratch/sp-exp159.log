@@ -1,0 +1,53 @@
+round 0: unconnected 50, shorting track items 62 across 14 nets, via shorts 5
+  +3V3D: SPLIT (50 -> 52); batch restored, hand-listed.
+  +VA: removed 0, vetoed 1, skipped 0 (hand list)
+  APD_K_ALT: apply failed, batch restored. workspace/pdlvds-route/scratch/drc_graph_prune.py", line 255, in apply_plan
+    net, lname = m.group(1), m.group(2)
+                 ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group'
+
+  CDR_DATN: removed 0, vetoed 1, skipped 0 (hand list)
+  CDR_DATP: removed 1, vetoed 3, skipped 0 (hand list)
+  CMP_IN: removed 0, vetoed 1, skipped 0 (hand list)
+  GND: apply failed, batch restored. workspace/pdlvds-route/scratch/drc_graph_prune.py", line 255, in apply_plan
+    net, lname = m.group(1), m.group(2)
+                 ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group'
+
+  HV_EN: removed 0, vetoed 0, skipped 7 (hand list)
+  HV_SHDN: removed 0, vetoed 1, skipped 0 (hand list)
+  I2C_SCL: removed 0, vetoed 1, skipped 0 (hand list)
+  ULPI_D4: removed 0, vetoed 3, skipped 3 (hand list)
+  ULPI_D6: removed 0, vetoed 0, skipped 3 (hand list)
+  ULPI_NXT: SPLIT (50 -> 51); batch restored, hand-listed.
+round 0: removed 2
+round 1: unconnected 50, shorting track items 60 across 13 nets, via shorts 5
+  +3V3D: SPLIT (50 -> 52); batch restored, hand-listed.
+  +VA: removed 0, vetoed 1, skipped 0 (hand list)
+  APD_K_ALT: apply failed, batch restored. workspace/pdlvds-route/scratch/drc_graph_prune.py", line 255, in apply_plan
+    net, lname = m.group(1), m.group(2)
+                 ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group'
+
+  CDR_DATN: removed 0, vetoed 1, skipped 0 (hand list)
+  CDR_DATP: removed 0, vetoed 3, skipped 0 (hand list)
+  CMP_IN: removed 0, vetoed 1, skipped 0 (hand list)
+  GND: apply failed, batch restored. workspace/pdlvds-route/scratch/drc_graph_prune.py", line 255, in apply_plan
+    net, lname = m.group(1), m.group(2)
+                 ^^^^^^^
+AttributeError: 'NoneType' object has no attribute 'group'
+
+  HV_EN: removed 0, vetoed 0, skipped 7 (hand list)
+  HV_SHDN: removed 0, vetoed 1, skipped 0 (hand list)
+  I2C_SCL: removed 0, vetoed 1, skipped 0 (hand list)
+  ULPI_D4: removed 0, vetoed 3, skipped 3 (hand list)
+  ULPI_D6: removed 0, vetoed 0, skipped 3 (hand list)
+  ULPI_NXT: SPLIT (50 -> 51); batch restored, hand-listed.
+round 1: removed 0
+TOTAL removed: 2
+via shorts (hand list, not auto-deleted):
+  Via [CDR_CLKP] on F.Cu - B.Cu
+  Via [I2C_SCL] on F.Cu - B.Cu
+  Via [I2C_SDA] on F.Cu - B.Cu
+  Via [ILIM_P] on F.Cu - B.Cu
+  Via [LED_STAT] on F.Cu - B.Cu

@@ -1,0 +1,225 @@
+[
+  {
+    "timestamp": "2026-11-03T19:39:29Z",
+    "hash": "dc6a010850077f47eaaf227b1751e7d5000965f0",
+    "short_hash": "dc6a010",
+    "label": "router v1 \u2014 first routed attempt",
+    "dir": "2026-11-03T193929Z_dc6a010",
+    "renders": null,
+    "stats": {
+      "pins_failed": 125,
+      "nets_routed": null,
+      "nets_total": null,
+      "clearance_violations": null,
+      "unconnected_nets": null,
+      "audit_verdict": null
+    },
+    "note": "No board was committed for this attempt. Pins-failed figure (125) is from the later commit messages that chart the progression (3ac1a43: 'v1: 125'; 41d7196: 'v1 125 -> v3 90 -> v4 59'). v1 sorted nets by spread only, leaving the 0.6mm +3V3D net (40 pins) last."
+  },
+  {
+    "timestamp": "2026-11-03T19:43:45Z",
+    "hash": "d0c0bca09143177ae7a3f59f2cc6b8dc8500739a",
+    "short_hash": "d0c0bca",
+    "label": "placed board \u2014 UNROUTED waypoint",
+    "dir": "2026-11-03T194345Z_d0c0bca",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
+    "stats": {
+      "nets_routed": 0,
+      "nets_total": 112,
+      "pins_failed": null,
+      "clearance_violations": null,
+      "unconnected_nets": null,
+      "audit_verdict": null
+    },
+    "note": "144 footprints placed, GND zones, HV isolation slot; saved unrouted after a VM replacement wiped the toolchain mid-routing (commit d0c0bca message)."
+  },
+  {
+    "timestamp": "2026-11-03T20:10:21Z",
+    "hash": "c79defe9ecb1ad3dc6286e18894aba50cdc4e07f",
+    "short_hash": "c79defe",
+    "label": "router v2 \u2014 wide nets first",
+    "dir": "2026-11-03T201021Z_c79defe",
+    "renders": null,
+    "stats": {
+      "nets_routed": null,
+      "nets_total": null,
+      "pins_failed": null,
+      "clearance_violations": null,
+      "unconnected_nets": null,
+      "audit_verdict": null
+    },
+    "note": "No board was committed for this attempt, and no result tally was recorded. v2 routed wide nets first (HV > power > LVDS > signals) with retry passes; the next commit (d9d257a) diagnosed the shared v1/v2 root cause: wide tracks could never escape 0.5mm-pitch pads without neck-down."
+  },
+  {
+    "timestamp": "2026-11-03T20:52:25Z",
+    "hash": "3ac1a430b6b34aad838f234624f8244d95d50e0e",
+    "short_hash": "3ac1a43",
+    "label": "router v3 \u2014 neck-down at fine-pitch pads",
+    "dir": "2026-11-03T205225Z_3ac1a43",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
+    "stats": {
+      "nets_routed": 57,
+      "nets_total": 112,
+      "pins_failed": 90,
+      "clearance_violations": null,
+      "unconnected_nets": null,
+      "audit_verdict": null
+    },
+    "note": "First committed routed board. 151 signal vias + 74 GND vias (commit 3ac1a43 message). No audit file was committed at this attempt, so clearance/unconnected/verdict are not recorded."
+  },
+  {
+    "timestamp": "2026-11-03T21:25:40Z",
+    "hash": "41d7196ba016876cd4c570858b575174c105ceee",
+    "short_hash": "41d7196",
+    "label": "router v4 \u2014 goal-cell exemption fix",
+    "dir": "2026-11-03T212540Z_41d7196",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
+    "stats": {
+      "nets_routed": 67,
+      "nets_total": 112,
+      "pins_failed": 59,
+      "clearance_violations": 454,
+      "audit_verdict": "FAIL",
+      "unconnected_nets": null
+    },
+    "note": "Clearance figure is the v4 audit's violating-pair count (454, of which 126 at gap 0.0 = literal shorts) as recorded in commit f8b9d1c; no audit file was committed at 41d7196 itself. Unconnected-net count for v4 not recorded."
+  },
+  {
+    "timestamp": "2026-11-03T22:29:05Z",
+    "hash": "fb2acf7b80f74860a8301a3cce6eaf4df1abbb6f",
+    "short_hash": "fb2acf7",
+    "label": "router v5 \u2014 stricter clearance model",
+    "dir": "2026-11-03T222905Z_fb2acf7",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
+    "stats": {
+      "nets_routed": 58,
+      "nets_total": 112,
+      "pins_failed": 74,
+      "clearance_violations": 341,
+      "unconnected_nets": 98,
+      "audit_verdict": "FAIL"
+    },
+    "note": "Stricter clearance model (vias never exempt, segment-midpoint tests, layer-aware HV) traded connections for correctness vs v4 (commit fb2acf7 message). Clearance/unconnected/verdict parsed from the audit file committed with this attempt."
+  },
+  {
+    "timestamp": "2026-11-04T03:50:41Z",
+    "hash": "b805fc37860f13a3d83fb11efe47e1b1ce8da968",
+    "short_hash": "b805fc3",
+    "label": "v6 full-board route 1 (home-grown exact model)",
+    "dir": "2026-11-04T035041Z_b805fc3",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
+    "stats": {
+      "pins_failed": 144,
+      "unconnected_nets": 83,
+      "clearance_violations": 64,
+      "audit_verdict": "FAIL",
+      "nets_routed": 30,
+      "nets_total": 112
+    },
+    "note": "Exact-clearance model: zero router-output violations (64 = 46 placement pad-pad + 18 zone). Connectivity behind: 144 pins failed, retries made zero progress."
+  },
+  {
+    "timestamp": "2026-11-04T06:10:45Z",
+    "hash": "67722e038347f08fb7ee20062df80662bb41896a",
+    "short_hash": "67722e0",
+    "label": "repair6 attempt 1 on v6 board (home-grown exact model + fanout)",
+    "dir": "2026-11-04T061045Z_67722e0",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
+    "stats": {
+      "pins_failed": 74,
+      "unconnected_nets": 62,
+      "clearance_violations": 64,
+      "audit_verdict": "FAIL",
+      "nets_routed": null,
+      "nets_total": null
+    },
+    "note": "45 groups connected before a VM replacement killed sweep 3; zones refilled post-hoc for this audit. Zero violations from emitted copper (64 = 46 placement pad-pad + 18 zone, same as v6 attempt 1)."
+  },
+  {
+    "timestamp": "2026-11-04T10:08:43Z",
+    "hash": "d489c787af9551c350cec5a0459c838ec1d9f41f",
+    "short_hash": "d489c78",
+    "label": "repair6 attempt 3 CHECKPOINT 1 (in progress, placement-revised board)",
+    "dir": "2026-11-04T100843Z_d489c78",
+    "renders": {
+      "top": "board-top.svg",
+      "bottom": "board-bottom.svg"
+    },
+    "layers": {
+      "F.Cu": "layer-FCu.svg",
+      "In1.Cu": "layer-In1Cu.svg",
+      "In2.Cu": "layer-In2Cu.svg",
+      "B.Cu": "layer-BCu.svg"
+    },
+    "render_method": "zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)",
+    "stats": {
+      "pins_failed": 74,
+      "unconnected_nets": 49,
+      "clearance_violations": 1435,
+      "audit_verdict": "FAIL",
+      "nets_routed": null,
+      "nets_total": null
+    },
+    "note": "Mid-run checkpoint committed per user directive (run still in flight, sweep 2). 111 groups connected so far; 1435 violations is the stale-zone mid-run artifact \u2014 zones refill at run end; comparable post-refill baseline is 64."
+  }
+]

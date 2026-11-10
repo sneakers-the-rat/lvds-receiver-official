@@ -1,0 +1,56 @@
+09:54:25: Debug: Adding duplicate image handler for 'PNG file'
+09:54:25: Debug: Adding duplicate image handler for 'JPEG file'
+09:54:25: Debug: Adding duplicate image handler for 'TIFF file'
+09:54:25: Debug: Adding duplicate image handler for 'GIF file'
+09:54:25: Debug: Adding duplicate image handler for 'PNM file'
+09:54:25: Debug: Adding duplicate image handler for 'PCX file'
+09:54:25: Debug: Adding duplicate image handler for 'IFF file'
+09:54:25: Debug: Adding duplicate image handler for 'Windows icon file'
+09:54:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:54:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:54:25: Debug: Adding duplicate image handler for 'TGA file'
+09:54:25: Debug: Adding duplicate image handler for 'XPM file'
+start star 3887 mm, movable 139
+sweep 0: T 26.0, accepted 24 moves, 0 swaps, star 3897
+sweep 1: T 23.5, accepted 27 moves, 0 swaps, star 3879
+sweep 2: T 21.2, accepted 15 moves, 2 swaps, star 3870
+sweep 3: T 19.2, accepted 35 moves, 1 swaps, star 3877
+sweep 4: T 17.3, accepted 28 moves, 0 swaps, star 3856
+sweep 5: T 15.6, accepted 21 moves, 0 swaps, star 3848
+sweep 6: T 14.1, accepted 20 moves, 1 swaps, star 3838
+sweep 7: T 12.7, accepted 21 moves, 0 swaps, star 3829
+sweep 8: T 11.5, accepted 21 moves, 1 swaps, star 3810
+sweep 9: T 10.4, accepted 20 moves, 0 swaps, star 3811
+sweep 10: T 9.4, accepted 21 moves, 0 swaps, star 3808
+sweep 11: T 8.5, accepted 23 moves, 0 swaps, star 3805
+sweep 12: T 7.7, accepted 21 moves, 0 swaps, star 3796
+sweep 13: T 6.9, accepted 16 moves, 1 swaps, star 3776
+sweep 14: T 6.3, accepted 17 moves, 0 swaps, star 3771
+sweep 15: T 5.6, accepted 19 moves, 1 swaps, star 3761
+sweep 16: T 5.1, accepted 24 moves, 0 swaps, star 3751
+sweep 17: T 4.6, accepted 17 moves, 0 swaps, star 3750
+sweep 18: T 4.2, accepted 17 moves, 0 swaps, star 3755
+sweep 19: T 3.8, accepted 17 moves, 0 swaps, star 3756
+sweep 20: T 3.4, accepted 19 moves, 0 swaps, star 3724
+sweep 21: T 3.1, accepted 19 moves, 0 swaps, star 3718
+sweep 22: T 2.8, accepted 18 moves, 0 swaps, star 3718
+sweep 23: T 2.5, accepted 17 moves, 0 swaps, star 3699
+sweep 24: T 2.3, accepted 23 moves, 1 swaps, star 3691
+sweep 25: T 2.0, accepted 19 moves, 0 swaps, star 3691
+sweep 26: T 1.8, accepted 18 moves, 1 swaps, star 3692
+sweep 27: T 1.7, accepted 15 moves, 1 swaps, star 3692
+sweep 28: T 1.5, accepted 13 moves, 0 swaps, star 3689
+sweep 29: T 1.4, accepted 14 moves, 0 swaps, star 3687
+sweep 30: T 1.2, accepted 13 moves, 0 swaps, star 3686
+sweep 31: T 1.1, accepted 14 moves, 1 swaps, star 3681
+sweep 32: T 1.0, accepted 8 moves, 0 swaps, star 3681
+sweep 33: T 0.9, accepted 12 moves, 0 swaps, star 3682
+sweep 34: T 0.8, accepted 8 moves, 0 swaps, star 3681
+sweep 35: T 0.7, accepted 9 moves, 0 swaps, star 3682
+sweep 36: T 0.7, accepted 7 moves, 0 swaps, star 3682
+sweep 37: T 0.6, accepted 4 moves, 2 swaps, star 3681
+sweep 38: T 0.5, accepted 2 moves, 1 swaps, star 3681
+sweep 39: T 0.5, accepted 5 moves, 0 swaps, star 3680
+sweep 40: T 0.4, accepted 5 moves, 2 swaps, star 3679
+sweep 41: T 0.4, accepted 1 moves, 0 swaps, star 3679
+saved scratch/exp179-fd.kicad_pcb

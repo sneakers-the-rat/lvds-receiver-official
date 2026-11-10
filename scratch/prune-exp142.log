@@ -1,0 +1,10 @@
+nets pruned: 7, reverted: []
+segments+vias removed: 0, tracks shortened: 9, dead length removed: 0.3 mm
+  CMP_IN: removed 0 segs + 0 vias, shortened 1, dead length 0.3 mm
+  GND: removed 0 segs + 0 vias, shortened 2, dead length 0.0 mm
+  RBIAS: removed 0 segs + 0 vias, shortened 2, dead length 0.0 mm
+  APD_K: removed 0 segs + 0 vias, shortened 1, dead length 0.0 mm
+  CAP_CLK: removed 0 segs + 0 vias, shortened 1, dead length 0.0 mm
+  SET_P: removed 0 segs + 0 vias, shortened 1, dead length 0.0 mm
+  HV_VC: removed 0 segs + 0 vias, shortened 1, dead length 0.0 mm
+saved hw/pdlvds_rx.exp143.kicad_pcb

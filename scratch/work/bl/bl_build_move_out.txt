@@ -1,0 +1,45 @@
+13:01:12: Debug: Adding duplicate image handler for 'PNG file'
+13:01:12: Debug: Adding duplicate image handler for 'JPEG file'
+13:01:12: Debug: Adding duplicate image handler for 'TIFF file'
+13:01:12: Debug: Adding duplicate image handler for 'GIF file'
+13:01:12: Debug: Adding duplicate image handler for 'PNM file'
+13:01:12: Debug: Adding duplicate image handler for 'PCX file'
+13:01:12: Debug: Adding duplicate image handler for 'IFF file'
+13:01:12: Debug: Adding duplicate image handler for 'Windows icon file'
+13:01:12: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:01:12: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:01:12: Debug: Adding duplicate image handler for 'TGA file'
+13:01:12: Debug: Adding duplicate image handler for 'XPM file'
+13:01:17: Debug: Adding duplicate image handler for 'PNG file'
+13:01:17: Debug: Adding duplicate image handler for 'JPEG file'
+13:01:17: Debug: Adding duplicate image handler for 'TIFF file'
+13:01:17: Debug: Adding duplicate image handler for 'GIF file'
+13:01:17: Debug: Adding duplicate image handler for 'PNM file'
+13:01:17: Debug: Adding duplicate image handler for 'PCX file'
+13:01:17: Debug: Adding duplicate image handler for 'IFF file'
+13:01:17: Debug: Adding duplicate image handler for 'Windows icon file'
+13:01:17: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:01:17: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:01:17: Debug: Adding duplicate image handler for 'TGA file'
+13:01:17: Debug: Adding duplicate image handler for 'XPM file'
+stats: {'split': 77, 'bridge': 27, 'moved_via': 33, 'shear_gnd': 0}
+census diffs (net,kind): base -> new (only changed):
+  ('+3V3A', 'trk'): 613 -> 627
+  ('+5V', 'trk'): 401 -> 403
+  ('DM_PHY', 'trk'): 256 -> 257
+  ('DP_PHY', 'trk'): 100 -> 102
+  ('ULPI_CK', 'trk'): 12 -> 14
+  ('ULPI_D0', 'trk'): 25 -> 27
+  ('ULPI_D1', 'trk'): 12 -> 14
+  ('ULPI_D2', 'trk'): 14 -> 16
+  ('ULPI_D3', 'trk'): 11 -> 13
+  ('ULPI_D4', 'trk'): 35 -> 37
+  ('ULPI_D5', 'trk'): 12 -> 14
+  ('ULPI_D6', 'trk'): 58 -> 60
+  ('ULPI_D7', 'trk'): 11 -> 13
+  ('ULPI_DIR', 'trk'): 17 -> 19
+  ('ULPI_NXT', 'trk'): 17 -> 19
+  ('ULPI_STP', 'trk'): 570 -> 572
+  ('XI', 'trk'): 33 -> 35
+  ('XO', 'trk'): 646 -> 651
+saved hw/pdlvds_rx.exp259.kicad_pcb

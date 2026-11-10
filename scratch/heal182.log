@@ -1,0 +1,51 @@
+11:57:55: Debug: Adding duplicate image handler for 'PNG file'
+11:57:55: Debug: Adding duplicate image handler for 'JPEG file'
+11:57:55: Debug: Adding duplicate image handler for 'TIFF file'
+11:57:55: Debug: Adding duplicate image handler for 'GIF file'
+11:57:55: Debug: Adding duplicate image handler for 'PNM file'
+11:57:55: Debug: Adding duplicate image handler for 'PCX file'
+11:57:55: Debug: Adding duplicate image handler for 'IFF file'
+11:57:55: Debug: Adding duplicate image handler for 'Windows icon file'
+11:57:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:57:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:57:55: Debug: Adding duplicate image handler for 'TGA file'
+11:57:55: Debug: Adding duplicate image handler for 'XPM file'
+ULPI_D2: 2 groups, main group 2 items
+  ULPI_D2: group (2 items, ['U7.22', 'track@(78.795, 13.25)']) STILL isolated (0s)
+ULPI_D3: 2 groups, main group 2 items
+  ULPI_D3: group (1 items, ['U7.21']) STILL isolated (0s)
+ULPI_D5: 2 groups, main group 29 items
+  ULPI_D5: connected group of 2 items (1s, 0 vias)
+ULPI_D0: 2 groups, main group 9 items
+  ULPI_D0: connected group of 1 items (1s, 0 vias)
+ULPI_D1: 2 groups, main group 5 items
+  ULPI_D1: connected group of 2 items (1s, 0 vias)
+ULPI_D4: 2 groups, main group 25 items
+  ULPI_D4: group (1 items, ['U6.70']) STILL isolated (0s)
+ULPI_D6: 2 groups, main group 28 items
+  ULPI_D6: connected group of 1 items (1s, 1 vias)
+ULPI_D7: 2 groups, main group 6 items
+  ULPI_D7: connected group of 2 items (1s, 1 vias)
+ULPI_CK: 3 groups, main group 2 items
+  ULPI_CK: connected group of 2 items (4s, 2 vias)
+  ULPI_CK: group (1 items, ['U7.14']) STILL isolated (0s)
+ULPI_DIR: 2 groups, main group 2 items
+  ULPI_DIR: group (2 items, ['U7.12', 'track@(75.75, 16.795)']) STILL isolated (0s)
+ULPI_NXT: 2 groups, main group 2 items
+  ULPI_NXT: group (2 items, ['U7.11', 'track@(75.25, 16.795)']) STILL isolated (0s)
+ULPI_STP: 3 groups, main group 30 items
+  ULPI_STP: connected group of 11 items (8s, 3 vias)
+  ULPI_STP: connected group of 2 items (0s, 0 vias)
+11:58:14: Debug: Adding duplicate image handler for 'PNG file'
+11:58:14: Debug: Adding duplicate image handler for 'JPEG file'
+11:58:14: Debug: Adding duplicate image handler for 'TIFF file'
+11:58:14: Debug: Adding duplicate image handler for 'GIF file'
+11:58:14: Debug: Adding duplicate image handler for 'PNM file'
+11:58:14: Debug: Adding duplicate image handler for 'PCX file'
+11:58:14: Debug: Adding duplicate image handler for 'IFF file'
+11:58:14: Debug: Adding duplicate image handler for 'Windows icon file'
+11:58:14: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:58:14: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:58:14: Debug: Adding duplicate image handler for 'TGA file'
+11:58:14: Debug: Adding duplicate image handler for 'XPM file'
+heal_nets done: 8 groups connected in 21s, output scratch/route182.kicad_pcb

@@ -1,0 +1,1 @@
+Unable to access the X Display, is $DISPLAY set properly?

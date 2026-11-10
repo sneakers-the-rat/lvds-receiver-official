@@ -1,0 +1,37 @@
+09:09:31: Debug: Adding duplicate image handler for 'PNG file'
+09:09:31: Debug: Adding duplicate image handler for 'JPEG file'
+09:09:31: Debug: Adding duplicate image handler for 'TIFF file'
+09:09:31: Debug: Adding duplicate image handler for 'GIF file'
+09:09:31: Debug: Adding duplicate image handler for 'PNM file'
+09:09:31: Debug: Adding duplicate image handler for 'PCX file'
+09:09:31: Debug: Adding duplicate image handler for 'IFF file'
+09:09:31: Debug: Adding duplicate image handler for 'Windows icon file'
+09:09:31: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:09:31: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:09:31: Debug: Adding duplicate image handler for 'TGA file'
+09:09:31: Debug: Adding duplicate image handler for 'XPM file'
++5V: 3 groups, main group 312 items
+  +5V: connected group of 72 items (138s, 1 vias)
+  +5V: group (1 items, ['U7.4']) STILL isolated (15s)
+CMP_QN: 2 groups, main group 63 items
+  CMP_QN: connected group of 35 items (41s, 1 vias)
+DAC_VREF: 2 groups, main group 11 items
+  DAC_VREF: group (2 items, ['C26.1', 'via@(43.125, 24.125)']) STILL isolated (1s)
+HV_DAC: 2 groups, main group 91 items
+  HV_DAC: connected group of 7 items (3s, 1 vias)
+HV_EN: 3 groups, main group 193 items
+  HV_EN: connected group of 39 items (52s, 1 vias)
+  HV_EN: group (1 items, ['U6.97']) STILL isolated (1s)
+09:13:50: Debug: Adding duplicate image handler for 'PNG file'
+09:13:50: Debug: Adding duplicate image handler for 'JPEG file'
+09:13:50: Debug: Adding duplicate image handler for 'TIFF file'
+09:13:50: Debug: Adding duplicate image handler for 'GIF file'
+09:13:50: Debug: Adding duplicate image handler for 'PNM file'
+09:13:50: Debug: Adding duplicate image handler for 'PCX file'
+09:13:50: Debug: Adding duplicate image handler for 'IFF file'
+09:13:50: Debug: Adding duplicate image handler for 'Windows icon file'
+09:13:50: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:13:50: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:13:50: Debug: Adding duplicate image handler for 'TGA file'
+09:13:50: Debug: Adding duplicate image handler for 'XPM file'
+heal_nets done: 4 groups connected in 260s, output scratch/slotwork-healed.kicad_pcb

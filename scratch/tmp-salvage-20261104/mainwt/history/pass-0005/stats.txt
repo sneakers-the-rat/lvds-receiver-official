@@ -1,0 +1,16 @@
+label: pass 5 — repair pass over pass 4 (repair attempt 4)
+timestamp (UTC): 2026-11-04T00:18:21Z
+commit: 162cc8762f15b8b432861d5dcaf89ba4ce13a7c0
+commit (short): 162cc87
+board file: hw/pdlvds_rx.repaired.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+render layers: top: F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS; bottom: B.Cu,In2.Cu,In1.Cu,F.Cu,B.SilkS
+layer renders: F.Cu=layer-FCu.svg (#FF3B30), In1.Cu=layer-In1Cu.svg (#FF9500), In2.Cu=layer-In2Cu.svg (#34C759), B.Cu=layer-BCu.svg (#0A84FF)
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 445
+unconnected nets: 95
+audit verdict: FAIL
+note: Renders backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.
+note: Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.

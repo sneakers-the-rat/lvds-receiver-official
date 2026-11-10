@@ -1,0 +1,6 @@
+#!/bin/sh
+# Keep the token metrics in sync on commits in the designated merge
+# clone. The work (and its opt-in gate) lives in metrics/sync_metrics.sh;
+# in every other clone this returns instantly. Never blocks a commit.
+[ -f metrics/sync_metrics.sh ] && sh metrics/sync_metrics.sh || true
+exit 0

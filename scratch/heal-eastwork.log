@@ -1,0 +1,29 @@
+09:35:18: Debug: Adding duplicate image handler for 'PNG file'
+09:35:18: Debug: Adding duplicate image handler for 'JPEG file'
+09:35:18: Debug: Adding duplicate image handler for 'TIFF file'
+09:35:18: Debug: Adding duplicate image handler for 'GIF file'
+09:35:18: Debug: Adding duplicate image handler for 'PNM file'
+09:35:18: Debug: Adding duplicate image handler for 'PCX file'
+09:35:18: Debug: Adding duplicate image handler for 'IFF file'
+09:35:18: Debug: Adding duplicate image handler for 'Windows icon file'
+09:35:18: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:35:18: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:35:18: Debug: Adding duplicate image handler for 'TGA file'
+09:35:18: Debug: Adding duplicate image handler for 'XPM file'
++3V3D: 2 groups, main group 943 items
+  +3V3D: connected group of 34 items (28s, 4 vias)
+CDR_CLKP: 2 groups, main group 238 items
+  CDR_CLKP: connected group of 9 items (2s, 0 vias)
+09:35:51: Debug: Adding duplicate image handler for 'PNG file'
+09:35:51: Debug: Adding duplicate image handler for 'JPEG file'
+09:35:51: Debug: Adding duplicate image handler for 'TIFF file'
+09:35:51: Debug: Adding duplicate image handler for 'GIF file'
+09:35:51: Debug: Adding duplicate image handler for 'PNM file'
+09:35:51: Debug: Adding duplicate image handler for 'PCX file'
+09:35:51: Debug: Adding duplicate image handler for 'IFF file'
+09:35:51: Debug: Adding duplicate image handler for 'Windows icon file'
+09:35:51: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:35:51: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:35:51: Debug: Adding duplicate image handler for 'TGA file'
+09:35:51: Debug: Adding duplicate image handler for 'XPM file'
+heal_nets done: 2 groups connected in 36s, output scratch/eastwork-healed.kicad_pcb

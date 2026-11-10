@@ -1,0 +1,74 @@
+11:43:32: Debug: Adding duplicate image handler for 'PNG file'
+11:43:32: Debug: Adding duplicate image handler for 'JPEG file'
+11:43:32: Debug: Adding duplicate image handler for 'TIFF file'
+11:43:32: Debug: Adding duplicate image handler for 'GIF file'
+11:43:32: Debug: Adding duplicate image handler for 'PNM file'
+11:43:32: Debug: Adding duplicate image handler for 'PCX file'
+11:43:32: Debug: Adding duplicate image handler for 'IFF file'
+11:43:32: Debug: Adding duplicate image handler for 'Windows icon file'
+11:43:32: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:43:32: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:43:32: Debug: Adding duplicate image handler for 'TGA file'
+11:43:32: Debug: Adding duplicate image handler for 'XPM file'
+ULPI_D2: 2 groups, main group 1 items
+  ULPI_D2: group (1 items, ['U7.22']) STILL isolated (116s)
+ULPI_D3: 2 groups, main group 1 items
+  ULPI_D3: group (1 items, ['U7.21']) STILL isolated (127s)
+ULPI_D5: 2 groups, main group 1 items
+  ULPI_D5: connected group of 1 items (4s, 0 vias)
+ULPI_DIR: 2 groups, main group 2 items
+  ULPI_DIR: group (1 items, ['U6.28']) STILL isolated (160s)
+ULPI_NXT: 2 groups, main group 2 items
+  ULPI_NXT: group (1 items, ['U6.29']) STILL isolated (125s)
+ULPI_STP: 2 groups, main group 2 items
+  ULPI_STP: connected group of 1 items (11s, 6 vias)
+ULPI_D0: 2 groups, main group 13 items
+  ULPI_D0: connected group of 1 items (0s, 0 vias)
+ULPI_D1: 2 groups, main group 7 items
+  ULPI_D1: connected group of 1 items (0s, 0 vias)
+ULPI_D4: 2 groups, main group 16 items
+  ULPI_D4: connected group of 1 items (1s, 1 vias)
+ULPI_D6: 2 groups, main group 33 items
+  ULPI_D6: connected group of 1 items (1s, 1 vias)
+ULPI_D7: 2 groups, main group 7 items
+  ULPI_D7: connected group of 1 items (1s, 1 vias)
+ULPI_CK: 3 groups, main group 6 items
+  ULPI_CK: group (1 items, ['U7.14']) STILL isolated (0s)
+  ULPI_CK: connected group of 1 items (1s, 1 vias)
+CDR_SQUELCH: 2 groups, main group 40 items
+  CDR_SQUELCH: connected group of 18 items (5s, 2 vias)
+NRST: 2 groups, main group 126 items
+  NRST: connected group of 1 items (1s, 0 vias)
+11:52:46: Debug: Adding duplicate image handler for 'PNG file'
+11:52:46: Debug: Adding duplicate image handler for 'JPEG file'
+11:52:46: Debug: Adding duplicate image handler for 'TIFF file'
+11:52:46: Debug: Adding duplicate image handler for 'GIF file'
+11:52:46: Debug: Adding duplicate image handler for 'PNM file'
+11:52:46: Debug: Adding duplicate image handler for 'PCX file'
+11:52:46: Debug: Adding duplicate image handler for 'IFF file'
+11:52:46: Debug: Adding duplicate image handler for 'Windows icon file'
+11:52:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:52:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:52:46: Debug: Adding duplicate image handler for 'TGA file'
+11:52:46: Debug: Adding duplicate image handler for 'XPM file'
+  checkpoint: 10 groups, saved
+PHY_1V8: 3 groups, main group 8 items
+  PHY_1V8: group (1 items, ['U7.15']) STILL isolated (1s)
+  PHY_1V8: group (1 items, ['U7.26']) STILL isolated (1s)
++3V3D: 4 groups, main group 232 items
+  +3V3D: connected group of 90 items (14s, 2 vias)
+  +3V3D: group (1 items, ['C48.1']) STILL isolated (7s)
+  +3V3D: group (1 items, ['U11.14']) STILL isolated (8s)
+11:53:19: Debug: Adding duplicate image handler for 'PNG file'
+11:53:19: Debug: Adding duplicate image handler for 'JPEG file'
+11:53:19: Debug: Adding duplicate image handler for 'TIFF file'
+11:53:19: Debug: Adding duplicate image handler for 'GIF file'
+11:53:19: Debug: Adding duplicate image handler for 'PNM file'
+11:53:19: Debug: Adding duplicate image handler for 'PCX file'
+11:53:19: Debug: Adding duplicate image handler for 'IFF file'
+11:53:19: Debug: Adding duplicate image handler for 'Windows icon file'
+11:53:19: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:53:19: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:53:19: Debug: Adding duplicate image handler for 'TGA file'
+11:53:19: Debug: Adding duplicate image handler for 'XPM file'
+heal_nets done: 11 groups connected in 588s, output scratch/route181.kicad_pcb

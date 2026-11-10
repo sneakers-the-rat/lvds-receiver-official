@@ -1,0 +1,15 @@
+\n## 2026-11-05T17:39:45-08:00 MH2 retry from exp140
+-- attempt 1
+MH2: pairs before: ['U6']; pad-net groups before: {}
+move: (96.50,3.50) -> +(0.00,6.50)
+re-laid segments: 0; owed nets: []
+pad-net groups after: {}
+MH2: pairs after: []
+saved hw/pdlvds_rx.exp141.kicad_pcb
+exp141 exists
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.

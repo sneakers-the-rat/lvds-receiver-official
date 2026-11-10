@@ -1,0 +1,12 @@
+TEST_IN: 2 groups, main group 1 items
+  TEST_IN: connected group of 1 items (1s, 0 vias)
++5V: 3 groups, main group 357 items
+  +5V: group (1 items, ['R25.1']) STILL isolated (11s)
+  +5V: group (1 items, ['U7.4']) STILL isolated (11s)
+LED_PWR_K: 2 groups, main group 1 items
+  LED_PWR_K: group (1 items, ['R44.1']) STILL isolated (0s)
+LED_STAT: 2 groups, main group 36 items
+  LED_STAT: connected group of 1 items (1s, 0 vias)
+LED_STAT_A: 2 groups, main group 30 items
+  LED_STAT_A: group (1 items, ['D7.2']) STILL isolated (0s)
+heal_nets done: 2 groups connected in 32s, output hw/pdlvds_rx.exp144.kicad_pcb

@@ -1,0 +1,47 @@
+TOTAL star (nets with <=40 pads): 5131 mm over 120 multi-part nets
+
+Top nets by star length:
+net                           pads     star    span
+GND                            132     4777   124.9
++3V3D                           40     1030    92.1
++5V                             27      855   117.3
++3V3A                           13      276    85.1
+APD_K                            8      167    58.0
+HV_SHDN                          5      138    71.1
++VA                             10      114    36.8
+PG_3V3                           3      113    86.7
+I2C_SDA                          4       96    60.0
+NEG_RAW                         12       80    25.9
+I2C_SCL                          4       80    60.6
+NRST                             4       73    40.3
+DM_PHY                           2       68    68.4
+DP_PHY                           2       67    67.3
+-VA                              4       62    32.2
+HV_RAW                           4       57    39.2
+APD_A                            9       55    19.9
+CDR_LOS                          2       47    47.2
+
+Top parts by MEAN distance to nearest partner pad:
+part        mean     max  pads
+J5          31.2    37.0     2
+D3          25.3    68.4     6
+D8          24.7    44.4     2
+R10         23.7    29.0     2
+R17         22.6    40.7     2
+J4          20.1    41.5     8
+D9          18.7    34.2     2
+U6          18.1    81.5    62
+R33         18.0    27.0     2
+T1          17.3    26.2     4
+D7          17.1    24.8     2
+U8          16.9    30.9    10
+C17         16.7    31.7     2
+U7          16.2    68.4    32
+RJ1         15.7    19.3     2
+J2          15.7    20.0     6
+C49         15.5    28.4     2
+U5          15.4    43.0    14
+RJ2         14.7    16.2     2
+C9          14.1    15.1     2
+
+Pads whose nearest partner is >40 mm away: 20

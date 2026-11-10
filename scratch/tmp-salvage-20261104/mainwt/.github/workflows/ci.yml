@@ -1,0 +1,472 @@
+name: ci
+# Main only (2026-11-04, owner directive): this project does not use
+# pull requests — work lands by direct merge to main. The old
+# push(any branch) + pull_request triggers ran the whole suite on
+# every worker-branch push and then again on the merge: every job
+# twice, pointlessly. Branch pushes now run nothing; manual runs
+# remain available via workflow_dispatch.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Least privilege by default; only the deploy-pages job below holds
+# the Pages permissions, scoped to that job alone.
+permissions:
+  contents: read
+
+# One run per ref at a time. Rapid successive pushes used to queue
+# duplicate runs behind each other, each paying the full multi-minute
+# KiCad install; now a new push cancels the stale run on the same ref.
+# (On 2026-11-03 the main and routing-history runs also installed
+# KiCad CONCURRENTLY from the same Launchpad mirror and both crawled
+# for 7+ minutes — per-ref groups don't prevent that cross-branch
+# case, but they stop the self-inflicted same-ref pile-ups.)
+# Exception (2026-11-04, apt-cache round 2): the DEFAULT branch is
+# never cancelled mid-flight. Step timings showed main runs
+# 41814248099 and 41815056150 cancelled while the sim job's install
+# step was mid-crawl (456 s and 309 s in) — in the Actions UI a
+# cancelled run looks exactly like a 5-10 minute install, and the
+# work is thrown away either way. With cancel-in-progress off for
+# main, a new push queues as the group's one pending run (a third
+# push supersedes the pending one, never the running one), so the
+# in-flight run finishes and lands its site/status. 'main' is this
+# repo's default branch (verified via the API). Feature branches
+# and PRs keep cancel-in-progress: their stale runs are worthless.
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+
+# Site/deploy decoupling (why the run can be red AND the site live):
+# the two validation jobs are the honest signal — they fail whenever
+# their checks fail, no continue-on-error anywhere near a check.
+# But the project site must exist to make those failures legible, so
+# build-site runs whenever the run was not cancelled, downloads every
+# artefact tolerantly (a missing artefact means "that section shows
+# as not available yet", never a failed site build), and deploy-pages
+# publishes whenever build-site succeeded and the owner enabled it.
+# Each validation job also records a small status JSON (its ci step
+# outcome) that build-site merges into the site's build-status panel.
+
+jobs:
+  # Why two validation jobs instead of one: the KiCad 8 PPA ships
+  # libngspice-kicad, whose codemodel files collide with Ubuntu's
+  # standalone `ngspice` package (both provide
+  # /usr/lib/x86_64-linux-gnu/ngspice/*.cm, with no Conflicts/Replaces
+  # declared). Installing both in one apt transaction fails in dpkg —
+  # that is exactly what killed run 41710107325 at the install step.
+  # So: the KiCad job never installs the standalone ngspice package,
+  # and the simulation job never installs KiCad. scripts/ci.sh selects
+  # steps via CI_STEPS; a local run without CI_STEPS does everything.
+  # DRC signal design (2026-11-03 — see docs/00-status.md, "CI
+  # signal fix"): ERC below is a HARD GATE and always has been —
+  # but since round 2 its verdict is parsed from the ERC report by
+  # scripts/erc_gate.py (FAIL iff Errors > 0; missing/unparseable
+  # report is a tool-health failure), NOT taken from kicad-cli's
+  # exit code: --exit-code-violations fires on warnings too and
+  # failed run 41750532660's ERC step over a 0-error report. DRC
+  # is split into its own step because the board is mid-routing: its
+  # raw counts are board state, not pass/fail. That step hard-fails
+  # only when (a) the DRC tool or its report is broken (kicad-cli
+  # won't run, board missing, report missing/empty/unparseable,
+  # implausible zero census while unfinished), or (b) the counts
+  # REGRESS above ci/drc-baseline.json. At/below baseline it passes
+  # and reports the counts as board state — never as "DRC passed".
+  # End state: when routing completes, set the baseline to 0/0 and
+  # this same step is a hard zero-tolerance DRC gate again — the
+  # baseline file is the only change needed.
+  kicad-validate:
+    runs-on: ubuntu-22.04
+    # Healthy total runtime for this job is ~1.5 minutes (step
+    # timings, 2026-11-04: 51-120 s across the day's runs), most of
+    # it the KiCad install below. A sick Launchpad mirror turned that
+    # install into a 7+ minute silent crawl on 2026-11-03 (twice,
+    # concurrently); 25 minutes is generous headroom that still fails
+    # a truly stuck job fast instead of eating a runner for an hour.
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      # .deb cache for the install step below. apt reuses a
+      # version-exact .deb already sitting in /var/cache/apt/archives
+      # instead of re-downloading it, so on a cache hit the slow PPA
+      # mirror is barely touched. A cache miss behaves exactly like
+      # the pre-cache workflow.
+      # Rolling key (2026-11-04, apt-cache round 2): cache entries
+      # are IMMUTABLE — a save under an already-used key is refused.
+      # The old key (hash of this file) therefore froze the cached
+      # set at whatever the first run under that hash downloaded: a
+      # PPA point release afterwards meant every run restored the
+      # stale .debs, re-downloaded the changed ones, and could never
+      # save the fresh set. Now the primary key carries the run id —
+      # unique per run, so the save below always lands — and
+      # restore-keys fetches the NEWEST entry under the prefix,
+      # i.e. the previous run's set. A changed package list or a PPA
+      # bump self-heals on the next run instead of freezing. The
+      # restore/save pair replaces the combined actions/cache action,
+      # whose post-step auto-save duplicated the explicit save step
+      # (visible as the extra "Post Restore cached .deb packages"
+      # step in run logs).
+      - name: Restore cached .deb packages
+        id: apt-cache
+        uses: actions/cache/restore@v4
+        with:
+          path: /var/cache/apt/archives
+          key: apt-kicad8-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            apt-kicad8-${{ runner.os }}-
+
+      # Makes the restore legible from the job page: on a working
+      # hit the matched key names the previous run that saved the
+      # set, and this step + the save below take real seconds
+      # (measured 0-1 s for this job's small set). An empty matched
+      # key means the install below is paying full mirror price.
+      - name: Report .deb cache restore
+        run: |
+          echo "cache primary key: ${{ steps.apt-cache.outputs.cache-primary-key }}"
+          echo "cache matched key: ${{ steps.apt-cache.outputs.cache-matched-key }}"
+
+      # Slim install — the evidence (PPA package index, 2026-11-03):
+      # the only kicad-cli subcommands this pipeline ever invokes are
+      # `sch erc`, `pcb drc`, `sch export netlist` (scripts/ci.sh step
+      # 10) and `pcb export gerbers|drill|pos|svg|pdf`
+      # (scripts/make_fab.sh). Every one of them reads the schematic's
+      # EMBEDDED symbols and the board's EMBEDDED footprints, so the
+      # stock symbol/footprint libraries are never opened. But apt's
+      # default Recommends chain pulls them anyway — and worse:
+      # `kicad` recommends kicad-libraries + kicad-doc-en +
+      # kicad-demos, and kicad-libraries in turn recommends
+      # kicad-packages3d, a 378 MB .deb (4.8 GB installed) of 3D
+      # models that no invoked command can use, plus kicad-footprints
+      # (22 MB) and kicad-symbols (2.6 MB). Installing `kicad` alone
+      # with --no-install-recommends cuts the PPA download from
+      # ~440 MB to the 35.7 MB kicad package plus its hard Depends
+      # (shared libraries only). xvfb stays: it is small, comes from
+      # the fast Ubuntu archive, and kicad-cli's wx initialisation
+      # has historically wanted a display for some export paths —
+      # removing it risks a new failure class for no real gain.
+      # The update+install is retried once: when the Launchpad mirror
+      # crawls, a second attempt inside the same step is cheaper than
+      # a red job and a manual re-run.
+      - name: Install KiCad 8 (native ERC/DRC) — no standalone ngspice
+        run: |
+          # GitHub's ubuntu images ship a docker-clean apt config
+          # that deletes downloaded .debs after every transaction;
+          # remove it so the cache save below has something to save
+          # (and so the retry reuses what attempt 1 downloaded).
+          sudo rm -f /etc/apt/apt.conf.d/docker-clean
+          sudo add-apt-repository -y ppa:kicad/kicad-8.0-releases
+          for attempt in 1 2; do
+            if sudo apt-get update && sudo apt-get install -y --no-install-recommends kicad xvfb; then
+              break
+            fi
+            if [ "$attempt" = 2 ]; then
+              echo "apt failed on both attempts" >&2
+              exit 1
+            fi
+            echo "apt attempt $attempt failed — retrying in 20 s" >&2
+            sleep 20
+          done
+
+      - name: Save .deb packages to cache
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: /var/cache/apt/archives
+          key: ${{ steps.apt-cache.outputs.cache-primary-key }}
+
+      - name: KiCad ERC — hard gate on the parsed report (scripts/ci.sh step 10)
+        id: erc
+        run: CI_STEPS=10 bash scripts/ci.sh
+
+      # Runs even when ERC failed: the DRC counts are evidence the
+      # site and the next diagnosis need, whatever ERC said. The
+      # step itself still fails on DRC tool-health breakage or a
+      # regression above ci/drc-baseline.json (see job comment).
+      - name: KiCad DRC — tool health + baseline ratchet (scripts/ci.sh step 11)
+        id: drc
+        if: ${{ !cancelled() }}
+        run: CI_STEPS=11 bash scripts/ci.sh
+
+      # Fab export runs even when ERC/DRC failed: the site should show
+      # the board as it currently is, not hide it behind a red check.
+      - name: Fabricate outputs (Gerbers, drill, BOM, CPL, renders)
+        id: fab
+        if: ${{ !cancelled() }}
+        run: bash scripts/make_fab.sh
+
+      - name: Upload fabrication outputs for the site job
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: fab-outputs
+          path: hw/fab/
+
+      # ci_outcome is the combined validation outcome (failure if
+      # either the ERC or the DRC step failed); the DRC board-state
+      # fields are merged in from results/drc-status.json, written
+      # by scripts/drc_gate.py in step 11, so the site panel can
+      # show the counts as board state next to the baseline.
+      - name: Record job status for the site build-status panel
+        if: always()
+        env:
+          ERC_OUTCOME: ${{ steps.erc.outcome }}
+          DRC_OUTCOME: ${{ steps.drc.outcome }}
+          FAB_OUTCOME: ${{ steps.fab.outcome }}
+          RUN_SHA: ${{ github.sha }}
+          RUN_ID: ${{ github.run_id }}
+        run: |
+          mkdir -p status
+          python3 - <<'PYEOF'
+          import json, os
+          erc = os.environ.get("ERC_OUTCOME", "")
+          drc = os.environ.get("DRC_OUTCOME", "")
+          status = {
+              "job": "kicad-validate",
+              "ci_outcome": "failure" if "failure" in (erc, drc) else erc,
+              "erc_outcome": erc,
+              "drc_outcome": drc,
+              "fab_outcome": os.environ.get("FAB_OUTCOME", ""),
+              "sha": os.environ.get("RUN_SHA", ""),
+              "run_id": os.environ.get("RUN_ID", ""),
+          }
+          try:
+              with open("results/drc-status.json") as f:
+                  gate = json.load(f)
+              for key in ("violations", "unconnected",
+                          "baseline_violations", "baseline_unconnected",
+                          "tool_health", "regression", "verdict",
+                          "board_state"):
+                  if key in gate:
+                      status["drc_" + key] = gate[key]
+          except FileNotFoundError:
+              pass
+          with open("status/kicad-validate.json", "w") as f:
+              json.dump(status, f)
+              f.write("\n")
+          print(json.dumps(status, indent=2))
+          PYEOF
+
+      - name: Upload job status
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: status-kicad
+          path: status/
+
+      # Evidence on failure: ERC/DRC reports must survive a red run,
+      # otherwise the next failure is as invisible as run 41714928437's
+      # TIA failure was.
+      - name: Upload reports as evidence (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-kicad
+          path: results/
+
+  sim-and-firmware:
+    runs-on: ubuntu-22.04
+    # The install step below is this job's only long pole; 25
+    # minutes (mirroring kicad-validate) caps a truly hung apt
+    # instead of letting it eat the 360-minute default.
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+
+      # .deb cache (2026-11-04, apt-cache round 2). This job's
+      # install turned out to be the workflow's real multi-minute
+      # step — NOT the KiCad install. Step timings across
+      # 2026-11-04's runs are bimodal: 47-73 s on a healthy mirror,
+      # but 429 s (run 41752803331), 479 s (41787142236), 371 s
+      # (41787138138), and 456 s / 309 s in runs 41814248099 /
+      # 41815056150, which were still crawling when cancelled. The
+      # set is big (gcc-arm-none-eabi + newlib + scipy = several
+      # hundred MB) and comes from the Ubuntu archive; when that
+      # mirror trickles at ~1.5 MB/s the step eats 5-8 minutes and
+      # no retry loop helps — attempt 1 eventually SUCCEEDS, just
+      # slowly. With the .debs restored from cache, apt downloads
+      # ~nothing on a hit and mirror health barely matters. Same
+      # rolling-key scheme as the KiCad job (immutable entries;
+      # run-id primary key so the save always lands; restore-keys
+      # fetches the newest set). Separate key namespace: the two
+      # jobs' package sets barely overlap.
+      - name: Restore cached .deb packages (sim)
+        id: apt-cache-sim
+        uses: actions/cache/restore@v4
+        with:
+          path: /var/cache/apt/archives
+          key: apt-sim-${{ runner.os }}-${{ github.run_id }}
+          restore-keys: |
+            apt-sim-${{ runner.os }}-
+
+      - name: Report .deb cache restore (sim)
+        run: |
+          echo "cache primary key: ${{ steps.apt-cache-sim.outputs.cache-primary-key }}"
+          echo "cache matched key: ${{ steps.apt-cache-sim.outputs.cache-matched-key }}"
+
+      - name: Install simulation toolchain — ngspice, no KiCad
+        run: |
+          # Same docker-clean removal as the KiCad job, and here it
+          # is load-bearing for the cache: GitHub's ubuntu images
+          # ship an apt config that deletes downloaded .debs after
+          # every transaction — without removing it, the archives
+          # directory is empty again by the time the save step runs
+          # and the cache would save nothing, forever.
+          sudo rm -f /etc/apt/apt.conf.d/docker-clean
+          # Same one-retry guard as the KiCad job: a transient mirror
+          # hiccup should retry inside the step instead of reddening
+          # the whole job.
+          for attempt in 1 2; do
+            if sudo apt-get update && sudo apt-get install -y ngspice gcc-arm-none-eabi \
+              python3-numpy python3-scipy python3-matplotlib; then
+              break
+            fi
+            if [ "$attempt" = 2 ]; then
+              echo "apt failed on both attempts" >&2
+              exit 1
+            fi
+            echo "apt attempt $attempt failed — retrying in 20 s" >&2
+            sleep 20
+          done
+
+      - name: Save .deb packages to cache (sim)
+        if: success()
+        uses: actions/cache/save@v4
+        with:
+          path: /var/cache/apt/archives
+          key: ${{ steps.apt-cache-sim.outputs.cache-primary-key }}
+
+      - name: Simulations, codec, firmware, host tool (ci.sh steps 1-9)
+        id: ci
+        run: CI_STEPS=1,2,3,4,5,6,7,8,9 bash scripts/ci.sh
+
+      # Uploaded even on failure so the site can show the partial
+      # results of a red run instead of nothing at all.
+      - name: Upload simulation results for the site job
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: sim-results
+          path: results/
+
+      - name: Record job status for the site build-status panel
+        if: always()
+        run: |
+          mkdir -p status
+          printf '{"job": "sim-and-firmware", "ci_outcome": "%s", "sha": "%s", "run_id": "%s"}\n' \
+            '${{ steps.ci.outcome }}' '${{ github.sha }}' \
+            '${{ github.run_id }}' > status/sim-and-firmware.json
+          cat status/sim-and-firmware.json
+
+      - name: Upload job status
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: status-sim
+          path: status/
+
+      - name: Upload reports as evidence (always)
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: evidence-sim
+          path: results/
+
+  build-site:
+    needs: [kicad-validate, sim-and-firmware]
+    # Runs whenever the run was not cancelled — in particular it runs
+    # when a validation job FAILED. The site is Jekyll (website/);
+    # its data step, scripts/site_data.py, tolerates every missing
+    # input (the tolerant downloads below plus its own
+    # "not available yet" placeholders), so a red validation run
+    # still produces a complete, honest site.
+    if: ${{ !cancelled() }}
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fetch fabrication outputs (tolerant)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: fab-outputs
+          path: hw/fab
+
+      - name: Fetch simulation results (tolerant)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: sim-results
+          path: results
+
+      - name: Fetch KiCad job status (tolerant)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: status-kicad
+          path: .site-status/kicad
+
+      - name: Fetch simulation job status (tolerant)
+        continue-on-error: true
+        uses: actions/download-artifact@v4
+        with:
+          name: status-sim
+          path: .site-status/sim
+
+      - name: Install site build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y python3-numpy python3-matplotlib
+
+      # Jekyll builds the site skeleton (layouts, the sidebar TOC,
+      # the passes collection); scripts/site_data.py runs first and
+      # stages _data/*.json + assets from the artefacts above. Ruby
+      # version matches the local development setup; bundler-cache
+      # installs website/Gemfile.lock's gems.
+      - name: Set up Ruby for Jekyll
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "3.2"
+          bundler-cache: true
+          working-directory: website
+
+      - name: Stage site data (scripts/site_data.py)
+        run: python3 scripts/site_data.py
+
+      - name: Build the static project site (Jekyll)
+        working-directory: website
+        run: bundle exec jekyll build
+
+      - name: Upload site as workflow artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: project-site
+          path: site/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/
+
+  deploy-pages:
+    needs: build-site
+    # Guarded: only runs when the repository owner enables it by
+    # setting the repository variable ENABLE_PAGES_DEPLOY=true, so a
+    # missing Pages setup never fails CI. (Pages itself is enabled on
+    # this repo with build_type=workflow; this job deploys the site/
+    # built by the build-site job.) It deliberately does NOT require
+    # the validation jobs to have passed: the site carries the
+    # build-status panel that says what failed, which is the point of
+    # publishing it.
+    if: ${{ !cancelled() && vars.ENABLE_PAGES_DEPLOY == 'true' }}
+    runs-on: ubuntu-22.04
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,38 @@
+09:52:11: Debug: Adding duplicate image handler for 'PNG file'
+09:52:11: Debug: Adding duplicate image handler for 'JPEG file'
+09:52:11: Debug: Adding duplicate image handler for 'TIFF file'
+09:52:11: Debug: Adding duplicate image handler for 'GIF file'
+09:52:11: Debug: Adding duplicate image handler for 'PNM file'
+09:52:11: Debug: Adding duplicate image handler for 'PCX file'
+09:52:11: Debug: Adding duplicate image handler for 'IFF file'
+09:52:11: Debug: Adding duplicate image handler for 'Windows icon file'
+09:52:11: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:52:11: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:52:11: Debug: Adding duplicate image handler for 'TGA file'
+09:52:11: Debug: Adding duplicate image handler for 'XPM file'
+start star: 5131 mm
+  anchor X1 -> (83,22) REJECTED {'C21', 'C24', 'R45', 'C20'}
+  anchor D6 -> (91,3) REJECTED {'U6'}
+  anchor D7 -> (91,9) REJECTED {'X1', 'D6'}
+  anchor R44 -> (91,12.5) REJECTED {'X1'}
+  anchor R45 -> (85,15) REJECTED {'X1', 'C21'}
+  anchor U5 -> (84,22) REJECTED {'X1', 'R45', 'C21', 'C20', 'C24'}
+  anchor R13 -> (75,30) ok
+  anchor R14 -> (75,36) REJECTED {'C14'}
+  anchor U11 -> (64,64) REJECTED {'C46'}
+  anchor L1 -> (77,64) REJECTED {'U11'}
+  anchor R17 -> (70,21) ok
+  anchor U13 -> (24,50) REJECTED {'U12', 'R6', 'R39', 'C39'}
+  anchor R10 -> (52,32) ok
+  anchor C19 -> (94,-10) REJECTED {'U6'}
+  anchor R15 -> (96,-16) ok
+  anchor TP3 -> (90,-27) ok
+  anchor C8 -> (52,38) REJECTED {'J3'}
+after anchors star: 5123
+round 0 (frac 0.65): moved 19, star 4806
+round 1 (frac 0.65): moved 15, star 4567
+round 2 (frac 0.4): moved 39, star 4397
+round 3 (frac 0.4): moved 8, star 4383
+round 4 (frac 1.0): moved 13, star 4265
+round 5 (frac 0.25): moved 28, star 4193
+saved scratch/exp179-work.kicad_pcb

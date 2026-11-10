@@ -1,0 +1,67 @@
+09:51:19: Debug: Adding duplicate image handler for 'PNG file'
+09:51:19: Debug: Adding duplicate image handler for 'JPEG file'
+09:51:19: Debug: Adding duplicate image handler for 'TIFF file'
+09:51:19: Debug: Adding duplicate image handler for 'GIF file'
+09:51:19: Debug: Adding duplicate image handler for 'PNM file'
+09:51:19: Debug: Adding duplicate image handler for 'PCX file'
+09:51:19: Debug: Adding duplicate image handler for 'IFF file'
+09:51:19: Debug: Adding duplicate image handler for 'Windows icon file'
+09:51:19: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:51:19: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:51:19: Debug: Adding duplicate image handler for 'TGA file'
+09:51:19: Debug: Adding duplicate image handler for 'XPM file'
+baseline gated courtyard pairs: 0
+baseline star total: 6142 mm
+  anchor U4 -> (66,43) ok
+  anchor C12 -> (60,50) ok
+  anchor C13 -> (60,36) ok
+  anchor C14 -> (73,36) ok
+  anchor C15 -> (73,50) ok
+  anchor R12 -> (59,43) ok
+  anchor X2 -> (66,33) ok
+  anchor FB1 -> (54,43) ok
+  anchor C50 -> (56,50) ok
+  anchor C51 -> (56,37) ok
+  anchor R13 -> (74,40) ok
+  anchor R14 -> (74,47) ok
+  anchor U5 -> (81,43.5) ok
+  anchor C8 -> (50,40.5) REJECTED pairs={'J3'} ok=True
+  anchor C9 -> (50,45.5) ok
+  anchor J5 -> (48,-20) ok
+  anchor U8 -> (62,16) ok
+  anchor C26 -> (56,20) ok
+  anchor C27 -> (56,12) ok
+  anchor R33 -> (42,-4) ok
+  anchor U9 -> (68,-18) ok
+  anchor R20 -> (69,-12) REJECTED pairs={'U6'} ok=True
+  anchor R21 -> (69,-9) REJECTED pairs={'U6'} ok=True
+  anchor R22 -> (64,-14) ok
+  anchor U11 -> (74,64) ok
+  anchor L1 -> (86,64) ok
+  anchor R35 -> (67,59) ok
+  anchor R36 -> (63,59) REJECTED pairs={'R43'} ok=True
+  anchor C36 -> (68,69) ok
+  anchor R37 -> (63,69) ok
+  anchor C28 -> (70,57) ok
+  anchor U13 -> (30,57) REJECTED pairs={'D2'} ok=True
+  anchor J4 -> (93,26) ok
+  anchor R17 -> (70,21) REJECTED pairs={'C22'} ok=True
+  anchor C22 -> (66,24) ok
+  anchor C23 -> (63,21) ok
+  anchor C19 -> (95,-13) REJECTED pairs={'U6', 'C49'} ok=True
+  anchor R15 -> (95,-17) REJECTED pairs={'TP3', 'R16'} ok=True
+  anchor R16 -> (95,-21) ok
+  anchor TP3 -> (92,-25) REJECTED pairs={'R17'} ok=True
+  anchor D6 -> (90,4) REJECTED pairs={'U6'} ok=True
+  anchor D7 -> (90,10) REJECTED pairs={'X1'} ok=True
+  anchor R44 -> (90,13.5) REJECTED pairs={'D7', 'X1'} ok=True
+  anchor R45 -> (84,16) REJECTED pairs={'X1'} ok=True
+  anchor C47 -> (66,-2) ok
+  anchor C49 -> (88,-12) REJECTED pairs={'U6'} ok=True
+after anchors star: 5617 mm, gated pairs 0
+round 0: moved 26, star 5289 mm, gated pairs 0
+round 1: moved 11, star 5131 mm, gated pairs 0
+round 2: moved 0, star 5131 mm, gated pairs 0
+round 3: moved 0, star 5131 mm, gated pairs 0
+round 4: moved 0, star 5131 mm, gated pairs 0
+saved scratch/exp179-work.kicad_pcb

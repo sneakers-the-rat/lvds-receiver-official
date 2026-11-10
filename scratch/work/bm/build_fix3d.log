@@ -1,0 +1,75 @@
+17:40:10: Debug: Adding duplicate image handler for 'PNG file'
+17:40:10: Debug: Adding duplicate image handler for 'JPEG file'
+17:40:10: Debug: Adding duplicate image handler for 'TIFF file'
+17:40:10: Debug: Adding duplicate image handler for 'GIF file'
+17:40:10: Debug: Adding duplicate image handler for 'PNM file'
+17:40:10: Debug: Adding duplicate image handler for 'PCX file'
+17:40:10: Debug: Adding duplicate image handler for 'IFF file'
+17:40:10: Debug: Adding duplicate image handler for 'Windows icon file'
+17:40:10: Debug: Adding duplicate image handler for 'Windows cursor file'
+17:40:10: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+17:40:10: Debug: Adding duplicate image handler for 'TGA file'
+17:40:10: Debug: Adding duplicate image handler for 'XPM file'
+ULPI_D0 F.Cu (79.19, 12.25)->(79.5, 11.92): negatives=0 worst=[(0.05, 'pad ULPI_D1 rect(78.75, 12.625, 79.625, 12.875)'), (0.075, 'trk ULPI_D1 (79.1875, 12.75)->(79.4375, 12.75)')]
+ULPI_D0 F.Cu (79.5, 11.92)->(79.44, 11.4): negatives=0 worst=[(0.036, 'via +3V3A@(78.8, 11.62)'), (0.186, 'trk +3V3A (78.5, 11.562)->(78.8, 11.62)')]
+ULPI_D0 F.Cu (79.44, 11.4)->(79.24, 10.93): negatives=0 worst=[(0.05, 'via +3V3A@(78.8, 11.62)'), (0.165, 'trk ULPI_D1 (79.35, 10.35)->(79.35, 7.55)')]
+ULPI_D0 F.Cu (79.24, 10.93)->(79.0, 10.72): negatives=0 worst=[(0.084, 'trk ULPI_D1 (79.35, 10.35)->(79.35, 7.55)'), (0.177, 'pad +3V3A rect(78.375, 11.125, 78.625, 12.0)')]
+ULPI_D1 F.Cu (79.44, 12.75)->(79.9, 12.62): negatives=0 worst=[(0.011, 'pad ULPI_D0 rect(78.75, 12.125, 79.625, 12.375)'), (0.075, 'pad ULPI_D2 rect(78.75, 13.125, 79.625, 13.375)')]
+ULPI_D1 F.Cu (79.9, 12.62)->(79.98, 12.3): negatives=0 worst=[(0.026, 'pad ULPI_D0 rect(78.75, 12.125, 79.625, 12.375)'), (0.045, 'pad NRST rect(80.325, 11.525, 81.225, 12.475)')]
+ULPI_D1 F.Cu (79.98, 12.3)->(79.95, 11.9): negatives=0 worst=[(0.041, 'pad ULPI_D0 rect(78.75, 12.125, 79.625, 12.375)'), (0.045, 'pad NRST rect(80.325, 11.525, 81.225, 12.475)')]
+ULPI_D1 F.Cu (79.95, 11.9)->(79.92, 11.5): negatives=0 worst=[(0.075, 'pad NRST rect(80.325, 11.525, 81.225, 12.475)'), (0.095, 'pad ULPI_D0 rect(78.75, 12.125, 79.625, 12.375)')]
+ULPI_D1 F.Cu (79.92, 11.5)->(79.78, 10.95): negatives=0 worst=[(0.106, 'pad NRST rect(80.325, 11.525, 81.225, 12.475)'), (0.173, 'trk NRST (80.775, 12.0)->(80.225, 10.5)')]
+ULPI_D1 F.Cu (79.78, 10.95)->(79.6, 10.62): negatives=0 worst=[(0.173, 'trk NRST (80.775, 12.0)->(80.225, 10.5)'), (0.181, 'trk NRST (80.225, 10.5)->(80.625, 9.875)')]
+ULPI_D1 F.Cu (79.6, 10.62)->(79.35, 10.35): negatives=0 worst=[(0.05, 'trk ULPI_D0 (78.875, 10.375)->(78.875, 10.125)'), (0.083, 'trk ULPI_D0 (79.0, 10.72)->(78.45, 10.35)')]
+ULPI_D2 F.Cu (79.44, 13.25)->(79.8, 13.13): negatives=1 worst=[(-0.003, 'pad ULPI_D1 rect(78.75, 12.625, 79.625, 12.875)'), (0.075, 'pad ULPI_D3 rect(78.75, 13.625, 79.625, 13.875)')]
+ULPI_D2 F.Cu (79.8, 13.13)->(80.42, 12.97): negatives=0 worst=[(0.009, 'pad ULPI_D1 rect(78.75, 12.625, 79.625, 12.875)'), (0.125, 'trk ULPI_D1 (79.1875, 12.75)->(79.4375, 12.75)')]
+ULPI_D2 In2.Cu (80.42, 12.97)->(80.15, 11.5): negatives=0 worst=[(0.356, 'trk I2C_SCL (79.15, 10.6)->(79.45, 11.1)'), (0.73, 'via +3V3A@(78.8, 11.62)')]
+ULPI_D2 In2.Cu (80.15, 11.5)->(80.12, 10.6): negatives=0 worst=[(0.236, 'trk I2C_SCL (79.15, 10.6)->(79.45, 11.1)'), (0.52, 'trk I2C_SCL (79.15, 10.6)->(79.15, 2.875)')]
+ULPI_D2 In2.Cu (80.12, 10.6)->(80.0, 8.3): negatives=0 worst=[(0.382, 'trk I2C_SCL (79.15, 10.6)->(79.45, 11.1)'), (0.4, 'trk I2C_SCL (79.15, 10.6)->(79.15, 2.875)')]
+ULPI_D3 F.Cu (79.19, 13.75)->(79.7, 13.78): negatives=0 worst=[(0.049, 'pad ULPI_D4 rect(78.75, 14.125, 79.625, 14.375)'), (0.075, 'pad ULPI_D2 rect(78.75, 13.125, 79.625, 13.375)')]
+ULPI_D3 F.Cu (79.7, 13.78)->(80.0, 13.78): negatives=0 worst=[(0.053, 'pad ULPI_D4 rect(78.75, 14.125, 79.625, 14.375)'), (0.112, 'pad ULPI_D2 rect(78.75, 13.125, 79.625, 13.375)')]
+ULPI_D3 In2.Cu (80.0, 13.78)->(80.7, 13.5): negatives=0 worst=[(0.322, 'via ULPI_D6@(81.0, 14.4)'), (0.36, 'trk I2C_SCL (79.45, 14.375)->(79.0, 14.85)')]
+ULPI_D3 In2.Cu (80.7, 13.5)->(81.35, 12.6): negatives=0 worst=[(0.324, 'via ULPI_D6@(81.0, 14.4)'), (0.47, 'trk ULPI_D6 (81.375, 14.125)->(81.625, 13.875)')]
+ULPI_D3 In2.Cu (81.35, 12.6)->(83.5, 9.75): negatives=0 worst=[(0.029, 'via +3V3D@(81.62, 10.9)'), (0.131, 'trk ULPI_D4 (82.625, 11.875)->(82.875, 11.625)')]
+ULPI_D4 F.Cu (79.44, 14.25)->(79.9, 14.36): negatives=0 worst=[(0.022, 'pad ULPI_D5 rect(78.75, 14.625, 79.625, 14.875)'), (0.075, 'pad ULPI_D3 rect(78.75, 13.625, 79.625, 13.875)')]
+ULPI_D4 F.Cu (79.9, 14.36)->(80.24, 14.48): negatives=0 worst=[(0.082, 'pad ULPI_D5 rect(78.75, 14.625, 79.625, 14.875)'), (0.164, 'via ULPI_D6@(81.0, 14.4)')]
+ULPI_D4 In2.Cu (80.24, 14.48)->(80.82, 13.78): negatives=1 worst=[(-0.091, 'via ULPI_D6@(81.0, 14.4)'), (0.109, 'trk ULPI_D6 (81.0, 14.4)->(81.375, 14.125)')]
+ULPI_D4 In2.Cu (80.82, 13.78)->(82.0, 12.9): negatives=2 worst=[(-0.026, 'trk ULPI_D6 (82.125, 13.375)->(82.375, 13.125)'), (-0.013, 'trk ULPI_D6 (82.375, 13.125)->(82.625, 12.875)')]
+ULPI_D4 In2.Cu (82.0, 12.9)->(82.625, 11.875): negatives=2 worst=[(-0.026, 'trk ULPI_D6 (82.125, 13.375)->(82.375, 13.125)'), (-0.013, 'trk ULPI_D6 (82.375, 13.125)->(82.625, 12.875)')]
+ULPI_D5 F.Cu (79.75, 14.78)->(80.15, 15.6): negatives=1 worst=[(-0.036, 'pad ULPI_D6 rect(78.75, 15.125, 79.625, 15.375)'), (0.087, 'trk ULPI_D6 (79.1875, 15.25)->(79.4375, 15.25)')]
+ULPI_D5 In2.Cu (80.15, 15.6)->(81.3, 15.35): negatives=2 worst=[(-0.036, 'trk I2C_SCL (79.75, 15.75)->(79.875, 15.875)'), (-0.036, 'trk I2C_SCL (80.125, 16.125)->(79.875, 15.875)')]
+ULPI_D6 F.Cu (79.44, 15.25)->(79.6, 15.1): negatives=1 worst=[(-0.075, 'pad ULPI_D5 rect(78.75, 14.625, 79.625, 14.875)'), (0.075, 'pad ULPI_D7 rect(78.75, 15.625, 79.625, 15.875)')]
+ULPI_D6 F.Cu (79.6, 15.1)->(80.5, 15.02): negatives=1 worst=[(-0.078, 'pad ULPI_D5 rect(78.75, 14.625, 79.625, 14.875)'), (0.225, 'pad ULPI_D7 rect(78.75, 15.625, 79.625, 15.875)')]
+ULPI_D6 F.Cu (80.5, 15.02)->(80.75, 15.3): negatives=0 worst=[(0.424, 'trk CDR_SQUELCH (81.125, 16.125)->(81.375, 15.875)'), (0.424, 'trk CDR_SQUELCH (81.375, 15.875)->(81.625, 15.625)')]
+ULPI_D6 F.Cu (80.75, 15.3)->(80.9, 15.72): negatives=0 worst=[(0.02, 'trk CDR_SQUELCH (81.125, 16.125)->(81.375, 15.875)'), (0.038, 'trk CDR_SQUELCH (80.875, 16.375)->(81.125, 16.125)')]
+ULPI_D6 F.Cu (80.9, 15.72)->(81.0, 14.4): negatives=0 worst=[(0.02, 'trk CDR_SQUELCH (81.125, 16.125)->(81.375, 15.875)'), (0.038, 'trk CDR_SQUELCH (80.875, 16.375)->(81.125, 16.125)')]
++3V3D F.Cu (82.425, 13.6)->(82.05, 13.25): negatives=0 worst=[(0.441, 'trk CDR_SQUELCH (82.875, 14.375)->(83.125, 14.125)'), (0.45, 'trk CDR_SQUELCH (83.125, 14.125)->(83.375, 13.875)')]
++3V3D F.Cu (82.05, 13.25)->(81.6, 12.85): negatives=0 worst=[(0.165, 'pad GND rect(81.875, 11.525, 82.775, 12.475)'), (0.23, 'pad NRST rect(80.325, 11.525, 81.225, 12.475)')]
++3V3D F.Cu (81.6, 12.85)->(81.55, 12.3): negatives=0 worst=[(0.008, 'pad GND rect(81.875, 11.525, 82.775, 12.475)'), (0.025, 'pad NRST rect(80.325, 11.525, 81.225, 12.475)')]
++3V3D B.Cu (80.375, 16.375)->(81.0, 15.95): negatives=2 worst=[(-0.059, 'trk I2C_SDA (81.375, 16.375)->(81.625, 16.125)'), (-0.058, 'trk I2C_SDA (81.125, 16.625)->(81.375, 16.375)')]
++3V3D B.Cu (81.0, 15.95)->(81.55, 15.6): negatives=5 worst=[(-0.201, 'trk I2C_SDA (81.625, 16.125)->(81.875, 15.875)'), (-0.199, 'trk I2C_SDA (81.875, 15.875)->(82.125, 15.625)')]
++3V3D B.Cu (81.55, 15.6)->(81.75, 15.3): negatives=4 worst=[(-0.201, 'trk I2C_SDA (81.625, 16.125)->(81.875, 15.875)'), (-0.199, 'trk I2C_SDA (81.875, 15.875)->(82.125, 15.625)')]
++3V3D B.Cu (81.75, 15.3)->(81.75, 13.95): negatives=4 worst=[(-0.13, 'trk I2C_SDA (81.875, 15.875)->(82.125, 15.625)'), (-0.129, 'trk I2C_SDA (82.125, 15.625)->(82.375, 15.375)')]
++3V3D B.Cu (81.75, 13.95)->(81.625, 13.7): negatives=0 worst=[(0.075, 'via ULPI_D6@(81.0, 14.4)'), (0.131, 'trk I2C_SDA (82.375, 14.375)->(82.625, 14.125)')]
++3V3D B.Cu (81.625, 13.7)->(81.625, 8.625): negatives=0 worst=[(0.125, 'trk I2C_SDA (82.375, 10.625)->(82.375, 6.125)'), (0.125, 'trk I2C_SDA (82.625, 10.875)->(82.375, 10.625)')]
+I2C_SCL In2.Cu (79.45, 11.1)->(79.45, 12.3): negatives=0 worst=[(0.025, 'via +3V3A@(78.8, 11.62)'), (0.15, 'trk +3V3A (78.8, 11.62)->(77.6, 11.9)')]
+I2C_SCL In2.Cu (79.45, 12.3)->(79.3, 12.55): negatives=0 worst=[(0.316, 'via +3V3A@(78.8, 11.62)'), (0.441, 'trk +3V3A (78.8, 11.62)->(77.6, 11.9)')]
+I2C_SCL In2.Cu (79.3, 12.55)->(79.3, 13.05): negatives=0 worst=[(0.431, 'via +3V3A@(78.8, 11.62)'), (0.556, 'trk +3V3A (78.8, 11.62)->(77.6, 11.9)')]
+I2C_SCL In2.Cu (79.3, 13.05)->(79.38, 13.35): negatives=0 worst=[(0.89, 'via +3V3A@(78.8, 11.62)'), (1.015, 'trk +3V3A (78.8, 11.62)->(77.6, 11.9)')]
+I2C_SCL In2.Cu (79.38, 13.35)->(79.3, 13.6): negatives=0 worst=[(1.2, 'via +3V3A@(78.8, 11.62)'), (1.25, 'trk +3V3A (77.375, 15.125)->(77.375, 13.125)')]
+I2C_SCL In2.Cu (79.3, 13.6)->(79.2, 13.9): negatives=0 worst=[(1.15, 'trk +3V3A (77.375, 15.125)->(77.375, 13.125)'), (1.241, 'via ULPI_D6@(81.0, 14.4)')]
+I2C_SCL In2.Cu (79.2, 13.9)->(79.45, 14.375): negatives=0 worst=[(0.92, 'via ULPI_D7@(79.1, 15.88)'), (0.925, 'via ULPI_D6@(81.0, 14.4)')]
+via ULPI_D2 (80.42, 12.97): negatives=0 worst=[(0.045, 'pad[F.Cu] NRST rect(80.325, 11.525, 81.225, 12.475)'), (0.351, 'pad[F.Cu] ULPI_D1 rect(78.75, 12.625, 79.625, 12.875)')]
+via ULPI_D3 (80.0, 13.78): negatives=0 worst=[(0.06, 'pad[F.Cu] ULPI_D4 rect(78.75, 14.125, 79.625, 14.375)'), (0.102, 'pad[F.Cu] ULPI_D2 rect(78.75, 13.125, 79.625, 13.375)')]
+via ULPI_D4 (80.24, 14.48): negatives=0 worst=[(0.014, 'via ULPI_D6@(81.0, 14.4)'), (0.182, 'pad[F.Cu] ULPI_D5 rect(78.75, 14.625, 79.625, 14.875)')]
+via ULPI_D5 (80.15, 15.6): negatives=4 worst=[(-0.186, 'trk[In2.Cu] I2C_SCL (79.75, 15.75)->(79.875, 15.875)'), (-0.186, 'trk[In2.Cu] I2C_SCL (80.125, 16.125)->(79.875, 15.875)')]
+NN trk-trk ULPI_D3 (80.0, 13.78)->(80.7, 13.5) vs ULPI_D4 (80.24, 14.48)->(80.82, 13.78): -0.145
+NN trk-trk ULPI_D3 (80.0, 13.78)->(80.7, 13.5) vs ULPI_D4 (80.82, 13.78)->(82.0, 12.9): -0.154
+NN trk-trk ULPI_D3 (80.7, 13.5)->(81.35, 12.6) vs ULPI_D4 (80.24, 14.48)->(80.82, 13.78): -0.145
+NN trk-trk ULPI_D3 (80.7, 13.5)->(81.35, 12.6) vs ULPI_D4 (80.82, 13.78)->(82.0, 12.9): -0.154
+NN trk-via ULPI_D3 (80.7, 13.5)->(81.35, 12.6) vs via ULPI_D2@(80.42, 12.97): -0.038
+NN trk-trk ULPI_D5 (79.75, 14.78)->(80.15, 15.6) vs ULPI_D6 (79.44, 15.25)->(79.6, 15.1): -0.125
+NN trk-trk ULPI_D5 (79.75, 14.78)->(80.15, 15.6) vs ULPI_D6 (79.6, 15.1)->(80.5, 15.02): -0.400
+NN trk-via ULPI_D6 (79.6, 15.1)->(80.5, 15.02) vs via ULPI_D5@(80.15, 15.6): -0.003
+gate negatives: 37
+GATE FAILED — not building

@@ -1,0 +1,13 @@
+pass: 39
+description: cluster clearing U4 disc (52,52) r4.2 on the stubbed board: 7/9 targets connected through the cleared field (CDR ring pads, +3V3D_CDR U4.24 among them)
+timestamp (UTC): 2026-11-04T19:54:32Z
+commit: pending
+board file: hw/pdlvds_rx.fr24.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (9 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 3
+unconnected nets: 35
+audit verdict: fail
+note: 

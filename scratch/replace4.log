@@ -1,0 +1,24 @@
+09:53:42: Debug: Adding duplicate image handler for 'PNG file'
+09:53:42: Debug: Adding duplicate image handler for 'JPEG file'
+09:53:42: Debug: Adding duplicate image handler for 'TIFF file'
+09:53:42: Debug: Adding duplicate image handler for 'GIF file'
+09:53:42: Debug: Adding duplicate image handler for 'PNM file'
+09:53:42: Debug: Adding duplicate image handler for 'PCX file'
+09:53:42: Debug: Adding duplicate image handler for 'IFF file'
+09:53:42: Debug: Adding duplicate image handler for 'Windows icon file'
+09:53:42: Debug: Adding duplicate image handler for 'Windows cursor file'
+09:53:42: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+09:53:42: Debug: Adding duplicate image handler for 'TGA file'
+09:53:42: Debug: Adding duplicate image handler for 'XPM file'
+start star: 3939 mm
+  anchor C17 -> (95.75,-13.5) ok
+  anchor D7 -> (95.75,-7) ok
+  anchor D6 -> (95.75,-0.5) ok
+  anchor R44 -> (91,10) ok
+  anchor R45 -> (88,10) REJECTED {'X1'}
+  anchor C18 -> (91,8.5) ok
+after anchors star: 3921
+round 0 (frac 0.5): moved 4, star 3890
+round 1 (frac 0.25): moved 3, star 3887
+round 2 (frac 0.5): moved 0, star 3887
+saved scratch/exp179-work.kicad_pcb

@@ -1,0 +1,14 @@
+baseline unconnected: 50
++3V3D        flagged 4  apply[?]  unconnected 50 -> 50
++3V3D_CDR    flagged 1  apply[('3', '0', '0')]  unconnected 50 -> 50
++5V          flagged 1  apply[('2', '0', '0')]  unconnected 50 -> 50
++VA          flagged 1  apply[('2', '0', '0')]  unconnected 50 -> 50
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/bisect_prune.py", line 40, in <module>
+    rep2 = dgp.run_drc(tmp, 'scratch/bisect-drc.json')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/pdlvds-route/scratch/drc_graph_prune.py", line 44, in run_drc
+    subprocess.run(['kicad-cli', 'pcb', 'drc', '--output', out_json,
+  File "/usr/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['kicad-cli', 'pcb', 'drc', '--output', 'scratch/bisect-drc.json', '--format', 'json', '--all-track-errors', 'scratch/bisect-board.kicad_pcb']' returned non-zero exit status 255.

@@ -1,0 +1,2953 @@
+                                                                      USB3300
+             Hi-Speed USB Host, Device or OTG PHY with
+                       ULPI Low Pin Interface
+Product Features                                       • Low Latency Hi-Speed Receiver (43 Hi-Speed
+                                                         clocks Max) allows use of legacy UTMI Links with
+• USB-IF Hi-Speed certified to the Universal Serial      a ULPI wrapper
+  Bus Specification Rev 2.0
+                                                       • Integrated Pull-up resistor on STP for interface
+• Interface compliant with the ULPI Specification        protection allows a reliable Link/PHY start-up with
+  revision 1.1 in 8-bit mode                             slow Links (software configured for low power)
+• Industry standard UTMI+ Low Pin Interface (ULPI)     • Internal 1.8 volt regulators allow operation from a
+  Converts 54 UTMI+ signals into a standard 12 pin       single 3.3 volt supply
+  Link controller interface
+                                                       • Internal short circuit protection of ID, DP and DM
+• 54.7mA Unconfigured Current (typical) - ideal for      lines to VBUS or ground
+  bus powered applications
+                                                       • Integrated 24MHz Crystal Oscillator supports
+• 83uA suspend current (typical) - ideal for battery     either crystal operation or 24MHz external clock
+  powered applications                                   input
+• Latch-Up performance exceeds 150 mA per EIA/         • Internal PLL for 480MHz Hi-Speed USB operation
+  JESD 78, Class II
+                                                       • Industrial Operating Temperature -40°C to +85°C
+• ESD protection levels of ±8kV HBM without exter-
+                                                       • 32 pin, QFN RoHS Compliant package
+  nal protection devices
+                                                         (5 x 5 x 0.90 mm height)
+• Integrated protection to withstand IEC61000-4-2
+  ESD tests (±8kV contact and ±15kV air) per 3rd       Applications
+  party test facility
+                                                       The USB3300 is the ideal companion to any ASIC, SoC
+• Supports FS pre-amble for FS hubs with a LS          or FPGA solution designed with a ULPI Hi-Speed USB
+  device attached (UTMI+ Level 3)                      host, peripheral or OTG core.
+• Supports HS SOF and LS keep-alive pulse
+                                                       The USB3300 is well suited for:
+• Includes full support for the optional On-The-Go
+  (OTG) protocol detailed in the On-The-Go Sup-        • Cell Phones
+  plement Revision 1.0a specification                  • PDAs
+• Supports the OTG Host Negotiation Protocol           • MP3 Players
+  (HNP) and Session Request Protocol (SRP)             • Scanners
+• Allows host to turn VBUS off to conserve battery     • External Hard Drives
+  power in OTG applications                            • Digital Still and Video Cameras
+• Supports OTG monitoring of VBUS levels with          • Portable Media Players
+  internal comparators. Includes support for an
+                                                       • Printers
+  external VBUS or fault monitor.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                      DS00001783B-page 1
+USB3300
+
+
+                                         TO OUR VALUED CUSTOMERS
+ It is our intention to provide our valued customers with the best documentation possible to ensure successful use of your Microchip
+ products. To this end, we will continue to improve our publications to better suit your needs. Our publications will be refined and
+ enhanced as new volumes and updates are introduced.
+ If you have any questions or comments regarding this publication, please contact the Marketing Communications Department via
+ E-mail at docerrors@microchip.com. We welcome your feedback.
+
+ Most Current Data Sheet
+ To obtain the most up-to-date version of this data sheet, please register at our Worldwide Web site at:
+      http://www.microchip.com
+ You can determine the version of a data sheet by examining its literature number found on the bottom outside corner of any page.
+ The last character of the literature number is the version number, (e.g., DS30000000A is version A of document DS30000000).
+
+ Errata
+ An errata sheet, describing minor operational differences from the data sheet and recommended workarounds, may exist for cur-
+ rent devices. As device/documentation issues become known to us, we will publish an errata sheet. The errata will specify the
+ revision of silicon and revision of document to which it applies.
+ To determine if an errata sheet exists for a particular device, please check with one of the following:
+ • Microchip’s Worldwide Web site; http://www.microchip.com
+ • Your local Microchip sales office (see last page)
+ When contacting a sales office, please specify which device, revision of silicon and data sheet (include -literature number) you are
+ using.
+
+ Customer Notification System
+ Register on our web site at www.microchip.com to receive the most current information on all of our products.
+
+
+
+
+DS00001783B-page 2                                                                            2014-2015 Microchip Technology Inc.
+                                                                                                                                                               USB3300
+Table of Contents
+1.0 Introduction ..................................................................................................................................................................................... 4
+2.0 Functional Overview ....................................................................................................................................................................... 6
+3.0 Pin Layout ....................................................................................................................................................................................... 7
+4.0 Operational Description ................................................................................................................................................................ 11
+5.0 Electrical Characteristics ............................................................................................................................................................... 12
+6.0 Architecture Overview ................................................................................................................................................................... 16
+7.0 Application Notes .......................................................................................................................................................................... 39
+8.0 Package Outline ............................................................................................................................................................................ 45
+Appendix A: Data Sheet Revision History ........................................................................................................................................... 48
+The Microchip Web Site ...................................................................................................................................................................... 50
+Customer Change Notification Service ............................................................................................................................................... 50
+Customer Support ............................................................................................................................................................................... 50
+Product Identification System ............................................................................................................................................................. 51
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                                                                                DS00001783B-page 3
+USB3300
+1.0      INTRODUCTION
+
+1.1      General Description
+The USB3300 is an industrial temperature Hi-Speed USB Physical Layer Transceiver (PHY). The USB3300 uses a low
+pin count interface (ULPI) to connect to a ULPI compliant Link layer. The ULPI interface reduces the UTMI+ interface
+from 54 pins to 12 pins using a method of in-band signaling and status byte transfers between the Link and PHY.
+This PHY was designed from the start with the ULPI interface. No UTMI to ULPI wrappers are used in this design which
+provides a seamless ULPI to Link interface. The result is a PHY with a low latency transmit and receive time. Microchip’s
+low latency high speed and full speed receiver provide the option of re-using existing UTMI Links with a simple wrapper
+to convert UTMI to ULPI.
+The ULPI interface allows the USB3300 PHY to operate as a device, host, or an On-The-Go (OTG) device. Designs
+using the USB3300 PHY as a device, can add host and OTG capability at a later date with no additional pins.
+The ULPI interface, combined with Microchip’s proprietary technology, makes the USB3300 the ideal method of adding
+Hi-Speed USB to new designs. The USB3300 features an industry leading small footprint package (5mm by 5mm) with
+sub 1mm height. In addition the USB3300 integrates all DP and DM termination resistances and requires a minimal
+number of external components.
+
+
+FIGURE 1-1:            BASIC ULPI USB DEVICE BLOCK DIAGRAM
+
+
+
+                                                    USB3300
+                            CLK
+                                                                                        VBUS
+                            STP                                                                        USB
+                                                ULPI              Hi-Speed               ID
+         ULPI                DIR                                                                    Connector
+                                               Digital             Analog                DM
+         LINK               NXT                                                                     (Standard
+                                               Logic               w/ OTG
+                                                                                         DP          or Mini)
+                         DATA[7:0]
+
+
+                                                  32 Pin QFN
+
+The ULPI interface consists of 12 interface pins; 8 bi-directional data pins, 3 control pins, and a 60 MHz clock. By using
+the 12 pin ULPI interface the USB3300 is able to provide support for the full range of UTMI+ Level 3 through Level 0,
+as shown in Figure 1-2. This allows USB3300 to work as a HS and FS peripheral and as a HS, FS, and LS Host.
+The USB3300 can also, as an option, fully support the On-the-Go (OTG) protocol defined in the On-The-Go Supplement
+to the USB 2.0 Specification. On-the-Go allows the USB3300 to function like a host, or peripheral configured dynamically
+by software. For example, a cell phone may connect to a computer as a peripheral to exchange address information or
+connect to a printer as a host to print pictures. Finally the OTG enabled device can connect to another OTG enabled
+device to exchange information. All this is supported using a single low profile Mini-AB USB connector.
+Designs not needing OTG can ignore the OTG feature set.
+In addition to the advantages of the leading edge ULPI interface, the use of Microchip’s advanced analog technology
+enables the USB3300 to consume a minimum amount of power which results in maximized battery life for portable appli-
+cations.
+
+
+
+
+DS00001783B-page 4                                                                    2014-2015 Microchip Technology Inc.
+                                                                                             USB3300
+
+FIGURE 1-2:                  ULPI INTERFACE FEATURES AS RELATED TO UTMI+
+
+
+                                                         ULPI
+                                      Hi-Speed Peripheral, host controllers, On-the-
+                                            Go devices with 12 pin interface           USB3300
+                                            (HS, FS, LS, preamble packet)
+
+                                                   UTMI+ Level 3
+                                       Hi-Speed Peripheral, host controllers, On-       USB3500
+                                                   the-Go devices                       USB3450
+                     ADDED FEATURES
+
+
+
+
+                                            (HS, FS, LS, preamble packet)
+
+                                                   UTMI+ Level 2
+                                       Hi-Speed Peripheral, host controllers, On-
+                                                   the-Go devices
+                                       (HS, FS, and LS but no preamble packet)
+
+                                                    UTMI+ Level 1
+                                          Hi-Speed Peripheral, host controllers,
+                                                and On-the-Go devices
+                                                   (HS and FS Only)
+
+                                                    UTMI+ Level 0                       USB3280
+                                               Hi-Speed Peripherals Only                USB3250
+
+
+
+
+1.2      Reference Documents
+• Universal Serial Bus Specification, Revision 2.0, April 27, 2000
+• On-The-Go Supplement to the USB 2.0 Specification, Revision 1.0a, June 24, 2003
+• USB 2.0 Transceiver Macrocell Interface (UTMI) Specification, Version 1.02, May 27, 2000
+• UTMI+ Specification, Revision 1.0, February 2, 2004
+• UTMI+ Low Pin Interface (ULPI) Specification, Revision 1.1
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                         DS00001783B-page 5
+USB3300
+2.0      FUNCTIONAL OVERVIEW
+The USB3300 is a highly integrated USB PHY. It contains a complete Hi-Speed USB 2.0 PHY with the ULPI industry
+standard interface to support fast time to market for a USB product. The USB3300 is composed of the functional blocks
+shown in Figure 2-1 below. Details of these individual blocks are described in Architecture Overview on page 16.
+
+
+FIGURE 2-1:            USB3300 BLOCK DIAGRAM
+
+
+
+
+                                                   m
+                                                                     EXTVBUS                                           5V
+                              VDDA1.8
+                                                                                                           FAULT
+                     VDD1.8
+
+
+
+
+                                                                                                                    Power
+
+
+
+
+                                                           XO
+                                                  24 MHz
+
+
+
+
+                                             XI
+                                                   XTAL                                 CPEN               EN
+                                                                                                                   Supply
+
+                    Internal                                                                   VBUS
+      VDD3.3                                  XTAL &                 OTG
+                  Regulator &                                       Module                       ID
+                                               PLL
+                      POR
+                                                                                               VDD3.3
+                                                                                                             Mini-AB
+                                                                                                              USB
+
+
+                                                                      Rpu_dp
+
+                                                                               Rpu_dm
+                                                                                                            Connector
+      DATA[7:0]                                                                                 DP
+                                                                                                DM
+
+
+
+                                                                               Rpd_dm
+                                                                      Rpd_dp
+      CLKOUT                                HS XCVR
+       STP
+                  ULPI Digital
+       DIR                                                        Resistors
+       NXT
+
+
+                                                                      Bias                     RBIAS
+                                               FS/LS                  Gen.
+                                               XCVR
+                                        USB3300
+
+
+
+
+DS00001783B-page 6                                                                         2014-2015 Microchip Technology Inc.
+                                                                                                                                    USB3300
+3.0       PIN LAYOUT
+The USB3300 is offered in a 32 pin QFN package (5 x 5 x 0.9mm). The pin definitions and locations are documented
+below.
+
+3.1       USB3300 Pin Diagram
+
+
+FIGURE 3-1:              USB3300 PIN DIAGRAM - TOP VIEW
+
+
+
+
+                                                                         VDDA1.8
+                                                     REG_EN
+
+
+
+
+                                                                                                             VDD3.3
+                                                               VDD3.3
+
+
+
+
+                                                                                                    VDD1.8
+                                             RBIAS
+
+
+
+
+                                                                                           XO
+                                                                                   XI
+                                             32
+
+                                                     31
+
+                                                               30
+
+                                                                         29
+
+                                                                                   28
+
+                                                                                           27
+
+                                                                                                    26
+
+                                                                                                             25
+                              GND        1                                                                            24   DATA0
+
+                              GND        2                                                                            23   DATA1
+
+                             CPEN        3                                                                            22   DATA2
+                                                             USB3300
+                             VBUS        4                Hi-Speed
+                                                          Hi-SpeedUSB2
+                                                                    USB                                               21   DATA3
+
+                                 ID      5                   ULPI PHY                                                 20   DATA4
+
+                           VDD3.3        6
+                                                            32 Pin QFN                                                19   DATA5
+
+                                DP       7                                                                            18   DATA6
+                                                                        GND FLAG
+                               DM        8                                                                            17   DATA7
+                                                     10
+
+                                                               11
+
+                                                                         12
+
+                                                                                   13
+
+                                                                                           14
+
+                                                                                                    15
+
+                                                                                                             16
+                                             9
+                                             RESET
+
+
+
+
+                                                                                           CLKOUT
+                                                               NXT
+
+                                                                         DIR
+                                                     EXTVBUS
+
+
+
+
+                                                                                                    VDD1.8
+
+                                                                                                             VDD3.3
+                                                                                   STP
+
+
+
+
+The exposed flag of the QFN package must be connected to ground with a via array to the ground plane. This is the
+main ground connection for the USB3300.
+
+3.2       Pin Function
+
+TABLE 3-1:        USB3300 PIN DEFINITIONS 32-PIN QFN PACKAGE
+                                        Direction,                Active
+  Pin             Name                                                                                                     Description
+                                          Type                    Level
+      1            GND                   Ground                         N/A              Ground
+      2            GND                   Ground                         N/A              Ground
+      3           CPEN                   Output,                        High             External 5 volt supply enable. This pin is used to
+                                         CMOS                                            enable the external Vbus power supply. The CPEN pin
+                                                                                         is low on POR.
+      4           VBUS                    I/O,                          N/A              VBUS pin of the USB cable. The USB3300 uses this
+                                         Analog                                          pin for the Vbus comparator inputs and for Vbus
+                                                                                         pulsing during session request protocol.
+      5             ID                   Input,                         N/A              ID pin of the USB cable. For non-OTG applications
+                                         Analog                                          this pin can be floated. For an A-Device ID = 0. For a
+                                                                                         B-Device ID = 1.
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                                                    DS00001783B-page 7
+USB3300
+TABLE 3-1:      USB3300 PIN DEFINITIONS 32-PIN QFN PACKAGE (CONTINUED)
+                            Direction,   Active
+  Pin           Name                                                   Description
+                              Type       Level
+   6           VDD3.3         Power       N/A     3.3V Supply. A 0.1uF bypass capacitor should be
+                                                  connected between this pin and the ground plane on
+                                                  the PCB.
+   7             DP           I/O,        N/A     D+ pin of the USB cable.
+                             Analog
+   8             DM           I/O,        N/A     D- pin of the USB cable.
+                             Analog
+   9           RESET       Input, CMOS   High     Optional active high transceiver reset. This is the
+                                                  same as a write to the ULPI Reset, address 04h, bit
+                                                  5. This does not reset the ULPI register set. This pin
+                                                  includes an integrated pull-down resistor to ground. If
+                                                  not used, this pin can be floated or connected to
+                                                  ground (recommended).
+
+                                                  See Section 6.1.11, "Reset Pin" for details.
+  10          EXTVBUS      Input, CMOS   High     External Vbus Detect. Connect to fault output of an
+                                                  external USB power switch or an external Vbus Valid
+                                                  comparator. See Section 6.5.4, "External Vbus
+                                                  Indicator," on page 38 for details. This pin has a pull
+                                                  down resistor to prevent it from floating when the ULPI
+                                                  bit UseExternalVbusIndicator is set to 0.
+  11            NXT          Output,     High     The PHY asserts NXT to throttle the data. When the
+                             CMOS                 Link is sending data to the PHY, NXT indicates when
+                                                  the current byte has been accepted by the PHY. The
+                                                  Link places the next byte on the data bus in the
+                                                  following clock cycle.
+  12             DIR         Output,      N/A     Controls the direction of the data bus. When the PHY
+                             CMOS                 has data to transfer to the Link, it drives DIR high to
+                                                  take ownership of the bus. When the PHY has no data
+                                                  to transfer it drives DIR low and monitors the bus for
+                                                  commands from the Link. The PHY will pull DIR high
+                                                  whenever the interface cannot accept data from the
+                                                  Link, such as during PLL start-up.
+  13            STP          Input,      High     The Link asserts STP for one clock cycle to stop the
+                             CMOS                 data stream currently on the bus. If the Link is sending
+                                                  data to the PHY, STP indicates the last byte of data
+                                                  was on the bus in the previous cycle. The STP pin
+                                                  also includes the interface protection detailed in
+                                                  Section 6.1.9.3, "Interface Protection," on page 31.
+  14          CLKOUT         Output,      N/A     60MHz reference clock output. All ULPI signals are
+                             CMOS                 driven synchronous to the rising edge of this clock.
+  15           VDD1.8         Power       N/A     1.8V for digital circuitry on chip. Supplied by On-Chip
+                                                  Regulator when REG_EN is active. Place a 0.1uF
+                                                  capacitor near this pin and connect the capacitor from
+                                                  this pin to ground. Connect pin 15 to pin 26.
+  16           VDD3.3         Power       N/A     A 0.1uF bypass capacitor should be connected
+                                                  between this pin and the ground plane on the PCB.
+
+
+
+
+DS00001783B-page 8                                                     2014-2015 Microchip Technology Inc.
+                                                                                              USB3300
+TABLE 3-1:        USB3300 PIN DEFINITIONS 32-PIN QFN PACKAGE (CONTINUED)
+                                        Direction,   Active
+  Pin             Name                                                             Description
+                                          Type       Level
+   17            DATA[7]                  I/O,        N/A     8-bit bi-directional data bus. Bus ownership is
+                                         CMOS,                determined by DIR. The Link and PHY initiate data
+                                         Pull-low             transfers by driving a non-zero pattern onto the data
+                                                              bus. ULPI defines interface timing for a single-edge
+   18            DATA[6]                  I/O,        N/A     data transfers with respect to rising edge of CLKOUT.
+                                         CMOS,                DATA[7] is the MSB and DATA[0] is the LSB.
+                                         Pull-low
+   19            DATA[5]                  I/O,        N/A
+                                         CMOS,
+                                         Pull-low
+   20            DATA[4]                  I/O,        N/A
+                                         CMOS,
+                                         Pull-low
+   21            DATA[3]                  I/O,        N/A
+                                         CMOS,
+                                         Pull-low
+   22            DATA[2]                  I/O,        N/A
+                                         CMOS,
+                                         Pull-low
+   23            DATA[1]                  I/O,        N/A
+                                         CMOS,
+                                         Pull-low
+   24            DATA[0]                  I/O,        N/A
+                                         CMOS,
+                                         Pull-low
+   25            VDD3.3                  Power        N/A     A 0.1uF bypass capacitor should be connected
+                                                              between this pin and the ground plane on the PCB.
+   26            VDD1.8                  Power        N/A     1.8V for digital circuitry on chip. Supplied by On-Chip
+                                                              Regulator when REG_EN is active. When using the
+                                                              internal regulators, place a 4.7uF low-ESR capacitor
+                                                              near this pin and connect the capacitor from this pin
+                                                              to ground. Connect pin 26 to pin 15. Do not connect
+                                                              VDD1.8 to VDDA1.8 when using internal regulators.
+                                                              When the regulators are disabled, pin 29 may be
+                                                              connected to pins 26 and 15.
+   27               XO                   Output,      N/A     Crystal pin. If using an external clock on XI this pin
+                                         Analog               should be floated.
+   28               XI                   Input,       N/A     Crystal pin. A 24MHz crystal is supported. The crystal
+                                         Analog               is placed across XI and XO. An external 24MHz clock
+                                                              source may be driven into XI in place of a crystal.
+   29           VDDA1.8                  Power        N/A     1.8V for analog circuitry on chip. Supplied by On-Chip
+                                                              Regulator when REG_EN is active. Place a 0.1uF
+                                                              capacitor near this pin and connect the capacitor from
+                                                              this pin to ground. When using the internal regulators,
+                                                              place a 4.7uF low-ESR capacitor near this pin in
+                                                              parallel with the 0.1uF capacitor. Do not connect
+                                                              VDD1.8A to VDD1.8 when using internal regulators.
+                                                              When the regulators are disabled, pin 29 may be
+                                                              connected to pins 26 and 15.
+   30            VDD3.3                  Power        N/A     Analog 3.3 volt supply. A 0.1uF low ESR bypass
+                                                              capacitor connected to the ground plane of the PCB is
+                                                              recommended.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                             DS00001783B-page 9
+USB3300
+TABLE 3-1:      USB3300 PIN DEFINITIONS 32-PIN QFN PACKAGE (CONTINUED)
+                            Direction,   Active
+  Pin           Name                                                   Description
+                              Type       Level
+  31          REG_EN          I/O,        N/A     On-Chip 1.8V regulator enable. Connect to ground to
+                             CMOS,                disable both of the on chip (VDDA1.8 and VDD1.8)
+                             Pull-low             regulators. When regulators are disabled:
+                                                  • External 1.8V must be supplied to VDDA1.8 and
+                                                    VDD1.8 pins. When the regulators are disabled,
+                                                    VDDA1.8 may be connected to VDD1.8 and a
+                                                    bypass capacitor (0.1uF recommended) should be
+                                                    connected to each pin.
+                                                  • The voltage at VDD3.3 must be at least 2.64V (0.8
+                                                    * 3.3V) before voltage is applied to VDDA1.8 and
+                                                    VDD1.8.
+  32           RBIAS         Analog,      N/A     External 12KΩ +/- 1% bias resistor to ground.
+                             CMOS
+             GND FLAG        Ground       N/A     Ground. The flag must be connected to the ground
+                                                  plane with a via array under the exposed flag. This is
+                                                  the main ground for the IC.
+
+
+
+
+DS00001783B-page 10                                                   2014-2015 Microchip Technology Inc.
+                                                                                               USB3300
+4.0        OPERATIONAL DESCRIPTION
+
+TABLE 4-1:         MAXIMUM GUARANTEED RATINGS
+           Parameter               Symbol               Condition              MIN      TYP       MAX         Units
+Maximum VBUS, ID,             VMAX_5V                                          -0.5               +5.5          V
+EXTVBUS, DP, and DM
+voltage to GND
+Maximum VDD1.8 and            VMAX_1.8V                                        -0.5                2.5          V
+VDDA1.8 voltage to
+Ground
+Maximum 3.3V supply           VMAX_3.3V                                        -0.5                4.0          V
+voltage to Ground
+Maximum I/O voltage to        VMAX_IN                                          -0.5                4.0          V
+Ground
+Operating Temperature         TMAX_OP                                          -40                 85          °C
+Storage Temperature           TMAX_STG                                         -55                 150         °C
+ESD PERFORMANCE
+All Pins                      VHBM            Human Body Model                  ±8                             kV
+LATCH-UP PERFORMANCE
+All Pins                      ILTCH_UP        EIA/JESD 78, Class II            150                             mA
+
+  Note:      Stresses beyond those listed under “Absolute Maximum Ratings” may cause permanent damage to the
+             device. Exposure to absolute maximum rating conditions for extended periods may affect device reliability.
+
+
+TABLE 4-2:         RECOMMENDED OPERATING CONDITIONS
+           Parameter               Symbol             Condition              MIN        TYP         MAX         Units
+VDD3.3 to GND                 VDD3.3                                          3.0        3.3         3.6            V
+Input Voltage on Digital      VI                                              0.0                   VDD3.3          V
+Pins
+Voltage on Analog I/O         VI(I/O)                                         0.0                   VDD3.3          V
+Pins (DP, DM, ID)
+VBUS to GND                   VVBUS                                           0.0                    5.25
+Ambient Temperature           TA                                             -40                      85            C
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                             DS00001783B-page 11
+USB3300
+5.0       ELECTRICAL CHARACTERISTICS
+
+TABLE 5-1:        ELECTRICAL CHARACTERISTICS: SUPPLY PINS
+  Parameter            Symbol           Condition                    MIN                      TYP       MAX        Units
+Unconfigured Current                  IAVG(UCFG)        Device Unconfigured                    Same as Idle         mA
+FS Idle 3.3V Current                  IAVG(FS33)        FS idle not data transfer             18.8       21.9       mA
+FS Idle 1.8V Current                  IAVG(FS18)        FS idle not data transfer             36.4       43.2       mA
+FS Transmit 3.3V Current              IAVG(FSTX33)      FS current during data transmit       36.0       41.6       mA
+FS Transmit 1.8V Current              IAVG(FSTX18)      FS current during data transmit       36.8       43.2       mA
+FS Receive 3.3V Current               IAVG(FSRX33)      FS current during data receive        22.5       27.0       mA
+FS Receive 1.8V Current               IAVG(FSRX18)      FS current during data receive        36.7       43.4       mA
+HS Idle 3.3V Current                  IAVG(HS33)        HS idle not data transfer             22.1       25.4       mA
+HS Idle 1.8V Current                  IAVG(HS18)        HS idle not data transfer             38.7       45.6       mA
+HS Transmit 3.3V Current              IAVG(HSTX33)      HS current during data                25.4       29.0       mA
+                                                        transmit
+HS Transmit 1.8V Current              IAVG(HSTX18)      HS current during data                39.1       46.2       mA
+                                                        transmit
+HS Receive 3.3V Current               IAVG(HSRX33)      HS current during data receive        23.0       26.6       mA
+HS Receive 1.8V Current               IAVG(HSRX18)      HS current during data receive        39.6       46.8       mA
+Low Power Mode 3.3V Current           IDD(LPM33)        VBUS 15kΩ pull-down and               59.4                  uA
+                                                        1.5kΩ pull-up resistor currents
+                                                        not included.
+Low Power Mode 1.8V Current           IDD(LPM18)        VBUS 15kΩ pull-down and               25.5                  uA
+                                                        1.5kΩ pull-up resistor currents
+                                                        not included.
+
+  Note:
+• VDD3.3 = 3.0 to 3.6V; VSS = 0V; TA = -40C to +85C; unless otherwise specified.
+• SessEnd and VbusVld comparators disabled. Interface protection disabled.
+• Maximum current numbers are worst case over supply voltage, temperature and process.
+
+
+TABLE 5-2:        ELECTRICAL CHARACTERISTICS: CLKOUT START-UP
+           Parameter                  Symbol             Condition             MIN          TYP       MAX         Units
+Suspend Recovery Time           TSTART                                                      2.25       3.5         ms
+
+  Note:    The USB330 uses the AutoResume feature, Section 6.3, for host start-up of less than 1ms.
+
+
+TABLE 5-3:        DC ELECTRICAL CHARACTERISTICS: LOGIC PINS
+           Parameter                  Symbol             Condition             MIN          TYP       MAX         Units
+Low-Level Input Voltage         VIL                                            VSS                     0.8          V
+High-Level Input Voltage        VIH                                              2.0                 VDD3.3         V
+Low-Level Output Voltage        VOL                IOL = 8mA                                           0.4          V
+High-Level Output Voltage       VOH                IOH = -8mA                VDD3.3 -                               V
+                                                                               0.4
+Input Leakage Current           ILI                                                                    ±10          uA
+Pin Capacitance                 Cpin                                                                    4           pF
+
+  Note:    VDD3.3 = 3.0 to 3.6V; VSS = 0V; TA = -40C to +85C; unless otherwise specified.
+
+
+
+
+DS00001783B-page 12                                                                     2014-2015 Microchip Technology Inc.
+                                                                                             USB3300
+
+TABLE 5-4:        DC ELECTRICAL CHARACTERISTICS: ANALOG I/O PINS (DP/DM)
+           Parameter                    Symbol              Condition         MIN     TYP     MAX       Units
+FS FUNCTIONALITY
+Input levels
+Differential Receiver Input       VDIFS          | V(DP) - V(DM) |             0.2                       V
+Sensitivity
+Differential Receiver             VCMFS                                        0.8             2.5       V
+Common-Mode Voltage
+Single-Ended Receiver Low         VILSE                                                        0.8       V
+Level Input Voltage
+Single-Ended Receiver High        VIHSE                                        2.0                       V
+Level Input Voltage
+Single-Ended Receiver             VHYSSE                                      0.050           0.150      V
+Hysteresis
+Output Levels
+Low Level Output Voltage          VFSOL          Pull-up resistor on DP;                       0.3       V
+                                                 RL = 1.5kΩ to VDD3.3
+High Level Output Voltage         VFSOH          Pull-down resistor on DP,     2.8             3.6       V
+                                                 DM;
+                                                 RL = 15kΩ to GND
+Termination
+Driver Output Impedance for       ZHSDRV         Steady state drive           40.5    45      49.5       Ù
+HS and FS
+Input Impedance                   ZINP           TX, RPU disabled              1.0                      MΩ
+Pull-up Resistor Impedance        ZPU            Bus Idle                     0.900   1.24    1.575      kΩ
+Pull-up Resistor Impedance        ZPURX          Device Receiving             1.425   2.26    3.09       kΩ
+Pull-dn Resistor Impedance        ZPD                                         14.25   15.0    15.75      kΩ
+HS FUNCTIONALITY
+Input levels
+HS Differential Input Sensitivity VDIHS          | V(DP) - V(DM) |            100                        mV
+HS Data Signaling Common          VCMHS                                        -50             500       mV
+Mode Voltage Range
+HS Squelch Detection                             Squelch Threshold                             100       mV
+Threshold (Differential)          VHSSQ
+                                                 Un-squelch Threshold         150                        mV
+Output Levels
+Hi-Speed Low Level                VHSOL          45Ω load                      -10             10        mV
+Output Voltage (DP/DM
+referenced to GND)
+Hi-Speed High Level               VHSOH          45Ω load                     360              440       mV
+Output Voltage (DP/DM
+referenced to GND)
+Hi-Speed IDLE Level               VOLHS          45Ω load                      -10             10        mV
+Output Voltage (DP/DM
+referenced to GND)
+Chirp-J Output Voltage            VCHIRPJ        HS termination resistor      700             1100       mV
+(Differential)                                   disabled, pull-up resistor
+                                                 connected. 45Ω load.
+Chirp-K Output Voltage            VCHIRPK        HS termination resistor      -900            -500       mV
+(Differential)                                   disabled, pull-up resistor
+                                                 connected. 45Ω load.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                        DS00001783B-page 13
+USB3300
+TABLE 5-4:         DC ELECTRICAL CHARACTERISTICS: ANALOG I/O PINS (DP/DM) (CONTINUED)
+            Parameter                 Symbol              Condition                 MIN         TYP      MAX        Units
+Leakage Current
+OFF-State Leakage Current         ILZ                                                                     ±10         uA
+Port Capacitance
+Transceiver Input Capacitance CIN                Pin to GND                                         5      10         pF
+
+  Note:      VDD3.3 = 3.0 to 3.6V; VSS = 0V; TA = -40C to +85C; unless otherwise specified.
+
+
+TABLE 5-5:         DYNAMIC CHARACTERISTICS: ANALOG I/O PINS (DP/DM)
+            Parameter                 Symbol               Condition               MIN         TYP        MAX        Units
+FS Output Driver Timing
+Rise Time                         TFSR            CL = 50pF; 10 to 90% of            4                      20         ns
+                                                  |VOH - VOL|
+Fall Time                         TFFF            CL = 50pF; 10 to 90% of            4                      20         ns
+                                                  |VOH - VOL|
+Output Signal Crossover           VCRS            Excluding the first transition    1.3                    2.0         V
+Voltage                                           from IDLE state
+Differential Rise/Fall Time       FRFM            Excluding the first transition    90                    111.1        %
+Matching                                          from IDLE state
+HS Output Driver Timing
+Differential Rise Time            THSR                                              500                                ps
+Differential Fall Time            THSF                                              500                                ps
+Driver Waveform                                   Eye pattern of Template 1
+Requirements                                      in USB 2.0 specification
+Hi-Speed Mode Timing
+Receiver Waveform                                 Eye pattern of Template 4
+Requirements                                      in USB 2.0 specification
+Data Source Jitter and                            Eye pattern of Template 4
+Receiver Jitter Tolerance                         in USB 2.0 specification
+
+  Note:      VDD3.3 = 3.0 to 3.6V; VSS = 0V; TA = -40C to +85C; unless otherwise specified.
+
+
+TABLE 5-6:         OTG ELECTRICAL CHARACTERISTICS
+          Parameter               Symbol                Condition                  MIN        TYP         MAX        Units
+SessEnd trip point              VSessEnd                                           0.2         0.5         0.8         V
+SessVld trip point              VSessVld                                           0.8         1.4         2.0         V
+VBUSVld trip point              VVbusVld                                           4.4        4.58        4.75         V
+Vbus Pull-Up                    RVbusPu        Vbus to VDD3.3                      281        340                      Ù
+                                               (ChargeVbus = 1)
+Vbus Pull-down                  RVbusPd        Vbus to GND                         656        850                      Ù
+                                               (DisChargeVbus = 1)
+Vbus Impedance                  RVbus          Vbus to GND                         40          75         100          kΩ
+ID pull-up resistance           RIdPullUp      IdPullup = 1                        80         100         120          kΩ
+ID pull-up resistance           RId            IdPullup = 0                         1                                 MΩ
+STP pull-up resistance          RSTP           InterfaceProtectDisable = 0         240        330         600          kΩ
+
+  Note:      VDD3.3 = 3.0 to 3.6V; VSS = 0V; TA = -40C to +85C; unless otherwise specified.
+
+
+
+
+DS00001783B-page 14                                                                       2014-2015 Microchip Technology Inc.
+                                                                                                        USB3300
+
+TABLE 5-7:         REGULATOR OUTPUT VOLTAGES
+           Parameter                    Symbol                  Condition              MIN         TYP        MAX       Units
+VDDA1.8                           VDDA1.8          Normal Operation                     1.6        1.8         2.0        V
+                                                   (SuspendM = 1)
+VDDA1.8                           VDDA1.8          Low Power Mode                                   0                     V
+                                                   (SuspendM = 0)
+VDD1.8                            VDD1.8                                                1.6        1.8         2.0        V
+
+  Note:      VDD3.3 = 3.0 to 3.6V; VSS = 0V; TA = -040C to +85C; unless otherwise specified.
+
+
+
+5.1       Piezoelectric Resonator for Internal Oscillator
+The internal oscillator may be used with an external quartz crystal or ceramic resonator as described in Section 6.3. See
+Table 5-8 for the recommended crystal specifications. See Table 5-1 for the ceramic resonator part number for commer-
+cial temperature applications. At this time, the ceramic resonator does not offer sufficient temperature stability to operate
+over the industrial temperature range.
+
+TABLE 5-8:         USB3300 QUARTZ CRYSTAL SPECIFICATIONS
+              Parameter                   Symbol       Condition             MIN          TYP            MAX          Units
+Crystal Cut                                                           AT, typ
+Crystal Oscillation Mode                                         Fundamental Mode
+Crystal Calibration Mode                                    Parallel Resonant Mode
+Frequency                                  Ffund            -                24               -          MHz
+Total Allowable PPM Budget                                  -                 -           ±500           PPM         Note 5-1
+Shunt Capacitance                           CO              -               7 typ             -          pF
+Load Capacitance                            CL              -               20 typ            -          pF
+Drive Level                                 PW             0.5                -               -          mW
+Equivalent Series Resistance                R1              -                 -               30         Ohm
+Operating Temperature Range                             Note 5-2              -         Note 5-3         oC
+
+USB3300 XI Pin Capacitance                                  -               3 typ             -          pF          Note 5-4
+USB3300 XO Pin Capacitance                                  -               3 typ             -          pF          Note 5-4
+
+  Note 5-1       The required bit rate accuracy for Hi-Speed USB applications is ±500 ppm as provided in the USB
+                 2.0 Specification. This takes into account the effect of voltage, temperature, aging, etc.
+  Note 5-2       0oC for commercial applications, -40oC for industrial applications.
+  Note 5-3       +70oC for commercial applications, +85oC for industrial applications.
+  Note 5-4       This number includes the pad, the bond wire and the lead frame. Printed Circuit Board (PCB)
+                 capacitance is not included in this value. The PCB capacitance value and the capacitance value of
+                 the XO and XI pins are required to accurately calculate the value of the two external load capacitors.
+
+TABLE 5-1:         USB3300 CERAMIC RESONATOR PART NUMBER
+          Frequency                       Murata Part Number                                       Notes
+24 MHz                        CSTCE24M0XK1***-R0                                     Commercial Temp Only, Note 5-5
+
+  Note 5-5       This is a generic part number assigned by Murata. The oscillating frequency is affected by stray
+                 capacitance on the Printed Circuit Board (PCB). Murata will assign the final part number for each
+                 customer’s PCB after characterizing the customer’s PCB design.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                    DS00001783B-page 15
+USB3300
+6.0      ARCHITECTURE OVERVIEW
+The USB3300 architecture can be broken down into the following blocks shown in Figure 6-1, "Simplified USB3300
+Architecture" below.
+
+
+FIGURE 6-1:            SIMPLIFIED USB3300 ARCHITECTURE
+
+
+
+
+                                                                                EXTVBUS
+                                     VDDA1.8
+                            VDD1.8
+
+
+
+
+                                                                   XO
+
+
+
+
+                                                                                                     CPEN
+                                                        XI
+                           Internal                                                                         VBUS
+          VDD3.3                                        XTAL &                         OTG
+                         Regulator &                                                  Module                  ID
+                                                         PLL
+                             POR
+                                                                                                            VDD3.3
+
+
+
+
+                                                                                          Rpu_dp
+
+                                                                                                   Rpu_dm
+           DATA[7:0]                                                                                         DP
+                                                                                                             DM
+
+
+
+
+                                                                                                   Rpd_dm
+                                                                                          Rpd_dp
+          CLKOUT                                       HS XCVR
+            STP
+                         ULPI Digital
+            DIR                                                                Resistors
+            NXT
+
+
+                                                                                          Bias              RBIAS
+                                                         FS/LS                            Gen.
+                                                         XCVR
+                                                  USB3300
+
+6.1      ULPI Digital
+The USB3300 uses the industry standard ULPI digital interface to facilitate communication between the PHY and Link
+(device controller). The ULPI interface is designed to reduce the number of pins required to connect a discrete USB
+PHY to an ASIC or digital controller. For example, a full UTMI+ Level 3 OTG interface requires 54 signals while a ULPI
+interface requires only 12 signals.
+The ULPI interface is documented completely in the “UTMI+ Low Pin Interface (ULPI) Specification” document
+(www.ulpi.org). The following sections highlight the key operating modes of the USB3300 digital interface.
+
+6.1.1      OVERVIEW
+Figure 6-2 illustrates the block diagram of the ULPI digital functions. It should be noted that this PHY does not use a
+“ULPI wrapper” around a UTMI+ PHY core as the ULPI specification implies.
+The advantage of a “wrapper less” architecture is that the PHY has a lower USB latency than a design which must first
+register signals into the PHY’s wrapper before the transfer to the PHY core. A low latency PHY allows a Link to use a
+wrapper around a UTMI Link and still make the required USB turn-around timing given in the USB 2.0 specification.
+
+
+
+
+DS00001783B-page 16                                                                    2014-2015 Microchip Technology Inc.
+                                                                                                                          USB3300
+RxEndDelay maximum allowed by the UTMI+/ULPI for 8-bit data is 63 high speed clocks. USB3300 uses a low latency
+high speed receiver path to lower the RxEndDelay to 43 high speed clocks. This low latency design gives the Link more
+cycles to make decisions and reduces the Link complexity. This is the result of the “wrapper less” architecture of the
+USB3300. This low RxEndDelay should allow legacy UTMI Links to use a “wrapper” to convert the UTMI+ interface to
+a ULPI interface.
+
+
+FIGURE 6-2:             ULPI DIGITAL BLOCK DIAGRAM
+
+
+
+                                                                          High Speed TX             HS Tx Data
+                                        Tx Data                           Full Speed TX
+                                                                                                    FS/LS Tx Data
+                Data[7:0]                                                 Low Speed TX
+
+                      DIR   ULPI Protocol
+                      NXT
+                               Block
+                                                                         High Speed Data                 HS RX Data
+              STP                                                            Recovery
+                                        Rx Data
+                                                                         Full / Low Speed                 FS/LS Data
+                                                                          Data Recovery
+
+
+
+
+                                                                     RXD CMD                                VbusValid
+                                                          InterruptStatus[4:0]                           SessionValid
+                                                                                                                                  From OTG
+                                                             InterruptLatch[4:0]
+                                                                                   Interrupt              SessionEnd
+                                                                                                                IdGnd
+                                                                                                                                  Module
+
+                                                  InterruptEnable Rise[4:0]         Control             Linestates[1:0]
+                                                                                                                                  From USB
+                                                  InterruptEnableFall[4:0]                             HostDisconnect
+                                                                                                                                  Transceiver
+
+                                                  XcvrSelect[1:0]
+                                                  TermSelect
+                                                                                      To USB
+                                                  OpMode[1:0]
+                                                                                      Transceiver
+                                                  Reset
+
+
+                                                  SuspendM
+                                                  6pinSerial Mode                  Transceiver
+                            ULPI Register         3pinSerial Mode
+                                                                                     Control                        To USB
+
+                               Array              ClockSuspendM                                                     Transceiver
+                                                  AutoResume                         Module
+                                                  Interface Protect Disable
+                                                  Indicator Complement
+                                                  Indicator Pass Thru
+                                                  IdPullUp
+                                                  DpPulldown
+                                                  DmPulldown                          To OTG
+                                                  DischrgVbus                         Module
+              POR                                 ChrgVbus                                             NOTE:
+                                                  DrvVbus                                              The USB3300 uses
+                                                  DrvVbusExternal                                      a wrapperless ULPI
+                                                  UseExternal Vbus Indicator
+                                                                                                       interface.
+
+
+
+In Figure 6-2, "ULPI Digital Block Diagram", a single ULPI Protocol Block decodes the ULPI 8-bit bi-directional bus when
+the Link addresses the PHY. The Link must use the DIR output to determine direction of the ULPI data bus. The
+USB3300 is the “bus arbitrator”. The ULPI Protocol Block will route data/commands to the transmitter or the ULPI reg-
+ister array.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                                        DS00001783B-page 17
+USB3300
+6.1.2         ULPI INTERFACE SIGNALS
+UTMI+ Low Pin Interface (ULPI) uses 12-pins to connect a full OTG Host / Device PHY to an SOC. A reduction of exter-
+nal pins on the PHY is accomplished by realizing that many of the relatively static configuration pins (xcvrselect[1:0],
+termselect, opmode[1:0], and DpPullDown DmPulldown to list a few,) can be implemented by having a internal static
+register array.
+An 8-bit bi-directional data bus clocked at 60Mhz allows the Link to access this internal register array and transfer USB
+packets to and from the PHY. The remaining 3 pins function to control the data flow and arbitrate the data bus.
+Direction of the 8-bit data bus is control by the DIR output from the PHY. Another output NXT is used to control data
+flow into and out of the device. Finally, STP, which is in input to the PHY, terminates transfers and is used to start up and
+resume from a suspend state.
+The 12 signals are described below in Table 6-1, "ULPI Interface Signals".
+
+TABLE 6-1:         ULPI INTERFACE SIGNALS
+    Signal         Direction                                            Description
+   CLKOUT             OUT         60MHz reference clock output. All ULPI signals are driven synchronous to the rising
+                                  edge of this clock.
+   DATA[7:0]           I/O        8-bit bi-directional data bus. Bus ownership is determined by DIR. The Link and PHY
+                                  initiate data transfers by driving a non-zero pattern onto the data bus. ULPI defines
+                                  interface timing for a single-edge data transfers with respect to rising edge of
+                                  CLKOUT.
+        DIR           OUT         Controls the direction of the data bus. When the PHY has data to transfer to the
+                                  Link, it drives DIR high to take ownership of the bus. When the PHY has no data to
+                                  transfer it drives DIR low and monitors the bus for commands from the Link. The
+                                  PHY will pull DIR high whenever the interface cannot accept data from the Link,
+                                  such as during PLL start-up.
+        STP            IN         The Link asserts STP for one clock cycle to stop the data stream currently on the
+                                  bus. If the Link is sending data to the PHY, STP indicates the last byte of data was
+                                  on the bus in the previous cycle.
+        NXT           OUT         The PHY asserts NXT to throttle the data. When the Link is sending data to the PHY,
+                                  NXT indicates when the current byte has been accepted by the PHY. The Link
+                                  places the next byte on the data bus in the following clock cycle.
+
+USB3300 implements a Single Data Rate (SDR) ULPI interface with all data transfers happening on the rising edge of
+the CLKOUT. CLKOUT is supplied by the PHY.
+The ULPI interface supports the two basic modes of operation, Synchronous Mode and Low Power Mode. Synchronous
+Mode with the signals all changing relative to the 60MHz clockout. Low Power Mode where the clock is off in a sus-
+pended state and the lower two bits of the data bus contain the linestate[1:0] signals. ULPI adds to Low Power Mode,
+an interrupt output which permits the Link to receive an asynchronous interrupt when the OTG comparators, or ID pin
+change state.
+In Synchronous Mode operation, data is transferred on the rising edge of CLKOUT. Direction of the data bus is deter-
+mined by the state of DIR. When DIR is high, the PHY is driving DATA[7:0]. When DIR is low, the Link is driving
+DATA[7:0].
+Each time DIR changes, a “turn-around” cycle occurs where neither the Link nor PHY drive the data bus for one clock
+cycle. During the “turn–around“ cycle, the state of DATA[7:0] is unknown and the PHY will not read the data bus.
+Because USB uses a bit-stuffing encoding, some means of allowing the PHY to throttle the USB transmit data is needed.
+The ULPI signal NXT is used to request the next byte to be placed on the databus by the Link layer.
+
+
+
+
+DS00001783B-page 18                                                                     2014-2015 Microchip Technology Inc.
+                                                                                               USB3300
+6.1.3       ULPI INTERFACE TIMING
+The control and data timing relationships are given in Figure 6-3, "ULPI Timing Diagram" and Table 6-2, "ULPI Interface
+Timing". The USB300 PHY provides CLKOUT and all timing is relative to the rising clock edge. The timing relationships
+detailed below apply to Synchronous Mode only.
+
+
+FIGURE 6-3:            ULPI TIMING DIAGRAM
+
+
+
+
+     Clock Out -
+       CLKOUT
+
+                          TSC            THC
+
+     Control In -
+           STP
+
+                         TSD              THD
+
+      Data In -
+     DATA[7:0]
+
+                                                                      TDC                          TDC
+
+   Control Out -
+     DIR, NXT
+
+                                                                     TDD
+
+     Data Out -
+     DATA[7:0]
+
+
+
+
+TABLE 6-2:          ULPI INTERFACE TIMING
+                      Parameter                            Symbol              MIN              MAX            Units
+Setup time (control in, 8-bit data in)                     TSC,TSD             5.0                              ns
+Hold time (control in, 8-bit data in)                     THC, THD              0                               ns
+Output delay (control out, 8-bit data out)                TDC, TDD             2.0               5.0            ns
+
+
+  Note:     VDD3.3 = 3.0 to 3.6V; VSS = 0V; TA = -40C to 85C; unless otherwise specified.
+
+
+
+6.1.4       ULPI REGISTER ARRAY
+The USB3300 PHY implements all of the ULPI registers detailed in the ULPI revision 1.1 specification. The complete
+USB3300 ULPI register set is shown in Table 6-3, "ULPI Register Map". All registers are 8 bits. This table also includes
+the default states of the register upon POR. The RESET bit in the Function Control Register does not reset the bits of
+the ULPI register array. The Link should not read or write to any registers not listed in this table.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                             DS00001783B-page 19
+USB3300
+
+TABLE 6-3:          ULPI REGISTER MAP
+                                                  Default                     Address (6bit)
+                 Register Name
+                                                   State        Read        Write           Set          Clear
+Vendor ID Low                                      24h          00h            -             -             -
+Vendor ID High                                     04h          01h            -             -             -
+Product ID Low                                     04h          02h            -             -             -
+Product ID High                                    00h          03h            -             -             -
+Function Control                                   41h         04-06h        04h           05h           06h
+Interface Control                                  00h         07-09h        07h           08h            09h
+OTG Control                                        06h         0A-0Ch        0Ah           0Bh           0Ch
+USB Interrupt Enable Rising                        1Fh         0D-0Fh        0Dh           0Eh           0Fh
+USB Interrupt Enable Falling                       1Fh         10-12h        10h           11h           12h
+USB Interrupt Status                               00h          13h            -             -             -
+USB Interrupt Latch                                00h          14h            -             -             -
+Debug                                              00h          15h            -             -             -
+Scratch Register                                   00h         16-18h        16h           17h           18h
+
+
+
+6.1.4.1      Vendor ID Low: Address = 00h (read only)
+
+        Field Name             Bit    Default                            Description
+Vendor ID Low             7:0        24h        Microchip Vendor ID
+
+
+
+6.1.4.2      Vendor ID High: Address = 01h (read only)
+
+        Field Name             Bit    Default                            Description
+Vendor ID High            7:0        04h        Microchip Vendor ID
+
+
+
+6.1.4.3      Product ID Low: Address = 02h (read only)
+
+        Field Name             Bit    Default                            Description
+Product ID Low            7:0        04h        Microchip Product ID revision A0
+
+
+
+6.1.4.4      Vendor ID Low: Address = 03h (read only)
+
+        Field Name             Bit    Default                            Description
+Product ID High           7:0        00h        Microchip Product ID revision A0
+
+
+
+
+DS00001783B-page 20                                                            2014-2015 Microchip Technology Inc.
+                                                                                              USB3300
+6.1.4.5       Function Control: Address = 04-06h (read), 04h (write), 05h (set), 06h (clear)
+
+        Field Name             Bit      Default                               Description
+XcvrSelect[1:0]                1:0       01b      Selects the required transceiver speed.
+                                                  00b: Enables HS transceiver
+                                                  01b: Enables FS transceiver
+                                                  10b: Enables LS transceiver
+                                                  11b: Enables FS transceiver for LS packets (FS preamble
+                                                  automatically pre-pended)
+TermSelect                      2         0b      Controls the DP and DM termination depending on XcvrSelect,
+                                                  OpMode, DpPulldown, and DmPulldown. The Dp and DM
+                                                  termination is detailed in Table 6-8, "DP/DM Termination vs.
+                                                  Signaling Mode".
+OpMode                         4:3       00b      Selects the required bit encoding style during transmit.
+                                                  00b: Normal Operation
+                                                  01b: Non-Driving
+                                                  10b: Disable bit-stuff and NRZI encoding
+                                                  11b: Reserved
+Reset                           5         0b      Active high transceiver reset. This reset does not reset the ULPI
+                                                  interface or register set. Automatically clears after reset is
+                                                  complete.
+SuspendM                        6         1b      Active low PHY suspend. When cleared the PHY will enter Low
+                                                  Power Mode as detailed in Section 6.1.9, "Low Power Mode".
+                                                  Automatically set when exiting Low Power Mode.
+Reserved                        7         0b      Driven low.
+
+
+
+6.1.4.6       Interface Control: Address = 07-09h (read), 07h (write), 08h (set), 09h (clear)
+
+        Field Name             Bit      Default                               Description
+6-pin FsLsSerialMode            0         0b      Changes the ULPI interface to a 6-pin Serial Mode. The PHY will
+                                                  automatically clear this bit when exiting serial mode.
+3-pin FsLsSerialMode            1         0b      Changes the ULPI interface to a 3-pin Serial Mode. The PHY will
+                                                  automatically clear this bit when exiting serial mode.
+Reserved                        2         0b      Driven low.
+ClockSuspendM                   3         0b      Enables Link to turn on 60MHz CLKOUT in serial mode.
+                                                  0b: Disable clock in serial mode.
+                                                  1b: Enable clock in serial mode.
+AutoResume                      4         0b      Only applicable in Host mode. Enables the PHY to automatically
+                                                  transmit resume signaling. This function is detailed in Section
+                                                  6.1.7.4, "Host Resume K".
+IndicatorComplement             5         0b      Inverts the EXTVBUS signal. This function is detailed in Section
+                                                  6.5.4, "External Vbus Indicator".
+IndicatorPassThru               6         0b      Disables anding the internal VBUS comparator with the EXTVBUS
+                                                  input when asserted. This function is detailed in Section 6.5.4.
+InterfaceProtectDisable         7         0b      Used to disable the integrated STP pull-up resistor used for
+                                                  interface protection. This function is detailed in Section 6.1.9.3,
+                                                  "Interface Protection".
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                            DS00001783B-page 21
+USB3300
+6.1.4.7       OTG Control: Address = 0A-0Ch (read), 0Ah (write), 0Bh (set), 0Ch (clear)
+
+      Field Name            Bit     Default                                Description
+IdPullup                     0         0b      Connects a pull-up resistor from the ID pin to VDD3.3
+                                               0b: Disables the pull-up resistor
+                                               1b: Enables the pull-up resistor
+DpPulldown                   1         1b      Enables the 15k Ohm pull-down resistor on DP.
+                                               0b: Pull-down resistor not connected to DP
+                                               1b: Pull-down resistor connected to DP
+DmPulldown                   2         1b      Enables the 15k Ohm pull-down resistor on DM.
+                                               0b: Pull-down resistor not connected to DM
+                                               1b: Pull-down resistor connected to DM
+DischrgVbus                  3         0b      This bit is only used during SRP. Connects a resistor from VBUS
+                                               to ground to discharge VBUS.
+                                               0b: disconnect resistor from VBUS to ground
+                                               1b: connect resistor from VBUS to ground
+ChrgVbus                     4         0b      This bit is only used during SRP. Connects a resistor from VBUS
+                                               to VDD3.3 to charge VBUS above the SessValid threshold.
+                                               0b: disconnect resistor from VBUS to VDD3.3
+                                               1b: connect resistor from VBUS to VDD3.3
+DrvVbus                      5         0b      Used to enable external 5 volt supply to drive 5 volts on VBUS.
+                                               This signal is or’ed with DrvVbusExternal.
+                                               0b: do not drive VBUS
+                                               1b: drive VBUS
+DrvVbusExternal              6         0b      Used to enable external 5 volt supply to drive 5 volts on VBUS.
+                                               This signal is or’ed with DrvVbus.
+                                               0b: do not drive VBUS
+                                               1b: drive VBUS
+UseExternalVbus              7         0b      Tells the PHY to use an external VBUS over-current or voltage
+Indicator                                      indicator. This function is detailed in Section 6.5.4, "External Vbus
+                                               Indicator".
+                                               0b: Use the internal VbusValid comparator
+                                               1b: Use the EXTVBUS input as for VbusValid signal.
+
+
+
+6.1.4.8       USB Interrupt Enable Rising: Address = 0D-0Fh (read), 0Dh (write), 0Eh (set), 0Fh (clear)
+
+      Field Name            Bit     Default                                Description
+HostDisconnect Rise          0         1b      Generate an interrupt event notification when Hostdisconnect
+                                               changes from low to high. Applicable only in host mode.
+VbusValid Rise               1         1b      Generate an interrupt event notification when Vbusvalid changes
+                                               from low to high.
+SessValid Rise               2         1b      Generate an interrupt event notification when SessValid changes
+                                               from low to high.
+SessEnd Rise                 3         1b      Generate an interrupt event notification when SessEnd changes
+                                               from low to high.
+IdGnd Rise                   4         1b      Generate an interrupt event notification when IdGnd changes from
+                                               low to high.
+Reserved                    7:5        0h      Driven low.
+
+
+
+
+DS00001783B-page 22                                                              2014-2015 Microchip Technology Inc.
+                                                                                             USB3300
+6.1.4.9       USB Interrupt Enable Falling: Address = 10-12h (read), 10h (write), 11h (set), 12h (clear)
+
+        Field Name             Bit      Default                             Description
+HostDisconnect Fall             0         1b      Generate an interrupt event notification when Hostdisconnect
+                                                  changes from high to low. Applicable only in host mode.
+VbusValid Fall                  1         1b      Generate an interrupt event notification when Vbusvalid changes
+                                                  from high to low.
+SessValid Fall                  2         1b      Generate an interrupt event notification when SessValid changes
+                                                  from high to low.
+SessEnd Fall                    3         1b      Generate an interrupt event notification when SessEnd changes
+                                                  from high to low.
+IdGnd Fall                      4         1b      Generate an interrupt event notification when IdGnd changes from
+                                                  high to low.
+Reserved                       7:5        0h      Driven low.
+
+
+
+6.1.4.10      USB Interrupt Status Register: Address = 13h (read only with auto clear)
+
+        Field Name             Bit      Default                             Description
+HostDisconnect                  0         0b      Current value of the UTMI+ Hostdisconnect output. Applicable
+                                                  only in host mode.
+VbusValid                       1         0b      Current value of the UTMI+ Vbusvalid output.
+SessValid                       2         0b      Current value of the UTMI+ SessValid output.
+SessEnd                         3         0b      Current value of the UTMI+ SessEnd output.
+IdGnd                           4         0b      Current value of the UTMI+ IdGnd output.
+Reserved                       7:5        0h      Driven low.
+
+
+
+6.1.4.11      USB Interrupt Status: Address = 14h (read only with auto clear)
+
+        Field Name             Bit      Default                             Description
+HostDisconnect Latch            0         0b      Set to 1b by the PHY when an unmasked event occurs on
+                                                  Hostdisconnect. Cleared when this register is read. Applicable
+                                                  only in host mode.
+VbusValid Latch                 1         0b      Set to 1b by the PHY when an unmasked event occurs on
+                                                  VbusValid. Cleared when this register is read.
+SessValid Latch                 2         0b      Set to 1b by the PHY when an unmasked event occurs on
+                                                  SessValid. Cleared when this register is read.
+SessEnd Latch                   3         0b      Set to 1b by the PHY when an unmasked event occurs on
+                                                  SessEnd. Cleared when this register is read.
+IdGnd Latch                     4         0b      Set to 1b by the PHY when an unmasked event occurs on IdGnd.
+                                                  Cleared when this register is read.
+Reserved                       7:5        0h      Driven low.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                          DS00001783B-page 23
+USB3300
+6.1.4.12          Debug Register: Address = 15h (read only)
+
+        Field Name               Bit       Default                              Description
+Linestate0                       0           0b      Contains the current value of Linestate[0].
+Linestate1                       1           0b      Contains the current value of Linestate[1].
+Reserved                         7:2    000000b      Driven low.
+
+
+
+6.1.4.13          Scratch Register: Address = 16-18h (read), 16h (write), 17h (set), 18h (clear)
+
+        Field Name               Bit       Default                              Description
+Scratch                          7:0        00h      Empty register byte for testing purposes. Software can read, write,
+                                                     set, and clear this register and the PHY functionality will not be
+                                                     affected.
+
+6.1.4.14          Carkit Register Access
+The Carkit registers are reserved for Microchip testing and should not be written to or read by the Link.
+
+6.1.4.15          Extended Register Access
+The extended registers are reserved for Microchip testing and should not be written to or read by the Link.
+
+6.1.4.16          Vendor Register Access
+The vendor specific registers are reserved for Microchip testing and should not be written to or read by the Link. The
+vendor specific registers include the range from 30h to 3Fh.
+
+6.1.5        ULPI REGISTER ACCESS
+A command from the Link begins a ULPI transfer from the Link to the USB3300. Anytime the Link wants to write or read
+a ULPI register, the Link will need to wait until DIR is low, and then send a Transmit Command Byte (TXD CMD) to the
+PHY. The TXD CMD byte informs the PHY of the type of data being sent. The TXD CMD is followed by the a data transfer
+to or from the PHY. Table 6-4, "ULPI TXD CMD Byte Encoding" gives the TXD command byte (TXD CMD) encoding for
+the USB3300. The upper two bits of the TX CMD instruct the PHY as to what type of packet the Link is transmitting.
+
+TABLE 6-4:            ULPI TXD CMD BYTE ENCODING
+  Command Name             CMD Bits[7:6]      CMD Bits[5:0]                    Command Description
+           Idle                 00b               000000b      ULPI Idle
+        Transmit                01b               000000b      USB Transmit Packet with No Packet Identifier (NOPID)
+                                                  00XXXXb      USB Transmit Packet Identifier (PID) where DATA[3:0]
+                                                               is equal to the 4-bit PID. P3P2P1P0 where P3 is the
+                                                               MSB.
+    Register Write              10b               XXXXXXb      Immediate Register Write Command where
+                                                               DATA[5:0] = 6-bit register address
+    Register Read               11b               XXXXXXb      Immediate Register Read Command where
+                                                               DATA[5:0] = 6-bit register address
+
+
+
+
+DS00001783B-page 24                                                                   2014-2015 Microchip Technology Inc.
+                                                                                                     USB3300
+6.1.5.1       ULPI Register Write
+A ULPI register write operation is given in Figure 6-4. The TXD command with a register write DATA[7:6] = 10b is driven
+by the Link at T0. The register address is encoded into DATA[5:0] of the TXD CMD byte.
+
+
+FIGURE 6-4:            ULPI REGISTER WRITE
+
+
+
+                                    T0          T1              T2       T3             T4          T5              T6
+
+                    CLK
+
+
+                                                  TXD CMD
+             DATA[7:0]       Idle
+                                                  (reg write)
+                                                                          Reg Data[n]        Idle
+
+
+
+
+                    DIR
+
+
+                    STP
+
+
+                    NXT
+
+
+           ULPI Register                                Reg Data [n-1]                                   Reg Data [n]
+
+
+
+
+To write to a register, the Link will wait until DIR is low, and at T0, drive the TXD CMD on the databus. At T2 the PHY
+will drive NXT high. On the next rising clock edge, T3, the Link will write the register data. At T4 the PHY will accept the
+register data and the Link will drive an Idle on the bus and drive STP high to signal the end of the data packet. Finally,
+at T5, the PHY will latch the data into the register and drive NXT low. The Link will pull STP low.
+NXT is used to control when the Link drives the register data on the bus. DIR is low throughout this transaction since
+the PHY is receiving data from the Link. STP is used to end the transaction and data is registered after the de-assertion
+of STP. After the write operation completes, the Link must drive a ULPI Idle (00h) on the data bus or the USB3300 may
+decode the bus value as a ULPI command.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                      DS00001783B-page 25
+USB3300
+6.1.5.2      ULPI Register Read
+A ULPI register read operation is given in Figure 6-5. The Link drives a TXD CMD byte with DATA[7:6] = 11h for a reg-
+ister read. DATA[5:0] of the ULPI TXD command bye contain the register address.
+
+
+FIGURE 6-5:             ULPI REGISTER READ
+
+
+                                     T0        T1          T2       T3             T4          T5            T6
+
+                 CLK
+
+
+           DATA[7:0]        Idle             Txd Cmd Reg
+                                                 Read
+                                                                     Turn around    Reg Data   Turn around        Idle
+
+
+
+
+                  DIR
+
+
+                 STP
+
+
+                 NXT
+
+
+
+At T0, the Link will place the TXD CMD on the databus. At T2, the PHY will bring NXT high, signaling that the Link it is
+ready to accept the data transfer. At T3, the PHY reads the TXD CMD, determines it is a register read, and asserts DIR
+to gain control of the bus. The PHY will also de-assert NXT. At T4, the bus ownership has transferred back to the PHY
+and the PHY drives the requested register onto the databus. At T5, the Link will read the databus and the PHY will drop
+DIR low returning control of the bus back to the Link. After the turn around cycle, the Link must drive a ULPI Idle com-
+mand at T6.
+
+6.1.6       ULPI RXD CMD
+The Link needs several more important states of information which were provided by the linestate[1:0], rxactive, rxvalid
+and rxerror. When an implementing the OTG functions the Vbus and ID pin states must also be transferred into the Link.
+ULPI defines a Receive Command Byte (RXD CMD) that contains this information. The Encoding of the RXD CMD byte
+is given in the Table 6-5, "ULPI RX CMD Encoding".
+Transfer of the RXD CMD byte occurs when in Synchronous Mode when the PHY has control of the bus. Transfers of
+the RXD CMD occur after: a transmit cmd has issued STP, a linestate change when not transmitting, a USB receive, or
+an interrupt event occurs.
+In Figure 6-2, "ULPI Digital Block Diagram", the ULPI Protocol Block determines when to send an RXD CMD. When a
+linestate change occurs the RXD CMD is sent immediately if the DIR output is low.
+When a USB Receive is occurring RXD CMDs are sent when ever NXT = 0 and DIR = 1. When a USB Transmit occurs
+the RXD CMDs are returned to the Link after the STP is asserted ending the Link to USB3300 transfer of the bytes to
+be sent on the transmit.
+To summarize a RXD CMD transfer occurs:
+• when DIR is low and a linestate change occurs.
+• when Vbus and/or ID comparators change state.
+• during a USB receive when NXT is low.
+• after STP is asserted during a USB transmit cmd.
+
+
+
+
+DS00001783B-page 26                                                                      2014-2015 Microchip Technology Inc.
+                                                                                                  USB3300
+
+TABLE 6-5:          ULPI RX CMD ENCODING
+  Data [7:0]        Name                                       Description and Value
+     [1:0]         Linestate   UTMI Linestate Signals
+                               DATA[1] = Linestate[1]
+                               DATA[0] = Linestate[0]
+     [3:2]         Encoded ENCODED VBUS VOLTAGE STATES
+                  Vbus State
+                             VALUE     VBUS VOLTAGE                         SESSEND         SESSVLD           VBUSVLD2
+                                   00       VVBUS < VSESS_END                    1                0              0
+                                   01       VSESS_END < VVBUS <                  0                0              0
+                                            VSESS_VLD
+                                   10       VSESS_VLD < VVBUS <                  X                1              0
+                                            VVBUS_VLD
+                                   11       VVBUS_VLD < VVBUS                    X                X              1
+     [5:4]         Rx Event    ENCODED UTMI EVENT SIGNALS
+                   Encoding
+                                 VALUE               RXACTIVE               RXERROR              HOSTDISCONNECT
+                                   00                     0                      0                        0
+                                   01                     1                      0                        0
+                                   11                     1                      1                        0
+                                   10                     X                      X                        1
+        [6]       State of ID Set to the logic state of the ID pin. A logic low indicates an A device. A logic high
+                      pin     indicates a B device.
+
+        [7]        Reserved    Always
+
+  Note 1: An ‘X’ is a do not care and can be either a logic 0 or 1.
+          2: The value of VbusValid is defined in Table 6-10, "External Vbus Indicator Logic".
+
+6.1.7         USB3300 TRANSMITTER
+The USB3300 ULPI transmitter fully supports HS, FS, and LS transmit operations. Figure 6-2, "ULPI Digital Block Dia-
+gram" shows the high speed, full speed, and low speed transmitter block controlled by ULPI Protocol Block. Encoding
+of the USB packet follows the bit-stuffing and NRZI outlined in the USB 2.0 specification. Many of these functions are
+re-used between the high speed and full/low speed transmitters. When using the USB3300, Table 6-8, "DP/DM Termi-
+nation vs. Signaling Mode" should always be used as a guideline on how to configure for various modes of operation.
+The transmitter decodes the inputs of Xcvrselect, Termselect, opmodes, DpPulldown and DmPulldown to determine
+what operation is expected. Users must strictly adhere to the modes of operation given in Table 6-8.
+Several important functions for a device and host are designed in the transmitter blocks.
+The USB3300 transmitter will transmit a 32-bit long high speed synch before every high speed packet. In full and low
+speed modes a 8-bit synch is transmitted.
+When the device or host needs to chirp for high speed port negotiation, the Opmode Bits=10 will turn off the bit-stuffing
+and NRZI encoding in the transmitter. At the end of a chirp, the USB3300 Opmode register bits should be changed only
+after the RXCMD linestate encoding indicates that the transmitter has completed transmitting. Should the opmode be
+switched to normal bit-stuffing and NRZI encoding before the transmit pipeline is empty, the remaining data in the pipe-
+line may be transmitted in an bit-stuff encoding format.
+Please refer to the ULPI specification for a detailed discussion of USB reset and HS chirp.
+
+6.1.7.1        High Speed Long EOP
+When operating as a Hi-Speed host, the USB3300 will automatically generate a 40 bit long End of Packet (EOP) after
+a SOF PID (A5h). The USB3300 determines when to send the 40-bit long EOP by decoding the ULPI TXD CMD bits
+[3:0] for the SOF. The 40-bit long EOP is only transmitted when the DpPulldown and DmPulldown bits are asserted. The
+Hi-Speed 40-bit long EOP is used to detect a disconnect in high speed mode.
+In device mode, the USB3300 will not send a long EOP after a SOF PID.
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                 DS00001783B-page 27
+USB3300
+6.1.7.2          Low Speed Keep-Alive
+Low speed keep alive is supported by the USB3300. When in Low speed (10b), the USB3300 will send out two Low
+speed bit times of SE0 when a SOF PID is received.
+
+6.1.7.3          UTMI+ Level 3
+Pre-amble is supported for UTMI+ Level 3 compatibility. When Xcvrselect is set to (11b) in host mode, (dpPulldown and
+dmPulldown both asserted) the USB3300 will pre-pend a full speed pre-amble before the low speed packet. Full speed
+rise and fall times are used in this mode. The pre-amble consists of the following: Full speed sync, the encoded pre-PID
+(C3h) and then full speed idle (DP=1 and DM = 0). A low speed packet follows with a sync, data and a LS EOP.
+
+6.1.7.4          Host Resume K
+Resume K generation is supported by the USB3300. When the USB3300 exits the suspended low power state, the
+USB3300, when operating as a host, will transmit a K on DP/DM. The transmitters will end the K with SE0 for two Low
+Speed bit times. If the USB3300 was operating in high speed mode before the suspend, the host must change to high
+speed mode before the SE0 ends. SE0 is two low speed bit times which is about 1.2 us.
+The ULPI specification has an explicit discussion of the resume sequence and the order of operations required.
+In device mode, the resume K will not append a SE0 but release the DP/ DM lines to allow the pull up to return the bus
+to the correct idle state, depending upon the operational mode of the USB3300. Refer to Table 6-8, "DP/DM Termination
+vs. Signaling Mode".
+
+6.1.7.5          No SYNC and EOP Generation (Opmode 11) (optional)
+UTMI+ defines an opmode 11 where no sync and EOP generation occurs in Hi-Speed operation. This is an option to
+the ULPI specification and not implemented in the USB3300.
+
+6.1.7.6          Typical USB Transmit with ULPI
+Figure 6-6, "ULPI Transmit" shows a typical USB transmit sequence. A transmit sequence starts by the Link sending a
+TXD CMD where DATA[7:6] = 01b, DATA[5:4] = 00b, and Data[3:0] = PID. The TX CMD with the PID is followed by
+transmit data. Form the time the data is clocked into the transmitter it will appear at DP and DM 11 high speed bit times
+later. This time is the HS_TX_START_DELAY.
+
+
+FIGURE 6-6:             ULPI TRANSMIT
+
+
+
+       CLK
+
+
+                          TXDCMD                                                                        Turn    RXD    Turn
+  DATA[7:0]   Idle
+                          (USBtx)
+                                         D0     D1         D2         D3           IDLE
+                                                                                                       Around   CMD   Around
+
+
+
+
+       DIR
+
+
+      NXT
+
+
+       STP
+
+
+    DP/DM                  SE0                                     !SQUELCH                            SE0
+
+
+
+
+During transmit the PHY will use NXT to control the rate of data flow into the PHY. If the USB3300 pipeline is full or bit-
+stuffing causes the data pipeline to overfill NXT is de-asserted and the Link will hold the value on Data until NXT is
+asserted. The USB Transmit ends when the Link asserts STP while NXT is asserted. (Note that the Link cannot assert
+STP with NXT de-asserted since the USB3300 is expecting to fetch another byte from the Link in this state).
+
+
+
+DS00001783B-page 28                                                                    2014-2015 Microchip Technology Inc.
+                                                                                                 USB3300
+Once, the USB3300 completes transmitting, the DP/DM lines return to idle and an RXD CMD is returned to the Link so
+the inter-packet timers may be updated by linestate.
+In the case of Full Speed or Low Speed, once STP is asserted each FS/LS bit transition will generate a RXD CMD since
+the bit times are relatively slow.
+
+6.1.8       USB3300 RECEIVER
+The USB3300 ULPI receiver fully supports HS, FS, and LS transmit operations. In all three modes the receiver detects
+the start of packet and synchronizes to the incoming data packet. In the ULPI protocol, a received packet has the priority
+and will immediately follow register reads and RXD CMD transfers. Figure 6-7, "ULPI Receive" shows a basic USB
+packet received by the USB3300 over the ULPI interface.
+
+
+FIGURE 6-7:             ULPI RECEIVE
+
+
+
+
+          CLK
+
+
+                                 Turn       Rxd                              Rxd                    Turn
+ DATA[7:0]            Idle
+                                around      Cmd
+                                                       PID        D1
+                                                                             Cmd
+                                                                                         D2
+                                                                                                   around
+
+
+
+
+          DIR
+
+
+          STP
+
+
+          NXT
+
+
+
+
+In Figure 6-7, "ULPI Receive" the PHY asserts DIR to take control of the data bus from the Link. The assertion of DIR
+and NXT in the same cycle contains additional information that Rxactive has been asserted. When NXT is de-asserted
+and DIR is asserted, the RXD CMD data is transferred to the Link. After the last byte of the USB receive packet is trans-
+ferred to the PHY, the linestate will return to idle.
+The ULPI full speed receiver operates according to the UTMI/ULPI specification. In the full speed case, the NXT signal
+will assert only when the Data bus has a valid received data byte. When NXT is low with DIR high, the RXD CMD is
+driven on the data bus.
+In full speed, the USB3300 will not issue a Rxactive de-assertion in the RXD CMD until the DP/DM linestate transition
+to idle. This prevents the Link from violating the two full speed bit times minimum turn around time.
+
+6.1.8.1         Disconnect Detection
+A High Speed host must detect a disconnect by sampling the transmitter outputs during the long EOP transmitted during
+a SOF packet. The USB3300 only looks for a high speed disconnect during the long EOP where the period is long
+enough for the disconnect reflection to return to the host PHY. When a high speed disconnect occurs the USB3300 will
+return a RXD CMD and set the host disconnect bit in the ULPI interrupt status register (address 13h).
+When in FS or LS modes, the Link is expected to handle all disconnect detection.
+
+6.1.9       LOW POWER MODE
+Low Power Mode is a power down state to save current when the USB session is suspended. The Link controls when
+the PHY is placed into or out of Low Power Mode. In Low Power Mode all of the circuits are powered down except the
+interface pins, full speed receiver, VBUS comparators, and ID comparator.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                               DS00001783B-page 29
+USB3300
+6.1.9.1         Entering Low Power/Suspend Mode
+To enter Low Power Mode, the Link will write a 0 or clear the SuspendM bit in the Function Control Register. Once this
+write is complete, the PHY will assert DIR high and after five rising edges of CLKOUT, drive the clock low. Once the
+clock is stopped, the PHY will enter a low power state to conserve current.
+
+
+FIGURE 6-8:                    ENTERING LOW POWER MODE
+
+
+                                T0    T1              T2          T3             T4          T5            T6              T10
+
+               CLK                                                                                               ...
+                                        TXD CMD                                                    Turn
+       DATA[7:0]        Idle
+                                        (reg write)
+                                                                   Reg Data[n]        Idle
+                                                                                                  Around
+                                                                                                                  Low Power Mode
+
+
+
+
+                DIR
+
+
+               STP
+
+
+               NXT
+
+
+      SUSPENDM
+ (ULPI Register Bit)
+
+
+
+
+While in Low Power Mode, the Data interface is redefined so that the Link can monitor Linestate and the Vbus voltage.
+In Low Power Mode DATA[3:0] are redefined as shown in Table 6-6, "Interface Signal Mapping During Low Power
+Mode". Linestate[1:0] is the combinational output of the full speed receivers. The “int” or interrupt signal indicates an
+unmasked interrupt has occurred. When an unmasked interrupt or linestate change has occurred, the Link is notified
+and can determine if it should wake-up the PHY.
+
+TABLE 6-6:             INTERFACE SIGNAL MAPPING DURING LOW POWER MODE
+       Signal            Maps To       Direction                                             Description
+linestate[0]           DATA[0]       OUT                   Combinatorial linestate[0] driven directly by FS analog receiver.
+linestate[1]           DATA[1]       OUT                   Combinatorial linestate[1] driven directly by FS analog receiver.
+reserved               DATA[2]       OUT                   Driven Low
+int                    DATA[3]       OUT                   Active high interrupt indication. Must be asserted whenever any
+                                                           unmasked interrupt occurs.
+reserved               DATA[7:4]     OUT                   Driven Low
+
+An unmasked interrupt can be caused by the following comparators changing state, VbusVld, SessVld, SessEnd, and
+IdGnd. If any of these signals change state during Low Power Mode and either their rising or falling edge interrupt is
+enabled, DATA[3] will assert. During Low Power Mode, the VbusVld and SessEnd comparators can have their interrupts
+masked to lower the suspend current. Refer to Section 6.1.9.4, "Minimizing Current in Low Power Mode".
+While in Low Power Mode, the Data bus is driven asynchronously because all of the PHY clocks are stopped during
+Low Power Mode.
+
+
+
+
+DS00001783B-page 30                                                                                  2014-2015 Microchip Technology Inc.
+                                                                                                                    USB3300
+6.1.9.2       Exiting Low Power Mode
+To exit Low Power Mode, the Link will assert STP. Upon the assertion of STP, the USB3300 will begin its start-up pro-
+cedure. After the PHY start-up is complete, the PHY will start the clock on CLKOUT and de-assert DIR. Once DIR has
+been de-asserted, the Link can de-assert STP when ready and start operating in Synchronous Mode. The PHY will auto-
+matically set the SuspendM bit to a 1 in the Function Control register.
+
+
+FIGURE 6-9:             EXITING LOW POWER MODE
+
+
+                           T0                          T1            T2            T3            T4         T5
+
+                 CLK                            ...
+                                    LOW                      TURN         DATA BUS IGNORED (SLOW LINK)
+            DATA[7:0]            POWER MODE                 AROUND              IDLE (FAST LINK)
+                                                                                                                 IDLE
+
+
+                                                                                                         Slow Link Drives Bus
+                                                                          Fast Link Drives Bus           Idle and STP low
+                  DIR                                                     Idle and STP low
+
+
+
+
+                 STP
+                                  Note: Not to Scale
+
+
+                 NXT
+
+
+
+The time from T0 to T1 is given in Table 5-2, “Electrical Characteristics: CLKOUT Start-Up,” on page 12.
+Should the Link de-assert STP before DIR is de-asserted, the USB3300 will detect this as a false resume request and
+return to Low Power Mode. This is detailed in section 3.9.4 of the ULPI 1.1 specification.
+
+6.1.9.3       Interface Protection
+ULPI protocol assumes that both the Link and PHY will keep the ULPI data bus driven by either the Link when DIR is
+low or the PHY when DIR is high. The only exception is when DIR has changed state and a turn around cycle occurs
+for 1 clock period.
+In the design of a USB system, there can be cases where the Link may not be driving the ULPI bus to a known state
+while DIR is low. Two examples where this can happen is because of a slow Link start-up or a hardware reset.
+Start up Protection
+Upon start-up, when the PHY de-asserts DIR, the Link must be ready to receive commands and drive Idle on the data
+bus. If the Link is not ready to receive commands or drive Idle, it must assert STP before DIR is de-asserted. The Link
+can then de-assert STP when it has completed its start-up. If the Link doesn’t assert STP before it can receive com-
+mands, the PHY may interpret the databus state as a TX CMD and transmit invalid data onto the USB bus, or make
+invalid register writes.
+A Link should be designed to have the default POR state of the STP output high and the data bus tri-stated. The
+USB3300 has weak pull-downs on the DATA bus to prevent these inputs from floating when not driven.
+In some cases, a Link may be software configured and not have control of its STP pin until after the PHY has started.
+In this case, the USB3300 has an internal pull-up on the STP input pad which will pull STP high while the Link’s STP
+output is tri-stated. The STP pull-up resistor is enabled on POR and can be disabled by setting the InterfaceProtectDis-
+able bit 7 of the Interface Control register.
+The STP pull-up resistor will pull-up the Link’s STP input high until the Link configures and drives STP high. Once the
+Link completes its start-up, STP can be synchronously driven low.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                                   DS00001783B-page 31
+USB3300
+A Link design which drives STP high during POR can disable the pull-up resistor on STP by setting InterfaceProtect-
+Disable bit to 1. A motivation for this is to reduce the suspend current. In Low Power Mode, STP is held low, which would
+draw current through the pull-up resistor on STP.
+Warm Reset
+Designers should also consider the case of a warm restart of a Link with a PHY in Low Power Mode. Once the PHY
+enters Low Power Mode, DIR is asserted and the clock is stopped. The USB3300 looks for STP to be asserted to re-
+start the clock and then resume normal synchronous operation.
+Should the USB3300 be suspended in Low Power Mode, and the Link receives a hardware reset, provision is made to
+allow the PHY to recover from Low Power Mode and start its clock. If the Link asserts STP on reset, the PHY will exit
+Low Power Mode and start its clock.
+If the Link does not assert STP on reset the interface protection pull-up can be used. When the Link is reset, its STP
+output will tri-state and the pull-up resistor will pull STP high, signaling the PHY to restart its clock.
+
+6.1.9.4         Minimizing Current in Low Power Mode
+In order to minimize the suspend current in Low Power Mode, the OTG comparators can be disabled to reduce suspend
+current. During suspend, the VbusVld and SessEnd comparators are not needed and can be disabled using the USB
+Interrupt Enable Rise and USB Interrupt Enable Fall registers. By disabling the interrupt in BOTH the rise and fall reg-
+isters, the SessEnd and VbusVld comparators are turned off. When exiting suspend, the Link should immediately re-
+enable the comparators if host or OTG functionality is needed.
+In addition to disabling the OTG comparators in suspend, the Link may choose to disable the Interface Protect Circuit.
+By setting the Interface Control, bit 7, InterfaceProtectDisable high, the Link can disable the pull-up resistor on STP.
+
+6.1.10        FULL SPEED/LOW SPEED SERIAL MODES
+The USB3300 includes two serial modes to support legacy Links which use either the 3pin or 6pin serial format. To enter
+either serial mode, the Link will need to write a 1 to the 6-pin FsLsSerialMode or the 3-pin FsLsSerialMode bit in the
+Interface control register. The 6-pin Serial Mode is provided for legacy link designs and is not recommended for new
+designs.
+The serial modes are entered in the same manner as the entry into Low Power Mode. The Link writes the Interface
+Control register bit for the specific serial mode. The USB3300 will assert DIR and shut off the clock after at least five
+clock cycles. Then the data bus goes to the format of the serial mode selected.
+By default, the PHY will shut off the 60MHz clock to conserve power. Should the Link need the 60Mhz clock to continue
+during the serial mode of operation, the ClockSuspendM bit[3] of the Interface Control Register should be set before
+entering a serial mode. If set, the 60 Mhz clock will be present during serial modes.
+In serial mode, interrupts are possible from unmasked sources. The state of each interrupt source is sampled prior to
+the assertion of DIR and this is compared against the asynchronous level from interrupt source.
+Exiting the serial modes is the same as exiting Low Power Mode. The Link must assert STP to signal the PHY to exit
+serial mode. Then the PHY can accept a command, DIR is de-asserted and the PHY will wait until the Link de-asserts
+STP to resume synchronous ULPI operation.
+
+6.1.10.1        3pin FS/LS Serial Mode
+Three pin serial mode utilizes the data bus pins for the serial functions shown in Table 6-7, "Pin Definitions in 3-pin Serial
+Mode".
+
+TABLE 6-7:         PIN DEFINITIONS IN 3-PIN SERIAL MODE
+     Signal         Connected To           Direction                                 Description
+   tx_enable           DATA[0]                 IN          Active High transmit enable
+      data             DATA[1]                 I/O         Tx differential data on DP/DM when tx_enable is high
+                                                           RX differential data from DP/DM when tx_enable is low
+      se0              DATA[2]                I/O          Tx SE0 on DP/DM when tx_enable is high
+                                                           RX SE0 from DP/DM when tx_enable is low
+    interrupt          DATA[3]                OUT          Asserted when any unmasked interrupt occurs. Active high
+
+
+
+
+DS00001783B-page 32                                                                     2014-2015 Microchip Technology Inc.
+                                                                                                                                                USB3300
+6.1.11       RESET PIN
+The reset input of the USB3300 may be asynchronously asserted and de-asserted so long as it is held in the asserted
+state continuously for a duration greater than one clkout clock cycle. The reset input may be asserted when the
+USB3300 clkout signal is not active (i.e. in the suspend state caused by asserting the SuspendM bit) but reset must only
+be de-asserted when the USB3300 clkout signal is active and the reset has been held asserted for a duration greater
+than one clkout clock cycle. No other PHY digital input signals may change state for two clkout clock cycles after the de-
+assertion of the reset signal.
+
+6.2      Hi-Speed USB Transceiver
+The Microchip Hi-Speed USB 2.0 Transceiver consists of four blocks in the lower right corner of Figure 6-1, "Simplified
+USB3300 Architecture". These four blocks are labeled HS XCVR, FS/LS XCVR, Resistors, and Bias Gen.
+
+6.2.1        HIGH SPEED AND FULL SPEED TRANSCEIVERS
+The USB3300 transceiver meets all requirements in the USB 2.0 specification.
+The receivers connect directly to the USB cable. This block contains a separate differential receiver for HS and FS
+mode. Depending on the mode, the selected receiver provides the serial data stream through the multiplexer to the RX
+Logic block. The FS mode section of the FS/HS RX block also consists of a single-ended receiver on each of the data
+lines to determine the correct FS linestate. For HS mode support, the FS/HS RX block contains a squelch circuit to
+insure that noise is never interpreted as data.
+The transmitters connect directly to the USB cable. The block contains a separate differential FS and HS transmitter
+which receive encoded, bit stuffed, serialized data from the TX Logic block and transmit it onto the USB cable.
+
+6.2.2        TERMINATION RESISTORS
+The USB3300 transceiver fully integrates all of the USB termination resistors. The USB3300 includes 1.5kΩ pull-up
+resistors on both DP and DM and a 15kΩ pull-down resistor on both DP and DM. The 45Ω high speed termination resis-
+tors are also integrated. These resistors require no tuning or trimming by the Link. The state of the resistors is deter-
+mined by the operating mode of the PHY. The possible valid resistor combinations are shown in Table 6-8, "DP/DM
+Termination vs. Signaling Mode". Operation is guaranteed in the configurations given in the table below.
+• RPU_DP_EN activates the 1.5kΩ DP pull-up resistor
+• RPU_DM_EN activates the 1.5kΩ DM pull-up resistor
+• RPD_DP_EN activates the 15kΩ DP pull-down resistor
+• RPD_DM_EN activates the 15kΩ DM pull-down resistor
+• HSTERM_EN activates the 45Ω DP and DM high speed termination resistors
+
+TABLE 6-8:          DP/DM TERMINATION VS. SIGNALING MODE
+                                                                      Register Settings                                                       Resistor Settings
+                                                    XCVRSELECT[1:0]
+
+
+
+
+                                                                                                                    DMPULLDOWN
+                                                                                                      DPPULLDOWN
+                                                                        TERMSELECT
+
+
+                                                                                       OPMODE[1:0]
+
+
+
+
+                                                                                                                                                RPU_DM_EN
+
+
+
+
+                                                                                                                                                                                         HSTERM_EN
+                                                                                                                                                                            RPD_DM_EN
+                                                                                                                                  RPU_DP_EN
+
+
+
+
+                                                                                                                                                               RPD_DP_EN
+
+
+
+
+              Signaling Mode
+
+
+
+
+General Settings
+Tri-State Drivers                                XXb                  Xb             01b             Xb            Xb            0b            0b             0b           0b           0b
+Power-up or Vbus < VSESSEND                      01b                   0b            00b             1b            1b            0b            0b             1b           1b           0b
+Host Settings
+Host Chirp                                       00b                   0b            10b             1b            1b            0b           0b              1b           1b           1b
+Host Hi-Speed                                    00b                   0b            00b             1b            1b            0b           0b              1b           1b           1b
+Host Full Speed                                  X1b                   1b            00b             1b            1b            0b           0b              1b           1b           0b
+Host HS/FS Suspend                               01b                   1b            00b             1b            1b            0b            0b             1b           1b           0b
+Host HS/FS Resume                                01b                   1b            10b             1b            1b            0b            0b             1b           1b           0b
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                                                                       DS00001783B-page 33
+USB3300
+TABLE 6-8:         DP/DM TERMINATION VS. SIGNALING MODE (CONTINUED)
+                                                                      Register Settings                                                          Resistor Settings
+
+
+
+
+                                                    XCVRSELECT[1:0]
+
+
+
+
+                                                                                                                    DMPULLDOWN
+                                                                                                      DPPULLDOWN
+                                                                        TERMSELECT
+
+
+                                                                                       OPMODE[1:0]
+
+
+
+
+                                                                                                                                                   RPU_DM_EN
+
+
+
+
+                                                                                                                                                                                          HSTERM_EN
+                                                                                                                                                                             RPD_DM_EN
+                                                                                                                                     RPU_DP_EN
+
+
+
+
+                                                                                                                                                                RPD_DP_EN
+              Signaling Mode
+
+
+
+
+Host low Speed                                   10b                   1b            00b             1b            1b               0b           0b            1b           1b           0b
+Host LS Suspend                                  10b                   1b            00b             1b            1b               0b           0b            1b           1b           0b
+Host LS Resume                                   10b                   1b            10b             1b            1b               0b            0b           1b           1b           0b
+Host Test J/Test_K                               00b                   0b            10b             1b            1b               0b            0b           1b           1b           1b
+Peripheral Settings
+Peripheral Chirp                                 00b                  1b             10b             0b            0b               1b           0b            0b           0b           0b
+Peripheral HS                                    00b                  0b             00b             0b            0b               0b           0b            0b           0b           1b
+Peripheral FS                                    01b                  1b             00b             0b            0b               1b           0b            0b           0b           0b
+Peripheral HS/FS Suspend                         01b                  1b             00b             0b            0b               1b           0b            0b           0b           0b
+Peripheral HS/FS Resume                          01b                  1b             10b             0b            0b               1b           0b            0b           0b           0b
+Peripheral LS                                    10b                  1b             00b             0b            0b               0b           1b            0b           0b           0b
+Peripheral LS Suspend                            10b                  1b             00b             0b            0b               0b           1b            0b           0b           0b
+Peripheral LS Resume                             10b                  1b             10b             0b            0b               0b           1b            0b           0b           0b
+Peripheral Test J/Test K                         00b                  0b             10b             0b            0b               0b           0b            0b           0b           1b
+OTG device, Peripheral Chirp                     00b                  1b             10b             0b            1b               1b           0b            0b           1b           0b
+OTG device, Peripheral HS                        00b                  0b             00b             0b            1b               0b           0b            0b           1b           1b
+OTG device, Peripheral FS                        01b                  1b             00b             0b            1b               1b           0b            0b           1b           0b
+OTG device, Peripheral HS/FS Suspend             01b                  1b             00b             0b            1b               1b           0b            0b           1b           0b
+OTG device, Peripheral HS/FS Resume              01b                  1b             10b             0b            1b               1b           0b            0b           1b           0b
+OTG device, Peripheral Test J/Test K             00b                  0b             10b             0b            1b               0b           0b            0b           1b           1b
+
+  Note:     This is the same as Table 40, Section 4.4 of the ULPI 1.1 specification.
+
+
+6.2.3       BIAS GENERATOR
+This block consists of an internal bandgap reference circuit used for generating the driver current and the biasing of the
+analog circuits. This block requires an external 12KΩ, 1% tolerance, external reference resistor connected from RBIAS
+to ground.
+
+6.3       Crystal Oscillator and PLL
+The USB3300 uses an internal crystal driver and PLL sub-system to provide a clean 480MHz reference clock that is
+used by the PHY during both transmit and receive. The USB3300 requires a clean 24MHz crystal or clock as a frequency
+reference. If the 24MHz reference is noisy or off frequency the PHY may not operate correctly.
+The USB3300 can use either a crystal or an external clock oscillator for the 24MHz reference. The crystal is connected
+to the XI and XO pins as shown in the application diagram, Figure 7-1. If a clock oscillator is used the clock should be
+connected to the XI input and the XO pin left floating. When a external clock is used the XI pin is designed to be driven
+with a 0 to 3.3 volt signal. When using an external clock the user needs to take care to ensure the external clock source
+is clean enough to not corrupt the high speed eye performance.
+Once the 480MHz PLL has locked to the correct frequency it will drive the CLKOUT pin with a 60MHz clock. The
+USB3300 is guaranteed to start the clock within the time specified in Table 5-2, "Electrical Characteristics: CLKOUT
+Start-Up". The USB3300 does not support using an external 60MHz clock input.
+
+
+
+
+DS00001783B-page 34                                                                                                               2014-2015 Microchip Technology Inc.
+                                                                                                  USB3300
+For Host Applications the USB3300 implements the ULPI AutoResume bit in the Interface Control register. The default
+AutoResume state is 0 and this bit should be enabled for Host applications. For more details please see sections 7.1.77
+and 7.9 of the USB specification.
+
+6.4       Internal Regulators and POR
+The USB3300 includes an integrated set of built in power management functions, including a POR generator. Internal
+regulators enable the USB3300 to be powered from a single 3.3 volt power supply, thereby reducing the bill of materials
+and simplifying product design.
+
+6.4.1       INTERNAL REGULATORS
+The USB3300 has two internal regulators that create two 1.8V outputs (labeled VDD1.8 and VDDA1.8) from the 3.3volt
+power supply input (VDD3.3). Each regulator requires an external 4.7uF +/-20% low ESR bypass capacitor to ensure
+stability. X5R or X7R ceramic capacitors are recommended since they exhibit an ESR lower that 0.1ohm at frequencies
+greater than 10kHz.
+
+  Note:     The specific capacitor recommendations for each pin are detailed in Table 3-1, "USB3300 Pin Definitions
+            32-Pin QFN Package", and shown in FIGURE 7-1: USB3300 Application Diagram (Peripheral) on page 40.
+            The USB3300 regulators are designed to generate a 1.8 volt supply for the USB3300 only. Using the reg-
+            ulators to provide current for other circuits is not recommended and Microchip does not guarantee USB
+            performance or regulator stability.
+
+6.4.2       POWER ON RESET (POR)
+The USB3300 provides an internal POR circuit that generates a reset pulse once the PHY supplies are stable. This reset
+will set all of the ULPI registers to their default values and start the PHY in normal operation. Cycling the 3.3 volt power
+supply is the only method for the PHY to reset the ULPI registers to their default states. The Link can write the registers
+to their default states at any time in normal operation.
+The RESET pin has the same functionality as the RESET register in the Function Control Register.
+
+6.5       USB On-The-Go (OTG) Module
+The USB3300 provides support for USB OTG. OTG allows the USB3300 to be dynamically configured as a host or a
+device depending on the type of cable inserted into the Mini-AB connector. When the Mini-A plug of a cable is inserted
+into the Mini-AB connector, the USB device becomes the A-device. When a Mini-B plug is inserted, the device becomes
+the B-device. The OTG A-device behaves similar to a Host while the B-device behaves similar to a peripheral. The dif-
+ferences are covered in the OTG supplement.
+The OTG Module meets all the requirements in the “On-The-Go Supplement to the USB 2.0 Specification”. In applica-
+tions where only Host or Device is required, the OTG Module is unused.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                DS00001783B-page 35
+USB3300
+
+FIGURE 6-10:              USB3300 ON-THE-GO MODULE
+
+
+
+                  ID
+                                                                                             IdGnd
+                                                  IdPullup   0.6V
+
+
+
+
+                                       R=100K
+                                                                       0.5V
+                              R>1M                                                           SessEnd
+
+           VDD33
+                                                  ChrgVbus
+                                                                                             SessValid
+                                       R>=281
+                                                                       1.4V
+
+
+            VBUS
+                                                                                             VbusValid
+                                       R>=656
+
+
+
+
+                                                                     4.575V
+                              R=75K
+
+
+
+
+                                                  DischrgVbus              [0, X]
+
+                                                                              [1, 0]
+                                                                                             RXCMD VbusValid
+        EXTVBUS                                                               [1, 1]
+                             IndicatorComplement
+
+
+                                      [UseExternalVbusindicator, IndicatorPassThru]
+
+                                                                                             DrvVbus
+            CPEN
+                                                                                             DrvVbusExternal
+
+
+                                                             OTG Module
+The OTG Module can be broken into 4 main blocks; ID Detection, VBUS Control, Driving External Vbus, and External
+Vbus Detection. Each of these blocks is covered in the sections below.
+
+6.5.1       ID DETECTION
+The USB3300 provides an ID pin to determine the type of USB cable connected. When the Mini-A Plug of a USB cable
+is inserted into the Mini-AB connector, the ID pin is shorted to ground. When the Mini-B Plug is inserted into the Mini-
+AB connector, the ID pin is allowed to float.
+.
+TABLE 6-9:             IDGND VS. USB CABLE TYPE
+         USB Plug                       OTG Role                       ID Voltage                        IDGND
+              A                                 HOST                          0                             0
+              B                       PERIPHERAL                           3.3                              1
+
+The USB3300 provides an integrated pull-up resistor and a comparator to detect if the ID pin is floating or grounded. An
+integrated pull-up resistor is provided to pull the ID pin high to VDD3.3 when a Mini-B plug is inserted and the cable is
+floating. When a Mini-A plug is connected, the pull-up resistor will be overpowered and the ID pin will be brought to
+ground. To save current when a Mini-A Plug is inserted, the ID pull-up resistor can be disabled by clearing the IdPullUp
+
+
+
+
+DS00001783B-page 36                                                                     2014-2015 Microchip Technology Inc.
+                                                                                                 USB3300
+bit in the OTG Control register. To prevent the ID pin from floating to a random value, a weak pull-up resistor is provided
+at all times. The circuits related to the ID comparator are shown in Figure 6-10, "USB3300 On-the-Go Module" and their
+related parameters are shown in Table 5-6, "OTG Electrical Characteristics".
+The status of IdGnd can be read by reading the ULPI USB Interrupt Status register, bit 4. It can also be set to generate
+an interrupt, in host mode, when IdGnd changes with the ULPI Interrupt Enable registers.
+
+6.5.2       VBUS CONTROL
+The USB3300 includes all of the Vbus comparators required for OTG. The VbusVld, SessVld, and SessEnd compara-
+tors are fully integrated into the USB3300. These comparators are used to ensure the Vbus voltage is the correct value
+for proper USB operation.
+The VbusVld comparator is used by the Link, when configured as an A device, to ensure that the Vbus voltage on the
+cable is valid. The SessVld comparator is used by the Link when configured as both an A or B device to indicate a ses-
+sion is requested or valid. Finally the SessEnd comparator is used by the B-device to indicate a USB session has ended.
+Also included in the VBUS Control block are the resistors used for Vbus pulsing in SRP. The resistors used for VBUS
+pulsing include a pull-down to ground and a pull-up to VDD3.3.
+
+6.5.2.1       SessEnd Comparator
+The SessEnd comparator is designed to trip when Vbus is less than 0.5 volts. When Vbus goes below 0.5 volts the ses-
+sion is considered to be ended and SessEnd will transition from 0 to 1. The SessEnd compatator can be disabled by
+clearing this bit in both the rising and falling interrupt enable registers. When disabled the SessEnd bit in the interrupt
+status register will read 0. The SessEnd comparator trip points are detailed in Table 5-6.
+
+6.5.2.2       SessVld Comparator
+The SessVld comparator is used when the PHY is configured as both an A and B device. When configured as an A
+device, the SessVld is used to detect Session Request protocol (SRP). When configured as a B device, SessVld is used
+to detect the presence of Vbus. The SessVld interrupts can be disabled by clearing this bit in both the rising and falling
+interrupt enable registers. When the interrupts are disabled, the SessVld comparator is not disabled and its state can
+be read in the interrupt status register. The SessVld comparator trip point is detailed in Table 5-6.
+
+  Note:     The OTG Supplement specifies a voltage range for A-Device Session Valid and B-Device Session Valid
+            comparator. The USB3300 PHY combines the two comparators into one and uses the narrower threshold
+            range.
+
+6.5.2.3       VbusVld Comparator
+The final Vbus comparator is the VbusVld comparator. This comparator is only used when configured as an A-device.
+In the OTG protocol the A-device is responsible to ensure that the Vbus voltage is within a certain range. The VbusVld
+comparator can be disabled by clearing both the rising and falling edge interrupts. When disabled a read of bit 1, in the
+Interrupt Status Register will return a 0. The VbusVld comparator trip points are detailed in Table 5-6.
+When the A-device is able to provide 8-100mA it must ensure Vbus doesn’t go below 4.4 volts. If the A-device can pro-
+vide 100-500mA on Vbus it must ensure that Vbus does not go below 4.75 volts.
+The internal Vbus comparator is designed to ensure that Vbus remains above 4.4 volts. If the design is required to sup-
+ply over 100mA the USB3300 provides an input for a more accurate Vbus comparator or fault (over current) detection
+described in Section 6.5.4, "External Vbus Indicator".
+
+6.5.2.4       Vbus Pull-up and Pull-down Resistors
+In addition to the internal Vbus comparators the USB3300 also includes the integrated Vbus pull-up and pull-down resis-
+tors used for Vbus Pulsing. To discharge the Vbus voltage, so that a Session Request can begin, the USB3300 provides
+a pull-down resistor from Vbus to Ground. This resistor is controlled by the DischargeVbus bit 3 of the OTG Control
+register, defined in the ULPI specifications. The pull-up resistor is connected between Vbus and VDD3.3. This resistor
+is used to pull Vbus above 2.1 volts so that the A-Device knows that a USB session has been requested. The state of
+the pull-up resistor is controlled by the bit 4 ChargeVbus of the OTG Control register, defined in the ULPI specifications.
+The Pull-Up and Pull-Down resistor values are detailed in Table 5-6.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                               DS00001783B-page 37
+USB3300
+6.5.2.5       Vbus Input Impedance
+The OTG Supplement requires an A-Device that supports Session request protocol to have an input impedance less
+than 100kohm and greater the 40kohm to ground. In addition, if configured as a B-Device, the PHY cannot draw more
+then 150uA from Vbus. The USB3300 provides a 75kΩ nominal resistance to ground which meets the above require-
+ments, see Table 5-6.
+
+6.5.3        DRIVING EXTERNAL VBUS
+When a system is operating as a host, it is required to source 5 volts on VBUS. The USB3300 fully supports VBUS
+power control using external devices. The USB3300 provides an active high control signal, CPEN, which is dedicated
+to controlling the Vbus supply when configured as an A-Device. The USB3300 also supports external Vbus fault detec-
+tion detailed in Section 6.5.4.
+CPEN is asserted when the ULPI OTG Control register bit 5 DrvVbus or bit 6, DrvVbusExternal is set high. To be com-
+patible with Link designs that support both internal and external Vbus supplies the DrvVbus and DrvVbusExternal bits
+in the OTG Control Register are or’d together. This enables the Link to set either bit to access the external Vbus enable
+(CPEN.) This logic is shown in Figure 6-10, "USB3300 On-the-Go Module". DrvVbus and DrvVbusExternal are set to 0
+on POR.
+
+6.5.4        EXTERNAL VBUS INDICATOR
+The USB3300 has fully implemented the External Vbus detection described in the ULPI 1.1 specification. The block dia-
+gram of the External Vbus detection is shown in Figure 6-10 and in Table 6-10.
+
+TABLE 6-10:        EXTERNAL VBUS INDICATOR LOGIC
+     Typical         Use External Indicator Pass           Indicator                   RXCMD Vbus Valid
+   Application      VBus Indicator     Thru               Complement                    Encoding Source
+   OTG Device              0                 X                  X          Internal VbusVld comparator (Default)
+                           1                 1                  0          External active high VbusVld signal
+                           1                 1                  1          External active low VbusVld signal
+                           1                 0                  0          External active high power fault signal
+                                                                           qualified with internal VbusVld comparator.
+                                                                           (Note 6-1)
+                           1                 0                  1          External active low power fault signal
+                                                                           qualified with internal VbusVld comparator.
+                                                                           (Note 6-1)
+  Standard Host            1                 1                  0          External active high power fault signal
+                           1                 1                  1          External active low power fault signal
+    Standard               0                 X                  X          Internal VbusVld comparator. This should
+    Peripheral                                                             not be used by the Link. (Note 6-2)
+
+  Note 6-1       Microchip does not recommend using the ExternalVbus signal qualified with the internal VbusVld
+                 comparator.
+  Note 6-2       A peripheral should not use VbusVld to begin operation. The peripheral should use SessVld because
+                 the internal VbusVld threshold can be above the Vbus voltage required for USB peripheral operation.
+A host PHY may use an active high or low fault by setting the IndicatorComplement bit [5] in the Interface Control reg-
+ister. Also this implementation supports the IndicatorPassThru bit [6] in the Interface Control register, which allows a
+choice of having the External Vbus input qualified (and’ed) with the external vbus comparator output. To use the External
+Vbus Input the UseExternalVbusIndicator bit [7] must be set in the OTG control register. The default is not to use this
+input.
+The EXTVBUS pin has a built in pull down resistor that is controlled by the UseExternalVbusIndicator bit [7] of the OTG
+control register. When UseExternalVbusIndicator is set to 0 (default) the pull down resistor is activated to prevent the
+pin from floating when it is unused. When UseExternalVbusIndicator is set to 1 the pull down resistor is disconnected.
+
+
+
+
+DS00001783B-page 38                                                                  2014-2015 Microchip Technology Inc.
+                                                                                              USB3300
+7.0      APPLICATION NOTES
+The USB3300 requires few external components as shown in the application diagrams. In some applications, the power
+supplied on the VBUS and GND pins of the USB connector is used as the source of system power. The USB2.0 standard
+restricts the voltage at the VBUS pin to a maximum value of 5.25V. In some applications, it may be required to provide
+protection to the USB3300 VBUS pin if the VBUS voltage exceeds the USB2.0 specifications.
+One method of protecting the VBUS pin from excessive voltage (transients) is to place a resistor (RVBUS) in series as
+shown in Figure 7-1, "USB3300 Application Diagram (Peripheral)" and Figure 7-2, "USB3300 Application Diagram
+(Host or OTG)". The resistor provides protection against transients that exceed the value of VVBUS provided in Table 4-
+2, "Recommended Operating Conditions". When RVBUS is installed, the transient must not be allowed to exceed the
+value of VVBUS for longer than 500 μs.
+To protect the VBUS pin against a steady state voltage on the USB connector that exceeds the value of VVBUS provided
+in Table 4-2, an Over Voltage Protection (OVP) component can be used as shown in Figure 7-3, "USB3300 Application
+Diagram (Peripheral with Over Voltage Protection)".
+
+TABLE 7-1:         COMPONENT VALUES IN APPLICATION DIAGRAMS
+   Reference
+                           Value                       Description                               Notes
+   Designator
+COUT               4.7μF                Bypass capacitors to ground (<1Ω ESR) Place as close as possible to the
+                                        for regulator stability.              PHY.
+CVBUS              See Table 7-2,    Capacitor to ground required by the          Place near the USB connector.
+                   "Capacitance      USB Specification. Microchip
+                   Values at VBUS of recommends <1Ω ESR.
+                   USB Connector"
+CBYP               System dependent. Bypass capacitor to ground.                  Place as close as possible to the
+                                                                                  PHY.
+CDC_BLOCK          System dependent. The USB connector housing may be             Industry convention is to ground
+                                     AC-coupled to the device ground.             only the host side of the cable
+                                                                                  shield.
+RVBUS              Max of 820Ω in       Series resistor to reduce any transient   The transient must not be allowed
+                   Host or OTG          voltage on the VBUS pin of the            to exceed the value of VVBUS for
+                   applications.        USB3300.                                  longer than 500 μs
+ID Pin                                                                            Okay to leave No Connection (NC)
+                                                                                  in device mode.
+
+In addition to the capacitors shown in the application diagrams, each VDD pin should have an additional capacitor to
+ground, of value 0.01 or 0.1 μF (not shown for clarity). Approximately equal numbers of each value should be used.
+
+TABLE 7-2:         CAPACITANCE VALUES AT VBUS OF USB CONNECTOR
+           MODE                             MIN Value                                    MAX Value
+            Host                               120μF
+          Device                                1μF                                          10μF
+           OTG                                  1μF                                         6.5μF
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                            DS00001783B-page 39
+USB3300
+7.1     Application Diagrams
+
+
+FIGURE 7-1:              USB3300 APPLICATION DIAGRAM (PERIPHERAL)
+
+
+
+          Steady state voltage at the VBUS pin must
+          not be allowed to exceed VVBUS.
+
+          RVBUS may be installed in this
+                                                                                                          Link Controller
+          configuration to assist in protecting                      USB3300
+          the VBUS pin. 820 Ohms will protect                                          17
+                                                                              DATA7    18
+                                                                                                          DATA7
+          against VBUS transients up to 8.5V.                                 DATA6                       DATA6
+          10K Ohms will protect against                                                19
+                                                                              DATA5    20
+                                                                                                          DATA5
+          transients up to 10V.                                               DATA4                       DATA4
+                                                                                       21
+                                              RVBUS                           DATA3    22
+                                                                                                          DATA3
+                                                         4
+                                                              VBUS            DATA2    23
+                                                                                                          DATA2
+                                                                              DATA1    24
+                                                                                                          DATA1
+                                                                              DATA0    13
+                                                                                                          DATA0
+                                                         31
+                                                              REG_EN            STP    11
+                                                                                                          STP
+          The capacitor CVBUS            3.3V                                   NXT    12
+                                                                                                          NXT
+          must be installed on          Supply           30
+                                                              VDD3.3             DIR   14
+                                                                                                          DIR
+          this side of RVBUS.                                                CLKOUT                       CLKOUT
+                                                                              RESET    9
+                                                          6   VDD3.3
+                                                  CBYP   16                            27
+                                                              VDD3.3             XO
+            USB                                          25
+         Receptacle                       CVBUS               VDD3.3              XI   28
+                            1                                                               CLOAD
+            VBUS                                                                                       1MΩ
+                                                                                                                     CLOAD
+                            2                             8                            15
+               DM                                             DM             VDD1.8
+                            3                            7                             26
+                DP                                            DP             VDD1.8
+                                                  NC      5                            29
+          SHIELD                                              ID            VDDA1.8
+                                                  NC                                   32
+              GND                                         3
+                                                              CPEN             RBIAS
+                                      CDC_BLOCK
+                                                  NC                                           12.0k
+                                                         10
+                                                              EXTVBUS                          1%
+                                                                           GND FLAG                    COUT   COUT
+                                                               1       2
+
+
+
+
+DS00001783B-page 40                                                                      2014-2015 Microchip Technology Inc.
+                                                                                                            USB3300
+
+FIGURE 7-2:                  USB3300 APPLICATION DIAGRAM (HOST OR OTG)
+
+
+
+         Steady state voltage at the VBUS pin must not
+         be allowed to exceed VVBUS.
+                                                                          USB3300
+                                                                                                               Link Controller
+                                                               3                            17
+                                                                   CPEN            DATA7                       DATA7
+                                                                                            18
+                                                                                   DATA6    19
+                                                                                                               DATA6
+                     VBUS Switch                                                   DATA5    20
+                                                                                                               DATA5
+        5V                                                    10                   DATA4    21
+                                                                                                               DATA4
+                      EN FLG                                       EXTVBUS         DATA3                       DATA3
+                                                                                            22
+                      IN OUT                                  4
+                                                                   VBUS            DATA2    23
+                                                                                                               DATA2
+                                                                                   DATA1    24
+                                                                                                               DATA1
+                                                  RVBUS                            DATA0                       DATA0
+        RVBUS may be installed to assist                                                    13
+                                                              31                     STP                       STP
+        in protecting the VBUS pin. 820                            REG_EN            NXT    11
+                                                                                                               NXT
+        Ohms will protect against VBUS                                                      12
+        transients up to 8.5V.
+                                                              30
+                                                                   VDD3.3            DIR    14
+                                                                                                               DIR
+                                              3.3V                                CLKOUT                       CLKOUT
+                                                                                   RESET    9
+        The capacitor CVBUS must be                            6   VDD3.3
+        installed on this side of RVBUS.               CBYP   16                            27
+                                                                   VDD3.3             XO
+                  USB                                         25
+               Receptacle                      CVBUS               VDD3.3              XI   28
+                                   1                                                             CLOAD
+                  VBUS                                                                                      1MΩ
+                                                               8                                                          CLOAD
+                                   2                                                        15
+                      DM                                           DM             VDD1.8
+                                   3                          7                             26
+                      DP                                           DP             VDD1.8
+                                   4                           5                            29
+                        ID                                         ID            VDDA1.8
+                                                                                            32
+                SHIELD                                                              RBIAS
+                                                                                                    12.0k
+                    GND                                                                             1%
+                                                                                GND FLAG                    COUT   COUT
+                                                                    1       2
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                         DS00001783B-page 41
+USB3300
+
+FIGURE 7-3:              USB3300 APPLICATION DIAGRAM (PERIPHERAL WITH OVER VOLTAGE
+                         PROTECTION)
+
+
+
+          Steady state voltage at the VBUS pin must
+          not be allowed to exceed VVBUS.
+
+                                                                                                          Link Controller
+                                                                     USB3300
+          Over-voltage device may be desired to                                        17
+          protect against out-of-spec chargers.                               DATA7    18
+                                                                                                          DATA7
+                                                                              DATA6    19
+                                                                                                          DATA6
+                                                                              DATA5    20
+                                                                                                          DATA5
+                                                                              DATA4    21
+                                                                                                          DATA4
+                                          Optional                            DATA3    22
+                                                                                                          DATA3
+                                        Over-voltage
+                                                         4
+                                                              VBUS            DATA2    23
+                                                                                                          DATA2
+                                         Protection
+                                                                              DATA1    24
+                                                                                                          DATA1
+                                                                              DATA0    13
+                                                                                                          DATA0
+                                                         31                     STP                       STP
+                                                              REG_EN            NXT    11
+                                                                                                          NXT
+          The capacitor CVBUS           3.3V                                           12
+          must be installed on         Supply            30
+                                                              VDD3.3             DIR   14
+                                                                                                          DIR
+          this side of RVBUS.                                                CLKOUT                       CLKOUT
+                                                                              RESET    9
+                                                          6   VDD3.3
+                                                  CBYP   16                            27
+                                                              VDD3.3             XO
+            USB                                          25
+         Receptacle                      CVBUS                VDD3.3              XI   28
+                           1                                                                CLOAD
+            VBUS                                                                                       1MΩ
+                                                          8                                                          CLOAD
+                           2                                                           15
+                DM                                            DM             VDD1.8
+                           3                             7                             26
+                DP                                            DP             VDD1.8
+                                                  NC      5                            29
+          SHIELD                                              ID            VDDA1.8
+                                                  NC                                   32
+              GND                                         3
+                                                              CPEN             RBIAS
+                                     CDC_BLOCK
+                                                  NC                                           12.0k
+                                                         10
+                                                              EXTVBUS                          1%
+                                                                           GND FLAG                    COUT   COUT
+                                                               1       2
+
+
+
+
+DS00001783B-page 42                                                                      2014-2015 Microchip Technology Inc.
+                                                                                             USB3300
+7.2       Multi-port Applications
+To support multiple ports a single USB3300 host can be combined with one of Microchip’s many hub products to expand
+the number of ports. Microchip has 2-port, 3-port, 4-port, and 7-port hub designs which can be used to expand the num-
+ber of ports in a design.
+
+
+FIGURE 7-4:            EXPANDING DOWNSTREAM PORTS FOR USB3300 HOST APPLICATIONS
+
+
+                                                                                                     USB Port 1
+               DIR                DIR             CPEN               VBUS_DET
+               NXT                NXT               DP               USBDP0        USBDP1                DP
+               STP                STP               DM               USBDM0        USBDN1                DM
+            CLOCK                 CLOCK
+                                                                                                     USB Port 2
+            DATA[7]               DATA[7]
+            DATA[6]               DATA[6]                                          USBDP2                DP
+            DATA[5]               DATA[5]                                          USBDN2                DM
+            DATA[4]               DATA[4]
+            DATA[3]               DATA[3]                                 USB2502                    USB Port 3
+            DATA[2]               DATA[2]
+            DATA[1]               DATA[1]                                          USBDP3                DP
+            DATA[0]               DATA[0]                                          USBDN3                DM
+
+
+         SOC w/                                                           USB2503                    USB Port 4
+        ULPI Link                       USB3300                                    USBDP4                DP
+                                                                                   USBDN4                DM
+
+                                                                          USB2504                   USB Ports 5-7
+                                                                                  USBDP5-7               DP
+                                                                                  USBDN5-7               DM
+
+                                                                          USB2507
+
+
+Using a Microchip hub to expand the number of ports allows a single Link to run several USB devices without a separate
+Link to support each USB port. Another advantage of using a Microchip hub is on products where the main board is not
+located near the USB ports. The USB3300 can be placed on the main board with the Link ASIC and the hub can be
+placed on a separate board next to the USB ports. The only data connection required between the boards is DP and DM.
+The CPEN output of the USB3300 is optional and can be used to turn the Hub on or off to lower current when the USB
+connection isn’t needed.
+
+7.3       Evaluation Board
+An evaluation board, EVB-USB3300, is available for building a prototype system with the USB3300. The evaluation
+board provides an industry standard T&MT connector to interface a ULPI Link controller and a Mini-AB connector for
+the USB cable. A 500mA fault protected 5V Vbus switch that is controlled by the USB3300 is also included.
+
+7.4       ESD Performance
+The USB3300 is protected from ESD strikes. By eliminating the requirement for external ESD protection devices, board
+space is conserved, and the board manufacturer is enabled to reduce cost. The advanced ESD structures integrated
+into the USB3300 protect the device whether or not it is powered up. When the USB3300 is not powered, the digital I/O
+pins are loaded by the ESD structures, and must not be driven by external signals.
+
+7.4.1       HUMAN BODY MODEL (HBM) PERFORMANCE
+HBM testing verifies the ability to withstand the ESD strikes like those that occur during handling and manufacturing,
+and is done without power applied to the IC. To pass the test, the device must have no change in operation or perfor-
+mance due to the event. All pins on the USB3300 provide ±8kV HBM protection.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                           DS00001783B-page 43
+USB3300
+7.4.2       IEC61000-4-2 PERFORMANCE
+The IEC61000-4-2 ESD specification is an international standard that addresses system-level immunity to ESD strikes
+while the end equipment is operational. In contrast, the HBM ESD tests are performed at the device level with the device
+powered down.
+Microchip contracts with independent laboratories to test the USB3300 to IEC61000-4-2 in a working system. Reports
+are available upon request. Please contact your Microchip representative, and request information on 3rd party ESD
+test results. The reports show that systems designed with the USB3300 can safely dissipate ±15kV air discharges and
+±8kV contact discharges per the IEC61000-4-2 specification without additional board level protection.
+Both air discharge and contact discharge test techniques for applying stress conditions are defined by the IEC61000-4-
+2 ESD document.
+
+7.4.2.1       Air Discharge
+To perform this test, a charged electrode is moved close to the system being tested until a spark is generated. This test
+is difficult to reproduce because the discharge is influenced by such factors as humidity, the speed of approach of the
+electrode, and construction of the test equipment.
+
+7.4.2.2       Contact Discharge
+The uncharged electrode first contacts the pin to prepare this test, and then the probe tip is energized. This yields more
+repeatable results, and is the preferred test method. The independent test laboratories contracted by Microchip provide
+test results for both types of discharge methods.
+
+
+
+
+DS00001783B-page 44                                                                   2014-2015 Microchip Technology Inc.
+                                                                                                               USB3300
+8.0      PACKAGE OUTLINE
+The USB3300 is offered in a compact 32 pin QFN package.
+
+
+FIGURE 8-1:            USB3300-EZK 32-PIN QFN PACKAGE OUTLINE, 5 X 5 X 0.9MM BODY (1 OF 2)
+
+
+
+
+                                                                      Note: For the most current package drawings,
+                                                                      see the Microchip Packaging Specification at
+                                                                      http://www.microchip.com/packaging
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                                DS00001783B-page 45
+USB3300
+
+FIGURE 8-2:           USB3300-EZK 32-PIN QFN PACKAGE OUTLINE, 5 X 5 X 0.9MM BODY (2 OF 2)
+
+
+
+
+                                                                     Note: For the most current package drawings,
+                                                                     see the Microchip Packaging Specification at
+                                                                     http://www.microchip.com/packaging
+
+
+
+
+DS00001783B-page 46                                               2014-2015 Microchip Technology Inc.
+                                                                         USB3300
+
+FIGURE 8-3:            QFN, 5X5 TAPING DIMENSIONS AND PART ORIENTATION
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                    DS00001783B-page 47
+USB3300
+APPENDIX A:           DATA SHEET REVISION HISTORY
+
+
+TABLE A-1:      REVISION HISTORY
+          Revision             Section/Figure/Entry                             Correction
+  DS00001783B (06-03-15)   Section , "Product Identifica-   Updated ordering code temperature information.
+                           tion System," on page 51
+  DS00001783A (07-08-14)   Replaces previous SMSC version Rev. 1.1 (01-24-13)
+
+                           Document converted to Microchip template
+
+                           Reel drawings and mention of reel quantity removed from Package Outline chapter.
+          Rev. 1.1         Section 5.1, "Piezoelectric      Added section.
+         (01-24-13)        Resonator for Internal
+                           Oscillator," on page 15
+         Rev. 1.08         Table 3-1, "USB3300 Pin          Description for Pins 15, 26, 29 and 31 modified.
+         (11-07-07)        Definitions 32-Pin QFN
+                           Package"
+          Rev. 1.08        Table 3-1, "USB3300 Pin          Description for “REG_EN” (pin 31) modified.
+         (10-25-07)        Definitions 32-Pin QFN
+                           Package"
+          Rev. 1.07        Section 7.4, "ESD                Added last sentence warning against multiplexing
+         (09-26-07)        Performance"                     digital I/O signals.
+          Rev. 1.07        Figure 7-2, "USB3300             Added information on RVBUS.
+         (09-26-07)        Application Diagram (Host or
+                           OTG)" and Figure 7-3,
+                           "USB3300 Application
+                           Diagram (Peripheral with
+                           Over Voltage Protection)"
+          Rev. 1.07        Application Notes on page 39 Changed to include information on RVBUS.
+         (09-25-07)        and Figure 7-1, "USB3300
+                           Application Diagram
+                           (Peripheral)"
+          Rev. 1.07        Table 3-1, "USB3300 Pin          Changed description of RESET.
+         (09-20-07)        Definitions 32-Pin QFN
+                           Package"
+          Rev. 1.07        Added Tape & Reel PN and drawings.
+         (09-20-07)
+          Rev. 1.06        “USB2.0” changed to “USB 2.0”
+         (05-07-07)
+          Rev. 1.06        Applications                     First sentence modified from: “The USB3300 is
+         (07-19-06)                                         targeted for any application where a Hi-Speed USB
+                                                            connection is desired and when board space and
+                                                            interface pins must be minimized.”
+                                                            To: “The USB3300 is the ideal companion to any
+                                                            ASIC, SoC or FPGA solution designed with a ULPI
+                                                            Hi-Speed USB host, peripheral or OTG core.”
+          Rev. 1.06        Applications                     Added “PDAs”, removed “Entertainment Devices”,
+         (07-18-06)                                         added “Digital” to “Still and Video Games”.
+          Rev. 1.06        Features                         Moved “Applications” to cover; re-ordered several
+         (07-18-06)                                         features.
+          Rev. 1.06        Features and General             Referenced Industrial Operating Temperature.
+         (07-17-06)        Description on page 4
+                           Table 4-1, "Maximum              Changed Operating Temperature from “0 to 70” to “-
+                           Guaranteed Ratings"              40 to 85”
+                           Table 4-2, "Recommended          Changed Operating Temperature from “0 to 70” to “-
+                           Operating Conditions"            40 to 85”
+
+
+
+
+DS00001783B-page 48                                                           2014-2015 Microchip Technology Inc.
+                                                                                             USB3300
+TABLE A-1:        REVISION HISTORY (CONTINUED)
+           Revision                     Section/Figure/Entry                         Correction
+           Rev. 1.05             Table 4-1                       Added ESD and Latch-up entries
+          (05-26-06)
+                                 Section 7.4, "ESD               Added Section 7.4
+                                 Performance"
+                                 Cover - Features: ESD           Removed mention of wrapper available. (Also
+                                 protection levels of ±8kV       removed from Section 1 and 6.1.1) Added bullets on
+                                 HBM without external            ESD and latch-up.
+                                 protection devices
+                                  USB Interrupt Status         Corrected title of section
+                                 Register: Address = 13h (read
+                                 only with auto clear) on page
+                                 23
+           Rev 1.04              Table 6-5, "ULPI RX CMD         Corrected CMD encoding for DATA[5:4]
+          (02-28-06)             Encoding"
+                                 USB Interrupt Status          Corrected to read “Status Register” instead of “Latch
+                                 Register: Address = 13h (read Register”
+                                 only with auto clear)
+                                 USB3300 Pin Definitions 32-     Changed pin 31 from VCCA1.8 to REG_EN.
+                                 Pin QFN Package                 Changed pin description to describe REG_EN
+                                                                 operation
+                                 Table 8.1, "32 Terminal QFN     Updated package dimensions per package data
+                                 Package Parameters"             sheet located in specifications database
+                                 Figure 3.1, "USB3300 Pin        Changed pin 31 in figure 3.1 to be named
+                                 Diagram"                        “REG_EN”.
+                                 Table 5-1, "Electrical          Added max current information
+                                 Characteristics: Supply Pins"
+           Rev. 1.03             Table 3-1, "USB3300 Pin         Modified description for pin 29 (wording changed
+           (05-11-05)            Definitions 32-Pin QFN          from “digital” to “analog”)
+                                 Package"
+                                 Table 6-2, "ULPI Interface      Add min value to Output delay
+                                 Timing"
+                                 Cover - Title                   Added OTG to Title
+                                                                 Changed to OTG version of USB logo.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                             DS00001783B-page 49
+USB3300
+THE MICROCHIP WEB SITE
+Microchip provides online support via our WWW site at www.microchip.com. This web site is used as a means to make
+files and information easily available to customers. Accessible by using your favorite Internet browser, the web site con-
+tains the following information:
+• Product Support – Data sheets and errata, application notes and sample programs, design resources, user’s
+  guides and hardware support documents, latest software releases and archived software
+• General Technical Support – Frequently Asked Questions (FAQ), technical support requests, online discussion
+  groups, Microchip consultant program member listing
+• Business of Microchip – Product selector and ordering guides, latest Microchip press releases, listing of semi-
+  nars and events, listings of Microchip sales offices, distributors and factory representatives
+
+CUSTOMER CHANGE NOTIFICATION SERVICE
+Microchip’s customer notification service helps keep customers current on Microchip products. Subscribers will receive
+e-mail notification whenever there are changes, updates, revisions or errata related to a specified product family or
+development tool of interest.
+To register, access the Microchip web site at www.microchip.com. Under “Support”, click on “Customer Change Notifi-
+cation” and follow the registration instructions.
+
+CUSTOMER SUPPORT
+Users of Microchip products can receive assistance through several channels:
+• Distributor or Representative
+• Local Sales Office
+• Field Application Engineer (FAE)
+• Technical Support
+Customers should contact their distributor, representative or field application engineer (FAE) for support. Local sales
+offices are also available to help customers. A listing of sales offices and locations is included in the back of this docu-
+ment.
+Technical support is available through the web site at: http://www.microchip.com/support
+
+
+
+
+DS00001783B-page 50                                                                    2014-2015 Microchip Technology Inc.
+                                                                                                                   USB3300
+PRODUCT IDENTIFICATION SYSTEM
+To order or obtain information, e.g., on pricing or delivery, refer to the factory or the listed sales office.
+
+            PART NO.            [X]      -      XXX       -            [X](1)           Examples:
+                                                                                        a)    USB3300-EZK
+             Device    Temperature            Package          Tape and Reel                  32-pin QFN
+                         Range                                   Option                       RoHS Compliant package
+                                                                                        b)    USB3300-EZK-TR
+                                                                                              32-pin QFN (Tape & Reel)
+  Device:               USB3300                                                               RoHS Compliant package
+
+
+  Temperature           Blank    = -40°C to    +85°C    (Industrial)
+  Range:
+
+
+  Package:              EZK      = 32-pin QFN
+
+
+  Tape and Reel         Blank    = Standard packaging (tray)
+  Option:               TR       = Tape and Reel(1)
+
+                                                                                        Note 1:    Tape and Reel identifier only appears in the
+                                                                                                   catalog part number description. This
+                                                                                                   identifier is used for ordering purposes and is
+                                                                                                   not printed on the device package. Check
+                                                                                                   with your Microchip Sales Office for package
+                                                                                                   availability with the Tape and Reel option.
+
+
+
+
+ 2014-2015 Microchip Technology Inc.                                                                                  DS00001783B-page 51
+    Note the following details of the code protection feature on Microchip devices:
+    •    Microchip products meet the specification contained in their particular Microchip Data Sheet.
+
+    •    Microchip believes that its family of products is one of the most secure families of its kind on the market today, when used in the
+         intended manner and under normal conditions.
+
+    •    There are dishonest and possibly illegal methods used to breach the code protection feature. All of these methods, to our
+         knowledge, require using the Microchip products in a manner outside the operating specifications contained in Microchip’s Data
+         Sheets. Most likely, the person doing so is engaged in theft of intellectual property.
+
+    •    Microchip is willing to work with the customer who is concerned about the integrity of their code.
+
+    •    Neither Microchip nor any other semiconductor manufacturer can guarantee the security of their code. Code protection does not
+         mean that we are guaranteeing the product as “unbreakable.”
+
+    Code protection is constantly evolving. We at Microchip are committed to continuously improving the code protection features of our
+    products. Attempts to break Microchip’s code protection feature may be a violation of the Digital Millennium Copyright Act. If such acts
+    allow unauthorized access to your software or other copyrighted work, you may have a right to sue for relief under that Act.
+
+
+
+    Information contained in this publication regarding device applications and the like is provided only for your convenience and may be
+    superseded by updates. It is your responsibility to ensure that your application meets with your specifications. MICROCHIP MAKES NO
+    REPRESENTATIONS OR WARRANTIES OF ANY KIND WHETHER EXPRESS OR IMPLIED, WRITTEN OR ORAL, STATUTORY OR
+    OTHERWISE, RELATED TO THE INFORMATION, INCLUDING BUT NOT LIMITED TO ITS CONDITION, QUALITY, PERFORMANCE,
+    MERCHANTABILITY OR FITNESS FOR PURPOSE. Microchip disclaims all liability arising from this information and its use. Use of Micro-
+    chip devices in life support and/or safety applications is entirely at the buyer’s risk, and the buyer agrees to defend, indemnify and hold
+    harmless Microchip from any and all damages, claims, suits, or expenses resulting from such use. No licenses are conveyed, implicitly or
+    otherwise, under any Microchip intellectual property rights.
+
+    Trademarks
+    The Microchip name and logo, the Microchip logo, dsPIC, FlashFlex, flexPWR, JukeBlox, KEELOQ, KEELOQ logo, Kleer, LANCheck,
+    MediaLB, MOST, MOST logo, MPLAB, OptoLyzer, PIC, PICSTART, PIC32 logo, RightTouch, SpyNIC, SST, SST Logo, SuperFlash and
+    UNI/O are registered trademarks of Microchip Technology Incorporated in the U.S.A. and other countries.
+    The Embedded Control Solutions Company and mTouch are registered trademarks of Microchip Technology Incorporated in the U.S.A.
+    Analog-for-the-Digital Age, BodyCom, chipKIT, chipKIT logo, CodeGuard, dsPICDEM, dsPICDEM.net, ECAN, In-Circuit Serial
+    Programming, ICSP, Inter-Chip Connectivity, KleerNet, KleerNet logo, MiWi, MPASM, MPF, MPLAB Certified logo, MPLIB, MPLINK,
+    MultiTRAK, NetDetach, Omniscient Code Generation, PICDEM, PICDEM.net, PICkit, PICtail, RightTouch logo, REAL ICE, SQI, Serial
+    Quad I/O, Total Endurance, TSHARC, USBCheck, VariSense, ViewSpan, WiperLock, Wireless DNA, and ZENA are trademarks of
+    Microchip Technology Incorporated in the U.S.A. and other countries.
+    SQTP is a service mark of Microchip Technology Incorporated in the U.S.A.
+    Silicon Storage Technology is a registered trademark of Microchip Technology Inc. in other countries.
+    GestIC is a registered trademarks of Microchip Technology Germany II GmbH & Co. KG, a subsidiary of Microchip Technology Inc., in
+    other countries.
+    All other trademarks mentioned herein are property of their respective companies.
+    © 2014-2015, Microchip Technology Incorporated, Printed in the U.S.A., All Rights Reserved.
+
+
+    ISBN: 9781632774491
+
+
+
+
+    QUALITY MANAGEMENT SYSTEM                                                 Microchip received ISO/TS-16949:2009 certification for its worldwide
+                                                                              headquarters, design and wafer fabrication facilities in Chandler and
+          CERTIFIED BY DNV                                                    Tempe, Arizona; Gresham, Oregon and design centers in California
+                                                                              and India. The Company’s quality system processes and procedures
+
+            == ISO/TS 16949 ==
+                                                                              are for its PIC® MCUs and dsPIC® DSCs, KEELOQ® code hopping
+                                                                              devices, Serial EEPROMs, microperipherals, nonvolatile memory and
+                                                                              analog products. In addition, Microchip’s quality system for the design
+                                                                              and manufacture of development systems is ISO 9001:2000 certified.
+
+
+
+DS00001783B-page 52                                                                              2014-2015 Microchip Technology Inc.
+                            Worldwide Sales and Service
+AMERICAS                    ASIA/PACIFIC                 ASIA/PACIFIC                      EUROPE
+Corporate Office            Asia Pacific Office          China - Xiamen                    Austria - Wels
+2355 West Chandler Blvd.    Suites 3707-14, 37th Floor   Tel: 86-592-2388138               Tel: 43-7242-2244-39
+Chandler, AZ 85224-6199     Tower 6, The Gateway         Fax: 86-592-2388130               Fax: 43-7242-2244-393
+Tel: 480-792-7200           Harbour City, Kowloon        China - Zhuhai                    Denmark - Copenhagen
+Fax: 480-792-7277           Hong Kong                                                      Tel: 45-4450-2828
+                                                         Tel: 86-756-3210040
+Technical Support:          Tel: 852-2943-5100                                             Fax: 45-4485-2829
+http://www.microchip.com/                                Fax: 86-756-3210049
+                            Fax: 852-2401-3431                                             France - Paris
+support                                                  India - Bangalore
+                            Australia - Sydney           Tel: 91-80-3090-4444              Tel: 33-1-69-53-63-20
+Web Address:
+                            Tel: 61-2-9868-6733          Fax: 91-80-3090-4123              Fax: 33-1-69-30-90-79
+www.microchip.com
+                            Fax: 61-2-9868-6755                                            Germany - Dusseldorf
+Atlanta                                                  India - New Delhi
+                            China - Beijing              Tel: 91-11-4160-8631              Tel: 49-2129-3766400
+Duluth, GA
+                            Tel: 86-10-8569-7000
+Tel: 678-957-9614                                        Fax: 91-11-4160-8632              Germany - Munich
+                            Fax: 86-10-8528-2104                                           Tel: 49-89-627-144-0
+Fax: 678-957-1455                                        India - Pune
+                            China - Chengdu              Tel: 91-20-3019-1500              Fax: 49-89-627-144-44
+Austin, TX
+                            Tel: 86-28-8665-5511
+Tel: 512-257-3370                                        Japan - Osaka
+                                                                                           Germany - Pforzheim
+                            Fax: 86-28-8665-7889                                           Tel: 49-7231-424750
+Boston                                                   Tel: 81-6-6152-7160
+Westborough, MA             China - Chongqing            Fax: 81-6-6152-9310               Italy - Milan
+Tel: 774-760-0087           Tel: 86-23-8980-9588                                           Tel: 39-0331-742611
+                            Fax: 86-23-8980-9500         Japan - Tokyo
+Fax: 774-760-0088                                                                          Fax: 39-0331-466781
+                                                         Tel: 81-3-6880- 3770
+Chicago                     China - Dongguan             Fax: 81-3-6880-3771               Italy - Venice
+Itasca, IL                  Tel: 86-769-8702-9880                                          Tel: 39-049-7625286
+                                                         Korea - Daegu
+Tel: 630-285-0071                                                                          Netherlands - Drunen
+                            China - Hangzhou             Tel: 82-53-744-4301
+Fax: 630-285-0075                                                                          Tel: 31-416-690399
+                            Tel: 86-571-8792-8115        Fax: 82-53-744-4302
+Cleveland                   Fax: 86-571-8792-8116                                          Fax: 31-416-690340
+                                                         Korea - Seoul
+Independence, OH                                         Tel: 82-2-554-7200                Poland - Warsaw
+                            China - Hong Kong SAR
+Tel: 216-447-0464                                                                          Tel: 48-22-3325737
+                            Tel: 852-2943-5100           Fax: 82-2-558-5932 or
+Fax: 216-447-0643
+                            Fax: 852-2401-3431           82-2-558-5934                     Spain - Madrid
+Dallas                                                                                     Tel: 34-91-708-08-90
+                            China - Nanjing              Malaysia - Kuala Lumpur
+Addison, TX                                                                                Fax: 34-91-708-08-91
+                            Tel: 86-25-8473-2460         Tel: 60-3-6201-9857
+Tel: 972-818-7423
+Fax: 972-818-2924           Fax: 86-25-8473-2470         Fax: 60-3-6201-9859               Sweden - Stockholm
+                                                         Malaysia - Penang                 Tel: 46-8-5090-4654
+Detroit                     China - Qingdao
+Novi, MI                    Tel: 86-532-8502-7355        Tel: 60-4-227-8870                UK - Wokingham
+Tel: 248-848-4000           Fax: 86-532-8502-7205        Fax: 60-4-227-4068                Tel: 44-118-921-5800
+                                                         Philippines - Manila              Fax: 44-118-921-5820
+Houston, TX                 China - Shanghai
+Tel: 281-894-5983           Tel: 86-21-5407-5533         Tel: 63-2-634-9065
+                            Fax: 86-21-5407-5066         Fax: 63-2-634-9069
+Indianapolis
+Noblesville, IN             China - Shenyang             Singapore
+Tel: 317-773-8323           Tel: 86-24-2334-2829         Tel: 65-6334-8870
+Fax: 317-773-5453           Fax: 86-24-2334-2393         Fax: 65-6334-8850
+Los Angeles                 China - Shenzhen             Taiwan - Hsin Chu
+Mission Viejo, CA           Tel: 86-755-8864-2200        Tel: 886-3-5778-366
+Tel: 949-462-9523           Fax: 86-755-8203-1760        Fax: 886-3-5770-955
+Fax: 949-462-9608           China - Wuhan                Taiwan - Kaohsiung
+New York, NY                Tel: 86-27-5980-5300         Tel: 886-7-213-7828
+Tel: 631-435-6000           Fax: 86-27-5980-5118         Taiwan - Taipei
+San Jose, CA                China - Xian                 Tel: 886-2-2508-8600
+Tel: 408-735-9110           Tel: 86-29-8833-7252         Fax: 886-2-2508-0102
+Canada - Toronto            Fax: 86-29-8833-7256         Thailand - Bangkok
+Tel: 905-673-0699                                        Tel: 66-2-694-1351
+Fax: 905-673-6509                                        Fax: 66-2-694-1350
+                                                                                                           01/27/15
+
+
+
+
+DS00001783B-page 53                                                               2014-2015 Microchip Technology Inc.
+

@@ -1,0 +1,4 @@
+(fp_lib_table
+  (version 7)
+  (lib (name "pdlvds")(type "KiCad")(uri "${KIPRJMOD}/pdlvds.pretty")(options "")(descr "Project-custom footprints (datasheet-derived)"))
+)

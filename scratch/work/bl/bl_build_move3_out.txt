@@ -1,0 +1,33 @@
+13:19:14: Debug: Adding duplicate image handler for 'PNG file'
+13:19:14: Debug: Adding duplicate image handler for 'JPEG file'
+13:19:14: Debug: Adding duplicate image handler for 'TIFF file'
+13:19:14: Debug: Adding duplicate image handler for 'GIF file'
+13:19:14: Debug: Adding duplicate image handler for 'PNM file'
+13:19:14: Debug: Adding duplicate image handler for 'PCX file'
+13:19:14: Debug: Adding duplicate image handler for 'IFF file'
+13:19:14: Debug: Adding duplicate image handler for 'Windows icon file'
+13:19:14: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:19:14: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:19:14: Debug: Adding duplicate image handler for 'TGA file'
+13:19:14: Debug: Adding duplicate image handler for 'XPM file'
+13:19:18: Debug: Adding duplicate image handler for 'PNG file'
+13:19:18: Debug: Adding duplicate image handler for 'JPEG file'
+13:19:18: Debug: Adding duplicate image handler for 'TIFF file'
+13:19:18: Debug: Adding duplicate image handler for 'GIF file'
+13:19:18: Debug: Adding duplicate image handler for 'PNM file'
+13:19:18: Debug: Adding duplicate image handler for 'PCX file'
+13:19:18: Debug: Adding duplicate image handler for 'IFF file'
+13:19:18: Debug: Adding duplicate image handler for 'Windows icon file'
+13:19:18: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:19:18: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:19:18: Debug: Adding duplicate image handler for 'TGA file'
+13:19:18: Debug: Adding duplicate image handler for 'XPM file'
+U7 footprint moved +0.75
+C19 footprint moved +0.35
+U7: re-emitted 141, collapsed 2
+C19: re-emitted 1, collapsed 0
+census diffs (only changed):
+  ('+3V3A', 'trk'): 613 -> 611
+saved hw/pdlvds_rx.exp259.kicad_pcb
+swig/python detected a memory leak of type 'BOX2< VECTOR2< int > > *', no destructor found.
+swig/python detected a memory leak of type 'VECTOR2< int > *', no destructor found.

@@ -1,0 +1,16 @@
+label: repair6 attempt 1 on v6 board (home-grown exact model + fanout)
+timestamp (UTC): 2026-11-04T06:10:45Z
+commit: 67722e038347f08fb7ee20062df80662bb41896a
+commit (short): 67722e0
+board file: hw/pdlvds_rx.repaired6.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+render layers: top: F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS; bottom: B.Cu,In2.Cu,In1.Cu,F.Cu,B.SilkS
+layer renders: F.Cu=layer-FCu.svg (#FF3B30), In1.Cu=layer-In1Cu.svg (#FF9500), In2.Cu=layer-In2Cu.svg (#34C759), B.Cu=layer-BCu.svg (#0A84FF)
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: 74
+clearance violations: 64
+unconnected nets: 62
+audit verdict: FAIL
+note: 45 groups connected before a VM replacement killed sweep 3; zones refilled post-hoc for this audit. Zero violations from emitted copper (64 = 46 placement pad-pad + 18 zone, same as v6 attempt 1).
+note: Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.

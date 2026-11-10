@@ -1,0 +1,16 @@
+label: router v5 — stricter clearance model
+timestamp (UTC): 2026-11-03T22:29:05Z
+commit: fb2acf7b80f74860a8301a3cce6eaf4df1abbb6f
+commit (short): fb2acf7
+board file: /tmp/regen-fb2acf7.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+render layers: top: F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS; bottom: B.Cu,In2.Cu,In1.Cu,F.Cu,B.SilkS
+layer renders: F.Cu=layer-FCu.svg (#FF3B30), In1.Cu=layer-In1Cu.svg (#FF9500), In2.Cu=layer-In2Cu.svg (#34C759), B.Cu=layer-BCu.svg (#0A84FF)
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: 58 of 112
+pins failed: 74
+clearance violations: 341
+unconnected nets: 98
+audit verdict: FAIL
+note: Stricter clearance model (vias never exempt, segment-midpoint tests, layer-aware HV) traded connections for correctness vs v4 (commit fb2acf7 message). Clearance/unconnected/verdict parsed from the audit file committed with this attempt.
+note: Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.

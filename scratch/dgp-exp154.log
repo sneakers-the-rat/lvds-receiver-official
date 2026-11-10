@@ -1,0 +1,985 @@
+round 0: unconnected 50, dangling flagged 91
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destruapply: removed 76, vetoed 3, skipped 12
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+ctor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+round 1: unconnected 50, dangling flagged 46
+apply: removed 24, vetoed 3, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 2: unconnected 50, dangling flagged 40
+apply: removed 18, vetoed 3, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 3: unconnected 50, dangling flagged 37
+apply: removed 14, vetoed 4, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+round 4: unconnected 50, dangling flagged 33
+apply: removed 10, vetoed 4, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 5: unconnected 50, dangling flagged 32
+apply: removed 9, vetoed 4, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 6: unconnected 50, dangling flagged 32
+apply: removed 9, vetoed 4, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 7: unconnected 50, dangling flagged 30
+apply: removed 6, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 8: unconnected 50, dangling flagged 29
+apply: removed 5, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 9: unconnected 50, dangling flagged 29
+apply: removed 5, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 10: unconnected 50, dangling flagged 28
+apply: removed 4, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 11: unconnected 50, dangling flagged 28
+apply: removed 4, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 12: unconnected 50, dangling flagged 28
+apply: removed 4, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_VIA *', no destructor found.
+round 13: unconnected 50, dangling flagged 28
+apply: removed 4, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 14: unconnected 50, dangling flagged 28
+apply: removed 4, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 15: unconnected 50, dangling flagged 28
+apply: removed 4, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 16: unconnected 50, dangling flagged 27
+apply: removed 3, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 17: unconnected 50, dangling flagged 27
+apply: removed 3, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 18: unconnected 50, dangling flagged 26
+apply: removed 2, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 19: unconnected 50, dangling flagged 26
+apply: removed 2, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 20: unconnected 50, dangling flagged 26
+apply: removed 2, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 21: unconnected 50, dangling flagged 26
+apply: removed 2, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 22: unconnected 50, dangling flagged 26
+apply: removed 2, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 23: unconnected 50, dangling flagged 26
+apply: removed 2, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 24: unconnected 50, dangling flagged 26
+apply: removed 2, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+round 25: unconnected 50, dangling flagged 25
+apply: removed 1, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+round 26: unconnected 50, dangling flagged 25
+apply: removed 1, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+round 27: unconnected 50, dangling flagged 25
+apply: removed 1, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+round 28: unconnected 50, dangling flagged 25
+apply: removed 1, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+round 29: unconnected 50, dangling flagged 25
+apply: removed 1, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+round 30: unconnected 50, dangling flagged 25
+apply: removed 1, vetoed 5, skipped 19
+  VETO (bridge): Track [GND] on F.Cu, length 14.0000 mm
+  VETO (bridge): Track [GND] on F.Cu, length 0.6750 mm
+  VETO (bridge): Track [GND] on F.Cu, length 1.7500 mm
+  VETO (bridge): Track [HV_DAC] on F.Cu, length 4.3753 mm
+  VETO (bridge): Track [ULPI_D7] on F.Cu, length 1.0000 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on F.Cu, length 1.5000 mm
+  SKIP (no unique match): Track [+3V3D] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+3V3D_CDR] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [+5V] on F.Cu, length 1.2500 mm
+  SKIP (no unique match): Track [+VA] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CAP_CLK] on F.Cu, length 0.2500 mm
+  SKIP (no unique match): Track [CDR_LOS] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [GND] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [NEG_RAW] on B.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SET_P] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [SWCLK] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D0] on In2.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_D5] on F.Cu, length 0.3536 mm
+  SKIP (no unique match): Track [ULPI_DIR] on In2.Cu, length 0.3536 mm
+round 31: unconnected 50, dangling flagged 25

@@ -1,0 +1,31 @@
+11:42:59: Debug: Adding duplicate image handler for 'PNG file'
+11:42:59: Debug: Adding duplicate image handler for 'JPEG file'
+11:42:59: Debug: Adding duplicate image handler for 'TIFF file'
+11:42:59: Debug: Adding duplicate image handler for 'GIF file'
+11:42:59: Debug: Adding duplicate image handler for 'PNM file'
+11:42:59: Debug: Adding duplicate image handler for 'PCX file'
+11:42:59: Debug: Adding duplicate image handler for 'IFF file'
+11:42:59: Debug: Adding duplicate image handler for 'Windows icon file'
+11:42:59: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:42:59: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:42:59: Debug: Adding duplicate image handler for 'TGA file'
+11:42:59: Debug: Adding duplicate image handler for 'XPM file'
+  ULPI_D2 U7.22: stub (78.80,13.25)->(79.38,13.25) w=0.25
+  ULPI_D3 U7.21: stub (78.80,13.75)->(79.38,13.75) w=0.25
+  ULPI_D5 U7.19: stub (78.80,14.75)->(79.38,14.75) w=0.25
+  USB_RST U7.9: NO STUB FOUND
+  +3V3A U7.6: NO STUB FOUND
+  XI U7.28: NO STUB FOUND
+  XO U7.27: NO STUB FOUND
+  ULPI_D0 U7.24: stub (78.44,12.19)->(78.44,11.62) w=0.25
+  ULPI_D1 U7.23: stub (78.80,12.75)->(79.53,12.75) w=0.25
+  ULPI_D4 U7.20: stub (78.80,14.25)->(79.38,14.25) w=0.25
+  ULPI_D6 U7.18: stub (78.80,15.25)->(79.38,15.25) w=0.25
+  ULPI_D7 U7.17: stub (78.80,15.75)->(79.38,15.75) w=0.25
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/hw/hand_stub.py", line 160, in <module>
+    main()
+  File "/home/hatch/workspace/pdlvds-route/hw/hand_stub.py", line 137, in main
+    assert n2 == net, f"{desc} is {n2}, not {net}"
+           ^^^^^^^^^
+AssertionError: U7.15 is PHY_1V8, not ULPI_CK

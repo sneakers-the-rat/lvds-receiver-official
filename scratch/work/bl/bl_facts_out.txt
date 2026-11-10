@@ -1,0 +1,83 @@
+12:45:13: Debug: Adding duplicate image handler for 'PNG file'
+12:45:13: Debug: Adding duplicate image handler for 'JPEG file'
+12:45:13: Debug: Adding duplicate image handler for 'TIFF file'
+12:45:13: Debug: Adding duplicate image handler for 'GIF file'
+12:45:13: Debug: Adding duplicate image handler for 'PNM file'
+12:45:13: Debug: Adding duplicate image handler for 'PCX file'
+12:45:13: Debug: Adding duplicate image handler for 'IFF file'
+12:45:13: Debug: Adding duplicate image handler for 'Windows icon file'
+12:45:13: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:45:13: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:45:13: Debug: Adding duplicate image handler for 'TGA file'
+12:45:13: Debug: Adding duplicate image handler for 'XPM file'
+U7 pos (76.000,14.000) rot 0.0
+== U7 pads (num, net, x, y, sx, sy):
+                   ( 74.970, 12.970) 0.83x0.83
+                   ( 74.970, 14.000) 0.83x0.83
+                   ( 74.970, 15.030) 0.83x0.83
+                   ( 76.000, 12.970) 0.83x0.83
+                   ( 76.000, 14.000) 0.83x0.83
+                   ( 76.000, 15.030) 0.83x0.83
+                   ( 77.030, 12.970) 0.83x0.83
+                   ( 77.030, 14.000) 0.83x0.83
+                   ( 77.030, 15.030) 0.83x0.83
+    1 GND          ( 73.562, 12.250) 0.88x0.25
+    2 GND          ( 73.562, 12.750) 0.88x0.25
+    3              ( 73.562, 13.250) 0.88x0.25
+    4 +5V          ( 73.562, 13.750) 0.88x0.25
+    5 GND          ( 73.562, 14.250) 0.88x0.25
+    6 +3V3A        ( 73.562, 14.750) 0.88x0.25
+    7 DP_PHY       ( 73.562, 15.250) 0.88x0.25
+    8 DM_PHY       ( 73.562, 15.750) 0.88x0.25
+    9 USB_RST      ( 74.250, 16.438) 0.25x0.88
+   10 GND          ( 74.750, 16.438) 0.25x0.88
+   11 ULPI_NXT     ( 75.250, 16.438) 0.25x0.88
+   12 ULPI_DIR     ( 75.750, 16.438) 0.25x0.88
+   13 ULPI_STP     ( 76.250, 16.438) 0.25x0.88
+   14 ULPI_CK      ( 76.750, 16.438) 0.25x0.88
+   15 PHY_1V8      ( 77.250, 16.438) 0.25x0.88
+   16 +3V3A        ( 77.750, 16.438) 0.25x0.88
+   17 ULPI_D7      ( 78.438, 15.750) 0.88x0.25
+   18 ULPI_D6      ( 78.438, 15.250) 0.88x0.25
+   19 ULPI_D5      ( 78.438, 14.750) 0.88x0.25
+   20 ULPI_D4      ( 78.438, 14.250) 0.88x0.25
+   21 ULPI_D3      ( 78.438, 13.750) 0.88x0.25
+   22 ULPI_D2      ( 78.438, 13.250) 0.88x0.25
+   23 ULPI_D1      ( 78.438, 12.750) 0.88x0.25
+   24 ULPI_D0      ( 78.438, 12.250) 0.88x0.25
+   25 +3V3A        ( 77.750, 11.562) 0.25x0.88
+   26 PHY_1V8      ( 77.250, 11.562) 0.25x0.88
+   27 XO           ( 76.750, 11.562) 0.25x0.88
+   28 XI           ( 76.250, 11.562) 0.25x0.88
+   29 PHY_1V8A     ( 75.750, 11.562) 0.25x0.88
+   30 +3V3A        ( 75.250, 11.562) 0.25x0.88
+   31 +3V3A        ( 74.750, 11.562) 0.25x0.88
+   32 RBIAS        ( 74.250, 11.562) 0.25x0.88
+   33 GND          ( 76.000, 14.000) 3.10x3.10
+== per-net copper touching box x[68,86] y[0,26] (trk count, via count, x-range, y-range):
+               NO COPPER
+  +3V3A        trk 613 via 12 x[55.88,79.38] y[-0.45,46.75]
+  +5V          trk 401 via 6 x[11.12,73.56] y[-41.56,72.25]
+  DM_PHY       trk 256 via 2 x[46.62,74.12] y[15.75,49.12]
+  DP_PHY       trk 100 via 2 x[46.62,73.56] y[15.25,47.38]
+  GND          trk 109 via 49 x[4.00,94.03] y[-24.60,44.90]
+  PHY_1V8      trk  11 via 2 x[76.95,78.10] y[10.08,17.50]
+  PHY_1V8A     trk 149 via 2 x[70.18,75.75] y[10.28,15.40]
+  RBIAS        trk 379 via 2 x[69.17,74.25] y[11.56,21.00]
+  ULPI_CK      trk  12 via 2 x[74.32,76.75] y[4.66,17.50]
+  ULPI_D0      trk  25 via 0 x[73.25,78.88] y[4.66,12.25]
+  ULPI_D1      trk  12 via 0 x[77.75,79.35] y[4.66,12.75]
+  ULPI_D2      trk  14 via 2 x[78.25,80.12] y[4.66,13.25]
+  ULPI_D3      trk  11 via 2 x[78.44,89.25] y[4.66,13.83]
+  ULPI_D4      trk  35 via 2 x[78.44,89.78] y[4.66,14.53]
+  ULPI_D5      trk  12 via 2 x[78.44,92.66] y[2.75,15.35]
+  ULPI_D6      trk  58 via 2 x[78.44,93.88] y[2.25,15.75]
+  ULPI_D7      trk  11 via 2 x[77.75,78.88] y[-16.66,15.88]
+  ULPI_DIR     trk  17 via 7 x[59.75,75.75] y[-1.25,30.25]
+  ULPI_NXT     trk  17 via 5 x[60.25,75.25] y[-0.75,29.62]
+  ULPI_STP     trk 570 via 8 x[69.65,78.30] y[-3.30,18.10]
+  USB_RST      NO COPPER
+  XI           trk  33 via 3 x[74.98,85.75] y[10.30,21.12]
+  XO           trk 646 via 7 x[68.88,87.50] y[8.55,31.62]
+== U7 courtyard bbox:
+  x[70.423,81.577] y[0.793,18.678]

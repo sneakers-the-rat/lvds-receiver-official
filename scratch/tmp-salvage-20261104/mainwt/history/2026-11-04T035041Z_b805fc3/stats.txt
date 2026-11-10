@@ -1,0 +1,16 @@
+label: v6 full-board route 1 (home-grown exact model)
+timestamp (UTC): 2026-11-04T03:50:41Z
+commit: b805fc37860f13a3d83fb11efe47e1b1ce8da968
+commit (short): b805fc3
+board file: /home/hatch/workspace/photodiode-lvds-rx/hw/pdlvds_rx.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+render layers: top: F.Cu,In1.Cu,In2.Cu,B.Cu,F.SilkS; bottom: B.Cu,In2.Cu,In1.Cu,F.Cu,B.SilkS
+layer renders: F.Cu=layer-FCu.svg (#FF3B30), In1.Cu=layer-In1Cu.svg (#FF9500), In2.Cu=layer-In2Cu.svg (#34C759), B.Cu=layer-BCu.svg (#0A84FF)
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: 30 of 112
+pins failed: 144
+clearance violations: 64
+unconnected nets: 83
+audit verdict: FAIL
+note: Exact-clearance model: zero router-output violations (64 = 46 placement pad-pad + 18 zone). Connectivity behind: 144 pins failed, retries made zero progress.
+note: Composite render backfilled on 2026-11-04 by rendering the board file as of this pass's commit; not contemporaneous with the pass.

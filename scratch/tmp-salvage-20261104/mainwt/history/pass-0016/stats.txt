@@ -1,0 +1,13 @@
+pass: 16
+description: repair6 checkpoint 4 on the Freerouting board: 40 groups connected; first still-isolated groups appear (U4.12/U4.18 +3V3D_CDR, J1.A4 VBUS_RAW) - later sweeps retry them
+timestamp (UTC): 2026-11-04T13:44:21Z
+commit: pending
+board file: hw/pdlvds_rx.fr1r.ckpt4.kicad_pcb
+renders: board-top.svg, board-bottom.svg
+route-only renders: zones deleted from temp pcbnew copy (3 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 13
+unconnected nets: 44
+audit verdict: fail
+note: 

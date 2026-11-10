@@ -1,0 +1,107 @@
+10:00:26: Debug: Adding duplicate image handler for 'PNG file'
+10:00:26: Debug: Adding duplicate image handler for 'JPEG file'
+10:00:26: Debug: Adding duplicate image handler for 'TIFF file'
+10:00:26: Debug: Adding duplicate image handler for 'GIF file'
+10:00:26: Debug: Adding duplicate image handler for 'PNM file'
+10:00:26: Debug: Adding duplicate image handler for 'PCX file'
+10:00:26: Debug: Adding duplicate image handler for 'IFF file'
+10:00:26: Debug: Adding duplicate image handler for 'Windows icon file'
+10:00:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:00:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:00:26: Debug: Adding duplicate image handler for 'TGA file'
+10:00:26: Debug: Adding duplicate image handler for 'XPM file'
+sweep 1: 120 nets with >1 group, t=0s
+  GND: connected group of 1 items (2s, 0 vias)
+  GND: connected group of 1 items (1s, 0 vias)
+  GND: connected group of 1 items (1s, 0 vias)
+  GND: connected group of 1 items (3s, 0 vias)
+  GND: connected group of 1 items (2s, 0 vias)
+  GND: connected group of 1 items (3s, 0 vias)
+  GND: connected group of 1 items (3s, 0 vias)
+  GND: connected group of 1 items (3s, 0 vias)
+  GND: connected group of 1 items (4s, 0 vias)
+  GND: connected group of 1 items (3s, 0 vias)
+10:00:51: Debug: Adding duplicate image handler for 'PNG file'
+10:00:51: Debug: Adding duplicate image handler for 'JPEG file'
+10:00:51: Debug: Adding duplicate image handler for 'TIFF file'
+10:00:51: Debug: Adding duplicate image handler for 'GIF file'
+10:00:51: Debug: Adding duplicate image handler for 'PNM file'
+10:00:51: Debug: Adding duplicate image handler for 'PCX file'
+10:00:51: Debug: Adding duplicate image handler for 'IFF file'
+10:00:51: Debug: Adding duplicate image handler for 'Windows icon file'
+10:00:51: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:00:51: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:00:51: Debug: Adding duplicate image handler for 'TGA file'
+10:00:51: Debug: Adding duplicate image handler for 'XPM file'
+  checkpoint: 10 groups, saved
+  GND: connected group of 1 items (3s, 0 vias)
+  GND: connected group of 1 items (3s, 0 vias)
+  GND: connected group of 1 items (4s, 0 vias)
+  GND: connected group of 1 items (3s, 0 vias)
+  GND: connected group of 1 items (5s, 0 vias)
+  GND: connected group of 1 items (5s, 0 vias)
+  GND: connected group of 1 items (6s, 0 vias)
+  GND: connected group of 1 items (9s, 0 vias)
+  GND: connected group of 1 items (8s, 0 vias)
+  GND: connected group of 1 items (7s, 0 vias)
+10:01:46: Debug: Adding duplicate image handler for 'PNG file'
+10:01:46: Debug: Adding duplicate image handler for 'JPEG file'
+10:01:46: Debug: Adding duplicate image handler for 'TIFF file'
+10:01:46: Debug: Adding duplicate image handler for 'GIF file'
+10:01:46: Debug: Adding duplicate image handler for 'PNM file'
+10:01:46: Debug: Adding duplicate image handler for 'PCX file'
+10:01:46: Debug: Adding duplicate image handler for 'IFF file'
+10:01:46: Debug: Adding duplicate image handler for 'Windows icon file'
+10:01:46: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:01:46: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:01:46: Debug: Adding duplicate image handler for 'TGA file'
+10:01:46: Debug: Adding duplicate image handler for 'XPM file'
+  checkpoint: 20 groups, saved
+  GND: connected group of 1 items (9s, 0 vias)
+  GND: connected group of 1 items (7s, 0 vias)
+  GND: connected group of 1 items (9s, 0 vias)
+  GND: connected group of 1 items (5s, 0 vias)
+  GND: connected group of 1 items (6s, 0 vias)
+  GND: connected group of 1 items (8s, 0 vias)
+  GND: connected group of 1 items (10s, 0 vias)
+  GND: connected group of 1 items (7s, 0 vias)
+  GND: connected group of 1 items (10s, 0 vias)
+  GND: connected group of 1 items (9s, 0 vias)
+10:03:09: Debug: Adding duplicate image handler for 'PNG file'
+10:03:09: Debug: Adding duplicate image handler for 'JPEG file'
+10:03:09: Debug: Adding duplicate image handler for 'TIFF file'
+10:03:09: Debug: Adding duplicate image handler for 'GIF file'
+10:03:09: Debug: Adding duplicate image handler for 'PNM file'
+10:03:09: Debug: Adding duplicate image handler for 'PCX file'
+10:03:09: Debug: Adding duplicate image handler for 'IFF file'
+10:03:09: Debug: Adding duplicate image handler for 'Windows icon file'
+10:03:09: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:03:09: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:03:09: Debug: Adding duplicate image handler for 'TGA file'
+10:03:09: Debug: Adding duplicate image handler for 'XPM file'
+  checkpoint: 30 groups, saved
+  GND: connected group of 1 items (10s, 0 vias)
+  GND: connected group of 1 items (10s, 0 vias)
+  GND: connected group of 1 items (9s, 0 vias)
+  GND: connected group of 1 items (11s, 0 vias)
+  GND: connected group of 1 items (11s, 0 vias)
+  GND: connected group of 1 items (15s, 0 vias)
+  GND: connected group of 1 items (12s, 0 vias)
+  GND: connected group of 1 items (10s, 0 vias)
+  GND: connected group of 1 items (8s, 0 vias)
+  GND: connected group of 1 items (8s, 0 vias)
+10:04:54: Debug: Adding duplicate image handler for 'PNG file'
+10:04:54: Debug: Adding duplicate image handler for 'JPEG file'
+10:04:54: Debug: Adding duplicate image handler for 'TIFF file'
+10:04:54: Debug: Adding duplicate image handler for 'GIF file'
+10:04:54: Debug: Adding duplicate image handler for 'PNM file'
+10:04:54: Debug: Adding duplicate image handler for 'PCX file'
+10:04:54: Debug: Adding duplicate image handler for 'IFF file'
+10:04:54: Debug: Adding duplicate image handler for 'Windows icon file'
+10:04:54: Debug: Adding duplicate image handler for 'Windows cursor file'
+10:04:54: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+10:04:54: Debug: Adding duplicate image handler for 'TGA file'
+10:04:54: Debug: Adding duplicate image handler for 'XPM file'
+  checkpoint: 40 groups, saved
+  GND: connected group of 1 items (9s, 0 vias)
+Terminated
