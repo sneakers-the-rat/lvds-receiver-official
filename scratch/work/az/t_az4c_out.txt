@@ -1,0 +1,312 @@
+00:04:06: Debug: Adding duplicate image handler for 'PNG file'
+00:04:06: Debug: Adding duplicate image handler for 'JPEG file'
+00:04:06: Debug: Adding duplicate image handler for 'TIFF file'
+00:04:06: Debug: Adding duplicate image handler for 'GIF file'
+00:04:06: Debug: Adding duplicate image handler for 'PNM file'
+00:04:06: Debug: Adding duplicate image handler for 'PCX file'
+00:04:06: Debug: Adding duplicate image handler for 'IFF file'
+00:04:06: Debug: Adding duplicate image handler for 'Windows icon file'
+00:04:06: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:04:06: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:04:06: Debug: Adding duplicate image handler for 'TGA file'
+00:04:06: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+00:04:07: Debug: Adding duplicate image handler for 'PNG file'
+00:04:07: Debug: Adding duplicate image handler for 'JPEG file'
+00:04:07: Debug: Adding duplicate image handler for 'TIFF file'
+00:04:07: Debug: Adding duplicate image handler for 'GIF file'
+00:04:07: Debug: Adding duplicate image handler for 'PNM file'
+00:04:07: Debug: Adding duplicate image handler for 'PCX file'
+00:04:07: Debug: Adding duplicate image handler for 'IFF file'
+00:04:07: Debug: Adding duplicate image handler for 'Windows icon file'
+00:04:07: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:04:07: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:04:07: Debug: Adding duplicate image handler for 'TGA file'
+00:04:07: Debug: Adding duplicate image handler for 'XPM file'
+##### PHY_1V8: 3 fragments in box
+  frag0: 1 items: ['pad PHY_1V8 (72.020,18.000) hw0.280x0.310']
+  frag1: 18 items: ['pad PHY_1V8 (77.250,16.438) hw0.125x0.438', 'pad PHY_1V8 (77.250,11.562) hw0.125x0.438', 'seg PHY_1V8 (77.250,16.438)->(77.250,17.188) hw0.100', 'seg PHY_1V8 (77.250,11.562)->(77.250,10.750) hw0.100']
+  frag2: 2 items: ['seg PHY_1V8 (71.375,17.625)->(71.725,17.750) hw0.100', 'seg PHY_1V8 (71.725,17.750)->(71.725,18.000) hw0.100']
+  start fragment: 0
+  reached L0: x[69.75,73.00] y[16.12,18.88] cells=238
+  reached L1: x[70.88,72.38] y[17.12,18.25] cells=73
+  reached L2: x[70.88,75.50] y[11.88,18.50] cells=661
+  frag1: gap 1.450 closest=(2, 76.95, 12.6252) from=(2, 75.5, 12.625)
+    strait mid (76.225,12.625) L2; fence items within 0.75mm of the strait segment:
+      L0 pad XO (76.750,11.562) hw0.125x0.438 clr=0.2 dist-to-strait=0.625
+      L0 pad XI (76.250,11.562) hw0.125x0.438 clr=0.2 dist-to-strait=0.625
+      L0 pad PHY_1V8A (75.750,11.562) hw0.125x0.438 clr=0.25 dist-to-strait=0.625
+      L0 pad +3V3A (75.250,11.562) hw0.125x0.438 clr=0.25 dist-to-strait=0.637
+      L0 pad GND (76.000,14.000) hw1.550x1.550 clr=0.2 dist-to-strait=0.000
+      L1 seg +3V3A (77.375,15.625)->(77.125,13.125) hw0.100 clr=0.25 dist-to-strait=0.430
+      L1 seg +3V3A (77.862,10.975)->(76.600,12.150) hw0.300 clr=0.25 dist-to-strait=0.175
+      L1 seg +3V3A (77.375,13.125)->(77.125,13.125) hw0.100 clr=0.25 dist-to-strait=0.430
+      L1 seg +3V3A (76.600,12.150)->(77.375,13.125) hw0.300 clr=0.25 dist-to-strait=-0.278
+      L1 seg +3V3A (76.625,10.500)->(78.000,16.375) hw0.100 clr=0.25 dist-to-strait=0.068
+      L1 seg +3V3A (77.125,13.125)->(76.625,10.250) hw0.100 clr=0.25 dist-to-strait=-0.013
+      L1 seg +3V3A (77.375,15.125)->(77.375,13.125) hw0.300 clr=0.25 dist-to-strait=0.356
+      L1 seg ULPI_CK (76.620,13.500)->(74.625,13.500) hw0.125 clr=0.2 dist-to-strait=0.750
+      L2 seg ULPI_STP (76.000,12.500)->(76.000,12.450) hw0.100 clr=0.2 dist-to-strait=0.033
+      L2 seg ULPI_STP (76.000,13.250)->(76.000,13.200) hw0.100 clr=0.2 dist-to-strait=0.477
+      L2 seg ULPI_STP (76.050,11.800)->(76.050,11.750) hw0.100 clr=0.2 dist-to-strait=0.725
+      L2 seg ULPI_STP (76.000,13.200)->(76.000,13.150) hw0.100 clr=0.2 dist-to-strait=0.427
+      L2 seg ULPI_STP (76.000,12.050)->(76.000,12.000) hw0.100 clr=0.2 dist-to-strait=0.477
+      L2 seg ULPI_STP (76.000,12.900)->(76.000,12.850) hw0.100 clr=0.2 dist-to-strait=0.129
+      L2 seg ULPI_STP (76.000,13.050)->(76.000,13.000) hw0.100 clr=0.2 dist-to-strait=0.277
+      L2 seg ULPI_STP (76.000,12.700)->(76.000,12.650) hw0.100 clr=0.2 dist-to-strait=-0.050
+      L2 seg ULPI_STP (76.100,13.450)->(76.050,13.400) hw0.100 clr=0.2 dist-to-strait=0.675
+      L2 seg ULPI_STP (76.000,12.550)->(76.000,12.500) hw0.100 clr=0.2 dist-to-strait=-0.013
+      L2 seg ULPI_STP (76.000,12.350)->(76.000,12.300) hw0.100 clr=0.2 dist-to-strait=0.179
+      L2 seg ULPI_STP (76.050,13.400)->(76.000,13.350) hw0.100 clr=0.2 dist-to-strait=0.626
+      L2 seg ULPI_STP (76.000,11.850)->(76.050,11.800) hw0.100 clr=0.2 dist-to-strait=0.676
+      L2 seg ULPI_STP (76.000,12.650)->(76.000,12.600) hw0.100 clr=0.2 dist-to-strait=-0.056
+      L2 seg ULPI_STP (76.000,11.950)->(76.000,11.900) hw0.100 clr=0.2 dist-to-strait=0.576
+      L2 seg ULPI_STP (76.000,12.600)->(76.000,12.550) hw0.100 clr=0.2 dist-to-strait=-0.050
+      L2 seg ULPI_STP (76.000,12.200)->(76.000,12.150) hw0.100 clr=0.2 dist-to-strait=0.327
+      L2 seg ULPI_STP (76.000,12.100)->(76.000,12.050) hw0.100 clr=0.2 dist-to-strait=0.427
+      L2 seg ULPI_STP (76.000,13.350)->(76.000,13.300) hw0.100 clr=0.2 dist-to-strait=0.576
+      L2 seg ULPI_STP (76.150,13.500)->(76.100,13.450) hw0.100 clr=0.2 dist-to-strait=0.727
+      L2 seg ULPI_STP (76.000,13.100)->(76.000,13.050) hw0.100 clr=0.2 dist-to-strait=0.327
+      L2 seg ULPI_STP (76.000,13.300)->(76.000,13.250) hw0.100 clr=0.2 dist-to-strait=0.526
+      L2 seg ULPI_STP (76.000,12.150)->(76.000,12.100) hw0.100 clr=0.2 dist-to-strait=0.377
+      L2 seg ULPI_STP (76.000,12.450)->(76.000,12.400) hw0.100 clr=0.2 dist-to-strait=0.080
+      L2 seg ULPI_STP (76.000,12.800)->(76.000,12.750) hw0.100 clr=0.2 dist-to-strait=0.032
+      L2 seg ULPI_STP (76.000,12.300)->(76.000,12.250) hw0.100 clr=0.2 dist-to-strait=0.228
+      L2 seg ULPI_STP (76.000,12.000)->(76.000,11.950) hw0.100 clr=0.2 dist-to-strait=0.527
+      L2 seg ULPI_STP (76.000,12.250)->(76.000,12.200) hw0.100 clr=0.2 dist-to-strait=0.278
+      L2 seg ULPI_STP (76.000,12.750)->(76.000,12.700) hw0.100 clr=0.2 dist-to-strait=-0.013
+      L2 seg ULPI_STP (76.000,13.150)->(76.000,13.100) hw0.100 clr=0.2 dist-to-strait=0.377
+      L2 seg ULPI_STP (76.000,12.850)->(76.000,12.800) hw0.100 clr=0.2 dist-to-strait=0.080
+      L2 seg ULPI_STP (76.000,11.900)->(76.000,11.850) hw0.100 clr=0.2 dist-to-strait=0.626
+      L2 seg ULPI_STP (76.000,12.950)->(76.000,12.900) hw0.100 clr=0.2 dist-to-strait=0.178
+      L2 seg ULPI_STP (76.000,12.400)->(76.000,12.350) hw0.100 clr=0.2 dist-to-strait=0.129
+      L2 seg ULPI_STP (76.000,13.000)->(76.000,12.950) hw0.100 clr=0.2 dist-to-strait=0.228
+  frag2: REACHED closest=(0, 71.375, 17.625) from=None
+##### XI: 3 fragments in box
+  frag0: 1 items: ['pad XI (75.720,18.730) hw0.280x0.310']
+  frag1: 30 items: ['pad XI (85.750,18.250) hw2.250x1.000', 'seg XI (85.750,18.750)->(85.750,18.250) hw0.100', 'seg XI (85.125,19.125)->(85.750,18.750) hw0.100', 'via XI (75.625,18.625) r0.300']
+  frag2: 1 items: ['pad XI (76.250,11.562) hw0.125x0.438']
+  start fragment: 0
+  reached L0: x[73.62,92.00] y[0.00,26.00] cells=12105
+  reached L1: x[72.50,92.00] y[0.00,26.00] cells=15650
+  reached L2: x[74.00,92.00] y[0.00,26.00] cells=17061
+  frag1: REACHED closest=(0, 85.75, 18.25) from=None
+  frag2: gap 4.450 closest=(0, 76.25, 11.5625) from=(0, 80.625, 10.75)
+    strait mid (78.438,11.156) L0; fence items within 0.75mm of the strait segment:
+      L0 pad +3V3A (77.750,11.562) hw0.125x0.438 clr=0.25 dist-to-strait=0.016
+      L0 pad PHY_1V8 (77.250,11.562) hw0.125x0.438 clr=0.25 dist-to-strait=0.000
+      L0 pad XO (76.750,11.562) hw0.125x0.438 clr=0.2 dist-to-strait=0.000
+      L0 pad NRST (80.225,12.000) hw0.450x0.475 clr=0.2 dist-to-strait=0.622
+      L0 seg +3V3A (77.750,11.562)->(77.862,10.975) hw0.100 clr=0.25 dist-to-strait=-0.019
+      L0 via +3V3A (77.862,10.975) r0.250 clr=0.25 dist-to-strait=0.034
+      L0 seg NRST (80.225,10.500)->(80.625,9.875) hw0.125 clr=0.2 dist-to-strait=0.256
+      L0 seg NRST (80.225,12.000)->(80.225,10.500) hw0.100 clr=0.2 dist-to-strait=0.047
+      L0 seg PHY_1V8 (77.250,11.562)->(77.250,10.750) hw0.100 clr=0.25 dist-to-strait=-0.006
+      L0 seg PHY_1V8 (77.250,10.750)->(77.550,10.350) hw0.100 clr=0.25 dist-to-strait=0.517
+      L0 seg ULPI_D0 (78.438,11.250)->(78.625,10.625) hw0.125 clr=0.2 dist-to-strait=-0.098
+      L0 seg ULPI_D0 (78.625,10.625)->(78.875,10.375) hw0.125 clr=0.2 dist-to-strait=0.435
+      L0 seg ULPI_D0 (78.438,12.250)->(78.438,11.250) hw0.100 clr=0.2 dist-to-strait=-0.006
+      L0 seg ULPI_D0 (78.875,10.375)->(78.875,10.125) hw0.125 clr=0.2 dist-to-strait=0.563
+      L0 seg ULPI_D1 (79.350,10.350)->(79.350,7.550) hw0.100 clr=0.2 dist-to-strait=0.530
+      L0 seg ULPI_D1 (79.180,11.950)->(79.050,11.400) hw0.100 clr=0.2 dist-to-strait=0.251
+      L0 seg ULPI_D1 (79.050,11.050)->(79.350,10.350) hw0.100 clr=0.2 dist-to-strait=-0.034
+      L0 seg ULPI_D1 (79.050,11.400)->(79.050,11.050) hw0.100 clr=0.2 dist-to-strait=-0.034
+      L0 seg XO (76.725,11.275)->(76.725,11.300) hw0.100 clr=0.2 dist-to-strait=0.076
+      L0 seg XO (76.725,11.450)->(76.725,11.475) hw0.100 clr=0.2 dist-to-strait=-0.028
+      L0 seg XO (76.725,11.500)->(76.725,11.525) hw0.100 clr=0.2 dist-to-strait=-0.018
+      L0 seg XO (76.725,11.475)->(76.725,11.500) hw0.100 clr=0.2 dist-to-strait=-0.027
+      L0 seg XO (76.500,10.750)->(76.550,10.700) hw0.100 clr=0.2 dist-to-strait=0.670
+      L0 seg XO (76.725,11.400)->(76.725,11.425) hw0.100 clr=0.2 dist-to-strait=-0.020
+      L0 seg XO (76.550,10.650)->(76.550,10.600) hw0.100 clr=0.2 dist-to-strait=0.748
+      L0 seg XO (76.725,11.350)->(76.725,11.375) hw0.100 clr=0.2 dist-to-strait=0.012
+      L0 seg XO (76.725,11.325)->(76.725,11.350) hw0.100 clr=0.2 dist-to-strait=0.032
+      L0 seg XO (76.725,11.375)->(76.725,11.400) hw0.100 clr=0.2 dist-to-strait=-0.006
+      L0 seg XO (76.725,11.425)->(76.725,11.450) hw0.100 clr=0.2 dist-to-strait=-0.027
+      L0 seg XO (76.750,11.125)->(76.725,11.150) hw0.100 clr=0.2 dist-to-strait=0.219
+      L0 seg XO (76.725,11.225)->(76.725,11.250) hw0.100 clr=0.2 dist-to-strait=0.123
+      L0 seg XO (76.725,11.150)->(76.725,11.175) hw0.100 clr=0.2 dist-to-strait=0.195
+      L0 seg XO (76.725,11.300)->(76.725,11.325) hw0.100 clr=0.2 dist-to-strait=0.054
+      L0 seg XO (76.725,11.250)->(76.725,11.275) hw0.100 clr=0.2 dist-to-strait=0.099
+      L0 seg XO (76.725,11.525)->(76.750,11.562) hw0.100 clr=0.2 dist-to-strait=-0.004
+      L0 seg XO (76.725,11.200)->(76.725,11.225) hw0.100 clr=0.2 dist-to-strait=0.147
+      L0 seg XO (76.750,11.125)->(76.500,10.750) hw0.100 clr=0.2 dist-to-strait=0.239
+      L0 seg XO (76.550,10.700)->(76.550,10.650) hw0.100 clr=0.2 dist-to-strait=0.700
+      L0 seg XO (76.725,11.175)->(76.725,11.200) hw0.100 clr=0.2 dist-to-strait=0.171
+      L1 via +3V3A (77.862,10.975) r0.250 clr=0.25 dist-to-strait=0.034
+      L1 seg +3V3A (77.862,10.975)->(76.600,12.150) hw0.300 clr=0.25 dist-to-strait=-0.228
+      L1 seg +3V3A (76.600,12.150)->(77.375,13.125) hw0.300 clr=0.25 dist-to-strait=0.384
+      L1 seg +3V3A (77.125,13.125)->(76.625,10.250) hw0.100 clr=0.25 dist-to-strait=-0.062
+      L1 seg ULPI_D2 (79.870,12.970)->(80.000,8.300) hw0.125 clr=0.2 dist-to-strait=0.024
+      L2 via +3V3A (77.862,10.975) r0.250 clr=0.25 dist-to-strait=0.034
+      L2 seg PHY_1V8 (77.450,10.100)->(76.950,11.050) hw0.150 clr=0.25 dist-to-strait=0.289
+      L2 seg PHY_1V8 (76.950,11.050)->(76.950,14.988) hw0.150 clr=0.25 dist-to-strait=0.003
+      L2 seg ULPI_D7 (78.625,14.375)->(78.625,10.625) hw0.125 clr=0.2 dist-to-strait=0.062
+      L2 seg ULPI_D7 (78.625,10.625)->(78.875,10.375) hw0.125 clr=0.2 dist-to-strait=0.435
+      L2 seg ULPI_STP (76.250,11.300)->(76.300,11.250) hw0.100 clr=0.2 dist-to-strait=0.162
+      L2 seg ULPI_STP (76.400,10.950)->(76.400,10.900) hw0.100 clr=0.2 dist-to-strait=0.531
+      L2 seg ULPI_STP (76.050,11.800)->(76.050,11.750) hw0.100 clr=0.2 dist-to-strait=0.174
+      L2 seg ULPI_STP (76.050,11.700)->(76.100,11.650) hw0.100 clr=0.2 dist-to-strait=0.074
+      L2 seg ULPI_STP (76.450,10.700)->(76.450,10.650) hw0.100 clr=0.2 dist-to-strait=0.736
+      L2 seg ULPI_STP (76.400,10.900)->(76.400,10.850) hw0.100 clr=0.2 dist-to-strait=0.579
+      L2 seg ULPI_STP (76.350,11.150)->(76.350,11.100) hw0.100 clr=0.2 dist-to-strait=0.324
+      L2 seg ULPI_STP (76.150,11.500)->(76.200,11.450) hw0.100 clr=0.2 dist-to-strait=0.015
+      L2 seg ULPI_STP (76.150,11.550)->(76.150,11.500) hw0.100 clr=0.2 dist-to-strait=0.001
+      L2 seg ULPI_STP (76.350,11.000)->(76.400,10.950) hw0.100 clr=0.2 dist-to-strait=0.471
+      L2 seg ULPI_STP (76.100,11.650)->(76.100,11.600) hw0.100 clr=0.2 dist-to-strait=0.055
+      L2 seg ULPI_STP (76.350,11.050)->(76.350,11.000) hw0.100 clr=0.2 dist-to-strait=0.422
+      L2 seg ULPI_STP (76.400,10.800)->(76.450,10.750) hw0.100 clr=0.2 dist-to-strait=0.671
+      L2 seg ULPI_STP (76.250,11.350)->(76.250,11.300) hw0.100 clr=0.2 dist-to-strait=0.113
+      L2 seg ULPI_STP (76.100,11.600)->(76.150,11.550) hw0.100 clr=0.2 dist-to-strait=0.001
+      L2 seg ULPI_STP (76.250,11.400)->(76.250,11.350) hw0.100 clr=0.2 dist-to-strait=0.062
+      L2 seg ULPI_STP (76.200,11.450)->(76.250,11.400) hw0.100 clr=0.2 dist-to-strait=0.023
+      L2 seg ULPI_STP (76.400,10.850)->(76.400,10.800) hw0.100 clr=0.2 dist-to-strait=0.628
+      L2 seg ULPI_STP (76.050,11.750)->(76.050,11.700) hw0.100 clr=0.2 dist-to-strait=0.143
+      L2 seg ULPI_STP (76.300,11.200)->(76.350,11.150) hw0.100 clr=0.2 dist-to-strait=0.266
+      L2 seg ULPI_STP (76.300,11.250)->(76.300,11.200) hw0.100 clr=0.2 dist-to-strait=0.216
+      L2 seg ULPI_STP (76.450,10.750)->(76.450,10.700) hw0.100 clr=0.2 dist-to-strait=0.691
+      L2 seg ULPI_STP (76.350,11.100)->(76.350,11.050) hw0.100 clr=0.2 dist-to-strait=0.373
+##### USB_RST: 2 fragments in box
+  frag0: 1 items: ['pad USB_RST (74.750,4.662) hw0.150x0.738']
+  frag1: 1 items: ['pad USB_RST (74.250,16.438) hw0.125x0.438']
+  start fragment: 1
+  reached L0: x[74.00,74.25] y[16.12,16.88] cells=17
+  frag0: gap 11.473 closest=(0, 74.75, 4.6625) from=(0, 74.25, 16.125)
+    strait mid (74.500,10.394) L0; fence items within 0.75mm of the strait segment:
+      L0 pad GND (73.525,9.500) hw0.450x0.475 clr=0.2 dist-to-strait=0.591
+      L0 pad GND (73.562,12.250) hw0.438x0.125 clr=0.2 dist-to-strait=0.530
+      L0 pad +3V3A (75.250,11.562) hw0.125x0.438 clr=0.25 dist-to-strait=0.688
+      L0 pad +3V3A (74.750,11.562) hw0.125x0.438 clr=0.25 dist-to-strait=0.188
+      L0 pad RBIAS (74.250,11.562) hw0.125x0.438 clr=0.2 dist-to-strait=0.062
+      L0 seg +3V3A (75.125,11.125)->(74.250,10.625) hw0.100 clr=0.25 dist-to-strait=0.225
+      L0 seg +3V3A (74.875,11.125)->(75.125,11.125) hw0.100 clr=0.25 dist-to-strait=0.722
+      L0 seg +3V3A (74.375,10.625)->(73.625,10.625) hw0.100 clr=0.25 dist-to-strait=0.163
+      L0 via +3V3A (73.625,10.625) r0.400 clr=0.25 dist-to-strait=0.505
+      L0 via +3V3A (75.625,8.625) r0.400 clr=0.25 dist-to-strait=0.714
+      L0 seg +3V3D (74.875,8.625)->(74.625,8.375) hw0.100 clr=0.25 dist-to-strait=0.359
+      L0 seg +3V3D (74.625,8.375)->(74.375,8.125) hw0.100 clr=0.25 dist-to-strait=0.489
+      L0 seg +3V3D (74.875,8.875)->(74.875,8.625) hw0.100 clr=0.25 dist-to-strait=0.224
+      L0 seg +3V3D (74.875,8.875)->(74.375,8.125) hw0.100 clr=0.25 dist-to-strait=0.208
+      L0 seg RBIAS (74.000,11.562)->(73.875,11.625) hw0.100 clr=0.2 dist-to-strait=0.411
+      L0 seg RBIAS (74.250,11.562)->(74.000,11.562) hw0.100 clr=0.2 dist-to-strait=0.224
+      L0 via RBIAS (73.875,11.625) r0.300 clr=0.2 dist-to-strait=0.298
+      L0 seg XO (73.850,8.600)->(73.800,8.550) hw0.100 clr=0.2 dist-to-strait=0.699
+      L0 seg XO (74.100,8.700)->(74.050,8.650) hw0.100 clr=0.2 dist-to-strait=0.431
+      L0 seg XO (74.800,9.450)->(74.750,9.400) hw0.100 clr=0.2 dist-to-strait=0.377
+      L0 seg XO (74.650,9.300)->(74.600,9.250) hw0.100 clr=0.2 dist-to-strait=0.191
+      L0 seg XO (73.900,8.600)->(73.850,8.600) hw0.100 clr=0.2 dist-to-strait=0.654
+      L0 seg XO (74.350,9.000)->(74.300,8.950) hw0.100 clr=0.2 dist-to-strait=0.116
+      L0 seg XO (74.250,8.850)->(74.200,8.800) hw0.100 clr=0.2 dist-to-strait=0.232
+      L0 seg XO (74.850,9.500)->(74.800,9.450) hw0.100 clr=0.2 dist-to-strait=0.444
+      L0 seg XO (74.700,9.350)->(74.650,9.300) hw0.100 clr=0.2 dist-to-strait=0.250
+      L0 seg XO (74.050,8.650)->(74.000,8.650) hw0.100 clr=0.2 dist-to-strait=0.499
+      L0 seg XO (74.550,9.200)->(74.500,9.150) hw0.100 clr=0.2 dist-to-strait=0.099
+      L0 seg XO (74.200,8.800)->(74.150,8.750) hw0.100 clr=0.2 dist-to-strait=0.297
+      L0 seg XO (74.400,9.050)->(74.350,9.000) hw0.100 clr=0.2 dist-to-strait=0.085
+      L0 seg XO (75.100,9.600)->(75.050,9.600) hw0.100 clr=0.2 dist-to-strait=0.704
+      L0 seg XO (74.750,9.400)->(74.700,9.350) hw0.100 clr=0.2 dist-to-strait=0.313
+      L0 seg XO (75.150,9.600)->(75.100,9.600) hw0.100 clr=0.2 dist-to-strait=0.735
+      L0 seg XO (74.150,8.750)->(74.100,8.700) hw0.100 clr=0.2 dist-to-strait=0.363
+      L0 seg XO (75.000,9.600)->(74.950,9.600) hw0.100 clr=0.2 dist-to-strait=0.647
+      L0 seg XO (74.300,8.950)->(74.300,8.900) hw0.100 clr=0.2 dist-to-strait=0.163
+      L0 seg XO (74.900,9.550)->(74.850,9.500) hw0.100 clr=0.2 dist-to-strait=0.511
+      L0 seg XO (74.300,8.900)->(74.250,8.850) hw0.100 clr=0.2 dist-to-strait=0.169
+      L0 seg XO (74.000,8.650)->(73.950,8.600) hw0.100 clr=0.2 dist-to-strait=0.543
+      L0 seg XO (75.050,9.600)->(75.000,9.600) hw0.100 clr=0.2 dist-to-strait=0.674
+      L0 seg XO (74.450,9.100)->(74.400,9.050) hw0.100 clr=0.2 dist-to-strait=0.078
+      L0 seg XO (74.950,9.600)->(74.900,9.550) hw0.100 clr=0.2 dist-to-strait=0.579
+      L0 seg XO (74.500,9.150)->(74.450,9.100) hw0.100 clr=0.2 dist-to-strait=0.079
+      L0 seg XO (74.600,9.250)->(74.550,9.200) hw0.100 clr=0.2 dist-to-strait=0.139
+      L0 seg XO (73.950,8.600)->(73.900,8.600) hw0.100 clr=0.2 dist-to-strait=0.611
+      L1 via +3V3A (73.625,10.625) r0.400 clr=0.25 dist-to-strait=0.505
+      L1 via +3V3A (75.625,8.625) r0.400 clr=0.25 dist-to-strait=0.714
+      L1 via RBIAS (73.875,11.625) r0.300 clr=0.2 dist-to-strait=0.298
+      L1 seg RBIAS (73.875,11.875)->(73.875,11.900) hw0.125 clr=0.2 dist-to-strait=0.440
+      L1 seg RBIAS (73.875,12.000)->(73.875,12.025) hw0.125 clr=0.2 dist-to-strait=0.464
+      L1 seg RBIAS (73.875,11.625)->(73.875,11.650) hw0.125 clr=0.2 dist-to-strait=0.465
+      L1 seg RBIAS (73.875,12.750)->(73.875,12.775) hw0.125 clr=0.2 dist-to-strait=0.571
+      L1 seg RBIAS (73.875,12.250)->(73.875,12.275) hw0.125 clr=0.2 dist-to-strait=0.579
+      L1 seg RBIAS (73.875,11.925)->(73.875,11.950) hw0.125 clr=0.2 dist-to-strait=0.446
+      L1 seg RBIAS (73.875,12.025)->(73.875,12.050) hw0.125 clr=0.2 dist-to-strait=0.471
+      L1 seg RBIAS (73.875,12.150)->(73.875,12.175) hw0.125 clr=0.2 dist-to-strait=0.524
+      L1 seg RBIAS (73.875,12.100)->(73.875,12.125) hw0.125 clr=0.2 dist-to-strait=0.500
+      L1 seg RBIAS (73.875,11.700)->(73.875,11.725) hw0.125 clr=0.2 dist-to-strait=0.447
+      L1 seg RBIAS (73.875,12.725)->(73.875,12.750) hw0.125 clr=0.2 dist-to-strait=0.589
+      L1 seg RBIAS (73.875,12.575)->(73.875,12.600) hw0.125 clr=0.2 dist-to-strait=0.703
+      L1 seg RBIAS (73.875,12.125)->(73.875,12.150) hw0.125 clr=0.2 dist-to-strait=0.512
+      L1 seg RBIAS (73.875,12.275)->(73.875,12.300) hw0.125 clr=0.2 dist-to-strait=0.594
+      L1 seg RBIAS (73.875,11.750)->(73.875,11.775) hw0.125 clr=0.2 dist-to-strait=0.440
+      L1 seg RBIAS (73.875,12.675)->(73.875,12.700) hw0.125 clr=0.2 dist-to-strait=0.625
+      L1 seg RBIAS (73.875,12.625)->(73.875,12.650) hw0.125 clr=0.2 dist-to-strait=0.663
+      L1 seg RBIAS (73.875,11.650)->(73.875,11.675) hw0.125 clr=0.2 dist-to-strait=0.458
+      L1 seg RBIAS (73.875,11.950)->(73.875,11.975) hw0.125 clr=0.2 dist-to-strait=0.451
+      L1 seg RBIAS (73.875,12.225)->(73.875,12.250) hw0.125 clr=0.2 dist-to-strait=0.564
+      L1 seg RBIAS (73.875,12.450)->(73.875,12.475) hw0.125 clr=0.2 dist-to-strait=0.715
+      L1 seg RBIAS (73.875,12.075)->(73.875,12.100) hw0.125 clr=0.2 dist-to-strait=0.490
+      L1 seg RBIAS (73.875,11.850)->(73.875,11.875) hw0.125 clr=0.2 dist-to-strait=0.438
+      L1 seg RBIAS (73.875,11.675)->(73.875,11.700) hw0.125 clr=0.2 dist-to-strait=0.452
+      L1 seg RBIAS (73.875,12.400)->(73.875,12.425) hw0.125 clr=0.2 dist-to-strait=0.678
+      L1 seg RBIAS (73.875,11.775)->(73.875,11.800) hw0.125 clr=0.2 dist-to-strait=0.438
+      L1 seg RBIAS (73.875,12.800)->(73.875,12.825) hw0.125 clr=0.2 dist-to-strait=0.537
+      L1 seg RBIAS (73.875,12.175)->(73.875,12.200) hw0.125 clr=0.2 dist-to-strait=0.537
+      L1 seg RBIAS (73.875,12.200)->(73.875,12.225) hw0.125 clr=0.2 dist-to-strait=0.550
+      L1 seg RBIAS (73.875,12.475)->(73.875,12.500) hw0.125 clr=0.2 dist-to-strait=0.733
+      L1 seg RBIAS (73.875,12.300)->(73.875,12.325) hw0.125 clr=0.2 dist-to-strait=0.610
+      L1 seg RBIAS (73.875,12.325)->(73.875,12.350) hw0.125 clr=0.2 dist-to-strait=0.627
+      L1 seg RBIAS (73.875,12.375)->(73.875,12.400) hw0.125 clr=0.2 dist-to-strait=0.661
+      L1 seg RBIAS (73.875,12.775)->(73.875,12.800) hw0.125 clr=0.2 dist-to-strait=0.554
+      L1 seg RBIAS (73.875,11.900)->(73.875,11.925) hw0.125 clr=0.2 dist-to-strait=0.442
+      L1 seg RBIAS (73.875,11.825)->(73.875,11.850) hw0.125 clr=0.2 dist-to-strait=0.438
+      L1 seg RBIAS (73.875,12.050)->(73.875,12.075) hw0.125 clr=0.2 dist-to-strait=0.480
+      L1 seg RBIAS (73.875,12.525)->(73.875,12.550) hw0.125 clr=0.2 dist-to-strait=0.743
+      L1 seg RBIAS (73.875,12.600)->(73.875,12.625) hw0.125 clr=0.2 dist-to-strait=0.683
+      L1 seg RBIAS (73.875,12.425)->(73.875,12.450) hw0.125 clr=0.2 dist-to-strait=0.696
+      L1 seg RBIAS (73.875,12.700)->(73.875,12.725) hw0.125 clr=0.2 dist-to-strait=0.607
+      L1 seg RBIAS (73.875,12.350)->(73.875,12.375) hw0.125 clr=0.2 dist-to-strait=0.643
+      L1 seg RBIAS (73.875,12.550)->(73.875,12.575) hw0.125 clr=0.2 dist-to-strait=0.723
+      L1 seg RBIAS (73.875,11.975)->(73.875,12.000) hw0.125 clr=0.2 dist-to-strait=0.457
+      L1 seg RBIAS (73.875,11.725)->(73.875,11.750) hw0.125 clr=0.2 dist-to-strait=0.443
+      L1 seg RBIAS (73.875,11.800)->(73.875,11.825) hw0.125 clr=0.2 dist-to-strait=0.438
+      L1 seg RBIAS (73.875,12.650)->(73.875,12.675) hw0.125 clr=0.2 dist-to-strait=0.644
+      L1 seg ULPI_CK (74.625,13.500)->(74.625,6.375) hw0.125 clr=0.2 dist-to-strait=-0.125
+      L2 via +3V3A (73.625,10.625) r0.400 clr=0.25 dist-to-strait=0.505
+      L2 via +3V3A (75.625,8.625) r0.400 clr=0.25 dist-to-strait=0.714
+      L2 seg +3V3A (74.800,8.400)->(74.750,8.400) hw0.100 clr=0.25 dist-to-strait=0.491
+      L2 seg +3V3A (75.000,8.400)->(74.950,8.400) hw0.100 clr=0.25 dist-to-strait=0.582
+      L2 seg +3V3A (74.700,8.400)->(74.650,8.400) hw0.100 clr=0.25 dist-to-strait=0.468
+      L2 seg +3V3A (74.650,8.400)->(74.600,8.400) hw0.100 clr=0.25 dist-to-strait=0.462
+      L2 seg +3V3A (74.000,8.550)->(73.950,8.600) hw0.100 clr=0.25 dist-to-strait=0.597
+      L2 seg +3V3A (74.300,8.400)->(74.250,8.400) hw0.100 clr=0.25 dist-to-strait=0.519
+      L2 seg +3V3A (75.150,8.400)->(75.100,8.400) hw0.100 clr=0.25 dist-to-strait=0.677
+      L2 seg +3V3A (74.150,8.450)->(74.100,8.500) hw0.100 clr=0.25 dist-to-strait=0.553
+      L2 seg +3V3A (74.400,8.400)->(74.350,8.400) hw0.100 clr=0.25 dist-to-strait=0.484
+      L2 seg +3V3A (75.100,8.400)->(75.050,8.400) hw0.100 clr=0.25 dist-to-strait=0.643
+      L2 seg +3V3A (74.350,8.400)->(74.300,8.400) hw0.100 clr=0.25 dist-to-strait=0.500
+      L2 seg +3V3A (75.250,8.400)->(75.200,8.400) hw0.100 clr=0.25 dist-to-strait=0.749
+      L2 seg +3V3A (74.100,8.500)->(74.050,8.500) hw0.100 clr=0.25 dist-to-strait=0.553
+      L2 seg +3V3A (73.625,10.625)->(75.625,8.625) hw0.100 clr=0.25 dist-to-strait=0.355
+      L2 seg +3V3A (75.625,8.625)->(71.250,11.125) hw0.100 clr=0.25 dist-to-strait=0.135
+      L2 seg +3V3A (75.050,8.400)->(75.000,8.400) hw0.100 clr=0.25 dist-to-strait=0.611
+      L2 seg +3V3A (75.200,8.400)->(75.150,8.400) hw0.100 clr=0.25 dist-to-strait=0.712
+      L2 seg +3V3A (74.600,8.400)->(74.550,8.400) hw0.100 clr=0.25 dist-to-strait=0.461
+      L2 seg +3V3A (74.550,8.400)->(74.500,8.400) hw0.100 clr=0.25 dist-to-strait=0.461
+      L2 seg +3V3A (74.750,8.400)->(74.700,8.400) hw0.100 clr=0.25 dist-to-strait=0.478
+      L2 seg +3V3A (74.850,8.400)->(74.800,8.400) hw0.100 clr=0.25 dist-to-strait=0.509
+      L2 seg +3V3A (74.900,8.400)->(74.850,8.400) hw0.100 clr=0.25 dist-to-strait=0.530
+      L2 seg +3V3A (74.950,8.400)->(74.900,8.400) hw0.100 clr=0.25 dist-to-strait=0.555
+      L2 seg +3V3A (73.900,8.600)->(73.850,8.650) hw0.100 clr=0.25 dist-to-strait=0.654
+      L2 seg +3V3A (74.200,8.400)->(74.150,8.450) hw0.100 clr=0.25 dist-to-strait=0.557
+      L2 seg +3V3A (74.450,8.400)->(74.400,8.400) hw0.100 clr=0.25 dist-to-strait=0.472
+      L2 seg +3V3A (74.250,8.400)->(74.200,8.400) hw0.100 clr=0.25 dist-to-strait=0.542
+      L2 seg +3V3A (73.850,8.650)->(73.800,8.650) hw0.100 clr=0.25 dist-to-strait=0.677
+      L2 seg +3V3A (74.500,8.400)->(74.450,8.400) hw0.100 clr=0.25 dist-to-strait=0.464
+      L2 seg +3V3A (74.050,8.500)->(74.000,8.550) hw0.100 clr=0.25 dist-to-strait=0.589
+      L2 seg +3V3A (73.950,8.600)->(73.900,8.600) hw0.100 clr=0.25 dist-to-strait=0.611
+      L2 seg +3V3A (73.800,8.650)->(73.750,8.700) hw0.100 clr=0.25 dist-to-strait=0.723
+      L2 seg PHY_1V8A (74.900,11.750)->(74.200,12.250) hw0.100 clr=0.25 dist-to-strait=0.107
+      L2 seg PHY_1V8A (75.300,11.350)->(74.900,11.750) hw0.100 clr=0.25 dist-to-strait=0.369
+      L2 seg PHY_1V8A (74.200,12.250)->(73.500,12.550) hw0.100 clr=0.25 dist-to-strait=0.385
+      L2 via RBIAS (73.875,11.625) r0.300 clr=0.2 dist-to-strait=0.298
+=== done ===

@@ -1,0 +1,47 @@
+00:54:57: Debug: Adding duplicate image handler for 'PNG file'
+00:54:57: Debug: Adding duplicate image handler for 'JPEG file'
+00:54:57: Debug: Adding duplicate image handler for 'TIFF file'
+00:54:57: Debug: Adding duplicate image handler for 'GIF file'
+00:54:57: Debug: Adding duplicate image handler for 'PNM file'
+00:54:57: Debug: Adding duplicate image handler for 'PCX file'
+00:54:57: Debug: Adding duplicate image handler for 'IFF file'
+00:54:57: Debug: Adding duplicate image handler for 'Windows icon file'
+00:54:57: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:54:57: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:54:57: Debug: Adding duplicate image handler for 'TGA file'
+00:54:57: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+00:54:58: Debug: Adding duplicate image handler for 'PNG file'
+00:54:58: Debug: Adding duplicate image handler for 'JPEG file'
+00:54:58: Debug: Adding duplicate image handler for 'TIFF file'
+00:54:58: Debug: Adding duplicate image handler for 'GIF file'
+00:54:58: Debug: Adding duplicate image handler for 'PNM file'
+00:54:58: Debug: Adding duplicate image handler for 'PCX file'
+00:54:58: Debug: Adding duplicate image handler for 'IFF file'
+00:54:58: Debug: Adding duplicate image handler for 'Windows icon file'
+00:54:58: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:54:58: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:54:58: Debug: Adding duplicate image handler for 'TGA file'
+00:54:58: Debug: Adding duplicate image handler for 'XPM file'
+legal d0.5 via sites: 1
+  y=10.2: x 75.2..75.2 n=1
+top-15 near-legal (margin, x, y):
+   (0.0, 75.2, 10.2)
+   (-0.015, 75.25, 10.2)
+   (-0.016, 75.2, 10.25)
+   (-0.045, 76.45, 8.95)
+   (-0.047, 75.3, 10.2)
+   (-0.048, 75.2, 10.15)
+   (-0.049, 75.2, 10.3)
+   (-0.05, 76.4, 9.0)
+   (-0.05, 75.35, 10.15)
+   (-0.05, 75.3, 10.15)
+   (-0.05, 75.25, 10.15)
+   (-0.05, 75.15, 10.35)
+   (-0.05, 75.15, 10.3)
+   (-0.05, 75.15, 10.25)
+   (-0.05, 75.15, 10.2)
+=== done ===

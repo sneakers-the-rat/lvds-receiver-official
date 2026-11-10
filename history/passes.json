@@ -6242,6 +6242,36 @@
       },
       "description": "ULPI_STP connected (split pass, pass-210 precedent): C20 shrunk 0603->0402 at (76.2,18.73); STP F stub + dive via (76.065,17.96) and the 17-leg densified B/In2 journey west/south to U6.26 (ax design D, legs emitted verbatim; joint overshoot spurs amputated DRC-guided - coincident duplicate tracks are DRC-benign and were NOT deduped); PHY_1V8 west arm + F tail ripped for leg1's crossing and the south loop re-laid (via (77.90,10.08), F stub jogged clear of the +3V3A via); SDA B jog, HV_SHDN and PG_3V3 re-lays emitted. NAMED TRADE: ripping the arm severed C22's only feed - PHY_1V8's C22 fragment {C22.1 + tail} is the opened net, healed in pass 215 jointly with XI/USB_RST (C22 feed hunt: the quadrant pocket is sealed in every configuration searched - ay evidence t_ay2..t_ay41). GND F islands stitched (vias (67.65,-0.77), (69.13,-8.94)). KiCad DRC: violations 5 (4 standing J1 copper_edge + 1 track_dangling on the opened PHY tail); unconnected 3 (PHY_1V8 fragment, USB_RST, XI). check_pcb: nets 3, census 109, courtyard 0, blind 21 SH1.",
       "note": ""
+    },
+    {
+      "pass": 215,
+      "timestamp": "2026-11-10T01:55:02Z",
+      "hash": "20d40c9e15432addf7bb0f0e3c777dbe4d6b00a7",
+      "short_hash": "20d40c9",
+      "board_file": "hw/pdlvds_rx.exp252.kicad_pcb",
+      "dir": "pass-0215",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 109,
+        "unconnected_nets": 3,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "pass 215: PHY_1V8A notch via relocated (75.7375,10.75)->(75.27,10.33), F stub and B head re-laid; zero-delta prep freeing the SE pocket centre for the PHY_1V8/STP crossing (notch disc was the keystone fence: its exclusion covered the pocket floor). DRC 5 (4 J1 + PHY tail dangle), check_pcb nets 3, census 109, courtyard 0",
+      "note": ""
     }
   ],
   "gaps": [

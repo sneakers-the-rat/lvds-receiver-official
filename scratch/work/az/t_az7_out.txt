@@ -1,0 +1,122 @@
+00:17:18: Debug: Adding duplicate image handler for 'PNG file'
+00:17:18: Debug: Adding duplicate image handler for 'JPEG file'
+00:17:18: Debug: Adding duplicate image handler for 'TIFF file'
+00:17:18: Debug: Adding duplicate image handler for 'GIF file'
+00:17:18: Debug: Adding duplicate image handler for 'PNM file'
+00:17:18: Debug: Adding duplicate image handler for 'PCX file'
+00:17:18: Debug: Adding duplicate image handler for 'IFF file'
+00:17:18: Debug: Adding duplicate image handler for 'Windows icon file'
+00:17:18: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:17:18: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:17:18: Debug: Adding duplicate image handler for 'TGA file'
+00:17:18: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+00:17:19: Debug: Adding duplicate image handler for 'PNG file'
+00:17:19: Debug: Adding duplicate image handler for 'JPEG file'
+00:17:19: Debug: Adding duplicate image handler for 'TIFF file'
+00:17:19: Debug: Adding duplicate image handler for 'GIF file'
+00:17:19: Debug: Adding duplicate image handler for 'PNM file'
+00:17:19: Debug: Adding duplicate image handler for 'PCX file'
+00:17:19: Debug: Adding duplicate image handler for 'IFF file'
+00:17:19: Debug: Adding duplicate image handler for 'Windows icon file'
+00:17:19: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:17:19: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:17:19: Debug: Adding duplicate image handler for 'TGA file'
+00:17:19: Debug: Adding duplicate image handler for 'XPM file'
+00:17:19: Debug: Adding duplicate image handler for 'PNG file'
+00:17:19: Debug: Adding duplicate image handler for 'JPEG file'
+00:17:19: Debug: Adding duplicate image handler for 'TIFF file'
+00:17:19: Debug: Adding duplicate image handler for 'GIF file'
+00:17:19: Debug: Adding duplicate image handler for 'PNM file'
+00:17:19: Debug: Adding duplicate image handler for 'PCX file'
+00:17:19: Debug: Adding duplicate image handler for 'IFF file'
+00:17:19: Debug: Adding duplicate image handler for 'Windows icon file'
+00:17:19: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:17:19: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:17:19: Debug: Adding duplicate image handler for 'TGA file'
+00:17:19: Debug: Adding duplicate image handler for 'XPM file'
+00:17:24: Debug: Adding duplicate image handler for 'PNG file'
+00:17:24: Debug: Adding duplicate image handler for 'JPEG file'
+00:17:24: Debug: Adding duplicate image handler for 'TIFF file'
+00:17:24: Debug: Adding duplicate image handler for 'GIF file'
+00:17:24: Debug: Adding duplicate image handler for 'PNM file'
+00:17:24: Debug: Adding duplicate image handler for 'PCX file'
+00:17:24: Debug: Adding duplicate image handler for 'IFF file'
+00:17:24: Debug: Adding duplicate image handler for 'Windows icon file'
+00:17:24: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:17:24: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:17:24: Debug: Adding duplicate image handler for 'TGA file'
+00:17:24: Debug: Adding duplicate image handler for 'XPM file'
+00:17:28: Debug: Adding duplicate image handler for 'PNG file'
+00:17:28: Debug: Adding duplicate image handler for 'JPEG file'
+00:17:28: Debug: Adding duplicate image handler for 'TIFF file'
+00:17:28: Debug: Adding duplicate image handler for 'GIF file'
+00:17:28: Debug: Adding duplicate image handler for 'PNM file'
+00:17:28: Debug: Adding duplicate image handler for 'PCX file'
+00:17:28: Debug: Adding duplicate image handler for 'IFF file'
+00:17:28: Debug: Adding duplicate image handler for 'Windows icon file'
+00:17:28: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:17:28: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:17:28: Debug: Adding duplicate image handler for 'TGA file'
+00:17:28: Debug: Adding duplicate image handler for 'XPM file'
+00:17:34: Debug: Adding duplicate image handler for 'PNG file'
+00:17:34: Debug: Adding duplicate image handler for 'JPEG file'
+00:17:34: Debug: Adding duplicate image handler for 'TIFF file'
+00:17:34: Debug: Adding duplicate image handler for 'GIF file'
+00:17:34: Debug: Adding duplicate image handler for 'PNM file'
+00:17:34: Debug: Adding duplicate image handler for 'PCX file'
+00:17:34: Debug: Adding duplicate image handler for 'IFF file'
+00:17:34: Debug: Adding duplicate image handler for 'Windows icon file'
+00:17:34: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:17:34: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:17:34: Debug: Adding duplicate image handler for 'TGA file'
+00:17:34: Debug: Adding duplicate image handler for 'XPM file'
+DM_PHY vias in pool:
+   L0 ('via', 'DM_PHY', (73.625, 19.125, 0.3), 0.2)
+   L0 ('via', 'DM_PHY', (46.625, 49.125, 0.3), 0.2)
+   L1 ('via', 'DM_PHY', (73.625, 19.125, 0.3), 0.2)
+   L1 ('via', 'DM_PHY', (46.625, 49.125, 0.3), 0.2)
+   L2 ('via', 'DM_PHY', (73.625, 19.125, 0.3), 0.2)
+   L2 ('via', 'DM_PHY', (46.625, 49.125, 0.3), 0.2)
+DM_PHY F items near the loop:
+    ('pad', 'DM_PHY', (73.5625, 15.75, 0.4375, 0.125, 0.0), 0.2)
+    ('pad', 'DM_PHY', (46.6375, 49.2, 0.6625, 0.3, 0.0), 0.2)
+    ('seg', 'DM_PHY', (74.125, 18.625, 74.125, 17.375, 0.125), 0.2)
+    ('seg', 'DM_PHY', (73.625, 19.125, 73.875, 18.875, 0.125), 0.2)
+    ('seg', 'DM_PHY', (74.125, 17.375, 73.5625, 17.0, 0.125), 0.2)
+    ('seg', 'DM_PHY', (73.5625, 17.0, 73.5625, 15.75, 0.1), 0.2)
+    ('seg', 'DM_PHY', (73.875, 18.875, 74.125, 18.625, 0.125), 0.2)
+    ('via', 'DM_PHY', (73.625, 19.125, 0.3), 0.2)
+    ('via', 'DM_PHY', (46.625, 49.125, 0.3), 0.2)
+== X-H: mega-rip pocket + column (non-XI segs/vias)
+    ripped pocket rip: 89 entries, 89 removals
+    ripped column rip: 117 entries, 117 removals
+    XI -> L2 (75.625,18.625): FOUND vias=[[76.0, 10.625], [75.625, 18.625]]
+    XI -> L0 (75.72,18.73): FOUND vias=[[76.0, 10.625], [75.75, 18.75]]
+    XI -> L2 (78.375,21.125): FOUND vias=[[76.0, 10.625], [75.5, 18.75]]
+== X-I: four fences ripped
+    ripped STP B column+stair: 123 entries, 125 removals
+    ripped notch via: 3 entries, 3 removals
+    ripped XO F esc: 28 entries, 28 removals
+    ripped +3V3A In2 web: 16 entries, 18 removals
+    XI -> L2 (75.625,18.625): none
+    XI -> L0 (75.72,18.73): none
+    XI -> L2 (78.375,21.125): none
+== R-H: mega-rip north box (non-RST segs/vias)
+    ripped north rip: 482 entries, 482 removals
+    USB_RST -> L0 (74.75,4.662): none
+    USB_RST -> L2 (74.75,4.662): none
+    USB_RST -> L1 (74.75,4.662): none
+== R-I: DM loop+via ripped by centre; target-side goals
+    ripped DM box all layers: 11 entries, 11 removals
+    USB_RST -> L0 (74.75,4.662): none
+    USB_RST -> L2 (74.75,4.662): none
+    USB_RST -> L1 (74.75,4.662): none
+  reverse: from U6.40 F to corridor head + U7.9:
+    USB_RST -> L0 (74.75,3.4): none
+    USB_RST -> L2 (74.75,3.4): none
+    USB_RST -> L0 (74.25,16.4375): none
+=== done ===

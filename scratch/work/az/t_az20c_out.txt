@@ -1,0 +1,34 @@
+00:48:01: Debug: Adding duplicate image handler for 'PNG file'
+00:48:01: Debug: Adding duplicate image handler for 'JPEG file'
+00:48:01: Debug: Adding duplicate image handler for 'TIFF file'
+00:48:01: Debug: Adding duplicate image handler for 'GIF file'
+00:48:01: Debug: Adding duplicate image handler for 'PNM file'
+00:48:01: Debug: Adding duplicate image handler for 'PCX file'
+00:48:01: Debug: Adding duplicate image handler for 'IFF file'
+00:48:01: Debug: Adding duplicate image handler for 'Windows icon file'
+00:48:01: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:48:01: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:48:01: Debug: Adding duplicate image handler for 'TGA file'
+00:48:01: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+00:48:01: Debug: Adding duplicate image handler for 'PNG file'
+00:48:01: Debug: Adding duplicate image handler for 'JPEG file'
+00:48:01: Debug: Adding duplicate image handler for 'TIFF file'
+00:48:01: Debug: Adding duplicate image handler for 'GIF file'
+00:48:01: Debug: Adding duplicate image handler for 'PNM file'
+00:48:01: Debug: Adding duplicate image handler for 'PCX file'
+00:48:01: Debug: Adding duplicate image handler for 'IFF file'
+00:48:01: Debug: Adding duplicate image handler for 'Windows icon file'
+00:48:01: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:48:01: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:48:01: Debug: Adding duplicate image handler for 'TGA file'
+00:48:01: Debug: Adding duplicate image handler for 'XPM file'
+L0: seg PHY_1V8 (77.250,11.562)->(77.250,10.750) hw0.100
+L0: seg PHY_1V8 (77.250,11.562)->(77.250,10.750) hw0.100
+L0: seg PHY_1V8 (77.250,10.750)->(77.550,10.350) hw0.100
+L0: seg PHY_1V8 (77.250,10.750)->(77.550,10.350) hw0.100
+L0: seg PHY_1V8 (77.250,10.750)->(77.550,10.350) hw0.100
+L0: seg PHY_1V8 (77.550,10.350)->(77.900,10.080) hw0.100

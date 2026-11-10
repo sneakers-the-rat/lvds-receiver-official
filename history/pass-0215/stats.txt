@@ -1,0 +1,14 @@
+pass: 215
+description: pass 215: PHY_1V8A notch via relocated (75.7375,10.75)->(75.27,10.33), F stub and B head re-laid; zero-delta prep freeing the SE pocket centre for the PHY_1V8/STP crossing (notch disc was the keystone fence: its exclusion covered the pocket floor). DRC 5 (4 J1 + PHY tail dangle), check_pcb nets 3, census 109, courtyard 0
+timestamp (UTC): 2026-11-10T01:55:02Z
+commit: pending
+board file: hw/pdlvds_rx.exp252.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 109
+unconnected nets: 3
+courtyard collisions: 0
+audit verdict: fail
+note: 

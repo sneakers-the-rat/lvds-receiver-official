@@ -1,0 +1,51 @@
+01:32:52: Debug: Adding duplicate image handler for 'PNG file'
+01:32:52: Debug: Adding duplicate image handler for 'JPEG file'
+01:32:52: Debug: Adding duplicate image handler for 'TIFF file'
+01:32:52: Debug: Adding duplicate image handler for 'GIF file'
+01:32:52: Debug: Adding duplicate image handler for 'PNM file'
+01:32:52: Debug: Adding duplicate image handler for 'PCX file'
+01:32:52: Debug: Adding duplicate image handler for 'IFF file'
+01:32:52: Debug: Adding duplicate image handler for 'Windows icon file'
+01:32:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:32:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:32:52: Debug: Adding duplicate image handler for 'TGA file'
+01:32:52: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:32:52: Debug: Adding duplicate image handler for 'PNG file'
+01:32:52: Debug: Adding duplicate image handler for 'JPEG file'
+01:32:52: Debug: Adding duplicate image handler for 'TIFF file'
+01:32:52: Debug: Adding duplicate image handler for 'GIF file'
+01:32:52: Debug: Adding duplicate image handler for 'PNM file'
+01:32:52: Debug: Adding duplicate image handler for 'PCX file'
+01:32:52: Debug: Adding duplicate image handler for 'IFF file'
+01:32:52: Debug: Adding duplicate image handler for 'Windows icon file'
+01:32:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:32:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:32:52: Debug: Adding duplicate image handler for 'TGA file'
+01:32:52: Debug: Adding duplicate image handler for 'XPM file'
+base pool: PHY 1 STP 2 CK 1 1V8A 1
+CK vertical ripped: 1
+CK B-hop gate: 64 pairs < 0.3; worst 8:
+    (-0.5, 0, ('via', 'ULPI_CK', (75.85, 12.0, 0.25), 0.2), ('pad', 'PHY_1V8A', (75.75, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (-0.449, 2, ('seg', 'ULPI_CK', (75.85, 12.0, 74.05, 10.9, 0.1), 0.2), ('seg', 'PHY_1V8A', (75.3, 11.35, 74.9, 11.75, 0.1), 0.25))
+    (-0.447, 2, ('seg', 'ULPI_CK', (75.85, 12.0, 74.05, 10.9, 0.1), 0.2), ('seg', 'PHY_1V8A', (75.05, 10.95, 74.9, 11.75, 0.1), 0.25))
+    (-0.394, 0, ('via', 'ULPI_CK', (74.05, 10.9, 0.25), 0.2), ('via', '+3V3A', (73.625, 10.625, 0.4), 0.25))
+    (-0.394, 1, ('via', 'ULPI_CK', (74.05, 10.9, 0.25), 0.2), ('via', '+3V3A', (73.625, 10.625, 0.4), 0.25))
+    (-0.394, 2, ('via', 'ULPI_CK', (74.05, 10.9, 0.25), 0.2), ('via', '+3V3A', (73.625, 10.625, 0.4), 0.25))
+    (-0.325, 0, ('via', 'ULPI_CK', (74.05, 10.9, 0.25), 0.2), ('seg', '+3V3A', (74.375, 10.625, 73.625, 10.625, 0.1), 0.25))
+    (-0.269, 1, ('seg', 'ULPI_CK', (74.05, 10.9, 74.625, 10.2, 0.125), 0.2), ('via', '+3V3A', (73.625, 10.625, 0.4), 0.25))
+CK frags: 1
+STP hop gate: 311 pairs < 0.3; worst 8:
+    (-0.45, 0, ('via', 'ULPI_STP', (75.4, 15.55, 0.25), 0.2), ('pad', 'GND', (76.0, 14.0, 1.55, 1.55, 0.0), 0.2))
+    (-0.425, 0, ('via', 'ULPI_STP', (75.55, 11.35, 0.25), 0.2), ('pad', 'PHY_1V8A', (75.75, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (-0.412, 0, ('via', 'ULPI_STP', (75.55, 11.35, 0.25), 0.2), ('seg', 'PHY_1V8A', (75.75, 11.5625, 75.72, 11.0, 0.1), 0.25))
+    (-0.35, 2, ('via', 'ULPI_STP', (75.55, 11.35, 0.25), 0.2), ('seg', 'PHY_1V8A', (75.3, 11.35, 74.9, 11.75, 0.1), 0.25))
+    (-0.325, 0, ('via', 'ULPI_STP', (75.55, 11.35, 0.25), 0.2), ('pad', '+3V3A', (75.25, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (-0.275, 1, ('seg', 'ULPI_STP', (75.4, 15.55, 74.15, 14.6, 0.1), 0.2), ('seg', 'RBIAS', (74.0, 14.575, 74.0, 14.6, 0.125), 0.2))
+    (-0.275, 1, ('seg', 'ULPI_STP', (75.4, 15.55, 74.15, 14.6, 0.1), 0.2), ('seg', 'RBIAS', (74.0, 14.6, 74.0, 14.625, 0.125), 0.2))
+    (-0.275, 1, ('seg', 'ULPI_STP', (74.15, 14.6, 74.15, 12.3, 0.1), 0.2), ('seg', 'RBIAS', (74.0, 14.4, 74.0, 14.425, 0.125), 0.2))
+final: STP 1 PHY 1 CK 1 XI 3 1V8A 1 XO 1
+=== done ===
