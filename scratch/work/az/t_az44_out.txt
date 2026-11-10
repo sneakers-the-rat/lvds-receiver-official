@@ -1,0 +1,19 @@
+01:38:45: Debug: Adding duplicate image handler for 'PNG file'
+01:38:45: Debug: Adding duplicate image handler for 'JPEG file'
+01:38:45: Debug: Adding duplicate image handler for 'TIFF file'
+01:38:45: Debug: Adding duplicate image handler for 'GIF file'
+01:38:45: Debug: Adding duplicate image handler for 'PNM file'
+01:38:45: Debug: Adding duplicate image handler for 'PCX file'
+01:38:45: Debug: Adding duplicate image handler for 'IFF file'
+01:38:45: Debug: Adding duplicate image handler for 'Windows icon file'
+01:38:45: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:38:45: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:38:45: Debug: Adding duplicate image handler for 'TGA file'
+01:38:45: Debug: Adding duplicate image handler for 'XPM file'
+netcodes: {'PHY_1V8A': 69}
+old via d=0.5 drill=0.3
+stub widths F=0.2 B=0.2
+saved hw/pdlvds_rx.exp252.kicad_pcb
+census diff (net: before->after): {'PHY_1V8A': (152, 154)}
+expected PHY_1V8A delta (+3 added -3 ripped +... via same): before 152 after 154
+=== done ===

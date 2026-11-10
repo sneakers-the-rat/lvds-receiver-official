@@ -1,0 +1,41 @@
+01:49:40: Debug: Adding duplicate image handler for 'PNG file'
+01:49:40: Debug: Adding duplicate image handler for 'JPEG file'
+01:49:40: Debug: Adding duplicate image handler for 'TIFF file'
+01:49:40: Debug: Adding duplicate image handler for 'GIF file'
+01:49:40: Debug: Adding duplicate image handler for 'PNM file'
+01:49:40: Debug: Adding duplicate image handler for 'PCX file'
+01:49:40: Debug: Adding duplicate image handler for 'IFF file'
+01:49:40: Debug: Adding duplicate image handler for 'Windows icon file'
+01:49:40: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:49:40: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:49:40: Debug: Adding duplicate image handler for 'TGA file'
+01:49:40: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:49:40: Debug: Adding duplicate image handler for 'PNG file'
+01:49:40: Debug: Adding duplicate image handler for 'JPEG file'
+01:49:40: Debug: Adding duplicate image handler for 'TIFF file'
+01:49:40: Debug: Adding duplicate image handler for 'GIF file'
+01:49:40: Debug: Adding duplicate image handler for 'PNM file'
+01:49:40: Debug: Adding duplicate image handler for 'PCX file'
+01:49:40: Debug: Adding duplicate image handler for 'IFF file'
+01:49:40: Debug: Adding duplicate image handler for 'Windows icon file'
+01:49:40: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:49:40: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:49:40: Debug: Adding duplicate image handler for 'TGA file'
+01:49:40: Debug: Adding duplicate image handler for 'XPM file'
+faithful 1V8A frags: 1
+ripped via: 1 segs: 3
+notch v3 gate (faithful pool): 47 pairs < 0.3; worst 8:
+    (-0.03, 1, ('via', 'PHY_1V8A', (75.22, 10.38, 0.25), 0.25), ('seg', 'ULPI_CK', (74.625, 13.5, 74.625, 6.375, 0.125), 0.2))
+    (-0.007, 0, ('seg', 'PHY_1V8A', (75.72, 11.0, 75.46, 10.7, 0.1), 0.25), ('pad', '+3V3A', (75.25, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (0.074, 0, ('seg', 'PHY_1V8A', (75.72, 11.0, 75.46, 10.7, 0.1), 0.25), ('pad', 'XI', (76.25, 11.5625, 0.125, 0.4375, 0.0), 0.2))
+    (0.082, 0, ('seg', 'PHY_1V8A', (75.72, 11.0, 75.46, 10.7, 0.1), 0.25), ('seg', '+3V3A', (75.125, 11.125, 74.25, 10.625, 0.1), 0.25))
+    (0.082, 0, ('seg', 'PHY_1V8A', (75.72, 11.0, 75.46, 10.7, 0.1), 0.25), ('seg', '+3V3A', (74.875, 11.125, 75.125, 11.125, 0.1), 0.25))
+    (0.083, 0, ('seg', 'PHY_1V8A', (75.46, 10.7, 75.22, 10.38, 0.1), 0.25), ('pad', '+3V3A', (75.25, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (0.089, 2, ('via', 'PHY_1V8A', (75.22, 10.38, 0.25), 0.25), ('seg', 'ULPI_STP', (75.85, 10.1, 75.9, 10.05, 0.1), 0.2))
+    (0.089, 2, ('via', 'PHY_1V8A', (75.22, 10.38, 0.25), 0.25), ('seg', 'ULPI_STP', (75.9, 10.1, 75.85, 10.1, 0.1), 0.2))
+1V8A frags: 1
+=== done ===

@@ -1,0 +1,77 @@
+01:30:27: Debug: Adding duplicate image handler for 'PNG file'
+01:30:27: Debug: Adding duplicate image handler for 'JPEG file'
+01:30:27: Debug: Adding duplicate image handler for 'TIFF file'
+01:30:27: Debug: Adding duplicate image handler for 'GIF file'
+01:30:27: Debug: Adding duplicate image handler for 'PNM file'
+01:30:27: Debug: Adding duplicate image handler for 'PCX file'
+01:30:27: Debug: Adding duplicate image handler for 'IFF file'
+01:30:27: Debug: Adding duplicate image handler for 'Windows icon file'
+01:30:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:30:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:30:27: Debug: Adding duplicate image handler for 'TGA file'
+01:30:27: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:30:27: Debug: Adding duplicate image handler for 'PNG file'
+01:30:27: Debug: Adding duplicate image handler for 'JPEG file'
+01:30:27: Debug: Adding duplicate image handler for 'TIFF file'
+01:30:27: Debug: Adding duplicate image handler for 'GIF file'
+01:30:27: Debug: Adding duplicate image handler for 'PNM file'
+01:30:27: Debug: Adding duplicate image handler for 'PCX file'
+01:30:27: Debug: Adding duplicate image handler for 'IFF file'
+01:30:27: Debug: Adding duplicate image handler for 'Windows icon file'
+01:30:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:30:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:30:27: Debug: Adding duplicate image handler for 'TGA file'
+01:30:27: Debug: Adding duplicate image handler for 'XPM file'
+pool rebuilt: PHY 1 STP 2 1V8A 1
+PHY B segs in pocket:
+    (77.9, 10.08, 77.5, 10.25)
+    (77.5, 10.25, 77.28, 10.8)
+    (77.28, 10.8, 77.15, 11.3)
+    (77.15, 11.3, 77.15, 13.0)
+    (74.0, 13.9, 74.05, 13.85)
+    (74.05, 13.85, 74.05, 13.75)
+    (74.05, 13.75, 74.15, 13.65)
+    (74.15, 13.65, 74.15, 13.6)
+    (74.15, 13.6, 74.2, 13.55)
+    (74.2, 13.55, 74.2, 13.5)
+    (74.2, 13.5, 74.25, 13.45)
+    (74.25, 13.45, 74.25, 13.35)
+    (74.25, 13.35, 74.5, 13.1)
+    (74.5, 13.1, 74.55, 13.1)
+    (74.55, 13.1, 74.65, 13.0)
+    (74.65, 13.0, 74.7, 13.0)
+    (74.7, 13.0, 74.75, 12.95)
+    (74.75, 12.95, 74.8, 12.95)
+    (74.8, 12.95, 74.9, 12.85)
+    (74.9, 12.85, 75.0, 12.85)
+    (75.0, 12.85, 75.05, 12.8)
+    (75.05, 12.8, 75.45, 12.8)
+    (75.45, 12.8, 75.5, 12.75)
+    (75.5, 12.75, 75.55, 12.75)
+    (75.55, 12.75, 75.6, 12.7)
+    (75.6, 12.7, 75.65, 12.7)
+    (75.65, 12.7, 75.7, 12.65)
+    (75.7, 12.65, 75.8, 12.65)
+    (75.8, 12.65, 75.85, 12.6)
+    (75.85, 12.6, 76.35, 12.6)
+    (76.35, 12.6, 76.4, 12.65)
+    (76.4, 12.65, 76.5, 12.65)
+    (76.5, 12.65, 76.6, 12.75)
+    (76.6, 12.75, 76.65, 12.75)
+    (76.65, 12.75, 76.7, 12.8)
+    (76.7, 12.8, 76.75, 12.8)
+    (76.75, 12.8, 76.8, 12.85)
+    (76.8, 12.85, 76.85, 12.85)
+    (76.85, 12.85, 76.9, 12.9)
+    (76.9, 12.9, 76.95, 12.9)
+    (76.95, 12.9, 77.0, 12.95)
+    (77.0, 12.95, 77.05, 12.95)
+    (77.05, 12.95, 77.1, 13.0)
+    (77.1, 13.0, 77.15, 13.0)
+STP A*: none
+final: STP 2 PHY 1 CK 1 XI 3 1V8A 1 XO 1
+=== done ===

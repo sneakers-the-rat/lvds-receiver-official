@@ -1,0 +1,46 @@
+00:03:01: Debug: Adding duplicate image handler for 'PNG file'
+00:03:01: Debug: Adding duplicate image handler for 'JPEG file'
+00:03:01: Debug: Adding duplicate image handler for 'TIFF file'
+00:03:01: Debug: Adding duplicate image handler for 'GIF file'
+00:03:01: Debug: Adding duplicate image handler for 'PNM file'
+00:03:01: Debug: Adding duplicate image handler for 'PCX file'
+00:03:01: Debug: Adding duplicate image handler for 'IFF file'
+00:03:01: Debug: Adding duplicate image handler for 'Windows icon file'
+00:03:01: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:03:01: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:03:01: Debug: Adding duplicate image handler for 'TGA file'
+00:03:01: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+00:03:02: Debug: Adding duplicate image handler for 'PNG file'
+00:03:02: Debug: Adding duplicate image handler for 'JPEG file'
+00:03:02: Debug: Adding duplicate image handler for 'TIFF file'
+00:03:02: Debug: Adding duplicate image handler for 'GIF file'
+00:03:02: Debug: Adding duplicate image handler for 'PNM file'
+00:03:02: Debug: Adding duplicate image handler for 'PCX file'
+00:03:02: Debug: Adding duplicate image handler for 'IFF file'
+00:03:02: Debug: Adding duplicate image handler for 'Windows icon file'
+00:03:02: Debug: Adding duplicate image handler for 'Windows cursor file'
+00:03:02: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+00:03:02: Debug: Adding duplicate image handler for 'TGA file'
+00:03:02: Debug: Adding duplicate image handler for 'XPM file'
+PHY_1V8 (start C22.1 F):
+  PHY_1V8 -> L0 (77.25,16.4375): NONE
+  PHY_1V8 -> L2 (77.8,16.2): NONE
+  PHY_1V8 -> L2 (78.1,17.5): NONE
+  PHY_1V8 -> L0 (77.9,10.08): NONE
+  PHY_1V8 -> L2 (76.95,13.0): NONE
+XI (start U7.28 F):
+  XI -> L2 (75.625,18.625): NONE
+  XI -> L0 (75.625,18.625): NONE
+  XI -> L1 (75.625,18.625): NONE
+  XI -> L0 (75.72,18.73): NONE
+  XI -> L2 (78.375,21.125): NONE
+  XI -> L0 (85.75,18.25): NONE
+USB_RST (start U7.9 F):
+  USB_RST -> L0 (74.75,4.662): NONE
+  USB_RST -> L2 (74.75,4.662): NONE
+  USB_RST -> L1 (74.75,4.662): NONE
+=== done ===

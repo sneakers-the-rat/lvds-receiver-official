@@ -1,0 +1,78 @@
+01:18:03: Debug: Adding duplicate image handler for 'PNG file'
+01:18:03: Debug: Adding duplicate image handler for 'JPEG file'
+01:18:03: Debug: Adding duplicate image handler for 'TIFF file'
+01:18:03: Debug: Adding duplicate image handler for 'GIF file'
+01:18:03: Debug: Adding duplicate image handler for 'PNM file'
+01:18:03: Debug: Adding duplicate image handler for 'PCX file'
+01:18:03: Debug: Adding duplicate image handler for 'IFF file'
+01:18:03: Debug: Adding duplicate image handler for 'Windows icon file'
+01:18:03: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:18:03: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:18:03: Debug: Adding duplicate image handler for 'TGA file'
+01:18:03: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:18:04: Debug: Adding duplicate image handler for 'PNG file'
+01:18:04: Debug: Adding duplicate image handler for 'JPEG file'
+01:18:04: Debug: Adding duplicate image handler for 'TIFF file'
+01:18:04: Debug: Adding duplicate image handler for 'GIF file'
+01:18:04: Debug: Adding duplicate image handler for 'PNM file'
+01:18:04: Debug: Adding duplicate image handler for 'PCX file'
+01:18:04: Debug: Adding duplicate image handler for 'IFF file'
+01:18:04: Debug: Adding duplicate image handler for 'Windows icon file'
+01:18:04: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:18:04: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:18:04: Debug: Adding duplicate image handler for 'TGA file'
+01:18:04: Debug: Adding duplicate image handler for 'XPM file'
+faithful STP frags: 1 PHY frags: 3
+STP vertical segs ripped: 16
+STP detour gate: 0 pairs < 0.3; worst 6:
+STP frags after detour: 1
+PHY loop pair-ripped: 4
+PHY loop gate: 17 pairs < 0.3; worst 6:
+    (0.006, 2, ('seg', 'PHY_1V8', (77.5, 10.25, 77.28, 10.8, 0.1), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.008, 2, ('seg', 'PHY_1V8', (77.28, 10.8, 77.15, 11.3, 0.1), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.133, 2, ('seg', 'PHY_1V8', (77.15, 11.3, 77.15, 14.5, 0.15), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.159, 2, ('seg', 'PHY_1V8', (77.9, 10.08, 77.5, 10.25, 0.15), 0.25), ('via', '+3V3A', (77.8625, 10.975, 0.25), 0.25))
+    (0.17, 2, ('seg', 'PHY_1V8', (77.9, 10.08, 77.5, 10.25, 0.15), 0.25), ('via', 'ULPI_STP', (77.0, 9.6, 0.25), 0.2))
+    (0.176, 2, ('seg', 'PHY_1V8', (77.9, 10.08, 77.5, 10.25, 0.15), 0.25), ('seg', 'ULPI_STP', (77.3, 9.6, 77.25, 9.6, 0.1), 0.2))
+PHY A* to loop split: none
+PHY tail ripped: 2
+final frags: STP 1 PHY 2 CK 1 XI 3
+=== done ===
+PHY F stub gate: 0 pairs < 0.3; worst 6:
+PHY dive gate: 54 pairs < 0.3; worst 6:
+    (0.024, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.525, 17.975, 72.525, 18.0, 0.125), 0.2))
+    (0.024, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.55, 17.95, 72.525, 17.975, 0.125), 0.2))
+    (0.025, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.5, 18.05, 72.5, 18.075, 0.125), 0.2))
+    (0.025, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.525, 18.025, 72.5, 18.05, 0.125), 0.2))
+    (0.029, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.575, 17.85, 72.55, 17.875, 0.125), 0.2))
+    (0.029, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.55, 17.875, 72.55, 17.9, 0.125), 0.2))
+PHY B hand journey gate: 234 pairs < 0.3; worst 6:
+    (-0.447, 2, ('seg', 'PHY_1V8', (75.8, 11.45, 76.5, 10.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.4, 10.55, 76.35, 10.5, 0.1), 0.2))
+    (-0.426, 2, ('seg', 'PHY_1V8', (75.8, 11.45, 76.5, 10.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.35, 10.5, 76.3, 10.45, 0.1), 0.2))
+    (-0.405, 2, ('seg', 'PHY_1V8', (75.8, 11.45, 76.5, 10.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.45, 10.6, 76.4, 10.55, 0.1), 0.2))
+    (-0.357, 2, ('seg', 'PHY_1V8', (75.8, 11.45, 76.5, 10.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.3, 10.45, 76.25, 10.4, 0.1), 0.2))
+    (-0.337, 2, ('seg', 'PHY_1V8', (75.8, 11.45, 76.5, 10.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.45, 10.65, 76.45, 10.6, 0.1), 0.2))
+    (-0.311, 2, ('seg', 'PHY_1V8', (75.8, 11.45, 76.5, 10.3, 0.1), 0.25), ('seg', 'ULPI_STP', (76.45, 10.7, 76.45, 10.65, 0.1), 0.2))
+final frags v2: STP 1 PHY 2 CK 1 XI 3
+=== done2 ===
+PHY F stub gate: 0 pairs < 0.3; worst 6:
+PHY dive gate: 54 pairs < 0.3; worst 6:
+    (0.024, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.525, 17.975, 72.525, 18.0, 0.125), 0.2))
+    (0.024, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.55, 17.95, 72.525, 17.975, 0.125), 0.2))
+    (0.025, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.5, 18.05, 72.5, 18.075, 0.125), 0.2))
+    (0.025, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.525, 18.025, 72.5, 18.05, 0.125), 0.2))
+    (0.029, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.575, 17.85, 72.55, 17.875, 0.125), 0.2))
+    (0.029, 1, ('via', 'PHY_1V8', (71.9, 17.8, 0.25), 0.25), ('seg', 'RBIAS', (72.55, 17.875, 72.55, 17.9, 0.125), 0.2))
+PHY B journey v3 gate: 87 pairs < 0.3; worst 6:
+    (-0.447, 2, ('seg', 'PHY_1V8', (75.7, 17.3, 76.5, 16.6, 0.1), 0.25), ('seg', 'ULPI_STP', (76.05, 17.0, 76.05, 16.95, 0.1), 0.2))
+    (-0.445, 2, ('seg', 'PHY_1V8', (75.7, 17.3, 76.5, 16.6, 0.1), 0.25), ('seg', 'ULPI_STP', (76.05, 17.05, 76.05, 17.0, 0.1), 0.2))
+    (-0.417, 2, ('seg', 'PHY_1V8', (75.7, 17.3, 76.5, 16.6, 0.1), 0.25), ('seg', 'ULPI_STP', (76.05, 16.95, 76.05, 16.9, 0.1), 0.2))
+    (-0.408, 2, ('seg', 'PHY_1V8', (75.7, 17.3, 76.5, 16.6, 0.1), 0.25), ('seg', 'ULPI_STP', (76.05, 17.1, 76.05, 17.05, 0.1), 0.2))
+    (-0.379, 2, ('seg', 'PHY_1V8', (75.7, 17.3, 76.5, 16.6, 0.1), 0.25), ('seg', 'ULPI_STP', (76.05, 16.9, 76.05, 16.85, 0.1), 0.2))
+    (-0.37, 2, ('seg', 'PHY_1V8', (75.7, 17.3, 76.5, 16.6, 0.1), 0.25), ('seg', 'ULPI_STP', (76.05, 17.15, 76.05, 17.1, 0.1), 0.2))
+final frags v3: STP 1 PHY 1 CK 1 XI 3
+=== done3 ===

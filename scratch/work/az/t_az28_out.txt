@@ -1,0 +1,79 @@
+01:05:59: Debug: Adding duplicate image handler for 'PNG file'
+01:05:59: Debug: Adding duplicate image handler for 'JPEG file'
+01:05:59: Debug: Adding duplicate image handler for 'TIFF file'
+01:05:59: Debug: Adding duplicate image handler for 'GIF file'
+01:05:59: Debug: Adding duplicate image handler for 'PNM file'
+01:05:59: Debug: Adding duplicate image handler for 'PCX file'
+01:05:59: Debug: Adding duplicate image handler for 'IFF file'
+01:05:59: Debug: Adding duplicate image handler for 'Windows icon file'
+01:05:59: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:05:59: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:05:59: Debug: Adding duplicate image handler for 'TGA file'
+01:05:59: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:05:59: Debug: Adding duplicate image handler for 'PNG file'
+01:05:59: Debug: Adding duplicate image handler for 'JPEG file'
+01:05:59: Debug: Adding duplicate image handler for 'TIFF file'
+01:05:59: Debug: Adding duplicate image handler for 'GIF file'
+01:05:59: Debug: Adding duplicate image handler for 'PNM file'
+01:05:59: Debug: Adding duplicate image handler for 'PCX file'
+01:05:59: Debug: Adding duplicate image handler for 'IFF file'
+01:05:59: Debug: Adding duplicate image handler for 'Windows icon file'
+01:05:59: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:05:59: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:05:59: Debug: Adding duplicate image handler for 'TGA file'
+01:05:59: Debug: Adding duplicate image handler for 'XPM file'
+faithful fragments XI: 3 XO: 1 CK: 1
+CK vertical segs found: 1
+CK fragments after re-lay: 1
+CK jog gate: 7 pairs < 0.3; worst 8:
+    (0.125, 1, ('seg', 'ULPI_CK', (74.625, 13.5, 74.625, 11.0, 0.125), 0.2), ('via', 'RBIAS', (73.875, 11.625, 0.3), 0.2))
+    (0.186, 1, ('seg', 'ULPI_CK', (74.625, 11.0, 74.55, 10.2, 0.125), 0.2), ('via', '+3V3A', (73.625, 10.625, 0.4), 0.25))
+    (0.225, 1, ('seg', 'ULPI_CK', (74.625, 9.4, 74.625, 6.375, 0.125), 0.2), ('via', '+3V3A', (75.625, 8.625, 0.4), 0.25))
+    (0.243, 1, ('seg', 'ULPI_CK', (74.55, 10.2, 74.625, 9.4, 0.125), 0.2), ('via', '+3V3A', (73.625, 10.625, 0.4), 0.25))
+    (0.257, 1, ('seg', 'ULPI_CK', (74.625, 9.4, 74.625, 6.375, 0.125), 0.2), ('seg', 'BIST_DRV', (74.125, 5.875, 74.375, 5.625, 0.125), 0.2))
+    (0.257, 1, ('seg', 'ULPI_CK', (74.625, 9.4, 74.625, 6.375, 0.125), 0.2), ('seg', 'BIST_DRV', (73.875, 6.125, 74.125, 5.875, 0.125), 0.2))
+    (0.293, 1, ('seg', 'ULPI_CK', (74.625, 13.5, 74.625, 11.0, 0.125), 0.2), ('via', '+3V3A', (73.625, 10.625, 0.4), 0.25))
+XO chain ripped: 24
+XO fragments after jog: 1
+XO jog gate: 14 pairs < 0.3; worst 8:
+    (-0.047, 0, ('seg', 'XO', (76.75, 11.125, 76.85, 10.7, 0.1), 0.2), ('seg', 'PHY_1V8', (77.25, 11.562, 77.25, 10.75, 0.1), 0.25))
+    (-0.047, 0, ('seg', 'XO', (76.75, 11.125, 76.85, 10.7, 0.1), 0.2), ('seg', 'PHY_1V8', (77.25, 10.75, 77.55, 10.35, 0.1), 0.25))
+    (-0.047, 0, ('seg', 'XO', (76.85, 10.7, 76.85, 10.15, 0.1), 0.2), ('seg', 'PHY_1V8', (77.25, 11.562, 77.25, 10.75, 0.1), 0.25))
+    (-0.047, 0, ('seg', 'XO', (76.85, 10.7, 76.85, 10.15, 0.1), 0.2), ('seg', 'PHY_1V8', (77.25, 10.75, 77.55, 10.35, 0.1), 0.25))
+    (0.01, 0, ('seg', 'XO', (76.85, 10.15, 76.3, 9.88, 0.1), 0.2), ('via', 'ULPI_STP', (77.0, 9.6, 0.25), 0.2))
+    (0.015, 0, ('seg', 'XO', (76.75, 11.125, 76.85, 10.7, 0.1), 0.2), ('pad', 'PHY_1V8', (77.25, 11.5625, 0.125, 0.4375, 0.0), 0.25))
+    (0.02, 0, ('seg', 'XO', (76.85, 10.7, 76.85, 10.15, 0.1), 0.2), ('via', 'ULPI_STP', (77.0, 9.6, 0.25), 0.2))
+    (0.075, 0, ('seg', 'XO', (76.75, 11.125, 76.85, 10.7, 0.1), 0.2), ('pad', 'XI', (76.25, 11.5625, 0.125, 0.4375, 0.0), 0.2))
+XI via gate: 39 pairs < 0.3; worst 8:
+    (0.002, 0, ('via', 'XI', (75.2, 10.2, 0.25), 0.2), ('seg', 'XO', (75.25, 9.65, 75.2, 9.6, 0.1), 0.2))
+    (0.002, 0, ('via', 'XI', (75.2, 10.2, 0.25), 0.2), ('seg', 'XO', (75.3, 9.65, 75.25, 9.65, 0.1), 0.2))
+    (0.009, 0, ('via', 'XI', (75.2, 10.2, 0.25), 0.2), ('seg', 'XO', (75.35, 9.65, 75.3, 9.65, 0.1), 0.2))
+    (0.019, 0, ('via', 'XI', (75.2, 10.2, 0.25), 0.2), ('via', 'PHY_1V8A', (75.7375, 10.75, 0.25), 0.25))
+    (0.019, 1, ('via', 'XI', (75.2, 10.2, 0.25), 0.2), ('via', 'PHY_1V8A', (75.7375, 10.75, 0.25), 0.25))
+    (0.019, 2, ('via', 'XI', (75.2, 10.2, 0.25), 0.2), ('via', 'PHY_1V8A', (75.7375, 10.75, 0.25), 0.25))
+    (0.02, 0, ('via', 'XI', (75.2, 10.2, 0.25), 0.2), ('seg', 'XO', (75.4, 9.65, 75.35, 9.65, 0.1), 0.2))
+    (0.035, 0, ('via', 'XI', (75.2, 10.2, 0.25), 0.2), ('seg', 'XO', (75.45, 9.65, 75.4, 9.65, 0.1), 0.2))
+XI F feed gate: 115 pairs < 0.3; worst 8:
+    (-0.041, 0, ('seg', 'XI', (75.75, 10.05, 76.34, 10.3, 0.1), 0.2), ('seg', 'XO', (76.85, 10.15, 76.3, 9.88, 0.1), 0.2))
+    (-0.041, 0, ('seg', 'XI', (76.34, 10.3, 76.34, 10.9, 0.1), 0.2), ('seg', 'XO', (76.85, 10.15, 76.3, 9.88, 0.1), 0.2))
+    (-0.029, 0, ('seg', 'XI', (75.75, 10.05, 76.34, 10.3, 0.1), 0.2), ('seg', 'XO', (76.3, 9.88, 75.9, 9.7, 0.1), 0.2))
+    (-0.019, 0, ('seg', 'XI', (75.2, 10.2, 75.75, 10.05, 0.1), 0.2), ('seg', 'XO', (75.9, 9.7, 75.85, 9.65, 0.1), 0.2))
+    (-0.019, 0, ('seg', 'XI', (75.2, 10.2, 75.75, 10.05, 0.1), 0.2), ('seg', 'XO', (76.3, 9.88, 75.9, 9.7, 0.1), 0.2))
+    (-0.019, 0, ('seg', 'XI', (75.75, 10.05, 76.34, 10.3, 0.1), 0.2), ('seg', 'XO', (75.9, 9.7, 75.85, 9.65, 0.1), 0.2))
+    (0.0, 0, ('seg', 'XI', (75.2, 10.2, 75.75, 10.05, 0.1), 0.2), ('seg', 'XO', (75.8, 9.65, 75.75, 9.65, 0.1), 0.2))
+    (0.0, 0, ('seg', 'XI', (75.2, 10.2, 75.75, 10.05, 0.1), 0.2), ('seg', 'XO', (75.75, 9.65, 75.7, 9.65, 0.1), 0.2))
+XI B ride gate: 276 pairs < 0.3; worst 8:
+    (-0.475, 2, ('seg', 'XI', (73.9, 11.45, 73.3, 11.9, 0.1), 0.2), ('via', 'RBIAS', (73.875, 11.625, 0.3), 0.2))
+    (-0.45, 2, ('seg', 'XI', (73.3, 11.9, 72.9, 12.15, 0.1), 0.2), ('seg', 'PHY_1V8A', (72.85, 12.1, 72.9, 12.15, 0.1), 0.25))
+    (-0.45, 2, ('seg', 'XI', (73.3, 11.9, 72.9, 12.15, 0.1), 0.2), ('seg', 'PHY_1V8A', (72.9, 12.15, 72.95, 12.2, 0.1), 0.25))
+    (-0.45, 2, ('seg', 'XI', (72.9, 12.15, 72.5, 12.2, 0.1), 0.2), ('seg', 'PHY_1V8A', (72.85, 12.1, 72.9, 12.15, 0.1), 0.25))
+    (-0.45, 2, ('seg', 'XI', (72.9, 12.15, 72.5, 12.2, 0.1), 0.2), ('seg', 'PHY_1V8A', (72.9, 12.15, 72.95, 12.2, 0.1), 0.25))
+    (-0.45, 2, ('seg', 'XI', (70.6, 12.25, 70.0, 12.4, 0.1), 0.2), ('seg', 'PHY_1V8A', (70.3, 12.15, 70.2, 12.5, 0.1), 0.25))
+    (-0.449, 2, ('seg', 'XI', (73.3, 11.9, 72.9, 12.15, 0.1), 0.2), ('seg', 'PHY_1V8A', (73.3, 12.2, 73.22, 11.94, 0.1), 0.25))
+    (-0.449, 2, ('seg', 'XI', (70.6, 12.25, 70.0, 12.4, 0.1), 0.2), ('seg', 'PHY_1V8A', (70.25, 12.35, 70.3, 12.3, 0.1), 0.25))
+XI fragments final: 2
+=== done ===

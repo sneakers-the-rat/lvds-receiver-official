@@ -1,0 +1,35 @@
+01:05:04: Debug: Adding duplicate image handler for 'PNG file'
+01:05:04: Debug: Adding duplicate image handler for 'JPEG file'
+01:05:04: Debug: Adding duplicate image handler for 'TIFF file'
+01:05:04: Debug: Adding duplicate image handler for 'GIF file'
+01:05:04: Debug: Adding duplicate image handler for 'PNM file'
+01:05:04: Debug: Adding duplicate image handler for 'PCX file'
+01:05:04: Debug: Adding duplicate image handler for 'IFF file'
+01:05:04: Debug: Adding duplicate image handler for 'Windows icon file'
+01:05:04: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:05:04: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:05:04: Debug: Adding duplicate image handler for 'TGA file'
+01:05:04: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:05:05: Debug: Adding duplicate image handler for 'PNG file'
+01:05:05: Debug: Adding duplicate image handler for 'JPEG file'
+01:05:05: Debug: Adding duplicate image handler for 'TIFF file'
+01:05:05: Debug: Adding duplicate image handler for 'GIF file'
+01:05:05: Debug: Adding duplicate image handler for 'PNM file'
+01:05:05: Debug: Adding duplicate image handler for 'PCX file'
+01:05:05: Debug: Adding duplicate image handler for 'IFF file'
+01:05:05: Debug: Adding duplicate image handler for 'Windows icon file'
+01:05:05: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:05:05: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:05:05: Debug: Adding duplicate image handler for 'TGA file'
+01:05:05: Debug: Adding duplicate image handler for 'XPM file'
+1V8A B via: via PHY_1V8A (75.737,10.750) r0.250
+1V8A B via: via PHY_1V8A (71.480,15.380) r0.250
+y~11: x 75.3..75.74 n=2
+y~12: x 70.2..74.9 n=74
+y~13: x 70.18..73.5 n=26
+y~14: x 72.5..73.35 n=21
+y~15: x 71.5..72.45 n=24

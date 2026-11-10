@@ -1,0 +1,43 @@
+01:37:55: Debug: Adding duplicate image handler for 'PNG file'
+01:37:55: Debug: Adding duplicate image handler for 'JPEG file'
+01:37:55: Debug: Adding duplicate image handler for 'TIFF file'
+01:37:55: Debug: Adding duplicate image handler for 'GIF file'
+01:37:55: Debug: Adding duplicate image handler for 'PNM file'
+01:37:55: Debug: Adding duplicate image handler for 'PCX file'
+01:37:55: Debug: Adding duplicate image handler for 'IFF file'
+01:37:55: Debug: Adding duplicate image handler for 'Windows icon file'
+01:37:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:37:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:37:55: Debug: Adding duplicate image handler for 'TGA file'
+01:37:55: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:37:56: Debug: Adding duplicate image handler for 'PNG file'
+01:37:56: Debug: Adding duplicate image handler for 'JPEG file'
+01:37:56: Debug: Adding duplicate image handler for 'TIFF file'
+01:37:56: Debug: Adding duplicate image handler for 'GIF file'
+01:37:56: Debug: Adding duplicate image handler for 'PNM file'
+01:37:56: Debug: Adding duplicate image handler for 'PCX file'
+01:37:56: Debug: Adding duplicate image handler for 'IFF file'
+01:37:56: Debug: Adding duplicate image handler for 'Windows icon file'
+01:37:56: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:37:56: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:37:56: Debug: Adding duplicate image handler for 'TGA file'
+01:37:56: Debug: Adding duplicate image handler for 'XPM file'
+PHY with astar4 journey: 2
+PHY staircase+run ripped: 52
+PHY southern tail gate: 151 pairs < 0.3; worst 8:
+    (-0.472, 2, ('seg', 'PHY_1V8', (73.45, 12.05, 74.4, 11.55, 0.1), 0.25), ('via', 'RBIAS', (73.875, 11.625, 0.3), 0.2))
+    (-0.45, 2, ('seg', 'PHY_1V8', (73.0, 13.2, 73.45, 12.05, 0.1), 0.25), ('seg', 'PHY_1V8A', (73.25, 12.5, 73.3, 12.55, 0.1), 0.25))
+    (-0.45, 2, ('seg', 'PHY_1V8', (74.4, 11.55, 75.45, 11.0, 0.1), 0.25), ('seg', 'PHY_1V8A', (75.05, 10.95, 74.9, 11.75, 0.1), 0.25))
+    (-0.449, 2, ('seg', 'PHY_1V8', (73.05, 14.2, 73.0, 13.2, 0.1), 0.25), ('seg', 'PHY_1V8A', (73.05, 13.95, 73.0, 14.0, 0.1), 0.25))
+    (-0.449, 2, ('seg', 'PHY_1V8', (73.0, 13.2, 73.45, 12.05, 0.1), 0.25), ('seg', 'PHY_1V8A', (73.5, 12.55, 73.3, 12.2, 0.1), 0.25))
+    (-0.437, 2, ('seg', 'PHY_1V8', (73.05, 14.2, 73.0, 13.2, 0.1), 0.25), ('seg', 'PHY_1V8A', (73.1, 13.9, 73.05, 13.95, 0.1), 0.25))
+    (-0.428, 2, ('seg', 'PHY_1V8', (73.0, 13.2, 73.45, 12.05, 0.1), 0.25), ('seg', 'PHY_1V8A', (73.2, 12.45, 73.25, 12.5, 0.1), 0.25))
+    (-0.41, 2, ('seg', 'PHY_1V8', (73.05, 14.2, 73.0, 13.2, 0.1), 0.25), ('seg', 'PHY_1V8A', (73.0, 14.0, 72.95, 14.05, 0.1), 0.25))
+PHY frags: 1
+STP A*: none
+final: STP 2 PHY 1 CK 1 XI 3 1V8A 1 XO 1
+=== done ===

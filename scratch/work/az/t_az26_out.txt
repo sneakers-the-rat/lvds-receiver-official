@@ -1,0 +1,32 @@
+01:04:27: Debug: Adding duplicate image handler for 'PNG file'
+01:04:27: Debug: Adding duplicate image handler for 'JPEG file'
+01:04:27: Debug: Adding duplicate image handler for 'TIFF file'
+01:04:27: Debug: Adding duplicate image handler for 'GIF file'
+01:04:27: Debug: Adding duplicate image handler for 'PNM file'
+01:04:27: Debug: Adding duplicate image handler for 'PCX file'
+01:04:27: Debug: Adding duplicate image handler for 'IFF file'
+01:04:27: Debug: Adding duplicate image handler for 'Windows icon file'
+01:04:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:04:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:04:27: Debug: Adding duplicate image handler for 'TGA file'
+01:04:27: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+01:04:28: Debug: Adding duplicate image handler for 'PNG file'
+01:04:28: Debug: Adding duplicate image handler for 'JPEG file'
+01:04:28: Debug: Adding duplicate image handler for 'TIFF file'
+01:04:28: Debug: Adding duplicate image handler for 'GIF file'
+01:04:28: Debug: Adding duplicate image handler for 'PNM file'
+01:04:28: Debug: Adding duplicate image handler for 'PCX file'
+01:04:28: Debug: Adding duplicate image handler for 'IFF file'
+01:04:28: Debug: Adding duplicate image handler for 'Windows icon file'
+01:04:28: Debug: Adding duplicate image handler for 'Windows cursor file'
+01:04:28: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+01:04:28: Debug: Adding duplicate image handler for 'TGA file'
+01:04:28: Debug: Adding duplicate image handler for 'XPM file'
+L0 binders: [(0.002, 'seg XO (75.250,9.650)->(75.200,9.600) hw0.100'), (0.002, 'seg XO (75.300,9.650)->(75.250,9.650) hw0.100'), (0.009, 'seg XO (75.350,9.650)->(75.300,9.650) hw0.100')]
+L1 binders: [(0.0, 'seg ULPI_CK (74.625,13.500)->(74.625,6.375) hw0.125'), (0.019, 'via PHY_1V8A (75.737,10.750) r0.250'), (0.426, 'seg +3V3A (76.625,10.250)->(75.500,9.000) hw0.100')]
+L2 binders: [(0.019, 'via PHY_1V8A (75.737,10.750) r0.250'), (0.108, 'seg ULPI_STP (75.850,10.100)->(75.900,10.050) hw0.100'), (0.108, 'seg ULPI_STP (75.900,10.100)->(75.850,10.100) hw0.100')]
+1V8A chain FAILED chain walk stuck at (70.18, 12.75) for PHY_1V8A L2
