@@ -36,9 +36,33 @@ Updated: 2026-11-10 ~06:00 PST. WORKING STATE — updated as I go.
 - Zone refill before DRC.
 
 ## exp262 refereed: DRC 85 (55 clr, 12 short, 6 mask, 5 hole, 4 J1, 2 dangl, 1 cross), nets 1 {USB_RST}, courtyard 0
-fix1's 5 new items = gate hole: new-track vs new-via cross terms unchecked. fix2 fixes gate + geometry:
-- STP via (76.065,17.96)->(76.6,17.8): DIR lane cannot pass between NXT bend pt (75.45,17.32) and STP via (needs 0.95, gap 0.888) nor south of it (X1 pad). DIR F re-lane north of new via.
-- CK via ->(77.5,17.95); GND stitch via ->(78.15,18.35).
-- +3V3A via (77.862,10.975) DELETED (redundant feed; In2 web fed from north via (76.625,10.5)->(78.0,16.375)).
-- C22 moves (77.17,9.95)->(77.45,9.6): un-braids XO (C22.1 NW corner sat on XO's only lane). PHY via ->(78.25,9.95), GND tie via ->(76.7,9.25).
-- South lanes (parallel, no crossings): A west, XI mid, XO east-then-west, +3V3A SW west.
+fix1's 5 new items = gate hole: new-track vs new-via cross terms unchecked. fix2 gate includes them.
+
+## fix2 -> exp263 BUILT (gate 0 negatives; referee running)
+Final design as built (all re-gated on exp262):
+- North fan: NXT/DIR F re-laned; STP via ->(76.74,17.88) with F drop + B
+  column rejoining at (76.425,12.9); CK via ->(77.48,17.98); CK In2 column
+  re-laid west at x75.9, T-joining kept column at (76.62,16.9) (only the
+  (76.62,18.3)->(76.62,17.3) seg ripped); CK In2 loop passes NORTH of the
+  GND stitch via (77.25,18.38) — stitch via KEPT in place.
+- +3V3A via (77.862,10.975) DELETED (redundant: In2 web fed from north).
+- SW quadrant: C22 does NOT move (every move broke its GND tie or PHY via).
+  XI keeps its F lane from PV; XO threads SE of XI's final seg and NW of
+  C22.1's pad (PHY hop re-laid SE to widen the slot); A lane west.
+- NOTE: exp263 has NO GND stitch via at (78.0,18.3) (it was fix1's
+  placement; ripped in fix2 as CK's loop fences it). If check_pcb shows a
+  GND split, re-stitch at a gated site.
+- Gate lessons: pads must enter pools as F-only rects (EP/thermal pads are
+  NOT on In2/B); gridroute track layer names ('F') vs pad layer names
+  ('F.Cu') silently broke victim matching — normalized in bm_gate pool;
+  +3V3D B staircase is 0.6 wide (not 0.2) — read widths from the board.
+- VM replaced once mid-fix2; toolchain restored offline via restore.sh.
+
+## Remaining for pass 220 (fix3, from drc262 items — recheck on exp263)
+- NE braid: +3V3A via (78.8,11.62) shorts I2C_SCL In2 x79.125 + ULPI_D7 B;
+  solve with SCL + D7 together.
+- East escapes D0-D7 shear-compressed vs dive vias; re-fan at pitch.
+  D3 via (80.15,13.7) shorts C48.1; D6 via (81.0,14.4) vs C48.1/+3V3D B;
+  D2 via (80.3,12.8) vs C19.1 NRST; D7 via (79.1,15.88) vs SCL staircase.
+- C48/C19 local: +3V3D F track vs C19.1 NRST pad.
+- +3V3A dangling In2 stubs at (77.625,15.875), (78.125,16.375).
