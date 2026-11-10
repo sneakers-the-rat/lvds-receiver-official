@@ -1,0 +1,42 @@
+07:06:23: Debug: Adding duplicate image handler for 'PNG file'
+07:06:23: Debug: Adding duplicate image handler for 'JPEG file'
+07:06:23: Debug: Adding duplicate image handler for 'TIFF file'
+07:06:23: Debug: Adding duplicate image handler for 'GIF file'
+07:06:23: Debug: Adding duplicate image handler for 'PNM file'
+07:06:23: Debug: Adding duplicate image handler for 'PCX file'
+07:06:23: Debug: Adding duplicate image handler for 'IFF file'
+07:06:23: Debug: Adding duplicate image handler for 'Windows icon file'
+07:06:23: Debug: Adding duplicate image handler for 'Windows cursor file'
+07:06:23: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+07:06:23: Debug: Adding duplicate image handler for 'TGA file'
+07:06:23: Debug: Adding duplicate image handler for 'XPM file'
+  best -0.269 NV=(75.0, 17.3) DV=(74.72, 17.96) b1=(75.6, 17.32) b2=(75.4, 17.85) in2=(74.42, 17.75) bb=(73.9, 18.75) [1s]
+      nxt_via: -0.007 binding ('F', 'GND', 'pad')
+      nxt_stub: +0.023 binding ('F', 'GND', 'pad', 75.156, 17.034)
+      nxt_in2: -0.261 binding ('In2', 'ULPI_DIR', 'via', 74.433, 17.99)
+      dir_via: +0.017 binding ('F', 'ULPI_NXT', 'via')
+      dir_stub: +0.018 binding ('F', 'ULPI_NXT', 'via', 75.533, 17.497)
+      dir_bseg: -0.269 binding ('B', 'DM_PHY', 'via', 73.573, 18.799)
+  best -0.261 NV=(75.0, 17.3) DV=(74.72, 17.96) b1=(75.6, 17.32) b2=(75.4, 17.85) in2=(74.42, 17.75) bb=(73.8, 18.65) [2s]
+      nxt_via: -0.007 binding ('F', 'GND', 'pad')
+      nxt_stub: +0.023 binding ('F', 'GND', 'pad', 75.156, 17.034)
+      nxt_in2: -0.261 binding ('In2', 'ULPI_DIR', 'via', 74.433, 17.99)
+      dir_via: +0.017 binding ('F', 'ULPI_NXT', 'via')
+      dir_stub: +0.018 binding ('F', 'ULPI_NXT', 'via', 75.533, 17.497)
+      dir_bseg: -0.167 binding ('B', 'DM_PHY', 'via', 73.534, 18.702)
+  best -0.221 NV=(75.0, 17.3) DV=(74.76, 17.96) b1=(75.6, 17.32) b2=(75.4, 17.85) in2=(74.42, 17.75) bb=(73.8, 18.65) [17s]
+      nxt_via: -0.007 binding ('F', 'GND', 'pad')
+      nxt_stub: +0.023 binding ('F', 'GND', 'pad', 75.156, 17.034)
+      nxt_in2: -0.221 binding ('In2', 'ULPI_DIR', 'via', 74.433, 17.99)
+      dir_via: +0.002 binding ('F', 'ULPI_NXT', 'via')
+      dir_stub: +0.018 binding ('F', 'ULPI_NXT', 'via', 75.533, 17.497)
+      dir_bseg: -0.167 binding ('B', 'DM_PHY', 'via', 73.534, 18.702)
+  best -0.182 NV=(75.0, 17.3) DV=(74.8, 17.96) b1=(75.6, 17.32) b2=(75.4, 17.85) in2=(74.42, 17.75) bb=(73.8, 18.65) [33s]
+      nxt_via: -0.010 binding ('F', 'ULPI_DIR', 'via')
+      nxt_stub: +0.023 binding ('F', 'GND', 'pad', 75.156, 17.034)
+      nxt_in2: -0.182 binding ('In2', 'ULPI_DIR', 'via', 74.433, 17.99)
+      dir_via: -0.010 binding ('F', 'ULPI_NXT', 'via')
+      dir_stub: +0.018 binding ('F', 'ULPI_NXT', 'via', 75.533, 17.497)
+      dir_bseg: -0.167 binding ('B', 'DM_PHY', 'via', 73.534, 18.702)
+
+diag2 done: 4374 configs, 755s, best -0.182
