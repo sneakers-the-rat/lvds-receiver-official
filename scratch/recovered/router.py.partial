@@ -1,0 +1,347 @@
+#!/usr/bin/env python3
+"""Grid A* router for the scripted PCB build.
+
+Layers used: F.Cu, In2.Cu, B.Cu (In1.Cu is the solid GND plane).
+Cell 0.25 mm. Obstacles are the real pad/track/via geometries kept in
+2 mm spatial buckets; a cell is blocked when the routed track (with its
+netclass width + clearance) would come too close to another net's
+copper. Multi-pin nets are routed pin-to-tree. This is a pragmatic
+scripted router, not a production autorouter: failures are reported,
+never silently dropped.
+"""
+import heapq, math
+import pcbnew
+
+CELL = 0.25
+W, H = 400, 320            # 100 x 80 mm
+LAYERS = [pcbnew.F_Cu, pcbnew.In2_Cu, pcbnew.B_Cu]
+MM = pcbnew.FromMM
+
+HV_NETS = {"APD_K", "HV_RAW", "HV_SEC"}
+# Nets that failed pins in the v4 run (59 pins over 41 nets), promoted
+# ahead of LVDS/default so they route while the board is still open;
+# the easy nets route around them afterwards. Data from
+# results/pcb_build.log of the v4 run (commit 41d7196).
+PROMOTE = {"SW2", "I2C_SDA", "I2C_SCL", "CDR_DATN", "CDR_CLKN", "CDR_CLKP",
+           "CDR_VREF", "CDR_SQUELCH", "CDR_PIN", "XI", "XO", "DP_CON",
+           "APD_A", "ULPI_STP", "ULPI_NXT", "ULPI_D6", "ULPI_D4", "ULPI_D3",
+           "ULPI_D1", "ULPI_CK", "VCAP1", "USB_RST", "TMP_ALERT", "SS_NEG",
+           "SS_3V3", "SPI_MOSI", "SLICEP", "SET_A", "REFCLKN", "RBIAS",
+           "HV_RT", "HV_INTVCC", "HV_FBX", "DP_PHY", "DBG_RX", "DAC_VREF",
+           "DAC_SYNC", "CF2", "CC1", "CC2", "CAP_CLK", "BIST_DRV"}
+POWER_NETS = {"+5V", "+3V3D", "+3V3D_CDR", "+3V3A", "+VA", "-VA",
+              "NEG_RAW", "VBUS_RAW", "PHY_1V8", "PHY_1V8A"}
+LVDS_NETS = {"CDR_DATP", "CDR_DATN", "CDR_CLKP", "CDR_CLKN",
+             "CMP_QP", "CMP_QN"}
+
+def netclass(name):
+    if name in HV_NETS: return (0.40, 1.00)
+    if name in POWER_NETS: return (0.60, 0.25)
+    if name in LVDS_NETS: return (0.30, 0.20)
+    return (0.25, 0.20)
+
+# Neck-down: a 0.6 mm power track physically cannot escape a
+# 0.5 mm-pitch QFP/QFN pad row — the lateral distance from a pad axis
+# to the neighbouring pad edge is 0.35 mm, but the track demands
+# width/2 + clearance = 0.30 + 0.25 = 0.55 mm. Human designers neck
+# the trace down at the pad; the router does the same: within
+# NECK_R mm of one of the net's own pad centres, the search and the
+# emitted copper use NECK_W (0.35 - 0.10 = 0.25 mm edge gap, which
+# still satisfies the 0.25 mm power clearance at the neck).
+NECK_W = 0.20
+NECK_R = 1.6
+
+def cell_of(x_mm, y_mm):
+    return (min(W - 1, max(0, int(x_mm / CELL))), min(H - 1, max(0, int(y_mm / CELL))))
+
+class Items:
+    """Copper geometry registry with buckets. Item: (kind, net, data)
+    kind 'pad': data=(cx,cy,hw,hh,rot_rad) OBB; 'seg': (x1,y1,x2,y2,hw);
+    'via': (cx,cy,r). Each item also stores its clearance demand."""
+    def __init__(self):
+        self.buckets = {}
+    def _keys(self, x1, y1, x2, y2):
+        for bx in range(int(x1 // 2), int(x2 // 2) + 1):
+            for by in range(int(y1 // 2), int(y2 // 2) + 1):
+                yield (bx, by)
+    def add(self, layer, item, bbox):
+        for k in self._keys(*bbox):
+            self.buckets.setdefault((layer,) + k, []).append(item)
+    def near(self, layer, x, y):
+        bx, by = int(x // 2), int(y // 2)
+        for dx in (-1, 0, 1):
+            for dy in (-1, 0, 1):
+                yield from self.buckets.get((layer, bx + dx, by + dy), ())
+
+def dist_to_item(item, x, y):
+    kind = item[0]
+    if kind == 'pad':
+        _, _, (cx, cy, hw, hh, rot) = item
+        dx, dy = x - cx, y - cy
+        c, s = math.cos(-rot), math.sin(-rot)
+        lx, ly = dx * c - dy * s, dx * s + dy * c
+        ex = max(abs(lx) - hw, 0.0); ey = max(abs(ly) - hh, 0.0)
+        return math.hypot(ex, ey)
+    if kind == 'seg':
+        _, _, (x1, y1, x2, y2, hw) = item
+        px, py = x - x1, y - y1; dx, dy = x2 - x1, y2 - y1
+        L2 = dx * dx + dy * dy
+        t = 0.0 if L2 == 0 else max(0.0, min(1.0, (px * dx + py * dy) / L2))
+        return math.hypot(px - t * dx, py - t * dy) - hw
+    _, _, (cx, cy, r) = item  # via
+    return math.hypot(x - cx, y - cy) - r
+
+def route(board, net_objs, fps):
+    items = {l: Items() for l in range(3)}
+    pad_cells = {}   # netname -> list of (pin_id, [(layer, cx, cy), ...])
+    for ref, fp in fps.items():
+        rot = math.radians(fp.GetOrientationDegrees())
+        for pad in fp.Pads():
+            net = pad.GetNetname()
+            pos = pcbnew.ToMM(pad.GetPosition())
+            size = pcbnew.ToMM(pad.GetSize())
+            layers = []
+            for li, lname in enumerate(LAYERS):
+                if pad.IsOnLayer(lname):
+                    layers.append(li)
+            item = ('pad', net, (pos[0], pos[1], size[0] / 2, size[1] / 2,
+                                 rot + math.radians(pad.GetOrientationDegrees())))
+            clr = netclass(net)[1] if net else 0.2
+            item = ('pad', net, item[2], clr)
+            pad_hw = max(size) / 2 + 1.8
+            for li in layers:
+                items[li].add(li, ('pad', net, (pos[0], pos[1], size[0]/2, size[1]/2,
+                                                rot + math.radians(pad.GetOrientationDegrees())), clr),
+                              (pos[0] - pad_hw, pos[1] - pad_hw, pos[0] + pad_hw, pos[1] + pad_hw))
+            if net:
+                cx, cy = cell_of(pos[0], pos[1])
+                pad_cells.setdefault(net, []).append((f"{ref}.{pad.GetNumber()}",
+                                                      [(li, cx, cy) for li in layers],
+                                                      (pos[0], pos[1])))
+    stats = {"routed": [], "failed": [], "vias": 0, "gnd_vias": 0}
+    # order: HV first, then by ascending pad spread
+    def spread(net):
+        pts = [p[2] for p in pad_cells[net]]
+        xs = [p[0] for p in pts]; ys = [p[1] for p in pts]
+        return (max(xs) - min(xs)) + (max(ys) - min(ys))
+    order = sorted((n for n in pad_cells if n != "GND"),
+                   key=lambda n: (0 if n in HV_NETS else 1, spread(n)))
+    import time
+    t_start = time.time()
+    for idx, netname in enumerate(order):
+        width, clr = netclass(netname)
+        hw_ = width / 2
+        print(f"[{idx + 1}/{len(order)}] {netname} "
+              f"({len(pad_cells[netname])} pins) "
+              f"t={time.time() - t_start:.0f}s", flush=True)
+        pins = pad_cells[netname]
+        tree = set()
+        for li, cx, cy in pins[0][1]:
+            tree.add((li, cx, cy))
+        ok = True
+        neck_pts = [p[2] for p in pins]
+        own_cells = frozenset(c for _, cs, _ in pins for c in cs)
+        for pin_id, cells, _ in pins[1:]:
+            path = astar(items, cells, tree, netname, hw_, clr,
+                         neck_pts=neck_pts, own_cells=own_cells)
+            if path is None:
+                ok = False
+                stats["failed"].append((netname, pin_id))
+                continue
+            emit(board, net_objs[netname], path, width, items, netname, clr, stats)
+            for node in path:
+                tree.add(node)
+        stats["routed" if ok else "routed"].append(netname) if ok else None
+        if ok: stats["routed"].append(netname)
+    # GND vias for SMD GND pads (reach the In1 plane)
+    for ref, fp in fps.items():
+        for pad in fp.Pads():
+            if pad.GetNetname() != "GND" or pad.GetAttribute() != pcbnew.PAD_ATTRIB_SMD:
+                continue
+            pos = pcbnew.ToMM(pad.GetPosition())
+            fpos = pcbnew.ToMM(fp.GetPosition())
+            dx, dy = pos[0] - fpos[0], pos[1] - fpos[1]
+            L = math.hypot(dx, dy) or 1.0
+            dx, dy = dx / L, dy / L
+            for dist, dang in [(1.1, 0), (1.1, 45), (1.1, -45), (1.6, 0), (1.6, 90), (1.6, -90)]:
+                a = math.radians(dang)
+                vx = pos[0] + (dx * math.cos(a) - dy * math.sin(a)) * dist
+                vy = pos[1] + (dx * math.sin(a) + dy * math.cos(a)) * dist
+                if not (0.8 < vx < 99.2 and 0.8 < vy < 79.2):
+                    continue
+                if all(dist_to_item(it, vx, vy) >= it[3] + 0.3 + 0.2
+                       for li in range(3) for it in items[li].near(li, vx, vy)
+                       if it[1] != "GND"):
+                    via = pcbnew.PCB_VIA(board)
+                    via.SetPosition(pcbnew.VECTOR2I(MM(vx), MM(vy)))
+                    via.SetWidth(MM(0.6)); via.SetDrill(MM(0.3))
+                    via.Set Net if False else None
+                    via.SetNet(net_objs["GND"])
+                    via.SetLayerPair(pcbnew.F_Cu, pcbnew.B_Cu)
+                    board.Add(via)
+                    stats["gnd_vias"] += 1
+                    for li in range(3):
+                        items[li].add(li, ('via', "GND", (vx, vy, 0.3), 0.2),
+                                      (vx - 2, vy - 2, vx + 2, vy + 2))
+                    break
+    print(f"router: {len(stats['routed'])} nets routed, "
+          f"{len(stats['failed'])} pin connections failed, "
+          f"{stats['vias']} signal vias, {stats['gnd_vias']} gnd vias")
+    for f in stats["failed"]:
+        print("  FAILED:", f)
+    return stats
+
+def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=(),
+          own_cells=frozenset(), via_cost=6):
+    def eff_hw(x, y):
+        # half-width the search must respect at this cell: necked
+        # down near the net's own pads (see NECK_W note above)
+        for (px, py) in neck_pts:
+            if abs(x - px) <= NECK_R and abs(y - py) <= NECK_R and \
+               (x - px) ** 2 + (y - py) ** 2 <= NECK_R * NECK_R:
+                return NECK_W / 2
+        return hw_
+    goalset = set(goals)
+    openh = []
+    gscore = {}
+    came = {}
+    for (li, cx, cy) in starts:
+        gscore[(li, cx, cy)] = 0
+        heapq.heappush(openh, (0, (li, cx, cy)))
+    # Heuristic evaluated against a subsample of the goal cells: with
+    # a large routed tree the full min() per push dominates the whole
+    # search. A subsampled distance overestimates slightly (greedier
+    # search, still complete up to the expansion cap).
+    hgoals = sorted(goalset)[::max(1, len(goalset) // 300)] or list(goalset)
+    def h(node):
+        li, cx, cy = node
+        return min(abs(cx - gx) + abs(cy - gy) for (_, gx, gy) in hgoals)
+    visited = 0
+    while openh:
+        _, node = heapq.heappop(openh)
+        if node in goalset and gscore[node] > 0 or (node in goalset and any(s != node for s in starts)):
+            path = [node]
+            while node in came:
+                node = came[node]; path.append(node)
+            return list(reversed(path))
+        visited += 1
+        if visited > cap:
+            return None
+        li, cx, cy = node
+        for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+            nx, ny = cx + dx, cy + dy
+            if not (0 <= nx < W and 0 <= ny < H):
+                continue
+            nb = (li, nx, ny)
+            if nb in gscore and gscore[nb] <= gscore[node] + 1:
+                continue
+            wx_, wy_ = (nx + 0.5) * CELL, (ny + 0.5) * CELL
+            # Goal cells and this net's own pad cells are exempt from
+            # the blocked test: they ARE this net's copper. Without
+            # this, grid quantisation (cell centre up to 0.18 mm from
+            # the true pad centre) plus 0.5 mm-pitch pad geometry made
+            # goal cells unenterable whenever a neighbouring foreign
+            # pad edge sat closer than hw+clr — whole nets (every QFN
+            # power net) failed instantly in v3 despite open board.
+            if nb not in goalset and nb not in own_cells and \
+               blocked(items, li, wx_, wy_, netname, eff_hw(wx_, wy_), clr):
+                continue
+            # Segment-midpoint test: testing only cell centres on a
+            # 0.25 mm grid under-protects the swept segment between
+            # them (midpoints and corners) by up to ~half a cell; the
+            # v4 board showed 200+ sub-clearance pairs from this.
+            mx, my = ((cx + nx) / 2 + 0.5) * CELL, ((cy + ny) / 2 + 0.5) * CELL
+            if blocked(items, li, mx, my, netname, eff_hw(mx, my), clr):
+                continue
+            gscore[nb] = gscore[node] + 1; came[nb] = node
+            heapq.heappush(openh, (gscore[nb] + h(nb), nb))
+        for lj in range(3):
+            if lj == li: continue
+            nb = (lj, cx, cy)
+            if nb in gscore and gscore[nb] <= gscore[node] + 6:
+                continue
+            wx_, wy_ = (cx + 0.5) * CELL, (cy + 0.5) * CELL
+            # Via landings must respect the VIA radius, not the track
+            # half-width (v3 under-modelled this: a 0.8 mm via was
+            # tested as a 0.4 mm-wide track, producing real clearance
+            # violations at via sites). Vias are NEVER exempt, not
+            # even on goal/own cells: a via is a circle that overhangs
+            # its cell in every direction — v4 exempted it and landed
+            # vias directly on neighbouring QFN pads (gap 0.0, i.e.
+            # shorts). A goal is reached by walking in on its own
+            # layer from an adjacent, properly tested via.
+            via_hw = 0.4 if eff_hw(wx_, wy_) >= 0.2 else 0.3
+            if blocked(items, lj, wx_, wy_, netname, via_hw, clr):
+                continue
+            # The via barrel also occupies the SOURCE layer at via
+            # radius — v5 tested only the target layer, and the
+            # audit's via violations (199 pairs) are the result.
+            if blocked(items, li, wx_, wy_, netname, via_hw, clr):
+                continue
+            gscore[nb] = gscore[node] + via_cost; came[nb] = node
+            heapq.heappush(openh, (gscore[nb] + h(nb), nb))
+    return None
+
+def blocked(items, li, x, y, netname, hw_, clr):
+    # Layer-aware HV clearance: the 1.0 mm HV rule is a SURFACE
+    # creepage rule (F.Cu/B.Cu). On the buried In2.Cu layer the
+    # insulation is solid FR4 prepreg (dielectric strength an order
+    # of magnitude above 420 V at 0.3 mm), so HV pairs there use
+    # 0.3 mm. The audit (hw/check_pcb.py) applies the same rule.
+    my_clr = 0.3 if (netname in HV_NETS and li == 1) else clr
+    for it in items[li].near(li, x, y):
+        if it[1] == netname:
+            continue
+        it_clr = 0.3 if (it[1] in HV_NETS and li == 1) else it[3]
+        need = hw_ + max(my_clr, it_clr)
+        if dist_to_item(it, x, y) < need:
+            return True
+    return False
+
+def emit(board, netobj, path, width, items, netname, clr, stats):
+    # simplify collinear runs
+    pts = []
+    for node in path:
+        if pts and pts[-1][0] == node[0] and len(pts) >= 2:
+            p0, p1 = pts[-2], pts[-1]
+            if (p0[1] == p1[1] == node[1]) or (p0[2] == p1[2] == node[2]):
+                pts[-1] = node; continue
+        pts.append(node)
+    def draw_seg(layer_i, x1, y1, x2, y2, w):
+        tr = pcbnew.PCB_TRACK(board)
+        tr.SetStart(pcbnew.VECTOR2I(MM(x1), MM(y1)))
+        tr.SetEnd(pcbnew.VECTOR2I(MM(x2), MM(y2)))
+        tr.SetWidth(MM(w)); tr.SetLayer(LAYERS[layer_i]); tr.SetNet(netobj)
+        board.Add(tr)
+        items[layer_i].add(layer_i, ('seg', netname, (x1, y1, x2, y2, w / 2), clr),
+                           (min(x1, x2) - 2, min(y1, y2) - 2,
+                            max(x1, x2) + 2, max(y1, y2) + 2))
+    cumdist = 0.0  # distance along the path from the pin (path start)
+    for a, b in zip(pts, pts[1:]):
+        # neck-down near the pin end, matching the search allowance
+        seg_w = NECK_W if (width > NECK_W and cumdist < NECK_R) else width
+        if a[0] == b[0]:
+            x1, y1 = (a[1] + 0.5) * CELL, (a[2] + 0.5) * CELL
+            x2, y2 = (b[1] + 0.5) * CELL, (b[2] + 0.5) * CELL
+            seglen = math.hypot(x2 - x1, y2 - y1)
+            budget = NECK_R - cumdist
+            if seg_w == NECK_W and 0 < budget < seglen:
+                frac = budget / seglen
+                xm, ym = x1 + (x2 - x1) * frac, y1 + (y2 - y1) * frac
+                draw_seg(a[0], x1, y1, xm, ym, NECK_W)
+                draw_seg(a[0], xm, ym, x2, y2, width)
+            else:
+                draw_seg(a[0], x1, y1, x2, y2, seg_w)
+            cumdist += seglen
+        else:
+            x, y = (a[1] + 0.5) * CELL, (a[2] + 0.5) * CELL
+            via = pcbnew.PCB_VIA(board)
+            via.SetPosition(pcbnew.VECTOR2I(MM(x), MM(y)))
+            vd, dr = (0.8, 0.4) if seg_w >= 0.4 else (0.6, 0.3)
+            via.SetWidth(MM(vd)); via.SetDrill(MM(dr))
+            via.SetNet(netobj); via.SetLayerPair(pcbnew.F_Cu, pcbnew.B_Cu)
+            board.Add(via)
+            stats["vias"] += 1
+            for li in range(3):
+                items[li].add(li, ('via', netname, (x, y, vd / 2), clr),
+                              (x - 2, y - 2, x + 2, y + 2))

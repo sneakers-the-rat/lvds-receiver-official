@@ -164,3 +164,54 @@ out of scope by the user's rule — the recovery is not board work):
 - Phase B (extraction of these sessions' scripts into this directory) starts only after
   the parent approves this set.
 
+
+## Phase B — extraction (redo, set as approved)
+
+Extraction from exactly the 94 sessions above, local files only (no muse.db). Tooling: `scripts/scratch-recovery/extract_phase_b.py` (ownership-resolved replay: fork copies resolved by earliest record, root-agent calls excluded by call-id oracle), `screen_secrets.py`, `land_phase_b.py`.
+
+- Owned write/edit/exec ops replayed: 10454 (root-owned fork copies excluded: 523).
+- (path, session) final states: 1463; distinct contents: 1388; already committed (counted, not landed): 1097; landed whole: 280; landed partial: 11; unrecoverable (path, session): 74.
+
+### Secrets screen (before any push)
+
+Screened the exact landing set (291 files) before any push.
+- Tier-1 credential shapes (ghp_, github_pat_, AKIA, xox*, sk-, AIza, private-key blocks): **0 hits**.
+- Tier-2 named-variable long literals: 0 found, 0 placeholder/test-class, 0 requiring stop-and-report.
+- Keyword-level mentions (code referring to tokens/secrets, no credential value): 4 files — build_agents.py, build_series.py, scan_dark.py, site_data.py
+
+### Batch: phase-b-1
+
+| recovered file | original path(s) | source agent | seq (raw / visible) | original write time (UTC) | sha256 | status | reconstruction |
+|---|---|---|---|---|---|---|---|
+| `proto.py` | /tmp/proto.py | `6b643e67-3b72-4a34-a4e4-cb88906fc170` | 20 / 21 | 2026-11-03T18:37:15.566877329+00:00 | `cb48224579d6aeae33b31e9cef6c1e47f38d772e33e6580ddae3b93b760c26a6` | complete | exec heredoc + heredoc append |
+| `hv_design.py` | /home/hatch/workspace/photodiode-lvds-rx/sim/hv_design.py | `211e6068-5645-443d-821c-d965a1288a6c` | 155 / 155 | 2026-11-03T18:40:18.090692824+00:00 | `41a58cb03fb7f2b0cf9eeeb3bfe978816e7da12fa69eb9d867f5414b3a2ba9eb` | complete | muse.write |
+| `digital_sim.py` | /home/hatch/workspace/photodiode-lvds-rx/sim/digital_sim.py | `6ff926cd-6c17-4a41-8909-98b586b5f440` | 68 / 69 | 2026-11-03T18:42:08.840987891+00:00 | `51680ce1036dfeb7eb8b2808cc02c9f9a5d1b8a93811af667e723bbf57c331af` | complete | muse.write + 6 edits replayed |
+| `rxhost.py` | /home/hatch/workspace/photodiode-lvds-rx/host/rxhost.py | `211e6068-5645-443d-821c-d965a1288a6c` | 311 / 311 | 2026-11-03T19:08:18.888220874+00:00 | `fd5e4f3c8babd2574150451ffaaf7c39cb344f29659ac35c4516b7a302ff1ece` | complete | muse.write |
+| `circuit.py` | /home/hatch/workspace/photodiode-lvds-rx/hw/circuit.py | `211e6068-5645-443d-821c-d965a1288a6c` | 385 / 386 | 2026-11-03T19:15:38.069635909+00:00 | `80d4bb3bce6ccd303321033df8fddfd2025a9960941ddcea214cc362c7730597` | complete | exec heredoc + heredoc append + heredoc append |
+| `check_netlist.py` | /home/hatch/workspace/photodiode-lvds-rx/hw/check_netlist.py | `211e6068-5645-443d-821c-d965a1288a6c` | 464 / 465 | 2026-11-03T19:23:51.922761700+00:00 | `f7c7210adc7c152e54fec71aeacfb21aa60d7774f593667d334d31009487754d` | complete | exec heredoc |
+| `zonetest.py` | /tmp/zonetest.py | `211e6068-5645-443d-821c-d965a1288a6c` | 542 / 543 | 2026-11-03T19:29:25.627576905+00:00 | `18f4096d0769362f9b8a784e9180fd0de0ff6aa8f309b3c5818f391bd98f7a19` | complete | exec heredoc |
+| `zonetest3.py` | /tmp/zonetest3.py | `211e6068-5645-443d-821c-d965a1288a6c` | 549 / 550 | 2026-11-03T19:29:43.433583101+00:00 | `868ae42cf86bf5f25a1f506027d29bb93a9c2cfe61153873fdb55de242e3207f` | complete | exec heredoc |
+| `dbg_route.py` | /tmp/dbg_route.py | `211e6068-5645-443d-821c-d965a1288a6c` | 1002 / 1003 | 2026-11-03T20:54:07.934627112+00:00 | `c76974279ca44c9f3f5ffce7481fecb58385c7aa98bd67526e8b85c00fd7d6b6` | complete | muse.write |
+| `measure_gaps.py` | /tmp/measure_gaps.py | `211e6068-5645-443d-821c-d965a1288a6c` | 1098 / 1100 | 2026-11-03T21:28:14.598067136+00:00 | `7c676441ca355b14d00c88c4db56c9fc127447cc2afd22bdf21eb1e0ec698749` | complete | muse.write |
+| `gen_pcb.py.partial` | /home/hatch/workspace/photodiode-lvds-rx/hw/gen_pcb.py | `211e6068-5645-443d-821c-d965a1288a6c` | 1146 / 1148 | 2026-11-03T21:33:32.836525765+00:00 | `534fbf79c471f52e57dd8f6ab79029e311f3e54cf74ef2ca159f34d3d8bb28c3` | partial | exec heredoc — diverged: edit old_text not found in replayed state |
+| `run_tia.py` | /home/hatch/workspace/photodiode-lvds-rx/sim/run_tia.py | `211e6068-5645-443d-821c-d965a1288a6c` | 1237 / 1239 | 2026-11-03T21:52:15.881733646+00:00 | `23c96bca3f1b5c1eba36bb37c103d74aa7498241d703f614a13e3f6edda508d2` | complete | muse.write + 11 edits replayed |
+| `run_hv.py.partial` | /home/hatch/workspace/photodiode-lvds-rx/sim/run_hv.py | `211e6068-5645-443d-821c-d965a1288a6c` | 1251 / 1253 | 2026-11-03T21:52:50.362880914+00:00 | `9f11d255c3855b172896c0feb8d1cbff96ae94f7a7acb68ea70bd030ba8a610b` | partial | muse.write + 1 edit replayed — diverged: edit old_text not found in replayed state |
+| `gen_schematic.py.partial` | /home/hatch/workspace/photodiode-lvds-rx/hw/gen_schematic.py | `211e6068-5645-443d-821c-d965a1288a6c` | 1284 / 1286 | 2026-11-03T21:57:00.809966140+00:00 | `3d8ca47a7c9f527e739ad9b1dd81fcc2d7595440dc02b3064f08ed644984adb2` | partial | exec heredoc + 5 edits replayed — diverged: edit old_text not found in replayed state |
+| `router.py.partial` | /home/hatch/workspace/photodiode-lvds-rx/hw/router.py | `211e6068-5645-443d-821c-d965a1288a6c` | 1331 / 1333 | 2026-11-03T22:30:27.410020401+00:00 | `89db1c8c18d5c2f1b948fc2f48600965971bd3a23a502a28b1b38efd55cda1a5` | partial | exec heredoc + 19 edits replayed — diverged: edit old_text not found in replayed state |
+| `repair_probe.py` | /tmp/repair_probe.py | `211e6068-5645-443d-821c-d965a1288a6c` | 1355 / 1357 | 2026-11-03T22:33:57.751149886+00:00 | `ee9517ec579c6c3be2dc688bbd01bce8d6889399feee3c5886e3857051bd635d` | complete | muse.write |
+| `regen_layers.py` | /tmp/regen_layers.py | `ff0c75ad-4e6c-4321-bfa3-a2ca61b971bc` | 610 / 374 | 2026-11-03T22:54:59.381276896+00:00 | `acb719af5ad96ae6b5135aac4975cc7f97a8b129f63c0f6120127556cf88da9e` | complete | exec heredoc |
+| `crosscheck.py` | /tmp/crosscheck.py | `ff0c75ad-4e6c-4321-bfa3-a2ca61b971bc` | 614 / 378 | 2026-11-03T22:55:43.666920404+00:00 | `1ad36405efca13dd117d181232d60ea7c791a7d14696e7df688a7d0c0425fd15` | complete | exec heredoc |
+| `regen_r3.py` | /tmp/regen_r3.py | `e3e498fa-2d0f-4ea0-896f-06f51051aa22` | 666 / 431 | 2026-11-03T23:21:34.258535379+00:00 | `a46b19f4be4877f878d9a447d137ece513cd95cdf7793dd6dc7dd2f48c0705c8` | complete | exec heredoc |
+| `scan_dark.py` | /tmp/scan_dark.py | `e3e498fa-2d0f-4ea0-896f-06f51051aa22` | 673 / 438 | 2026-11-03T23:22:35.574753094+00:00 | `33dc1fa68731a9d404bc400a22737abf080e1034d81e317c74da0b5f0a8536e7` | complete | exec heredoc |
+| `repair.py.partial` | /home/hatch/workspace/photodiode-lvds-rx/hw/repair.py | `211e6068-5645-443d-821c-d965a1288a6c` | 1519 / 1522 | 2026-11-03T23:41:33.493829367+00:00 | `243344068f17331d3128fd2e0b81b4e30bc10cc3b815b69880fddf9fcf3ca69b` | partial | muse.write + 10 edits replayed — diverged: edit old_text not found in replayed state |
+| `chunked_dl.sh` | /home/hatch/workspace/tools/freerouting/chunked_dl.sh | `110e2372-a411-4917-9496-e2188176d9f6` | 1176 / 562 | 2026-11-04T06:05:32.209633221+00:00 | `37df4d7d4ff7d1fd931242e45258362fdef5d5f212dfbfe95743cb59961e86cf` | complete | exec heredoc |
+| `20261104T080624Z-build_series.py` | /tmp/build_series.py | `60e10a13-9832-4f5a-b861-c8112a74866b` | 950 / 334 | 2026-11-04T08:06:24.744700793+00:00 | `9c2728e20d48cf59edf8dd2b71212ab2937d28b1f43af0957e82343fec8bdcda` | complete | muse.write |
+| `build_agents.py` | /tmp/build_agents.py | `60e10a13-9832-4f5a-b861-c8112a74866b` | 974 / 358 | 2026-11-04T08:08:16.688945950+00:00 | `4120f40faa19995896e9da217c22725836eba73c0145d0e430810b5d024531b7` | complete | muse.write |
+| `20261104T083040Z-build_series.py` | /tmp/build_series.py | `0088c73b-1d16-42f6-9f1a-5ba99e7c4865` | 995 / 379 | 2026-11-04T08:30:40.881359350+00:00 | `31001438c445ead8d3615908f57dc85c8b3445e9adc730b447cd12fab116150f` | complete | muse.write |
+| `gen.py` | /tmp/passgen/gen.py | `333218be-904b-4e57-a6bd-d45857886107` | 1055 / 103 | 2026-11-04T10:15:46.622580255+00:00 | `07621847fd37709c219a19ab3d8dba8e84a5738359233ba507d2f399bf7cb240` | complete | exec heredoc |
+| `genmd.py` | /tmp/passgen/genmd.py | `333218be-904b-4e57-a6bd-d45857886107` | 1062 / 110 | 2026-11-04T10:16:03.998785940+00:00 | `097fc8984f8d70f0b5df194ec70408d28923812044ed164bec604df7695d32ed` | complete | exec heredoc |
+| `routing_history.py` | /tmp/passgen/routing_history.py | `333218be-904b-4e57-a6bd-d45857886107` | 1076 / 124 | 2026-11-04T10:16:59.809574383+00:00 | `e3aa0cfd186b65179bb571d4c14c16c65febdac40dada5bd163f17939ffa4bec` | complete | exec heredoc |
+| `site_data.py` | /home/hatch/workspace/pdlvds-cifix/scripts/site_data.py | `d5bb5f18-a489-4487-afd5-2bce236e766e` | 1163 / 208 | 2026-11-04T10:27:55.785366047+00:00 | `df685554c8741d77570c47659fc9165e17c6355798df05ac7019b79092d77877` | complete | muse.write + 2 edits replayed |
+| `jobs.py` | /tmp/cidiag/jobs.py | `ce118fef-acba-4105-aabf-c1338429fb5d` | 1261 / 304 | 2026-11-04T10:41:59.461498986+00:00 | `dd51ba8756fa403fe8eea9d037c1579463c90b7760db1071cdac2f39164ca524` | complete | exec heredoc |
+| `jobs2.py` | /tmp/cidiag/jobs2.py | `ce118fef-acba-4105-aabf-c1338429fb5d` | 1275 / 318 | 2026-11-04T10:43:00.638654899+00:00 | `b67418c3b0ed477e791636caab28603f80d51f91446ba6bba900e157b8c1213b` | complete | exec heredoc |
+| `edits.py` | /tmp/cidiag/edits.py | `ce118fef-acba-4105-aabf-c1338429fb5d` | 1287 / 330 | 2026-11-04T10:44:59.486406583+00:00 | `fc8015361f38dde92a103ef9d104993851240ee8a0049f3c3e6f94c292898230` | complete | muse.write |

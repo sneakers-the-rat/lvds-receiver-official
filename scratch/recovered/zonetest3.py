@@ -1,0 +1,16 @@
+import wx; app = wx.App(False)
+import pcbnew
+MM = pcbnew.FromMM
+board = pcbnew.BOARD(); board.SetCopperLayerCount(4)
+ni = pcbnew.NETINFO_ITEM(board, "GND"); board.Add(ni)
+fp = pcbnew.FootprintLoad("/usr/share/kicad/footprints/Resistor_SMD.pretty", "R_0603_1608Metric")
+fp.SetReference("R1"); fp.SetPosition(pcbnew.VECTOR2I(MM(50), MM(40))); board.Add(fp)
+for pad in fp.Pads(): pad.SetNet(ni)
+z = pcbnew.ZONE(board); z.SetLayer(pcbnew.In1_Cu); z.SetNet(ni); z.SetNetCode(ni.GetNetCode())
+out = z.Outline(); chain = pcbnew.SHAPE_LINE_CHAIN()
+for (x, y) in [(0.3,0.3),(99.7,0.3),(99.7,79.7),(0.3,79.7)]: chain.Append(pcbnew.VECTOR2I(MM(x),MM(y)))
+chain.SetClosed(True); out.AddOutline(chain)
+board.Add(z)
+board.Save('/tmp/zt.kicad_pcb'); print("saved", flush=True)
+b2 = pcbnew.LoadBoard('/tmp/zt.kicad_pcb'); print("reloaded", flush=True)
+f = pcbnew.ZONE_FILLER(b2); f.Fill(b2.Zones()); print("FILL OK after reload", flush=True)
