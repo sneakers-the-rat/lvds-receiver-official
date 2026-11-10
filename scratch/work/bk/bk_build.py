@@ -10,7 +10,7 @@ import bk_lib as L
 SRC = '/home/hatch/workspace/pdlvds-route/hw/pdlvds_rx.exp257.kicad_pcb'
 DST = '/home/hatch/workspace/pdlvds-route/hw/pdlvds_rx.exp258.kicad_pcb'
 LAY = {'F': BL.F, 'In1': BL.IN1, 'In2': BL.IN2, 'B': BL.B}
-DRILL = {0.4: 0.20, 0.5: 0.25, 0.6: 0.30}
+DRILL = {0.4: 0.20, 0.5: 0.30, 0.6: 0.30}  # board setup min hole = 0.30
 
 nets = sorted({r[1] for r in L.RIPS} | {it.net for _, it in L.ADDS})
 print('nets:', nets)
