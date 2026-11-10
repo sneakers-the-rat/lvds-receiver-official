@@ -58,46 +58,56 @@ class Surgery:
 
     def find_tracks(self, net, layer, pred):
         nc = self.NC[net]
-        return [t for t in list(self.b.GetTracks())
+        return [t for t in self.b.GetTracks()
                 if t.GetNetCode() == nc and t.Type() == pcbnew.PCB_TRACE_T
                 and t.GetLayer() == layer and pred(t)]
 
-    def rip_seg(self, net, layer, a, b, expect=1, tol=0.03):
+    # NOTE (KiCad 8 SWIG): after BOARD.Remove(), a fresh GetTracks()
+    # can return a non-iterable wrapper. The safe pattern is: FIND
+    # every victim first, then REMOVE them all, then add. The find_*
+    # methods below only locate; remove() performs the rips.
+    def find_seg(self, net, layer, a, b, expect=1, tol=0.03):
         def pred(t):
             s, e = self.ends(t)
             return (self._near(s, a, tol) and self._near(e, b, tol)) or \
                    (self._near(s, b, tol) and self._near(e, a, tol))
         victims = self.find_tracks(net, layer, pred)
         assert len(victims) == expect, \
-            f'rip_seg {net} {a}->{b}: {len(victims)} victims, expect {expect}'
+            f'find_seg {net} {a}->{b}: {len(victims)} victims, expect {expect}'
         self._last_width = _mm(victims[0].GetWidth())
-        for t in victims:
-            self.b.Remove(t)
-        print(f'ripped {net} seg {a}->{b} (w={self._last_width})')
+        print(f'found {net} seg {a}->{b} (w={self._last_width})')
         return victims
 
-    def rip_via(self, net, at, expect=1, tol=0.03):
+    def find_via(self, net, at, expect=1, tol=0.03):
         nc = self.NC[net]
-        victims = [t for t in list(self.b.GetTracks())
+        victims = [t for t in self.b.GetTracks()
                    if t.GetNetCode() == nc and t.Type() == pcbnew.PCB_VIA_T
                    and self._near((_mm(t.GetPosition().x),
                                    _mm(t.GetPosition().y)), at, tol)]
         assert len(victims) == expect, \
-            f'rip_via {net} @{at}: {len(victims)} victims, expect {expect}'
-        for t in victims:
-            self.b.Remove(t)
-        print(f'ripped {net} via @{at}')
+            f'find_via {net} @{at}: {len(victims)} victims, expect {expect}'
+        print(f'found {net} via @{at}')
         return victims
 
-    def rip_where(self, net, layer, pred, expect, label):
-        victims = self.find_tracks(net, layer, pred)
-        assert len(victims) == expect, \
-            f'rip_where {label}: {len(victims)} victims, expect {expect}'
-        if victims:
-            self._last_width = _mm(victims[0].GetWidth())
+    def remove(self, victims):
         for t in victims:
             self.b.Remove(t)
-        print(f'ripped {label}: {len(victims)} (w={self._last_width})')
+        print(f'removed {len(victims)} items')
+        return victims
+
+    def rip_seg(self, net, layer, a, b, expect=1, tol=0.03):
+        return self.remove(self.find_seg(net, layer, a, b, expect, tol))
+
+    def rip_via(self, net, at, expect=1, tol=0.03):
+        return self.remove(self.find_via(net, at, expect, tol))
+
+    def find_where(self, net, layer, pred, expect, label):
+        victims = self.find_tracks(net, layer, pred)
+        assert len(victims) == expect, \
+            f'find_where {label}: {len(victims)} victims, expect {expect}'
+        if victims:
+            self._last_width = _mm(victims[0].GetWidth())
+        print(f'found {label}: {len(victims)} (w={self._last_width})')
         return victims
 
     def width_of_last_rip(self):

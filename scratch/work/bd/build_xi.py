@@ -19,14 +19,16 @@ S = BL.Surgery('hw/pdlvds_rx.exp256.kicad_pcb',
                'hw/pdlvds_rx.exp257.kicad_pcb',
                nets=('ULPI_NXT', 'ULPI_DIR', 'XI', 'ULPI_STP'))
 
-# ---- rips (counts asserted on the board) ----
-S.rip_seg('ULPI_NXT', BL.F, (75.25, 16.875), (74.65, 17.8))
-S.rip_seg('ULPI_NXT', BL.F, (74.65, 17.8), (74.5, 19.25))
+# ---- find ALL victims first, then remove (SWIG-safe order) ----
+victims = []
+victims += S.find_seg('ULPI_NXT', BL.F, (75.25, 16.875), (74.65, 17.8))
+victims += S.find_seg('ULPI_NXT', BL.F, (74.65, 17.8), (74.5, 19.25))
 w_nxt = S.width_of_last_rip()
-S.rip_seg('ULPI_DIR', BL.F, (75.75, 16.875), (75.5, 17.521))
+victims += S.find_seg('ULPI_DIR', BL.F, (75.75, 16.875), (75.5, 17.521))
 w_dir = S.width_of_last_rip()
-S.rip_seg('ULPI_DIR', BL.B, (75.5, 17.521), (71.375, 19.125))
-S.rip_via('ULPI_DIR', (75.5, 17.521))
+victims += S.find_seg('ULPI_DIR', BL.B, (75.5, 17.521), (71.375, 19.125))
+victims += S.find_via('ULPI_DIR', (75.5, 17.521))
+S.remove(victims)
 
 # ---- NXT escape, bowed west (underpass of the DIR stub fan) ----
 S.add_polyline('ULPI_NXT', BL.F,
