@@ -1,15 +1,15 @@
-12:30:52: Debug: Adding duplicate image handler for 'PNG file'
-12:30:52: Debug: Adding duplicate image handler for 'JPEG file'
-12:30:52: Debug: Adding duplicate image handler for 'TIFF file'
-12:30:52: Debug: Adding duplicate image handler for 'GIF file'
-12:30:52: Debug: Adding duplicate image handler for 'PNM file'
-12:30:52: Debug: Adding duplicate image handler for 'PCX file'
-12:30:52: Debug: Adding duplicate image handler for 'IFF file'
-12:30:52: Debug: Adding duplicate image handler for 'Windows icon file'
-12:30:52: Debug: Adding duplicate image handler for 'Windows cursor file'
-12:30:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
-12:30:52: Debug: Adding duplicate image handler for 'TGA file'
-12:30:52: Debug: Adding duplicate image handler for 'XPM file'
+12:36:42: Debug: Adding duplicate image handler for 'PNG file'
+12:36:42: Debug: Adding duplicate image handler for 'JPEG file'
+12:36:42: Debug: Adding duplicate image handler for 'TIFF file'
+12:36:42: Debug: Adding duplicate image handler for 'GIF file'
+12:36:42: Debug: Adding duplicate image handler for 'PNM file'
+12:36:42: Debug: Adding duplicate image handler for 'PCX file'
+12:36:42: Debug: Adding duplicate image handler for 'IFF file'
+12:36:42: Debug: Adding duplicate image handler for 'Windows icon file'
+12:36:42: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:36:42: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:36:42: Debug: Adding duplicate image handler for 'TGA file'
+12:36:42: Debug: Adding duplicate image handler for 'XPM file'
 copper items: 15253
 unconnected nets: 0
 clearance violations: 165
@@ -45,9 +45,9 @@ clearance violations: 165
   CLEARANCE GND (C19.2) vs +3V3D (track@(81.0, 12.6)): need 0.25 mm
   CLEARANCE GND (C19.2) vs +3V3D (via@(81.625, 10.9)): need 0.25 mm
   CLEARANCE HV_SEC (T1.10) vs GND (zone L0): need 1.0 mm
-  CLEARANCE +3V3A (via@(73.625, 10.625)) vs USB_RST (track@(74.05, 10.3)): need 0.25 mm
   CLEARANCE +3V3A (via@(73.625, 10.625)) vs USB_RST (track@(74.13, 10.85)): need 0.25 mm
   CLEARANCE +3V3A (via@(73.625, 10.625)) vs USB_RST (track@(74.14, 11.5)): need 0.25 mm
+  CLEARANCE +3V3A (via@(73.625, 10.625)) vs USB_RST (track@(74.05, 10.3)): need 0.25 mm
   CLEARANCE +3V3A (track@(76.25, 9.875)) vs XI (via@(75.82, 10.3)): need 0.25 mm
   CLEARANCE +3V3A (track@(75.625, 8.625)) vs DAC_VREF (via@(69.51, 7.85)): need 0.25 mm
   CLEARANCE +3V3D_CDR (via@(66.2, 40.55)) vs REFCLKN (track@(65.5, 40.44)): need 0.25 mm
@@ -63,8 +63,8 @@ clearance violations: 165
   CLEARANCE BIST_DRV (track@(74.125, 5.826)) vs USB_RST (via@(74.82, 5.84)): need 0.2 mm
   CLEARANCE CDR_SQUELCH (track@(75.375, 19.625)) vs ULPI_DIR (via@(75.0, 19.2)): need 0.2 mm
   CLEARANCE CDR_SQUELCH (track@(75.125, 19.875)) vs ULPI_DIR (via@(75.0, 19.2)): need 0.2 mm
-  CLEARANCE DM_PHY (via@(73.625, 19.125)) vs ULPI_DIR (track@(74.28, 18.98)): need 0.2 mm
   CLEARANCE DM_PHY (via@(73.625, 19.125)) vs ULPI_DIR (track@(75.0, 19.2)): need 0.2 mm
+  CLEARANCE DM_PHY (via@(73.625, 19.125)) vs ULPI_DIR (track@(74.28, 18.98)): need 0.2 mm
   CLEARANCE DM_PHY (via@(73.625, 19.125)) vs ULPI_DIR (track@(74.15, 18.85)): need 0.2 mm
   CLEARANCE HV_RAW (track@(12.125, -19.125)) vs GND (zone L0): need 1.0 mm
   CLEARANCE HV_RAW (track@(8.875, -22.375)) vs GND (zone L0): need 1.0 mm
@@ -141,22 +141,12 @@ clearance violations: 165
   CLEARANCE RBIAS (via@(73.52, 11.55)) vs XO (track@(73.125, 11.375)): need 0.2 mm
   CLEARANCE RBIAS (track@(73.52, 11.55)) vs XO (track@(72.875, 11.125)): need 0.2 mm
   CLEARANCE RBIAS (track@(73.52, 11.55)) vs XO (track@(73.125, 11.375)): need 0.2 mm
-  CLEARANCE ULPI_CK (track@(74.38, 10.28)) vs USB_RST (track@(74.05, 10.3)): need 0.2 mm
   CLEARANCE ULPI_CK (track@(74.38, 10.28)) vs USB_RST (track@(74.13, 10.85)): need 0.2 mm
   CLEARANCE ULPI_CK (track@(74.38, 10.28)) vs USB_RST (track@(74.14, 11.5)): need 0.2 mm
-  CLEARANCE ULPI_CK (track@(74.625, 9.4)) vs USB_RST (track@(74.05, 10.3)): need 0.2 mm
+  CLEARANCE ULPI_CK (track@(74.38, 10.28)) vs USB_RST (track@(74.05, 10.3)): need 0.2 mm
   CLEARANCE ULPI_CK (track@(74.625, 9.4)) vs USB_RST (track@(74.13, 10.85)): need 0.2 mm
+  CLEARANCE ULPI_CK (track@(74.625, 9.4)) vs USB_RST (track@(74.05, 10.3)): need 0.2 mm
   CLEARANCE ULPI_D0 (track@(74.625, 6.375)) vs USB_RST (via@(74.82, 5.84)): need 0.2 mm
-  CLEARANCE ULPI_DIR (track@(75.05, 17.9)) vs ULPI_NXT (via@(74.9, 17.4)): need 0.2 mm
-  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.4)): need 0.2 mm
-  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.3)): need 0.2 mm
-  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.55)): need 0.2 mm
-  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.1, 17.25)): need 0.2 mm
-  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.15, 17.15)): need 0.2 mm
-  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.1, 17.2)): need 0.2 mm
-  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.5)): need 0.2 mm
-  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.45)): need 0.2 mm
-  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.35)): need 0.2 mm
   CLEARANCE ULPI_DIR (track@(75.72, 17.35)) vs ULPI_NXT (via@(74.9, 17.4)): need 0.2 mm
   CLEARANCE ULPI_DIR (track@(75.72, 17.35)) vs ULPI_STP (track@(76.05, 17.4)): need 0.2 mm
   CLEARANCE ULPI_DIR (track@(75.72, 17.35)) vs ULPI_STP (track@(76.05, 17.3)): need 0.2 mm
@@ -166,8 +156,18 @@ clearance violations: 165
   CLEARANCE ULPI_DIR (track@(75.72, 17.35)) vs ULPI_STP (track@(76.05, 17.5)): need 0.2 mm
   CLEARANCE ULPI_DIR (track@(75.72, 17.35)) vs ULPI_STP (track@(76.05, 17.45)): need 0.2 mm
   CLEARANCE ULPI_DIR (track@(75.72, 17.35)) vs ULPI_STP (track@(76.05, 17.35)): need 0.2 mm
-  CLEARANCE ULPI_DIR (via@(75.0, 19.2)) vs ULPI_NXT (track@(75.05, 18.3)): need 0.2 mm
+  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.4)): need 0.2 mm
+  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.3)): need 0.2 mm
+  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.55)): need 0.2 mm
+  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.1, 17.25)): need 0.2 mm
+  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.15, 17.15)): need 0.2 mm
+  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.1, 17.2)): need 0.2 mm
+  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.5)): need 0.2 mm
+  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.45)): need 0.2 mm
+  CLEARANCE ULPI_DIR (track@(75.75, 16.875)) vs ULPI_STP (track@(76.05, 17.35)): need 0.2 mm
+  CLEARANCE ULPI_DIR (track@(75.05, 17.9)) vs ULPI_NXT (via@(74.9, 17.4)): need 0.2 mm
   CLEARANCE ULPI_DIR (via@(75.0, 19.2)) vs ULPI_NXT (track@(74.5, 19.25)): need 0.2 mm
+  CLEARANCE ULPI_DIR (via@(75.0, 19.2)) vs ULPI_NXT (track@(75.05, 18.3)): need 0.2 mm
   CLEARANCE ULPI_NXT (track@(75.05, 18.3)) vs USB_RST (via@(74.45, 18.25)): need 0.2 mm
   CLEARANCE HV_OVP1 (track@(8.15, -25.0)) vs GND (zone L0): need 1.0 mm
   CLEARANCE HV_OVP1 (track@(9.375, -24.875)) vs GND (zone L0): need 1.0 mm
