@@ -1,0 +1,160 @@
+02:08:26: Debug: Adding duplicate image handler for 'PNG file'
+02:08:26: Debug: Adding duplicate image handler for 'JPEG file'
+02:08:26: Debug: Adding duplicate image handler for 'TIFF file'
+02:08:26: Debug: Adding duplicate image handler for 'GIF file'
+02:08:26: Debug: Adding duplicate image handler for 'PNM file'
+02:08:26: Debug: Adding duplicate image handler for 'PCX file'
+02:08:26: Debug: Adding duplicate image handler for 'IFF file'
+02:08:26: Debug: Adding duplicate image handler for 'Windows icon file'
+02:08:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:08:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:08:26: Debug: Adding duplicate image handler for 'TGA file'
+02:08:26: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+02:08:27: Debug: Adding duplicate image handler for 'PNG file'
+02:08:27: Debug: Adding duplicate image handler for 'JPEG file'
+02:08:27: Debug: Adding duplicate image handler for 'TIFF file'
+02:08:27: Debug: Adding duplicate image handler for 'GIF file'
+02:08:27: Debug: Adding duplicate image handler for 'PNM file'
+02:08:27: Debug: Adding duplicate image handler for 'PCX file'
+02:08:27: Debug: Adding duplicate image handler for 'IFF file'
+02:08:27: Debug: Adding duplicate image handler for 'Windows icon file'
+02:08:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:08:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:08:27: Debug: Adding duplicate image handler for 'TGA file'
+02:08:27: Debug: Adding duplicate image handler for 'XPM file'
+baseline frags: PHY 3 STP 1 CK 1 XI 3 1V8A 1 XO 1
+--- gate vs pool WITH STP chain present (conflict census) ---
+PHY journey vs exp252 full pool: 171 pairs < 0.05; worst 8:
+    (-0.45, 2, 'PHY_1V8', 'ULPI_STP', (76.1, 12.6), (76.0, 12.62))
+    (-0.45, 2, 'PHY_1V8', 'ULPI_STP', (76.1, 12.6), (76.0, 12.57))
+    (-0.4, 2, 'PHY_1V8', 'ULPI_STP', (76.1, 12.6), (76.0, 12.68))
+    (-0.4, 2, 'PHY_1V8', 'ULPI_STP', (76.1, 12.6), (76.0, 12.53))
+    (-0.35, 2, 'PHY_1V8', 'ULPI_STP', (76.1, 12.6), (76.0, 12.47))
+    (-0.35, 2, 'PHY_1V8', 'ULPI_STP', (76.1, 12.6), (76.0, 12.72))
+    (-0.3, 2, 'PHY_1V8', 'ULPI_STP', (75.82, 12.62), (76.0, 12.62))
+    (-0.3, 2, 'PHY_1V8', 'ULPI_STP', (75.82, 12.62), (76.0, 12.57))
+PHY x77.15 loop vs exp252 full pool: 2 pairs < 0.05; worst 8:
+    (0.006, 2, 'PHY_1V8', '+3V3A', (77.39, 10.53), (77.86, 10.97))
+    (0.008, 2, 'PHY_1V8', '+3V3A', (77.22, 11.05), (77.86, 10.97))
+STP chain segs found: 94
+   STP B seg (76.1, 13.5) -> (76.15, 13.5) hw 0.1
+   STP B seg (76.15, 13.5) -> (76.1, 13.45) hw 0.1
+   STP B seg (76.1, 13.45) -> (76.05, 13.4) hw 0.1
+   STP B seg (76.05, 13.4) -> (76.0, 13.35) hw 0.1
+   STP B seg (76.0, 13.35) -> (76.0, 13.3) hw 0.1
+   STP B seg (76.0, 13.3) -> (76.0, 13.25) hw 0.1
+   STP B seg (76.0, 13.25) -> (76.0, 13.2) hw 0.1
+   STP B seg (76.0, 13.2) -> (76.0, 13.15) hw 0.1
+   STP B seg (76.0, 13.15) -> (76.0, 13.1) hw 0.1
+   STP B seg (76.0, 13.1) -> (76.0, 13.05) hw 0.1
+   STP B seg (76.0, 13.05) -> (76.0, 13.0) hw 0.1
+   STP B seg (76.0, 13.0) -> (76.0, 12.95) hw 0.1
+   STP B seg (76.0, 12.95) -> (76.0, 12.9) hw 0.1
+   STP B seg (76.0, 12.9) -> (76.0, 12.85) hw 0.1
+   STP B seg (76.0, 12.85) -> (76.0, 12.8) hw 0.1
+   STP B seg (76.0, 12.8) -> (76.0, 12.75) hw 0.1
+   STP B seg (76.0, 12.75) -> (76.0, 12.7) hw 0.1
+   STP B seg (76.0, 12.7) -> (76.0, 12.65) hw 0.1
+   STP B seg (76.0, 12.65) -> (76.0, 12.6) hw 0.1
+   STP B seg (76.0, 12.6) -> (76.0, 12.55) hw 0.1
+   STP B seg (76.0, 12.55) -> (76.0, 12.5) hw 0.1
+   STP B seg (76.0, 12.5) -> (76.0, 12.45) hw 0.1
+   STP B seg (76.0, 12.45) -> (76.0, 12.4) hw 0.1
+   STP B seg (76.0, 12.4) -> (76.0, 12.35) hw 0.1
+   STP B seg (76.0, 12.35) -> (76.0, 12.3) hw 0.1
+   STP B seg (76.0, 12.3) -> (76.0, 12.25) hw 0.1
+   STP B seg (76.0, 12.25) -> (76.0, 12.2) hw 0.1
+   STP B seg (76.0, 12.2) -> (76.0, 12.15) hw 0.1
+   STP B seg (76.0, 12.15) -> (76.0, 12.1) hw 0.1
+   STP B seg (76.0, 12.1) -> (76.0, 12.05) hw 0.1
+   STP B seg (76.0, 12.05) -> (76.0, 12.0) hw 0.1
+   STP B seg (76.0, 12.0) -> (76.0, 11.95) hw 0.1
+   STP B seg (76.0, 11.95) -> (76.0, 11.9) hw 0.1
+   STP B seg (76.0, 11.9) -> (76.0, 11.85) hw 0.1
+   STP B seg (76.0, 11.85) -> (76.05, 11.8) hw 0.1
+   STP B seg (76.05, 11.8) -> (76.05, 11.75) hw 0.1
+   STP B seg (76.05, 11.75) -> (76.05, 11.7) hw 0.1
+   STP B seg (76.05, 11.7) -> (76.1, 11.65) hw 0.1
+   STP B seg (76.1, 11.65) -> (76.1, 11.6) hw 0.1
+   STP B seg (76.1, 11.6) -> (76.15, 11.55) hw 0.1
+   STP B seg (76.15, 11.55) -> (76.15, 11.5) hw 0.1
+   STP B seg (76.15, 11.5) -> (76.2, 11.45) hw 0.1
+   STP B seg (76.2, 11.45) -> (76.25, 11.4) hw 0.1
+   STP B seg (76.25, 11.4) -> (76.25, 11.35) hw 0.1
+   STP B seg (76.25, 11.35) -> (76.25, 11.3) hw 0.1
+   STP B seg (76.25, 11.3) -> (76.3, 11.25) hw 0.1
+   STP B seg (76.3, 11.25) -> (76.3, 11.2) hw 0.1
+   STP B seg (76.3, 11.2) -> (76.35, 11.15) hw 0.1
+   STP B seg (76.35, 11.15) -> (76.35, 11.1) hw 0.1
+   STP B seg (76.35, 11.1) -> (76.35, 11.05) hw 0.1
+   STP B seg (76.35, 11.05) -> (76.35, 11.0) hw 0.1
+   STP B seg (76.35, 11.0) -> (76.4, 10.95) hw 0.1
+   STP B seg (76.4, 10.95) -> (76.4, 10.9) hw 0.1
+   STP B seg (76.4, 10.9) -> (76.4, 10.85) hw 0.1
+   STP B seg (76.4, 10.85) -> (76.4, 10.8) hw 0.1
+   STP B seg (76.4, 10.8) -> (76.45, 10.75) hw 0.1
+   STP B seg (76.45, 10.75) -> (76.45, 10.7) hw 0.1
+   STP B seg (76.45, 10.7) -> (76.45, 10.65) hw 0.1
+   STP B seg (76.45, 10.65) -> (76.45, 10.6) hw 0.1
+   STP B seg (76.45, 10.6) -> (76.4, 10.55) hw 0.1
+   STP B seg (76.4, 10.55) -> (76.35, 10.5) hw 0.1
+   STP B seg (76.35, 10.5) -> (76.3, 10.45) hw 0.1
+   STP B seg (76.3, 10.45) -> (76.25, 10.4) hw 0.1
+   STP B seg (76.25, 10.4) -> (76.2, 10.35) hw 0.1
+   STP B seg (76.2, 10.35) -> (76.15, 10.3) hw 0.1
+   STP B seg (76.15, 10.3) -> (76.1, 10.25) hw 0.1
+   STP B seg (76.1, 10.25) -> (76.05, 10.2) hw 0.1
+   STP B seg (76.05, 10.2) -> (76.0, 10.15) hw 0.1
+   STP B seg (76.0, 10.15) -> (75.95, 10.1) hw 0.1
+   STP B seg (75.95, 10.1) -> (75.9, 10.1) hw 0.1
+   STP B seg (75.9, 10.1) -> (75.85, 10.1) hw 0.1
+   STP B seg (75.85, 10.1) -> (75.9, 10.05) hw 0.1
+   STP B seg (75.9, 10.05) -> (75.95, 10.0) hw 0.1
+   STP B seg (75.95, 10.0) -> (76.0, 9.95) hw 0.1
+   STP B seg (76.0, 9.95) -> (76.05, 9.9) hw 0.1
+   STP B seg (76.05, 9.9) -> (76.1, 9.85) hw 0.1
+   STP B seg (76.1, 9.85) -> (76.15, 9.8) hw 0.1
+   STP B seg (76.15, 9.8) -> (76.2, 9.75) hw 0.1
+   STP B seg (76.2, 9.75) -> (76.25, 9.7) hw 0.1
+   STP B seg (76.25, 9.7) -> (76.3, 9.65) hw 0.1
+   STP B seg (76.3, 9.65) -> (76.35, 9.6) hw 0.1
+   STP B seg (76.35, 9.6) -> (76.4, 9.55) hw 0.1
+   STP B seg (76.4, 9.55) -> (76.45, 9.55) hw 0.1
+   STP B seg (76.45, 9.55) -> (76.5, 9.55) hw 0.1
+   STP B seg (76.5, 9.55) -> (76.55, 9.55) hw 0.1
+   STP B seg (76.55, 9.55) -> (76.6, 9.5) hw 0.1
+   STP B seg (76.6, 9.5) -> (76.65, 9.45) hw 0.1
+   STP B seg (76.65, 9.45) -> (76.7, 9.4) hw 0.1
+   STP B seg (76.7, 9.4) -> (76.75, 9.45) hw 0.1
+   STP B seg (76.75, 9.45) -> (76.8, 9.5) hw 0.1
+   STP B seg (76.8, 9.5) -> (76.85, 9.55) hw 0.1
+   STP B seg (76.85, 9.55) -> (76.9, 9.6) hw 0.1
+   STP B seg (76.9, 9.6) -> (76.95, 9.6) hw 0.1
+   STP B seg (76.95, 9.6) -> (77.0, 9.6) hw 0.1
+PHY loop pair-ripped: 4
+PHY journey gate (STP ripped, exp252): 150 pairs < 0.3; worst 8:
+    (0.024, 1, 'PHY_1V8', 'RBIAS', (71.9, 17.8), (72.53, 17.99))
+    (0.024, 1, 'PHY_1V8', 'RBIAS', (71.9, 17.8), (72.54, 17.96))
+    (0.025, 1, 'PHY_1V8', 'RBIAS', (71.9, 17.8), (72.5, 18.06))
+    (0.025, 1, 'PHY_1V8', 'RBIAS', (71.9, 17.8), (72.51, 18.04))
+    (0.029, 1, 'PHY_1V8', 'RBIAS', (71.9, 17.8), (72.56, 17.86))
+    (0.029, 1, 'PHY_1V8', 'RBIAS', (71.9, 17.8), (72.55, 17.89))
+    (0.029, 1, 'PHY_1V8', 'RBIAS', (71.9, 17.8), (72.36, 18.26))
+    (0.029, 1, 'PHY_1V8', 'RBIAS', (71.9, 17.8), (72.39, 18.24))
+PHY loop gate (post-add, exp252): 17 pairs < 0.3; worst 8:
+    (0.006, 2, 'PHY_1V8', '+3V3A', (77.39, 10.53), (77.86, 10.97))
+    (0.008, 2, 'PHY_1V8', '+3V3A', (77.22, 11.05), (77.86, 10.97))
+    (0.133, 2, 'PHY_1V8', '+3V3A', (77.15, 12.15), (77.86, 10.97))
+    (0.159, 2, 'PHY_1V8', '+3V3A', (77.7, 10.16), (77.86, 10.97))
+    (0.17, 2, 'PHY_1V8', 'ULPI_STP', (77.7, 10.16), (77.0, 9.6))
+    (0.176, 2, 'PHY_1V8', 'ULPI_STP', (77.7, 10.16), (77.28, 9.6))
+    (0.187, 2, 'PHY_1V8', 'ULPI_D7', (77.47, 15.65), (78.62, 15.88))
+    (0.196, 2, 'PHY_1V8', 'ULPI_STP', (77.7, 10.16), (77.22, 9.6))
+PHY tail ripped: 2
+final frags: PHY 1 STP 2 CK 1 XI 3 1V8A 1 XO 1
+negative-margin pairs in design: 0
+=== done ===

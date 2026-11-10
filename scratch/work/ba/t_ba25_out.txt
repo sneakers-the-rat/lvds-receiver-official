@@ -1,0 +1,42 @@
+03:14:39: Debug: Adding duplicate image handler for 'PNG file'
+03:14:39: Debug: Adding duplicate image handler for 'JPEG file'
+03:14:39: Debug: Adding duplicate image handler for 'TIFF file'
+03:14:39: Debug: Adding duplicate image handler for 'GIF file'
+03:14:39: Debug: Adding duplicate image handler for 'PNM file'
+03:14:39: Debug: Adding duplicate image handler for 'PCX file'
+03:14:39: Debug: Adding duplicate image handler for 'IFF file'
+03:14:39: Debug: Adding duplicate image handler for 'Windows icon file'
+03:14:39: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:14:39: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:14:39: Debug: Adding duplicate image handler for 'TGA file'
+03:14:39: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+03:14:39: Debug: Adding duplicate image handler for 'PNG file'
+03:14:39: Debug: Adding duplicate image handler for 'JPEG file'
+03:14:39: Debug: Adding duplicate image handler for 'TIFF file'
+03:14:39: Debug: Adding duplicate image handler for 'GIF file'
+03:14:39: Debug: Adding duplicate image handler for 'PNM file'
+03:14:39: Debug: Adding duplicate image handler for 'PCX file'
+03:14:39: Debug: Adding duplicate image handler for 'IFF file'
+03:14:39: Debug: Adding duplicate image handler for 'Windows icon file'
+03:14:39: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:14:39: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:14:39: Debug: Adding duplicate image handler for 'TGA file'
+03:14:39: Debug: Adding duplicate image handler for 'XPM file'
+STP south placed (ripped 304); frags 2
+site (77.15,9.55) r270: pad1 (77.15, 10.030000000000001) hop +0.105 vs ULPI_STP
+   GND via (76.35, 8.95) gate -0.105 (worst ('F', '+3V3A', (75.62, 8.62))); track from pad2 (77.15, 9.07): -0.115 vs ULPI_STP
+   GND via (77.55, 9.55) gate -0.115 (worst ('B', 'I2C_SCL', (77.25, 9.0))); track from pad2 (77.15, 9.07): +0.001 vs ULPI_STP
+   GND via (76.5, 8.95) gate -0.141 (worst ('F', 'ULPI_STP', (76.75, 9.45))); track from pad2 (77.15, 9.07): -0.104 vs ULPI_STP
+site (77.3,9.5) r270: pad1 (77.3, 9.98) hop +0.164 vs ULPI_STP
+   GND via (76.35, 8.95) gate -0.105 (worst ('F', '+3V3A', (75.62, 8.62))); track from pad2 (77.3, 9.02): -0.093 vs ULPI_D0
+   GND via (77.55, 9.55) gate -0.115 (worst ('B', 'I2C_SCL', (77.25, 9.0))); track from pad2 (77.3, 9.02): -0.093 vs ULPI_D0
+   GND via (76.5, 8.95) gate -0.141 (worst ('F', 'ULPI_STP', (76.75, 9.45))); track from pad2 (77.3, 9.02): -0.093 vs ULPI_D0
+site (77.5,9.7) r270: pad1 (77.5, 10.18) hop +0.183 vs ULPI_D0
+   GND via (76.35, 8.95) gate -0.105 (worst ('F', '+3V3A', (75.62, 8.62))); track from pad2 (77.5, 9.219999999999999): -0.155 vs ULPI_STP
+   GND via (77.55, 9.55) gate -0.115 (worst ('B', 'I2C_SCL', (77.25, 9.0))); track from pad2 (77.5, 9.219999999999999): -0.093 vs ULPI_D0
+   GND via (76.5, 8.95) gate -0.141 (worst ('F', 'ULPI_STP', (76.75, 9.45))); track from pad2 (77.5, 9.219999999999999): -0.132 vs ULPI_STP
+=== done ===

@@ -1,0 +1,37 @@
+02:11:25: Debug: Adding duplicate image handler for 'PNG file'
+02:11:25: Debug: Adding duplicate image handler for 'JPEG file'
+02:11:25: Debug: Adding duplicate image handler for 'TIFF file'
+02:11:25: Debug: Adding duplicate image handler for 'GIF file'
+02:11:25: Debug: Adding duplicate image handler for 'PNM file'
+02:11:25: Debug: Adding duplicate image handler for 'PCX file'
+02:11:25: Debug: Adding duplicate image handler for 'IFF file'
+02:11:25: Debug: Adding duplicate image handler for 'Windows icon file'
+02:11:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:11:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:11:25: Debug: Adding duplicate image handler for 'TGA file'
+02:11:25: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+02:11:25: Debug: Adding duplicate image handler for 'PNG file'
+02:11:25: Debug: Adding duplicate image handler for 'JPEG file'
+02:11:25: Debug: Adding duplicate image handler for 'TIFF file'
+02:11:25: Debug: Adding duplicate image handler for 'GIF file'
+02:11:25: Debug: Adding duplicate image handler for 'PNM file'
+02:11:25: Debug: Adding duplicate image handler for 'PCX file'
+02:11:25: Debug: Adding duplicate image handler for 'IFF file'
+02:11:25: Debug: Adding duplicate image handler for 'Windows icon file'
+02:11:25: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:11:25: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:11:25: Debug: Adding duplicate image handler for 'TGA file'
+02:11:25: Debug: Adding duplicate image handler for 'XPM file'
+PHY placed; frags PHY 1 STP 2
+V1 legs-end->(77.0,9.6): NONE
+V2 legs-end->(77.35,7.75): NONE
+V3: B legs in dive column: 37
+V3 dive->(77.0,9.6): NONE
+V4: F stub segs: 31 dive via: 1
+V4 U7.13pad->(77.0,9.6): NONE
+final frags: STP 4 PHY 1 CK 1 XI 3 1V8A 1
+=== done ===
