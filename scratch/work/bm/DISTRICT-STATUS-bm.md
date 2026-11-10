@@ -109,3 +109,10 @@ Final design as built (all re-gated on exp262):
   D2 via (80.3,12.8) vs C19.1 NRST; D7 via (79.1,15.88) vs SCL staircase.
 - C48/C19 local: +3V3D F track vs C19.1 NRST pad.
 - +3V3A dangling In2 stubs at (77.625,15.875), (78.125,16.375).
+
+## 2026-11-10 ~16:55 — fix3b + fix3b2 BANKED-IN-PROGRESS (commit d9abf96b, pushed+verified)
+- exp268 (fix3b): SW knot decomposition: +3V3A F web/row ripped, via31 in pad31 rect + via30, XI F rise + B ride re-laid, A F/B re-laid. DRC 54->51. New defects: via31-via30 hole_near_hole (drills 0.275 apart — gate had no via-via hole check), west +3V3A via (73.625,10.625) dangling, 4x A-seg vs XI PV clearance (A lane passes PV at 0.39-0.49 centre; F-north passage proven closed: needs y>=10.85 at x75.82 vs pad bound 10.825).
+- exp269 (fix3b2): A w0.15 neck at y~10.82-10.84 over PV (KiCad edge 0.203-0.22 both sides — DOCUMENTED compromise, 0.15mm neck ~0.8mm long on PHY_1V8A), via30 deleted -> pad30 fed by F row track (75.5,11.562)->(76.0,11.562) w0.25 through pad31, west via deleted. DRC 46: clearance 29, shorting 6, hole_clearance 3, tracks_crossing 1, mask_bridge 1, copper_edge 4 (J1), track_dangling 2 (+3V3A In2 stubs). UNCONN = USB_RST only. SW KNOT CLEAN.
+- Declared gate exceptions (bm_fix3b2 allowed()): A vs +3V3A pad30/pad31 rects floor -0.05 = exactly KiCad's zero (gate uses check_pcb 0.25 power rule, KiCad 0.2).
+- VM was replaced mid-build (service restart); toolchain restored via restore.sh (KiCad 8.0.9). exp268 build log lost in restart; board verified by DRC instead.
+- NEXT: fix3c NE braid (+3V3A vias (78.8,11.62)/(79.375,16.625), SCL In2 x79.125 vertical, D7 via (79.1,15.88) + D7 B track, +3V3A B tracks, 2 dangling In2 stubs), then fix3d east D-fan (~27 items).
