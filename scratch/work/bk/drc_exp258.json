@@ -1,0 +1,938 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-10T12:36:42+0000",
+    "kicad_version": "8.0.9",
+    "schematic_parity": [],
+    "source": "pdlvds_rx.exp258.kicad_pcb",
+    "unconnected_items": [],
+    "violations": [
+        {
+            "description": "Via diameter (board setup constraints min diameter 0.5000 mm; actual 0.4000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_RST] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.82,
+                        "y": 5.84
+                    },
+                    "uuid": "8f76348c-a979-40f0-a69a-82a56fcb563a"
+                }
+            ],
+            "severity": "error",
+            "type": "via_diameter"
+        },
+        {
+            "description": "Hole size out of range (board setup constraints min hole 0.3000 mm; actual 0.2000 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_RST] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.82,
+                        "y": 5.84
+                    },
+                    "uuid": "8f76348c-a979-40f0-a69a-82a56fcb563a"
+                }
+            ],
+            "severity": "error",
+            "type": "drill_out_of_range"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3063 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of J1",
+                    "pos": {
+                        "x": 33.6,
+                        "y": 72.14
+                    },
+                    "uuid": "42a95997-ef9d-446f-870a-8a312445bcec"
+                },
+                {
+                    "description": "Pad A12 [GND] of J1 on F.Cu",
+                    "pos": {
+                        "x": 32.75,
+                        "y": 71.48
+                    },
+                    "uuid": "6663d430-cb58-4d62-9277-18e2a558e0a3"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "9c5c4aef-8d41-4e4f-afb0-8acad9f18a0a"
+                },
+                {
+                    "description": "PTH pad S1 [<no net>] of J1",
+                    "pos": {
+                        "x": 25.51,
+                        "y": 79.34
+                    },
+                    "uuid": "1c6ca1c1-67a3-4dea-ba49-c6281fc9d406"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2982 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of J1",
+                    "pos": {
+                        "x": 33.6,
+                        "y": 72.14
+                    },
+                    "uuid": "42a95997-ef9d-446f-870a-8a312445bcec"
+                },
+                {
+                    "description": "PTH pad S1 [<no net>] of J1",
+                    "pos": {
+                        "x": 34.13,
+                        "y": 73.39
+                    },
+                    "uuid": "6831ac38-57a9-41a7-a30c-a7b383a2b621"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "9c5c4aef-8d41-4e4f-afb0-8acad9f18a0a"
+                },
+                {
+                    "description": "PTH pad S1 [<no net>] of J1",
+                    "pos": {
+                        "x": 34.49,
+                        "y": 79.34
+                    },
+                    "uuid": "eda871f6-0a88-4c19-8352-cabbd7a9a51c"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Items shorting two nets (nets +3V3A and USB_RST)",
+            "items": [
+                {
+                    "description": "Via [+3V3A] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.625,
+                        "y": 10.625
+                    },
+                    "uuid": "bd279dc7-10da-4312-95a9-91580337720e"
+                },
+                {
+                    "description": "Track [USB_RST] on In2.Cu, length 0.5558 mm",
+                    "pos": {
+                        "x": 74.13,
+                        "y": 10.85
+                    },
+                    "uuid": "0fd95e69-75b5-404b-858f-7748691e4045"
+                }
+            ],
+            "severity": "error",
+            "type": "shorting_items"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1356 mm)",
+            "items": [
+                {
+                    "description": "Track [PHY_1V8A] on B.Cu, length 0.4386 mm",
+                    "pos": {
+                        "x": 73.22,
+                        "y": 11.94
+                    },
+                    "uuid": "08e2355c-3cce-46d5-85df-59b4f98c832f"
+                },
+                {
+                    "description": "Via [RBIAS] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.52,
+                        "y": 11.55
+                    },
+                    "uuid": "6866ae71-7801-46dd-adbc-9ae6c940d615"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1420 mm)",
+            "items": [
+                {
+                    "description": "Track [PHY_1V8A] on B.Cu, length 0.2720 mm",
+                    "pos": {
+                        "x": 73.3,
+                        "y": 12.2
+                    },
+                    "uuid": "d51e2900-b82e-4f5c-99bb-8070044decd1"
+                },
+                {
+                    "description": "Via [RBIAS] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.52,
+                        "y": 11.55
+                    },
+                    "uuid": "6866ae71-7801-46dd-adbc-9ae6c940d615"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0570 mm)",
+            "items": [
+                {
+                    "description": "Via [RBIAS] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.52,
+                        "y": 11.55
+                    },
+                    "uuid": "6866ae71-7801-46dd-adbc-9ae6c940d615"
+                },
+                {
+                    "description": "Track [XO] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 72.875,
+                        "y": 11.125
+                    },
+                    "uuid": "30cc721e-6db0-4655-959b-55b301c87afd"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1820 mm)",
+            "items": [
+                {
+                    "description": "Track [RBIAS] on In2.Cu, length 0.0930 mm",
+                    "pos": {
+                        "x": 73.52,
+                        "y": 11.55
+                    },
+                    "uuid": "d0a5f46d-0fe5-4af0-9591-3593379f4fdf"
+                },
+                {
+                    "description": "Track [XO] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 72.875,
+                        "y": 11.125
+                    },
+                    "uuid": "30cc721e-6db0-4655-959b-55b301c87afd"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1907 mm)",
+            "items": [
+                {
+                    "description": "Track [CDR_SQUELCH] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 75.375,
+                        "y": 19.625
+                    },
+                    "uuid": "4a57014e-49d6-4b95-801b-6e5e763cddb0"
+                },
+                {
+                    "description": "Via [ULPI_DIR] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 19.2
+                    },
+                    "uuid": "7ef4e893-20d7-4bb0-8e64-a275060a0700"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1918 mm)",
+            "items": [
+                {
+                    "description": "Track [CDR_SQUELCH] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 75.125,
+                        "y": 19.875
+                    },
+                    "uuid": "57eec42d-77bd-4668-9f0c-8cc1ce344541"
+                },
+                {
+                    "description": "Via [ULPI_DIR] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 19.2
+                    },
+                    "uuid": "7ef4e893-20d7-4bb0-8e64-a275060a0700"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1677 mm)",
+            "items": [
+                {
+                    "description": "Via [DM_PHY] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.625,
+                        "y": 19.125
+                    },
+                    "uuid": "69db2634-217a-4ef9-83cb-fd051cc1abfa"
+                },
+                {
+                    "description": "Track [ULPI_DIR] on B.Cu, length 0.9192 mm",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 19.2
+                    },
+                    "uuid": "14679e3f-fcb6-4c49-8204-05c2b2205068"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1990 mm)",
+            "items": [
+                {
+                    "description": "Track [SPI_MOSI] on In2.Cu, length 1.8200 mm",
+                    "pos": {
+                        "x": 73.4,
+                        "y": 5.186
+                    },
+                    "uuid": "ac951f7f-4680-45d6-921a-4bc369f42ba7"
+                },
+                {
+                    "description": "Track [BIST_DRV] on In2.Cu, length 0.5000 mm",
+                    "pos": {
+                        "x": 74.875,
+                        "y": 5.076
+                    },
+                    "uuid": "b33dd281-8734-44d8-836e-b60761281f48"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1763 mm)",
+            "items": [
+                {
+                    "description": "Track [BIST_DRV] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 74.375,
+                        "y": 5.576
+                    },
+                    "uuid": "2af6b696-adad-4264-8226-379b4030f007"
+                },
+                {
+                    "description": "Via [USB_RST] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.82,
+                        "y": 5.84
+                    },
+                    "uuid": "8f76348c-a979-40f0-a69a-82a56fcb563a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1990 mm)",
+            "items": [
+                {
+                    "description": "Track [BIST_DRV] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 74.625,
+                        "y": 5.326
+                    },
+                    "uuid": "b4b9352a-879f-476d-a9db-f25d549d0c7a"
+                },
+                {
+                    "description": "Track [SPI_MOSI] on In2.Cu, length 1.8200 mm",
+                    "pos": {
+                        "x": 73.4,
+                        "y": 5.186
+                    },
+                    "uuid": "ac951f7f-4680-45d6-921a-4bc369f42ba7"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1924 mm)",
+            "items": [
+                {
+                    "description": "Track [BIST_DRV] on In2.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 74.125,
+                        "y": 5.826
+                    },
+                    "uuid": "d83b1de6-69db-46fb-bd5c-3fcb3f0e2eff"
+                },
+                {
+                    "description": "Via [USB_RST] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.82,
+                        "y": 5.84
+                    },
+                    "uuid": "8f76348c-a979-40f0-a69a-82a56fcb563a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1044 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_CK] on In2.Cu, length 0.7605 mm",
+                    "pos": {
+                        "x": 74.38,
+                        "y": 10.28
+                    },
+                    "uuid": "6a08d2ce-65a2-441c-a382-7b81dddd68a2"
+                },
+                {
+                    "description": "Track [USB_RST] on In2.Cu, length 0.5558 mm",
+                    "pos": {
+                        "x": 74.13,
+                        "y": 10.85
+                    },
+                    "uuid": "0fd95e69-75b5-404b-858f-7748691e4045"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1044 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_CK] on In2.Cu, length 0.9135 mm",
+                    "pos": {
+                        "x": 74.625,
+                        "y": 9.4
+                    },
+                    "uuid": "77acbdfe-76a8-4277-9240-7b6bcff32917"
+                },
+                {
+                    "description": "Track [USB_RST] on In2.Cu, length 0.5558 mm",
+                    "pos": {
+                        "x": 74.13,
+                        "y": 10.85
+                    },
+                    "uuid": "0fd95e69-75b5-404b-858f-7748691e4045"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1912 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_D0] on F.Cu, length 0.3536 mm",
+                    "pos": {
+                        "x": 74.625,
+                        "y": 6.375
+                    },
+                    "uuid": "3ba7738f-2655-4bbc-bd7e-4c08f82fbed2"
+                },
+                {
+                    "description": "Via [USB_RST] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.82,
+                        "y": 5.84
+                    },
+                    "uuid": "8f76348c-a979-40f0-a69a-82a56fcb563a"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1316 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.8668 mm",
+                    "pos": {
+                        "x": 75.72,
+                        "y": 17.35
+                    },
+                    "uuid": "0e5639d5-9f40-4e05-9178-69270231ed0e"
+                },
+                {
+                    "description": "Via [ULPI_NXT] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.9,
+                        "y": 17.4
+                    },
+                    "uuid": "33e199d0-b8a6-4a42-9984-3f01d426dd74"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1338 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.4759 mm",
+                    "pos": {
+                        "x": 75.75,
+                        "y": 16.875
+                    },
+                    "uuid": "1986735a-af74-4d34-9206-47a63109aa93"
+                },
+                {
+                    "description": "Track [ULPI_STP] on F.Cu, length 0.0500 mm",
+                    "pos": {
+                        "x": 76.05,
+                        "y": 17.4
+                    },
+                    "uuid": "55cbfb75-b277-46bc-8e68-26470d5d3687"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1720 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 1.3010 mm",
+                    "pos": {
+                        "x": 75.05,
+                        "y": 17.9
+                    },
+                    "uuid": "6852d87f-ccb7-4cd7-9ead-3c8da24a0af5"
+                },
+                {
+                    "description": "Via [ULPI_NXT] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.9,
+                        "y": 17.4
+                    },
+                    "uuid": "33e199d0-b8a6-4a42-9984-3f01d426dd74"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1525 mm)",
+            "items": [
+                {
+                    "description": "Via [ULPI_DIR] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 19.2
+                    },
+                    "uuid": "7ef4e893-20d7-4bb0-8e64-a275060a0700"
+                },
+                {
+                    "description": "Track [ULPI_NXT] on In2.Cu, length 6.4530 mm",
+                    "pos": {
+                        "x": 74.5,
+                        "y": 19.25
+                    },
+                    "uuid": "663f59f3-d18e-4c61-ada4-9b590a101fca"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1829 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_DIR] on B.Cu, length 0.5420 mm",
+                    "pos": {
+                        "x": 74.28,
+                        "y": 18.98
+                    },
+                    "uuid": "22bbd51b-9b2f-4ec8-aff6-168876eff190"
+                },
+                {
+                    "description": "Via [DM_PHY] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.625,
+                        "y": 19.125
+                    },
+                    "uuid": "69db2634-217a-4ef9-83cb-fd051cc1abfa"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1677 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_DIR] on B.Cu, length 0.2702 mm",
+                    "pos": {
+                        "x": 74.15,
+                        "y": 18.85
+                    },
+                    "uuid": "7970616a-538c-4758-938e-f807245909f4"
+                },
+                {
+                    "description": "Via [DM_PHY] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.625,
+                        "y": 19.125
+                    },
+                    "uuid": "69db2634-217a-4ef9-83cb-fd051cc1abfa"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0327 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_NXT] on In2.Cu, length 1.0977 mm",
+                    "pos": {
+                        "x": 75.05,
+                        "y": 18.3
+                    },
+                    "uuid": "7b98b36e-1e61-4ee9-9afb-76d4a87cfe66"
+                },
+                {
+                    "description": "Via [ULPI_DIR] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 75.0,
+                        "y": 19.2
+                    },
+                    "uuid": "7ef4e893-20d7-4bb0-8e64-a275060a0700"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1338 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_STP] on F.Cu, length 0.0500 mm",
+                    "pos": {
+                        "x": 76.05,
+                        "y": 17.4
+                    },
+                    "uuid": "55cbfb75-b277-46bc-8e68-26470d5d3687"
+                },
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.8668 mm",
+                    "pos": {
+                        "x": 75.72,
+                        "y": 17.35
+                    },
+                    "uuid": "0e5639d5-9f40-4e05-9178-69270231ed0e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1300 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_STP] on F.Cu, length 0.0500 mm",
+                    "pos": {
+                        "x": 76.05,
+                        "y": 17.3
+                    },
+                    "uuid": "60298527-7757-45f1-bed8-58c12a3184a2"
+                },
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.8668 mm",
+                    "pos": {
+                        "x": 75.72,
+                        "y": 17.35
+                    },
+                    "uuid": "0e5639d5-9f40-4e05-9178-69270231ed0e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1859 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_STP] on F.Cu, length 0.0500 mm",
+                    "pos": {
+                        "x": 76.05,
+                        "y": 17.55
+                    },
+                    "uuid": "6def4543-8721-4c3e-863e-a02049b67bf4"
+                },
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.8668 mm",
+                    "pos": {
+                        "x": 75.72,
+                        "y": 17.35
+                    },
+                    "uuid": "0e5639d5-9f40-4e05-9178-69270231ed0e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1338 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_STP] on F.Cu, length 0.0707 mm",
+                    "pos": {
+                        "x": 76.1,
+                        "y": 17.25
+                    },
+                    "uuid": "7a815abf-303a-4989-b54a-62df7554e4da"
+                },
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.8668 mm",
+                    "pos": {
+                        "x": 75.72,
+                        "y": 17.35
+                    },
+                    "uuid": "0e5639d5-9f40-4e05-9178-69270231ed0e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1698 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_STP] on F.Cu, length 0.0707 mm",
+                    "pos": {
+                        "x": 76.15,
+                        "y": 17.15
+                    },
+                    "uuid": "7bbac8bd-4fed-4387-9826-4a8c98eae5e9"
+                },
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.4759 mm",
+                    "pos": {
+                        "x": 75.75,
+                        "y": 16.875
+                    },
+                    "uuid": "1986735a-af74-4d34-9206-47a63109aa93"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1929 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_STP] on F.Cu, length 0.0500 mm",
+                    "pos": {
+                        "x": 76.1,
+                        "y": 17.2
+                    },
+                    "uuid": "a28b93c2-5789-4277-8309-f05edf4492de"
+                },
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.8668 mm",
+                    "pos": {
+                        "x": 75.72,
+                        "y": 17.35
+                    },
+                    "uuid": "0e5639d5-9f40-4e05-9178-69270231ed0e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1625 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_STP] on F.Cu, length 0.0500 mm",
+                    "pos": {
+                        "x": 76.05,
+                        "y": 17.5
+                    },
+                    "uuid": "a3fad91d-9a7f-4e8a-b445-54c3adb9ef53"
+                },
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.8668 mm",
+                    "pos": {
+                        "x": 75.72,
+                        "y": 17.35
+                    },
+                    "uuid": "0e5639d5-9f40-4e05-9178-69270231ed0e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1448 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_STP] on F.Cu, length 0.0500 mm",
+                    "pos": {
+                        "x": 76.05,
+                        "y": 17.45
+                    },
+                    "uuid": "d0725f09-2305-43b5-89d3-8cdbae9c276d"
+                },
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.8668 mm",
+                    "pos": {
+                        "x": 75.72,
+                        "y": 17.35
+                    },
+                    "uuid": "0e5639d5-9f40-4e05-9178-69270231ed0e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1300 mm)",
+            "items": [
+                {
+                    "description": "Track [ULPI_STP] on F.Cu, length 0.0500 mm",
+                    "pos": {
+                        "x": 76.05,
+                        "y": 17.35
+                    },
+                    "uuid": "f3652fb2-8ce2-40e3-a3ea-d4364f35e305"
+                },
+                {
+                    "description": "Track [ULPI_DIR] on F.Cu, length 0.8668 mm",
+                    "pos": {
+                        "x": 75.72,
+                        "y": 17.35
+                    },
+                    "uuid": "0e5639d5-9f40-4e05-9178-69270231ed0e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1693 mm)",
+            "items": [
+                {
+                    "description": "Via [USB_RST] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 74.45,
+                        "y": 18.25
+                    },
+                    "uuid": "9cbd208e-db29-46eb-a311-bd4a8308c1a6"
+                },
+                {
+                    "description": "Track [ULPI_NXT] on In2.Cu, length 1.0977 mm",
+                    "pos": {
+                        "x": 75.05,
+                        "y": 18.3
+                    },
+                    "uuid": "7b98b36e-1e61-4ee9-9afb-76d4a87cfe66"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0529 mm)",
+            "items": [
+                {
+                    "description": "Track [USB_RST] on In2.Cu, length 0.6501 mm",
+                    "pos": {
+                        "x": 74.14,
+                        "y": 11.5
+                    },
+                    "uuid": "7580810c-112b-4376-a810-6b9e55a9ef57"
+                },
+                {
+                    "description": "Via [+3V3A] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.625,
+                        "y": 10.625
+                    },
+                    "uuid": "bd279dc7-10da-4312-95a9-91580337720e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0350 mm)",
+            "items": [
+                {
+                    "description": "Track [USB_RST] on In2.Cu, length 0.4031 mm",
+                    "pos": {
+                        "x": 74.05,
+                        "y": 10.3
+                    },
+                    "uuid": "81820aeb-02f1-4889-a1de-03d425af0cb6"
+                },
+                {
+                    "description": "Via [+3V3A] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.625,
+                        "y": 10.625
+                    },
+                    "uuid": "bd279dc7-10da-4312-95a9-91580337720e"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        },
+        {
+            "description": "Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0200 mm)",
+            "items": [
+                {
+                    "description": "Track [XO] on In2.Cu, length 4.5000 mm",
+                    "pos": {
+                        "x": 73.125,
+                        "y": 11.375
+                    },
+                    "uuid": "c2bb5a95-9f1b-4211-bbba-45cdc2c80e57"
+                },
+                {
+                    "description": "Via [RBIAS] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 73.52,
+                        "y": 11.55
+                    },
+                    "uuid": "6866ae71-7801-46dd-adbc-9ae6c940d615"
+                }
+            ],
+            "severity": "error",
+            "type": "clearance"
+        }
+    ]
+}
