@@ -1,0 +1,24 @@
+11:46:23: Debug: Adding duplicate image handler for 'PNG file'
+11:46:23: Debug: Adding duplicate image handler for 'JPEG file'
+11:46:23: Debug: Adding duplicate image handler for 'TIFF file'
+11:46:23: Debug: Adding duplicate image handler for 'GIF file'
+11:46:23: Debug: Adding duplicate image handler for 'PNM file'
+11:46:23: Debug: Adding duplicate image handler for 'PCX file'
+11:46:23: Debug: Adding duplicate image handler for 'IFF file'
+11:46:23: Debug: Adding duplicate image handler for 'Windows icon file'
+11:46:23: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:46:23: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:46:23: Debug: Adding duplicate image handler for 'TGA file'
+11:46:23: Debug: Adding duplicate image handler for 'XPM file'
+local pool: 341
+solo-ok: D4 36, D5 132, D6 126
+  joint +0.013  V4=(80.46, 14.21) V5=(80.13, 14.9) V6=(80.85, 14.81)
+  joint +0.010  V4=(80.44, 14.23) V5=(80.13, 14.9) V6=(80.85, 14.81)
+  joint +0.007  V4=(80.42, 14.25) V5=(80.13, 14.9) V6=(80.85, 14.83)
+  joint +0.007  V4=(80.44, 14.23) V5=(80.13, 14.9) V6=(80.85, 14.83)
+  joint +0.007  V4=(80.44, 14.25) V5=(80.13, 14.9) V6=(80.85, 14.83)
+  joint +0.007  V4=(80.46, 14.21) V5=(80.13, 14.9) V6=(80.85, 14.83)
+  joint +0.007  V4=(80.46, 14.23) V5=(80.13, 14.9) V6=(80.85, 14.83)
+  joint +0.007  V4=(80.48, 14.21) V5=(80.13, 14.9) V6=(80.85, 14.83)
+  joint +0.006  V4=(80.48, 14.19) V5=(80.13, 14.88) V6=(80.85, 14.81)
+  joint +0.006  V4=(80.48, 14.19) V5=(80.13, 14.88) V6=(80.85, 14.83)

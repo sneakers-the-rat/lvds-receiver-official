@@ -1,0 +1,21 @@
+11:20:32: Debug: Adding duplicate image handler for 'PNG file'
+11:20:32: Debug: Adding duplicate image handler for 'JPEG file'
+11:20:32: Debug: Adding duplicate image handler for 'TIFF file'
+11:20:32: Debug: Adding duplicate image handler for 'GIF file'
+11:20:32: Debug: Adding duplicate image handler for 'PNM file'
+11:20:32: Debug: Adding duplicate image handler for 'PCX file'
+11:20:32: Debug: Adding duplicate image handler for 'IFF file'
+11:20:32: Debug: Adding duplicate image handler for 'Windows icon file'
+11:20:32: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:20:32: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:20:32: Debug: Adding duplicate image handler for 'TGA file'
+11:20:32: Debug: Adding duplicate image handler for 'XPM file'
+pool 15451 -> local 339
+scoring D3 options...
+  V3 candidates: 28
+  D3 options kept: 54
+scoring D2 options...
+  V2 candidates: 43
+  D2 options kept: 86
+combining...
+joint options: 0

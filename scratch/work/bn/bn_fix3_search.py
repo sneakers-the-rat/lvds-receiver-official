@@ -33,6 +33,7 @@ FIXED_TRK = [
     ('ULPI_D6', 'F.Cu', (80.95, 15.3), (80.85, 14.8), 0.1),
     ('ULPI_D6', 'In2.Cu', (80.85, 14.8), (81.375, 14.125), 0.125),
     ('+3V3D', 'F.Cu', (81.12, 13.6), (81.3, 13.0), 0.1),
+    ('NRST', 'F.Cu', (81.095, 11.85), (80.55, 10.65), 0.1),
 ]
 FIXED_VIA = [('ULPI_D5', (80.35, 15.3)), ('ULPI_D6', (80.85, 14.8))]
 
@@ -40,16 +41,23 @@ FIXED_VIA = [('ULPI_D5', (80.35, 15.3)), ('ULPI_D6', (80.85, 14.8))]
 items = G.load_items(F3.SRC)
 for it in items:
     it.layer = {'F': 'F.Cu', 'In2': 'In2.Cu', 'B': 'B.Cu'}.get(it.layer, it.layer)
+C19_OLD = [(80.775, 12.0), (82.375, 12.0)]
+C19_NEW = [('NRST', (80.815, 11.54, 81.375, 12.16)),
+           ('GND', (81.775, 11.54, 82.335, 12.16))]
 pool = []
 for it in items:
     if F3.is_victim(it):
         continue
+    if it.kind == 'trk' and it.net == 'NRST' and \
+            {F3.rk(it.a), F3.rk(it.b)} == {(80.775, 12.0), (80.55, 10.65)}:
+        continue  # NRST feed leg re-laid with C19's move
     if it.kind == 'pad':
         cx = (it.rect[0] + it.rect[2]) / 2; cy = (it.rect[1] + it.rect[3]) / 2
-        if any(abs(cx - ox) < 0.01 and abs(cy - oy) < 0.01 for ox, oy in F3.C48_OLD):
+        if any(abs(cx - ox) < 0.01 and abs(cy - oy) < 0.01
+               for ox, oy in F3.C48_OLD + C19_OLD):
             continue
     pool.append(it)
-for net, rect in F3.C48_NEW:
+for net, rect in F3.C48_NEW + C19_NEW:
     pool.append(G.Item(net, 'pad', layer='F.Cu', rect=rect))
 
 BOX = (78.3, 7.3, 83.2, 17.2)
@@ -131,7 +139,7 @@ v3_cands = [p for p in grid(79.7, 80.8, 13.3, 14.2, 0.05)
 v3_cands += [(79.95, 13.75), (79.93, 13.73), (79.9, 13.75)]
 v3_cands = sorted(set(v3_cands))
 print(f'  V3 candidates: {len(v3_cands)}')
-bow3 = grid(80.3, 81.7, 12.2, 13.3, 0.15)
+bow3 = grid(80.3, 81.8, 12.1, 13.4, 0.15)
 for v3 in v3_cands:
     vm = min_margin_via(v3, 'ULPI_D3')
     paths = [[(v3, (82.2, 11.6))]]
@@ -145,15 +153,16 @@ for v3 in v3_cands:
         sc = min(vm, score_option(trks, [('ULPI_D3', v3)]))
         scored.append((sc, trks))
     scored.sort(key=lambda t: -t[0])
-    for sc, trks in scored[:2]:
-        if sc >= 0.005:
+    print(f'  V3 {v3}: via {vm:+.3f} bestleg {scored[0][0]:+.3f}')
+    for sc, trks in scored[:6]:
+        if sc >= -0.02:
             d3_opts.append((sc, v3, trks))
 print(f'  D3 options kept: {len(d3_opts)}')
 
 # ---- D2 options ----
 print('scoring D2 options...')
 d2_opts = []
-v2_cands = [p for p in grid(79.7, 80.8, 12.2, 13.5, 0.05)
+v2_cands = [p for p in grid(79.7, 80.8, 12.4, 13.5, 0.05)
             if min_margin_via(p, 'ULPI_D2') >= 0.005]
 v2_cands += [(80.28, 12.95)]
 v2_cands = sorted(set(v2_cands))
@@ -164,6 +173,7 @@ for v2 in v2_cands:
     head = ('ULPI_D2', 'In2.Cu', v2, (80.0, 8.3), 0.125)
     hm = score_option([head], [])
     if hm < 0.005:
+        print(f'  V2 {v2}: head blocked {hm:+.3f}')
         continue
     feeds = [[(79.438, 13.25), v2]]
     for b in bow2:
@@ -175,8 +185,9 @@ for v2 in v2_cands:
         sc = min(vm, hm, score_option(trks, [('ULPI_D2', v2)]))
         scored.append((sc, trks))
     scored.sort(key=lambda t: -t[0])
-    for sc, trks in scored[:2]:
-        if sc >= 0.005:
+    print(f'  V2 {v2}: via {vm:+.3f} head {hm:+.3f} best {scored[0][0]:+.3f}')
+    for sc, trks in scored[:4]:
+        if sc >= -0.02:
             d2_opts.append((sc, v2, trks))
 print(f'  D2 options kept: {len(d2_opts)}')
 
@@ -186,23 +197,26 @@ best = []
 for sc3, v3, t3 in d3_opts:
     for sc2, v2, t2 in d2_opts:
         sc = min(sc3, sc2)
-        if sc < 0.005:
-            continue
+        bind = 'solo'
         m = math.hypot(v3[0] - v2[0], v3[1] - v2[1]) - 0.5 - 0.20
-        sc = min(sc, m)
-        if sc < 0.005:
-            continue
+        if m < sc:
+            sc, bind = m, 'via-via'
         for s in t3:
-            sc = min(sc, nn_trk_via(s, ('ULPI_D2', v2)))
+            mm = nn_trk_via(s, ('ULPI_D2', v2))
+            if mm < sc:
+                sc, bind = mm, f'D3leg-vs-D2via {s[2]}->{s[3]}'
             for s2 in t2:
-                sc = min(sc, nn_trk_trk(s, s2))
+                mm = nn_trk_trk(s, s2)
+                if mm < sc:
+                    sc, bind = mm, f'trk-trk {s[2]}->{s[3]} x {s2[2]}->{s2[3]}'
         for s in t2:
-            sc = min(sc, nn_trk_via(s, ('ULPI_D3', v3)))
-        if sc >= 0.005:
-            best.append((sc, v2, t2, v3, t3))
+            mm = nn_trk_via(s, ('ULPI_D3', v3))
+            if mm < sc:
+                sc, bind = mm, f'D2leg-vs-D3via {s[2]}->{s[3]}'
+        best.append((sc, bind, v2, t2, v3, t3))
 best.sort(key=lambda t: -t[0])
-print(f'joint options: {len(best)}')
-for sc, v2, t2, v3, t3 in best[:5]:
-    print(f'\nSCORE {sc:+.3f}  V2={v2}  V3={v3}')
+print(f'joint options >= 0.005: {sum(1 for b in best if b[0] >= 0.005)}')
+for sc, bind, v2, t2, v3, t3 in best[:6]:
+    print(f'\nSCORE {sc:+.3f} bind={bind}  V2={v2}  V3={v3}')
     for nn, ll, a, b, hw in t2 + t3:
         print(f'    ({nn!r}, {ll!r}, {a}, {b}, {hw * 2})')

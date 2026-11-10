@@ -1,0 +1,63 @@
+11:21:37: Debug: Adding duplicate image handler for 'PNG file'
+11:21:37: Debug: Adding duplicate image handler for 'JPEG file'
+11:21:37: Debug: Adding duplicate image handler for 'TIFF file'
+11:21:37: Debug: Adding duplicate image handler for 'GIF file'
+11:21:37: Debug: Adding duplicate image handler for 'PNM file'
+11:21:37: Debug: Adding duplicate image handler for 'PCX file'
+11:21:37: Debug: Adding duplicate image handler for 'IFF file'
+11:21:37: Debug: Adding duplicate image handler for 'Windows icon file'
+11:21:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:21:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:21:37: Debug: Adding duplicate image handler for 'TGA file'
+11:21:37: Debug: Adding duplicate image handler for 'XPM file'
+pool 15451 -> local 339
+scoring D3 options...
+  V3 candidates: 28
+  D3 options kept: 54
+scoring D2 options...
+  V2 candidates: 43
+  D2 options kept: 86
+combining...
+joint options >= 0.005: 0
+
+SCORE -0.246 bind=D3leg-vs-D2via (79.93, 13.73)->(82.2, 11.6)  V2=(80.28, 12.95)  V3=(79.93, 13.73)
+    ('ULPI_D2', 'F.Cu', (79.438, 13.25), (79.5, 13.3), 0.2)
+    ('ULPI_D2', 'F.Cu', (79.5, 13.3), (80.28, 12.95), 0.2)
+    ('ULPI_D2', 'In2.Cu', (80.28, 12.95), (80.0, 8.3), 0.25)
+    ('ULPI_D3', 'In2.Cu', (79.93, 13.73), (82.2, 11.6), 0.25)
+    ('ULPI_D3', 'F.Cu', (79.95, 13.75), (79.93, 13.73), 0.2)
+
+SCORE -0.246 bind=D3leg-vs-D2via (79.93, 13.73)->(82.2, 11.6)  V2=(80.28, 12.95)  V3=(79.93, 13.73)
+    ('ULPI_D2', 'F.Cu', (79.438, 13.25), (79.6, 13.3), 0.2)
+    ('ULPI_D2', 'F.Cu', (79.6, 13.3), (80.28, 12.95), 0.2)
+    ('ULPI_D2', 'In2.Cu', (80.28, 12.95), (80.0, 8.3), 0.25)
+    ('ULPI_D3', 'In2.Cu', (79.93, 13.73), (82.2, 11.6), 0.25)
+    ('ULPI_D3', 'F.Cu', (79.95, 13.75), (79.93, 13.73), 0.2)
+
+SCORE -0.250 bind=D3leg-vs-D2via (79.9, 13.75)->(82.2, 11.6)  V2=(80.28, 12.95)  V3=(79.9, 13.75)
+    ('ULPI_D2', 'F.Cu', (79.438, 13.25), (79.5, 13.3), 0.2)
+    ('ULPI_D2', 'F.Cu', (79.5, 13.3), (80.28, 12.95), 0.2)
+    ('ULPI_D2', 'In2.Cu', (80.28, 12.95), (80.0, 8.3), 0.25)
+    ('ULPI_D3', 'In2.Cu', (79.9, 13.75), (82.2, 11.6), 0.25)
+    ('ULPI_D3', 'F.Cu', (79.95, 13.75), (79.9, 13.75), 0.2)
+
+SCORE -0.250 bind=D3leg-vs-D2via (79.9, 13.75)->(82.2, 11.6)  V2=(80.28, 12.95)  V3=(79.9, 13.75)
+    ('ULPI_D2', 'F.Cu', (79.438, 13.25), (79.6, 13.3), 0.2)
+    ('ULPI_D2', 'F.Cu', (79.6, 13.3), (80.28, 12.95), 0.2)
+    ('ULPI_D2', 'In2.Cu', (80.28, 12.95), (80.0, 8.3), 0.25)
+    ('ULPI_D3', 'In2.Cu', (79.9, 13.75), (82.2, 11.6), 0.25)
+    ('ULPI_D3', 'F.Cu', (79.95, 13.75), (79.9, 13.75), 0.2)
+
+SCORE -0.252 bind=D3leg-vs-D2via (79.95, 13.7)->(82.2, 11.6)  V2=(80.28, 12.95)  V3=(79.95, 13.7)
+    ('ULPI_D2', 'F.Cu', (79.438, 13.25), (79.5, 13.3), 0.2)
+    ('ULPI_D2', 'F.Cu', (79.5, 13.3), (80.28, 12.95), 0.2)
+    ('ULPI_D2', 'In2.Cu', (80.28, 12.95), (80.0, 8.3), 0.25)
+    ('ULPI_D3', 'In2.Cu', (79.95, 13.7), (82.2, 11.6), 0.25)
+    ('ULPI_D3', 'F.Cu', (79.95, 13.75), (79.95, 13.7), 0.2)
+
+SCORE -0.252 bind=D3leg-vs-D2via (79.95, 13.7)->(82.2, 11.6)  V2=(80.28, 12.95)  V3=(79.95, 13.7)
+    ('ULPI_D2', 'F.Cu', (79.438, 13.25), (79.6, 13.3), 0.2)
+    ('ULPI_D2', 'F.Cu', (79.6, 13.3), (80.28, 12.95), 0.2)
+    ('ULPI_D2', 'In2.Cu', (80.28, 12.95), (80.0, 8.3), 0.25)
+    ('ULPI_D3', 'In2.Cu', (79.95, 13.7), (82.2, 11.6), 0.25)
+    ('ULPI_D3', 'F.Cu', (79.95, 13.75), (79.95, 13.7), 0.2)

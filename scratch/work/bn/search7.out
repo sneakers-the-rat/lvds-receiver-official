@@ -1,0 +1,53 @@
+11:41:05: Debug: Adding duplicate image handler for 'PNG file'
+11:41:05: Debug: Adding duplicate image handler for 'JPEG file'
+11:41:05: Debug: Adding duplicate image handler for 'TIFF file'
+11:41:05: Debug: Adding duplicate image handler for 'GIF file'
+11:41:05: Debug: Adding duplicate image handler for 'PNM file'
+11:41:05: Debug: Adding duplicate image handler for 'PCX file'
+11:41:05: Debug: Adding duplicate image handler for 'IFF file'
+11:41:05: Debug: Adding duplicate image handler for 'Windows icon file'
+11:41:05: Debug: Adding duplicate image handler for 'Windows cursor file'
+11:41:05: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+11:41:05: Debug: Adding duplicate image handler for 'TGA file'
+11:41:05: Debug: Adding duplicate image handler for 'XPM file'
+local pool: 341
+--- pair A: V2 x D3vertex (also D3via vs pool in solo) ---
+  D2 solo-ok: 72, D3 solo-ok: 78
+  joint -0.011  V2=(80.5, 12.55) VX=(80.85, 13.0)
+  joint -0.012  V2=(80.5, 12.55) VX=(80.8, 13.05)
+  joint -0.013  V2=(80.5, 12.55) VX=(80.9, 12.95)
+  joint -0.013  V2=(80.5, 12.55) VX=(80.75, 13.1)
+  joint -0.014  V2=(80.5, 12.55) VX=(80.7, 13.15)
+  joint -0.015  V2=(80.5, 12.55) VX=(80.65, 13.2)
+--- pair A binder diagnosis ---
+ V2=(80.5, 12.55) solo -0.005 | VX=(80.85, 13.0) solo +0.010
+   nn -0.011  via ULPI_D2(80.5, 12.55) vs trk ULPI_D3(80.85, 13.0)->(82.2, 11.6)
+   nn -0.005  via ULPI_D2(80.5, 12.55) vs trk ULPI_D3(79.93, 13.73)->(80.85, 13.0)
+   nn +0.029  trk ULPI_D2(79.438, 13.25)->(80.0, 13.12) vs via ULPI_D3(79.93, 13.73)
+ V2=(80.5, 12.55) solo -0.005 | VX=(80.8, 13.05) solo +0.010
+   nn -0.012  via ULPI_D2(80.5, 12.55) vs trk ULPI_D3(80.8, 13.05)->(82.2, 11.6)
+   nn +0.008  via ULPI_D2(80.5, 12.55) vs trk ULPI_D3(79.93, 13.73)->(80.8, 13.05)
+   nn +0.029  trk ULPI_D2(79.438, 13.25)->(80.0, 13.12) vs via ULPI_D3(79.93, 13.73)
+--- pair A fine grid ---
+  fine: D2 37, D3 77
+  joint -0.003  V2=(80.525, 12.5) VX=(80.7, 13.15)
+  joint -0.003  V2=(80.525, 12.5) VX=(80.725, 13.125)
+  joint -0.003  V2=(80.525, 12.5) VX=(80.75, 13.1)
+  joint -0.003  V2=(80.525, 12.5) VX=(80.775, 13.075)
+  joint -0.003  V2=(80.525, 12.5) VX=(80.8, 13.05)
+  joint -0.003  V2=(80.525, 12.5) VX=(80.825, 13.025)
+--- pair B: V4 vs fixed D3(pocket straight) + D6(80.85,14.8) couplings ---
+  joint +0.011  V4=(80.3, 14.35)
+  joint +0.007  V4=(80.35, 14.3)
+  joint +0.001  V4=(80.4, 14.25)
+  joint +0.001  V4=(80.45, 14.2)
+  joint -0.005  V4=(80.5, 14.2)
+  joint -0.020  V4=(80.3, 14.4)
+--- pair C: V5 x V6 ---
+  D5 solo-ok: 65, D6 solo-ok: 29
+  joint +0.018  V5=(80.1, 14.9) V6=(80.8, 14.6)
+  joint +0.018  V5=(80.1, 14.9) V6=(80.8, 14.65)
+  joint +0.018  V5=(80.1, 14.9) V6=(80.8, 14.7)
+  joint +0.018  V5=(80.1, 14.9) V6=(80.85, 14.6)
+  joint +0.018  V5=(80.1, 14.9) V6=(80.85, 14.65)
+  joint +0.018  V5=(80.1, 14.9) V6=(80.85, 14.7)
