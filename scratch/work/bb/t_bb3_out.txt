@@ -1,0 +1,168 @@
+05:02:53: Debug: Adding duplicate image handler for 'PNG file'
+05:02:53: Debug: Adding duplicate image handler for 'JPEG file'
+05:02:53: Debug: Adding duplicate image handler for 'TIFF file'
+05:02:53: Debug: Adding duplicate image handler for 'GIF file'
+05:02:53: Debug: Adding duplicate image handler for 'PNM file'
+05:02:53: Debug: Adding duplicate image handler for 'PCX file'
+05:02:53: Debug: Adding duplicate image handler for 'IFF file'
+05:02:53: Debug: Adding duplicate image handler for 'Windows icon file'
+05:02:53: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:02:53: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:02:53: Debug: Adding duplicate image handler for 'TGA file'
+05:02:53: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+05:02:55: Debug: Adding duplicate image handler for 'PNG file'
+05:02:55: Debug: Adding duplicate image handler for 'JPEG file'
+05:02:55: Debug: Adding duplicate image handler for 'TIFF file'
+05:02:55: Debug: Adding duplicate image handler for 'GIF file'
+05:02:55: Debug: Adding duplicate image handler for 'PNM file'
+05:02:55: Debug: Adding duplicate image handler for 'PCX file'
+05:02:55: Debug: Adding duplicate image handler for 'IFF file'
+05:02:55: Debug: Adding duplicate image handler for 'Windows icon file'
+05:02:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:02:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:02:55: Debug: Adding duplicate image handler for 'TGA file'
+05:02:55: Debug: Adding duplicate image handler for 'XPM file'
+--- In2 census x[72.6,74.62] y[8.0,13.0] (all nets) ---
+  +3V3A     via (73.62,10.62) r0.40
+  GND       via (72.90,9.45) r0.25
+  RBIAS     via (73.88,11.62) r0.30
+  RBIAS     seg (73.88,12.95)->(73.88,12.97)
+  RBIAS     seg (73.88,11.88)->(73.88,11.90)
+  RBIAS     seg (73.88,12.00)->(73.88,12.03)
+  RBIAS     seg (73.88,11.62)->(73.88,11.65)
+  RBIAS     seg (73.88,12.75)->(73.88,12.78)
+  RBIAS     seg (73.88,12.97)->(73.88,13.00)
+  RBIAS     seg (73.88,12.25)->(73.88,12.28)
+  RBIAS     seg (73.88,12.50)->(73.88,12.53)
+  RBIAS     seg (73.88,11.93)->(73.88,11.95)
+  RBIAS     seg (73.88,12.03)->(73.88,12.05)
+  RBIAS     seg (73.88,12.15)->(73.88,12.18)
+  RBIAS     seg (73.88,12.10)->(73.88,12.12)
+  RBIAS     seg (73.88,11.70)->(73.88,11.72)
+  RBIAS     seg (73.88,12.72)->(73.88,12.75)
+  RBIAS     seg (73.88,12.57)->(73.88,12.60)
+  RBIAS     seg (73.88,12.12)->(73.88,12.15)
+  RBIAS     seg (73.88,12.28)->(73.88,12.30)
+  RBIAS     seg (73.88,11.75)->(73.88,11.78)
+  RBIAS     seg (73.88,12.68)->(73.88,12.70)
+  RBIAS     seg (73.88,12.88)->(73.88,12.90)
+  RBIAS     seg (73.88,12.62)->(73.88,12.65)
+  RBIAS     seg (73.88,11.65)->(73.88,11.68)
+  RBIAS     seg (73.88,11.95)->(73.88,11.97)
+  RBIAS     seg (73.88,12.22)->(73.88,12.25)
+  RBIAS     seg (73.88,12.45)->(73.88,12.47)
+  RBIAS     seg (73.88,12.07)->(73.88,12.10)
+  RBIAS     seg (73.88,12.90)->(73.88,12.93)
+  RBIAS     seg (73.88,11.85)->(73.88,11.88)
+  RBIAS     seg (73.88,11.68)->(73.88,11.70)
+  RBIAS     seg (73.88,12.40)->(73.88,12.43)
+  RBIAS     seg (73.88,11.78)->(73.88,11.80)
+  RBIAS     seg (73.88,12.80)->(73.88,12.82)
+  RBIAS     seg (73.88,12.85)->(73.88,12.88)
+  RBIAS     seg (73.88,12.93)->(73.88,12.95)
+  RBIAS     seg (73.88,12.18)->(73.88,12.20)
+  RBIAS     seg (73.88,12.20)->(73.88,12.22)
+  RBIAS     seg (73.88,12.47)->(73.88,12.50)
+  RBIAS     seg (73.88,12.30)->(73.88,12.32)
+  RBIAS     seg (73.88,12.32)->(73.88,12.35)
+  RBIAS     seg (73.88,12.38)->(73.88,12.40)
+  RBIAS     seg (73.88,12.78)->(73.88,12.80)
+  RBIAS     seg (73.88,11.90)->(73.88,11.93)
+  RBIAS     seg (73.88,11.82)->(73.88,11.85)
+  RBIAS     seg (73.88,12.05)->(73.88,12.07)
+  RBIAS     seg (73.88,12.53)->(73.88,12.55)
+  RBIAS     seg (73.88,12.60)->(73.88,12.62)
+  RBIAS     seg (73.88,12.43)->(73.88,12.45)
+  RBIAS     seg (73.88,12.70)->(73.88,12.72)
+  RBIAS     seg (73.88,12.35)->(73.88,12.38)
+  RBIAS     seg (73.88,12.82)->(73.88,12.85)
+  RBIAS     seg (73.88,12.55)->(73.88,12.57)
+  RBIAS     seg (73.88,11.97)->(73.88,12.00)
+  RBIAS     seg (73.88,11.72)->(73.88,11.75)
+  RBIAS     seg (73.88,11.80)->(73.88,11.82)
+  RBIAS     seg (73.88,12.65)->(73.88,12.68)
+  XO        seg (72.88,10.88)->(72.88,11.12)
+  XO        seg (72.88,11.12)->(73.12,11.38)
+  XO        seg (72.62,10.38)->(72.62,10.62)
+  XO        seg (72.62,10.62)->(72.88,10.88)
+--- B census x[76.3,77.3] y[8.8,14.2] (all nets) ---
+  GND       via (76.97,9.60) r0.25
+  I2C_SCL   seg (77.12,8.88)->(77.38,9.12)
+  PHY_1V8   seg (77.45,10.10)->(76.95,11.05)
+  PHY_1V8   seg (76.95,11.05)->(76.95,14.99)
+  ULPI_STP  via (76.44,9.03) r0.25
+  ULPI_STP  seg (76.25,10.50)->(76.44,9.03)
+--- F census x[76.3,77.3] y[8.8,14.2] (all nets) ---
+  PHY_1V8   pad (77.17,10.43)
+  GND       pad (77.17,9.47)
+  PHY_1V8   pad (77.25,11.56)
+  XO        pad (76.75,11.56)
+  GND       seg (77.17,9.47)->(76.97,9.60)
+  GND       via (76.97,9.60) r0.25
+  PHY_1V8   seg (77.25,11.56)->(77.25,10.75)
+  ULPI_STP  via (76.44,9.03) r0.25
+  XO        seg (76.45,10.15)->(76.40,10.10)
+  XO        seg (76.55,10.25)->(76.50,10.20)
+  XO        seg (76.50,10.20)->(76.45,10.15)
+  XO        seg (76.72,11.28)->(76.72,11.30)
+  XO        seg (76.72,11.45)->(76.72,11.47)
+  XO        seg (76.72,11.50)->(76.72,11.53)
+  XO        seg (76.72,11.47)->(76.72,11.50)
+  XO        seg (76.50,10.75)->(76.55,10.70)
+  XO        seg (76.72,11.40)->(76.72,11.43)
+  XO        seg (76.55,10.65)->(76.55,10.60)
+  XO        seg (76.72,11.35)->(76.72,11.38)
+  XO        seg (76.72,11.32)->(76.72,11.35)
+  XO        seg (76.55,10.60)->(76.55,10.55)
+  XO        seg (76.72,11.38)->(76.72,11.40)
+  XO        seg (76.72,11.43)->(76.72,11.45)
+  XO        seg (76.75,11.12)->(76.72,11.15)
+  XO        seg (76.72,11.22)->(76.72,11.25)
+  XO        seg (76.72,11.15)->(76.72,11.18)
+  XO        seg (76.55,10.45)->(76.55,10.40)
+  XO        seg (76.72,11.30)->(76.72,11.32)
+  XO        seg (76.72,11.25)->(76.72,11.28)
+  XO        seg (76.55,10.55)->(76.55,10.50)
+  XO        seg (76.55,10.50)->(76.55,10.45)
+  XO        seg (76.72,11.53)->(76.75,11.56)
+  XO        seg (76.40,10.10)->(76.35,10.05)
+  XO        seg (76.72,11.20)->(76.72,11.22)
+  XO        seg (76.75,11.12)->(76.50,10.75)
+  XO        seg (76.55,10.70)->(76.55,10.65)
+  XO        seg (76.35,10.05)->(76.30,10.00)
+  XO        seg (76.55,10.40)->(76.55,10.35)
+  XO        seg (76.55,10.35)->(76.55,10.30)
+  XO        seg (76.72,11.18)->(76.72,11.20)
+  XO        seg (76.55,10.30)->(76.55,10.25)
+base frags ULPI_STP: 2
+base frags PHY_1V8A: 1
+base frags ULPI_CK: 1
+base frags XI: 3
+Move A rip: 60 STP B segs
+Move A gate: worst 5 [(-0.016, 'B', 'GND', (76.44, 10.96), (76.97, 9.6)), (-0.0, 'B', 'PHY_1V8', (76.44, 10.96), (76.95, 13.02)), (-0.0, 'B', 'PHY_1V8', (76.25, 13.18), (76.95, 13.02)), (0.005, 'B', 'PHY_1V8', (76.44, 10.96), (77.2, 10.57))]
+STP frags after A: 2 base 2
+Move B rip: 0 CK In2 segs
+Move B gate: worst 5 [(0.025, 'In2', '+3V3A', (74.47, 10.6), (73.62, 10.62)), (0.04, 'In2', '+3V3A', (74.47, 9.8), (73.62, 10.62))]
+CK frags after B: 2 base 1
+Move C rip: 7 items
+Move C segs gate: worst 5 [(-0.015, 'F', '+3V3A', (75.34, 10.6), (75.25, 11.56)), (0.065, 'F', '+3V3A', (75.34, 10.6), (74.69, 10.88)), (0.065, 'F', '+3V3A', (75.34, 10.6), (75.0, 11.12)), (0.074, 'F', 'XI', (75.34, 10.6), (76.25, 11.56)), (0.15, 'F', 'XO', (75.34, 10.6), (74.97, 9.6))]
+Move C via gate worst 5: [(-0.3, 'In2', 'ULPI_CK', (74.62, 9.94)), (-0.035, 'In2', 'ULPI_CK', (74.47, 9.8)), (-0.035, 'In2', 'ULPI_CK', (74.47, 10.6)), (-0.0, 'F', 'XO', (74.97, 9.6)), (-0.0, 'F', 'XO', (74.93, 9.57))]
+1V8A frags after C: 2 base 1
+--- pocket grid v2 (via d0.5) ---
+   (-0.03, 75.825, 10.275, 'In2', '+3V3A', (76.44, 10.19))
+   (-0.035, 75.8, 10.25, 'F', 'XO', (76.03, 9.78))
+   (-0.038, 75.875, 10.35, 'F', 'PHY_1V8A', (75.34, 10.6))
+   (-0.038, 75.85, 10.325, 'F', 'PHY_1V8A', (75.34, 10.6))
+   (-0.038, 75.85, 10.3, 'In2', '+3V3A', (76.44, 10.19))
+   (-0.039, 75.825, 10.3, 'F', 'PHY_1V8A', (75.34, 10.6))
+   (-0.04, 75.8, 10.275, 'F', 'PHY_1V8A', (75.34, 10.6))
+   (-0.04, 75.775, 10.25, 'F', 'PHY_1V8A', (75.34, 10.6))
+   (-0.041, 75.75, 10.225, 'F', 'PHY_1V8A', (75.34, 10.6))
+   (-0.043, 75.9, 10.375, 'In2', '+3V3A', (76.44, 10.19))
+frag check ULPI_STP: base 2 now 2 sig_equal=True
+frag check PHY_1V8A: base 1 now 2 sig_equal=False
+frag check ULPI_CK: base 1 now 2 sig_equal=False

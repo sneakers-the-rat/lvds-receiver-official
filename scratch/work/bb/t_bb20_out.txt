@@ -1,0 +1,38 @@
+05:27:47: Debug: Adding duplicate image handler for 'PNG file'
+05:27:47: Debug: Adding duplicate image handler for 'JPEG file'
+05:27:47: Debug: Adding duplicate image handler for 'TIFF file'
+05:27:47: Debug: Adding duplicate image handler for 'GIF file'
+05:27:47: Debug: Adding duplicate image handler for 'PNM file'
+05:27:47: Debug: Adding duplicate image handler for 'PCX file'
+05:27:47: Debug: Adding duplicate image handler for 'IFF file'
+05:27:47: Debug: Adding duplicate image handler for 'Windows icon file'
+05:27:47: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:27:47: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:27:47: Debug: Adding duplicate image handler for 'TGA file'
+05:27:47: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+05:27:48: Debug: Adding duplicate image handler for 'PNG file'
+05:27:48: Debug: Adding duplicate image handler for 'JPEG file'
+05:27:48: Debug: Adding duplicate image handler for 'TIFF file'
+05:27:48: Debug: Adding duplicate image handler for 'GIF file'
+05:27:48: Debug: Adding duplicate image handler for 'PNM file'
+05:27:48: Debug: Adding duplicate image handler for 'PCX file'
+05:27:48: Debug: Adding duplicate image handler for 'IFF file'
+05:27:48: Debug: Adding duplicate image handler for 'Windows icon file'
+05:27:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+05:27:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+05:27:48: Debug: Adding duplicate image handler for 'TGA file'
+05:27:48: Debug: Adding duplicate image handler for 'XPM file'
+XI: B vias [(75.62, 18.62, 0.3), (85.12, 19.12, 0.3)]
+   B seg endpoints with degree 1 (tips): [(75.62, 18.62), (85.12, 19.12)]
+CAP_DATA: B vias [(72.6, 19.3, 0.25), (69.9, 3.18, 0.25), (63.55, 11.95, 0.25), (64.7, 15.45, 0.25), (74.9, 22.3, 0.25)]
+   B seg endpoints with degree 1 (tips): [(72.6, 19.3), (74.9, 22.3)]
+DP_PHY: B vias [(46.62, 47.38, 0.3), (72.12, 15.88, 0.3)]
+   B seg endpoints with degree 1 (tips): [(46.62, 47.38), (72.12, 15.88)]
+ULPI_DIR: B vias [(67.5, 0.12, 0.25), (75.5, 17.52, 0.25), (66.25, 28.62, 0.25), (61.38, 11.75, 0.25), (62.62, 24.75, 0.25), (64.0, 3.66, 0.25), (66.75, 30.12, 0.25)]
+   B seg endpoints with degree 1 (tips): [(64.0, 3.66), (66.75, 30.12), (67.5, 0.12), (75.5, 17.52)]
+ULPI_NXT: B vias [(62.62, 12.75, 0.25), (68.0, 0.62, 0.25), (67.25, 29.62, 0.25), (74.5, 19.25, 0.25), (66.25, 24.62, 0.25)]
+   B seg endpoints with degree 1 (tips): [(62.62, 12.75), (66.25, 24.62)]
