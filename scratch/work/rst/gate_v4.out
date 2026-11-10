@@ -1,0 +1,38 @@
+13:13:37: Debug: Adding duplicate image handler for 'PNG file'
+13:13:37: Debug: Adding duplicate image handler for 'JPEG file'
+13:13:37: Debug: Adding duplicate image handler for 'TIFF file'
+13:13:37: Debug: Adding duplicate image handler for 'GIF file'
+13:13:37: Debug: Adding duplicate image handler for 'PNM file'
+13:13:37: Debug: Adding duplicate image handler for 'PCX file'
+13:13:37: Debug: Adding duplicate image handler for 'IFF file'
+13:13:37: Debug: Adding duplicate image handler for 'Windows icon file'
+13:13:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:13:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:13:37: Debug: Adding duplicate image handler for 'TGA file'
+13:13:37: Debug: Adding duplicate image handler for 'XPM file'
+13:13:38: Debug: Adding duplicate image handler for 'PNG file'
+13:13:38: Debug: Adding duplicate image handler for 'JPEG file'
+13:13:38: Debug: Adding duplicate image handler for 'TIFF file'
+13:13:38: Debug: Adding duplicate image handler for 'GIF file'
+13:13:38: Debug: Adding duplicate image handler for 'PNM file'
+13:13:38: Debug: Adding duplicate image handler for 'PCX file'
+13:13:38: Debug: Adding duplicate image handler for 'IFF file'
+13:13:38: Debug: Adding duplicate image handler for 'Windows icon file'
+13:13:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:13:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:13:38: Debug: Adding duplicate image handler for 'TGA file'
+13:13:38: Debug: Adding duplicate image handler for 'XPM file'
+ULPI_DIR F.Cu (76.5, 16.875)->(75.2, 17.45): negatives=1 worst=[(-0.14831024445836188, 'pad ULPI_NXT rect(75.875, 16.0, 76.125, 16.875)')]
+ULPI_NXT F.Cu (76.0, 16.875)->(75.85, 18.35): negatives=2 worst=[(-0.24468323991120733, 'via XI@(75.62, 18.62)'), (-0.22999999999999973, 'pad XI rect(75.44, 18.42, 76.0, 19.04)')]
+ULPI_NXT F.Cu (75.85, 18.35)->(75.3, 19.15): negatives=4 worst=[(-0.5703859933490942, 'via XI@(75.62, 18.62)'), (-0.30000000000000004, 'pad XI rect(75.44, 18.42, 76.0, 19.04)'), (-0.0360912703473934, 'trk CDR_SQUELCH (75.375, 19.625)->(75.625, 19.375)'), (-0.029715292478949495, 'trk CDR_SQUELCH (75.625, 19.375)->(77.875, 19.375)')]
+ULPI_NXT F.Cu (75.3, 19.15)->(74.65, 19.0): negatives=3 worst=[(-0.12195506185235136, 'pad XI rect(75.44, 18.42, 76.0, 19.04)'), (-0.0360912703473934, 'trk CDR_SQUELCH (75.375, 19.625)->(75.625, 19.375)'), (-0.029715292478949495, 'trk CDR_SQUELCH (75.625, 19.375)->(77.875, 19.375)')]
+ULPI_D0 F.Cu (74.125, 5.875)->(74.2, 6.62): negatives=12 worst=[(-0.1619019486853009, 'trk +3V3D (73.875, 6.875)->(73.0, 6.3)'), (-0.1355887450304569, 'trk +3V3D (73.95, 6.85)->(74.0, 6.9)'), (-0.13529424497073975, 'trk +3V3D (73.9, 6.8)->(73.95, 6.85)'), (-0.13090698931829306, 'trk +3V3D (74.0, 6.9)->(74.05, 6.95)'), (-0.12514288630928458, 'trk +3V3D (73.85, 6.75)->(73.9, 6.8)'), (-0.11250862079216042, 'trk +3V3D (74.05, 6.95)->(74.1, 7.0)'), (-0.10163690594810268, 'trk +3V3D (73.8, 6.7)->(73.85, 6.75)'), (-0.08206234591222791, 'trk +3V3D (74.1, 7.0)->(74.15, 7.05)'), (-0.06707843891257162, 'trk +3V3D (73.75, 6.7)->(73.8, 6.7)'), (-0.04210278356173339, 'trk +3V3D (74.15, 7.05)->(74.2, 7.1)'), (-0.01794420471893962, 'trk +3V3D (73.7, 6.65)->(73.75, 6.7)'), (-0.014878066911796745, 'trk +3V3D (74.125, 7.125)->(73.875, 6.875)')]
+ULPI_D0 F.Cu (74.2, 6.62)->(74.75, 6.78): negatives=13 worst=[(-0.1619019486853009, 'trk +3V3D (73.875, 6.875)->(73.0, 6.3)'), (-0.1355887450304569, 'trk +3V3D (73.95, 6.85)->(74.0, 6.9)'), (-0.13529424497073975, 'trk +3V3D (73.9, 6.8)->(73.95, 6.85)'), (-0.13090698931829306, 'trk +3V3D (74.0, 6.9)->(74.05, 6.95)'), (-0.12514288630928458, 'trk +3V3D (73.85, 6.75)->(73.9, 6.8)'), (-0.11250862079216042, 'trk +3V3D (74.05, 6.95)->(74.1, 7.0)'), (-0.10163690594810268, 'trk +3V3D (73.8, 6.7)->(73.85, 6.75)'), (-0.08219283320762513, 'trk +3V3D (74.1, 7.0)->(74.15, 7.05)'), (-0.06707843891257162, 'trk +3V3D (73.75, 6.7)->(73.8, 6.7)'), (-0.04814954541895636, 'trk +3V3D (74.15, 7.05)->(74.2, 7.1)'), (-0.01794420471893962, 'trk +3V3D (73.7, 6.65)->(73.75, 6.7)'), (-0.014878066911796745, 'trk +3V3D (74.125, 7.125)->(73.875, 6.875)'), (-0.014106257630283309, 'trk +3V3D (74.2, 7.1)->(74.25, 7.15)')]
+NN trk-trk ULPI_DIR (76.5, 16.875)->(75.2, 17.45) vs ULPI_NXT (76.0, 16.875)->(75.85, 18.35): -0.400
+NN trk-trk USB_RST (73.99, 10.58)->(73.92, 10.0) vs ULPI_CK (74.625, 9.4)->(74.38, 10.28): -0.002
+NN trk-trk USB_RST (73.99, 10.58)->(73.92, 10.0) vs ULPI_CK (74.38, 10.28)->(74.625, 11.0): -0.002
+NN trk-via I2C_SCL (74.125, 5.875)->(74.26, 6.72) vs via USB_RST@(74.72, 6.02): -0.010
+NN trk-trk BIST_DRV (74.62, 5.25)->(74.95, 5.02) vs SPI_MOSI (73.4, 5.186)->(75.1, 4.536): -0.026
+NN trk-trk BIST_DRV (74.95, 5.02)->(75.375, 5.05) vs SPI_MOSI (73.4, 5.186)->(75.1, 4.536): -0.026
+gate negatives: 41
+GATE FAILED — not building

@@ -1,0 +1,54 @@
+12:46:26: Debug: Adding duplicate image handler for 'PNG file'
+12:46:26: Debug: Adding duplicate image handler for 'JPEG file'
+12:46:26: Debug: Adding duplicate image handler for 'TIFF file'
+12:46:26: Debug: Adding duplicate image handler for 'GIF file'
+12:46:26: Debug: Adding duplicate image handler for 'PNM file'
+12:46:26: Debug: Adding duplicate image handler for 'PCX file'
+12:46:26: Debug: Adding duplicate image handler for 'IFF file'
+12:46:26: Debug: Adding duplicate image handler for 'Windows icon file'
+12:46:26: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:46:26: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:46:26: Debug: Adding duplicate image handler for 'TGA file'
+12:46:26: Debug: Adding duplicate image handler for 'XPM file'
+12:46:27: Debug: Adding duplicate image handler for 'PNG file'
+12:46:27: Debug: Adding duplicate image handler for 'JPEG file'
+12:46:27: Debug: Adding duplicate image handler for 'TIFF file'
+12:46:27: Debug: Adding duplicate image handler for 'GIF file'
+12:46:27: Debug: Adding duplicate image handler for 'PNM file'
+12:46:27: Debug: Adding duplicate image handler for 'PCX file'
+12:46:27: Debug: Adding duplicate image handler for 'IFF file'
+12:46:27: Debug: Adding duplicate image handler for 'Windows icon file'
+12:46:27: Debug: Adding duplicate image handler for 'Windows cursor file'
+12:46:27: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+12:46:27: Debug: Adding duplicate image handler for 'TGA file'
+12:46:27: Debug: Adding duplicate image handler for 'XPM file'
+USB_RST In2.Cu (74.45, 18.25)->(74.3, 17.35): negatives=1 worst=[(-0.1985358471636879, 'trk ULPI_NXT (74.1, 17.7)->(74.5, 19.25)')]
+ULPI_CK In2.Cu (75.48, 5.92)->(75.25, 6.75): negatives=2 worst=[(-0.0007359312880736157, 'trk +3V3A (75.55, 7.05)->(75.55, 7.1)'), (-0.0007359312880736157, 'trk +3V3A (75.6, 7.0)->(75.55, 7.05)')]
+ULPI_CK In2.Cu (75.25, 6.75)->(74.75, 7.05): negatives=2 worst=[(-0.0007359312880736157, 'trk +3V3A (75.55, 7.05)->(75.55, 7.1)'), (-0.0007359312880736157, 'trk +3V3A (75.6, 7.0)->(75.55, 7.05)')]
+ULPI_DIR F.Cu (76.5, 16.875)->(76.25, 17.7): negatives=1 worst=[(-0.02798467455447734, 'via ULPI_STP@(76.74, 17.88)')]
+ULPI_DIR F.Cu (76.25, 17.7)->(75.7, 18.6): negatives=3 worst=[(-0.5209430584957883, 'via XI@(75.62, 18.62)'), (-0.30000000000000004, 'pad XI rect(75.44, 18.42, 76.0, 19.04)'), (-0.02798467455447734, 'via ULPI_STP@(76.74, 17.88)')]
+ULPI_DIR F.Cu (75.7, 18.6)->(75.05, 19.05): negatives=2 worst=[(-0.5778640563788147, 'via XI@(75.62, 18.62)'), (-0.30000000000000004, 'pad XI rect(75.44, 18.42, 76.0, 19.04)')]
+ULPI_DIR B.Cu (75.05, 19.05)->(74.15, 18.85): negatives=1 worst=[(-0.03233652044351076, 'via DM_PHY@(73.62, 19.12)')]
+ULPI_DIR B.Cu (74.15, 18.85)->(74.42, 18.86): negatives=1 worst=[(-0.03233652044351076, 'via DM_PHY@(73.62, 19.12)')]
+ULPI_DIR B.Cu (74.28, 18.98)->(73.95, 18.55): negatives=1 worst=[(-0.01710366756570958, 'via DM_PHY@(73.62, 19.12)')]
+ULPI_NXT F.Cu (76.0, 16.875)->(75.65, 17.3): negatives=1 worst=[(-0.010526161643604454, 'pad GND rect(75.375, 16.0, 75.625, 16.875)')]
+ULPI_D0 F.Cu (74.125, 5.875)->(74.35, 6.75): negatives=12 worst=[(-0.12144660940673127, 'trk +3V3D (74.05, 6.95)->(74.1, 7.0)'), (-0.12144660940672622, 'trk +3V3D (74.1, 7.0)->(74.15, 7.05)'), (-0.11444487245360754, 'trk +3V3D (74.15, 7.05)->(74.2, 7.1)'), (-0.11444487245360332, 'trk +3V3D (74.0, 6.9)->(74.05, 6.95)'), (-0.09421134470680967, 'trk +3V3D (73.95, 6.85)->(74.0, 6.9)'), (-0.09421134470680828, 'trk +3V3D (74.2, 7.1)->(74.25, 7.15)'), (-0.08382793239029301, 'trk +3V3D (73.875, 6.875)->(73.0, 6.3)'), (-0.06269872298020049, 'trk +3V3D (73.9, 6.8)->(73.95, 6.85)'), (-0.06268943743823499, 'trk +3V3D (74.25, 7.15)->(74.3, 7.2)'), (-0.026726128340900962, 'trk +3V3D (73.85, 6.75)->(73.9, 6.8)'), (-0.022230743093129307, 'trk +3V3D (74.3, 7.2)->(74.3, 7.25)'), (-0.0007359312880755031, 'trk +3V3D (74.125, 7.125)->(73.875, 6.875)')]
+ULPI_D0 F.Cu (74.35, 6.75)->(75.2, 7.35): negatives=17 worst=[(-0.2565188702851581, 'pad +3V3D rect(74.175, 7.275, 74.975, 8.225)'), (-0.12144660940673127, 'trk +3V3D (74.05, 6.95)->(74.1, 7.0)'), (-0.12144660940672622, 'trk +3V3D (74.1, 7.0)->(74.15, 7.05)'), (-0.11457300150084512, 'trk +3V3D (74.15, 7.05)->(74.2, 7.1)'), (-0.11444487245360332, 'trk +3V3D (74.0, 6.9)->(74.05, 6.95)'), (-0.1025587682175377, 'trk +3V3D (74.2, 7.1)->(74.25, 7.15)'), (-0.09421134470680967, 'trk +3V3D (73.95, 6.85)->(74.0, 6.9)'), (-0.09054453493423029, 'trk +3V3D (74.25, 7.15)->(74.3, 7.2)'), (-0.08382793239029301, 'trk +3V3D (73.875, 6.875)->(73.0, 6.3)'), (-0.07853030165092287, 'trk +3V3D (74.3, 7.2)->(74.3, 7.25)'), (-0.06268943743824232, 'trk +3V3D (73.9, 6.8)->(73.95, 6.85)'), (-0.03768190848768502, 'trk +3V3D (74.3, 7.25)->(74.35, 7.3)'), (-0.0256676752043776, 'trk +3V3D (74.35, 7.3)->(74.4, 7.35)'), (-0.02223074309314052, 'trk +3V3D (73.85, 6.75)->(73.9, 6.8)'), (-0.013653441921084225, 'trk +3V3D (74.4, 7.35)->(74.45, 7.4)'), (-0.0016392086377768067, 'trk +3V3D (74.45, 7.4)->(74.45, 7.45)'), (-0.0007359312880755031, 'trk +3V3D (74.125, 7.125)->(73.875, 6.875)')]
+ULPI_D0 F.Cu (75.2, 7.35)->(75.875, 7.125): negatives=1 worst=[(-0.09999999999999148, 'pad +3V3D rect(74.175, 7.275, 74.975, 8.225)')]
+via USB_RST (74.45, 18.25): negatives=1 worst=[(-0.3485358471636879, 'trk[In2.Cu] ULPI_NXT (74.1, 17.7)->(74.5, 19.25)')]
+via ULPI_DIR (75.05, 19.05): negatives=2 worst=[(-0.05987181593737623, 'pad[F.Cu] XI rect(75.44, 18.42, 76.0, 19.04)'), (-0.03498251769624272, 'via XI@(75.62, 18.62)')]
+via ULPI_NXT (75.35, 17.75): negatives=3 worst=[(-0.4228180534637316, 'trk[B.Cu] XI (75.42, 18.15)->(75.48, 17.74)'), (-0.41961595189593726, 'trk[B.Cu] XI (75.48, 17.74)->(75.6, 16.95)'), (-0.14392118991506112, 'trk[B.Cu] XI (75.625, 18.625)->(75.42, 18.15)')]
+NN trk-trk USB_RST (74.45, 18.25)->(74.3, 17.35) vs ULPI_NXT (75.35, 17.75)->(74.1, 17.7): -0.425
+NN trk-trk USB_RST (74.3, 17.35)->(74.16, 16.55) vs ULPI_NXT (75.35, 17.75)->(74.1, 17.7): -0.067
+NN trk-trk USB_RST (74.16, 12.0)->(74.1, 11.5) vs RBIAS (73.72, 11.35)->(73.575, 11.625): -0.016
+NN trk-via USB_RST (74.16, 12.0)->(74.1, 11.5) vs via RBIAS@(73.72, 11.35): -0.141
+NN trk-trk USB_RST (74.1, 11.5)->(74.02, 10.9) vs RBIAS (73.72, 11.35)->(73.575, 11.625): -0.068
+NN trk-via USB_RST (74.1, 11.5)->(74.02, 10.9) vs via RBIAS@(73.72, 11.35): -0.193
+NN trk-trk USB_RST (74.02, 10.9)->(73.95, 10.25) vs ULPI_CK (74.625, 9.4)->(74.38, 10.28): -0.001
+NN trk-trk USB_RST (74.02, 10.9)->(73.95, 10.25) vs ULPI_CK (74.38, 10.28)->(74.625, 11.0): -0.001
+NN trk-via USB_RST (74.02, 10.9)->(73.95, 10.25) vs via RBIAS@(73.72, 11.35): -0.009
+NN trk-via ULPI_NXT (75.35, 17.75)->(74.1, 17.7) vs via USB_RST@(74.45, 18.25): -0.039
+NN trk-via ULPI_D0 (74.125, 5.875)->(74.35, 6.75) vs via USB_RST@(74.72, 6.2): -0.080
+NN trk-via I2C_SCL (74.125, 5.875)->(74.25, 6.7) vs via USB_RST@(74.72, 6.2): -0.035
+gate negatives: 63
+GATE FAILED — not building

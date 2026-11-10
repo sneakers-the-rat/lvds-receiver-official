@@ -1,0 +1,45 @@
+13:09:29: Debug: Adding duplicate image handler for 'PNG file'
+13:09:29: Debug: Adding duplicate image handler for 'JPEG file'
+13:09:29: Debug: Adding duplicate image handler for 'TIFF file'
+13:09:29: Debug: Adding duplicate image handler for 'GIF file'
+13:09:29: Debug: Adding duplicate image handler for 'PNM file'
+13:09:29: Debug: Adding duplicate image handler for 'PCX file'
+13:09:29: Debug: Adding duplicate image handler for 'IFF file'
+13:09:29: Debug: Adding duplicate image handler for 'Windows icon file'
+13:09:29: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:09:29: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:09:29: Debug: Adding duplicate image handler for 'TGA file'
+13:09:29: Debug: Adding duplicate image handler for 'XPM file'
+total items: 15476
+local pool: 1034
+RST solo: 786 top [(0.4513387859357489, (74.5, 17.25)), (0.4503048327204883, (74.5, 17.2)), (0.44303940071399267, (74.55, 17.25)), (0.43670739254841234, (74.55, 17.2))]
+DIR solo: 725 top [(0.4251410154434066, (74.45, 18.25)), (0.42128780492704526, (74.45, 18.2)), (0.4188669727560996, (74.4, 18.25)), (0.4173544647962037, (74.45, 18.15))]
+NXT solo: 725 top [(0.4251410154434066, (74.45, 18.25)), (0.42128780492704526, (74.45, 18.2)), (0.4188669727560996, (74.4, 18.25)), (0.4173544647962037, (74.45, 18.15))]
+decimated: RST 47 DIR 42 NXT 42
+RST x DIR pairs (decimated): 1180
+top triples (of streamed search):
+  score +1.159  RST (74.5, 17.25)  DIR (74.65, 19.0)  NXT (74.45, 18.25)
+  score +1.159  RST (74.5, 17.25)  DIR (74.45, 18.25)  NXT (74.65, 19.0)
+  score +1.121  RST (74.55, 17.45)  DIR (74.45, 18.25)  NXT (74.65, 19.0)
+  score +1.121  RST (74.55, 17.45)  DIR (74.65, 19.0)  NXT (74.45, 18.25)
+  score +1.108  RST (74.5, 17.25)  DIR (74.6, 19.25)  NXT (74.45, 18.25)
+  score +1.108  RST (74.5, 17.25)  DIR (74.45, 18.25)  NXT (74.6, 19.25)
+  score +1.090  RST (74.55, 17.05)  DIR (74.65, 19.0)  NXT (74.45, 18.25)
+  score +1.090  RST (74.55, 17.05)  DIR (74.45, 18.25)  NXT (74.65, 19.0)
+  score +1.069  RST (74.55, 17.45)  DIR (74.6, 19.25)  NXT (74.45, 18.25)
+  score +1.069  RST (74.55, 17.45)  DIR (74.45, 18.25)  NXT (74.6, 19.25)
+  score +1.061  RST (74.55, 17.05)  DIR (74.55, 18.65)  NXT (74.5, 17.95)
+  score +1.061  RST (74.55, 17.05)  DIR (74.5, 17.95)  NXT (74.55, 18.65)
+  score +1.054  RST (74.55, 17.05)  DIR (74.65, 19.0)  NXT (74.5, 17.95)
+  score +1.054  RST (74.55, 17.05)  DIR (74.5, 17.95)  NXT (74.65, 19.0)
+  score +1.044  RST (74.5, 17.25)  DIR (74.8, 19.15)  NXT (74.45, 18.25)
+  score +1.044  RST (74.5, 17.25)  DIR (74.45, 18.25)  NXT (74.8, 19.15)
+  score +1.039  RST (74.55, 17.05)  DIR (74.6, 19.25)  NXT (74.45, 18.25)
+  score +1.039  RST (74.55, 17.05)  DIR (74.45, 18.25)  NXT (74.6, 19.25)
+  score +1.038  RST (74.5, 17.25)  DIR (74.6, 19.25)  NXT (74.5, 18.45)
+  score +1.038  RST (74.5, 17.25)  DIR (74.5, 18.45)  NXT (74.6, 19.25)
+  score +1.026  RST (74.5, 17.25)  DIR (74.65, 19.0)  NXT (74.25, 18.25)
+  score +1.026  RST (74.5, 17.25)  DIR (74.25, 18.25)  NXT (74.65, 19.0)
+  score +1.007  RST (74.7, 17.2)  DIR (74.65, 19.0)  NXT (74.45, 18.25)
+  score +1.007  RST (74.7, 17.2)  DIR (74.45, 18.25)  NXT (74.65, 19.0)
+  score +1.006  RST (74.55, 17.45)  DIR (74.8, 19.15)  NXT (74.45, 18.25)

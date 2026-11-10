@@ -1,0 +1,192 @@
+13:20:05: Debug: Adding duplicate image handler for 'PNG file'
+13:20:05: Debug: Adding duplicate image handler for 'JPEG file'
+13:20:05: Debug: Adding duplicate image handler for 'TIFF file'
+13:20:05: Debug: Adding duplicate image handler for 'GIF file'
+13:20:05: Debug: Adding duplicate image handler for 'PNM file'
+13:20:05: Debug: Adding duplicate image handler for 'PCX file'
+13:20:05: Debug: Adding duplicate image handler for 'IFF file'
+13:20:05: Debug: Adding duplicate image handler for 'Windows icon file'
+13:20:05: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:20:05: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:20:05: Debug: Adding duplicate image handler for 'TGA file'
+13:20:05: Debug: Adding duplicate image handler for 'XPM file'
+13:20:05: Debug: Adding duplicate image handler for 'PNG file'
+13:20:05: Debug: Adding duplicate image handler for 'JPEG file'
+13:20:05: Debug: Adding duplicate image handler for 'TIFF file'
+13:20:05: Debug: Adding duplicate image handler for 'GIF file'
+13:20:05: Debug: Adding duplicate image handler for 'PNM file'
+13:20:05: Debug: Adding duplicate image handler for 'PCX file'
+13:20:05: Debug: Adding duplicate image handler for 'IFF file'
+13:20:05: Debug: Adding duplicate image handler for 'Windows icon file'
+13:20:05: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:20:05: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:20:05: Debug: Adding duplicate image handler for 'TGA file'
+13:20:05: Debug: Adding duplicate image handler for 'XPM file'
+13:20:18: Debug: Adding duplicate image handler for 'PNG file'
+13:20:18: Debug: Adding duplicate image handler for 'JPEG file'
+13:20:18: Debug: Adding duplicate image handler for 'TIFF file'
+13:20:18: Debug: Adding duplicate image handler for 'GIF file'
+13:20:18: Debug: Adding duplicate image handler for 'PNM file'
+13:20:18: Debug: Adding duplicate image handler for 'PCX file'
+13:20:18: Debug: Adding duplicate image handler for 'IFF file'
+13:20:18: Debug: Adding duplicate image handler for 'Windows icon file'
+13:20:18: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:20:18: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:20:18: Debug: Adding duplicate image handler for 'TGA file'
+13:20:18: Debug: Adding duplicate image handler for 'XPM file'
+gate negatives: 0
+gate clean
+netcodes: {'BIST_DRV': 12, 'DM_PHY': 38, 'I2C_SCL': 57, 'RBIAS': 73, 'SPI_MOSI': 80, 'ULPI_CK': 95, 'ULPI_D0': 96, 'ULPI_DIR': 104, 'ULPI_NXT': 105, 'USB_RST': 107}
+found DM_PHY seg (74.125, 18.625)->(74.125, 17.375) (w=0.25)
+found DM_PHY seg (74.125, 17.375)->(73.562, 17.0) (w=0.25)
+found DM_PHY seg (73.875, 18.875)->(74.125, 18.625) (w=0.25)
+found DM_PHY seg (73.625, 19.125)->(73.875, 18.875) (w=0.25)
+found ULPI_DIR seg (76.5, 16.438)->(76.46, 17.08) (w=0.2)
+found ULPI_DIR seg (76.46, 17.08)->(76.24, 17.42) (w=0.2)
+found ULPI_DIR seg (76.24, 17.42)->(76.08, 17.6) (w=0.2)
+found ULPI_DIR seg (76.08, 17.6)->(75.5, 17.8) (w=0.2)
+found ULPI_DIR seg (75.5, 17.8)->(74.84, 18.07) (w=0.2)
+found ULPI_DIR seg (74.84, 18.07)->(73.3, 18.42) (w=0.2)
+found ULPI_NXT seg (76.0, 16.438)->(75.9, 17.14) (w=0.2)
+found ULPI_NXT seg (75.9, 17.14)->(75.1, 17.32) (w=0.2)
+found ULPI_NXT seg (75.1, 17.32)->(74.94, 17.36) (w=0.2)
+found ULPI_NXT seg (74.94, 17.36)->(74.1, 17.7) (w=0.2)
+found ULPI_NXT seg (74.1, 17.7)->(74.5, 19.25) (w=0.2)
+found ULPI_CK seg (75.125, 5.875)->(75.25, 5.162) (w=0.2)
+found ULPI_CK seg (74.625, 6.375)->(74.875, 6.125) (w=0.25)
+found ULPI_CK seg (74.875, 6.125)->(75.125, 5.875) (w=0.2)
+found ULPI_CK seg (74.625, 6.375)->(74.625, 9.4) (w=0.25)
+found ULPI_CK seg (74.625, 9.4)->(74.32, 10.2) (w=0.25)
+found ULPI_CK seg (74.32, 10.2)->(74.625, 11.0) (w=0.25)
+found ULPI_CK seg (74.625, 11.0)->(74.625, 13.5) (w=0.25)
+found RBIAS seg (74.0, 11.562)->(73.875, 11.625) (w=0.2)
+found ULPI_D0 seg (74.125, 5.875)->(74.375, 6.125) (w=0.25)
+found ULPI_D0 seg (74.375, 6.125)->(74.625, 6.375) (w=0.25)
+found ULPI_D0 seg (74.625, 6.375)->(74.875, 6.625) (w=0.25)
+found ULPI_D0 seg (74.875, 6.625)->(75.375, 6.625) (w=0.25)
+found ULPI_D0 seg (75.375, 6.625)->(75.625, 6.875) (w=0.25)
+found ULPI_D0 seg (75.625, 6.875)->(75.875, 7.125) (w=0.25)
+found BIST_DRV seg (73.875, 6.125)->(74.125, 5.875) (w=0.25)
+found BIST_DRV seg (74.125, 5.875)->(74.375, 5.625) (w=0.25)
+found BIST_DRV seg (74.375, 5.625)->(74.625, 5.375) (w=0.25)
+found BIST_DRV seg (74.625, 5.375)->(74.875, 5.125) (w=0.25)
+found BIST_DRV seg (74.875, 5.125)->(75.375, 5.125) (w=0.25)
+found SPI_MOSI seg (71.9, 7.25)->(73.4, 5.2) (w=0.2)
+found SPI_MOSI seg (73.4, 5.2)->(75.1, 4.55) (w=0.2)
+found SPI_MOSI seg (75.1, 4.55)->(76.4, 3.35) (w=0.2)
+found I2C_SCL seg (74.125, 5.875)->(74.375, 6.125) (w=0.25)
+found I2C_SCL seg (74.375, 6.125)->(74.625, 6.375) (w=0.25)
+found I2C_SCL seg (74.625, 6.375)->(74.875, 6.625) (w=0.25)
+found I2C_SCL seg (74.875, 6.625)->(75.125, 6.875) (w=0.25)
+found RBIAS seg (73.875, 12.95)->(73.875, 12.975) (w=0.25)
+found RBIAS seg (74.0, 15.25)->(74.0, 15.275) (w=0.25)
+found RBIAS seg (74.0, 14.75)->(74.0, 14.775) (w=0.25)
+found RBIAS seg (73.875, 13.375)->(73.875, 13.4) (w=0.25)
+found RBIAS seg (74.0, 16.025)->(74.0, 16.05) (w=0.25)
+found RBIAS seg (74.0, 14.4)->(74.0, 14.425) (w=0.25)
+found RBIAS seg (74.0, 14.225)->(74.0, 14.25) (w=0.25)
+found RBIAS seg (73.875, 11.875)->(73.875, 11.9) (w=0.25)
+found RBIAS seg (74.0, 14.675)->(74.0, 14.7) (w=0.25)
+found RBIAS seg (73.875, 12.0)->(73.875, 12.025) (w=0.25)
+found RBIAS seg (73.8, 16.45)->(73.775, 16.475) (w=0.25)
+found RBIAS seg (73.875, 11.625)->(73.875, 11.65) (w=0.25)
+found RBIAS seg (74.0, 15.8)->(74.0, 15.825) (w=0.25)
+found RBIAS seg (73.95, 16.175)->(73.95, 16.2) (w=0.25)
+found RBIAS seg (73.9, 13.725)->(73.9, 13.75) (w=0.25)
+found RBIAS seg (73.875, 12.75)->(73.875, 12.775) (w=0.25)
+found RBIAS seg (73.775, 16.475)->(73.75, 16.5) (w=0.25)
+found RBIAS seg (73.875, 12.975)->(73.875, 13.0) (w=0.25)
+found RBIAS seg (74.0, 15.35)->(74.0, 15.375) (w=0.25)
+found RBIAS seg (73.975, 14.025)->(73.975, 14.05) (w=0.25)
+found RBIAS seg (73.925, 16.275)->(73.9, 16.3) (w=0.25)
+found RBIAS seg (73.875, 12.25)->(73.875, 12.275) (w=0.25)
+found RBIAS seg (74.0, 14.875)->(74.0, 14.9) (w=0.25)
+found RBIAS seg (74.0, 15.15)->(74.0, 15.175) (w=0.25)
+found RBIAS seg (74.0, 15.325)->(74.0, 15.35) (w=0.25)
+found RBIAS seg (73.875, 12.5)->(73.875, 12.525) (w=0.25)
+found RBIAS seg (74.0, 14.55)->(74.0, 14.575) (w=0.25)
+found RBIAS seg (73.925, 13.85)->(73.925, 13.875) (w=0.25)
+found RBIAS seg (73.875, 11.925)->(73.875, 11.95) (w=0.25)
+found RBIAS seg (74.0, 15.85)->(74.0, 15.875) (w=0.25)
+found RBIAS seg (74.0, 15.7)->(74.0, 15.725) (w=0.25)
+found RBIAS seg (73.875, 12.025)->(73.875, 12.05) (w=0.25)
+found RBIAS seg (74.0, 14.275)->(74.0, 14.3) (w=0.25)
+found RBIAS seg (73.875, 12.15)->(73.875, 12.175) (w=0.25)
+found RBIAS seg (73.875, 13.45)->(73.875, 13.475) (w=0.25)
+found RBIAS seg (73.875, 13.475)->(73.875, 13.5) (w=0.25)
+found RBIAS seg (73.925, 16.25)->(73.925, 16.275) (w=0.25)
+found RBIAS seg (74.0, 15.425)->(74.0, 15.45) (w=0.25)
+found RBIAS seg (74.0, 16.0)->(74.0, 16.025) (w=0.25)
+found RBIAS seg (73.875, 12.1)->(73.875, 12.125) (w=0.25)
+found RBIAS seg (73.875, 11.7)->(73.875, 11.725) (w=0.25)
+found RBIAS seg (73.875, 13.2)->(73.875, 13.225) (w=0.25)
+found RBIAS seg (74.0, 15.5)->(74.0, 15.525) (w=0.25)
+found RBIAS seg (74.0, 15.675)->(74.0, 15.7) (w=0.25)
+found RBIAS seg (73.825, 16.4)->(73.825, 16.425) (w=0.25)
+found RBIAS seg (74.0, 14.425)->(74.0, 14.45) (w=0.25)
+found RBIAS seg (74.0, 14.825)->(74.0, 14.85) (w=0.25)
+found RBIAS seg (73.875, 12.725)->(73.875, 12.75) (w=0.25)
+found RBIAS seg (73.875, 13.15)->(73.875, 13.175) (w=0.25)
+found RBIAS seg (73.875, 12.575)->(73.875, 12.6) (w=0.25)
+found RBIAS seg (73.875, 12.125)->(73.875, 12.15) (w=0.25)
+found RBIAS seg (74.0, 15.925)->(74.0, 15.95) (w=0.25)
+found RBIAS seg (73.875, 12.275)->(73.875, 12.3) (w=0.25)
+found RBIAS seg (73.875, 11.75)->(73.875, 11.775) (w=0.25)
+found RBIAS seg (73.875, 12.675)->(73.875, 12.7) (w=0.25)
+found RBIAS seg (73.875, 12.875)->(73.875, 12.9) (w=0.25)
+found RBIAS seg (73.875, 12.625)->(73.875, 12.65) (w=0.25)
+found RBIAS seg (73.975, 14.05)->(73.975, 14.075) (w=0.25)
+found RBIAS seg (74.0, 14.85)->(74.0, 14.875) (w=0.25)
+found RBIAS seg (73.9, 13.825)->(73.925, 13.85) (w=0.25)
+found RBIAS seg (74.0, 16.075)->(73.975, 16.1) (w=0.25)
+found RBIAS seg (73.875, 13.0)->(73.875, 13.025) (w=0.25)
+found RBIAS seg (73.875, 11.65)->(73.875, 11.675) (w=0.25)
+found RBIAS seg (74.0, 14.175)->(74.0, 14.2) (w=0.25)
+found RBIAS seg (74.0, 15.775)->(74.0, 15.8) (w=0.25)
+found RBIAS seg (73.9, 13.8)->(73.9, 13.825) (w=0.25)
+found RBIAS seg (74.0, 14.925)->(74.0, 14.95) (w=0.25)
+found RBIAS seg (73.9, 13.775)->(73.9, 13.8) (w=0.25)
+found RBIAS seg (73.875, 11.95)->(73.875, 11.975) (w=0.25)
+found RBIAS seg (73.75, 16.5)->(73.725, 16.525) (w=0.25)
+found RBIAS seg (74.0, 15.025)->(74.0, 15.05) (w=0.25)
+found RBIAS seg (73.875, 12.225)->(73.875, 12.25) (w=0.25)
+found RBIAS seg (74.0, 15.6)->(74.0, 15.625) (w=0.25)
+found RBIAS seg (74.0, 15.0)->(74.0, 15.025) (w=0.25)
+found RBIAS seg (74.0, 14.375)->(74.0, 14.4) (w=0.25)
+found RBIAS seg (74.0, 14.125)->(74.0, 14.15) (w=0.25)
+found RBIAS seg (73.95, 13.95)->(73.95, 13.975) (w=0.25)
+found RBIAS seg (73.875, 12.45)->(73.875, 12.475) (w=0.25)
+found RBIAS seg (74.0, 14.7)->(74.0, 14.725) (w=0.25)
+found RBIAS seg (74.0, 15.725)->(74.0, 15.75) (w=0.25)
+found RBIAS seg (73.875, 12.075)->(73.875, 12.1) (w=0.25)
+found RBIAS seg (74.0, 15.575)->(74.0, 15.6) (w=0.25)
+found RBIAS seg (73.875, 13.025)->(73.875, 13.05) (w=0.25)
+found RBIAS seg (74.0, 14.8)->(74.0, 14.825) (w=0.25)
+found RBIAS seg (73.925, 13.9)->(73.925, 13.925) (w=0.25)
+found RBIAS seg (74.0, 15.2)->(74.0, 15.225) (w=0.25)
+found RBIAS seg (73.875, 12.9)->(73.875, 12.925) (w=0.25)
+found RBIAS seg (73.875, 11.85)->(73.875, 11.875) (w=0.25)
+found RBIAS seg (73.875, 13.6)->(73.875, 13.625) (w=0.25)
+found RBIAS seg (73.875, 13.5)->(73.875, 13.525) (w=0.25)
+found RBIAS seg (74.0, 14.15)->(74.0, 14.175) (w=0.25)
+found RBIAS seg (74.0, 14.45)->(74.0, 14.475) (w=0.25)
+found RBIAS seg (73.875, 11.675)->(73.875, 11.7) (w=0.25)
+found RBIAS seg (74.0, 14.95)->(74.0, 14.975) (w=0.25)
+found RBIAS seg (73.875, 13.35)->(73.875, 13.375) (w=0.25)
+found RBIAS seg (73.875, 12.4)->(73.875, 12.425) (w=0.25)
+found RBIAS seg (74.0, 15.05)->(74.0, 15.075) (w=0.25)
+found RBIAS seg (74.0, 15.65)->(74.0, 15.675) (w=0.25)
+found RBIAS seg (73.875, 11.775)->(73.875, 11.8) (w=0.25)
+found RBIAS seg (74.0, 14.775)->(74.0, 14.8) (w=0.25)13:20:34: Debug: Adding duplicate image handler for 'PNG file'
+13:20:34: Debug: Adding duplicate image handler for 'JPEG file'
+13:20:34: Debug: Adding duplicate image handler for 'TIFF file'
+13:20:34: Debug: Adding duplicate image handler for 'GIF file'
+13:20:34: Debug: Adding duplicate image handler for 'PNM file'
+13:20:34: Debug: Adding duplicate image handler for 'PCX file'
+13:20:34: Debug: Adding duplicate image handler for 'IFF file'
+13:20:34: Debug: Adding duplicate image handler for 'Windows icon file'
+13:20:34: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:20:34: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:20:34: Debug: Adding duplicate image handler for 'TGA file'
+13:20:34: Debug: Adding duplicate image handler for 'XPM file'
+Segmentation fault

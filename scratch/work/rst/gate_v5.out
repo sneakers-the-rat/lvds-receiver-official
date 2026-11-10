@@ -1,0 +1,31 @@
+13:17:17: Debug: Adding duplicate image handler for 'PNG file'
+13:17:17: Debug: Adding duplicate image handler for 'JPEG file'
+13:17:17: Debug: Adding duplicate image handler for 'TIFF file'
+13:17:17: Debug: Adding duplicate image handler for 'GIF file'
+13:17:17: Debug: Adding duplicate image handler for 'PNM file'
+13:17:17: Debug: Adding duplicate image handler for 'PCX file'
+13:17:17: Debug: Adding duplicate image handler for 'IFF file'
+13:17:17: Debug: Adding duplicate image handler for 'Windows icon file'
+13:17:17: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:17:17: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:17:17: Debug: Adding duplicate image handler for 'TGA file'
+13:17:17: Debug: Adding duplicate image handler for 'XPM file'
+13:17:18: Debug: Adding duplicate image handler for 'PNG file'
+13:17:18: Debug: Adding duplicate image handler for 'JPEG file'
+13:17:18: Debug: Adding duplicate image handler for 'TIFF file'
+13:17:18: Debug: Adding duplicate image handler for 'GIF file'
+13:17:18: Debug: Adding duplicate image handler for 'PNM file'
+13:17:18: Debug: Adding duplicate image handler for 'PCX file'
+13:17:18: Debug: Adding duplicate image handler for 'IFF file'
+13:17:18: Debug: Adding duplicate image handler for 'Windows icon file'
+13:17:18: Debug: Adding duplicate image handler for 'Windows cursor file'
+13:17:18: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+13:17:18: Debug: Adding duplicate image handler for 'TGA file'
+13:17:18: Debug: Adding duplicate image handler for 'XPM file'
+ULPI_DIR F.Cu (76.5, 16.875)->(75.6, 17.9): negatives=1 worst=[(-0.01820991560605542, 'pad ULPI_NXT rect(75.875, 16.0, 76.125, 16.875)')]
+ULPI_DIR F.Cu (75.6, 17.9)->(75.35, 18.2): negatives=2 worst=[(-0.0937885817170816, 'via XI@(75.62, 18.62)'), (-0.06230271351990224, 'pad XI rect(75.44, 18.42, 76.0, 19.04)')]
+ULPI_DIR F.Cu (75.35, 18.2)->(74.75, 18.65): negatives=2 worst=[(-0.09499999999999886, 'via XI@(75.62, 18.62)'), (-0.06999999999999604, 'pad XI rect(75.44, 18.42, 76.0, 19.04)')]
+ULPI_NXT F.Cu (76.0, 16.875)->(75.15, 17.6): negatives=1 worst=[(-0.0566450227189719, 'pad GND rect(75.375, 16.0, 75.625, 16.875)')]
+NN trk-trk ULPI_DIR (76.5, 16.875)->(75.6, 17.9) vs ULPI_NXT (76.0, 16.875)->(75.15, 17.6): -0.024
+gate negatives: 7
+GATE FAILED — not building
