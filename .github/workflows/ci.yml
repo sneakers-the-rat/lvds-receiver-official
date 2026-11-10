@@ -181,6 +181,12 @@ jobs:
 
       # Fab export runs even when ERC/DRC failed: the site should show
       # the board as it currently is, not hide it behind a red check.
+      # make_fab.sh exports the CURRENT frontier board (the newest
+      # exp board, via commit_pass.resolve_board — it used to fab
+      # the pre-expansion base board) plus the schematic PDF/SVG;
+      # the build-site job has no KiCad, so this artefact is how
+      # its /board/ and /schematic/ pages stay current (site_data.py
+      # exports them itself wherever KiCad is available).
       - name: Fabricate outputs (Gerbers, drill, BOM, CPL, renders)
         id: fab
         if: ${{ !cancelled() }}

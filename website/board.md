@@ -6,6 +6,8 @@ permalink: /board/
 
 ## PCB — top and bottom
 
+{% if site.data.board.board_file %}<p><small>Renders of <code>{{ site.data.board.board_file }}</code> — {{ site.data.board.renders_source }}. The site build exports these from the current board on every build; they are never a hand-refreshed copy.</small></p>{% endif %}
+
 ### Routes — all layers and each copper layer
 
 {% comment %}Selectable gallery: the all-layers composite plus each
@@ -34,15 +36,15 @@ scripts/site_data.py), so the render stands alone in that tab.{% endcomment %}
 </div>
 <script src="{{ '/assets/js/routes-gallery.js' | relative_url }}" defer></script>
 {% else %}
-<p><em>Layer renders not generated — run scripts/make_fab.sh.</em></p>
+<p><em>Layer renders not generated — the site build could not export them (no KiCad available and no CI fab artefact staged).</em></p>
 {% endif %}
 
 ### Top
 
-{% if site.data.board.top %}<img src="{{ '/assets/gen/board-top.svg' | relative_url }}" alt="PCB top">{% else %}<p><em>PCB top render not generated — run scripts/make_fab.sh.</em></p>{% endif %}
+{% if site.data.board.top %}<img src="{{ '/assets/gen/board-top.svg' | relative_url }}" alt="PCB top">{% else %}<p><em>PCB top render not generated — the site build could not export it (no KiCad available and no CI fab artefact staged).</em></p>{% endif %}
 
 ### Bottom
 
-{% if site.data.board.bottom %}<img src="{{ '/assets/gen/board-bottom.svg' | relative_url }}" alt="PCB bottom">{% else %}<p><em>PCB bottom render not generated — run scripts/make_fab.sh.</em></p>{% endif %}
+{% if site.data.board.bottom %}<img src="{{ '/assets/gen/board-bottom.svg' | relative_url }}" alt="PCB bottom">{% else %}<p><em>PCB bottom render not generated — the site build could not export it (no KiCad available and no CI fab artefact staged).</em></p>{% endif %}
 
 Per-layer SVG: {% if site.data.board.layers.size > 0 %}{% for l in site.data.board.layers %}<a href="{{ '/assets/gen/' | append: l.file | relative_url }}">{{ l.name }}</a>{% unless forloop.last %} · {% endunless %}{% endfor %}{% else %}<em>per-layer SVGs not generated</em>{% endif %}

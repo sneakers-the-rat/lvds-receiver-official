@@ -1,0 +1,29 @@
+ERC report (2026-11-08T22:54:27+0000, Encoding UTF8)
+
+***** Sheet /
+[lib_symbol_issues]: Symbol 'PWR_FLAG' has been modified in library 'power'
+    ; warning
+    @(81.2800 mm, 560.0700 mm): Symbol #FLG81 [PWR_FLAG]
+[lib_symbol_issues]: Symbol 'PWR_FLAG' has been modified in library 'power'
+    ; warning
+    @(106.6800 mm, 560.0700 mm): Symbol #FLG106 [PWR_FLAG]
+[lib_symbol_issues]: Symbol 'PWR_FLAG' has been modified in library 'power'
+    ; warning
+    @(55.8800 mm, 560.0700 mm): Symbol #FLG55 [PWR_FLAG]
+[lib_symbol_issues]: Symbol 'PWR_FLAG' has been modified in library 'power'
+    ; warning
+    @(132.0800 mm, 560.0700 mm): Symbol #FLG132 [PWR_FLAG]
+[lib_symbol_issues]: Symbol 'PWR_FLAG' has been modified in library 'power'
+    ; warning
+    @(157.4800 mm, 560.0700 mm): Symbol #FLG157 [PWR_FLAG]
+[lib_symbol_issues]: Symbol 'PWR_FLAG' has been modified in library 'power'
+    ; warning
+    @(182.8800 mm, 560.0700 mm): Symbol #FLG182 [PWR_FLAG]
+[lib_symbol_issues]: Symbol 'PWR_FLAG' has been modified in library 'power'
+    ; warning
+    @(30.4800 mm, 560.0700 mm): Symbol #FLG30 [PWR_FLAG]
+[lib_symbol_issues]: Symbol 'PWR_FLAG' has been modified in library 'power'
+    ; warning
+    @(208.2800 mm, 560.0700 mm): Symbol #FLG208 [PWR_FLAG]
+
+ ** ERC messages: 8  Errors 0  Warnings 8

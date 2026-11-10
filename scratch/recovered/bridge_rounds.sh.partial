@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+# Bridge campaign rounds on the working board.
+# Each round: parse target nets (all nets with >1 group, GND last/excluded
+# per ROUND call args) from the latest audit, run one batched bridge.py
+# invocation (one load, one save+refill), re-audit, append a tally line.
+# Usage: bridge_rounds.sh IN_BOARD WORK_BOARD AUDIT0 ROUNDS
+set -u
+cd ~/workspace/pdlvds-route
+IN=$1; WORK=$2; AUD0=$3; ROUNDS=${4:-4}
+cp "$IN" "$WORK"
+prev_audit=$AUD0
+for r in $(seq 1 "$ROUNDS"); do
+  nets=$(python3 - "$prev_audit" <<'EOF'
+import re, sys
+rows = []
+for line in open(sys.argv[1]):
+    m = re.match(r'  UNCONNECTED (\S+): (\d+) groups', line)
+    if m and m.group(1) != 'GND':
+        rows.append((m.group(1), int(m.group(2))))
+rows.sort(key=lambda kv: -kv[1])
+print(' '.join(n for n, _ in rows))
+EOF
+)
+  echo "=== bridge round $r: $(echo $nets | wc -w) nets ==="
+  xvfb-run -a python3 -u hw/bridge.py "$WORK" "$WORK.tmp.kicad_pcb" $nets \
+      > "results/bridge-r$r.log" 2>&1
+  mv "$WORK.tmp.kicad_pcb" "$WORK"
+  xvfb-run -a python3 hw/check_pcb.py "$WORK" \
+      > "results/audit-bridge-r$r.txt" 2>&1
+  python3 - "results/audit-bridge-r$r.txt" "$r" <<'EOF'
+import re, sys
+tot = 0; nets = 0; viol = None; unc = None
+for line in open(sys.argv[1]):
+    m = re.match(r'  UNCONNECTED (\S+): (\d+) groups', line)
+    if m:
+        tot += int(m.group(2)); nets += 1
+    if 'unconnected nets:' in line:
+        unc = line.split(':')[1].strip()
+    if 'clearance violations:' in line:
+        viol = line.split(':')[1].strip()
+print(f"round {sys.argv[2]}: unconnected nets={unc} total groups={tot} "
+      f"violations={viol}")
+EOF
+  prev_audit="results/audit-bridge-r$r.txt"
+done
+echo "campaign done"
