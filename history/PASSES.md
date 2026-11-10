@@ -1780,6 +1780,14 @@ pass 0217: district prep: PHY_1V8A notch journey re-laid compact (via (75.27,10.
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 120 · Unconnected nets: 2 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 218 — 2026-11-10T05:46:24Z · commit `0dabc10`
+
+Board: `hw/pdlvds_rx.exp256.kicad_pcb` · Commit: `0dabc106594f76dae7bc368ef57e23198e94522f`
+
+pass 218: XI pocket build (design v10 pocket half): ULPI_STP B descent re-laid east as 3-seg jog (76.44,9.03)->(76.42,9.5)->(76.425,12.9)->(76.05,13.45) clearing GND via (76.975,9.6) at +0.005 model-exact; ULPI_CK In2 vertical jogged west around the pocket (74.625,9.4)->(74.32,10.2)->(74.625,11.0); PHY_1V8A notch via moved (75.45,10.6)->(74.99,10.28) with single F stub; XO final approach re-laid off the (76.5,10.75) vertex to column x76.55->(76.56,10.8)->(76.725,11.15); XI pocket via (75.82,10.30) + F leg (76.18,10.94) to U7.28 centre. KiCad DRC: 4 J1 copper_edge only + 1 via_dangling (the pocket via, awaits the XI ride). check_pcb nets 2 {XI, USB_RST}, census 120, courtyard 0, blind SH1-21. XI west ride still open: groute A* NO PATH on exp256 and on a DIR-ripped variant; flood diagnosis: goal island is 25 F cells, start flood reaches the pocket via's B cell - the seal is the pocket via transition.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 120 · Unconnected nets: 2 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
