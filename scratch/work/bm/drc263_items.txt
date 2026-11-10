@@ -1,0 +1,70 @@
+solder_mask_bridge: Front solder mask aperture bridges items with different nets :: Track [+3V3A] on F.Cu, length 0.4206 mm | Pad 32 [RBIAS] of U7 on F.Cu
+solder_mask_bridge: Front solder mask aperture bridges items with different nets :: Track [PHY_1V8A] on F.Cu, length 0.4782 mm | Pad 30 [+3V3A] of U7 on F.Cu
+solder_mask_bridge: Front solder mask aperture bridges items with different nets :: Track [PHY_1V8A] on F.Cu, length 0.4243 mm | Pad 30 [+3V3A] of U7 on F.Cu
+solder_mask_bridge: Front solder mask aperture bridges items with different nets :: Via [ULPI_D3] on F.Cu - B.Cu | Pad 1 [+3V3D] of C48 on F.Cu
+solder_mask_bridge: Front solder mask aperture bridges items with different nets :: Track [XI] on F.Cu, length 0.7425 mm | Pad 29 [PHY_1V8A] of U7 on F.Cu
+solder_mask_bridge: Front solder mask aperture bridges items with different nets :: Track [XO] on F.Cu, length 0.4000 mm | Pad 1 [PHY_1V8] of C22 on F.Cu
+solder_mask_bridge: Front solder mask aperture bridges items with different nets :: Track [XO] on F.Cu, length 0.4687 mm | Pad 1 [PHY_1V8] of C22 on F.Cu
+copper_edge_clearance: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3063 mm) :: NPTH pad of J1 | Pad A12 [GND] of J1 on F.Cu
+copper_edge_clearance: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm) :: Segment on Edge.Cuts | PTH pad S1 [<no net>] of J1
+copper_edge_clearance: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2982 mm) :: NPTH pad of J1 | PTH pad S1 [<no net>] of J1
+copper_edge_clearance: Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm) :: Segment on Edge.Cuts | PTH pad S1 [<no net>] of J1
+shorting_items: Items shorting two nets (nets +3V3A and RBIAS) :: Track [+3V3A] on F.Cu, length 0.4206 mm | Pad 32 [RBIAS] of U7 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0177 mm) :: Track [+3V3A] on F.Cu, length 0.5402 mm | Pad 32 [RBIAS] of U7 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1380 mm) :: Track [+3V3A] on F.Cu, length 0.2052 mm | Pad 32 [RBIAS] of U7 on F.Cu
+shorting_items: Items shorting two nets (nets +3V3A and I2C_SCL) :: Via [+3V3A] on F.Cu - B.Cu | Track [I2C_SCL] on In2.Cu, length 11.5000 mm
+shorting_items: Items shorting two nets (nets +3V3A and ULPI_D7) :: Via [+3V3A] on F.Cu - B.Cu | Track [ULPI_D7] on B.Cu, length 3.7014 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0941 mm) :: Via [+3V3A] on F.Cu - B.Cu | Via [ULPI_D7] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1454 mm) :: Track [+3V3A] on In2.Cu, length 0.2500 mm | Via [ULPI_D7] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1750 mm) :: Track [PHY_1V8] on F.Cu, length 0.8016 mm | Pad 25 [+3V3A] of U7 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1750 mm) :: Track [PHY_1V8] on F.Cu, length 0.2804 mm | Pad 25 [+3V3A] of U7 on F.Cu
+shorting_items: Items shorting two nets (nets PHY_1V8A and +3V3A) :: Track [PHY_1V8A] on F.Cu, length 0.4782 mm | Pad 30 [+3V3A] of U7 on F.Cu
+tracks_crossing: Tracks crossing :: Track [+3V3A] on B.Cu, length 0.7539 mm | Track [ULPI_D7] on B.Cu, length 3.7014 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0700 mm) :: Track [PHY_1V8A] on F.Cu, length 0.7684 mm | Pad 30 [+3V3A] of U7 on F.Cu
+shorting_items: Items shorting two nets (nets PHY_1V8A and +3V3A) :: Track [PHY_1V8A] on F.Cu, length 0.4243 mm | Pad 30 [+3V3A] of U7 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1500 mm) :: Track [+3V3A] on B.Cu, length 1.9000 mm | Via [ULPI_D3] on F.Cu - B.Cu
+shorting_items: Items shorting two nets (nets +3V3A and ULPI_D7) :: Track [+3V3A] on B.Cu, length 2.1427 mm | Via [ULPI_D7] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0250 mm) :: Track [+3V3D] on B.Cu, length 6.5000 mm | Via [ULPI_D6] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1683 mm) :: Track [ULPI_D0] on F.Cu, length 0.3780 mm | Track [ULPI_D1] on F.Cu, length 0.6801 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1683 mm) :: Track [ULPI_D0] on F.Cu, length 0.5142 mm | Track [ULPI_D1] on F.Cu, length 0.6801 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1321 mm) :: Track [ULPI_D0] on F.Cu, length 0.4500 mm | Track [ULPI_D1] on F.Cu, length 0.6007 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1836 mm) :: Track [ULPI_D1] on F.Cu, length 0.6500 mm | Track [ULPI_D2] on F.Cu, length 0.5350 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1385 mm) :: Track [ULPI_D1] on F.Cu, length 0.4743 mm | Track [ULPI_D0] on F.Cu, length 0.5142 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1836 mm) :: Track [ULPI_D1] on F.Cu, length 0.5144 mm | Track [ULPI_D2] on F.Cu, length 0.5350 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1321 mm) :: Track [ULPI_D1] on F.Cu, length 0.6007 mm | Track [ULPI_D0] on F.Cu, length 0.5142 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1292 mm) :: Via [ULPI_D2] on F.Cu - B.Cu | Pad 1 [NRST] of C19 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1463 mm) :: Via [ULPI_D2] on F.Cu - B.Cu | Track [ULPI_D3] on In2.Cu, length 2.9347 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1250 mm) :: Track [ULPI_D3] on F.Cu, length 0.2062 mm | Pad 1 [+3V3D] of C48 on F.Cu
+shorting_items: Items shorting two nets (nets ULPI_D3 and +3V3D) :: Via [ULPI_D3] on F.Cu - B.Cu | Pad 1 [+3V3D] of C48 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1312 mm) :: Via [ULPI_D3] on F.Cu - B.Cu | Track [ULPI_D4] on In2.Cu, length 0.3536 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1753 mm) :: Via [ULPI_D4] on F.Cu - B.Cu | Track [ULPI_D5] on F.Cu, length 0.4826 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1309 mm) :: Track [ULPI_D4] on In2.Cu, length 0.3691 mm | Via [ULPI_D3] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0846 mm) :: Track [ULPI_D4] on In2.Cu, length 0.3536 mm | Via [ULPI_D3] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1977 mm) :: Track [ULPI_D5] on F.Cu, length 0.1107 mm | Track [ULPI_D6] on F.Cu, length 0.3536 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0477 mm) :: Via [ULPI_D5] on F.Cu - B.Cu | Track [ULPI_D6] on F.Cu, length 0.3536 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0875 mm) :: Track [ULPI_D6] on F.Cu, length 0.5000 mm | Via [ULPI_D5] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1525 mm) :: Track [ULPI_D6] on F.Cu, length 0.6374 mm | Via [ULPI_D5] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0693 mm) :: Track [ULPI_D6] on F.Cu, length 0.4550 mm | Via [ULPI_D5] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0250 mm) :: Via [ULPI_D6] on F.Cu - B.Cu | Pad 1 [+3V3D] of C48 on F.Cu
+shorting_items: Items shorting two nets (nets I2C_SCL and ULPI_D7) :: Track [I2C_SCL] on In2.Cu, length 0.3536 mm | Via [ULPI_D7] on F.Cu - B.Cu
+shorting_items: Items shorting two nets (nets ULPI_D7 and I2C_SCL) :: Via [ULPI_D7] on F.Cu - B.Cu | Track [I2C_SCL] on In2.Cu, length 0.2500 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1433 mm) :: Track [ULPI_D7] on B.Cu, length 1.4808 mm | Track [+3V3A] on B.Cu, length 2.1427 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1587 mm) :: Track [I2C_SCL] on In2.Cu, length 0.3536 mm | Via [ULPI_D7] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.0806 mm) :: Track [I2C_SCL] on In2.Cu, length 0.3536 mm | Via [ULPI_D7] on F.Cu - B.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1282 mm) :: Track [ULPI_NXT] on F.Cu, length 0.7762 mm | Pad 10 [GND] of U7 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1370 mm) :: Track [ULPI_NXT] on F.Cu, length 0.6439 mm | Pad 10 [GND] of U7 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1797 mm) :: Track [+3V3D] on F.Cu, length 1.4885 mm | Pad 1 [NRST] of C19 on F.Cu
+shorting_items: Items shorting two nets (nets XI and PHY_1V8A) :: Track [XI] on F.Cu, length 0.7425 mm | Pad 29 [PHY_1V8A] of U7 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1250 mm) :: Track [XI] on F.Cu, length 0.3019 mm | Pad 29 [PHY_1V8A] of U7 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1341 mm) :: Via [XI] on F.Cu - B.Cu | Track [XO] on F.Cu, length 0.2500 mm
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1700 mm) :: Track [XO] on F.Cu, length 0.2789 mm | Pad 1 [PHY_1V8] of C22 on F.Cu
+shorting_items: Items shorting two nets (nets XO and PHY_1V8) :: Track [XO] on F.Cu, length 0.4000 mm | Pad 1 [PHY_1V8] of C22 on F.Cu
+shorting_items: Items shorting two nets (nets XO and PHY_1V8) :: Track [XO] on F.Cu, length 0.4687 mm | Pad 1 [PHY_1V8] of C22 on F.Cu
+clearance: Clearance violation (netclass 'Default' clearance 0.2000 mm; actual 0.1600 mm) :: Track [XO] on F.Cu, length 0.4610 mm | Pad 1 [PHY_1V8] of C22 on F.Cu
+hole_clearance: Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.1750 mm) :: Pad 1 [+3V3D] of C48 on F.Cu | Via [ULPI_D6] on F.Cu - B.Cu
+hole_clearance: Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.0750 mm) :: Pad 1 [+3V3D] of C48 on F.Cu | Via [ULPI_D3] on F.Cu - B.Cu
+hole_clearance: Hole clearance violation (board setup constraints hole clearance 0.2500 mm; actual 0.2292 mm) :: Pad 1 [NRST] of C19 on F.Cu | Via [ULPI_D2] on F.Cu - B.Cu
+track_dangling: Track has unconnected end :: Track [+3V3A] on In2.Cu, length 0.3536 mm
+track_dangling: Track has unconnected end :: Track [+3V3A] on In2.Cu, length 0.3536 mm
+track_dangling: Track has unconnected end :: Track [+3V3A] on In2.Cu, length 1.2455 mm
+track_dangling: Track has unconnected end :: Track [ULPI_CK] on In2.Cu, length 3.8000 mm
