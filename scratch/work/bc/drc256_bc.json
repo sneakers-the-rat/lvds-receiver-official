@@ -1,0 +1,165 @@
+{
+    "$schema": "https://schemas.kicad.org/drc.v1.json",
+    "coordinate_units": "mm",
+    "date": "2026-11-10T06:01:02+0000",
+    "kicad_version": "8.0.9",
+    "schematic_parity": [],
+    "source": "pdlvds_rx.exp256.kicad_pcb",
+    "unconnected_items": [
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Pad 9 [USB_RST] of U7 on F.Cu",
+                    "pos": {
+                        "x": 74.25,
+                        "y": 16.4375
+                    },
+                    "uuid": "416e64a2-e615-4243-b607-b46f684e9c11"
+                },
+                {
+                    "description": "Pad 40 [USB_RST] of U6 on F.Cu",
+                    "pos": {
+                        "x": 74.75,
+                        "y": 4.6625
+                    },
+                    "uuid": "d61e3b04-5616-4f73-9376-aaba493fb953"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        },
+        {
+            "description": "Missing connection between items",
+            "items": [
+                {
+                    "description": "Track [XI] on F.Cu, length 0.6264 mm",
+                    "pos": {
+                        "x": 76.18,
+                        "y": 10.94
+                    },
+                    "uuid": "45eb1854-0e06-4139-bb6e-357ee942d783"
+                },
+                {
+                    "description": "Via [XI] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 75.625,
+                        "y": 18.625
+                    },
+                    "uuid": "9677ff6d-0765-4519-80a8-091d98392fbb"
+                }
+            ],
+            "severity": "error",
+            "type": "unconnected_items"
+        }
+    ],
+    "violations": [
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.3063 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of J1",
+                    "pos": {
+                        "x": 33.6,
+                        "y": 72.14
+                    },
+                    "uuid": "42a95997-ef9d-446f-870a-8a312445bcec"
+                },
+                {
+                    "description": "Pad A12 [GND] of J1 on F.Cu",
+                    "pos": {
+                        "x": 32.75,
+                        "y": 71.48
+                    },
+                    "uuid": "6663d430-cb58-4d62-9277-18e2a558e0a3"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "9c5c4aef-8d41-4e4f-afb0-8acad9f18a0a"
+                },
+                {
+                    "description": "PTH pad S1 [<no net>] of J1",
+                    "pos": {
+                        "x": 25.51,
+                        "y": 79.34
+                    },
+                    "uuid": "1c6ca1c1-67a3-4dea-ba49-c6281fc9d406"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.2982 mm)",
+            "items": [
+                {
+                    "description": "NPTH pad of J1",
+                    "pos": {
+                        "x": 33.6,
+                        "y": 72.14
+                    },
+                    "uuid": "42a95997-ef9d-446f-870a-8a312445bcec"
+                },
+                {
+                    "description": "PTH pad S1 [<no net>] of J1",
+                    "pos": {
+                        "x": 34.13,
+                        "y": 73.39
+                    },
+                    "uuid": "6831ac38-57a9-41a7-a30c-a7b383a2b621"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Board edge clearance violation (board setup constraints edge clearance 0.5000 mm; actual 0.0000 mm)",
+            "items": [
+                {
+                    "description": "Segment on Edge.Cuts",
+                    "pos": {
+                        "x": 100.0,
+                        "y": 80.0
+                    },
+                    "uuid": "9c5c4aef-8d41-4e4f-afb0-8acad9f18a0a"
+                },
+                {
+                    "description": "PTH pad S1 [<no net>] of J1",
+                    "pos": {
+                        "x": 34.49,
+                        "y": 79.34
+                    },
+                    "uuid": "eda871f6-0a88-4c19-8352-cabbd7a9a51c"
+                }
+            ],
+            "severity": "error",
+            "type": "copper_edge_clearance"
+        },
+        {
+            "description": "Via is not connected or connected on only one layer",
+            "items": [
+                {
+                    "description": "Via [XI] on F.Cu - B.Cu",
+                    "pos": {
+                        "x": 75.82,
+                        "y": 10.3
+                    },
+                    "uuid": "7bbdedfa-8c05-4aba-83d2-50e54ff84e29"
+                }
+            ],
+            "severity": "warning",
+            "type": "via_dangling"
+        }
+    ]
+}
