@@ -1,0 +1,55 @@
+15:41:09: Debug: Adding duplicate image handler for 'PNG file'
+15:41:09: Debug: Adding duplicate image handler for 'JPEG file'
+15:41:09: Debug: Adding duplicate image handler for 'TIFF file'
+15:41:09: Debug: Adding duplicate image handler for 'GIF file'
+15:41:09: Debug: Adding duplicate image handler for 'PNM file'
+15:41:09: Debug: Adding duplicate image handler for 'PCX file'
+15:41:09: Debug: Adding duplicate image handler for 'IFF file'
+15:41:09: Debug: Adding duplicate image handler for 'Windows icon file'
+15:41:09: Debug: Adding duplicate image handler for 'Windows cursor file'
+15:41:09: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+15:41:09: Debug: Adding duplicate image handler for 'TGA file'
+15:41:09: Debug: Adding duplicate image handler for 'XPM file'
+ULPI_NXT F.Cu (76.0, 16.438)->(75.9, 17.14): negatives=0 worst=[(0.01, 'pad GND rect(75.375, 16.0, 75.625, 16.875)'), (0.075, 'pad ULPI_DIR rect(76.375, 16.0, 76.625, 16.875)')]
+ULPI_NXT F.Cu (75.9, 17.14)->(75.1, 17.32): negatives=0 worst=[(0.019, 'pad GND rect(75.375, 16.0, 75.625, 16.875)'), (0.129, 'pad USB_RST rect(74.875, 16.0, 75.125, 16.875)')]
+ULPI_NXT F.Cu (75.1, 17.32)->(74.94, 17.36): negatives=0 worst=[(0.145, 'pad USB_RST rect(74.875, 16.0, 75.125, 16.875)'), (0.167, 'via ULPI_DIR@(74.84, 18.07)')]
+ULPI_DIR F.Cu (76.5, 16.438)->(76.46, 17.08): negatives=0 worst=[(0.047, 'pad ULPI_NXT rect(75.875, 16.0, 76.125, 16.875)'), (0.075, 'pad ULPI_STP rect(76.875, 16.0, 77.125, 16.875)')]
+ULPI_DIR F.Cu (76.46, 17.08)->(76.24, 17.42): negatives=0 worst=[(0.093, 'pad ULPI_NXT rect(75.875, 16.0, 76.125, 16.875)'), (0.163, 'pad ULPI_STP rect(76.875, 16.0, 77.125, 16.875)')]
+ULPI_DIR F.Cu (76.24, 17.42)->(76.08, 17.6): negatives=0 worst=[(0.257, 'pad ULPI_NXT rect(75.875, 16.0, 76.125, 16.875)'), (0.521, 'via XI@(75.62, 18.62)')]
+ULPI_DIR F.Cu (76.08, 17.6)->(75.5, 17.8): negatives=0 worst=[(0.162, 'via ULPI_NXT@(74.94, 17.36)'), (0.234, 'via XI@(75.62, 18.62)')]
+ULPI_DIR F.Cu (75.5, 17.8)->(74.84, 18.07): negatives=0 worst=[(0.069, 'via ULPI_NXT@(74.94, 17.36)'), (0.211, 'via XI@(75.62, 18.62)')]
+ULPI_STP F.Cu (77.0, 16.438)->(76.92, 17.0): negatives=0 worst=[(0.01, 'pad ULPI_DIR rect(76.375, 16.0, 76.625, 16.875)'), (0.075, 'pad ULPI_CK rect(77.375, 16.0, 77.625, 16.875)')]
+ULPI_STP F.Cu (76.92, 17.0)->(76.92, 17.85): negatives=0 worst=[(0.02, 'pad ULPI_DIR rect(76.375, 16.0, 76.625, 16.875)'), (0.172, 'pad ULPI_CK rect(77.375, 16.0, 77.625, 16.875)')]
+ULPI_STP F.Cu (76.92, 17.85)->(76.74, 17.88): negatives=0 worst=[(0.24, 'pad GND rect(76.4, 18.42, 76.96, 19.04)'), (0.616, 'pad XI rect(75.44, 18.42, 76.0, 19.04)')]
+ULPI_STP B.Cu (76.74, 17.88)->(76.4, 16.3): negatives=0 worst=[(0.4, 'trk XI (75.6, 16.3)->(74.98, 15.95)'), (0.4, 'trk XI (75.6, 16.95)->(75.6, 16.3)')]
+ULPI_STP B.Cu (76.4, 16.3)->(76.35, 14.6): negatives=0 worst=[(0.138, 'trk PHY_1V8 (76.95, 11.05)->(76.95, 14.988)'), (0.138, 'trk PHY_1V8 (76.95, 14.988)->(77.8, 16.2)')]
+ULPI_STP B.Cu (76.35, 14.6)->(76.425, 12.9): negatives=0 worst=[(0.075, 'trk PHY_1V8 (76.95, 11.05)->(76.95, 14.988)'), (0.165, 'via GND@(75.6, 14.75)')]
+ULPI_CK F.Cu (77.5, 16.438)->(77.48, 17.3): negatives=0 worst=[(0.051, 'via PHY_1V8@(78.1, 17.5)'), (0.065, 'pad ULPI_STP rect(76.875, 16.0, 77.125, 16.875)')]
+ULPI_CK F.Cu (77.48, 17.3)->(77.48, 17.98): negatives=0 worst=[(0.02, 'via PHY_1V8@(78.1, 17.5)'), (0.132, 'trk PHY_1V8 (78.0, 17.188)->(78.1, 17.5)')]
+ULPI_CK In2.Cu (77.48, 17.98)->(77.88, 18.25): negatives=0 worst=[(0.145, 'via PHY_1V8@(78.1, 17.5)'), (0.945, 'trk +3V3D (77.2, 19.525)->(77.15, 19.525)')]
+ULPI_CK In2.Cu (77.88, 18.25)->(77.72, 18.78): negatives=0 worst=[(0.182, 'via PHY_1V8@(78.1, 17.5)'), (0.399, 'trk +3V3D (77.3, 19.575)->(77.25, 19.575)')]
+ULPI_CK In2.Cu (77.72, 18.78)->(77.35, 18.9): negatives=0 worst=[(0.143, 'trk +3V3D (77.2, 19.525)->(77.15, 19.525)'), (0.143, 'trk +3V3D (77.25, 19.575)->(77.2, 19.525)')]
+ULPI_CK In2.Cu (77.35, 18.9)->(76.9, 18.85): negatives=0 worst=[(0.138, 'trk +3V3D (77.2, 19.525)->(77.15, 19.525)'), (0.138, 'trk +3V3D (77.25, 19.575)->(77.2, 19.525)')]
+ULPI_CK In2.Cu (76.9, 18.85)->(76.5, 18.78): negatives=0 worst=[(0.175, 'trk +3V3D (76.9, 19.525)->(76.85, 19.525)'), (0.175, 'trk +3V3D (76.95, 19.525)->(76.9, 19.525)')]
+ULPI_CK In2.Cu (76.5, 18.78)->(76.28, 18.62): negatives=0 worst=[(0.055, 'via XI@(75.62, 18.62)'), (0.247, 'trk +3V3D (76.55, 19.525)->(76.5, 19.575)')]
+ULPI_CK In2.Cu (76.28, 18.62)->(75.9, 16.9): negatives=0 worst=[(0.041, 'via XI@(75.62, 18.62)'), (0.444, 'trk +3V3D (76.55, 19.525)->(76.5, 19.575)')]
+ULPI_CK In2.Cu (75.9, 16.9)->(76.62, 16.9): negatives=0 worst=[(0.515, 'via ULPI_NXT@(74.94, 17.36)'), (0.665, 'trk ULPI_NXT (74.94, 17.36)->(74.1, 17.7)')]
+XI F.Cu (75.82, 10.3)->(76.2, 10.42): negatives=1 worst=[(-0.039, 'trk PHY_1V8A (75.95, 10.82)->(75.35, 10.42)'), (0.001, 'trk XO (76.2, 10.0)->(76.05, 9.8)')]
+XI F.Cu (76.2, 10.42)->(76.48, 10.5): negatives=0 worst=[(0.02, 'trk XO (76.2, 10.0)->(76.05, 9.8)'), (0.023, 'trk PHY_1V8A (76.42, 10.92)->(75.95, 10.82)')]
+XI F.Cu (76.48, 10.5)->(76.78, 10.6): negatives=0 worst=[(0.017, 'trk PHY_1V8A (76.42, 10.92)->(75.95, 10.82)'), (0.017, 'trk PHY_1V8A (76.5, 11.562)->(76.42, 10.92)')]
+XI F.Cu (76.78, 10.6)->(76.95, 11.0): negatives=0 worst=[(0.048, 'pad PHY_1V8A rect(76.375, 11.125, 76.625, 12.0)'), (0.056, 'trk PHY_1V8A (76.42, 10.92)->(75.95, 10.82)')]
+XI F.Cu (76.95, 11.0)->(77.0, 11.562): negatives=0 worst=[(0.035, 'pad PHY_1V8A rect(76.375, 11.125, 76.625, 12.0)'), (0.075, 'pad XO rect(77.375, 11.125, 77.625, 12.0)')]
+XO F.Cu (77.5, 11.562)->(77.44, 11.02): negatives=0 worst=[(0.025, 'pad XI rect(76.875, 11.125, 77.125, 12.0)'), (0.075, 'pad PHY_1V8 rect(77.875, 11.125, 78.125, 12.0)')]
+XO F.Cu (77.44, 11.02)->(77.26, 10.46): negatives=0 worst=[(0.032, 'pad XI rect(76.875, 11.125, 77.125, 12.0)'), (0.147, 'pad PHY_1V8 rect(77.875, 11.125, 78.125, 12.0)')]
+XO F.Cu (77.26, 10.46)->(76.76, 10.08): negatives=0 worst=[(0.12, 'pad PHY_1V8 rect(76.74, 9.1, 77.36, 9.66)'), (0.194, 'via PHY_1V8@(77.9, 10.08)')]
+XO F.Cu (76.76, 10.08)->(76.5, 10.05): negatives=0 worst=[(0.115, 'pad PHY_1V8 rect(76.74, 9.1, 77.36, 9.66)'), (0.174, 'via XI@(75.82, 10.3)')]
+XO F.Cu (76.5, 10.05)->(76.3, 10.0): negatives=0 worst=[(0.016, 'via XI@(75.82, 10.3)'), (0.158, 'pad PHY_1V8 rect(76.74, 9.1, 77.36, 9.66)')]
+PHY_1V8 F.Cu (77.05, 9.38)->(77.55, 9.85): negatives=0 worst=[(0.149, 'via ULPI_STP@(76.44, 9.03)'), (0.317, 'trk ULPI_D0 (78.125, 9.375)->(77.875, 9.125)')]
+PHY_1V8 F.Cu (77.55, 9.85)->(77.9, 10.08): negatives=0 worst=[(0.174, 'trk ULPI_D0 (78.45, 10.35)->(78.5, 10.15)'), (0.179, 'trk ULPI_D0 (78.5, 10.15)->(78.625, 9.875)')]
+PHY_1V8 F.Cu (78.0, 11.562)->(78.0, 11.2): negatives=0 worst=[(0.025, 'pad +3V3A rect(78.375, 11.125, 78.625, 12.0)'), (0.05, 'trk +3V3A (78.5, 11.562)->(78.8, 11.62)')]
+PHY_1V8 F.Cu (78.0, 11.2)->(77.98, 10.5): negatives=0 worst=[(0.025, 'pad +3V3A rect(78.375, 11.125, 78.625, 12.0)'), (0.068, 'trk ULPI_D0 (78.45, 10.35)->(78.5, 10.15)')]
+PHY_1V8 F.Cu (77.98, 10.5)->(77.9, 10.08): negatives=0 worst=[(0.065, 'trk ULPI_D0 (78.45, 10.35)->(78.5, 10.15)'), (0.065, 'trk ULPI_D0 (79.0, 10.72)->(78.45, 10.35)')]
+via ULPI_STP (76.74, 17.88): negatives=0 worst=[(0.017, 'trk[In2.Cu] ULPI_CK (76.62, 17.3)->(76.62, 13.5)'), (0.09, 'pad[F.Cu] GND rect(76.4, 18.42, 76.96, 19.04)')]
+via ULPI_CK (77.48, 17.98): negatives=0 worst=[(0.034, 'via PHY_1V8@(78.1, 17.5)'), (0.231, 'pad[F.Cu] GND rect(76.4, 18.42, 76.96, 19.04)')]
+gate negatives: 1
+GATE FAILED — not building
