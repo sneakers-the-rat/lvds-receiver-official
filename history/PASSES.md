@@ -1772,6 +1772,14 @@ PHY_1V8 connected: C22 relocated north of U7 (77.17,9.95) rot90, 0.52mm-class ho
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 120 · Unconnected nets: 2 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 217 — 2026-11-10T04:38:56Z · commit `7859c92`
+
+Board: `hw/pdlvds_rx.exp254.kicad_pcb` · Commit: `7859c9286eff24e610368f835589839df7e7aa5c`
+
+pass 0217: district prep: PHY_1V8A notch journey re-laid compact (via (75.27,10.33)->(75.45,10.6), single-seg F stub, north-bowed B head; model gates +0.006/+0.017); ULPI_STP western B excursion removed and its through-connection re-made deliberately as one bowed B chain (76.05,16.7)->(76.35,15.6)->(76.35,13.9)->(76.05,13.45) around the GND EP stitch via (75.6,14.75). KiCad DRC 4 J1 only, unconnected 2 (XI, USB_RST). check_pcb nets 2, census 120 unchanged, courtyard 0, blind SH1-only.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 120 · Unconnected nets: 2 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
