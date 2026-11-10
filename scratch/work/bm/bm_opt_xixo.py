@@ -35,7 +35,7 @@ pool = []
 for it in items:
     if it.layer != 'F.Cu':
         continue
-    if it.kind == 'pad' and 75.2 <= it.cx <= 78.3 and 12.45 <= it.cy <= 15.55:
+    if it.kind == 'pad' and it.rect and 75.2 <= (it.rect[0] + it.rect[2]) / 2 <= 78.3 and 12.45 <= (it.rect[1] + it.rect[3]) / 2 <= 15.55:
         continue  # U7 EP F pads: tracks never legally enter the EP rect
     if it.kind == 'trk':
         a, b = rk(it.a), rk(it.b)
@@ -44,37 +44,38 @@ for it in items:
         if any(it.net == n and it.layer == l and {a, b} == {rk(a0), rk(b0)} for n, l, a0, b0 in RIP_SEGS):
             continue
     pool.append(it)
-print('pool', len(pool))
+def near(it):
+    pts = []
+    if it.kind == 'trk' or it.kind == 'via':
+        pts = [it.a] + ([it.b] if it.kind == 'trk' else [])
+    if it.rect:
+        pts += [(it.rect[0], it.rect[1]), (it.rect[2], it.rect[3])]
+    return any(74.0 <= p[0] <= 79.5 and 8.8 <= p[1] <= 12.6 for p in pts)
+pool = [it for it in pool if near(it)]
+print('pool near', len(pool), flush=True)
 
 def margins_of(net, pts, w=0.20):
-    """min margin of a chain vs pool + FIXED_NEW + the other chain (passed in extra)"""
     worst = 9.9
     segs = list(zip(pts, pts[1:]))
-    for it in pool:
-        if it.net == net:
-            continue
-        for a, b in segs:
-            m = BG.margin_trk(net, 'F.Cu', a, b, w, it)
-            if m < worst:
-                worst = m
+    for a, b in segs:
+        ms = BG.margin_trk(a, b, 'F.Cu', net, pool, hw=w / 2)
+        if ms:
+            worst = min(worst, ms[0][0])
     for n2, lay, pts2, w2 in FIXED_NEW:
         if n2 == net:
             continue
         for a, b in segs:
             for c, d in zip(pts2, pts2[1:]):
-                dist = BG.seg_seg(a, b, c, d)
-                m = dist - w / 2 - w2 / 2 - BG.clr(net, n2, 'F.Cu')
-                if m < worst:
-                    worst = m
+                m = BG.seg_seg(a, b, c, d) - w / 2 - w2 / 2 - BG.clr(n2)
+                worst = min(worst, m)
     return worst
 
 def pair_margin(ptsA, ptsB, w=0.20):
     worst = 9.9
     for a, b in zip(ptsA, ptsA[1:]):
         for c, d in zip(ptsB, ptsB[1:]):
-            m = BG.seg_seg(a, b, c, d) - w - BG.clr('XI', 'XO', 'F.Cu')
-            if m < worst:
-                worst = m
+            m = BG.seg_seg(a, b, c, d) - w - BG.clr('XO')
+            worst = min(worst, m)
     return worst
 
 XI0 = [(75.82, 10.3), (76.1, 10.48), (76.3, 10.55), (76.55, 10.58), (76.82, 10.84), (77.0, 11.562)]
@@ -84,12 +85,12 @@ def score(xi, xo):
     return min(margins_of('XI', xi), margins_of('XO', xo), pair_margin(xi, xo))
 
 best = score(XI0, XO0)
-print('seed score', round(best, 3))
+print('seed score', round(best, 3), flush=True)
 xi = [list(p) for p in XI0]
 xo = [list(p) for p in XO0]
 random.seed(42)
 cur = best
-for it in range(4000):
+for it in range(1500):
     chain = xi if random.random() < 0.5 else xo
     i = random.randrange(1, len(chain) - 1)
     dx = random.choice([-0.06, -0.04, -0.02, 0.02, 0.04, 0.06])
@@ -101,7 +102,7 @@ for it in range(4000):
         cur = s
         if s > best:
             best = s
-            print(it, 'score', round(best, 3), 'XI', [tuple(p) for p in xi], 'XO', [tuple(p) for p in xo])
+            print(it, 'score', round(best, 3), 'XI', [tuple(p) for p in xi], 'XO', [tuple(p) for p in xo], flush=True)
             if best >= 0.03:
                 break
     else:
