@@ -1,0 +1,44 @@
+02:33:16: Debug: Adding duplicate image handler for 'PNG file'
+02:33:16: Debug: Adding duplicate image handler for 'JPEG file'
+02:33:16: Debug: Adding duplicate image handler for 'TIFF file'
+02:33:16: Debug: Adding duplicate image handler for 'GIF file'
+02:33:16: Debug: Adding duplicate image handler for 'PNM file'
+02:33:16: Debug: Adding duplicate image handler for 'PCX file'
+02:33:16: Debug: Adding duplicate image handler for 'IFF file'
+02:33:16: Debug: Adding duplicate image handler for 'Windows icon file'
+02:33:16: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:33:16: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:33:16: Debug: Adding duplicate image handler for 'TGA file'
+02:33:16: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+02:33:17: Debug: Adding duplicate image handler for 'PNG file'
+02:33:17: Debug: Adding duplicate image handler for 'JPEG file'
+02:33:17: Debug: Adding duplicate image handler for 'TIFF file'
+02:33:17: Debug: Adding duplicate image handler for 'GIF file'
+02:33:17: Debug: Adding duplicate image handler for 'PNM file'
+02:33:17: Debug: Adding duplicate image handler for 'PCX file'
+02:33:17: Debug: Adding duplicate image handler for 'IFF file'
+02:33:17: Debug: Adding duplicate image handler for 'Windows icon file'
+02:33:17: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:33:17: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:33:17: Debug: Adding duplicate image handler for 'TGA file'
+02:33:17: Debug: Adding duplicate image handler for 'XPM file'
+config rebuilt; PHY frags 1
+inbound anchor idx 89 = (73.55, 16.9); exit anchor idx 165 = (72.2, 16.65)
+tuned STP gate: pairs<0.1 19, neg 6
+    (-0.093, 'B', 'GND', (73.05, 17.42), (73.43, 17.68))
+    (-0.021, 'B', 'PHY_1V8', (71.8, 18.37), (71.9, 17.8))
+    (-0.021, 'B', 'PHY_1V8', (71.45, 18.17), (71.9, 17.8))
+    (-0.02, 'B', 'PHY_1V8', (71.32, 17.8), (71.9, 17.8))
+    (-0.018, 'B', 'PHY_1V8', (72.19, 18.3), (71.9, 17.8))
+    (-0.015, 'B', 'PHY_1V8', (71.44, 17.45), (71.9, 17.8))
+    (0.001, 'B', 'DP_PHY', (72.55, 16.3), (72.12, 15.88))
+    (0.01, 'B', 'PHY_1V8', (71.72, 17.08), (71.9, 17.8))
+    (0.015, 'B', 'PHY_1V8', (72.46, 18.07), (71.9, 17.8))
+    (0.036, 'B', 'ULPI_DIR', (72.19, 18.3), (73.44, 18.32))
+    (0.036, 'B', 'ULPI_DIR', (71.8, 18.37), (73.44, 18.32))
+    (0.049, 'B', 'XO', (71.45, 18.17), (70.95, 18.5))
+=== done ===

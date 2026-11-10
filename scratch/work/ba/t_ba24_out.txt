@@ -1,0 +1,35 @@
+03:12:03: Debug: Adding duplicate image handler for 'PNG file'
+03:12:03: Debug: Adding duplicate image handler for 'JPEG file'
+03:12:03: Debug: Adding duplicate image handler for 'TIFF file'
+03:12:03: Debug: Adding duplicate image handler for 'GIF file'
+03:12:03: Debug: Adding duplicate image handler for 'PNM file'
+03:12:03: Debug: Adding duplicate image handler for 'PCX file'
+03:12:03: Debug: Adding duplicate image handler for 'IFF file'
+03:12:03: Debug: Adding duplicate image handler for 'Windows icon file'
+03:12:03: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:12:03: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:12:03: Debug: Adding duplicate image handler for 'TGA file'
+03:12:03: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+03:12:04: Debug: Adding duplicate image handler for 'PNG file'
+03:12:04: Debug: Adding duplicate image handler for 'JPEG file'
+03:12:04: Debug: Adding duplicate image handler for 'TIFF file'
+03:12:04: Debug: Adding duplicate image handler for 'GIF file'
+03:12:04: Debug: Adding duplicate image handler for 'PNM file'
+03:12:04: Debug: Adding duplicate image handler for 'PCX file'
+03:12:04: Debug: Adding duplicate image handler for 'IFF file'
+03:12:04: Debug: Adding duplicate image handler for 'Windows icon file'
+03:12:04: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:12:04: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:12:04: Debug: Adding duplicate image handler for 'TGA file'
+03:12:04: Debug: Adding duplicate image handler for 'XPM file'
+ripped 304 southern/mid STP items
+STP re-plan (blocked): NONE
+C22 pad1 hop: +0.183 vs ULPI_D0
+C22 GND via (76.4,9.0): -0.039 vs ('F', '+3V3A')
+C22 GND track legs: -0.093 vs ULPI_D0 / +0.111 vs +3V3A
+alt GND via (76.15,8.55): -0.370 vs ('F', '+3V3A'); direct track -0.220 vs +3V3A
+=== done ===

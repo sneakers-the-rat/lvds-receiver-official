@@ -1,0 +1,38 @@
+03:19:52: Debug: Adding duplicate image handler for 'PNG file'
+03:19:52: Debug: Adding duplicate image handler for 'JPEG file'
+03:19:52: Debug: Adding duplicate image handler for 'TIFF file'
+03:19:52: Debug: Adding duplicate image handler for 'GIF file'
+03:19:52: Debug: Adding duplicate image handler for 'PNM file'
+03:19:52: Debug: Adding duplicate image handler for 'PCX file'
+03:19:52: Debug: Adding duplicate image handler for 'IFF file'
+03:19:52: Debug: Adding duplicate image handler for 'Windows icon file'
+03:19:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:19:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:19:52: Debug: Adding duplicate image handler for 'TGA file'
+03:19:52: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+03:19:53: Debug: Adding duplicate image handler for 'PNG file'
+03:19:53: Debug: Adding duplicate image handler for 'JPEG file'
+03:19:53: Debug: Adding duplicate image handler for 'TIFF file'
+03:19:53: Debug: Adding duplicate image handler for 'GIF file'
+03:19:53: Debug: Adding duplicate image handler for 'PNM file'
+03:19:53: Debug: Adding duplicate image handler for 'PCX file'
+03:19:53: Debug: Adding duplicate image handler for 'IFF file'
+03:19:53: Debug: Adding duplicate image handler for 'Windows icon file'
+03:19:53: Debug: Adding duplicate image handler for 'Windows cursor file'
+03:19:53: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+03:19:53: Debug: Adding duplicate image handler for 'TGA file'
+03:19:53: Debug: Adding duplicate image handler for 'XPM file'
+C22 pad item: ('pad', 'PHY_1V8', (72.02, 18.0, 0.28, 0.31, 0.0), 0.25)
+C22 pad item: ('pad', 'GND', (72.98, 18.0, 0.28, 0.31, 0.0), 0.2)
+STP surgery: B run 82->62 pts, vias [[76.2, 8.9], [77.15, 5.9], [78.3, 1.85], [75.9, -0.65]]
+STP adjusted gate: neg 10, worst 6: [(-0.263, 'F', '+3V3A', (76.2, 8.9), (75.62, 8.62)), (-0.263, 'In2', '+3V3A', (76.2, 8.9), (75.62, 8.62)), (-0.263, 'B', '+3V3A', (76.2, 8.9), (75.62, 8.62)), (-0.163, 'B', '+3V3A', (76.2, 8.9), (72.12, 8.62)), (-0.13, 'In2', '+3V3A', (76.2, 8.9), (75.71, 8.91)), (-0.118, 'In2', '+3V3A', (76.7, 7.4), (75.62, 8.62))]
+pad template: ('pad', 'PHY_1V8', (72.02, 18.0, 0.28, 0.31, 0.0), 0.25)
+C22 pads at (76.9,10.15) r270: neg 0, worst 6: []
+C22 pad1 hop: neg 10, worst 6: [(-0.1, 'F', 'XO', (77.4, 10.36), (76.55, 10.62)), (-0.099, 'F', 'XO', (77.4, 10.36), (76.55, 10.57)), (-0.099, 'F', 'XO', (77.4, 10.36), (76.55, 10.68)), (-0.093, 'F', 'XO', (77.4, 10.36), (76.53, 10.72)), (-0.091, 'F', 'XO', (77.4, 10.36), (76.55, 10.53)), (-0.077, 'F', 'XO', (77.4, 10.36), (76.55, 10.47))]
+C22 GND stub: neg 0, worst 6: []
+C22 GND via (76.85,9.70): neg 2, worst 6: [(-0.065, 'In2', '+3V3A', (76.85, 9.7), (76.06, 9.62)), (-0.006, 'In2', '+3V3A', (76.85, 9.7), (76.88, 11.69)), (0.005, 'In2', '+3V3A', (76.85, 9.7), (76.44, 10.19)), (0.025, 'In2', '+3V3A', (76.85, 9.7), (76.03, 9.54)), (0.051, 'F', 'XO', (76.85, 9.7), (76.43, 10.12)), (0.052, 'F', 'XO', (76.85, 9.7), (76.47, 10.18))]
+=== done ===

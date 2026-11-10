@@ -1,0 +1,34 @@
+02:41:38: Debug: Adding duplicate image handler for 'PNG file'
+02:41:38: Debug: Adding duplicate image handler for 'JPEG file'
+02:41:38: Debug: Adding duplicate image handler for 'TIFF file'
+02:41:38: Debug: Adding duplicate image handler for 'GIF file'
+02:41:38: Debug: Adding duplicate image handler for 'PNM file'
+02:41:38: Debug: Adding duplicate image handler for 'PCX file'
+02:41:38: Debug: Adding duplicate image handler for 'IFF file'
+02:41:38: Debug: Adding duplicate image handler for 'Windows icon file'
+02:41:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:41:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:41:38: Debug: Adding duplicate image handler for 'TGA file'
+02:41:38: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+02:41:38: Debug: Adding duplicate image handler for 'PNG file'
+02:41:38: Debug: Adding duplicate image handler for 'JPEG file'
+02:41:38: Debug: Adding duplicate image handler for 'TIFF file'
+02:41:38: Debug: Adding duplicate image handler for 'GIF file'
+02:41:38: Debug: Adding duplicate image handler for 'PNM file'
+02:41:38: Debug: Adding duplicate image handler for 'PCX file'
+02:41:38: Debug: Adding duplicate image handler for 'IFF file'
+02:41:38: Debug: Adding duplicate image handler for 'Windows icon file'
+02:41:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:41:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:41:38: Debug: Adding duplicate image handler for 'TGA file'
+02:41:38: Debug: Adding duplicate image handler for 'XPM file'
+config: PHY frags 1, STP frags 1, 1V8A ripped 157 items
+1V8A notch->tail In2 goal: NONE
+1V8A notch->tail B goal: NONE
+hand polyline gate: neg 28, worst 8: [(-0.645, 'In2', '+5V', (71.46, 14.29), (63.12, 13.62)), (-0.472, 'In2', 'ULPI_CK', (74.94, 10.02), (74.62, 9.94)), (-0.458, 'In2', 'GND', (73.0, 9.31), (72.9, 9.45)), (-0.45, 'In2', 'ULPI_CK', (74.0, 9.51), (74.62, 9.94)), (-0.323, 'In2', 'GND', (71.56, 11.35), (71.3, 10.4)), (-0.287, 'In2', 'XO', (71.77, 9.79), (72.12, 9.88)), (-0.265, 'In2', 'GND', (72.28, 9.34), (72.9, 9.45)), (-0.256, 'In2', 'GND', (71.77, 9.79), (71.3, 10.4))]
+final frags: PHY 1 STP 1 1V8A 2 CK 1 XI 3 XO 1
+=== done ===

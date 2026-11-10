@@ -1,0 +1,38 @@
+02:31:06: Debug: Adding duplicate image handler for 'PNG file'
+02:31:06: Debug: Adding duplicate image handler for 'JPEG file'
+02:31:06: Debug: Adding duplicate image handler for 'TIFF file'
+02:31:06: Debug: Adding duplicate image handler for 'GIF file'
+02:31:06: Debug: Adding duplicate image handler for 'PNM file'
+02:31:06: Debug: Adding duplicate image handler for 'PCX file'
+02:31:06: Debug: Adding duplicate image handler for 'IFF file'
+02:31:06: Debug: Adding duplicate image handler for 'Windows icon file'
+02:31:06: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:31:06: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:31:06: Debug: Adding duplicate image handler for 'TGA file'
+02:31:06: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+02:31:07: Debug: Adding duplicate image handler for 'PNG file'
+02:31:07: Debug: Adding duplicate image handler for 'JPEG file'
+02:31:07: Debug: Adding duplicate image handler for 'TIFF file'
+02:31:07: Debug: Adding duplicate image handler for 'GIF file'
+02:31:07: Debug: Adding duplicate image handler for 'PNM file'
+02:31:07: Debug: Adding duplicate image handler for 'PCX file'
+02:31:07: Debug: Adding duplicate image handler for 'IFF file'
+02:31:07: Debug: Adding duplicate image handler for 'Windows icon file'
+02:31:07: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:31:07: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:31:07: Debug: Adding duplicate image handler for 'TGA file'
+02:31:07: Debug: Adding duplicate image handler for 'XPM file'
+1V8A routed copper ripped: 157 items; 1V8A frags now 2 (pads only, expected until C23 moves)
+STP chain ripped: 94
+PHY placed (loop rips 4, tail 2); PHY frags 1; STP frags 2
+S1: FOUND vias=[]
+S1 exact gate: pairs<0.3 186, neg 8, worst 6: [(-0.034, 'B', 'PHY_1V8', (72.45, 18.05), (71.9, 17.8)), (-0.034, 'B', 'PHY_1V8', (71.47, 18.17), (71.9, 17.8)), (-0.015, 'B', 'PHY_1V8', (72.12, 18.35), (71.9, 17.8)), (-0.015, 'B', 'PHY_1V8', (72.07, 18.38), (71.9, 17.8)), (-0.003, 'B', 'PHY_1V8', (73.08, 17.23), (72.2, 17.5)), (-0.003, 'B', 'PHY_1V8', (73.08, 17.23), (72.5, 17.17))]
+S1 saved to design_stp_freed_s1.json
+  run layer 2 npts 317: (76.1,13.5) (75.3,13.7) (74.7,14.3) (74.5,15.1) (74.5,15.8) (74.2,16.6) (73.5,16.9) (72.8,17.6) (72.2,18.3) (71.5,18.1) (71.5,17.4) (72.2,16.6) (72.9,15.9) (72.8,15.2) (72.8,14.4) (73.2,13.7) (73.5,12.9) (74.2,12.4) (75.0,11.8) (75.8,11.1) (76.5,10.3) (77.0,9.7) (77.0,9.6)
+  vias: []
+final frags: PHY 1 STP 1 1V8A 2 CK 1 XI 3 XO 1
+=== done ===
