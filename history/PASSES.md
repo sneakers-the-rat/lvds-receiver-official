@@ -1764,6 +1764,14 @@ pass 215: PHY_1V8A notch via relocated (75.7375,10.75)->(75.27,10.33), F stub an
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 3 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 216 — 2026-11-10T03:59:07Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp253.kicad_pcb` · Commit: `pending`
+
+PHY_1V8 connected: C22 relocated north of U7 (77.17,9.95) rot90, 0.52mm-class hop to PHY via (77.90,10.08), GND via (76.975,9.6); ULPI_STP southern half re-laid (transition via (76.445,9.03), In2 diagonal to (77.2,5.9), old southern chain east of the (74.90,-1.30) T-join ripped). Unconnected 3->2 (XI, USB_RST remain). KiCad DRC 5->4 (standing J1 copper_edge only, PHY tail dangling gone). check_pcb nets 3->2, census 109->120 (+11, all C22.1 x XO staircase adjacency at 0.205-0.21, DRC-legal), courtyard 0, blind SH1-only.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 120 · Unconnected nets: 2 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
