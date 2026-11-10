@@ -1,0 +1,47 @@
+04:18:02: Debug: Adding duplicate image handler for 'PNG file'
+04:18:02: Debug: Adding duplicate image handler for 'JPEG file'
+04:18:02: Debug: Adding duplicate image handler for 'TIFF file'
+04:18:02: Debug: Adding duplicate image handler for 'GIF file'
+04:18:02: Debug: Adding duplicate image handler for 'PNM file'
+04:18:02: Debug: Adding duplicate image handler for 'PCX file'
+04:18:02: Debug: Adding duplicate image handler for 'IFF file'
+04:18:02: Debug: Adding duplicate image handler for 'Windows icon file'
+04:18:02: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:18:02: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:18:02: Debug: Adding duplicate image handler for 'TGA file'
+04:18:02: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+04:18:03: Debug: Adding duplicate image handler for 'PNG file'
+04:18:03: Debug: Adding duplicate image handler for 'JPEG file'
+04:18:03: Debug: Adding duplicate image handler for 'TIFF file'
+04:18:03: Debug: Adding duplicate image handler for 'GIF file'
+04:18:03: Debug: Adding duplicate image handler for 'PNM file'
+04:18:03: Debug: Adding duplicate image handler for 'PCX file'
+04:18:03: Debug: Adding duplicate image handler for 'IFF file'
+04:18:03: Debug: Adding duplicate image handler for 'Windows icon file'
+04:18:03: Debug: Adding duplicate image handler for 'Windows cursor file'
+04:18:03: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+04:18:03: Debug: Adding duplicate image handler for 'TGA file'
+04:18:03: Debug: Adding duplicate image handler for 'XPM file'
+excursion ripped 76
+descent rip: 8 segs
+descent relay: neg 4, worst 6: [(-0.038, 'B', 'GND', (76.46, 9.59), (76.97, 9.6)), (-0.03, 'B', 'PHY_1V8', (76.29, 13.03), (76.95, 13.02)), (-0.03, 'B', 'PHY_1V8', (76.48, 11.35), (77.2, 10.57)), (-0.03, 'B', 'PHY_1V8', (76.48, 11.35), (76.95, 13.02))]
+STP frags: 4
+XO foot rip: 13 segs
+XO frags mid: 2
+XO jog: neg 1, worst 6: [(-0.01, 'F', 'PHY_1V8', (76.4, 10.11), (77.17, 10.43))]
+XO frags after: 2
+pocket via optimum: margin -0.076 at (75.94,10.40)
+XI B channel: neg 1, worst 6: [(-0.397, 'B', 'ULPI_DIR', (74.93, 17.68), (73.44, 18.32)), (0.03, 'B', 'ULPI_DIR', (74.93, 17.68), (75.5, 17.52)), (0.1, 'B', 'GND', (74.9, 14.93), (75.6, 14.75))]
+XI via1 (74.9,12.85): neg 2, worst 6: [(-0.45, 'F', 'GND', (74.9, 12.85), (76.0, 14.0)), (-0.3, 'In2', 'ULPI_CK', (74.9, 12.85), (74.62, 9.94)), (0.075, 'In2', 'ULPI_CK', (74.9, 12.85), (75.62, 13.5))]
+XI In2 span: neg 1, worst 6: [(-0.15, 'In2', 'ULPI_CK', (75.12, 12.52), (74.62, 9.94)), (0.058, 'In2', 'PHY_1V8A', (75.64, 11.3), (75.27, 10.33)), (0.086, 'In2', '+3V3A', (75.64, 11.3), (76.44, 10.19))]
+XI pocket via: neg 11, worst 6: [(-0.076, 'F', 'PHY_1V8A', (75.94, 10.4), (75.27, 10.33)), (-0.076, 'In2', 'PHY_1V8A', (75.94, 10.4), (75.27, 10.33)), (-0.076, 'B', 'PHY_1V8A', (75.94, 10.4), (75.27, 10.33)), (-0.072, 'B', 'ULPI_STP', (75.94, 10.4), (76.07, 10.88)), (-0.066, 'F', 'PHY_1V8A', (75.94, 10.4), (75.6, 10.84)), (-0.065, 'F', 'PHY_1V8A', (75.94, 10.4), (75.38, 10.51))]
+XI F legs: neg 5, worst 6: [(-0.047, 'F', 'XO', (76.2, 11.07), (76.53, 10.72)), (-0.047, 'F', 'XO', (76.2, 11.07), (76.62, 10.94)), (-0.046, 'F', 'XO', (76.05, 10.6), (76.53, 10.72)), (-0.046, 'F', 'XO', (76.05, 10.6), (76.62, 10.94)), (-0.021, 'F', 'PHY_1V8A', (76.2, 11.07), (75.75, 11.56)), (0.009, 'F', 'PHY_1V8A', (76.2, 11.07), (75.6, 10.84))]
+XI frags final: 3
+   terms: [(0, (75.72, 18.73))]
+   terms: [(0, (74.9, 12.85)), (0, (75.625, 18.625)), (0, (76.25, 11.35)), (1, (75.625, 18.625)), (1, (85.125, 19.125)), (2, (75.94, 10.4))]
+   terms: [(0, (76.25, 11.5625))]
+=== done ===
