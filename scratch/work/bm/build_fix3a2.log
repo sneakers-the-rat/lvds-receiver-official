@@ -1,0 +1,56 @@
+16:13:08: Debug: Adding duplicate image handler for 'PNG file'
+16:13:08: Debug: Adding duplicate image handler for 'JPEG file'
+16:13:08: Debug: Adding duplicate image handler for 'TIFF file'
+16:13:08: Debug: Adding duplicate image handler for 'GIF file'
+16:13:08: Debug: Adding duplicate image handler for 'PNM file'
+16:13:08: Debug: Adding duplicate image handler for 'PCX file'
+16:13:08: Debug: Adding duplicate image handler for 'IFF file'
+16:13:08: Debug: Adding duplicate image handler for 'Windows icon file'
+16:13:08: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:13:08: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:13:08: Debug: Adding duplicate image handler for 'TGA file'
+16:13:08: Debug: Adding duplicate image handler for 'XPM file'
+16:13:09: Debug: Adding duplicate image handler for 'PNG file'
+16:13:09: Debug: Adding duplicate image handler for 'JPEG file'
+16:13:09: Debug: Adding duplicate image handler for 'TIFF file'
+16:13:09: Debug: Adding duplicate image handler for 'GIF file'
+16:13:09: Debug: Adding duplicate image handler for 'PNM file'
+16:13:09: Debug: Adding duplicate image handler for 'PCX file'
+16:13:09: Debug: Adding duplicate image handler for 'IFF file'
+16:13:09: Debug: Adding duplicate image handler for 'Windows icon file'
+16:13:09: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:13:09: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:13:09: Debug: Adding duplicate image handler for 'TGA file'
+16:13:09: Debug: Adding duplicate image handler for 'XPM file'
+16:13:13: Debug: Adding duplicate image handler for 'PNG file'
+16:13:13: Debug: Adding duplicate image handler for 'JPEG file'
+16:13:13: Debug: Adding duplicate image handler for 'TIFF file'
+16:13:13: Debug: Adding duplicate image handler for 'GIF file'
+16:13:13: Debug: Adding duplicate image handler for 'PNM file'
+16:13:13: Debug: Adding duplicate image handler for 'PCX file'
+16:13:13: Debug: Adding duplicate image handler for 'IFF file'
+16:13:13: Debug: Adding duplicate image handler for 'Windows icon file'
+16:13:13: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:13:13: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:13:13: Debug: Adding duplicate image handler for 'TGA file'
+16:13:13: Debug: Adding duplicate image handler for 'XPM file'
+ULPI_D0 F.Cu (76.375, 7.625)->(76.7, 7.35): negatives=0 worst=[(0.457, 'via +3V3A@(76.1, 6.45)'), (0.475, 'via +3V3A@(75.62, 8.62)')]
+ULPI_D0 F.Cu (76.7, 7.35)->(77.45, 7.18): negatives=0 worst=[(0.457, 'via +3V3A@(76.1, 6.45)'), (0.523, 'trk ULPI_D1 (78.2, 6.6)->(77.85, 6.1)')]
+ULPI_D0 F.Cu (77.45, 7.18)->(78.35, 7.42): negatives=0 worst=[(0.078, 'trk ULPI_D1 (78.8, 7.15)->(78.2, 6.6)'), (0.1, 'trk ULPI_D1 (79.35, 7.55)->(78.8, 7.15)')]
+ULPI_D0 F.Cu (78.35, 7.42)->(78.62, 7.55): negatives=0 worst=[(0.004, 'trk ULPI_D1 (79.35, 7.55)->(78.8, 7.15)'), (0.013, 'trk ULPI_D1 (78.8, 7.15)->(78.2, 6.6)')]
+ULPI_D0 F.Cu (78.62, 7.55)->(78.9, 9.12): negatives=0 worst=[(0.004, 'trk ULPI_D1 (79.35, 7.55)->(78.8, 7.15)'), (0.007, 'via I2C_SCL@(78.12, 8.38)')]
+ULPI_D0 F.Cu (78.9, 9.12)->(78.375, 9.625): negatives=0 worst=[(0.025, 'trk ULPI_D1 (79.35, 10.35)->(79.35, 7.55)'), (0.083, 'via PHY_1V8@(77.9, 10.08)')]
+via GND (77.35, 7.84): negatives=0 worst=[(0.051, 'trk[In2.Cu] ULPI_STP (76.445, 9.03)->(77.2, 5.9)'), (0.192, 'via I2C_SCL@(78.12, 8.38)')]
+gate negatives: 0
+gate clean; building
+netcodes: {'ULPI_D0': 96, 'GND': 44}
+found ULPI_D0 seg (76.375, 7.625)->(76.625, 7.875) (w=0.25)
+found ULPI_D0 seg (76.625, 7.875)->(76.95, 7.8) (w=0.25)
+found ULPI_D0 seg (76.95, 7.8)->(77.7, 7.75) (w=0.25)
+found ULPI_D0 seg (77.7, 7.75)->(78.65, 7.6) (w=0.25)
+found ULPI_D0 seg (78.65, 7.6)->(78.88, 9.15) (w=0.25)
+removed 5 items
+saved hw/pdlvds_rx.exp267.kicad_pcb
+reload census diff (net, kind): base -> now
+  ('GND', 'via'): 48 -> 49
+  ('ULPI_D0', 'trk'): 27 -> 28
