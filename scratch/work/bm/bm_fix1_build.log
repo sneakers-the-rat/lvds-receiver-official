@@ -1,0 +1,134 @@
+14:17:50: Debug: Adding duplicate image handler for 'PNG file'
+14:17:50: Debug: Adding duplicate image handler for 'JPEG file'
+14:17:50: Debug: Adding duplicate image handler for 'TIFF file'
+14:17:50: Debug: Adding duplicate image handler for 'GIF file'
+14:17:50: Debug: Adding duplicate image handler for 'PNM file'
+14:17:50: Debug: Adding duplicate image handler for 'PCX file'
+14:17:50: Debug: Adding duplicate image handler for 'IFF file'
+14:17:50: Debug: Adding duplicate image handler for 'Windows icon file'
+14:17:50: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:17:50: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:17:50: Debug: Adding duplicate image handler for 'TGA file'
+14:17:50: Debug: Adding duplicate image handler for 'XPM file'
+14:17:52: Debug: Adding duplicate image handler for 'PNG file'
+14:17:52: Debug: Adding duplicate image handler for 'JPEG file'
+14:17:52: Debug: Adding duplicate image handler for 'TIFF file'
+14:17:52: Debug: Adding duplicate image handler for 'GIF file'
+14:17:52: Debug: Adding duplicate image handler for 'PNM file'
+14:17:52: Debug: Adding duplicate image handler for 'PCX file'
+14:17:52: Debug: Adding duplicate image handler for 'IFF file'
+14:17:52: Debug: Adding duplicate image handler for 'Windows icon file'
+14:17:52: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:17:52: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:17:52: Debug: Adding duplicate image handler for 'TGA file'
+14:17:52: Debug: Adding duplicate image handler for 'XPM file'
+14:17:55: Debug: Adding duplicate image handler for 'PNG file'
+14:17:55: Debug: Adding duplicate image handler for 'JPEG file'
+14:17:55: Debug: Adding duplicate image handler for 'TIFF file'
+14:17:55: Debug: Adding duplicate image handler for 'GIF file'
+14:17:55: Debug: Adding duplicate image handler for 'PNM file'
+14:17:55: Debug: Adding duplicate image handler for 'PCX file'
+14:17:55: Debug: Adding duplicate image handler for 'IFF file'
+14:17:55: Debug: Adding duplicate image handler for 'Windows icon file'
+14:17:55: Debug: Adding duplicate image handler for 'Windows cursor file'
+14:17:55: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+14:17:55: Debug: Adding duplicate image handler for 'TGA file'
+14:17:55: Debug: Adding duplicate image handler for 'XPM file'
+ULPI_NXT F (76.0, 16.438)->(75.98, 17.05): negatives=0 worst=[(0.061, 'pad GND rect(75.375, 16.0, 75.625, 16.875)'), (0.075, 'pad ULPI_DIR rect(76.375, 16.0, 76.625, 16.875)')]
+ULPI_NXT F (75.98, 17.05)->(75.45, 17.32): negatives=0 worst=[(0.017, 'pad GND rect(75.375, 16.0, 75.625, 16.875)'), (0.132, 'pad ULPI_DIR rect(76.375, 16.0, 76.625, 16.875)')]
+ULPI_NXT F (75.45, 17.32)->(74.94, 17.36): negatives=0 worst=[(0.145, 'pad GND rect(75.375, 16.0, 75.625, 16.875)'), (0.169, 'pad USB_RST rect(74.875, 16.0, 75.125, 16.875)')]
+ULPI_DIR F (76.5, 16.438)->(76.5, 17.3): negatives=0 worst=[(0.075, 'pad ULPI_NXT rect(75.875, 16.0, 76.125, 16.875)'), (0.075, 'pad ULPI_STP rect(76.875, 16.0, 77.125, 16.875)')]
+ULPI_DIR F (76.5, 17.3)->(76.15, 17.42): negatives=0 worst=[(0.224, 'pad ULPI_NXT rect(75.875, 16.0, 76.125, 16.875)'), (0.267, 'pad ULPI_STP rect(76.875, 16.0, 77.125, 16.875)')]
+ULPI_DIR F (76.15, 17.42)->(75.35, 17.85): negatives=0 worst=[(0.089, 'via ULPI_NXT@(74.94, 17.36)'), (0.222, 'via XI@(75.62, 18.62)')]
+ULPI_DIR F (75.35, 17.85)->(74.84, 18.07): negatives=0 worst=[(0.062, 'via ULPI_NXT@(74.94, 17.36)'), (0.221, 'via XI@(75.62, 18.62)')]
+ULPI_DIR B (74.84, 18.07)->(73.3, 18.42): negatives=0 worst=[(0.137, 'via GND@(73.43, 17.68)'), (0.159, 'via DM_PHY@(73.62, 19.12)')]
+ULPI_STP F (77.0, 16.438)->(76.92, 17.0): negatives=0 worst=[(0.01, 'pad ULPI_DIR rect(76.375, 16.0, 76.625, 16.875)'), (0.075, 'pad ULPI_CK rect(77.375, 16.0, 77.625, 16.875)')]
+ULPI_STP F (76.92, 17.0)->(76.92, 17.9): negatives=0 worst=[(0.02, 'pad ULPI_DIR rect(76.375, 16.0, 76.625, 16.875)'), (0.172, 'pad ULPI_CK rect(77.375, 16.0, 77.625, 16.875)')]
+ULPI_STP F (76.92, 17.9)->(76.065, 17.96): negatives=0 worst=[(0.165, 'pad XI rect(75.44, 18.42, 76.0, 19.04)'), (0.182, 'pad GND rect(76.4, 18.42, 76.96, 19.04)')]
+ULPI_STP B (76.065, 17.96)->(76.1, 16.0): negatives=0 worst=[(0.083, 'trk XI (75.48, 17.74)->(75.6, 16.95)'), (0.083, 'trk XI (75.6, 16.95)->(75.6, 16.3)')]
+ULPI_STP B (76.1, 16.0)->(76.35, 14.6): negatives=0 worst=[(0.112, 'via GND@(75.6, 14.75)'), (0.15, 'trk PHY_1V8 (76.95, 11.05)->(76.95, 14.988)')]
+ULPI_STP B (76.35, 14.6)->(76.425, 12.9): negatives=0 worst=[(0.075, 'trk PHY_1V8 (76.95, 11.05)->(76.95, 14.988)'), (0.165, 'via GND@(75.6, 14.75)')]
+ULPI_CK F (77.5, 16.438)->(77.45, 17.3): negatives=0 worst=[(0.049, 'pad ULPI_STP rect(76.875, 16.0, 77.125, 16.875)'), (0.075, 'pad PHY_1V8 rect(77.875, 16.0, 78.125, 16.875)')]
+ULPI_CK F (77.45, 17.3)->(77.4, 17.85): negatives=0 worst=[(0.065, 'via PHY_1V8@(78.1, 17.5)'), (0.161, 'trk PHY_1V8 (78.0, 17.188)->(78.1, 17.5)')]
+ULPI_CK In2 (77.4, 17.85)->(77.5, 18.4): negatives=0 worst=[(0.183, 'via PHY_1V8@(78.1, 17.5)'), (0.664, 'trk +3V3D (77.2, 19.525)->(77.15, 19.525)')]
+ULPI_CK In2 (77.5, 18.4)->(77.05, 18.8): negatives=0 worst=[(0.225, 'trk +3V3D (77.05, 19.525)->(77.0, 19.525)'), (0.225, 'trk +3V3D (77.1, 19.525)->(77.05, 19.525)')]
+ULPI_CK In2 (77.05, 18.8)->(76.7, 18.85): negatives=0 worst=[(0.175, 'trk +3V3D (76.7, 19.525)->(76.65, 19.525)'), (0.175, 'trk +3V3D (76.75, 19.525)->(76.7, 19.525)')]
+ULPI_CK In2 (76.7, 18.85)->(76.62, 18.3): negatives=0 worst=[(0.175, 'trk +3V3D (76.7, 19.525)->(76.65, 19.525)'), (0.175, 'trk +3V3D (76.75, 19.525)->(76.7, 19.525)')]
++3V3A F (78.5, 16.438)->(78.625, 16.75): negatives=0 worst=[(0.075, 'pad PHY_1V8 rect(77.875, 16.0, 78.125, 16.875)'), (0.1, 'trk PHY_1V8 (78.0, 16.4375)->(78.0, 17.1875)')]
+via ULPI_DIR (74.84, 18.07): negatives=0 worst=[(0.017, 'via ULPI_NXT@(74.94, 17.36)'), (0.035, 'trk[B] XI (75.42, 18.15)->(75.48, 17.74)')]
+via ULPI_STP (76.065, 17.96): negatives=0 worst=[(0.005, 'trk[In2] ULPI_CK (76.62, 18.3)->(76.62, 17.3)'), (0.015, 'pad[F] XI rect(75.44, 18.42, 76.0, 19.04)')]
+via ULPI_CK (77.4, 17.85): negatives=0 worst=[(0.033, 'via PHY_1V8@(78.1, 17.5)'), (0.233, 'trk[B] PHY_1V8 (78.1, 17.5)->(77.8, 16.2)')]
+via GND (78.0, 18.3): negatives=0 worst=[(0.049, 'trk[B] +3V3D (78.375, 19.125)->(78.625, 18.875)'), (0.049, 'trk[B] +3V3D (78.625, 18.875)->(78.875, 18.625)')]
+gate clean; building
+netcodes: {'ULPI_NXT': 105, 'ULPI_DIR': 104, 'ULPI_STP': 106, 'ULPI_CK': 95, '+3V3A': 1, 'GND': 44}
+find ULPI_NXT F (74.8, 16.3, 76.2, 17.6): 1
+find ULPI_DIR F (73.0, 16.3, 76.7, 18.6): 3
+find ULPI_DIR B (73.0, 16.3, 76.7, 18.6): 1
+find ULPI_STP F (75.9, 16.3, 77.2, 18.3): 17
+find ULPI_STP B (75.9, 12.8, 76.95, 18.2): 38
+find ULPI_CK F (76.4, 16.3, 77.9, 19.1): 2
+found ULPI_CK seg (77.05, 17.85)->(77.35, 18.35) (w=0.2)
+found ULPI_CK seg (77.35, 18.35)->(76.9, 18.75) (w=0.2)
+found ULPI_CK seg (76.9, 18.75)->(76.62, 18.3) (w=0.2)
+find +3V3A F (78.0, 16.2, 79.5, 16.9): 5
+found ULPI_DIR via @(74.82, 18.1)
+found ULPI_STP via @(76.065, 17.96)
+found ULPI_CK via @(77.05, 17.85)
+found GND via @(77.25, 18.38)
+removed 74 items
+saved hw/pdlvds_rx.exp262.kicad_pcb
+reload census diff (net, kind): base -> now
+  ('+3V3A', 'trk'): 616 -> 612
+  ('ULPI_CK', 'trk'): 16 -> 17
+  ('ULPI_DIR', 'trk'): 17 -> 18
+  ('ULPI_NXT', 'trk'): 17 -> 19
+  ('ULPI_STP', 'trk'): 556 -> 507
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
