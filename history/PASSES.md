@@ -1756,9 +1756,9 @@ ULPI_STP connected (split pass, pass-210 precedent): C20 shrunk 0603->0402 at (7
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 3 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 215 — 2026-11-10T01:55:02Z · commit `pending`
+### Pass 215 — 2026-11-10T01:55:02Z · commit `20d40c9`
 
-Board: `hw/pdlvds_rx.exp252.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp252.kicad_pcb` · Commit: `20d40c9e15432addf7bb0f0e3c777dbe4d6b00a7`
 
 pass 215: PHY_1V8A notch via relocated (75.7375,10.75)->(75.27,10.33), F stub and B head re-laid; zero-delta prep freeing the SE pocket centre for the PHY_1V8/STP crossing (notch disc was the keystone fence: its exclusion covered the pocket floor). DRC 5 (4 J1 + PHY tail dangle), check_pcb nets 3, census 109, courtyard 0
 
