@@ -1,0 +1,9 @@
+{
+  "board_state": "ERC: 0 errors, 0 warnings",
+  "errors": 0,
+  "messages": 0,
+  "report": "results/erc-report.txt",
+  "tool_health": "ok",
+  "verdict": "PASS",
+  "warnings": 0
+}
