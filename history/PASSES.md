@@ -1804,9 +1804,9 @@ U7 re-place repair finished: east D-fan knot re-fanned (C48 + C19 shrunk 0603 to
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 138 · Unconnected nets: 1 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 221 — 2026-11-10T21:25:59Z · commit `pending`
+### Pass 221 — 2026-11-10T21:25:59Z · commit `91df08f`
 
-Board: `hw/pdlvds_rx.exp273.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp273.kicad_pcb` · Commit: `91df08f084a61d1e2213648713ccd3d9c7ad40dc`
 
 USB_RST connected end to end — last net on the board: south dives set by a joint via grid (RST (74.55,17.05), NXT (74.5,17.95), DIR (74.75,18.65)) with DIR/NXT escapes re-fanned, In2 journey west of the ULPI_CK column (CK bows east at the RBIAS-via latitude; RBIAS via re-placed (73.7,11.55), column shifted -0.30), DM_PHY loop return re-laid clear of CAP_DATA's via, arrival threaded at legal d0.5 vias (surf via (74.72,6.02), ULPI_D0 threaded between the surf via and +3V3D's feed chain, SCL/BIST windows re-laid); KiCad DRC 4 J1 only, unconnected 0, check_pcb nets 0, courtyard 0 — BOARD FULLY ROUTED
 
