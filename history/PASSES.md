@@ -1788,6 +1788,14 @@ pass 218: XI pocket build (design v10 pocket half): ULPI_STP B descent re-laid e
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 120 · Unconnected nets: 2 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 219 — 2026-11-10T08:28:49Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp257.kicad_pcb` · Commit: `pending`
+
+XI connected: ULPI_NXT escape re-laid (short F stub to new via (74.94,17.36), In2 west bow via (74.10,17.70) to the tail joint at (74.5,19.25); vestigial dive via ripped); ULPI_DIR via moved south to (74.82,18.10) (waist to STP dive 1.253), F stub threaded (75.60,17.30)/(75.42,17.95), B journey bent at (73.3,18.42) around GND/DM_PHY/CAP_DATA vias; bent XI ride on B from arc via (75.625,18.625) through the waist into PV (75.82,10.30) -- PV via_dangling dead. KiCad DRC 4 (standing J1 only); check_pcb nets 1 {USB_RST}, census 120 line-identical, courtyard 0, blind 21.
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 120 · Unconnected nets: 1 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
