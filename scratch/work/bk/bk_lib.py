@@ -160,6 +160,7 @@ for it in rbias_bnd:
 # +3V3A west via + its F horizontal + B vertical + B diagonal (DELETED via)
 rip_via('+3V3A', (73.625, 10.625))
 rip_trk('+3V3A', 'F', (74.375, 10.625), (73.625, 10.625))
+rip_trk('+3V3A', 'F', (75.125, 11.125), (74.250, 10.625))
 rip_trk('+3V3A', 'B', (73.625, 8.625), (73.625, 10.625))
 rip_trk('+3V3A', 'B', (73.625, 10.625), (75.625, 8.625))
 # BIST window (bh3: 5 segs)
@@ -211,27 +212,27 @@ add_poly('DM-west', 'DM_PHY', 'F',
 # RST F stub + dive via
 add_poly('RST-stub', 'USB_RST', 'F', [(74.250, 16.878), (74.320, 17.550), (74.450, 18.250)], 0.20)
 add_via('RST-dive', 'USB_RST', (74.450, 18.250), 0.50)
-# RST In2 journey: dive -> channel -> jog thread -> arrival diagonal
+# RST In2 journey: dive -> channel -> jog thread (east approach) -> arrival
 JOURNEY = [(74.450, 18.250), (74.300, 17.350), (74.160, 16.550), (74.160, 12.000),
-           (74.130, 10.850), (73.990, 10.460), (74.080, 9.800), (74.140, 9.000),
+           (74.200, 10.620), (73.960, 10.550), (73.800, 9.900), (74.140, 9.000),
            (74.140, 7.050), (74.820, 5.840)]
 add_poly('RST-journey', 'USB_RST', 'In2', JOURNEY, 0.20)
-# arrival (bh3 exact)
-add_via('CK-via', 'ULPI_CK', (75.420, 6.120), 0.50)
-add_poly('CK-F', 'ULPI_CK', 'F', [(75.250, 5.162), (75.330, 5.620), (75.420, 6.120)], 0.20)
+# arrival (bh shape, CK via shifted to (75.48,5.92): D0-vs-surf jaw solution)
+add_via('CK-via', 'ULPI_CK', (75.480, 5.920), 0.50)
+add_poly('CK-F', 'ULPI_CK', 'F', [(75.250, 5.162), (75.280, 5.600), (75.480, 5.920)], 0.20)
 add_poly('CK-bow', 'ULPI_CK', 'In2',
-         [(75.420, 6.120), (75.050, 6.600), (74.700, 7.000), (74.625, 7.350)], 0.25)
+         [(75.480, 5.920), (75.050, 6.600), (74.700, 7.000), (74.625, 7.350)], 0.25)
 add_poly('CK-col', 'ULPI_CK', 'In2', [(74.625, 7.350), (74.625, 9.400)], 0.25)
 add_via('RST-surf', 'USB_RST', (74.820, 5.840), 0.40)
 add_poly('RST-hop', 'USB_RST', 'F', [(74.820, 5.840), (74.780, 5.500), (74.780, 5.300)], 0.20)
-# +3V3A east re-feed to existing via (75.625,8.625)
-add_poly('P3V3A-feed', '+3V3A', 'F',
-         [(74.250, 10.625), (74.450, 9.800), (75.300, 9.500), (75.850, 9.250),
+# +3V3A In2 re-feed: U7.25 pad south edge -> staircase -> via (75.625,8.625)
+add_poly('P3V3A-feed', '+3V3A', 'In2',
+         [(75.250, 11.200), (75.300, 10.000), (75.450, 9.350), (75.580, 8.950),
           (75.625, 8.625)], 0.20)
-# RBIAS via west + F stub + In2 connector (bowed east vs XO endpoint)
-add_via('RBIAS-via', 'RBIAS', (73.480, 10.820), 0.60)
-add_poly('RBIAS-F', 'RBIAS', 'F', [(74.000, 11.562), (73.480, 10.820)], 0.20)
-add_poly('RBIAS-conn', 'RBIAS', 'In2', [(73.480, 10.820), (73.680, 11.150), (73.575, 11.625)], 0.25)
+# RBIAS via west-north + F stub + In2 connector (bowed east vs XO endpoint)
+add_via('RBIAS-via', 'RBIAS', (73.510, 10.950), 0.60)
+add_poly('RBIAS-F', 'RBIAS', 'F', [(74.000, 11.562), (73.510, 10.950)], 0.20)
+add_poly('RBIAS-conn', 'RBIAS', 'In2', [(73.510, 10.950), (73.680, 11.150), (73.575, 11.625)], 0.25)
 # RBIAS column shifted -0.30 + boundary connectors (bj machinery)
 for it in rbias_col:
     ADDS.append(('RBIAS-col', G.Item('RBIAS', 'trk', layer='In2',
