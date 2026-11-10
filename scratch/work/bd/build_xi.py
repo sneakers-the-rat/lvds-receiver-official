@@ -1,15 +1,20 @@
-"""build_xi v1: the user's XI design, built and refereed (no scans).
+"""build_xi v3 (family C): NXT leaves F early; DIR via goes south.
+
+Referee history: v1 (drc257.json) connected XI but the F-layer
+scissor (DIR stub vs NXT F escape) cost 14; v2 (drc257_v2.json)
+cut it to 3 items, all the same scissor + CAP_DATA graze. The
+strip south of the U7 pad row cannot hold both F dives plus the
+DIR via at waist >= 1.10 from the STP dive. So:
 
 exp256 -> exp257:
-- ULPI_NXT escape re-laid bowed west, passing EAST then south of
-  the DIR stub fan: F (75.25,16.875) -> (75.45,17.90) ->
-  (74.55,18.70) -> kept dive via (74.5,19.25).
-- ULPI_DIR via nudged west along its row to (74.80,17.521)
-  (waist to STP dive = 1.339); F stub dives steeply west passing
-  below the NXT pad corner; B journey bends at (74.35,18.22)
-  around the GND via (v1 referee fences, drc257.json).
-- XI bent ride on B: arc via (75.625,18.625) -> waist -> east lane
-  x75.60 -> west jog -> lane x74.98 -> NE jog -> PV (75.82,10.30).
+- ULPI_NXT: short F stub (75.25,16.875) -> new via NV
+  (75.0,17.3); In2 (74.42,17.75) -> kept dive via (74.5,19.25).
+- ULPI_DIR: via DV south at (74.8,17.96) (waist to STP dive
+  1.241); F stub threads east of NV then dives; B journey bends
+  at (73.8,18.65) to the kept joint (71.375,19.125).
+- XI bent ride on B: unchanged from v1/v2 (connected clean
+  twice): arc (75.625,18.625) -> waist -> east lane x75.60 ->
+  west jog -> lane x74.98 -> NE jog -> PV (75.82,10.30).
 Judge: KiCad DRC + check_pcb on the built board only.
 """
 import sys
@@ -31,17 +36,19 @@ victims += S.find_seg('ULPI_DIR', BL.B, (75.5, 17.521), (71.375, 19.125))
 victims += S.find_via('ULPI_DIR', (75.5, 17.521))
 S.remove(victims)
 
-# ---- NXT escape, bowed west (underpass of the DIR stub fan) ----
-S.add_polyline('ULPI_NXT', BL.F,
-               [(75.25, 16.875), (75.45, 17.90), (74.55, 18.70),
-                (74.5, 19.25)], w_nxt)
+# ---- NXT: F stub to NV, In2 escape to the kept dive via ----
+S.add_track('ULPI_NXT', BL.F, (75.25, 16.875), (75.0, 17.3), w_nxt)
+S.add_via('ULPI_NXT', 75.0, 17.3)
+S.add_polyline('ULPI_NXT', BL.IN2,
+               [(75.0, 17.3), (74.42, 17.75), (74.5, 19.25)], w_nxt)
 
-# ---- DIR via west + stub + B journey head ----
-S.add_via('ULPI_DIR', 74.80, 17.521)
+# ---- DIR: stub thread + south via + bent B journey ----
+S.add_via('ULPI_DIR', 74.8, 17.96)
 S.add_polyline('ULPI_DIR', BL.F,
-               [(75.75, 16.875), (74.94, 17.47), (74.80, 17.521)], w_dir)
+               [(75.75, 16.875), (75.65, 17.32), (75.45, 17.85),
+                (74.8, 17.96)], w_dir)
 S.add_polyline('ULPI_DIR', BL.B,
-               [(74.80, 17.521), (74.35, 18.22), (71.375, 19.125)], w_dir)
+               [(74.8, 17.96), (73.8, 18.65), (71.375, 19.125)], w_dir)
 
 # ---- XI bent ride on B into PV ----
 S.add_polyline('XI', BL.B,
