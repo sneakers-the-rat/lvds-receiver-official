@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""bl build v3.1: re-place U7 +0.75 east (C19 +0.35) on exp257 -> exp259.
-Node-graph shear: per net, flood the component touching the part's
-pads; a NODE (track endpoint) moves by DX iff it lies inside the
-escape zone (pads bbox + 0.9mm) and is not on a kept via, a fixed
-pad, or a kept track. Every component track incident to a moving
-node is re-emitted with mapped endpoints (count preserved 1:1).
-Vias never move. Refill, save, reload census."""
+"""bl build v3.2: re-place U7 +0.75 east (C19 +0.35) on exp257 -> exp259.
+Escape shear: per net, BFS from the part's pads over track segments,
+including a segment iff both endpoints are within 1.45mm of a seed pad
+rect; expansion does not cross via centres or fixed pads (terminals).
+A node moves by DX iff it is an endpoint of an included segment and is
+not on a via, a fixed pad, or a non-included track. Footprints move
+first (fresh objects); track surgery after. Vias never move."""
 import math
 import wx
 _app = wx.App(False)
@@ -48,39 +48,43 @@ def near(p, q, tol):
 def in_rect(p, r, pad=0.0):
     return r[0] - pad <= p[0] <= r[2] + pad and r[1] - pad <= p[1] <= r[3] + pad
 
-def key(p):
-    return (round(p[0], 3), round(p[1], 3))
+def rect_dist(p, r):
+    dx = max(r[0] - p[0], 0.0, p[0] - r[2])
+    dy = max(r[1] - p[1], 0.0, p[1] - r[3])
+    return math.hypot(dx, dy)
 
-def get_fp(ref):
+# capture pad data for moving parts, then move footprints (fresh objs)
+part_pads = {}
+for ref, DX in MOVES:
     for fp in b.GetFootprints():
         if fp.GetReference() == ref:
-            return fp
-    raise KeyError(ref)
-
-def refan(ref, DX):
-    fp = get_fp(ref)
-    pads = []
+            pads = []
+            for pad in fp.Pads():
+                bb = pad.GetBoundingBox()
+                pads.append((pad.GetNetname(), (bb.GetLeft() / IU, bb.GetTop() / IU,
+                                                bb.GetRight() / IU, bb.GetBottom() / IU)))
+            part_pads[ref] = pads
+            p = fp.GetPosition()
+            fp.SetPosition(pcbnew.VECTOR2I(p.x + int(round(DX * IU)), p.y))
+            print(f'{ref} footprint moved +{DX}')
+            break
+# fixed pad rects per net (parts not moving)
+fixed_pads = {}
+for fp in b.GetFootprints():
+    if fp.GetReference() in dict(MOVES):
+        continue
     for pad in fp.Pads():
         bb = pad.GetBoundingBox()
-        pads.append((pad.GetNetname(), (bb.GetLeft() / IU, bb.GetTop() / IU,
-                                        bb.GetRight() / IU, bb.GetBottom() / IU)))
-    xs = [r[0] for _, r in pads] + [r[2] for _, r in pads]
-    ys = [r[1] for _, r in pads] + [r[3] for _, r in pads]
-    E = (min(xs) - 0.9, min(ys) - 0.9, max(xs) + 0.9, max(ys) + 0.9)
-    # fixed pad rects (parts not moving), per net
-    fixed_pads = {}
-    for f2 in b.GetFootprints():
-        if f2.GetReference() in dict(MOVES):
-            continue
-        for pad in f2.Pads():
-            bb = pad.GetBoundingBox()
-            fixed_pads.setdefault(pad.GetNetname(), []).append(
-                (bb.GetLeft() / IU, bb.GetTop() / IU, bb.GetRight() / IU, bb.GetBottom() / IU))
+        fixed_pads.setdefault(pad.GetNetname(), []).append(
+            (bb.GetLeft() / IU, bb.GetTop() / IU, bb.GetRight() / IU, bb.GetBottom() / IU))
+
+def refan(ref, DX):
+    pads = part_pads[ref]
     tracks = list(b.GetTracks())
     by_net = {}
     for t in tracks:
         by_net.setdefault(t.GetNetname(), []).append(t)
-    n_re = 0
+    n_re = n_col = 0
     for net in {n for n, _ in pads if n and n in NC}:
         items = by_net.get(net, [])
         trks = [t for t in items if t.Type() != pcbnew.PCB_VIA_T]
@@ -88,44 +92,61 @@ def refan(ref, DX):
                  t.GetWidth() / IU / 2)
                 for t in items if t.Type() == pcbnew.PCB_VIA_T]
         seed_rects = [r for n, r in pads if n == net]
-        # flood component from this part's pads
-        comp = set()
+
+        def on_via(p):
+            return any(math.hypot(p[0] - vx, p[1] - vy) <= vr + 0.045
+                       for (vx, vy, vr) in vias)
+
+        def on_fixed_pad(p):
+            return any(in_rect(p, r, 0.03) for r in fixed_pads.get(net, []))
+
+        def terminal(p):
+            return on_via(p) or on_fixed_pad(p)
+
+        # BFS include: seg endpoints within 1.45 of a seed rect; do not
+        # expand through terminal nodes (segment touching terminal is
+        # included, its other side is not crossed).
+        included = set()
         frontier = []
         for t in trks:
             a, bb = seg_pts(t)
             if any(in_rect(a, r, 0.05) or in_rect(bb, r, 0.05) for r in seed_rects):
-                comp.add(id(t))
+                included.add(id(t))
                 frontier.append(t)
         while frontier:
             cur = frontier.pop()
             ca, cb = seg_pts(cur)
             for t in trks:
-                if id(t) in comp:
+                if id(t) in included:
                     continue
                 a, bb = seg_pts(t)
-                if any(near(p, ca, 0.045) or near(p, cb, 0.045) or
-                       pt_seg(p, ca, cb) <= 0.045 for p in (a, bb)) or \
-                   any(pt_seg(p, a, bb) <= 0.045 for p in (ca, cb)):
-                    comp.add(id(t))
-                    frontier.append(t)
-        comp_trks = [t for t in trks if id(t) in comp]
-        kept_trks = [t for t in trks if id(t) not in comp]
-        # node classification
+                if min(rect_dist(a, r) for r in seed_rects) > 1.45 or \
+                   min(rect_dist(bb, r) for r in seed_rects) > 1.45:
+                    continue
+                for p, q in ((a, ca), (a, cb), (bb, ca), (bb, cb)):
+                    if near(p, q, 0.045) and not terminal(q):
+                        included.add(id(t))
+                        frontier.append(t)
+                        break
+                else:
+                    # T-joint: endpoint of t on cur, cur's endpoint not terminal
+                    if (pt_seg(a, ca, cb) <= 0.045 and not terminal(a)) or \
+                       (pt_seg(bb, ca, cb) <= 0.045 and not terminal(bb)):
+                        included.add(id(t))
+                        frontier.append(t)
+        inc_trks = [t for t in trks if id(t) in included]
+        kept_trks = [t for t in trks if id(t) not in included]
+
         def node_moves(p):
-            if not in_rect(p, E):
+            if terminal(p):
                 return False
-            for (vx, vy, vr) in vias:
-                if math.hypot(p[0] - vx, p[1] - vy) <= vr + 0.045:
-                    return False
-            for r in fixed_pads.get(net, []):
-                if in_rect(p, r, 0.03):
-                    return False
             for t in kept_trks:
                 a, bb = seg_pts(t)
                 if near(p, a, 0.045) or near(p, bb, 0.045) or pt_seg(p, a, bb) <= 0.045:
                     return False
             return True
-        for t in comp_trks:
+
+        for t in inc_trks:
             a, bb = seg_pts(t)
             ma, mb = node_moves(a), node_moves(bb)
             if not (ma or mb):
@@ -135,7 +156,7 @@ def refan(ref, DX):
             lay, w = t.GetLayer(), t.GetWidth()
             b.Remove(t)
             if abs(na[0] - nb[0]) < 1e-6 and abs(na[1] - nb[1]) < 1e-6:
-                print(f'  WARN {net}: track collapsed at {a}')
+                n_col += 1
                 continue
             nt = pcbnew.PCB_TRACK(b)
             nt.SetNetCode(NC[net])
@@ -145,10 +166,7 @@ def refan(ref, DX):
             nt.SetWidth(w)
             b.Add(nt)
             n_re += 1
-    fp = get_fp(ref)
-    p = fp.GetPosition()
-    fp.SetPosition(pcbnew.VECTOR2I(p.x + int(round(DX * IU)), p.y))
-    print(f'{ref}: re-emitted {n_re} tracks, footprint moved +{DX}')
+    print(f'{ref}: re-emitted {n_re}, collapsed {n_col}')
 
 for ref, DX in MOVES:
     refan(ref, DX)
