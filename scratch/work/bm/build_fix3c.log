@@ -1,0 +1,90 @@
+16:56:33: Debug: Adding duplicate image handler for 'PNG file'
+16:56:33: Debug: Adding duplicate image handler for 'JPEG file'
+16:56:33: Debug: Adding duplicate image handler for 'TIFF file'
+16:56:33: Debug: Adding duplicate image handler for 'GIF file'
+16:56:33: Debug: Adding duplicate image handler for 'PNM file'
+16:56:33: Debug: Adding duplicate image handler for 'PCX file'
+16:56:33: Debug: Adding duplicate image handler for 'IFF file'
+16:56:33: Debug: Adding duplicate image handler for 'Windows icon file'
+16:56:33: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:56:33: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:56:33: Debug: Adding duplicate image handler for 'TGA file'
+16:56:33: Debug: Adding duplicate image handler for 'XPM file'
+16:56:34: Debug: Adding duplicate image handler for 'PNG file'
+16:56:34: Debug: Adding duplicate image handler for 'JPEG file'
+16:56:34: Debug: Adding duplicate image handler for 'TIFF file'
+16:56:34: Debug: Adding duplicate image handler for 'GIF file'
+16:56:34: Debug: Adding duplicate image handler for 'PNM file'
+16:56:34: Debug: Adding duplicate image handler for 'PCX file'
+16:56:34: Debug: Adding duplicate image handler for 'IFF file'
+16:56:34: Debug: Adding duplicate image handler for 'Windows icon file'
+16:56:34: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:56:34: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:56:34: Debug: Adding duplicate image handler for 'TGA file'
+16:56:34: Debug: Adding duplicate image handler for 'XPM file'
+16:56:38: Debug: Adding duplicate image handler for 'PNG file'
+16:56:38: Debug: Adding duplicate image handler for 'JPEG file'
+16:56:38: Debug: Adding duplicate image handler for 'TIFF file'
+16:56:38: Debug: Adding duplicate image handler for 'GIF file'
+16:56:38: Debug: Adding duplicate image handler for 'PNM file'
+16:56:38: Debug: Adding duplicate image handler for 'PCX file'
+16:56:38: Debug: Adding duplicate image handler for 'IFF file'
+16:56:38: Debug: Adding duplicate image handler for 'Windows icon file'
+16:56:38: Debug: Adding duplicate image handler for 'Windows cursor file'
+16:56:38: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+16:56:38: Debug: Adding duplicate image handler for 'TGA file'
+16:56:38: Debug: Adding duplicate image handler for 'XPM file'
+I2C_SCL In2.Cu (79.15, 10.6)->(79.15, 2.875): negatives=0 worst=[(0.092, 'via GND@(79.82, 6.08)'), (0.225, 'via ULPI_D2@(80.0, 8.3)')]
+I2C_SCL In2.Cu (79.15, 10.6)->(79.45, 11.1): negatives=0 worst=[(0.207, 'via +3V3A@(78.8, 11.62)'), (0.285, 'trk ULPI_D2 (80.3, 12.8)->(80.0, 8.3)')]
+I2C_SCL In2.Cu (79.45, 11.1)->(79.45, 14.375): negatives=0 worst=[(0.025, 'via +3V3A@(78.8, 11.62)'), (0.125, 'via ULPI_D3@(80.15, 13.7)')]
+I2C_SCL In2.Cu (79.15, 2.875)->(79.375, 2.625): negatives=0 worst=[(0.257, 'trk BIST_DRV (78.625, 2.375)->(78.875, 2.125)'), (0.257, 'trk BIST_DRV (78.875, 2.125)->(79.125, 1.875)')]
+I2C_SCL In2.Cu (78.125, 8.375)->(79.15, 8.375): negatives=0 worst=[(0.228, 'via ULPI_D2@(80.0, 8.3)'), (0.367, 'via GND@(77.35, 7.84)')]
+I2C_SCL In2.Cu (79.45, 14.375)->(79.0, 14.85): negatives=0 worst=[(0.179, 'via ULPI_D4@(80.2, 14.45)'), (0.329, 'trk ULPI_D4 (80.2, 14.45)->(80.375, 14.125)')]
+I2C_SCL In2.Cu (79.0, 14.85)->(79.0, 15.2): negatives=0 worst=[(0.062, 'via ULPI_D7@(79.1, 15.88)'), (0.675, 'via ULPI_D5@(80.25, 15.19)')]
+I2C_SCL In2.Cu (79.0, 15.2)->(79.5, 15.3): negatives=0 worst=[(0.022, 'via ULPI_D7@(79.1, 15.88)'), (0.183, 'via ULPI_D5@(80.25, 15.19)')]
+I2C_SCL In2.Cu (79.5, 15.3)->(79.75, 15.75): negatives=0 worst=[(0.006, 'via ULPI_D7@(79.1, 15.88)'), (0.135, 'via ULPI_D5@(80.25, 15.19)')]
+I2C_SCL In2.Cu (79.75, 15.75)->(79.875, 15.875): negatives=0 worst=[(0.038, 'via ULPI_D7@(79.1, 15.88)'), (0.178, 'via ULPI_D5@(80.25, 15.19)')]
+ULPI_D7 B.Cu (79.1, 15.88)->(78.62, 14.9): negatives=0 worst=[(0.366, 'via +3V3A@(78.62, 16.75)'), (0.693, 'trk +3V3D (80.375, 16.375)->(80.625, 16.125)')]
+ULPI_D7 B.Cu (78.62, 14.9)->(77.95, 14.3): negatives=0 worst=[(0.525, 'trk PHY_1V8 (76.95, 11.05)->(76.95, 14.988)'), (0.739, 'trk PHY_1V8 (76.95, 14.988)->(77.8, 16.2)')]
+ULPI_D7 B.Cu (77.95, 14.3)->(77.95, 11.2): negatives=0 worst=[(0.225, 'via +3V3A@(78.8, 11.62)'), (0.48, 'trk PHY_1V8 (77.45, 10.1)->(76.95, 11.05)')]
+ULPI_D7 B.Cu (77.95, 11.2)->(78.55, 10.45): negatives=0 worst=[(0.164, 'via PHY_1V8@(77.9, 10.08)'), (0.264, 'trk PHY_1V8 (77.9, 10.08)->(77.45, 10.1)')]
+ULPI_D7 B.Cu (78.55, 10.45)->(78.875, 10.375): negatives=0 worst=[(0.173, 'via PHY_1V8@(77.9, 10.08)'), (0.273, 'trk PHY_1V8 (77.9, 10.08)->(77.45, 10.1)')]
++3V3A In2.Cu (78.8, 11.62)->(77.6, 11.9): negatives=0 worst=[(0.968, 'trk ULPI_D2 (80.3, 12.8)->(80.0, 8.3)'), (1.129, 'via PHY_1V8@(77.9, 10.08)')]
++3V3A In2.Cu (77.6, 11.9)->(76.6, 12.15): negatives=0 worst=[(0.9, 'trk ULPI_CK (76.62, 13.5)->(74.625, 13.5)'), (0.925, 'trk ULPI_CK (76.62, 16.9)->(76.62, 13.5)')]
+gate negatives: 0
+gate clean; building
+netcodes: {'I2C_SCL': 57, 'ULPI_D7': 103, '+3V3A': 1}
+found I2C_SCL seg (79.125, 14.375)->(79.125, 2.875) (w=0.25)
+found I2C_SCL seg (79.125, 2.875)->(79.375, 2.625) (w=0.25)
+found I2C_SCL seg (78.125, 8.375)->(79.125, 8.375) (w=0.25)
+found I2C_SCL seg (78.875, 14.625)->(79.125, 14.375) (w=0.25)
+found I2C_SCL seg (78.875, 15.125)->(78.875, 14.625) (w=0.25)
+found I2C_SCL seg (79.125, 15.375)->(78.875, 15.125) (w=0.25)
+found I2C_SCL seg (79.375, 15.625)->(79.125, 15.375) (w=0.25)
+found I2C_SCL seg (79.625, 15.625)->(79.375, 15.625) (w=0.25)
+found I2C_SCL seg (79.875, 15.875)->(79.625, 15.625) (w=0.25)
+found ULPI_D7 seg (79.1, 15.88)->(79.05, 14.4) (w=0.25)
+found ULPI_D7 seg (79.05, 14.4)->(78.95, 10.7) (w=0.25)
+found ULPI_D7 seg (78.95, 10.7)->(78.875, 10.375) (w=0.25)
+found +3V3A seg (78.8, 11.62)->(79.5, 11.9) (w=0.2)
+found +3V3A seg (79.5, 11.9)->(79.65, 12.6) (w=0.2)
+found +3V3A seg (79.65, 12.6)->(79.65, 14.5) (w=0.2)
+found +3V3A seg (79.65, 14.5)->(79.375, 16.625) (w=0.2)
+found +3V3A seg (79.375, 16.625)->(79.125, 16.625) (w=0.6)
+found +3V3A seg (79.125, 16.625)->(78.375, 16.625) (w=0.2)
+found +3V3A seg (78.375, 16.625)->(78.125, 16.375) (w=0.2)
+found +3V3A seg (78.125, 16.375)->(77.875, 16.125) (w=0.2)
+found +3V3A seg (77.625, 15.875)->(77.375, 15.625) (w=0.2)
+found +3V3A via @(79.375, 16.625)
+removed 22 items
+saved hw/pdlvds_rx.exp270.kicad_pcb
+reload census diff (net, kind): base -> now
+  ('+3V3A', 'trk'): 609 -> 602
+  ('+3V3A', 'via'): 12 -> 11
+  ('I2C_SCL', 'trk'): 268 -> 269
+  ('ULPI_D7', 'trk'): 10 -> 12
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
+swig/python detected a memory leak of type 'PCB_TRACK *', no destructor found.
