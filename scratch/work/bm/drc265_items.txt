@@ -1,0 +1,57 @@
+silk_over_copper | Reference 'C22'
+solder_mask_bridge | Via [ULPI_D3] on F.Cu - B.Cu ;; Pad 1 [+3V3D] of C48 on F.Cu
+copper_edge_clearance | NPTH pad of J1 ;; Pad A12 [GND] of J1 on F.Cu
+copper_edge_clearance | Segment on Edge.Cuts ;; PTH pad S1 [<no net>] of J1
+copper_edge_clearance | NPTH pad of J1 ;; PTH pad S1 [<no net>] of J1
+copper_edge_clearance | Segment on Edge.Cuts ;; PTH pad S1 [<no net>] of J1
+clearance | Track [+3V3A] on F.Cu, length 0.2500 mm ;; Track [PHY_1V8A] on F.Cu, length 0.7211 mm
+shorting_items | Track [+3V3A] on F.Cu, length 0.4290 mm ;; Track [PHY_1V8A] on F.Cu, length 0.7211 mm
+clearance | Track [+3V3A] on F.Cu, length 0.9202 mm ;; Via [PHY_1V8A] on F.Cu - B.Cu
+shorting_items | Via [+3V3A] on F.Cu - B.Cu ;; Track [I2C_SCL] on In2.Cu, length 11.5000 mm
+shorting_items | Via [+3V3A] on F.Cu - B.Cu ;; Track [ULPI_D7] on B.Cu, length 3.7014 mm
+clearance | Via [+3V3A] on F.Cu - B.Cu ;; Via [ULPI_D7] on F.Cu - B.Cu
+clearance | Track [+3V3A] on In2.Cu, length 0.2500 mm ;; Via [ULPI_D7] on F.Cu - B.Cu
+tracks_crossing | Track [+3V3A] on B.Cu, length 0.7539 mm ;; Track [ULPI_D7] on B.Cu, length 3.7014 mm
+clearance | Track [+3V3A] on B.Cu, length 1.9000 mm ;; Via [ULPI_D3] on F.Cu - B.Cu
+shorting_items | Track [PHY_1V8A] on F.Cu, length 0.7211 mm ;; Track [+3V3A] on F.Cu, length 0.9202 mm
+clearance | Track [PHY_1V8A] on F.Cu, length 0.4805 mm ;; Track [+3V3A] on F.Cu, length 0.9202 mm
+clearance | Track [PHY_1V8A] on F.Cu, length 0.3863 mm ;; Track [+3V3A] on F.Cu, length 0.9202 mm
+clearance | Track [+3V3A] on B.Cu, length 2.1427 mm ;; Track [ULPI_D7] on B.Cu, length 1.4808 mm
+clearance | Track [+3V3D] on B.Cu, length 6.5000 mm ;; Via [ULPI_D6] on F.Cu - B.Cu
+clearance | Track [+3V3D] on F.Cu, length 1.4885 mm ;; Pad 1 [NRST] of C19 on F.Cu
+shorting_items | Track [I2C_SCL] on In2.Cu, length 0.3536 mm ;; Via [ULPI_D7] on F.Cu - B.Cu
+shorting_items | Track [I2C_SCL] on In2.Cu, length 0.2500 mm ;; Via [ULPI_D7] on F.Cu - B.Cu
+clearance | Track [I2C_SCL] on In2.Cu, length 0.3536 mm ;; Via [ULPI_D7] on F.Cu - B.Cu
+clearance | Track [ULPI_D0] on F.Cu, length 0.3780 mm ;; Track [ULPI_D1] on F.Cu, length 0.6801 mm
+clearance | Track [ULPI_D0] on F.Cu, length 0.5142 mm ;; Track [ULPI_D1] on F.Cu, length 0.6801 mm
+clearance | Track [ULPI_D0] on F.Cu, length 0.4500 mm ;; Track [ULPI_D1] on F.Cu, length 0.6007 mm
+clearance | Track [ULPI_D1] on F.Cu, length 0.6500 mm ;; Track [ULPI_D2] on F.Cu, length 0.5350 mm
+clearance | Track [ULPI_D1] on F.Cu, length 0.4743 mm ;; Track [ULPI_D0] on F.Cu, length 0.5142 mm
+clearance | Track [I2C_SCL] on In2.Cu, length 0.3536 mm ;; Via [ULPI_D7] on F.Cu - B.Cu
+clearance | Track [ULPI_D1] on F.Cu, length 0.5144 mm ;; Track [ULPI_D2] on F.Cu, length 0.5350 mm
+clearance | Track [ULPI_D1] on F.Cu, length 0.6007 mm ;; Track [ULPI_D0] on F.Cu, length 0.5142 mm
+clearance | Via [ULPI_D2] on F.Cu - B.Cu ;; Pad 1 [NRST] of C19 on F.Cu
+clearance | Via [ULPI_D2] on F.Cu - B.Cu ;; Track [ULPI_D3] on In2.Cu, length 2.9347 mm
+clearance | Track [ULPI_D3] on F.Cu, length 0.2062 mm ;; Pad 1 [+3V3D] of C48 on F.Cu
+shorting_items | Via [ULPI_D3] on F.Cu - B.Cu ;; Pad 1 [+3V3D] of C48 on F.Cu
+clearance | Via [ULPI_D3] on F.Cu - B.Cu ;; Track [ULPI_D4] on In2.Cu, length 0.3691 mm
+clearance | Via [ULPI_D4] on F.Cu - B.Cu ;; Track [ULPI_D5] on F.Cu, length 0.4826 mm
+clearance | Track [ULPI_D4] on In2.Cu, length 0.3536 mm ;; Via [ULPI_D3] on F.Cu - B.Cu
+clearance | Track [ULPI_D4] on In2.Cu, length 0.3536 mm ;; Via [ULPI_D3] on F.Cu - B.Cu
+clearance | Track [ULPI_D5] on F.Cu, length 0.1107 mm ;; Track [ULPI_D6] on F.Cu, length 0.3536 mm
+clearance | Via [ULPI_D5] on F.Cu - B.Cu ;; Track [ULPI_D6] on F.Cu, length 0.3536 mm
+clearance | Track [ULPI_D6] on F.Cu, length 0.5000 mm ;; Via [ULPI_D5] on F.Cu - B.Cu
+clearance | Track [ULPI_D6] on F.Cu, length 0.6374 mm ;; Via [ULPI_D5] on F.Cu - B.Cu
+clearance | Track [ULPI_D6] on F.Cu, length 0.4550 mm ;; Via [ULPI_D5] on F.Cu - B.Cu
+clearance | Via [ULPI_D6] on F.Cu - B.Cu ;; Pad 1 [+3V3D] of C48 on F.Cu
+shorting_items | Via [ULPI_D7] on F.Cu - B.Cu ;; Track [+3V3A] on B.Cu, length 2.1427 mm
+clearance | Track [XI] on F.Cu, length 0.3985 mm ;; Track [PHY_1V8A] on F.Cu, length 0.7211 mm
+clearance | Via [XI] on F.Cu - B.Cu ;; Track [+3V3A] on F.Cu, length 0.9202 mm
+hole_clearance | Pad 1 [+3V3D] of C48 on F.Cu ;; Via [ULPI_D6] on F.Cu - B.Cu
+hole_clearance | Pad 1 [+3V3D] of C48 on F.Cu ;; Via [ULPI_D3] on F.Cu - B.Cu
+hole_clearance | Pad 1 [NRST] of C19 on F.Cu ;; Via [ULPI_D2] on F.Cu - B.Cu
+track_dangling | Track [+3V3A] on In2.Cu, length 0.3536 mm
+track_dangling | Track [+3V3A] on In2.Cu, length 0.3536 mm
+track_dangling | Track [+3V3A] on In2.Cu, length 1.2455 mm
+UNCONNECTED | Zone [GND] on In1.Cu ;; Zone [GND] on F.Cu
+UNCONNECTED | Pad 40 [USB_RST] of U6 on F.Cu ;; Pad 9 [USB_RST] of U7 on F.Cu
