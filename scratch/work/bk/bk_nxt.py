@@ -62,7 +62,7 @@ for mv, vc, _ in vias[:10]:
                 if m < wi:
                     wi, bi = m, d
             results.append((min(mv, wf, wi), vc, ef, em, mv, wf, bf, wi, bi))
-results.sort(reverse=True)
+results.sort(key=lambda r: r[0], reverse=True)
 lines.append('NXT full top 10 (score, via, elbowF, midIn2 | viaM, fM bind, iM bind):')
 for r in results[:10]:
     lines.append(f'  {r[0]:+.3f} via{r[1]} eF{r[2]} mI{r[3]} | via {r[4]:+.3f} F {r[5]:+.3f} [{r[6]}] In2 {r[7]:+.3f} [{r[8]}]')
