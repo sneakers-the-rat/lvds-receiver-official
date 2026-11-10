@@ -1,0 +1,38 @@
+02:20:37: Debug: Adding duplicate image handler for 'PNG file'
+02:20:37: Debug: Adding duplicate image handler for 'JPEG file'
+02:20:37: Debug: Adding duplicate image handler for 'TIFF file'
+02:20:37: Debug: Adding duplicate image handler for 'GIF file'
+02:20:37: Debug: Adding duplicate image handler for 'PNM file'
+02:20:37: Debug: Adding duplicate image handler for 'PCX file'
+02:20:37: Debug: Adding duplicate image handler for 'IFF file'
+02:20:37: Debug: Adding duplicate image handler for 'Windows icon file'
+02:20:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:20:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:20:37: Debug: Adding duplicate image handler for 'TGA file'
+02:20:37: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+02:20:37: Debug: Adding duplicate image handler for 'PNG file'
+02:20:37: Debug: Adding duplicate image handler for 'JPEG file'
+02:20:37: Debug: Adding duplicate image handler for 'TIFF file'
+02:20:37: Debug: Adding duplicate image handler for 'GIF file'
+02:20:37: Debug: Adding duplicate image handler for 'PNM file'
+02:20:37: Debug: Adding duplicate image handler for 'PCX file'
+02:20:37: Debug: Adding duplicate image handler for 'IFF file'
+02:20:37: Debug: Adding duplicate image handler for 'Windows icon file'
+02:20:37: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:20:37: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:20:37: Debug: Adding duplicate image handler for 'TGA file'
+02:20:37: Debug: Adding duplicate image handler for 'XPM file'
+PHY placed; frags PHY 1
+snake B segs ripped: 144
+F tail segs ripped: 2 tail via: 1
+1V8A frags after snake rip: 2
+S1 legs-end->(77.0,9.6): FOUND vias=[]
+S1 legs-end->(77.0,9.6) exact gate: 270 pairs < 0.3, neg 8, worst 4: [(-0.034, 2, 'ULPI_STP', 'PHY_1V8'), (-0.034, 2, 'ULPI_STP', 'PHY_1V8'), (-0.015, 2, 'ULPI_STP', 'PHY_1V8'), (-0.015, 2, 'ULPI_STP', 'PHY_1V8')]
+S1 legs-end->(77.0,9.6): STP frags 1
+1V8A re-plan: NONE
+final frags: PHY 1 STP 1 1V8A 2 CK 1 XI 3 XO 1
+=== done ===

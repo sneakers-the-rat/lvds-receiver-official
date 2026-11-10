@@ -1,0 +1,93 @@
+02:36:23: Debug: Adding duplicate image handler for 'PNG file'
+02:36:23: Debug: Adding duplicate image handler for 'JPEG file'
+02:36:23: Debug: Adding duplicate image handler for 'TIFF file'
+02:36:23: Debug: Adding duplicate image handler for 'GIF file'
+02:36:23: Debug: Adding duplicate image handler for 'PNM file'
+02:36:23: Debug: Adding duplicate image handler for 'PCX file'
+02:36:23: Debug: Adding duplicate image handler for 'IFF file'
+02:36:23: Debug: Adding duplicate image handler for 'Windows icon file'
+02:36:23: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:36:23: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:36:23: Debug: Adding duplicate image handler for 'TGA file'
+02:36:23: Debug: Adding duplicate image handler for 'XPM file'
+PG_3V3: rip 0 items
++3V3D: rip 0 items
+XO: rip 0 items
+model rebuilt from au93
+02:36:23: Debug: Adding duplicate image handler for 'PNG file'
+02:36:23: Debug: Adding duplicate image handler for 'JPEG file'
+02:36:23: Debug: Adding duplicate image handler for 'TIFF file'
+02:36:23: Debug: Adding duplicate image handler for 'GIF file'
+02:36:23: Debug: Adding duplicate image handler for 'PNM file'
+02:36:23: Debug: Adding duplicate image handler for 'PCX file'
+02:36:23: Debug: Adding duplicate image handler for 'IFF file'
+02:36:23: Debug: Adding duplicate image handler for 'Windows icon file'
+02:36:23: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:36:23: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:36:23: Debug: Adding duplicate image handler for 'TGA file'
+02:36:23: Debug: Adding duplicate image handler for 'XPM file'
+02:36:24: Debug: Adding duplicate image handler for 'PNG file'
+02:36:24: Debug: Adding duplicate image handler for 'JPEG file'
+02:36:24: Debug: Adding duplicate image handler for 'TIFF file'
+02:36:24: Debug: Adding duplicate image handler for 'GIF file'
+02:36:24: Debug: Adding duplicate image handler for 'PNM file'
+02:36:24: Debug: Adding duplicate image handler for 'PCX file'
+02:36:24: Debug: Adding duplicate image handler for 'IFF file'
+02:36:24: Debug: Adding duplicate image handler for 'Windows icon file'
+02:36:24: Debug: Adding duplicate image handler for 'Windows cursor file'
+02:36:24: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+02:36:24: Debug: Adding duplicate image handler for 'TGA file'
+02:36:24: Debug: Adding duplicate image handler for 'XPM file'
+--- footprints in x[72,80] y[7.5,13] ---
+--- U7 south-row pads (y<12.2) exact rects ---
+  U7.  centre (74.970,-12.970) size (0.83x0.83)
+  U7.  centre (74.970,-14.000) size (0.83x0.83)
+  U7.  centre (74.970,-15.030) size (0.83x0.83)
+  U7.  centre (76.000,-12.970) size (0.83x0.83)
+  U7.  centre (76.000,-14.000) size (0.83x0.83)
+  U7.  centre (76.000,-15.030) size (0.83x0.83)
+  U7.  centre (77.030,-12.970) size (0.83x0.83)
+  U7.  centre (77.030,-14.000) size (0.83x0.83)
+  U7.  centre (77.030,-15.030) size (0.83x0.83)
+  U7.1 GND centre (73.562,-12.250) size (0.88x0.25)
+  U7.2 GND centre (73.562,-12.750) size (0.88x0.25)
+  U7.3  centre (73.562,-13.250) size (0.88x0.25)
+  U7.4 +5V centre (73.562,-13.750) size (0.88x0.25)
+  U7.5 GND centre (73.562,-14.250) size (0.88x0.25)
+  U7.6 +3V3A centre (73.562,-14.750) size (0.88x0.25)
+  U7.7 DP_PHY centre (73.562,-15.250) size (0.88x0.25)
+  U7.8 DM_PHY centre (73.562,-15.750) size (0.88x0.25)
+  U7.9 USB_RST centre (74.250,-16.438) size (0.25x0.88)
+  U7.10 GND centre (74.750,-16.438) size (0.25x0.88)
+  U7.11 ULPI_NXT centre (75.250,-16.438) size (0.25x0.88)
+  U7.12 ULPI_DIR centre (75.750,-16.438) size (0.25x0.88)
+  U7.13 ULPI_STP centre (76.250,-16.438) size (0.25x0.88)
+  U7.14 ULPI_CK centre (76.750,-16.438) size (0.25x0.88)
+  U7.15 PHY_1V8 centre (77.250,-16.438) size (0.25x0.88)
+  U7.16 +3V3A centre (77.750,-16.438) size (0.25x0.88)
+  U7.17 ULPI_D7 centre (78.438,-15.750) size (0.88x0.25)
+  U7.18 ULPI_D6 centre (78.438,-15.250) size (0.88x0.25)
+  U7.19 ULPI_D5 centre (78.438,-14.750) size (0.88x0.25)
+  U7.20 ULPI_D4 centre (78.438,-14.250) size (0.88x0.25)
+  U7.21 ULPI_D3 centre (78.438,-13.750) size (0.88x0.25)
+  U7.22 ULPI_D2 centre (78.438,-13.250) size (0.88x0.25)
+  U7.23 ULPI_D1 centre (78.438,-12.750) size (0.88x0.25)
+  U7.24 ULPI_D0 centre (78.438,-12.250) size (0.88x0.25)
+  U7.25 +3V3A centre (77.750,-11.562) size (0.25x0.88)
+  U7.26 PHY_1V8 centre (77.250,-11.562) size (0.25x0.88)
+  U7.27 XO centre (76.750,-11.562) size (0.25x0.88)
+  U7.28 XI centre (76.250,-11.562) size (0.25x0.88)
+  U7.29 PHY_1V8A centre (75.750,-11.562) size (0.25x0.88)
+  U7.30 +3V3A centre (75.250,-11.562) size (0.25x0.88)
+  U7.31 +3V3A centre (74.750,-11.562) size (0.25x0.88)
+  U7.32 RBIAS centre (74.250,-11.562) size (0.25x0.88)
+  U7.33 GND centre (76.000,-14.000) size (3.10x3.10)
+--- candidate sites ---
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/ba/t_ba11_c23site.py", line 98, in <module>
+    g1 = gate_track(0, 'PHY_1V8A', 75.75, 11.5625, mx, p1[1] + 0.55)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/ba/t_ba11_c23site.py", line 54, in gate_track
+    m = L.item_margin(l, it, [o])
+        ^^^^^^^^^^^^^
+AttributeError: module 't_ai_lib' has no attribute 'item_margin'. Did you mean: 'pt_margin'?
