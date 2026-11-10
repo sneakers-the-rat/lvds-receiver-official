@@ -182,11 +182,9 @@ NEW_COMMON = [
     T('USB_RST', 'F', (74.78, 5.50), (74.78, 5.30)),
 ]
 NEW_NXT = [
-    T('ULPI_NXT', 'F', (75.25, 16.875), (75.42, 17.60)),
-    T('ULPI_NXT', 'F', (75.42, 17.60), (75.30, 18.45)),
-    T('ULPI_NXT', 'F', (75.30, 18.45), (74.95, 19.05)),
-    V('ULPI_NXT', 74.95, 19.05, 0.5),
-    T('ULPI_NXT', 'In2', (74.95, 19.05), (74.50, 19.25)),
+    T('ULPI_NXT', 'F', (75.25, 16.875), (74.95, 17.40)),
+    V('ULPI_NXT', 74.95, 17.40, 0.5),
+    T('ULPI_NXT', 'In2', (74.95, 17.40), (74.10, 17.70)),
 ]
 NEW_DIR = [
     T('ULPI_DIR', 'F', (75.75, 16.875), (76.10, 17.50)),
@@ -196,6 +194,37 @@ NEW_DIR = [
     T('ULPI_DIR', 'B', (76.45, 19.30), (74.90, 19.85)),
     T('ULPI_DIR', 'B', (74.90, 19.85), (73.30, 18.42)),
 ]
+# V3: DIR stock; RST dive SOUTH (74.55,19.05) d0.40; In2 west leg;
+# B column x70.15; hop vias (70.05,9.70)/(70.15,7.35); east leg y3.90.
+NEW_V3 = [
+    T('ULPI_CK', 'F', (75.25, 5.162), (75.33, 5.62)),
+    T('ULPI_CK', 'F', (75.33, 5.62), (75.44, 6.04)),
+    V('ULPI_CK', 75.44, 6.04, 0.5),
+    T('ULPI_CK', 'In2', (75.44, 6.04), (75.05, 6.60), 0.25),
+    T('ULPI_CK', 'In2', (75.05, 6.60), (74.70, 7.00), 0.25),
+    T('ULPI_CK', 'In2', (74.70, 7.00), (74.625, 7.35), 0.25),
+    T('ULPI_CK', 'In2', (74.625, 7.35), (74.625, 9.40), 0.25),
+    T('USB_RST', 'F', (74.25, 16.878), (74.62, 17.60)),
+    T('USB_RST', 'F', (74.62, 17.60), (74.55, 19.05)),
+    V('USB_RST', 74.55, 19.05, 0.40),
+    T('USB_RST', 'In2', (74.55, 19.05), (73.95, 18.60)),
+    T('USB_RST', 'In2', (73.95, 18.60), (73.80, 17.55)),
+    T('USB_RST', 'In2', (73.80, 17.55), (73.85, 16.80)),
+    T('USB_RST', 'In2', (73.85, 16.80), (72.60, 16.55)),
+    T('USB_RST', 'In2', (72.60, 16.55), (70.15, 16.35)),
+    V('USB_RST', 70.15, 16.35, 0.5),
+    T('USB_RST', 'B', (70.15, 16.35), (70.15, 9.70)),
+    V('USB_RST', 70.05, 9.70, 0.5),
+    T('USB_RST', 'B', (70.15, 9.70), (70.05, 9.70)),
+    T('USB_RST', 'In2', (70.05, 9.70), (70.15, 7.35)),
+    V('USB_RST', 70.15, 7.35, 0.5),
+    T('USB_RST', 'B', (70.15, 7.35), (70.15, 3.90)),
+    T('USB_RST', 'B', (70.15, 3.90), (74.30, 3.90)),
+    T('USB_RST', 'B', (74.30, 3.90), (74.80, 5.82)),
+    V('USB_RST', 74.80, 5.82, 0.40),
+    T('USB_RST', 'F', (74.80, 5.82), (74.78, 5.50)),
+    T('USB_RST', 'F', (74.78, 5.50), (74.78, 5.30)),
+] + NEW_NXT
 
 
 def as_items(new):
@@ -228,5 +257,110 @@ def price(name, move_dir):
         print(f'    {m:+.3f}  {d}')
 
 
-price('V1 DIR stays, NXT south via (74.95,19.05)', False)
-price('V2 DIR east via (76.35,18.75), NXT south', True)
+def price_new(name, new, move_dir=False):
+    pool = build_pool(move_dir)
+    pool_all = pool + as_items(new)
+    print(f'--- {name}: negatives (referee rules)')
+    worst = []
+    for kind, net, layer, a, b, hw in new:
+        if kind == 'via':
+            r = m_via(a, hw, net, pool_all)
+            worst += [(m, f'{net} via@{a}: {d}') for m, d in r[:2]]
+        else:
+            r = m_trk(a, b, layer, hw, net, pool_all)
+            worst += [(m, f'{net} {layer} {a}->{b}: {d}') for m, d in r[:2]]
+    worst.sort()
+    neg = [w for w in worst if w[0] < 0]
+    print(f'  count {len(neg)}; worst 14:')
+    for m, d in worst[:14]:
+        print(f'    {m:+.3f}  {d}')
+
+
+DIR_RIPS_ALL = DIR_RIPS + [
+    ('ULPI_NXT', 'In2', (74.100, 17.700), (74.500, 19.250)),
+]
+NEW_V4 = [
+    # CK arrival (bh final)
+    T('ULPI_CK', 'F', (75.25, 5.162), (75.33, 5.62)),
+    T('ULPI_CK', 'F', (75.33, 5.62), (75.44, 6.04)),
+    V('ULPI_CK', 75.44, 6.04, 0.5),
+    T('ULPI_CK', 'In2', (75.44, 6.04), (75.05, 6.60), 0.25),
+    T('ULPI_CK', 'In2', (75.05, 6.60), (74.70, 7.00), 0.25),
+    T('ULPI_CK', 'In2', (74.70, 7.00), (74.625, 7.35), 0.25),
+    T('ULPI_CK', 'In2', (74.625, 7.35), (74.625, 9.40), 0.25),
+    # DIR re-fan: via (74.20,19.55), B rejoin via (74.60,18.35)
+    T('ULPI_DIR', 'F', (75.75, 16.875), (75.30, 17.90)),
+    T('ULPI_DIR', 'F', (75.30, 17.90), (74.35, 18.85)),
+    T('ULPI_DIR', 'F', (74.35, 18.85), (74.20, 19.55)),
+    V('ULPI_DIR', 74.20, 19.55, 0.5),
+    T('ULPI_DIR', 'B', (74.20, 19.55), (74.60, 18.35)),
+    T('ULPI_DIR', 'B', (74.60, 18.35), (73.30, 18.42)),
+    # NXT re-fan: via (74.85,19.15)
+    T('ULPI_NXT', 'F', (75.25, 16.875), (74.95, 17.85)),
+    T('ULPI_NXT', 'F', (74.95, 17.85), (74.70, 18.60)),
+    T('ULPI_NXT', 'F', (74.70, 18.60), (74.85, 19.15)),
+    V('ULPI_NXT', 74.85, 19.15, 0.5),
+    T('ULPI_NXT', 'In2', (74.85, 19.15), (74.50, 19.25)),
+    # RST: F stub + dive (74.85,17.45); B west with In2 hop over DIR B;
+    # column x67.15; east leg; arrival stub
+    T('USB_RST', 'F', (74.25, 16.878), (74.85, 17.45)),
+    V('USB_RST', 74.85, 17.45, 0.5),
+    T('USB_RST', 'B', (74.85, 17.45), (74.75, 17.75)),
+    V('USB_RST', 74.75, 17.75, 0.5),
+    T('USB_RST', 'In2', (74.75, 17.75), (73.70, 19.10)),
+    V('USB_RST', 73.70, 19.10, 0.5),
+    T('USB_RST', 'B', (73.70, 19.10), (72.50, 19.30)),
+    T('USB_RST', 'B', (72.50, 19.30), (67.15, 19.30)),
+    T('USB_RST', 'B', (67.15, 19.30), (67.15, 5.30)),
+    T('USB_RST', 'B', (67.15, 5.30), (68.30, 5.30)),
+    T('USB_RST', 'B', (68.30, 5.30), (69.60, 4.90)),
+    T('USB_RST', 'B', (69.60, 4.90), (74.30, 4.50)),
+    T('USB_RST', 'B', (74.30, 4.50), (74.80, 5.82)),
+    V('USB_RST', 74.80, 5.82, 0.40),
+    T('USB_RST', 'F', (74.80, 5.82), (74.78, 5.50)),
+    T('USB_RST', 'F', (74.78, 5.50), (74.78, 5.30)),
+]
+
+
+def price_v4():
+    rips = list(RIPS) + DIR_RIPS_ALL
+    rip_vias = list(RIP_VIAS) + [('ULPI_DIR', (74.820, 18.100))]
+    shift_keys = {(n, l, a, b) for n, l, a, b, dx, dy in SHIFTS}
+    pool = []
+    for it in BASE:
+        if it.kind == 'trk':
+            k = (it.net, it.layer, it.a, it.b)
+            k2 = (it.net, it.layer, it.b, it.a)
+            if any(it.net == n and it.layer == l and ((near(it.a, a) and near(it.b, b)) or
+                   (near(it.a, b) and near(it.b, a))) for n, l, a, b in rips):
+                continue
+            if k in shift_keys or k2 in shift_keys:
+                continue
+            pool.append(it)
+        elif it.kind == 'via':
+            if any(it.net == n and near(it.a, at) for n, at in rip_vias):
+                continue
+            pool.append(it)
+        else:
+            pool.append(it)
+    for n, l, a, b, dx, dy in SHIFTS:
+        pool.append(G.Item(n, 'trk', layer=l, a=(a[0] + dx, a[1] + dy),
+                           b=(b[0] + dx, b[1] + dy), hw=0.125 if n == 'BIST_DRV' else 0.10))
+    pool_all = pool + as_items(NEW_V4)
+    print('--- V4 full composite: negatives (referee rules)')
+    worst = []
+    for kind, net, layer, a, b, hw in NEW_V4:
+        if kind == 'via':
+            r = m_via(a, hw, net, pool_all)
+            worst += [(m, f'{net} via@{a}: {d}') for m, d in r[:2]]
+        else:
+            r = m_trk(a, b, layer, hw, net, pool_all)
+            worst += [(m, f'{net} {layer} {a}->{b}: {d}') for m, d in r[:2]]
+    worst.sort()
+    neg = [w for w in worst if w[0] < 0]
+    print(f'  count {len(neg)}; worst 16:')
+    for m, d in worst[:16]:
+        print(f'    {m:+.3f}  {d}')
+
+
+price_v4()
