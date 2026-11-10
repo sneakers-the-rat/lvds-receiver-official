@@ -1,5 +1,48 @@
 # DISTRICT STATUS — bm (USB_RST endgame, inherited from bl)
-Updated: 2026-11-10 ~06:00 PST. WORKING STATE — updated as I go.
+Updated: 2026-11-10 ~15:50 PST. WORKING STATE — updated as I go.
+
+## CURRENT: exp264 BUILT + REFEREED (commit 21db5163, local — push pending)
+- exp264 = bm_fix2b from exp262: north fan re-lane (NXT/DIR/STP/CK),
+  C22 MOVED SOUTH (77.17,9.95)->(77.05,8.9), XI/XO braid re-laid,
+  PHY hop + pad26 chain re-laid, +3V3A via (77.862,10.975) + its In2
+  seg DELETED (it SHORTED U7.26 PHY_1V8 — drc262 shorting_items),
+  GND stitch via (78.0,18.3) and C22.2's old stub/via ripped.
+- Referee: KiCad DRC 65 (35 clearance, 12 shorting, 5 mask bridge,
+  4 hole, 4 dangling, 4 copper_edge J1, 1 crossing); check_pcb nets 2
+  {GND, USB_RST}, courtyard 0. (exp262 was DRC 85/nets 1; exp263 70/2.)
+- GND nets-2 = C22.2 islanded at its new site + zone<->zone pair —
+  both named fix3 items. +3V3A is WHOLE (the deleted via was NOT
+  pad30's feed; pad30/pad31 feed = row track + diagonal + west lane).
+- Gate: bm_fix2b gate-clean except ONE declared exception, coded in
+  the script: XI seg PV(75.82,10.3)->(76.2,10.42) vs PHY_1V8A seg
+  (75.95,10.82)->(75.35,10.42) at -0.039. PV itself is 0.361 from
+  that seg (< 0.4), so no track out of PV clears it; the identical
+  pair is a KiCad clearance item on exp262 AND exp264 (count 1,
+  unchanged). Fixing it = moving A's lane = fix3b's knot.
+- Gate lessons banked this session: (1) gridroute pad items carry
+  short layer names — normalize ALL item layers or pad checks never
+  run (voided fix1/fix2 gates); (2) TWO silent string-replace patch
+  failures (C22 pool shift; a POWER=set patch) — grep-verify every
+  patch; (3) a gate is only as good as its pool.
+
+## fix3 plan (bank pass 220 only at nets 1 / DRC 4 J1 / courtyard 0)
+- fix3a: C22 fallout — D0 F staircase step (77.125,8.375)->(77.375,
+  8.625) shorts C22.2's new rect: jog D0 around the rect's NE corner.
+  STP via (76.44,9.03) vs C22.1 rect (clearance+hole): shift via W.
+  CK In2 dangling: kept column seg (76.62,17.3)->(76.62,13.5) has a
+  free end at 17.3 (my loop T-joins at 16.9) — trim to (76.62,16.9).
+  C22.2 GND tie at new site + GND zone<->zone stitch via.
+- fix3b: SW knot — +3V3A west lane vs PHY_1V8A lane SHORT on F
+  (interleaved chords: A NE->SW via (74.99,10.28), +3V3A E->W).
+  Coordinated re-lay of BOTH; ~7 items incl. the XI/PV exception.
+- fix3c: NE braid — +3V3A via (78.8,11.62) shorts I2C_SCL In2 11.5mm
+  seg + ULPI_D7 B trk; D7 via (79.1,15.88) shorts SCL stub + +3V3A B;
+  +3V3A B crossing D7 B; ~11 items, solve +3V3A/SCL/D7 together.
+- fix3d: east D-fan — D0..D7 escapes shear-compressed by the U7 move;
+  sequential rip + re-fan at pitch; D3 via shorts C48.1 rect; D2 via
+  vs C19.1; +3V3D F vs C19.1; +3V3A In2 dangling stubs x3. ~24 items.
+- LOCAL COMMITS NOT PUSHED: cf92a91e..21db5163 (route clone). Push via
+  fresh GitHub-URL clone + ls-verify refs/heads/main.
 
 ## Inherited state (verified from disk)
 - bl re-placed U7 +0.75 EAST (76.00,14.00) -> (76.75,14.00); C19 also moved
