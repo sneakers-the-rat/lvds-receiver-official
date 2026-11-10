@@ -489,3 +489,88 @@ Screened the exact landing set (291 files) before any push.
 | `t_stp.py` | /tmp/t_stp.py | `bf0b8727-d72c-4188-ba24-e29fc094d2f7` | 6974 / 519 | 2026-11-10T03:03:00.994180561+00:00 | `3aade358b109e8e65332d564c365dbd3a57f62440c2e9d3df6e4d2be0e337020` | complete | exec heredoc |
 | `t_ba57_build217.py` | /home/hatch/workspace/pdlvds-route/scratch/work/ba/t_ba57_build217.py | `bf0b8727-d72c-4188-ba24-e29fc094d2f7` | 7343 / 890 | 2026-11-10T04:21:06.938968707+00:00 | `8d2369db642d2397d76ac5bc50e49fd72306071f4ea1128437f8bb6da392bb81` | complete | muse.write |
 | `t_bb14_census256.py` | /home/hatch/workspace/pdlvds-route/scratch/work/bb/t_bb14_census256.py | `7fab2300-5df8-4b5f-97fa-ab7cd9d0072d` | 6991 / 260 | 2026-11-10T05:17:42.117052812+00:00 | `b67c97a915ea8d00f6225c0d5d51d7c29056cdb9ef3a81c32e887fe15a119cad` | complete | muse.write |
+
+### Unrecoverable (named, with reasons)
+
+Final states that no in-session write, edit chain or heredoc establishes — in every case the session edited a file that already existed on disk (written by a predecessor or committed), so the session's own records hold no base to replay from.
+
+| original path | source agent | seq (raw / visible) | reason |
+|---|---|---|---|
+| /home/hatch/workspace/pdlvds-cifix/sim/run_tia.py | `3c689d8e-9bcc-47b0-a096-4767120a160c` | 331 / 98 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/hw/circuit.py | `3c689d8e-9bcc-47b0-a096-4767120a160c` | 408 / 175 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/hw/gen_schematic.py | `3c689d8e-9bcc-47b0-a096-4767120a160c` | 441 / 208 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/ci.sh | `3c689d8e-9bcc-47b0-a096-4767120a160c` | 447 / 214 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/build_site.py | `3c689d8e-9bcc-47b0-a096-4767120a160c` | 512 / 279 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/hw/gen_schematic.py | `263d02bd-2694-4be4-a34b-d020557c1979` | 442 / 208 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/hw/check_netlist.py | `263d02bd-2694-4be4-a34b-d020557c1979` | 456 / 222 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/build_site.py | `00079813-c48a-433e-bd73-476dd6ede479` | 499 / 265 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix-r4/hw/gen_schematic.py | `fbee6d75-6e0b-4c8a-a720-6ef52d21c0d2` | 499 / 265 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix-r4/hw/check_netlist.py | `fbee6d75-6e0b-4c8a-a720-6ef52d21c0d2` | 503 / 269 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/snapshot_route.py | `ff0c75ad-4e6c-4321-bfa3-a2ca61b971bc` | 673 / 437 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/build_site.py | `ff0c75ad-4e6c-4321-bfa3-a2ca61b971bc` | 685 / 449 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/snapshot_route.py | `e3e498fa-2d0f-4ea0-896f-06f51051aa22` | 649 / 414 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/build_site.py | `e3e498fa-2d0f-4ea0-896f-06f51051aa22` | 660 / 425 | edit on unknown base |
+| /home/hatch/workspace/photodiode-lvds-rx/hw/gen_pcb.py | `110e2372-a411-4917-9496-e2188176d9f6` | 826 / 211 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/ci.sh | `b3484ddd-409f-4eb0-bc21-c912679c6b5d` | 712 / 97 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/build_site.py | `b3484ddd-409f-4eb0-bc21-c912679c6b5d` | 741 / 126 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/drc_gate.py | `13c2bc99-3cf3-4499-a01f-dda273939356` | 721 / 106 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/build_site.py | `13c2bc99-3cf3-4499-a01f-dda273939356` | 726 / 111 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/ci.sh | `13c2bc99-3cf3-4499-a01f-dda273939356` | 737 / 122 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/drc_gate.py | `b785e77a-5ae4-47b7-a4a9-61508885fa25` | 709 / 94 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/build_site.py | `b785e77a-5ae4-47b7-a4a9-61508885fa25` | 717 / 102 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/ci/test_gates.py | `b785e77a-5ae4-47b7-a4a9-61508885fa25` | 725 / 110 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/build_site.py | `0088c73b-1d16-42f6-9f1a-5ba99e7c4865` | 1102 / 487 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-chartv2/scripts/build_site.py | `11120dd2-6afc-4c3b-9c7f-7cf4627a92c4` | 1111 / 158 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/commit_pass.py | `d5bb5f18-a489-4487-afd5-2bce236e766e` | 1207 / 252 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cifix/scripts/snapshot_route.py | `d5bb5f18-a489-4487-afd5-2bce236e766e` | 1219 / 264 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-split/metrics/estimate_input_split.py | `1fe81d0d-1d0a-4955-8b0d-10edd7bed231` | 1410 / 105 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cost/scripts/site_data.py | `b728b450-ad5f-4415-873c-4db2a154a76c` | 1448 / 143 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-cost/scripts/site_data.py | `e49a319b-6f75-432b-a279-f17e9917db5e` | 1493 / 188 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-chartv2/scripts/snapshot_route.py | `9a93416b-f726-4fe6-9fa6-e55d045aea0e` | 1555 / 247 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-chartv2/scripts/commit_pass.py | `9a93416b-f726-4fe6-9fa6-e55d045aea0e` | 1560 / 252 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-chartv2/scripts/make_fab.sh | `9a93416b-f726-4fe6-9fa6-e55d045aea0e` | 1590 / 282 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-split/sim/digital_sim.py | `74a92a7e-43e9-45ad-a559-91d42365a624` | 1635 / 325 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-split/host/rxhost.py | `74a92a7e-43e9-45ad-a559-91d42365a624` | 1646 / 336 | edit on unknown base |
+| /home/hatch/workspace/photodiode-lvds-rx/hw/import_ses.py | `d1f0d05a-a887-4772-989b-05b56480fb1d` | 2053 / 375 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/hand_stub.py | `2edb9d7e-5b3a-4fec-9eb7-377437572a1a` | 2704 / 733 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/hand_via.py | `2edb9d7e-5b3a-4fec-9eb7-377437572a1a` | 2713 / 742 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/router.py | `2edb9d7e-5b3a-4fec-9eb7-377437572a1a` | 2797 / 826 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/router6.py | `2edb9d7e-5b3a-4fec-9eb7-377437572a1a` | 2807 / 836 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/notch_strip.py | `98e426b0-540c-4eca-a7dd-67f646ed9bb7` | 2492 / 229 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/thread.py | `b8f9dc88-c0ab-4ab4-b924-b731a676afee` | 2601 / 338 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/thread_far.py | `b8f9dc88-c0ab-4ab4-b924-b731a676afee` | 2608 / 345 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-hvfix/hw/circuit.py | `d03706d0-0923-437b-b493-bfbe6552b535` | 2652 / 109 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-hvfix/sim/hv_design.py | `d03706d0-0923-437b-b493-bfbe6552b535` | 2775 / 232 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-hvfix/sim/run_hv.py | `d03706d0-0923-437b-b493-bfbe6552b535` | 2776 / 233 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-hvfix/host/rxhost.py | `d03706d0-0923-437b-b493-bfbe6552b535` | 2843 / 300 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-partsfix/hw/circuit.py | `e5ec69fd-70b5-49cf-baf9-a85b819611d0` | 2886 / 344 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/check_pcb.py | `4393dc69-a319-496f-987c-4c2d3f9d4c83` | 2966 / 422 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/router.py | `4393dc69-a319-496f-987c-4c2d3f9d4c83` | 2967 / 423 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scripts/commit_pass.py | `4393dc69-a319-496f-987c-4c2d3f9d4c83` | 3107 / 564 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/hops2.py | `ecabc602-1ab4-479b-8b34-3c2d2e4b4be5` | 3062 / 172 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/repair.py | `826fd10c-2967-4ec0-af33-8c054d8c4ef5` | 3527 / 356 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scripts/snapshot_route.py | `826fd10c-2967-4ec0-af33-8c054d8c4ef5` | 4654 / 1486 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scripts/commit_pass.py | `826fd10c-2967-4ec0-af33-8c054d8c4ef5` | 4665 / 1497 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scripts/gen_pass_pages.py | `826fd10c-2967-4ec0-af33-8c054d8c4ef5` | 4670 / 1502 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/check_pcb.py | `826fd10c-2967-4ec0-af33-8c054d8c4ef5` | 4709 / 1541 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/drc_graph_prune.py | `843addc6-05f8-43fb-876a-0305148a999f` | 4902 / 419 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/drc_graph_prune.py | `11a7a32f-8259-47d1-b430-5deb54b7667d` | 4803 / 320 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/heal8/repair.py | `8e23251f-636a-48aa-9ee3-72368d67abe0` | 5046 / 187 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/repair.py | `8e23251f-636a-48aa-9ee3-72368d67abe0` | 5048 / 189 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/router.py | `8e23251f-636a-48aa-9ee3-72368d67abe0` | 5056 / 197 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/router6.py | `8e23251f-636a-48aa-9ee3-72368d67abe0` | 5058 / 199 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/work/t_ac16_groute_dbg.py | `bf963864-0546-437d-be90-a3a4209149d8` | 5662 / 278 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/work/ai/t_ai_lib.py | `0ba936c0-535c-4ce0-b7af-c35ea829bf3e` | 5646 / 262 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/work/ao/t_ao4_hvopt5.py | `7da12727-8bdc-4527-89e9-e197d2af5c33` | 5863 / 480 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-split/scripts/site_data.py | `0b552a13-666c-4e8f-a630-e19975f39cf7` | 6067 / 141 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-split/scripts/make_fab.sh | `0b552a13-666c-4e8f-a630-e19975f39cf7` | 6099 / 173 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/work/au/t_au77_phase2g.py | `ae719c55-5551-4cd1-9902-f1e0fb01ca79` | 6659 / 736 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/work/aw/t_aw10_h5.py | `ad8257c0-736d-4b1c-89f1-65f5afcb5d79` | 6486 / 290 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/work/aw/t_aw11_h5.py | `ad8257c0-736d-4b1c-89f1-65f5afcb5d79` | 6503 / 307 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/hw/circuit.py | `ad8257c0-736d-4b1c-89f1-65f5afcb5d79` | 7075 / 881 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/work/ax/t_ax239_design214z.py | `99fd7bda-c81e-46f8-9b70-9dfc260f5a79` | 8301 / 2110 | edit on unknown base |
+| /home/hatch/workspace/pdlvds-route/scratch/work/ax/t_ax252_design214ae.py | `99fd7bda-c81e-46f8-9b70-9dfc260f5a79` | 8457 / 2267 | edit on unknown base |
+
+### Reconciliation (Phase B closing)
+
+Distinct contents extracted: **1388** == already committed **1097** + landed whole **280** + landed partial **11**. Unrecoverable (path, session) states: **74**, every one named above. Zero unexplained.
