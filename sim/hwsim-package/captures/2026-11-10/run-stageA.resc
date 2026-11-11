@@ -1,0 +1,13 @@
+mach create "pdlvds_rx"
+machine LoadPlatformDescription @/home/hatch/workspace/pdlvds-route/sim/hwsim-package/pdlvds_h723.repl
+sysbus LoadELF @/home/hatch/workspace/pdlvds-route/firmware/build/rxfw.elf
+start
+sleep 20000
+pause
+sysbus.cpu PC
+sysbus.cpu IsHalted
+start
+sleep 10000
+pause
+sysbus.cpu PC
+quit

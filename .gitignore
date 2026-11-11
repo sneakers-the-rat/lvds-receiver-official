@@ -17,3 +17,5 @@ website/assets/gen/
 website/downloads/
 website/.jekyll-cache/
 website/.jekyll-metadata
+sim/hwsim-package/renode/
+sim/hwsim-package/renode-portable*.tar.gz

@@ -1,0 +1,242 @@
+
+(Renode:98117): Gdk-CRITICAL **: 16:02:21.918: gdk_keymap_get_for_display: assertion 'GDK_IS_DISPLAY (display)' failed
+[16:02:23.6199] [INFO] Loaded monitor commands from: /home/hatch/workspace/pdlvds-route/sim/hwsim-package/renode/scripts/monitor.py
+[0mRenode, version 1.17.0 (1.17.0+20260907gitf1dd1b4af)
+
+[91m(monitor) [0mmach create "pdlvds_rx"
+[16:02:23.8288] [INFO] System bus created.
+[33m(pdlvds_rx) [0mmachine LoadPlatformDescription @pdlvds_h723.repl
+[16:02:28.8042] [INFO] Pseudorandom Number Generator was created with seed: 887498224
+[33m(pdlvds_rx) [0msysbus LoadELF @../../firmware/build/rxfw.elf
+[16:02:29.2676] [INFO] sysbus: Loading block of 18252 bytes length at 0x8000000.
+[16:02:29.2753] [INFO] sysbus: Loading block of 36 bytes length at 0x800474C.
+[16:02:29.2756] [INFO] sysbus: Loading block of 3464 bytes length at 0x8004770.
+[16:02:29.2756] [INFO] sysbus: Loading block of 16384 bytes length at 0x24000000.
+[33m(pdlvds_rx) [0mstart
+Starting emulation...
+[16:02:29.3095] [INFO] cpu: Guessing VectorTableOffset value to be 0x8000000.
+[16:02:29.3400] [INFO] cpu: Setting initial values: PC = 0x80001A5, SP = 0x20020000.
+[16:02:29.3449] [INFO] pdlvds_rx: Machine started.
+[33m(pdlvds_rx) [0m[16:02:29.5432] [WARNING] rtc: Writing to TimeRegister allowed only in init mode
+[16:02:29.5432] [WARNING] rtc: Writing to TimeRegister allowed only in init mode
+[16:02:29.5661] [WARNING] rcc: Unhandled write to offset 0x2C. Unhandled bits: [3] when writing value 0x1FF0008. Tags: PLL1GRE (0x2).
+[16:02:29.5844] [WARNING] gpioPortB: Unhandled write to offset 0x4. Unhandled bits: [6-7] when writing value 0xC0. Tags: OT6 (0x1), OT7 (0x1).
+[16:02:29.5851] [WARNING] i2c1: Unhandled write to offset 0x10. Unhandled bits: [0, 4-5, 7-8, 10, 12-14, 20-22, 28-29] when writing value 0x307075B1. Tags: SCLL (0xB1), SCLH (0x75), SCLDEL (0x7), PRESC (0x3).
+[16:02:29.5901] [WARNING] sysbus: [cpu: 0x8000898] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C00, returning 0x00000000.
+[16:02:29.5911] [WARNING] sysbus: [cpu: 0x80008A0] (tag: 'SPI3_/_I2S3') WriteDoubleWord to non existing peripheral at 0x40003C00, value 0x0.
+[16:02:29.5912] [WARNING] sysbus: [cpu: 0x80008A2] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C08, returning 0x00000000.
+[16:02:29.5912] [WARNING] sysbus: [cpu: 0x80008A8] (tag: 'SPI3_/_I2S3') WriteDoubleWord to non existing peripheral at 0x40003C08, value 0x40000007.
+[16:02:29.5912] [WARNING] sysbus: [cpu: 0x80008AA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C0C, returning 0x00000000.
+[16:02:29.5912] [WARNING] sysbus: [cpu: 0x80008B4] (tag: 'SPI3_/_I2S3') WriteDoubleWord to non existing peripheral at 0x40003C0C, value 0x4C00000.
+[16:02:29.5912] [WARNING] sysbus: [cpu: 0x80008B6] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C00, returning 0x00000000.
+[16:02:29.5913] [WARNING] sysbus: [cpu: 0x80008BC] (tag: 'SPI3_/_I2S3') WriteDoubleWord to non existing peripheral at 0x40003C00, value 0x1.
+[16:02:29.5914] [WARNING] sysbus: [cpu: 0x80008D4] (tag: 'SPI3_/_I2S3') WriteDoubleWord to non existing peripheral at 0x40003C04, value 0x3.
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008D6] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C00, returning 0x00000000.
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008DC] (tag: 'SPI3_/_I2S3') WriteDoubleWord to non existing peripheral at 0x40003C00, value 0x200.
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000.
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+pause
+Pausing emulation...
+[16:02:29.5915] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (8518)
+[16:02:45.3532] [INFO] pdlvds_rx: Machine paused.
+[33m(pdlvds_rx) [0msysbus.cpu PC
+0x80008fe
+[33m(pdlvds_rx) [0mstart
+Starting emulation...
+[16:02:47.2478] [INFO] pdlvds_rx: Machine resumed.
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000.
+[33m(pdlvds_rx) [0m[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (9971)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (10000)
+pause
+Pausing emulation...
+[33m(pdlvds_r[16:02:47.2581] [WARNING] sysbus: [cpu: 0x80008FA] (tag: 'SPI3_/_I2S3') ReadDoubleWord from non existing peripheral at 0x40003C14, returning 0x00000000. (9337)
+[16:02:55.3971] [INFO] pdlvds_rx: Machine paused.
+x) [0msysbus.cpu PC
+0x80008f6
+[33m(pdlvds_rx) [0mquit
+[92mR[0m[92me[0m[92mn[0m[92mo[0m[92md[0m[92me[0m[92m [0m[92mi[0m[92ms[0m[92m [0m[92mq[0m[92mu[0m[92mi[0m[92mt[0m[92mt[0m[92mi[0m[92mn[0m[92mg[0m[92m[0m[92m
+[0m[92m[0m[0m[0m[16:02:55.6371] [INFO] pdlvds_rx: Disposed.

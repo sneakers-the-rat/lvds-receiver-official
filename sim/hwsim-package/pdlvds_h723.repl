@@ -1,6 +1,16 @@
 // pdlvds_h723.repl — STM32H723 platform for the LVDS receiver, Renode format.
 // UNTESTED: authored from the design sources, never executed (REFUSAL-RECORD.md).
 //
+// RECONCILED 2026-11-10 (first execution attempt): the standalone
+// MappedMemory block that used to follow is REPLACED by an include of
+// Renode's bundled STM32H743 CPU platform. Verified before the swap:
+// the bundled stm32h7.repl map is IDENTICAL to the linker.ld map below
+// (flashBank1 1 MB @ 0x08000000, dtcm 128 KB @ 0x20000000, axiSram
+// 512 KB @ 0x24000000) and it brings the Cortex-M7 cpu + the H7
+// peripheral models (RCC/PWR/GPIO/OTG_HS/SPI/I2C) this file only
+// listed. The H743 model stands in for the H723 (near-identical
+// peripheral sets for the blocks below, per the original note).
+//
 // HOW TO USE: start from Renode's bundled STM32H7 platform file
 //   (find renode -iname '*stm32h7*' -name '*.repl')
 // and reconcile it against this file: the memory map below is authoritative
@@ -35,11 +45,4 @@
 //                         in capture.c — inject the codec chain's chip
 //                         stream here (Manchester 16 Mbaud, PRBS-15)
 
-flash: Memory.MappedMemory @ sysbus 0x08000000
-    size: 0x100000
-
-dtcm: Memory.MappedMemory @ sysbus 0x20000000
-    size: 0x20000
-
-axi_sram: Memory.MappedMemory @ sysbus 0x24000000
-    size: 0x80000
+using "platforms/cpus/stm32h743.repl"
