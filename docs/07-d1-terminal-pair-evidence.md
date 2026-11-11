@@ -120,10 +120,43 @@ whose detector is 500 V-class. The parts-fix R31 series string
 identical to the single-part model; worst-high reproduces
 259.40 V).
 
-**(a) Land pattern — STILL UNVERIFIED.** Nothing in the clamp or
-parts-fix work touched D1's footprint or produced a readable
-copy of the manufacturer's Figure 10 land pattern; the condition
-stands exactly as recorded above.
+**(a) Land pattern — PROVEN 2026-11-10 (finishing pass).**
+Figure 10 of the in-repo datasheet (C30737PH-CH-LH-MH-EH
+Rev.2017-10, page 9) was rendered at 600 dpi
+(`scratch/work/finish/d1/`) and its dimension lines traced to
+their extension-line endpoints, cross-checked against pixel
+measurements of the drawing itself (scale fixed by the printed
+1.10 mm row pitch: 297.0 px per pitch, body outline measuring
+809 × 811 px against the printed 3.00 × 3.00 mm):
+
+* 0.85 [.033] 5X runs from the package edge to the pads' INNER
+  edge; 0.15 [.006] 6X runs from the package edge to the pads'
+  outer (castellation) start; 1.30 [.051] 5X spans inner edge to
+  inner edge — and 3.00 − 2×0.85 = 1.30 exactly, so the three
+  dimensions are mutually consistent.
+* Therefore each standard pad is 0.85 − 0.15 = 0.70 mm wide
+  (radial), centred 0.50 mm in from the package edge, i.e. at
+  ±1.00 mm from the package centre; height 0.60 [.024] 6X;
+  rows at 0, ±1.10 mm. Pad 1 is the exception the "5X" counts
+  imply: it is elongated inward to the package centreline
+  (flat from 0.15 inside the edge to the centre, 1.35 mm long,
+  centre 0.675 mm in from centre on its side).
+* Connection (printed under the figure): pads 1, 2, 3, 4, 6
+  NEGATIVE (anode); pad 5 POSITIVE (cathode) — matching the
+  design's APD_A / APD_K assignment and the footprint's pin
+  placement (bottom view mirrored into the top-view footprint:
+  pad 5 lands mid-right, pad 1 top-left, as drawn).
+
+The shipped footprint `C30737LH_LCC6` had this wrong: it used
+the 1.30 mm inner-edge gap as the pad WIDTH, with 1.30 × 0.60
+pads centred at ±0.85 — pads 0.60 mm too wide, centres 0.15 mm
+too close in, pad 5's inner edge reaching 0.45 mm closer to the
+anode column than the real part. The footprint is corrected to
+the proven geometry (0.70 × 0.60 at ±1.00; pad 1 elongated
+1.35 × 0.60 centred at −0.675). The earlier "raster-only,
+unprovable" reading of this figure is superseded: the printed
+dimensions were always sufficient once their extension lines
+are traced; what was missing was the trace, recorded here.
 
 **Gate state: the exemption still does NOT ship.** Condition (b)
 now passes and condition (a) remains unverified, and the gate

@@ -31,9 +31,13 @@ constant M = 1.3 V/°C; gain M=100 @900 nm; responsivity 55 typ / 60 max
 A/W @900 nm at M=100 (=> 0.55 A/W at M=1); total dark current 0.1 typ /
 1 max nA; noise current 0.1 pA/√Hz (f=10 kHz); capacitance 1 pF typ;
 rise+fall 0.9 ns (RL=50 Ω); cutoff 380 MHz; operating −40..+85 °C.
-Package (Fig. 10, p.9, rendered drawing read directly): LH = leadless
-ceramic carrier (LCC) top-looking, body 3.00 × 3.00 mm; 6 pads,
-pad size 1.30 × 0.60 mm, vertical pitch 1.10 mm;
+Package (Fig. 10, p.9; dimension extension lines traced at 600 dpi
+2026-11-10, docs/07): LH = leadless ceramic carrier (LCC)
+top-looking, body 3.00 × 3.00 mm; 6 pads — the printed 1.30 mm is
+the inner-edge-to-inner-edge gap, NOT the pad size: pads are
+0.70 (radial) × 0.60 mm, starting 0.15 mm inside the package edge
+and ending 0.85 mm from it (centres ±1.00 mm), vertical pitch
+1.10 mm; pad 1 elongated inward to the centreline;
 CONNECTION: PAD 5 = POSITIVE (CATHODE); PADS 1,2,3,4,6 = NEGATIVE (ANODE);
 photodetector plane 0.65 mm below package top.
 Spectral curve (Fig. 2): responsivity at M=1 ≈ 0.50 A/W @740 nm,

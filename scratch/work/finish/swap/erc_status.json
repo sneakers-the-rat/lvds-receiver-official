@@ -1,0 +1,9 @@
+{
+  "board_state": "ERC: 0 errors, 0 warnings",
+  "errors": 0,
+  "messages": 0,
+  "report": "scratch/work/finish/swap/erc_after.txt",
+  "tool_health": "ok",
+  "verdict": "PASS",
+  "warnings": 0
+}
