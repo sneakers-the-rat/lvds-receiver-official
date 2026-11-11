@@ -40,6 +40,7 @@ fail() { echo "STEP FAILED: $1"; FAIL=1; }
 step1() {
   step "1/11 python codec unit tests"
   python3 -m pytest host/test_codec.py -q || python3 host/test_codec.py || fail "codec tests"
+  python3 -m pytest host/test_transport.py -q || python3 host/test_transport.py || fail "transport tests"
 }
 
 step2() {

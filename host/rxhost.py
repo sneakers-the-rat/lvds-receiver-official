@@ -2,12 +2,12 @@
 """
 rxhost.py — host tool for the photodiode LVDS receiver module.
 
-Talks to the board over USB (vendor bulk + CDC control, mirroring the
-firmware/src/usb_app.c command set: GET_INFO, SET_BIAS, SET_THRESHOLD,
-GET_STATUS, BER_TEST_START/STOP, STREAM_START/STOP). Hardware access uses
-pyusb if importable; without hardware (or with --simulate) every command
-runs against SimBoard, a software model of the board built on the same
-codec as the firmware tests (host/codec.py):
+Talks to the board over its USB CDC ACM port (VID 0x1209 / PID 0xD723;
+firmware/src/usb_app.h protocol, carried by host/cdc_transport.py,
+needs pyserial: pip install pyserial). Without hardware (or with
+--simulate) every command runs against SimBoard, a software model of
+the board built on the same codec as the firmware tests
+(host/codec.py):
 
   * SimBoard generates paper-format packets (sync + 11-word header +
     5032-byte payload), encodes them 8b/10b (or Manchester, the paper's
@@ -28,7 +28,7 @@ Usage:
   python3 host/rxhost.py --simulate selftest
 Exit status 0 = success / test passed, 1 = failure.
 """
-import argparse, random, sys, os
+import argparse, random, sys, os, time
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import codec
 
@@ -227,6 +227,83 @@ def cmd_selftest(board, _):
     return 0 if ok else 1
 
 
+# --- hardware commands (CDCBoard from cdc_transport) ------------------
+
+def cmd_stream_hw(board, args):
+    import cdc_transport as ct
+    board.stream_start()
+    raw = b""
+    try:
+        raw = board.stream_read(args.packets * ct.CAPTURE_BUF_BYTES)
+    finally:
+        board.stream_stop()
+    if not raw:
+        print("stream: no capture data received (no optical signal, "
+              "or the CDR is not locked - see GET_STATUS cdr_los)")
+        return 1
+    bits = []
+    for byte in raw:
+        bits += [(byte >> (7 - i)) & 1 for i in range(8)]
+    data, dec = decode_stream_bits(bits, args.mode)
+    code_errs = (dec.code_errors + dec.disparity_errors) if dec else 0
+    pkts = codec.parse_packets(data) if data else []
+    print(f"stream: {len(raw)} bytes captured, {len(pkts)} packets "
+          f"parsed, codec errors={code_errs}")
+    return 0 if pkts else 1
+
+
+def cmd_ber_test_hw(board, args):
+    if args.ber:
+        print("(channel --ber applies to --simulate only; on hardware "
+              "the channel is the real optical link)")
+    board.ber_start(0)
+    deadline = time.time() + args.timeout
+    last = -1
+    while time.time() < deadline:
+        st = board.get_status()
+        if st["buffers_completed"] == last:
+            break  # no new data: source exhausted or no signal
+        last = st["buffers_completed"]
+        if last >= args.buffers:
+            break
+        time.sleep(0.25)
+    r = board.ber_stop()
+    scored = r["bits_checked"] / 40256
+    if r["bits_checked"] == 0:
+        print("ber-test: no data scored (no optical signal?)")
+        return 1
+    ber = r["bit_errors"] / r["bits_checked"]
+    per = r["packets_failed"] / scored
+    print(f"PRBS-15 PER test (paper method, on-board scoring): "
+          f"buffers scored={scored:.0f}")
+    print(f"bit errors: {r['bit_errors']} / {r['bits_checked']} bits "
+          f"-> BER {ber:.3e}")
+    print(f"packets failed: {r['packets_failed']} -> PER {per:.4f}")
+    print(f"implied frame loss (8 pkt/frame): {1 - (1 - per) ** 8:.4f}")
+    return 0
+
+
+def cmd_selftest_hw(board, _):
+    ok = True
+    info = board.get_info()
+    step = info["protocol"] == 1
+    print(f"  GET_INFO (firmware {info['firmware']}, protocol "
+          f"{info['protocol']}): {'PASS' if step else 'FAIL'}")
+    ok &= step
+    board.set_threshold(1250.0)
+    st = board.get_status()
+    step = abs(st["threshold_counts"] - 32768) <= 1
+    print(f"  SET_THRESHOLD/GET_STATUS loopback (counts="
+          f"{st['threshold_counts']}): {'PASS' if step else 'FAIL'}")
+    ok &= step
+    print("  SET_BIAS not exercised here: it enables the HV rail. "
+          "Use 'config --bias <V>' deliberately (interlock J5 must "
+          "be fitted).")
+    print("  Optical BIST self-test is a bench procedure: docs/05.")
+    print(f"selftest: {'PASS' if ok else 'FAIL'}")
+    return 0 if ok else 1
+
+
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[1])
     ap.add_argument("--simulate", action="store_true",
@@ -235,6 +312,9 @@ def main(argv=None):
                     default="8b10b")
     ap.add_argument("--ber", type=float, default=0.0,
                     help="simulated channel bit-error probability")
+    ap.add_argument("--port", default=None,
+                    help="CDC serial port for hardware (default: "
+                         "auto-detect by VID:PID 1209:D723)")
     sub = ap.add_subparsers(dest="cmd", required=True)
     sub.add_parser("info")
     c = sub.add_parser("config")
@@ -245,20 +325,26 @@ def main(argv=None):
     b = sub.add_parser("ber-test")
     b.add_argument("--buffers", type=int, default=100)
     b.add_argument("--ber", type=float, default=1e-5)
+    b.add_argument("--timeout", type=float, default=30.0,
+                   help="hardware only: seconds to wait for data")
     sub.add_parser("selftest")
     args = ap.parse_args(argv)
 
     if not args.simulate:
+        import cdc_transport as ct
         try:
-            import usb.core  # noqa: F401  (pyusb, hardware path)
-        except Exception:
-            print("No hardware transport available (pyusb not installed) "
-                  "and --simulate not given. Re-run with --simulate to "
-                  "verify against the software board model.")
+            board = ct.open_board(args.port)
+        except ct.TransportError as e:
+            print(str(e))
             return 1
-        print("Hardware present-check not implemented in this revision; "
-              "use --simulate. (Board USB stack bring-up: firmware/README)")
-        return 1
+        fn = {"info": cmd_info, "config": cmd_config,
+              "stream": cmd_stream_hw, "ber-test": cmd_ber_test_hw,
+              "selftest": cmd_selftest_hw}[args.cmd]
+        try:
+            return fn(board, args)
+        except (ct.TransportError, ValueError) as e:
+            print(f"error: {e}")
+            return 1
 
     board = SimBoard(ber=args.ber, mode=args.mode)
     fn = {"info": cmd_info, "config": cmd_config, "stream": cmd_stream,
