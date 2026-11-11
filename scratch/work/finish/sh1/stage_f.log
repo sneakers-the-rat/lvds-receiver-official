@@ -1,0 +1,20 @@
+18:48:19: Debug: Adding duplicate image handler for 'PNG file'
+18:48:19: Debug: Adding duplicate image handler for 'JPEG file'
+18:48:19: Debug: Adding duplicate image handler for 'TIFF file'
+18:48:19: Debug: Adding duplicate image handler for 'GIF file'
+18:48:19: Debug: Adding duplicate image handler for 'PNM file'
+18:48:19: Debug: Adding duplicate image handler for 'PCX file'
+18:48:19: Debug: Adding duplicate image handler for 'IFF file'
+18:48:19: Debug: Adding duplicate image handler for 'Windows icon file'
+18:48:19: Debug: Adding duplicate image handler for 'Windows cursor file'
+18:48:19: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+18:48:19: Debug: Adding duplicate image handler for 'TGA file'
+18:48:19: Debug: Adding duplicate image handler for 'XPM file'
+footprints reloaded
+saved hw/pdlvds_rx.exp275.kicad_pcb
+swig/python detected a memory leak of type 'FOOTPRINT *', no destructor found.
+swig/python detected a memory leak of type 'FOOTPRINT *', no destructor found.
+swig/python detected a memory leak of type 'FOOTPRINT *', no destructor found.
+swig/python detected a memory leak of type 'FOOTPRINT *', no destructor found.
+swig/python detected a memory leak of type 'FOOTPRINT *', no destructor found.
+swig/python detected a memory leak of type 'ZONE_FILLER *', no destructor found.

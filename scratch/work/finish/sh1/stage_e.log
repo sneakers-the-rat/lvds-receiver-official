@@ -1,0 +1,17 @@
+18:40:11: Debug: Adding duplicate image handler for 'PNG file'
+18:40:11: Debug: Adding duplicate image handler for 'JPEG file'
+18:40:11: Debug: Adding duplicate image handler for 'TIFF file'
+18:40:11: Debug: Adding duplicate image handler for 'GIF file'
+18:40:11: Debug: Adding duplicate image handler for 'PNM file'
+18:40:11: Debug: Adding duplicate image handler for 'PCX file'
+18:40:11: Debug: Adding duplicate image handler for 'IFF file'
+18:40:11: Debug: Adding duplicate image handler for 'Windows icon file'
+18:40:11: Debug: Adding duplicate image handler for 'Windows cursor file'
+18:40:11: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+18:40:11: Debug: Adding duplicate image handler for 'TGA file'
+18:40:11: Debug: Adding duplicate image handler for 'XPM file'
+ripped 2 legs
+seg (38.35,41.60)-(38.47,41.60) w0.20
+seg (38.47,41.60)-(38.47,42.55) w0.20
+seg (38.47,42.55)-(39.19,42.55) w0.20
+saved hw/pdlvds_rx.exp275.kicad_pcb

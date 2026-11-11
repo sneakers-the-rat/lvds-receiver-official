@@ -1,0 +1,23 @@
+18:30:48: Debug: Adding duplicate image handler for 'PNG file'
+18:30:48: Debug: Adding duplicate image handler for 'JPEG file'
+18:30:48: Debug: Adding duplicate image handler for 'TIFF file'
+18:30:48: Debug: Adding duplicate image handler for 'GIF file'
+18:30:48: Debug: Adding duplicate image handler for 'PNM file'
+18:30:48: Debug: Adding duplicate image handler for 'PCX file'
+18:30:48: Debug: Adding duplicate image handler for 'IFF file'
+18:30:48: Debug: Adding duplicate image handler for 'Windows icon file'
+18:30:48: Debug: Adding duplicate image handler for 'Windows cursor file'
+18:30:48: Debug: Adding duplicate image handler for 'Windows animated cursor file'
+18:30:48: Debug: Adding duplicate image handler for 'TGA file'
+18:30:48: Debug: Adding duplicate image handler for 'XPM file'
+footprints reloaded
+swig/python detected a memory leak of type 'FOOTPRINT *', no destructor found.
+swig/python detected a memory leak of type 'FOOTPRINT *', no destructor found.
+swig/python detected a memory leak of type 'FOOTPRINT *', no destructor found.
+swig/python detected a memory leak of type 'FOOTPRINT *', no destructor found.
+swig/python detected a memory leak of type 'FOOTPRINT *', no destructor found.
+Traceback (most recent call last):
+  File "/home/hatch/workspace/pdlvds-route/scratch/work/finish/sh1_stage_d.py", line 64, in <module>
+    t.SetPosition(pcbnew.VECTOR2I(mm(x), mm(y)))
+    ^^^^^^^^^^^^^
+AttributeError: 'SwigPyObject' object has no attribute 'SetPosition'
