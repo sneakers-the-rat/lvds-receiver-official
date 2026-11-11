@@ -383,9 +383,20 @@ PARTS += [
    {"1":("","passive",None)}, "mech"),
  P("MH6","M2.5 lens holder", ("MountingHole","MountingHole_2.7mm_M2.5"), "box",
    {"1":("","passive",None)}, "mech"),
- P("SH1","Harwin S02-25200300 25x20 can (S1001 clips)", ("pdlvds","SHIELD_CAN_26x20"), "box",
-   {"1":("","passive","GND"), "2":("","passive","GND"),
-    "3":("","passive","GND"), "4":("","passive","GND")}, "mech"),
+ P("SH1","Harwin S02-20150300 20x15x3 can (S1001-46R clips)", ("pdlvds","SHIELD_CAN_S02_20150300"), "box",
+   {}, "mech"),
+ P("CL1","Harwin S1001-46R shield clip", ("pdlvds","HARWIN_S1001"), "box",
+   {"1":("","passive","GND"), "2":("","passive","GND"), "3":("","passive","GND")}, "mech"),
+ P("CL2","Harwin S1001-46R shield clip", ("pdlvds","HARWIN_S1001"), "box",
+   {"1":("","passive","GND"), "2":("","passive","GND"), "3":("","passive","GND")}, "mech"),
+ P("CL3","Harwin S1001-46R shield clip", ("pdlvds","HARWIN_S1001"), "box",
+   {"1":("","passive","GND"), "2":("","passive","GND"), "3":("","passive","GND")}, "mech"),
+ P("CL4","Harwin S1001-46R shield clip", ("pdlvds","HARWIN_S1001"), "box",
+   {"1":("","passive","GND"), "2":("","passive","GND"), "3":("","passive","GND")}, "mech"),
+ P("CL5","Harwin S1001-46R shield clip", ("pdlvds","HARWIN_S1001"), "box",
+   {"1":("","passive","GND"), "2":("","passive","GND"), "3":("","passive","GND")}, "mech"),
+ P("CL6","Harwin S1001-46R shield clip", ("pdlvds","HARWIN_S1001"), "box",
+   {"1":("","passive","GND"), "2":("","passive","GND"), "3":("","passive","GND")}, "mech"),
 ]
 
 NETS = set()

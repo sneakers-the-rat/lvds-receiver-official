@@ -170,8 +170,11 @@ LEDs: D6 power (+3V3D, R44), D7 status (MCU PC9 via R45), D8 =
 Ushio Epitex SMT740 740 nm source LED near D1 (R46 100 Ω from +3V3D, cathode = BIST_DRV,
 MCU PC8 sinks ≈20 mA pulses).
 Mechanical: MH1–MH4 M3 corners (GND), MH5/MH6 M2.5 lens-holder holes
-flanking D1 on the optical axis, SH1 = Harwin S02-25200300 shield
-can (25x20 mm, 3.0 mm internal height — clears the 1.75 mm-max
-OPA657 under it; production fitting uses S1001 clips, footprint
-conversion from the fitted 4-pad 26x20 pattern is flagged in
-docs/09) over the AFE.
+flanking D1 on the optical axis, SH1 = Harwin S02-20150300 shield
+can (20x15 mm centre-of-material, 3.0 mm internal height — clears
+the 1.75 mm-max OPA657 under it) over U1/U2 only: the can is solid
+with no aperture, so it must never cover D1; D1 sits west of the
+can's west wall in the clear, only its short APD_A trace passing
+under the wall line region on the board's surface layers. The can
+itself has no board pads; it is held and grounded by six Harwin
+S1001-46R spring clips CL1-CL6 (GND) soldered around its walls.
