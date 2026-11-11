@@ -239,6 +239,25 @@ every sub-0.40 pair on the board — thirteen, all buried, all
 ≥ 0.3005 mm, all passing the internal-layer rule — so the clean
 verdict does not rest on the rules' say-so alone.
 
+**Fab package addendum (later the same day).** The fab package
+committed with the correction was itself wrong-board: make_fab
+selects its board by the pass system's rule (newest exp board),
+and the correction had been banked only into the canonical file,
+so the package was regenerated from the pre-correction exp276 —
+and its gerbers.zip, built by zip-updating the previous archive
+and sweeping every board stem in the directory, contained two
+pre-correction board sets and no corrected one. Found by
+gerber-level diffing against independent exports (the corrected
+board's F.Cu differed from the package's by ~2000 lines; the
+package matched exp276 to 2). Fixed properly: the corrected
+board is banked as `hw/pdlvds_rx.exp277.kicad_pcb` (byte-copy of
+the canonical file, md5 cc3043eb…), restoring the invariant the
+selection rule assumes; the package was regenerated from the
+canonical board explicitly; make_fab's zip step now archives
+only the exported board's stem into a fresh zip; and the
+regenerated F.Cu gerber diffs 0 lines against an independent
+export of the corrected board.
+
 **DM_PHY disposition.** The recorded pass-210 asymmetry (DM_PHY at
 0.10 mm against DP_PHY's 0.125 mm) no longer exists: the later
 routing passes rebuilt the pair, and measurement of the shipped

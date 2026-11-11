@@ -76,8 +76,14 @@ kicad-cli pcb export svg --layers F.Cu,F.SilkS,Edge.Cuts \
     --page-size-mode 2 --exclude-drawing-sheet -o hw/fab/board-top.svg "$B"
 kicad-cli pcb export svg --layers B.Cu,B.SilkS,Edge.Cuts \
     --page-size-mode 2 --exclude-drawing-sheet -o hw/fab/board-bottom.svg "$B"
-( cd hw/fab && zip -q -r gerbers.zip . -i "*.gbr" "*.gbrjob" "*.drl" 2>/dev/null || \
-  zip -q -r gerbers.zip . -i "*.gtl" "*.gbl" "*.gts" "*.gbs" "*.gto" "*.gbo" "*.drl" ) || true
+# Zip ONLY the board just exported (its stem), into a FRESH
+# archive. The old step zip-updated whatever gerbers.zip already
+# held and swept every stem in the directory — after the DRC
+# correction it shipped two boards (the stale canonical-stem set
+# and the exp276 set), neither of them the corrected board.
+STEM=$(basename "$B" .kicad_pcb)
+( cd hw/fab && rm -f gerbers.zip && \
+  zip -q gerbers.zip "$STEM"-*.g* "$STEM".drl ) || true
 # Interactive 3D model for the website (not a fab input; rides along
 # in the package so CI's build-site job can stage it). Best-effort:
 # a GLB failure must never sink the gerbers.
