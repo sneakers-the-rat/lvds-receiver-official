@@ -78,4 +78,9 @@ kicad-cli pcb export svg --layers B.Cu,B.SilkS,Edge.Cuts \
     --page-size-mode 2 --exclude-drawing-sheet -o hw/fab/board-bottom.svg "$B"
 ( cd hw/fab && zip -q -r gerbers.zip . -i "*.gbr" "*.gbrjob" "*.drl" 2>/dev/null || \
   zip -q -r gerbers.zip . -i "*.gtl" "*.gbl" "*.gts" "*.gbs" "*.gto" "*.gbo" "*.drl" ) || true
+# Interactive 3D model for the website (not a fab input; rides along
+# in the package so CI's build-site job can stage it). Best-effort:
+# a GLB failure must never sink the gerbers.
+bash scripts/export_glb.sh "$B" hw/fab/board-3d.glb || \
+  echo "make_fab: WARNING — board-3d.glb export failed, continuing"
 ls hw/fab/

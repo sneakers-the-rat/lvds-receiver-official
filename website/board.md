@@ -4,9 +4,21 @@ title: Board
 permalink: /board/
 ---
 
-## PCB — top and bottom
+## PCB — the finished board
 
 {% if site.data.board.board_file %}<p><small>Renders of <code>{{ site.data.board.board_file }}</code> — {{ site.data.board.renders_source }}. The site build exports these from the current board on every build; they are never a hand-refreshed copy.</small></p>{% endif %}
+
+### Interactive 3D model
+
+{% if site.data.board.model3d %}
+<figure class="viewer3d">
+<model-viewer src="{{ '/assets/gen/board-3d.glb' | relative_url }}" poster="{{ '/assets/gen/board-top.svg' | relative_url }}" alt="Interactive 3D model of the PDLVDS-RX board" camera-controls auto-rotate auto-rotate-delay="4000" rotation-per-second="18deg" shadow-intensity="0.6" exposure="1.05"></model-viewer>
+<figcaption>Drag to orbit; scroll or pinch to zoom. The model is {{ site.data.board.model3d_source }}. Most components use KiCad library models; the transformer, shield can and clips, photodiodes and BIST LED use simplified project-authored solids at their datasheet dimensions. It is a visualisation, not a mechanical CAD substitute — work from the KiCad board file for enclosure design. A copy is also on the <a href="{{ '/downloads/' | relative_url }}">downloads page</a>.</figcaption>
+</figure>
+<script type="module" src="{{ '/assets/js/model-viewer.min.js' | relative_url }}"></script>
+{% else %}
+<p><em>3D model not generated — this site build could neither export it nor stage the fab package's copy.</em></p>
+{% endif %}
 
 ### Routes — all layers and each copper layer
 

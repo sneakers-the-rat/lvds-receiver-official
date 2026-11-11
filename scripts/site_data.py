@@ -725,10 +725,13 @@ def tia_plot():
         matplotlib.use("Agg")
         import matplotlib.pyplot as plt
         import numpy as np
-        data = np.genfromtxt(csv_path, delimiter=",", names=True)
-        cols = data.dtype.names
+        # ngspice's wrdata output is whitespace-delimited with no
+        # header, despite the .csv name: two columns, Hz and dB.
+        data = np.loadtxt(csv_path)
+        if data.ndim != 2 or data.shape[1] < 2:
+            raise ValueError(f"unexpected TIA data shape {data.shape}")
         fig, ax = plt.subplots(figsize=(7, 3.2), dpi=130)
-        ax.semilogx(data[cols[0]] / 1e6, data[cols[1]])
+        ax.semilogx(data[:, 0] / 1e6, data[:, 1])
         ax.axhline(-3, color="r", ls="--", lw=0.8)
         ax.set_xlabel("frequency (MHz)")
         ax.set_ylabel("gain (dB)")
@@ -910,10 +913,43 @@ def stage_assets():
         sch_svg_src = ("staged from hw/fab/schematic.svg (CI fab "
                        "artefact, exported from the current "
                        "schematic by scripts/make_fab.sh)")
+    # board-3d.glb: the interactive 3D model. Exported at build time
+    # from the frontier board when KiCad is available (via
+    # scripts/export_glb.sh, which resolves every component model
+    # from the repo's hw/models3d mirror); otherwise staged from the
+    # fab package CI's kicad-validate job regenerated.
+    model3d = False
+    model3d_src = None
+    glb_dst = os.path.join(ASSETS, "board-3d.glb")
+    if board and have_kicad():
+        try:
+            r = subprocess.run(
+                ["bash", os.path.join(ROOT, "scripts", "export_glb.sh"),
+                 board, glb_dst],
+                capture_output=True, text=True, timeout=600)
+            if r.returncode == 0 and os.path.exists(glb_dst):
+                model3d = True
+                model3d_src = ("exported at build time from "
+                               + (board_rel or "the frontier board"))
+            else:
+                print("warning: export_glb failed: "
+                      + (r.stderr or r.stdout or "")[-300:])
+        except Exception as e:
+            print(f"warning: export_glb failed ({e})")
+    if not model3d and copy_into("hw/fab/board-3d.glb", ASSETS,
+                                 "board-3d.glb"):
+        model3d = True
+        model3d_src = ("staged from hw/fab/board-3d.glb (CI fab "
+                       "artefact, exported from the current board "
+                       "by scripts/make_fab.sh)")
+    if copy_into("hw/fab/board-3d.glb", DOWNLOADS, "board-3d.glb"):
+        dl["board-3d.glb"] = "board-3d.glb"
     write_json("board.json", {
         "top": "board-top.svg" in img,
         "bottom": "board-bottom.svg" in img,
         "composite": "board-layers.svg" in img,
+        "model3d": model3d,
+        "model3d_source": model3d_src,
         "layers": [{"name": k, "file": v}
                    for k, v in sorted(layers.items())],
         "has_link_budget_plot": "link_budget.png" in img,
@@ -930,6 +966,7 @@ def stage_assets():
               "cpl.csv": "cpl.csv",
               "board-layers.pdf": "board-layers.pdf",
               "schematic.pdf": "schematic.pdf",
+              "board-3d.glb": "board-3d.glb (interactive 3D model)",
               "token-metrics-README.md": "token-metrics-README.md"}
     write_json("downloads.json", {
         "files": [{"name": labels.get(n, n), "file": f}
@@ -946,15 +983,16 @@ def stage_assets():
 
 # ------------------------------------------------------- docs includes
 def stage_docs():
-    """Copy docs/01, docs/02, docs/05 into _includes/docs/ with
-    heading levels shifted one deeper (page title holds the h1,
+    """Copy docs/01, docs/02, docs/05, docs/14 into _includes/docs/
+    with heading levels shifted one deeper (page title holds the h1,
     exactly as the old markdown converter arranged it)."""
     if os.path.exists(INCLUDES_DOCS):
         shutil.rmtree(INCLUDES_DOCS)
     os.makedirs(INCLUDES_DOCS)
     for src, name in [("docs/01-requirements.md", "requirements.md"),
                       ("docs/02-architecture.md", "architecture.md"),
-                      ("docs/05-test-plan.md", "test-plan.md")]:
+                      ("docs/05-test-plan.md", "test-plan.md"),
+                      ("docs/14-build-guide.md", "build-guide.md")]:
         txt = read(src)
         if txt is None:
             txt = f"_{src} missing_"

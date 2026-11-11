@@ -25,7 +25,7 @@ maintained by hand.
 Why counts and not “% connected”: the only total-nets figure in the
 early pass metadata is 112, the net count of the *original* board.
 The design has since been re-schematicked — the current netlist has
-223 nets (`results/partsfix/netlist-final.txt`) — so no single
+224 nets (`results/netlist.xml`) — so no single
 denominator spans all 100+ passes, and a percentage would mix two
 different boards. The honest series is the disconnected count
 itself, falling to 0.

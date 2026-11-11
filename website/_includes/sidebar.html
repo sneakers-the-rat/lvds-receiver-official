@@ -3,16 +3,19 @@
 <nav>
 <ul class="toc">
 <li><a href="{{ '/' | relative_url }}"{% if page.url == '/' %} class="active"{% endif %}>Summary</a></li>
-<li><a href="{{ '/board/' | relative_url }}"{% if page.url == '/board/' %} class="active"{% endif %}>Board</a></li>
-<li><a href="{{ '/tokens/' | relative_url }}"{% if page.url == '/tokens/' %} class="active"{% endif %}>Token usage</a></li>
-<li><a href="{{ '/routing/' | relative_url }}"{% if page.url == '/routing/' %} class="active"{% endif %}>Routing history</a></li>
-<li><a href="{{ '/progress/' | relative_url }}"{% if page.url == '/progress/' %} class="active"{% endif %}>Progress overview</a></li>
+<li><a href="{{ '/build/' | relative_url }}"{% if page.url == '/build/' %} class="active"{% endif %}>Build guide</a></li>
+<li><a href="{{ '/board/' | relative_url }}"{% if page.url == '/board/' %} class="active"{% endif %}>Board &amp; 3D</a></li>
 <li><a href="{{ '/schematic/' | relative_url }}"{% if page.url == '/schematic/' %} class="active"{% endif %}>Schematic</a></li>
 <li><a href="{{ '/stackup/' | relative_url }}"{% if page.url == '/stackup/' %} class="active"{% endif %}>Stackup</a></li>
 <li><a href="{{ '/bom/' | relative_url }}"{% if page.url == '/bom/' %} class="active"{% endif %}>BOM</a></li>
 <li><a href="{{ '/sims/' | relative_url }}"{% if page.url == '/sims/' %} class="active"{% endif %}>Simulations</a></li>
 <li><a href="{{ '/testplan/' | relative_url }}"{% if page.url == '/testplan/' %} class="active"{% endif %}>Bench test plan</a></li>
+<li><a href="{{ '/design/' | relative_url }}"{% if page.url == '/design/' %} class="active"{% endif %}>Design</a></li>
+<li><a href="{{ '/requirements/' | relative_url }}"{% if page.url == '/requirements/' %} class="active"{% endif %}>Requirements</a></li>
 <li><a href="{{ '/downloads/' | relative_url }}"{% if page.url == '/downloads/' %} class="active"{% endif %}>Downloads</a></li>
+<li><a href="{{ '/progress/' | relative_url }}"{% if page.url == '/progress/' %} class="active"{% endif %}>Progress overview</a></li>
+<li><a href="{{ '/routing/' | relative_url }}"{% if page.url == '/routing/' %} class="active"{% endif %}>Routing history</a></li>
+<li><a href="{{ '/tokens/' | relative_url }}"{% if page.url == '/tokens/' %} class="active"{% endif %}>Token usage</a></li>
 </ul>
 {% comment %}Layout passes: a collapsible branch. Every level is
 collapsed unless the current page lives inside it — the branch is
