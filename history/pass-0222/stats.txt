@@ -1,0 +1,14 @@
+pass: 222
+description: T1 swap: Wurth WE-FLEX HV 749196518 fitted, two-cell Cockcroft-Walton ladder (C52-54, D12-15) routed in the HV district, R28 0.15R; D11 restored to its canonical position (T1 moved east instead); D1 footprint swapped to the proven Excelitas land pattern (pads 0.70x0.60 at +/-1.00, pad 1 elongated) per docs/07. KiCad DRC 132 clearance (class-band population) + 4 J1 edge + 2 refill-artifact zone pairs, no shorts; check_pcb unconnected 0, courtyard 0.
+timestamp (UTC): 2026-11-11T02:05:27Z
+commit: pending
+board file: hw/pdlvds_rx.exp274.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 85
+unconnected nets: 0
+courtyard collisions: 0
+audit verdict: fail
+note: 
