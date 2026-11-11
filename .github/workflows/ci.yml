@@ -233,7 +233,8 @@ jobs:
               for key in ("violations", "unconnected",
                           "baseline_violations", "baseline_unconnected",
                           "tool_health", "regression", "verdict",
-                          "board_state"):
+                          "board_state", "excluded_items",
+                          "effective_violations"):
                   if key in gate:
                       status["drc_" + key] = gate[key]
           except FileNotFoundError:
