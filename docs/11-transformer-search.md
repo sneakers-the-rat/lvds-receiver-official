@@ -123,37 +123,35 @@ lead — the 518 is the stockable one.
 ## Selection and the redesign it implies
 
 **T1 becomes Würth 749196518**, windings connected on the PCB as
-**1 primary : 5 secondary in series (1:5)** with a **secondary voltage
-doubler** replacing the single rectifier diode. Effective step-up
-1:10 at the rectifier. Design consequences, each to be proved in the
-redesign step before the swap lands:
+**1 primary : 5 secondary in series (1:5)** with a **two-cell
+Cockcroft–Walton ladder** replacing the single rectifier diode.
+Design consequences (proved in docs/12 + `sim/check_hv_flex.py`):
 
-- CCM duty at 253.21 V: the doubler needs a secondary amplitude of
-  ≈126.6 V, i.e. D/(1−D) = 126.6/(5 × 5 V) = 5.06 → **D ≈ 0.835** at
-  250 kHz — inside the LT3757's maximum-duty envelope (Dmax falls with
-  frequency; verified against the datasheet in the redesign proof).
-  Reachability of the 259.40 V worst-case demand needs D ≈ 0.838.
-- Reflected secondary voltage at the primary: 126.6/5 ≈ 25.3 V;
-  Q1 drain ≈ 5 + 25.3 + leakage spike — the fitted 60 V MOSFET keeps
-  its margin class (original design: 430/20 ≈ 21.5 V reflected).
-- Primary peak current is re-limited by R28 to **0.5 A**
-  (from the 2.4 A class): energy per cycle at the limit is
-  ½ · 22.3 µH · 0.5² ≈ 2.8 µJ → ≈0.7 W throughput ceiling at
-  250 kHz, ≈30× the rail's worst-case draw. Saturation margin:
-  0.5 A limit vs 0.93 A base saturation (all-driven figure, the
-  conservative reading) = 1.9×.
-- Volt-seconds on the primary winding: 5 V × (0.835/250 kHz)
-  ≈ 16.7 Vµs vs the 123.4 Vµs capability — 7× margin.
-- Doubler stresses: each diode blocks 2 × secondary amplitude ≈ 253 V
-  (C30737 build) — the fitted ES1J class (600 V) stands; each doubler
-  capacitor stands at the secondary amplitude ≈127 V — the fitted
-  630 V film class stands.
-- The S8664 (DNP alternate) build at 430 V would need D ≈ 0.896 with
-  the doubler; disposition (acceptable at the LT3757's Dmax, or a
-  tripler stuffing option) is settled in the redesign proof.
+- A flyback secondary swings asymmetrically (−N·Vin on, +Vf off), so
+  one CW cell delivers Vf + N·Vin = N·Vin/(1−D), not 2·Vf. Two cells
+  give **Vout = 50/(1−D)**: 253.21 V at **D ≈ 0.803**, the 259.40 V
+  worst-case demand at D ≈ 0.807, and the S8664 variant's 420 V at
+  D ≈ 0.881 — all with ≥2× margin on the LT3757's 220 ns typical
+  minimum off-time at 250 kHz. (This paragraph originally sketched a
+  single "doubler" at D ≈ 0.835 from the symmetric-waveform formula;
+  that arithmetic was wrong for a flyback waveform and is superseded
+  by docs/12.)
+- Q1 drain steady peak: 25.9 V (C30737 worst case) / 42.0 V (S8664)
+  vs the fitted 60 V MOSFET — the S8664 figure is the redesign's
+  tightest number and is recorded as such in docs/12.
+- Primary peak current is re-limited by R28 (0.05 → 0.15 Ω) to
+  **≤0.80 A worst case**, below the 0.93 A base saturation figure
+  under the conservative reading; the rail's full-load draw needs
+  only ≈120 mA peak.
+- Volt-seconds on the primary winding: worst 18.4 Vµs vs the
+  123.4 Vµs capability.
+- Ladder stresses: every diode blocks ≤ Vout/2 (210 V worst variant)
+  — the fitted ES1J class (600 V) stands; ladder capacitors stand at
+  ≤ Vout/2 — the fitted 630 V class stands.
 - Footprint: new 12-pin footprint drawn from the datasheet's printed
-  land pattern; envelope grows from 23.11 × 26.1 mm (old EFD20 frame)
-  to 29.5 × 21.5 mm — the HV district is re-laid and re-refereed.
+  land pattern (pads 3.50 × 2.25 mm, pitch 3.00 mm, columns 26.20 mm
+  apart); envelope grows from 23.11 × 26.1 mm (old EFD20 frame) to
+  29.5 × 21.5 mm — the HV district is re-laid and re-refereed.
 
 What does **not** change: LT3757, switching frequency (250 kHz, R24),
 the feedback divider and DAC set-point transfer (the docs/07 clamp
