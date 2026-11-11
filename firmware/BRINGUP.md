@@ -49,7 +49,9 @@ otherwise; if you find a claim that does, it is a bug in the docs.
    against the built ELF at software time; re-confirm on the
    flashed image).
 5. **Command round trip on hardware.** Run the host tool's
-   hardware path (or a serial terminal at any baud — CDC ACM
+   hardware path — `python3 host/rxhost.py info` (needs pyserial:
+   `pip install pyserial`; it auto-detects the board by VID:PID,
+   or pass `--port`) — or a serial terminal at any baud (CDC ACM
    ignores line coding for the data pipe) and issue GET_INFO:
    expect the `PDRX` reply. Then SET_THRESHOLD / GET_STATUS, and
    only then STREAM_START against the CDR.
