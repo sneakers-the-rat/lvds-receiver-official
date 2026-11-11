@@ -1828,6 +1828,14 @@ SH1 fix: Harwin S02-20150300 20x15 can on five S1001-46R clips over U1/U2 only; 
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 0 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 224 — 2026-11-11T03:12:11Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp276.kicad_pcb` · Commit: `pending`
+
+D8 footprint correction: SMT740 is a 3.2x2.7 PLCC-style package, not 1206 - new SMT740_3227 footprint, D8 moved +0.25/+0.35, BIST_DRV via re-laid
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 109 · Unconnected nets: 0 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number
