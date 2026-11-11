@@ -319,8 +319,54 @@ def file_mtime_iso(path):
 # staged render opened outside the page (new tab, direct link) lost
 # the panel and showed the artwork on white/transparent. Staging
 # bakes the same colour into the file instead.
-SVG_BG = "#111"
+SVG_BG = "#05070f"
 SVG_BG_ID = "site-bg"
+
+
+# ------------------------------------------ neon layer variants
+# The /board layer-stack viewer composites each copper layer as a
+# glowing wireframe plane. Its assets are derived here from the
+# staged per-layer SVGs: same geometry, copper recoloured to the
+# layer's neon colour, and NO baked background (the stack blends
+# the planes over the page's own dark stage). The recolour rewrites
+# EVERY 6-digit hex token: most layers plot in #000000, but B.Cu
+# plots its pads in KiCad's layer blue (#4D7FC4) — a single-token
+# rewrite left those pads blue in the amber plane.
+NEON_LAYER_COLORS = {"F.Cu": "#00f0ff", "In1.Cu": "#ff2a6d",
+                     "In2.Cu": "#9d4dff", "B.Cu": "#ffb300"}
+
+
+def derive_neon_layers(layers):
+    """Write layer-neon-<layer>.svg for each staged copper layer.
+
+    `layers` maps layer name -> staged SVG filename in ASSETS.
+    Returns [{name, file, color}] in stack order, top first."""
+    out = []
+    for name in ("F.Cu", "In1.Cu", "In2.Cu", "B.Cu"):
+        src_name = layers.get(name)
+        if not src_name:
+            continue
+        try:
+            with open(os.path.join(ASSETS, src_name),
+                      encoding="utf-8") as f:
+                txt = f.read()
+        except OSError:
+            continue
+        txt = re.sub(r'<rect id="site-bg"[^>]*/>', '', txt)
+        color = NEON_LAYER_COLORS[name]
+        txt = re.sub(r'#[0-9a-fA-F]{6}\b', color, txt)
+        # Wireframe treatment: KiCad draws tracks as centreline
+        # strokes at their real widths and zones/pads as solid
+        # fills. Drop every fill to a ghost so the plane reads as
+        # its glowing trace network over a faint pour, not as a
+        # solid sheet of colour.
+        txt = txt.replace("fill-opacity:1.0000", "fill-opacity:0.08")
+        dst = f"layer-neon-{name}.svg"
+        with open(os.path.join(ASSETS, dst), "w",
+                  encoding="utf-8") as f:
+            f.write(txt)
+        out.append({"name": name, "file": dst, "color": color})
+    return out
 
 
 def inject_svg_background(path):
@@ -909,6 +955,7 @@ def stage_assets():
             inject_svg_background(os.path.join(ASSETS, name))
     for f in layers.values():
         inject_svg_background(os.path.join(ASSETS, f))
+    neon_layers = derive_neon_layers(layers)
     tia = tia_plot()
     if tia:
         img[tia] = tia
@@ -963,6 +1010,7 @@ def stage_assets():
         "model3d_source": model3d_src,
         "layers": [{"name": k, "file": v}
                    for k, v in sorted(layers.items())],
+        "neon_layers": neon_layers,
         "has_link_budget_plot": "link_budget.png" in img,
         "has_tia_plot": tia is not None,
         "has_digital_plot": "digital_sim.png" in img,

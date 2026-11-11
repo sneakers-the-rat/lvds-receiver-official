@@ -8,7 +8,11 @@ permalink: /board/
 
 {% if site.data.board.board_file %}<p><small>Renders of <code>{{ site.data.board.board_file }}</code> — {{ site.data.board.renders_source }}. The site build exports these from the current board on every build; they are never a hand-refreshed copy.</small></p>{% endif %}
 
-### Interactive 3D model
+### Layer stack — every trace, in 3D
+
+{% include stack3d.html %}
+
+### Assembled board — component model
 
 {% if site.data.board.model3d %}
 <figure class="viewer3d">

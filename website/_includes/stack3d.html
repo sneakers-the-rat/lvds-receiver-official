@@ -1,0 +1,29 @@
+{% comment %}Exploded neon layer stack: one glowing plane per
+copper layer, from scripts/site_data.py's layer-neon-*.svg
+derivatives of the real per-layer exports. CSS-3D only; the
+controls live in assets/js/stack3d.js. Used by the landing hero
+and the board page.{% endcomment %}
+{% if site.data.board.neon_layers.size > 0 %}
+<div class="stack3d">
+  <div class="stack-stage" id="stack-stage">
+    <div class="stack-scene" id="stack-scene">
+      <div class="stack-slab"></div>
+      {% for l in site.data.board.neon_layers %}<img class="stack-layer" data-name="{{ l.name }}" src="{{ '/assets/gen/' | append: l.file | relative_url }}" alt="{{ l.name }} copper layer" style="--c:{{ l.color }}" draggable="false">{% endfor %}
+    </div>
+  </div>
+  <div class="stack-bar">
+    <div class="stack-chips">
+      {% for l in site.data.board.neon_layers %}<button type="button" class="stack-chip" data-name="{{ l.name }}" aria-pressed="true" style="--c:{{ l.color }}">{{ l.name }}</button>{% endfor %}
+    </div>
+    <label class="stack-gapctl">EXPLODE <input type="range" id="stack-gap" min="0" max="64" value="30" aria-label="Layer separation"></label>
+    <div class="stack-views">
+      <button type="button" data-view="iso">ISO</button>
+      <button type="button" data-view="top">TOP</button>
+      <button type="button" data-view="edge">EDGE</button>
+      <label class="stack-spinctl"><input type="checkbox" id="stack-spin" checked> SPIN</label>
+    </div>
+  </div>
+  <p class="stack-hint">Drag to orbit. Every plane is one copper layer of the real board, top (F.Cu) to bottom (B.Cu), exported from the same board file as everything else on this site — hover a layer chip to isolate it, click to switch it off.</p>
+</div>
+<script src="{{ '/assets/js/stack3d.js' | relative_url }}" defer></script>
+{% endif %}

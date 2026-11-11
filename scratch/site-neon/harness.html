@@ -1,0 +1,42 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@400;500;600;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/main.css"></head>
+<body><div class="shell"><div class="content-wrap">
+<header><h1>PDLVDS-RX — photodiode LVDS receiver</h1><p>Harness page mimicking the rendered board page.</p></header>
+<main>
+<h2>PCB — the finished board</h2>
+<h3>Layer stack — every trace, in 3D</h3>
+<div class="stack3d">
+  <div class="stack-stage" id="stack-stage">
+    <div class="stack-scene" id="stack-scene">
+      <div class="stack-slab"></div>
+      <img class="stack-layer" data-name="F.Cu" src="assets/gen/layer-neon-F.Cu.svg" style="--c:#00f0ff" draggable="false">
+      <img class="stack-layer" data-name="In1.Cu" src="assets/gen/layer-neon-In1.Cu.svg" style="--c:#ff2a6d" draggable="false">
+      <img class="stack-layer" data-name="In2.Cu" src="assets/gen/layer-neon-In2.Cu.svg" style="--c:#9d4dff" draggable="false">
+      <img class="stack-layer" data-name="B.Cu" src="assets/gen/layer-neon-B.Cu.svg" style="--c:#ffb300" draggable="false">
+    </div>
+  </div>
+  <div class="stack-bar">
+    <div class="stack-chips">
+      <button type="button" class="stack-chip" data-name="F.Cu" aria-pressed="true" style="--c:#00f0ff">F.Cu</button>
+      <button type="button" class="stack-chip" data-name="In1.Cu" aria-pressed="true" style="--c:#ff2a6d">In1.Cu</button>
+      <button type="button" class="stack-chip" data-name="In2.Cu" aria-pressed="true" style="--c:#9d4dff">In2.Cu</button>
+      <button type="button" class="stack-chip" data-name="B.Cu" aria-pressed="true" style="--c:#ffb300">B.Cu</button>
+    </div>
+    <label class="stack-gapctl">EXPLODE <input type="range" id="stack-gap" min="0" max="64" value="30"></label>
+    <div class="stack-views">
+      <button type="button" data-view="iso">ISO</button>
+      <button type="button" data-view="top">TOP</button>
+      <button type="button" data-view="edge">EDGE</button>
+      <label class="stack-spinctl"><input type="checkbox" id="stack-spin" checked> SPIN</label>
+    </div>
+  </div>
+  <p class="stack-hint">Drag to orbit. Every plane is one copper layer of the real board.</p>
+</div>
+<div class="specgrid">
+<div class="spec"><div class="k">Detector</div><div class="v">Excelitas C30737 APD</div><div class="s">0.5 mm active area</div></div>
+<div class="spec"><div class="k">Design target</div><div class="v">50 Mbps, 8b/10b</div><div class="s">40 Mbps payload</div></div>
+<div class="spec"><div class="k">Board</div><div class="v">100 × 125 mm, 4 layers</div><div class="s">163 parts, fully routed</div></div>
+</div>
+<script src="assets/js/stack3d.js" defer></script>
+</main></div></div></body></html>
