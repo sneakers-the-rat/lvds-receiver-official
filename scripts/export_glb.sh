@@ -45,6 +45,18 @@ with open(sys.argv[1], "w") as fh:
     json.dump(cfg, fh)
 PYEOF
 
-HOME="$TMP/home" kicad-cli pcb export glb --subst-models --no-dnp \
+# The 3D-model variables are ALSO passed as process environment:
+# KiCad's environment resolution gives the process environment
+# precedence over the config file, and in CI the config-file write
+# alone silently failed to take effect (the live site's GLB came
+# out with only the project-authored models, 11 meshes instead of
+# 153). Verified by poison test, 2026-11-11: a config pointing at
+# an empty dir degrades the export to 11 meshes; adding these env
+# vars restores the full 153 with the same poisoned config.
+HOME="$TMP/home" \
+  KICAD6_3DMODEL_DIR="$MODELS" \
+  KICAD7_3DMODEL_DIR="$MODELS" \
+  KICAD8_3DMODEL_DIR="$MODELS" \
+  kicad-cli pcb export glb --subst-models --no-dnp \
   -f -o "$OUT" "$TMP/render.kicad_pcb"
 echo "export_glb: wrote $OUT"
