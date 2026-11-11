@@ -271,8 +271,12 @@ Closing any of these needs a built board; no document substitutes.
   then the pair stays an unregistered placeholder — bench use only,
   do not distribute.
 - **The bench list** (above, docs/05) — needs fabricated hardware.
-- **GitHub CI on the final tree** runs on push; the verified record
-  at the time of writing is the local run above.
+- **GitHub CI on the final tree**: run 42995377783 (the correction
+  commit) — all four jobs green, kicad-validate's DRC gate passing
+  for the first time on the finished board; run 42997288147 (the
+  status-merge fix) likewise green, and the live site's status
+  panel shows the DRC PASS row with the exclusion note while its
+  3D model serves all 153 meshes.
 
 ## Project history — the honest record
 
