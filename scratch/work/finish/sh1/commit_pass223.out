@@ -1,0 +1,35 @@
+audit: unconnected=0 violations=108 courtyard=0 verdict=FAIL
+not staged (not pass files): hw/pdlvds_rx.exp271.kicad_prl, hw/pdlvds_rx.exp271.kicad_pro, hw/pdlvds_rx.exp272.kicad_pro, hw/pdlvds_rx.exp273.kicad_prl, hw/pdlvds_rx.exp273.kicad_pro, hw/pdlvds_rx.exp274.kicad_prl, hw/pdlvds_rx.exp274.kicad_pro, hw/pdlvds_rx.exp275.kicad_prl, hw/pdlvds_rx.exp275.kicad_pro
+committed eba182c: pass 0223: SH1 fix: Harwin S02-20150300 20x15 can on five S1001-46R clips over U1/U2 only; D1 (APD) clear of the can; R8/C7/C44/C2 relocated (13 files)
+pass 223 recorded as commit eba182cd42062a4d5cc95dbcff7d47e17e159b0c
+only step remaining: git push
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
+swig/python detected a memory leak of type 'ZONE *', no destructor found.
