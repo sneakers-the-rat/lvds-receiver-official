@@ -1,6 +1,6 @@
 # 00 — Status board
 
-## FINAL STATUS — 2026-11-10 — project complete
+## FINAL STATUS — 2026-11-10 — design complete; the carried-open items were closed the same day (passes 222–224)
 
 This project designed, from scratch, a replacement for the optical
 receiver in the Miniscope Zero paper (bioRxiv 10.64898/2026.09.05.745822v1),
@@ -9,101 +9,178 @@ This design needs no FPGA: anyone can plug the module into a laptop over
 USB, program it, and verify it.
 
 **Signal chain.** Excelitas C30737LH-500-90 silicon APD → OPA657
-transimpedance amplifier → LMH7220 comparator with a DAC-set threshold,
-native LVDS out (the bit-transparent main path). A verification tap runs
-comparator → ADN2813 clock/data recovery → STM32H723 (timer/SPI-slave
-DMA capture, firmware decode) → USB3300 ULPI USB-HS → host. Bias is an
-LT3757 flyback under DAC control with temperature compensation and a
-hardware interlock. Power is USB-C. Programming is via the STM32's ROM
-USB DFU bootloader plus SWD pads. An alternate footprint fits the
-Hamamatsu S8664-20K (D2, do-not-populate in the standard build).
+transimpedance amplifier → THS4304 post-amplifier → LMH7220 comparator
+with a DAC-set threshold, native LVDS out (the bit-transparent main
+path). A verification tap runs comparator → ADN2813 clock/data
+recovery → STM32H723 (timer/SPI-slave DMA capture, firmware decode) →
+USB3300 ULPI USB-HS → host. Bias is an LT3757 flyback under DAC
+control with temperature compensation and a hardware interlock (J5).
+Power is USB-C. Programming is via the STM32's ROM USB DFU bootloader
+plus SWD pads. An alternate footprint fits the Hamamatsu S8664-20K
+(D2, do-not-populate in the standard build).
 
 **Modes.** The paper's uplink — 8 Mbps Manchester — is supported as
 transmitted. The design target of 50 Mbps line rate (8b/10b, 40 Mbps
 payload) is implemented in the codec and capture path; no transmitter
 for it exists yet, so that mode is proven in simulation only.
 
+**The finish pass.** An earlier version of this page declared the
+project complete when the routed design package was pushed. That
+claim was corrected the same day (2026-11-10 16:31): the package was
+complete, but the board was not fab-ready while a list of carried
+verification items stayed open. The owner ordered all of them
+finished, and passes 222–224 plus the work below closed every one
+that paper and measurement can close:
+
+- **D1 land pattern — PROVEN** (docs/07 gate closed on both
+  conditions). The datasheet's Figure 10 was measured at 600 dpi
+  against its own printed dimensions: the fitted footprint's pads
+  were the wrong size in the wrong places (a dimension for the gap
+  between pad rows had been read as a pad width). Footprint
+  rewritten to the measured geometry (standard pads 0.70 × 0.60 mm
+  centred ±1.00 mm from the package edges; pad 1 elongated to the
+  centreline) and swapped onto the board.
+- **T1 — custom wind replaced by a production part** (docs/11,
+  docs/12; pass 222). A nine-family search replaced the
+  impractical-to-source custom transformer with the Würth WE-FLEX
+  HV 749196518 (EFD20, six windings, 1500 VAC insulation test,
+  distributor stock), its five spare windings series-connected as
+  the secondary, and a two-cell Cockcroft–Walton ladder (D12–D15,
+  C52–C54) that reaches the full bias range inside the LT3757's
+  duty-cycle limit. R28 re-ratioed so the worst-case peak current
+  stays below saturation. 23 analytical checks pass; the docs/07
+  clamp bound re-verified unchanged (259.40 V worst case ≤ 260 V).
+- **SH1 — the shield can no longer blinds the photodiode**
+  (pass 223). Measurement showed the fitted 26×20 can outline sat
+  squarely over D1. Exact-geometry solvers proved no 25×20 can
+  placement covers the amplifier pair while excluding both D1 and
+  the comparator, so the board now carries the smaller stock can
+  (Harwin S02-20150300, 20×15×3.0 mm) over U1/U2 only, on five
+  S1001-46R clips (the sixth clip position has no lawful window),
+  with D1 west of the can wall in the clear and the +VA decouplers
+  relocated east. The checker's semantic question is answered by
+  its own blind-list output: the parts under the can are exactly
+  the analogue front end (U1, U2 and their passives, all under the
+  3.0 mm internal height); D1 is not among them.
+- **F-08 — CLOSED.** AN5419 Rev 2 (ST's own application note) gives
+  the VCAP rule for this configuration — 2.2 µF, ESR < 100 mΩ, one
+  per pin — which is exactly what C17/C18 are; ST's symbol data
+  puts VCAP on pins 71 and 106, matching the design. No values
+  changed.
+- **D8 — the flagged check caught a real defect** (pass 224). The
+  complete SMT740 datasheet (the repo's copy had been truncated)
+  shows the part is a 3.2 × 2.7 mm PLCC-style package, not the
+  fitted 1206. New footprint drawn from the datasheet dimensions,
+  D8 moved 0.25/0.35 mm, its via re-laid. The same sheet's VF table
+  puts the R46 drive at 11–14 mA, inside all ratings.
+- **S8664 (D2) — VERIFIED CORRECT, no change.** The datasheet
+  connection diagram was read at vector level: pin 1 = anode,
+  pin 2 = cathode, pin 3 = case — exactly the design's map, and
+  the footprint's pad frame, tab mark and pin-1 mark all match
+  the drawing.
+- **rxhost hardware transport — IMPLEMENTED.** `host/cdc_transport.py`
+  speaks the firmware's CDC protocol (info, bias, threshold,
+  status, BER counters, raw stream) with VID:PID auto-detection;
+  nine tests against a software model of the firmware's command
+  handler pass, and CI runs them. SET_BIAS is deliberately not
+  exercised by the self-test path (it enables the high voltage).
+
 ### The board
 
-- Final board file: `hw/pdlvds_rx.kicad_pcb` — a byte-identical copy of
-  the pass-221 board (`hw/pdlvds_rx.exp273.kicad_pcb`). 221 banked
-  routing passes; the board is **fully routed: 0 unconnected items**.
-- KiCad DRC on the final tree (with the project netclasses below):
-  210 items, every one dispositioned under "Verification"; 0
-  unconnected. Under the Default-only rules the routing was banked
-  against, the same board shows 4 items — all intrinsic to the USB-C
+- Final board file: `hw/pdlvds_rx.kicad_pcb` — a byte-identical copy
+  of the pass-224 board (`hw/pdlvds_rx.exp276.kicad_pcb`). 224 banked
+  passes; the board is **fully routed: 0 unconnected nets** on the
+  connectivity census, 0 courtyard collisions.
+- KiCad DRC on the final tree (project netclasses in force):
+  149 clearance items + 4 edge items + 2 unconnected items, every
+  one dispositioned under "Verification" below. Under the
+  Default-only rules the routing was banked against, the routed
+  board (pass 221) showed 4 items — all intrinsic to the USB-C
   connector's own geometry at the board edge (J1).
-- `hw/check_pcb.py` on the final board: 0 unconnected nets, 0 courtyard
-  collisions, 147 class-band clearance pairs + 37 segregated
-  same-footprint pairs (the same population DRC counts as 206; the two
-  checkers count at different granularity), blind list SH1 only
-  (21 fallback pairs, reported, not gated).
-- Schematic: 152 parts / 648 pins / 223 nets / 545 connections;
-  ERC 0 errors, 0 warnings. The schematic was redrawn for readability
-  on 2026-11-08 with a byte-identical netlist proof (0-byte snapshot
-  diff).
-- Netclasses now live in the project file (`hw/pdlvds_rx.kicad_pro`):
-  Default 0.20 mm, Power 0.25 mm, HV 1.00 mm, assigned by the carried-
-  voltage census in `hw/check_pcb.py` (the same net lists the checker
-  used throughout). They are proven to bind: on a scratch copy, a
-  planted track at a 0.50 mm gap to HV copper is flagged as an HV
-  violation with the classes present and passes silently with the
-  project stripped back to Default-only (A/B DRC reports in
-  `scratch/work/final/plant/`).
-- Fab package: `hw/fab/`, generated from the final board — full gerber
-  set, drill file, `gerbers.zip`, placement CSV, BOM (83 rows), board
+- `hw/check_pcb.py` on the final board: 0 unconnected nets,
+  0 courtyard collisions, 109 class-band clearance pairs + 40
+  segregated same-footprint pairs, blind list SH1 only (18 fallback
+  pairs, reported, not gated; D1 not among them).
+- Schematic: 163 parts; regenerated for the final design data
+  (transformer ladder, five shield clips, D8 footprint). Netlist
+  check PASS (673 connected pins against 576 expected); ERC
+  0 errors, 0 warnings.
+- Netclasses live in the project file (`hw/pdlvds_rx.kicad_pro`):
+  Default 0.20 mm, Power 0.25 mm, HV 1.00 mm, assigned by the
+  carried-voltage census in `hw/check_pcb.py`. They are proven to
+  bind: on a scratch copy, a planted track at a 0.50 mm gap to HV
+  copper is flagged as an HV violation with the classes present and
+  passes silently with the project stripped back to Default-only
+  (A/B DRC reports in `scratch/work/final/plant/`).
+- Fab package: `hw/fab/`, regenerated from the final board — full
+  gerber set, drill file, `gerbers.zip`, placement CSV, BOM, board
   renders, schematic PDF/SVG.
 
-### Verification (final local run of `scripts/ci.sh`, 2026-11-10)
+### Verification (final local run of `scripts/ci.sh`, 2026-11-10, on the pass-224 tree)
 
 Steps 1–10 PASS; step 11 (DRC gate) reports REGRESSION against the
 zero-tolerance baseline — see the disposition below.
 
-- Codec unit tests: 11/11 PASS. Digital simulation (8b/10b, Manchester,
-  PRBS-15): PASS.
+- Codec unit tests: 11/11 PASS. **Transport tests: 9/9 PASS** (new).
+  Digital simulation (8b/10b, Manchester, PRBS-15): PASS.
 - Link budget: −45.6 dBm at 740 nm against the −34 dBm requirement
   (≈11 dB margin): PASS.
 - TIA ngspice simulation: PASS — f-3dB 153.6 MHz (requirement ≥50 MHz);
   noise inside 3 dB of the 0.569 mV budget. The margin over the noise
   budget is thin (the underlying figure is 0.567 mV); the bench, not
   the simulator, will settle it.
-- HV analytical check: PASS — worst-case demand 259.40 V against the
-  APD's 260 V rating (the self-fry fix, docs/07).
-- Firmware: host unit tests PASS (the suite totals 96 checks across
-  firmware and host tooling); ARM cross-compile clean; host-tool
-  simulation smoke test PASS. The host tool's hardware transport is a
-  stub — it cannot yet talk to a real board.
-- Netlist verification: exact (152/648/223/545, nothing missing,
-  nothing extra). ERC gate: PASS (0/0).
-- Hardware simulation (Renode, the fresh attempt the package was kept
-  for): **Stage A CONFIRMED** — the unmodified production firmware
-  boots on the emulated STM32 (H743 model) through peripheral init and
-  the USB controller init into its main loop (program-counter samples
-  inside `tud_task_ext` and `usb_dev_recv`, three cold starts; record
-  in `sim/hwsim-package/captures/2026-11-10/`). Two limits recorded
-  there: the bundled platform has no SPI3 model, so the DAC/threshold
-  path is not validated; Stage B (host bridge) was not attempted —
-  Renode offers no ready host-visible bridge for this controller and
-  the host tool's transport is a stub.
+- HV checks: PASS — the analytical clamp proof (worst-case demand
+  259.40 V against the APD's 260 V rating, docs/07) and the WE-FLEX
+  redesign checks (`sim/check_hv_flex.py`, 23/23).
+- Firmware: host unit tests PASS (96 checks across firmware and host
+  tooling, plus the 9 transport tests above); ARM cross-compile
+  clean; host-tool simulation smoke test PASS.
+- Netlist verification: exact. ERC gate: PASS (0/0).
+- Hardware simulation (Renode): **Stage A CONFIRMED** — the
+  unmodified production firmware boots on the emulated STM32 (H743
+  model) through peripheral init and the USB controller init into
+  its main loop (record in `sim/hwsim-package/captures/2026-11-10/`).
+  The bundled platform has no SPI3 model, so the DAC/threshold path
+  is not validated; Stage B (a host bridge driving the real host
+  tool against the emulated firmware) was not attempted — Renode
+  offers no ready host-visible bridge for this USB controller. The
+  host transport it would exercise now exists and is unit-tested.
 
-**DRC gate disposition.** The CI DRC baseline is zero-tolerance by the
-owner's 2026-11-05 ruling and has not been changed. The final board
-reports 210 items against it, all in known classes: 4 J1
-connector-at-edge items; 206 netclass-band items that exist only
-because the completion phase wrote the project's own design classes
-into the project file (HV: 62 zone-surface + 27 surface-routing +
-11 zone-buried + 10 buried-layer + 8 same-footprint; Power: 46
-same-footprint + 32 surface-band + 10 buried-layer). Every one is a
-pair that satisfies the board's binding 0.20 mm fab rule; the wider
-bands were the project's design census, tracked as counts throughout
-routing, never as defects. The HV pairs sit in the APD/HV front-end
-district and at the ground pour's own 0.25 mm carve; same-footprint
-pairs are manufacturer pad geometry. CI's DRC step will therefore show
-red on the final tree while its ERC gate shows green; that is the
-owner's gate working as configured, with the items named here rather
-than baselined away. Inside those counts sit the two D1 clearance
-lines held open since docs/07: D1's land pattern cannot be proven
-from the datasheet's raster figure, so they were never exempted.
+**DRC gate disposition.** The CI DRC baseline is zero-tolerance by
+the owner's 2026-11-05 ruling and has not been changed. The final
+board reports 155 items against it, all in named classes:
+
+- **149 clearance items, all class-band adjacencies, zero shorts,
+  zero below the board's binding 0.20 mm fab rule.** 52 are HV-band
+  (actual gaps 0.2218–0.9994 mm against the 1.00 mm class figure);
+  97 are Power-band (0.2000–0.2493 mm against 0.25 mm). These bands
+  were the project's design census, tracked as counts throughout
+  routing, never as defects; the wider separations are physically
+  unavailable in the dense districts they occur in, and every pair
+  meets the rule the fab will actually enforce.
+- **4 copper-edge items**: the USB-C connector J1's own geometry at
+  the board edge — present on every board revision, declared.
+- **2 unconnected items**: a ground-zone pair at one outline corner.
+  These are a demonstrated artefact of scripted zone refills, not a
+  connectivity defect: refilling an untouched copy of the canonical
+  board produces exactly these two items and nothing else; all 49
+  ground vias were verified inside the inner-layer fill; and the
+  connectivity census (which does not depend on fill state) reports
+  0 unconnected nets.
+
+CI's DRC step will therefore show red on the final tree while its
+ERC gate shows green; that is the owner's gate working as
+configured, with the items named here rather than baselined away.
+
+**DM_PHY disposition.** The recorded pass-210 asymmetry (DM_PHY at
+0.10 mm against DP_PHY's 0.125 mm) no longer exists: the later
+routing passes rebuilt the pair, and measurement of the shipped
+board shows both nets routed in the same widths (0.20/0.25 mm),
+lengths matched — 46.3 mm against 45.8 mm — with two vias each.
+No copper change was made. One honest residual: the two legs run
+mostly on different layers (DM on In2, DP on B.Cu) rather than as a
+coupled pair, so USB high-speed signal integrity is a bench
+question, already carried on the docs/05 list.
 
 ### Not proven on hardware (the bench list, docs/05)
 
@@ -113,26 +190,22 @@ into the front end, shielding against the paper's 6.63 MHz
 wireless-power field, ADN2813 lock at 16 Mbaud (near its floor;
 datasheet-compatible), STM32 capture timing closure, USB enumeration
 on real silicon, and end-to-end BER against the real transmitter.
+Closing any of these needs a built board; no document substitutes.
 
-### Carried open items
+### What remains open
 
-- docs/07 condition (a): D1 land-pattern proof (datasheet figure is
-  raster-only).
-- T1 land pattern provisional: the custom wind (Würth EFD20 frame,
-  order code 070-4290; Lp 47 µH, 1:20, hipot 1500 VAC) must be
-  confirmed against the manufacturer's drawing before fab.
-- F-08: U6/C17/C18 unverified (datasheet fetches failed on every
-  route; nothing was guessed).
-- SH1: the shield can's fitted pattern predates its S1001 clip
-  conversion, and its courtyard question still needs the semantic
-  covering-part answer (it is the checker's one blind footprint).
-- D8 package outline unverified (part identity and 740 nm established).
-- S8664 (D2) lead identity not verified against the Hamamatsu drawing.
-- USB VID/PID (0x1209/0xD723) is an unregistered placeholder; register
-  before distributing hardware.
-- DM_PHY was routed at 0.10 mm width against DP_PHY's 0.125 mm — a
-  pair asymmetry recorded at pass 210, cosmetic for a 8 Mbps link but
-  named here.
+- **USB VID/PID filing** — the path is fully resolved in docs/13:
+  PID 0xD723 under pid.codes' VID 0x1209 was verified unassigned on
+  2026-11-10, the filing is a prepared pull request, and no firmware
+  change is needed if it is granted as-is. Two things only the
+  owner can do: choose an open-source license for this repository
+  (pid.codes eligibility requires one; the repo currently declares
+  none), and file the PR under their own GitHub identity. Until
+  then the pair stays an unregistered placeholder — bench use only,
+  do not distribute.
+- **The bench list** (above, docs/05) — needs fabricated hardware.
+- **GitHub CI on the final tree** runs on push; the verified record
+  at the time of writing is the local run above.
 
 ## Project history — the honest record
 
