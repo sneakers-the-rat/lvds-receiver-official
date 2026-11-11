@@ -96,3 +96,60 @@ Found by the user 2026-11-10 17:38.
    0603/1206 passives <= 1.35 (C33 is outside), RJ2 0603 — all
    < 3.0 internal. Verify each under-can part's height from its
    datasheet when the under-can list is final.
+
+## FINAL LOCK (2026-11-10, solver v7 + hand-checks; build on exp275,
+## referees judge the last fractions)
+- Can S02-20150300 centre (21.05, 37.25); walls x 11.05/31.05,
+  y 29.75/44.75 (wall centre-lines).
+- Relocations: R8 -> (29.32, 35.90); C7 -> (37.9, 42.8);
+  C44 -> (38.4, 44.3); C2 -> (38.3, 45.9). The +VA via at
+  (30.82, 40.05) is ripped with the C44/C2 web re-lay.
+- Clips (S1001-46R lands, courtyard trimmed to +/-2.45):
+  N1 (23.9, 29.75), N2 (28.8, 29.75), S1 (14.65, 44.75),
+  S2 (28.8, 44.75), W (11.05, 33.75), E (31.05, 33.75).
+  N clips sit on the eastern 2/3 of the north wall: the APD_K
+  via staircase at (20.9-21.6, 29.7-30.6) and C33's courtyard
+  fence the west end. S2 vs C3's courtyard is the known tight
+  pair - DRC/check_pcb at surgery time decides; fallback is
+  dropping S2 (5 clips) or nudging it in 0.2 steps.
+- Heights under the can: U1 SO-8 1.75 max, U2 SOT-23-5 ~1.1,
+  passives <= 1.35 - all < 3.0 internal. RJ2 (0603) ~0.9.
+
+## RESULT (2026-11-10, built on exp275, stages A-F2)
+- As built: can at (21.05, 37.25) as locked. Relocations landed at
+  R8 (28.80, 35.90), C7 (36.90, 42.80), C44 (37.60, 44.50),
+  C2 (37.40, 46.20) (final positions from measured courtyard rects
+  at surgery time, east of U3 as locked in spirit).
+- FIVE clips fitted: CL1 (23.90, 29.75), CL2 (28.80, 29.75) on the
+  y=29.75 wall; CL3 (14.65, 44.75) on the y=44.75 wall;
+  CL4 (11.05, 33.75) W; CL5 (31.05, 33.00) E. The S2 clip was
+  dropped (no lawful window; C3 courtyard + east wall fence it),
+  and circuit.py carries CL1-CL5 only (CL6 removed, schematic
+  regenerated: 163 parts, check_netlist PASS, ERC 0/0, snapshot
+  delta = exactly the CL6 removal).
+- Each clip's three GND pads are joined by an explicit spine track
+  (KiCad does not internally connect same-net pads) plus a stitch
+  via to the In1 GND plane.
+- Referees on the final exp275: KiCad DRC 152 = 148 clearance +
+  4 copper_edge (standing J1) + 2 unconnected_items (the proven
+  scripted-refill zone artifact pair, see pass 222 record);
+  ZERO shorts, silk, courtyards. check_pcb: unconnected nets 0,
+  courtyard collisions 0, blind list = SH1 only, fallback pairs 18
+  and D1 is NOT among them (the can's contents are exactly U1, U2
+  and the AFE passives C1/C5/R1/R3/R4/R7/R8/RJ2, plus the clips
+  themselves on the wall lines). Slot census: 0 items.
+- Mechanical wall check (sh1/wall_check.py): no component body
+  straddles a can wall; outside parts clear the wall bands
+  (C33 by 0.30, R2 by 0.19, C3 clear south); clips straddle only
+  the wall each grips, by design.
+- Clearance delta vs exp274 (KiCad DRC 132 -> 148): +9 HV-band
+  APD_K vs new clip GND copper (actuals 0.34-0.98, all above the
+  0.20 binding fab rule; same population as the 118 pre-existing
+  HV-band items) and +7 Power-band from the +VA re-lay (all
+  >= 0.20). Stage E caught and fixed the one genuine defect of
+  the surgery: two +VA legs at 0.125 mm from C7.2's GND pad
+  (below the 0.20 fab rule) - re-laid in the channel centre,
+  now 0.245. Final board has ZERO sub-0.20 clearance items.
+- Fab-text hygiene: the footprints' long descriptive strings now
+  live in (descr ...) instead of drawn F.Fab text (their drawn
+  bboxes spanned the whole board and polluted the Fab render).

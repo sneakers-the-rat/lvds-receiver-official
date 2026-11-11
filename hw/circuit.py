@@ -395,8 +395,9 @@ PARTS += [
    {"1":("","passive","GND"), "2":("","passive","GND"), "3":("","passive","GND")}, "mech"),
  P("CL5","Harwin S1001-46R shield clip", ("pdlvds","HARWIN_S1001"), "box",
    {"1":("","passive","GND"), "2":("","passive","GND"), "3":("","passive","GND")}, "mech"),
- P("CL6","Harwin S1001-46R shield clip", ("pdlvds","HARWIN_S1001"), "box",
-   {"1":("","passive","GND"), "2":("","passive","GND"), "3":("","passive","GND")}, "mech"),
+ # Five clips fitted (2N/1S/1W/1E per scratch/work/finish/
+ # sh1_plan.md FINAL LOCK); the sixth (SE-south) has no lawful
+ # window. Board carries CL1-CL5 only.
 ]
 
 NETS = set()

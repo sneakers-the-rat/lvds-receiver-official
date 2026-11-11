@@ -176,5 +176,7 @@ the 1.75 mm-max OPA657 under it) over U1/U2 only: the can is solid
 with no aperture, so it must never cover D1; D1 sits west of the
 can's west wall in the clear, only its short APD_A trace passing
 under the wall line region on the board's surface layers. The can
-itself has no board pads; it is held and grounded by six Harwin
-S1001-46R spring clips CL1-CL6 (GND) soldered around its walls.
+itself has no board pads; it is held and grounded by five Harwin
+S1001-46R spring clips CL1-CL5 (GND) soldered around its walls
+(2N/1S/1W/1E; the sixth, SE-south, position has no lawful window
+between C3's courtyard and the east wall — sh1_plan.md).
