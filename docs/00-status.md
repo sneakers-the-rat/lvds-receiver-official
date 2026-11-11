@@ -87,39 +87,61 @@ that paper and measurement can close:
 
 ### The board
 
-- Final board file: `hw/pdlvds_rx.kicad_pcb` — a byte-identical copy
-  of the pass-224 board (`hw/pdlvds_rx.exp276.kicad_pcb`). 224 banked
+- Final board file: `hw/pdlvds_rx.kicad_pcb` — the pass-224 board
+  (`hw/pdlvds_rx.exp276.kicad_pcb`) plus the 2026-11-11 correction
+  pass below (five copper fixes, no placement changes). 224 banked
   passes; the board is **fully routed: 0 unconnected nets** on the
   connectivity census, 0 courtyard collisions.
-- KiCad DRC on the final tree (project netclasses in force):
-  149 clearance items + 4 edge items + 2 unconnected items, every
-  one dispositioned under "Verification" below. Under the
-  Default-only rules the routing was banked against, the routed
-  board (pass 221) showed 4 items — all intrinsic to the USB-C
-  connector's own geometry at the board edge (J1).
-- `hw/check_pcb.py` on the final board: 0 unconnected nets,
-  0 courtyard collisions, 109 class-band clearance pairs + 40
-  segregated same-footprint pairs, blind list SH1 only (18 fallback
-  pairs, reported, not gated; D1 not among them).
+- KiCad DRC on the current tree (project netclasses + the
+  per-layer rules in `hw/pdlvds_rx.kicad_dru` in force): **4 items,
+  all copper_edge_clearance at J1, and 0 unconnected** — the four
+  are the USB-C connector manufacturer's own land pattern, held as
+  pinned DRC exclusions (see the correction record below). The
+  155-item report the finish pass dispositioned (149 clearance +
+  4 edge + 2 unconnected) was re-derived from primary records on
+  2026-11-11 and found wrong in three ways; the corrected account
+  replaces the old disposition below.
+- `hw/check_pcb.py` on the corrected board (the tool itself fixed
+  in the correction pass — per-fragment zone connectivity, the
+  corrected class values, a board-edge check): **PCB CHECK: PASS**
+  — 0 unconnected nets, 0 clearance violations, 0 intrinsic pairs,
+  0 board-edge violations, 0 courtyard collisions, blind list SH1
+  only (18 fallback pairs, reported, not gated; D1 not among
+  them). On the pre-correction board the same tool had reported
+  the 109 class-band pairs and 0 unconnected — the second figure
+  was the fused-fragment bug the correction record describes.
 - Schematic: 163 parts; regenerated for the final design data
   (transformer ladder, five shield clips, D8 footprint). Netlist
   check PASS (673 connected pins against 576 expected); ERC
   0 errors, 0 warnings.
 - Netclasses live in the project file (`hw/pdlvds_rx.kicad_pro`):
-  Default 0.20 mm, Power 0.25 mm, HV 1.00 mm, assigned by the
-  carried-voltage census in `hw/check_pcb.py`. They are proven to
-  bind: on a scratch copy, a planted track at a 0.50 mm gap to HV
-  copper is flagged as an HV violation with the classes present and
-  passes silently with the project stripped back to Default-only
-  (A/B DRC reports in `scratch/work/final/plant/`).
+  Default 0.20 mm, Power 0.20 mm, HV 0.40 mm, assigned by the
+  carried-voltage census in `hw/check_pcb.py`. HV spacing is
+  refined per layer by `hw/pdlvds_rx.kicad_dru`: 0.40 mm on the
+  surface layers, 0.30 mm on the internal layers. The basis is
+  IPC-2221B Table 6-1 for the ≤259.4 V bias domain: B4 (external,
+  permanent polymer coating) 0.40 mm; B1 (internal) 0.20 mm, run
+  at 0.30 for margin. The uncoated external column (B2, 1.25 mm)
+  is physically impossible with the fitted detector — the
+  C30737's own anode/cathode pads sit 0.50 mm apart at full bias —
+  so conformal coating of the HV island is a design requirement,
+  stated on the board's fab drawing layer and in docs/14. The
+  classes are proven to bind: on a scratch copy, a planted track
+  at a 0.50 mm gap to HV copper is flagged as an HV violation
+  with the classes present and passes silently with the project
+  stripped back to Default-only (A/B DRC reports in
+  `scratch/work/final/plant/`).
 - Fab package: `hw/fab/`, regenerated from the final board — full
   gerber set, drill file, `gerbers.zip`, placement CSV, BOM, board
   renders, schematic PDF/SVG.
 
 ### Verification (final local run of `scripts/ci.sh`, 2026-11-10, on the pass-224 tree)
 
-Steps 1–10 PASS; step 11 (DRC gate) reports REGRESSION against the
-zero-tolerance baseline — see the disposition below.
+Steps 1–10 PASS. Step 11 (DRC gate) reported REGRESSION against
+the zero-tolerance baseline on the pass-224 tree; the 2026-11-11
+correction below resolved it — the gate now passes on the
+corrected tree (local steps 10–11 re-run 2026-11-11: ERC 0/0,
+DRC gate NO REGRESSION with the four pinned exclusions reported).
 
 - Codec unit tests: 11/11 PASS. **Transport tests: 9/9 PASS** (new).
   Digital simulation (8b/10b, Manchester, PRBS-15): PASS.
@@ -146,31 +168,76 @@ zero-tolerance baseline — see the disposition below.
   offers no ready host-visible bridge for this USB controller. The
   host transport it would exercise now exists and is unit-tested.
 
-**DRC gate disposition.** The CI DRC baseline is zero-tolerance by
-the owner's 2026-11-05 ruling and has not been changed. The final
-board reports 155 items against it, all in named classes:
+**DRC correction (2026-11-11) — the finish-pass disposition was
+wrong; this record replaces it.** The CI DRC baseline is
+zero-tolerance by the owner's 2026-11-05 ruling and has not been
+changed. The owner asked why the finished board still reported
+155 items, why the project's own configuration was stricter than
+the yardstick the disposition judged it against, whether the J1
+items could be fixed, and — for the 2 unconnected items — why
+KiCad should not simply be believed over the project's tooling.
+Re-deriving every item from the primary records found the
+disposition wrong in three ways:
 
-- **149 clearance items, all class-band adjacencies, zero shorts,
-  zero below the board's binding 0.20 mm fab rule.** 52 are HV-band
-  (actual gaps 0.2218–0.9994 mm against the 1.00 mm class figure);
-  97 are Power-band (0.2000–0.2493 mm against 0.25 mm). These bands
-  were the project's design census, tracked as counts throughout
-  routing, never as defects; the wider separations are physically
-  unavailable in the dense districts they occur in, and every pair
-  meets the rule the fab will actually enforce.
-- **4 copper-edge items**: the USB-C connector J1's own geometry at
-  the board edge — present on every board revision, declared.
-- **2 unconnected items**: a ground-zone pair at one outline corner.
-  These are a demonstrated artefact of scripted zone refills, not a
-  connectivity defect: refilling an untouched copy of the canonical
-  board produces exactly these two items and nothing else; all 49
-  ground vias were verified inside the inner-layer fill; and the
-  connectivity census (which does not depend on fill state) reports
-  0 unconnected nets.
+- **The specification was wrong, not just strict.** The 1.00 mm
+  HV and 0.25 mm Power figures began as *reporting bands* in
+  `hw/check_pcb.py` (a KiCad-7-era census tool whose verdict never
+  gated on them), were copied flat into the project netclasses at
+  completion — losing the tool's layer logic (buried HV pairs were
+  always 0.30 there) — and the disposition then judged the board
+  against a third figure (a flat 0.20 mm "fab rule") that appears
+  in neither tool. Corrected spec, on a stated basis: Power
+  0.25 → 0.20 (the 97 items were ≤5.5 V adjacencies, the tightest
+  of them package-intrinsic QFP pad spacings); HV per IPC-2221B
+  Table 6-1, enforced per layer by `hw/pdlvds_rx.kicad_dru`
+  (0.40 surface / 0.30 internal, coating now a stated fab
+  requirement — it previously existed only as a claim in
+  docs/02). The class-only remainder after the spec fix was
+  11 clearance items — the real defects, next bullet.
+- **Three of the real defects were genuine, and one was worse
+  than reported.** (a) The APD_K front-side staircase passed
+  **0.072 mm** from CL1's ground pad — under every rule including
+  the flat 0.20 the disposition claimed as the floor; the shipped
+  report did not even itemise that pair (at a 1.00 mm class value
+  the engine paired the same stub against a farther object;
+  at 0.80 and below the pair appears at its true distance —
+  reproduced, mechanism not established). (b) A ~253 V net
+  (HV_R29M) ran 0.222 mm from a ~2 V compensation net on B.Cu —
+  under the 0.40 coated basis, a real violation. (c) An APD_K via
+  sat 0.320 mm from D1's anode pad (the report's pair minimum,
+  0.500, had masked it the same way). All three are fixed in
+  copper (staircase re-laid north earlier, B.Cu jogs shifted
+  east, via nudged and given a proper surface stub), as is a
+  fourth item the fixes exposed (the via's In2 feed at 0.255 mm
+  from a ground via, re-jogged to 0.390).
+- **The 2 unconnected items were real, and KiCad was right.**
+  They are two floating islands of the front-side ground pour:
+  a ~5 mm² pocket holding the ground pins of C7 and C44 (the
+  +VA decoupling capacitors) and a ~0.8 mm² pocket at U2's ground
+  pin, each touching nothing else. The "refill artefact" story is
+  disproven (a fresh refill of the untouched board reproduces
+  them exactly, and per-fragment clustering reproduces KiCad's
+  count precisely). `check_pcb.py` missed them because it entered
+  each zone's fill as a single union-find item, fusing all
+  fragments into one node; that is fixed (per-fragment items),
+  and each pocket is now stitched to the ground plane (a via;
+  a bridge track at U2).
 
-CI's DRC step will therefore show red on the final tree while its
-ERC gate shows green; that is the owner's gate working as
-configured, with the items named here rather than baselined away.
+What remains: **4 copper_edge_clearance items at J1** — the
+Amphenol 12401610E4-2A's own land pattern (its shell stakes cross
+the board outline; its mounting hole sits 0.30 mm from the edge
+against a 0.50 mm generic default). Moving the connector inward
+would recess its face, so these are recorded as four pinned DRC
+exclusions in `hw/pdlvds_rx.kicad_pro`, duplicated in
+`ci/drc-baseline.json`; the CI gate (scripts/drc_gate.py) matches
+report items to them by UUID, fails loudly if the two lists
+differ or an exclusion stops matching, and reports the excluded
+items in its verdict line — they are named, not hidden. DRC on
+the corrected board: 4 items (all four excluded), 0 unconnected,
+0 clearance violations; ERC 0/0. A flat-0.40 no-rules run itemises
+every sub-0.40 pair on the board — thirteen, all buried, all
+≥ 0.3005 mm, all passing the internal-layer rule — so the clean
+verdict does not rest on the rules' say-so alone.
 
 **DM_PHY disposition.** The recorded pass-210 asymmetry (DM_PHY at
 0.10 mm against DP_PHY's 0.125 mm) no longer exists: the later

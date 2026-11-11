@@ -403,6 +403,17 @@ def drc_row():
                 kj.get("drc_board_state")
                 or "DRC counts above baseline, within checker "
                    "jitter tolerance (see CI log)")
+    if kj is not None and kj.get("drc_effective_violations") == 0 \
+            and kj.get("drc_unconnected") == 0 \
+            and kj.get("drc_baseline_violations") == 0 \
+            and kj.get("drc_baseline_unconnected") == 0:
+        # Finished-board hard gate, clean after the pinned J1
+        # land-pattern exclusions — the gate's own wording carries
+        # the exclusion disclosure.
+        return ("KiCad DRC (native)", "PASS",
+                kj.get("drc_board_state")
+                or "0 violations, 0 unconnected — baseline 0/0 "
+                   "(hard gate)")
     v = u = bv = bu = None
     tv = tu = 0
     regression = None

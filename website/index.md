@@ -50,9 +50,15 @@ board built around a single avalanche photodiode:
 The design was finished on 2026-11-10: schematic and layout
 complete and fully routed (0 unconnected nets), the functional
 simulations and firmware/host tests passing, the electrical rule
-check at 0 errors, and fabrication files generated. The design
-rule check's remaining count is not hidden or re-baselined; it is
-dispositioned in the status record and explained below.
+check at 0 errors, and fabrication files generated. A correction
+pass on 2026-11-11 re-examined the design rule check from the
+primary records: three real defects it had been masking were
+found and fixed in the copper, the spacing rules were rewritten
+on their proper standards basis, and the only items the checker
+still reports are four board-edge items that are the USB-C
+connector manufacturer's own land pattern — recorded as pinned
+exclusions in the project file, named in the status record, and
+counted by the CI gate rather than hidden.
 What is **not** done is the part only hardware can do — nobody has
 built one yet. The [bench test plan]({{ '/testplan/' | relative_url }})
 lists, in order, everything the first build must prove: APD gain

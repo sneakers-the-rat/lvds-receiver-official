@@ -42,6 +42,7 @@ DRC_FIXTURE = os.path.join(ROOT, "ci", "fixtures",
 ERC_FIXTURE = os.path.join(ROOT, "ci", "fixtures",
                            "erc-report-run41750532660.txt")
 SHIPPED_BASELINE = os.path.join(ROOT, "ci", "drc-baseline.json")
+PRO_FILE = os.path.join(ROOT, "hw", "pdlvds_rx.kicad_pro")
 
 failures = []
 
@@ -71,9 +72,14 @@ def write(path, text):
     return path
 
 
-def baseline_file(tmp, v, u):
-    return write(os.path.join(tmp, f"baseline-{v}-{u}.json"),
-                 json.dumps({"violations": v, "unconnected": u}))
+def baseline_file(tmp, v, u, tv=None, tu=None):
+    data = {"violations": v, "unconnected": u}
+    if tv is not None:
+        data["tolerance_violations"] = tv
+    if tu is not None:
+        data["tolerance_unconnected"] = tu
+    return write(os.path.join(tmp, f"baseline-{v}-{u}-{tv}-{tu}.json"),
+                 json.dumps(data))
 
 
 def drc(tmp, report, baseline):
@@ -107,8 +113,14 @@ def main():
         base726 = baseline_file(tmp, 726, 190)
         check("drc real fixture @ baseline 726/190",
               drc(tmp, DRC_FIXTURE, base726).returncode, 0)
-        check("drc real fixture @ shipped baseline",
-              drc(tmp, DRC_FIXTURE, SHIPPED_BASELINE).returncode, 0)
+        # The shipped baseline is the 0/0 finished-board hard gate
+        # (owner ruling 2026-11-05): the 726/190 fixture REGRESSES
+        # against it. (Pre-2026-11-11 this check expected a pass
+        # because the shipped baseline was still 726/190 + jitter
+        # tolerances; the jitter mechanism itself is exercised
+        # below against a synthetic 726/190 + 5/2 baseline.)
+        check("drc real fixture @ shipped baseline (0/0 hard gate)",
+              drc(tmp, DRC_FIXTURE, SHIPPED_BASELINE).returncode, 1)
         doc = write(os.path.join(tmp, "drc-727.txt"),
                     real_drc.replace("** Found 726 DRC violations **",
                                      "** Found 727 DRC violations **"))
@@ -116,11 +128,13 @@ def main():
               "baseline (strict)",
               drc(tmp, doc, base726).returncode, 1)
 
-        # ---- DRC, round 3: jitter tolerance (shipped baseline
-        # 726/190 + tolerance 5/2) ----
-        r = drc(tmp, doc, SHIPPED_BASELINE)
-        check("drc round3 doctored 727/190 @ shipped baseline "
-              "(jitter)", r.returncode, 0)
+        # ---- DRC, round 3: jitter tolerance (synthetic baseline
+        # 726/190 + tolerance 5/2 — the calibration the shipped
+        # baseline carried until the 2026-11-05 0/0 ruling) ----
+        base726tol = baseline_file(tmp, 726, 190, 5, 2)
+        r = drc(tmp, doc, base726tol)
+        check("drc round3 doctored 727/190 @ 726/190+tol "
+              "baseline (jitter)", r.returncode, 0)
         check_bool("drc round3 jitter banner wording",
                    "within checker jitter tolerance" in r.stdout
                    and "+1 violations over baseline" in r.stdout
@@ -139,18 +153,18 @@ def main():
                         "** Found 731 DRC violations **").replace(
                         "** Found 190 unconnected pads **",
                         "** Found 192 unconnected pads **"))
-        check("drc round3 doctored 731/192 @ shipped (tolerance "
-              "edge)", drc(tmp, doc, SHIPPED_BASELINE).returncode, 0)
+        check("drc round3 doctored 731/192 @ tol baseline "
+              "(tolerance edge)", drc(tmp, doc, base726tol).returncode, 0)
         doc = write(os.path.join(tmp, "drc-732.txt"),
                     real_drc.replace("** Found 726 DRC violations **",
                                      "** Found 732 DRC violations **"))
-        check("drc round3 doctored 732/190 @ shipped (beyond "
-              "tolerance)", drc(tmp, doc, SHIPPED_BASELINE).returncode, 1)
+        check("drc round3 doctored 732/190 @ tol baseline "
+              "(beyond tolerance)", drc(tmp, doc, base726tol).returncode, 1)
         doc = write(os.path.join(tmp, "drc-193.txt"),
                     real_drc.replace("** Found 190 unconnected pads **",
                                      "** Found 193 unconnected pads **"))
-        check("drc round3 doctored 726/193 @ shipped (beyond "
-              "tolerance)", drc(tmp, doc, SHIPPED_BASELINE).returncode, 1)
+        check("drc round3 doctored 726/193 @ tol baseline "
+              "(beyond tolerance)", drc(tmp, doc, base726tol).returncode, 1)
         doc = write(os.path.join(tmp, "drc-191.txt"),
                     real_drc.replace("** Found 190 unconnected pads **",
                                      "** Found 191 unconnected pads **"))
@@ -165,6 +179,52 @@ def main():
         check("drc missing report",
               drc(tmp, os.path.join(tmp, "no-such.txt"),
                   base726).returncode, 2)
+
+        # ---- DRC, pinned exclusions (2026-11-11): JSON report
+        # items matched by (type, item UUIDs) against the pinned
+        # drc_exclusions in the shipped baseline, which must equal
+        # the list in hw/pdlvds_rx.kicad_pro ----
+        with open(SHIPPED_BASELINE) as f:
+            pinned = json.load(f).get("drc_exclusions", [])
+
+        def json_report(name, extra=0):
+            items = []
+            for e in pinned:
+                t, _x, _y, u1, u2 = e.split("|")
+                items.append({"type": t,
+                              "items": [{"uuid": u1}, {"uuid": u2}]})
+            for k in range(extra):
+                items.append({"type": "clearance", "items": [
+                    {"uuid": f"00000000-0000-0000-0000-{k:012d}"},
+                    {"uuid": f"11111111-1111-1111-1111-{k:012d}"}]})
+            return write(os.path.join(tmp, name), json.dumps(
+                {"violations": items, "unconnected_items": []}))
+
+        def drc_json(report, jreport, pro):
+            return run_gate(DRC_GATE, [
+                "--report", report, "--json-report", jreport,
+                "--pro", pro, "--baseline", SHIPPED_BASELINE,
+                "--out", os.path.join(tmp, "drc-status.json")])
+
+        n_ex = len(pinned)
+        txt = synthetic_drc(tmp, "excl.txt", n_ex, 0, framed=True)
+        r = drc_json(txt, json_report("excl.json"), PRO_FILE)
+        check("drc exclusions: all items pinned-excluded @ shipped",
+              r.returncode, 0)
+        with open(os.path.join(tmp, "drc-status.json")) as f:
+            st = json.load(f)
+        check_bool("drc exclusions: status counts",
+                   st.get("excluded_items") == n_ex
+                   and st.get("effective_violations") == 0)
+        txt5 = synthetic_drc(tmp, "excl5.txt", n_ex + 1, 0, framed=True)
+        check("drc exclusions: one unexcluded violation fails",
+              drc_json(txt5, json_report("excl5.json", extra=1),
+                       PRO_FILE).returncode, 1)
+        badpro = write(os.path.join(tmp, "bad.kicad_pro"), json.dumps(
+            {"board": {"design_settings": {"drc_exclusions": []}}}))
+        check("drc exclusions: pro list != pinned is tool failure",
+              drc_json(txt, json_report("excl.json"),
+                       badpro).returncode, 2)
 
         # ---- DRC, round-1 synthetic suite (console format) ----
         base807 = baseline_file(tmp, 807, 175)

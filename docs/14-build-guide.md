@@ -53,6 +53,17 @@ Board specification to order against:
   everything is on the top side; the single bottom-side part
   (C40) can be hand-soldered afterwards if your stencil/process
   only covers one side.
+- **Conformal coating is a design requirement, not an option.**
+  After assembly, coat the HV bias island (the APD and boost
+  converter area on the west side of the board). The board's
+  high-voltage spacings are designed to IPC-2221B Table 6-1
+  column B4 — external conductors with a permanent polymer
+  coating — because the uncoated column (B2, 1.25 mm at this
+  voltage) is physically impossible with the fitted detector:
+  the C30737's own anode/cathode pads sit 0.50 mm apart at full
+  bias. The same note is on the fab drawing layer of the board
+  file. An uncoated board does not meet its design basis and
+  must not be powered at full bias.
 
 ## 3. Order the parts
 

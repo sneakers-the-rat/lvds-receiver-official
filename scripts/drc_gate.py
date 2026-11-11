@@ -47,6 +47,21 @@ census check is skipped when the baseline total is 0, and the
 tolerances are forced to 0 when the baseline is 0/0, so a genuinely
 clean report is the only pass.
 
+Pinned exclusions (2026-11-11): four copper_edge_clearance items at
+J1 are the Amphenol 12401610E4-2A manufacturer's own land pattern
+(shell stakes and mounting hole at the board edge) — intended
+geometry, not defects. They are recorded as DRC exclusions in
+hw/pdlvds_rx.kicad_pro (which KiCad's GUI honours but kicad-cli's
+count does not apply), and the SAME four strings are pinned in
+ci/drc-baseline.json under "drc_exclusions". When --json-report is
+given, this gate matches the JSON report's items against the
+exclusions by (type, item UUIDs): an item that matches is reported
+as excluded, never silently dropped; the verdict runs on the
+remaining (effective) counts. The gate FAILS LOUDLY when the .pro
+list differs from the pinned baseline list, when an exclusion
+matches no report item (board geometry moved under it — re-review),
+or when the text and JSON runs disagree beyond checker jitter.
+
 Every run writes a JSON status file (default
 results/drc-status.json) for the workflow's site status JSON, prints
 the counts prominently to the job log, and appends a markdown block
@@ -76,9 +91,10 @@ RE_UNCONNECTED = re.compile(
 
 def load_baseline(path):
     """Return (violations, unconnected, tol_violations,
-    tol_unconnected) or raise ValueError. Tolerances default to 0
-    when absent (pre-round-3 baseline files keep the strict
-    any-rise-is-a-regression semantics)."""
+    tol_unconnected, pinned_exclusions) or raise ValueError.
+    Tolerances default to 0 when absent (pre-round-3 baseline files
+    keep the strict any-rise-is-a-regression semantics);
+    pinned_exclusions defaults to [] (pre-2026-11 baselines)."""
     with open(path) as f:
         data = json.load(f)
     v = data["violations"]
@@ -90,7 +106,65 @@ def load_baseline(path):
     if not isinstance(tv, int) or not isinstance(tu, int) or tv < 0 or tu < 0:
         raise ValueError(
             f"baseline tolerances must be non-negative ints, got {tv!r}/{tu!r}")
-    return v, u, tv, tu
+    pinned = data.get("drc_exclusions", [])
+    if not isinstance(pinned, list) or not all(isinstance(s, str) for s in pinned):
+        raise ValueError("baseline drc_exclusions must be a list of strings")
+    return v, u, tv, tu, pinned
+
+
+def _exclusion_key(entry):
+    """'type|x|y|uuid1|uuid2' -> (type, frozenset({uuid1, uuid2})).
+    The stored position is not part of the match (KiCad's own
+    exclusion identity is type + item UUIDs)."""
+    parts = entry.split("|")
+    if len(parts) != 5:
+        raise ValueError(f"malformed DRC exclusion entry: {entry!r}")
+    return parts[0], frozenset(parts[3:5])
+
+
+def apply_exclusions(json_path, pro_path, pinned):
+    """Match a JSON DRC report's violations against the pinned
+    exclusions. Returns (raw_violations, raw_unconnected,
+    excluded_count, effective_violations). Raises ValueError on any
+    inconsistency — every failure here is a tool-health failure,
+    never a quiet pass."""
+    if not os.path.exists(json_path):
+        raise ValueError(f"DRC JSON report not produced: {json_path} does not exist")
+    with open(json_path) as f:
+        report = json.load(f)
+    with open(pro_path) as f:
+        pro = json.load(f)
+    pro_excl = pro.get("board", {}).get("design_settings", {}) \
+        .get("drc_exclusions", [])
+    if sorted(pro_excl) != sorted(pinned):
+        raise ValueError(
+            "DRC exclusions in the .kicad_pro differ from the pinned "
+            f"list in the baseline ({len(pro_excl)} vs {len(pinned)} "
+            "entries) — an exclusion change must be reviewed in both "
+            "places in the same commit")
+    keys = {}
+    for entry in pinned:
+        keys.setdefault(_exclusion_key(entry), []).append(entry)
+    matched = {k: 0 for k in keys}
+    effective = 0
+    for v in report.get("violations", []):
+        k = (v.get("type"),
+             frozenset(i.get("uuid") for i in v.get("items", [])))
+        if k in matched:
+            matched[k] += 1
+        else:
+            effective += 1
+    unmatched = [e for k, entries in keys.items() if matched[k] == 0
+                 for e in entries]
+    if unmatched:
+        raise ValueError(
+            f"{len(unmatched)} pinned DRC exclusion(s) matched no "
+            "report item — the board geometry moved under them; "
+            f"re-review and update both lists: {unmatched}")
+    excluded = sum(matched.values())
+    return (len(report.get("violations", [])),
+            len(report.get("unconnected_items", [])),
+            excluded, effective)
 
 
 def parse_report(path):
@@ -125,6 +199,12 @@ def parse_report(path):
 def main(argv=None):
     ap = argparse.ArgumentParser(description=__doc__.splitlines()[0])
     ap.add_argument("--report", default="results/drc-report.txt")
+    ap.add_argument("--json-report", default=None,
+                    help="JSON DRC report from the same board; when "
+                         "given, pinned exclusions are matched by "
+                         "UUID and the verdict runs on effective "
+                         "counts")
+    ap.add_argument("--pro", default="hw/pdlvds_rx.kicad_pro")
     ap.add_argument("--baseline", default="ci/drc-baseline.json")
     ap.add_argument("--out", default="results/drc-status.json")
     args = ap.parse_args(argv)
@@ -165,7 +245,7 @@ def main(argv=None):
         return code
 
     try:
-        bv, bu, tv, tu = load_baseline(args.baseline)
+        bv, bu, tv, tu, pinned = load_baseline(args.baseline)
     except Exception as e:
         status["tool_health"] = "FAIL"
         status["case"] = "tool_failure"
@@ -209,6 +289,39 @@ def main(argv=None):
         return finish(2)
     status["tool_health"] = "ok"
 
+    # Pinned exclusions: match the JSON run's items by UUID. The
+    # text and JSON reports come from two kicad-cli runs of the
+    # same board; counts must agree within the observed checker
+    # jitter (±1), else neither is trustworthy. The verdict below
+    # then runs on effective (post-exclusion) counts; the raw
+    # counts stay in the status as "violations"/"unconnected" and
+    # the excluded count is reported, never hidden.
+    status["excluded_items"] = 0
+    status["effective_violations"] = v
+    if args.json_report:
+        try:
+            jv, ju, excluded, effective = apply_exclusions(
+                args.json_report, args.pro, pinned)
+        except Exception as e:
+            status["tool_health"] = "FAIL"
+            status["case"] = "tool_failure"
+            status["verdict"] = "TOOL FAILURE"
+            status["board_state"] = f"DRC TOOL FAILURE: {e}"
+            return finish(2)
+        if abs(jv - v) > 1 or abs(ju - u) > 1:
+            status["tool_health"] = "FAIL"
+            status["case"] = "tool_failure"
+            status["verdict"] = "TOOL FAILURE"
+            status["board_state"] = (
+                f"DRC TOOL FAILURE: text report ({v} violations, "
+                f"{u} unconnected) and JSON report ({jv}, {ju}) "
+                "disagree beyond checker jitter — neither is "
+                "trustworthy")
+            return finish(2)
+        status["excluded_items"] = excluded
+        status["effective_violations"] = effective
+        v, u = effective, ju
+
     # Three cases (round 3): at/below baseline; above baseline but
     # within the checker-jitter tolerance; above baseline +
     # tolerance. `regression` keeps its CI meaning — the hard
@@ -242,7 +355,14 @@ def main(argv=None):
 
     status["case"] = "no_regression"
     status["verdict"] = "NO REGRESSION"
-    if bv == 0 and bu == 0:
+    if bv == 0 and bu == 0 and status["excluded_items"]:
+        status["board_state"] = (
+            f"DRC: 0 violations, {u} unconnected — baseline 0/0 "
+            "(finished board; hard gate). "
+            f"{status['excluded_items']} further report item(s) "
+            "match the pinned J1 land-pattern exclusions in "
+            "ci/drc-baseline.json (reported, not hidden)")
+    elif bv == 0 and bu == 0:
         status["board_state"] = (
             f"DRC: {v} violations, {u} unconnected — baseline 0/0 "
             "(finished board; hard gate)")

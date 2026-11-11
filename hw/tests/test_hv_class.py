@@ -20,8 +20,10 @@ Failure history (found 2026-11-04, passes 78-79):
     midpoints) would have landed at 0.20 too.
 
 Checks:
-  1. every HV-domain net classes at 1.00 mm in check_pcb AND in
-     router.netclass;
+  1. every HV-domain net classes at 0.40 mm in check_pcb AND in
+     router.netclass (the 2026-11-11 spec correction: IPC-2221B
+     B4 coated surface value; the 1.00 mm figure was a reporting
+     band from the KiCad-7 era that was never a fab rule);
   2. every LV net with an HV_ name classes at the 0.20 default in
      both (a future prefix-based rule fails here);
   3. the two modules' HV_NETS sets are identical (drift guard).
@@ -56,10 +58,10 @@ fails = []
 for net in sorted(HV_DOMAIN):
     c1 = check_pcb.clearance_for(net)
     c2 = router.netclass(net)[1]
-    if c1 != 1.0:
-        fails.append(f"check_pcb.clearance_for({net}) = {c1}, want 1.0")
-    if c2 != 1.0:
-        fails.append(f"router.netclass({net}) clearance = {c2}, want 1.0")
+    if c1 != 0.4:
+        fails.append(f"check_pcb.clearance_for({net}) = {c1}, want 0.4")
+    if c2 != 0.4:
+        fails.append(f"router.netclass({net}) clearance = {c2}, want 0.4")
 for net in sorted(LV_HV_NAMED):
     c1 = check_pcb.clearance_for(net)
     c2 = router.netclass(net)[1]
@@ -79,5 +81,5 @@ if fails:
     for f in fails:
         print("  -", f)
     sys.exit(1)
-print(f"PASS test_hv_class: {len(HV_DOMAIN)} HV-domain nets at 1.00, "
+print(f"PASS test_hv_class: {len(HV_DOMAIN)} HV-domain nets at 0.40, "
       f"{len(LV_HV_NAMED)} LV HV_-named nets at 0.20, sets in sync")

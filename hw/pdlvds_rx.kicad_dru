@@ -1,0 +1,45 @@
+(version 1)
+
+# PDLVDS-RX custom design rules.
+#
+# HV bias-domain spacing, per IPC-2221B Table 6-1 applied by layer.
+# The bias domain runs at <= 259.4 V worst case. For the 251-300 V
+# band, Table 6-1 gives: B1 internal 0.20 mm; B2 external uncoated
+# 1.25 mm; B4 external with permanent polymer coating 0.40 mm.
+# This design's external basis is B4: the HV island is conformal
+# coated after assembly (fab drawing note; docs/14 build guide).
+# B2 is not achievable with the fitted detector at all -- the
+# C30737's own anode/cathode pads sit 0.50 mm apart at full bias --
+# so the coating is a design requirement, not an assembly option.
+# Internal (buried) pairs use 0.30 mm: above the B1 minimum of
+# 0.20 mm, keeping margin in solid FR4.
+#
+# NOTE: in KiCad 8.0.9 a (layer ...) clause listing two layers
+# silently disables the rule. One layer per rule below, verified
+# by the CI gate's rule-firing check.
+#
+# J1 (Amphenol 12401610E4-2A) edge items are handled by the four
+# pinned DRC exclusions in pdlvds_rx.kicad_pro: the manufacturer's
+# own land pattern places its shell stakes and mounting hole at
+# the board edge. The CI gate asserts the excluded set is exactly
+# those four items.
+
+(rule "HV bias domain - F.Cu (IPC-2221B B4 coated)"
+    (layer "F.Cu")
+    (condition "A.NetClass == 'HV' || B.NetClass == 'HV'")
+    (constraint clearance (min 0.4mm)))
+
+(rule "HV bias domain - B.Cu (IPC-2221B B4 coated)"
+    (layer "B.Cu")
+    (condition "A.NetClass == 'HV' || B.NetClass == 'HV'")
+    (constraint clearance (min 0.4mm)))
+
+(rule "HV bias domain - In1.Cu (IPC-2221B B1 + margin)"
+    (layer "In1.Cu")
+    (condition "A.NetClass == 'HV' || B.NetClass == 'HV'")
+    (constraint clearance (min 0.3mm)))
+
+(rule "HV bias domain - In2.Cu (IPC-2221B B1 + margin)"
+    (layer "In2.Cu")
+    (condition "A.NetClass == 'HV' || B.NetClass == 'HV'")
+    (constraint clearance (min 0.3mm)))

@@ -1,16 +1,29 @@
 #!/usr/bin/env python3
-"""DRC-equivalent checks for the scripted board (KiCad 7.0.11 has no
-kicad-cli drc; the KiCad 8 PPA was blocked in this environment).
+"""Independent cross-check of the scripted board, alongside KiCad 8's
+own kicad-cli DRC (which is the primary referee; this tool exists so
+the verdict never rests on one engine's itemisation — it was written
+when KiCad 7.0.11 had no CLI DRC in this environment).
 
 Checks, using KiCad's own effective copper shapes via pcbnew:
   1. Connectivity: union-find over pads/tracks/vias/zone-fills that
      touch on a common layer; every net must form exactly one group
      (GND may form one group per copper layer island bridged by vias —
      reported as groups; vias/pads bridge layers in the union).
+     Zone fills enter PER FILL FRAGMENT (one item per outline of the
+     filled-polys list): a zone whose fill falls into disconnected
+     pockets must not read as one connected item — that was the bug
+     that hid two floating GND pockets (C7/C44 grounds, U2 pin 2)
+     behind a "0 unconnected" verdict while KiCad reported them.
   2. Clearance: for every pair of different-net copper shapes sharing a
      layer, SHAPE.Collide with the netclass clearance; violations are
-     printed with locations.
-  3. Board-edge clearance 0.3 mm for all copper.
+     printed with locations. Class values mirror the project spec:
+     HV 0.40 mm on surface layers (IPC-2221B Table 6-1 B4, coated,
+     251-300 V band) and 0.30 mm buried (B1 is 0.20; margin in solid
+     FR4); Power 0.20 mm; Default 0.20 mm.
+  3. Board-edge clearance 0.3 mm for all copper, except J1's pads:
+     the Amphenol 12401610E4-2A land pattern places its shell stakes
+     and mounting hole at the edge by design — the same four items
+     the pinned DRC exclusions in pdlvds_rx.kicad_pro cover.
   4. Courtyard collisions (HARD GATE, owner ruling 2026-11-05): two
      footprints on the same board side whose courtyard polygons
      intersect with area > 0.001 mm^2 FAIL the verdict. A layout
@@ -35,8 +48,9 @@ _app = wx.App(False)
 import pcbnew
 
 MM = pcbnew.FromMM
-# HV clearance class (1.0 mm surface creepage) — assigned by CARRIED
-# VOLTAGE, never by name (census: results/class-voltage-census.txt).
+# HV clearance class (0.40 mm surface, IPC-2221B B4 coated basis) —
+# assigned by CARRIED VOLTAGE, never by name (census:
+# results/class-voltage-census.txt).
 # APD_K/HV_RAW/HV_SEC: the <=259.4 V clamped bias domain. TP_HV: the
 # test point floats to ~APD_K potential through R34 10 MOhm.
 # HV_R29M (~259 V), HV_R30M (~130 V), HV_R31A (~160 V), HV_R31B
@@ -56,8 +70,8 @@ POWER_NETS = {"+5V", "+3V3D", "+3V3D_CDR", "+3V3A", "+VA", "-VA",
 WAIVERS = []   # (net_a, net_b, reason) — filled from docs/04 if needed
 
 def clearance_for(net):
-    if net in HV_NETS: return 1.0
-    if net in POWER_NETS: return 0.25
+    if net in HV_NETS: return 0.4
+    if net in POWER_NETS: return 0.2
     return 0.2
 
 SURFACE = None  # set in main (needs pcbnew layer ids)
@@ -130,11 +144,11 @@ def courtyard_pairs(board):
     return pairs, sorted(blind)
 
 def need_for(na, nb, shared_layers):
-    """Layer-aware clearance: the 1.0 mm HV rule is a surface
-    creepage rule. A pair sharing ONLY buried layers (In1/In2) is
-    separated by solid FR4 prepreg, whose dielectric strength makes
-    0.3 mm ample for 420 V — so HV counts 0.3 there. Pairs sharing
-    F.Cu or B.Cu use the full surface values."""
+    """Layer-aware clearance, mirroring hw/pdlvds_rx.kicad_dru:
+    HV pairs on a surface layer need 0.40 mm (IPC-2221B B4 coated);
+    a pair sharing ONLY buried layers (In1/In2) is separated by
+    solid FR4 prepreg — 0.30 mm there (B1 minimum is 0.20 mm).
+    Pairs sharing F.Cu or B.Cu use the surface values."""
     internal_only = shared_layers and not (shared_layers & SURFACE)
     def c(n):
         if internal_only and n in HV_NETS: return 0.3
@@ -168,8 +182,14 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
         net = z.GetNetname()
         layer = z.GetLayer()
         poly = z.GetFilledPolysList(layer)
-        if poly.OutlineCount() == 0: continue
-        items.append(("zone", net, {layer}, poly, z.GetBoundingBox(), f"zone L{layer}"))
+        # One item per fill fragment. KiCad zone fills carry no
+        # separate hole outlines (holes are stitched into the
+        # fragment contour), so each outline is one copper island.
+        for k in range(poly.OutlineCount()):
+            frag = pcbnew.SHAPE_POLY_SET()
+            frag.AddOutline(poly.Outline(k))
+            items.append(("zone", net, {layer}, frag, frag.BBox(),
+                          f"zone L{layer} frag{k}"))
     print(f"copper items: {len(items)}")
     # ---------- connectivity (union-find) ----------
     parent = list(range(len(items)))
@@ -245,6 +265,37 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
           f"(datasheet geometry, not routable): {len(intrinsic)}")
     for v in intrinsic[:20]:
         print(f"  INTRINSIC {v[0]} ({v[1]}) vs {v[2]} ({v[3]}): need {v[4]} mm")
+    # ---------- board-edge clearance (0.3 mm; J1 pads exempt) ----
+    edge_shapes = []
+    for d in board.GetDrawings():
+        if d.GetLayer() == pcbnew.Edge_Cuts:
+            try:
+                edge_shapes.append(d.GetEffectiveShape())
+            except Exception:
+                pass
+    edge_hits = []
+    grow = MM(0.3)
+    for it in items:
+        if it[0] == "pad" and it[5].rsplit(".", 1)[0] == "J1":
+            continue  # manufacturer's land pattern sits at the edge
+        bb = it[4]
+        for es in edge_shapes:
+            eb = es.BBox()
+            if (bb.GetLeft() - grow > eb.GetRight() or
+                    bb.GetRight() + grow < eb.GetLeft() or
+                    bb.GetTop() - grow > eb.GetBottom() or
+                    bb.GetBottom() + grow < eb.GetTop()):
+                continue
+            try:
+                if it[3].Collide(es, MM(0.3 - 0.001)):
+                    edge_hits.append((it[1], it[5]))
+                    break
+            except Exception:
+                pass
+    print(f"board-edge clearance violations (0.3 mm, J1 pads exempt): "
+          f"{len(edge_hits)}")
+    for net, desc in edge_hits[:50]:
+        print(f"  EDGE {net} ({desc})")
     # ---------- courtyard collisions (HARD GATE: no waivers) ----
     cpairs, cblind = courtyard_pairs(board)
     gated = [p for p in cpairs if not p[4]]
@@ -260,7 +311,7 @@ def main(path="hw/pdlvds_rx.kicad_pcb"):
     if cblind:
         print(f"courtyard bbox fallback in use (no drawn courtyard): "
               f"{cblind}")
-    ok = not unconnected and not violations and not gated
+    ok = not unconnected and not violations and not gated and not edge_hits
     print("PCB CHECK:", "PASS" if ok else "FAIL")
     return 0 if ok else 1
 

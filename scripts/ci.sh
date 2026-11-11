@@ -171,6 +171,16 @@ step11() {
       cat results/drc-report.txt 2>/dev/null || echo "(no DRC report file produced)"
       return
     fi
+    # Same run in JSON: the gate matches report items against the
+    # project's pinned DRC exclusions (J1's land pattern) by UUID —
+    # the text report carries no UUIDs, and kicad-cli itself does
+    # not apply the .kicad_pro exclusions to its counts.
+    rm -f results/drc-report.json
+    if ! kicad-cli pcb drc --severity-all --format json \
+        -o results/drc-report.json hw/pdlvds_rx.kicad_pcb; then
+      fail "DRC tool health: kicad-cli pcb drc (JSON) failed to run"
+      return
+    fi
     # Tool health, part 2 + ratchet: the report must exist, parse,
     # and carry a plausible census, and the counts must not exceed
     # ci/drc-baseline.json. scripts/drc_gate.py prints the counts
@@ -178,6 +188,8 @@ step11() {
     # status panel, and appends to $GITHUB_STEP_SUMMARY when set.
     python3 scripts/drc_gate.py \
         --report results/drc-report.txt \
+        --json-report results/drc-report.json \
+        --pro hw/pdlvds_rx.kicad_pro \
         --baseline ci/drc-baseline.json \
         --out results/drc-status.json || fail "DRC gate (tool health / baseline ratchet)"
   else

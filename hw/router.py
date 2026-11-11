@@ -42,8 +42,12 @@ LVDS_NETS = {"CDR_DATP", "CDR_DATN", "CDR_CLKP", "CDR_CLKN",
              "CMP_QP", "CMP_QN"}
 
 def netclass(name):
-    if name in HV_NETS: return (0.40, 1.00)
-    if name in POWER_NETS: return (0.60, 0.25)
+    # Clearances per the 2026-11-11 spec correction (IPC-2221B
+    # B4 coated surface 0.40 / B1 internal; Power at the 0.20
+    # board rule) — mirrors hw/check_pcb.py and the .kicad_pro /
+    # .kicad_dru the finished board is judged by.
+    if name in HV_NETS: return (0.40, 0.40)
+    if name in POWER_NETS: return (0.60, 0.20)
     if name in LVDS_NETS: return (0.30, 0.20)
     return (0.25, 0.20)
 
@@ -331,11 +335,11 @@ def astar(items, starts, goals, netname, hw_, clr, cap=900000, neck_pts=(),
     return None
 
 def blocked(items, li, x, y, netname, hw_, clr):
-    # Layer-aware HV clearance: the 1.0 mm HV rule is a SURFACE
-    # creepage rule (F.Cu/B.Cu). On the buried In2.Cu layer the
-    # insulation is solid FR4 prepreg (dielectric strength an order
-    # of magnitude above 420 V at 0.3 mm), so HV pairs there use
-    # 0.3 mm. The audit (hw/check_pcb.py) applies the same rule.
+    # Layer-aware HV clearance: the 0.40 mm HV rule is a SURFACE
+    # rule (IPC-2221B B4 coated; F.Cu/B.Cu). On the buried In2.Cu
+    # layer the insulation is solid FR4 prepreg, so HV pairs there
+    # use 0.3 mm (B1 minimum is 0.20). The audit
+    # (hw/check_pcb.py) applies the same rule.
     my_clr = 0.3 if (netname in HV_NETS and li == 1) else clr
     for it in items[li].near(li, x, y):
         if it[1] == netname:
