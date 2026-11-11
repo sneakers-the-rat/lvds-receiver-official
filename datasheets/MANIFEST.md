@@ -16,6 +16,7 @@ aids, same sources).
 | ths4304.pdf | TI THS4304, SLOS436A | ti.com/lit/ds/symlink/ths4304.pdf | YES | see below |
 | usb3300.pdf | Microchip USB3300, DS00001783B | microchip.com (via Octopart mirror of the same doc after the direct CDN fetch returned HTML) | YES 978 KB | see below |
 | s8664.pdf | Hamamatsu S8664 series Si APD, KAPD1012E | hamamatsu.com/content/dam/.../s8664_series_kapd1012e.pdf | YES 639 KB | see below |
+| smt740.pdf (in results/partsfix/datasheets/) | Ushio Epitex SMT740 740 nm top IR LED, Ushio Opto Semiconductors data sheet 2019.03, 7 pp | laser-opto.com mirror of the Ushio sheet (the 2026-11-04 copy was truncated at 55,927 bytes with no EOF; replaced 2026-11-10 by the complete 177,263-byte copy) | YES 173 KB | see below |
 | c15522.pdf | Hamamatsu C15522 series MPPC modules, KACC-series | hamamatsu.com datasheet copy via laser-opto.com mirror (direct fetch returned an HTML error page; the first 20 KB c15522.pdf in git history was that HTML page and has been REPLACED) | YES 766 KB | reference only (the part being replaced) |
 | s14645.pdf | Hamamatsu S14645 series | hamamatsu.com | YES 608 KB | background only (not in design) |
 | adn2813.pdf | ADI ADN2813 CDR, Rev. C | analog.com/media/.../ADN2813.pdf | PDF download BLOCKED (repeated 0-byte stalls), BUT full datasheet text extracted via the browser cache of the same official URL on 2026-11-03 — pinout/registers below are from that official text. See ADN2813 section. |
@@ -93,9 +94,31 @@ dark current max 6 nA; cutoff 280 MHz; Ct 11 pF; Vbr typ 400 V;
 tempco 0.78 V/°C; gain typ 50.
 Can outline (datasheet dimensional drawing): flange dia 9.1 ±0.2 mm,
 can dia 8.1 ±0.1 mm, window-to-base 5.9 ±0.1 mm class dims (S8664-02K/
--05K/-10K/-20K common outline). Pin identification from the datasheet
-drawing (anode/cathode/case) — VERIFY against the rendered drawing at
-layout time; the footprint in hw/ marks the pins as drawn there.
+-05K/-10K/-20K common outline). Pin identification VERIFIED 2026-11-10 from drawing KAPDA0026EC
+(p.4): lead circle dia 5.08 +-0.2 mm, leads dia 0.45 mm; in the
+lead-side view pin 1 is east, pin 2 west, pin 3 north, index tab NE
+(SE in the top/window view), which converts to part-frame (top view,
+tab SE): 1 = (+2.54, 0), 2 = (-2.54, 0), 3 = (0, -2.54). The
+connection diagram's pin 3 dot ties to the dashed case circle only:
+pin 3 = case. The diode glyph was read at vector level from the
+PDF (filled triangle, apex pointing at the cathode bar on the
+pin-2 side): **pin 1 = anode, pin 2 = cathode, pin 3 = case** —
+circuit.py's D2 map (1->APD_A_ALT, 2->APD_K_ALT, 3->GND) and
+footprint S8664_TO5 (pads as above with pin 3 at KiCad (0, +2.54)
+= part-frame south; drill 0.9; tab silk SE; pin-1 mark east) are
+both correct as built. No change.
+
+### SMT740 (Ushio Epitex) — BIST source LED D8
+Outline (data sheet p.1, read from the rendered drawing): PLCC-style
+top LED, body 3.2 (lead axis) x 2.7 mm, height 1.8 mm, overall lead
+span 3.5 mm, lens dia 2.4 mm; terminals 2.2 +-0.1 mm wide with a
+0.8 +-0.2 mm flat contact from each body end face; anode mark =
+chamfered corner at the anode end. **Not a 1206** — footprint
+pdlvds:SMT740_3227 drawn from these dims (pass 224).
+Electricals (Tc = 25 C): peak 740 nm typ (730-750 at IF = 50 mA);
+VF 1.9 min / 2.2 typ at 50 mA; VFP 3.8 V at IFP = 500 mA; ratings
+PD 170 mW, IF 75 mA, IFP 500 mA, VR 5 V. R46 100 ohm from +3V3D
+delivers 11-14 mA — inside all ratings (docs/09 F-13).
 
 ### C15522-3010SA (Hamamatsu) — the replaced SiPM module (reference)
 Built-in MPPC S14160-3010PS class: effective area 3 × 3 mm, pixel pitch

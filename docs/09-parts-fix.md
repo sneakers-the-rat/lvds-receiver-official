@@ -218,14 +218,27 @@ accepted and written down in docs/03 rather than re-architected.
 
 **F-13 (D8 + SH1) — CLOSED with two flagged sub-items.**
 - D8 = **Ushio Epitex SMT740**, 740 nm (the decided wavelength);
-  docs/02 and docs/04 corrected from 630 nm. Sub-item: the
-  manufacturer's datasheet PDF was truncated at every fetch
-  (55,927 bytes, no EOF) — the part identity and 740 nm peak are
-  established from Ushio's product data, but the package outline
-  dimensions and VF/IF table were **not** read from the
-  datasheet. The fitted LED_1206_3216Metric footprint and the
-  R46 100 Ω / ≈20 mA pulse drive are unchanged; confirm the
-  outline against the datasheet at first article.
+  docs/02 and docs/04 corrected from 630 nm. Sub-item CLOSED
+  2026-11-10: a complete datasheet (Ushio Opto Semiconductors,
+  SMT740 data sheet 2019.03, 7 pp., 177,263 bytes with EOF) was
+  obtained and now sits at results/partsfix/datasheets/smt740.pdf
+  replacing the truncated copy. Reading it changed the design:
+  the SMT740 is **not** a 1206 — it is a PLCC-style top LED,
+  body 3.2 (lead axis) x 2.7 x 1.8 mm, overall lead span 3.5,
+  lens dia 2.4, terminals 2.2 +-0.1 wide with a 0.8 +-0.2 flat
+  contact from each body end face; anode mark = chamfered corner
+  at the anode end. The fitted LED_1206_3216Metric footprint was
+  therefore wrong and has been replaced by pdlvds:SMT740_3227
+  (pads 1.20 x 2.30 at +-1.35, covering the contact zone plus a
+  toe fillet; pin 1 = K, pin 2 = A at the chamfer end), and D8
+  was moved +0.25/+0.35 mm on the board with its BIST_DRV via
+  re-laid (pass 224; DRC delta +1 Power-band item at 0.225, no
+  clearance below the 0.20 binding rule). Electricals from the
+  same sheet: VF 1.9 min / 2.2 typ at IF = 50 mA, VFP 3.8 V at
+  500 mA; ratings IF 75 mA, IFP 500 mA, PD 170 mW. The R46
+  100 ohm drive from +3V3D therefore delivers (3.3 - VF)/100 =
+  11-14 mA (the earlier ≈20 mA estimate assumed a lower VF) —
+  comfortably inside every rating; no value change.
 - SH1 = **Harwin S02-25200300**: production can, 25×20 mm,
   **3.0 mm internal height** (Harwin EMC catalog) over the
   tallest part beneath it, U1 OPA657 SOIC-8 at 1.75 mm max
@@ -237,6 +250,15 @@ accepted and written down in docs/03 rather than re-architected.
   clip land dimensions are on Harwin catalog pp.178/178a, which
   were not in the fetched extract, so no geometry was invented
   here.
+  **Superseded as built (pass 223, 2026-11-10):** when the
+  conversion was executed, measurement showed the 25×20 can
+  centred on the AFE also covered D1, the photodiode — a solid
+  can there would blind the receiver — and no 25×20 placement
+  covers U1+U2 while excluding both D1 and U3. As built: the
+  smaller stock can **S02-20150300 (20×15×3.0)** on **five**
+  S1001-46R clips (the sixth position has no lawful window)
+  over U1/U2 only, D1 west of the can wall in the clear;
+  R8/C7/C44/C2 relocated. Record: scratch/work/finish/sh1_plan.md.
 
 ## T1 controlled winding specification (custom wind, F-10)
 
@@ -266,19 +288,24 @@ service or any winder building to this spec on that frame.
 
 ## Open / flagged items carried forward
 
-1. T1 footprint `XFMR_EFD20_SMD10`: silk/Fab outline = the Würth
-   envelope (23.11×26.1); pad rows are a **provisional** land —
-   the datasheet's footprint figure is a raster image that text
-   routes could not extract. Confirm against the 070-4290
-   drawing before fab; the footprint file and this record both
-   say so. Pin assignment is NOT provisional (it is defined by
-   the winding spec above).
-2. SH1 footprint conversion to Harwin S1001 clip lands, 25×20
-   (see F-13).
-3. D8/SMT740 package outline + VF table unread (truncated
-   datasheet; see F-13).
-4. U6/C17/C18 remain UNVERIFIED (DS13313 unreachable; see F-08).
-5. D1 docs/07 condition (a) still open (see F-01).
+All five items originally carried here are closed:
+
+1. T1 footprint — superseded: the fitted transformer is now the
+   Würth WE-FLEX HV 749196518 on the manufacturer's recommended
+   land pattern (docs/11, docs/12; pass 222).
+2. SH1 clip-land conversion — done as pass 223, at 20×15 rather
+   than 25×20 for the D1 reason recorded under F-13 above.
+3. D8/SMT740 outline + VF — closed 2026-11-10 (see F-13 above;
+   pass 224).
+4. U6/C17/C18 (F-08) — CLOSED 2026-11-10 (AN5419 + ST symbol
+   data; see the F-08 entry).
+5. D1 docs/07 condition (a) — CLOSED 2026-11-10 (land pattern
+   proven from Figure 10; see docs/07).
+
+What remains open on the project lives in docs/00-status.md
+(VID/PID registration before distribution, the DM_PHY width
+asymmetry, and the bench list in docs/05 — nothing on paper
+substitutes for a built board).
 
 ## For the routing lane — re-sync list
 
