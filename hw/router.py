@@ -22,7 +22,9 @@ MM = pcbnew.FromMM
 # (drift-guarded by hw/tests/test_hv_class.py; evidence and the
 # per-net voltage table: results/class-voltage-census.txt).
 HV_NETS = {"APD_K", "HV_RAW", "HV_SEC", "TP_HV", "HV_R29M",
-           "HV_R30M", "HV_R31A", "HV_R31B", "HV_OVP1", "HV_OVP2"}
+           "HV_R30M", "HV_R31A", "HV_R31B", "HV_OVP1", "HV_OVP2",
+           "HV_S1", "HV_S2", "HV_S3", "HV_S4",
+           "HV_M1", "HV_M2", "HV_M3"}
 # Nets that failed pins in the v4 run (59 pins over 41 nets), promoted
 # ahead of LVDS/default so they route while the board is still open;
 # the easy nets route around them afterwards. Data from

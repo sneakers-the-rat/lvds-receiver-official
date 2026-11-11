@@ -235,14 +235,31 @@ PARTS += [
  P("R27","10R", R0603, "R", {"1":("","passive","HV_GATE"), "2":("","passive","MOS_G")}, "hv"),
  P("Q1","IRLML0060TRPBF", ("Package_TO_SOT_SMD","SOT-23"), "box",
    {"1":("G","in","MOS_G"), "2":("S","passive","HV_SENSE"), "3":("D","passive","FLY_PRI")}, "hv"),
- P("R28","0.05R", R1206, "R", {"1":("","passive","HV_SENSE"), "2":("","passive","GND")}, "hv"),
- P("T1","CUSTOM WIND EFD20 1:20 Lp47uH Isat>=2.6A (Wurth 070-4290 frame, docs/09 spec)", ("pdlvds","XFMR_EFD20_SMD10"), "box",
+ P("R28","0.15R", R1206, "R", {"1":("","passive","HV_SENSE"), "2":("","passive","GND")}, "hv"),
+ # T1: Wurth WE-FLEX HV 749196518 catalog transformer (docs/11, docs/12).
+ # N1 (1 dot / 2) = primary; N2..N6 in series = secondary (1:5), string
+ # dot-end (pin 3) at GND, far end (pin 7) = HV_SEC. Two-cell
+ # Cockcroft-Walton ladder (D12-D15, C52-C54) replaces the old single
+ # rectifier D5; R28 0.15R caps the LT3757 peak at <=0.80 A, below the
+ # part's 0.93 A saturation figure (proof: sim/check_hv_flex.py).
+ P("T1","Wurth WE-FLEX HV 749196518 1:5 (N1 pri, N2-N6 sec series)", ("pdlvds","WEFLEXHV_EFD20_12"), "box",
    {"1":("PRI_A","passive","+5V"), "2":("PRI_B","passive","FLY_PRI"),
-    "3":("NC","nc",None), "4":("NC","nc",None), "5":("NC","nc",None),
-    "6":("NC","nc",None), "7":("NC","nc",None), "8":("NC","nc",None),
-    "9":("SEC_B","passive","GND"), "10":("SEC_A","passive","HV_SEC")}, "hv"),
- P("D5","ES1J", ("Diode_SMD","D_SMA"), "D",
-   {"1":("K","passive","HV_RAW"), "2":("A","passive","HV_SEC")}, "hv"),
+    "3":("SEC_GND","passive","GND"), "4":("S1","passive","HV_S1"),
+    "5":("S1B","passive","HV_S1"), "6":("S2","passive","HV_S2"),
+    "12":("S2B","passive","HV_S2"), "11":("S3","passive","HV_S3"),
+    "10":("S3B","passive","HV_S3"), "9":("S4","passive","HV_S4"),
+    "8":("S4B","passive","HV_S4"), "7":("SEC_A","passive","HV_SEC")}, "hv"),
+ P("C52","100nF 630V", C1206, "C", {"1":("","passive","HV_SEC"), "2":("","passive","HV_M1")}, "hv"),
+ P("D12","ES1J", ("Diode_SMD","D_SMA"), "D",
+   {"1":("K","passive","HV_M1"), "2":("A","passive","GND")}, "hv"),
+ P("D13","ES1J", ("Diode_SMD","D_SMA"), "D",
+   {"1":("K","passive","HV_M2"), "2":("A","passive","HV_M1")}, "hv"),
+ P("C53","100nF 630V", C1206, "C", {"1":("","passive","HV_M2"), "2":("","passive","GND")}, "hv"),
+ P("C54","100nF 630V", C1206, "C", {"1":("","passive","HV_M1"), "2":("","passive","HV_M3")}, "hv"),
+ P("D14","ES1J", ("Diode_SMD","D_SMA"), "D",
+   {"1":("K","passive","HV_M3"), "2":("A","passive","HV_M2")}, "hv"),
+ P("D15","ES1J", ("Diode_SMD","D_SMA"), "D",
+   {"1":("K","passive","HV_RAW"), "2":("A","passive","HV_M3")}, "hv"),
  P("C32","100nF 630V", C1206, "C", {"1":("","passive","HV_RAW"), "2":("","passive","GND")}, "hv"),
  P("R29","5.00k HV73V1J (1 of 2)", R0603, "R", {"1":("","passive","HV_RAW"), "2":("","passive","HV_R29M")}, "hv"),
  P("R47","5.00k HV73V1J (2 of 2)", R0603, "R", {"1":("","passive","HV_R29M"), "2":("","passive","APD_K")}, "hv"),

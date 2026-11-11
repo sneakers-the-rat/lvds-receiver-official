@@ -59,17 +59,17 @@ N4 = 12(dot)–11, N5 = 10(dot)–9, N6 = 8(dot)–7.
 
 | Part | Connection | Stands at |
 |---|---|---|
-| C36, 100 nF 630 V | HV_SEC → HV_M1 | N·Vin ≈ 26 V |
+| C52, 100 nF 630 V | HV_SEC → HV_M1 | N·Vin ≈ 26 V |
 | D12, ES1J | GND → HV_M1 (clamp) | ≤ Vout/2 |
 | D13, ES1J | HV_M1 → HV_M2 | ≤ Vout/2 |
-| C37, 100 nF 630 V | HV_M2 → GND | Vout/2 |
-| C38, 100 nF 630 V | HV_M1 → HV_M3 | Vout/2 |
+| C53, 100 nF 630 V | HV_M2 → GND | Vout/2 |
+| C54, 100 nF 630 V | HV_M1 → HV_M3 | Vout/2 |
 | D14, ES1J | HV_M2 → HV_M3 (clamp) | ≤ Vout/2 |
 | D15, ES1J | HV_M3 → HV_RAW | ≤ Vout/2 |
 | C32, 100 nF 630 V | HV_RAW → GND (existing reservoir) | Vout |
 
-(D12–D15 / C36–C38 are the designators assigned in circuit.py at the
-swap; C36–C38 are the same 100 nF 630 V 1206 class as C32.)
+(D12–D15 / C52–C54 are the designators assigned in circuit.py;
+the ladder caps are the same 100 nF 630 V 1206 class as C32.)
 
 New nets HV_S1–HV_S4 and HV_M1–HV_M3 join the HV net class (peaks up
 to 210 V on the ladder nodes in the S8664 variant).
@@ -124,7 +124,7 @@ to 210 V on the ladder nodes in the S8664 variant).
 
 ## What the swap step must touch
 
-circuit.py (T1 entry + pin map, R28 value, D5 out, D12–D15 / C36–C38
+circuit.py (T1 entry + pin map, R28 value, D5 out, D12–D15 / C52–C54
 in), CONNECTIONS.md HV section, gen_schematic.py regeneration with
 the identity snapshot re-proved, a new 12-pin footprint drawn from
 the datasheet's printed land pattern (pads 3.50 × 2.25 mm, pitch

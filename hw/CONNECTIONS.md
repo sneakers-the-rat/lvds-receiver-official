@@ -107,13 +107,18 @@ disable, PC7 high drives ≈3.3 V to enable. PA6 senses the node
 voltage (ADC) for firmware's jumper-state gate. GATE (7) -> R27 10 Ω -> Q1
 IRLML0060TRPBF gate (60 V SOT-23; swapped from the 30 V IRLML0030,
 parts-fix docs/09 — R27 itself was always 10 Ω here; circuit.py's
-former 10 kΩ entry was the error, now corrected); Q1 drain = FLY_PRI, source -> R28 0.05 Ω sense -> GND;
-SENSE (6) at source. T1 flyback 1:20, CUSTOM WIND on the Würth EFD20
-frame (070-4290): Lp 47 µH, Isat ≥2.6 A (above the LT3757's 2.4 A
-max current-limit peak), pinout defined by the winding spec
-(1/2 = primary, 10/9 = secondary; full spec docs/09): primary between +5V and FLY_PRI
-(dot at +5V end), secondary dot at GND end, SEC_A -> D5 ES1J anode;
-cathode = HV_RAW. C32 100 nF/630 V reservoir. R29+R47 (2x5.00 kΩ
+former 10 kΩ entry was the error, now corrected); Q1 drain = FLY_PRI, source -> R28 0.15 Ω sense -> GND;
+SENSE (6) at source. T1 = Würth WE-FLEX HV 749196518 catalog flyback
+(docs/11/docs/12; the docs/09 custom wind is superseded): N1 primary
+(pin 1 dot at +5V end, pin 2 = FLY_PRI), N2–N6 in series as the
+secondary (1:5) — pin 3 (string dot end) = GND, links HV_S1 (4–5),
+HV_S2 (6–12), HV_S3 (11–10), HV_S4 (9–8), pin 7 = HV_SEC. R28 0.15 Ω
+caps the LT3757 peak at ≤0.80 A, below the part's 0.93 A saturation
+figure (proof sim/check_hv_flex.py). HV_SEC feeds a two-cell
+Cockcroft–Walton ladder: C52 HV_SEC->HV_M1, D12 clamp GND->HV_M1,
+D13 HV_M1->HV_M2, C53 HV_M2->GND, C54 HV_M1->HV_M3, D14 clamp
+HV_M2->HV_M3, D15 HV_M3->HV_RAW (all diodes ES1J, all ladder caps
+100 nF/630 V). C32 100 nF/630 V reservoir at HV_RAW. R29+R47 (2x5.00 kΩ
 HV73V1J) + C33 form the
 post-filter to APD_K (the APD node). OVP clamp (S8664 fit only,
 DNP in the standard build): D9 SMBJ5384B + D10/D11 SMBJ5383B zener

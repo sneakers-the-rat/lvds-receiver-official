@@ -283,6 +283,34 @@
         "pattern": "HV_OVP2"
       },
       {
+        "netclass": "HV",
+        "pattern": "HV_S1"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "HV_S2"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "HV_S3"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "HV_S4"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "HV_M1"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "HV_M2"
+      },
+      {
+        "netclass": "HV",
+        "pattern": "HV_M3"
+      },
+      {
         "netclass": "Power",
         "pattern": "+5V"
       },

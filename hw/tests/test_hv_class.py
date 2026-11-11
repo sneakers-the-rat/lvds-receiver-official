@@ -43,7 +43,11 @@ import check_pcb
 import router
 
 HV_DOMAIN = {"APD_K", "HV_RAW", "HV_SEC", "TP_HV", "HV_R29M",
-             "HV_R30M", "HV_R31A", "HV_R31B", "HV_OVP1", "HV_OVP2"}
+             "HV_R30M", "HV_R31A", "HV_R31B", "HV_OVP1", "HV_OVP2",
+             # docs/12 (2026-11-10): WE-FLEX string taps + CW ladder
+             # nodes joined the HV domain with the transformer swap.
+             "HV_S1", "HV_S2", "HV_S3", "HV_S4",
+             "HV_M1", "HV_M2", "HV_M3"}
 LV_HV_NAMED = {"HV_VC", "HV_VC2", "HV_FBX", "HV_SS", "HV_RT",
                "HV_SENSE", "HV_GATE", "HV_INTVCC", "HV_SHDN",
                "HV_EN", "HV_DAC"}

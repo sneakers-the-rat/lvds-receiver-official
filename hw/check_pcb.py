@@ -45,7 +45,12 @@ MM = pcbnew.FromMM
 # HV_FBX 1.6 V, HV_SENSE <=0.12 V, ...) are LV and stay at the 0.20
 # default — hw/tests/test_hv_class.py pins both directions.
 HV_NETS = {"APD_K", "HV_RAW", "HV_SEC", "TP_HV", "HV_R29M",
-           "HV_R30M", "HV_R31A", "HV_R31B", "HV_OVP1", "HV_OVP2"}
+           "HV_R30M", "HV_R31A", "HV_R31B", "HV_OVP1", "HV_OVP2",
+           # docs/12: WE-FLEX secondary string taps (peak 21-148 V by
+           # position/variant) and CW ladder nodes (peak Vout/2,
+           # <= 210 V) — HV generator internals, classed with the rail.
+           "HV_S1", "HV_S2", "HV_S3", "HV_S4",
+           "HV_M1", "HV_M2", "HV_M3"}
 POWER_NETS = {"+5V", "+3V3D", "+3V3D_CDR", "+3V3A", "+VA", "-VA",
               "NEG_RAW", "VBUS_RAW", "PHY_1V8", "PHY_1V8A"}
 WAIVERS = []   # (net_a, net_b, reason) — filled from docs/04 if needed
