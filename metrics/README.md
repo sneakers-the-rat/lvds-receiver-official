@@ -1,17 +1,29 @@
 # Token metrics — how much agent work this PCB took, as recorded
 
-Snapshot generated **2026-11-09T14:55:51Z** (the last usage row included;
-refreshed from the 2026-11-08T12:22:00Z export, same SQL, bound
-`created_at <= 1794236151`).
+Closing snapshot generated **2026-11-10T23:42:47Z** (the last usage row
+included; same SQL as below, bound `created_at <= 1794354167`; the
+closing increment of 226 rows was verified per-agent against the
+database — all 60 agents in the increment reproduce exactly).
 Headline, for the project scope defined below:
 
 | scope | agents | usage rows | input tokens | output tokens |
 |---|---|---|---|---|
-| chat tree (main chat + its subagents) | 58 | 533 | 560,954,013 | 2,717,243 |
-| checkpoint cron (`pdlvds-progress`) | 211 | 165 | 163,551,170 | 929,625 |
-| **project total** | **269** | **698** | **724,505,183** | **3,646,868** |
+| chat tree (main chat + its subagents) | 147 | 1,074 | 1,549,279,717 | 11,642,189 |
+| checkpoint cron (`pdlvds-progress`) | 349 | 293 | 369,509,078 | 1,878,616 |
+| **project total** | **496** | **1,367** | **1,918,788,795** | **13,520,805** |
 
-**Gross total: 728,152,051 tokens processed.** Read the semantics section
+**Gross total: 1,932,309,600 tokens processed.**
+
+Closing-refresh note: the input split was deliberately **not** re-run
+for this snapshot. A fresh estimator run on 2026-11-10 showed degraded
+coverage — the nightly transcript pruning has removed worker
+transcripts the estimator needs, so its per-scope repeated shares
+collapse (its own documented bug: pruned agents contribute zero
+estimable rows while their tokens remain in the totals). The closing
+cost bounds therefore price the closing totals with the last good
+split (2026-11-09, from `input_split_summary.csv` as committed);
+re-running the estimator and restoring that file reproduces the
+published bounds exactly. Read the semantics section
 before quoting that number anywhere: it is *gross tokens processed* — the
 full context is re-sent on every model request, so the sum counts the same
 content many times. It is a work meter, not a content size and not a bill.

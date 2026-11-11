@@ -1,4 +1,283 @@
-# 00 — Status board (updated by the build coordinator after every stage)
+# 00 — Status board
+
+## FINAL STATUS — 2026-11-10 — project complete
+
+This project designed, from scratch, a replacement for the optical
+receiver in the Miniscope Zero paper (bioRxiv 10.64898/2026.09.05.745822v1),
+whose receiver is a Hamamatsu SiPM module plus an Opal Kelly FPGA board.
+This design needs no FPGA: anyone can plug the module into a laptop over
+USB, program it, and verify it.
+
+**Signal chain.** Excelitas C30737LH-500-90 silicon APD → OPA657
+transimpedance amplifier → LMH7220 comparator with a DAC-set threshold,
+native LVDS out (the bit-transparent main path). A verification tap runs
+comparator → ADN2813 clock/data recovery → STM32H723 (timer/SPI-slave
+DMA capture, firmware decode) → USB3300 ULPI USB-HS → host. Bias is an
+LT3757 flyback under DAC control with temperature compensation and a
+hardware interlock. Power is USB-C. Programming is via the STM32's ROM
+USB DFU bootloader plus SWD pads. An alternate footprint fits the
+Hamamatsu S8664-20K (D2, do-not-populate in the standard build).
+
+**Modes.** The paper's uplink — 8 Mbps Manchester — is supported as
+transmitted. The design target of 50 Mbps line rate (8b/10b, 40 Mbps
+payload) is implemented in the codec and capture path; no transmitter
+for it exists yet, so that mode is proven in simulation only.
+
+### The board
+
+- Final board file: `hw/pdlvds_rx.kicad_pcb` — a byte-identical copy of
+  the pass-221 board (`hw/pdlvds_rx.exp273.kicad_pcb`). 221 banked
+  routing passes; the board is **fully routed: 0 unconnected items**.
+- KiCad DRC on the final tree (with the project netclasses below):
+  210 items, every one dispositioned under "Verification"; 0
+  unconnected. Under the Default-only rules the routing was banked
+  against, the same board shows 4 items — all intrinsic to the USB-C
+  connector's own geometry at the board edge (J1).
+- `hw/check_pcb.py` on the final board: 0 unconnected nets, 0 courtyard
+  collisions, 147 class-band clearance pairs + 37 segregated
+  same-footprint pairs (the same population DRC counts as 206; the two
+  checkers count at different granularity), blind list SH1 only
+  (21 fallback pairs, reported, not gated).
+- Schematic: 152 parts / 648 pins / 223 nets / 545 connections;
+  ERC 0 errors, 0 warnings. The schematic was redrawn for readability
+  on 2026-11-08 with a byte-identical netlist proof (0-byte snapshot
+  diff).
+- Netclasses now live in the project file (`hw/pdlvds_rx.kicad_pro`):
+  Default 0.20 mm, Power 0.25 mm, HV 1.00 mm, assigned by the carried-
+  voltage census in `hw/check_pcb.py` (the same net lists the checker
+  used throughout). They are proven to bind: on a scratch copy, a
+  planted track at a 0.50 mm gap to HV copper is flagged as an HV
+  violation with the classes present and passes silently with the
+  project stripped back to Default-only (A/B DRC reports in
+  `scratch/work/final/plant/`).
+- Fab package: `hw/fab/`, generated from the final board — full gerber
+  set, drill file, `gerbers.zip`, placement CSV, BOM (83 rows), board
+  renders, schematic PDF/SVG.
+
+### Verification (final local run of `scripts/ci.sh`, 2026-11-10)
+
+Steps 1–10 PASS; step 11 (DRC gate) reports REGRESSION against the
+zero-tolerance baseline — see the disposition below.
+
+- Codec unit tests: 11/11 PASS. Digital simulation (8b/10b, Manchester,
+  PRBS-15): PASS.
+- Link budget: −45.6 dBm at 740 nm against the −34 dBm requirement
+  (≈11 dB margin): PASS.
+- TIA ngspice simulation: PASS — f-3dB 153.6 MHz (requirement ≥50 MHz);
+  noise inside 3 dB of the 0.569 mV budget. The margin over the noise
+  budget is thin (the underlying figure is 0.567 mV); the bench, not
+  the simulator, will settle it.
+- HV analytical check: PASS — worst-case demand 259.40 V against the
+  APD's 260 V rating (the self-fry fix, docs/07).
+- Firmware: host unit tests PASS (the suite totals 96 checks across
+  firmware and host tooling); ARM cross-compile clean; host-tool
+  simulation smoke test PASS. The host tool's hardware transport is a
+  stub — it cannot yet talk to a real board.
+- Netlist verification: exact (152/648/223/545, nothing missing,
+  nothing extra). ERC gate: PASS (0/0).
+- Hardware simulation (Renode, the fresh attempt the package was kept
+  for): **Stage A CONFIRMED** — the unmodified production firmware
+  boots on the emulated STM32 (H743 model) through peripheral init and
+  the USB controller init into its main loop (program-counter samples
+  inside `tud_task_ext` and `usb_dev_recv`, three cold starts; record
+  in `sim/hwsim-package/captures/2026-11-10/`). Two limits recorded
+  there: the bundled platform has no SPI3 model, so the DAC/threshold
+  path is not validated; Stage B (host bridge) was not attempted —
+  Renode offers no ready host-visible bridge for this controller and
+  the host tool's transport is a stub.
+
+**DRC gate disposition.** The CI DRC baseline is zero-tolerance by the
+owner's 2026-11-05 ruling and has not been changed. The final board
+reports 210 items against it, all in known classes: 4 J1
+connector-at-edge items; 206 netclass-band items that exist only
+because the completion phase wrote the project's own design classes
+into the project file (HV: 62 zone-surface + 27 surface-routing +
+11 zone-buried + 10 buried-layer + 8 same-footprint; Power: 46
+same-footprint + 32 surface-band + 10 buried-layer). Every one is a
+pair that satisfies the board's binding 0.20 mm fab rule; the wider
+bands were the project's design census, tracked as counts throughout
+routing, never as defects. The HV pairs sit in the APD/HV front-end
+district and at the ground pour's own 0.25 mm carve; same-footprint
+pairs are manufacturer pad geometry. CI's DRC step will therefore show
+red on the final tree while its ERC gate shows green; that is the
+owner's gate working as configured, with the items named here rather
+than baselined away. Inside those counts sit the two D1 clearance
+lines held open since docs/07: D1's land pattern cannot be proven
+from the datasheet's raster figure, so they were never exempted.
+
+### Not proven on hardware (the bench list, docs/05)
+
+Nothing here is bench-proven: APD gain and temperature coefficient,
+TIA noise and stability against real parasitics, HV ripple coupling
+into the front end, shielding against the paper's 6.63 MHz
+wireless-power field, ADN2813 lock at 16 Mbaud (near its floor;
+datasheet-compatible), STM32 capture timing closure, USB enumeration
+on real silicon, and end-to-end BER against the real transmitter.
+
+### Carried open items
+
+- docs/07 condition (a): D1 land-pattern proof (datasheet figure is
+  raster-only).
+- T1 land pattern provisional: the custom wind (Würth EFD20 frame,
+  order code 070-4290; Lp 47 µH, 1:20, hipot 1500 VAC) must be
+  confirmed against the manufacturer's drawing before fab.
+- F-08: U6/C17/C18 unverified (datasheet fetches failed on every
+  route; nothing was guessed).
+- SH1: the shield can's fitted pattern predates its S1001 clip
+  conversion, and its courtyard question still needs the semantic
+  covering-part answer (it is the checker's one blind footprint).
+- D8 package outline unverified (part identity and 740 nm established).
+- S8664 (D2) lead identity not verified against the Hamamatsu drawing.
+- USB VID/PID (0x1209/0xD723) is an unregistered placeholder; register
+  before distributing hardware.
+- DM_PHY was routed at 0.10 mm width against DP_PHY's 0.125 mm — a
+  pair asymmetry recorded at pass 210, cosmetic for a 8 Mbps link but
+  named here.
+
+## Project history — the honest record
+
+- **The missed deadline.** On 2026-11-04 the
+...[truncated 7370 chars] user set "have this
+  done by the morning" (2026-11-05). It was missed, and the miss was
+  reported plainly, with no replacement date promised. From then on
+  the project reported state — audited numbers — instead of dates.
+- **Placement.** The first placement was script-generated and accepted
+  on parts-present checks alone — never courtyard-checked, never
+  scored on connection distance. The user found the collisions and
+  the scatter themselves, three times. The fix was ordered on
+  2026-11-06: force-directed placement over the whole board (pass
+  149; total connection star length 6,142 → 3,680 mm), no adoption
+  gate, no fallback to the random layout.
+- **The courtyard crisis and the zero rule.** Components had been
+  placed physically overlapping. The owner's ruling (2026-11-05):
+  tests assert zero violations, and courtyard overlaps get no
+  declared-exception carve-out — "we should just have no overlaps."
+  The board has held courtyard 0 since.
+- **A checker grading itself.** An early cleanup tool (`prune_dead`)
+  reported success by its own measure while the referees disagreed;
+  the standing rule since is that a result counts only when an
+  independent checker measures its effect.
+- **The HV self-fry defect (docs/07).** The fitted APD's breakdown
+  range tops at 260 V, but the bias supply as first designed could
+  demand 420 V and powered up at maximum demand. Fixed by re-ratioing
+  the set-point string (worst case 259.40 V, proven analytically and
+  in simulation), a shutdown re-ratio so the converter is off at
+  power-up, and a physical jumper interlock in the enable path.
+  Condition (a) of that gate — the D1 land-pattern proof — remains
+  open (see carried items).
+- **Parts audit (docs/08, docs/09).** 144 designators audited three
+  ways; 115 locked at audit, findings F-01…F-13 worked to ground.
+  The worst: the flyback transformer existed only as simulation
+  parameters — no production 1:20 / 47 µH part exists — resolved as a
+  controlled custom wind on a standard Würth EFD20 frame.
+- **Toolchain.** The board files outgrew the cached KiCad 7 kit
+  mid-project. On 2026-11-09 the parent migrated the offline restore
+  kit to KiCad 8.0.9 (the network route is proxy-poisoned; restore is
+  `~/workspace/toolchain-restore/restore.sh` only). The VM was
+  replaced repeatedly throughout, including mid-session; committed
+  work was never lost. Two completion-phase footnotes: ngspice had
+  also been lost to a replacement and was restored from a local
+  package extract for the final run.
+- **Checker lessons that shaped the work.** KiCad's save renames a
+  track that touches foreign copper on a shared layer (verified
+  repeatedly; every scripted edit is reloaded and net-verified before
+  it counts). KiCad 8 DRC is the primary referee; the home-grown
+  checker survives for what DRC cannot do — courtyard polygons,
+  per-net connectivity census, and the voltage-class census. At pass
+  192 that tooling caught a fabrication defect both checkers had
+  missed: APD_K copper crossing the milled HV slot, which the fab
+  would have cut away. Passes 198–201 closed the silkscreen campaign
+  at zero.
+- **Delegation (2026-11-08).** With the last nets resisting, the user
+  delegated the open design forks — "Don't ask me, just fix it
+  yourself" — and confirmed every net is load-bearing: the target is
+  0 unconnected, no exceptions. Executed under that authority: C20
+  shrank 0603→0402, C16 relocated off the PHY's south row, the
+  netclasses written in the completion phase. In the same sitting
+  the user parked all simulation work until routing reached zero.
+
+- **Site and schematic side-quests (2026-11-08).** The project site
+  had been rendering a board dozens of passes old because the fab
+  script exported the pre-expansion base board; the build now selects
+  the frontier board with the pass system's own rule and prints
+  provenance. The schematic was redrawn into framed subsystems with
+  the netlist byte-identical before and after.
+- **The CAP campaign and the named trade.** CAP_CLK/CAP_DATA took five
+  worker sessions of coordinated district re-fans (pass 210). Pass
+  214 banked ULPI_STP connected while knowingly opening the PHY_1V8
+  feed to C22 — the trade was named in the pass record and healed by
+  pass 216, which used the user's own C22-north relocation from the
+  visual-direction session below.
+- **The user at the board (2026-11-09 evening).** Reading rendered
+  screenshots, the user directed the endgame: C22 north of the PHY
+  (landed as pass 216; the south-east alternative was evaluated and
+  rejected with arithmetic), a remove-first cleanup posture
+  (calibrated the same evening: finishing the board is the goal,
+  cleanup a working suggestion, no board-wide audit), and the bent
+  XI run under the chip (landed as pass 219). The screenshot rules
+  from that session — bare pad outlines, no yellow, tight zooms,
+  never reuse a filename — are standing.
+- **The script-recovery epic (2026-11-09/10).** Asked whether every
+  script was committed, the parent commissioned a recovery from agent
+  transcripts. Batch 1 landed 650 files — and roughly a third were
+  pre-project scripts from other work: the inclusion rule was
+  per-agent and all-time, so one qualifying call swept in everything
+  that agent had ever written, and the main chat's long-lived session
+  qualified. The user found it within minutes via a GitHub link. The
+  batch was purged from the repo's whole history the same night
+  (force-push fb3342d → a684be2; a secrets screen over the dump found
+  zero credential-shaped matches; GitHub may still serve the orphaned
+  commit by direct SHA until garbage collection — only the account
+  owner can expedite that). The redo proved its set first from
+  spawn briefs: 94 sessions of this project's own subagents (the main
+  chat holds zero), and reconciled exactly — 1,388 distinct scripts
+  = 1,097 already committed + 280 landed whole + 11 landed partial,
+  with 74 edit-on-unknown-base states named unrecoverable and every
+  landed blob re-hashed. The standing rule from the episode: every
+  working script is committed immediately after its first successful
+  run.
+- **The method correction (2026-11-09/10).** The user named the
+  scratch-code culture — ~104,000 lines of single-use scripts, one
+  literally executing its predecessor's first half as its library —
+  as the cause of the slow pace. Orders in force since: the
+  configuration-scan line is closed; candidates are built and judged
+  by the referees, not proven in a model first; needed operations go
+  into the shared layout library (`hw/build_lib.py`), parameterized.
+- **The USB_RST endgame.** The last net was fenced in turn by the
+  crystal clock via, the DM_PHY loop, and a +3V3D via, and its first
+  solved arrival used a via below the board's minimum size. A
+  full-set build connected it at 41 violations (not bankable); the
+  PHY was re-placed; three consecutive worker sessions died of an
+  output-truncation error (their predecessors' repair work survived
+  on disk and on origin each time: DRC 109 → 32); the parent then
+  announced it was taking the repair directly and finished it —
+  pass 220 (DRC back to the 4 J1 items) and pass 221: USB_RST
+  connected end to end, 0 unconnected, routing complete.
+- **Token discipline.** The project ran against a subscription meter
+  resetting 2026-11-15; in the final week the burn was cut roughly
+  two-thirds (background explorers slowed, two watchdog crons
+  converted to cheap hooks, the fail-open sentinel paused until the
+  board finished). The closing snapshot is below.
+
+## Token metrics — closing snapshot (2026-11-10T23:42:47Z bound)
+
+Gross database volume over the whole project: **1,918,788,795 input
+tokens, 13,520,805 output, 1,932,309,600 total**, across 1,367 usage
+rows and 496 agents in scope (this chat's tree plus the progress-job
+workers). The export is verified: per-agent sums reproduce the
+database exactly for all 60 agents in the closing increment. Cost
+equivalents at the rates recorded in `metrics/api_rates.json`,
+published as the standing two bounds (pessimistic: the repeated
+preamble is new at every request; optimistic: it is cache-served
+after the first send): Meta $3,192.98 / $599.92; Anthropic
+$3,621.95 / $616.01; OpenAI $7,390.90 / $1,613.44. (All-uncached
+references: $4,931.21 / $5,766.89 / $11,149.21.) Full tables:
+`metrics/cost_summary.csv`; method: `metrics/README.md`. The bound is
+the last usage row the database had written at export time; the
+handful of turns after it are excluded by construction.
+
+## Dated build diary (2026-11-03 → 2026-11-04), as written at the time
+
 
 ## LATEST — 2026-11-03 12:36 PST — CI fix for GH Actions run 41710107325
 
