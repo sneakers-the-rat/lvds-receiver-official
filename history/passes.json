@@ -6482,6 +6482,36 @@
       },
       "description": "T1 swap: Wurth WE-FLEX HV 749196518 fitted, two-cell Cockcroft-Walton ladder (C52-54, D12-15) routed in the HV district, R28 0.15R; D11 restored to its canonical position (T1 moved east instead); D1 footprint swapped to the proven Excelitas land pattern (pads 0.70x0.60 at +/-1.00, pad 1 elongated) per docs/07. KiCad DRC 132 clearance (class-band population) + 4 J1 edge + 2 refill-artifact zone pairs, no shorts; check_pcb unconnected 0, courtyard 0.",
       "note": ""
+    },
+    {
+      "pass": 223,
+      "timestamp": "2026-11-11T03:00:29Z",
+      "hash": null,
+      "short_hash": null,
+      "board_file": "hw/pdlvds_rx.exp275.kicad_pcb",
+      "dir": "pass-0223",
+      "renders": {
+        "top": "board-top.svg",
+        "bottom": "board-bottom.svg",
+        "all_layers": "board-all-layers.svg"
+      },
+      "layers": {
+        "F.Cu": "layer-FCu.svg",
+        "In1.Cu": "layer-In1Cu.svg",
+        "In2.Cu": "layer-In2Cu.svg",
+        "B.Cu": "layer-BCu.svg"
+      },
+      "stats": {
+        "nets_routed": null,
+        "nets_total": null,
+        "pins_failed": null,
+        "clearance_violations": 108,
+        "unconnected_nets": 0,
+        "audit_verdict": "FAIL",
+        "courtyard_collisions": 0
+      },
+      "description": "SH1 fix: Harwin S02-20150300 20x15 can on five S1001-46R clips over U1/U2 only; D1 (APD) clear of the can; R8/C7/C44/C2 relocated",
+      "note": ""
     }
   ],
   "gaps": [

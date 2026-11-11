@@ -1820,6 +1820,14 @@ T1 swap: Wurth WE-FLEX HV 749196518 fitted, two-cell Cockcroft-Walton ladder (C5
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 85 · Unconnected nets: 0 · Courtyard collisions: 0 · Audit verdict: FAIL
 
+### Pass 223 — 2026-11-11T03:00:29Z · commit `pending`
+
+Board: `hw/pdlvds_rx.exp275.kicad_pcb` · Commit: `pending`
+
+SH1 fix: Harwin S02-20150300 20x15 can on five S1001-46R clips over U1/U2 only; D1 (APD) clear of the can; R8/C7/C44/C2 relocated
+
+Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 108 · Unconnected nets: 0 · Courtyard collisions: 0 · Audit verdict: FAIL
+
 <!-- next-pass -->
 
 ## Gaps — runs that were never committed, and so have no number

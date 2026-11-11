@@ -1,0 +1,14 @@
+pass: 223
+description: SH1 fix: Harwin S02-20150300 20x15 can on five S1001-46R clips over U1/U2 only; D1 (APD) clear of the can; R8/C7/C44/C2 relocated
+timestamp (UTC): 2026-11-11T03:00:29Z
+commit: pending
+board file: hw/pdlvds_rx.exp275.kicad_pcb
+renders: board-top.svg, board-bottom.svg, board-all-layers.svg
+route-only renders: zones deleted from temp pcbnew copy (31 zones removed; source board unmodified)
+nets fully routed: not recorded
+pins failed: not recorded
+clearance violations: 108
+unconnected nets: 0
+courtyard collisions: 0
+audit verdict: fail
+note: 
