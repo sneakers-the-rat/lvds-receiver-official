@@ -1812,9 +1812,9 @@ USB_RST connected end to end — last net on the board: south dives set by a joi
 
 Nets fully routed: not recorded · Pins failed: not recorded · Clearance violations: 147 · Unconnected nets: 0 · Courtyard collisions: 0 · Audit verdict: FAIL
 
-### Pass 222 — 2026-11-11T02:05:27Z · commit `pending`
+### Pass 222 — 2026-11-11T02:05:27Z · commit `9061ce3`
 
-Board: `hw/pdlvds_rx.exp274.kicad_pcb` · Commit: `pending`
+Board: `hw/pdlvds_rx.exp274.kicad_pcb` · Commit: `9061ce3d6dcef3d366b12f1e8271ba4431971ab0`
 
 T1 swap: Wurth WE-FLEX HV 749196518 fitted, two-cell Cockcroft-Walton ladder (C52-54, D12-15) routed in the HV district, R28 0.15R; D11 restored to its canonical position (T1 moved east instead); D1 footprint swapped to the proven Excelitas land pattern (pads 0.70x0.60 at +/-1.00, pad 1 elongated) per docs/07. KiCad DRC 132 clearance (class-band population) + 4 J1 edge + 2 refill-artifact zone pairs, no shorts; check_pcb unconnected 0, courtyard 0.
 
