@@ -357,7 +357,7 @@ PARTS += [
  P("D7","LED green STAT", ("LED_SMD","LED_0603_1608Metric"), "LED",
    {"1":("K","passive","LED_STAT"), "2":("A","passive","LED_STAT_A")}, "misc"),
  P("R45","1k", R0603, "R", {"1":("","passive","+3V3D"), "2":("","passive","LED_STAT_A")}, "misc"),
- P("D8","SMT740 740nm LED BIST source", ("LED_SMD","LED_1206_3216Metric"), "LED",
+ P("D8","SMT740 740nm LED BIST source", ("pdlvds","SMT740_3227"), "LED",
    {"1":("K","passive","BIST_DRV"), "2":("A","passive","BIST_A")}, "misc"),
  P("R46","100R", R0603, "R", {"1":("","passive","+3V3D"), "2":("","passive","BIST_A")}, "misc"),
  # decoupling sprinkled for MCU / LVDS32 / DAC already partly present; add bulk
