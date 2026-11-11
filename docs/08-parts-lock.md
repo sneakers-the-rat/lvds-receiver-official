@@ -91,7 +91,12 @@ recorded in MANIFEST).
   (cross-checked against two secondary tables, MANIFEST Stage-7);
   DS13313 was unreachable for the project and for this audit, so the
   VDD/VDDA ranges and the VCAP capacitor requirement (C17/C18) are
-  unverified from the manufacturer document.
+  unverified from the manufacturer document. **CLOSED 2026-11-10**
+  (docs/09 F-08): AN5419 Rev 2 Table 2 read from st.com specifies
+  2.2 µF ESR < 100 mΩ per VCAP pin in LDO mode, and exact-block
+  extraction of ST's STM32H723ZGTx symbol gives VCAP on pins 71
+  and 106 — the design's C18/C17 connections. U6/C17/C18 VERIFIED;
+  no value changed.
 - **F-09 — Neither frequency source is a specified part.** X1 is
   "24MHz" with no part number (USB3300 demands CL 20 pF typ / ESR
   ≤30 Ω from its Table 5-8; C20/C21 realize ≈14–16 pF); X2 is "25MHz
@@ -293,7 +298,7 @@ the declared standard.
 | U3 | TI LMH7220MK, TSOT-23-6 | TSOT-23-6 stock — MATCH (pinout per MANIFEST; TSOT-6 has no hysteresis pin — external R9 network per docs/02 deviation 3) (board: `TSOT-23-6`) | WITHIN: supply range 2.7–12 V vs +VA 4.6 V; abs max VCC−GND 13.5 V | COMPATIBLE at the design point: LVDS out VOD 250–400 mV / VOS 1125–1325 mV (TIA/EIA-644, meets R4) into U4's AC-coupled inputs. Input window −0.2..VCC−2 = −0.2..+2.6 V at VCC 4.6 V contains both idle points (0 V direct, 2.3 V post-amp); note the R3 overload swing can drive IN+ below −0.2 V — already open as docs/04 R-1 | **LOCKED** |
 | U4 | Analog Devices ADN2813ACPZ, LFCSP-32 | QFN-32-1EP_5x5mm_P0.5_EP3.1x3.1 — MATCH: datasheet outline 5.00 SQ body, 0.50 BSC pitch, exposed pad 3.10 SQ (2.95–3.25) = footprint EP 3.1×3.1 mm (board: `QFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm`) | WITHIN: VCC 3.0/3.3/3.6 V vs +3V3D_CDR ≈3.3 V; current 139 typ/155 max mA in the docs/03 budget | COMPATIBLE ×4: data rate 10–1250 Mb/s covers the 16 Mbaud Manchester chip stream and 50 Mb/s 8b/10b (R6); REFCLK 25 MHz inside 10–160 MHz, single-ended drive datasheet-sanctioned; inputs accept U3's 250–400 mV diff (sensitivity 3.3 mV pp, max diff 2.0 V, internal 100 Ω); LVDS outputs match U5. I2C 0x40 (SADDR5=GND) distinct from U9's 0x48. Note: docs/04 R-13 says THRADJ 'fitted at 0 Ω' — circuit.py (authoritative) fits 10 kΩ (R12) | **LOCKED** |
 | U5 | TI SN65LVDS32D, SOIC-16 | SOIC-16 stock — MATCH (datasheet D package 9.90×3.91 mm; pin table verified pin-for-pin incl. G/G̅ enables; unused ch3/4 inputs parked on rails, outputs NC) (board: `SOIC-16_3.9x9.9mm_P1.27mm`) | WITHIN: single 3.3 V supply vs 3.296 V rail; abs max VCC 4 V | COMPATIBLE: input thresholds ±100 mV max vs ADN2813's 250–400 mV drive; rated 100 Mb/s ≥ 50 Mb/s design and 16 Mbaud; LVTTL outputs feed MCU 3.3 V inputs | **LOCKED** |
-| U6 | ST STM32H723ZGT6, LQFP-144 | LQFP-144_20x20mm_P0.5 stock — MATCH at package level (JEDEC LQFP-144); pin name→number map provenance = installed KiCad symbol library, cross-checked against ST community + mbed tables (MANIFEST Stage-7 addendum) — not the ST datasheet (board: `LQFP-144_20x20mm_P0.5mm`) | **UNVERIFIED in part**: VDD/VDDA ranges and the VCAP capacitor requirement rest on DS13313, unreachable from this environment (project-recorded block, MANIFEST; this audit's fetch failed identically). Design runs VDD 3.296 V / VDDA 3.32 V, the family's nominal 3.3 V point — F-08 | COMPATIBLE: ULPI — U7 sources the 60 MHz clock, the MCU's OTG-HS ULPI consumes it (direction correct); PC2_C/PC3_C analog-switch closure is firmware bring-up (docs/04 R-6), not a part conflict; no HSE fitted, by design | **NOT LOCKED** |
+| U6 | ST STM32H723ZGT6, LQFP-144 | LQFP-144_20x20mm_P0.5 stock — MATCH at package level (JEDEC LQFP-144); pin name→number map provenance = installed KiCad symbol library, cross-checked against ST community + mbed tables (MANIFEST Stage-7 addendum) — not the ST datasheet (board: `LQFP-144_20x20mm_P0.5mm`) | **VERIFIED 2026-11-10 (F-08 closed, docs/09)**: the VCAP capacitor requirement is AN5419 Rev 2 Table 2 (read from st.com): 2.2 µF ESR < 100 mΩ per VCAP pin, LDO mode; VCAP pins on LQFP-144 are 71 and 106 per exact-block extraction of ST's STM32H723ZGTx symbol; C17 → 106, C18 → 71 as designed. Design runs VDD 3.296 V / VDDA 3.32 V, the family's nominal 3.3 V point | COMPATIBLE: ULPI — U7 sources the 60 MHz clock, the MCU's OTG-HS ULPI consumes it (direction correct); PC2_C/PC3_C analog-switch closure is firmware bring-up (docs/04 R-6), not a part conflict; no HSE fitted, by design | **LOCKED** (F-08 closed 2026-11-10) |
 | U7 | Microchip USB3300-EZK, QFN-32 | QFN-32-1EP_5x5mm_P0.5_EP3.1x3.1 — MATCH at package level (datasheet: 32-pin QFN 5×5 mm, 0.5 mm pitch, EP = main GND, wired to GND) (board: `QFN-32-1EP_5x5mm_P0.5mm_EP3.1x3.1mm`) | WITHIN: VDD3.3 3.0/3.3/3.6 V vs +3V3A 3.32 V; VBUS pin max 5.5 V vs ≤5.25 V; −40..+85 °C | COMPATIBLE: sources 60 MHz CLKOUT to the MCU ULPI; RBIAS 12 kΩ 1% is the datasheet value (R17); REG_EN at +3V3A enables internal regulators (PHY_1V8 is its output, C22/C23 per datasheet); ID=GND is the device-mode strap — bring-up check docs/04 R-7, not a rating conflict | **LOCKED** |
 | U8 | TI DAC8562SDGS, VSSOP-10 | VSSOP-10_3x3mm_P0.5 stock — MATCH (DGS package; pinout per MANIFEST) (board: `VSSOP-10_3x3mm_P0.5mm`) | WITHIN: AVDD 2.7–5.5 V vs +3V3D 3.296 V; outputs used 0–2.5 V ≤ AVDD | COMPATIBLE: SPI ≤50 MHz, logic domain = AVDD = MCU's 3.3 V; POR zero-scale output is the documented HV-demand interaction, sequenced by SHDN (docs/03, docs/04 R-8) — a system note, not a part defect | **LOCKED** |
 | U9 | TI TMP117NAI, WSON-6 (DRV) | **MISMATCH — measured from the board file**: pads 1–6 overlap the exposed pad (pad 7, GND) by 0.20 mm in X (signal pads span to 0.30 mm of centre; the EP spans to 0.50 mm) — on copper, all six pins short to the grounded thermal pad. The footprint is the only intra-footprint overlap on the board. Geometry also disagrees with TI's DRV0006B land-pattern callouts (datasheet: pads 0.45×0.30 mm, 0.65-class pitch callouts, (1.95) span) vs the footprint's 0.50 mm pitch, ±0.575 mm columns, 0.55×0.28 mm pads. Lock = redraw from DRV0006B and re-verify — F-04 (board: `TMP117_WSON6`) | WITHIN: V+ 1.8–5.5 V vs +3V3A 3.32 V; ±0.1 °C grade serves the APD tempco compensation (R9) | COMPATIBLE: I2C 0x48 (ADD0=GND) distinct from U4's 0x40; ALERT is open-drain and its pull-up is fitted (R22 → +3V3D) | **NOT LOCKED** |
@@ -447,8 +452,11 @@ F-06, F-07 (with R24 refitted — the RT suspicion was correct),
 F-09, F-10, F-11 (closed as a recorded residual risk in docs/03),
 F-12, F-13 are CLOSED. Still open: F-01's land-pattern condition
 (docs/07 (a); its rail-bound half (b) now PASSES — see the docs/07
-amendment) and F-08 (DS13313 still unreachable; U6/C17/C18 stay
-UNVERIFIED). Flagged sub-items: T1 provisional land pattern, SH1
-clip-land conversion, D8 package outline — all listed in docs/09.
+amendment) and F-08 (CLOSED 2026-11-10: AN5419 + ST symbol
+extraction verify U6/C17/C18; the DS13313 PDF itself remains
+unarchived). Flagged sub-items: T1 provisional land pattern
+(superseded — docs/11/12, WE-FLEX HV fitted), SH1 clip-land
+conversion (done — pass 223), D8 package outline — all listed
+in docs/09.
 This audit's rows are not re-verdicted here; the re-audit is the
 audit owner's.

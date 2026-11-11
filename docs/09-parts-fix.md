@@ -128,15 +128,38 @@ wrong.** The full LT3757 datasheet (Rev. G) was obtained and read
   for 250 kHz; typical-value basis, recorded as such).
 docs/04 R-3 carries the resolution note.
 
-**F-08 (DS13313 / U6 / C17 / C18) — OPEN, blocked, recorded.**
-Attempts this branch: st.com datasheet curl failed (connection
-produced no file); the AN5419 hardware guide (ST's own document,
-URL from ST community) curl failed identically. ST community
-material corroborates the fitted values (H723 LQFP-144 has 2 VCAP
-pins; 2.2 µF per VCAP pin is the DS rule as quoted there, and
-Nucleo-H723 fits 2.2 µF per pin), but that is secondary evidence:
-per the audit standard, **U6, C17, C18 stay UNVERIFIED** until
-DS13313 itself is read. No value was changed on this evidence.
+**F-08 (DS13313 / U6 / C17 / C18) — CLOSED 2026-11-10.**
+Earlier state (superseded): st.com datasheet curl failed (no
+file); the AN5419 curl failed identically; ST community material
+corroborated the fitted values but was secondary evidence, so
+U6/C17/C18 stayed UNVERIFIED and no value was changed.
+Resolution, on primary evidence read 2026-11-10:
+- **AN5419 Rev 2 (May 2020), Table 2, read in full from st.com**
+  (browser route; the direct curl still stalls from this
+  network): for the LDO-enabled configuration — the H723's only
+  configuration, its VDDLDO being internally tied to VDD and the
+  part having no SMPS pins — the VCAP requirement is **2.2 µF,
+  ESR < 100 mΩ, for VCAP1 and the same for VCAP2**. The
+  connect-together language applies to VCAP3 (absent on this
+  package) and to the LDO-disabled bypass mode (not used;
+  firmware never sets the PWR bypass bit — it touches only
+  PWR_CR3's USB33DEN). C17/C18 are 2.2 µF ceramics, one per pin,
+  exactly as specified; ceramic ESR is far below 100 mΩ.
+- **Pin numbers from ST's own symbol data**: exact-block
+  extraction of `STM32H723ZGTx` from the installed KiCad 8
+  library (MCU_ST_STM32H7.kicad_sym) gives 144 pins with **VCAP
+  on pins 71 and 106 only** — the design connects C18 → pin 71
+  (net VCAP2) and C17 → pin 106 (net VCAP1), as generated and
+  netlist-verified. This also settles the variant question: the
+  design as built is the ZG (LQFP-144); the MANIFEST's VG
+  (LQFP-100) fallback note records a superseded design phase.
+- No value or footprint changed. U6, C17, C18 are VERIFIED.
+  Residual: the DS13313 PDF itself is still not archived in
+  datasheets/ (st.com direct download stalls; the AN5419 PDF
+  likewise could not be archived although its full text was
+  read). The two F-08 questions the finding actually turned on —
+  which pins are VCAP, and what capacitor each needs — are
+  answered by the two ST sources above.
 
 **F-09 (X1/X2) — CLOSED.**
 - X1 = **ECS-240-20-5PDN-TR** (ECS CSM-7/HC-49US SMD): 24.0000 MHz,
